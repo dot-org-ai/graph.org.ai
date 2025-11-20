@@ -1,0 +1,154 @@
+domain	parent	description	types	enums	properties
+mdx.org.ai	markdown.org.ai	MDXLD standard: YAML-LD embedded in MDX for structured data + content + code + UI.	MDXLD		
+primitives.org.ai					
+workflows.org.ai	agents.org.ai				
+agents.org.ai	nouns.org.ai	Autonomous or semi-autonomous actors.	Agent		
+functions.org.ai	nouns.org.ai	Functional units of execution or logic.	CodeFunction, GenerativeFunction, AgenticFunction, HumanFunction		
+actions.org.ai	verbs.org.ai	Something done by an agent.	Action		
+gs1.org.ai	knowledge.org.ai	Standardized types for commercial products, places, and supply chain events.	Product, Place, Location, Event, Organization		
+wikipedia.org.ai	wiki.org.ai				
+schema.org.ai		Core simplified ontology extending Schema.org with AI-native types, Nouns, and Verbs.	Thing, Agent, Tool, AIModel, LandingPage, WPHero, WPBenefits, WPFeatures		digital
+naics.org.ai	knowledge.org.ai	North American Industry Classification System.		NAICSCode	
+soc.org.ai	knowledge.org.ai	Standard Occupational Classification.		SOCCode	
+triggers.org.ai	agents.org.ai				
+searches.org.ai	agents.org.ai				
+md.org.ai	markdown.org.ai	Standard Markdown file format conventions and specifications.	MarkdownFile		frontmatter, content
+startups.org.ai	business.org.ai	New business ventures.	Startup		
+services.org.ai	products.org.ai	Intangible products.	Service		
+markdown.org.ai	things.org.ai				
+onet.org.ai	knowledge.org.ai	Standardized occupational skills, tools, and technology classifications.	Occupation, Task, Activity, Tool, Technology, Skill		
+gdpval.org.ai	agi.org.ai				
+jobs.org.ai	work.org.ai	Employment roles and listings.	JobPosting, Role		
+tasks.org.ai	activities.org.ai	Normalized task definitions and hierarchies.	Task		
+tools.org.ai	things.org.ai	Instruments used to perform actions.	Tool		
+tech.org.ai	things.org.ai	Technology stacks and software.	Technology, Stack		
+business.org.ai	things.org.ai	Commercial entities and concepts.	Business		
+events.org.ai	verbs.org.ai	Unified event model connecting verbs to 5W+H (Who, What, Where, When, Why, How), extending EPCIS.	Event		who, what, where, when, why, how
+process.org.ai	activities.org.ai	Structured series of actions/tasks.	Process		
+apqc.org.ai	knowledge.org.ai	Standardized business process and activity classifications.	Process, Activity, Task		
+industries.org.ai	business.org.ai	Classifications of economic activity.	Industry	IndustryClassification	
+vc.org.ai	finance.org.ai	Venture Capital.	Investment		
+enterprises.org.ai	business.org.ai				
+semantics.org.ai	language.org.ai				
+skills.org.ai	knowledge.org.ai	Abilities required for tasks.	Skill		
+products.org.ai	things.org.ai	Any offered product or service.	Product		
+datasets.org.ai	knowledge.org.ai	Structured collections of data.	Dataset		
+models.org.ai	tech.org.ai	AI and Statistical Models.	AIModel, MLModel		
+contracts.org.ai	law.org.ai				
+schedules.org.ai	agents.org.ai				
+places.org.ai	things.org.ai	Entities that have a somewhat fixed, physical extension. Includes GeoNames data.	Place, Location		
+things.org.ai	schema.org.ai	The most generic type of item.	Thing		
+genes.org.ai	science.org.ai				
+people.org.ai	agents.org.ai	Human beings.	Person		
+molecules.org.ai	science.org.ai				
+instruments.org.ai	things.org.ai				
+equipment.org.ai	things.org.ai				
+properties.org.ai	schema.org.ai	Global property definitions.			
+vehicles.org.ai	tools.org.ai				
+energy.org.ai	science.org.ai				
+materials.org.ai	science.org.ai				
+courses.org.ai	education.org.ai				
+content.org.ai	media.org.ai	Media content.	MediaObject		
+offers.org.ai	business.org.ai				
+payments.org.ai	business.org.ai				
+research.org.ai	knowledge.org.ai				
+species.org.ai	science.org.ai				
+units.org.ai	things.org.ai				
+ideas.org.ai	knowledge.org.ai				
+language.org.ai	things.org.ai	Linguistic structures including parts of speech and their relationships.	Adjective, Adverb, Preposition		modifies, relatesTo
+science.org.ai	knowledge.org.ai	Systematic enterprise that builds and organizes knowledge.	Science		
+finance.org.ai	business.org.ai	Financial systems, money, and instruments.	FinancialProduct, MonetaryAmount		
+health.org.ai	science.org.ai	Health and medical related concepts.	MedicalEntity		
+manufacturing.org.ai	industries.org.ai				
+design.org.ai	media.org.ai				
+insurance.org.ai	business.org.ai				
+law.org.ai	knowledge.org.ai	Legal systems and legislation.	Legislation		
+code.org.ai	tech.org.ai				
+ops.org.ai	work.org.ai				
+management.org.ai	business.org.ai				
+creative.org.ai	media.org.ai	Creative works.	CreativeWork		
+organizations.org.ai	agents.org.ai	Structured groups of people.	Organization		
+news.org.ai	media.org.ai				
+blog.org.ai	media.org.ai				
+mcp.org.ai	agents.org.ai				
+wiki.org.ai	knowledge.org.ai				
+do.org.ai					
+activities.org.ai	actions.org.ai	Standardized definitions of ongoing actions and processes.	Activity		
+knowledge.org.ai	things.org.ai	Abstract information and concepts.	Knowledge		
+education.org.ai	knowledge.org.ai	Learning, teaching, and training.	EducationalOrganization, Course		
+context.org.ai	agents.org.ai				
+types.org.ai	schema.org.ai	Global type definitions.			
+companies.org.ai	business.org.ai	Registered corporate entities.	Company, Corporation		
+chemicals.org.ai	science.org.ai				
+elements.org.ai	science.org.ai				
+media.org.ai	things.org.ai				
+security.org.ai	tech.org.ai				
+consulting.org.ai	business.org.ai				
+retail.org.ai	industries.org.ai				
+logistics.org.ai	business.org.ai				
+automotive.org.ai	industries.org.ai				
+transport.org.ai	business.org.ai				
+engineering.org.ai	work.org.ai				
+hospitality.org.ai	business.org.ai				
+roles.org.ai	agents.org.ai	Capabilities and functions assigned to agents.	Role		
+agi.org.ai	agents.org.ai				
+work.org.ai	business.org.ai				
+robotics.org.ai	tech.org.ai				
+reports.org.ai	media.org.ai				
+images.org.ai	media.org.ai				
+video.org.ai	media.org.ai				
+safety.org.ai	agi.org.ai				
+legal.org.ai	law.org.ai	Legal documents and processes.	LegalService		
+apis.org.ai	tech.org.ai	Application Programming Interfaces.	WebAPI		
+nouns.org.ai	schema.org.ai	Defines the Noun class, representing the "Who" and "What" - a subclass of Type/Class.	Noun		
+verbs.org.ai	schema.org.ai	Defines the Verb class, connecting actions to their semantic components (act, actor, action, etc.).	Verb		act, actor, action, activity, result, event, inverse
+occupations.org.ai	work.org.ai	Normalized occupation definitions, extending O*NET.	Occupation		
+readme.md.markdown.org.ai	markdown.org.ai	Standard specification for README.md files, describing projects and domains.	Readme		
+todo.md.markdown.org.ai	markdown.org.ai	Standard specification for TODO.md files, tracking tasks and status.	Todo, Task		
+agents.md.markdown.org.ai	markdown.org.ai	Standard specification for AGENTS.md files, defining agent profiles and capabilities.	AgentProfile		
+claude.agents.md.markdown.org.ai	agents.md.markdown.org.ai	Claude-specific agent configuration and prompt standards.	ClaudeProfile		
+gemini.agents.md.markdown.org.ai	agents.md.markdown.org.ai	Gemini-specific agent configuration and prompt standards.	GeminiProfile		
+graph.org.ai		The meta-graph definition and core ontology for the .org.ai ecosystem.	Graph, Ontology, Schema		
+physical.verbs.org.ai	verbs.org.ai	Verbs primarily involving physical actions and changes.	PhysicalAction		
+digital.verbs.org.ai	verbs.org.ai	Verbs primarily involving digital data and information processing.	DigitalAction		
+commissions.physical.verbs.org.ai	physical.verbs.org.ai	Verb: commissions. Action: commission. Activity: commissioning.	Commissions, Commission, Commissioning		
+decommissions.physical.verbs.org.ai	physical.verbs.org.ai	Verb: decommissions. Action: decommission. Activity: decommissioning.	Decommissions, Decommission, Decommissioning		
+destroys.physical.verbs.org.ai	physical.verbs.org.ai	Verb: destroys. Action: destroy. Activity: destroying.	Destroys, Destroy, Destroying		
+encodes.physical.verbs.org.ai	physical.verbs.org.ai	Verb: encodes. Action: encode. Activity: encoding.	Encodes, Encode, Encoding		
+exports.physical.verbs.org.ai	physical.verbs.org.ai	Verb: exports. Action: export. Activity: exporting.	Exports, Export, Exporting		
+holds.physical.verbs.org.ai	physical.verbs.org.ai	Verb: holds. Action: hold. Activity: holding.	Holds, Hold, Holding		
+inspects.physical.verbs.org.ai	physical.verbs.org.ai	Verb: inspects. Action: inspect. Activity: inspecting.	Inspects, Inspect, Inspecting		
+installs.physical.verbs.org.ai	physical.verbs.org.ai	Verb: installs. Action: install. Activity: installing.	Installs, Install, Installing		
+kills.physical.verbs.org.ai	physical.verbs.org.ai	Verb: kills. Action: kill. Activity: killing.	Kills, Kill, Killing		
+loads.physical.verbs.org.ai	physical.verbs.org.ai	Verb: loads. Action: load. Activity: loading.	Loads, Load, Loading		
+packs.physical.verbs.org.ai	physical.verbs.org.ai	Verb: packs. Action: pack. Activity: packing.	Packs, Pack, Packing		
+picks.physical.verbs.org.ai	physical.verbs.org.ai	Verb: picks. Action: pick. Activity: picking.	Picks, Pick, Picking		
+receives.physical.verbs.org.ai	physical.verbs.org.ai	Verb: receives. Action: receive. Activity: receiving.	Receives, Receive, Receiving		
+removes.physical.verbs.org.ai	physical.verbs.org.ai	Verb: removes. Action: remove. Activity: removing.	Removes, Remove, Removing		
+repairs.physical.verbs.org.ai	physical.verbs.org.ai	Verb: repairs. Action: repair. Activity: repairing.	Repairs, Repair, Repairing		
+sells.physical.verbs.org.ai	physical.verbs.org.ai	Verb: sells. Action: sell. Activity: selling.	Sells, Sell, Selling		
+ships.physical.verbs.org.ai	physical.verbs.org.ai	Verb: ships. Action: ship. Activity: shipping.	Ships, Ship, Shipping		
+stocks.physical.verbs.org.ai	physical.verbs.org.ai	Verb: stocks. Action: stock. Activity: stocking.	Stocks, Stock, Stocking		
+stores.physical.verbs.org.ai	physical.verbs.org.ai	Verb: stores. Action: store. Activity: storing.	Stores, Store, Storing		
+transforms.physical.verbs.org.ai	physical.verbs.org.ai	Verb: transforms. Action: transform. Activity: transforming.	Transforms, Transform, Transforming		
+transports.physical.verbs.org.ai	physical.verbs.org.ai	Verb: transports. Action: transport. Activity: transporting.	Transports, Transport, Transporting		
+unloads.physical.verbs.org.ai	physical.verbs.org.ai	Verb: unloads. Action: unload. Activity: unloading.	Unloads, Unload, Unloading		
+unpacks.physical.verbs.org.ai	physical.verbs.org.ai	Verb: unpacks. Action: unpack. Activity: unpacking.	Unpacks, Unpack, Unpacking		
+voids.physical.verbs.org.ai	physical.verbs.org.ai	Verb: voids. Action: void. Activity: voiding.	Voids, Void, Voiding		
+achieves.digital.verbs.org.ai	digital.verbs.org.ai	Verb: achieves. Action: achieve. Activity: achieving.	Achieves, Achieve, Achieving		
+assesses.digital.verbs.org.ai	digital.verbs.org.ai	Verb: assesses. Action: assess. Activity: assessing.	Assesses, Assess, Assessing		
+communicates.digital.verbs.org.ai	digital.verbs.org.ai	Verb: communicates. Action: communicate. Activity: communicating.	Communicates, Communicate, Communicating		
+creates.digital.verbs.org.ai	digital.verbs.org.ai	Verb: creates. Action: create. Activity: creating.	Creates, Create, Creating		
+discovers.digital.verbs.org.ai	digital.verbs.org.ai	Verb: discovers. Action: discover. Activity: discovering.	Discovers, Discover, Discovering		
+interacts.digital.verbs.org.ai	digital.verbs.org.ai	Verb: interacts. Action: interact. Activity: interacting.	Interacts, Interact, Interacting		
+organizes.digital.verbs.org.ai	digital.verbs.org.ai	Verb: organizes. Action: organize. Activity: organizing.	Organizes, Organize, Organizing		
+plans.digital.verbs.org.ai	digital.verbs.org.ai	Verb: plans. Action: plan. Activity: planning.	Plans, Plan, Planning		
+plays.digital.verbs.org.ai	digital.verbs.org.ai	Verb: plays. Action: play. Activity: playing.	Plays, Play, Playing		
+searches.digital.verbs.org.ai	digital.verbs.org.ai	Verb: searches. Action: search. Activity: searching.	Searches, Search, Searching		
+trades.digital.verbs.org.ai	digital.verbs.org.ai	Verb: trades. Action: trade. Activity: trading.	Trades, Trade, Trading		
+transfers.digital.verbs.org.ai	digital.verbs.org.ai	Verb: transfers. Action: transfer. Activity: transferring.	Transfers, Transfer, Transferring		
+updates.digital.verbs.org.ai	digital.verbs.org.ai	Verb: updates. Action: update. Activity: updating.	Updates, Update, Updating		
+views.digital.verbs.org.ai	digital.verbs.org.ai	Verb: views. Action: view. Activity: viewing.	Views, View, Viewing		
+listens.digital.verbs.org.ai	digital.verbs.org.ai	Verb: listens. Action: listen. Activity: listening.	Listens, Listen, Listening		
+reads.digital.verbs.org.ai	digital.verbs.org.ai	Verb: reads. Action: read. Activity: reading.	Reads, Read, Reading		
+watches.digital.verbs.org.ai	digital.verbs.org.ai	Verb: watches. Action: watch. Activity: watching.	Watches, Watch, Watching		
