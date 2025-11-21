@@ -1,0 +1,27 @@
+{
+  "name": "mdxai",
+  "version": "0.0.1",
+  "description": "AI-driven content generation and enrichment for MDX",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "mdxai": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mdx", "ai", "cli", "generation"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "mdxdb": "file:../mdxdb",
+    "mdxld": "file:../mdxld",
+    "lodash-es": "^4.17.21",
+    "papaparse": "^5.4.0"
+  }
+}
