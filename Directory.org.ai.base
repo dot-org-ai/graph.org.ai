@@ -1,0 +1,9 @@
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - file.name.endsWith(".org.ai")
+    cardSize: 200
+  - type: table
+    name: View
