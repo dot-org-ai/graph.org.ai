@@ -1,0 +1,68 @@
+---
+id: CameraOperatorsTelevisionVideoAndFilm
+slug: CameraOperatorsTelevisionVideoAndFilm
+code:
+  code: null
+title:
+  title: null
+description: Operate television, video, or film camera to record images or
+  scenes for television, video, or film productions.
+$id: https://graph.org.ai/occupations/CameraOperatorsTelevisionVideoAndFilm
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CameraOperatorsTelevisionVideoAndFilm`
+      };
+  }));
+
+# Camera Operators, Television, Video, and Film
+
+**O*NET Code**: 27-4031.00
+
+Operate television, video, or film camera to record images or scenes for television, video, or film productions.
+
+## Job Profile
+<JobZone occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+### General Activities
+<Activities occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+## Qualifications
+### Skills
+<Skills occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+### Knowledge
+<Knowledge occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+### Abilities
+<Abilities occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+## Work Context
+<WorkContext occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CameraOperatorsTelevisionVideoAndFilm />
+
+### Industries
+<Industries occupation=CameraOperatorsTelevisionVideoAndFilm />

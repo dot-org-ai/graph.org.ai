@@ -1,0 +1,68 @@
+---
+id: MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic
+slug: MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend metal or plastic molding, casting, or
+  coremaking machines to mold or cast metal or thermoplastic parts or products.
+$id: https://graph.org.ai/occupations/MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic`
+      };
+  }));
+
+# Molding, Coremaking, and Casting Machine Setters, Operators, and Tenders, Metal and Plastic
+
+**O*NET Code**: 51-4072.00
+
+Set up, operate, or tend metal or plastic molding, casting, or coremaking machines to mold or cast metal or thermoplastic parts or products.
+
+## Job Profile
+<JobZone occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### General Activities
+<Activities occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Industries
+<Industries occupation=MoldingCoremakingAndCastingMachineSettersOperatorsAndTendersMetalAndPlastic />

@@ -1,0 +1,69 @@
+---
+id: CooksFastFood
+slug: CooksFastFood
+code:
+  code: null
+title:
+  title: null
+description: Prepare and cook food in a fast food restaurant with a limited
+  menu. Duties of these cooks are limited to preparation of a few basic items
+  and normally involve operating large-volume single-purpose cooking equipment.
+$id: https://graph.org.ai/occupations/CooksFastFood
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CooksFastFood`
+      };
+  }));
+
+# Cooks, Fast Food
+
+**O*NET Code**: 35-2011.00
+
+Prepare and cook food in a fast food restaurant with a limited menu. Duties of these cooks are limited to preparation of a few basic items and normally involve operating large-volume single-purpose cooking equipment.
+
+## Job Profile
+<JobZone occupation=CooksFastFood />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CooksFastFood />
+
+### General Activities
+<Activities occupation=CooksFastFood />
+
+## Qualifications
+### Skills
+<Skills occupation=CooksFastFood />
+
+### Knowledge
+<Knowledge occupation=CooksFastFood />
+
+### Abilities
+<Abilities occupation=CooksFastFood />
+
+## Work Context
+<WorkContext occupation=CooksFastFood />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CooksFastFood />
+
+### Industries
+<Industries occupation=CooksFastFood />

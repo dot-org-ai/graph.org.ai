@@ -1,0 +1,68 @@
+---
+id: RotaryDrillOperatorsOilAndGas
+slug: RotaryDrillOperatorsOilAndGas
+code:
+  code: null
+title:
+  title: null
+description: Set up or operate a variety of drills to remove underground oil and
+  gas, or remove core samples for testing during oil and gas exploration.
+$id: https://graph.org.ai/occupations/RotaryDrillOperatorsOilAndGas
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RotaryDrillOperatorsOilAndGas`
+      };
+  }));
+
+# Rotary Drill Operators, Oil and Gas
+
+**O*NET Code**: 47-5012.00
+
+Set up or operate a variety of drills to remove underground oil and gas, or remove core samples for testing during oil and gas exploration.
+
+## Job Profile
+<JobZone occupation=RotaryDrillOperatorsOilAndGas />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RotaryDrillOperatorsOilAndGas />
+
+### General Activities
+<Activities occupation=RotaryDrillOperatorsOilAndGas />
+
+## Qualifications
+### Skills
+<Skills occupation=RotaryDrillOperatorsOilAndGas />
+
+### Knowledge
+<Knowledge occupation=RotaryDrillOperatorsOilAndGas />
+
+### Abilities
+<Abilities occupation=RotaryDrillOperatorsOilAndGas />
+
+## Work Context
+<WorkContext occupation=RotaryDrillOperatorsOilAndGas />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RotaryDrillOperatorsOilAndGas />
+
+### Industries
+<Industries occupation=RotaryDrillOperatorsOilAndGas />

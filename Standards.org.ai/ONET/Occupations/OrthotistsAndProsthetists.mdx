@@ -1,0 +1,69 @@
+---
+id: OrthotistsAndProsthetists
+slug: OrthotistsAndProsthetists
+code:
+  code: null
+title:
+  title: null
+description: Design, measure, fit, and adapt orthopedic braces, appliances or
+  prostheses, such as limbs or facial parts for patients with disabling
+  conditions.
+$id: https://graph.org.ai/occupations/OrthotistsAndProsthetists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OrthotistsAndProsthetists`
+      };
+  }));
+
+# Orthotists and Prosthetists
+
+**O*NET Code**: 29-2091.00
+
+Design, measure, fit, and adapt orthopedic braces, appliances or prostheses, such as limbs or facial parts for patients with disabling conditions.
+
+## Job Profile
+<JobZone occupation=OrthotistsAndProsthetists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OrthotistsAndProsthetists />
+
+### General Activities
+<Activities occupation=OrthotistsAndProsthetists />
+
+## Qualifications
+### Skills
+<Skills occupation=OrthotistsAndProsthetists />
+
+### Knowledge
+<Knowledge occupation=OrthotistsAndProsthetists />
+
+### Abilities
+<Abilities occupation=OrthotistsAndProsthetists />
+
+## Work Context
+<WorkContext occupation=OrthotistsAndProsthetists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OrthotistsAndProsthetists />
+
+### Industries
+<Industries occupation=OrthotistsAndProsthetists />

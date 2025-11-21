@@ -1,0 +1,70 @@
+---
+id: MaidsAndHousekeepingCleaners
+slug: MaidsAndHousekeepingCleaners
+code:
+  code: null
+title:
+  title: null
+description: Perform any combination of light cleaning duties to maintain
+  private households or commercial establishments, such as hotels and hospitals,
+  in a clean and orderly manner. Duties may include making beds, replenishing
+  linens, cleaning rooms and halls, and vacuuming.
+$id: https://graph.org.ai/occupations/MaidsAndHousekeepingCleaners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MaidsAndHousekeepingCleaners`
+      };
+  }));
+
+# Maids and Housekeeping Cleaners
+
+**O*NET Code**: 37-2012.00
+
+Perform any combination of light cleaning duties to maintain private households or commercial establishments, such as hotels and hospitals, in a clean and orderly manner. Duties may include making beds, replenishing linens, cleaning rooms and halls, and vacuuming.
+
+## Job Profile
+<JobZone occupation=MaidsAndHousekeepingCleaners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MaidsAndHousekeepingCleaners />
+
+### General Activities
+<Activities occupation=MaidsAndHousekeepingCleaners />
+
+## Qualifications
+### Skills
+<Skills occupation=MaidsAndHousekeepingCleaners />
+
+### Knowledge
+<Knowledge occupation=MaidsAndHousekeepingCleaners />
+
+### Abilities
+<Abilities occupation=MaidsAndHousekeepingCleaners />
+
+## Work Context
+<WorkContext occupation=MaidsAndHousekeepingCleaners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MaidsAndHousekeepingCleaners />
+
+### Industries
+<Industries occupation=MaidsAndHousekeepingCleaners />

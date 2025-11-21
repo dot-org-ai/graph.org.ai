@@ -1,0 +1,72 @@
+---
+id: MedicalAssistants
+slug: MedicalAssistants
+code:
+  code: null
+title:
+  title: null
+description: Perform administrative and certain clinical duties under the
+  direction of a physician. Administrative duties may include scheduling
+  appointments, maintaining medical records, billing, and coding information for
+  insurance purposes. Clinical duties may include taking and recording vital
+  signs and medical histories, preparing patients for examination, drawing
+  blood, and administering medications as directed by physician.
+$id: https://graph.org.ai/occupations/MedicalAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MedicalAssistants`
+      };
+  }));
+
+# Medical Assistants
+
+**O*NET Code**: 31-9092.00
+
+Perform administrative and certain clinical duties under the direction of a physician. Administrative duties may include scheduling appointments, maintaining medical records, billing, and coding information for insurance purposes. Clinical duties may include taking and recording vital signs and medical histories, preparing patients for examination, drawing blood, and administering medications as directed by physician.
+
+## Job Profile
+<JobZone occupation=MedicalAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MedicalAssistants />
+
+### General Activities
+<Activities occupation=MedicalAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=MedicalAssistants />
+
+### Knowledge
+<Knowledge occupation=MedicalAssistants />
+
+### Abilities
+<Abilities occupation=MedicalAssistants />
+
+## Work Context
+<WorkContext occupation=MedicalAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MedicalAssistants />
+
+### Industries
+<Industries occupation=MedicalAssistants />

@@ -1,0 +1,69 @@
+---
+id: ControlAndValveInstallersAndRepairersExceptMechanicalDoor
+slug: ControlAndValveInstallersAndRepairersExceptMechanicalDoor
+code:
+  code: null
+title:
+  title: null
+description: Install, repair, and maintain mechanical regulating and controlling
+  devices, such as electric meters, gas regulators, thermostats, safety and flow
+  valves, and other mechanical governors.
+$id: https://graph.org.ai/occupations/ControlAndValveInstallersAndRepairersExceptMechanicalDoor
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ControlAndValveInstallersAndRepairersExceptMechanicalDoor`
+      };
+  }));
+
+# Control and Valve Installers and Repairers, Except Mechanical Door
+
+**O*NET Code**: 49-9012.00
+
+Install, repair, and maintain mechanical regulating and controlling devices, such as electric meters, gas regulators, thermostats, safety and flow valves, and other mechanical governors.
+
+## Job Profile
+<JobZone occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+### General Activities
+<Activities occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+## Qualifications
+### Skills
+<Skills occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+### Knowledge
+<Knowledge occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+### Abilities
+<Abilities occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+## Work Context
+<WorkContext occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />
+
+### Industries
+<Industries occupation=ControlAndValveInstallersAndRepairersExceptMechanicalDoor />

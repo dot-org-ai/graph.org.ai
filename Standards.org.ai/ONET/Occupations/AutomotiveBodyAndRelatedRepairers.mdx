@@ -1,0 +1,67 @@
+---
+id: AutomotiveBodyAndRelatedRepairers
+slug: AutomotiveBodyAndRelatedRepairers
+code:
+  code: null
+title:
+  title: null
+description: Repair and refinish automotive vehicle bodies and straighten vehicle frames.
+$id: https://graph.org.ai/occupations/AutomotiveBodyAndRelatedRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AutomotiveBodyAndRelatedRepairers`
+      };
+  }));
+
+# Automotive Body and Related Repairers
+
+**O*NET Code**: 49-3021.00
+
+Repair and refinish automotive vehicle bodies and straighten vehicle frames.
+
+## Job Profile
+<JobZone occupation=AutomotiveBodyAndRelatedRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AutomotiveBodyAndRelatedRepairers />
+
+### General Activities
+<Activities occupation=AutomotiveBodyAndRelatedRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=AutomotiveBodyAndRelatedRepairers />
+
+### Knowledge
+<Knowledge occupation=AutomotiveBodyAndRelatedRepairers />
+
+### Abilities
+<Abilities occupation=AutomotiveBodyAndRelatedRepairers />
+
+## Work Context
+<WorkContext occupation=AutomotiveBodyAndRelatedRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AutomotiveBodyAndRelatedRepairers />
+
+### Industries
+<Industries occupation=AutomotiveBodyAndRelatedRepairers />

@@ -1,0 +1,70 @@
+---
+id: Historians
+slug: Historians
+code:
+  code: null
+title:
+  title: null
+description: Research, analyze, record, and interpret the past as recorded in
+  sources, such as government and institutional records, newspapers and other
+  periodicals, photographs, interviews, films, electronic media, and unpublished
+  manuscripts, such as personal diaries and letters.
+$id: https://graph.org.ai/occupations/Historians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Historians`
+      };
+  }));
+
+# Historians
+
+**O*NET Code**: 19-3093.00
+
+Research, analyze, record, and interpret the past as recorded in sources, such as government and institutional records, newspapers and other periodicals, photographs, interviews, films, electronic media, and unpublished manuscripts, such as personal diaries and letters.
+
+## Job Profile
+<JobZone occupation=Historians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Historians />
+
+### General Activities
+<Activities occupation=Historians />
+
+## Qualifications
+### Skills
+<Skills occupation=Historians />
+
+### Knowledge
+<Knowledge occupation=Historians />
+
+### Abilities
+<Abilities occupation=Historians />
+
+## Work Context
+<WorkContext occupation=Historians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Historians />
+
+### Industries
+<Industries occupation=Historians />

@@ -1,0 +1,68 @@
+---
+id: SolarSalesRepresentativesAndAssessors
+slug: SolarSalesRepresentativesAndAssessors
+code:
+  code: null
+title:
+  title: null
+description: Contact new or existing customers to determine their solar
+  equipment needs, suggest systems or equipment, or estimate costs.
+$id: https://graph.org.ai/occupations/SolarSalesRepresentativesAndAssessors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SolarSalesRepresentativesAndAssessors`
+      };
+  }));
+
+# Solar Sales Representatives and Assessors
+
+**O*NET Code**: 41-4011.07
+
+Contact new or existing customers to determine their solar equipment needs, suggest systems or equipment, or estimate costs.
+
+## Job Profile
+<JobZone occupation=SolarSalesRepresentativesAndAssessors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SolarSalesRepresentativesAndAssessors />
+
+### General Activities
+<Activities occupation=SolarSalesRepresentativesAndAssessors />
+
+## Qualifications
+### Skills
+<Skills occupation=SolarSalesRepresentativesAndAssessors />
+
+### Knowledge
+<Knowledge occupation=SolarSalesRepresentativesAndAssessors />
+
+### Abilities
+<Abilities occupation=SolarSalesRepresentativesAndAssessors />
+
+## Work Context
+<WorkContext occupation=SolarSalesRepresentativesAndAssessors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SolarSalesRepresentativesAndAssessors />
+
+### Industries
+<Industries occupation=SolarSalesRepresentativesAndAssessors />

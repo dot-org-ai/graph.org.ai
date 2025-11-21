@@ -1,0 +1,67 @@
+---
+id: FirstLineSupervisorsOfPassengerAttendants
+slug: FirstLineSupervisorsOfPassengerAttendants
+code:
+  code: null
+title:
+  title: null
+description: Supervise and coordinate activities of passenger attendants.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfPassengerAttendants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfPassengerAttendants`
+      };
+  }));
+
+# First-Line Supervisors of Passenger Attendants
+
+**O*NET Code**: 53-1044.00
+
+Supervise and coordinate activities of passenger attendants.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfPassengerAttendants />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfPassengerAttendants />

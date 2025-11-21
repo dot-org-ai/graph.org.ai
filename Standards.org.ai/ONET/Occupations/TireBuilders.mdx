@@ -1,0 +1,67 @@
+---
+id: TireBuilders
+slug: TireBuilders
+code:
+  code: null
+title:
+  title: null
+description: Operate machines to build tires.
+$id: https://graph.org.ai/occupations/TireBuilders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TireBuilders`
+      };
+  }));
+
+# Tire Builders
+
+**O*NET Code**: 51-9197.00
+
+Operate machines to build tires.
+
+## Job Profile
+<JobZone occupation=TireBuilders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TireBuilders />
+
+### General Activities
+<Activities occupation=TireBuilders />
+
+## Qualifications
+### Skills
+<Skills occupation=TireBuilders />
+
+### Knowledge
+<Knowledge occupation=TireBuilders />
+
+### Abilities
+<Abilities occupation=TireBuilders />
+
+## Work Context
+<WorkContext occupation=TireBuilders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TireBuilders />
+
+### Industries
+<Industries occupation=TireBuilders />

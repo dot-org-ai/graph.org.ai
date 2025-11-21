@@ -1,0 +1,68 @@
+---
+id: PatternmakersMetalAndPlastic
+slug: PatternmakersMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Lay out, machine, fit, and assemble castings and parts to metal or
+  plastic foundry patterns, core boxes, or match plates.
+$id: https://graph.org.ai/occupations/PatternmakersMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PatternmakersMetalAndPlastic`
+      };
+  }));
+
+# Patternmakers, Metal and Plastic
+
+**O*NET Code**: 51-4062.00
+
+Lay out, machine, fit, and assemble castings and parts to metal or plastic foundry patterns, core boxes, or match plates.
+
+## Job Profile
+<JobZone occupation=PatternmakersMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PatternmakersMetalAndPlastic />
+
+### General Activities
+<Activities occupation=PatternmakersMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=PatternmakersMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=PatternmakersMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=PatternmakersMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=PatternmakersMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PatternmakersMetalAndPlastic />
+
+### Industries
+<Industries occupation=PatternmakersMetalAndPlastic />

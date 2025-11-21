@@ -1,0 +1,70 @@
+---
+id: ClaimsAdjustersExaminersAndInvestigators
+slug: ClaimsAdjustersExaminersAndInvestigators
+code:
+  code: null
+title:
+  title: null
+description: Review settled claims to determine that payments and settlements
+  are made in accordance with company practices and procedures. Confer with
+  legal counsel on claims requiring litigation. May also settle insurance
+  claims.
+$id: https://graph.org.ai/occupations/ClaimsAdjustersExaminersAndInvestigators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ClaimsAdjustersExaminersAndInvestigators`
+      };
+  }));
+
+# Claims Adjusters, Examiners, and Investigators
+
+**O*NET Code**: 13-1031.00
+
+Review settled claims to determine that payments and settlements are made in accordance with company practices and procedures. Confer with legal counsel on claims requiring litigation. May also settle insurance claims.
+
+## Job Profile
+<JobZone occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+### General Activities
+<Activities occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+## Qualifications
+### Skills
+<Skills occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+### Knowledge
+<Knowledge occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+### Abilities
+<Abilities occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+## Work Context
+<WorkContext occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ClaimsAdjustersExaminersAndInvestigators />
+
+### Industries
+<Industries occupation=ClaimsAdjustersExaminersAndInvestigators />

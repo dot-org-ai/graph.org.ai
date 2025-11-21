@@ -1,0 +1,69 @@
+---
+id: DataWarehousingSpecialists
+slug: DataWarehousingSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Design, model, or implement corporate data warehousing activities.
+  Program and configure warehouses of database information and provide support
+  to warehouse users.
+$id: https://graph.org.ai/occupations/DataWarehousingSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DataWarehousingSpecialists`
+      };
+  }));
+
+# Data Warehousing Specialists
+
+**O*NET Code**: 15-1243.01
+
+Design, model, or implement corporate data warehousing activities. Program and configure warehouses of database information and provide support to warehouse users.
+
+## Job Profile
+<JobZone occupation=DataWarehousingSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DataWarehousingSpecialists />
+
+### General Activities
+<Activities occupation=DataWarehousingSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=DataWarehousingSpecialists />
+
+### Knowledge
+<Knowledge occupation=DataWarehousingSpecialists />
+
+### Abilities
+<Abilities occupation=DataWarehousingSpecialists />
+
+## Work Context
+<WorkContext occupation=DataWarehousingSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DataWarehousingSpecialists />
+
+### Industries
+<Industries occupation=DataWarehousingSpecialists />

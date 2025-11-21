@@ -1,0 +1,70 @@
+---
+id: SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts
+slug: SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts
+code:
+  code: null
+title:
+  title: null
+description: Sell goods for wholesalers or manufacturers where technical or
+  scientific knowledge is required in such areas as biology, engineering,
+  chemistry, and electronics, normally obtained from at least 2 years of
+  postsecondary education.
+$id: https://graph.org.ai/occupations/SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts`
+      };
+  }));
+
+# Sales Representatives, Wholesale and Manufacturing, Technical and Scientific Products
+
+**O*NET Code**: 41-4011.00
+
+Sell goods for wholesalers or manufacturers where technical or scientific knowledge is required in such areas as biology, engineering, chemistry, and electronics, normally obtained from at least 2 years of postsecondary education.
+
+## Job Profile
+<JobZone occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+### General Activities
+<Activities occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+## Qualifications
+### Skills
+<Skills occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+### Knowledge
+<Knowledge occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+### Abilities
+<Abilities occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+## Work Context
+<WorkContext occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />
+
+### Industries
+<Industries occupation=SalesRepresentativesWholesaleAndManufacturingTechnicalAndScientificProducts />

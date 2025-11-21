@@ -1,0 +1,68 @@
+---
+id: HumanResourcesManagers
+slug: HumanResourcesManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate human resources activities and staff of
+  an organization.
+$id: https://graph.org.ai/occupations/HumanResourcesManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HumanResourcesManagers`
+      };
+  }));
+
+# Human Resources Managers
+
+**O*NET Code**: 11-3121.00
+
+Plan, direct, or coordinate human resources activities and staff of an organization.
+
+## Job Profile
+<JobZone occupation=HumanResourcesManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HumanResourcesManagers />
+
+### General Activities
+<Activities occupation=HumanResourcesManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=HumanResourcesManagers />
+
+### Knowledge
+<Knowledge occupation=HumanResourcesManagers />
+
+### Abilities
+<Abilities occupation=HumanResourcesManagers />
+
+## Work Context
+<WorkContext occupation=HumanResourcesManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HumanResourcesManagers />
+
+### Industries
+<Industries occupation=HumanResourcesManagers />

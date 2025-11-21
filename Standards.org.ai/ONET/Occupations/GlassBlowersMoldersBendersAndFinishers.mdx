@@ -1,0 +1,67 @@
+---
+id: GlassBlowersMoldersBendersAndFinishers
+slug: GlassBlowersMoldersBendersAndFinishers
+code:
+  code: null
+title:
+  title: null
+description: Shape molten glass according to patterns.
+$id: https://graph.org.ai/occupations/GlassBlowersMoldersBendersAndFinishers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GlassBlowersMoldersBendersAndFinishers`
+      };
+  }));
+
+# Glass Blowers, Molders, Benders, and Finishers
+
+**O*NET Code**: 51-9195.04
+
+Shape molten glass according to patterns.
+
+## Job Profile
+<JobZone occupation=GlassBlowersMoldersBendersAndFinishers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GlassBlowersMoldersBendersAndFinishers />
+
+### General Activities
+<Activities occupation=GlassBlowersMoldersBendersAndFinishers />
+
+## Qualifications
+### Skills
+<Skills occupation=GlassBlowersMoldersBendersAndFinishers />
+
+### Knowledge
+<Knowledge occupation=GlassBlowersMoldersBendersAndFinishers />
+
+### Abilities
+<Abilities occupation=GlassBlowersMoldersBendersAndFinishers />
+
+## Work Context
+<WorkContext occupation=GlassBlowersMoldersBendersAndFinishers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GlassBlowersMoldersBendersAndFinishers />
+
+### Industries
+<Industries occupation=GlassBlowersMoldersBendersAndFinishers />

@@ -1,0 +1,68 @@
+---
+id: Tellers
+slug: Tellers
+code:
+  code: null
+title:
+  title: null
+description: Receive and pay out money. Keep records of money and negotiable
+  instruments involved in a financial institution's various transactions.
+$id: https://graph.org.ai/occupations/Tellers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Tellers`
+      };
+  }));
+
+# Tellers
+
+**O*NET Code**: 43-3071.00
+
+Receive and pay out money. Keep records of money and negotiable instruments involved in a financial institution's various transactions.
+
+## Job Profile
+<JobZone occupation=Tellers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Tellers />
+
+### General Activities
+<Activities occupation=Tellers />
+
+## Qualifications
+### Skills
+<Skills occupation=Tellers />
+
+### Knowledge
+<Knowledge occupation=Tellers />
+
+### Abilities
+<Abilities occupation=Tellers />
+
+## Work Context
+<WorkContext occupation=Tellers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Tellers />
+
+### Industries
+<Industries occupation=Tellers />

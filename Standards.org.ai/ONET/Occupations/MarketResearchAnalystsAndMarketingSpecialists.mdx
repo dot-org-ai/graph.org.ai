@@ -1,0 +1,73 @@
+---
+id: MarketResearchAnalystsAndMarketingSpecialists
+slug: MarketResearchAnalystsAndMarketingSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Research conditions in local, regional, national, or online
+  markets. Gather information to determine potential sales of a product or
+  service, or plan a marketing or advertising campaign. May gather information
+  on competitors, prices, sales, and methods of marketing and distribution. May
+  employ search marketing tactics, analyze web metrics, and develop
+  recommendations to increase search engine ranking and visibility to target
+  markets.
+$id: https://graph.org.ai/occupations/MarketResearchAnalystsAndMarketingSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MarketResearchAnalystsAndMarketingSpecialists`
+      };
+  }));
+
+# Market Research Analysts and Marketing Specialists
+
+**O*NET Code**: 13-1161.00
+
+Research conditions in local, regional, national, or online markets. Gather information to determine potential sales of a product or service, or plan a marketing or advertising campaign. May gather information on competitors, prices, sales, and methods of marketing and distribution. May employ search marketing tactics, analyze web metrics, and develop recommendations to increase search engine ranking and visibility to target markets.
+
+## Job Profile
+<JobZone occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+### General Activities
+<Activities occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+### Knowledge
+<Knowledge occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+### Abilities
+<Abilities occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+## Work Context
+<WorkContext occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MarketResearchAnalystsAndMarketingSpecialists />
+
+### Industries
+<Industries occupation=MarketResearchAnalystsAndMarketingSpecialists />

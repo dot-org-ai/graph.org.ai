@@ -1,0 +1,69 @@
+---
+id: PumpOperatorsExceptWellheadPumpers
+slug: PumpOperatorsExceptWellheadPumpers
+code:
+  code: null
+title:
+  title: null
+description: Tend, control, or operate power-driven, stationary, or portable
+  pumps and manifold systems to transfer gases, oil, other liquids, slurries, or
+  powdered materials to and from various vessels and processes.
+$id: https://graph.org.ai/occupations/PumpOperatorsExceptWellheadPumpers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PumpOperatorsExceptWellheadPumpers`
+      };
+  }));
+
+# Pump Operators, Except Wellhead Pumpers
+
+**O*NET Code**: 53-7072.00
+
+Tend, control, or operate power-driven, stationary, or portable pumps and manifold systems to transfer gases, oil, other liquids, slurries, or powdered materials to and from various vessels and processes.
+
+## Job Profile
+<JobZone occupation=PumpOperatorsExceptWellheadPumpers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PumpOperatorsExceptWellheadPumpers />
+
+### General Activities
+<Activities occupation=PumpOperatorsExceptWellheadPumpers />
+
+## Qualifications
+### Skills
+<Skills occupation=PumpOperatorsExceptWellheadPumpers />
+
+### Knowledge
+<Knowledge occupation=PumpOperatorsExceptWellheadPumpers />
+
+### Abilities
+<Abilities occupation=PumpOperatorsExceptWellheadPumpers />
+
+## Work Context
+<WorkContext occupation=PumpOperatorsExceptWellheadPumpers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PumpOperatorsExceptWellheadPumpers />
+
+### Industries
+<Industries occupation=PumpOperatorsExceptWellheadPumpers />

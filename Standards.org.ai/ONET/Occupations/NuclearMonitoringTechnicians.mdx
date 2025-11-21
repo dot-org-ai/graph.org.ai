@@ -1,0 +1,68 @@
+---
+id: NuclearMonitoringTechnicians
+slug: NuclearMonitoringTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Collect and test samples to monitor results of nuclear experiments
+  and contamination of humans, facilities, and environment.
+$id: https://graph.org.ai/occupations/NuclearMonitoringTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NuclearMonitoringTechnicians`
+      };
+  }));
+
+# Nuclear Monitoring Technicians
+
+**O*NET Code**: 19-4051.02
+
+Collect and test samples to monitor results of nuclear experiments and contamination of humans, facilities, and environment.
+
+## Job Profile
+<JobZone occupation=NuclearMonitoringTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NuclearMonitoringTechnicians />
+
+### General Activities
+<Activities occupation=NuclearMonitoringTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=NuclearMonitoringTechnicians />
+
+### Knowledge
+<Knowledge occupation=NuclearMonitoringTechnicians />
+
+### Abilities
+<Abilities occupation=NuclearMonitoringTechnicians />
+
+## Work Context
+<WorkContext occupation=NuclearMonitoringTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NuclearMonitoringTechnicians />
+
+### Industries
+<Industries occupation=NuclearMonitoringTechnicians />

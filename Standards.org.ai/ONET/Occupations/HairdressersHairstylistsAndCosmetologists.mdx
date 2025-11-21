@@ -1,0 +1,69 @@
+---
+id: HairdressersHairstylistsAndCosmetologists
+slug: HairdressersHairstylistsAndCosmetologists
+code:
+  code: null
+title:
+  title: null
+description: Provide beauty services, such as cutting, coloring, and styling
+  hair, and massaging and treating scalp. May shampoo hair, apply makeup, dress
+  wigs, remove hair, and provide nail and skincare services.
+$id: https://graph.org.ai/occupations/HairdressersHairstylistsAndCosmetologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HairdressersHairstylistsAndCosmetologists`
+      };
+  }));
+
+# Hairdressers, Hairstylists, and Cosmetologists
+
+**O*NET Code**: 39-5012.00
+
+Provide beauty services, such as cutting, coloring, and styling hair, and massaging and treating scalp. May shampoo hair, apply makeup, dress wigs, remove hair, and provide nail and skincare services.
+
+## Job Profile
+<JobZone occupation=HairdressersHairstylistsAndCosmetologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HairdressersHairstylistsAndCosmetologists />
+
+### General Activities
+<Activities occupation=HairdressersHairstylistsAndCosmetologists />
+
+## Qualifications
+### Skills
+<Skills occupation=HairdressersHairstylistsAndCosmetologists />
+
+### Knowledge
+<Knowledge occupation=HairdressersHairstylistsAndCosmetologists />
+
+### Abilities
+<Abilities occupation=HairdressersHairstylistsAndCosmetologists />
+
+## Work Context
+<WorkContext occupation=HairdressersHairstylistsAndCosmetologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HairdressersHairstylistsAndCosmetologists />
+
+### Industries
+<Industries occupation=HairdressersHairstylistsAndCosmetologists />

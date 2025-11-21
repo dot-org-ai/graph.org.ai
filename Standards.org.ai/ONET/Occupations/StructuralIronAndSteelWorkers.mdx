@@ -1,0 +1,69 @@
+---
+id: StructuralIronAndSteelWorkers
+slug: StructuralIronAndSteelWorkers
+code:
+  code: null
+title:
+  title: null
+description: Raise, place, and unite iron or steel girders, columns, and other
+  structural members to form completed structures or structural frameworks. May
+  erect metal storage tanks and assemble prefabricated metal buildings.
+$id: https://graph.org.ai/occupations/StructuralIronAndSteelWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$StructuralIronAndSteelWorkers`
+      };
+  }));
+
+# Structural Iron and Steel Workers
+
+**O*NET Code**: 47-2221.00
+
+Raise, place, and unite iron or steel girders, columns, and other structural members to form completed structures or structural frameworks. May erect metal storage tanks and assemble prefabricated metal buildings.
+
+## Job Profile
+<JobZone occupation=StructuralIronAndSteelWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=StructuralIronAndSteelWorkers />
+
+### General Activities
+<Activities occupation=StructuralIronAndSteelWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=StructuralIronAndSteelWorkers />
+
+### Knowledge
+<Knowledge occupation=StructuralIronAndSteelWorkers />
+
+### Abilities
+<Abilities occupation=StructuralIronAndSteelWorkers />
+
+## Work Context
+<WorkContext occupation=StructuralIronAndSteelWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=StructuralIronAndSteelWorkers />
+
+### Industries
+<Industries occupation=StructuralIronAndSteelWorkers />

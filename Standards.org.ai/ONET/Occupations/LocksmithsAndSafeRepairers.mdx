@@ -1,0 +1,68 @@
+---
+id: LocksmithsAndSafeRepairers
+slug: LocksmithsAndSafeRepairers
+code:
+  code: null
+title:
+  title: null
+description: Repair and open locks, make keys, change locks and safe
+  combinations, and install and repair safes.
+$id: https://graph.org.ai/occupations/LocksmithsAndSafeRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LocksmithsAndSafeRepairers`
+      };
+  }));
+
+# Locksmiths and Safe Repairers
+
+**O*NET Code**: 49-9094.00
+
+Repair and open locks, make keys, change locks and safe combinations, and install and repair safes.
+
+## Job Profile
+<JobZone occupation=LocksmithsAndSafeRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LocksmithsAndSafeRepairers />
+
+### General Activities
+<Activities occupation=LocksmithsAndSafeRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=LocksmithsAndSafeRepairers />
+
+### Knowledge
+<Knowledge occupation=LocksmithsAndSafeRepairers />
+
+### Abilities
+<Abilities occupation=LocksmithsAndSafeRepairers />
+
+## Work Context
+<WorkContext occupation=LocksmithsAndSafeRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LocksmithsAndSafeRepairers />
+
+### Industries
+<Industries occupation=LocksmithsAndSafeRepairers />

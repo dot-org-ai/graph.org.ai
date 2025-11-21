@@ -1,0 +1,68 @@
+---
+id: MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic
+slug: MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend milling or planing machines to mill,
+  plane, shape, groove, or profile metal or plastic work pieces.
+$id: https://graph.org.ai/occupations/MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic`
+      };
+  }));
+
+# Milling and Planing Machine Setters, Operators, and Tenders, Metal and Plastic
+
+**O*NET Code**: 51-4035.00
+
+Set up, operate, or tend milling or planing machines to mill, plane, shape, groove, or profile metal or plastic work pieces.
+
+## Job Profile
+<JobZone occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### General Activities
+<Activities occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Industries
+<Industries occupation=MillingAndPlaningMachineSettersOperatorsAndTendersMetalAndPlastic />

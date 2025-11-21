@@ -1,0 +1,71 @@
+---
+id: DispatchersExceptPoliceFireAndAmbulance
+slug: DispatchersExceptPoliceFireAndAmbulance
+code:
+  code: null
+title:
+  title: null
+description: Schedule and dispatch workers, work crews, equipment, or service
+  vehicles for conveyance of materials, freight, or passengers, or for normal
+  installation, service, or emergency repairs rendered outside the place of
+  business. Duties may include using radio, telephone, or computer to transmit
+  assignments and compiling statistics and reports on work progress.
+$id: https://graph.org.ai/occupations/DispatchersExceptPoliceFireAndAmbulance
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DispatchersExceptPoliceFireAndAmbulance`
+      };
+  }));
+
+# Dispatchers, Except Police, Fire, and Ambulance
+
+**O*NET Code**: 43-5032.00
+
+Schedule and dispatch workers, work crews, equipment, or service vehicles for conveyance of materials, freight, or passengers, or for normal installation, service, or emergency repairs rendered outside the place of business. Duties may include using radio, telephone, or computer to transmit assignments and compiling statistics and reports on work progress.
+
+## Job Profile
+<JobZone occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+### General Activities
+<Activities occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+## Qualifications
+### Skills
+<Skills occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+### Knowledge
+<Knowledge occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+### Abilities
+<Abilities occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+## Work Context
+<WorkContext occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DispatchersExceptPoliceFireAndAmbulance />
+
+### Industries
+<Industries occupation=DispatchersExceptPoliceFireAndAmbulance />

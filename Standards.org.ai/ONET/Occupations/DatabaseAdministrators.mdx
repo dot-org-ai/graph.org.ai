@@ -1,0 +1,71 @@
+---
+id: DatabaseAdministrators
+slug: DatabaseAdministrators
+code:
+  code: null
+title:
+  title: null
+description: Administer, test, and implement computer databases, applying
+  knowledge of database management systems. Coordinate changes to computer
+  databases. Identify, investigate, and resolve database performance issues,
+  database capacity, and database scalability. May plan, coordinate, and
+  implement security measures to safeguard computer databases.
+$id: https://graph.org.ai/occupations/DatabaseAdministrators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DatabaseAdministrators`
+      };
+  }));
+
+# Database Administrators
+
+**O*NET Code**: 15-1242.00
+
+Administer, test, and implement computer databases, applying knowledge of database management systems. Coordinate changes to computer databases. Identify, investigate, and resolve database performance issues, database capacity, and database scalability. May plan, coordinate, and implement security measures to safeguard computer databases.
+
+## Job Profile
+<JobZone occupation=DatabaseAdministrators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DatabaseAdministrators />
+
+### General Activities
+<Activities occupation=DatabaseAdministrators />
+
+## Qualifications
+### Skills
+<Skills occupation=DatabaseAdministrators />
+
+### Knowledge
+<Knowledge occupation=DatabaseAdministrators />
+
+### Abilities
+<Abilities occupation=DatabaseAdministrators />
+
+## Work Context
+<WorkContext occupation=DatabaseAdministrators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DatabaseAdministrators />
+
+### Industries
+<Industries occupation=DatabaseAdministrators />

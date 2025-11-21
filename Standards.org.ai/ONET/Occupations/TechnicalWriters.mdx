@@ -1,0 +1,68 @@
+---
+id: TechnicalWriters
+slug: TechnicalWriters
+code:
+  code: null
+title:
+  title: null
+description: Write technical materials, such as equipment manuals, appendices,
+  or operating and maintenance instructions. May assist in layout work.
+$id: https://graph.org.ai/occupations/TechnicalWriters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TechnicalWriters`
+      };
+  }));
+
+# Technical Writers
+
+**O*NET Code**: 27-3042.00
+
+Write technical materials, such as equipment manuals, appendices, or operating and maintenance instructions. May assist in layout work.
+
+## Job Profile
+<JobZone occupation=TechnicalWriters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TechnicalWriters />
+
+### General Activities
+<Activities occupation=TechnicalWriters />
+
+## Qualifications
+### Skills
+<Skills occupation=TechnicalWriters />
+
+### Knowledge
+<Knowledge occupation=TechnicalWriters />
+
+### Abilities
+<Abilities occupation=TechnicalWriters />
+
+## Work Context
+<WorkContext occupation=TechnicalWriters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TechnicalWriters />
+
+### Industries
+<Industries occupation=TechnicalWriters />

@@ -1,0 +1,69 @@
+---
+id: EngineAndOtherMachineAssemblers
+slug: EngineAndOtherMachineAssemblers
+code:
+  code: null
+title:
+  title: null
+description: Construct, assemble, or rebuild machines, such as engines,
+  turbines, and similar equipment used in such industries as construction,
+  extraction, textiles, and paper manufacturing.
+$id: https://graph.org.ai/occupations/EngineAndOtherMachineAssemblers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EngineAndOtherMachineAssemblers`
+      };
+  }));
+
+# Engine and Other Machine Assemblers
+
+**O*NET Code**: 51-2031.00
+
+Construct, assemble, or rebuild machines, such as engines, turbines, and similar equipment used in such industries as construction, extraction, textiles, and paper manufacturing.
+
+## Job Profile
+<JobZone occupation=EngineAndOtherMachineAssemblers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EngineAndOtherMachineAssemblers />
+
+### General Activities
+<Activities occupation=EngineAndOtherMachineAssemblers />
+
+## Qualifications
+### Skills
+<Skills occupation=EngineAndOtherMachineAssemblers />
+
+### Knowledge
+<Knowledge occupation=EngineAndOtherMachineAssemblers />
+
+### Abilities
+<Abilities occupation=EngineAndOtherMachineAssemblers />
+
+## Work Context
+<WorkContext occupation=EngineAndOtherMachineAssemblers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EngineAndOtherMachineAssemblers />
+
+### Industries
+<Industries occupation=EngineAndOtherMachineAssemblers />

@@ -1,0 +1,69 @@
+---
+id: ShuttleDriversAndChauffeurs
+slug: ShuttleDriversAndChauffeurs
+code:
+  code: null
+title:
+  title: null
+description: Drive a motor vehicle to transport passengers on a planned or
+  scheduled basis. May collect a fare. Includes nonemergency medical
+  transporters and hearse drivers.
+$id: https://graph.org.ai/occupations/ShuttleDriversAndChauffeurs
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ShuttleDriversAndChauffeurs`
+      };
+  }));
+
+# Shuttle Drivers and Chauffeurs
+
+**O*NET Code**: 53-3053.00
+
+Drive a motor vehicle to transport passengers on a planned or scheduled basis. May collect a fare. Includes nonemergency medical transporters and hearse drivers.
+
+## Job Profile
+<JobZone occupation=ShuttleDriversAndChauffeurs />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ShuttleDriversAndChauffeurs />
+
+### General Activities
+<Activities occupation=ShuttleDriversAndChauffeurs />
+
+## Qualifications
+### Skills
+<Skills occupation=ShuttleDriversAndChauffeurs />
+
+### Knowledge
+<Knowledge occupation=ShuttleDriversAndChauffeurs />
+
+### Abilities
+<Abilities occupation=ShuttleDriversAndChauffeurs />
+
+## Work Context
+<WorkContext occupation=ShuttleDriversAndChauffeurs />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ShuttleDriversAndChauffeurs />
+
+### Industries
+<Industries occupation=ShuttleDriversAndChauffeurs />

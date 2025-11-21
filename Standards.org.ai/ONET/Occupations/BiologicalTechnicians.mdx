@@ -1,0 +1,70 @@
+---
+id: BiologicalTechnicians
+slug: BiologicalTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Assist biological and medical scientists. Set up, operate, and
+  maintain laboratory instruments and equipment, monitor experiments, collect
+  data and samples, make observations, and calculate and record results. May
+  analyze organic substances, such as blood, food, and drugs.
+$id: https://graph.org.ai/occupations/BiologicalTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BiologicalTechnicians`
+      };
+  }));
+
+# Biological Technicians
+
+**O*NET Code**: 19-4021.00
+
+Assist biological and medical scientists. Set up, operate, and maintain laboratory instruments and equipment, monitor experiments, collect data and samples, make observations, and calculate and record results. May analyze organic substances, such as blood, food, and drugs.
+
+## Job Profile
+<JobZone occupation=BiologicalTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BiologicalTechnicians />
+
+### General Activities
+<Activities occupation=BiologicalTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=BiologicalTechnicians />
+
+### Knowledge
+<Knowledge occupation=BiologicalTechnicians />
+
+### Abilities
+<Abilities occupation=BiologicalTechnicians />
+
+## Work Context
+<WorkContext occupation=BiologicalTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BiologicalTechnicians />
+
+### Industries
+<Industries occupation=BiologicalTechnicians />

@@ -1,0 +1,67 @@
+---
+id: FineArtistsIncludingPaintersSculptorsAndIllustrators
+slug: FineArtistsIncludingPaintersSculptorsAndIllustrators
+code:
+  code: null
+title:
+  title: null
+description: Create original artwork using any of a wide variety of media and techniques.
+$id: https://graph.org.ai/occupations/FineArtistsIncludingPaintersSculptorsAndIllustrators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FineArtistsIncludingPaintersSculptorsAndIllustrators`
+      };
+  }));
+
+# Fine Artists, Including Painters, Sculptors, and Illustrators
+
+**O*NET Code**: 27-1013.00
+
+Create original artwork using any of a wide variety of media and techniques.
+
+## Job Profile
+<JobZone occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+### General Activities
+<Activities occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+## Qualifications
+### Skills
+<Skills occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+### Knowledge
+<Knowledge occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+### Abilities
+<Abilities occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+## Work Context
+<WorkContext occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />
+
+### Industries
+<Industries occupation=FineArtistsIncludingPaintersSculptorsAndIllustrators />

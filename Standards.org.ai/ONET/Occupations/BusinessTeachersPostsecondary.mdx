@@ -1,0 +1,70 @@
+---
+id: BusinessTeachersPostsecondary
+slug: BusinessTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in business administration and management, such as
+  accounting, finance, human resources, labor and industrial relations,
+  marketing, and operations research. Includes both teachers primarily engaged
+  in teaching and those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/BusinessTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BusinessTeachersPostsecondary`
+      };
+  }));
+
+# Business Teachers, Postsecondary
+
+**O*NET Code**: 25-1011.00
+
+Teach courses in business administration and management, such as accounting, finance, human resources, labor and industrial relations, marketing, and operations research. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=BusinessTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BusinessTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=BusinessTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=BusinessTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=BusinessTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=BusinessTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=BusinessTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BusinessTeachersPostsecondary />
+
+### Industries
+<Industries occupation=BusinessTeachersPostsecondary />

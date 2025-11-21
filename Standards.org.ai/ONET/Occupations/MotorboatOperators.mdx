@@ -1,0 +1,67 @@
+---
+id: MotorboatOperators
+slug: MotorboatOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate small motor-driven boats. May assist in navigational activities.
+$id: https://graph.org.ai/occupations/MotorboatOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MotorboatOperators`
+      };
+  }));
+
+# Motorboat Operators
+
+**O*NET Code**: 53-5022.00
+
+Operate small motor-driven boats. May assist in navigational activities.
+
+## Job Profile
+<JobZone occupation=MotorboatOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MotorboatOperators />
+
+### General Activities
+<Activities occupation=MotorboatOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=MotorboatOperators />
+
+### Knowledge
+<Knowledge occupation=MotorboatOperators />
+
+### Abilities
+<Abilities occupation=MotorboatOperators />
+
+## Work Context
+<WorkContext occupation=MotorboatOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MotorboatOperators />
+
+### Industries
+<Industries occupation=MotorboatOperators />

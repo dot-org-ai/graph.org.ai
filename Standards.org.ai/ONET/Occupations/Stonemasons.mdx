@@ -1,0 +1,68 @@
+---
+id: Stonemasons
+slug: Stonemasons
+code:
+  code: null
+title:
+  title: null
+description: Build stone structures, such as piers, walls, and abutments. Lay
+  walks, curbstones, or special types of masonry for vats, tanks, and floors.
+$id: https://graph.org.ai/occupations/Stonemasons
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Stonemasons`
+      };
+  }));
+
+# Stonemasons
+
+**O*NET Code**: 47-2022.00
+
+Build stone structures, such as piers, walls, and abutments. Lay walks, curbstones, or special types of masonry for vats, tanks, and floors.
+
+## Job Profile
+<JobZone occupation=Stonemasons />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Stonemasons />
+
+### General Activities
+<Activities occupation=Stonemasons />
+
+## Qualifications
+### Skills
+<Skills occupation=Stonemasons />
+
+### Knowledge
+<Knowledge occupation=Stonemasons />
+
+### Abilities
+<Abilities occupation=Stonemasons />
+
+## Work Context
+<WorkContext occupation=Stonemasons />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Stonemasons />
+
+### Industries
+<Industries occupation=Stonemasons />

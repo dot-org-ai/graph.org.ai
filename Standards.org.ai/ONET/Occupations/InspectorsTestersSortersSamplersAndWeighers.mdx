@@ -1,0 +1,70 @@
+---
+id: InspectorsTestersSortersSamplersAndWeighers
+slug: InspectorsTestersSortersSamplersAndWeighers
+code:
+  code: null
+title:
+  title: null
+description: Inspect, test, sort, sample, or weigh nonagricultural raw materials
+  or processed, machined, fabricated, or assembled parts or products for
+  defects, wear, and deviations from specifications. May use precision measuring
+  instruments and complex test equipment.
+$id: https://graph.org.ai/occupations/InspectorsTestersSortersSamplersAndWeighers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InspectorsTestersSortersSamplersAndWeighers`
+      };
+  }));
+
+# Inspectors, Testers, Sorters, Samplers, and Weighers
+
+**O*NET Code**: 51-9061.00
+
+Inspect, test, sort, sample, or weigh nonagricultural raw materials or processed, machined, fabricated, or assembled parts or products for defects, wear, and deviations from specifications. May use precision measuring instruments and complex test equipment.
+
+## Job Profile
+<JobZone occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+### General Activities
+<Activities occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+## Qualifications
+### Skills
+<Skills occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+### Knowledge
+<Knowledge occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+### Abilities
+<Abilities occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+## Work Context
+<WorkContext occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InspectorsTestersSortersSamplersAndWeighers />
+
+### Industries
+<Industries occupation=InspectorsTestersSortersSamplersAndWeighers />

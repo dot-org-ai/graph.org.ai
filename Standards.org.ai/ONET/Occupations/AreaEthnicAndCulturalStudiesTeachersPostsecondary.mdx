@@ -1,0 +1,70 @@
+---
+id: AreaEthnicAndCulturalStudiesTeachersPostsecondary
+slug: AreaEthnicAndCulturalStudiesTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses pertaining to the culture and development of an area,
+  an ethnic group, or any other group, such as Latin American studies, women's
+  studies, or urban affairs. Includes both teachers primarily engaged in
+  teaching and those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/AreaEthnicAndCulturalStudiesTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AreaEthnicAndCulturalStudiesTeachersPostsecondary`
+      };
+  }));
+
+# Area, Ethnic, and Cultural Studies Teachers, Postsecondary
+
+**O*NET Code**: 25-1062.00
+
+Teach courses pertaining to the culture and development of an area, an ethnic group, or any other group, such as Latin American studies, women's studies, or urban affairs. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />
+
+### Industries
+<Industries occupation=AreaEthnicAndCulturalStudiesTeachersPostsecondary />

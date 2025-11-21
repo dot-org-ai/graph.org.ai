@@ -1,0 +1,71 @@
+---
+id: ArchitecturalAndCivilDrafters
+slug: ArchitecturalAndCivilDrafters
+code:
+  code: null
+title:
+  title: null
+description: Prepare detailed drawings of architectural and structural features
+  of buildings or drawings and topographical relief maps used in civil
+  engineering projects, such as highways, bridges, and public works. Use
+  knowledge of building materials, engineering practices, and mathematics to
+  complete drawings.
+$id: https://graph.org.ai/occupations/ArchitecturalAndCivilDrafters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ArchitecturalAndCivilDrafters`
+      };
+  }));
+
+# Architectural and Civil Drafters
+
+**O*NET Code**: 17-3011.00
+
+Prepare detailed drawings of architectural and structural features of buildings or drawings and topographical relief maps used in civil engineering projects, such as highways, bridges, and public works. Use knowledge of building materials, engineering practices, and mathematics to complete drawings.
+
+## Job Profile
+<JobZone occupation=ArchitecturalAndCivilDrafters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ArchitecturalAndCivilDrafters />
+
+### General Activities
+<Activities occupation=ArchitecturalAndCivilDrafters />
+
+## Qualifications
+### Skills
+<Skills occupation=ArchitecturalAndCivilDrafters />
+
+### Knowledge
+<Knowledge occupation=ArchitecturalAndCivilDrafters />
+
+### Abilities
+<Abilities occupation=ArchitecturalAndCivilDrafters />
+
+## Work Context
+<WorkContext occupation=ArchitecturalAndCivilDrafters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ArchitecturalAndCivilDrafters />
+
+### Industries
+<Industries occupation=ArchitecturalAndCivilDrafters />

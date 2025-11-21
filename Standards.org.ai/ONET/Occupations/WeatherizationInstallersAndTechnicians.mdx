@@ -1,0 +1,70 @@
+---
+id: WeatherizationInstallersAndTechnicians
+slug: WeatherizationInstallersAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Perform a variety of activities to weatherize homes and make them
+  more energy efficient. Duties include repairing windows, insulating ducts, and
+  performing heating, ventilating, and air-conditioning (HVAC) work. May perform
+  energy audits and advise clients on energy conservation measures.
+$id: https://graph.org.ai/occupations/WeatherizationInstallersAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WeatherizationInstallersAndTechnicians`
+      };
+  }));
+
+# Weatherization Installers and Technicians
+
+**O*NET Code**: 47-4099.03
+
+Perform a variety of activities to weatherize homes and make them more energy efficient. Duties include repairing windows, insulating ducts, and performing heating, ventilating, and air-conditioning (HVAC) work. May perform energy audits and advise clients on energy conservation measures.
+
+## Job Profile
+<JobZone occupation=WeatherizationInstallersAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WeatherizationInstallersAndTechnicians />
+
+### General Activities
+<Activities occupation=WeatherizationInstallersAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=WeatherizationInstallersAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=WeatherizationInstallersAndTechnicians />
+
+### Abilities
+<Abilities occupation=WeatherizationInstallersAndTechnicians />
+
+## Work Context
+<WorkContext occupation=WeatherizationInstallersAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WeatherizationInstallersAndTechnicians />
+
+### Industries
+<Industries occupation=WeatherizationInstallersAndTechnicians />

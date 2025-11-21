@@ -1,0 +1,71 @@
+---
+id: CourtReportersAndSimultaneousCaptioners
+slug: CourtReportersAndSimultaneousCaptioners
+code:
+  code: null
+title:
+  title: null
+description: Use verbatim methods and equipment to capture, store, retrieve, and
+  transcribe pretrial and trial proceedings or other information. Includes
+  stenocaptioners who operate computerized stenographic captioning equipment to
+  provide captions of live or prerecorded broadcasts for hearing-impaired
+  viewers.
+$id: https://graph.org.ai/occupations/CourtReportersAndSimultaneousCaptioners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CourtReportersAndSimultaneousCaptioners`
+      };
+  }));
+
+# Court Reporters and Simultaneous Captioners
+
+**O*NET Code**: 27-3092.00
+
+Use verbatim methods and equipment to capture, store, retrieve, and transcribe pretrial and trial proceedings or other information. Includes stenocaptioners who operate computerized stenographic captioning equipment to provide captions of live or prerecorded broadcasts for hearing-impaired viewers.
+
+## Job Profile
+<JobZone occupation=CourtReportersAndSimultaneousCaptioners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CourtReportersAndSimultaneousCaptioners />
+
+### General Activities
+<Activities occupation=CourtReportersAndSimultaneousCaptioners />
+
+## Qualifications
+### Skills
+<Skills occupation=CourtReportersAndSimultaneousCaptioners />
+
+### Knowledge
+<Knowledge occupation=CourtReportersAndSimultaneousCaptioners />
+
+### Abilities
+<Abilities occupation=CourtReportersAndSimultaneousCaptioners />
+
+## Work Context
+<WorkContext occupation=CourtReportersAndSimultaneousCaptioners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CourtReportersAndSimultaneousCaptioners />
+
+### Industries
+<Industries occupation=CourtReportersAndSimultaneousCaptioners />

@@ -1,0 +1,68 @@
+---
+id: FarmEquipmentMechanicsAndServiceTechnicians
+slug: FarmEquipmentMechanicsAndServiceTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, adjust, repair, or overhaul farm machinery and vehicles,
+  such as tractors, harvesters, dairy equipment, and irrigation systems.
+$id: https://graph.org.ai/occupations/FarmEquipmentMechanicsAndServiceTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FarmEquipmentMechanicsAndServiceTechnicians`
+      };
+  }));
+
+# Farm Equipment Mechanics and Service Technicians
+
+**O*NET Code**: 49-3041.00
+
+Diagnose, adjust, repair, or overhaul farm machinery and vehicles, such as tractors, harvesters, dairy equipment, and irrigation systems.
+
+## Job Profile
+<JobZone occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+### General Activities
+<Activities occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+### Knowledge
+<Knowledge occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+### Abilities
+<Abilities occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+## Work Context
+<WorkContext occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FarmEquipmentMechanicsAndServiceTechnicians />
+
+### Industries
+<Industries occupation=FarmEquipmentMechanicsAndServiceTechnicians />

@@ -1,0 +1,70 @@
+---
+id: Logisticians
+slug: Logisticians
+code:
+  code: null
+title:
+  title: null
+description: Analyze and coordinate the ongoing logistical functions of a firm
+  or organization. Responsible for the entire life cycle of a product, including
+  acquisition, distribution, internal allocation, delivery, and final disposal
+  of resources.
+$id: https://graph.org.ai/occupations/Logisticians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Logisticians`
+      };
+  }));
+
+# Logisticians
+
+**O*NET Code**: 13-1081.00
+
+Analyze and coordinate the ongoing logistical functions of a firm or organization. Responsible for the entire life cycle of a product, including acquisition, distribution, internal allocation, delivery, and final disposal of resources.
+
+## Job Profile
+<JobZone occupation=Logisticians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Logisticians />
+
+### General Activities
+<Activities occupation=Logisticians />
+
+## Qualifications
+### Skills
+<Skills occupation=Logisticians />
+
+### Knowledge
+<Knowledge occupation=Logisticians />
+
+### Abilities
+<Abilities occupation=Logisticians />
+
+## Work Context
+<WorkContext occupation=Logisticians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Logisticians />
+
+### Industries
+<Industries occupation=Logisticians />

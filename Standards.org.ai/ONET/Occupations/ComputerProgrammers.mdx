@@ -1,0 +1,70 @@
+---
+id: ComputerProgrammers
+slug: ComputerProgrammers
+code:
+  code: null
+title:
+  title: null
+description: Create, modify, and test the code and scripts that allow computer
+  applications to run. Work from specifications drawn up by software and web
+  developers or other individuals. May develop and write computer programs to
+  store, locate, and retrieve specific documents, data, and information.
+$id: https://graph.org.ai/occupations/ComputerProgrammers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerProgrammers`
+      };
+  }));
+
+# Computer Programmers
+
+**O*NET Code**: 15-1251.00
+
+Create, modify, and test the code and scripts that allow computer applications to run. Work from specifications drawn up by software and web developers or other individuals. May develop and write computer programs to store, locate, and retrieve specific documents, data, and information.
+
+## Job Profile
+<JobZone occupation=ComputerProgrammers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerProgrammers />
+
+### General Activities
+<Activities occupation=ComputerProgrammers />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerProgrammers />
+
+### Knowledge
+<Knowledge occupation=ComputerProgrammers />
+
+### Abilities
+<Abilities occupation=ComputerProgrammers />
+
+## Work Context
+<WorkContext occupation=ComputerProgrammers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerProgrammers />
+
+### Industries
+<Industries occupation=ComputerProgrammers />

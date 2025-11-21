@@ -1,0 +1,68 @@
+---
+id: TalentDirectors
+slug: TalentDirectors
+code:
+  code: null
+title:
+  title: null
+description: Audition and interview performers to select most appropriate talent
+  for parts in stage, television, radio, or motion picture productions.
+$id: https://graph.org.ai/occupations/TalentDirectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TalentDirectors`
+      };
+  }));
+
+# Talent Directors
+
+**O*NET Code**: 27-2012.04
+
+Audition and interview performers to select most appropriate talent for parts in stage, television, radio, or motion picture productions.
+
+## Job Profile
+<JobZone occupation=TalentDirectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TalentDirectors />
+
+### General Activities
+<Activities occupation=TalentDirectors />
+
+## Qualifications
+### Skills
+<Skills occupation=TalentDirectors />
+
+### Knowledge
+<Knowledge occupation=TalentDirectors />
+
+### Abilities
+<Abilities occupation=TalentDirectors />
+
+## Work Context
+<WorkContext occupation=TalentDirectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TalentDirectors />
+
+### Industries
+<Industries occupation=TalentDirectors />

@@ -1,0 +1,72 @@
+---
+id: FarmersRanchersAndOtherAgriculturalManagers
+slug: FarmersRanchersAndOtherAgriculturalManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate the management or operation of farms,
+  ranches, greenhouses, aquacultural operations, nurseries, timber tracts, or
+  other agricultural establishments. May hire, train, and supervise farm workers
+  or contract for services to carry out the day-to-day activities of the managed
+  operation. May engage in or supervise planting, cultivating, harvesting, and
+  financial and marketing activities.
+$id: https://graph.org.ai/occupations/FarmersRanchersAndOtherAgriculturalManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FarmersRanchersAndOtherAgriculturalManagers`
+      };
+  }));
+
+# Farmers, Ranchers, and Other Agricultural Managers
+
+**O*NET Code**: 11-9013.00
+
+Plan, direct, or coordinate the management or operation of farms, ranches, greenhouses, aquacultural operations, nurseries, timber tracts, or other agricultural establishments. May hire, train, and supervise farm workers or contract for services to carry out the day-to-day activities of the managed operation. May engage in or supervise planting, cultivating, harvesting, and financial and marketing activities.
+
+## Job Profile
+<JobZone occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+### General Activities
+<Activities occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+### Knowledge
+<Knowledge occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+### Abilities
+<Abilities occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+## Work Context
+<WorkContext occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FarmersRanchersAndOtherAgriculturalManagers />
+
+### Industries
+<Industries occupation=FarmersRanchersAndOtherAgriculturalManagers />

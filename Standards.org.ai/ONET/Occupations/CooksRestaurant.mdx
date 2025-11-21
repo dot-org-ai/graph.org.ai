@@ -1,0 +1,69 @@
+---
+id: CooksRestaurant
+slug: CooksRestaurant
+code:
+  code: null
+title:
+  title: null
+description: Prepare, season, and cook dishes such as soups, meats, vegetables,
+  or desserts in restaurants. May order supplies, keep records and accounts,
+  price items on menu, or plan menu.
+$id: https://graph.org.ai/occupations/CooksRestaurant
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CooksRestaurant`
+      };
+  }));
+
+# Cooks, Restaurant
+
+**O*NET Code**: 35-2014.00
+
+Prepare, season, and cook dishes such as soups, meats, vegetables, or desserts in restaurants. May order supplies, keep records and accounts, price items on menu, or plan menu.
+
+## Job Profile
+<JobZone occupation=CooksRestaurant />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CooksRestaurant />
+
+### General Activities
+<Activities occupation=CooksRestaurant />
+
+## Qualifications
+### Skills
+<Skills occupation=CooksRestaurant />
+
+### Knowledge
+<Knowledge occupation=CooksRestaurant />
+
+### Abilities
+<Abilities occupation=CooksRestaurant />
+
+## Work Context
+<WorkContext occupation=CooksRestaurant />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CooksRestaurant />
+
+### Industries
+<Industries occupation=CooksRestaurant />

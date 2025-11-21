@@ -1,0 +1,69 @@
+---
+id: Pipelayers
+slug: Pipelayers
+code:
+  code: null
+title:
+  title: null
+description: "Lay pipe for storm or sanitation sewers, drains, and water mains.
+  Perform any combination of the following tasks: grade trenches or culverts,
+  position pipe, or seal joints."
+$id: https://graph.org.ai/occupations/Pipelayers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Pipelayers`
+      };
+  }));
+
+# Pipelayers
+
+**O*NET Code**: 47-2151.00
+
+Lay pipe for storm or sanitation sewers, drains, and water mains. Perform any combination of the following tasks: grade trenches or culverts, position pipe, or seal joints.
+
+## Job Profile
+<JobZone occupation=Pipelayers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Pipelayers />
+
+### General Activities
+<Activities occupation=Pipelayers />
+
+## Qualifications
+### Skills
+<Skills occupation=Pipelayers />
+
+### Knowledge
+<Knowledge occupation=Pipelayers />
+
+### Abilities
+<Abilities occupation=Pipelayers />
+
+## Work Context
+<WorkContext occupation=Pipelayers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Pipelayers />
+
+### Industries
+<Industries occupation=Pipelayers />

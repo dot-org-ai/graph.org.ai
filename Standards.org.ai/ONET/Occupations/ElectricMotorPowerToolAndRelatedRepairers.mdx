@@ -1,0 +1,67 @@
+---
+id: ElectricMotorPowerToolAndRelatedRepairers
+slug: ElectricMotorPowerToolAndRelatedRepairers
+code:
+  code: null
+title:
+  title: null
+description: Repair, maintain, or install electric motors, wiring, or switches.
+$id: https://graph.org.ai/occupations/ElectricMotorPowerToolAndRelatedRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectricMotorPowerToolAndRelatedRepairers`
+      };
+  }));
+
+# Electric Motor, Power Tool, and Related Repairers
+
+**O*NET Code**: 49-2092.00
+
+Repair, maintain, or install electric motors, wiring, or switches.
+
+## Job Profile
+<JobZone occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+### General Activities
+<Activities occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+### Knowledge
+<Knowledge occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+### Abilities
+<Abilities occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+## Work Context
+<WorkContext occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectricMotorPowerToolAndRelatedRepairers />
+
+### Industries
+<Industries occupation=ElectricMotorPowerToolAndRelatedRepairers />

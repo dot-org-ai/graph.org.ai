@@ -1,0 +1,69 @@
+---
+id: ClimateChangePolicyAnalysts
+slug: ClimateChangePolicyAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Research and analyze policy developments related to climate change.
+  Make climate-related recommendations for actions such as legislation,
+  awareness campaigns, or fundraising approaches.
+$id: https://graph.org.ai/occupations/ClimateChangePolicyAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ClimateChangePolicyAnalysts`
+      };
+  }));
+
+# Climate Change Policy Analysts
+
+**O*NET Code**: 19-2041.01
+
+Research and analyze policy developments related to climate change. Make climate-related recommendations for actions such as legislation, awareness campaigns, or fundraising approaches.
+
+## Job Profile
+<JobZone occupation=ClimateChangePolicyAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ClimateChangePolicyAnalysts />
+
+### General Activities
+<Activities occupation=ClimateChangePolicyAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=ClimateChangePolicyAnalysts />
+
+### Knowledge
+<Knowledge occupation=ClimateChangePolicyAnalysts />
+
+### Abilities
+<Abilities occupation=ClimateChangePolicyAnalysts />
+
+## Work Context
+<WorkContext occupation=ClimateChangePolicyAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ClimateChangePolicyAnalysts />
+
+### Industries
+<Industries occupation=ClimateChangePolicyAnalysts />

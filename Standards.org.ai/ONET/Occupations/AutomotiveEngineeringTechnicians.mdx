@@ -1,0 +1,69 @@
+---
+id: AutomotiveEngineeringTechnicians
+slug: AutomotiveEngineeringTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Assist engineers in determining the practicality of proposed
+  product design changes and plan and carry out tests on experimental test
+  devices or equipment for performance, durability, or efficiency.
+$id: https://graph.org.ai/occupations/AutomotiveEngineeringTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AutomotiveEngineeringTechnicians`
+      };
+  }));
+
+# Automotive Engineering Technicians
+
+**O*NET Code**: 17-3027.01
+
+Assist engineers in determining the practicality of proposed product design changes and plan and carry out tests on experimental test devices or equipment for performance, durability, or efficiency.
+
+## Job Profile
+<JobZone occupation=AutomotiveEngineeringTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AutomotiveEngineeringTechnicians />
+
+### General Activities
+<Activities occupation=AutomotiveEngineeringTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=AutomotiveEngineeringTechnicians />
+
+### Knowledge
+<Knowledge occupation=AutomotiveEngineeringTechnicians />
+
+### Abilities
+<Abilities occupation=AutomotiveEngineeringTechnicians />
+
+## Work Context
+<WorkContext occupation=AutomotiveEngineeringTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AutomotiveEngineeringTechnicians />
+
+### Industries
+<Industries occupation=AutomotiveEngineeringTechnicians />

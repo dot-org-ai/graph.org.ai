@@ -1,0 +1,72 @@
+---
+id: MiningAndGeologicalEngineersIncludingMiningSafetyEngineers
+slug: MiningAndGeologicalEngineersIncludingMiningSafetyEngineers
+code:
+  code: null
+title:
+  title: null
+description: Conduct subsurface surveys to identify the characteristics of
+  potential land or mining development sites. May specify the ground support
+  systems, processes, and equipment for safe, economical, and environmentally
+  sound extraction or underground construction activities. May inspect areas for
+  unsafe geological conditions, equipment, and working conditions. May design,
+  implement, and coordinate mine safety programs.
+$id: https://graph.org.ai/occupations/MiningAndGeologicalEngineersIncludingMiningSafetyEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MiningAndGeologicalEngineersIncludingMiningSafetyEngineers`
+      };
+  }));
+
+# Mining and Geological Engineers, Including Mining Safety Engineers
+
+**O*NET Code**: 17-2151.00
+
+Conduct subsurface surveys to identify the characteristics of potential land or mining development sites. May specify the ground support systems, processes, and equipment for safe, economical, and environmentally sound extraction or underground construction activities. May inspect areas for unsafe geological conditions, equipment, and working conditions. May design, implement, and coordinate mine safety programs.
+
+## Job Profile
+<JobZone occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+### General Activities
+<Activities occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+### Knowledge
+<Knowledge occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+### Abilities
+<Abilities occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+## Work Context
+<WorkContext occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />
+
+### Industries
+<Industries occupation=MiningAndGeologicalEngineersIncludingMiningSafetyEngineers />

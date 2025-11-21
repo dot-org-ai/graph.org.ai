@@ -1,0 +1,71 @@
+---
+id: SpeechLanguagePathologyAssistants
+slug: SpeechLanguagePathologyAssistants
+code:
+  code: null
+title:
+  title: null
+description: Assist speech-language pathologists in the assessment and treatment
+  of speech, language, voice, and fluency disorders. Implement speech and
+  language programs or activities as planned and directed by speech-language
+  pathologists. Monitor the use of alternative communication devices and
+  systems.
+$id: https://graph.org.ai/occupations/SpeechLanguagePathologyAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SpeechLanguagePathologyAssistants`
+      };
+  }));
+
+# Speech-Language Pathology Assistants
+
+**O*NET Code**: 31-9099.01
+
+Assist speech-language pathologists in the assessment and treatment of speech, language, voice, and fluency disorders. Implement speech and language programs or activities as planned and directed by speech-language pathologists. Monitor the use of alternative communication devices and systems.
+
+## Job Profile
+<JobZone occupation=SpeechLanguagePathologyAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SpeechLanguagePathologyAssistants />
+
+### General Activities
+<Activities occupation=SpeechLanguagePathologyAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=SpeechLanguagePathologyAssistants />
+
+### Knowledge
+<Knowledge occupation=SpeechLanguagePathologyAssistants />
+
+### Abilities
+<Abilities occupation=SpeechLanguagePathologyAssistants />
+
+## Work Context
+<WorkContext occupation=SpeechLanguagePathologyAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SpeechLanguagePathologyAssistants />
+
+### Industries
+<Industries occupation=SpeechLanguagePathologyAssistants />

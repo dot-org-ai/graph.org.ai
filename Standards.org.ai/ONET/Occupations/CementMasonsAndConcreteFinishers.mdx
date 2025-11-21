@@ -1,0 +1,70 @@
+---
+id: CementMasonsAndConcreteFinishers
+slug: CementMasonsAndConcreteFinishers
+code:
+  code: null
+title:
+  title: null
+description: Smooth and finish surfaces of poured concrete, such as floors,
+  walks, sidewalks, roads, or curbs using a variety of hand and power tools.
+  Align forms for sidewalks, curbs, or gutters; patch voids; and use saws to cut
+  expansion joints.
+$id: https://graph.org.ai/occupations/CementMasonsAndConcreteFinishers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CementMasonsAndConcreteFinishers`
+      };
+  }));
+
+# Cement Masons and Concrete Finishers
+
+**O*NET Code**: 47-2051.00
+
+Smooth and finish surfaces of poured concrete, such as floors, walks, sidewalks, roads, or curbs using a variety of hand and power tools. Align forms for sidewalks, curbs, or gutters; patch voids; and use saws to cut expansion joints.
+
+## Job Profile
+<JobZone occupation=CementMasonsAndConcreteFinishers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CementMasonsAndConcreteFinishers />
+
+### General Activities
+<Activities occupation=CementMasonsAndConcreteFinishers />
+
+## Qualifications
+### Skills
+<Skills occupation=CementMasonsAndConcreteFinishers />
+
+### Knowledge
+<Knowledge occupation=CementMasonsAndConcreteFinishers />
+
+### Abilities
+<Abilities occupation=CementMasonsAndConcreteFinishers />
+
+## Work Context
+<WorkContext occupation=CementMasonsAndConcreteFinishers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CementMasonsAndConcreteFinishers />
+
+### Industries
+<Industries occupation=CementMasonsAndConcreteFinishers />

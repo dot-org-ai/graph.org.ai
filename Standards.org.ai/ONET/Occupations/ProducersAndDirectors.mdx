@@ -1,0 +1,70 @@
+---
+id: ProducersAndDirectors
+slug: ProducersAndDirectors
+code:
+  code: null
+title:
+  title: null
+description: Produce or direct stage, television, radio, video, or film
+  productions for entertainment, information, or instruction. Responsible for
+  creative decisions, such as interpretation of script, choice of actors or
+  guests, set design, sound, special effects, and choreography.
+$id: https://graph.org.ai/occupations/ProducersAndDirectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ProducersAndDirectors`
+      };
+  }));
+
+# Producers and Directors
+
+**O*NET Code**: 27-2012.00
+
+Produce or direct stage, television, radio, video, or film productions for entertainment, information, or instruction. Responsible for creative decisions, such as interpretation of script, choice of actors or guests, set design, sound, special effects, and choreography.
+
+## Job Profile
+<JobZone occupation=ProducersAndDirectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ProducersAndDirectors />
+
+### General Activities
+<Activities occupation=ProducersAndDirectors />
+
+## Qualifications
+### Skills
+<Skills occupation=ProducersAndDirectors />
+
+### Knowledge
+<Knowledge occupation=ProducersAndDirectors />
+
+### Abilities
+<Abilities occupation=ProducersAndDirectors />
+
+## Work Context
+<WorkContext occupation=ProducersAndDirectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ProducersAndDirectors />
+
+### Industries
+<Industries occupation=ProducersAndDirectors />

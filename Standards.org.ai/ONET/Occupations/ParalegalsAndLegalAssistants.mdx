@@ -1,0 +1,69 @@
+---
+id: ParalegalsAndLegalAssistants
+slug: ParalegalsAndLegalAssistants
+code:
+  code: null
+title:
+  title: null
+description: Assist lawyers by investigating facts, preparing legal documents,
+  or researching legal precedent. Conduct research to support a legal
+  proceeding, to formulate a defense, or to initiate legal action.
+$id: https://graph.org.ai/occupations/ParalegalsAndLegalAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ParalegalsAndLegalAssistants`
+      };
+  }));
+
+# Paralegals and Legal Assistants
+
+**O*NET Code**: 23-2011.00
+
+Assist lawyers by investigating facts, preparing legal documents, or researching legal precedent. Conduct research to support a legal proceeding, to formulate a defense, or to initiate legal action.
+
+## Job Profile
+<JobZone occupation=ParalegalsAndLegalAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ParalegalsAndLegalAssistants />
+
+### General Activities
+<Activities occupation=ParalegalsAndLegalAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=ParalegalsAndLegalAssistants />
+
+### Knowledge
+<Knowledge occupation=ParalegalsAndLegalAssistants />
+
+### Abilities
+<Abilities occupation=ParalegalsAndLegalAssistants />
+
+## Work Context
+<WorkContext occupation=ParalegalsAndLegalAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ParalegalsAndLegalAssistants />
+
+### Industries
+<Industries occupation=ParalegalsAndLegalAssistants />

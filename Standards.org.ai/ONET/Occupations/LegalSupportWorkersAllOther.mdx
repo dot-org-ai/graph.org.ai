@@ -1,0 +1,67 @@
+---
+id: LegalSupportWorkersAllOther
+slug: LegalSupportWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All legal support workers not listed separately.
+$id: https://graph.org.ai/occupations/LegalSupportWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LegalSupportWorkersAllOther`
+      };
+  }));
+
+# Legal Support Workers, All Other
+
+**O*NET Code**: 23-2099.00
+
+All legal support workers not listed separately.
+
+## Job Profile
+<JobZone occupation=LegalSupportWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LegalSupportWorkersAllOther />
+
+### General Activities
+<Activities occupation=LegalSupportWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=LegalSupportWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=LegalSupportWorkersAllOther />
+
+### Abilities
+<Abilities occupation=LegalSupportWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=LegalSupportWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LegalSupportWorkersAllOther />
+
+### Industries
+<Industries occupation=LegalSupportWorkersAllOther />

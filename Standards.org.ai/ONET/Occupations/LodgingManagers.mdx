@@ -1,0 +1,68 @@
+---
+id: LodgingManagers
+slug: LodgingManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate activities of an organization or
+  department that provides lodging and other accommodations.
+$id: https://graph.org.ai/occupations/LodgingManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LodgingManagers`
+      };
+  }));
+
+# Lodging Managers
+
+**O*NET Code**: 11-9081.00
+
+Plan, direct, or coordinate activities of an organization or department that provides lodging and other accommodations.
+
+## Job Profile
+<JobZone occupation=LodgingManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LodgingManagers />
+
+### General Activities
+<Activities occupation=LodgingManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=LodgingManagers />
+
+### Knowledge
+<Knowledge occupation=LodgingManagers />
+
+### Abilities
+<Abilities occupation=LodgingManagers />
+
+## Work Context
+<WorkContext occupation=LodgingManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LodgingManagers />
+
+### Industries
+<Industries occupation=LodgingManagers />

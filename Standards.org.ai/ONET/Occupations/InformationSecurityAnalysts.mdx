@@ -1,0 +1,72 @@
+---
+id: InformationSecurityAnalysts
+slug: InformationSecurityAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Plan, implement, upgrade, or monitor security measures for the
+  protection of computer networks and information. Assess system vulnerabilities
+  for security risks and propose and implement risk mitigation strategies. May
+  ensure appropriate security controls are in place that will safeguard digital
+  files and vital electronic infrastructure. May respond to computer security
+  breaches and viruses.
+$id: https://graph.org.ai/occupations/InformationSecurityAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InformationSecurityAnalysts`
+      };
+  }));
+
+# Information Security Analysts
+
+**O*NET Code**: 15-1212.00
+
+Plan, implement, upgrade, or monitor security measures for the protection of computer networks and information. Assess system vulnerabilities for security risks and propose and implement risk mitigation strategies. May ensure appropriate security controls are in place that will safeguard digital files and vital electronic infrastructure. May respond to computer security breaches and viruses.
+
+## Job Profile
+<JobZone occupation=InformationSecurityAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InformationSecurityAnalysts />
+
+### General Activities
+<Activities occupation=InformationSecurityAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=InformationSecurityAnalysts />
+
+### Knowledge
+<Knowledge occupation=InformationSecurityAnalysts />
+
+### Abilities
+<Abilities occupation=InformationSecurityAnalysts />
+
+## Work Context
+<WorkContext occupation=InformationSecurityAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InformationSecurityAnalysts />
+
+### Industries
+<Industries occupation=InformationSecurityAnalysts />

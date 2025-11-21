@@ -1,0 +1,68 @@
+---
+id: PackagingAndFillingMachineOperatorsAndTenders
+slug: PackagingAndFillingMachineOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend machines to prepare industrial or consumer products
+  for storage or shipment. Includes cannery workers who pack food products.
+$id: https://graph.org.ai/occupations/PackagingAndFillingMachineOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PackagingAndFillingMachineOperatorsAndTenders`
+      };
+  }));
+
+# Packaging and Filling Machine Operators and Tenders
+
+**O*NET Code**: 51-9111.00
+
+Operate or tend machines to prepare industrial or consumer products for storage or shipment. Includes cannery workers who pack food products.
+
+## Job Profile
+<JobZone occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PackagingAndFillingMachineOperatorsAndTenders />
+
+### Industries
+<Industries occupation=PackagingAndFillingMachineOperatorsAndTenders />

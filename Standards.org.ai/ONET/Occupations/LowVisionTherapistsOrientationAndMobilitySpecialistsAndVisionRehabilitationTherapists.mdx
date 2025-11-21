@@ -1,0 +1,69 @@
+---
+id: LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists
+slug: LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists
+code:
+  code: null
+title:
+  title: null
+description: Provide therapy to patients with visual impairments to improve
+  their functioning in daily life activities. May train patients in activities
+  such as computer use, communication skills, or home management skills.
+$id: https://graph.org.ai/occupations/LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists`
+      };
+  }));
+
+# Low Vision Therapists, Orientation and Mobility Specialists, and Vision Rehabilitation Therapists
+
+**O*NET Code**: 29-1122.01
+
+Provide therapy to patients with visual impairments to improve their functioning in daily life activities. May train patients in activities such as computer use, communication skills, or home management skills.
+
+## Job Profile
+<JobZone occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+### General Activities
+<Activities occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+## Qualifications
+### Skills
+<Skills occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+### Knowledge
+<Knowledge occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+### Abilities
+<Abilities occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+## Work Context
+<WorkContext occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />
+
+### Industries
+<Industries occupation=LowVisionTherapistsOrientationAndMobilitySpecialistsAndVisionRehabilitationTherapists />

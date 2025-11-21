@@ -1,0 +1,71 @@
+---
+id: MathematicalScienceTeachersPostsecondary
+slug: MathematicalScienceTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses pertaining to mathematical concepts, statistics, and
+  actuarial science and to the application of original and standardized
+  mathematical techniques in solving specific problems and situations. Includes
+  both teachers primarily engaged in teaching and those who do a combination of
+  teaching and research.
+$id: https://graph.org.ai/occupations/MathematicalScienceTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MathematicalScienceTeachersPostsecondary`
+      };
+  }));
+
+# Mathematical Science Teachers, Postsecondary
+
+**O*NET Code**: 25-1022.00
+
+Teach courses pertaining to mathematical concepts, statistics, and actuarial science and to the application of original and standardized mathematical techniques in solving specific problems and situations. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=MathematicalScienceTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MathematicalScienceTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=MathematicalScienceTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=MathematicalScienceTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=MathematicalScienceTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=MathematicalScienceTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=MathematicalScienceTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MathematicalScienceTeachersPostsecondary />
+
+### Industries
+<Industries occupation=MathematicalScienceTeachersPostsecondary />

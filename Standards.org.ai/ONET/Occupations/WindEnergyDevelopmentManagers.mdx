@@ -1,0 +1,69 @@
+---
+id: WindEnergyDevelopmentManagers
+slug: WindEnergyDevelopmentManagers
+code:
+  code: null
+title:
+  title: null
+description: Lead or manage the development and evaluation of potential wind
+  energy business opportunities, including environmental studies, permitting,
+  and proposals. May also manage construction of projects.
+$id: https://graph.org.ai/occupations/WindEnergyDevelopmentManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WindEnergyDevelopmentManagers`
+      };
+  }));
+
+# Wind Energy Development Managers
+
+**O*NET Code**: 11-9199.10
+
+Lead or manage the development and evaluation of potential wind energy business opportunities, including environmental studies, permitting, and proposals. May also manage construction of projects.
+
+## Job Profile
+<JobZone occupation=WindEnergyDevelopmentManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WindEnergyDevelopmentManagers />
+
+### General Activities
+<Activities occupation=WindEnergyDevelopmentManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=WindEnergyDevelopmentManagers />
+
+### Knowledge
+<Knowledge occupation=WindEnergyDevelopmentManagers />
+
+### Abilities
+<Abilities occupation=WindEnergyDevelopmentManagers />
+
+## Work Context
+<WorkContext occupation=WindEnergyDevelopmentManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WindEnergyDevelopmentManagers />
+
+### Industries
+<Industries occupation=WindEnergyDevelopmentManagers />

@@ -1,0 +1,104 @@
+---
+$id: https://graph.org.ai/tasks/{slug}
+$type: Task
+source: ONET
+title: "{title}"
+---
+
+export const items = Promise.all([
+    CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Task%20Statements.txt'),
+    CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Tasks%20to%20DWAs.txt'),
+    CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/DWA%20Reference.txt'),
+    CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/IWA%20Reference.txt'),
+    CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Content%20Model%20Reference.txt')
+]).then(([tasks, taskToDwa, dwas, iwas, contentModel]) => {
+    const makeSlug = (str) => _.upperFirst(_.camelCase(str));
+
+    // Maps
+    const dwaMap = new Map(dwas.map(d => [d['DWA ID'], d]));
+    const iwaMap = new Map(iwas.map(i => [i['IWA ID'], i]));
+    const gwaMap = new Map(contentModel.map(c => [c['Element ID'], c]));
+    
+    // Task -> DWA
+    const taskDwa = new Map(); // TaskID -> DWA ID (first)
+    taskToDwa.forEach(r => {
+        if (!taskDwa.has(r['Task ID'])) {
+            taskDwa.set(r['Task ID'], r['DWA ID']);
+        }
+    });
+
+    return tasks.map(t => {
+        const taskId = t['Task ID'];
+        const description = t['Task'];
+        const taskType = t['Task Type'];
+        
+        // Hierarchy lookup
+        const dwaId = taskDwa.get(taskId);
+        let dwa = null, iwa = null, gwa = null;
+        let pathParts = ['Uncategorized']; 
+
+        if (dwaId) {
+            dwa = dwaMap.get(dwaId);
+            if (dwa) {
+                const iwaId = dwa['IWA ID'];
+                iwa = iwaMap.get(iwaId);
+                if (iwa) {
+                    // IWA Reference usually has 'Element ID' linking to GWA?
+                    // Let's check keys. If not found, we use 'Unknown'.
+                    const gwaId = iwa['Element ID'];
+                    gwa = gwaMap.get(gwaId);
+                }
+            }
+        }
+        
+        // Construct slugs
+        const taskSlug = makeSlug(description).substring(0, 50); // Truncate for safety? Or use Task ID if desc is long?
+        // Tasks descriptions are long. Maybe use "Task_ID"?
+        // User said "TitleCaseNames". 
+        // "DetermineAndFormulatePolicies..." is very long.
+        // Let's use a sanitized truncated version + ID for uniqueness?
+        // Or just Task ID? "Task_8823". User said "Descriptively named".
+        // Let's try truncated text.
+        
+        const gwaSlug = gwa ? makeSlug(gwa['Element Name']) : 'General';
+        const iwaSlug = iwa ? makeSlug(iwa['IWA Title']) : 'Misc';
+        const dwaSlug = dwa ? makeSlug(dwa['DWA Title']) : 'Other';
+        
+        // Ensure slugs are valid
+        const finalTaskSlug = taskSlug ? `${taskSlug}_${taskId}` : `Task_${taskId}`;
+        
+        const relativePath = `${gwaSlug}/${iwaSlug}/${dwaSlug}/${finalTaskSlug}`;
+        
+        return {
+            id: relativePath,
+            title: description,
+            description: description,
+            type: taskType,
+            activitySlug: gwaSlug,
+            iwaSlug: iwaSlug,
+            dwaSlug: dwaSlug,
+            slug: finalTaskSlug,
+            $id: `https://graph.org.ai/tasks/${finalTaskSlug}`
+        };
+    });
+});
+
+# {title}
+
+{description}
+
+## Hierarchy
+**Activity**: <Activity id={activitySlug} />
+**IWA**: <IWA id={iwaSlug} />
+**DWA**: <DWA id={dwaSlug} />
+
+## Relationships
+### Occupations
+<Occupations task={slug} />
+
+### Tools & Tech
+<Tools task={slug} />
+<Tech task={slug} />
+
+### Related Processes
+<Processes task={slug} />

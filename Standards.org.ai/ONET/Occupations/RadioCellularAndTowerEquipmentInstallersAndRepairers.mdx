@@ -1,0 +1,71 @@
+---
+id: RadioCellularAndTowerEquipmentInstallersAndRepairers
+slug: RadioCellularAndTowerEquipmentInstallersAndRepairers
+code:
+  code: null
+title:
+  title: null
+description: Repair, install, or maintain mobile or stationary radio
+  transmitting, broadcasting, and receiving equipment, and two-way radio
+  communications systems used in cellular telecommunications, mobile broadband,
+  ship-to-shore, aircraft-to-ground communications, and radio equipment in
+  service and emergency vehicles. May test and analyze network coverage.
+$id: https://graph.org.ai/occupations/RadioCellularAndTowerEquipmentInstallersAndRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RadioCellularAndTowerEquipmentInstallersAndRepairers`
+      };
+  }));
+
+# Radio, Cellular, and Tower Equipment Installers and Repairers
+
+**O*NET Code**: 49-2021.00
+
+Repair, install, or maintain mobile or stationary radio transmitting, broadcasting, and receiving equipment, and two-way radio communications systems used in cellular telecommunications, mobile broadband, ship-to-shore, aircraft-to-ground communications, and radio equipment in service and emergency vehicles. May test and analyze network coverage.
+
+## Job Profile
+<JobZone occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+### General Activities
+<Activities occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+### Knowledge
+<Knowledge occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+### Abilities
+<Abilities occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+## Work Context
+<WorkContext occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />
+
+### Industries
+<Industries occupation=RadioCellularAndTowerEquipmentInstallersAndRepairers />

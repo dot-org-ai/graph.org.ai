@@ -1,0 +1,67 @@
+---
+id: Embalmers
+slug: Embalmers
+code:
+  code: null
+title:
+  title: null
+description: Prepare bodies for interment in conformity with legal requirements.
+$id: https://graph.org.ai/occupations/Embalmers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Embalmers`
+      };
+  }));
+
+# Embalmers
+
+**O*NET Code**: 39-4011.00
+
+Prepare bodies for interment in conformity with legal requirements.
+
+## Job Profile
+<JobZone occupation=Embalmers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Embalmers />
+
+### General Activities
+<Activities occupation=Embalmers />
+
+## Qualifications
+### Skills
+<Skills occupation=Embalmers />
+
+### Knowledge
+<Knowledge occupation=Embalmers />
+
+### Abilities
+<Abilities occupation=Embalmers />
+
+## Work Context
+<WorkContext occupation=Embalmers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Embalmers />
+
+### Industries
+<Industries occupation=Embalmers />

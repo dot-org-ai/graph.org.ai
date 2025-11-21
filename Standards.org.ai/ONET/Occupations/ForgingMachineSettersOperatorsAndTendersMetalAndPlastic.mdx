@@ -1,0 +1,68 @@
+---
+id: ForgingMachineSettersOperatorsAndTendersMetalAndPlastic
+slug: ForgingMachineSettersOperatorsAndTendersMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend forging machines to taper, shape, or form
+  metal or plastic parts.
+$id: https://graph.org.ai/occupations/ForgingMachineSettersOperatorsAndTendersMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ForgingMachineSettersOperatorsAndTendersMetalAndPlastic`
+      };
+  }));
+
+# Forging Machine Setters, Operators, and Tenders, Metal and Plastic
+
+**O*NET Code**: 51-4022.00
+
+Set up, operate, or tend forging machines to taper, shape, or form metal or plastic parts.
+
+## Job Profile
+<JobZone occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### General Activities
+<Activities occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />
+
+### Industries
+<Industries occupation=ForgingMachineSettersOperatorsAndTendersMetalAndPlastic />

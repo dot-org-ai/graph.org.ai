@@ -1,0 +1,69 @@
+---
+id: SignalAndTrackSwitchRepairers
+slug: SignalAndTrackSwitchRepairers
+code:
+  code: null
+title:
+  title: null
+description: Install, inspect, test, maintain, or repair electric gate
+  crossings, signals, signal equipment, track switches, section lines, or
+  intercommunications systems within a railroad system.
+$id: https://graph.org.ai/occupations/SignalAndTrackSwitchRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SignalAndTrackSwitchRepairers`
+      };
+  }));
+
+# Signal and Track Switch Repairers
+
+**O*NET Code**: 49-9097.00
+
+Install, inspect, test, maintain, or repair electric gate crossings, signals, signal equipment, track switches, section lines, or intercommunications systems within a railroad system.
+
+## Job Profile
+<JobZone occupation=SignalAndTrackSwitchRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SignalAndTrackSwitchRepairers />
+
+### General Activities
+<Activities occupation=SignalAndTrackSwitchRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=SignalAndTrackSwitchRepairers />
+
+### Knowledge
+<Knowledge occupation=SignalAndTrackSwitchRepairers />
+
+### Abilities
+<Abilities occupation=SignalAndTrackSwitchRepairers />
+
+## Work Context
+<WorkContext occupation=SignalAndTrackSwitchRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SignalAndTrackSwitchRepairers />
+
+### Industries
+<Industries occupation=SignalAndTrackSwitchRepairers />

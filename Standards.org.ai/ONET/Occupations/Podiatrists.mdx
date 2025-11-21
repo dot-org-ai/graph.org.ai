@@ -1,0 +1,67 @@
+---
+id: Podiatrists
+slug: Podiatrists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and treat diseases and deformities of the human foot.
+$id: https://graph.org.ai/occupations/Podiatrists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Podiatrists`
+      };
+  }));
+
+# Podiatrists
+
+**O*NET Code**: 29-1081.00
+
+Diagnose and treat diseases and deformities of the human foot.
+
+## Job Profile
+<JobZone occupation=Podiatrists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Podiatrists />
+
+### General Activities
+<Activities occupation=Podiatrists />
+
+## Qualifications
+### Skills
+<Skills occupation=Podiatrists />
+
+### Knowledge
+<Knowledge occupation=Podiatrists />
+
+### Abilities
+<Abilities occupation=Podiatrists />
+
+## Work Context
+<WorkContext occupation=Podiatrists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Podiatrists />
+
+### Industries
+<Industries occupation=Podiatrists />

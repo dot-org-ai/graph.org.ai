@@ -1,0 +1,68 @@
+---
+id: ArchitectsExceptLandscapeAndNaval
+slug: ArchitectsExceptLandscapeAndNaval
+code:
+  code: null
+title:
+  title: null
+description: Plan and design structures, such as private residences, office
+  buildings, theaters, factories, and other structural property.
+$id: https://graph.org.ai/occupations/ArchitectsExceptLandscapeAndNaval
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ArchitectsExceptLandscapeAndNaval`
+      };
+  }));
+
+# Architects, Except Landscape and Naval
+
+**O*NET Code**: 17-1011.00
+
+Plan and design structures, such as private residences, office buildings, theaters, factories, and other structural property.
+
+## Job Profile
+<JobZone occupation=ArchitectsExceptLandscapeAndNaval />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ArchitectsExceptLandscapeAndNaval />
+
+### General Activities
+<Activities occupation=ArchitectsExceptLandscapeAndNaval />
+
+## Qualifications
+### Skills
+<Skills occupation=ArchitectsExceptLandscapeAndNaval />
+
+### Knowledge
+<Knowledge occupation=ArchitectsExceptLandscapeAndNaval />
+
+### Abilities
+<Abilities occupation=ArchitectsExceptLandscapeAndNaval />
+
+## Work Context
+<WorkContext occupation=ArchitectsExceptLandscapeAndNaval />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ArchitectsExceptLandscapeAndNaval />
+
+### Industries
+<Industries occupation=ArchitectsExceptLandscapeAndNaval />

@@ -1,0 +1,70 @@
+---
+id: ConstructionAndBuildingInspectors
+slug: ConstructionAndBuildingInspectors
+code:
+  code: null
+title:
+  title: null
+description: Inspect structures using engineering skills to determine structural
+  soundness and compliance with specifications, building codes, and other
+  regulations. Inspections may be general in nature or may be limited to a
+  specific area, such as electrical systems or plumbing.
+$id: https://graph.org.ai/occupations/ConstructionAndBuildingInspectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ConstructionAndBuildingInspectors`
+      };
+  }));
+
+# Construction and Building Inspectors
+
+**O*NET Code**: 47-4011.00
+
+Inspect structures using engineering skills to determine structural soundness and compliance with specifications, building codes, and other regulations. Inspections may be general in nature or may be limited to a specific area, such as electrical systems or plumbing.
+
+## Job Profile
+<JobZone occupation=ConstructionAndBuildingInspectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ConstructionAndBuildingInspectors />
+
+### General Activities
+<Activities occupation=ConstructionAndBuildingInspectors />
+
+## Qualifications
+### Skills
+<Skills occupation=ConstructionAndBuildingInspectors />
+
+### Knowledge
+<Knowledge occupation=ConstructionAndBuildingInspectors />
+
+### Abilities
+<Abilities occupation=ConstructionAndBuildingInspectors />
+
+## Work Context
+<WorkContext occupation=ConstructionAndBuildingInspectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ConstructionAndBuildingInspectors />
+
+### Industries
+<Industries occupation=ConstructionAndBuildingInspectors />

@@ -1,0 +1,69 @@
+---
+id: PhotonicsTechnicians
+slug: PhotonicsTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Build, install, test, or maintain optical or fiber optic equipment,
+  such as lasers, lenses, or mirrors, using spectrometers, interferometers, or
+  related equipment.
+$id: https://graph.org.ai/occupations/PhotonicsTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhotonicsTechnicians`
+      };
+  }));
+
+# Photonics Technicians
+
+**O*NET Code**: 17-3029.08
+
+Build, install, test, or maintain optical or fiber optic equipment, such as lasers, lenses, or mirrors, using spectrometers, interferometers, or related equipment.
+
+## Job Profile
+<JobZone occupation=PhotonicsTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhotonicsTechnicians />
+
+### General Activities
+<Activities occupation=PhotonicsTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=PhotonicsTechnicians />
+
+### Knowledge
+<Knowledge occupation=PhotonicsTechnicians />
+
+### Abilities
+<Abilities occupation=PhotonicsTechnicians />
+
+## Work Context
+<WorkContext occupation=PhotonicsTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhotonicsTechnicians />
+
+### Industries
+<Industries occupation=PhotonicsTechnicians />

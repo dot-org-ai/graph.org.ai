@@ -1,0 +1,70 @@
+---
+id: MentalHealthAndSubstanceAbuseSocialWorkers
+slug: MentalHealthAndSubstanceAbuseSocialWorkers
+code:
+  code: null
+title:
+  title: null
+description: Assess and treat individuals with mental, emotional, or substance
+  abuse problems, including abuse of alcohol, tobacco, and/or other drugs.
+  Activities may include individual and group therapy, crisis intervention, case
+  management, client advocacy, prevention, and education.
+$id: https://graph.org.ai/occupations/MentalHealthAndSubstanceAbuseSocialWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MentalHealthAndSubstanceAbuseSocialWorkers`
+      };
+  }));
+
+# Mental Health and Substance Abuse Social Workers
+
+**O*NET Code**: 21-1023.00
+
+Assess and treat individuals with mental, emotional, or substance abuse problems, including abuse of alcohol, tobacco, and/or other drugs. Activities may include individual and group therapy, crisis intervention, case management, client advocacy, prevention, and education.
+
+## Job Profile
+<JobZone occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+### General Activities
+<Activities occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+### Knowledge
+<Knowledge occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+### Abilities
+<Abilities occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+## Work Context
+<WorkContext occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MentalHealthAndSubstanceAbuseSocialWorkers />
+
+### Industries
+<Industries occupation=MentalHealthAndSubstanceAbuseSocialWorkers />

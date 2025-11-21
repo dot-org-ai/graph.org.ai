@@ -1,0 +1,71 @@
+---
+id: LandscapingAndGroundskeepingWorkers
+slug: LandscapingAndGroundskeepingWorkers
+code:
+  code: null
+title:
+  title: null
+description: "Landscape or maintain grounds of property using hand or power
+  tools or equipment. Workers typically perform a variety of tasks, which may
+  include any combination of the following: sod laying, mowing, trimming,
+  planting, watering, fertilizing, digging, raking, sprinkler installation, and
+  installation of mortarless segmental concrete masonry wall units."
+$id: https://graph.org.ai/occupations/LandscapingAndGroundskeepingWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LandscapingAndGroundskeepingWorkers`
+      };
+  }));
+
+# Landscaping and Groundskeeping Workers
+
+**O*NET Code**: 37-3011.00
+
+Landscape or maintain grounds of property using hand or power tools or equipment. Workers typically perform a variety of tasks, which may include any combination of the following: sod laying, mowing, trimming, planting, watering, fertilizing, digging, raking, sprinkler installation, and installation of mortarless segmental concrete masonry wall units.
+
+## Job Profile
+<JobZone occupation=LandscapingAndGroundskeepingWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LandscapingAndGroundskeepingWorkers />
+
+### General Activities
+<Activities occupation=LandscapingAndGroundskeepingWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=LandscapingAndGroundskeepingWorkers />
+
+### Knowledge
+<Knowledge occupation=LandscapingAndGroundskeepingWorkers />
+
+### Abilities
+<Abilities occupation=LandscapingAndGroundskeepingWorkers />
+
+## Work Context
+<WorkContext occupation=LandscapingAndGroundskeepingWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LandscapingAndGroundskeepingWorkers />
+
+### Industries
+<Industries occupation=LandscapingAndGroundskeepingWorkers />

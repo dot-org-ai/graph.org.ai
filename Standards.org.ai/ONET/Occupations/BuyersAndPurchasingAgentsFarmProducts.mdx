@@ -1,0 +1,69 @@
+---
+id: BuyersAndPurchasingAgentsFarmProducts
+slug: BuyersAndPurchasingAgentsFarmProducts
+code:
+  code: null
+title:
+  title: null
+description: Purchase farm products either for further processing or resale.
+  Includes tree farm contractors, grain brokers and market operators, grain
+  buyers, and tobacco buyers. May negotiate contracts.
+$id: https://graph.org.ai/occupations/BuyersAndPurchasingAgentsFarmProducts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BuyersAndPurchasingAgentsFarmProducts`
+      };
+  }));
+
+# Buyers and Purchasing Agents, Farm Products
+
+**O*NET Code**: 13-1021.00
+
+Purchase farm products either for further processing or resale. Includes tree farm contractors, grain brokers and market operators, grain buyers, and tobacco buyers. May negotiate contracts.
+
+## Job Profile
+<JobZone occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+### General Activities
+<Activities occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+## Qualifications
+### Skills
+<Skills occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+### Knowledge
+<Knowledge occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+### Abilities
+<Abilities occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+## Work Context
+<WorkContext occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BuyersAndPurchasingAgentsFarmProducts />
+
+### Industries
+<Industries occupation=BuyersAndPurchasingAgentsFarmProducts />

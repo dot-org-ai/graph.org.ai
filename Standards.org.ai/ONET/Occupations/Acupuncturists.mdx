@@ -1,0 +1,70 @@
+---
+id: Acupuncturists
+slug: Acupuncturists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, and prevent disorders by stimulating specific
+  acupuncture points within the body using acupuncture needles. May also use
+  cups, nutritional supplements, therapeutic massage, acupressure, and other
+  alternative health therapies.
+$id: https://graph.org.ai/occupations/Acupuncturists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Acupuncturists`
+      };
+  }));
+
+# Acupuncturists
+
+**O*NET Code**: 29-1291.00
+
+Diagnose, treat, and prevent disorders by stimulating specific acupuncture points within the body using acupuncture needles. May also use cups, nutritional supplements, therapeutic massage, acupressure, and other alternative health therapies.
+
+## Job Profile
+<JobZone occupation=Acupuncturists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Acupuncturists />
+
+### General Activities
+<Activities occupation=Acupuncturists />
+
+## Qualifications
+### Skills
+<Skills occupation=Acupuncturists />
+
+### Knowledge
+<Knowledge occupation=Acupuncturists />
+
+### Abilities
+<Abilities occupation=Acupuncturists />
+
+## Work Context
+<WorkContext occupation=Acupuncturists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Acupuncturists />
+
+### Industries
+<Industries occupation=Acupuncturists />

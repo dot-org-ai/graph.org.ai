@@ -1,0 +1,69 @@
+---
+id: Fallers
+slug: Fallers
+code:
+  code: null
+title:
+  title: null
+description: Use axes or chainsaws to fell trees using knowledge of tree
+  characteristics and cutting techniques to control direction of fall and
+  minimize tree damage.
+$id: https://graph.org.ai/occupations/Fallers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Fallers`
+      };
+  }));
+
+# Fallers
+
+**O*NET Code**: 45-4021.00
+
+Use axes or chainsaws to fell trees using knowledge of tree characteristics and cutting techniques to control direction of fall and minimize tree damage.
+
+## Job Profile
+<JobZone occupation=Fallers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Fallers />
+
+### General Activities
+<Activities occupation=Fallers />
+
+## Qualifications
+### Skills
+<Skills occupation=Fallers />
+
+### Knowledge
+<Knowledge occupation=Fallers />
+
+### Abilities
+<Abilities occupation=Fallers />
+
+## Work Context
+<WorkContext occupation=Fallers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Fallers />
+
+### Industries
+<Industries occupation=Fallers />

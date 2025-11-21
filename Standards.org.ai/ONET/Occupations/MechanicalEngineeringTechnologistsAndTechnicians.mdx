@@ -1,0 +1,69 @@
+---
+id: MechanicalEngineeringTechnologistsAndTechnicians
+slug: MechanicalEngineeringTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Apply theory and principles of mechanical engineering to modify,
+  develop, test, or adjust machinery and equipment under direction of
+  engineering staff or physical scientists.
+$id: https://graph.org.ai/occupations/MechanicalEngineeringTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MechanicalEngineeringTechnologistsAndTechnicians`
+      };
+  }));
+
+# Mechanical Engineering Technologists and Technicians
+
+**O*NET Code**: 17-3027.00
+
+Apply theory and principles of mechanical engineering to modify, develop, test, or adjust machinery and equipment under direction of engineering staff or physical scientists.
+
+## Job Profile
+<JobZone occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MechanicalEngineeringTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=MechanicalEngineeringTechnologistsAndTechnicians />

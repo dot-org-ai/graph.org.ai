@@ -1,0 +1,68 @@
+---
+id: SociologyTeachersPostsecondary
+slug: SociologyTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in sociology. Includes both teachers primarily
+  engaged in teaching and those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/SociologyTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SociologyTeachersPostsecondary`
+      };
+  }));
+
+# Sociology Teachers, Postsecondary
+
+**O*NET Code**: 25-1067.00
+
+Teach courses in sociology. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=SociologyTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SociologyTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=SociologyTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=SociologyTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=SociologyTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=SociologyTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=SociologyTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SociologyTeachersPostsecondary />
+
+### Industries
+<Industries occupation=SociologyTeachersPostsecondary />

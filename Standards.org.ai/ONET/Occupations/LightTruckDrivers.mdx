@@ -1,0 +1,70 @@
+---
+id: LightTruckDrivers
+slug: LightTruckDrivers
+code:
+  code: null
+title:
+  title: null
+description: Drive a light vehicle, such as a truck or van, with a capacity of
+  less than 26,001 pounds Gross Vehicle Weight (GVW), primarily to pick up
+  merchandise or packages from a distribution center and deliver. May load and
+  unload vehicle.
+$id: https://graph.org.ai/occupations/LightTruckDrivers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LightTruckDrivers`
+      };
+  }));
+
+# Light Truck Drivers
+
+**O*NET Code**: 53-3033.00
+
+Drive a light vehicle, such as a truck or van, with a capacity of less than 26,001 pounds Gross Vehicle Weight (GVW), primarily to pick up merchandise or packages from a distribution center and deliver. May load and unload vehicle.
+
+## Job Profile
+<JobZone occupation=LightTruckDrivers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LightTruckDrivers />
+
+### General Activities
+<Activities occupation=LightTruckDrivers />
+
+## Qualifications
+### Skills
+<Skills occupation=LightTruckDrivers />
+
+### Knowledge
+<Knowledge occupation=LightTruckDrivers />
+
+### Abilities
+<Abilities occupation=LightTruckDrivers />
+
+## Work Context
+<WorkContext occupation=LightTruckDrivers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LightTruckDrivers />
+
+### Industries
+<Industries occupation=LightTruckDrivers />

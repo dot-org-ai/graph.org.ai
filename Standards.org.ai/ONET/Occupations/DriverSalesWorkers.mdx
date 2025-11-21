@@ -1,0 +1,71 @@
+---
+id: DriverSalesWorkers
+slug: DriverSalesWorkers
+code:
+  code: null
+title:
+  title: null
+description: Drive truck or other vehicle over established routes or within an
+  established territory and sell or deliver goods, such as food products,
+  including restaurant take-out items, or pick up or deliver items such as
+  commercial laundry. May also take orders, collect payment, or stock
+  merchandise at point of delivery.
+$id: https://graph.org.ai/occupations/DriverSalesWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DriverSalesWorkers`
+      };
+  }));
+
+# Driver/Sales Workers
+
+**O*NET Code**: 53-3031.00
+
+Drive truck or other vehicle over established routes or within an established territory and sell or deliver goods, such as food products, including restaurant take-out items, or pick up or deliver items such as commercial laundry. May also take orders, collect payment, or stock merchandise at point of delivery.
+
+## Job Profile
+<JobZone occupation=DriverSalesWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DriverSalesWorkers />
+
+### General Activities
+<Activities occupation=DriverSalesWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=DriverSalesWorkers />
+
+### Knowledge
+<Knowledge occupation=DriverSalesWorkers />
+
+### Abilities
+<Abilities occupation=DriverSalesWorkers />
+
+## Work Context
+<WorkContext occupation=DriverSalesWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DriverSalesWorkers />
+
+### Industries
+<Industries occupation=DriverSalesWorkers />

@@ -1,0 +1,71 @@
+---
+id: AgriculturalSciencesTeachersPostsecondary
+slug: AgriculturalSciencesTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in the agricultural sciences. Includes teachers of
+  agronomy, dairy sciences, fisheries management, horticultural sciences,
+  poultry sciences, range management, and agricultural soil conservation.
+  Includes both teachers primarily engaged in teaching and those who do a
+  combination of teaching and research.
+$id: https://graph.org.ai/occupations/AgriculturalSciencesTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AgriculturalSciencesTeachersPostsecondary`
+      };
+  }));
+
+# Agricultural Sciences Teachers, Postsecondary
+
+**O*NET Code**: 25-1041.00
+
+Teach courses in the agricultural sciences. Includes teachers of agronomy, dairy sciences, fisheries management, horticultural sciences, poultry sciences, range management, and agricultural soil conservation. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=AgriculturalSciencesTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AgriculturalSciencesTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=AgriculturalSciencesTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=AgriculturalSciencesTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=AgriculturalSciencesTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=AgriculturalSciencesTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=AgriculturalSciencesTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AgriculturalSciencesTeachersPostsecondary />
+
+### Industries
+<Industries occupation=AgriculturalSciencesTeachersPostsecondary />

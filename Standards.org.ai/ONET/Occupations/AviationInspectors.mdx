@@ -1,0 +1,69 @@
+---
+id: AviationInspectors
+slug: AviationInspectors
+code:
+  code: null
+title:
+  title: null
+description: Inspect aircraft, maintenance procedures, air navigational aids,
+  air traffic controls, and communications equipment to ensure conformance with
+  Federal safety regulations.
+$id: https://graph.org.ai/occupations/AviationInspectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AviationInspectors`
+      };
+  }));
+
+# Aviation Inspectors
+
+**O*NET Code**: 53-6051.01
+
+Inspect aircraft, maintenance procedures, air navigational aids, air traffic controls, and communications equipment to ensure conformance with Federal safety regulations.
+
+## Job Profile
+<JobZone occupation=AviationInspectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AviationInspectors />
+
+### General Activities
+<Activities occupation=AviationInspectors />
+
+## Qualifications
+### Skills
+<Skills occupation=AviationInspectors />
+
+### Knowledge
+<Knowledge occupation=AviationInspectors />
+
+### Abilities
+<Abilities occupation=AviationInspectors />
+
+## Work Context
+<WorkContext occupation=AviationInspectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AviationInspectors />
+
+### Industries
+<Industries occupation=AviationInspectors />

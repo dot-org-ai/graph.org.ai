@@ -1,0 +1,75 @@
+---
+id: OpticiansDispensing
+slug: OpticiansDispensing
+code:
+  code: null
+title:
+  title: null
+description: Design, measure, fit, and adapt lenses and frames for client
+  according to written optical prescription or specification. Assist client with
+  inserting, removing, and caring for contact lenses. Assist client with
+  selecting frames. Measure customer for size of eyeglasses and coordinate
+  frames with facial and eye measurements and optical prescription. Prepare work
+  order for optical laboratory containing instructions for grinding and mounting
+  lenses in frames. Verify exactness of finished lens spectacles. Adjust frame
+  and lens position to fit client. May shape or reshape frames. Includes contact
+  lens opticians.
+$id: https://graph.org.ai/occupations/OpticiansDispensing
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OpticiansDispensing`
+      };
+  }));
+
+# Opticians, Dispensing
+
+**O*NET Code**: 29-2081.00
+
+Design, measure, fit, and adapt lenses and frames for client according to written optical prescription or specification. Assist client with inserting, removing, and caring for contact lenses. Assist client with selecting frames. Measure customer for size of eyeglasses and coordinate frames with facial and eye measurements and optical prescription. Prepare work order for optical laboratory containing instructions for grinding and mounting lenses in frames. Verify exactness of finished lens spectacles. Adjust frame and lens position to fit client. May shape or reshape frames. Includes contact lens opticians.
+
+## Job Profile
+<JobZone occupation=OpticiansDispensing />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OpticiansDispensing />
+
+### General Activities
+<Activities occupation=OpticiansDispensing />
+
+## Qualifications
+### Skills
+<Skills occupation=OpticiansDispensing />
+
+### Knowledge
+<Knowledge occupation=OpticiansDispensing />
+
+### Abilities
+<Abilities occupation=OpticiansDispensing />
+
+## Work Context
+<WorkContext occupation=OpticiansDispensing />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OpticiansDispensing />
+
+### Industries
+<Industries occupation=OpticiansDispensing />

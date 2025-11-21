@@ -1,0 +1,69 @@
+---
+id: ManufacturingEngineers
+slug: ManufacturingEngineers
+code:
+  code: null
+title:
+  title: null
+description: Design, integrate, or improve manufacturing systems or related
+  processes. May work with commercial or industrial designers to refine product
+  designs to increase producibility and decrease costs.
+$id: https://graph.org.ai/occupations/ManufacturingEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ManufacturingEngineers`
+      };
+  }));
+
+# Manufacturing Engineers
+
+**O*NET Code**: 17-2112.03
+
+Design, integrate, or improve manufacturing systems or related processes. May work with commercial or industrial designers to refine product designs to increase producibility and decrease costs.
+
+## Job Profile
+<JobZone occupation=ManufacturingEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ManufacturingEngineers />
+
+### General Activities
+<Activities occupation=ManufacturingEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=ManufacturingEngineers />
+
+### Knowledge
+<Knowledge occupation=ManufacturingEngineers />
+
+### Abilities
+<Abilities occupation=ManufacturingEngineers />
+
+## Work Context
+<WorkContext occupation=ManufacturingEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ManufacturingEngineers />
+
+### Industries
+<Industries occupation=ManufacturingEngineers />

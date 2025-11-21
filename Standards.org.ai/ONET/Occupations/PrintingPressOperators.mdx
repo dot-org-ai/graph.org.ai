@@ -1,0 +1,69 @@
+---
+id: PrintingPressOperators
+slug: PrintingPressOperators
+code:
+  code: null
+title:
+  title: null
+description: Set up and operate digital, letterpress, lithographic,
+  flexographic, gravure, or other printing machines. Includes short-run offset
+  printing presses.
+$id: https://graph.org.ai/occupations/PrintingPressOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PrintingPressOperators`
+      };
+  }));
+
+# Printing Press Operators
+
+**O*NET Code**: 51-5112.00
+
+Set up and operate digital, letterpress, lithographic, flexographic, gravure, or other printing machines. Includes short-run offset printing presses.
+
+## Job Profile
+<JobZone occupation=PrintingPressOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PrintingPressOperators />
+
+### General Activities
+<Activities occupation=PrintingPressOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=PrintingPressOperators />
+
+### Knowledge
+<Knowledge occupation=PrintingPressOperators />
+
+### Abilities
+<Abilities occupation=PrintingPressOperators />
+
+## Work Context
+<WorkContext occupation=PrintingPressOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PrintingPressOperators />
+
+### Industries
+<Industries occupation=PrintingPressOperators />

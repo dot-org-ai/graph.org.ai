@@ -1,0 +1,69 @@
+---
+id: ComputerAndInformationResearchScientists
+slug: ComputerAndInformationResearchScientists
+code:
+  code: null
+title:
+  title: null
+description: Conduct research into fundamental computer and information science
+  as theorists, designers, or inventors. Develop solutions to problems in the
+  field of computer hardware and software.
+$id: https://graph.org.ai/occupations/ComputerAndInformationResearchScientists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerAndInformationResearchScientists`
+      };
+  }));
+
+# Computer and Information Research Scientists
+
+**O*NET Code**: 15-1221.00
+
+Conduct research into fundamental computer and information science as theorists, designers, or inventors. Develop solutions to problems in the field of computer hardware and software.
+
+## Job Profile
+<JobZone occupation=ComputerAndInformationResearchScientists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerAndInformationResearchScientists />
+
+### General Activities
+<Activities occupation=ComputerAndInformationResearchScientists />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerAndInformationResearchScientists />
+
+### Knowledge
+<Knowledge occupation=ComputerAndInformationResearchScientists />
+
+### Abilities
+<Abilities occupation=ComputerAndInformationResearchScientists />
+
+## Work Context
+<WorkContext occupation=ComputerAndInformationResearchScientists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerAndInformationResearchScientists />
+
+### Industries
+<Industries occupation=ComputerAndInformationResearchScientists />

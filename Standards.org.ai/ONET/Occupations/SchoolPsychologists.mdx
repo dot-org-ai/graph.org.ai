@@ -1,0 +1,72 @@
+---
+id: SchoolPsychologists
+slug: SchoolPsychologists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and implement individual or schoolwide interventions or
+  strategies to address educational, behavioral, or developmental issues that
+  adversely impact educational functioning in a school. May address student
+  learning and behavioral problems and counsel students or families. May design
+  and implement performance plans, and evaluate performance. May consult with
+  other school-based personnel.
+$id: https://graph.org.ai/occupations/SchoolPsychologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SchoolPsychologists`
+      };
+  }));
+
+# School Psychologists
+
+**O*NET Code**: 19-3034.00
+
+Diagnose and implement individual or schoolwide interventions or strategies to address educational, behavioral, or developmental issues that adversely impact educational functioning in a school. May address student learning and behavioral problems and counsel students or families. May design and implement performance plans, and evaluate performance. May consult with other school-based personnel.
+
+## Job Profile
+<JobZone occupation=SchoolPsychologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SchoolPsychologists />
+
+### General Activities
+<Activities occupation=SchoolPsychologists />
+
+## Qualifications
+### Skills
+<Skills occupation=SchoolPsychologists />
+
+### Knowledge
+<Knowledge occupation=SchoolPsychologists />
+
+### Abilities
+<Abilities occupation=SchoolPsychologists />
+
+## Work Context
+<WorkContext occupation=SchoolPsychologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SchoolPsychologists />
+
+### Industries
+<Industries occupation=SchoolPsychologists />

@@ -1,0 +1,69 @@
+---
+id: CabinetmakersAndBenchCarpenters
+slug: CabinetmakersAndBenchCarpenters
+code:
+  code: null
+title:
+  title: null
+description: Cut, shape, and assemble wooden articles or set up and operate a
+  variety of woodworking machines, such as power saws, jointers, and mortisers
+  to surface, cut, or shape lumber or to fabricate parts for wood products.
+$id: https://graph.org.ai/occupations/CabinetmakersAndBenchCarpenters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CabinetmakersAndBenchCarpenters`
+      };
+  }));
+
+# Cabinetmakers and Bench Carpenters
+
+**O*NET Code**: 51-7011.00
+
+Cut, shape, and assemble wooden articles or set up and operate a variety of woodworking machines, such as power saws, jointers, and mortisers to surface, cut, or shape lumber or to fabricate parts for wood products.
+
+## Job Profile
+<JobZone occupation=CabinetmakersAndBenchCarpenters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CabinetmakersAndBenchCarpenters />
+
+### General Activities
+<Activities occupation=CabinetmakersAndBenchCarpenters />
+
+## Qualifications
+### Skills
+<Skills occupation=CabinetmakersAndBenchCarpenters />
+
+### Knowledge
+<Knowledge occupation=CabinetmakersAndBenchCarpenters />
+
+### Abilities
+<Abilities occupation=CabinetmakersAndBenchCarpenters />
+
+## Work Context
+<WorkContext occupation=CabinetmakersAndBenchCarpenters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CabinetmakersAndBenchCarpenters />
+
+### Industries
+<Industries occupation=CabinetmakersAndBenchCarpenters />

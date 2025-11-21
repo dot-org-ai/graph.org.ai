@@ -1,0 +1,69 @@
+---
+id: FraudExaminersInvestigatorsAndAnalysts
+slug: FraudExaminersInvestigatorsAndAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Obtain evidence, take statements, produce reports, and testify to
+  findings regarding resolution of fraud allegations. May coordinate fraud
+  detection and prevention activities.
+$id: https://graph.org.ai/occupations/FraudExaminersInvestigatorsAndAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FraudExaminersInvestigatorsAndAnalysts`
+      };
+  }));
+
+# Fraud Examiners, Investigators and Analysts
+
+**O*NET Code**: 13-2099.04
+
+Obtain evidence, take statements, produce reports, and testify to findings regarding resolution of fraud allegations. May coordinate fraud detection and prevention activities.
+
+## Job Profile
+<JobZone occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+### General Activities
+<Activities occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+### Knowledge
+<Knowledge occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+### Abilities
+<Abilities occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+## Work Context
+<WorkContext occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FraudExaminersInvestigatorsAndAnalysts />
+
+### Industries
+<Industries occupation=FraudExaminersInvestigatorsAndAnalysts />

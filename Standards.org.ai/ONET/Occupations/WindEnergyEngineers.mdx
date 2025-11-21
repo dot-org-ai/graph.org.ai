@@ -1,0 +1,68 @@
+---
+id: WindEnergyEngineers
+slug: WindEnergyEngineers
+code:
+  code: null
+title:
+  title: null
+description: Design underground or overhead wind farm collector systems and
+  prepare and develop site specifications.
+$id: https://graph.org.ai/occupations/WindEnergyEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WindEnergyEngineers`
+      };
+  }));
+
+# Wind Energy Engineers
+
+**O*NET Code**: 17-2199.10
+
+Design underground or overhead wind farm collector systems and prepare and develop site specifications.
+
+## Job Profile
+<JobZone occupation=WindEnergyEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WindEnergyEngineers />
+
+### General Activities
+<Activities occupation=WindEnergyEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=WindEnergyEngineers />
+
+### Knowledge
+<Knowledge occupation=WindEnergyEngineers />
+
+### Abilities
+<Abilities occupation=WindEnergyEngineers />
+
+## Work Context
+<WorkContext occupation=WindEnergyEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WindEnergyEngineers />
+
+### Industries
+<Industries occupation=WindEnergyEngineers />

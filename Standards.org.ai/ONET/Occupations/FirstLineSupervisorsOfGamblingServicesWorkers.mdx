@@ -1,0 +1,72 @@
+---
+id: FirstLineSupervisorsOfGamblingServicesWorkers
+slug: FirstLineSupervisorsOfGamblingServicesWorkers
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate activities of workers in assigned
+  gambling areas. May circulate among tables, observe operations, and ensure
+  that stations and games are covered for each shift. May verify and pay off
+  jackpots. May reset slot machines after payoffs and make repairs or
+  adjustments to slot machines or recommend removal of slot machines for repair.
+  May plan and organize activities and services for guests in hotels/casinos.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfGamblingServicesWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfGamblingServicesWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Gambling Services Workers
+
+**O*NET Code**: 39-1013.00
+
+Directly supervise and coordinate activities of workers in assigned gambling areas. May circulate among tables, observe operations, and ensure that stations and games are covered for each shift. May verify and pay off jackpots. May reset slot machines after payoffs and make repairs or adjustments to slot machines or recommend removal of slot machines for repair. May plan and organize activities and services for guests in hotels/casinos.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfGamblingServicesWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfGamblingServicesWorkers />

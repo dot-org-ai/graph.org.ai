@@ -1,0 +1,69 @@
+---
+id: FishingAndHuntingWorkers
+slug: FishingAndHuntingWorkers
+code:
+  code: null
+title:
+  title: null
+description: Hunt, trap, catch, or gather wild animals or aquatic animals and
+  plants. May use nets, traps, or other equipment. May haul catch onto ship or
+  other vessel.
+$id: https://graph.org.ai/occupations/FishingAndHuntingWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FishingAndHuntingWorkers`
+      };
+  }));
+
+# Fishing and Hunting Workers
+
+**O*NET Code**: 45-3031.00
+
+Hunt, trap, catch, or gather wild animals or aquatic animals and plants. May use nets, traps, or other equipment. May haul catch onto ship or other vessel.
+
+## Job Profile
+<JobZone occupation=FishingAndHuntingWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FishingAndHuntingWorkers />
+
+### General Activities
+<Activities occupation=FishingAndHuntingWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FishingAndHuntingWorkers />
+
+### Knowledge
+<Knowledge occupation=FishingAndHuntingWorkers />
+
+### Abilities
+<Abilities occupation=FishingAndHuntingWorkers />
+
+## Work Context
+<WorkContext occupation=FishingAndHuntingWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FishingAndHuntingWorkers />
+
+### Industries
+<Industries occupation=FishingAndHuntingWorkers />

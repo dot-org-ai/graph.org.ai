@@ -1,0 +1,69 @@
+---
+id: EtchersAndEngravers
+slug: EtchersAndEngravers
+code:
+  code: null
+title:
+  title: null
+description: Engrave or etch metal, wood, rubber, or other materials. Includes
+  such workers as etcher-circuit processors, pantograph engravers, and silk
+  screen etchers.
+$id: https://graph.org.ai/occupations/EtchersAndEngravers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EtchersAndEngravers`
+      };
+  }));
+
+# Etchers and Engravers
+
+**O*NET Code**: 51-9194.00
+
+Engrave or etch metal, wood, rubber, or other materials. Includes such workers as etcher-circuit processors, pantograph engravers, and silk screen etchers.
+
+## Job Profile
+<JobZone occupation=EtchersAndEngravers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EtchersAndEngravers />
+
+### General Activities
+<Activities occupation=EtchersAndEngravers />
+
+## Qualifications
+### Skills
+<Skills occupation=EtchersAndEngravers />
+
+### Knowledge
+<Knowledge occupation=EtchersAndEngravers />
+
+### Abilities
+<Abilities occupation=EtchersAndEngravers />
+
+## Work Context
+<WorkContext occupation=EtchersAndEngravers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EtchersAndEngravers />
+
+### Industries
+<Industries occupation=EtchersAndEngravers />

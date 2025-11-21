@@ -1,0 +1,70 @@
+---
+id: AircraftStructureSurfacesRiggingAndSystemsAssemblers
+slug: AircraftStructureSurfacesRiggingAndSystemsAssemblers
+code:
+  code: null
+title:
+  title: null
+description: Assemble, fit, fasten, and install parts of airplanes, space
+  vehicles, or missiles, such as tails, wings, fuselage, bulkheads, stabilizers,
+  landing gear, rigging and control equipment, or heating and ventilating
+  systems.
+$id: https://graph.org.ai/occupations/AircraftStructureSurfacesRiggingAndSystemsAssemblers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AircraftStructureSurfacesRiggingAndSystemsAssemblers`
+      };
+  }));
+
+# Aircraft Structure, Surfaces, Rigging, and Systems Assemblers
+
+**O*NET Code**: 51-2011.00
+
+Assemble, fit, fasten, and install parts of airplanes, space vehicles, or missiles, such as tails, wings, fuselage, bulkheads, stabilizers, landing gear, rigging and control equipment, or heating and ventilating systems.
+
+## Job Profile
+<JobZone occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+### General Activities
+<Activities occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+## Qualifications
+### Skills
+<Skills occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+### Knowledge
+<Knowledge occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+### Abilities
+<Abilities occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+## Work Context
+<WorkContext occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />
+
+### Industries
+<Industries occupation=AircraftStructureSurfacesRiggingAndSystemsAssemblers />

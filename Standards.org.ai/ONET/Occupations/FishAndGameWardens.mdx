@@ -1,0 +1,69 @@
+---
+id: FishAndGameWardens
+slug: FishAndGameWardens
+code:
+  code: null
+title:
+  title: null
+description: Patrol assigned area to prevent fish and game law violations.
+  Investigate reports of damage to crops or property by wildlife. Compile
+  biological data.
+$id: https://graph.org.ai/occupations/FishAndGameWardens
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FishAndGameWardens`
+      };
+  }));
+
+# Fish and Game Wardens
+
+**O*NET Code**: 33-3031.00
+
+Patrol assigned area to prevent fish and game law violations. Investigate reports of damage to crops or property by wildlife. Compile biological data.
+
+## Job Profile
+<JobZone occupation=FishAndGameWardens />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FishAndGameWardens />
+
+### General Activities
+<Activities occupation=FishAndGameWardens />
+
+## Qualifications
+### Skills
+<Skills occupation=FishAndGameWardens />
+
+### Knowledge
+<Knowledge occupation=FishAndGameWardens />
+
+### Abilities
+<Abilities occupation=FishAndGameWardens />
+
+## Work Context
+<WorkContext occupation=FishAndGameWardens />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FishAndGameWardens />
+
+### Industries
+<Industries occupation=FishAndGameWardens />

@@ -1,0 +1,69 @@
+---
+id: ParkingAttendants
+slug: ParkingAttendants
+code:
+  code: null
+title:
+  title: null
+description: Park vehicles or issue tickets for customers in a parking lot or
+  garage. May park or tend vehicles in environments such as a car dealership or
+  rental car facility. May collect fee.
+$id: https://graph.org.ai/occupations/ParkingAttendants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ParkingAttendants`
+      };
+  }));
+
+# Parking Attendants
+
+**O*NET Code**: 53-6021.00
+
+Park vehicles or issue tickets for customers in a parking lot or garage. May park or tend vehicles in environments such as a car dealership or rental car facility. May collect fee.
+
+## Job Profile
+<JobZone occupation=ParkingAttendants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ParkingAttendants />
+
+### General Activities
+<Activities occupation=ParkingAttendants />
+
+## Qualifications
+### Skills
+<Skills occupation=ParkingAttendants />
+
+### Knowledge
+<Knowledge occupation=ParkingAttendants />
+
+### Abilities
+<Abilities occupation=ParkingAttendants />
+
+## Work Context
+<WorkContext occupation=ParkingAttendants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ParkingAttendants />
+
+### Industries
+<Industries occupation=ParkingAttendants />

@@ -1,0 +1,69 @@
+---
+id: HearingAidSpecialists
+slug: HearingAidSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Select and fit hearing aids for customers. Administer and interpret
+  tests of hearing. Assess hearing instrument efficacy. Take ear impressions and
+  prepare, design, and modify ear molds.
+$id: https://graph.org.ai/occupations/HearingAidSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HearingAidSpecialists`
+      };
+  }));
+
+# Hearing Aid Specialists
+
+**O*NET Code**: 29-2092.00
+
+Select and fit hearing aids for customers. Administer and interpret tests of hearing. Assess hearing instrument efficacy. Take ear impressions and prepare, design, and modify ear molds.
+
+## Job Profile
+<JobZone occupation=HearingAidSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HearingAidSpecialists />
+
+### General Activities
+<Activities occupation=HearingAidSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=HearingAidSpecialists />
+
+### Knowledge
+<Knowledge occupation=HearingAidSpecialists />
+
+### Abilities
+<Abilities occupation=HearingAidSpecialists />
+
+## Work Context
+<WorkContext occupation=HearingAidSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HearingAidSpecialists />
+
+### Industries
+<Industries occupation=HearingAidSpecialists />

@@ -1,0 +1,72 @@
+---
+id: Machinists
+slug: Machinists
+code:
+  code: null
+title:
+  title: null
+description: Set up and operate a variety of machine tools to produce precision
+  parts and instruments out of metal. Includes precision instrument makers who
+  fabricate, modify, or repair mechanical instruments. May also fabricate and
+  modify parts to make or repair machine tools or maintain industrial machines,
+  applying knowledge of mechanics, mathematics, metal properties, layout, and
+  machining procedures.
+$id: https://graph.org.ai/occupations/Machinists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Machinists`
+      };
+  }));
+
+# Machinists
+
+**O*NET Code**: 51-4041.00
+
+Set up and operate a variety of machine tools to produce precision parts and instruments out of metal. Includes precision instrument makers who fabricate, modify, or repair mechanical instruments. May also fabricate and modify parts to make or repair machine tools or maintain industrial machines, applying knowledge of mechanics, mathematics, metal properties, layout, and machining procedures.
+
+## Job Profile
+<JobZone occupation=Machinists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Machinists />
+
+### General Activities
+<Activities occupation=Machinists />
+
+## Qualifications
+### Skills
+<Skills occupation=Machinists />
+
+### Knowledge
+<Knowledge occupation=Machinists />
+
+### Abilities
+<Abilities occupation=Machinists />
+
+## Work Context
+<WorkContext occupation=Machinists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Machinists />
+
+### Industries
+<Industries occupation=Machinists />

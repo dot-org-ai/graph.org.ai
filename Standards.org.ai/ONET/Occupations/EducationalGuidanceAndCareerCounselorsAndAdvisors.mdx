@@ -1,0 +1,68 @@
+---
+id: EducationalGuidanceAndCareerCounselorsAndAdvisors
+slug: EducationalGuidanceAndCareerCounselorsAndAdvisors
+code:
+  code: null
+title:
+  title: null
+description: Advise and assist students and provide educational and vocational
+  guidance services.
+$id: https://graph.org.ai/occupations/EducationalGuidanceAndCareerCounselorsAndAdvisors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EducationalGuidanceAndCareerCounselorsAndAdvisors`
+      };
+  }));
+
+# Educational, Guidance, and Career Counselors and Advisors
+
+**O*NET Code**: 21-1012.00
+
+Advise and assist students and provide educational and vocational guidance services.
+
+## Job Profile
+<JobZone occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+### General Activities
+<Activities occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+## Qualifications
+### Skills
+<Skills occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+### Knowledge
+<Knowledge occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+### Abilities
+<Abilities occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+## Work Context
+<WorkContext occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />
+
+### Industries
+<Industries occupation=EducationalGuidanceAndCareerCounselorsAndAdvisors />

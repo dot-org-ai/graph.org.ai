@@ -1,0 +1,68 @@
+---
+id: FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators
+slug: FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate activities of material-moving
+  machine and vehicle operators and helpers.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators`
+      };
+  }));
+
+# First-Line Supervisors of Material-Moving Machine and Vehicle Operators
+
+**O*NET Code**: 53-1043.00
+
+Directly supervise and coordinate activities of material-moving machine and vehicle operators and helpers.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfMaterialMovingMachineAndVehicleOperators />

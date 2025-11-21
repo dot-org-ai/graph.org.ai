@@ -1,0 +1,74 @@
+---
+id: SoftwareDevelopers
+slug: SoftwareDevelopers
+code:
+  code: null
+title:
+  title: null
+description: Research, design, and develop computer and network software or
+  specialized utility programs. Analyze user needs and develop software
+  solutions, applying principles and techniques of computer science,
+  engineering, and mathematical analysis. Update software or enhance existing
+  software capabilities. May work with computer hardware engineers to integrate
+  hardware and software systems, and develop specifications and performance
+  requirements. May maintain databases within an application area, working
+  individually or coordinating database development as part of a team.
+$id: https://graph.org.ai/occupations/SoftwareDevelopers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SoftwareDevelopers`
+      };
+  }));
+
+# Software Developers
+
+**O*NET Code**: 15-1252.00
+
+Research, design, and develop computer and network software or specialized utility programs. Analyze user needs and develop software solutions, applying principles and techniques of computer science, engineering, and mathematical analysis. Update software or enhance existing software capabilities. May work with computer hardware engineers to integrate hardware and software systems, and develop specifications and performance requirements. May maintain databases within an application area, working individually or coordinating database development as part of a team.
+
+## Job Profile
+<JobZone occupation=SoftwareDevelopers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SoftwareDevelopers />
+
+### General Activities
+<Activities occupation=SoftwareDevelopers />
+
+## Qualifications
+### Skills
+<Skills occupation=SoftwareDevelopers />
+
+### Knowledge
+<Knowledge occupation=SoftwareDevelopers />
+
+### Abilities
+<Abilities occupation=SoftwareDevelopers />
+
+## Work Context
+<WorkContext occupation=SoftwareDevelopers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SoftwareDevelopers />
+
+### Industries
+<Industries occupation=SoftwareDevelopers />

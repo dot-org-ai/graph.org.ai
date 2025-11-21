@@ -1,0 +1,70 @@
+---
+id: RailTrackLayingAndMaintenanceEquipmentOperators
+slug: RailTrackLayingAndMaintenanceEquipmentOperators
+code:
+  code: null
+title:
+  title: null
+description: Lay, repair, and maintain track for standard or narrow-gauge
+  railroad equipment used in regular railroad service or in plant yards,
+  quarries, sand and gravel pits, and mines. Includes ballast cleaning machine
+  operators and railroad bed tamping machine operators.
+$id: https://graph.org.ai/occupations/RailTrackLayingAndMaintenanceEquipmentOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RailTrackLayingAndMaintenanceEquipmentOperators`
+      };
+  }));
+
+# Rail-Track Laying and Maintenance Equipment Operators
+
+**O*NET Code**: 47-4061.00
+
+Lay, repair, and maintain track for standard or narrow-gauge railroad equipment used in regular railroad service or in plant yards, quarries, sand and gravel pits, and mines. Includes ballast cleaning machine operators and railroad bed tamping machine operators.
+
+## Job Profile
+<JobZone occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+### General Activities
+<Activities occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+### Knowledge
+<Knowledge occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+### Abilities
+<Abilities occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+## Work Context
+<WorkContext occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RailTrackLayingAndMaintenanceEquipmentOperators />
+
+### Industries
+<Industries occupation=RailTrackLayingAndMaintenanceEquipmentOperators />

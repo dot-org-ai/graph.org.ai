@@ -1,0 +1,67 @@
+---
+id: ComputerOccupationsAllOther
+slug: ComputerOccupationsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All computer occupations not listed separately.
+$id: https://graph.org.ai/occupations/ComputerOccupationsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerOccupationsAllOther`
+      };
+  }));
+
+# Computer Occupations, All Other
+
+**O*NET Code**: 15-1299.00
+
+All computer occupations not listed separately.
+
+## Job Profile
+<JobZone occupation=ComputerOccupationsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerOccupationsAllOther />
+
+### General Activities
+<Activities occupation=ComputerOccupationsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerOccupationsAllOther />
+
+### Knowledge
+<Knowledge occupation=ComputerOccupationsAllOther />
+
+### Abilities
+<Abilities occupation=ComputerOccupationsAllOther />
+
+## Work Context
+<WorkContext occupation=ComputerOccupationsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerOccupationsAllOther />
+
+### Industries
+<Industries occupation=ComputerOccupationsAllOther />

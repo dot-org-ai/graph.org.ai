@@ -1,0 +1,70 @@
+---
+id: FirstLineSupervisorsOfRetailSalesWorkers
+slug: FirstLineSupervisorsOfRetailSalesWorkers
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate activities of retail sales
+  workers in an establishment or department. Duties may include management
+  functions, such as purchasing, budgeting, accounting, and personnel work, in
+  addition to supervisory duties.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfRetailSalesWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfRetailSalesWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Retail Sales Workers
+
+**O*NET Code**: 41-1011.00
+
+Directly supervise and coordinate activities of retail sales workers in an establishment or department. Duties may include management functions, such as purchasing, budgeting, accounting, and personnel work, in addition to supervisory duties.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfRetailSalesWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfRetailSalesWorkers />

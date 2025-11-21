@@ -1,0 +1,69 @@
+---
+id: WoodworkingMachineSettersOperatorsAndTendersExceptSawing
+slug: WoodworkingMachineSettersOperatorsAndTendersExceptSawing
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend woodworking machines, such as drill
+  presses, lathes, shapers, routers, sanders, planers, and wood nailing
+  machines. May operate computer numerically controlled (CNC) equipment.
+$id: https://graph.org.ai/occupations/WoodworkingMachineSettersOperatorsAndTendersExceptSawing
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WoodworkingMachineSettersOperatorsAndTendersExceptSawing`
+      };
+  }));
+
+# Woodworking Machine Setters, Operators, and Tenders, Except Sawing
+
+**O*NET Code**: 51-7042.00
+
+Set up, operate, or tend woodworking machines, such as drill presses, lathes, shapers, routers, sanders, planers, and wood nailing machines. May operate computer numerically controlled (CNC) equipment.
+
+## Job Profile
+<JobZone occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+### General Activities
+<Activities occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+## Qualifications
+### Skills
+<Skills occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+### Knowledge
+<Knowledge occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+### Abilities
+<Abilities occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+## Work Context
+<WorkContext occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />
+
+### Industries
+<Industries occupation=WoodworkingMachineSettersOperatorsAndTendersExceptSawing />

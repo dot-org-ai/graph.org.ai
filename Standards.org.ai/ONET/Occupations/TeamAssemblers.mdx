@@ -1,0 +1,72 @@
+---
+id: TeamAssemblers
+slug: TeamAssemblers
+code:
+  code: null
+title:
+  title: null
+description: Work as part of a team having responsibility for assembling an
+  entire product or component of a product. Team assemblers can perform all
+  tasks conducted by the team in the assembly process and rotate through all or
+  most of them, rather than being assigned to a specific task on a permanent
+  basis. May participate in making management decisions affecting the work.
+  Includes team leaders who work as part of the team.
+$id: https://graph.org.ai/occupations/TeamAssemblers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TeamAssemblers`
+      };
+  }));
+
+# Team Assemblers
+
+**O*NET Code**: 51-2092.00
+
+Work as part of a team having responsibility for assembling an entire product or component of a product. Team assemblers can perform all tasks conducted by the team in the assembly process and rotate through all or most of them, rather than being assigned to a specific task on a permanent basis. May participate in making management decisions affecting the work. Includes team leaders who work as part of the team.
+
+## Job Profile
+<JobZone occupation=TeamAssemblers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TeamAssemblers />
+
+### General Activities
+<Activities occupation=TeamAssemblers />
+
+## Qualifications
+### Skills
+<Skills occupation=TeamAssemblers />
+
+### Knowledge
+<Knowledge occupation=TeamAssemblers />
+
+### Abilities
+<Abilities occupation=TeamAssemblers />
+
+## Work Context
+<WorkContext occupation=TeamAssemblers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TeamAssemblers />
+
+### Industries
+<Industries occupation=TeamAssemblers />

@@ -1,0 +1,70 @@
+---
+id: CardiovascularTechnologistsAndTechnicians
+slug: CardiovascularTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Conduct tests on pulmonary or cardiovascular systems of patients
+  for diagnostic, therapeutic, or research purposes. May conduct or assist in
+  electrocardiograms, cardiac catheterizations, pulmonary functions, lung
+  capacity, and similar tests.
+$id: https://graph.org.ai/occupations/CardiovascularTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CardiovascularTechnologistsAndTechnicians`
+      };
+  }));
+
+# Cardiovascular Technologists and Technicians
+
+**O*NET Code**: 29-2031.00
+
+Conduct tests on pulmonary or cardiovascular systems of patients for diagnostic, therapeutic, or research purposes. May conduct or assist in electrocardiograms, cardiac catheterizations, pulmonary functions, lung capacity, and similar tests.
+
+## Job Profile
+<JobZone occupation=CardiovascularTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CardiovascularTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=CardiovascularTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=CardiovascularTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=CardiovascularTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=CardiovascularTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=CardiovascularTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CardiovascularTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=CardiovascularTechnologistsAndTechnicians />

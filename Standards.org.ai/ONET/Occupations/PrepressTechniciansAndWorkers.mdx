@@ -1,0 +1,69 @@
+---
+id: PrepressTechniciansAndWorkers
+slug: PrepressTechniciansAndWorkers
+code:
+  code: null
+title:
+  title: null
+description: Format and proof text and images submitted by designers and clients
+  into finished pages that can be printed. Includes digital and photo
+  typesetting. May produce printing plates.
+$id: https://graph.org.ai/occupations/PrepressTechniciansAndWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PrepressTechniciansAndWorkers`
+      };
+  }));
+
+# Prepress Technicians and Workers
+
+**O*NET Code**: 51-5111.00
+
+Format and proof text and images submitted by designers and clients into finished pages that can be printed. Includes digital and photo typesetting. May produce printing plates.
+
+## Job Profile
+<JobZone occupation=PrepressTechniciansAndWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PrepressTechniciansAndWorkers />
+
+### General Activities
+<Activities occupation=PrepressTechniciansAndWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=PrepressTechniciansAndWorkers />
+
+### Knowledge
+<Knowledge occupation=PrepressTechniciansAndWorkers />
+
+### Abilities
+<Abilities occupation=PrepressTechniciansAndWorkers />
+
+## Work Context
+<WorkContext occupation=PrepressTechniciansAndWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PrepressTechniciansAndWorkers />
+
+### Industries
+<Industries occupation=PrepressTechniciansAndWorkers />

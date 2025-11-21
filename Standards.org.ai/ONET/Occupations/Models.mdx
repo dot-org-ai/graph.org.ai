@@ -1,0 +1,70 @@
+---
+id: Models
+slug: Models
+code:
+  code: null
+title:
+  title: null
+description: Model garments or other apparel and accessories for prospective
+  buyers at fashion shows, private showings, or retail establishments. May pose
+  for photos to be used in magazines or advertisements. May pose as subject for
+  paintings, sculptures, and other types of artistic expression.
+$id: https://graph.org.ai/occupations/Models
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Models`
+      };
+  }));
+
+# Models
+
+**O*NET Code**: 41-9012.00
+
+Model garments or other apparel and accessories for prospective buyers at fashion shows, private showings, or retail establishments. May pose for photos to be used in magazines or advertisements. May pose as subject for paintings, sculptures, and other types of artistic expression.
+
+## Job Profile
+<JobZone occupation=Models />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Models />
+
+### General Activities
+<Activities occupation=Models />
+
+## Qualifications
+### Skills
+<Skills occupation=Models />
+
+### Knowledge
+<Knowledge occupation=Models />
+
+### Abilities
+<Abilities occupation=Models />
+
+## Work Context
+<WorkContext occupation=Models />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Models />
+
+### Industries
+<Industries occupation=Models />

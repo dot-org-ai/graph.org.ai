@@ -1,0 +1,69 @@
+---
+id: Orthodontists
+slug: Orthodontists
+code:
+  code: null
+title:
+  title: null
+description: Examine, diagnose, and treat dental malocclusions and oral cavity
+  anomalies. Design and fabricate appliances to realign teeth and jaws to
+  produce and maintain normal function and to improve appearance.
+$id: https://graph.org.ai/occupations/Orthodontists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Orthodontists`
+      };
+  }));
+
+# Orthodontists
+
+**O*NET Code**: 29-1023.00
+
+Examine, diagnose, and treat dental malocclusions and oral cavity anomalies. Design and fabricate appliances to realign teeth and jaws to produce and maintain normal function and to improve appearance.
+
+## Job Profile
+<JobZone occupation=Orthodontists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Orthodontists />
+
+### General Activities
+<Activities occupation=Orthodontists />
+
+## Qualifications
+### Skills
+<Skills occupation=Orthodontists />
+
+### Knowledge
+<Knowledge occupation=Orthodontists />
+
+### Abilities
+<Abilities occupation=Orthodontists />
+
+## Work Context
+<WorkContext occupation=Orthodontists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Orthodontists />
+
+### Industries
+<Industries occupation=Orthodontists />

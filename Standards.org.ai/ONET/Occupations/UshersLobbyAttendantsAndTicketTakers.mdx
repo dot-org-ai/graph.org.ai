@@ -1,0 +1,70 @@
+---
+id: UshersLobbyAttendantsAndTicketTakers
+slug: UshersLobbyAttendantsAndTicketTakers
+code:
+  code: null
+title:
+  title: null
+description: Assist patrons at entertainment events by performing duties, such
+  as collecting admission tickets and passes from patrons, assisting in finding
+  seats, searching for lost articles, and helping patrons locate such facilities
+  as restrooms and telephones.
+$id: https://graph.org.ai/occupations/UshersLobbyAttendantsAndTicketTakers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$UshersLobbyAttendantsAndTicketTakers`
+      };
+  }));
+
+# Ushers, Lobby Attendants, and Ticket Takers
+
+**O*NET Code**: 39-3031.00
+
+Assist patrons at entertainment events by performing duties, such as collecting admission tickets and passes from patrons, assisting in finding seats, searching for lost articles, and helping patrons locate such facilities as restrooms and telephones.
+
+## Job Profile
+<JobZone occupation=UshersLobbyAttendantsAndTicketTakers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=UshersLobbyAttendantsAndTicketTakers />
+
+### General Activities
+<Activities occupation=UshersLobbyAttendantsAndTicketTakers />
+
+## Qualifications
+### Skills
+<Skills occupation=UshersLobbyAttendantsAndTicketTakers />
+
+### Knowledge
+<Knowledge occupation=UshersLobbyAttendantsAndTicketTakers />
+
+### Abilities
+<Abilities occupation=UshersLobbyAttendantsAndTicketTakers />
+
+## Work Context
+<WorkContext occupation=UshersLobbyAttendantsAndTicketTakers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=UshersLobbyAttendantsAndTicketTakers />
+
+### Industries
+<Industries occupation=UshersLobbyAttendantsAndTicketTakers />

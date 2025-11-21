@@ -1,0 +1,68 @@
+---
+id: AnimalScientists
+slug: AnimalScientists
+code:
+  code: null
+title:
+  title: null
+description: Conduct research in the genetics, nutrition, reproduction, growth,
+  and development of domestic farm animals.
+$id: https://graph.org.ai/occupations/AnimalScientists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AnimalScientists`
+      };
+  }));
+
+# Animal Scientists
+
+**O*NET Code**: 19-1011.00
+
+Conduct research in the genetics, nutrition, reproduction, growth, and development of domestic farm animals.
+
+## Job Profile
+<JobZone occupation=AnimalScientists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AnimalScientists />
+
+### General Activities
+<Activities occupation=AnimalScientists />
+
+## Qualifications
+### Skills
+<Skills occupation=AnimalScientists />
+
+### Knowledge
+<Knowledge occupation=AnimalScientists />
+
+### Abilities
+<Abilities occupation=AnimalScientists />
+
+## Work Context
+<WorkContext occupation=AnimalScientists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AnimalScientists />
+
+### Industries
+<Industries occupation=AnimalScientists />

@@ -1,0 +1,70 @@
+---
+id: HighwayMaintenanceWorkers
+slug: HighwayMaintenanceWorkers
+code:
+  code: null
+title:
+  title: null
+description: Maintain highways, municipal and rural roads, airport runways, and
+  rights-of-way. Duties include patching broken or eroded pavement and repairing
+  guard rails, highway markers, and snow fences. May also mow or clear brush
+  from along road, or plow snow from roadway.
+$id: https://graph.org.ai/occupations/HighwayMaintenanceWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HighwayMaintenanceWorkers`
+      };
+  }));
+
+# Highway Maintenance Workers
+
+**O*NET Code**: 47-4051.00
+
+Maintain highways, municipal and rural roads, airport runways, and rights-of-way. Duties include patching broken or eroded pavement and repairing guard rails, highway markers, and snow fences. May also mow or clear brush from along road, or plow snow from roadway.
+
+## Job Profile
+<JobZone occupation=HighwayMaintenanceWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HighwayMaintenanceWorkers />
+
+### General Activities
+<Activities occupation=HighwayMaintenanceWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=HighwayMaintenanceWorkers />
+
+### Knowledge
+<Knowledge occupation=HighwayMaintenanceWorkers />
+
+### Abilities
+<Abilities occupation=HighwayMaintenanceWorkers />
+
+## Work Context
+<WorkContext occupation=HighwayMaintenanceWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HighwayMaintenanceWorkers />
+
+### Industries
+<Industries occupation=HighwayMaintenanceWorkers />

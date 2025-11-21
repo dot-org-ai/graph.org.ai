@@ -1,0 +1,72 @@
+---
+id: InsuranceClaimsAndPolicyProcessingClerks
+slug: InsuranceClaimsAndPolicyProcessingClerks
+code:
+  code: null
+title:
+  title: null
+description: Process new insurance policies, modifications to existing policies,
+  and claims forms. Obtain information from policyholders to verify the accuracy
+  and completeness of information on claims forms, applications and related
+  documents, and company records. Update existing policies and company records
+  to reflect changes requested by policyholders and insurance company
+  representatives.
+$id: https://graph.org.ai/occupations/InsuranceClaimsAndPolicyProcessingClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InsuranceClaimsAndPolicyProcessingClerks`
+      };
+  }));
+
+# Insurance Claims and Policy Processing Clerks
+
+**O*NET Code**: 43-9041.00
+
+Process new insurance policies, modifications to existing policies, and claims forms. Obtain information from policyholders to verify the accuracy and completeness of information on claims forms, applications and related documents, and company records. Update existing policies and company records to reflect changes requested by policyholders and insurance company representatives.
+
+## Job Profile
+<JobZone occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+### General Activities
+<Activities occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+### Knowledge
+<Knowledge occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+### Abilities
+<Abilities occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+## Work Context
+<WorkContext occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InsuranceClaimsAndPolicyProcessingClerks />
+
+### Industries
+<Industries occupation=InsuranceClaimsAndPolicyProcessingClerks />

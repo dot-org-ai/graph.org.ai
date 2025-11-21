@@ -1,0 +1,71 @@
+---
+id: AerospaceEngineeringAndOperationsTechnologistsAndTechnicians
+slug: AerospaceEngineeringAndOperationsTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Operate, install, adjust, and maintain integrated
+  computer/communications systems, consoles, simulators, and other data
+  acquisition, test, and measurement instruments and equipment, which are used
+  to launch, track, position, and evaluate air and space vehicles. May record
+  and interpret test data.
+$id: https://graph.org.ai/occupations/AerospaceEngineeringAndOperationsTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AerospaceEngineeringAndOperationsTechnologistsAndTechnicians`
+      };
+  }));
+
+# Aerospace Engineering and Operations Technologists and Technicians
+
+**O*NET Code**: 17-3021.00
+
+Operate, install, adjust, and maintain integrated computer/communications systems, consoles, simulators, and other data acquisition, test, and measurement instruments and equipment, which are used to launch, track, position, and evaluate air and space vehicles. May record and interpret test data.
+
+## Job Profile
+<JobZone occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=AerospaceEngineeringAndOperationsTechnologistsAndTechnicians />

@@ -1,0 +1,71 @@
+---
+id: AgriculturalEquipmentOperators
+slug: AgriculturalEquipmentOperators
+code:
+  code: null
+title:
+  title: null
+description: Drive and control equipment to support agricultural activities such
+  as tilling soil; planting, cultivating, and harvesting crops; feeding and
+  herding livestock; or removing animal waste. May perform tasks such as crop
+  baling or hay bucking. May operate stationary equipment to perform
+  post-harvest tasks such as husking, shelling, threshing, and ginning.
+$id: https://graph.org.ai/occupations/AgriculturalEquipmentOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AgriculturalEquipmentOperators`
+      };
+  }));
+
+# Agricultural Equipment Operators
+
+**O*NET Code**: 45-2091.00
+
+Drive and control equipment to support agricultural activities such as tilling soil; planting, cultivating, and harvesting crops; feeding and herding livestock; or removing animal waste. May perform tasks such as crop baling or hay bucking. May operate stationary equipment to perform post-harvest tasks such as husking, shelling, threshing, and ginning.
+
+## Job Profile
+<JobZone occupation=AgriculturalEquipmentOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AgriculturalEquipmentOperators />
+
+### General Activities
+<Activities occupation=AgriculturalEquipmentOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=AgriculturalEquipmentOperators />
+
+### Knowledge
+<Knowledge occupation=AgriculturalEquipmentOperators />
+
+### Abilities
+<Abilities occupation=AgriculturalEquipmentOperators />
+
+## Work Context
+<WorkContext occupation=AgriculturalEquipmentOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AgriculturalEquipmentOperators />
+
+### Industries
+<Industries occupation=AgriculturalEquipmentOperators />

@@ -1,0 +1,70 @@
+---
+id: GamblingDealers
+slug: GamblingDealers
+code:
+  code: null
+title:
+  title: null
+description: Operate table games. Stand or sit behind table and operate games of
+  chance by dispensing the appropriate number of cards or blocks to players, or
+  operating other gambling equipment. Distribute winnings or collect players'
+  money or chips. May compare the house's hand against players' hands.
+$id: https://graph.org.ai/occupations/GamblingDealers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GamblingDealers`
+      };
+  }));
+
+# Gambling Dealers
+
+**O*NET Code**: 39-3011.00
+
+Operate table games. Stand or sit behind table and operate games of chance by dispensing the appropriate number of cards or blocks to players, or operating other gambling equipment. Distribute winnings or collect players' money or chips. May compare the house's hand against players' hands.
+
+## Job Profile
+<JobZone occupation=GamblingDealers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GamblingDealers />
+
+### General Activities
+<Activities occupation=GamblingDealers />
+
+## Qualifications
+### Skills
+<Skills occupation=GamblingDealers />
+
+### Knowledge
+<Knowledge occupation=GamblingDealers />
+
+### Abilities
+<Abilities occupation=GamblingDealers />
+
+## Work Context
+<WorkContext occupation=GamblingDealers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GamblingDealers />
+
+### Industries
+<Industries occupation=GamblingDealers />

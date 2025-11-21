@@ -1,0 +1,70 @@
+---
+id: FinancialQuantitativeAnalysts
+slug: FinancialQuantitativeAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Develop quantitative techniques to inform securities investing,
+  equities investing, pricing, or valuation of financial instruments. Develop
+  mathematical or statistical models for risk management, asset optimization,
+  pricing, or relative value analysis.
+$id: https://graph.org.ai/occupations/FinancialQuantitativeAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FinancialQuantitativeAnalysts`
+      };
+  }));
+
+# Financial Quantitative Analysts
+
+**O*NET Code**: 13-2099.01
+
+Develop quantitative techniques to inform securities investing, equities investing, pricing, or valuation of financial instruments. Develop mathematical or statistical models for risk management, asset optimization, pricing, or relative value analysis.
+
+## Job Profile
+<JobZone occupation=FinancialQuantitativeAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FinancialQuantitativeAnalysts />
+
+### General Activities
+<Activities occupation=FinancialQuantitativeAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=FinancialQuantitativeAnalysts />
+
+### Knowledge
+<Knowledge occupation=FinancialQuantitativeAnalysts />
+
+### Abilities
+<Abilities occupation=FinancialQuantitativeAnalysts />
+
+## Work Context
+<WorkContext occupation=FinancialQuantitativeAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FinancialQuantitativeAnalysts />
+
+### Industries
+<Industries occupation=FinancialQuantitativeAnalysts />

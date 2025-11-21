@@ -1,0 +1,70 @@
+---
+id: Orderlies
+slug: Orderlies
+code:
+  code: null
+title:
+  title: null
+description: Transport patients to areas such as operating rooms or x-ray rooms
+  using wheelchairs, stretchers, or moveable beds. May maintain stocks of
+  supplies or clean and transport equipment. Psychiatric orderlies are included
+  in Psychiatric Aides.
+$id: https://graph.org.ai/occupations/Orderlies
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Orderlies`
+      };
+  }));
+
+# Orderlies
+
+**O*NET Code**: 31-1132.00
+
+Transport patients to areas such as operating rooms or x-ray rooms using wheelchairs, stretchers, or moveable beds. May maintain stocks of supplies or clean and transport equipment. Psychiatric orderlies are included in Psychiatric Aides.
+
+## Job Profile
+<JobZone occupation=Orderlies />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Orderlies />
+
+### General Activities
+<Activities occupation=Orderlies />
+
+## Qualifications
+### Skills
+<Skills occupation=Orderlies />
+
+### Knowledge
+<Knowledge occupation=Orderlies />
+
+### Abilities
+<Abilities occupation=Orderlies />
+
+## Work Context
+<WorkContext occupation=Orderlies />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Orderlies />
+
+### Industries
+<Industries occupation=Orderlies />

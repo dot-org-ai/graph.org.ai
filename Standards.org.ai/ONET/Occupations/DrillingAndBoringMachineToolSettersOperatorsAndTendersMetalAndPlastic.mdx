@@ -1,0 +1,68 @@
+---
+id: DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic
+slug: DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend drilling machines to drill, bore, ream,
+  mill, or countersink metal or plastic work pieces.
+$id: https://graph.org.ai/occupations/DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic`
+      };
+  }));
+
+# Drilling and Boring Machine Tool Setters, Operators, and Tenders, Metal and Plastic
+
+**O*NET Code**: 51-4032.00
+
+Set up, operate, or tend drilling machines to drill, bore, ream, mill, or countersink metal or plastic work pieces.
+
+## Job Profile
+<JobZone occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### General Activities
+<Activities occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### Industries
+<Industries occupation=DrillingAndBoringMachineToolSettersOperatorsAndTendersMetalAndPlastic />

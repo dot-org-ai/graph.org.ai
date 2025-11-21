@@ -1,0 +1,72 @@
+---
+id: ClinicalNeuropsychologists
+slug: ClinicalNeuropsychologists
+code:
+  code: null
+title:
+  title: null
+description: Assess and diagnose patients with neurobehavioral problems related
+  to acquired or developmental disorders of the nervous system, such as
+  neurodegenerative disorders, traumatic brain injury, seizure disorders, and
+  learning disabilities. Recommend treatment after diagnosis, such as therapy,
+  medication, or surgery. Assist with evaluation before and after neurosurgical
+  procedures, such as deep brain stimulation.
+$id: https://graph.org.ai/occupations/ClinicalNeuropsychologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ClinicalNeuropsychologists`
+      };
+  }));
+
+# Clinical Neuropsychologists
+
+**O*NET Code**: 19-3039.03
+
+Assess and diagnose patients with neurobehavioral problems related to acquired or developmental disorders of the nervous system, such as neurodegenerative disorders, traumatic brain injury, seizure disorders, and learning disabilities. Recommend treatment after diagnosis, such as therapy, medication, or surgery. Assist with evaluation before and after neurosurgical procedures, such as deep brain stimulation.
+
+## Job Profile
+<JobZone occupation=ClinicalNeuropsychologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ClinicalNeuropsychologists />
+
+### General Activities
+<Activities occupation=ClinicalNeuropsychologists />
+
+## Qualifications
+### Skills
+<Skills occupation=ClinicalNeuropsychologists />
+
+### Knowledge
+<Knowledge occupation=ClinicalNeuropsychologists />
+
+### Abilities
+<Abilities occupation=ClinicalNeuropsychologists />
+
+## Work Context
+<WorkContext occupation=ClinicalNeuropsychologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ClinicalNeuropsychologists />
+
+### Industries
+<Industries occupation=ClinicalNeuropsychologists />

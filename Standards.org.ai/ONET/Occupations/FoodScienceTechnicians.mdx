@@ -1,0 +1,71 @@
+---
+id: FoodScienceTechnicians
+slug: FoodScienceTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Work with food scientists or technologists to perform standardized
+  qualitative and quantitative tests to determine physical or chemical
+  properties of food or beverage products. Includes technicians who assist in
+  research and development of production technology, quality control, packaging,
+  processing, and use of foods.
+$id: https://graph.org.ai/occupations/FoodScienceTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FoodScienceTechnicians`
+      };
+  }));
+
+# Food Science Technicians
+
+**O*NET Code**: 19-4013.00
+
+Work with food scientists or technologists to perform standardized qualitative and quantitative tests to determine physical or chemical properties of food or beverage products. Includes technicians who assist in research and development of production technology, quality control, packaging, processing, and use of foods.
+
+## Job Profile
+<JobZone occupation=FoodScienceTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FoodScienceTechnicians />
+
+### General Activities
+<Activities occupation=FoodScienceTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=FoodScienceTechnicians />
+
+### Knowledge
+<Knowledge occupation=FoodScienceTechnicians />
+
+### Abilities
+<Abilities occupation=FoodScienceTechnicians />
+
+## Work Context
+<WorkContext occupation=FoodScienceTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FoodScienceTechnicians />
+
+### Industries
+<Industries occupation=FoodScienceTechnicians />

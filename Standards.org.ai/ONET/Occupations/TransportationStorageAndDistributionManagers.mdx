@@ -1,0 +1,69 @@
+---
+id: TransportationStorageAndDistributionManagers
+slug: TransportationStorageAndDistributionManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate transportation, storage, or
+  distribution activities in accordance with organizational policies and
+  applicable government laws or regulations. Includes logistics managers.
+$id: https://graph.org.ai/occupations/TransportationStorageAndDistributionManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TransportationStorageAndDistributionManagers`
+      };
+  }));
+
+# Transportation, Storage, and Distribution Managers
+
+**O*NET Code**: 11-3071.00
+
+Plan, direct, or coordinate transportation, storage, or distribution activities in accordance with organizational policies and applicable government laws or regulations. Includes logistics managers.
+
+## Job Profile
+<JobZone occupation=TransportationStorageAndDistributionManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TransportationStorageAndDistributionManagers />
+
+### General Activities
+<Activities occupation=TransportationStorageAndDistributionManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=TransportationStorageAndDistributionManagers />
+
+### Knowledge
+<Knowledge occupation=TransportationStorageAndDistributionManagers />
+
+### Abilities
+<Abilities occupation=TransportationStorageAndDistributionManagers />
+
+## Work Context
+<WorkContext occupation=TransportationStorageAndDistributionManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TransportationStorageAndDistributionManagers />
+
+### Industries
+<Industries occupation=TransportationStorageAndDistributionManagers />

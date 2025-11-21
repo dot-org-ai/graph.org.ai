@@ -1,0 +1,68 @@
+---
+id: PowerPlantOperators
+slug: PowerPlantOperators
+code:
+  code: null
+title:
+  title: null
+description: Control, operate, or maintain machinery to generate electric power.
+  Includes auxiliary equipment operators.
+$id: https://graph.org.ai/occupations/PowerPlantOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PowerPlantOperators`
+      };
+  }));
+
+# Power Plant Operators
+
+**O*NET Code**: 51-8013.00
+
+Control, operate, or maintain machinery to generate electric power. Includes auxiliary equipment operators.
+
+## Job Profile
+<JobZone occupation=PowerPlantOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PowerPlantOperators />
+
+### General Activities
+<Activities occupation=PowerPlantOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=PowerPlantOperators />
+
+### Knowledge
+<Knowledge occupation=PowerPlantOperators />
+
+### Abilities
+<Abilities occupation=PowerPlantOperators />
+
+## Work Context
+<WorkContext occupation=PowerPlantOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PowerPlantOperators />
+
+### Industries
+<Industries occupation=PowerPlantOperators />

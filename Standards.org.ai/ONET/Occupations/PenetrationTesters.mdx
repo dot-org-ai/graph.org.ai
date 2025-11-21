@@ -1,0 +1,70 @@
+---
+id: PenetrationTesters
+slug: PenetrationTesters
+code:
+  code: null
+title:
+  title: null
+description: Evaluate network system security by conducting simulated internal
+  and external cyberattacks using adversary tools and techniques. Attempt to
+  breach and exploit critical systems and gain access to sensitive information
+  to assess system security.
+$id: https://graph.org.ai/occupations/PenetrationTesters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PenetrationTesters`
+      };
+  }));
+
+# Penetration Testers
+
+**O*NET Code**: 15-1299.04
+
+Evaluate network system security by conducting simulated internal and external cyberattacks using adversary tools and techniques. Attempt to breach and exploit critical systems and gain access to sensitive information to assess system security.
+
+## Job Profile
+<JobZone occupation=PenetrationTesters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PenetrationTesters />
+
+### General Activities
+<Activities occupation=PenetrationTesters />
+
+## Qualifications
+### Skills
+<Skills occupation=PenetrationTesters />
+
+### Knowledge
+<Knowledge occupation=PenetrationTesters />
+
+### Abilities
+<Abilities occupation=PenetrationTesters />
+
+## Work Context
+<WorkContext occupation=PenetrationTesters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PenetrationTesters />
+
+### Industries
+<Industries occupation=PenetrationTesters />

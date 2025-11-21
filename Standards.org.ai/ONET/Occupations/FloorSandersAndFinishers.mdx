@@ -1,0 +1,68 @@
+---
+id: FloorSandersAndFinishers
+slug: FloorSandersAndFinishers
+code:
+  code: null
+title:
+  title: null
+description: Scrape and sand wooden floors to smooth surfaces using floor
+  scraper and floor sanding machine, and apply coats of finish.
+$id: https://graph.org.ai/occupations/FloorSandersAndFinishers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FloorSandersAndFinishers`
+      };
+  }));
+
+# Floor Sanders and Finishers
+
+**O*NET Code**: 47-2043.00
+
+Scrape and sand wooden floors to smooth surfaces using floor scraper and floor sanding machine, and apply coats of finish.
+
+## Job Profile
+<JobZone occupation=FloorSandersAndFinishers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FloorSandersAndFinishers />
+
+### General Activities
+<Activities occupation=FloorSandersAndFinishers />
+
+## Qualifications
+### Skills
+<Skills occupation=FloorSandersAndFinishers />
+
+### Knowledge
+<Knowledge occupation=FloorSandersAndFinishers />
+
+### Abilities
+<Abilities occupation=FloorSandersAndFinishers />
+
+## Work Context
+<WorkContext occupation=FloorSandersAndFinishers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FloorSandersAndFinishers />
+
+### Industries
+<Industries occupation=FloorSandersAndFinishers />

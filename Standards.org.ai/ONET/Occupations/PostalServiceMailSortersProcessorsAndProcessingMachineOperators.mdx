@@ -1,0 +1,72 @@
+---
+id: PostalServiceMailSortersProcessorsAndProcessingMachineOperators
+slug: PostalServiceMailSortersProcessorsAndProcessingMachineOperators
+code:
+  code: null
+title:
+  title: null
+description: Prepare incoming and outgoing mail for distribution for the United
+  States Postal Service (USPS). Examine, sort, and route mail. Load, operate,
+  and occasionally adjust and repair mail processing, sorting, and canceling
+  machinery. Keep records of shipments, pouches, and sacks, and perform other
+  duties related to mail handling within the postal service. Includes postal
+  service mail sorters and processors employed by USPS contractors.
+$id: https://graph.org.ai/occupations/PostalServiceMailSortersProcessorsAndProcessingMachineOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PostalServiceMailSortersProcessorsAndProcessingMachineOperators`
+      };
+  }));
+
+# Postal Service Mail Sorters, Processors, and Processing Machine Operators
+
+**O*NET Code**: 43-5053.00
+
+Prepare incoming and outgoing mail for distribution for the United States Postal Service (USPS). Examine, sort, and route mail. Load, operate, and occasionally adjust and repair mail processing, sorting, and canceling machinery. Keep records of shipments, pouches, and sacks, and perform other duties related to mail handling within the postal service. Includes postal service mail sorters and processors employed by USPS contractors.
+
+## Job Profile
+<JobZone occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+### General Activities
+<Activities occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+### Knowledge
+<Knowledge occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+### Abilities
+<Abilities occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+## Work Context
+<WorkContext occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />
+
+### Industries
+<Industries occupation=PostalServiceMailSortersProcessorsAndProcessingMachineOperators />

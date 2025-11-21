@@ -1,0 +1,70 @@
+---
+id: EnvironmentalEconomists
+slug: EnvironmentalEconomists
+code:
+  code: null
+title:
+  title: null
+description: Conduct economic analysis related to environmental protection and
+  use of the natural environment, such as water, air, land, and renewable energy
+  resources. Evaluate and quantify benefits, costs, incentives, and impacts of
+  alternative options using economic principles and statistical techniques.
+$id: https://graph.org.ai/occupations/EnvironmentalEconomists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnvironmentalEconomists`
+      };
+  }));
+
+# Environmental Economists
+
+**O*NET Code**: 19-3011.01
+
+Conduct economic analysis related to environmental protection and use of the natural environment, such as water, air, land, and renewable energy resources. Evaluate and quantify benefits, costs, incentives, and impacts of alternative options using economic principles and statistical techniques.
+
+## Job Profile
+<JobZone occupation=EnvironmentalEconomists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnvironmentalEconomists />
+
+### General Activities
+<Activities occupation=EnvironmentalEconomists />
+
+## Qualifications
+### Skills
+<Skills occupation=EnvironmentalEconomists />
+
+### Knowledge
+<Knowledge occupation=EnvironmentalEconomists />
+
+### Abilities
+<Abilities occupation=EnvironmentalEconomists />
+
+## Work Context
+<WorkContext occupation=EnvironmentalEconomists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnvironmentalEconomists />
+
+### Industries
+<Industries occupation=EnvironmentalEconomists />

@@ -1,0 +1,67 @@
+---
+id: MediaAndCommunicationWorkersAllOther
+slug: MediaAndCommunicationWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All media and communication workers not listed separately.
+$id: https://graph.org.ai/occupations/MediaAndCommunicationWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MediaAndCommunicationWorkersAllOther`
+      };
+  }));
+
+# Media and Communication Workers, All Other
+
+**O*NET Code**: 27-3099.00
+
+All media and communication workers not listed separately.
+
+## Job Profile
+<JobZone occupation=MediaAndCommunicationWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MediaAndCommunicationWorkersAllOther />
+
+### General Activities
+<Activities occupation=MediaAndCommunicationWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=MediaAndCommunicationWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=MediaAndCommunicationWorkersAllOther />
+
+### Abilities
+<Abilities occupation=MediaAndCommunicationWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=MediaAndCommunicationWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MediaAndCommunicationWorkersAllOther />
+
+### Industries
+<Industries occupation=MediaAndCommunicationWorkersAllOther />

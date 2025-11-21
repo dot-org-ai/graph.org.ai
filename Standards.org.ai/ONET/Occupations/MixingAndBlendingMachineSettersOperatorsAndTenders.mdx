@@ -1,0 +1,68 @@
+---
+id: MixingAndBlendingMachineSettersOperatorsAndTenders
+slug: MixingAndBlendingMachineSettersOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend machines to mix or blend materials, such
+  as chemicals, tobacco, liquids, color pigments, or explosive ingredients.
+$id: https://graph.org.ai/occupations/MixingAndBlendingMachineSettersOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MixingAndBlendingMachineSettersOperatorsAndTenders`
+      };
+  }));
+
+# Mixing and Blending Machine Setters, Operators, and Tenders
+
+**O*NET Code**: 51-9023.00
+
+Set up, operate, or tend machines to mix or blend materials, such as chemicals, tobacco, liquids, color pigments, or explosive ingredients.
+
+## Job Profile
+<JobZone occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />
+
+### Industries
+<Industries occupation=MixingAndBlendingMachineSettersOperatorsAndTenders />

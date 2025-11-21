@@ -1,0 +1,67 @@
+---
+id: RoofBoltersMining
+slug: RoofBoltersMining
+code:
+  code: null
+title:
+  title: null
+description: Operate machinery to install roof support bolts in underground mine.
+$id: https://graph.org.ai/occupations/RoofBoltersMining
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RoofBoltersMining`
+      };
+  }));
+
+# Roof Bolters, Mining
+
+**O*NET Code**: 47-5043.00
+
+Operate machinery to install roof support bolts in underground mine.
+
+## Job Profile
+<JobZone occupation=RoofBoltersMining />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RoofBoltersMining />
+
+### General Activities
+<Activities occupation=RoofBoltersMining />
+
+## Qualifications
+### Skills
+<Skills occupation=RoofBoltersMining />
+
+### Knowledge
+<Knowledge occupation=RoofBoltersMining />
+
+### Abilities
+<Abilities occupation=RoofBoltersMining />
+
+## Work Context
+<WorkContext occupation=RoofBoltersMining />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RoofBoltersMining />
+
+### Industries
+<Industries occupation=RoofBoltersMining />

@@ -1,0 +1,70 @@
+---
+id: InterviewersExceptEligibilityAndLoan
+slug: InterviewersExceptEligibilityAndLoan
+code:
+  code: null
+title:
+  title: null
+description: Interview persons by telephone, mail, in person, or by other means
+  for the purpose of completing forms, applications, or questionnaires. Ask
+  specific questions, record answers, and assist persons with completing form.
+  May sort, classify, and file forms.
+$id: https://graph.org.ai/occupations/InterviewersExceptEligibilityAndLoan
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InterviewersExceptEligibilityAndLoan`
+      };
+  }));
+
+# Interviewers, Except Eligibility and Loan
+
+**O*NET Code**: 43-4111.00
+
+Interview persons by telephone, mail, in person, or by other means for the purpose of completing forms, applications, or questionnaires. Ask specific questions, record answers, and assist persons with completing form. May sort, classify, and file forms.
+
+## Job Profile
+<JobZone occupation=InterviewersExceptEligibilityAndLoan />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InterviewersExceptEligibilityAndLoan />
+
+### General Activities
+<Activities occupation=InterviewersExceptEligibilityAndLoan />
+
+## Qualifications
+### Skills
+<Skills occupation=InterviewersExceptEligibilityAndLoan />
+
+### Knowledge
+<Knowledge occupation=InterviewersExceptEligibilityAndLoan />
+
+### Abilities
+<Abilities occupation=InterviewersExceptEligibilityAndLoan />
+
+## Work Context
+<WorkContext occupation=InterviewersExceptEligibilityAndLoan />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InterviewersExceptEligibilityAndLoan />
+
+### Industries
+<Industries occupation=InterviewersExceptEligibilityAndLoan />

@@ -1,0 +1,71 @@
+---
+id: BioengineersAndBiomedicalEngineers
+slug: BioengineersAndBiomedicalEngineers
+code:
+  code: null
+title:
+  title: null
+description: Apply knowledge of engineering, biology, chemistry, computer
+  science, and biomechanical principles to the design, development, and
+  evaluation of biological, agricultural, and health systems and products, such
+  as artificial organs, prostheses, instrumentation, medical information
+  systems, and health management and care delivery systems.
+$id: https://graph.org.ai/occupations/BioengineersAndBiomedicalEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BioengineersAndBiomedicalEngineers`
+      };
+  }));
+
+# Bioengineers and Biomedical Engineers
+
+**O*NET Code**: 17-2031.00
+
+Apply knowledge of engineering, biology, chemistry, computer science, and biomechanical principles to the design, development, and evaluation of biological, agricultural, and health systems and products, such as artificial organs, prostheses, instrumentation, medical information systems, and health management and care delivery systems.
+
+## Job Profile
+<JobZone occupation=BioengineersAndBiomedicalEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BioengineersAndBiomedicalEngineers />
+
+### General Activities
+<Activities occupation=BioengineersAndBiomedicalEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=BioengineersAndBiomedicalEngineers />
+
+### Knowledge
+<Knowledge occupation=BioengineersAndBiomedicalEngineers />
+
+### Abilities
+<Abilities occupation=BioengineersAndBiomedicalEngineers />
+
+## Work Context
+<WorkContext occupation=BioengineersAndBiomedicalEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BioengineersAndBiomedicalEngineers />
+
+### Industries
+<Industries occupation=BioengineersAndBiomedicalEngineers />

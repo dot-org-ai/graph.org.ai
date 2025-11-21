@@ -1,0 +1,69 @@
+---
+id: MusicDirectorsAndComposers
+slug: MusicDirectorsAndComposers
+code:
+  code: null
+title:
+  title: null
+description: Conduct, direct, plan, and lead instrumental or vocal performances
+  by musical artists or groups, such as orchestras, bands, choirs, and glee
+  clubs; or create original works of music.
+$id: https://graph.org.ai/occupations/MusicDirectorsAndComposers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MusicDirectorsAndComposers`
+      };
+  }));
+
+# Music Directors and Composers
+
+**O*NET Code**: 27-2041.00
+
+Conduct, direct, plan, and lead instrumental or vocal performances by musical artists or groups, such as orchestras, bands, choirs, and glee clubs; or create original works of music.
+
+## Job Profile
+<JobZone occupation=MusicDirectorsAndComposers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MusicDirectorsAndComposers />
+
+### General Activities
+<Activities occupation=MusicDirectorsAndComposers />
+
+## Qualifications
+### Skills
+<Skills occupation=MusicDirectorsAndComposers />
+
+### Knowledge
+<Knowledge occupation=MusicDirectorsAndComposers />
+
+### Abilities
+<Abilities occupation=MusicDirectorsAndComposers />
+
+## Work Context
+<WorkContext occupation=MusicDirectorsAndComposers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MusicDirectorsAndComposers />
+
+### Industries
+<Industries occupation=MusicDirectorsAndComposers />

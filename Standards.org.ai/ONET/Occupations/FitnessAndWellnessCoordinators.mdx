@@ -1,0 +1,69 @@
+---
+id: FitnessAndWellnessCoordinators
+slug: FitnessAndWellnessCoordinators
+code:
+  code: null
+title:
+  title: null
+description: Manage or coordinate fitness and wellness programs and services.
+  Manage and train staff of wellness specialists, health educators, or fitness
+  instructors.
+$id: https://graph.org.ai/occupations/FitnessAndWellnessCoordinators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FitnessAndWellnessCoordinators`
+      };
+  }));
+
+# Fitness and Wellness Coordinators
+
+**O*NET Code**: 11-9179.01
+
+Manage or coordinate fitness and wellness programs and services. Manage and train staff of wellness specialists, health educators, or fitness instructors.
+
+## Job Profile
+<JobZone occupation=FitnessAndWellnessCoordinators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FitnessAndWellnessCoordinators />
+
+### General Activities
+<Activities occupation=FitnessAndWellnessCoordinators />
+
+## Qualifications
+### Skills
+<Skills occupation=FitnessAndWellnessCoordinators />
+
+### Knowledge
+<Knowledge occupation=FitnessAndWellnessCoordinators />
+
+### Abilities
+<Abilities occupation=FitnessAndWellnessCoordinators />
+
+## Work Context
+<WorkContext occupation=FitnessAndWellnessCoordinators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FitnessAndWellnessCoordinators />
+
+### Industries
+<Industries occupation=FitnessAndWellnessCoordinators />

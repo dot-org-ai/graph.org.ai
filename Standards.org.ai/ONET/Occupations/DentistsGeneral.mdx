@@ -1,0 +1,70 @@
+---
+id: DentistsGeneral
+slug: DentistsGeneral
+code:
+  code: null
+title:
+  title: null
+description: Examine, diagnose, and treat diseases, injuries, and malformations
+  of teeth and gums. May treat diseases of nerve, pulp, and other dental tissues
+  affecting oral hygiene and retention of teeth. May fit dental appliances or
+  provide preventive care.
+$id: https://graph.org.ai/occupations/DentistsGeneral
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DentistsGeneral`
+      };
+  }));
+
+# Dentists, General
+
+**O*NET Code**: 29-1021.00
+
+Examine, diagnose, and treat diseases, injuries, and malformations of teeth and gums. May treat diseases of nerve, pulp, and other dental tissues affecting oral hygiene and retention of teeth. May fit dental appliances or provide preventive care.
+
+## Job Profile
+<JobZone occupation=DentistsGeneral />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DentistsGeneral />
+
+### General Activities
+<Activities occupation=DentistsGeneral />
+
+## Qualifications
+### Skills
+<Skills occupation=DentistsGeneral />
+
+### Knowledge
+<Knowledge occupation=DentistsGeneral />
+
+### Abilities
+<Abilities occupation=DentistsGeneral />
+
+## Work Context
+<WorkContext occupation=DentistsGeneral />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DentistsGeneral />
+
+### Industries
+<Industries occupation=DentistsGeneral />

@@ -1,0 +1,69 @@
+---
+id: ToolAndDieMakers
+slug: ToolAndDieMakers
+code:
+  code: null
+title:
+  title: null
+description: Analyze specifications, lay out metal stock, set up and operate
+  machine tools, and fit and assemble parts to make and repair dies, cutting
+  tools, jigs, fixtures, gauges, and machinists' hand tools.
+$id: https://graph.org.ai/occupations/ToolAndDieMakers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ToolAndDieMakers`
+      };
+  }));
+
+# Tool and Die Makers
+
+**O*NET Code**: 51-4111.00
+
+Analyze specifications, lay out metal stock, set up and operate machine tools, and fit and assemble parts to make and repair dies, cutting tools, jigs, fixtures, gauges, and machinists' hand tools.
+
+## Job Profile
+<JobZone occupation=ToolAndDieMakers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ToolAndDieMakers />
+
+### General Activities
+<Activities occupation=ToolAndDieMakers />
+
+## Qualifications
+### Skills
+<Skills occupation=ToolAndDieMakers />
+
+### Knowledge
+<Knowledge occupation=ToolAndDieMakers />
+
+### Abilities
+<Abilities occupation=ToolAndDieMakers />
+
+## Work Context
+<WorkContext occupation=ToolAndDieMakers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ToolAndDieMakers />
+
+### Industries
+<Industries occupation=ToolAndDieMakers />

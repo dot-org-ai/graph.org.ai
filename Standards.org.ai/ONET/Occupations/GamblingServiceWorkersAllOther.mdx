@@ -1,0 +1,67 @@
+---
+id: GamblingServiceWorkersAllOther
+slug: GamblingServiceWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All gambling service workers not listed separately.
+$id: https://graph.org.ai/occupations/GamblingServiceWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GamblingServiceWorkersAllOther`
+      };
+  }));
+
+# Gambling Service Workers, All Other
+
+**O*NET Code**: 39-3019.00
+
+All gambling service workers not listed separately.
+
+## Job Profile
+<JobZone occupation=GamblingServiceWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GamblingServiceWorkersAllOther />
+
+### General Activities
+<Activities occupation=GamblingServiceWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=GamblingServiceWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=GamblingServiceWorkersAllOther />
+
+### Abilities
+<Abilities occupation=GamblingServiceWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=GamblingServiceWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GamblingServiceWorkersAllOther />
+
+### Industries
+<Industries occupation=GamblingServiceWorkersAllOther />

@@ -1,0 +1,67 @@
+---
+id: LifeScientistsAllOther
+slug: LifeScientistsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All life scientists not listed separately.
+$id: https://graph.org.ai/occupations/LifeScientistsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LifeScientistsAllOther`
+      };
+  }));
+
+# Life Scientists, All Other
+
+**O*NET Code**: 19-1099.00
+
+All life scientists not listed separately.
+
+## Job Profile
+<JobZone occupation=LifeScientistsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LifeScientistsAllOther />
+
+### General Activities
+<Activities occupation=LifeScientistsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=LifeScientistsAllOther />
+
+### Knowledge
+<Knowledge occupation=LifeScientistsAllOther />
+
+### Abilities
+<Abilities occupation=LifeScientistsAllOther />
+
+## Work Context
+<WorkContext occupation=LifeScientistsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LifeScientistsAllOther />
+
+### Industries
+<Industries occupation=LifeScientistsAllOther />

@@ -1,0 +1,71 @@
+---
+id: TransportationEngineers
+slug: TransportationEngineers
+code:
+  code: null
+title:
+  title: null
+description: Develop plans for surface transportation projects, according to
+  established engineering standards and state or federal construction policy.
+  Prepare designs, specifications, or estimates for transportation facilities.
+  Plan modifications of existing streets, highways, or freeways to improve
+  traffic flow.
+$id: https://graph.org.ai/occupations/TransportationEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TransportationEngineers`
+      };
+  }));
+
+# Transportation Engineers
+
+**O*NET Code**: 17-2051.01
+
+Develop plans for surface transportation projects, according to established engineering standards and state or federal construction policy. Prepare designs, specifications, or estimates for transportation facilities. Plan modifications of existing streets, highways, or freeways to improve traffic flow.
+
+## Job Profile
+<JobZone occupation=TransportationEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TransportationEngineers />
+
+### General Activities
+<Activities occupation=TransportationEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=TransportationEngineers />
+
+### Knowledge
+<Knowledge occupation=TransportationEngineers />
+
+### Abilities
+<Abilities occupation=TransportationEngineers />
+
+## Work Context
+<WorkContext occupation=TransportationEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TransportationEngineers />
+
+### Industries
+<Industries occupation=TransportationEngineers />

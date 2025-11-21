@@ -1,0 +1,68 @@
+---
+id: SegmentalPavers
+slug: SegmentalPavers
+code:
+  code: null
+title:
+  title: null
+description: Lay out, cut, and place segmental paving units. Includes installers
+  of bedding and restraining materials for the paving units.
+$id: https://graph.org.ai/occupations/SegmentalPavers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SegmentalPavers`
+      };
+  }));
+
+# Segmental Pavers
+
+**O*NET Code**: 47-4091.00
+
+Lay out, cut, and place segmental paving units. Includes installers of bedding and restraining materials for the paving units.
+
+## Job Profile
+<JobZone occupation=SegmentalPavers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SegmentalPavers />
+
+### General Activities
+<Activities occupation=SegmentalPavers />
+
+## Qualifications
+### Skills
+<Skills occupation=SegmentalPavers />
+
+### Knowledge
+<Knowledge occupation=SegmentalPavers />
+
+### Abilities
+<Abilities occupation=SegmentalPavers />
+
+## Work Context
+<WorkContext occupation=SegmentalPavers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SegmentalPavers />
+
+### Industries
+<Industries occupation=SegmentalPavers />

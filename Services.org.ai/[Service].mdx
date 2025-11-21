@@ -1,9 +1,19 @@
 ---
-$id: https://graph.org.ai/services/{code}
+$id: https://graph.org.ai/services/{slug}
 $type: Service
 source: UNSPSC
+code: {code}
+title: {title}
 ---
 
 # {title}
 
-<Providers service={code} />
+**UNSPSC Code**: {code}
+
+{description}
+
+## Providers
+<Providers service={slug} />
+
+## Related Industries
+<Industries service={slug} />

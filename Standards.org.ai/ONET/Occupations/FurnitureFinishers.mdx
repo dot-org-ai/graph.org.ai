@@ -1,0 +1,68 @@
+---
+id: FurnitureFinishers
+slug: FurnitureFinishers
+code:
+  code: null
+title:
+  title: null
+description: Shape, finish, and refinish damaged, worn, or used furniture or new
+  high-grade furniture to specified color or finish.
+$id: https://graph.org.ai/occupations/FurnitureFinishers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FurnitureFinishers`
+      };
+  }));
+
+# Furniture Finishers
+
+**O*NET Code**: 51-7021.00
+
+Shape, finish, and refinish damaged, worn, or used furniture or new high-grade furniture to specified color or finish.
+
+## Job Profile
+<JobZone occupation=FurnitureFinishers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FurnitureFinishers />
+
+### General Activities
+<Activities occupation=FurnitureFinishers />
+
+## Qualifications
+### Skills
+<Skills occupation=FurnitureFinishers />
+
+### Knowledge
+<Knowledge occupation=FurnitureFinishers />
+
+### Abilities
+<Abilities occupation=FurnitureFinishers />
+
+## Work Context
+<WorkContext occupation=FurnitureFinishers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FurnitureFinishers />
+
+### Industries
+<Industries occupation=FurnitureFinishers />

@@ -1,0 +1,70 @@
+---
+id: AerospaceEngineers
+slug: AerospaceEngineers
+code:
+  code: null
+title:
+  title: null
+description: Perform engineering duties in designing, constructing, and testing
+  aircraft, missiles, and spacecraft. May conduct basic and applied research to
+  evaluate adaptability of materials and equipment to aircraft design and
+  manufacture. May recommend improvements in testing equipment and techniques.
+$id: https://graph.org.ai/occupations/AerospaceEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AerospaceEngineers`
+      };
+  }));
+
+# Aerospace Engineers
+
+**O*NET Code**: 17-2011.00
+
+Perform engineering duties in designing, constructing, and testing aircraft, missiles, and spacecraft. May conduct basic and applied research to evaluate adaptability of materials and equipment to aircraft design and manufacture. May recommend improvements in testing equipment and techniques.
+
+## Job Profile
+<JobZone occupation=AerospaceEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AerospaceEngineers />
+
+### General Activities
+<Activities occupation=AerospaceEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=AerospaceEngineers />
+
+### Knowledge
+<Knowledge occupation=AerospaceEngineers />
+
+### Abilities
+<Abilities occupation=AerospaceEngineers />
+
+## Work Context
+<WorkContext occupation=AerospaceEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AerospaceEngineers />
+
+### Industries
+<Industries occupation=AerospaceEngineers />

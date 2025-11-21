@@ -1,0 +1,75 @@
+---
+id: SheetMetalWorkers
+slug: SheetMetalWorkers
+code:
+  code: null
+title:
+  title: null
+description: "Fabricate, assemble, install, and repair sheet metal products and
+  equipment, such as ducts, control boxes, drainpipes, and furnace casings. Work
+  may involve any of the following: setting up and operating fabricating
+  machines to cut, bend, and straighten sheet metal; shaping metal over anvils,
+  blocks, or forms using hammer; operating soldering and welding equipment to
+  join sheet metal parts; or inspecting, assembling, and smoothing seams and
+  joints of burred surfaces. Includes sheet metal duct installers who install
+  prefabricated sheet metal ducts used for heating, air conditioning, or other
+  purposes."
+$id: https://graph.org.ai/occupations/SheetMetalWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SheetMetalWorkers`
+      };
+  }));
+
+# Sheet Metal Workers
+
+**O*NET Code**: 47-2211.00
+
+Fabricate, assemble, install, and repair sheet metal products and equipment, such as ducts, control boxes, drainpipes, and furnace casings. Work may involve any of the following: setting up and operating fabricating machines to cut, bend, and straighten sheet metal; shaping metal over anvils, blocks, or forms using hammer; operating soldering and welding equipment to join sheet metal parts; or inspecting, assembling, and smoothing seams and joints of burred surfaces. Includes sheet metal duct installers who install prefabricated sheet metal ducts used for heating, air conditioning, or other purposes.
+
+## Job Profile
+<JobZone occupation=SheetMetalWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SheetMetalWorkers />
+
+### General Activities
+<Activities occupation=SheetMetalWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=SheetMetalWorkers />
+
+### Knowledge
+<Knowledge occupation=SheetMetalWorkers />
+
+### Abilities
+<Abilities occupation=SheetMetalWorkers />
+
+## Work Context
+<WorkContext occupation=SheetMetalWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SheetMetalWorkers />
+
+### Industries
+<Industries occupation=SheetMetalWorkers />

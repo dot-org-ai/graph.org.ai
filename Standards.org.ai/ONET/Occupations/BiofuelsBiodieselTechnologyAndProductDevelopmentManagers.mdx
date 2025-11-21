@@ -1,0 +1,69 @@
+---
+id: BiofuelsBiodieselTechnologyAndProductDevelopmentManagers
+slug: BiofuelsBiodieselTechnologyAndProductDevelopmentManagers
+code:
+  code: null
+title:
+  title: null
+description: Define, plan, or execute biofuels/biodiesel research programs that
+  evaluate alternative feedstock and process technologies with near-term
+  commercial potential.
+$id: https://graph.org.ai/occupations/BiofuelsBiodieselTechnologyAndProductDevelopmentManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BiofuelsBiodieselTechnologyAndProductDevelopmentManagers`
+      };
+  }));
+
+# Biofuels/Biodiesel Technology and Product Development Managers
+
+**O*NET Code**: 11-9041.01
+
+Define, plan, or execute biofuels/biodiesel research programs that evaluate alternative feedstock and process technologies with near-term commercial potential.
+
+## Job Profile
+<JobZone occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+### General Activities
+<Activities occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+### Knowledge
+<Knowledge occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+### Abilities
+<Abilities occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+## Work Context
+<WorkContext occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />
+
+### Industries
+<Industries occupation=BiofuelsBiodieselTechnologyAndProductDevelopmentManagers />

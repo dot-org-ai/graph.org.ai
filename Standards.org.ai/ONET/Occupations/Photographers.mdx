@@ -1,0 +1,70 @@
+---
+id: Photographers
+slug: Photographers
+code:
+  code: null
+title:
+  title: null
+description: Photograph people, landscapes, merchandise, or other subjects. May
+  use lighting equipment to enhance a subject's appearance. May use editing
+  software to produce finished images and prints. Includes commercial and
+  industrial photographers, scientific photographers, and photojournalists.
+$id: https://graph.org.ai/occupations/Photographers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Photographers`
+      };
+  }));
+
+# Photographers
+
+**O*NET Code**: 27-4021.00
+
+Photograph people, landscapes, merchandise, or other subjects. May use lighting equipment to enhance a subject's appearance. May use editing software to produce finished images and prints. Includes commercial and industrial photographers, scientific photographers, and photojournalists.
+
+## Job Profile
+<JobZone occupation=Photographers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Photographers />
+
+### General Activities
+<Activities occupation=Photographers />
+
+## Qualifications
+### Skills
+<Skills occupation=Photographers />
+
+### Knowledge
+<Knowledge occupation=Photographers />
+
+### Abilities
+<Abilities occupation=Photographers />
+
+## Work Context
+<WorkContext occupation=Photographers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Photographers />
+
+### Industries
+<Industries occupation=Photographers />

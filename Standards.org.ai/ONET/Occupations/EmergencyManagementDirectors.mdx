@@ -1,0 +1,71 @@
+---
+id: EmergencyManagementDirectors
+slug: EmergencyManagementDirectors
+code:
+  code: null
+title:
+  title: null
+description: Plan and direct disaster response or crisis management activities,
+  provide disaster preparedness training, and prepare emergency plans and
+  procedures for natural (e.g., hurricanes, floods, earthquakes), wartime, or
+  technological (e.g., nuclear power plant emergencies or hazardous materials
+  spills) disasters or hostage situations.
+$id: https://graph.org.ai/occupations/EmergencyManagementDirectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EmergencyManagementDirectors`
+      };
+  }));
+
+# Emergency Management Directors
+
+**O*NET Code**: 11-9161.00
+
+Plan and direct disaster response or crisis management activities, provide disaster preparedness training, and prepare emergency plans and procedures for natural (e.g., hurricanes, floods, earthquakes), wartime, or technological (e.g., nuclear power plant emergencies or hazardous materials spills) disasters or hostage situations.
+
+## Job Profile
+<JobZone occupation=EmergencyManagementDirectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EmergencyManagementDirectors />
+
+### General Activities
+<Activities occupation=EmergencyManagementDirectors />
+
+## Qualifications
+### Skills
+<Skills occupation=EmergencyManagementDirectors />
+
+### Knowledge
+<Knowledge occupation=EmergencyManagementDirectors />
+
+### Abilities
+<Abilities occupation=EmergencyManagementDirectors />
+
+## Work Context
+<WorkContext occupation=EmergencyManagementDirectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EmergencyManagementDirectors />
+
+### Industries
+<Industries occupation=EmergencyManagementDirectors />

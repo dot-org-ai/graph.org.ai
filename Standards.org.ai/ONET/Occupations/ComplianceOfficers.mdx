@@ -1,0 +1,70 @@
+---
+id: ComplianceOfficers
+slug: ComplianceOfficers
+code:
+  code: null
+title:
+  title: null
+description: Examine, evaluate, and investigate eligibility for or conformity
+  with laws and regulations governing contract compliance of licenses and
+  permits, and perform other compliance and enforcement inspection and analysis
+  activities not classified elsewhere.
+$id: https://graph.org.ai/occupations/ComplianceOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComplianceOfficers`
+      };
+  }));
+
+# Compliance Officers
+
+**O*NET Code**: 13-1041.00
+
+Examine, evaluate, and investigate eligibility for or conformity with laws and regulations governing contract compliance of licenses and permits, and perform other compliance and enforcement inspection and analysis activities not classified elsewhere.
+
+## Job Profile
+<JobZone occupation=ComplianceOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComplianceOfficers />
+
+### General Activities
+<Activities occupation=ComplianceOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=ComplianceOfficers />
+
+### Knowledge
+<Knowledge occupation=ComplianceOfficers />
+
+### Abilities
+<Abilities occupation=ComplianceOfficers />
+
+## Work Context
+<WorkContext occupation=ComplianceOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComplianceOfficers />
+
+### Industries
+<Industries occupation=ComplianceOfficers />

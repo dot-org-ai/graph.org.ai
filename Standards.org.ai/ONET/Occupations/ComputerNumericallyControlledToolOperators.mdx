@@ -1,0 +1,69 @@
+---
+id: ComputerNumericallyControlledToolOperators
+slug: ComputerNumericallyControlledToolOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate computer-controlled tools, machines, or robots to machine
+  or process parts, tools, or other work pieces made of metal, plastic, wood,
+  stone, or other materials. May also set up and maintain equipment.
+$id: https://graph.org.ai/occupations/ComputerNumericallyControlledToolOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerNumericallyControlledToolOperators`
+      };
+  }));
+
+# Computer Numerically Controlled Tool Operators
+
+**O*NET Code**: 51-9161.00
+
+Operate computer-controlled tools, machines, or robots to machine or process parts, tools, or other work pieces made of metal, plastic, wood, stone, or other materials. May also set up and maintain equipment.
+
+## Job Profile
+<JobZone occupation=ComputerNumericallyControlledToolOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerNumericallyControlledToolOperators />
+
+### General Activities
+<Activities occupation=ComputerNumericallyControlledToolOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerNumericallyControlledToolOperators />
+
+### Knowledge
+<Knowledge occupation=ComputerNumericallyControlledToolOperators />
+
+### Abilities
+<Abilities occupation=ComputerNumericallyControlledToolOperators />
+
+## Work Context
+<WorkContext occupation=ComputerNumericallyControlledToolOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerNumericallyControlledToolOperators />
+
+### Industries
+<Industries occupation=ComputerNumericallyControlledToolOperators />

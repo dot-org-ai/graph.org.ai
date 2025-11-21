@@ -1,0 +1,68 @@
+---
+id: FloorLayersExceptCarpetWoodAndHardTiles
+slug: FloorLayersExceptCarpetWoodAndHardTiles
+code:
+  code: null
+title:
+  title: null
+description: Apply blocks, strips, or sheets of shock-absorbing,
+  sound-deadening, or decorative coverings to floors.
+$id: https://graph.org.ai/occupations/FloorLayersExceptCarpetWoodAndHardTiles
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FloorLayersExceptCarpetWoodAndHardTiles`
+      };
+  }));
+
+# Floor Layers, Except Carpet, Wood, and Hard Tiles
+
+**O*NET Code**: 47-2042.00
+
+Apply blocks, strips, or sheets of shock-absorbing, sound-deadening, or decorative coverings to floors.
+
+## Job Profile
+<JobZone occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+### General Activities
+<Activities occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+## Qualifications
+### Skills
+<Skills occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+### Knowledge
+<Knowledge occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+### Abilities
+<Abilities occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+## Work Context
+<WorkContext occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FloorLayersExceptCarpetWoodAndHardTiles />
+
+### Industries
+<Industries occupation=FloorLayersExceptCarpetWoodAndHardTiles />

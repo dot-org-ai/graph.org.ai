@@ -1,0 +1,70 @@
+---
+id: ExercisePhysiologists
+slug: ExercisePhysiologists
+code:
+  code: null
+title:
+  title: null
+description: Assess, plan, or implement fitness programs that include exercise
+  or physical activities such as those designed to improve cardiorespiratory
+  function, body composition, muscular strength, muscular endurance, or
+  flexibility.
+$id: https://graph.org.ai/occupations/ExercisePhysiologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ExercisePhysiologists`
+      };
+  }));
+
+# Exercise Physiologists
+
+**O*NET Code**: 29-1128.00
+
+Assess, plan, or implement fitness programs that include exercise or physical activities such as those designed to improve cardiorespiratory function, body composition, muscular strength, muscular endurance, or flexibility.
+
+## Job Profile
+<JobZone occupation=ExercisePhysiologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ExercisePhysiologists />
+
+### General Activities
+<Activities occupation=ExercisePhysiologists />
+
+## Qualifications
+### Skills
+<Skills occupation=ExercisePhysiologists />
+
+### Knowledge
+<Knowledge occupation=ExercisePhysiologists />
+
+### Abilities
+<Abilities occupation=ExercisePhysiologists />
+
+## Work Context
+<WorkContext occupation=ExercisePhysiologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ExercisePhysiologists />
+
+### Industries
+<Industries occupation=ExercisePhysiologists />

@@ -1,0 +1,69 @@
+---
+id: LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic
+slug: LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend lathe and turning machines to turn, bore,
+  thread, form, or face metal or plastic materials, such as wire, rod, or bar
+  stock.
+$id: https://graph.org.ai/occupations/LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic`
+      };
+  }));
+
+# Lathe and Turning Machine Tool Setters, Operators, and Tenders, Metal and Plastic
+
+**O*NET Code**: 51-4034.00
+
+Set up, operate, or tend lathe and turning machines to turn, bore, thread, form, or face metal or plastic materials, such as wire, rod, or bar stock.
+
+## Job Profile
+<JobZone occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### General Activities
+<Activities occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />
+
+### Industries
+<Industries occupation=LatheAndTurningMachineToolSettersOperatorsAndTendersMetalAndPlastic />

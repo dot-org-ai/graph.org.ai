@@ -1,0 +1,72 @@
+---
+id: ElectronicsEngineersExceptComputer
+slug: ElectronicsEngineersExceptComputer
+code:
+  code: null
+title:
+  title: null
+description: Research, design, develop, or test electronic components and
+  systems for commercial, industrial, military, or scientific use employing
+  knowledge of electronic theory and materials properties. Design electronic
+  circuits and components for use in fields such as telecommunications,
+  aerospace guidance and propulsion control, acoustics, or instruments and
+  controls.
+$id: https://graph.org.ai/occupations/ElectronicsEngineersExceptComputer
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectronicsEngineersExceptComputer`
+      };
+  }));
+
+# Electronics Engineers, Except Computer
+
+**O*NET Code**: 17-2072.00
+
+Research, design, develop, or test electronic components and systems for commercial, industrial, military, or scientific use employing knowledge of electronic theory and materials properties. Design electronic circuits and components for use in fields such as telecommunications, aerospace guidance and propulsion control, acoustics, or instruments and controls.
+
+## Job Profile
+<JobZone occupation=ElectronicsEngineersExceptComputer />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectronicsEngineersExceptComputer />
+
+### General Activities
+<Activities occupation=ElectronicsEngineersExceptComputer />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectronicsEngineersExceptComputer />
+
+### Knowledge
+<Knowledge occupation=ElectronicsEngineersExceptComputer />
+
+### Abilities
+<Abilities occupation=ElectronicsEngineersExceptComputer />
+
+## Work Context
+<WorkContext occupation=ElectronicsEngineersExceptComputer />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectronicsEngineersExceptComputer />
+
+### Industries
+<Industries occupation=ElectronicsEngineersExceptComputer />

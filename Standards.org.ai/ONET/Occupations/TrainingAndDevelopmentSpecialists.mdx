@@ -1,0 +1,69 @@
+---
+id: TrainingAndDevelopmentSpecialists
+slug: TrainingAndDevelopmentSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Design or conduct work-related training and development programs to
+  improve individual skills or organizational performance. May analyze
+  organizational training needs or evaluate training effectiveness.
+$id: https://graph.org.ai/occupations/TrainingAndDevelopmentSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TrainingAndDevelopmentSpecialists`
+      };
+  }));
+
+# Training and Development Specialists
+
+**O*NET Code**: 13-1151.00
+
+Design or conduct work-related training and development programs to improve individual skills or organizational performance. May analyze organizational training needs or evaluate training effectiveness.
+
+## Job Profile
+<JobZone occupation=TrainingAndDevelopmentSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TrainingAndDevelopmentSpecialists />
+
+### General Activities
+<Activities occupation=TrainingAndDevelopmentSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=TrainingAndDevelopmentSpecialists />
+
+### Knowledge
+<Knowledge occupation=TrainingAndDevelopmentSpecialists />
+
+### Abilities
+<Abilities occupation=TrainingAndDevelopmentSpecialists />
+
+## Work Context
+<WorkContext occupation=TrainingAndDevelopmentSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TrainingAndDevelopmentSpecialists />
+
+### Industries
+<Industries occupation=TrainingAndDevelopmentSpecialists />

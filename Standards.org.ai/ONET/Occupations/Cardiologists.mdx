@@ -1,0 +1,70 @@
+---
+id: Cardiologists
+slug: Cardiologists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, manage, and prevent diseases or conditions of the
+  cardiovascular system. May further subspecialize in interventional procedures
+  (e.g., balloon angioplasty and stent placement), echocardiography, or
+  electrophysiology.
+$id: https://graph.org.ai/occupations/Cardiologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Cardiologists`
+      };
+  }));
+
+# Cardiologists
+
+**O*NET Code**: 29-1212.00
+
+Diagnose, treat, manage, and prevent diseases or conditions of the cardiovascular system. May further subspecialize in interventional procedures (e.g., balloon angioplasty and stent placement), echocardiography, or electrophysiology.
+
+## Job Profile
+<JobZone occupation=Cardiologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Cardiologists />
+
+### General Activities
+<Activities occupation=Cardiologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Cardiologists />
+
+### Knowledge
+<Knowledge occupation=Cardiologists />
+
+### Abilities
+<Abilities occupation=Cardiologists />
+
+## Work Context
+<WorkContext occupation=Cardiologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Cardiologists />
+
+### Industries
+<Industries occupation=Cardiologists />

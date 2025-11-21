@@ -1,0 +1,70 @@
+---
+id: DirectorsReligiousActivitiesAndEducation
+slug: DirectorsReligiousActivitiesAndEducation
+code:
+  code: null
+title:
+  title: null
+description: Coordinate or design programs and conduct outreach to promote the
+  religious education or activities of a denominational group. May provide
+  counseling, guidance, and leadership relative to marital, health, financial,
+  and religious problems.
+$id: https://graph.org.ai/occupations/DirectorsReligiousActivitiesAndEducation
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DirectorsReligiousActivitiesAndEducation`
+      };
+  }));
+
+# Directors, Religious Activities and Education
+
+**O*NET Code**: 21-2021.00
+
+Coordinate or design programs and conduct outreach to promote the religious education or activities of a denominational group. May provide counseling, guidance, and leadership relative to marital, health, financial, and religious problems.
+
+## Job Profile
+<JobZone occupation=DirectorsReligiousActivitiesAndEducation />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DirectorsReligiousActivitiesAndEducation />
+
+### General Activities
+<Activities occupation=DirectorsReligiousActivitiesAndEducation />
+
+## Qualifications
+### Skills
+<Skills occupation=DirectorsReligiousActivitiesAndEducation />
+
+### Knowledge
+<Knowledge occupation=DirectorsReligiousActivitiesAndEducation />
+
+### Abilities
+<Abilities occupation=DirectorsReligiousActivitiesAndEducation />
+
+## Work Context
+<WorkContext occupation=DirectorsReligiousActivitiesAndEducation />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DirectorsReligiousActivitiesAndEducation />
+
+### Industries
+<Industries occupation=DirectorsReligiousActivitiesAndEducation />

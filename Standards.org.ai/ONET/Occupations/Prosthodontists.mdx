@@ -1,0 +1,69 @@
+---
+id: Prosthodontists
+slug: Prosthodontists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, rehabilitate, design, and fit prostheses that
+  maintain oral function, health, and appearance for patients with clinical
+  conditions associated with teeth, oral and maxillofacial tissues, or the jaw.
+$id: https://graph.org.ai/occupations/Prosthodontists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Prosthodontists`
+      };
+  }));
+
+# Prosthodontists
+
+**O*NET Code**: 29-1024.00
+
+Diagnose, treat, rehabilitate, design, and fit prostheses that maintain oral function, health, and appearance for patients with clinical conditions associated with teeth, oral and maxillofacial tissues, or the jaw.
+
+## Job Profile
+<JobZone occupation=Prosthodontists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Prosthodontists />
+
+### General Activities
+<Activities occupation=Prosthodontists />
+
+## Qualifications
+### Skills
+<Skills occupation=Prosthodontists />
+
+### Knowledge
+<Knowledge occupation=Prosthodontists />
+
+### Abilities
+<Abilities occupation=Prosthodontists />
+
+## Work Context
+<WorkContext occupation=Prosthodontists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Prosthodontists />
+
+### Industries
+<Industries occupation=Prosthodontists />

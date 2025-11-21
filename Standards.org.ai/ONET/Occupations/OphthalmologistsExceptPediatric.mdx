@@ -1,0 +1,69 @@
+---
+id: OphthalmologistsExceptPediatric
+slug: OphthalmologistsExceptPediatric
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and perform surgery to treat and help prevent disorders
+  and diseases of the eye. May also provide vision services for treatment
+  including glasses and contacts.
+$id: https://graph.org.ai/occupations/OphthalmologistsExceptPediatric
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OphthalmologistsExceptPediatric`
+      };
+  }));
+
+# Ophthalmologists, Except Pediatric
+
+**O*NET Code**: 29-1241.00
+
+Diagnose and perform surgery to treat and help prevent disorders and diseases of the eye. May also provide vision services for treatment including glasses and contacts.
+
+## Job Profile
+<JobZone occupation=OphthalmologistsExceptPediatric />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OphthalmologistsExceptPediatric />
+
+### General Activities
+<Activities occupation=OphthalmologistsExceptPediatric />
+
+## Qualifications
+### Skills
+<Skills occupation=OphthalmologistsExceptPediatric />
+
+### Knowledge
+<Knowledge occupation=OphthalmologistsExceptPediatric />
+
+### Abilities
+<Abilities occupation=OphthalmologistsExceptPediatric />
+
+## Work Context
+<WorkContext occupation=OphthalmologistsExceptPediatric />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OphthalmologistsExceptPediatric />
+
+### Industries
+<Industries occupation=OphthalmologistsExceptPediatric />

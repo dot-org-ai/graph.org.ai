@@ -1,0 +1,69 @@
+---
+id: ChefsAndHeadCooks
+slug: ChefsAndHeadCooks
+code:
+  code: null
+title:
+  title: null
+description: Direct and may participate in the preparation, seasoning, and
+  cooking of salads, soups, fish, meats, vegetables, desserts, or other foods.
+  May plan and price menu items, order supplies, and keep records and accounts.
+$id: https://graph.org.ai/occupations/ChefsAndHeadCooks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ChefsAndHeadCooks`
+      };
+  }));
+
+# Chefs and Head Cooks
+
+**O*NET Code**: 35-1011.00
+
+Direct and may participate in the preparation, seasoning, and cooking of salads, soups, fish, meats, vegetables, desserts, or other foods. May plan and price menu items, order supplies, and keep records and accounts.
+
+## Job Profile
+<JobZone occupation=ChefsAndHeadCooks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ChefsAndHeadCooks />
+
+### General Activities
+<Activities occupation=ChefsAndHeadCooks />
+
+## Qualifications
+### Skills
+<Skills occupation=ChefsAndHeadCooks />
+
+### Knowledge
+<Knowledge occupation=ChefsAndHeadCooks />
+
+### Abilities
+<Abilities occupation=ChefsAndHeadCooks />
+
+## Work Context
+<WorkContext occupation=ChefsAndHeadCooks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ChefsAndHeadCooks />
+
+### Industries
+<Industries occupation=ChefsAndHeadCooks />

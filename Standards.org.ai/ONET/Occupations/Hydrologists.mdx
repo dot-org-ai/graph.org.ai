@@ -1,0 +1,70 @@
+---
+id: Hydrologists
+slug: Hydrologists
+code:
+  code: null
+title:
+  title: null
+description: Research the distribution, circulation, and physical properties of
+  underground and surface waters; and study the form and intensity of
+  precipitation and its rate of infiltration into the soil, movement through the
+  earth, and return to the ocean and atmosphere.
+$id: https://graph.org.ai/occupations/Hydrologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Hydrologists`
+      };
+  }));
+
+# Hydrologists
+
+**O*NET Code**: 19-2043.00
+
+Research the distribution, circulation, and physical properties of underground and surface waters; and study the form and intensity of precipitation and its rate of infiltration into the soil, movement through the earth, and return to the ocean and atmosphere.
+
+## Job Profile
+<JobZone occupation=Hydrologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Hydrologists />
+
+### General Activities
+<Activities occupation=Hydrologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Hydrologists />
+
+### Knowledge
+<Knowledge occupation=Hydrologists />
+
+### Abilities
+<Abilities occupation=Hydrologists />
+
+## Work Context
+<WorkContext occupation=Hydrologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Hydrologists />
+
+### Industries
+<Industries occupation=Hydrologists />

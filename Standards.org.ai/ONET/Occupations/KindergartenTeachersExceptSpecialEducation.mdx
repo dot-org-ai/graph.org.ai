@@ -1,0 +1,67 @@
+---
+id: KindergartenTeachersExceptSpecialEducation
+slug: KindergartenTeachersExceptSpecialEducation
+code:
+  code: null
+title:
+  title: null
+description: Teach academic and social skills to kindergarten students.
+$id: https://graph.org.ai/occupations/KindergartenTeachersExceptSpecialEducation
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$KindergartenTeachersExceptSpecialEducation`
+      };
+  }));
+
+# Kindergarten Teachers, Except Special Education
+
+**O*NET Code**: 25-2012.00
+
+Teach academic and social skills to kindergarten students.
+
+## Job Profile
+<JobZone occupation=KindergartenTeachersExceptSpecialEducation />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=KindergartenTeachersExceptSpecialEducation />
+
+### General Activities
+<Activities occupation=KindergartenTeachersExceptSpecialEducation />
+
+## Qualifications
+### Skills
+<Skills occupation=KindergartenTeachersExceptSpecialEducation />
+
+### Knowledge
+<Knowledge occupation=KindergartenTeachersExceptSpecialEducation />
+
+### Abilities
+<Abilities occupation=KindergartenTeachersExceptSpecialEducation />
+
+## Work Context
+<WorkContext occupation=KindergartenTeachersExceptSpecialEducation />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=KindergartenTeachersExceptSpecialEducation />
+
+### Industries
+<Industries occupation=KindergartenTeachersExceptSpecialEducation />

@@ -1,0 +1,73 @@
+---
+id: AgriculturalTechnicians
+slug: AgriculturalTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Work with agricultural scientists in plant, fiber, and animal
+  research, or assist with animal breeding and nutrition. Set up or maintain
+  laboratory equipment and collect samples from crops or animals. Prepare
+  specimens or record data to assist scientists in biology or related life
+  science experiments. Conduct tests and experiments to improve yield and
+  quality of crops or to increase the resistance of plants and animals to
+  disease or insects.
+$id: https://graph.org.ai/occupations/AgriculturalTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AgriculturalTechnicians`
+      };
+  }));
+
+# Agricultural Technicians
+
+**O*NET Code**: 19-4012.00
+
+Work with agricultural scientists in plant, fiber, and animal research, or assist with animal breeding and nutrition. Set up or maintain laboratory equipment and collect samples from crops or animals. Prepare specimens or record data to assist scientists in biology or related life science experiments. Conduct tests and experiments to improve yield and quality of crops or to increase the resistance of plants and animals to disease or insects.
+
+## Job Profile
+<JobZone occupation=AgriculturalTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AgriculturalTechnicians />
+
+### General Activities
+<Activities occupation=AgriculturalTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=AgriculturalTechnicians />
+
+### Knowledge
+<Knowledge occupation=AgriculturalTechnicians />
+
+### Abilities
+<Abilities occupation=AgriculturalTechnicians />
+
+## Work Context
+<WorkContext occupation=AgriculturalTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AgriculturalTechnicians />
+
+### Industries
+<Industries occupation=AgriculturalTechnicians />

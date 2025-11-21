@@ -1,0 +1,70 @@
+---
+id: Radiologists
+slug: Radiologists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and treat diseases and injuries using medical imaging
+  techniques, such as x rays, magnetic resonance imaging (MRI), nuclear
+  medicine, and ultrasounds. May perform minimally invasive medical procedures
+  and tests.
+$id: https://graph.org.ai/occupations/Radiologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Radiologists`
+      };
+  }));
+
+# Radiologists
+
+**O*NET Code**: 29-1224.00
+
+Diagnose and treat diseases and injuries using medical imaging techniques, such as x rays, magnetic resonance imaging (MRI), nuclear medicine, and ultrasounds. May perform minimally invasive medical procedures and tests.
+
+## Job Profile
+<JobZone occupation=Radiologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Radiologists />
+
+### General Activities
+<Activities occupation=Radiologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Radiologists />
+
+### Knowledge
+<Knowledge occupation=Radiologists />
+
+### Abilities
+<Abilities occupation=Radiologists />
+
+## Work Context
+<WorkContext occupation=Radiologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Radiologists />
+
+### Industries
+<Industries occupation=Radiologists />

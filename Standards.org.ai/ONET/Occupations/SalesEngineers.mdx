@@ -1,0 +1,68 @@
+---
+id: SalesEngineers
+slug: SalesEngineers
+code:
+  code: null
+title:
+  title: null
+description: Sell business goods or services, the selling of which requires a
+  technical background equivalent to a baccalaureate degree in engineering.
+$id: https://graph.org.ai/occupations/SalesEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SalesEngineers`
+      };
+  }));
+
+# Sales Engineers
+
+**O*NET Code**: 41-9031.00
+
+Sell business goods or services, the selling of which requires a technical background equivalent to a baccalaureate degree in engineering.
+
+## Job Profile
+<JobZone occupation=SalesEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SalesEngineers />
+
+### General Activities
+<Activities occupation=SalesEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=SalesEngineers />
+
+### Knowledge
+<Knowledge occupation=SalesEngineers />
+
+### Abilities
+<Abilities occupation=SalesEngineers />
+
+## Work Context
+<WorkContext occupation=SalesEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SalesEngineers />
+
+### Industries
+<Industries occupation=SalesEngineers />

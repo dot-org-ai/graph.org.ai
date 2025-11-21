@@ -1,0 +1,69 @@
+---
+id: ElectricalEngineers
+slug: ElectricalEngineers
+code:
+  code: null
+title:
+  title: null
+description: Research, design, develop, test, or supervise the manufacturing and
+  installation of electrical equipment, components, or systems for commercial,
+  industrial, military, or scientific use.
+$id: https://graph.org.ai/occupations/ElectricalEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectricalEngineers`
+      };
+  }));
+
+# Electrical Engineers
+
+**O*NET Code**: 17-2071.00
+
+Research, design, develop, test, or supervise the manufacturing and installation of electrical equipment, components, or systems for commercial, industrial, military, or scientific use.
+
+## Job Profile
+<JobZone occupation=ElectricalEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectricalEngineers />
+
+### General Activities
+<Activities occupation=ElectricalEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectricalEngineers />
+
+### Knowledge
+<Knowledge occupation=ElectricalEngineers />
+
+### Abilities
+<Abilities occupation=ElectricalEngineers />
+
+## Work Context
+<WorkContext occupation=ElectricalEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectricalEngineers />
+
+### Industries
+<Industries occupation=ElectricalEngineers />

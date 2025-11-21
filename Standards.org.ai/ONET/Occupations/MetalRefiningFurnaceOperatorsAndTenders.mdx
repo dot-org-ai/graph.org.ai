@@ -1,0 +1,69 @@
+---
+id: MetalRefiningFurnaceOperatorsAndTenders
+slug: MetalRefiningFurnaceOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend furnaces, such as gas, oil, coal, electric-arc or
+  electric induction, open-hearth, or oxygen furnaces, to melt and refine metal
+  before casting or to produce specified types of steel.
+$id: https://graph.org.ai/occupations/MetalRefiningFurnaceOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MetalRefiningFurnaceOperatorsAndTenders`
+      };
+  }));
+
+# Metal-Refining Furnace Operators and Tenders
+
+**O*NET Code**: 51-4051.00
+
+Operate or tend furnaces, such as gas, oil, coal, electric-arc or electric induction, open-hearth, or oxygen furnaces, to melt and refine metal before casting or to produce specified types of steel.
+
+## Job Profile
+<JobZone occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MetalRefiningFurnaceOperatorsAndTenders />
+
+### Industries
+<Industries occupation=MetalRefiningFurnaceOperatorsAndTenders />

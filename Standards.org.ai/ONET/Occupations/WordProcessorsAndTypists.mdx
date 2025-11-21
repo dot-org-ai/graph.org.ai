@@ -1,0 +1,69 @@
+---
+id: WordProcessorsAndTypists
+slug: WordProcessorsAndTypists
+code:
+  code: null
+title:
+  title: null
+description: Use word processor, computer, or typewriter to type letters,
+  reports, forms, or other material from rough draft, corrected copy, or voice
+  recording. May perform other clerical duties as assigned.
+$id: https://graph.org.ai/occupations/WordProcessorsAndTypists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WordProcessorsAndTypists`
+      };
+  }));
+
+# Word Processors and Typists
+
+**O*NET Code**: 43-9022.00
+
+Use word processor, computer, or typewriter to type letters, reports, forms, or other material from rough draft, corrected copy, or voice recording. May perform other clerical duties as assigned.
+
+## Job Profile
+<JobZone occupation=WordProcessorsAndTypists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WordProcessorsAndTypists />
+
+### General Activities
+<Activities occupation=WordProcessorsAndTypists />
+
+## Qualifications
+### Skills
+<Skills occupation=WordProcessorsAndTypists />
+
+### Knowledge
+<Knowledge occupation=WordProcessorsAndTypists />
+
+### Abilities
+<Abilities occupation=WordProcessorsAndTypists />
+
+## Work Context
+<WorkContext occupation=WordProcessorsAndTypists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WordProcessorsAndTypists />
+
+### Industries
+<Industries occupation=WordProcessorsAndTypists />

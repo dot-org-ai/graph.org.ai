@@ -1,0 +1,70 @@
+---
+id: GamblingChangePersonsAndBoothCashiers
+slug: GamblingChangePersonsAndBoothCashiers
+code:
+  code: null
+title:
+  title: null
+description: Exchange coins, tokens, and chips for patrons' money. May issue
+  payoffs and obtain customer's signature on receipt. May operate a booth in the
+  slot machine area and furnish change persons with money bank at the start of
+  the shift, or count and audit money in drawers.
+$id: https://graph.org.ai/occupations/GamblingChangePersonsAndBoothCashiers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GamblingChangePersonsAndBoothCashiers`
+      };
+  }));
+
+# Gambling Change Persons and Booth Cashiers
+
+**O*NET Code**: 41-2012.00
+
+Exchange coins, tokens, and chips for patrons' money. May issue payoffs and obtain customer's signature on receipt. May operate a booth in the slot machine area and furnish change persons with money bank at the start of the shift, or count and audit money in drawers.
+
+## Job Profile
+<JobZone occupation=GamblingChangePersonsAndBoothCashiers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GamblingChangePersonsAndBoothCashiers />
+
+### General Activities
+<Activities occupation=GamblingChangePersonsAndBoothCashiers />
+
+## Qualifications
+### Skills
+<Skills occupation=GamblingChangePersonsAndBoothCashiers />
+
+### Knowledge
+<Knowledge occupation=GamblingChangePersonsAndBoothCashiers />
+
+### Abilities
+<Abilities occupation=GamblingChangePersonsAndBoothCashiers />
+
+## Work Context
+<WorkContext occupation=GamblingChangePersonsAndBoothCashiers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GamblingChangePersonsAndBoothCashiers />
+
+### Industries
+<Industries occupation=GamblingChangePersonsAndBoothCashiers />

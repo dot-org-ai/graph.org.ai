@@ -1,0 +1,69 @@
+---
+id: EnvironmentalScienceTeachersPostsecondary
+slug: EnvironmentalScienceTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in environmental science. Includes both teachers
+  primarily engaged in teaching and those who do a combination of teaching and
+  research.
+$id: https://graph.org.ai/occupations/EnvironmentalScienceTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnvironmentalScienceTeachersPostsecondary`
+      };
+  }));
+
+# Environmental Science Teachers, Postsecondary
+
+**O*NET Code**: 25-1053.00
+
+Teach courses in environmental science. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=EnvironmentalScienceTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnvironmentalScienceTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=EnvironmentalScienceTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=EnvironmentalScienceTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=EnvironmentalScienceTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=EnvironmentalScienceTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=EnvironmentalScienceTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnvironmentalScienceTeachersPostsecondary />
+
+### Industries
+<Industries occupation=EnvironmentalScienceTeachersPostsecondary />

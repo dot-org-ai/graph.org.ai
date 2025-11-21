@@ -1,0 +1,69 @@
+---
+id: AnesthesiologistAssistants
+slug: AnesthesiologistAssistants
+code:
+  code: null
+title:
+  title: null
+description: Assist anesthesiologists in the administration of anesthesia for
+  surgical and non-surgical procedures. Monitor patient status and provide
+  patient care during surgical treatment.
+$id: https://graph.org.ai/occupations/AnesthesiologistAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AnesthesiologistAssistants`
+      };
+  }));
+
+# Anesthesiologist Assistants
+
+**O*NET Code**: 29-1071.01
+
+Assist anesthesiologists in the administration of anesthesia for surgical and non-surgical procedures. Monitor patient status and provide patient care during surgical treatment.
+
+## Job Profile
+<JobZone occupation=AnesthesiologistAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AnesthesiologistAssistants />
+
+### General Activities
+<Activities occupation=AnesthesiologistAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=AnesthesiologistAssistants />
+
+### Knowledge
+<Knowledge occupation=AnesthesiologistAssistants />
+
+### Abilities
+<Abilities occupation=AnesthesiologistAssistants />
+
+## Work Context
+<WorkContext occupation=AnesthesiologistAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AnesthesiologistAssistants />
+
+### Industries
+<Industries occupation=AnesthesiologistAssistants />

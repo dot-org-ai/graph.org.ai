@@ -1,0 +1,68 @@
+---
+id: Choreographers
+slug: Choreographers
+code:
+  code: null
+title:
+  title: null
+description: Create new dance routines. Rehearse performance of routines. May
+  direct and stage presentations.
+$id: https://graph.org.ai/occupations/Choreographers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Choreographers`
+      };
+  }));
+
+# Choreographers
+
+**O*NET Code**: 27-2032.00
+
+Create new dance routines. Rehearse performance of routines. May direct and stage presentations.
+
+## Job Profile
+<JobZone occupation=Choreographers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Choreographers />
+
+### General Activities
+<Activities occupation=Choreographers />
+
+## Qualifications
+### Skills
+<Skills occupation=Choreographers />
+
+### Knowledge
+<Knowledge occupation=Choreographers />
+
+### Abilities
+<Abilities occupation=Choreographers />
+
+## Work Context
+<WorkContext occupation=Choreographers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Choreographers />
+
+### Industries
+<Industries occupation=Choreographers />

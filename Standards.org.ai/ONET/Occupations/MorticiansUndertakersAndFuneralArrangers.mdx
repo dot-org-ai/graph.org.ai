@@ -1,0 +1,71 @@
+---
+id: MorticiansUndertakersAndFuneralArrangers
+slug: MorticiansUndertakersAndFuneralArrangers
+code:
+  code: null
+title:
+  title: null
+description: Perform various tasks to arrange and direct individual funeral
+  services, such as coordinating transportation of body to mortuary,
+  interviewing family or other authorized person to arrange details, selecting
+  pallbearers, aiding with the selection of officials for religious rites, and
+  providing transportation for mourners.
+$id: https://graph.org.ai/occupations/MorticiansUndertakersAndFuneralArrangers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MorticiansUndertakersAndFuneralArrangers`
+      };
+  }));
+
+# Morticians, Undertakers, and Funeral Arrangers
+
+**O*NET Code**: 39-4031.00
+
+Perform various tasks to arrange and direct individual funeral services, such as coordinating transportation of body to mortuary, interviewing family or other authorized person to arrange details, selecting pallbearers, aiding with the selection of officials for religious rites, and providing transportation for mourners.
+
+## Job Profile
+<JobZone occupation=MorticiansUndertakersAndFuneralArrangers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MorticiansUndertakersAndFuneralArrangers />
+
+### General Activities
+<Activities occupation=MorticiansUndertakersAndFuneralArrangers />
+
+## Qualifications
+### Skills
+<Skills occupation=MorticiansUndertakersAndFuneralArrangers />
+
+### Knowledge
+<Knowledge occupation=MorticiansUndertakersAndFuneralArrangers />
+
+### Abilities
+<Abilities occupation=MorticiansUndertakersAndFuneralArrangers />
+
+## Work Context
+<WorkContext occupation=MorticiansUndertakersAndFuneralArrangers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MorticiansUndertakersAndFuneralArrangers />
+
+### Industries
+<Industries occupation=MorticiansUndertakersAndFuneralArrangers />

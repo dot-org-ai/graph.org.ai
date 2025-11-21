@@ -1,0 +1,71 @@
+---
+id: Statisticians
+slug: Statisticians
+code:
+  code: null
+title:
+  title: null
+description: Develop or apply mathematical or statistical theory and methods to
+  collect, organize, interpret, and summarize numerical data to provide usable
+  information. May specialize in fields such as biostatistics, agricultural
+  statistics, business statistics, or economic statistics. Includes mathematical
+  and survey statisticians.
+$id: https://graph.org.ai/occupations/Statisticians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Statisticians`
+      };
+  }));
+
+# Statisticians
+
+**O*NET Code**: 15-2041.00
+
+Develop or apply mathematical or statistical theory and methods to collect, organize, interpret, and summarize numerical data to provide usable information. May specialize in fields such as biostatistics, agricultural statistics, business statistics, or economic statistics. Includes mathematical and survey statisticians.
+
+## Job Profile
+<JobZone occupation=Statisticians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Statisticians />
+
+### General Activities
+<Activities occupation=Statisticians />
+
+## Qualifications
+### Skills
+<Skills occupation=Statisticians />
+
+### Knowledge
+<Knowledge occupation=Statisticians />
+
+### Abilities
+<Abilities occupation=Statisticians />
+
+## Work Context
+<WorkContext occupation=Statisticians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Statisticians />
+
+### Industries
+<Industries occupation=Statisticians />

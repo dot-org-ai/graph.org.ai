@@ -1,0 +1,68 @@
+---
+id: MeetingConventionAndEventPlanners
+slug: MeetingConventionAndEventPlanners
+code:
+  code: null
+title:
+  title: null
+description: Coordinate activities of staff, convention personnel, or clients to
+  make arrangements for group meetings, events, or conventions.
+$id: https://graph.org.ai/occupations/MeetingConventionAndEventPlanners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MeetingConventionAndEventPlanners`
+      };
+  }));
+
+# Meeting, Convention, and Event Planners
+
+**O*NET Code**: 13-1121.00
+
+Coordinate activities of staff, convention personnel, or clients to make arrangements for group meetings, events, or conventions.
+
+## Job Profile
+<JobZone occupation=MeetingConventionAndEventPlanners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MeetingConventionAndEventPlanners />
+
+### General Activities
+<Activities occupation=MeetingConventionAndEventPlanners />
+
+## Qualifications
+### Skills
+<Skills occupation=MeetingConventionAndEventPlanners />
+
+### Knowledge
+<Knowledge occupation=MeetingConventionAndEventPlanners />
+
+### Abilities
+<Abilities occupation=MeetingConventionAndEventPlanners />
+
+## Work Context
+<WorkContext occupation=MeetingConventionAndEventPlanners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MeetingConventionAndEventPlanners />
+
+### Industries
+<Industries occupation=MeetingConventionAndEventPlanners />

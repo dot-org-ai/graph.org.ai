@@ -1,0 +1,67 @@
+---
+id: TextileKnittingAndWeavingMachineSettersOperatorsAndTenders
+slug: TextileKnittingAndWeavingMachineSettersOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend machines that knit, loop, weave, or draw in textiles.
+$id: https://graph.org.ai/occupations/TextileKnittingAndWeavingMachineSettersOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TextileKnittingAndWeavingMachineSettersOperatorsAndTenders`
+      };
+  }));
+
+# Textile Knitting and Weaving Machine Setters, Operators, and Tenders
+
+**O*NET Code**: 51-6063.00
+
+Set up, operate, or tend machines that knit, loop, weave, or draw in textiles.
+
+## Job Profile
+<JobZone occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />
+
+### Industries
+<Industries occupation=TextileKnittingAndWeavingMachineSettersOperatorsAndTenders />

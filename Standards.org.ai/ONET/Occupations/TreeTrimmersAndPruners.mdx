@@ -1,0 +1,72 @@
+---
+id: TreeTrimmersAndPruners
+slug: TreeTrimmersAndPruners
+code:
+  code: null
+title:
+  title: null
+description: Using sophisticated climbing and rigging techniques, cut away dead
+  or excess branches from trees or shrubs to maintain right-of-way for roads,
+  sidewalks, or utilities, or to improve appearance, health, and value of tree.
+  Prune or treat trees or shrubs using handsaws, hand pruners, clippers, and
+  power pruners. Works off the ground in the tree canopy and may use
+  truck-mounted lifts.
+$id: https://graph.org.ai/occupations/TreeTrimmersAndPruners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TreeTrimmersAndPruners`
+      };
+  }));
+
+# Tree Trimmers and Pruners
+
+**O*NET Code**: 37-3013.00
+
+Using sophisticated climbing and rigging techniques, cut away dead or excess branches from trees or shrubs to maintain right-of-way for roads, sidewalks, or utilities, or to improve appearance, health, and value of tree. Prune or treat trees or shrubs using handsaws, hand pruners, clippers, and power pruners. Works off the ground in the tree canopy and may use truck-mounted lifts.
+
+## Job Profile
+<JobZone occupation=TreeTrimmersAndPruners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TreeTrimmersAndPruners />
+
+### General Activities
+<Activities occupation=TreeTrimmersAndPruners />
+
+## Qualifications
+### Skills
+<Skills occupation=TreeTrimmersAndPruners />
+
+### Knowledge
+<Knowledge occupation=TreeTrimmersAndPruners />
+
+### Abilities
+<Abilities occupation=TreeTrimmersAndPruners />
+
+## Work Context
+<WorkContext occupation=TreeTrimmersAndPruners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TreeTrimmersAndPruners />
+
+### Industries
+<Industries occupation=TreeTrimmersAndPruners />

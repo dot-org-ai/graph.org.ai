@@ -1,0 +1,69 @@
+---
+id: QualityControlSystemsManagers
+slug: QualityControlSystemsManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate quality assurance programs. Formulate
+  quality control policies and control quality of laboratory and production
+  efforts.
+$id: https://graph.org.ai/occupations/QualityControlSystemsManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$QualityControlSystemsManagers`
+      };
+  }));
+
+# Quality Control Systems Managers
+
+**O*NET Code**: 11-3051.01
+
+Plan, direct, or coordinate quality assurance programs. Formulate quality control policies and control quality of laboratory and production efforts.
+
+## Job Profile
+<JobZone occupation=QualityControlSystemsManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=QualityControlSystemsManagers />
+
+### General Activities
+<Activities occupation=QualityControlSystemsManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=QualityControlSystemsManagers />
+
+### Knowledge
+<Knowledge occupation=QualityControlSystemsManagers />
+
+### Abilities
+<Abilities occupation=QualityControlSystemsManagers />
+
+## Work Context
+<WorkContext occupation=QualityControlSystemsManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=QualityControlSystemsManagers />
+
+### Industries
+<Industries occupation=QualityControlSystemsManagers />

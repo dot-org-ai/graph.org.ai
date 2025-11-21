@@ -1,0 +1,73 @@
+---
+id: ConstructionLaborers
+slug: ConstructionLaborers
+code:
+  code: null
+title:
+  title: null
+description: "Perform tasks involving physical labor at construction sites. May
+  operate hand and power tools of all types: air hammers, earth tampers, cement
+  mixers, small mechanical hoists, surveying and measuring equipment, and a
+  variety of other equipment and instruments. May clean and prepare sites, dig
+  trenches, set braces to support the sides of excavations, erect scaffolding,
+  and clean up rubble, debris, and other waste materials. May assist other craft
+  workers."
+$id: https://graph.org.ai/occupations/ConstructionLaborers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ConstructionLaborers`
+      };
+  }));
+
+# Construction Laborers
+
+**O*NET Code**: 47-2061.00
+
+Perform tasks involving physical labor at construction sites. May operate hand and power tools of all types: air hammers, earth tampers, cement mixers, small mechanical hoists, surveying and measuring equipment, and a variety of other equipment and instruments. May clean and prepare sites, dig trenches, set braces to support the sides of excavations, erect scaffolding, and clean up rubble, debris, and other waste materials. May assist other craft workers.
+
+## Job Profile
+<JobZone occupation=ConstructionLaborers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ConstructionLaborers />
+
+### General Activities
+<Activities occupation=ConstructionLaborers />
+
+## Qualifications
+### Skills
+<Skills occupation=ConstructionLaborers />
+
+### Knowledge
+<Knowledge occupation=ConstructionLaborers />
+
+### Abilities
+<Abilities occupation=ConstructionLaborers />
+
+## Work Context
+<WorkContext occupation=ConstructionLaborers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ConstructionLaborers />
+
+### Industries
+<Industries occupation=ConstructionLaborers />

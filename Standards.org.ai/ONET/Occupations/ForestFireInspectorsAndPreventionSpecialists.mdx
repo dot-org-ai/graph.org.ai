@@ -1,0 +1,69 @@
+---
+id: ForestFireInspectorsAndPreventionSpecialists
+slug: ForestFireInspectorsAndPreventionSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Enforce fire regulations, inspect forest for fire hazards, and
+  recommend forest fire prevention or control measures. May report forest fires
+  and weather conditions.
+$id: https://graph.org.ai/occupations/ForestFireInspectorsAndPreventionSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ForestFireInspectorsAndPreventionSpecialists`
+      };
+  }));
+
+# Forest Fire Inspectors and Prevention Specialists
+
+**O*NET Code**: 33-2022.00
+
+Enforce fire regulations, inspect forest for fire hazards, and recommend forest fire prevention or control measures. May report forest fires and weather conditions.
+
+## Job Profile
+<JobZone occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+### General Activities
+<Activities occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+### Knowledge
+<Knowledge occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+### Abilities
+<Abilities occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+## Work Context
+<WorkContext occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ForestFireInspectorsAndPreventionSpecialists />
+
+### Industries
+<Industries occupation=ForestFireInspectorsAndPreventionSpecialists />

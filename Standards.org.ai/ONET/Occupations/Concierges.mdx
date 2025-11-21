@@ -1,0 +1,70 @@
+---
+id: Concierges
+slug: Concierges
+code:
+  code: null
+title:
+  title: null
+description: Assist patrons at hotel, apartment, or office building with
+  personal services. May take messages; arrange or give advice on
+  transportation, business services, or entertainment; or monitor guest requests
+  for housekeeping and maintenance.
+$id: https://graph.org.ai/occupations/Concierges
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Concierges`
+      };
+  }));
+
+# Concierges
+
+**O*NET Code**: 39-6012.00
+
+Assist patrons at hotel, apartment, or office building with personal services. May take messages; arrange or give advice on transportation, business services, or entertainment; or monitor guest requests for housekeeping and maintenance.
+
+## Job Profile
+<JobZone occupation=Concierges />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Concierges />
+
+### General Activities
+<Activities occupation=Concierges />
+
+## Qualifications
+### Skills
+<Skills occupation=Concierges />
+
+### Knowledge
+<Knowledge occupation=Concierges />
+
+### Abilities
+<Abilities occupation=Concierges />
+
+## Work Context
+<WorkContext occupation=Concierges />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Concierges />
+
+### Industries
+<Industries occupation=Concierges />

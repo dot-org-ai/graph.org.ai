@@ -1,0 +1,70 @@
+---
+id: TransportationInspectors
+slug: TransportationInspectors
+code:
+  code: null
+title:
+  title: null
+description: Inspect equipment or goods in connection with the safe transport of
+  cargo or people. Includes rail transportation inspectors, such as freight
+  inspectors, rail inspectors, and other inspectors of transportation vehicles
+  not elsewhere classified.
+$id: https://graph.org.ai/occupations/TransportationInspectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TransportationInspectors`
+      };
+  }));
+
+# Transportation Inspectors
+
+**O*NET Code**: 53-6051.00
+
+Inspect equipment or goods in connection with the safe transport of cargo or people. Includes rail transportation inspectors, such as freight inspectors, rail inspectors, and other inspectors of transportation vehicles not elsewhere classified.
+
+## Job Profile
+<JobZone occupation=TransportationInspectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TransportationInspectors />
+
+### General Activities
+<Activities occupation=TransportationInspectors />
+
+## Qualifications
+### Skills
+<Skills occupation=TransportationInspectors />
+
+### Knowledge
+<Knowledge occupation=TransportationInspectors />
+
+### Abilities
+<Abilities occupation=TransportationInspectors />
+
+## Work Context
+<WorkContext occupation=TransportationInspectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TransportationInspectors />
+
+### Industries
+<Industries occupation=TransportationInspectors />

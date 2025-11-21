@@ -1,0 +1,70 @@
+---
+id: HelpersExtractionWorkers
+slug: HelpersExtractionWorkers
+code:
+  code: null
+title:
+  title: null
+description: Help extraction craft workers, such as earth drillers, blasters and
+  explosives workers, derrick operators, and mining machine operators, by
+  performing duties requiring less skill. Duties include supplying equipment or
+  cleaning work area.
+$id: https://graph.org.ai/occupations/HelpersExtractionWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersExtractionWorkers`
+      };
+  }));
+
+# Helpers--Extraction Workers
+
+**O*NET Code**: 47-5081.00
+
+Help extraction craft workers, such as earth drillers, blasters and explosives workers, derrick operators, and mining machine operators, by performing duties requiring less skill. Duties include supplying equipment or cleaning work area.
+
+## Job Profile
+<JobZone occupation=HelpersExtractionWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersExtractionWorkers />
+
+### General Activities
+<Activities occupation=HelpersExtractionWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersExtractionWorkers />
+
+### Knowledge
+<Knowledge occupation=HelpersExtractionWorkers />
+
+### Abilities
+<Abilities occupation=HelpersExtractionWorkers />
+
+## Work Context
+<WorkContext occupation=HelpersExtractionWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersExtractionWorkers />
+
+### Industries
+<Industries occupation=HelpersExtractionWorkers />

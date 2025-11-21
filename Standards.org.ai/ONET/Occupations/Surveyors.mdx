@@ -1,0 +1,71 @@
+---
+id: Surveyors
+slug: Surveyors
+code:
+  code: null
+title:
+  title: null
+description: Make exact measurements and determine property boundaries. Provide
+  data relevant to the shape, contour, gravitation, location, elevation, or
+  dimension of land or land features on or near the earth's surface for
+  engineering, mapmaking, mining, land evaluation, construction, and other
+  purposes.
+$id: https://graph.org.ai/occupations/Surveyors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Surveyors`
+      };
+  }));
+
+# Surveyors
+
+**O*NET Code**: 17-1022.00
+
+Make exact measurements and determine property boundaries. Provide data relevant to the shape, contour, gravitation, location, elevation, or dimension of land or land features on or near the earth's surface for engineering, mapmaking, mining, land evaluation, construction, and other purposes.
+
+## Job Profile
+<JobZone occupation=Surveyors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Surveyors />
+
+### General Activities
+<Activities occupation=Surveyors />
+
+## Qualifications
+### Skills
+<Skills occupation=Surveyors />
+
+### Knowledge
+<Knowledge occupation=Surveyors />
+
+### Abilities
+<Abilities occupation=Surveyors />
+
+## Work Context
+<WorkContext occupation=Surveyors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Surveyors />
+
+### Industries
+<Industries occupation=Surveyors />

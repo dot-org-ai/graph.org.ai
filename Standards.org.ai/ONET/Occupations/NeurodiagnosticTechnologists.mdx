@@ -1,0 +1,69 @@
+---
+id: NeurodiagnosticTechnologists
+slug: NeurodiagnosticTechnologists
+code:
+  code: null
+title:
+  title: null
+description: Conduct electroneurodiagnostic (END) tests such as
+  electroencephalograms, evoked potentials, polysomnograms, or
+  electronystagmograms. May perform nerve conduction studies.
+$id: https://graph.org.ai/occupations/NeurodiagnosticTechnologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NeurodiagnosticTechnologists`
+      };
+  }));
+
+# Neurodiagnostic Technologists
+
+**O*NET Code**: 29-2099.01
+
+Conduct electroneurodiagnostic (END) tests such as electroencephalograms, evoked potentials, polysomnograms, or electronystagmograms. May perform nerve conduction studies.
+
+## Job Profile
+<JobZone occupation=NeurodiagnosticTechnologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NeurodiagnosticTechnologists />
+
+### General Activities
+<Activities occupation=NeurodiagnosticTechnologists />
+
+## Qualifications
+### Skills
+<Skills occupation=NeurodiagnosticTechnologists />
+
+### Knowledge
+<Knowledge occupation=NeurodiagnosticTechnologists />
+
+### Abilities
+<Abilities occupation=NeurodiagnosticTechnologists />
+
+## Work Context
+<WorkContext occupation=NeurodiagnosticTechnologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NeurodiagnosticTechnologists />
+
+### Industries
+<Industries occupation=NeurodiagnosticTechnologists />

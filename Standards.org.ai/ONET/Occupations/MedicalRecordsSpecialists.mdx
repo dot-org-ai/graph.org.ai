@@ -1,0 +1,72 @@
+---
+id: MedicalRecordsSpecialists
+slug: MedicalRecordsSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Compile, process, and maintain medical records of hospital and
+  clinic patients in a manner consistent with medical, administrative, ethical,
+  legal, and regulatory requirements of the healthcare system. Classify medical
+  and healthcare concepts, including diagnosis, procedures, medical services,
+  and equipment, into the healthcare industry's numerical coding system.
+  Includes medical coders.
+$id: https://graph.org.ai/occupations/MedicalRecordsSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MedicalRecordsSpecialists`
+      };
+  }));
+
+# Medical Records Specialists
+
+**O*NET Code**: 29-2072.00
+
+Compile, process, and maintain medical records of hospital and clinic patients in a manner consistent with medical, administrative, ethical, legal, and regulatory requirements of the healthcare system. Classify medical and healthcare concepts, including diagnosis, procedures, medical services, and equipment, into the healthcare industry's numerical coding system. Includes medical coders.
+
+## Job Profile
+<JobZone occupation=MedicalRecordsSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MedicalRecordsSpecialists />
+
+### General Activities
+<Activities occupation=MedicalRecordsSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=MedicalRecordsSpecialists />
+
+### Knowledge
+<Knowledge occupation=MedicalRecordsSpecialists />
+
+### Abilities
+<Abilities occupation=MedicalRecordsSpecialists />
+
+## Work Context
+<WorkContext occupation=MedicalRecordsSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MedicalRecordsSpecialists />
+
+### Industries
+<Industries occupation=MedicalRecordsSpecialists />

@@ -1,0 +1,69 @@
+---
+id: PublicRelationsManagers
+slug: PublicRelationsManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate activities designed to create or
+  maintain a favorable public image or raise issue awareness for their
+  organization or client.
+$id: https://graph.org.ai/occupations/PublicRelationsManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PublicRelationsManagers`
+      };
+  }));
+
+# Public Relations Managers
+
+**O*NET Code**: 11-2032.00
+
+Plan, direct, or coordinate activities designed to create or maintain a favorable public image or raise issue awareness for their organization or client.
+
+## Job Profile
+<JobZone occupation=PublicRelationsManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PublicRelationsManagers />
+
+### General Activities
+<Activities occupation=PublicRelationsManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=PublicRelationsManagers />
+
+### Knowledge
+<Knowledge occupation=PublicRelationsManagers />
+
+### Abilities
+<Abilities occupation=PublicRelationsManagers />
+
+## Work Context
+<WorkContext occupation=PublicRelationsManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PublicRelationsManagers />
+
+### Industries
+<Industries occupation=PublicRelationsManagers />

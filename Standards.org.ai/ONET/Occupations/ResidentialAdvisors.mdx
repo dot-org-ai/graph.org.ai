@@ -1,0 +1,71 @@
+---
+id: ResidentialAdvisors
+slug: ResidentialAdvisors
+code:
+  code: null
+title:
+  title: null
+description: Coordinate activities in resident facilities in secondary school
+  and college dormitories, group homes, or similar establishments. Order
+  supplies and determine need for maintenance, repairs, and furnishings. May
+  maintain household records and assign rooms. May assist residents with problem
+  solving or refer them to counseling resources.
+$id: https://graph.org.ai/occupations/ResidentialAdvisors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ResidentialAdvisors`
+      };
+  }));
+
+# Residential Advisors
+
+**O*NET Code**: 39-9041.00
+
+Coordinate activities in resident facilities in secondary school and college dormitories, group homes, or similar establishments. Order supplies and determine need for maintenance, repairs, and furnishings. May maintain household records and assign rooms. May assist residents with problem solving or refer them to counseling resources.
+
+## Job Profile
+<JobZone occupation=ResidentialAdvisors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ResidentialAdvisors />
+
+### General Activities
+<Activities occupation=ResidentialAdvisors />
+
+## Qualifications
+### Skills
+<Skills occupation=ResidentialAdvisors />
+
+### Knowledge
+<Knowledge occupation=ResidentialAdvisors />
+
+### Abilities
+<Abilities occupation=ResidentialAdvisors />
+
+## Work Context
+<WorkContext occupation=ResidentialAdvisors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ResidentialAdvisors />
+
+### Industries
+<Industries occupation=ResidentialAdvisors />

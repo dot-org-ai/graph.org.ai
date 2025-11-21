@@ -1,0 +1,73 @@
+---
+id: GamblingCageWorkers
+slug: GamblingCageWorkers
+code:
+  code: null
+title:
+  title: null
+description: In a gambling establishment, conduct financial transactions for
+  patrons. Accept patron's credit application and verify credit references to
+  provide check-cashing authorization or to establish house credit accounts. May
+  reconcile daily summaries of transactions to balance books. May sell gambling
+  chips, tokens, or tickets to patrons, or to other workers for resale to
+  patrons. May convert gambling chips, tokens, or tickets to currency upon
+  patron's request. May use a cash register or computer to record transaction.
+$id: https://graph.org.ai/occupations/GamblingCageWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GamblingCageWorkers`
+      };
+  }));
+
+# Gambling Cage Workers
+
+**O*NET Code**: 43-3041.00
+
+In a gambling establishment, conduct financial transactions for patrons. Accept patron's credit application and verify credit references to provide check-cashing authorization or to establish house credit accounts. May reconcile daily summaries of transactions to balance books. May sell gambling chips, tokens, or tickets to patrons, or to other workers for resale to patrons. May convert gambling chips, tokens, or tickets to currency upon patron's request. May use a cash register or computer to record transaction.
+
+## Job Profile
+<JobZone occupation=GamblingCageWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GamblingCageWorkers />
+
+### General Activities
+<Activities occupation=GamblingCageWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=GamblingCageWorkers />
+
+### Knowledge
+<Knowledge occupation=GamblingCageWorkers />
+
+### Abilities
+<Abilities occupation=GamblingCageWorkers />
+
+## Work Context
+<WorkContext occupation=GamblingCageWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GamblingCageWorkers />
+
+### Industries
+<Industries occupation=GamblingCageWorkers />

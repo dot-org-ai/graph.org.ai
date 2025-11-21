@@ -1,0 +1,70 @@
+---
+id: TransportationSecurityScreeners
+slug: TransportationSecurityScreeners
+code:
+  code: null
+title:
+  title: null
+description: Conduct screening of passengers, baggage, or cargo to ensure
+  compliance with Transportation Security Administration (TSA) regulations. May
+  operate basic security equipment such as x-ray machines and hand wands at
+  screening checkpoints.
+$id: https://graph.org.ai/occupations/TransportationSecurityScreeners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TransportationSecurityScreeners`
+      };
+  }));
+
+# Transportation Security Screeners
+
+**O*NET Code**: 33-9093.00
+
+Conduct screening of passengers, baggage, or cargo to ensure compliance with Transportation Security Administration (TSA) regulations. May operate basic security equipment such as x-ray machines and hand wands at screening checkpoints.
+
+## Job Profile
+<JobZone occupation=TransportationSecurityScreeners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TransportationSecurityScreeners />
+
+### General Activities
+<Activities occupation=TransportationSecurityScreeners />
+
+## Qualifications
+### Skills
+<Skills occupation=TransportationSecurityScreeners />
+
+### Knowledge
+<Knowledge occupation=TransportationSecurityScreeners />
+
+### Abilities
+<Abilities occupation=TransportationSecurityScreeners />
+
+## Work Context
+<WorkContext occupation=TransportationSecurityScreeners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TransportationSecurityScreeners />
+
+### Industries
+<Industries occupation=TransportationSecurityScreeners />

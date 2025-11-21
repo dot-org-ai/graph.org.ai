@@ -1,0 +1,68 @@
+---
+id: Bakers
+slug: Bakers
+code:
+  code: null
+title:
+  title: null
+description: Mix and bake ingredients to produce breads, rolls, cookies, cakes,
+  pies, pastries, or other baked goods.
+$id: https://graph.org.ai/occupations/Bakers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Bakers`
+      };
+  }));
+
+# Bakers
+
+**O*NET Code**: 51-3011.00
+
+Mix and bake ingredients to produce breads, rolls, cookies, cakes, pies, pastries, or other baked goods.
+
+## Job Profile
+<JobZone occupation=Bakers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Bakers />
+
+### General Activities
+<Activities occupation=Bakers />
+
+## Qualifications
+### Skills
+<Skills occupation=Bakers />
+
+### Knowledge
+<Knowledge occupation=Bakers />
+
+### Abilities
+<Abilities occupation=Bakers />
+
+## Work Context
+<WorkContext occupation=Bakers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Bakers />
+
+### Industries
+<Industries occupation=Bakers />

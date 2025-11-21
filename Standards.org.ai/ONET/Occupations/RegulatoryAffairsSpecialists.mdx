@@ -1,0 +1,69 @@
+---
+id: RegulatoryAffairsSpecialists
+slug: RegulatoryAffairsSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Coordinate and document internal regulatory processes, such as
+  internal audits, inspections, license renewals, or registrations. May compile
+  and prepare materials for submission to regulatory agencies.
+$id: https://graph.org.ai/occupations/RegulatoryAffairsSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RegulatoryAffairsSpecialists`
+      };
+  }));
+
+# Regulatory Affairs Specialists
+
+**O*NET Code**: 13-1041.07
+
+Coordinate and document internal regulatory processes, such as internal audits, inspections, license renewals, or registrations. May compile and prepare materials for submission to regulatory agencies.
+
+## Job Profile
+<JobZone occupation=RegulatoryAffairsSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RegulatoryAffairsSpecialists />
+
+### General Activities
+<Activities occupation=RegulatoryAffairsSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=RegulatoryAffairsSpecialists />
+
+### Knowledge
+<Knowledge occupation=RegulatoryAffairsSpecialists />
+
+### Abilities
+<Abilities occupation=RegulatoryAffairsSpecialists />
+
+## Work Context
+<WorkContext occupation=RegulatoryAffairsSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RegulatoryAffairsSpecialists />
+
+### Industries
+<Industries occupation=RegulatoryAffairsSpecialists />

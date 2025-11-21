@@ -1,0 +1,67 @@
+---
+id: SocialWorkersAllOther
+slug: SocialWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All social workers not listed separately.
+$id: https://graph.org.ai/occupations/SocialWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SocialWorkersAllOther`
+      };
+  }));
+
+# Social Workers, All Other
+
+**O*NET Code**: 21-1029.00
+
+All social workers not listed separately.
+
+## Job Profile
+<JobZone occupation=SocialWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SocialWorkersAllOther />
+
+### General Activities
+<Activities occupation=SocialWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=SocialWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=SocialWorkersAllOther />
+
+### Abilities
+<Abilities occupation=SocialWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=SocialWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SocialWorkersAllOther />
+
+### Industries
+<Industries occupation=SocialWorkersAllOther />

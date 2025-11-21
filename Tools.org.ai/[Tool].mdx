@@ -1,9 +1,37 @@
 ---
-$id: https://graph.org.ai/tools/{id}
+$id: https://graph.org.ai/tools/{slug}
 $type: Tool
 source: ONET
+name: "{name}"
 ---
+
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Tools%20Used.txt')
+  .then(rows => {
+      const unique = _.uniqBy(rows, 'Commodity Title');
+      
+      return unique
+        .filter(row => row['Commodity Title'])
+        .map(row => {
+          const name = row['Commodity Title'];
+          const slug = _.upperFirst(_.camelCase(name));
+          
+          return {
+              id: slug,
+              slug: slug,
+              name: name,
+              description: `Tool class: ${name}`,
+              $id: `https://graph.org.ai/tools/${slug}`
+          };
+      });
+  });
 
 # {name}
 
-<Occupations tool={id} />
+{description}
+
+## Context
+### Related Occupations
+<Occupations tool={slug} />
+
+### Related Tasks
+<Tasks tool={slug} />

@@ -1,0 +1,70 @@
+---
+id: GamblingSurveillanceOfficersAndGamblingInvestigators
+slug: GamblingSurveillanceOfficersAndGamblingInvestigators
+code:
+  code: null
+title:
+  title: null
+description: Observe gambling operation for irregular activities such as
+  cheating or theft by either employees or patrons. Investigate potential
+  threats to gambling assets such as money, chips, and gambling equipment. Act
+  as oversight and security agent for management and customers.
+$id: https://graph.org.ai/occupations/GamblingSurveillanceOfficersAndGamblingInvestigators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GamblingSurveillanceOfficersAndGamblingInvestigators`
+      };
+  }));
+
+# Gambling Surveillance Officers and Gambling Investigators
+
+**O*NET Code**: 33-9031.00
+
+Observe gambling operation for irregular activities such as cheating or theft by either employees or patrons. Investigate potential threats to gambling assets such as money, chips, and gambling equipment. Act as oversight and security agent for management and customers.
+
+## Job Profile
+<JobZone occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+### General Activities
+<Activities occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+## Qualifications
+### Skills
+<Skills occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+### Knowledge
+<Knowledge occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+### Abilities
+<Abilities occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+## Work Context
+<WorkContext occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />
+
+### Industries
+<Industries occupation=GamblingSurveillanceOfficersAndGamblingInvestigators />

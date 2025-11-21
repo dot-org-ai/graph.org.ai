@@ -1,9 +1,21 @@
 ---
-$id: https://graph.org.ai/products/{code}
+$id: https://graph.org.ai/products/{slug}
 $type: Product
 source: UNSPSC
+code: {code}
+title: {title}
 ---
 
 # {title}
 
-<Classifications product={code} />
+**UNSPSC Code**: {code}
+
+{description}
+
+## Classification
+**Family**: <ProductFamily id={familySlug} />
+**Class**: <ProductClass id={classSlug} />
+
+## Market
+**Manufacturers**: <Companies product={slug} />
+**Related Industries**: <Industries product={slug} />

@@ -1,0 +1,70 @@
+---
+id: StockersAndOrderFillers
+slug: StockersAndOrderFillers
+code:
+  code: null
+title:
+  title: null
+description: Receive, store, and issue merchandise, materials, equipment, and
+  other items from stockroom, warehouse, or storage yard to fill shelves, racks,
+  tables, or customers' orders. May operate power equipment to fill orders. May
+  mark prices on merchandise and set up sales displays.
+$id: https://graph.org.ai/occupations/StockersAndOrderFillers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$StockersAndOrderFillers`
+      };
+  }));
+
+# Stockers and Order Fillers
+
+**O*NET Code**: 53-7065.00
+
+Receive, store, and issue merchandise, materials, equipment, and other items from stockroom, warehouse, or storage yard to fill shelves, racks, tables, or customers' orders. May operate power equipment to fill orders. May mark prices on merchandise and set up sales displays.
+
+## Job Profile
+<JobZone occupation=StockersAndOrderFillers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=StockersAndOrderFillers />
+
+### General Activities
+<Activities occupation=StockersAndOrderFillers />
+
+## Qualifications
+### Skills
+<Skills occupation=StockersAndOrderFillers />
+
+### Knowledge
+<Knowledge occupation=StockersAndOrderFillers />
+
+### Abilities
+<Abilities occupation=StockersAndOrderFillers />
+
+## Work Context
+<WorkContext occupation=StockersAndOrderFillers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=StockersAndOrderFillers />
+
+### Industries
+<Industries occupation=StockersAndOrderFillers />

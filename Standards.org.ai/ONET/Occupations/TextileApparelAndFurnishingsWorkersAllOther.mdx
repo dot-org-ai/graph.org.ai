@@ -1,0 +1,67 @@
+---
+id: TextileApparelAndFurnishingsWorkersAllOther
+slug: TextileApparelAndFurnishingsWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All textile, apparel, and furnishings workers not listed separately.
+$id: https://graph.org.ai/occupations/TextileApparelAndFurnishingsWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TextileApparelAndFurnishingsWorkersAllOther`
+      };
+  }));
+
+# Textile, Apparel, and Furnishings Workers, All Other
+
+**O*NET Code**: 51-6099.00
+
+All textile, apparel, and furnishings workers not listed separately.
+
+## Job Profile
+<JobZone occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+### General Activities
+<Activities occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+### Abilities
+<Abilities occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TextileApparelAndFurnishingsWorkersAllOther />
+
+### Industries
+<Industries occupation=TextileApparelAndFurnishingsWorkersAllOther />

@@ -1,0 +1,75 @@
+---
+id: CommandAndControlCenterSpecialists
+slug: CommandAndControlCenterSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Operate and monitor communications, detection, and weapons systems
+  essential for controlling air, ground, and naval operations. Duties include
+  maintaining and relaying critical communications between air, naval, and
+  ground forces; implementing emergency plans for natural and wartime disasters;
+  relaying command center information to high-level military and government
+  decisionmakers; monitoring surveillance and detection systems, such as air
+  defense; interpreting and evaluating tactical situations and making
+  recommendations to superiors; and operating weapons targeting, firing, and
+  launch computer systems.
+$id: https://graph.org.ai/occupations/CommandAndControlCenterSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CommandAndControlCenterSpecialists`
+      };
+  }));
+
+# Command and Control Center Specialists
+
+**O*NET Code**: 55-3015.00
+
+Operate and monitor communications, detection, and weapons systems essential for controlling air, ground, and naval operations. Duties include maintaining and relaying critical communications between air, naval, and ground forces; implementing emergency plans for natural and wartime disasters; relaying command center information to high-level military and government decisionmakers; monitoring surveillance and detection systems, such as air defense; interpreting and evaluating tactical situations and making recommendations to superiors; and operating weapons targeting, firing, and launch computer systems.
+
+## Job Profile
+<JobZone occupation=CommandAndControlCenterSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CommandAndControlCenterSpecialists />
+
+### General Activities
+<Activities occupation=CommandAndControlCenterSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=CommandAndControlCenterSpecialists />
+
+### Knowledge
+<Knowledge occupation=CommandAndControlCenterSpecialists />
+
+### Abilities
+<Abilities occupation=CommandAndControlCenterSpecialists />
+
+## Work Context
+<WorkContext occupation=CommandAndControlCenterSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CommandAndControlCenterSpecialists />
+
+### Industries
+<Industries occupation=CommandAndControlCenterSpecialists />

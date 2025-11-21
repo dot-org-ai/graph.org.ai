@@ -1,0 +1,67 @@
+---
+id: FloralDesigners
+slug: FloralDesigners
+code:
+  code: null
+title:
+  title: null
+description: Design, cut, and arrange live, dried, or artificial flowers and foliage.
+$id: https://graph.org.ai/occupations/FloralDesigners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FloralDesigners`
+      };
+  }));
+
+# Floral Designers
+
+**O*NET Code**: 27-1023.00
+
+Design, cut, and arrange live, dried, or artificial flowers and foliage.
+
+## Job Profile
+<JobZone occupation=FloralDesigners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FloralDesigners />
+
+### General Activities
+<Activities occupation=FloralDesigners />
+
+## Qualifications
+### Skills
+<Skills occupation=FloralDesigners />
+
+### Knowledge
+<Knowledge occupation=FloralDesigners />
+
+### Abilities
+<Abilities occupation=FloralDesigners />
+
+## Work Context
+<WorkContext occupation=FloralDesigners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FloralDesigners />
+
+### Industries
+<Industries occupation=FloralDesigners />

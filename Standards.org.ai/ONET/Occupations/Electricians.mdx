@@ -1,0 +1,69 @@
+---
+id: Electricians
+slug: Electricians
+code:
+  code: null
+title:
+  title: null
+description: Install, maintain, and repair electrical wiring, equipment, and
+  fixtures. Ensure that work is in accordance with relevant codes. May install
+  or service street lights, intercom systems, or electrical control systems.
+$id: https://graph.org.ai/occupations/Electricians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Electricians`
+      };
+  }));
+
+# Electricians
+
+**O*NET Code**: 47-2111.00
+
+Install, maintain, and repair electrical wiring, equipment, and fixtures. Ensure that work is in accordance with relevant codes. May install or service street lights, intercom systems, or electrical control systems.
+
+## Job Profile
+<JobZone occupation=Electricians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Electricians />
+
+### General Activities
+<Activities occupation=Electricians />
+
+## Qualifications
+### Skills
+<Skills occupation=Electricians />
+
+### Knowledge
+<Knowledge occupation=Electricians />
+
+### Abilities
+<Abilities occupation=Electricians />
+
+## Work Context
+<WorkContext occupation=Electricians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Electricians />
+
+### Industries
+<Industries occupation=Electricians />

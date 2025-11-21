@@ -1,0 +1,17 @@
+---
+$id: https://graph.org.ai/gs1/gln/{gln}
+$type: GLN
+code: {gln}
+---
+
+# GLN: {gln}
+
+## Entity
+<Party gln={gln} />
+<Location gln={gln} />
+
+## Events (as Location)
+<Events location={gln} />
+
+## Events (as Party)
+<Events party={gln} />

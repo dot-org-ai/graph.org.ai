@@ -1,0 +1,69 @@
+---
+id: AnthropologyAndArcheologyTeachersPostsecondary
+slug: AnthropologyAndArcheologyTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in anthropology or archeology. Includes both teachers
+  primarily engaged in teaching and those who do a combination of teaching and
+  research.
+$id: https://graph.org.ai/occupations/AnthropologyAndArcheologyTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AnthropologyAndArcheologyTeachersPostsecondary`
+      };
+  }));
+
+# Anthropology and Archeology Teachers, Postsecondary
+
+**O*NET Code**: 25-1061.00
+
+Teach courses in anthropology or archeology. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AnthropologyAndArcheologyTeachersPostsecondary />
+
+### Industries
+<Industries occupation=AnthropologyAndArcheologyTeachersPostsecondary />

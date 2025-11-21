@@ -1,0 +1,70 @@
+---
+id: DiningRoomAndCafeteriaAttendantsAndBartenderHelpers
+slug: DiningRoomAndCafeteriaAttendantsAndBartenderHelpers
+code:
+  code: null
+title:
+  title: null
+description: Facilitate food service. Clean tables; remove dirty dishes; replace
+  soiled table linens; set tables; replenish supply of clean linens, silverware,
+  glassware, and dishes; supply service bar with food; and serve items such as
+  water, condiments, and coffee to patrons.
+$id: https://graph.org.ai/occupations/DiningRoomAndCafeteriaAttendantsAndBartenderHelpers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DiningRoomAndCafeteriaAttendantsAndBartenderHelpers`
+      };
+  }));
+
+# Dining Room and Cafeteria Attendants and Bartender Helpers
+
+**O*NET Code**: 35-9011.00
+
+Facilitate food service. Clean tables; remove dirty dishes; replace soiled table linens; set tables; replenish supply of clean linens, silverware, glassware, and dishes; supply service bar with food; and serve items such as water, condiments, and coffee to patrons.
+
+## Job Profile
+<JobZone occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+### General Activities
+<Activities occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+## Qualifications
+### Skills
+<Skills occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+### Knowledge
+<Knowledge occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+### Abilities
+<Abilities occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+## Work Context
+<WorkContext occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />
+
+### Industries
+<Industries occupation=DiningRoomAndCafeteriaAttendantsAndBartenderHelpers />

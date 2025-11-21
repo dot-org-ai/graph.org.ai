@@ -1,0 +1,69 @@
+---
+id: Chiropractors
+slug: Chiropractors
+code:
+  code: null
+title:
+  title: null
+description: Assess, treat, and care for patients by manipulation of spine and
+  musculoskeletal system. May provide spinal adjustment or address sacral or
+  pelvic misalignment.
+$id: https://graph.org.ai/occupations/Chiropractors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Chiropractors`
+      };
+  }));
+
+# Chiropractors
+
+**O*NET Code**: 29-1011.00
+
+Assess, treat, and care for patients by manipulation of spine and musculoskeletal system. May provide spinal adjustment or address sacral or pelvic misalignment.
+
+## Job Profile
+<JobZone occupation=Chiropractors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Chiropractors />
+
+### General Activities
+<Activities occupation=Chiropractors />
+
+## Qualifications
+### Skills
+<Skills occupation=Chiropractors />
+
+### Knowledge
+<Knowledge occupation=Chiropractors />
+
+### Abilities
+<Abilities occupation=Chiropractors />
+
+## Work Context
+<WorkContext occupation=Chiropractors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Chiropractors />
+
+### Industries
+<Industries occupation=Chiropractors />

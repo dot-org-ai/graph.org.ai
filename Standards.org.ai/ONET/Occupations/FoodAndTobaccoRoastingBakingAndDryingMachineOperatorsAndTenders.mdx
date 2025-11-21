@@ -1,0 +1,69 @@
+---
+id: FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders
+slug: FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend food or tobacco roasting, baking, or drying
+  equipment, including hearth ovens, kiln driers, roasters, char kilns, and
+  vacuum drying equipment.
+$id: https://graph.org.ai/occupations/FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders`
+      };
+  }));
+
+# Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders
+
+**O*NET Code**: 51-3091.00
+
+Operate or tend food or tobacco roasting, baking, or drying equipment, including hearth ovens, kiln driers, roasters, char kilns, and vacuum drying equipment.
+
+## Job Profile
+<JobZone occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />
+
+### Industries
+<Industries occupation=FoodAndTobaccoRoastingBakingAndDryingMachineOperatorsAndTenders />

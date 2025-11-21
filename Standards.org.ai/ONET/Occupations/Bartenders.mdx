@@ -1,0 +1,67 @@
+---
+id: Bartenders
+slug: Bartenders
+code:
+  code: null
+title:
+  title: null
+description: Mix and serve drinks to patrons, directly or through waitstaff.
+$id: https://graph.org.ai/occupations/Bartenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Bartenders`
+      };
+  }));
+
+# Bartenders
+
+**O*NET Code**: 35-3011.00
+
+Mix and serve drinks to patrons, directly or through waitstaff.
+
+## Job Profile
+<JobZone occupation=Bartenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Bartenders />
+
+### General Activities
+<Activities occupation=Bartenders />
+
+## Qualifications
+### Skills
+<Skills occupation=Bartenders />
+
+### Knowledge
+<Knowledge occupation=Bartenders />
+
+### Abilities
+<Abilities occupation=Bartenders />
+
+## Work Context
+<WorkContext occupation=Bartenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Bartenders />
+
+### Industries
+<Industries occupation=Bartenders />

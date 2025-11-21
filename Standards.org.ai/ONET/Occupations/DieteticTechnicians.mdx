@@ -1,0 +1,70 @@
+---
+id: DieteticTechnicians
+slug: DieteticTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Assist in the provision of food service and nutritional programs,
+  under the supervision of a dietitian. May plan and produce meals based on
+  established guidelines, teach principles of food and nutrition, or counsel
+  individuals.
+$id: https://graph.org.ai/occupations/DieteticTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DieteticTechnicians`
+      };
+  }));
+
+# Dietetic Technicians
+
+**O*NET Code**: 29-2051.00
+
+Assist in the provision of food service and nutritional programs, under the supervision of a dietitian. May plan and produce meals based on established guidelines, teach principles of food and nutrition, or counsel individuals.
+
+## Job Profile
+<JobZone occupation=DieteticTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DieteticTechnicians />
+
+### General Activities
+<Activities occupation=DieteticTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=DieteticTechnicians />
+
+### Knowledge
+<Knowledge occupation=DieteticTechnicians />
+
+### Abilities
+<Abilities occupation=DieteticTechnicians />
+
+## Work Context
+<WorkContext occupation=DieteticTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DieteticTechnicians />
+
+### Industries
+<Industries occupation=DieteticTechnicians />

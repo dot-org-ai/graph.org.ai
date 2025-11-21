@@ -1,0 +1,67 @@
+---
+id: CooksPrivateHousehold
+slug: CooksPrivateHousehold
+code:
+  code: null
+title:
+  title: null
+description: Prepare meals in private homes. Includes personal chefs.
+$id: https://graph.org.ai/occupations/CooksPrivateHousehold
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CooksPrivateHousehold`
+      };
+  }));
+
+# Cooks, Private Household
+
+**O*NET Code**: 35-2013.00
+
+Prepare meals in private homes. Includes personal chefs.
+
+## Job Profile
+<JobZone occupation=CooksPrivateHousehold />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CooksPrivateHousehold />
+
+### General Activities
+<Activities occupation=CooksPrivateHousehold />
+
+## Qualifications
+### Skills
+<Skills occupation=CooksPrivateHousehold />
+
+### Knowledge
+<Knowledge occupation=CooksPrivateHousehold />
+
+### Abilities
+<Abilities occupation=CooksPrivateHousehold />
+
+## Work Context
+<WorkContext occupation=CooksPrivateHousehold />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CooksPrivateHousehold />
+
+### Industries
+<Industries occupation=CooksPrivateHousehold />

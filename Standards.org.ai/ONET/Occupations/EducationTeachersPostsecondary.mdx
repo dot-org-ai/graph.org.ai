@@ -1,0 +1,70 @@
+---
+id: EducationTeachersPostsecondary
+slug: EducationTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses pertaining to education, such as counseling,
+  curriculum, guidance, instruction, teacher education, and teaching English as
+  a second language. Includes both teachers primarily engaged in teaching and
+  those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/EducationTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EducationTeachersPostsecondary`
+      };
+  }));
+
+# Education Teachers, Postsecondary
+
+**O*NET Code**: 25-1081.00
+
+Teach courses pertaining to education, such as counseling, curriculum, guidance, instruction, teacher education, and teaching English as a second language. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=EducationTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EducationTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=EducationTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=EducationTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=EducationTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=EducationTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=EducationTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EducationTeachersPostsecondary />
+
+### Industries
+<Industries occupation=EducationTeachersPostsecondary />

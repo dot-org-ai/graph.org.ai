@@ -1,0 +1,68 @@
+---
+id: Urologists
+slug: Urologists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, and help prevent benign and malignant medical and
+  surgical disorders of the genitourinary system and the renal glands.
+$id: https://graph.org.ai/occupations/Urologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Urologists`
+      };
+  }));
+
+# Urologists
+
+**O*NET Code**: 29-1229.03
+
+Diagnose, treat, and help prevent benign and malignant medical and surgical disorders of the genitourinary system and the renal glands.
+
+## Job Profile
+<JobZone occupation=Urologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Urologists />
+
+### General Activities
+<Activities occupation=Urologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Urologists />
+
+### Knowledge
+<Knowledge occupation=Urologists />
+
+### Abilities
+<Abilities occupation=Urologists />
+
+## Work Context
+<WorkContext occupation=Urologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Urologists />
+
+### Industries
+<Industries occupation=Urologists />

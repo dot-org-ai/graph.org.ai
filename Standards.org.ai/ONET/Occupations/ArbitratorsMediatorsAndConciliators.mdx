@@ -1,0 +1,69 @@
+---
+id: ArbitratorsMediatorsAndConciliators
+slug: ArbitratorsMediatorsAndConciliators
+code:
+  code: null
+title:
+  title: null
+description: Facilitate negotiation and conflict resolution through dialogue.
+  Resolve conflicts outside of the court system by mutual consent of parties
+  involved.
+$id: https://graph.org.ai/occupations/ArbitratorsMediatorsAndConciliators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ArbitratorsMediatorsAndConciliators`
+      };
+  }));
+
+# Arbitrators, Mediators, and Conciliators
+
+**O*NET Code**: 23-1022.00
+
+Facilitate negotiation and conflict resolution through dialogue. Resolve conflicts outside of the court system by mutual consent of parties involved.
+
+## Job Profile
+<JobZone occupation=ArbitratorsMediatorsAndConciliators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ArbitratorsMediatorsAndConciliators />
+
+### General Activities
+<Activities occupation=ArbitratorsMediatorsAndConciliators />
+
+## Qualifications
+### Skills
+<Skills occupation=ArbitratorsMediatorsAndConciliators />
+
+### Knowledge
+<Knowledge occupation=ArbitratorsMediatorsAndConciliators />
+
+### Abilities
+<Abilities occupation=ArbitratorsMediatorsAndConciliators />
+
+## Work Context
+<WorkContext occupation=ArbitratorsMediatorsAndConciliators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ArbitratorsMediatorsAndConciliators />
+
+### Industries
+<Industries occupation=ArbitratorsMediatorsAndConciliators />

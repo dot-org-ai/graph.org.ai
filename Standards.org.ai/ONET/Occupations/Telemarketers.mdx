@@ -1,0 +1,67 @@
+---
+id: Telemarketers
+slug: Telemarketers
+code:
+  code: null
+title:
+  title: null
+description: Solicit donations or orders for goods or services over the telephone.
+$id: https://graph.org.ai/occupations/Telemarketers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Telemarketers`
+      };
+  }));
+
+# Telemarketers
+
+**O*NET Code**: 41-9041.00
+
+Solicit donations or orders for goods or services over the telephone.
+
+## Job Profile
+<JobZone occupation=Telemarketers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Telemarketers />
+
+### General Activities
+<Activities occupation=Telemarketers />
+
+## Qualifications
+### Skills
+<Skills occupation=Telemarketers />
+
+### Knowledge
+<Knowledge occupation=Telemarketers />
+
+### Abilities
+<Abilities occupation=Telemarketers />
+
+## Work Context
+<WorkContext occupation=Telemarketers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Telemarketers />
+
+### Industries
+<Industries occupation=Telemarketers />

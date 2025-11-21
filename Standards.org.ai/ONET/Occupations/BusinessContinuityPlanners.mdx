@@ -1,0 +1,73 @@
+---
+id: BusinessContinuityPlanners
+slug: BusinessContinuityPlanners
+code:
+  code: null
+title:
+  title: null
+description: Develop, maintain, or implement business continuity and disaster
+  recovery strategies and solutions, including risk assessments, business impact
+  analyses, strategy selection, and documentation of business continuity and
+  disaster recovery procedures. Plan, conduct, and debrief regular mock-disaster
+  exercises to test the adequacy of existing plans and strategies, updating
+  procedures and plans regularly. Act as a coordinator for continuity efforts
+  after a disruption event.
+$id: https://graph.org.ai/occupations/BusinessContinuityPlanners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BusinessContinuityPlanners`
+      };
+  }));
+
+# Business Continuity Planners
+
+**O*NET Code**: 13-1199.04
+
+Develop, maintain, or implement business continuity and disaster recovery strategies and solutions, including risk assessments, business impact analyses, strategy selection, and documentation of business continuity and disaster recovery procedures. Plan, conduct, and debrief regular mock-disaster exercises to test the adequacy of existing plans and strategies, updating procedures and plans regularly. Act as a coordinator for continuity efforts after a disruption event.
+
+## Job Profile
+<JobZone occupation=BusinessContinuityPlanners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BusinessContinuityPlanners />
+
+### General Activities
+<Activities occupation=BusinessContinuityPlanners />
+
+## Qualifications
+### Skills
+<Skills occupation=BusinessContinuityPlanners />
+
+### Knowledge
+<Knowledge occupation=BusinessContinuityPlanners />
+
+### Abilities
+<Abilities occupation=BusinessContinuityPlanners />
+
+## Work Context
+<WorkContext occupation=BusinessContinuityPlanners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BusinessContinuityPlanners />
+
+### Industries
+<Industries occupation=BusinessContinuityPlanners />

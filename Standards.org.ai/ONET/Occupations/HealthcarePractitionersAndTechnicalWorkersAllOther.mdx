@@ -1,0 +1,67 @@
+---
+id: HealthcarePractitionersAndTechnicalWorkersAllOther
+slug: HealthcarePractitionersAndTechnicalWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All healthcare practitioners and technical workers not listed separately.
+$id: https://graph.org.ai/occupations/HealthcarePractitionersAndTechnicalWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HealthcarePractitionersAndTechnicalWorkersAllOther`
+      };
+  }));
+
+# Healthcare Practitioners and Technical Workers, All Other
+
+**O*NET Code**: 29-9099.00
+
+All healthcare practitioners and technical workers not listed separately.
+
+## Job Profile
+<JobZone occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+### General Activities
+<Activities occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+### Abilities
+<Abilities occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />
+
+### Industries
+<Industries occupation=HealthcarePractitionersAndTechnicalWorkersAllOther />

@@ -1,0 +1,68 @@
+---
+id: BaggagePortersAndBellhops
+slug: BaggagePortersAndBellhops
+code:
+  code: null
+title:
+  title: null
+description: Handle baggage for travelers at transportation terminals or for
+  guests at hotels or similar establishments.
+$id: https://graph.org.ai/occupations/BaggagePortersAndBellhops
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BaggagePortersAndBellhops`
+      };
+  }));
+
+# Baggage Porters and Bellhops
+
+**O*NET Code**: 39-6011.00
+
+Handle baggage for travelers at transportation terminals or for guests at hotels or similar establishments.
+
+## Job Profile
+<JobZone occupation=BaggagePortersAndBellhops />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BaggagePortersAndBellhops />
+
+### General Activities
+<Activities occupation=BaggagePortersAndBellhops />
+
+## Qualifications
+### Skills
+<Skills occupation=BaggagePortersAndBellhops />
+
+### Knowledge
+<Knowledge occupation=BaggagePortersAndBellhops />
+
+### Abilities
+<Abilities occupation=BaggagePortersAndBellhops />
+
+## Work Context
+<WorkContext occupation=BaggagePortersAndBellhops />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BaggagePortersAndBellhops />
+
+### Industries
+<Industries occupation=BaggagePortersAndBellhops />

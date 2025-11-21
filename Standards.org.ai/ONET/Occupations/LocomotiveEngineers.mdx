@@ -1,0 +1,69 @@
+---
+id: LocomotiveEngineers
+slug: LocomotiveEngineers
+code:
+  code: null
+title:
+  title: null
+description: Drive electric, diesel-electric, steam, or gas-turbine-electric
+  locomotives to transport passengers or freight. Interpret train orders,
+  electronic or manual signals, and railroad rules and regulations.
+$id: https://graph.org.ai/occupations/LocomotiveEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LocomotiveEngineers`
+      };
+  }));
+
+# Locomotive Engineers
+
+**O*NET Code**: 53-4011.00
+
+Drive electric, diesel-electric, steam, or gas-turbine-electric locomotives to transport passengers or freight. Interpret train orders, electronic or manual signals, and railroad rules and regulations.
+
+## Job Profile
+<JobZone occupation=LocomotiveEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LocomotiveEngineers />
+
+### General Activities
+<Activities occupation=LocomotiveEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=LocomotiveEngineers />
+
+### Knowledge
+<Knowledge occupation=LocomotiveEngineers />
+
+### Abilities
+<Abilities occupation=LocomotiveEngineers />
+
+## Work Context
+<WorkContext occupation=LocomotiveEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LocomotiveEngineers />
+
+### Industries
+<Industries occupation=LocomotiveEngineers />

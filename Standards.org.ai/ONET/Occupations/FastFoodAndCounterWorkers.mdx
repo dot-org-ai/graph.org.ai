@@ -1,0 +1,69 @@
+---
+id: FastFoodAndCounterWorkers
+slug: FastFoodAndCounterWorkers
+code:
+  code: null
+title:
+  title: null
+description: Perform duties such as taking orders and serving food and
+  beverages. Serve customers at counter or from a steam table. May take payment.
+  May prepare food and beverages.
+$id: https://graph.org.ai/occupations/FastFoodAndCounterWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FastFoodAndCounterWorkers`
+      };
+  }));
+
+# Fast Food and Counter Workers
+
+**O*NET Code**: 35-3023.00
+
+Perform duties such as taking orders and serving food and beverages. Serve customers at counter or from a steam table. May take payment. May prepare food and beverages.
+
+## Job Profile
+<JobZone occupation=FastFoodAndCounterWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FastFoodAndCounterWorkers />
+
+### General Activities
+<Activities occupation=FastFoodAndCounterWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FastFoodAndCounterWorkers />
+
+### Knowledge
+<Knowledge occupation=FastFoodAndCounterWorkers />
+
+### Abilities
+<Abilities occupation=FastFoodAndCounterWorkers />
+
+## Work Context
+<WorkContext occupation=FastFoodAndCounterWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FastFoodAndCounterWorkers />
+
+### Industries
+<Industries occupation=FastFoodAndCounterWorkers />

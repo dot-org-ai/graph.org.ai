@@ -1,0 +1,68 @@
+---
+id: CounterAndRentalClerks
+slug: CounterAndRentalClerks
+code:
+  code: null
+title:
+  title: null
+description: Receive orders, generally in person, for repairs, rentals, and
+  services. May describe available options, compute cost, and accept payment.
+$id: https://graph.org.ai/occupations/CounterAndRentalClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CounterAndRentalClerks`
+      };
+  }));
+
+# Counter and Rental Clerks
+
+**O*NET Code**: 41-2021.00
+
+Receive orders, generally in person, for repairs, rentals, and services. May describe available options, compute cost, and accept payment.
+
+## Job Profile
+<JobZone occupation=CounterAndRentalClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CounterAndRentalClerks />
+
+### General Activities
+<Activities occupation=CounterAndRentalClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=CounterAndRentalClerks />
+
+### Knowledge
+<Knowledge occupation=CounterAndRentalClerks />
+
+### Abilities
+<Abilities occupation=CounterAndRentalClerks />
+
+## Work Context
+<WorkContext occupation=CounterAndRentalClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CounterAndRentalClerks />
+
+### Industries
+<Industries occupation=CounterAndRentalClerks />

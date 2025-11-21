@@ -1,0 +1,70 @@
+---
+id: CustomerServiceRepresentatives
+slug: CustomerServiceRepresentatives
+code:
+  code: null
+title:
+  title: null
+description: Interact with customers to provide basic or scripted information in
+  response to routine inquiries about products and services. May handle and
+  resolve general complaints. Excludes individuals whose duties are primarily
+  installation, sales, repair, and technical support.
+$id: https://graph.org.ai/occupations/CustomerServiceRepresentatives
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CustomerServiceRepresentatives`
+      };
+  }));
+
+# Customer Service Representatives
+
+**O*NET Code**: 43-4051.00
+
+Interact with customers to provide basic or scripted information in response to routine inquiries about products and services. May handle and resolve general complaints. Excludes individuals whose duties are primarily installation, sales, repair, and technical support.
+
+## Job Profile
+<JobZone occupation=CustomerServiceRepresentatives />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CustomerServiceRepresentatives />
+
+### General Activities
+<Activities occupation=CustomerServiceRepresentatives />
+
+## Qualifications
+### Skills
+<Skills occupation=CustomerServiceRepresentatives />
+
+### Knowledge
+<Knowledge occupation=CustomerServiceRepresentatives />
+
+### Abilities
+<Abilities occupation=CustomerServiceRepresentatives />
+
+## Work Context
+<WorkContext occupation=CustomerServiceRepresentatives />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CustomerServiceRepresentatives />
+
+### Industries
+<Industries occupation=CustomerServiceRepresentatives />

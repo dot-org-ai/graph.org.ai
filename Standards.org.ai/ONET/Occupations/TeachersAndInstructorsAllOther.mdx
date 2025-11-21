@@ -1,0 +1,67 @@
+---
+id: TeachersAndInstructorsAllOther
+slug: TeachersAndInstructorsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All teachers and instructors not listed separately.
+$id: https://graph.org.ai/occupations/TeachersAndInstructorsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TeachersAndInstructorsAllOther`
+      };
+  }));
+
+# Teachers and Instructors, All Other
+
+**O*NET Code**: 25-3099.00
+
+All teachers and instructors not listed separately.
+
+## Job Profile
+<JobZone occupation=TeachersAndInstructorsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TeachersAndInstructorsAllOther />
+
+### General Activities
+<Activities occupation=TeachersAndInstructorsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=TeachersAndInstructorsAllOther />
+
+### Knowledge
+<Knowledge occupation=TeachersAndInstructorsAllOther />
+
+### Abilities
+<Abilities occupation=TeachersAndInstructorsAllOther />
+
+## Work Context
+<WorkContext occupation=TeachersAndInstructorsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TeachersAndInstructorsAllOther />
+
+### Industries
+<Industries occupation=TeachersAndInstructorsAllOther />

@@ -1,0 +1,70 @@
+---
+id: Coroners
+slug: Coroners
+code:
+  code: null
+title:
+  title: null
+description: Direct activities such as autopsies, pathological and toxicological
+  analyses, and inquests relating to the investigation of deaths occurring
+  within a legal jurisdiction to determine cause of death or to fix
+  responsibility for accidental, violent, or unexplained deaths.
+$id: https://graph.org.ai/occupations/Coroners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Coroners`
+      };
+  }));
+
+# Coroners
+
+**O*NET Code**: 13-1041.06
+
+Direct activities such as autopsies, pathological and toxicological analyses, and inquests relating to the investigation of deaths occurring within a legal jurisdiction to determine cause of death or to fix responsibility for accidental, violent, or unexplained deaths.
+
+## Job Profile
+<JobZone occupation=Coroners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Coroners />
+
+### General Activities
+<Activities occupation=Coroners />
+
+## Qualifications
+### Skills
+<Skills occupation=Coroners />
+
+### Knowledge
+<Knowledge occupation=Coroners />
+
+### Abilities
+<Abilities occupation=Coroners />
+
+## Work Context
+<WorkContext occupation=Coroners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Coroners />
+
+### Industries
+<Industries occupation=Coroners />

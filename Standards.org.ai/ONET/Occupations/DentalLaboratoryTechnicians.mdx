@@ -1,0 +1,67 @@
+---
+id: DentalLaboratoryTechnicians
+slug: DentalLaboratoryTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Construct and repair full or partial dentures or dental appliances.
+$id: https://graph.org.ai/occupations/DentalLaboratoryTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DentalLaboratoryTechnicians`
+      };
+  }));
+
+# Dental Laboratory Technicians
+
+**O*NET Code**: 51-9081.00
+
+Construct and repair full or partial dentures or dental appliances.
+
+## Job Profile
+<JobZone occupation=DentalLaboratoryTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DentalLaboratoryTechnicians />
+
+### General Activities
+<Activities occupation=DentalLaboratoryTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=DentalLaboratoryTechnicians />
+
+### Knowledge
+<Knowledge occupation=DentalLaboratoryTechnicians />
+
+### Abilities
+<Abilities occupation=DentalLaboratoryTechnicians />
+
+## Work Context
+<WorkContext occupation=DentalLaboratoryTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DentalLaboratoryTechnicians />
+
+### Industries
+<Industries occupation=DentalLaboratoryTechnicians />

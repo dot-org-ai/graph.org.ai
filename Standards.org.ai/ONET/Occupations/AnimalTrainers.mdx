@@ -1,0 +1,71 @@
+---
+id: AnimalTrainers
+slug: AnimalTrainers
+code:
+  code: null
+title:
+  title: null
+description: Train animals for riding, harness, security, performance, or
+  obedience, or for assisting persons with disabilities. Accustom animals to
+  human voice and contact, and condition animals to respond to commands. Train
+  animals according to prescribed standards for show or competition. May train
+  animals to carry pack loads or work as part of pack team.
+$id: https://graph.org.ai/occupations/AnimalTrainers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AnimalTrainers`
+      };
+  }));
+
+# Animal Trainers
+
+**O*NET Code**: 39-2011.00
+
+Train animals for riding, harness, security, performance, or obedience, or for assisting persons with disabilities. Accustom animals to human voice and contact, and condition animals to respond to commands. Train animals according to prescribed standards for show or competition. May train animals to carry pack loads or work as part of pack team.
+
+## Job Profile
+<JobZone occupation=AnimalTrainers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AnimalTrainers />
+
+### General Activities
+<Activities occupation=AnimalTrainers />
+
+## Qualifications
+### Skills
+<Skills occupation=AnimalTrainers />
+
+### Knowledge
+<Knowledge occupation=AnimalTrainers />
+
+### Abilities
+<Abilities occupation=AnimalTrainers />
+
+## Work Context
+<WorkContext occupation=AnimalTrainers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AnimalTrainers />
+
+### Industries
+<Industries occupation=AnimalTrainers />

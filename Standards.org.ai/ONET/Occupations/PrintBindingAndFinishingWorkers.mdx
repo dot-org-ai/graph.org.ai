@@ -1,0 +1,68 @@
+---
+id: PrintBindingAndFinishingWorkers
+slug: PrintBindingAndFinishingWorkers
+code:
+  code: null
+title:
+  title: null
+description: Bind books and other publications or finish printed products by
+  hand or machine. May set up binding and finishing machines.
+$id: https://graph.org.ai/occupations/PrintBindingAndFinishingWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PrintBindingAndFinishingWorkers`
+      };
+  }));
+
+# Print Binding and Finishing Workers
+
+**O*NET Code**: 51-5113.00
+
+Bind books and other publications or finish printed products by hand or machine. May set up binding and finishing machines.
+
+## Job Profile
+<JobZone occupation=PrintBindingAndFinishingWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PrintBindingAndFinishingWorkers />
+
+### General Activities
+<Activities occupation=PrintBindingAndFinishingWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=PrintBindingAndFinishingWorkers />
+
+### Knowledge
+<Knowledge occupation=PrintBindingAndFinishingWorkers />
+
+### Abilities
+<Abilities occupation=PrintBindingAndFinishingWorkers />
+
+## Work Context
+<WorkContext occupation=PrintBindingAndFinishingWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PrintBindingAndFinishingWorkers />
+
+### Industries
+<Industries occupation=PrintBindingAndFinishingWorkers />

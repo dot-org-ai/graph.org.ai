@@ -1,0 +1,71 @@
+---
+id: HazardousMaterialsRemovalWorkers
+slug: HazardousMaterialsRemovalWorkers
+code:
+  code: null
+title:
+  title: null
+description: Identify, remove, pack, transport, or dispose of hazardous
+  materials, including asbestos, lead-based paint, waste oil, fuel, transmission
+  fluid, radioactive materials, or contaminated soil. Specialized training and
+  certification in hazardous materials handling or a confined entry permit are
+  generally required. May operate earth-moving equipment or trucks.
+$id: https://graph.org.ai/occupations/HazardousMaterialsRemovalWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HazardousMaterialsRemovalWorkers`
+      };
+  }));
+
+# Hazardous Materials Removal Workers
+
+**O*NET Code**: 47-4041.00
+
+Identify, remove, pack, transport, or dispose of hazardous materials, including asbestos, lead-based paint, waste oil, fuel, transmission fluid, radioactive materials, or contaminated soil. Specialized training and certification in hazardous materials handling or a confined entry permit are generally required. May operate earth-moving equipment or trucks.
+
+## Job Profile
+<JobZone occupation=HazardousMaterialsRemovalWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HazardousMaterialsRemovalWorkers />
+
+### General Activities
+<Activities occupation=HazardousMaterialsRemovalWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=HazardousMaterialsRemovalWorkers />
+
+### Knowledge
+<Knowledge occupation=HazardousMaterialsRemovalWorkers />
+
+### Abilities
+<Abilities occupation=HazardousMaterialsRemovalWorkers />
+
+## Work Context
+<WorkContext occupation=HazardousMaterialsRemovalWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HazardousMaterialsRemovalWorkers />
+
+### Industries
+<Industries occupation=HazardousMaterialsRemovalWorkers />

@@ -1,0 +1,67 @@
+---
+id: DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers
+slug: DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers
+code:
+  code: null
+title:
+  title: null
+description: Sell goods or services door-to-door or on the street.
+$id: https://graph.org.ai/occupations/DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers`
+      };
+  }));
+
+# Door-to-Door Sales Workers, News and Street Vendors, and Related Workers
+
+**O*NET Code**: 41-9091.00
+
+Sell goods or services door-to-door or on the street.
+
+## Job Profile
+<JobZone occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+### General Activities
+<Activities occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+### Knowledge
+<Knowledge occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+### Abilities
+<Abilities occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+## Work Context
+<WorkContext occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />
+
+### Industries
+<Industries occupation=DoorToDoorSalesWorkersNewsAndStreetVendorsAndRelatedWorkers />

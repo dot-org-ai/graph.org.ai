@@ -1,0 +1,69 @@
+---
+id: HelpersPipelayersPlumbersPipefittersAndSteamfitters
+slug: HelpersPipelayersPlumbersPipefittersAndSteamfitters
+code:
+  code: null
+title:
+  title: null
+description: Help plumbers, pipefitters, steamfitters, or pipelayers by
+  performing duties requiring less skill. Duties include using, supplying, or
+  holding materials or tools, and cleaning work area and equipment.
+$id: https://graph.org.ai/occupations/HelpersPipelayersPlumbersPipefittersAndSteamfitters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersPipelayersPlumbersPipefittersAndSteamfitters`
+      };
+  }));
+
+# Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters
+
+**O*NET Code**: 47-3015.00
+
+Help plumbers, pipefitters, steamfitters, or pipelayers by performing duties requiring less skill. Duties include using, supplying, or holding materials or tools, and cleaning work area and equipment.
+
+## Job Profile
+<JobZone occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+### General Activities
+<Activities occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+### Knowledge
+<Knowledge occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+### Abilities
+<Abilities occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+## Work Context
+<WorkContext occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />
+
+### Industries
+<Industries occupation=HelpersPipelayersPlumbersPipefittersAndSteamfitters />

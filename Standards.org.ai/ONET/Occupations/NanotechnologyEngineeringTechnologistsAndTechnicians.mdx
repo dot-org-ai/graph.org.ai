@@ -1,0 +1,71 @@
+---
+id: NanotechnologyEngineeringTechnologistsAndTechnicians
+slug: NanotechnologyEngineeringTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Implement production processes and operate commercial-scale
+  production equipment to produce, test, or modify materials, devices, or
+  systems of unique molecular or macromolecular composition. Operate advanced
+  microscopy equipment to manipulate nanoscale objects. Work under the
+  supervision of nanoengineering staff.
+$id: https://graph.org.ai/occupations/NanotechnologyEngineeringTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NanotechnologyEngineeringTechnologistsAndTechnicians`
+      };
+  }));
+
+# Nanotechnology Engineering Technologists and Technicians
+
+**O*NET Code**: 17-3026.01
+
+Implement production processes and operate commercial-scale production equipment to produce, test, or modify materials, devices, or systems of unique molecular or macromolecular composition. Operate advanced microscopy equipment to manipulate nanoscale objects. Work under the supervision of nanoengineering staff.
+
+## Job Profile
+<JobZone occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=NanotechnologyEngineeringTechnologistsAndTechnicians />

@@ -1,0 +1,69 @@
+---
+id: OutdoorPowerEquipmentAndOtherSmallEngineMechanics
+slug: OutdoorPowerEquipmentAndOtherSmallEngineMechanics
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, adjust, repair, or overhaul small engines used to power
+  lawn mowers, chain saws, recreational sporting equipment, and related
+  equipment.
+$id: https://graph.org.ai/occupations/OutdoorPowerEquipmentAndOtherSmallEngineMechanics
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OutdoorPowerEquipmentAndOtherSmallEngineMechanics`
+      };
+  }));
+
+# Outdoor Power Equipment and Other Small Engine Mechanics
+
+**O*NET Code**: 49-3053.00
+
+Diagnose, adjust, repair, or overhaul small engines used to power lawn mowers, chain saws, recreational sporting equipment, and related equipment.
+
+## Job Profile
+<JobZone occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+### General Activities
+<Activities occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+## Qualifications
+### Skills
+<Skills occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+### Knowledge
+<Knowledge occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+### Abilities
+<Abilities occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+## Work Context
+<WorkContext occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />
+
+### Industries
+<Industries occupation=OutdoorPowerEquipmentAndOtherSmallEngineMechanics />

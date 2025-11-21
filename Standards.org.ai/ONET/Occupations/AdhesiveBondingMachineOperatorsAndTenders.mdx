@@ -1,0 +1,70 @@
+---
+id: AdhesiveBondingMachineOperatorsAndTenders
+slug: AdhesiveBondingMachineOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend bonding machines that use adhesives to join items
+  for further processing or to form a completed product. Processes include
+  joining veneer sheets into plywood; gluing paper; or joining rubber and
+  rubberized fabric parts, plastic, simulated leather, or other materials.
+$id: https://graph.org.ai/occupations/AdhesiveBondingMachineOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AdhesiveBondingMachineOperatorsAndTenders`
+      };
+  }));
+
+# Adhesive Bonding Machine Operators and Tenders
+
+**O*NET Code**: 51-9191.00
+
+Operate or tend bonding machines that use adhesives to join items for further processing or to form a completed product. Processes include joining veneer sheets into plywood; gluing paper; or joining rubber and rubberized fabric parts, plastic, simulated leather, or other materials.
+
+## Job Profile
+<JobZone occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AdhesiveBondingMachineOperatorsAndTenders />
+
+### Industries
+<Industries occupation=AdhesiveBondingMachineOperatorsAndTenders />

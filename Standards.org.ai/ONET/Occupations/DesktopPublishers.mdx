@@ -1,0 +1,68 @@
+---
+id: DesktopPublishers
+slug: DesktopPublishers
+code:
+  code: null
+title:
+  title: null
+description: Format typescript and graphic elements using computer software to
+  produce publication-ready material.
+$id: https://graph.org.ai/occupations/DesktopPublishers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DesktopPublishers`
+      };
+  }));
+
+# Desktop Publishers
+
+**O*NET Code**: 43-9031.00
+
+Format typescript and graphic elements using computer software to produce publication-ready material.
+
+## Job Profile
+<JobZone occupation=DesktopPublishers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DesktopPublishers />
+
+### General Activities
+<Activities occupation=DesktopPublishers />
+
+## Qualifications
+### Skills
+<Skills occupation=DesktopPublishers />
+
+### Knowledge
+<Knowledge occupation=DesktopPublishers />
+
+### Abilities
+<Abilities occupation=DesktopPublishers />
+
+## Work Context
+<WorkContext occupation=DesktopPublishers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DesktopPublishers />
+
+### Industries
+<Industries occupation=DesktopPublishers />

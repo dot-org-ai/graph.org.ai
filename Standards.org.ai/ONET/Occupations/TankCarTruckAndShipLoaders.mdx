@@ -1,0 +1,70 @@
+---
+id: TankCarTruckAndShipLoaders
+slug: TankCarTruckAndShipLoaders
+code:
+  code: null
+title:
+  title: null
+description: Load and unload chemicals and bulk solids, such as coal, sand, and
+  grain, into or from tank cars, trucks, or ships, using material moving
+  equipment. May perform a variety of other tasks relating to shipment of
+  products. May gauge or sample shipping tanks and test them for leaks.
+$id: https://graph.org.ai/occupations/TankCarTruckAndShipLoaders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TankCarTruckAndShipLoaders`
+      };
+  }));
+
+# Tank Car, Truck, and Ship Loaders
+
+**O*NET Code**: 53-7121.00
+
+Load and unload chemicals and bulk solids, such as coal, sand, and grain, into or from tank cars, trucks, or ships, using material moving equipment. May perform a variety of other tasks relating to shipment of products. May gauge or sample shipping tanks and test them for leaks.
+
+## Job Profile
+<JobZone occupation=TankCarTruckAndShipLoaders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TankCarTruckAndShipLoaders />
+
+### General Activities
+<Activities occupation=TankCarTruckAndShipLoaders />
+
+## Qualifications
+### Skills
+<Skills occupation=TankCarTruckAndShipLoaders />
+
+### Knowledge
+<Knowledge occupation=TankCarTruckAndShipLoaders />
+
+### Abilities
+<Abilities occupation=TankCarTruckAndShipLoaders />
+
+## Work Context
+<WorkContext occupation=TankCarTruckAndShipLoaders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TankCarTruckAndShipLoaders />
+
+### Industries
+<Industries occupation=TankCarTruckAndShipLoaders />

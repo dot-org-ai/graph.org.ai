@@ -1,0 +1,72 @@
+---
+id: NuclearMedicineTechnologists
+slug: NuclearMedicineTechnologists
+code:
+  code: null
+title:
+  title: null
+description: Prepare, administer, and measure radioactive isotopes in
+  therapeutic, diagnostic, and tracer studies using a variety of radioisotope
+  equipment. Prepare stock solutions of radioactive materials and calculate
+  doses to be administered by radiologists. Subject patients to radiation.
+  Execute blood volume, red cell survival, and fat absorption studies following
+  standard laboratory techniques.
+$id: https://graph.org.ai/occupations/NuclearMedicineTechnologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NuclearMedicineTechnologists`
+      };
+  }));
+
+# Nuclear Medicine Technologists
+
+**O*NET Code**: 29-2033.00
+
+Prepare, administer, and measure radioactive isotopes in therapeutic, diagnostic, and tracer studies using a variety of radioisotope equipment. Prepare stock solutions of radioactive materials and calculate doses to be administered by radiologists. Subject patients to radiation. Execute blood volume, red cell survival, and fat absorption studies following standard laboratory techniques.
+
+## Job Profile
+<JobZone occupation=NuclearMedicineTechnologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NuclearMedicineTechnologists />
+
+### General Activities
+<Activities occupation=NuclearMedicineTechnologists />
+
+## Qualifications
+### Skills
+<Skills occupation=NuclearMedicineTechnologists />
+
+### Knowledge
+<Knowledge occupation=NuclearMedicineTechnologists />
+
+### Abilities
+<Abilities occupation=NuclearMedicineTechnologists />
+
+## Work Context
+<WorkContext occupation=NuclearMedicineTechnologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NuclearMedicineTechnologists />
+
+### Industries
+<Industries occupation=NuclearMedicineTechnologists />

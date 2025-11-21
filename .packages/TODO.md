@@ -1,61 +1,33 @@
 # Project Plan: MDX-based Data System
 
-## Phase 1: Ontology Design & Fixtures
-Create the structure and example `.mdx` files for the core domains. These files will serve as the design specification and test fixtures for the software packages.
+## Phase 1: Core Infrastructure
+- [x] **`mdxld`**: Core MDX-LD parsing/stringify/validation.
+- [x] **`@mdxui/markdown`**: MDX renderer.
+- [x] **`mdxdb`**:
+    - [x] Filesystem adapter.
+    - [x] CLI (watch, ingest).
+    - [ ] **MCP Server**: Add stdio-based Model Context Protocol server.
+- [x] **`mdxai`**: AI enrichment CLI.
 
-- [x] **Industries.org.ai** (NAICS)
-    - [x] `[Sector].mdx`
-- [x] **Occupations.org.ai** (O*NET)
-    - [x] `[Occupation].mdx`
-- [x] **Tasks.org.ai** (O*NET)
-    - [x] `[Task].mdx`
-- [x] **Processes.org.ai** (APQC)
-    - [x] `[Process].mdx`
-- [x] **Products.org.ai** (UNSPSC)
-    - [x] `[Product].mdx`
-- [x] **Services.org.ai** (UNSPSC)
-    - [x] `[Service].mdx`
-- [x] **Activities.org.ai** (O*NET)
-    - [x] `[Activity].mdx`
-- [x] **Tech.org.ai** (O*NET)
-    - [x] `[Tech].mdx`
-- [x] **Tools.org.ai** (O*NET)
-    - [x] `[Tool].mdx`
-- [ ] **GS1 Standards** (CBV/EPCIS + IDs)
-    - [ ] Define templates for Events and ID types (GTIN, GLN, SSCC, etc.).
-- [ ] **Schema.org**
-    - [ ] Define `[Type].mdx` and `[Property].mdx`.
+## Phase 2: Data Ingestion Strategy
+### Layer 1: Raw Standards Ingestion
+Ingest data "as-is" (or lightly normalized) into provider-specific namespaces.
+- [ ] **Standards.org.ai/ONET** (was Occupations.org.ai directly)
+- [ ] **Standards.org.ai/NAICS**
+- [ ] **Standards.org.ai/UNSPSC**
+- [ ] **Standards.org.ai/GS1**
+- [ ] **Standards.org.ai/Schema.org**
 
-## Phase 2: Package Implementation & Testing
+### Layer 2: Canonical Ontology & Curation
+Aggregate and transform raw data into the primary graph.
+- [ ] **Verbs/Actions Engine**:
+    - Aggregation from ONET, GS1, Schema, APQC.
+    - NLP Conjugation (Action/Activity/Event).
+- [ ] **Occupations**: Aggregated from ONET + others.
+- [ ] **Industries**: Aggregated from NAICS.
 
-### Global Config
-- [ ] **Style**: Configure Prettier (no semicolons).
-
-### 1. `mdxld`
-- [x] Core logic (parse, stringify, validate)
-- [ ] **Tests**: Fix regex for frontmatter parsing, ensure tests pass non-interactively.
-
-### 2. `@mdxui/markdown`
-- [ ] **Implementation**: Render MDX components to Markdown.
-- [ ] **Tests**: Verify `<Tasks occupation={...} />` renders to `## Tasks` + Table using the fixtures.
-
-### 3. `mdxdb`
-- [ ] **Interface Updates**:
-    - `list(globPattern)`
-    - `search(query)` (grep/mongo-style)
-    - `get(id)`
-    - `set(id, data)`
-    - `delete(id)`
-- [ ] **Implementation**: Filesystem adapter, Relationship management.
-- [ ] **Tests**: 
-    - Load the Ontology folders as Collections.
-    - Test CRUD operations.
-    - Verify bidirectional updates between Occupations and Tasks.
-
-### 4. `mdxai`
-- [ ] **Implementation**: CLI for generation/enrichment.
-- [ ] **Tests**: 
-    - `mdxai enrich` using `CSV.fetch` from O*NET URLs defined in the fixtures.
-
-## Phase 3: Data Ingestion
-- [ ] Populate the Ontology folders with actual data (O*NET, NAICS, etc.) using `mdxai`.
+## Phase 3: Implementation Steps
+1.  **MCP Server**: Enable LLM tools to query `mdxdb` directly.
+2.  **Refactor Folders**: Move current `Occupations.org.ai` etc. to `Standards.org.ai/...`.
+3.  **Raw Ingestion Templates**: Create templates for raw loading.
+4.  **Transformation Scripts**: Implement `mdxdb generate` scripts for the Cartesian products and aggregation.

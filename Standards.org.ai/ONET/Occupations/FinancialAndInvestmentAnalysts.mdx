@@ -1,0 +1,69 @@
+---
+id: FinancialAndInvestmentAnalysts
+slug: FinancialAndInvestmentAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Conduct quantitative analyses of information involving investment
+  programs or financial data of public or private institutions, including
+  valuation of businesses.
+$id: https://graph.org.ai/occupations/FinancialAndInvestmentAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FinancialAndInvestmentAnalysts`
+      };
+  }));
+
+# Financial and Investment Analysts
+
+**O*NET Code**: 13-2051.00
+
+Conduct quantitative analyses of information involving investment programs or financial data of public or private institutions, including valuation of businesses.
+
+## Job Profile
+<JobZone occupation=FinancialAndInvestmentAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FinancialAndInvestmentAnalysts />
+
+### General Activities
+<Activities occupation=FinancialAndInvestmentAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=FinancialAndInvestmentAnalysts />
+
+### Knowledge
+<Knowledge occupation=FinancialAndInvestmentAnalysts />
+
+### Abilities
+<Abilities occupation=FinancialAndInvestmentAnalysts />
+
+## Work Context
+<WorkContext occupation=FinancialAndInvestmentAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FinancialAndInvestmentAnalysts />
+
+### Industries
+<Industries occupation=FinancialAndInvestmentAnalysts />

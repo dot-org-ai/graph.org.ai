@@ -1,0 +1,69 @@
+---
+id: IndustrialTruckAndTractorOperators
+slug: IndustrialTruckAndTractorOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate industrial trucks or tractors equipped to move materials
+  around a warehouse, storage yard, factory, construction site, or similar
+  location.
+$id: https://graph.org.ai/occupations/IndustrialTruckAndTractorOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$IndustrialTruckAndTractorOperators`
+      };
+  }));
+
+# Industrial Truck and Tractor Operators
+
+**O*NET Code**: 53-7051.00
+
+Operate industrial trucks or tractors equipped to move materials around a warehouse, storage yard, factory, construction site, or similar location.
+
+## Job Profile
+<JobZone occupation=IndustrialTruckAndTractorOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=IndustrialTruckAndTractorOperators />
+
+### General Activities
+<Activities occupation=IndustrialTruckAndTractorOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=IndustrialTruckAndTractorOperators />
+
+### Knowledge
+<Knowledge occupation=IndustrialTruckAndTractorOperators />
+
+### Abilities
+<Abilities occupation=IndustrialTruckAndTractorOperators />
+
+## Work Context
+<WorkContext occupation=IndustrialTruckAndTractorOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=IndustrialTruckAndTractorOperators />
+
+### Industries
+<Industries occupation=IndustrialTruckAndTractorOperators />

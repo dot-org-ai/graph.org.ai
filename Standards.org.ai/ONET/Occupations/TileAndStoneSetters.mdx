@@ -1,0 +1,68 @@
+---
+id: TileAndStoneSetters
+slug: TileAndStoneSetters
+code:
+  code: null
+title:
+  title: null
+description: Apply hard tile, stone, and comparable materials to walls, floors,
+  ceilings, countertops, and roof decks.
+$id: https://graph.org.ai/occupations/TileAndStoneSetters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TileAndStoneSetters`
+      };
+  }));
+
+# Tile and Stone Setters
+
+**O*NET Code**: 47-2044.00
+
+Apply hard tile, stone, and comparable materials to walls, floors, ceilings, countertops, and roof decks.
+
+## Job Profile
+<JobZone occupation=TileAndStoneSetters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TileAndStoneSetters />
+
+### General Activities
+<Activities occupation=TileAndStoneSetters />
+
+## Qualifications
+### Skills
+<Skills occupation=TileAndStoneSetters />
+
+### Knowledge
+<Knowledge occupation=TileAndStoneSetters />
+
+### Abilities
+<Abilities occupation=TileAndStoneSetters />
+
+## Work Context
+<WorkContext occupation=TileAndStoneSetters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TileAndStoneSetters />
+
+### Industries
+<Industries occupation=TileAndStoneSetters />

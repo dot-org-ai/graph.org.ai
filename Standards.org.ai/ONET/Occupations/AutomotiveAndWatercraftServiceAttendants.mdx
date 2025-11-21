@@ -1,0 +1,71 @@
+---
+id: AutomotiveAndWatercraftServiceAttendants
+slug: AutomotiveAndWatercraftServiceAttendants
+code:
+  code: null
+title:
+  title: null
+description: Service automobiles, buses, trucks, boats, and other automotive or
+  marine vehicles with fuel, lubricants, and accessories. Collect payment for
+  services and supplies. May lubricate vehicle, change motor oil, refill
+  antifreeze, or replace lights or other accessories, such as windshield wiper
+  blades or fan belts. May repair or replace tires.
+$id: https://graph.org.ai/occupations/AutomotiveAndWatercraftServiceAttendants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AutomotiveAndWatercraftServiceAttendants`
+      };
+  }));
+
+# Automotive and Watercraft Service Attendants
+
+**O*NET Code**: 53-6031.00
+
+Service automobiles, buses, trucks, boats, and other automotive or marine vehicles with fuel, lubricants, and accessories. Collect payment for services and supplies. May lubricate vehicle, change motor oil, refill antifreeze, or replace lights or other accessories, such as windshield wiper blades or fan belts. May repair or replace tires.
+
+## Job Profile
+<JobZone occupation=AutomotiveAndWatercraftServiceAttendants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AutomotiveAndWatercraftServiceAttendants />
+
+### General Activities
+<Activities occupation=AutomotiveAndWatercraftServiceAttendants />
+
+## Qualifications
+### Skills
+<Skills occupation=AutomotiveAndWatercraftServiceAttendants />
+
+### Knowledge
+<Knowledge occupation=AutomotiveAndWatercraftServiceAttendants />
+
+### Abilities
+<Abilities occupation=AutomotiveAndWatercraftServiceAttendants />
+
+## Work Context
+<WorkContext occupation=AutomotiveAndWatercraftServiceAttendants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AutomotiveAndWatercraftServiceAttendants />
+
+### Industries
+<Industries occupation=AutomotiveAndWatercraftServiceAttendants />

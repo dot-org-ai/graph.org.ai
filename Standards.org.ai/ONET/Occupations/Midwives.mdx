@@ -1,0 +1,67 @@
+---
+id: Midwives
+slug: Midwives
+code:
+  code: null
+title:
+  title: null
+description: Provide prenatal care and childbirth assistance.
+$id: https://graph.org.ai/occupations/Midwives
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Midwives`
+      };
+  }));
+
+# Midwives
+
+**O*NET Code**: 29-9099.01
+
+Provide prenatal care and childbirth assistance.
+
+## Job Profile
+<JobZone occupation=Midwives />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Midwives />
+
+### General Activities
+<Activities occupation=Midwives />
+
+## Qualifications
+### Skills
+<Skills occupation=Midwives />
+
+### Knowledge
+<Knowledge occupation=Midwives />
+
+### Abilities
+<Abilities occupation=Midwives />
+
+## Work Context
+<WorkContext occupation=Midwives />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Midwives />
+
+### Industries
+<Industries occupation=Midwives />

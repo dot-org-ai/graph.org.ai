@@ -1,0 +1,70 @@
+---
+id: LightingTechnicians
+slug: LightingTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Set up, maintain, and dismantle light fixtures, lighting control
+  devices, and the associated lighting electrical and rigging equipment used for
+  photography, television, film, video, and live productions. May focus or
+  operate light fixtures, or attach color filters or other lighting accessories.
+$id: https://graph.org.ai/occupations/LightingTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LightingTechnicians`
+      };
+  }));
+
+# Lighting Technicians
+
+**O*NET Code**: 27-4015.00
+
+Set up, maintain, and dismantle light fixtures, lighting control devices, and the associated lighting electrical and rigging equipment used for photography, television, film, video, and live productions. May focus or operate light fixtures, or attach color filters or other lighting accessories.
+
+## Job Profile
+<JobZone occupation=LightingTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LightingTechnicians />
+
+### General Activities
+<Activities occupation=LightingTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=LightingTechnicians />
+
+### Knowledge
+<Knowledge occupation=LightingTechnicians />
+
+### Abilities
+<Abilities occupation=LightingTechnicians />
+
+## Work Context
+<WorkContext occupation=LightingTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LightingTechnicians />
+
+### Industries
+<Industries occupation=LightingTechnicians />

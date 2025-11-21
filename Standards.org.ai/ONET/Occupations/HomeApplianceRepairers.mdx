@@ -1,0 +1,68 @@
+---
+id: HomeApplianceRepairers
+slug: HomeApplianceRepairers
+code:
+  code: null
+title:
+  title: null
+description: Repair, adjust, or install all types of electric or gas household
+  appliances, such as refrigerators, washers, dryers, and ovens.
+$id: https://graph.org.ai/occupations/HomeApplianceRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HomeApplianceRepairers`
+      };
+  }));
+
+# Home Appliance Repairers
+
+**O*NET Code**: 49-9031.00
+
+Repair, adjust, or install all types of electric or gas household appliances, such as refrigerators, washers, dryers, and ovens.
+
+## Job Profile
+<JobZone occupation=HomeApplianceRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HomeApplianceRepairers />
+
+### General Activities
+<Activities occupation=HomeApplianceRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=HomeApplianceRepairers />
+
+### Knowledge
+<Knowledge occupation=HomeApplianceRepairers />
+
+### Abilities
+<Abilities occupation=HomeApplianceRepairers />
+
+## Work Context
+<WorkContext occupation=HomeApplianceRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HomeApplianceRepairers />
+
+### Industries
+<Industries occupation=HomeApplianceRepairers />

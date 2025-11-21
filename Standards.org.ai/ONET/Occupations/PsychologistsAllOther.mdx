@@ -1,0 +1,67 @@
+---
+id: PsychologistsAllOther
+slug: PsychologistsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All psychologists not listed separately.
+$id: https://graph.org.ai/occupations/PsychologistsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PsychologistsAllOther`
+      };
+  }));
+
+# Psychologists, All Other
+
+**O*NET Code**: 19-3039.00
+
+All psychologists not listed separately.
+
+## Job Profile
+<JobZone occupation=PsychologistsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PsychologistsAllOther />
+
+### General Activities
+<Activities occupation=PsychologistsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=PsychologistsAllOther />
+
+### Knowledge
+<Knowledge occupation=PsychologistsAllOther />
+
+### Abilities
+<Abilities occupation=PsychologistsAllOther />
+
+## Work Context
+<WorkContext occupation=PsychologistsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PsychologistsAllOther />
+
+### Industries
+<Industries occupation=PsychologistsAllOther />

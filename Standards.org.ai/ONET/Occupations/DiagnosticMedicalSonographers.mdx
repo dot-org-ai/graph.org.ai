@@ -1,0 +1,68 @@
+---
+id: DiagnosticMedicalSonographers
+slug: DiagnosticMedicalSonographers
+code:
+  code: null
+title:
+  title: null
+description: Produce ultrasonic recordings of internal organs for use by
+  physicians. Includes vascular technologists.
+$id: https://graph.org.ai/occupations/DiagnosticMedicalSonographers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DiagnosticMedicalSonographers`
+      };
+  }));
+
+# Diagnostic Medical Sonographers
+
+**O*NET Code**: 29-2032.00
+
+Produce ultrasonic recordings of internal organs for use by physicians. Includes vascular technologists.
+
+## Job Profile
+<JobZone occupation=DiagnosticMedicalSonographers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DiagnosticMedicalSonographers />
+
+### General Activities
+<Activities occupation=DiagnosticMedicalSonographers />
+
+## Qualifications
+### Skills
+<Skills occupation=DiagnosticMedicalSonographers />
+
+### Knowledge
+<Knowledge occupation=DiagnosticMedicalSonographers />
+
+### Abilities
+<Abilities occupation=DiagnosticMedicalSonographers />
+
+## Work Context
+<WorkContext occupation=DiagnosticMedicalSonographers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DiagnosticMedicalSonographers />
+
+### Industries
+<Industries occupation=DiagnosticMedicalSonographers />

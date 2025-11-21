@@ -1,0 +1,71 @@
+---
+id: BroadcastTechnicians
+slug: BroadcastTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, and maintain the electronic equipment used to
+  acquire, edit, and transmit audio and video for radio or television programs.
+  Control and adjust incoming and outgoing broadcast signals to regulate sound
+  volume, signal strength, and signal clarity. Operate satellite, microwave, or
+  other transmitter equipment to broadcast radio or television programs.
+$id: https://graph.org.ai/occupations/BroadcastTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BroadcastTechnicians`
+      };
+  }));
+
+# Broadcast Technicians
+
+**O*NET Code**: 27-4012.00
+
+Set up, operate, and maintain the electronic equipment used to acquire, edit, and transmit audio and video for radio or television programs. Control and adjust incoming and outgoing broadcast signals to regulate sound volume, signal strength, and signal clarity. Operate satellite, microwave, or other transmitter equipment to broadcast radio or television programs.
+
+## Job Profile
+<JobZone occupation=BroadcastTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BroadcastTechnicians />
+
+### General Activities
+<Activities occupation=BroadcastTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=BroadcastTechnicians />
+
+### Knowledge
+<Knowledge occupation=BroadcastTechnicians />
+
+### Abilities
+<Abilities occupation=BroadcastTechnicians />
+
+## Work Context
+<WorkContext occupation=BroadcastTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BroadcastTechnicians />
+
+### Industries
+<Industries occupation=BroadcastTechnicians />

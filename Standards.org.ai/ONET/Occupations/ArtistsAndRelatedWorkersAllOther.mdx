@@ -1,0 +1,67 @@
+---
+id: ArtistsAndRelatedWorkersAllOther
+slug: ArtistsAndRelatedWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All artists and related workers not listed separately.
+$id: https://graph.org.ai/occupations/ArtistsAndRelatedWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ArtistsAndRelatedWorkersAllOther`
+      };
+  }));
+
+# Artists and Related Workers, All Other
+
+**O*NET Code**: 27-1019.00
+
+All artists and related workers not listed separately.
+
+## Job Profile
+<JobZone occupation=ArtistsAndRelatedWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ArtistsAndRelatedWorkersAllOther />
+
+### General Activities
+<Activities occupation=ArtistsAndRelatedWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=ArtistsAndRelatedWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=ArtistsAndRelatedWorkersAllOther />
+
+### Abilities
+<Abilities occupation=ArtistsAndRelatedWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=ArtistsAndRelatedWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ArtistsAndRelatedWorkersAllOther />
+
+### Industries
+<Industries occupation=ArtistsAndRelatedWorkersAllOther />

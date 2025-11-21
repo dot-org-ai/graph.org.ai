@@ -1,0 +1,70 @@
+---
+id: AmusementAndRecreationAttendants
+slug: AmusementAndRecreationAttendants
+code:
+  code: null
+title:
+  title: null
+description: Perform a variety of attending duties at amusement or recreation
+  facility. May schedule use of recreation facilities, maintain and provide
+  equipment to participants of sporting events or recreational pursuits, or
+  operate amusement concessions and rides.
+$id: https://graph.org.ai/occupations/AmusementAndRecreationAttendants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AmusementAndRecreationAttendants`
+      };
+  }));
+
+# Amusement and Recreation Attendants
+
+**O*NET Code**: 39-3091.00
+
+Perform a variety of attending duties at amusement or recreation facility. May schedule use of recreation facilities, maintain and provide equipment to participants of sporting events or recreational pursuits, or operate amusement concessions and rides.
+
+## Job Profile
+<JobZone occupation=AmusementAndRecreationAttendants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AmusementAndRecreationAttendants />
+
+### General Activities
+<Activities occupation=AmusementAndRecreationAttendants />
+
+## Qualifications
+### Skills
+<Skills occupation=AmusementAndRecreationAttendants />
+
+### Knowledge
+<Knowledge occupation=AmusementAndRecreationAttendants />
+
+### Abilities
+<Abilities occupation=AmusementAndRecreationAttendants />
+
+## Work Context
+<WorkContext occupation=AmusementAndRecreationAttendants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AmusementAndRecreationAttendants />
+
+### Industries
+<Industries occupation=AmusementAndRecreationAttendants />

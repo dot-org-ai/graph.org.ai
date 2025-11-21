@@ -1,0 +1,72 @@
+---
+id: ForensicScienceTechnicians
+slug: ForensicScienceTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Collect, identify, classify, and analyze physical evidence related
+  to criminal investigations. Perform tests on weapons or substances, such as
+  fiber, hair, and tissue to determine significance to investigation. May
+  testify as expert witnesses on evidence or crime laboratory techniques. May
+  serve as specialists in area of expertise, such as ballistics, fingerprinting,
+  handwriting, or biochemistry.
+$id: https://graph.org.ai/occupations/ForensicScienceTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ForensicScienceTechnicians`
+      };
+  }));
+
+# Forensic Science Technicians
+
+**O*NET Code**: 19-4092.00
+
+Collect, identify, classify, and analyze physical evidence related to criminal investigations. Perform tests on weapons or substances, such as fiber, hair, and tissue to determine significance to investigation. May testify as expert witnesses on evidence or crime laboratory techniques. May serve as specialists in area of expertise, such as ballistics, fingerprinting, handwriting, or biochemistry.
+
+## Job Profile
+<JobZone occupation=ForensicScienceTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ForensicScienceTechnicians />
+
+### General Activities
+<Activities occupation=ForensicScienceTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=ForensicScienceTechnicians />
+
+### Knowledge
+<Knowledge occupation=ForensicScienceTechnicians />
+
+### Abilities
+<Abilities occupation=ForensicScienceTechnicians />
+
+## Work Context
+<WorkContext occupation=ForensicScienceTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ForensicScienceTechnicians />
+
+### Industries
+<Industries occupation=ForensicScienceTechnicians />

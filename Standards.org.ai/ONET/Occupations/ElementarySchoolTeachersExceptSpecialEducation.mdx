@@ -1,0 +1,67 @@
+---
+id: ElementarySchoolTeachersExceptSpecialEducation
+slug: ElementarySchoolTeachersExceptSpecialEducation
+code:
+  code: null
+title:
+  title: null
+description: Teach academic and social skills to students at the elementary school level.
+$id: https://graph.org.ai/occupations/ElementarySchoolTeachersExceptSpecialEducation
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElementarySchoolTeachersExceptSpecialEducation`
+      };
+  }));
+
+# Elementary School Teachers, Except Special Education
+
+**O*NET Code**: 25-2021.00
+
+Teach academic and social skills to students at the elementary school level.
+
+## Job Profile
+<JobZone occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+### General Activities
+<Activities occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+## Qualifications
+### Skills
+<Skills occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+### Knowledge
+<Knowledge occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+### Abilities
+<Abilities occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+## Work Context
+<WorkContext occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElementarySchoolTeachersExceptSpecialEducation />
+
+### Industries
+<Industries occupation=ElementarySchoolTeachersExceptSpecialEducation />

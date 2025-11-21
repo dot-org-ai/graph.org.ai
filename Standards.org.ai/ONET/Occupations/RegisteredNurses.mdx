@@ -1,0 +1,71 @@
+---
+id: RegisteredNurses
+slug: RegisteredNurses
+code:
+  code: null
+title:
+  title: null
+description: Assess patient health problems and needs, develop and implement
+  nursing care plans, and maintain medical records. Administer nursing care to
+  ill, injured, convalescent, or disabled patients. May advise patients on
+  health maintenance and disease prevention or provide case management.
+  Licensing or registration required.
+$id: https://graph.org.ai/occupations/RegisteredNurses
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RegisteredNurses`
+      };
+  }));
+
+# Registered Nurses
+
+**O*NET Code**: 29-1141.00
+
+Assess patient health problems and needs, develop and implement nursing care plans, and maintain medical records. Administer nursing care to ill, injured, convalescent, or disabled patients. May advise patients on health maintenance and disease prevention or provide case management. Licensing or registration required.
+
+## Job Profile
+<JobZone occupation=RegisteredNurses />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RegisteredNurses />
+
+### General Activities
+<Activities occupation=RegisteredNurses />
+
+## Qualifications
+### Skills
+<Skills occupation=RegisteredNurses />
+
+### Knowledge
+<Knowledge occupation=RegisteredNurses />
+
+### Abilities
+<Abilities occupation=RegisteredNurses />
+
+## Work Context
+<WorkContext occupation=RegisteredNurses />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RegisteredNurses />
+
+### Industries
+<Industries occupation=RegisteredNurses />

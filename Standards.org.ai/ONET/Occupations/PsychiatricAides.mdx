@@ -1,0 +1,71 @@
+---
+id: PsychiatricAides
+slug: PsychiatricAides
+code:
+  code: null
+title:
+  title: null
+description: Assist mentally impaired or emotionally disturbed patients, working
+  under direction of nursing and medical staff. May assist with daily living
+  activities, lead patients in educational and recreational activities, or
+  accompany patients to and from examinations and treatments. May restrain
+  violent patients. Includes psychiatric orderlies.
+$id: https://graph.org.ai/occupations/PsychiatricAides
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PsychiatricAides`
+      };
+  }));
+
+# Psychiatric Aides
+
+**O*NET Code**: 31-1133.00
+
+Assist mentally impaired or emotionally disturbed patients, working under direction of nursing and medical staff. May assist with daily living activities, lead patients in educational and recreational activities, or accompany patients to and from examinations and treatments. May restrain violent patients. Includes psychiatric orderlies.
+
+## Job Profile
+<JobZone occupation=PsychiatricAides />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PsychiatricAides />
+
+### General Activities
+<Activities occupation=PsychiatricAides />
+
+## Qualifications
+### Skills
+<Skills occupation=PsychiatricAides />
+
+### Knowledge
+<Knowledge occupation=PsychiatricAides />
+
+### Abilities
+<Abilities occupation=PsychiatricAides />
+
+## Work Context
+<WorkContext occupation=PsychiatricAides />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PsychiatricAides />
+
+### Industries
+<Industries occupation=PsychiatricAides />

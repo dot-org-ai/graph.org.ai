@@ -1,0 +1,69 @@
+---
+id: LogGradersAndScalers
+slug: LogGradersAndScalers
+code:
+  code: null
+title:
+  title: null
+description: Grade logs or estimate the marketable content or value of logs or
+  pulpwood in sorting yards, millpond, log deck, or similar locations. Inspect
+  logs for defects or measure logs to determine volume.
+$id: https://graph.org.ai/occupations/LogGradersAndScalers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LogGradersAndScalers`
+      };
+  }));
+
+# Log Graders and Scalers
+
+**O*NET Code**: 45-4023.00
+
+Grade logs or estimate the marketable content or value of logs or pulpwood in sorting yards, millpond, log deck, or similar locations. Inspect logs for defects or measure logs to determine volume.
+
+## Job Profile
+<JobZone occupation=LogGradersAndScalers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LogGradersAndScalers />
+
+### General Activities
+<Activities occupation=LogGradersAndScalers />
+
+## Qualifications
+### Skills
+<Skills occupation=LogGradersAndScalers />
+
+### Knowledge
+<Knowledge occupation=LogGradersAndScalers />
+
+### Abilities
+<Abilities occupation=LogGradersAndScalers />
+
+## Work Context
+<WorkContext occupation=LogGradersAndScalers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LogGradersAndScalers />
+
+### Industries
+<Industries occupation=LogGradersAndScalers />

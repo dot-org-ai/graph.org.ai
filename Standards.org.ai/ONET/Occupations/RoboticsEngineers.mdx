@@ -1,0 +1,67 @@
+---
+id: RoboticsEngineers
+slug: RoboticsEngineers
+code:
+  code: null
+title:
+  title: null
+description: Research, design, develop, or test robotic applications.
+$id: https://graph.org.ai/occupations/RoboticsEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RoboticsEngineers`
+      };
+  }));
+
+# Robotics Engineers
+
+**O*NET Code**: 17-2199.08
+
+Research, design, develop, or test robotic applications.
+
+## Job Profile
+<JobZone occupation=RoboticsEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RoboticsEngineers />
+
+### General Activities
+<Activities occupation=RoboticsEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=RoboticsEngineers />
+
+### Knowledge
+<Knowledge occupation=RoboticsEngineers />
+
+### Abilities
+<Abilities occupation=RoboticsEngineers />
+
+## Work Context
+<WorkContext occupation=RoboticsEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RoboticsEngineers />
+
+### Industries
+<Industries occupation=RoboticsEngineers />

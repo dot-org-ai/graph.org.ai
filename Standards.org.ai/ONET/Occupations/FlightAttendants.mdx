@@ -1,0 +1,69 @@
+---
+id: FlightAttendants
+slug: FlightAttendants
+code:
+  code: null
+title:
+  title: null
+description: Monitor safety of the aircraft cabin. Provide services to airline
+  passengers, explain safety information, serve food and beverages, and respond
+  to emergency incidents.
+$id: https://graph.org.ai/occupations/FlightAttendants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FlightAttendants`
+      };
+  }));
+
+# Flight Attendants
+
+**O*NET Code**: 53-2031.00
+
+Monitor safety of the aircraft cabin. Provide services to airline passengers, explain safety information, serve food and beverages, and respond to emergency incidents.
+
+## Job Profile
+<JobZone occupation=FlightAttendants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FlightAttendants />
+
+### General Activities
+<Activities occupation=FlightAttendants />
+
+## Qualifications
+### Skills
+<Skills occupation=FlightAttendants />
+
+### Knowledge
+<Knowledge occupation=FlightAttendants />
+
+### Abilities
+<Abilities occupation=FlightAttendants />
+
+## Work Context
+<WorkContext occupation=FlightAttendants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FlightAttendants />
+
+### Industries
+<Industries occupation=FlightAttendants />

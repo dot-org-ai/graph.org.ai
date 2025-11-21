@@ -1,0 +1,69 @@
+---
+id: HelpersCarpenters
+slug: HelpersCarpenters
+code:
+  code: null
+title:
+  title: null
+description: Help carpenters by performing duties requiring less skill. Duties
+  include using, supplying, or holding materials or tools, and cleaning work
+  area and equipment.
+$id: https://graph.org.ai/occupations/HelpersCarpenters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersCarpenters`
+      };
+  }));
+
+# Helpers--Carpenters
+
+**O*NET Code**: 47-3012.00
+
+Help carpenters by performing duties requiring less skill. Duties include using, supplying, or holding materials or tools, and cleaning work area and equipment.
+
+## Job Profile
+<JobZone occupation=HelpersCarpenters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersCarpenters />
+
+### General Activities
+<Activities occupation=HelpersCarpenters />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersCarpenters />
+
+### Knowledge
+<Knowledge occupation=HelpersCarpenters />
+
+### Abilities
+<Abilities occupation=HelpersCarpenters />
+
+## Work Context
+<WorkContext occupation=HelpersCarpenters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersCarpenters />
+
+### Industries
+<Industries occupation=HelpersCarpenters />

@@ -1,0 +1,72 @@
+---
+id: DatabaseArchitects
+slug: DatabaseArchitects
+code:
+  code: null
+title:
+  title: null
+description: Design strategies for enterprise databases, data warehouse systems,
+  and multidimensional networks. Set standards for database operations,
+  programming, query processes, and security. Model, design, and construct large
+  relational databases or data warehouses. Create and optimize data models for
+  warehouse infrastructure and workflow. Integrate new systems with existing
+  warehouse structure and refine system performance and functionality.
+$id: https://graph.org.ai/occupations/DatabaseArchitects
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DatabaseArchitects`
+      };
+  }));
+
+# Database Architects
+
+**O*NET Code**: 15-1243.00
+
+Design strategies for enterprise databases, data warehouse systems, and multidimensional networks. Set standards for database operations, programming, query processes, and security. Model, design, and construct large relational databases or data warehouses. Create and optimize data models for warehouse infrastructure and workflow. Integrate new systems with existing warehouse structure and refine system performance and functionality.
+
+## Job Profile
+<JobZone occupation=DatabaseArchitects />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DatabaseArchitects />
+
+### General Activities
+<Activities occupation=DatabaseArchitects />
+
+## Qualifications
+### Skills
+<Skills occupation=DatabaseArchitects />
+
+### Knowledge
+<Knowledge occupation=DatabaseArchitects />
+
+### Abilities
+<Abilities occupation=DatabaseArchitects />
+
+## Work Context
+<WorkContext occupation=DatabaseArchitects />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DatabaseArchitects />
+
+### Industries
+<Industries occupation=DatabaseArchitects />

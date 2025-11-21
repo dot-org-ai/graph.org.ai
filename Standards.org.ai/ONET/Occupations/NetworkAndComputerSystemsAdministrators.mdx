@@ -1,0 +1,76 @@
+---
+id: NetworkAndComputerSystemsAdministrators
+slug: NetworkAndComputerSystemsAdministrators
+code:
+  code: null
+title:
+  title: null
+description: Install, configure, and maintain an organization's local area
+  network (LAN), wide area network (WAN), data communications network, operating
+  systems, and physical and virtual servers. Perform system monitoring and
+  verify the integrity and availability of hardware, network, and server
+  resources and systems. Review system and application logs and verify
+  completion of scheduled jobs, including system backups. Analyze network and
+  server resource consumption and control user access. Install and upgrade
+  software and maintain software licenses. May assist in network modeling,
+  analysis, planning, and coordination between network and data communications
+  hardware and software.
+$id: https://graph.org.ai/occupations/NetworkAndComputerSystemsAdministrators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NetworkAndComputerSystemsAdministrators`
+      };
+  }));
+
+# Network and Computer Systems Administrators
+
+**O*NET Code**: 15-1244.00
+
+Install, configure, and maintain an organization's local area network (LAN), wide area network (WAN), data communications network, operating systems, and physical and virtual servers. Perform system monitoring and verify the integrity and availability of hardware, network, and server resources and systems. Review system and application logs and verify completion of scheduled jobs, including system backups. Analyze network and server resource consumption and control user access. Install and upgrade software and maintain software licenses. May assist in network modeling, analysis, planning, and coordination between network and data communications hardware and software.
+
+## Job Profile
+<JobZone occupation=NetworkAndComputerSystemsAdministrators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NetworkAndComputerSystemsAdministrators />
+
+### General Activities
+<Activities occupation=NetworkAndComputerSystemsAdministrators />
+
+## Qualifications
+### Skills
+<Skills occupation=NetworkAndComputerSystemsAdministrators />
+
+### Knowledge
+<Knowledge occupation=NetworkAndComputerSystemsAdministrators />
+
+### Abilities
+<Abilities occupation=NetworkAndComputerSystemsAdministrators />
+
+## Work Context
+<WorkContext occupation=NetworkAndComputerSystemsAdministrators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NetworkAndComputerSystemsAdministrators />
+
+### Industries
+<Industries occupation=NetworkAndComputerSystemsAdministrators />

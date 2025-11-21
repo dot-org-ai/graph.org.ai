@@ -1,0 +1,68 @@
+---
+id: Editors
+slug: Editors
+code:
+  code: null
+title:
+  title: null
+description: Plan, coordinate, revise, or edit written material. May review
+  proposals and drafts for possible publication.
+$id: https://graph.org.ai/occupations/Editors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Editors`
+      };
+  }));
+
+# Editors
+
+**O*NET Code**: 27-3041.00
+
+Plan, coordinate, revise, or edit written material. May review proposals and drafts for possible publication.
+
+## Job Profile
+<JobZone occupation=Editors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Editors />
+
+### General Activities
+<Activities occupation=Editors />
+
+## Qualifications
+### Skills
+<Skills occupation=Editors />
+
+### Knowledge
+<Knowledge occupation=Editors />
+
+### Abilities
+<Abilities occupation=Editors />
+
+## Work Context
+<WorkContext occupation=Editors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Editors />
+
+### Industries
+<Industries occupation=Editors />

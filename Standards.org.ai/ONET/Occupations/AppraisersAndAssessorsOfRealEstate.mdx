@@ -1,0 +1,68 @@
+---
+id: AppraisersAndAssessorsOfRealEstate
+slug: AppraisersAndAssessorsOfRealEstate
+code:
+  code: null
+title:
+  title: null
+description: Appraise real estate, exclusively, and estimate its fair value. May
+  assess taxes in accordance with prescribed schedules.
+$id: https://graph.org.ai/occupations/AppraisersAndAssessorsOfRealEstate
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AppraisersAndAssessorsOfRealEstate`
+      };
+  }));
+
+# Appraisers and Assessors of Real Estate
+
+**O*NET Code**: 13-2023.00
+
+Appraise real estate, exclusively, and estimate its fair value. May assess taxes in accordance with prescribed schedules.
+
+## Job Profile
+<JobZone occupation=AppraisersAndAssessorsOfRealEstate />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AppraisersAndAssessorsOfRealEstate />
+
+### General Activities
+<Activities occupation=AppraisersAndAssessorsOfRealEstate />
+
+## Qualifications
+### Skills
+<Skills occupation=AppraisersAndAssessorsOfRealEstate />
+
+### Knowledge
+<Knowledge occupation=AppraisersAndAssessorsOfRealEstate />
+
+### Abilities
+<Abilities occupation=AppraisersAndAssessorsOfRealEstate />
+
+## Work Context
+<WorkContext occupation=AppraisersAndAssessorsOfRealEstate />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AppraisersAndAssessorsOfRealEstate />
+
+### Industries
+<Industries occupation=AppraisersAndAssessorsOfRealEstate />

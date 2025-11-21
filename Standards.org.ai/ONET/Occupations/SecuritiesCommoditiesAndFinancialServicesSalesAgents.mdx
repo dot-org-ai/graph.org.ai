@@ -1,0 +1,70 @@
+---
+id: SecuritiesCommoditiesAndFinancialServicesSalesAgents
+slug: SecuritiesCommoditiesAndFinancialServicesSalesAgents
+code:
+  code: null
+title:
+  title: null
+description: Buy and sell securities or commodities in investment and trading
+  firms, or provide financial services to businesses and individuals. May advise
+  customers about stocks, bonds, mutual funds, commodities, and market
+  conditions.
+$id: https://graph.org.ai/occupations/SecuritiesCommoditiesAndFinancialServicesSalesAgents
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SecuritiesCommoditiesAndFinancialServicesSalesAgents`
+      };
+  }));
+
+# Securities, Commodities, and Financial Services Sales Agents
+
+**O*NET Code**: 41-3031.00
+
+Buy and sell securities or commodities in investment and trading firms, or provide financial services to businesses and individuals. May advise customers about stocks, bonds, mutual funds, commodities, and market conditions.
+
+## Job Profile
+<JobZone occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+### General Activities
+<Activities occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+## Qualifications
+### Skills
+<Skills occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+### Knowledge
+<Knowledge occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+### Abilities
+<Abilities occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+## Work Context
+<WorkContext occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />
+
+### Industries
+<Industries occupation=SecuritiesCommoditiesAndFinancialServicesSalesAgents />

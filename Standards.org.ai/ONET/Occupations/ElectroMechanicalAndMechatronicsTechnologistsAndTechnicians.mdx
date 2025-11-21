@@ -1,0 +1,72 @@
+---
+id: ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians
+slug: ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Operate, test, maintain, or adjust unmanned, automated,
+  servomechanical, or electromechanical equipment. May operate unmanned
+  submarines, aircraft, or other equipment to observe or record visual
+  information at sites such as oil rigs, crop fields, buildings, or for similar
+  infrastructure, deep ocean exploration, or hazardous waste removal. May assist
+  engineers in testing and designing robotics equipment.
+$id: https://graph.org.ai/occupations/ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians`
+      };
+  }));
+
+# Electro-Mechanical and Mechatronics Technologists and Technicians
+
+**O*NET Code**: 17-3024.00
+
+Operate, test, maintain, or adjust unmanned, automated, servomechanical, or electromechanical equipment. May operate unmanned submarines, aircraft, or other equipment to observe or record visual information at sites such as oil rigs, crop fields, buildings, or for similar infrastructure, deep ocean exploration, or hazardous waste removal. May assist engineers in testing and designing robotics equipment.
+
+## Job Profile
+<JobZone occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=ElectroMechanicalAndMechatronicsTechnologistsAndTechnicians />

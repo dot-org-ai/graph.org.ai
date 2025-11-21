@@ -1,0 +1,72 @@
+---
+id: OperationsResearchAnalysts
+slug: OperationsResearchAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Formulate and apply mathematical modeling and other optimizing
+  methods to develop and interpret information that assists management with
+  decisionmaking, policy formulation, or other managerial functions. May collect
+  and analyze data and develop decision support software, services, or products.
+  May develop and supply optimal time, cost, or logistics networks for program
+  evaluation, review, or implementation.
+$id: https://graph.org.ai/occupations/OperationsResearchAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OperationsResearchAnalysts`
+      };
+  }));
+
+# Operations Research Analysts
+
+**O*NET Code**: 15-2031.00
+
+Formulate and apply mathematical modeling and other optimizing methods to develop and interpret information that assists management with decisionmaking, policy formulation, or other managerial functions. May collect and analyze data and develop decision support software, services, or products. May develop and supply optimal time, cost, or logistics networks for program evaluation, review, or implementation.
+
+## Job Profile
+<JobZone occupation=OperationsResearchAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OperationsResearchAnalysts />
+
+### General Activities
+<Activities occupation=OperationsResearchAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=OperationsResearchAnalysts />
+
+### Knowledge
+<Knowledge occupation=OperationsResearchAnalysts />
+
+### Abilities
+<Abilities occupation=OperationsResearchAnalysts />
+
+## Work Context
+<WorkContext occupation=OperationsResearchAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OperationsResearchAnalysts />
+
+### Industries
+<Industries occupation=OperationsResearchAnalysts />

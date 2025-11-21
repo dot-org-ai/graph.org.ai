@@ -1,0 +1,67 @@
+---
+id: MedicalEquipmentRepairers
+slug: MedicalEquipmentRepairers
+code:
+  code: null
+title:
+  title: null
+description: Test, adjust, or repair biomedical or electromedical equipment.
+$id: https://graph.org.ai/occupations/MedicalEquipmentRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MedicalEquipmentRepairers`
+      };
+  }));
+
+# Medical Equipment Repairers
+
+**O*NET Code**: 49-9062.00
+
+Test, adjust, or repair biomedical or electromedical equipment.
+
+## Job Profile
+<JobZone occupation=MedicalEquipmentRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MedicalEquipmentRepairers />
+
+### General Activities
+<Activities occupation=MedicalEquipmentRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=MedicalEquipmentRepairers />
+
+### Knowledge
+<Knowledge occupation=MedicalEquipmentRepairers />
+
+### Abilities
+<Abilities occupation=MedicalEquipmentRepairers />
+
+## Work Context
+<WorkContext occupation=MedicalEquipmentRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MedicalEquipmentRepairers />
+
+### Industries
+<Industries occupation=MedicalEquipmentRepairers />

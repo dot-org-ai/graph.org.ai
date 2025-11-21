@@ -1,0 +1,68 @@
+---
+id: WellheadPumpers
+slug: WellheadPumpers
+code:
+  code: null
+title:
+  title: null
+description: Operate power pumps and auxiliary equipment to produce flow of oil
+  or gas from wells in oil field.
+$id: https://graph.org.ai/occupations/WellheadPumpers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WellheadPumpers`
+      };
+  }));
+
+# Wellhead Pumpers
+
+**O*NET Code**: 53-7073.00
+
+Operate power pumps and auxiliary equipment to produce flow of oil or gas from wells in oil field.
+
+## Job Profile
+<JobZone occupation=WellheadPumpers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WellheadPumpers />
+
+### General Activities
+<Activities occupation=WellheadPumpers />
+
+## Qualifications
+### Skills
+<Skills occupation=WellheadPumpers />
+
+### Knowledge
+<Knowledge occupation=WellheadPumpers />
+
+### Abilities
+<Abilities occupation=WellheadPumpers />
+
+## Work Context
+<WorkContext occupation=WellheadPumpers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WellheadPumpers />
+
+### Industries
+<Industries occupation=WellheadPumpers />

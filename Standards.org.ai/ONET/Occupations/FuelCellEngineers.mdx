@@ -1,0 +1,68 @@
+---
+id: FuelCellEngineers
+slug: FuelCellEngineers
+code:
+  code: null
+title:
+  title: null
+description: Design, evaluate, modify, or construct fuel cell components or
+  systems for transportation, stationary, or portable applications.
+$id: https://graph.org.ai/occupations/FuelCellEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FuelCellEngineers`
+      };
+  }));
+
+# Fuel Cell Engineers
+
+**O*NET Code**: 17-2141.01
+
+Design, evaluate, modify, or construct fuel cell components or systems for transportation, stationary, or portable applications.
+
+## Job Profile
+<JobZone occupation=FuelCellEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FuelCellEngineers />
+
+### General Activities
+<Activities occupation=FuelCellEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=FuelCellEngineers />
+
+### Knowledge
+<Knowledge occupation=FuelCellEngineers />
+
+### Abilities
+<Abilities occupation=FuelCellEngineers />
+
+## Work Context
+<WorkContext occupation=FuelCellEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FuelCellEngineers />
+
+### Industries
+<Industries occupation=FuelCellEngineers />

@@ -1,0 +1,69 @@
+---
+id: Clergy
+slug: Clergy
+code:
+  code: null
+title:
+  title: null
+description: Conduct religious worship and perform other spiritual functions
+  associated with beliefs and practices of religious faith or denomination.
+  Provide spiritual and moral guidance and assistance to members.
+$id: https://graph.org.ai/occupations/Clergy
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Clergy`
+      };
+  }));
+
+# Clergy
+
+**O*NET Code**: 21-2011.00
+
+Conduct religious worship and perform other spiritual functions associated with beliefs and practices of religious faith or denomination. Provide spiritual and moral guidance and assistance to members.
+
+## Job Profile
+<JobZone occupation=Clergy />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Clergy />
+
+### General Activities
+<Activities occupation=Clergy />
+
+## Qualifications
+### Skills
+<Skills occupation=Clergy />
+
+### Knowledge
+<Knowledge occupation=Clergy />
+
+### Abilities
+<Abilities occupation=Clergy />
+
+## Work Context
+<WorkContext occupation=Clergy />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Clergy />
+
+### Industries
+<Industries occupation=Clergy />

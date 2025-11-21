@@ -1,0 +1,71 @@
+---
+id: WaterWastewaterEngineers
+slug: WaterWastewaterEngineers
+code:
+  code: null
+title:
+  title: null
+description: Design or oversee projects involving provision of potable water,
+  disposal of wastewater and sewage, or prevention of flood-related damage.
+  Prepare environmental documentation for water resources, regulatory program
+  compliance, data management and analysis, and field work. Perform hydraulic
+  modeling and pipeline design.
+$id: https://graph.org.ai/occupations/WaterWastewaterEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WaterWastewaterEngineers`
+      };
+  }));
+
+# Water/Wastewater Engineers
+
+**O*NET Code**: 17-2051.02
+
+Design or oversee projects involving provision of potable water, disposal of wastewater and sewage, or prevention of flood-related damage. Prepare environmental documentation for water resources, regulatory program compliance, data management and analysis, and field work. Perform hydraulic modeling and pipeline design.
+
+## Job Profile
+<JobZone occupation=WaterWastewaterEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WaterWastewaterEngineers />
+
+### General Activities
+<Activities occupation=WaterWastewaterEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=WaterWastewaterEngineers />
+
+### Knowledge
+<Knowledge occupation=WaterWastewaterEngineers />
+
+### Abilities
+<Abilities occupation=WaterWastewaterEngineers />
+
+## Work Context
+<WorkContext occupation=WaterWastewaterEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WaterWastewaterEngineers />
+
+### Industries
+<Industries occupation=WaterWastewaterEngineers />

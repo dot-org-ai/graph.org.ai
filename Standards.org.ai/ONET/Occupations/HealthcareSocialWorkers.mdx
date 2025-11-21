@@ -1,0 +1,72 @@
+---
+id: HealthcareSocialWorkers
+slug: HealthcareSocialWorkers
+code:
+  code: null
+title:
+  title: null
+description: Provide individuals, families, and groups with the psychosocial
+  support needed to cope with chronic, acute, or terminal illnesses. Services
+  include advising family caregivers. Provide patients with information and
+  counseling, and make referrals for other services. May also provide case and
+  care management or interventions designed to promote health, prevent disease,
+  and address barriers to access to healthcare.
+$id: https://graph.org.ai/occupations/HealthcareSocialWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HealthcareSocialWorkers`
+      };
+  }));
+
+# Healthcare Social Workers
+
+**O*NET Code**: 21-1022.00
+
+Provide individuals, families, and groups with the psychosocial support needed to cope with chronic, acute, or terminal illnesses. Services include advising family caregivers. Provide patients with information and counseling, and make referrals for other services. May also provide case and care management or interventions designed to promote health, prevent disease, and address barriers to access to healthcare.
+
+## Job Profile
+<JobZone occupation=HealthcareSocialWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HealthcareSocialWorkers />
+
+### General Activities
+<Activities occupation=HealthcareSocialWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=HealthcareSocialWorkers />
+
+### Knowledge
+<Knowledge occupation=HealthcareSocialWorkers />
+
+### Abilities
+<Abilities occupation=HealthcareSocialWorkers />
+
+## Work Context
+<WorkContext occupation=HealthcareSocialWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HealthcareSocialWorkers />
+
+### Industries
+<Industries occupation=HealthcareSocialWorkers />

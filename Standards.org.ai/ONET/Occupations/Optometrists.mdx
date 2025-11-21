@@ -1,0 +1,70 @@
+---
+id: Optometrists
+slug: Optometrists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, manage, and treat conditions and diseases of the human
+  eye and visual system. Examine eyes and visual system, diagnose problems or
+  impairments, prescribe corrective lenses, and provide treatment. May prescribe
+  therapeutic drugs to treat specific eye conditions.
+$id: https://graph.org.ai/occupations/Optometrists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Optometrists`
+      };
+  }));
+
+# Optometrists
+
+**O*NET Code**: 29-1041.00
+
+Diagnose, manage, and treat conditions and diseases of the human eye and visual system. Examine eyes and visual system, diagnose problems or impairments, prescribe corrective lenses, and provide treatment. May prescribe therapeutic drugs to treat specific eye conditions.
+
+## Job Profile
+<JobZone occupation=Optometrists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Optometrists />
+
+### General Activities
+<Activities occupation=Optometrists />
+
+## Qualifications
+### Skills
+<Skills occupation=Optometrists />
+
+### Knowledge
+<Knowledge occupation=Optometrists />
+
+### Abilities
+<Abilities occupation=Optometrists />
+
+## Work Context
+<WorkContext occupation=Optometrists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Optometrists />
+
+### Industries
+<Industries occupation=Optometrists />

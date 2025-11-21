@@ -1,0 +1,68 @@
+---
+id: HistologyTechnicians
+slug: HistologyTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Prepare histological slides from tissue sections for microscopic
+  examination and diagnosis by pathologists. May assist with research studies.
+$id: https://graph.org.ai/occupations/HistologyTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HistologyTechnicians`
+      };
+  }));
+
+# Histology Technicians
+
+**O*NET Code**: 29-2012.01
+
+Prepare histological slides from tissue sections for microscopic examination and diagnosis by pathologists. May assist with research studies.
+
+## Job Profile
+<JobZone occupation=HistologyTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HistologyTechnicians />
+
+### General Activities
+<Activities occupation=HistologyTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=HistologyTechnicians />
+
+### Knowledge
+<Knowledge occupation=HistologyTechnicians />
+
+### Abilities
+<Abilities occupation=HistologyTechnicians />
+
+## Work Context
+<WorkContext occupation=HistologyTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HistologyTechnicians />
+
+### Industries
+<Industries occupation=HistologyTechnicians />

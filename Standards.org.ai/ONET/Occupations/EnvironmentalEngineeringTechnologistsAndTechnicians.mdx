@@ -1,0 +1,71 @@
+---
+id: EnvironmentalEngineeringTechnologistsAndTechnicians
+slug: EnvironmentalEngineeringTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Apply theory and principles of environmental engineering to modify,
+  test, and operate equipment and devices used in the prevention, control, and
+  remediation of environmental problems, including waste treatment and site
+  remediation, under the direction of engineering staff or scientists. May
+  assist in the development of environmental remediation devices.
+$id: https://graph.org.ai/occupations/EnvironmentalEngineeringTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnvironmentalEngineeringTechnologistsAndTechnicians`
+      };
+  }));
+
+# Environmental Engineering Technologists and Technicians
+
+**O*NET Code**: 17-3025.00
+
+Apply theory and principles of environmental engineering to modify, test, and operate equipment and devices used in the prevention, control, and remediation of environmental problems, including waste treatment and site remediation, under the direction of engineering staff or scientists. May assist in the development of environmental remediation devices.
+
+## Job Profile
+<JobZone occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=EnvironmentalEngineeringTechnologistsAndTechnicians />

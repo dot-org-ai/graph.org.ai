@@ -1,0 +1,68 @@
+---
+id: CuttersAndTrimmersHand
+slug: CuttersAndTrimmersHand
+code:
+  code: null
+title:
+  title: null
+description: Use hand tools or hand-held power tools to cut and trim a variety
+  of manufactured items, such as carpet, fabric, stone, glass, or rubber.
+$id: https://graph.org.ai/occupations/CuttersAndTrimmersHand
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CuttersAndTrimmersHand`
+      };
+  }));
+
+# Cutters and Trimmers, Hand
+
+**O*NET Code**: 51-9031.00
+
+Use hand tools or hand-held power tools to cut and trim a variety of manufactured items, such as carpet, fabric, stone, glass, or rubber.
+
+## Job Profile
+<JobZone occupation=CuttersAndTrimmersHand />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CuttersAndTrimmersHand />
+
+### General Activities
+<Activities occupation=CuttersAndTrimmersHand />
+
+## Qualifications
+### Skills
+<Skills occupation=CuttersAndTrimmersHand />
+
+### Knowledge
+<Knowledge occupation=CuttersAndTrimmersHand />
+
+### Abilities
+<Abilities occupation=CuttersAndTrimmersHand />
+
+## Work Context
+<WorkContext occupation=CuttersAndTrimmersHand />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CuttersAndTrimmersHand />
+
+### Industries
+<Industries occupation=CuttersAndTrimmersHand />

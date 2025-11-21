@@ -1,0 +1,70 @@
+---
+id: CouriersAndMessengers
+slug: CouriersAndMessengers
+code:
+  code: null
+title:
+  title: null
+description: Pick up and deliver messages, documents, packages, and other items
+  between offices or departments within an establishment or directly to other
+  business concerns, traveling by foot, bicycle, motorcycle, automobile, or
+  public conveyance.
+$id: https://graph.org.ai/occupations/CouriersAndMessengers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CouriersAndMessengers`
+      };
+  }));
+
+# Couriers and Messengers
+
+**O*NET Code**: 43-5021.00
+
+Pick up and deliver messages, documents, packages, and other items between offices or departments within an establishment or directly to other business concerns, traveling by foot, bicycle, motorcycle, automobile, or public conveyance.
+
+## Job Profile
+<JobZone occupation=CouriersAndMessengers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CouriersAndMessengers />
+
+### General Activities
+<Activities occupation=CouriersAndMessengers />
+
+## Qualifications
+### Skills
+<Skills occupation=CouriersAndMessengers />
+
+### Knowledge
+<Knowledge occupation=CouriersAndMessengers />
+
+### Abilities
+<Abilities occupation=CouriersAndMessengers />
+
+## Work Context
+<WorkContext occupation=CouriersAndMessengers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CouriersAndMessengers />
+
+### Industries
+<Industries occupation=CouriersAndMessengers />

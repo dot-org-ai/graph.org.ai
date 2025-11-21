@@ -1,0 +1,69 @@
+---
+id: Chemists
+slug: Chemists
+code:
+  code: null
+title:
+  title: null
+description: Conduct qualitative and quantitative chemical analyses or
+  experiments in laboratories for quality or process control or to develop new
+  products or knowledge.
+$id: https://graph.org.ai/occupations/Chemists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Chemists`
+      };
+  }));
+
+# Chemists
+
+**O*NET Code**: 19-2031.00
+
+Conduct qualitative and quantitative chemical analyses or experiments in laboratories for quality or process control or to develop new products or knowledge.
+
+## Job Profile
+<JobZone occupation=Chemists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Chemists />
+
+### General Activities
+<Activities occupation=Chemists />
+
+## Qualifications
+### Skills
+<Skills occupation=Chemists />
+
+### Knowledge
+<Knowledge occupation=Chemists />
+
+### Abilities
+<Abilities occupation=Chemists />
+
+## Work Context
+<WorkContext occupation=Chemists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Chemists />
+
+### Industries
+<Industries occupation=Chemists />

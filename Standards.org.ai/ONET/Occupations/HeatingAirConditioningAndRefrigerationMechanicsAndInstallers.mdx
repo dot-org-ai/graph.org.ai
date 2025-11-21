@@ -1,0 +1,69 @@
+---
+id: HeatingAirConditioningAndRefrigerationMechanicsAndInstallers
+slug: HeatingAirConditioningAndRefrigerationMechanicsAndInstallers
+code:
+  code: null
+title:
+  title: null
+description: Install or repair heating, central air conditioning, HVAC, or
+  refrigeration systems, including oil burners, hot-air furnaces, and heating
+  stoves.
+$id: https://graph.org.ai/occupations/HeatingAirConditioningAndRefrigerationMechanicsAndInstallers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HeatingAirConditioningAndRefrigerationMechanicsAndInstallers`
+      };
+  }));
+
+# Heating, Air Conditioning, and Refrigeration Mechanics and Installers
+
+**O*NET Code**: 49-9021.00
+
+Install or repair heating, central air conditioning, HVAC, or refrigeration systems, including oil burners, hot-air furnaces, and heating stoves.
+
+## Job Profile
+<JobZone occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+### General Activities
+<Activities occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+## Qualifications
+### Skills
+<Skills occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+### Knowledge
+<Knowledge occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+### Abilities
+<Abilities occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+## Work Context
+<WorkContext occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />
+
+### Industries
+<Industries occupation=HeatingAirConditioningAndRefrigerationMechanicsAndInstallers />

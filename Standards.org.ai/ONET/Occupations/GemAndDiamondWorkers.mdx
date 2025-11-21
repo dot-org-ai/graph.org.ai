@@ -1,0 +1,68 @@
+---
+id: GemAndDiamondWorkers
+slug: GemAndDiamondWorkers
+code:
+  code: null
+title:
+  title: null
+description: Fabricate, finish, or evaluate the quality of gems and diamonds
+  used in jewelry or industrial tools.
+$id: https://graph.org.ai/occupations/GemAndDiamondWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GemAndDiamondWorkers`
+      };
+  }));
+
+# Gem and Diamond Workers
+
+**O*NET Code**: 51-9071.06
+
+Fabricate, finish, or evaluate the quality of gems and diamonds used in jewelry or industrial tools.
+
+## Job Profile
+<JobZone occupation=GemAndDiamondWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GemAndDiamondWorkers />
+
+### General Activities
+<Activities occupation=GemAndDiamondWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=GemAndDiamondWorkers />
+
+### Knowledge
+<Knowledge occupation=GemAndDiamondWorkers />
+
+### Abilities
+<Abilities occupation=GemAndDiamondWorkers />
+
+## Work Context
+<WorkContext occupation=GemAndDiamondWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GemAndDiamondWorkers />
+
+### Industries
+<Industries occupation=GemAndDiamondWorkers />

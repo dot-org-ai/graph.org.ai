@@ -1,0 +1,68 @@
+---
+id: FirstLineSupervisorsOfFoodPreparationAndServingWorkers
+slug: FirstLineSupervisorsOfFoodPreparationAndServingWorkers
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate activities of workers engaged in
+  preparing and serving food.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfFoodPreparationAndServingWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfFoodPreparationAndServingWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Food Preparation and Serving Workers
+
+**O*NET Code**: 35-1012.00
+
+Directly supervise and coordinate activities of workers engaged in preparing and serving food.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfFoodPreparationAndServingWorkers />

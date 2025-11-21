@@ -1,0 +1,68 @@
+---
+id: Biologists
+slug: Biologists
+code:
+  code: null
+title:
+  title: null
+description: Research or study basic principles of plant and animal life, such
+  as origin, relationship, development, anatomy, and functions.
+$id: https://graph.org.ai/occupations/Biologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Biologists`
+      };
+  }));
+
+# Biologists
+
+**O*NET Code**: 19-1029.04
+
+Research or study basic principles of plant and animal life, such as origin, relationship, development, anatomy, and functions.
+
+## Job Profile
+<JobZone occupation=Biologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Biologists />
+
+### General Activities
+<Activities occupation=Biologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Biologists />
+
+### Knowledge
+<Knowledge occupation=Biologists />
+
+### Abilities
+<Abilities occupation=Biologists />
+
+## Work Context
+<WorkContext occupation=Biologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Biologists />
+
+### Industries
+<Industries occupation=Biologists />

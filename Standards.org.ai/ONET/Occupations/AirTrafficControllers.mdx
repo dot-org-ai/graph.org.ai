@@ -1,0 +1,71 @@
+---
+id: AirTrafficControllers
+slug: AirTrafficControllers
+code:
+  code: null
+title:
+  title: null
+description: Control air traffic on and within vicinity of airport, and movement
+  of air traffic between altitude sectors and control centers, according to
+  established procedures and policies. Authorize, regulate, and control
+  commercial airline flights according to government or company regulations to
+  expedite and ensure flight safety.
+$id: https://graph.org.ai/occupations/AirTrafficControllers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AirTrafficControllers`
+      };
+  }));
+
+# Air Traffic Controllers
+
+**O*NET Code**: 53-2021.00
+
+Control air traffic on and within vicinity of airport, and movement of air traffic between altitude sectors and control centers, according to established procedures and policies. Authorize, regulate, and control commercial airline flights according to government or company regulations to expedite and ensure flight safety.
+
+## Job Profile
+<JobZone occupation=AirTrafficControllers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AirTrafficControllers />
+
+### General Activities
+<Activities occupation=AirTrafficControllers />
+
+## Qualifications
+### Skills
+<Skills occupation=AirTrafficControllers />
+
+### Knowledge
+<Knowledge occupation=AirTrafficControllers />
+
+### Abilities
+<Abilities occupation=AirTrafficControllers />
+
+## Work Context
+<WorkContext occupation=AirTrafficControllers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AirTrafficControllers />
+
+### Industries
+<Industries occupation=AirTrafficControllers />

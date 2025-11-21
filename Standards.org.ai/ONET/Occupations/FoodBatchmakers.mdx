@@ -1,0 +1,69 @@
+---
+id: FoodBatchmakers
+slug: FoodBatchmakers
+code:
+  code: null
+title:
+  title: null
+description: Set up and operate equipment that mixes or blends ingredients used
+  in the manufacturing of food products. Includes candy makers and cheese
+  makers.
+$id: https://graph.org.ai/occupations/FoodBatchmakers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FoodBatchmakers`
+      };
+  }));
+
+# Food Batchmakers
+
+**O*NET Code**: 51-3092.00
+
+Set up and operate equipment that mixes or blends ingredients used in the manufacturing of food products. Includes candy makers and cheese makers.
+
+## Job Profile
+<JobZone occupation=FoodBatchmakers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FoodBatchmakers />
+
+### General Activities
+<Activities occupation=FoodBatchmakers />
+
+## Qualifications
+### Skills
+<Skills occupation=FoodBatchmakers />
+
+### Knowledge
+<Knowledge occupation=FoodBatchmakers />
+
+### Abilities
+<Abilities occupation=FoodBatchmakers />
+
+## Work Context
+<WorkContext occupation=FoodBatchmakers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FoodBatchmakers />
+
+### Industries
+<Industries occupation=FoodBatchmakers />

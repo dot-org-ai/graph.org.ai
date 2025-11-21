@@ -1,0 +1,67 @@
+---
+id: PersonalCareAndServiceWorkersAllOther
+slug: PersonalCareAndServiceWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All personal care and service workers not listed separately.
+$id: https://graph.org.ai/occupations/PersonalCareAndServiceWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PersonalCareAndServiceWorkersAllOther`
+      };
+  }));
+
+# Personal Care and Service Workers, All Other
+
+**O*NET Code**: 39-9099.00
+
+All personal care and service workers not listed separately.
+
+## Job Profile
+<JobZone occupation=PersonalCareAndServiceWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PersonalCareAndServiceWorkersAllOther />
+
+### General Activities
+<Activities occupation=PersonalCareAndServiceWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=PersonalCareAndServiceWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=PersonalCareAndServiceWorkersAllOther />
+
+### Abilities
+<Abilities occupation=PersonalCareAndServiceWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=PersonalCareAndServiceWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PersonalCareAndServiceWorkersAllOther />
+
+### Industries
+<Industries occupation=PersonalCareAndServiceWorkersAllOther />

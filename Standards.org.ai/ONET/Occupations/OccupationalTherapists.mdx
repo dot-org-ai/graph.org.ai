@@ -1,0 +1,71 @@
+---
+id: OccupationalTherapists
+slug: OccupationalTherapists
+code:
+  code: null
+title:
+  title: null
+description: Assess, plan, and organize rehabilitative programs that help build
+  or restore vocational, homemaking, and daily living skills, as well as general
+  independence, to persons with disabilities or developmental delays. Use
+  therapeutic techniques, adapt the individual's environment, teach skills, and
+  modify specific tasks that present barriers to the individual.
+$id: https://graph.org.ai/occupations/OccupationalTherapists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OccupationalTherapists`
+      };
+  }));
+
+# Occupational Therapists
+
+**O*NET Code**: 29-1122.00
+
+Assess, plan, and organize rehabilitative programs that help build or restore vocational, homemaking, and daily living skills, as well as general independence, to persons with disabilities or developmental delays. Use therapeutic techniques, adapt the individual's environment, teach skills, and modify specific tasks that present barriers to the individual.
+
+## Job Profile
+<JobZone occupation=OccupationalTherapists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OccupationalTherapists />
+
+### General Activities
+<Activities occupation=OccupationalTherapists />
+
+## Qualifications
+### Skills
+<Skills occupation=OccupationalTherapists />
+
+### Knowledge
+<Knowledge occupation=OccupationalTherapists />
+
+### Abilities
+<Abilities occupation=OccupationalTherapists />
+
+## Work Context
+<WorkContext occupation=OccupationalTherapists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OccupationalTherapists />
+
+### Industries
+<Industries occupation=OccupationalTherapists />

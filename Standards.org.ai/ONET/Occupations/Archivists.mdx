@@ -1,0 +1,69 @@
+---
+id: Archivists
+slug: Archivists
+code:
+  code: null
+title:
+  title: null
+description: Appraise, edit, and direct safekeeping of permanent records and
+  historically valuable documents. Participate in research activities based on
+  archival materials.
+$id: https://graph.org.ai/occupations/Archivists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Archivists`
+      };
+  }));
+
+# Archivists
+
+**O*NET Code**: 25-4011.00
+
+Appraise, edit, and direct safekeeping of permanent records and historically valuable documents. Participate in research activities based on archival materials.
+
+## Job Profile
+<JobZone occupation=Archivists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Archivists />
+
+### General Activities
+<Activities occupation=Archivists />
+
+## Qualifications
+### Skills
+<Skills occupation=Archivists />
+
+### Knowledge
+<Knowledge occupation=Archivists />
+
+### Abilities
+<Abilities occupation=Archivists />
+
+## Work Context
+<WorkContext occupation=Archivists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Archivists />
+
+### Industries
+<Industries occupation=Archivists />

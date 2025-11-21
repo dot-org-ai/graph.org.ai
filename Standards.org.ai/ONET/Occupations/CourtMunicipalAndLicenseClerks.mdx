@@ -1,0 +1,72 @@
+---
+id: CourtMunicipalAndLicenseClerks
+slug: CourtMunicipalAndLicenseClerks
+code:
+  code: null
+title:
+  title: null
+description: Perform clerical duties for courts of law, municipalities, or
+  governmental licensing agencies and bureaus. May prepare docket of cases to be
+  called; secure information for judges and court; prepare draft agendas or
+  bylaws for town or city council; answer official correspondence; keep fiscal
+  records and accounts; issue licenses or permits; and record data, administer
+  tests, or collect fees.
+$id: https://graph.org.ai/occupations/CourtMunicipalAndLicenseClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CourtMunicipalAndLicenseClerks`
+      };
+  }));
+
+# Court, Municipal, and License Clerks
+
+**O*NET Code**: 43-4031.00
+
+Perform clerical duties for courts of law, municipalities, or governmental licensing agencies and bureaus. May prepare docket of cases to be called; secure information for judges and court; prepare draft agendas or bylaws for town or city council; answer official correspondence; keep fiscal records and accounts; issue licenses or permits; and record data, administer tests, or collect fees.
+
+## Job Profile
+<JobZone occupation=CourtMunicipalAndLicenseClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CourtMunicipalAndLicenseClerks />
+
+### General Activities
+<Activities occupation=CourtMunicipalAndLicenseClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=CourtMunicipalAndLicenseClerks />
+
+### Knowledge
+<Knowledge occupation=CourtMunicipalAndLicenseClerks />
+
+### Abilities
+<Abilities occupation=CourtMunicipalAndLicenseClerks />
+
+## Work Context
+<WorkContext occupation=CourtMunicipalAndLicenseClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CourtMunicipalAndLicenseClerks />
+
+### Industries
+<Industries occupation=CourtMunicipalAndLicenseClerks />

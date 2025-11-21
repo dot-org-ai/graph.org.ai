@@ -1,0 +1,68 @@
+---
+id: Anesthesiologists
+slug: Anesthesiologists
+code:
+  code: null
+title:
+  title: null
+description: Administer anesthetics and analgesics for pain management prior to,
+  during, or after surgery.
+$id: https://graph.org.ai/occupations/Anesthesiologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Anesthesiologists`
+      };
+  }));
+
+# Anesthesiologists
+
+**O*NET Code**: 29-1211.00
+
+Administer anesthetics and analgesics for pain management prior to, during, or after surgery.
+
+## Job Profile
+<JobZone occupation=Anesthesiologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Anesthesiologists />
+
+### General Activities
+<Activities occupation=Anesthesiologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Anesthesiologists />
+
+### Knowledge
+<Knowledge occupation=Anesthesiologists />
+
+### Abilities
+<Abilities occupation=Anesthesiologists />
+
+## Work Context
+<WorkContext occupation=Anesthesiologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Anesthesiologists />
+
+### Industries
+<Industries occupation=Anesthesiologists />

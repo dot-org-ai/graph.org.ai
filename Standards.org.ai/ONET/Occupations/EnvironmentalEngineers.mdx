@@ -1,0 +1,70 @@
+---
+id: EnvironmentalEngineers
+slug: EnvironmentalEngineers
+code:
+  code: null
+title:
+  title: null
+description: Research, design, plan, or perform engineering duties in the
+  prevention, control, and remediation of environmental hazards using various
+  engineering disciplines. Work may include waste treatment, site remediation,
+  or pollution control technology.
+$id: https://graph.org.ai/occupations/EnvironmentalEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnvironmentalEngineers`
+      };
+  }));
+
+# Environmental Engineers
+
+**O*NET Code**: 17-2081.00
+
+Research, design, plan, or perform engineering duties in the prevention, control, and remediation of environmental hazards using various engineering disciplines. Work may include waste treatment, site remediation, or pollution control technology.
+
+## Job Profile
+<JobZone occupation=EnvironmentalEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnvironmentalEngineers />
+
+### General Activities
+<Activities occupation=EnvironmentalEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=EnvironmentalEngineers />
+
+### Knowledge
+<Knowledge occupation=EnvironmentalEngineers />
+
+### Abilities
+<Abilities occupation=EnvironmentalEngineers />
+
+## Work Context
+<WorkContext occupation=EnvironmentalEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnvironmentalEngineers />
+
+### Industries
+<Industries occupation=EnvironmentalEngineers />

@@ -1,0 +1,69 @@
+---
+id: TerrazzoWorkersAndFinishers
+slug: TerrazzoWorkersAndFinishers
+code:
+  code: null
+title:
+  title: null
+description: Apply a mixture of cement, sand, pigment, or marble chips to
+  floors, stairways, and cabinet fixtures to fashion durable and decorative
+  surfaces.
+$id: https://graph.org.ai/occupations/TerrazzoWorkersAndFinishers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TerrazzoWorkersAndFinishers`
+      };
+  }));
+
+# Terrazzo Workers and Finishers
+
+**O*NET Code**: 47-2053.00
+
+Apply a mixture of cement, sand, pigment, or marble chips to floors, stairways, and cabinet fixtures to fashion durable and decorative surfaces.
+
+## Job Profile
+<JobZone occupation=TerrazzoWorkersAndFinishers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TerrazzoWorkersAndFinishers />
+
+### General Activities
+<Activities occupation=TerrazzoWorkersAndFinishers />
+
+## Qualifications
+### Skills
+<Skills occupation=TerrazzoWorkersAndFinishers />
+
+### Knowledge
+<Knowledge occupation=TerrazzoWorkersAndFinishers />
+
+### Abilities
+<Abilities occupation=TerrazzoWorkersAndFinishers />
+
+## Work Context
+<WorkContext occupation=TerrazzoWorkersAndFinishers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TerrazzoWorkersAndFinishers />
+
+### Industries
+<Industries occupation=TerrazzoWorkersAndFinishers />

@@ -1,0 +1,67 @@
+---
+id: TaxPreparers
+slug: TaxPreparers
+code:
+  code: null
+title:
+  title: null
+description: Prepare tax returns for individuals or small businesses.
+$id: https://graph.org.ai/occupations/TaxPreparers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TaxPreparers`
+      };
+  }));
+
+# Tax Preparers
+
+**O*NET Code**: 13-2082.00
+
+Prepare tax returns for individuals or small businesses.
+
+## Job Profile
+<JobZone occupation=TaxPreparers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TaxPreparers />
+
+### General Activities
+<Activities occupation=TaxPreparers />
+
+## Qualifications
+### Skills
+<Skills occupation=TaxPreparers />
+
+### Knowledge
+<Knowledge occupation=TaxPreparers />
+
+### Abilities
+<Abilities occupation=TaxPreparers />
+
+## Work Context
+<WorkContext occupation=TaxPreparers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TaxPreparers />
+
+### Industries
+<Industries occupation=TaxPreparers />

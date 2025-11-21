@@ -1,0 +1,71 @@
+---
+id: MarriageAndFamilyTherapists
+slug: MarriageAndFamilyTherapists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and treat mental and emotional disorders, whether
+  cognitive, affective, or behavioral, within the context of marriage and family
+  systems. Apply psychotherapeutic and family systems theories and techniques in
+  the delivery of services to individuals, couples, and families for the purpose
+  of treating such diagnosed nervous and mental disorders.
+$id: https://graph.org.ai/occupations/MarriageAndFamilyTherapists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MarriageAndFamilyTherapists`
+      };
+  }));
+
+# Marriage and Family Therapists
+
+**O*NET Code**: 21-1013.00
+
+Diagnose and treat mental and emotional disorders, whether cognitive, affective, or behavioral, within the context of marriage and family systems. Apply psychotherapeutic and family systems theories and techniques in the delivery of services to individuals, couples, and families for the purpose of treating such diagnosed nervous and mental disorders.
+
+## Job Profile
+<JobZone occupation=MarriageAndFamilyTherapists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MarriageAndFamilyTherapists />
+
+### General Activities
+<Activities occupation=MarriageAndFamilyTherapists />
+
+## Qualifications
+### Skills
+<Skills occupation=MarriageAndFamilyTherapists />
+
+### Knowledge
+<Knowledge occupation=MarriageAndFamilyTherapists />
+
+### Abilities
+<Abilities occupation=MarriageAndFamilyTherapists />
+
+## Work Context
+<WorkContext occupation=MarriageAndFamilyTherapists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MarriageAndFamilyTherapists />
+
+### Industries
+<Industries occupation=MarriageAndFamilyTherapists />

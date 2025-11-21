@@ -1,0 +1,70 @@
+---
+id: RealEstateSalesAgents
+slug: RealEstateSalesAgents
+code:
+  code: null
+title:
+  title: null
+description: Rent, buy, or sell property for clients. Perform duties such as
+  study property listings, interview prospective clients, accompany clients to
+  property site, discuss conditions of sale, and draw up real estate contracts.
+  Includes agents who represent buyer.
+$id: https://graph.org.ai/occupations/RealEstateSalesAgents
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RealEstateSalesAgents`
+      };
+  }));
+
+# Real Estate Sales Agents
+
+**O*NET Code**: 41-9022.00
+
+Rent, buy, or sell property for clients. Perform duties such as study property listings, interview prospective clients, accompany clients to property site, discuss conditions of sale, and draw up real estate contracts. Includes agents who represent buyer.
+
+## Job Profile
+<JobZone occupation=RealEstateSalesAgents />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RealEstateSalesAgents />
+
+### General Activities
+<Activities occupation=RealEstateSalesAgents />
+
+## Qualifications
+### Skills
+<Skills occupation=RealEstateSalesAgents />
+
+### Knowledge
+<Knowledge occupation=RealEstateSalesAgents />
+
+### Abilities
+<Abilities occupation=RealEstateSalesAgents />
+
+## Work Context
+<WorkContext occupation=RealEstateSalesAgents />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RealEstateSalesAgents />
+
+### Industries
+<Industries occupation=RealEstateSalesAgents />

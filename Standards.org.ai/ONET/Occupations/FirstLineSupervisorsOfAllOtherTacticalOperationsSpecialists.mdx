@@ -1,0 +1,69 @@
+---
+id: FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists
+slug: FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Supervise and coordinate the activities of all other tactical
+  operations specialists not classified separately above. Supervisors may also
+  perform the same activities as the workers they supervise.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists`
+      };
+  }));
+
+# First-Line Supervisors of All Other Tactical Operations Specialists
+
+**O*NET Code**: 55-2013.00
+
+Supervise and coordinate the activities of all other tactical operations specialists not classified separately above. Supervisors may also perform the same activities as the workers they supervise.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfAllOtherTacticalOperationsSpecialists />

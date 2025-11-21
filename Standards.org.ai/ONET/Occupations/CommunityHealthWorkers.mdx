@@ -1,0 +1,74 @@
+---
+id: CommunityHealthWorkers
+slug: CommunityHealthWorkers
+code:
+  code: null
+title:
+  title: null
+description: Promote health within a community by assisting individuals to adopt
+  healthy behaviors. Serve as an advocate for the health needs of individuals by
+  assisting community residents in effectively communicating with healthcare
+  providers or social service agencies. Act as liaison or advocate and implement
+  programs that promote, maintain, and improve individual and overall community
+  health. May deliver health-related preventive services such as blood pressure,
+  glaucoma, and hearing screenings. May collect data to help identify community
+  health needs.
+$id: https://graph.org.ai/occupations/CommunityHealthWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CommunityHealthWorkers`
+      };
+  }));
+
+# Community Health Workers
+
+**O*NET Code**: 21-1094.00
+
+Promote health within a community by assisting individuals to adopt healthy behaviors. Serve as an advocate for the health needs of individuals by assisting community residents in effectively communicating with healthcare providers or social service agencies. Act as liaison or advocate and implement programs that promote, maintain, and improve individual and overall community health. May deliver health-related preventive services such as blood pressure, glaucoma, and hearing screenings. May collect data to help identify community health needs.
+
+## Job Profile
+<JobZone occupation=CommunityHealthWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CommunityHealthWorkers />
+
+### General Activities
+<Activities occupation=CommunityHealthWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=CommunityHealthWorkers />
+
+### Knowledge
+<Knowledge occupation=CommunityHealthWorkers />
+
+### Abilities
+<Abilities occupation=CommunityHealthWorkers />
+
+## Work Context
+<WorkContext occupation=CommunityHealthWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CommunityHealthWorkers />
+
+### Industries
+<Industries occupation=CommunityHealthWorkers />
