@@ -1,0 +1,29 @@
+{
+  "name": "@mdxui/markdown",
+  "version": "0.0.1",
+  "description": "Render and evaluate MDX to Markdown",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mdx", "markdown", "render"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^3.0.0",
+    "vfile": "^6.0.0",
+    "vfile-matter": "^5.0.0"
+  }
+}

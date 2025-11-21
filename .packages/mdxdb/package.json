@@ -1,0 +1,32 @@
+{
+  "name": "mdxdb",
+  "version": "0.0.1",
+  "description": "Database interface for MDX files",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./fs": {
+      "import": "./dist/fs/index.js",
+      "types": "./dist/fs/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mdx", "database", "fs"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "mdxld": "file:../mdxld",
+    "glob": "^10.0.0"
+  }
+}

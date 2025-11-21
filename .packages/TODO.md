@@ -1,57 +1,61 @@
 # Project Plan: MDX-based Data System
 
-## Overview
-This project involves creating a suite of TypeScript packages to manage, render, and enrich MDX-based data with JSON-LD/YAML-LD semantics.
+## Phase 1: Ontology Design & Fixtures
+Create the structure and example `.mdx` files for the core domains. These files will serve as the design specification and test fixtures for the software packages.
 
-## Packages
+- [x] **Industries.org.ai** (NAICS)
+    - [x] `[Sector].mdx`
+- [x] **Occupations.org.ai** (O*NET)
+    - [x] `[Occupation].mdx`
+- [x] **Tasks.org.ai** (O*NET)
+    - [x] `[Task].mdx`
+- [x] **Processes.org.ai** (APQC)
+    - [x] `[Process].mdx`
+- [x] **Products.org.ai** (UNSPSC)
+    - [x] `[Product].mdx`
+- [x] **Services.org.ai** (UNSPSC)
+    - [x] `[Service].mdx`
+- [x] **Activities.org.ai** (O*NET)
+    - [x] `[Activity].mdx`
+- [x] **Tech.org.ai** (O*NET)
+    - [x] `[Tech].mdx`
+- [x] **Tools.org.ai** (O*NET)
+    - [x] `[Tool].mdx`
+- [ ] **GS1 Standards** (CBV/EPCIS + IDs)
+    - [ ] Define templates for Events and ID types (GTIN, GLN, SSCC, etc.).
+- [ ] **Schema.org**
+    - [ ] Define `[Type].mdx` and `[Property].mdx`.
+
+## Phase 2: Package Implementation & Testing
+
+### Global Config
+- [ ] **Style**: Configure Prettier (no semicolons).
 
 ### 1. `mdxld`
-- **Purpose**: Handle MDX + JSON-LD/YAML-LD parsing, stringification, and validation.
-- **Key Features**:
-  - Supports valid variable names for LD keys: `$id`, `$type`, `$context`.
-  - **Functions**: `parse`, `stringify`, `validate`.
-  - **Shapes**:
-    - **Flat**: Uses `$id`, `$type`, `$context`, `$code`, `$content` mixed into the data object.
-    - **Expanded**: Uses `id`, `type`, `context`, `code`, `content` as distinct properties.
+- [x] Core logic (parse, stringify, validate)
+- [ ] **Tests**: Fix regex for frontmatter parsing, ensure tests pass non-interactively.
 
 ### 2. `@mdxui/markdown`
-- **Purpose**: Render/evaluate MDX content specifically into Markdown format.
-- **Key Features**:
-  - Evaluates MDX components.
-  - Outputs clean Markdown.
+- [ ] **Implementation**: Render MDX components to Markdown.
+- [ ] **Tests**: Verify `<Tasks occupation={...} />` renders to `## Tasks` + Table using the fixtures.
 
-### 3. `mdxdb` (Core & Interfaces)
-- **Purpose**: Expose local `.md` and `.mdx` files as a database (Collections & Documents).
-- **Key Features**:
-  - **Schema Definition**: MDX files describe their own data shape and relationships.
-  - **Relationship Management**: 
-    - Renders relationships as components (e.g., `<Tasks occupation={name} />` renders `## Tasks` + Table).
-    - Bidirectional updates (e.g., updating a Task's occupations updates the Occupation's tasks).
-  - **API**: `db.Collection.create()`, `db.Collection.update()`, etc.
+### 3. `mdxdb`
+- [ ] **Interface Updates**:
+    - `list(globPattern)`
+    - `search(query)` (grep/mongo-style)
+    - `get(id)`
+    - `set(id, data)`
+    - `delete(id)`
+- [ ] **Implementation**: Filesystem adapter, Relationship management.
+- [ ] **Tests**: 
+    - Load the Ontology folders as Collections.
+    - Test CRUD operations.
+    - Verify bidirectional updates between Occupations and Tasks.
 
-### 4. `mdxdb/fs`
-- **Purpose**: Filesystem adapter/implementation for `mdxdb`.
-- **Key Features**:
-  - Reads/Writes to local file system.
-  - Handles file parsing via `mdxld`.
+### 4. `mdxai`
+- [ ] **Implementation**: CLI for generation/enrichment.
+- [ ] **Tests**: 
+    - `mdxai enrich` using `CSV.fetch` from O*NET URLs defined in the fixtures.
 
-### 5. `mdxai`
-- **Purpose**: AI-driven content generation and data enrichment.
-- **Key Features**:
-  - **CLI Commands**:
-    - `mdxai generate`: Create new content.
-    - `mdxai enrich`: Enhance existing data.
-  - **Integration**: Uses `mdxdb` for data access and `mdxld` for validation.
-  - **Data Sourcing**:
-    - Supports fetching external data in MDX (e.g., `export const items = CSV.fetch(...)`).
-    - Integrates `lodash-es` and `PapaParse` into the MDX evaluation scope for data manipulation.
-
-## Implementation Steps
-
-- [ ] **Setup**: Initialize `.packages` structure and workspace configuration.
-- [ ] **mdxld**: Implement parsing/stringifying logic and type definitions.
-- [ ] **@mdxui/markdown**: Implement MDX to Markdown rendering logic.
-- [ ] **mdxdb**: Define core interfaces and relationship logic.
-- [ ] **mdxdb/fs**: Implement filesystem IO and integration with `mdxld`.
-- [ ] **mdxai**: Build CLI tool and integrate AI generation/enrichment logic.
-- [ ] **Integration**: Wire up global context (Lodash, PapaParse) for MDX evaluation.
+## Phase 3: Data Ingestion
+- [ ] Populate the Ontology folders with actual data (O*NET, NAICS, etc.) using `mdxai`.
