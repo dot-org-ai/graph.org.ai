@@ -1,0 +1,68 @@
+---
+id: MakeupArtistsTheatricalAndPerformance
+slug: MakeupArtistsTheatricalAndPerformance
+code:
+  code: null
+title:
+  title: null
+description: Apply makeup to performers to reflect period, setting, and
+  situation of their role.
+$id: https://graph.org.ai/occupations/MakeupArtistsTheatricalAndPerformance
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MakeupArtistsTheatricalAndPerformance`
+      };
+  }));
+
+# Makeup Artists, Theatrical and Performance
+
+**O*NET Code**: 39-5091.00
+
+Apply makeup to performers to reflect period, setting, and situation of their role.
+
+## Job Profile
+<JobZone occupation=MakeupArtistsTheatricalAndPerformance />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MakeupArtistsTheatricalAndPerformance />
+
+### General Activities
+<Activities occupation=MakeupArtistsTheatricalAndPerformance />
+
+## Qualifications
+### Skills
+<Skills occupation=MakeupArtistsTheatricalAndPerformance />
+
+### Knowledge
+<Knowledge occupation=MakeupArtistsTheatricalAndPerformance />
+
+### Abilities
+<Abilities occupation=MakeupArtistsTheatricalAndPerformance />
+
+## Work Context
+<WorkContext occupation=MakeupArtistsTheatricalAndPerformance />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MakeupArtistsTheatricalAndPerformance />
+
+### Industries
+<Industries occupation=MakeupArtistsTheatricalAndPerformance />

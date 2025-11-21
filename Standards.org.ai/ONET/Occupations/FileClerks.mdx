@@ -1,0 +1,69 @@
+---
+id: FileClerks
+slug: FileClerks
+code:
+  code: null
+title:
+  title: null
+description: File correspondence, cards, invoices, receipts, and other records
+  in alphabetical or numerical order or according to the filing system used.
+  Locate and remove material from file when requested.
+$id: https://graph.org.ai/occupations/FileClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FileClerks`
+      };
+  }));
+
+# File Clerks
+
+**O*NET Code**: 43-4071.00
+
+File correspondence, cards, invoices, receipts, and other records in alphabetical or numerical order or according to the filing system used. Locate and remove material from file when requested.
+
+## Job Profile
+<JobZone occupation=FileClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FileClerks />
+
+### General Activities
+<Activities occupation=FileClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=FileClerks />
+
+### Knowledge
+<Knowledge occupation=FileClerks />
+
+### Abilities
+<Abilities occupation=FileClerks />
+
+## Work Context
+<WorkContext occupation=FileClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FileClerks />
+
+### Industries
+<Industries occupation=FileClerks />

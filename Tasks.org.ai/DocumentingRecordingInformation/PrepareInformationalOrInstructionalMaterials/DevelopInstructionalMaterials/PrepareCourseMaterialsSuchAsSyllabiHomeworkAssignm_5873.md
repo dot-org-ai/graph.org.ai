@@ -1,0 +1,36 @@
+---
+id: DocumentingRecordingInformation/PrepareInformationalOrInstructionalMaterials/DevelopInstructionalMaterials/PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873
+title: Prepare course materials, such as syllabi, homework assignments, and handouts.
+description: Prepare course materials, such as syllabi, homework assignments, and handouts.
+type: Core
+activitySlug: DocumentingRecordingInformation
+iwaSlug: PrepareInformationalOrInstructionalMaterials
+dwaSlug: DevelopInstructionalMaterials
+slug: PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873
+$id: https://graph.org.ai/tasks/PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873
+$type: Task
+source: ONET
+---
+# Prepare course materials, such as syllabi, homework assignments, and handouts.
+
+Prepare course materials, such as syllabi, homework assignments, and handouts.
+
+## Hierarchy
+
+**Activity**: <Activity id="DocumentingRecordingInformation"></Activity>**IWA**: <IWA id="PrepareInformationalOrInstructionalMaterials"></IWA>**DWA**:<DWA id="DevelopInstructionalMaterials"></DWA>
+
+## Relationships
+
+### Occupations
+
+<Occupations task="PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873"></Occupations>
+
+### Tools & Tech
+
+<Tools task="PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873"></Tools>
+
+<Tech task="PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873"></Tech>
+
+### Related Processes
+
+<Processes task="PrepareCourseMaterialsSuchAsSyllabiHomeworkAssignm_5873"></Processes>

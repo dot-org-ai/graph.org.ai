@@ -1,0 +1,68 @@
+---
+id: EngineeringTechnologistsAndTechniciansExceptDraftersAllOther
+slug: EngineeringTechnologistsAndTechniciansExceptDraftersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All engineering technologists and technicians, except drafters, not
+  listed separately.
+$id: https://graph.org.ai/occupations/EngineeringTechnologistsAndTechniciansExceptDraftersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EngineeringTechnologistsAndTechniciansExceptDraftersAllOther`
+      };
+  }));
+
+# Engineering Technologists and Technicians, Except Drafters, All Other
+
+**O*NET Code**: 17-3029.00
+
+All engineering technologists and technicians, except drafters, not listed separately.
+
+## Job Profile
+<JobZone occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+### General Activities
+<Activities occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+### Knowledge
+<Knowledge occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+### Abilities
+<Abilities occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+## Work Context
+<WorkContext occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />
+
+### Industries
+<Industries occupation=EngineeringTechnologistsAndTechniciansExceptDraftersAllOther />

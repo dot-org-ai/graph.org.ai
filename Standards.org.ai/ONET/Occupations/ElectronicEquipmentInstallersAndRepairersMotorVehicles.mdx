@@ -1,0 +1,68 @@
+---
+id: ElectronicEquipmentInstallersAndRepairersMotorVehicles
+slug: ElectronicEquipmentInstallersAndRepairersMotorVehicles
+code:
+  code: null
+title:
+  title: null
+description: Install, diagnose, or repair communications, sound, security, or
+  navigation equipment in motor vehicles.
+$id: https://graph.org.ai/occupations/ElectronicEquipmentInstallersAndRepairersMotorVehicles
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectronicEquipmentInstallersAndRepairersMotorVehicles`
+      };
+  }));
+
+# Electronic Equipment Installers and Repairers, Motor Vehicles
+
+**O*NET Code**: 49-2096.00
+
+Install, diagnose, or repair communications, sound, security, or navigation equipment in motor vehicles.
+
+## Job Profile
+<JobZone occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+### General Activities
+<Activities occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+### Knowledge
+<Knowledge occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+### Abilities
+<Abilities occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+## Work Context
+<WorkContext occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />
+
+### Industries
+<Industries occupation=ElectronicEquipmentInstallersAndRepairersMotorVehicles />

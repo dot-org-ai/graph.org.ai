@@ -1,0 +1,69 @@
+---
+id: PileDriverOperators
+slug: PileDriverOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate pile drivers mounted on skids, barges, crawler treads, or
+  locomotive cranes to drive pilings for retaining walls, bulkheads, and
+  foundations of structures such as buildings, bridges, and piers.
+$id: https://graph.org.ai/occupations/PileDriverOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PileDriverOperators`
+      };
+  }));
+
+# Pile Driver Operators
+
+**O*NET Code**: 47-2072.00
+
+Operate pile drivers mounted on skids, barges, crawler treads, or locomotive cranes to drive pilings for retaining walls, bulkheads, and foundations of structures such as buildings, bridges, and piers.
+
+## Job Profile
+<JobZone occupation=PileDriverOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PileDriverOperators />
+
+### General Activities
+<Activities occupation=PileDriverOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=PileDriverOperators />
+
+### Knowledge
+<Knowledge occupation=PileDriverOperators />
+
+### Abilities
+<Abilities occupation=PileDriverOperators />
+
+## Work Context
+<WorkContext occupation=PileDriverOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PileDriverOperators />
+
+### Industries
+<Industries occupation=PileDriverOperators />

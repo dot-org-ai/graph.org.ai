@@ -1,0 +1,68 @@
+---
+id: InsulationWorkersMechanical
+slug: InsulationWorkersMechanical
+code:
+  code: null
+title:
+  title: null
+description: Apply insulating materials to pipes or ductwork, or other
+  mechanical systems in order to help control and maintain temperature.
+$id: https://graph.org.ai/occupations/InsulationWorkersMechanical
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InsulationWorkersMechanical`
+      };
+  }));
+
+# Insulation Workers, Mechanical
+
+**O*NET Code**: 47-2132.00
+
+Apply insulating materials to pipes or ductwork, or other mechanical systems in order to help control and maintain temperature.
+
+## Job Profile
+<JobZone occupation=InsulationWorkersMechanical />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InsulationWorkersMechanical />
+
+### General Activities
+<Activities occupation=InsulationWorkersMechanical />
+
+## Qualifications
+### Skills
+<Skills occupation=InsulationWorkersMechanical />
+
+### Knowledge
+<Knowledge occupation=InsulationWorkersMechanical />
+
+### Abilities
+<Abilities occupation=InsulationWorkersMechanical />
+
+## Work Context
+<WorkContext occupation=InsulationWorkersMechanical />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InsulationWorkersMechanical />
+
+### Industries
+<Industries occupation=InsulationWorkersMechanical />

@@ -1,0 +1,71 @@
+---
+id: CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders
+slug: CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend spraying or rolling machines to coat or
+  paint any of a wide variety of products, including glassware, cloth, ceramics,
+  metal, plastic, paper, or wood, with lacquer, silver, copper, rubber, varnish,
+  glaze, enamel, oil, or rust-proofing materials. Includes painters of
+  transportation vehicles such as painters in auto body repair facilities.
+$id: https://graph.org.ai/occupations/CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders`
+      };
+  }));
+
+# Coating, Painting, and Spraying Machine Setters, Operators, and Tenders
+
+**O*NET Code**: 51-9124.00
+
+Set up, operate, or tend spraying or rolling machines to coat or paint any of a wide variety of products, including glassware, cloth, ceramics, metal, plastic, paper, or wood, with lacquer, silver, copper, rubber, varnish, glaze, enamel, oil, or rust-proofing materials. Includes painters of transportation vehicles such as painters in auto body repair facilities.
+
+## Job Profile
+<JobZone occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />
+
+### Industries
+<Industries occupation=CoatingPaintingAndSprayingMachineSettersOperatorsAndTenders />

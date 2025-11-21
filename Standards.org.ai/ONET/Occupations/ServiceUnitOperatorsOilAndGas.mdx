@@ -1,0 +1,69 @@
+---
+id: ServiceUnitOperatorsOilAndGas
+slug: ServiceUnitOperatorsOilAndGas
+code:
+  code: null
+title:
+  title: null
+description: Operate equipment to increase oil flow from producing wells or to
+  remove stuck pipe, casing, tools, or other obstructions from drilling wells.
+  Includes fishing-tool technicians.
+$id: https://graph.org.ai/occupations/ServiceUnitOperatorsOilAndGas
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ServiceUnitOperatorsOilAndGas`
+      };
+  }));
+
+# Service Unit Operators, Oil and Gas
+
+**O*NET Code**: 47-5013.00
+
+Operate equipment to increase oil flow from producing wells or to remove stuck pipe, casing, tools, or other obstructions from drilling wells. Includes fishing-tool technicians.
+
+## Job Profile
+<JobZone occupation=ServiceUnitOperatorsOilAndGas />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ServiceUnitOperatorsOilAndGas />
+
+### General Activities
+<Activities occupation=ServiceUnitOperatorsOilAndGas />
+
+## Qualifications
+### Skills
+<Skills occupation=ServiceUnitOperatorsOilAndGas />
+
+### Knowledge
+<Knowledge occupation=ServiceUnitOperatorsOilAndGas />
+
+### Abilities
+<Abilities occupation=ServiceUnitOperatorsOilAndGas />
+
+## Work Context
+<WorkContext occupation=ServiceUnitOperatorsOilAndGas />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ServiceUnitOperatorsOilAndGas />
+
+### Industries
+<Industries occupation=ServiceUnitOperatorsOilAndGas />

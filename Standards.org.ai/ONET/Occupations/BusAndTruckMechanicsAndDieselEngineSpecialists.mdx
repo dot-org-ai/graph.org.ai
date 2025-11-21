@@ -1,0 +1,69 @@
+---
+id: BusAndTruckMechanicsAndDieselEngineSpecialists
+slug: BusAndTruckMechanicsAndDieselEngineSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, adjust, repair, or overhaul buses and trucks, or maintain
+  and repair any type of diesel engines. Includes mechanics working primarily
+  with automobile or marine diesel engines.
+$id: https://graph.org.ai/occupations/BusAndTruckMechanicsAndDieselEngineSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BusAndTruckMechanicsAndDieselEngineSpecialists`
+      };
+  }));
+
+# Bus and Truck Mechanics and Diesel Engine Specialists
+
+**O*NET Code**: 49-3031.00
+
+Diagnose, adjust, repair, or overhaul buses and trucks, or maintain and repair any type of diesel engines. Includes mechanics working primarily with automobile or marine diesel engines.
+
+## Job Profile
+<JobZone occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+### General Activities
+<Activities occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+### Knowledge
+<Knowledge occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+### Abilities
+<Abilities occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+## Work Context
+<WorkContext occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />
+
+### Industries
+<Industries occupation=BusAndTruckMechanicsAndDieselEngineSpecialists />

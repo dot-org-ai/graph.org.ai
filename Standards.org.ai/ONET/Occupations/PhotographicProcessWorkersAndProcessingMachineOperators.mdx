@@ -1,0 +1,69 @@
+---
+id: PhotographicProcessWorkersAndProcessingMachineOperators
+slug: PhotographicProcessWorkersAndProcessingMachineOperators
+code:
+  code: null
+title:
+  title: null
+description: Perform work involved in developing and processing photographic
+  images from film or digital media. May perform precision tasks such as editing
+  photographic negatives and prints.
+$id: https://graph.org.ai/occupations/PhotographicProcessWorkersAndProcessingMachineOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhotographicProcessWorkersAndProcessingMachineOperators`
+      };
+  }));
+
+# Photographic Process Workers and Processing Machine Operators
+
+**O*NET Code**: 51-9151.00
+
+Perform work involved in developing and processing photographic images from film or digital media. May perform precision tasks such as editing photographic negatives and prints.
+
+## Job Profile
+<JobZone occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+### General Activities
+<Activities occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+### Knowledge
+<Knowledge occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+### Abilities
+<Abilities occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+## Work Context
+<WorkContext occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhotographicProcessWorkersAndProcessingMachineOperators />
+
+### Industries
+<Industries occupation=PhotographicProcessWorkersAndProcessingMachineOperators />

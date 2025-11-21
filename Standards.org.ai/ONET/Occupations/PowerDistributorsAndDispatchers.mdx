@@ -1,0 +1,67 @@
+---
+id: PowerDistributorsAndDispatchers
+slug: PowerDistributorsAndDispatchers
+code:
+  code: null
+title:
+  title: null
+description: Coordinate, regulate, or distribute electricity or steam.
+$id: https://graph.org.ai/occupations/PowerDistributorsAndDispatchers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PowerDistributorsAndDispatchers`
+      };
+  }));
+
+# Power Distributors and Dispatchers
+
+**O*NET Code**: 51-8012.00
+
+Coordinate, regulate, or distribute electricity or steam.
+
+## Job Profile
+<JobZone occupation=PowerDistributorsAndDispatchers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PowerDistributorsAndDispatchers />
+
+### General Activities
+<Activities occupation=PowerDistributorsAndDispatchers />
+
+## Qualifications
+### Skills
+<Skills occupation=PowerDistributorsAndDispatchers />
+
+### Knowledge
+<Knowledge occupation=PowerDistributorsAndDispatchers />
+
+### Abilities
+<Abilities occupation=PowerDistributorsAndDispatchers />
+
+## Work Context
+<WorkContext occupation=PowerDistributorsAndDispatchers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PowerDistributorsAndDispatchers />
+
+### Industries
+<Industries occupation=PowerDistributorsAndDispatchers />

@@ -1,0 +1,67 @@
+---
+id: SocialSciencesTeachersPostsecondaryAllOther
+slug: SocialSciencesTeachersPostsecondaryAllOther
+code:
+  code: null
+title:
+  title: null
+description: All postsecondary social sciences teachers not listed separately.
+$id: https://graph.org.ai/occupations/SocialSciencesTeachersPostsecondaryAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SocialSciencesTeachersPostsecondaryAllOther`
+      };
+  }));
+
+# Social Sciences Teachers, Postsecondary, All Other
+
+**O*NET Code**: 25-1069.00
+
+All postsecondary social sciences teachers not listed separately.
+
+## Job Profile
+<JobZone occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+### General Activities
+<Activities occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+### Knowledge
+<Knowledge occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+### Abilities
+<Abilities occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+## Work Context
+<WorkContext occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SocialSciencesTeachersPostsecondaryAllOther />
+
+### Industries
+<Industries occupation=SocialSciencesTeachersPostsecondaryAllOther />

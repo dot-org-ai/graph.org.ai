@@ -1,0 +1,68 @@
+---
+id: MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther
+slug: MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All military enlisted tactical operations and air/weapons
+  specialists and crewmembers not listed separately.
+$id: https://graph.org.ai/occupations/MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther`
+      };
+  }));
+
+# Military Enlisted Tactical Operations and Air/Weapons Specialists and Crew Members, All Other
+
+**O*NET Code**: 55-3019.00
+
+All military enlisted tactical operations and air/weapons specialists and crewmembers not listed separately.
+
+## Job Profile
+<JobZone occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+### General Activities
+<Activities occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+### Knowledge
+<Knowledge occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+### Abilities
+<Abilities occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+## Work Context
+<WorkContext occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />
+
+### Industries
+<Industries occupation=MilitaryEnlistedTacticalOperationsAndAirWeaponsSpecialistsAndCrewMembersAllOther />

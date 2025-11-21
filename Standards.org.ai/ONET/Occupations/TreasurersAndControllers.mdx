@@ -1,0 +1,68 @@
+---
+id: TreasurersAndControllers
+slug: TreasurersAndControllers
+code:
+  code: null
+title:
+  title: null
+description: Direct financial activities, such as planning, procurement, and
+  investments for all or part of an organization.
+$id: https://graph.org.ai/occupations/TreasurersAndControllers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TreasurersAndControllers`
+      };
+  }));
+
+# Treasurers and Controllers
+
+**O*NET Code**: 11-3031.01
+
+Direct financial activities, such as planning, procurement, and investments for all or part of an organization.
+
+## Job Profile
+<JobZone occupation=TreasurersAndControllers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TreasurersAndControllers />
+
+### General Activities
+<Activities occupation=TreasurersAndControllers />
+
+## Qualifications
+### Skills
+<Skills occupation=TreasurersAndControllers />
+
+### Knowledge
+<Knowledge occupation=TreasurersAndControllers />
+
+### Abilities
+<Abilities occupation=TreasurersAndControllers />
+
+## Work Context
+<WorkContext occupation=TreasurersAndControllers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TreasurersAndControllers />
+
+### Industries
+<Industries occupation=TreasurersAndControllers />

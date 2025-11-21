@@ -1,0 +1,70 @@
+---
+id: PaintersConstructionAndMaintenance
+slug: PaintersConstructionAndMaintenance
+code:
+  code: null
+title:
+  title: null
+description: Paint walls, equipment, buildings, bridges, and other structural
+  surfaces, using brushes, rollers, and spray guns. May remove old paint to
+  prepare surface prior to painting. May mix colors or oils to obtain desired
+  color or consistency.
+$id: https://graph.org.ai/occupations/PaintersConstructionAndMaintenance
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PaintersConstructionAndMaintenance`
+      };
+  }));
+
+# Painters, Construction and Maintenance
+
+**O*NET Code**: 47-2141.00
+
+Paint walls, equipment, buildings, bridges, and other structural surfaces, using brushes, rollers, and spray guns. May remove old paint to prepare surface prior to painting. May mix colors or oils to obtain desired color or consistency.
+
+## Job Profile
+<JobZone occupation=PaintersConstructionAndMaintenance />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PaintersConstructionAndMaintenance />
+
+### General Activities
+<Activities occupation=PaintersConstructionAndMaintenance />
+
+## Qualifications
+### Skills
+<Skills occupation=PaintersConstructionAndMaintenance />
+
+### Knowledge
+<Knowledge occupation=PaintersConstructionAndMaintenance />
+
+### Abilities
+<Abilities occupation=PaintersConstructionAndMaintenance />
+
+## Work Context
+<WorkContext occupation=PaintersConstructionAndMaintenance />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PaintersConstructionAndMaintenance />
+
+### Industries
+<Industries occupation=PaintersConstructionAndMaintenance />

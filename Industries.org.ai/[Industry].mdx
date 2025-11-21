@@ -1,0 +1,55 @@
+---
+$id: https://graph.org.ai/industries/{slug}
+$type: Industry
+source: NAICS
+code: {code}
+title: {title}
+---
+
+export const items = CSV.fetch('https://www.census.gov/naics/2022NAICS/2-6%20digit_2022_Codes.txt')
+  .then(rows => rows.map(row => {
+      // NAICS file structure: "2022 NAICS Code" (col 1), "2022 NAICS Title" (col 2)
+      // But header line might be different.
+      // The file is usually fixed width or tab?
+      // Let's assume CSV/Tab fetch handles it if we provide correct delimiter or if it's comma.
+      // NAICS files are often CSV.
+      // Wait, the URL ends in .txt.
+      // Inspect the file first?
+      
+      const code = row['2022 NAICS Code'];
+      const title = row['2022 NAICS Title'];
+      
+      if (!code || !title) return null;
+      
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug,
+          slug: slug,
+          code: String(code),
+          title: title,
+          description: title,
+          $id: `https://graph.org.ai/industries/${slug}`
+      };
+  }).filter(x => x));
+
+# {title}
+
+**NAICS Code**: {code}
+
+{description}
+
+## Hierarchy
+**Parent Industry**: <Industry id={parentSlug} />
+**Sub-Industries**: <SubIndustries parent={slug} />
+
+## Analysis
+### Key Occupations
+<Occupations industry={slug} />
+
+### Related Products
+<Products industry={slug} />
+
+### Supply Chain
+**Inputs**: <Inputs industry={slug} />
+**Outputs**: <Outputs industry={slug} />

@@ -1,0 +1,72 @@
+---
+id: SoilAndPlantScientists
+slug: SoilAndPlantScientists
+code:
+  code: null
+title:
+  title: null
+description: Conduct research in breeding, physiology, production, yield, and
+  management of crops and agricultural plants or trees, shrubs, and nursery
+  stock, their growth in soils, and control of pests; or study the chemical,
+  physical, biological, and mineralogical composition of soils as they relate to
+  plant or crop growth. May classify and map soils and investigate effects of
+  alternative practices on soil and crop productivity.
+$id: https://graph.org.ai/occupations/SoilAndPlantScientists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SoilAndPlantScientists`
+      };
+  }));
+
+# Soil and Plant Scientists
+
+**O*NET Code**: 19-1013.00
+
+Conduct research in breeding, physiology, production, yield, and management of crops and agricultural plants or trees, shrubs, and nursery stock, their growth in soils, and control of pests; or study the chemical, physical, biological, and mineralogical composition of soils as they relate to plant or crop growth. May classify and map soils and investigate effects of alternative practices on soil and crop productivity.
+
+## Job Profile
+<JobZone occupation=SoilAndPlantScientists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SoilAndPlantScientists />
+
+### General Activities
+<Activities occupation=SoilAndPlantScientists />
+
+## Qualifications
+### Skills
+<Skills occupation=SoilAndPlantScientists />
+
+### Knowledge
+<Knowledge occupation=SoilAndPlantScientists />
+
+### Abilities
+<Abilities occupation=SoilAndPlantScientists />
+
+## Work Context
+<WorkContext occupation=SoilAndPlantScientists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SoilAndPlantScientists />
+
+### Industries
+<Industries occupation=SoilAndPlantScientists />

@@ -1,0 +1,70 @@
+---
+id: OccupationalHealthAndSafetyTechnicians
+slug: OccupationalHealthAndSafetyTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Collect data on work environments for analysis by occupational
+  health and safety specialists. Implement and conduct evaluation of programs
+  designed to limit chemical, physical, biological, and ergonomic risks to
+  workers.
+$id: https://graph.org.ai/occupations/OccupationalHealthAndSafetyTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OccupationalHealthAndSafetyTechnicians`
+      };
+  }));
+
+# Occupational Health and Safety Technicians
+
+**O*NET Code**: 19-5012.00
+
+Collect data on work environments for analysis by occupational health and safety specialists. Implement and conduct evaluation of programs designed to limit chemical, physical, biological, and ergonomic risks to workers.
+
+## Job Profile
+<JobZone occupation=OccupationalHealthAndSafetyTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OccupationalHealthAndSafetyTechnicians />
+
+### General Activities
+<Activities occupation=OccupationalHealthAndSafetyTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=OccupationalHealthAndSafetyTechnicians />
+
+### Knowledge
+<Knowledge occupation=OccupationalHealthAndSafetyTechnicians />
+
+### Abilities
+<Abilities occupation=OccupationalHealthAndSafetyTechnicians />
+
+## Work Context
+<WorkContext occupation=OccupationalHealthAndSafetyTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OccupationalHealthAndSafetyTechnicians />
+
+### Industries
+<Industries occupation=OccupationalHealthAndSafetyTechnicians />

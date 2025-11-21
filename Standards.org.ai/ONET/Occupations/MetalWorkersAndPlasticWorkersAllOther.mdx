@@ -1,0 +1,67 @@
+---
+id: MetalWorkersAndPlasticWorkersAllOther
+slug: MetalWorkersAndPlasticWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All metal workers and plastic workers not listed separately.
+$id: https://graph.org.ai/occupations/MetalWorkersAndPlasticWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MetalWorkersAndPlasticWorkersAllOther`
+      };
+  }));
+
+# Metal Workers and Plastic Workers, All Other
+
+**O*NET Code**: 51-4199.00
+
+All metal workers and plastic workers not listed separately.
+
+## Job Profile
+<JobZone occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+### General Activities
+<Activities occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+### Abilities
+<Abilities occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MetalWorkersAndPlasticWorkersAllOther />
+
+### Industries
+<Industries occupation=MetalWorkersAndPlasticWorkersAllOther />

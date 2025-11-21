@@ -1,0 +1,69 @@
+---
+id: SwitchboardOperatorsIncludingAnsweringService
+slug: SwitchboardOperatorsIncludingAnsweringService
+code:
+  code: null
+title:
+  title: null
+description: Operate telephone business systems equipment or switchboards to
+  relay incoming, outgoing, and interoffice calls. May supply information to
+  callers and record messages.
+$id: https://graph.org.ai/occupations/SwitchboardOperatorsIncludingAnsweringService
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SwitchboardOperatorsIncludingAnsweringService`
+      };
+  }));
+
+# Switchboard Operators, Including Answering Service
+
+**O*NET Code**: 43-2011.00
+
+Operate telephone business systems equipment or switchboards to relay incoming, outgoing, and interoffice calls. May supply information to callers and record messages.
+
+## Job Profile
+<JobZone occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+### General Activities
+<Activities occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+## Qualifications
+### Skills
+<Skills occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+### Knowledge
+<Knowledge occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+### Abilities
+<Abilities occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+## Work Context
+<WorkContext occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SwitchboardOperatorsIncludingAnsweringService />
+
+### Industries
+<Industries occupation=SwitchboardOperatorsIncludingAnsweringService />

@@ -1,0 +1,68 @@
+---
+id: SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts
+slug: SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts
+code:
+  code: null
+title:
+  title: null
+description: Sell goods for wholesalers or manufacturers to businesses or groups
+  of individuals. Work requires substantial knowledge of items sold.
+$id: https://graph.org.ai/occupations/SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts`
+      };
+  }));
+
+# Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products
+
+**O*NET Code**: 41-4012.00
+
+Sell goods for wholesalers or manufacturers to businesses or groups of individuals. Work requires substantial knowledge of items sold.
+
+## Job Profile
+<JobZone occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+### General Activities
+<Activities occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+## Qualifications
+### Skills
+<Skills occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+### Knowledge
+<Knowledge occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+### Abilities
+<Abilities occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+## Work Context
+<WorkContext occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />
+
+### Industries
+<Industries occupation=SalesRepresentativesWholesaleAndManufacturingExceptTechnicalAndScientificProducts />

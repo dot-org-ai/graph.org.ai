@@ -1,0 +1,69 @@
+---
+id: SoundEngineeringTechnicians
+slug: SoundEngineeringTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Assemble and operate equipment to record, synchronize, mix, edit,
+  or reproduce sound, including music, voices, or sound effects, for theater,
+  video, film, television, podcasts, sporting events, and other productions.
+$id: https://graph.org.ai/occupations/SoundEngineeringTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SoundEngineeringTechnicians`
+      };
+  }));
+
+# Sound Engineering Technicians
+
+**O*NET Code**: 27-4014.00
+
+Assemble and operate equipment to record, synchronize, mix, edit, or reproduce sound, including music, voices, or sound effects, for theater, video, film, television, podcasts, sporting events, and other productions.
+
+## Job Profile
+<JobZone occupation=SoundEngineeringTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SoundEngineeringTechnicians />
+
+### General Activities
+<Activities occupation=SoundEngineeringTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=SoundEngineeringTechnicians />
+
+### Knowledge
+<Knowledge occupation=SoundEngineeringTechnicians />
+
+### Abilities
+<Abilities occupation=SoundEngineeringTechnicians />
+
+## Work Context
+<WorkContext occupation=SoundEngineeringTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SoundEngineeringTechnicians />
+
+### Industries
+<Industries occupation=SoundEngineeringTechnicians />

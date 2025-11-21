@@ -1,0 +1,71 @@
+---
+id: ChiefExecutives
+slug: ChiefExecutives
+code:
+  code: null
+title:
+  title: null
+description: Determine and formulate policies and provide overall direction of
+  companies or private and public sector organizations within guidelines set up
+  by a board of directors or similar governing body. Plan, direct, or coordinate
+  operational activities at the highest level of management with the help of
+  subordinate executives and staff managers.
+$id: https://graph.org.ai/occupations/ChiefExecutives
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ChiefExecutives`
+      };
+  }));
+
+# Chief Executives
+
+**O*NET Code**: 11-1011.00
+
+Determine and formulate policies and provide overall direction of companies or private and public sector organizations within guidelines set up by a board of directors or similar governing body. Plan, direct, or coordinate operational activities at the highest level of management with the help of subordinate executives and staff managers.
+
+## Job Profile
+<JobZone occupation=ChiefExecutives />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ChiefExecutives />
+
+### General Activities
+<Activities occupation=ChiefExecutives />
+
+## Qualifications
+### Skills
+<Skills occupation=ChiefExecutives />
+
+### Knowledge
+<Knowledge occupation=ChiefExecutives />
+
+### Abilities
+<Abilities occupation=ChiefExecutives />
+
+## Work Context
+<WorkContext occupation=ChiefExecutives />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ChiefExecutives />
+
+### Industries
+<Industries occupation=ChiefExecutives />

@@ -1,0 +1,69 @@
+---
+id: BiologicalScienceTeachersPostsecondary
+slug: BiologicalScienceTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in biological sciences. Includes both teachers
+  primarily engaged in teaching and those who do a combination of teaching and
+  research.
+$id: https://graph.org.ai/occupations/BiologicalScienceTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BiologicalScienceTeachersPostsecondary`
+      };
+  }));
+
+# Biological Science Teachers, Postsecondary
+
+**O*NET Code**: 25-1042.00
+
+Teach courses in biological sciences. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=BiologicalScienceTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BiologicalScienceTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=BiologicalScienceTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=BiologicalScienceTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=BiologicalScienceTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=BiologicalScienceTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=BiologicalScienceTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BiologicalScienceTeachersPostsecondary />
+
+### Industries
+<Industries occupation=BiologicalScienceTeachersPostsecondary />

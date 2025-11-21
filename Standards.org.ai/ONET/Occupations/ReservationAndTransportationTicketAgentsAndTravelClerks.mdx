@@ -1,0 +1,71 @@
+---
+id: ReservationAndTransportationTicketAgentsAndTravelClerks
+slug: ReservationAndTransportationTicketAgentsAndTravelClerks
+code:
+  code: null
+title:
+  title: null
+description: Make and confirm reservations for transportation or lodging, or
+  sell transportation tickets. May check baggage and direct passengers to
+  designated concourse, pier, or track; deliver tickets and contact individuals
+  and groups to inform them of package tours; or provide tourists with travel or
+  transportation information.
+$id: https://graph.org.ai/occupations/ReservationAndTransportationTicketAgentsAndTravelClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ReservationAndTransportationTicketAgentsAndTravelClerks`
+      };
+  }));
+
+# Reservation and Transportation Ticket Agents and Travel Clerks
+
+**O*NET Code**: 43-4181.00
+
+Make and confirm reservations for transportation or lodging, or sell transportation tickets. May check baggage and direct passengers to designated concourse, pier, or track; deliver tickets and contact individuals and groups to inform them of package tours; or provide tourists with travel or transportation information.
+
+## Job Profile
+<JobZone occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+### General Activities
+<Activities occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+### Knowledge
+<Knowledge occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+### Abilities
+<Abilities occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+## Work Context
+<WorkContext occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />
+
+### Industries
+<Industries occupation=ReservationAndTransportationTicketAgentsAndTravelClerks />

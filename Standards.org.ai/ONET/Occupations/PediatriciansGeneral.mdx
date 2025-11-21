@@ -1,0 +1,69 @@
+---
+id: PediatriciansGeneral
+slug: PediatriciansGeneral
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, and help prevent diseases and injuries in
+  children. May refer patients to specialists for further diagnosis or
+  treatment, as needed.
+$id: https://graph.org.ai/occupations/PediatriciansGeneral
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PediatriciansGeneral`
+      };
+  }));
+
+# Pediatricians, General
+
+**O*NET Code**: 29-1221.00
+
+Diagnose, treat, and help prevent diseases and injuries in children. May refer patients to specialists for further diagnosis or treatment, as needed.
+
+## Job Profile
+<JobZone occupation=PediatriciansGeneral />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PediatriciansGeneral />
+
+### General Activities
+<Activities occupation=PediatriciansGeneral />
+
+## Qualifications
+### Skills
+<Skills occupation=PediatriciansGeneral />
+
+### Knowledge
+<Knowledge occupation=PediatriciansGeneral />
+
+### Abilities
+<Abilities occupation=PediatriciansGeneral />
+
+## Work Context
+<WorkContext occupation=PediatriciansGeneral />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PediatriciansGeneral />
+
+### Industries
+<Industries occupation=PediatriciansGeneral />

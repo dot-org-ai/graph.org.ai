@@ -1,0 +1,69 @@
+---
+id: HeavyAndTractorTrailerTruckDrivers
+slug: HeavyAndTractorTrailerTruckDrivers
+code:
+  code: null
+title:
+  title: null
+description: Drive a tractor-trailer combination or a truck with a capacity of
+  at least 26,001 pounds Gross Vehicle Weight (GVW). May be required to unload
+  truck. Requires commercial drivers' license. Includes tow truck drivers.
+$id: https://graph.org.ai/occupations/HeavyAndTractorTrailerTruckDrivers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HeavyAndTractorTrailerTruckDrivers`
+      };
+  }));
+
+# Heavy and Tractor-Trailer Truck Drivers
+
+**O*NET Code**: 53-3032.00
+
+Drive a tractor-trailer combination or a truck with a capacity of at least 26,001 pounds Gross Vehicle Weight (GVW). May be required to unload truck. Requires commercial drivers' license. Includes tow truck drivers.
+
+## Job Profile
+<JobZone occupation=HeavyAndTractorTrailerTruckDrivers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HeavyAndTractorTrailerTruckDrivers />
+
+### General Activities
+<Activities occupation=HeavyAndTractorTrailerTruckDrivers />
+
+## Qualifications
+### Skills
+<Skills occupation=HeavyAndTractorTrailerTruckDrivers />
+
+### Knowledge
+<Knowledge occupation=HeavyAndTractorTrailerTruckDrivers />
+
+### Abilities
+<Abilities occupation=HeavyAndTractorTrailerTruckDrivers />
+
+## Work Context
+<WorkContext occupation=HeavyAndTractorTrailerTruckDrivers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HeavyAndTractorTrailerTruckDrivers />
+
+### Industries
+<Industries occupation=HeavyAndTractorTrailerTruckDrivers />

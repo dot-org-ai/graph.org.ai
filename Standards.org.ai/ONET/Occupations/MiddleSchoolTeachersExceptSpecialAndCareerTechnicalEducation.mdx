@@ -1,0 +1,68 @@
+---
+id: MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation
+slug: MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation
+code:
+  code: null
+title:
+  title: null
+description: Teach one or more subjects to students at the middle, intermediate,
+  or junior high school level.
+$id: https://graph.org.ai/occupations/MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation`
+      };
+  }));
+
+# Middle School Teachers, Except Special and Career/Technical Education
+
+**O*NET Code**: 25-2022.00
+
+Teach one or more subjects to students at the middle, intermediate, or junior high school level.
+
+## Job Profile
+<JobZone occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+### General Activities
+<Activities occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+## Qualifications
+### Skills
+<Skills occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+### Knowledge
+<Knowledge occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+### Abilities
+<Abilities occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+## Work Context
+<WorkContext occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />
+
+### Industries
+<Industries occupation=MiddleSchoolTeachersExceptSpecialAndCareerTechnicalEducation />

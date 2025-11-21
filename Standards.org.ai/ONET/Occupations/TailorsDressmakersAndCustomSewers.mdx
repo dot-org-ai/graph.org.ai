@@ -1,0 +1,67 @@
+---
+id: TailorsDressmakersAndCustomSewers
+slug: TailorsDressmakersAndCustomSewers
+code:
+  code: null
+title:
+  title: null
+description: Design, make, alter, repair, or fit garments.
+$id: https://graph.org.ai/occupations/TailorsDressmakersAndCustomSewers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TailorsDressmakersAndCustomSewers`
+      };
+  }));
+
+# Tailors, Dressmakers, and Custom Sewers
+
+**O*NET Code**: 51-6052.00
+
+Design, make, alter, repair, or fit garments.
+
+## Job Profile
+<JobZone occupation=TailorsDressmakersAndCustomSewers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TailorsDressmakersAndCustomSewers />
+
+### General Activities
+<Activities occupation=TailorsDressmakersAndCustomSewers />
+
+## Qualifications
+### Skills
+<Skills occupation=TailorsDressmakersAndCustomSewers />
+
+### Knowledge
+<Knowledge occupation=TailorsDressmakersAndCustomSewers />
+
+### Abilities
+<Abilities occupation=TailorsDressmakersAndCustomSewers />
+
+## Work Context
+<WorkContext occupation=TailorsDressmakersAndCustomSewers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TailorsDressmakersAndCustomSewers />
+
+### Industries
+<Industries occupation=TailorsDressmakersAndCustomSewers />

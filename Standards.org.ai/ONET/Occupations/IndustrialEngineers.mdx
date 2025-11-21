@@ -1,0 +1,70 @@
+---
+id: IndustrialEngineers
+slug: IndustrialEngineers
+code:
+  code: null
+title:
+  title: null
+description: Design, develop, test, and evaluate integrated systems for managing
+  industrial production processes, including human work factors, quality
+  control, inventory control, logistics and material flow, cost analysis, and
+  production coordination.
+$id: https://graph.org.ai/occupations/IndustrialEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$IndustrialEngineers`
+      };
+  }));
+
+# Industrial Engineers
+
+**O*NET Code**: 17-2112.00
+
+Design, develop, test, and evaluate integrated systems for managing industrial production processes, including human work factors, quality control, inventory control, logistics and material flow, cost analysis, and production coordination.
+
+## Job Profile
+<JobZone occupation=IndustrialEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=IndustrialEngineers />
+
+### General Activities
+<Activities occupation=IndustrialEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=IndustrialEngineers />
+
+### Knowledge
+<Knowledge occupation=IndustrialEngineers />
+
+### Abilities
+<Abilities occupation=IndustrialEngineers />
+
+## Work Context
+<WorkContext occupation=IndustrialEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=IndustrialEngineers />
+
+### Industries
+<Industries occupation=IndustrialEngineers />

@@ -1,0 +1,74 @@
+---
+id: ArtilleryAndMissileOfficers
+slug: ArtilleryAndMissileOfficers
+code:
+  code: null
+title:
+  title: null
+description: Manage personnel and weapons operations to destroy enemy positions,
+  aircraft, and vessels. Duties include planning, targeting, and coordinating
+  the tactical deployment of field artillery and air defense artillery missile
+  systems units; directing the establishment and operation of fire control
+  communications systems; targeting and launching intercontinental ballistic
+  missiles; directing the storage and handling of nuclear munitions and
+  components; overseeing security of weapons storage and launch facilities; and
+  managing maintenance of weapons systems.
+$id: https://graph.org.ai/occupations/ArtilleryAndMissileOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ArtilleryAndMissileOfficers`
+      };
+  }));
+
+# Artillery and Missile Officers
+
+**O*NET Code**: 55-1014.00
+
+Manage personnel and weapons operations to destroy enemy positions, aircraft, and vessels. Duties include planning, targeting, and coordinating the tactical deployment of field artillery and air defense artillery missile systems units; directing the establishment and operation of fire control communications systems; targeting and launching intercontinental ballistic missiles; directing the storage and handling of nuclear munitions and components; overseeing security of weapons storage and launch facilities; and managing maintenance of weapons systems.
+
+## Job Profile
+<JobZone occupation=ArtilleryAndMissileOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ArtilleryAndMissileOfficers />
+
+### General Activities
+<Activities occupation=ArtilleryAndMissileOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=ArtilleryAndMissileOfficers />
+
+### Knowledge
+<Knowledge occupation=ArtilleryAndMissileOfficers />
+
+### Abilities
+<Abilities occupation=ArtilleryAndMissileOfficers />
+
+## Work Context
+<WorkContext occupation=ArtilleryAndMissileOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ArtilleryAndMissileOfficers />
+
+### Industries
+<Industries occupation=ArtilleryAndMissileOfficers />

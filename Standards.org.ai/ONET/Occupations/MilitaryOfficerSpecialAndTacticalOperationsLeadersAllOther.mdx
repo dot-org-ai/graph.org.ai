@@ -1,0 +1,68 @@
+---
+id: MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther
+slug: MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All military officer special and tactical operations leaders not
+  listed separately.
+$id: https://graph.org.ai/occupations/MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther`
+      };
+  }));
+
+# Military Officer Special and Tactical Operations Leaders, All Other
+
+**O*NET Code**: 55-1019.00
+
+All military officer special and tactical operations leaders not listed separately.
+
+## Job Profile
+<JobZone occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+### General Activities
+<Activities occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+### Knowledge
+<Knowledge occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+### Abilities
+<Abilities occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+## Work Context
+<WorkContext occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />
+
+### Industries
+<Industries occupation=MilitaryOfficerSpecialAndTacticalOperationsLeadersAllOther />

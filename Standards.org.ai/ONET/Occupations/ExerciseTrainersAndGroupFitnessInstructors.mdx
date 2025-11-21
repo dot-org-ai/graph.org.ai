@@ -1,0 +1,71 @@
+---
+id: ExerciseTrainersAndGroupFitnessInstructors
+slug: ExerciseTrainersAndGroupFitnessInstructors
+code:
+  code: null
+title:
+  title: null
+description: Instruct or coach groups or individuals in exercise activities for
+  the primary purpose of personal fitness. Demonstrate techniques and form,
+  observe participants, and explain to them corrective measures necessary to
+  improve their skills. Develop and implement individualized approaches to
+  exercise.
+$id: https://graph.org.ai/occupations/ExerciseTrainersAndGroupFitnessInstructors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ExerciseTrainersAndGroupFitnessInstructors`
+      };
+  }));
+
+# Exercise Trainers and Group Fitness Instructors
+
+**O*NET Code**: 39-9031.00
+
+Instruct or coach groups or individuals in exercise activities for the primary purpose of personal fitness. Demonstrate techniques and form, observe participants, and explain to them corrective measures necessary to improve their skills. Develop and implement individualized approaches to exercise.
+
+## Job Profile
+<JobZone occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+### General Activities
+<Activities occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+## Qualifications
+### Skills
+<Skills occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+### Knowledge
+<Knowledge occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+### Abilities
+<Abilities occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+## Work Context
+<WorkContext occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ExerciseTrainersAndGroupFitnessInstructors />
+
+### Industries
+<Industries occupation=ExerciseTrainersAndGroupFitnessInstructors />

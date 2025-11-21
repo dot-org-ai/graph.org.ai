@@ -1,0 +1,68 @@
+---
+id: ShoeMachineOperatorsAndTenders
+slug: ShoeMachineOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend a variety of machines to join, decorate, reinforce,
+  or finish shoes and shoe parts.
+$id: https://graph.org.ai/occupations/ShoeMachineOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ShoeMachineOperatorsAndTenders`
+      };
+  }));
+
+# Shoe Machine Operators and Tenders
+
+**O*NET Code**: 51-6042.00
+
+Operate or tend a variety of machines to join, decorate, reinforce, or finish shoes and shoe parts.
+
+## Job Profile
+<JobZone occupation=ShoeMachineOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ShoeMachineOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=ShoeMachineOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=ShoeMachineOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=ShoeMachineOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=ShoeMachineOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=ShoeMachineOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ShoeMachineOperatorsAndTenders />
+
+### Industries
+<Industries occupation=ShoeMachineOperatorsAndTenders />

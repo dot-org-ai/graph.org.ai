@@ -1,0 +1,69 @@
+---
+id: Audiologists
+slug: Audiologists
+code:
+  code: null
+title:
+  title: null
+description: Assess and treat persons with hearing and related disorders. May
+  fit hearing aids and provide auditory training. May perform research related
+  to hearing problems.
+$id: https://graph.org.ai/occupations/Audiologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Audiologists`
+      };
+  }));
+
+# Audiologists
+
+**O*NET Code**: 29-1181.00
+
+Assess and treat persons with hearing and related disorders. May fit hearing aids and provide auditory training. May perform research related to hearing problems.
+
+## Job Profile
+<JobZone occupation=Audiologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Audiologists />
+
+### General Activities
+<Activities occupation=Audiologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Audiologists />
+
+### Knowledge
+<Knowledge occupation=Audiologists />
+
+### Abilities
+<Abilities occupation=Audiologists />
+
+## Work Context
+<WorkContext occupation=Audiologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Audiologists />
+
+### Industries
+<Industries occupation=Audiologists />

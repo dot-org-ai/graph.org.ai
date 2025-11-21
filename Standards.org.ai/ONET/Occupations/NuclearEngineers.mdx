@@ -1,0 +1,69 @@
+---
+id: NuclearEngineers
+slug: NuclearEngineers
+code:
+  code: null
+title:
+  title: null
+description: Conduct research on nuclear engineering projects or apply
+  principles and theory of nuclear science to problems concerned with release,
+  control, and use of nuclear energy and nuclear waste disposal.
+$id: https://graph.org.ai/occupations/NuclearEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NuclearEngineers`
+      };
+  }));
+
+# Nuclear Engineers
+
+**O*NET Code**: 17-2161.00
+
+Conduct research on nuclear engineering projects or apply principles and theory of nuclear science to problems concerned with release, control, and use of nuclear energy and nuclear waste disposal.
+
+## Job Profile
+<JobZone occupation=NuclearEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NuclearEngineers />
+
+### General Activities
+<Activities occupation=NuclearEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=NuclearEngineers />
+
+### Knowledge
+<Knowledge occupation=NuclearEngineers />
+
+### Abilities
+<Abilities occupation=NuclearEngineers />
+
+## Work Context
+<WorkContext occupation=NuclearEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NuclearEngineers />
+
+### Industries
+<Industries occupation=NuclearEngineers />

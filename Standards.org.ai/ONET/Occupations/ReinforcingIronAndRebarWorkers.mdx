@@ -1,0 +1,69 @@
+---
+id: ReinforcingIronAndRebarWorkers
+slug: ReinforcingIronAndRebarWorkers
+code:
+  code: null
+title:
+  title: null
+description: Position and secure steel bars or mesh in concrete forms in order
+  to reinforce concrete. Use a variety of fasteners, rod-bending machines,
+  blowtorches, and hand tools. Includes rod busters.
+$id: https://graph.org.ai/occupations/ReinforcingIronAndRebarWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ReinforcingIronAndRebarWorkers`
+      };
+  }));
+
+# Reinforcing Iron and Rebar Workers
+
+**O*NET Code**: 47-2171.00
+
+Position and secure steel bars or mesh in concrete forms in order to reinforce concrete. Use a variety of fasteners, rod-bending machines, blowtorches, and hand tools. Includes rod busters.
+
+## Job Profile
+<JobZone occupation=ReinforcingIronAndRebarWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ReinforcingIronAndRebarWorkers />
+
+### General Activities
+<Activities occupation=ReinforcingIronAndRebarWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=ReinforcingIronAndRebarWorkers />
+
+### Knowledge
+<Knowledge occupation=ReinforcingIronAndRebarWorkers />
+
+### Abilities
+<Abilities occupation=ReinforcingIronAndRebarWorkers />
+
+## Work Context
+<WorkContext occupation=ReinforcingIronAndRebarWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ReinforcingIronAndRebarWorkers />
+
+### Industries
+<Industries occupation=ReinforcingIronAndRebarWorkers />

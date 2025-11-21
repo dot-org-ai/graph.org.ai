@@ -1,0 +1,71 @@
+---
+id: ChemistryTeachersPostsecondary
+slug: ChemistryTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses pertaining to the chemical and physical properties
+  and compositional changes of substances. Work may include providing
+  instruction in the methods of qualitative and quantitative chemical analysis.
+  Includes both teachers primarily engaged in teaching, and those who do a
+  combination of teaching and research.
+$id: https://graph.org.ai/occupations/ChemistryTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ChemistryTeachersPostsecondary`
+      };
+  }));
+
+# Chemistry Teachers, Postsecondary
+
+**O*NET Code**: 25-1052.00
+
+Teach courses pertaining to the chemical and physical properties and compositional changes of substances. Work may include providing instruction in the methods of qualitative and quantitative chemical analysis. Includes both teachers primarily engaged in teaching, and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=ChemistryTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ChemistryTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=ChemistryTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=ChemistryTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=ChemistryTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=ChemistryTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=ChemistryTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ChemistryTeachersPostsecondary />
+
+### Industries
+<Industries occupation=ChemistryTeachersPostsecondary />

@@ -1,0 +1,72 @@
+---
+id: PostalServiceClerks
+slug: PostalServiceClerks
+code:
+  code: null
+title:
+  title: null
+description: Perform any combination of tasks in a United States Postal Service
+  (USPS) post office, such as receive letters and parcels; sell postage and
+  revenue stamps, postal cards, and stamped envelopes; fill out and sell money
+  orders; place mail in pigeon holes of mail rack or in bags; and examine mail
+  for correct postage. Includes postal service clerks employed by USPS
+  contractors.
+$id: https://graph.org.ai/occupations/PostalServiceClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PostalServiceClerks`
+      };
+  }));
+
+# Postal Service Clerks
+
+**O*NET Code**: 43-5051.00
+
+Perform any combination of tasks in a United States Postal Service (USPS) post office, such as receive letters and parcels; sell postage and revenue stamps, postal cards, and stamped envelopes; fill out and sell money orders; place mail in pigeon holes of mail rack or in bags; and examine mail for correct postage. Includes postal service clerks employed by USPS contractors.
+
+## Job Profile
+<JobZone occupation=PostalServiceClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PostalServiceClerks />
+
+### General Activities
+<Activities occupation=PostalServiceClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=PostalServiceClerks />
+
+### Knowledge
+<Knowledge occupation=PostalServiceClerks />
+
+### Abilities
+<Abilities occupation=PostalServiceClerks />
+
+## Work Context
+<WorkContext occupation=PostalServiceClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PostalServiceClerks />
+
+### Industries
+<Industries occupation=PostalServiceClerks />

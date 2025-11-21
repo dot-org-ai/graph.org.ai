@@ -1,0 +1,69 @@
+---
+id: ChildcareWorkers
+slug: ChildcareWorkers
+code:
+  code: null
+title:
+  title: null
+description: Attend to children at schools, businesses, private households, and
+  childcare institutions. Perform a variety of tasks, such as dressing, feeding,
+  bathing, and overseeing play.
+$id: https://graph.org.ai/occupations/ChildcareWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ChildcareWorkers`
+      };
+  }));
+
+# Childcare Workers
+
+**O*NET Code**: 39-9011.00
+
+Attend to children at schools, businesses, private households, and childcare institutions. Perform a variety of tasks, such as dressing, feeding, bathing, and overseeing play.
+
+## Job Profile
+<JobZone occupation=ChildcareWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ChildcareWorkers />
+
+### General Activities
+<Activities occupation=ChildcareWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=ChildcareWorkers />
+
+### Knowledge
+<Knowledge occupation=ChildcareWorkers />
+
+### Abilities
+<Abilities occupation=ChildcareWorkers />
+
+## Work Context
+<WorkContext occupation=ChildcareWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ChildcareWorkers />
+
+### Industries
+<Industries occupation=ChildcareWorkers />

@@ -1,0 +1,72 @@
+---
+id: GeneticCounselors
+slug: GeneticCounselors
+code:
+  code: null
+title:
+  title: null
+description: Assess individual or family risk for a variety of inherited
+  conditions, such as genetic disorders and birth defects. Provide information
+  to other healthcare providers or to individuals and families concerned with
+  the risk of inherited conditions. Advise individuals and families to support
+  informed decisionmaking and coping methods for those at risk. May help conduct
+  research related to genetic conditions or genetic counseling.
+$id: https://graph.org.ai/occupations/GeneticCounselors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GeneticCounselors`
+      };
+  }));
+
+# Genetic Counselors
+
+**O*NET Code**: 29-9092.00
+
+Assess individual or family risk for a variety of inherited conditions, such as genetic disorders and birth defects. Provide information to other healthcare providers or to individuals and families concerned with the risk of inherited conditions. Advise individuals and families to support informed decisionmaking and coping methods for those at risk. May help conduct research related to genetic conditions or genetic counseling.
+
+## Job Profile
+<JobZone occupation=GeneticCounselors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GeneticCounselors />
+
+### General Activities
+<Activities occupation=GeneticCounselors />
+
+## Qualifications
+### Skills
+<Skills occupation=GeneticCounselors />
+
+### Knowledge
+<Knowledge occupation=GeneticCounselors />
+
+### Abilities
+<Abilities occupation=GeneticCounselors />
+
+## Work Context
+<WorkContext occupation=GeneticCounselors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GeneticCounselors />
+
+### Industries
+<Industries occupation=GeneticCounselors />

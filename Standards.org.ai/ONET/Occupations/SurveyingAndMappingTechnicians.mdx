@@ -1,0 +1,73 @@
+---
+id: SurveyingAndMappingTechnicians
+slug: SurveyingAndMappingTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Perform surveying and mapping duties, usually under the direction
+  of an engineer, surveyor, cartographer, or photogrammetrist, to obtain data
+  used for construction, mapmaking, boundary location, mining, or other
+  purposes. May calculate mapmaking information and create maps from source
+  data, such as surveying notes, aerial photography, satellite data, or other
+  maps to show topographical features, political boundaries, and other features.
+  May verify accuracy and completeness of maps.
+$id: https://graph.org.ai/occupations/SurveyingAndMappingTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SurveyingAndMappingTechnicians`
+      };
+  }));
+
+# Surveying and Mapping Technicians
+
+**O*NET Code**: 17-3031.00
+
+Perform surveying and mapping duties, usually under the direction of an engineer, surveyor, cartographer, or photogrammetrist, to obtain data used for construction, mapmaking, boundary location, mining, or other purposes. May calculate mapmaking information and create maps from source data, such as surveying notes, aerial photography, satellite data, or other maps to show topographical features, political boundaries, and other features. May verify accuracy and completeness of maps.
+
+## Job Profile
+<JobZone occupation=SurveyingAndMappingTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SurveyingAndMappingTechnicians />
+
+### General Activities
+<Activities occupation=SurveyingAndMappingTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=SurveyingAndMappingTechnicians />
+
+### Knowledge
+<Knowledge occupation=SurveyingAndMappingTechnicians />
+
+### Abilities
+<Abilities occupation=SurveyingAndMappingTechnicians />
+
+## Work Context
+<WorkContext occupation=SurveyingAndMappingTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SurveyingAndMappingTechnicians />
+
+### Industries
+<Industries occupation=SurveyingAndMappingTechnicians />

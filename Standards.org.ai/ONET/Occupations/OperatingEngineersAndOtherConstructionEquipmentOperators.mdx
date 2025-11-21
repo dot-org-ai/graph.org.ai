@@ -1,0 +1,71 @@
+---
+id: OperatingEngineersAndOtherConstructionEquipmentOperators
+slug: OperatingEngineersAndOtherConstructionEquipmentOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate one or several types of power construction equipment, such
+  as motor graders, bulldozers, scrapers, compressors, pumps, derricks, shovels,
+  tractors, or front-end loaders to excavate, move, and grade earth, erect
+  structures, or pour concrete or other hard surface pavement. May repair and
+  maintain equipment in addition to other duties.
+$id: https://graph.org.ai/occupations/OperatingEngineersAndOtherConstructionEquipmentOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OperatingEngineersAndOtherConstructionEquipmentOperators`
+      };
+  }));
+
+# Operating Engineers and Other Construction Equipment Operators
+
+**O*NET Code**: 47-2073.00
+
+Operate one or several types of power construction equipment, such as motor graders, bulldozers, scrapers, compressors, pumps, derricks, shovels, tractors, or front-end loaders to excavate, move, and grade earth, erect structures, or pour concrete or other hard surface pavement. May repair and maintain equipment in addition to other duties.
+
+## Job Profile
+<JobZone occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+### General Activities
+<Activities occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+### Knowledge
+<Knowledge occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+### Abilities
+<Abilities occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+## Work Context
+<WorkContext occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />
+
+### Industries
+<Industries occupation=OperatingEngineersAndOtherConstructionEquipmentOperators />

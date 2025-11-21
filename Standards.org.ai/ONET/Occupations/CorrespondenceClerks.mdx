@@ -1,0 +1,70 @@
+---
+id: CorrespondenceClerks
+slug: CorrespondenceClerks
+code:
+  code: null
+title:
+  title: null
+description: Compose letters or electronic correspondence in reply to requests
+  for merchandise, damage claims, credit and other information, delinquent
+  accounts, incorrect billings, or unsatisfactory services. Duties may include
+  gathering data to formulate reply and preparing correspondence.
+$id: https://graph.org.ai/occupations/CorrespondenceClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CorrespondenceClerks`
+      };
+  }));
+
+# Correspondence Clerks
+
+**O*NET Code**: 43-4021.00
+
+Compose letters or electronic correspondence in reply to requests for merchandise, damage claims, credit and other information, delinquent accounts, incorrect billings, or unsatisfactory services. Duties may include gathering data to formulate reply and preparing correspondence.
+
+## Job Profile
+<JobZone occupation=CorrespondenceClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CorrespondenceClerks />
+
+### General Activities
+<Activities occupation=CorrespondenceClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=CorrespondenceClerks />
+
+### Knowledge
+<Knowledge occupation=CorrespondenceClerks />
+
+### Abilities
+<Abilities occupation=CorrespondenceClerks />
+
+## Work Context
+<WorkContext occupation=CorrespondenceClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CorrespondenceClerks />
+
+### Industries
+<Industries occupation=CorrespondenceClerks />

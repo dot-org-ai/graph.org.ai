@@ -1,0 +1,70 @@
+---
+id: CostEstimators
+slug: CostEstimators
+code:
+  code: null
+title:
+  title: null
+description: Prepare cost estimates for product manufacturing, construction
+  projects, or services to aid management in bidding on or determining price of
+  product or service. May specialize according to particular service performed
+  or type of product manufactured.
+$id: https://graph.org.ai/occupations/CostEstimators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CostEstimators`
+      };
+  }));
+
+# Cost Estimators
+
+**O*NET Code**: 13-1051.00
+
+Prepare cost estimates for product manufacturing, construction projects, or services to aid management in bidding on or determining price of product or service. May specialize according to particular service performed or type of product manufactured.
+
+## Job Profile
+<JobZone occupation=CostEstimators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CostEstimators />
+
+### General Activities
+<Activities occupation=CostEstimators />
+
+## Qualifications
+### Skills
+<Skills occupation=CostEstimators />
+
+### Knowledge
+<Knowledge occupation=CostEstimators />
+
+### Abilities
+<Abilities occupation=CostEstimators />
+
+## Work Context
+<WorkContext occupation=CostEstimators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CostEstimators />
+
+### Industries
+<Industries occupation=CostEstimators />

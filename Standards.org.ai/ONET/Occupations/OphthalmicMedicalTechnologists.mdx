@@ -1,0 +1,71 @@
+---
+id: OphthalmicMedicalTechnologists
+slug: OphthalmicMedicalTechnologists
+code:
+  code: null
+title:
+  title: null
+description: Assist ophthalmologists by performing ophthalmic clinical functions
+  and ophthalmic photography. Provide instruction and supervision to other
+  ophthalmic personnel. Assist with minor surgical procedures, applying aseptic
+  techniques and preparing instruments. May perform eye exams, administer eye
+  medications, and instruct patients in care and use of corrective lenses.
+$id: https://graph.org.ai/occupations/OphthalmicMedicalTechnologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OphthalmicMedicalTechnologists`
+      };
+  }));
+
+# Ophthalmic Medical Technologists
+
+**O*NET Code**: 29-2099.05
+
+Assist ophthalmologists by performing ophthalmic clinical functions and ophthalmic photography. Provide instruction and supervision to other ophthalmic personnel. Assist with minor surgical procedures, applying aseptic techniques and preparing instruments. May perform eye exams, administer eye medications, and instruct patients in care and use of corrective lenses.
+
+## Job Profile
+<JobZone occupation=OphthalmicMedicalTechnologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OphthalmicMedicalTechnologists />
+
+### General Activities
+<Activities occupation=OphthalmicMedicalTechnologists />
+
+## Qualifications
+### Skills
+<Skills occupation=OphthalmicMedicalTechnologists />
+
+### Knowledge
+<Knowledge occupation=OphthalmicMedicalTechnologists />
+
+### Abilities
+<Abilities occupation=OphthalmicMedicalTechnologists />
+
+## Work Context
+<WorkContext occupation=OphthalmicMedicalTechnologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OphthalmicMedicalTechnologists />
+
+### Industries
+<Industries occupation=OphthalmicMedicalTechnologists />

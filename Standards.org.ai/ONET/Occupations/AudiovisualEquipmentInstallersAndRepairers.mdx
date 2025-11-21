@@ -1,0 +1,69 @@
+---
+id: AudiovisualEquipmentInstallersAndRepairers
+slug: AudiovisualEquipmentInstallersAndRepairers
+code:
+  code: null
+title:
+  title: null
+description: Install, repair, or adjust audio or television receivers, stereo
+  systems, camcorders, video systems, or other electronic entertainment
+  equipment in homes or other venues. May perform routine maintenance.
+$id: https://graph.org.ai/occupations/AudiovisualEquipmentInstallersAndRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AudiovisualEquipmentInstallersAndRepairers`
+      };
+  }));
+
+# Audiovisual Equipment Installers and Repairers
+
+**O*NET Code**: 49-2097.00
+
+Install, repair, or adjust audio or television receivers, stereo systems, camcorders, video systems, or other electronic entertainment equipment in homes or other venues. May perform routine maintenance.
+
+## Job Profile
+<JobZone occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+### General Activities
+<Activities occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+### Knowledge
+<Knowledge occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+### Abilities
+<Abilities occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+## Work Context
+<WorkContext occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AudiovisualEquipmentInstallersAndRepairers />
+
+### Industries
+<Industries occupation=AudiovisualEquipmentInstallersAndRepairers />

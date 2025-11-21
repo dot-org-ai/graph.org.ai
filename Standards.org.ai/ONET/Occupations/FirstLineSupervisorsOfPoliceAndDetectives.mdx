@@ -1,0 +1,67 @@
+---
+id: FirstLineSupervisorsOfPoliceAndDetectives
+slug: FirstLineSupervisorsOfPoliceAndDetectives
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate activities of members of police force.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfPoliceAndDetectives
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfPoliceAndDetectives`
+      };
+  }));
+
+# First-Line Supervisors of Police and Detectives
+
+**O*NET Code**: 33-1012.00
+
+Directly supervise and coordinate activities of members of police force.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfPoliceAndDetectives />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfPoliceAndDetectives />

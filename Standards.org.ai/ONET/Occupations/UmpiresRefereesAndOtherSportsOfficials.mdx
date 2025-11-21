@@ -1,0 +1,70 @@
+---
+id: UmpiresRefereesAndOtherSportsOfficials
+slug: UmpiresRefereesAndOtherSportsOfficials
+code:
+  code: null
+title:
+  title: null
+description: Officiate at competitive athletic or sporting events. Detect
+  infractions of rules and decide penalties according to established
+  regulations. Includes all sporting officials, referees, and competition
+  judges.
+$id: https://graph.org.ai/occupations/UmpiresRefereesAndOtherSportsOfficials
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$UmpiresRefereesAndOtherSportsOfficials`
+      };
+  }));
+
+# Umpires, Referees, and Other Sports Officials
+
+**O*NET Code**: 27-2023.00
+
+Officiate at competitive athletic or sporting events. Detect infractions of rules and decide penalties according to established regulations. Includes all sporting officials, referees, and competition judges.
+
+## Job Profile
+<JobZone occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+### General Activities
+<Activities occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+## Qualifications
+### Skills
+<Skills occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+### Knowledge
+<Knowledge occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+### Abilities
+<Abilities occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+## Work Context
+<WorkContext occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=UmpiresRefereesAndOtherSportsOfficials />
+
+### Industries
+<Industries occupation=UmpiresRefereesAndOtherSportsOfficials />

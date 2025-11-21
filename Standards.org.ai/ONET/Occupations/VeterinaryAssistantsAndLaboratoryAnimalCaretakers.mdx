@@ -1,0 +1,73 @@
+---
+id: VeterinaryAssistantsAndLaboratoryAnimalCaretakers
+slug: VeterinaryAssistantsAndLaboratoryAnimalCaretakers
+code:
+  code: null
+title:
+  title: null
+description: Feed, water, and examine pets and other nonfarm animals for signs
+  of illness, disease, or injury in laboratories and animal hospitals and
+  clinics. Clean and disinfect cages and work areas, and sterilize laboratory
+  and surgical equipment. May provide routine postoperative care, administer
+  medication orally or topically, or prepare samples for laboratory examination
+  under the supervision of veterinary or laboratory animal technologists or
+  technicians, veterinarians, or scientists.
+$id: https://graph.org.ai/occupations/VeterinaryAssistantsAndLaboratoryAnimalCaretakers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$VeterinaryAssistantsAndLaboratoryAnimalCaretakers`
+      };
+  }));
+
+# Veterinary Assistants and Laboratory Animal Caretakers
+
+**O*NET Code**: 31-9096.00
+
+Feed, water, and examine pets and other nonfarm animals for signs of illness, disease, or injury in laboratories and animal hospitals and clinics. Clean and disinfect cages and work areas, and sterilize laboratory and surgical equipment. May provide routine postoperative care, administer medication orally or topically, or prepare samples for laboratory examination under the supervision of veterinary or laboratory animal technologists or technicians, veterinarians, or scientists.
+
+## Job Profile
+<JobZone occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+### General Activities
+<Activities occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+## Qualifications
+### Skills
+<Skills occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+### Knowledge
+<Knowledge occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+### Abilities
+<Abilities occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+## Work Context
+<WorkContext occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />
+
+### Industries
+<Industries occupation=VeterinaryAssistantsAndLaboratoryAnimalCaretakers />

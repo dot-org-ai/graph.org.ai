@@ -1,0 +1,68 @@
+---
+id: CrossingGuardsAndFlaggers
+slug: CrossingGuardsAndFlaggers
+code:
+  code: null
+title:
+  title: null
+description: Guide or control vehicular or pedestrian traffic at such places as
+  streets, schools, railroad crossings, or construction sites.
+$id: https://graph.org.ai/occupations/CrossingGuardsAndFlaggers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CrossingGuardsAndFlaggers`
+      };
+  }));
+
+# Crossing Guards and Flaggers
+
+**O*NET Code**: 33-9091.00
+
+Guide or control vehicular or pedestrian traffic at such places as streets, schools, railroad crossings, or construction sites.
+
+## Job Profile
+<JobZone occupation=CrossingGuardsAndFlaggers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CrossingGuardsAndFlaggers />
+
+### General Activities
+<Activities occupation=CrossingGuardsAndFlaggers />
+
+## Qualifications
+### Skills
+<Skills occupation=CrossingGuardsAndFlaggers />
+
+### Knowledge
+<Knowledge occupation=CrossingGuardsAndFlaggers />
+
+### Abilities
+<Abilities occupation=CrossingGuardsAndFlaggers />
+
+## Work Context
+<WorkContext occupation=CrossingGuardsAndFlaggers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CrossingGuardsAndFlaggers />
+
+### Industries
+<Industries occupation=CrossingGuardsAndFlaggers />

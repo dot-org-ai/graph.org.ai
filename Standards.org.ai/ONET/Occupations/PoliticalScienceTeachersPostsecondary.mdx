@@ -1,0 +1,69 @@
+---
+id: PoliticalScienceTeachersPostsecondary
+slug: PoliticalScienceTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in political science, international affairs, and
+  international relations. Includes both teachers primarily engaged in teaching
+  and those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/PoliticalScienceTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PoliticalScienceTeachersPostsecondary`
+      };
+  }));
+
+# Political Science Teachers, Postsecondary
+
+**O*NET Code**: 25-1065.00
+
+Teach courses in political science, international affairs, and international relations. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=PoliticalScienceTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PoliticalScienceTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=PoliticalScienceTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=PoliticalScienceTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=PoliticalScienceTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=PoliticalScienceTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=PoliticalScienceTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PoliticalScienceTeachersPostsecondary />
+
+### Industries
+<Industries occupation=PoliticalScienceTeachersPostsecondary />

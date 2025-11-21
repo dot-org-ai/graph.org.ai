@@ -1,0 +1,70 @@
+---
+id: NuclearPowerReactorOperators
+slug: NuclearPowerReactorOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate or control nuclear reactors. Move control rods, start and
+  stop equipment, monitor and adjust controls, and record data in logs.
+  Implement emergency procedures when needed. May respond to abnormalities,
+  determine cause, and recommend corrective action.
+$id: https://graph.org.ai/occupations/NuclearPowerReactorOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NuclearPowerReactorOperators`
+      };
+  }));
+
+# Nuclear Power Reactor Operators
+
+**O*NET Code**: 51-8011.00
+
+Operate or control nuclear reactors. Move control rods, start and stop equipment, monitor and adjust controls, and record data in logs. Implement emergency procedures when needed. May respond to abnormalities, determine cause, and recommend corrective action.
+
+## Job Profile
+<JobZone occupation=NuclearPowerReactorOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NuclearPowerReactorOperators />
+
+### General Activities
+<Activities occupation=NuclearPowerReactorOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=NuclearPowerReactorOperators />
+
+### Knowledge
+<Knowledge occupation=NuclearPowerReactorOperators />
+
+### Abilities
+<Abilities occupation=NuclearPowerReactorOperators />
+
+## Work Context
+<WorkContext occupation=NuclearPowerReactorOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NuclearPowerReactorOperators />
+
+### Industries
+<Industries occupation=NuclearPowerReactorOperators />

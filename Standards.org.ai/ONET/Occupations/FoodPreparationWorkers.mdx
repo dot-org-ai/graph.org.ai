@@ -1,0 +1,69 @@
+---
+id: FoodPreparationWorkers
+slug: FoodPreparationWorkers
+code:
+  code: null
+title:
+  title: null
+description: Perform a variety of food preparation duties other than cooking,
+  such as preparing cold foods and shellfish, slicing meat, and brewing coffee
+  or tea.
+$id: https://graph.org.ai/occupations/FoodPreparationWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FoodPreparationWorkers`
+      };
+  }));
+
+# Food Preparation Workers
+
+**O*NET Code**: 35-2021.00
+
+Perform a variety of food preparation duties other than cooking, such as preparing cold foods and shellfish, slicing meat, and brewing coffee or tea.
+
+## Job Profile
+<JobZone occupation=FoodPreparationWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FoodPreparationWorkers />
+
+### General Activities
+<Activities occupation=FoodPreparationWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FoodPreparationWorkers />
+
+### Knowledge
+<Knowledge occupation=FoodPreparationWorkers />
+
+### Abilities
+<Abilities occupation=FoodPreparationWorkers />
+
+## Work Context
+<WorkContext occupation=FoodPreparationWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FoodPreparationWorkers />
+
+### Industries
+<Industries occupation=FoodPreparationWorkers />

@@ -1,0 +1,71 @@
+---
+id: Actuaries
+slug: Actuaries
+code:
+  code: null
+title:
+  title: null
+description: Analyze statistical data, such as mortality, accident, sickness,
+  disability, and retirement rates and construct probability tables to forecast
+  risk and liability for payment of future benefits. May ascertain insurance
+  rates required and cash reserves necessary to ensure payment of future
+  benefits.
+$id: https://graph.org.ai/occupations/Actuaries
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Actuaries`
+      };
+  }));
+
+# Actuaries
+
+**O*NET Code**: 15-2011.00
+
+Analyze statistical data, such as mortality, accident, sickness, disability, and retirement rates and construct probability tables to forecast risk and liability for payment of future benefits. May ascertain insurance rates required and cash reserves necessary to ensure payment of future benefits.
+
+## Job Profile
+<JobZone occupation=Actuaries />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Actuaries />
+
+### General Activities
+<Activities occupation=Actuaries />
+
+## Qualifications
+### Skills
+<Skills occupation=Actuaries />
+
+### Knowledge
+<Knowledge occupation=Actuaries />
+
+### Abilities
+<Abilities occupation=Actuaries />
+
+## Work Context
+<WorkContext occupation=Actuaries />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Actuaries />
+
+### Industries
+<Industries occupation=Actuaries />

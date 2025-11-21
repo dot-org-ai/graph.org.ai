@@ -1,0 +1,69 @@
+---
+id: SubstituteTeachersShortTerm
+slug: SubstituteTeachersShortTerm
+code:
+  code: null
+title:
+  title: null
+description: Teach students on a short-term basis as a temporary replacement for
+  a regular classroom teacher, typically using the regular teacher's lesson
+  plan.
+$id: https://graph.org.ai/occupations/SubstituteTeachersShortTerm
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SubstituteTeachersShortTerm`
+      };
+  }));
+
+# Substitute Teachers, Short-Term
+
+**O*NET Code**: 25-3031.00
+
+Teach students on a short-term basis as a temporary replacement for a regular classroom teacher, typically using the regular teacher's lesson plan.
+
+## Job Profile
+<JobZone occupation=SubstituteTeachersShortTerm />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SubstituteTeachersShortTerm />
+
+### General Activities
+<Activities occupation=SubstituteTeachersShortTerm />
+
+## Qualifications
+### Skills
+<Skills occupation=SubstituteTeachersShortTerm />
+
+### Knowledge
+<Knowledge occupation=SubstituteTeachersShortTerm />
+
+### Abilities
+<Abilities occupation=SubstituteTeachersShortTerm />
+
+## Work Context
+<WorkContext occupation=SubstituteTeachersShortTerm />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SubstituteTeachersShortTerm />
+
+### Industries
+<Industries occupation=SubstituteTeachersShortTerm />

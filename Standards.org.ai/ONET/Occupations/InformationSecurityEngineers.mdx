@@ -1,0 +1,74 @@
+---
+id: InformationSecurityEngineers
+slug: InformationSecurityEngineers
+code:
+  code: null
+title:
+  title: null
+description: Develop and oversee the implementation of information security
+  procedures and policies. Build, maintain and upgrade security technology, such
+  as firewalls, for the safe use of computer networks and the transmission and
+  retrieval of information. Design and implement appropriate security controls
+  to identify vulnerabilities and protect digital files and electronic
+  infrastructures. Monitor and respond to computer security breaches, viruses,
+  and intrusions, and perform forensic investigation. May oversee the assessment
+  of information security systems.
+$id: https://graph.org.ai/occupations/InformationSecurityEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InformationSecurityEngineers`
+      };
+  }));
+
+# Information Security Engineers
+
+**O*NET Code**: 15-1299.05
+
+Develop and oversee the implementation of information security procedures and policies. Build, maintain and upgrade security technology, such as firewalls, for the safe use of computer networks and the transmission and retrieval of information. Design and implement appropriate security controls to identify vulnerabilities and protect digital files and electronic infrastructures. Monitor and respond to computer security breaches, viruses, and intrusions, and perform forensic investigation. May oversee the assessment of information security systems.
+
+## Job Profile
+<JobZone occupation=InformationSecurityEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InformationSecurityEngineers />
+
+### General Activities
+<Activities occupation=InformationSecurityEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=InformationSecurityEngineers />
+
+### Knowledge
+<Knowledge occupation=InformationSecurityEngineers />
+
+### Abilities
+<Abilities occupation=InformationSecurityEngineers />
+
+## Work Context
+<WorkContext occupation=InformationSecurityEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InformationSecurityEngineers />
+
+### Industries
+<Industries occupation=InformationSecurityEngineers />

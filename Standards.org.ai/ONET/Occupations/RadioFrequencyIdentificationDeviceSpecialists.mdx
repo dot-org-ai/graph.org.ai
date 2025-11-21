@@ -1,0 +1,68 @@
+---
+id: RadioFrequencyIdentificationDeviceSpecialists
+slug: RadioFrequencyIdentificationDeviceSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Design and implement radio frequency identification device (RFID)
+  systems used to track shipments or goods.
+$id: https://graph.org.ai/occupations/RadioFrequencyIdentificationDeviceSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RadioFrequencyIdentificationDeviceSpecialists`
+      };
+  }));
+
+# Radio Frequency Identification Device Specialists
+
+**O*NET Code**: 17-2072.01
+
+Design and implement radio frequency identification device (RFID) systems used to track shipments or goods.
+
+## Job Profile
+<JobZone occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+### General Activities
+<Activities occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+### Knowledge
+<Knowledge occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+### Abilities
+<Abilities occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+## Work Context
+<WorkContext occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RadioFrequencyIdentificationDeviceSpecialists />
+
+### Industries
+<Industries occupation=RadioFrequencyIdentificationDeviceSpecialists />

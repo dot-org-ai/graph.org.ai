@@ -1,0 +1,70 @@
+---
+id: BiofuelsProcessingTechnicians
+slug: BiofuelsProcessingTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Calculate, measure, load, mix, and process refined feedstock with
+  additives in fermentation or reaction process vessels and monitor production
+  process. Perform, and keep records of, plant maintenance, repairs, and safety
+  inspections.
+$id: https://graph.org.ai/occupations/BiofuelsProcessingTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BiofuelsProcessingTechnicians`
+      };
+  }));
+
+# Biofuels Processing Technicians
+
+**O*NET Code**: 51-8099.01
+
+Calculate, measure, load, mix, and process refined feedstock with additives in fermentation or reaction process vessels and monitor production process. Perform, and keep records of, plant maintenance, repairs, and safety inspections.
+
+## Job Profile
+<JobZone occupation=BiofuelsProcessingTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BiofuelsProcessingTechnicians />
+
+### General Activities
+<Activities occupation=BiofuelsProcessingTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=BiofuelsProcessingTechnicians />
+
+### Knowledge
+<Knowledge occupation=BiofuelsProcessingTechnicians />
+
+### Abilities
+<Abilities occupation=BiofuelsProcessingTechnicians />
+
+## Work Context
+<WorkContext occupation=BiofuelsProcessingTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BiofuelsProcessingTechnicians />
+
+### Industries
+<Industries occupation=BiofuelsProcessingTechnicians />

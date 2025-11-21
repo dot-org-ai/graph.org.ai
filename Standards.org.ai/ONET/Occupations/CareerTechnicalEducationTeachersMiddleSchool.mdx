@@ -1,0 +1,68 @@
+---
+id: CareerTechnicalEducationTeachersMiddleSchool
+slug: CareerTechnicalEducationTeachersMiddleSchool
+code:
+  code: null
+title:
+  title: null
+description: Teach occupational, vocational, career, or technical subjects to
+  students at the middle, intermediate, or junior high school level.
+$id: https://graph.org.ai/occupations/CareerTechnicalEducationTeachersMiddleSchool
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CareerTechnicalEducationTeachersMiddleSchool`
+      };
+  }));
+
+# Career/Technical Education Teachers, Middle School
+
+**O*NET Code**: 25-2023.00
+
+Teach occupational, vocational, career, or technical subjects to students at the middle, intermediate, or junior high school level.
+
+## Job Profile
+<JobZone occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+### General Activities
+<Activities occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+## Qualifications
+### Skills
+<Skills occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+### Knowledge
+<Knowledge occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+### Abilities
+<Abilities occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+## Work Context
+<WorkContext occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CareerTechnicalEducationTeachersMiddleSchool />
+
+### Industries
+<Industries occupation=CareerTechnicalEducationTeachersMiddleSchool />

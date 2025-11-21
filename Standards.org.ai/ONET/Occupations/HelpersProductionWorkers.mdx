@@ -1,0 +1,69 @@
+---
+id: HelpersProductionWorkers
+slug: HelpersProductionWorkers
+code:
+  code: null
+title:
+  title: null
+description: Help production workers by performing duties requiring less skill.
+  Duties include supplying or holding materials or tools, and cleaning work area
+  and equipment.
+$id: https://graph.org.ai/occupations/HelpersProductionWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersProductionWorkers`
+      };
+  }));
+
+# Helpers--Production Workers
+
+**O*NET Code**: 51-9198.00
+
+Help production workers by performing duties requiring less skill. Duties include supplying or holding materials or tools, and cleaning work area and equipment.
+
+## Job Profile
+<JobZone occupation=HelpersProductionWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersProductionWorkers />
+
+### General Activities
+<Activities occupation=HelpersProductionWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersProductionWorkers />
+
+### Knowledge
+<Knowledge occupation=HelpersProductionWorkers />
+
+### Abilities
+<Abilities occupation=HelpersProductionWorkers />
+
+## Work Context
+<WorkContext occupation=HelpersProductionWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersProductionWorkers />
+
+### Industries
+<Industries occupation=HelpersProductionWorkers />

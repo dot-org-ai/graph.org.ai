@@ -1,0 +1,70 @@
+---
+id: VideoGameDesigners
+slug: VideoGameDesigners
+code:
+  code: null
+title:
+  title: null
+description: Design core features of video games. Specify innovative game and
+  role-play mechanics, story lines, and character biographies. Create and
+  maintain design documentation. Guide and collaborate with production staff to
+  produce games as designed.
+$id: https://graph.org.ai/occupations/VideoGameDesigners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$VideoGameDesigners`
+      };
+  }));
+
+# Video Game Designers
+
+**O*NET Code**: 15-1255.01
+
+Design core features of video games. Specify innovative game and role-play mechanics, story lines, and character biographies. Create and maintain design documentation. Guide and collaborate with production staff to produce games as designed.
+
+## Job Profile
+<JobZone occupation=VideoGameDesigners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=VideoGameDesigners />
+
+### General Activities
+<Activities occupation=VideoGameDesigners />
+
+## Qualifications
+### Skills
+<Skills occupation=VideoGameDesigners />
+
+### Knowledge
+<Knowledge occupation=VideoGameDesigners />
+
+### Abilities
+<Abilities occupation=VideoGameDesigners />
+
+## Work Context
+<WorkContext occupation=VideoGameDesigners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=VideoGameDesigners />
+
+### Industries
+<Industries occupation=VideoGameDesigners />

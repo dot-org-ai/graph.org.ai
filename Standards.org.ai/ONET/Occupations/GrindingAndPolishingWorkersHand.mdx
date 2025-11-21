@@ -1,0 +1,69 @@
+---
+id: GrindingAndPolishingWorkersHand
+slug: GrindingAndPolishingWorkersHand
+code:
+  code: null
+title:
+  title: null
+description: Grind, sand, or polish, using hand tools or hand-held power tools,
+  a variety of metal, wood, stone, clay, plastic, or glass objects. Includes
+  chippers, buffers, and finishers.
+$id: https://graph.org.ai/occupations/GrindingAndPolishingWorkersHand
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GrindingAndPolishingWorkersHand`
+      };
+  }));
+
+# Grinding and Polishing Workers, Hand
+
+**O*NET Code**: 51-9022.00
+
+Grind, sand, or polish, using hand tools or hand-held power tools, a variety of metal, wood, stone, clay, plastic, or glass objects. Includes chippers, buffers, and finishers.
+
+## Job Profile
+<JobZone occupation=GrindingAndPolishingWorkersHand />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GrindingAndPolishingWorkersHand />
+
+### General Activities
+<Activities occupation=GrindingAndPolishingWorkersHand />
+
+## Qualifications
+### Skills
+<Skills occupation=GrindingAndPolishingWorkersHand />
+
+### Knowledge
+<Knowledge occupation=GrindingAndPolishingWorkersHand />
+
+### Abilities
+<Abilities occupation=GrindingAndPolishingWorkersHand />
+
+## Work Context
+<WorkContext occupation=GrindingAndPolishingWorkersHand />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GrindingAndPolishingWorkersHand />
+
+### Industries
+<Industries occupation=GrindingAndPolishingWorkersHand />

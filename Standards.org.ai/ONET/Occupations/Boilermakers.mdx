@@ -1,0 +1,73 @@
+---
+id: Boilermakers
+slug: Boilermakers
+code:
+  code: null
+title:
+  title: null
+description: Construct, assemble, maintain, and repair stationary steam boilers
+  and boiler house auxiliaries. Align structures or plate sections to assemble
+  boiler frame tanks or vats, following blueprints. Work involves use of hand
+  and power tools, plumb bobs, levels, wedges, dogs, or turnbuckles. Assist in
+  testing assembled vessels. Direct cleaning of boilers and boiler furnaces.
+  Inspect and repair boiler fittings, such as safety valves, regulators,
+  automatic-control mechanisms, water columns, and auxiliary machines.
+$id: https://graph.org.ai/occupations/Boilermakers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Boilermakers`
+      };
+  }));
+
+# Boilermakers
+
+**O*NET Code**: 47-2011.00
+
+Construct, assemble, maintain, and repair stationary steam boilers and boiler house auxiliaries. Align structures or plate sections to assemble boiler frame tanks or vats, following blueprints. Work involves use of hand and power tools, plumb bobs, levels, wedges, dogs, or turnbuckles. Assist in testing assembled vessels. Direct cleaning of boilers and boiler furnaces. Inspect and repair boiler fittings, such as safety valves, regulators, automatic-control mechanisms, water columns, and auxiliary machines.
+
+## Job Profile
+<JobZone occupation=Boilermakers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Boilermakers />
+
+### General Activities
+<Activities occupation=Boilermakers />
+
+## Qualifications
+### Skills
+<Skills occupation=Boilermakers />
+
+### Knowledge
+<Knowledge occupation=Boilermakers />
+
+### Abilities
+<Abilities occupation=Boilermakers />
+
+## Work Context
+<WorkContext occupation=Boilermakers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Boilermakers />
+
+### Industries
+<Industries occupation=Boilermakers />

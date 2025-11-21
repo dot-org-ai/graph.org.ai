@@ -1,0 +1,69 @@
+---
+id: TelecommunicationsEngineeringSpecialists
+slug: TelecommunicationsEngineeringSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Design or configure wired, wireless, and satellite communications
+  systems for voice, video, and data services. Supervise installation, service,
+  and maintenance.
+$id: https://graph.org.ai/occupations/TelecommunicationsEngineeringSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TelecommunicationsEngineeringSpecialists`
+      };
+  }));
+
+# Telecommunications Engineering Specialists
+
+**O*NET Code**: 15-1241.01
+
+Design or configure wired, wireless, and satellite communications systems for voice, video, and data services. Supervise installation, service, and maintenance.
+
+## Job Profile
+<JobZone occupation=TelecommunicationsEngineeringSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TelecommunicationsEngineeringSpecialists />
+
+### General Activities
+<Activities occupation=TelecommunicationsEngineeringSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=TelecommunicationsEngineeringSpecialists />
+
+### Knowledge
+<Knowledge occupation=TelecommunicationsEngineeringSpecialists />
+
+### Abilities
+<Abilities occupation=TelecommunicationsEngineeringSpecialists />
+
+## Work Context
+<WorkContext occupation=TelecommunicationsEngineeringSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TelecommunicationsEngineeringSpecialists />
+
+### Industries
+<Industries occupation=TelecommunicationsEngineeringSpecialists />

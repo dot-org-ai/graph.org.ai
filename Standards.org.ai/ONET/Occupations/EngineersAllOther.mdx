@@ -1,0 +1,67 @@
+---
+id: EngineersAllOther
+slug: EngineersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All engineers not listed separately.
+$id: https://graph.org.ai/occupations/EngineersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EngineersAllOther`
+      };
+  }));
+
+# Engineers, All Other
+
+**O*NET Code**: 17-2199.00
+
+All engineers not listed separately.
+
+## Job Profile
+<JobZone occupation=EngineersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EngineersAllOther />
+
+### General Activities
+<Activities occupation=EngineersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=EngineersAllOther />
+
+### Knowledge
+<Knowledge occupation=EngineersAllOther />
+
+### Abilities
+<Abilities occupation=EngineersAllOther />
+
+## Work Context
+<WorkContext occupation=EngineersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EngineersAllOther />
+
+### Industries
+<Industries occupation=EngineersAllOther />

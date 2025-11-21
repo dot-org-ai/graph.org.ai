@@ -1,0 +1,68 @@
+---
+id: Tapers
+slug: Tapers
+code:
+  code: null
+title:
+  title: null
+description: Seal joints between plasterboard or other wallboard to prepare wall
+  surface for painting or papering.
+$id: https://graph.org.ai/occupations/Tapers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Tapers`
+      };
+  }));
+
+# Tapers
+
+**O*NET Code**: 47-2082.00
+
+Seal joints between plasterboard or other wallboard to prepare wall surface for painting or papering.
+
+## Job Profile
+<JobZone occupation=Tapers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Tapers />
+
+### General Activities
+<Activities occupation=Tapers />
+
+## Qualifications
+### Skills
+<Skills occupation=Tapers />
+
+### Knowledge
+<Knowledge occupation=Tapers />
+
+### Abilities
+<Abilities occupation=Tapers />
+
+## Work Context
+<WorkContext occupation=Tapers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Tapers />
+
+### Industries
+<Industries occupation=Tapers />

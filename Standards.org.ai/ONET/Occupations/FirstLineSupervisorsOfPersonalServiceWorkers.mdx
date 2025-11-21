@@ -1,0 +1,67 @@
+---
+id: FirstLineSupervisorsOfPersonalServiceWorkers
+slug: FirstLineSupervisorsOfPersonalServiceWorkers
+code:
+  code: null
+title:
+  title: null
+description: Supervise and coordinate activities of personal service workers.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfPersonalServiceWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfPersonalServiceWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Personal Service Workers
+
+**O*NET Code**: 39-1022.00
+
+Supervise and coordinate activities of personal service workers.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfPersonalServiceWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfPersonalServiceWorkers />

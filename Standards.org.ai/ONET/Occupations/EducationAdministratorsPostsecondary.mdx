@@ -1,0 +1,70 @@
+---
+id: EducationAdministratorsPostsecondary
+slug: EducationAdministratorsPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate student instruction, administration,
+  and services, as well as other research and educational activities, at
+  postsecondary institutions, including universities, colleges, and junior and
+  community colleges.
+$id: https://graph.org.ai/occupations/EducationAdministratorsPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EducationAdministratorsPostsecondary`
+      };
+  }));
+
+# Education Administrators, Postsecondary
+
+**O*NET Code**: 11-9033.00
+
+Plan, direct, or coordinate student instruction, administration, and services, as well as other research and educational activities, at postsecondary institutions, including universities, colleges, and junior and community colleges.
+
+## Job Profile
+<JobZone occupation=EducationAdministratorsPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EducationAdministratorsPostsecondary />
+
+### General Activities
+<Activities occupation=EducationAdministratorsPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=EducationAdministratorsPostsecondary />
+
+### Knowledge
+<Knowledge occupation=EducationAdministratorsPostsecondary />
+
+### Abilities
+<Abilities occupation=EducationAdministratorsPostsecondary />
+
+## Work Context
+<WorkContext occupation=EducationAdministratorsPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EducationAdministratorsPostsecondary />
+
+### Industries
+<Industries occupation=EducationAdministratorsPostsecondary />

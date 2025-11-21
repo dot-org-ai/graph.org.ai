@@ -1,0 +1,67 @@
+---
+id: ManufacturedBuildingAndMobileHomeInstallers
+slug: ManufacturedBuildingAndMobileHomeInstallers
+code:
+  code: null
+title:
+  title: null
+description: Move or install mobile homes or prefabricated buildings.
+$id: https://graph.org.ai/occupations/ManufacturedBuildingAndMobileHomeInstallers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ManufacturedBuildingAndMobileHomeInstallers`
+      };
+  }));
+
+# Manufactured Building and Mobile Home Installers
+
+**O*NET Code**: 49-9095.00
+
+Move or install mobile homes or prefabricated buildings.
+
+## Job Profile
+<JobZone occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+### General Activities
+<Activities occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+## Qualifications
+### Skills
+<Skills occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+### Knowledge
+<Knowledge occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+### Abilities
+<Abilities occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+## Work Context
+<WorkContext occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ManufacturedBuildingAndMobileHomeInstallers />
+
+### Industries
+<Industries occupation=ManufacturedBuildingAndMobileHomeInstallers />

@@ -1,0 +1,74 @@
+---
+id: PersonalCareAides
+slug: PersonalCareAides
+code:
+  code: null
+title:
+  title: null
+description: Provide personalized assistance to individuals with disabilities or
+  illness who require help with personal care and activities of daily living
+  support (e.g., feeding, bathing, dressing, grooming, toileting, and
+  ambulation). May also provide help with tasks such as preparing meals, doing
+  light housekeeping, and doing laundry. Work is performed in various settings
+  depending on the needs of the care recipient and may include locations such as
+  their home, place of work, out in the community, or at a daytime
+  nonresidential facility.
+$id: https://graph.org.ai/occupations/PersonalCareAides
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PersonalCareAides`
+      };
+  }));
+
+# Personal Care Aides
+
+**O*NET Code**: 31-1122.00
+
+Provide personalized assistance to individuals with disabilities or illness who require help with personal care and activities of daily living support (e.g., feeding, bathing, dressing, grooming, toileting, and ambulation). May also provide help with tasks such as preparing meals, doing light housekeeping, and doing laundry. Work is performed in various settings depending on the needs of the care recipient and may include locations such as their home, place of work, out in the community, or at a daytime nonresidential facility.
+
+## Job Profile
+<JobZone occupation=PersonalCareAides />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PersonalCareAides />
+
+### General Activities
+<Activities occupation=PersonalCareAides />
+
+## Qualifications
+### Skills
+<Skills occupation=PersonalCareAides />
+
+### Knowledge
+<Knowledge occupation=PersonalCareAides />
+
+### Abilities
+<Abilities occupation=PersonalCareAides />
+
+## Work Context
+<WorkContext occupation=PersonalCareAides />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PersonalCareAides />
+
+### Industries
+<Industries occupation=PersonalCareAides />

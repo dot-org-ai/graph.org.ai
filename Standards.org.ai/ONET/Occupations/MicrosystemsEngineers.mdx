@@ -1,0 +1,68 @@
+---
+id: MicrosystemsEngineers
+slug: MicrosystemsEngineers
+code:
+  code: null
+title:
+  title: null
+description: Research, design, develop, or test microelectromechanical systems
+  (MEMS) devices.
+$id: https://graph.org.ai/occupations/MicrosystemsEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MicrosystemsEngineers`
+      };
+  }));
+
+# Microsystems Engineers
+
+**O*NET Code**: 17-2199.06
+
+Research, design, develop, or test microelectromechanical systems (MEMS) devices.
+
+## Job Profile
+<JobZone occupation=MicrosystemsEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MicrosystemsEngineers />
+
+### General Activities
+<Activities occupation=MicrosystemsEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=MicrosystemsEngineers />
+
+### Knowledge
+<Knowledge occupation=MicrosystemsEngineers />
+
+### Abilities
+<Abilities occupation=MicrosystemsEngineers />
+
+## Work Context
+<WorkContext occupation=MicrosystemsEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MicrosystemsEngineers />
+
+### Industries
+<Industries occupation=MicrosystemsEngineers />

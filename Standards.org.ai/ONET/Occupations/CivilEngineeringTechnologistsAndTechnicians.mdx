@@ -1,0 +1,69 @@
+---
+id: CivilEngineeringTechnologistsAndTechnicians
+slug: CivilEngineeringTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Apply theory and principles of civil engineering in planning,
+  designing, and overseeing construction and maintenance of structures and
+  facilities under the direction of engineering staff or physical scientists.
+$id: https://graph.org.ai/occupations/CivilEngineeringTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CivilEngineeringTechnologistsAndTechnicians`
+      };
+  }));
+
+# Civil Engineering Technologists and Technicians
+
+**O*NET Code**: 17-3022.00
+
+Apply theory and principles of civil engineering in planning, designing, and overseeing construction and maintenance of structures and facilities under the direction of engineering staff or physical scientists.
+
+## Job Profile
+<JobZone occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CivilEngineeringTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=CivilEngineeringTechnologistsAndTechnicians />

@@ -1,0 +1,72 @@
+---
+id: ConstructionManagers
+slug: ConstructionManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate, usually through subordinate
+  supervisory personnel, activities concerned with the construction and
+  maintenance of structures, facilities, and systems. Participate in the
+  conceptual development of a construction project and oversee its organization,
+  scheduling, budgeting, and implementation. Includes managers in specialized
+  construction fields, such as carpentry or plumbing.
+$id: https://graph.org.ai/occupations/ConstructionManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ConstructionManagers`
+      };
+  }));
+
+# Construction Managers
+
+**O*NET Code**: 11-9021.00
+
+Plan, direct, or coordinate, usually through subordinate supervisory personnel, activities concerned with the construction and maintenance of structures, facilities, and systems. Participate in the conceptual development of a construction project and oversee its organization, scheduling, budgeting, and implementation. Includes managers in specialized construction fields, such as carpentry or plumbing.
+
+## Job Profile
+<JobZone occupation=ConstructionManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ConstructionManagers />
+
+### General Activities
+<Activities occupation=ConstructionManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=ConstructionManagers />
+
+### Knowledge
+<Knowledge occupation=ConstructionManagers />
+
+### Abilities
+<Abilities occupation=ConstructionManagers />
+
+## Work Context
+<WorkContext occupation=ConstructionManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ConstructionManagers />
+
+### Industries
+<Industries occupation=ConstructionManagers />

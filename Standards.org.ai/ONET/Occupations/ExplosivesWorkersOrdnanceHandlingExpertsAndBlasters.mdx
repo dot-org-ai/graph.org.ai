@@ -1,0 +1,69 @@
+---
+id: ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters
+slug: ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters
+code:
+  code: null
+title:
+  title: null
+description: Place and detonate explosives to demolish structures or to loosen,
+  remove, or displace earth, rock, or other materials. May perform specialized
+  handling, storage, and accounting procedures.
+$id: https://graph.org.ai/occupations/ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters`
+      };
+  }));
+
+# Explosives Workers, Ordnance Handling Experts, and Blasters
+
+**O*NET Code**: 47-5032.00
+
+Place and detonate explosives to demolish structures or to loosen, remove, or displace earth, rock, or other materials. May perform specialized handling, storage, and accounting procedures.
+
+## Job Profile
+<JobZone occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+### General Activities
+<Activities occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+## Qualifications
+### Skills
+<Skills occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+### Knowledge
+<Knowledge occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+### Abilities
+<Abilities occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+## Work Context
+<WorkContext occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />
+
+### Industries
+<Industries occupation=ExplosivesWorkersOrdnanceHandlingExpertsAndBlasters />

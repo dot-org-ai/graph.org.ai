@@ -1,0 +1,68 @@
+---
+id: RockSplittersQuarry
+slug: RockSplittersQuarry
+code:
+  code: null
+title:
+  title: null
+description: Separate blocks of rough dimension stone from quarry mass using
+  jackhammers, wedges, or chop saws.
+$id: https://graph.org.ai/occupations/RockSplittersQuarry
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RockSplittersQuarry`
+      };
+  }));
+
+# Rock Splitters, Quarry
+
+**O*NET Code**: 47-5051.00
+
+Separate blocks of rough dimension stone from quarry mass using jackhammers, wedges, or chop saws.
+
+## Job Profile
+<JobZone occupation=RockSplittersQuarry />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RockSplittersQuarry />
+
+### General Activities
+<Activities occupation=RockSplittersQuarry />
+
+## Qualifications
+### Skills
+<Skills occupation=RockSplittersQuarry />
+
+### Knowledge
+<Knowledge occupation=RockSplittersQuarry />
+
+### Abilities
+<Abilities occupation=RockSplittersQuarry />
+
+## Work Context
+<WorkContext occupation=RockSplittersQuarry />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RockSplittersQuarry />
+
+### Industries
+<Industries occupation=RockSplittersQuarry />

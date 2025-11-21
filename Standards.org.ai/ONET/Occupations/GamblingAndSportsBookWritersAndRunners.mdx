@@ -1,0 +1,71 @@
+---
+id: GamblingAndSportsBookWritersAndRunners
+slug: GamblingAndSportsBookWritersAndRunners
+code:
+  code: null
+title:
+  title: null
+description: Post information enabling patrons to wager on various races and
+  sporting events. Assist in the operation of games such as keno and bingo. May
+  operate random number-generating equipment and announce the numbers for
+  patrons. Receive, verify, and record patrons' wagers. Scan and process winning
+  tickets presented by patrons and pay out winnings for those wagers.
+$id: https://graph.org.ai/occupations/GamblingAndSportsBookWritersAndRunners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GamblingAndSportsBookWritersAndRunners`
+      };
+  }));
+
+# Gambling and Sports Book Writers and Runners
+
+**O*NET Code**: 39-3012.00
+
+Post information enabling patrons to wager on various races and sporting events. Assist in the operation of games such as keno and bingo. May operate random number-generating equipment and announce the numbers for patrons. Receive, verify, and record patrons' wagers. Scan and process winning tickets presented by patrons and pay out winnings for those wagers.
+
+## Job Profile
+<JobZone occupation=GamblingAndSportsBookWritersAndRunners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GamblingAndSportsBookWritersAndRunners />
+
+### General Activities
+<Activities occupation=GamblingAndSportsBookWritersAndRunners />
+
+## Qualifications
+### Skills
+<Skills occupation=GamblingAndSportsBookWritersAndRunners />
+
+### Knowledge
+<Knowledge occupation=GamblingAndSportsBookWritersAndRunners />
+
+### Abilities
+<Abilities occupation=GamblingAndSportsBookWritersAndRunners />
+
+## Work Context
+<WorkContext occupation=GamblingAndSportsBookWritersAndRunners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GamblingAndSportsBookWritersAndRunners />
+
+### Industries
+<Industries occupation=GamblingAndSportsBookWritersAndRunners />

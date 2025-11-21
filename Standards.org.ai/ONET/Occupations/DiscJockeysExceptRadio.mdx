@@ -1,0 +1,70 @@
+---
+id: DiscJockeysExceptRadio
+slug: DiscJockeysExceptRadio
+code:
+  code: null
+title:
+  title: null
+description: Play prerecorded music for live audiences at venues or events such
+  as clubs, parties, or wedding receptions. May use techniques such as mixing,
+  cutting, or sampling to manipulate recordings. May also perform as emcee
+  (master of ceremonies).
+$id: https://graph.org.ai/occupations/DiscJockeysExceptRadio
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DiscJockeysExceptRadio`
+      };
+  }));
+
+# Disc Jockeys, Except Radio
+
+**O*NET Code**: 27-2091.00
+
+Play prerecorded music for live audiences at venues or events such as clubs, parties, or wedding receptions. May use techniques such as mixing, cutting, or sampling to manipulate recordings. May also perform as emcee (master of ceremonies).
+
+## Job Profile
+<JobZone occupation=DiscJockeysExceptRadio />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DiscJockeysExceptRadio />
+
+### General Activities
+<Activities occupation=DiscJockeysExceptRadio />
+
+## Qualifications
+### Skills
+<Skills occupation=DiscJockeysExceptRadio />
+
+### Knowledge
+<Knowledge occupation=DiscJockeysExceptRadio />
+
+### Abilities
+<Abilities occupation=DiscJockeysExceptRadio />
+
+## Work Context
+<WorkContext occupation=DiscJockeysExceptRadio />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DiscJockeysExceptRadio />
+
+### Industries
+<Industries occupation=DiscJockeysExceptRadio />

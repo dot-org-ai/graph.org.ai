@@ -1,0 +1,74 @@
+---
+id: WholesaleAndRetailBuyersExceptFarmProducts
+slug: WholesaleAndRetailBuyersExceptFarmProducts
+code:
+  code: null
+title:
+  title: null
+description: Buy merchandise or commodities, other than farm products, for
+  resale to consumers at the wholesale or retail level, including both durable
+  and nondurable goods. Analyze past buying trends, sales records, price, and
+  quality of merchandise to determine value and yield. Select, order, and
+  authorize payment for merchandise according to contractual agreements. May
+  conduct meetings with sales personnel and introduce new products. May
+  negotiate contracts. Includes assistant wholesale and retail buyers of nonfarm
+  products.
+$id: https://graph.org.ai/occupations/WholesaleAndRetailBuyersExceptFarmProducts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WholesaleAndRetailBuyersExceptFarmProducts`
+      };
+  }));
+
+# Wholesale and Retail Buyers, Except Farm Products
+
+**O*NET Code**: 13-1022.00
+
+Buy merchandise or commodities, other than farm products, for resale to consumers at the wholesale or retail level, including both durable and nondurable goods. Analyze past buying trends, sales records, price, and quality of merchandise to determine value and yield. Select, order, and authorize payment for merchandise according to contractual agreements. May conduct meetings with sales personnel and introduce new products. May negotiate contracts. Includes assistant wholesale and retail buyers of nonfarm products.
+
+## Job Profile
+<JobZone occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+### General Activities
+<Activities occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+## Qualifications
+### Skills
+<Skills occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+### Knowledge
+<Knowledge occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+### Abilities
+<Abilities occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+## Work Context
+<WorkContext occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WholesaleAndRetailBuyersExceptFarmProducts />
+
+### Industries
+<Industries occupation=WholesaleAndRetailBuyersExceptFarmProducts />

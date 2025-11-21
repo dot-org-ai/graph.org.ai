@@ -1,0 +1,70 @@
+---
+id: AgriculturalEngineers
+slug: AgriculturalEngineers
+code:
+  code: null
+title:
+  title: null
+description: Apply knowledge of engineering technology and biological science to
+  agricultural problems concerned with power and machinery, electrification,
+  structures, soil and water conservation, and processing of agricultural
+  products.
+$id: https://graph.org.ai/occupations/AgriculturalEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AgriculturalEngineers`
+      };
+  }));
+
+# Agricultural Engineers
+
+**O*NET Code**: 17-2021.00
+
+Apply knowledge of engineering technology and biological science to agricultural problems concerned with power and machinery, electrification, structures, soil and water conservation, and processing of agricultural products.
+
+## Job Profile
+<JobZone occupation=AgriculturalEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AgriculturalEngineers />
+
+### General Activities
+<Activities occupation=AgriculturalEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=AgriculturalEngineers />
+
+### Knowledge
+<Knowledge occupation=AgriculturalEngineers />
+
+### Abilities
+<Abilities occupation=AgriculturalEngineers />
+
+## Work Context
+<WorkContext occupation=AgriculturalEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AgriculturalEngineers />
+
+### Industries
+<Industries occupation=AgriculturalEngineers />

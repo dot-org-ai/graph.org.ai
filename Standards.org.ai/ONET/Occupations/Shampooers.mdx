@@ -1,0 +1,67 @@
+---
+id: Shampooers
+slug: Shampooers
+code:
+  code: null
+title:
+  title: null
+description: Shampoo and rinse customers' hair.
+$id: https://graph.org.ai/occupations/Shampooers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Shampooers`
+      };
+  }));
+
+# Shampooers
+
+**O*NET Code**: 39-5093.00
+
+Shampoo and rinse customers' hair.
+
+## Job Profile
+<JobZone occupation=Shampooers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Shampooers />
+
+### General Activities
+<Activities occupation=Shampooers />
+
+## Qualifications
+### Skills
+<Skills occupation=Shampooers />
+
+### Knowledge
+<Knowledge occupation=Shampooers />
+
+### Abilities
+<Abilities occupation=Shampooers />
+
+## Work Context
+<WorkContext occupation=Shampooers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Shampooers />
+
+### Industries
+<Industries occupation=Shampooers />

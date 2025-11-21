@@ -1,0 +1,68 @@
+---
+id: PoetsLyricistsAndCreativeWriters
+slug: PoetsLyricistsAndCreativeWriters
+code:
+  code: null
+title:
+  title: null
+description: Create original written works, such as scripts, essays, prose,
+  poetry or song lyrics, for publication or performance.
+$id: https://graph.org.ai/occupations/PoetsLyricistsAndCreativeWriters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PoetsLyricistsAndCreativeWriters`
+      };
+  }));
+
+# Poets, Lyricists and Creative Writers
+
+**O*NET Code**: 27-3043.05
+
+Create original written works, such as scripts, essays, prose, poetry or song lyrics, for publication or performance.
+
+## Job Profile
+<JobZone occupation=PoetsLyricistsAndCreativeWriters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PoetsLyricistsAndCreativeWriters />
+
+### General Activities
+<Activities occupation=PoetsLyricistsAndCreativeWriters />
+
+## Qualifications
+### Skills
+<Skills occupation=PoetsLyricistsAndCreativeWriters />
+
+### Knowledge
+<Knowledge occupation=PoetsLyricistsAndCreativeWriters />
+
+### Abilities
+<Abilities occupation=PoetsLyricistsAndCreativeWriters />
+
+## Work Context
+<WorkContext occupation=PoetsLyricistsAndCreativeWriters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PoetsLyricistsAndCreativeWriters />
+
+### Industries
+<Industries occupation=PoetsLyricistsAndCreativeWriters />

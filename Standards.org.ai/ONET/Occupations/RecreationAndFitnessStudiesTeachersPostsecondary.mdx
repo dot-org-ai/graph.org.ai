@@ -1,0 +1,70 @@
+---
+id: RecreationAndFitnessStudiesTeachersPostsecondary
+slug: RecreationAndFitnessStudiesTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses pertaining to recreation, leisure, and fitness
+  studies, including exercise physiology and facilities management. Includes
+  both teachers primarily engaged in teaching and those who do a combination of
+  teaching and research.
+$id: https://graph.org.ai/occupations/RecreationAndFitnessStudiesTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RecreationAndFitnessStudiesTeachersPostsecondary`
+      };
+  }));
+
+# Recreation and Fitness Studies Teachers, Postsecondary
+
+**O*NET Code**: 25-1193.00
+
+Teach courses pertaining to recreation, leisure, and fitness studies, including exercise physiology and facilities management. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RecreationAndFitnessStudiesTeachersPostsecondary />
+
+### Industries
+<Industries occupation=RecreationAndFitnessStudiesTeachersPostsecondary />

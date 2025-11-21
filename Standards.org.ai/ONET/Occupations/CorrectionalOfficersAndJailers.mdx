@@ -1,0 +1,71 @@
+---
+id: CorrectionalOfficersAndJailers
+slug: CorrectionalOfficersAndJailers
+code:
+  code: null
+title:
+  title: null
+description: Guard inmates in penal or rehabilitative institutions in accordance
+  with established regulations and procedures. May guard prisoners in transit
+  between jail, courtroom, prison, or other point. Includes deputy sheriffs and
+  police who spend the majority of their time guarding prisoners in correctional
+  institutions.
+$id: https://graph.org.ai/occupations/CorrectionalOfficersAndJailers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CorrectionalOfficersAndJailers`
+      };
+  }));
+
+# Correctional Officers and Jailers
+
+**O*NET Code**: 33-3012.00
+
+Guard inmates in penal or rehabilitative institutions in accordance with established regulations and procedures. May guard prisoners in transit between jail, courtroom, prison, or other point. Includes deputy sheriffs and police who spend the majority of their time guarding prisoners in correctional institutions.
+
+## Job Profile
+<JobZone occupation=CorrectionalOfficersAndJailers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CorrectionalOfficersAndJailers />
+
+### General Activities
+<Activities occupation=CorrectionalOfficersAndJailers />
+
+## Qualifications
+### Skills
+<Skills occupation=CorrectionalOfficersAndJailers />
+
+### Knowledge
+<Knowledge occupation=CorrectionalOfficersAndJailers />
+
+### Abilities
+<Abilities occupation=CorrectionalOfficersAndJailers />
+
+## Work Context
+<WorkContext occupation=CorrectionalOfficersAndJailers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CorrectionalOfficersAndJailers />
+
+### Industries
+<Industries occupation=CorrectionalOfficersAndJailers />

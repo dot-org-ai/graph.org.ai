@@ -1,0 +1,69 @@
+---
+id: MoldersShapersAndCastersExceptMetalAndPlastic
+slug: MoldersShapersAndCastersExceptMetalAndPlastic
+code:
+  code: null
+title:
+  title: null
+description: Mold, shape, form, cast, or carve products such as food products,
+  figurines, tile, pipes, and candles consisting of clay, glass, plaster,
+  concrete, stone, or combinations of materials.
+$id: https://graph.org.ai/occupations/MoldersShapersAndCastersExceptMetalAndPlastic
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MoldersShapersAndCastersExceptMetalAndPlastic`
+      };
+  }));
+
+# Molders, Shapers, and Casters, Except Metal and Plastic
+
+**O*NET Code**: 51-9195.00
+
+Mold, shape, form, cast, or carve products such as food products, figurines, tile, pipes, and candles consisting of clay, glass, plaster, concrete, stone, or combinations of materials.
+
+## Job Profile
+<JobZone occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+### General Activities
+<Activities occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+## Qualifications
+### Skills
+<Skills occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+### Knowledge
+<Knowledge occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+### Abilities
+<Abilities occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+## Work Context
+<WorkContext occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MoldersShapersAndCastersExceptMetalAndPlastic />
+
+### Industries
+<Industries occupation=MoldersShapersAndCastersExceptMetalAndPlastic />

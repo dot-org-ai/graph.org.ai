@@ -1,0 +1,72 @@
+---
+id: VeterinaryTechnologistsAndTechnicians
+slug: VeterinaryTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Perform medical tests in a laboratory environment for use in the
+  treatment and diagnosis of diseases in animals. Prepare vaccines and serums
+  for prevention of diseases. Prepare tissue samples, take blood samples, and
+  execute laboratory tests, such as urinalysis and blood counts. Clean and
+  sterilize instruments and materials and maintain equipment and machines. May
+  assist a veterinarian during surgery.
+$id: https://graph.org.ai/occupations/VeterinaryTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$VeterinaryTechnologistsAndTechnicians`
+      };
+  }));
+
+# Veterinary Technologists and Technicians
+
+**O*NET Code**: 29-2056.00
+
+Perform medical tests in a laboratory environment for use in the treatment and diagnosis of diseases in animals. Prepare vaccines and serums for prevention of diseases. Prepare tissue samples, take blood samples, and execute laboratory tests, such as urinalysis and blood counts. Clean and sterilize instruments and materials and maintain equipment and machines. May assist a veterinarian during surgery.
+
+## Job Profile
+<JobZone occupation=VeterinaryTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=VeterinaryTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=VeterinaryTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=VeterinaryTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=VeterinaryTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=VeterinaryTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=VeterinaryTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=VeterinaryTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=VeterinaryTechnologistsAndTechnicians />

@@ -1,0 +1,67 @@
+---
+id: FoodPreparationAndServingRelatedWorkersAllOther
+slug: FoodPreparationAndServingRelatedWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All food preparation and serving related workers not listed separately.
+$id: https://graph.org.ai/occupations/FoodPreparationAndServingRelatedWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FoodPreparationAndServingRelatedWorkersAllOther`
+      };
+  }));
+
+# Food Preparation and Serving Related Workers, All Other
+
+**O*NET Code**: 35-9099.00
+
+All food preparation and serving related workers not listed separately.
+
+## Job Profile
+<JobZone occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+### General Activities
+<Activities occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+### Abilities
+<Abilities occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FoodPreparationAndServingRelatedWorkersAllOther />
+
+### Industries
+<Industries occupation=FoodPreparationAndServingRelatedWorkersAllOther />

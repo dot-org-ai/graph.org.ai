@@ -1,0 +1,69 @@
+---
+id: ElectricalAndElectronicEquipmentAssemblers
+slug: ElectricalAndElectronicEquipmentAssemblers
+code:
+  code: null
+title:
+  title: null
+description: Assemble or modify electrical or electronic equipment, such as
+  computers, test equipment telemetering systems, electric motors, and
+  batteries.
+$id: https://graph.org.ai/occupations/ElectricalAndElectronicEquipmentAssemblers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectricalAndElectronicEquipmentAssemblers`
+      };
+  }));
+
+# Electrical and Electronic Equipment Assemblers
+
+**O*NET Code**: 51-2022.00
+
+Assemble or modify electrical or electronic equipment, such as computers, test equipment telemetering systems, electric motors, and batteries.
+
+## Job Profile
+<JobZone occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+### General Activities
+<Activities occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+### Knowledge
+<Knowledge occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+### Abilities
+<Abilities occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+## Work Context
+<WorkContext occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectricalAndElectronicEquipmentAssemblers />
+
+### Industries
+<Industries occupation=ElectricalAndElectronicEquipmentAssemblers />

@@ -1,0 +1,72 @@
+---
+id: OfficeClerksGeneral
+slug: OfficeClerksGeneral
+code:
+  code: null
+title:
+  title: null
+description: Perform duties too varied and diverse to be classified in any
+  specific office clerical occupation, requiring knowledge of office systems and
+  procedures. Clerical duties may be assigned in accordance with the office
+  procedures of individual establishments and may include a combination of
+  answering telephones, bookkeeping, typing or word processing, office machine
+  operation, and filing.
+$id: https://graph.org.ai/occupations/OfficeClerksGeneral
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OfficeClerksGeneral`
+      };
+  }));
+
+# Office Clerks, General
+
+**O*NET Code**: 43-9061.00
+
+Perform duties too varied and diverse to be classified in any specific office clerical occupation, requiring knowledge of office systems and procedures. Clerical duties may be assigned in accordance with the office procedures of individual establishments and may include a combination of answering telephones, bookkeeping, typing or word processing, office machine operation, and filing.
+
+## Job Profile
+<JobZone occupation=OfficeClerksGeneral />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OfficeClerksGeneral />
+
+### General Activities
+<Activities occupation=OfficeClerksGeneral />
+
+## Qualifications
+### Skills
+<Skills occupation=OfficeClerksGeneral />
+
+### Knowledge
+<Knowledge occupation=OfficeClerksGeneral />
+
+### Abilities
+<Abilities occupation=OfficeClerksGeneral />
+
+## Work Context
+<WorkContext occupation=OfficeClerksGeneral />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OfficeClerksGeneral />
+
+### Industries
+<Industries occupation=OfficeClerksGeneral />

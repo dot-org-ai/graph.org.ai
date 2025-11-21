@@ -1,0 +1,71 @@
+---
+id: RecreationWorkers
+slug: RecreationWorkers
+code:
+  code: null
+title:
+  title: null
+description: Conduct recreation activities with groups in public, private, or
+  volunteer agencies or recreation facilities. Organize and promote activities,
+  such as arts and crafts, sports, games, music, dramatics, social recreation,
+  camping, and hobbies, taking into account the needs and interests of
+  individual members.
+$id: https://graph.org.ai/occupations/RecreationWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RecreationWorkers`
+      };
+  }));
+
+# Recreation Workers
+
+**O*NET Code**: 39-9032.00
+
+Conduct recreation activities with groups in public, private, or volunteer agencies or recreation facilities. Organize and promote activities, such as arts and crafts, sports, games, music, dramatics, social recreation, camping, and hobbies, taking into account the needs and interests of individual members.
+
+## Job Profile
+<JobZone occupation=RecreationWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RecreationWorkers />
+
+### General Activities
+<Activities occupation=RecreationWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=RecreationWorkers />
+
+### Knowledge
+<Knowledge occupation=RecreationWorkers />
+
+### Abilities
+<Abilities occupation=RecreationWorkers />
+
+## Work Context
+<WorkContext occupation=RecreationWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RecreationWorkers />
+
+### Industries
+<Industries occupation=RecreationWorkers />

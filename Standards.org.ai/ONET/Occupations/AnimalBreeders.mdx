@@ -1,0 +1,70 @@
+---
+id: AnimalBreeders
+slug: AnimalBreeders
+code:
+  code: null
+title:
+  title: null
+description: Select and breed animals according to their genealogy,
+  characteristics, and offspring. May require knowledge of artificial
+  insemination techniques and equipment use. May involve keeping records on
+  heats, birth intervals, or pedigree.
+$id: https://graph.org.ai/occupations/AnimalBreeders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AnimalBreeders`
+      };
+  }));
+
+# Animal Breeders
+
+**O*NET Code**: 45-2021.00
+
+Select and breed animals according to their genealogy, characteristics, and offspring. May require knowledge of artificial insemination techniques and equipment use. May involve keeping records on heats, birth intervals, or pedigree.
+
+## Job Profile
+<JobZone occupation=AnimalBreeders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AnimalBreeders />
+
+### General Activities
+<Activities occupation=AnimalBreeders />
+
+## Qualifications
+### Skills
+<Skills occupation=AnimalBreeders />
+
+### Knowledge
+<Knowledge occupation=AnimalBreeders />
+
+### Abilities
+<Abilities occupation=AnimalBreeders />
+
+## Work Context
+<WorkContext occupation=AnimalBreeders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AnimalBreeders />
+
+### Industries
+<Industries occupation=AnimalBreeders />

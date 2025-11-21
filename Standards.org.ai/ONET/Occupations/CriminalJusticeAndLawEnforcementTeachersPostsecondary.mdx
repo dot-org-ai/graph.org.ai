@@ -1,0 +1,69 @@
+---
+id: CriminalJusticeAndLawEnforcementTeachersPostsecondary
+slug: CriminalJusticeAndLawEnforcementTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in criminal justice, corrections, and law enforcement
+  administration. Includes both teachers primarily engaged in teaching and those
+  who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/CriminalJusticeAndLawEnforcementTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CriminalJusticeAndLawEnforcementTeachersPostsecondary`
+      };
+  }));
+
+# Criminal Justice and Law Enforcement Teachers, Postsecondary
+
+**O*NET Code**: 25-1111.00
+
+Teach courses in criminal justice, corrections, and law enforcement administration. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />
+
+### Industries
+<Industries occupation=CriminalJusticeAndLawEnforcementTeachersPostsecondary />

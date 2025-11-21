@@ -1,0 +1,70 @@
+---
+id: PsychologyTeachersPostsecondary
+slug: PsychologyTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in psychology, such as child, clinical, and
+  developmental psychology, and psychological counseling. Includes both teachers
+  primarily engaged in teaching and those who do a combination of teaching and
+  research.
+$id: https://graph.org.ai/occupations/PsychologyTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PsychologyTeachersPostsecondary`
+      };
+  }));
+
+# Psychology Teachers, Postsecondary
+
+**O*NET Code**: 25-1066.00
+
+Teach courses in psychology, such as child, clinical, and developmental psychology, and psychological counseling. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=PsychologyTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PsychologyTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=PsychologyTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=PsychologyTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=PsychologyTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=PsychologyTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=PsychologyTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PsychologyTeachersPostsecondary />
+
+### Industries
+<Industries occupation=PsychologyTeachersPostsecondary />

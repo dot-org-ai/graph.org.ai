@@ -1,0 +1,73 @@
+---
+id: DigitalForensicsAnalysts
+slug: DigitalForensicsAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Conduct investigations on computer-based crimes establishing
+  documentary or physical evidence, such as digital media and logs associated
+  with cyber intrusion incidents. Analyze digital evidence and investigate
+  computer security incidents to derive information in support of system and
+  network vulnerability mitigation. Preserve and present computer-related
+  evidence in support of criminal, fraud, counterintelligence, or law
+  enforcement investigations.
+$id: https://graph.org.ai/occupations/DigitalForensicsAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DigitalForensicsAnalysts`
+      };
+  }));
+
+# Digital Forensics Analysts
+
+**O*NET Code**: 15-1299.06
+
+Conduct investigations on computer-based crimes establishing documentary or physical evidence, such as digital media and logs associated with cyber intrusion incidents. Analyze digital evidence and investigate computer security incidents to derive information in support of system and network vulnerability mitigation. Preserve and present computer-related evidence in support of criminal, fraud, counterintelligence, or law enforcement investigations.
+
+## Job Profile
+<JobZone occupation=DigitalForensicsAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DigitalForensicsAnalysts />
+
+### General Activities
+<Activities occupation=DigitalForensicsAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=DigitalForensicsAnalysts />
+
+### Knowledge
+<Knowledge occupation=DigitalForensicsAnalysts />
+
+### Abilities
+<Abilities occupation=DigitalForensicsAnalysts />
+
+## Work Context
+<WorkContext occupation=DigitalForensicsAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DigitalForensicsAnalysts />
+
+### Industries
+<Industries occupation=DigitalForensicsAnalysts />

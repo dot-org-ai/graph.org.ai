@@ -1,0 +1,68 @@
+---
+id: CriticalCareNurses
+slug: CriticalCareNurses
+code:
+  code: null
+title:
+  title: null
+description: Provide specialized nursing care for patients in critical or
+  coronary care units.
+$id: https://graph.org.ai/occupations/CriticalCareNurses
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CriticalCareNurses`
+      };
+  }));
+
+# Critical Care Nurses
+
+**O*NET Code**: 29-1141.03
+
+Provide specialized nursing care for patients in critical or coronary care units.
+
+## Job Profile
+<JobZone occupation=CriticalCareNurses />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CriticalCareNurses />
+
+### General Activities
+<Activities occupation=CriticalCareNurses />
+
+## Qualifications
+### Skills
+<Skills occupation=CriticalCareNurses />
+
+### Knowledge
+<Knowledge occupation=CriticalCareNurses />
+
+### Abilities
+<Abilities occupation=CriticalCareNurses />
+
+## Work Context
+<WorkContext occupation=CriticalCareNurses />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CriticalCareNurses />
+
+### Industries
+<Industries occupation=CriticalCareNurses />

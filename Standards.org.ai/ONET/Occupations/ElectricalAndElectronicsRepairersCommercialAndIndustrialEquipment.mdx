@@ -1,0 +1,68 @@
+---
+id: ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment
+slug: ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment
+code:
+  code: null
+title:
+  title: null
+description: Repair, test, adjust, or install electronic equipment, such as
+  industrial controls, transmitters, and antennas.
+$id: https://graph.org.ai/occupations/ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment`
+      };
+  }));
+
+# Electrical and Electronics Repairers, Commercial and Industrial Equipment
+
+**O*NET Code**: 49-2094.00
+
+Repair, test, adjust, or install electronic equipment, such as industrial controls, transmitters, and antennas.
+
+## Job Profile
+<JobZone occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+### General Activities
+<Activities occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+### Knowledge
+<Knowledge occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+### Abilities
+<Abilities occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+## Work Context
+<WorkContext occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />
+
+### Industries
+<Industries occupation=ElectricalAndElectronicsRepairersCommercialAndIndustrialEquipment />

@@ -1,0 +1,67 @@
+---
+id: FirstLineSupervisorsOfProtectiveServiceWorkersAllOther
+slug: FirstLineSupervisorsOfProtectiveServiceWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All protective service supervisors not listed separately above.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfProtectiveServiceWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfProtectiveServiceWorkersAllOther`
+      };
+  }));
+
+# First-Line Supervisors of Protective Service Workers, All Other
+
+**O*NET Code**: 33-1099.00
+
+All protective service supervisors not listed separately above.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfProtectiveServiceWorkersAllOther />

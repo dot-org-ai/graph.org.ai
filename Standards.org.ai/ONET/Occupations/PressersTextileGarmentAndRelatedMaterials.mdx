@@ -1,0 +1,67 @@
+---
+id: PressersTextileGarmentAndRelatedMaterials
+slug: PressersTextileGarmentAndRelatedMaterials
+code:
+  code: null
+title:
+  title: null
+description: Press or shape articles by hand or machine.
+$id: https://graph.org.ai/occupations/PressersTextileGarmentAndRelatedMaterials
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PressersTextileGarmentAndRelatedMaterials`
+      };
+  }));
+
+# Pressers, Textile, Garment, and Related Materials
+
+**O*NET Code**: 51-6021.00
+
+Press or shape articles by hand or machine.
+
+## Job Profile
+<JobZone occupation=PressersTextileGarmentAndRelatedMaterials />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PressersTextileGarmentAndRelatedMaterials />
+
+### General Activities
+<Activities occupation=PressersTextileGarmentAndRelatedMaterials />
+
+## Qualifications
+### Skills
+<Skills occupation=PressersTextileGarmentAndRelatedMaterials />
+
+### Knowledge
+<Knowledge occupation=PressersTextileGarmentAndRelatedMaterials />
+
+### Abilities
+<Abilities occupation=PressersTextileGarmentAndRelatedMaterials />
+
+## Work Context
+<WorkContext occupation=PressersTextileGarmentAndRelatedMaterials />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PressersTextileGarmentAndRelatedMaterials />
+
+### Industries
+<Industries occupation=PressersTextileGarmentAndRelatedMaterials />

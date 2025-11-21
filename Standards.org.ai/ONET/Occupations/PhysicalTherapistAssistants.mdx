@@ -1,0 +1,72 @@
+---
+id: PhysicalTherapistAssistants
+slug: PhysicalTherapistAssistants
+code:
+  code: null
+title:
+  title: null
+description: Assist physical therapists in providing physical therapy treatments
+  and procedures. May, in accordance with state laws, assist in the development
+  of treatment plans, carry out routine functions, document the progress of
+  treatment, and modify specific treatments in accordance with patient status
+  and within the scope of treatment plans established by a physical therapist.
+  Generally requires formal training.
+$id: https://graph.org.ai/occupations/PhysicalTherapistAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhysicalTherapistAssistants`
+      };
+  }));
+
+# Physical Therapist Assistants
+
+**O*NET Code**: 31-2021.00
+
+Assist physical therapists in providing physical therapy treatments and procedures. May, in accordance with state laws, assist in the development of treatment plans, carry out routine functions, document the progress of treatment, and modify specific treatments in accordance with patient status and within the scope of treatment plans established by a physical therapist. Generally requires formal training.
+
+## Job Profile
+<JobZone occupation=PhysicalTherapistAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhysicalTherapistAssistants />
+
+### General Activities
+<Activities occupation=PhysicalTherapistAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=PhysicalTherapistAssistants />
+
+### Knowledge
+<Knowledge occupation=PhysicalTherapistAssistants />
+
+### Abilities
+<Abilities occupation=PhysicalTherapistAssistants />
+
+## Work Context
+<WorkContext occupation=PhysicalTherapistAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhysicalTherapistAssistants />
+
+### Industries
+<Industries occupation=PhysicalTherapistAssistants />

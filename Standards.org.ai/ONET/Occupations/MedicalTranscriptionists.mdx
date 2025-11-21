@@ -1,0 +1,73 @@
+---
+id: MedicalTranscriptionists
+slug: MedicalTranscriptionists
+code:
+  code: null
+title:
+  title: null
+description: Transcribe medical reports recorded by physicians and other
+  healthcare practitioners using various electronic devices, covering office
+  visits, emergency room visits, diagnostic imaging studies, operations, chart
+  reviews, and final summaries. Transcribe dictated reports and translate
+  abbreviations into fully understandable form. Edit as necessary and return
+  reports in either printed or electronic form for review and signature, or
+  correction.
+$id: https://graph.org.ai/occupations/MedicalTranscriptionists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MedicalTranscriptionists`
+      };
+  }));
+
+# Medical Transcriptionists
+
+**O*NET Code**: 31-9094.00
+
+Transcribe medical reports recorded by physicians and other healthcare practitioners using various electronic devices, covering office visits, emergency room visits, diagnostic imaging studies, operations, chart reviews, and final summaries. Transcribe dictated reports and translate abbreviations into fully understandable form. Edit as necessary and return reports in either printed or electronic form for review and signature, or correction.
+
+## Job Profile
+<JobZone occupation=MedicalTranscriptionists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MedicalTranscriptionists />
+
+### General Activities
+<Activities occupation=MedicalTranscriptionists />
+
+## Qualifications
+### Skills
+<Skills occupation=MedicalTranscriptionists />
+
+### Knowledge
+<Knowledge occupation=MedicalTranscriptionists />
+
+### Abilities
+<Abilities occupation=MedicalTranscriptionists />
+
+## Work Context
+<WorkContext occupation=MedicalTranscriptionists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MedicalTranscriptionists />
+
+### Industries
+<Industries occupation=MedicalTranscriptionists />

@@ -1,0 +1,71 @@
+---
+id: AirfieldOperationsSpecialists
+slug: AirfieldOperationsSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Ensure the safe takeoff and landing of commercial and military
+  aircraft. Duties include coordination between air-traffic control and
+  maintenance personnel, dispatching, using airfield landing and navigational
+  aids, implementing airfield safety procedures, monitoring and maintaining
+  flight records, and applying knowledge of weather information.
+$id: https://graph.org.ai/occupations/AirfieldOperationsSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AirfieldOperationsSpecialists`
+      };
+  }));
+
+# Airfield Operations Specialists
+
+**O*NET Code**: 53-2022.00
+
+Ensure the safe takeoff and landing of commercial and military aircraft. Duties include coordination between air-traffic control and maintenance personnel, dispatching, using airfield landing and navigational aids, implementing airfield safety procedures, monitoring and maintaining flight records, and applying knowledge of weather information.
+
+## Job Profile
+<JobZone occupation=AirfieldOperationsSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AirfieldOperationsSpecialists />
+
+### General Activities
+<Activities occupation=AirfieldOperationsSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=AirfieldOperationsSpecialists />
+
+### Knowledge
+<Knowledge occupation=AirfieldOperationsSpecialists />
+
+### Abilities
+<Abilities occupation=AirfieldOperationsSpecialists />
+
+## Work Context
+<WorkContext occupation=AirfieldOperationsSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AirfieldOperationsSpecialists />
+
+### Industries
+<Industries occupation=AirfieldOperationsSpecialists />

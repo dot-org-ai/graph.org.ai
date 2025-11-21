@@ -1,0 +1,68 @@
+---
+id: FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers
+slug: FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate work activities of cleaning
+  personnel in hotels, hospitals, offices, and other establishments.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Housekeeping and Janitorial Workers
+
+**O*NET Code**: 37-1011.00
+
+Directly supervise and coordinate work activities of cleaning personnel in hotels, hospitals, offices, and other establishments.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfHousekeepingAndJanitorialWorkers />

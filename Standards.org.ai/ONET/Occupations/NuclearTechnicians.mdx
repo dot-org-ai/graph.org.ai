@@ -1,0 +1,70 @@
+---
+id: NuclearTechnicians
+slug: NuclearTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Assist nuclear physicists, nuclear engineers, or other scientists
+  in laboratory, power generation, or electricity production activities. May
+  operate, maintain, or provide quality control for nuclear testing and research
+  equipment. May monitor radiation.
+$id: https://graph.org.ai/occupations/NuclearTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NuclearTechnicians`
+      };
+  }));
+
+# Nuclear Technicians
+
+**O*NET Code**: 19-4051.00
+
+Assist nuclear physicists, nuclear engineers, or other scientists in laboratory, power generation, or electricity production activities. May operate, maintain, or provide quality control for nuclear testing and research equipment. May monitor radiation.
+
+## Job Profile
+<JobZone occupation=NuclearTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NuclearTechnicians />
+
+### General Activities
+<Activities occupation=NuclearTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=NuclearTechnicians />
+
+### Knowledge
+<Knowledge occupation=NuclearTechnicians />
+
+### Abilities
+<Abilities occupation=NuclearTechnicians />
+
+## Work Context
+<WorkContext occupation=NuclearTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NuclearTechnicians />
+
+### Industries
+<Industries occupation=NuclearTechnicians />

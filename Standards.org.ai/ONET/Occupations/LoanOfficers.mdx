@@ -1,0 +1,70 @@
+---
+id: LoanOfficers
+slug: LoanOfficers
+code:
+  code: null
+title:
+  title: null
+description: Evaluate, authorize, or recommend approval of commercial, real
+  estate, or credit loans. Advise borrowers on financial status and payment
+  methods. Includes mortgage loan officers and agents, collection analysts, loan
+  servicing officers, loan underwriters, and payday loan officers.
+$id: https://graph.org.ai/occupations/LoanOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LoanOfficers`
+      };
+  }));
+
+# Loan Officers
+
+**O*NET Code**: 13-2072.00
+
+Evaluate, authorize, or recommend approval of commercial, real estate, or credit loans. Advise borrowers on financial status and payment methods. Includes mortgage loan officers and agents, collection analysts, loan servicing officers, loan underwriters, and payday loan officers.
+
+## Job Profile
+<JobZone occupation=LoanOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LoanOfficers />
+
+### General Activities
+<Activities occupation=LoanOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=LoanOfficers />
+
+### Knowledge
+<Knowledge occupation=LoanOfficers />
+
+### Abilities
+<Abilities occupation=LoanOfficers />
+
+## Work Context
+<WorkContext occupation=LoanOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LoanOfficers />
+
+### Industries
+<Industries occupation=LoanOfficers />

@@ -1,0 +1,67 @@
+---
+id: FenceErectors
+slug: FenceErectors
+code:
+  code: null
+title:
+  title: null
+description: Erect and repair fences and fence gates, using hand and power tools.
+$id: https://graph.org.ai/occupations/FenceErectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FenceErectors`
+      };
+  }));
+
+# Fence Erectors
+
+**O*NET Code**: 47-4031.00
+
+Erect and repair fences and fence gates, using hand and power tools.
+
+## Job Profile
+<JobZone occupation=FenceErectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FenceErectors />
+
+### General Activities
+<Activities occupation=FenceErectors />
+
+## Qualifications
+### Skills
+<Skills occupation=FenceErectors />
+
+### Knowledge
+<Knowledge occupation=FenceErectors />
+
+### Abilities
+<Abilities occupation=FenceErectors />
+
+## Work Context
+<WorkContext occupation=FenceErectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FenceErectors />
+
+### Industries
+<Industries occupation=FenceErectors />

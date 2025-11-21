@@ -1,0 +1,74 @@
+---
+id: ConservationScientists
+slug: ConservationScientists
+code:
+  code: null
+title:
+  title: null
+description: Manage, improve, and protect natural resources to maximize their
+  use without damaging the environment. May conduct soil surveys and develop
+  plans to eliminate soil erosion or to protect rangelands. May instruct
+  farmers, agricultural production managers, or ranchers in best ways to use
+  crop rotation, contour plowing, or terracing to conserve soil and water; in
+  the number and kind of livestock and forage plants best suited to particular
+  ranges; and in range and farm improvements, such as fencing and reservoirs for
+  stock watering.
+$id: https://graph.org.ai/occupations/ConservationScientists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ConservationScientists`
+      };
+  }));
+
+# Conservation Scientists
+
+**O*NET Code**: 19-1031.00
+
+Manage, improve, and protect natural resources to maximize their use without damaging the environment. May conduct soil surveys and develop plans to eliminate soil erosion or to protect rangelands. May instruct farmers, agricultural production managers, or ranchers in best ways to use crop rotation, contour plowing, or terracing to conserve soil and water; in the number and kind of livestock and forage plants best suited to particular ranges; and in range and farm improvements, such as fencing and reservoirs for stock watering.
+
+## Job Profile
+<JobZone occupation=ConservationScientists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ConservationScientists />
+
+### General Activities
+<Activities occupation=ConservationScientists />
+
+## Qualifications
+### Skills
+<Skills occupation=ConservationScientists />
+
+### Knowledge
+<Knowledge occupation=ConservationScientists />
+
+### Abilities
+<Abilities occupation=ConservationScientists />
+
+## Work Context
+<WorkContext occupation=ConservationScientists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ConservationScientists />
+
+### Industries
+<Industries occupation=ConservationScientists />

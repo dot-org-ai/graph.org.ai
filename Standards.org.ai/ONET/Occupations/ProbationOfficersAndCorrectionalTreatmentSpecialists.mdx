@@ -1,0 +1,71 @@
+---
+id: ProbationOfficersAndCorrectionalTreatmentSpecialists
+slug: ProbationOfficersAndCorrectionalTreatmentSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Provide social services to assist in rehabilitation of law
+  offenders in custody or on probation or parole. Make recommendations for
+  actions involving formulation of rehabilitation plan and treatment of
+  offender, including conditional release and education and employment
+  stipulations.
+$id: https://graph.org.ai/occupations/ProbationOfficersAndCorrectionalTreatmentSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ProbationOfficersAndCorrectionalTreatmentSpecialists`
+      };
+  }));
+
+# Probation Officers and Correctional Treatment Specialists
+
+**O*NET Code**: 21-1092.00
+
+Provide social services to assist in rehabilitation of law offenders in custody or on probation or parole. Make recommendations for actions involving formulation of rehabilitation plan and treatment of offender, including conditional release and education and employment stipulations.
+
+## Job Profile
+<JobZone occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+### General Activities
+<Activities occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+### Knowledge
+<Knowledge occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+### Abilities
+<Abilities occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+## Work Context
+<WorkContext occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />
+
+### Industries
+<Industries occupation=ProbationOfficersAndCorrectionalTreatmentSpecialists />

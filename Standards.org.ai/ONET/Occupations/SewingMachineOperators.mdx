@@ -1,0 +1,69 @@
+---
+id: SewingMachineOperators
+slug: SewingMachineOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend sewing machines to join, reinforce, decorate, or
+  perform related sewing operations in the manufacture of garment or nongarment
+  products.
+$id: https://graph.org.ai/occupations/SewingMachineOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SewingMachineOperators`
+      };
+  }));
+
+# Sewing Machine Operators
+
+**O*NET Code**: 51-6031.00
+
+Operate or tend sewing machines to join, reinforce, decorate, or perform related sewing operations in the manufacture of garment or nongarment products.
+
+## Job Profile
+<JobZone occupation=SewingMachineOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SewingMachineOperators />
+
+### General Activities
+<Activities occupation=SewingMachineOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=SewingMachineOperators />
+
+### Knowledge
+<Knowledge occupation=SewingMachineOperators />
+
+### Abilities
+<Abilities occupation=SewingMachineOperators />
+
+## Work Context
+<WorkContext occupation=SewingMachineOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SewingMachineOperators />
+
+### Industries
+<Industries occupation=SewingMachineOperators />

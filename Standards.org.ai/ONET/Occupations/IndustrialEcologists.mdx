@@ -1,0 +1,71 @@
+---
+id: IndustrialEcologists
+slug: IndustrialEcologists
+code:
+  code: null
+title:
+  title: null
+description: Apply principles and processes of natural ecosystems to develop
+  models for efficient industrial systems. Use knowledge from the physical and
+  social sciences to maximize effective use of natural resources in the
+  production and use of goods and services. Examine societal issues and their
+  relationship with both technical systems and the environment.
+$id: https://graph.org.ai/occupations/IndustrialEcologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$IndustrialEcologists`
+      };
+  }));
+
+# Industrial Ecologists
+
+**O*NET Code**: 19-2041.03
+
+Apply principles and processes of natural ecosystems to develop models for efficient industrial systems. Use knowledge from the physical and social sciences to maximize effective use of natural resources in the production and use of goods and services. Examine societal issues and their relationship with both technical systems and the environment.
+
+## Job Profile
+<JobZone occupation=IndustrialEcologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=IndustrialEcologists />
+
+### General Activities
+<Activities occupation=IndustrialEcologists />
+
+## Qualifications
+### Skills
+<Skills occupation=IndustrialEcologists />
+
+### Knowledge
+<Knowledge occupation=IndustrialEcologists />
+
+### Abilities
+<Abilities occupation=IndustrialEcologists />
+
+## Work Context
+<WorkContext occupation=IndustrialEcologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=IndustrialEcologists />
+
+### Industries
+<Industries occupation=IndustrialEcologists />

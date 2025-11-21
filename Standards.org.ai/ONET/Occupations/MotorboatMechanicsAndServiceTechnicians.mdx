@@ -1,0 +1,68 @@
+---
+id: MotorboatMechanicsAndServiceTechnicians
+slug: MotorboatMechanicsAndServiceTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Repair and adjust electrical and mechanical equipment of inboard or
+  inboard-outboard boat engines.
+$id: https://graph.org.ai/occupations/MotorboatMechanicsAndServiceTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MotorboatMechanicsAndServiceTechnicians`
+      };
+  }));
+
+# Motorboat Mechanics and Service Technicians
+
+**O*NET Code**: 49-3051.00
+
+Repair and adjust electrical and mechanical equipment of inboard or inboard-outboard boat engines.
+
+## Job Profile
+<JobZone occupation=MotorboatMechanicsAndServiceTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MotorboatMechanicsAndServiceTechnicians />
+
+### General Activities
+<Activities occupation=MotorboatMechanicsAndServiceTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=MotorboatMechanicsAndServiceTechnicians />
+
+### Knowledge
+<Knowledge occupation=MotorboatMechanicsAndServiceTechnicians />
+
+### Abilities
+<Abilities occupation=MotorboatMechanicsAndServiceTechnicians />
+
+## Work Context
+<WorkContext occupation=MotorboatMechanicsAndServiceTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MotorboatMechanicsAndServiceTechnicians />
+
+### Industries
+<Industries occupation=MotorboatMechanicsAndServiceTechnicians />

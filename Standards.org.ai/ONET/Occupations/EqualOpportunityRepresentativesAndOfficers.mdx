@@ -1,0 +1,70 @@
+---
+id: EqualOpportunityRepresentativesAndOfficers
+slug: EqualOpportunityRepresentativesAndOfficers
+code:
+  code: null
+title:
+  title: null
+description: Monitor and evaluate compliance with equal opportunity laws,
+  guidelines, and policies to ensure that employment practices and contracting
+  arrangements give equal opportunity without regard to race, religion, color,
+  national origin, sex, age, or disability.
+$id: https://graph.org.ai/occupations/EqualOpportunityRepresentativesAndOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EqualOpportunityRepresentativesAndOfficers`
+      };
+  }));
+
+# Equal Opportunity Representatives and Officers
+
+**O*NET Code**: 13-1041.03
+
+Monitor and evaluate compliance with equal opportunity laws, guidelines, and policies to ensure that employment practices and contracting arrangements give equal opportunity without regard to race, religion, color, national origin, sex, age, or disability.
+
+## Job Profile
+<JobZone occupation=EqualOpportunityRepresentativesAndOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EqualOpportunityRepresentativesAndOfficers />
+
+### General Activities
+<Activities occupation=EqualOpportunityRepresentativesAndOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=EqualOpportunityRepresentativesAndOfficers />
+
+### Knowledge
+<Knowledge occupation=EqualOpportunityRepresentativesAndOfficers />
+
+### Abilities
+<Abilities occupation=EqualOpportunityRepresentativesAndOfficers />
+
+## Work Context
+<WorkContext occupation=EqualOpportunityRepresentativesAndOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EqualOpportunityRepresentativesAndOfficers />
+
+### Industries
+<Industries occupation=EqualOpportunityRepresentativesAndOfficers />

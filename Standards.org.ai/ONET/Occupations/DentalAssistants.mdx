@@ -1,0 +1,72 @@
+---
+id: DentalAssistants
+slug: DentalAssistants
+code:
+  code: null
+title:
+  title: null
+description: Perform limited clinical duties under the direction of a dentist.
+  Clinical duties may include equipment preparation and sterilization, preparing
+  patients for treatment, assisting the dentist during treatment, and providing
+  patients with instructions for oral healthcare procedures. May perform
+  administrative duties such as scheduling appointments, maintaining medical
+  records, billing, and coding information for insurance purposes.
+$id: https://graph.org.ai/occupations/DentalAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DentalAssistants`
+      };
+  }));
+
+# Dental Assistants
+
+**O*NET Code**: 31-9091.00
+
+Perform limited clinical duties under the direction of a dentist. Clinical duties may include equipment preparation and sterilization, preparing patients for treatment, assisting the dentist during treatment, and providing patients with instructions for oral healthcare procedures. May perform administrative duties such as scheduling appointments, maintaining medical records, billing, and coding information for insurance purposes.
+
+## Job Profile
+<JobZone occupation=DentalAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DentalAssistants />
+
+### General Activities
+<Activities occupation=DentalAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=DentalAssistants />
+
+### Knowledge
+<Knowledge occupation=DentalAssistants />
+
+### Abilities
+<Abilities occupation=DentalAssistants />
+
+## Work Context
+<WorkContext occupation=DentalAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DentalAssistants />
+
+### Industries
+<Industries occupation=DentalAssistants />

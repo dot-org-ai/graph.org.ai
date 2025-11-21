@@ -1,9 +1,51 @@
 ---
-$id: https://graph.org.ai/tech/{id}
+$id: https://graph.org.ai/tech/{slug}
 $type: Tech
 source: ONET
+name: "{name}"
 ---
+
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Technology%20Skills.txt')
+  .then(rows => {
+      // Use 'Example' as the Tech entity (e.g. "Adobe Acrobat")
+      // 'Commodity Title' is the classification.
+      
+      // Deduplicate by Example name
+      // Note: Some Examples might map to multiple Commodities? Usually 1-to-1 but let's check.
+      // We'll pick the first one found.
+      
+      const unique = _.uniqBy(rows, 'Example');
+      
+      return unique
+        .filter(row => row['Example'])
+        .map(row => {
+          const name = row['Example'];
+          const category = row['Commodity Title'];
+          const slug = _.upperFirst(_.camelCase(name));
+          
+          // Ensure slug is not empty or invalid
+          if (!slug) return null;
+          
+          return {
+              id: slug,
+              slug: slug,
+              name: name,
+              category: category,
+              description: `${category} - ${name}`,
+              $id: `https://graph.org.ai/tech/${slug}`
+          };
+      }).filter(x => x);
+  });
 
 # {name}
 
-<Occupations tech={id} />
+**Category**: {category}
+
+{description}
+
+## Context
+### Related Occupations
+<Occupations tech={slug} />
+
+### Related Tasks
+<Tasks tech={slug} />

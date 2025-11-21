@@ -1,0 +1,69 @@
+---
+id: ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment
+slug: ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment
+code:
+  code: null
+title:
+  title: null
+description: Install, adjust, or maintain mobile electronics communication
+  equipment, including sound, sonar, security, navigation, and surveillance
+  systems on trains, watercraft, or other mobile equipment.
+$id: https://graph.org.ai/occupations/ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment`
+      };
+  }));
+
+# Electrical and Electronics Installers and Repairers, Transportation Equipment
+
+**O*NET Code**: 49-2093.00
+
+Install, adjust, or maintain mobile electronics communication equipment, including sound, sonar, security, navigation, and surveillance systems on trains, watercraft, or other mobile equipment.
+
+## Job Profile
+<JobZone occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+### General Activities
+<Activities occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+### Knowledge
+<Knowledge occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+### Abilities
+<Abilities occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+## Work Context
+<WorkContext occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />
+
+### Industries
+<Industries occupation=ElectricalAndElectronicsInstallersAndRepairersTransportationEquipment />

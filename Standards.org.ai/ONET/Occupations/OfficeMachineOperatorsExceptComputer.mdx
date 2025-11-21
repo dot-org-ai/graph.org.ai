@@ -1,0 +1,69 @@
+---
+id: OfficeMachineOperatorsExceptComputer
+slug: OfficeMachineOperatorsExceptComputer
+code:
+  code: null
+title:
+  title: null
+description: Operate one or more of a variety of office machines, such as
+  photocopying, photographic, and duplicating machines, or other office
+  machines.
+$id: https://graph.org.ai/occupations/OfficeMachineOperatorsExceptComputer
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OfficeMachineOperatorsExceptComputer`
+      };
+  }));
+
+# Office Machine Operators, Except Computer
+
+**O*NET Code**: 43-9071.00
+
+Operate one or more of a variety of office machines, such as photocopying, photographic, and duplicating machines, or other office machines.
+
+## Job Profile
+<JobZone occupation=OfficeMachineOperatorsExceptComputer />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OfficeMachineOperatorsExceptComputer />
+
+### General Activities
+<Activities occupation=OfficeMachineOperatorsExceptComputer />
+
+## Qualifications
+### Skills
+<Skills occupation=OfficeMachineOperatorsExceptComputer />
+
+### Knowledge
+<Knowledge occupation=OfficeMachineOperatorsExceptComputer />
+
+### Abilities
+<Abilities occupation=OfficeMachineOperatorsExceptComputer />
+
+## Work Context
+<WorkContext occupation=OfficeMachineOperatorsExceptComputer />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OfficeMachineOperatorsExceptComputer />
+
+### Industries
+<Industries occupation=OfficeMachineOperatorsExceptComputer />

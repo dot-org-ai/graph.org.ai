@@ -1,0 +1,70 @@
+---
+id: LaundryAndDryCleaningWorkers
+slug: LaundryAndDryCleaningWorkers
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend washing or dry-cleaning machines to wash or
+  dry-clean industrial or household articles, such as cloth garments, suede,
+  leather, furs, blankets, draperies, linens, rugs, and carpets. Includes
+  spotters and dyers of these articles.
+$id: https://graph.org.ai/occupations/LaundryAndDryCleaningWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LaundryAndDryCleaningWorkers`
+      };
+  }));
+
+# Laundry and Dry-Cleaning Workers
+
+**O*NET Code**: 51-6011.00
+
+Operate or tend washing or dry-cleaning machines to wash or dry-clean industrial or household articles, such as cloth garments, suede, leather, furs, blankets, draperies, linens, rugs, and carpets. Includes spotters and dyers of these articles.
+
+## Job Profile
+<JobZone occupation=LaundryAndDryCleaningWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LaundryAndDryCleaningWorkers />
+
+### General Activities
+<Activities occupation=LaundryAndDryCleaningWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=LaundryAndDryCleaningWorkers />
+
+### Knowledge
+<Knowledge occupation=LaundryAndDryCleaningWorkers />
+
+### Abilities
+<Abilities occupation=LaundryAndDryCleaningWorkers />
+
+## Work Context
+<WorkContext occupation=LaundryAndDryCleaningWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LaundryAndDryCleaningWorkers />
+
+### Industries
+<Industries occupation=LaundryAndDryCleaningWorkers />

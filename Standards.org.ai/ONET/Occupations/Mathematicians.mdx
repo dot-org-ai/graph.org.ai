@@ -1,0 +1,69 @@
+---
+id: Mathematicians
+slug: Mathematicians
+code:
+  code: null
+title:
+  title: null
+description: Conduct research in fundamental mathematics or in application of
+  mathematical techniques to science, management, and other fields. Solve
+  problems in various fields using mathematical methods.
+$id: https://graph.org.ai/occupations/Mathematicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Mathematicians`
+      };
+  }));
+
+# Mathematicians
+
+**O*NET Code**: 15-2021.00
+
+Conduct research in fundamental mathematics or in application of mathematical techniques to science, management, and other fields. Solve problems in various fields using mathematical methods.
+
+## Job Profile
+<JobZone occupation=Mathematicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Mathematicians />
+
+### General Activities
+<Activities occupation=Mathematicians />
+
+## Qualifications
+### Skills
+<Skills occupation=Mathematicians />
+
+### Knowledge
+<Knowledge occupation=Mathematicians />
+
+### Abilities
+<Abilities occupation=Mathematicians />
+
+## Work Context
+<WorkContext occupation=Mathematicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Mathematicians />
+
+### Industries
+<Industries occupation=Mathematicians />

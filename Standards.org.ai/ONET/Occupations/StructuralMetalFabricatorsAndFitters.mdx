@@ -1,0 +1,67 @@
+---
+id: StructuralMetalFabricatorsAndFitters
+slug: StructuralMetalFabricatorsAndFitters
+code:
+  code: null
+title:
+  title: null
+description: Fabricate, position, align, and fit parts of structural metal products.
+$id: https://graph.org.ai/occupations/StructuralMetalFabricatorsAndFitters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$StructuralMetalFabricatorsAndFitters`
+      };
+  }));
+
+# Structural Metal Fabricators and Fitters
+
+**O*NET Code**: 51-2041.00
+
+Fabricate, position, align, and fit parts of structural metal products.
+
+## Job Profile
+<JobZone occupation=StructuralMetalFabricatorsAndFitters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=StructuralMetalFabricatorsAndFitters />
+
+### General Activities
+<Activities occupation=StructuralMetalFabricatorsAndFitters />
+
+## Qualifications
+### Skills
+<Skills occupation=StructuralMetalFabricatorsAndFitters />
+
+### Knowledge
+<Knowledge occupation=StructuralMetalFabricatorsAndFitters />
+
+### Abilities
+<Abilities occupation=StructuralMetalFabricatorsAndFitters />
+
+## Work Context
+<WorkContext occupation=StructuralMetalFabricatorsAndFitters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=StructuralMetalFabricatorsAndFitters />
+
+### Industries
+<Industries occupation=StructuralMetalFabricatorsAndFitters />

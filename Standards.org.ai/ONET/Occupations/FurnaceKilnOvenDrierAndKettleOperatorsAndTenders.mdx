@@ -1,0 +1,70 @@
+---
+id: FurnaceKilnOvenDrierAndKettleOperatorsAndTenders
+slug: FurnaceKilnOvenDrierAndKettleOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend heating equipment other than basic metal, plastic,
+  or food processing equipment. Includes activities such as annealing glass,
+  drying lumber, curing rubber, removing moisture from materials, or boiling
+  soap.
+$id: https://graph.org.ai/occupations/FurnaceKilnOvenDrierAndKettleOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FurnaceKilnOvenDrierAndKettleOperatorsAndTenders`
+      };
+  }));
+
+# Furnace, Kiln, Oven, Drier, and Kettle Operators and Tenders
+
+**O*NET Code**: 51-9051.00
+
+Operate or tend heating equipment other than basic metal, plastic, or food processing equipment. Includes activities such as annealing glass, drying lumber, curing rubber, removing moisture from materials, or boiling soap.
+
+## Job Profile
+<JobZone occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />
+
+### Industries
+<Industries occupation=FurnaceKilnOvenDrierAndKettleOperatorsAndTenders />

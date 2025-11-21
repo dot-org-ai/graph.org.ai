@@ -1,0 +1,69 @@
+---
+id: PharmacyAides
+slug: PharmacyAides
+code:
+  code: null
+title:
+  title: null
+description: Record drugs delivered to the pharmacy, store incoming merchandise,
+  and inform the supervisor of stock needs. May operate cash register and accept
+  prescriptions for filling.
+$id: https://graph.org.ai/occupations/PharmacyAides
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PharmacyAides`
+      };
+  }));
+
+# Pharmacy Aides
+
+**O*NET Code**: 31-9095.00
+
+Record drugs delivered to the pharmacy, store incoming merchandise, and inform the supervisor of stock needs. May operate cash register and accept prescriptions for filling.
+
+## Job Profile
+<JobZone occupation=PharmacyAides />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PharmacyAides />
+
+### General Activities
+<Activities occupation=PharmacyAides />
+
+## Qualifications
+### Skills
+<Skills occupation=PharmacyAides />
+
+### Knowledge
+<Knowledge occupation=PharmacyAides />
+
+### Abilities
+<Abilities occupation=PharmacyAides />
+
+## Work Context
+<WorkContext occupation=PharmacyAides />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PharmacyAides />
+
+### Industries
+<Industries occupation=PharmacyAides />

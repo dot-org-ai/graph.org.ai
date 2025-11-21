@@ -1,0 +1,71 @@
+---
+id: RecreationalVehicleServiceTechnicians
+slug: RecreationalVehicleServiceTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, inspect, adjust, repair, or overhaul recreational
+  vehicles including travel trailers. May specialize in maintaining gas,
+  electrical, hydraulic, plumbing, or chassis/towing systems as well as
+  repairing generators, appliances, and interior components. Includes workers
+  who perform customized van conversions.
+$id: https://graph.org.ai/occupations/RecreationalVehicleServiceTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RecreationalVehicleServiceTechnicians`
+      };
+  }));
+
+# Recreational Vehicle Service Technicians
+
+**O*NET Code**: 49-3092.00
+
+Diagnose, inspect, adjust, repair, or overhaul recreational vehicles including travel trailers. May specialize in maintaining gas, electrical, hydraulic, plumbing, or chassis/towing systems as well as repairing generators, appliances, and interior components. Includes workers who perform customized van conversions.
+
+## Job Profile
+<JobZone occupation=RecreationalVehicleServiceTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RecreationalVehicleServiceTechnicians />
+
+### General Activities
+<Activities occupation=RecreationalVehicleServiceTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=RecreationalVehicleServiceTechnicians />
+
+### Knowledge
+<Knowledge occupation=RecreationalVehicleServiceTechnicians />
+
+### Abilities
+<Abilities occupation=RecreationalVehicleServiceTechnicians />
+
+## Work Context
+<WorkContext occupation=RecreationalVehicleServiceTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RecreationalVehicleServiceTechnicians />
+
+### Industries
+<Industries occupation=RecreationalVehicleServiceTechnicians />

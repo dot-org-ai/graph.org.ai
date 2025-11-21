@@ -1,0 +1,69 @@
+---
+id: SepticTankServicersAndSewerPipeCleaners
+slug: SepticTankServicersAndSewerPipeCleaners
+code:
+  code: null
+title:
+  title: null
+description: Clean and repair septic tanks, sewer lines, or drains. May patch
+  walls and partitions of tank, replace damaged drain tile, or repair breaks in
+  underground piping.
+$id: https://graph.org.ai/occupations/SepticTankServicersAndSewerPipeCleaners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SepticTankServicersAndSewerPipeCleaners`
+      };
+  }));
+
+# Septic Tank Servicers and Sewer Pipe Cleaners
+
+**O*NET Code**: 47-4071.00
+
+Clean and repair septic tanks, sewer lines, or drains. May patch walls and partitions of tank, replace damaged drain tile, or repair breaks in underground piping.
+
+## Job Profile
+<JobZone occupation=SepticTankServicersAndSewerPipeCleaners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SepticTankServicersAndSewerPipeCleaners />
+
+### General Activities
+<Activities occupation=SepticTankServicersAndSewerPipeCleaners />
+
+## Qualifications
+### Skills
+<Skills occupation=SepticTankServicersAndSewerPipeCleaners />
+
+### Knowledge
+<Knowledge occupation=SepticTankServicersAndSewerPipeCleaners />
+
+### Abilities
+<Abilities occupation=SepticTankServicersAndSewerPipeCleaners />
+
+## Work Context
+<WorkContext occupation=SepticTankServicersAndSewerPipeCleaners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SepticTankServicersAndSewerPipeCleaners />
+
+### Industries
+<Industries occupation=SepticTankServicersAndSewerPipeCleaners />

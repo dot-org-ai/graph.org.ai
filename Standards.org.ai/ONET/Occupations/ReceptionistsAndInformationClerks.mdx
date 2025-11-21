@@ -1,0 +1,70 @@
+---
+id: ReceptionistsAndInformationClerks
+slug: ReceptionistsAndInformationClerks
+code:
+  code: null
+title:
+  title: null
+description: Answer inquiries and provide information to the general public,
+  customers, visitors, and other interested parties regarding activities
+  conducted at establishment and location of departments, offices, and employees
+  within the organization.
+$id: https://graph.org.ai/occupations/ReceptionistsAndInformationClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ReceptionistsAndInformationClerks`
+      };
+  }));
+
+# Receptionists and Information Clerks
+
+**O*NET Code**: 43-4171.00
+
+Answer inquiries and provide information to the general public, customers, visitors, and other interested parties regarding activities conducted at establishment and location of departments, offices, and employees within the organization.
+
+## Job Profile
+<JobZone occupation=ReceptionistsAndInformationClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ReceptionistsAndInformationClerks />
+
+### General Activities
+<Activities occupation=ReceptionistsAndInformationClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=ReceptionistsAndInformationClerks />
+
+### Knowledge
+<Knowledge occupation=ReceptionistsAndInformationClerks />
+
+### Abilities
+<Abilities occupation=ReceptionistsAndInformationClerks />
+
+## Work Context
+<WorkContext occupation=ReceptionistsAndInformationClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ReceptionistsAndInformationClerks />
+
+### Industries
+<Industries occupation=ReceptionistsAndInformationClerks />

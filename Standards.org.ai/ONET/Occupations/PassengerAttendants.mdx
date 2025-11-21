@@ -1,0 +1,70 @@
+---
+id: PassengerAttendants
+slug: PassengerAttendants
+code:
+  code: null
+title:
+  title: null
+description: Provide services to ensure the safety of passengers aboard ships,
+  buses, trains, or within the station or terminal. Perform duties such as
+  explaining the use of safety equipment, serving meals or beverages, or
+  answering questions related to travel.
+$id: https://graph.org.ai/occupations/PassengerAttendants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PassengerAttendants`
+      };
+  }));
+
+# Passenger Attendants
+
+**O*NET Code**: 53-6061.00
+
+Provide services to ensure the safety of passengers aboard ships, buses, trains, or within the station or terminal. Perform duties such as explaining the use of safety equipment, serving meals or beverages, or answering questions related to travel.
+
+## Job Profile
+<JobZone occupation=PassengerAttendants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PassengerAttendants />
+
+### General Activities
+<Activities occupation=PassengerAttendants />
+
+## Qualifications
+### Skills
+<Skills occupation=PassengerAttendants />
+
+### Knowledge
+<Knowledge occupation=PassengerAttendants />
+
+### Abilities
+<Abilities occupation=PassengerAttendants />
+
+## Work Context
+<WorkContext occupation=PassengerAttendants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PassengerAttendants />
+
+### Industries
+<Industries occupation=PassengerAttendants />

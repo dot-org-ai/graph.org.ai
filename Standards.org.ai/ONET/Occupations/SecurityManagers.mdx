@@ -1,0 +1,68 @@
+---
+id: SecurityManagers
+slug: SecurityManagers
+code:
+  code: null
+title:
+  title: null
+description: Direct an organization's security functions, including physical
+  security and safety of employees and facilities.
+$id: https://graph.org.ai/occupations/SecurityManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SecurityManagers`
+      };
+  }));
+
+# Security Managers
+
+**O*NET Code**: 11-3013.01
+
+Direct an organization's security functions, including physical security and safety of employees and facilities.
+
+## Job Profile
+<JobZone occupation=SecurityManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SecurityManagers />
+
+### General Activities
+<Activities occupation=SecurityManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=SecurityManagers />
+
+### Knowledge
+<Knowledge occupation=SecurityManagers />
+
+### Abilities
+<Abilities occupation=SecurityManagers />
+
+## Work Context
+<WorkContext occupation=SecurityManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SecurityManagers />
+
+### Industries
+<Industries occupation=SecurityManagers />

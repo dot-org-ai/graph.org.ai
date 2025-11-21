@@ -1,0 +1,70 @@
+---
+id: HealthInformaticsSpecialists
+slug: HealthInformaticsSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Apply knowledge of nursing and informatics to assist in the design,
+  development, and ongoing modification of computerized health care systems. May
+  educate staff and assist in problem solving to promote the implementation of
+  the health care system.
+$id: https://graph.org.ai/occupations/HealthInformaticsSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HealthInformaticsSpecialists`
+      };
+  }));
+
+# Health Informatics Specialists
+
+**O*NET Code**: 15-1211.01
+
+Apply knowledge of nursing and informatics to assist in the design, development, and ongoing modification of computerized health care systems. May educate staff and assist in problem solving to promote the implementation of the health care system.
+
+## Job Profile
+<JobZone occupation=HealthInformaticsSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HealthInformaticsSpecialists />
+
+### General Activities
+<Activities occupation=HealthInformaticsSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=HealthInformaticsSpecialists />
+
+### Knowledge
+<Knowledge occupation=HealthInformaticsSpecialists />
+
+### Abilities
+<Abilities occupation=HealthInformaticsSpecialists />
+
+## Work Context
+<WorkContext occupation=HealthInformaticsSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HealthInformaticsSpecialists />
+
+### Industries
+<Industries occupation=HealthInformaticsSpecialists />

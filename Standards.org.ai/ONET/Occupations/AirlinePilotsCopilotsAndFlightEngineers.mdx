@@ -1,0 +1,71 @@
+---
+id: AirlinePilotsCopilotsAndFlightEngineers
+slug: AirlinePilotsCopilotsAndFlightEngineers
+code:
+  code: null
+title:
+  title: null
+description: Pilot and navigate the flight of fixed-wing aircraft, usually on
+  scheduled air carrier routes, for the transport of passengers and cargo.
+  Requires Federal Air Transport certificate and rating for specific aircraft
+  type used. Includes regional, national, and international airline pilots and
+  flight instructors of airline pilots.
+$id: https://graph.org.ai/occupations/AirlinePilotsCopilotsAndFlightEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AirlinePilotsCopilotsAndFlightEngineers`
+      };
+  }));
+
+# Airline Pilots, Copilots, and Flight Engineers
+
+**O*NET Code**: 53-2011.00
+
+Pilot and navigate the flight of fixed-wing aircraft, usually on scheduled air carrier routes, for the transport of passengers and cargo. Requires Federal Air Transport certificate and rating for specific aircraft type used. Includes regional, national, and international airline pilots and flight instructors of airline pilots.
+
+## Job Profile
+<JobZone occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+### General Activities
+<Activities occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+### Knowledge
+<Knowledge occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+### Abilities
+<Abilities occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+## Work Context
+<WorkContext occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AirlinePilotsCopilotsAndFlightEngineers />
+
+### Industries
+<Industries occupation=AirlinePilotsCopilotsAndFlightEngineers />

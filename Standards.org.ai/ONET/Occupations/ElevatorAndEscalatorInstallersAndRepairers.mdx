@@ -1,0 +1,68 @@
+---
+id: ElevatorAndEscalatorInstallersAndRepairers
+slug: ElevatorAndEscalatorInstallersAndRepairers
+code:
+  code: null
+title:
+  title: null
+description: Assemble, install, repair, or maintain electric or hydraulic
+  freight or passenger elevators, escalators, or dumbwaiters.
+$id: https://graph.org.ai/occupations/ElevatorAndEscalatorInstallersAndRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElevatorAndEscalatorInstallersAndRepairers`
+      };
+  }));
+
+# Elevator and Escalator Installers and Repairers
+
+**O*NET Code**: 47-4021.00
+
+Assemble, install, repair, or maintain electric or hydraulic freight or passenger elevators, escalators, or dumbwaiters.
+
+## Job Profile
+<JobZone occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+### General Activities
+<Activities occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+### Knowledge
+<Knowledge occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+### Abilities
+<Abilities occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+## Work Context
+<WorkContext occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElevatorAndEscalatorInstallersAndRepairers />
+
+### Industries
+<Industries occupation=ElevatorAndEscalatorInstallersAndRepairers />

@@ -1,0 +1,73 @@
+---
+id: GeoscientistsExceptHydrologistsAndGeographers
+slug: GeoscientistsExceptHydrologistsAndGeographers
+code:
+  code: null
+title:
+  title: null
+description: Study the composition, structure, and other physical aspects of the
+  Earth. May use geological, physics, and mathematics knowledge in exploration
+  for oil, gas, minerals, or underground water; or in waste disposal, land
+  reclamation, or other environmental problems. May study the Earth's internal
+  composition, atmospheres, and oceans, and its magnetic, electrical, and
+  gravitational forces. Includes mineralogists, paleontologists, stratigraphers,
+  geodesists, and seismologists.
+$id: https://graph.org.ai/occupations/GeoscientistsExceptHydrologistsAndGeographers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GeoscientistsExceptHydrologistsAndGeographers`
+      };
+  }));
+
+# Geoscientists, Except Hydrologists and Geographers
+
+**O*NET Code**: 19-2042.00
+
+Study the composition, structure, and other physical aspects of the Earth. May use geological, physics, and mathematics knowledge in exploration for oil, gas, minerals, or underground water; or in waste disposal, land reclamation, or other environmental problems. May study the Earth's internal composition, atmospheres, and oceans, and its magnetic, electrical, and gravitational forces. Includes mineralogists, paleontologists, stratigraphers, geodesists, and seismologists.
+
+## Job Profile
+<JobZone occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+### General Activities
+<Activities occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+## Qualifications
+### Skills
+<Skills occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+### Knowledge
+<Knowledge occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+### Abilities
+<Abilities occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+## Work Context
+<WorkContext occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GeoscientistsExceptHydrologistsAndGeographers />
+
+### Industries
+<Industries occupation=GeoscientistsExceptHydrologistsAndGeographers />

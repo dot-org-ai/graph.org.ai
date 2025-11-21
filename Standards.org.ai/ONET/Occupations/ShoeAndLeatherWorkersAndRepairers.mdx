@@ -1,0 +1,68 @@
+---
+id: ShoeAndLeatherWorkersAndRepairers
+slug: ShoeAndLeatherWorkersAndRepairers
+code:
+  code: null
+title:
+  title: null
+description: Construct, decorate, or repair leather and leather-like products,
+  such as luggage, shoes, and saddles. May use hand tools.
+$id: https://graph.org.ai/occupations/ShoeAndLeatherWorkersAndRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ShoeAndLeatherWorkersAndRepairers`
+      };
+  }));
+
+# Shoe and Leather Workers and Repairers
+
+**O*NET Code**: 51-6041.00
+
+Construct, decorate, or repair leather and leather-like products, such as luggage, shoes, and saddles. May use hand tools.
+
+## Job Profile
+<JobZone occupation=ShoeAndLeatherWorkersAndRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ShoeAndLeatherWorkersAndRepairers />
+
+### General Activities
+<Activities occupation=ShoeAndLeatherWorkersAndRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=ShoeAndLeatherWorkersAndRepairers />
+
+### Knowledge
+<Knowledge occupation=ShoeAndLeatherWorkersAndRepairers />
+
+### Abilities
+<Abilities occupation=ShoeAndLeatherWorkersAndRepairers />
+
+## Work Context
+<WorkContext occupation=ShoeAndLeatherWorkersAndRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ShoeAndLeatherWorkersAndRepairers />
+
+### Industries
+<Industries occupation=ShoeAndLeatherWorkersAndRepairers />

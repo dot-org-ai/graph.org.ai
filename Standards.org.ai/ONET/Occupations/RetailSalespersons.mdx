@@ -1,0 +1,68 @@
+---
+id: RetailSalespersons
+slug: RetailSalespersons
+code:
+  code: null
+title:
+  title: null
+description: Sell merchandise, such as furniture, motor vehicles, appliances, or
+  apparel to consumers.
+$id: https://graph.org.ai/occupations/RetailSalespersons
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RetailSalespersons`
+      };
+  }));
+
+# Retail Salespersons
+
+**O*NET Code**: 41-2031.00
+
+Sell merchandise, such as furniture, motor vehicles, appliances, or apparel to consumers.
+
+## Job Profile
+<JobZone occupation=RetailSalespersons />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RetailSalespersons />
+
+### General Activities
+<Activities occupation=RetailSalespersons />
+
+## Qualifications
+### Skills
+<Skills occupation=RetailSalespersons />
+
+### Knowledge
+<Knowledge occupation=RetailSalespersons />
+
+### Abilities
+<Abilities occupation=RetailSalespersons />
+
+## Work Context
+<WorkContext occupation=RetailSalespersons />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RetailSalespersons />
+
+### Industries
+<Industries occupation=RetailSalespersons />

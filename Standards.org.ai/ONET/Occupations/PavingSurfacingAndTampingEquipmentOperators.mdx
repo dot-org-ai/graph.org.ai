@@ -1,0 +1,71 @@
+---
+id: PavingSurfacingAndTampingEquipmentOperators
+slug: PavingSurfacingAndTampingEquipmentOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate equipment used for applying concrete, asphalt, or other
+  materials to road beds, parking lots, or airport runways and taxiways or for
+  tamping gravel, dirt, or other materials. Includes concrete and asphalt paving
+  machine operators, form tampers, tamping machine operators, and stone spreader
+  operators.
+$id: https://graph.org.ai/occupations/PavingSurfacingAndTampingEquipmentOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PavingSurfacingAndTampingEquipmentOperators`
+      };
+  }));
+
+# Paving, Surfacing, and Tamping Equipment Operators
+
+**O*NET Code**: 47-2071.00
+
+Operate equipment used for applying concrete, asphalt, or other materials to road beds, parking lots, or airport runways and taxiways or for tamping gravel, dirt, or other materials. Includes concrete and asphalt paving machine operators, form tampers, tamping machine operators, and stone spreader operators.
+
+## Job Profile
+<JobZone occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+### General Activities
+<Activities occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+### Knowledge
+<Knowledge occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+### Abilities
+<Abilities occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+## Work Context
+<WorkContext occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PavingSurfacingAndTampingEquipmentOperators />
+
+### Industries
+<Industries occupation=PavingSurfacingAndTampingEquipmentOperators />

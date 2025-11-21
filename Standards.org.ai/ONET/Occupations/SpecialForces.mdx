@@ -1,0 +1,77 @@
+---
+id: SpecialForces
+slug: SpecialForces
+code:
+  code: null
+title:
+  title: null
+description: Implement unconventional operations by air, land, or sea during
+  combat or peacetime as members of elite teams. These activities include
+  offensive raids, demolitions, reconnaissance, search and rescue, and
+  counterterrorism. In addition to their combat training, special forces members
+  often have specialized training in swimming, diving, parachuting, survival,
+  emergency medicine, and foreign languages. Duties include conducting advanced
+  reconnaissance operations and collecting intelligence information; recruiting,
+  training, and equipping friendly forces; conducting raids and invasions on
+  enemy territories; laying and detonating explosives for demolition targets;
+  locating, identifying, defusing, and disposing of ordnance; and operating and
+  maintaining sophisticated communications equipment.
+$id: https://graph.org.ai/occupations/SpecialForces
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SpecialForces`
+      };
+  }));
+
+# Special Forces
+
+**O*NET Code**: 55-3018.00
+
+Implement unconventional operations by air, land, or sea during combat or peacetime as members of elite teams. These activities include offensive raids, demolitions, reconnaissance, search and rescue, and counterterrorism. In addition to their combat training, special forces members often have specialized training in swimming, diving, parachuting, survival, emergency medicine, and foreign languages. Duties include conducting advanced reconnaissance operations and collecting intelligence information; recruiting, training, and equipping friendly forces; conducting raids and invasions on enemy territories; laying and detonating explosives for demolition targets; locating, identifying, defusing, and disposing of ordnance; and operating and maintaining sophisticated communications equipment.
+
+## Job Profile
+<JobZone occupation=SpecialForces />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SpecialForces />
+
+### General Activities
+<Activities occupation=SpecialForces />
+
+## Qualifications
+### Skills
+<Skills occupation=SpecialForces />
+
+### Knowledge
+<Knowledge occupation=SpecialForces />
+
+### Abilities
+<Abilities occupation=SpecialForces />
+
+## Work Context
+<WorkContext occupation=SpecialForces />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SpecialForces />
+
+### Industries
+<Industries occupation=SpecialForces />

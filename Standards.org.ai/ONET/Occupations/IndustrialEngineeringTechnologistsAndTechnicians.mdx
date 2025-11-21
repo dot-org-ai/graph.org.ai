@@ -1,0 +1,71 @@
+---
+id: IndustrialEngineeringTechnologistsAndTechnicians
+slug: IndustrialEngineeringTechnologistsAndTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Apply engineering theory and principles to problems of industrial
+  layout or manufacturing production, usually under the direction of engineering
+  staff. May perform time and motion studies on worker operations in a variety
+  of industries for purposes such as establishing standard production rates or
+  improving efficiency.
+$id: https://graph.org.ai/occupations/IndustrialEngineeringTechnologistsAndTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$IndustrialEngineeringTechnologistsAndTechnicians`
+      };
+  }));
+
+# Industrial Engineering Technologists and Technicians
+
+**O*NET Code**: 17-3026.00
+
+Apply engineering theory and principles to problems of industrial layout or manufacturing production, usually under the direction of engineering staff. May perform time and motion studies on worker operations in a variety of industries for purposes such as establishing standard production rates or improving efficiency.
+
+## Job Profile
+<JobZone occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+### General Activities
+<Activities occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+### Knowledge
+<Knowledge occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+### Abilities
+<Abilities occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+## Work Context
+<WorkContext occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=IndustrialEngineeringTechnologistsAndTechnicians />
+
+### Industries
+<Industries occupation=IndustrialEngineeringTechnologistsAndTechnicians />

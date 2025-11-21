@@ -1,0 +1,72 @@
+---
+id: PoliceAndSheriffsPatrolOfficers
+slug: PoliceAndSheriffsPatrolOfficers
+code:
+  code: null
+title:
+  title: null
+description: "Maintain order and protect life and property by enforcing local,
+  tribal, state, or federal laws and ordinances. Perform a combination of the
+  following duties: patrol a specific area; direct traffic; issue traffic
+  summonses; investigate accidents; apprehend and arrest suspects, or serve
+  legal processes of courts. Includes police officers working at educational
+  institutions."
+$id: https://graph.org.ai/occupations/PoliceAndSheriffsPatrolOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PoliceAndSheriffsPatrolOfficers`
+      };
+  }));
+
+# Police and Sheriff's Patrol Officers
+
+**O*NET Code**: 33-3051.00
+
+Maintain order and protect life and property by enforcing local, tribal, state, or federal laws and ordinances. Perform a combination of the following duties: patrol a specific area; direct traffic; issue traffic summonses; investigate accidents; apprehend and arrest suspects, or serve legal processes of courts. Includes police officers working at educational institutions.
+
+## Job Profile
+<JobZone occupation=PoliceAndSheriffsPatrolOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PoliceAndSheriffsPatrolOfficers />
+
+### General Activities
+<Activities occupation=PoliceAndSheriffsPatrolOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=PoliceAndSheriffsPatrolOfficers />
+
+### Knowledge
+<Knowledge occupation=PoliceAndSheriffsPatrolOfficers />
+
+### Abilities
+<Abilities occupation=PoliceAndSheriffsPatrolOfficers />
+
+## Work Context
+<WorkContext occupation=PoliceAndSheriffsPatrolOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PoliceAndSheriffsPatrolOfficers />
+
+### Industries
+<Industries occupation=PoliceAndSheriffsPatrolOfficers />

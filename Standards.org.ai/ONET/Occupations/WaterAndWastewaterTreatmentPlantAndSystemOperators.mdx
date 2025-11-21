@@ -1,0 +1,68 @@
+---
+id: WaterAndWastewaterTreatmentPlantAndSystemOperators
+slug: WaterAndWastewaterTreatmentPlantAndSystemOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate or control an entire process or system of machines, often
+  through the use of control boards, to transfer or treat water or wastewater.
+$id: https://graph.org.ai/occupations/WaterAndWastewaterTreatmentPlantAndSystemOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WaterAndWastewaterTreatmentPlantAndSystemOperators`
+      };
+  }));
+
+# Water and Wastewater Treatment Plant and System Operators
+
+**O*NET Code**: 51-8031.00
+
+Operate or control an entire process or system of machines, often through the use of control boards, to transfer or treat water or wastewater.
+
+## Job Profile
+<JobZone occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+### General Activities
+<Activities occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+### Knowledge
+<Knowledge occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+### Abilities
+<Abilities occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+## Work Context
+<WorkContext occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />
+
+### Industries
+<Industries occupation=WaterAndWastewaterTreatmentPlantAndSystemOperators />

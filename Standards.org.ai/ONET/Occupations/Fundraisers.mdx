@@ -1,0 +1,70 @@
+---
+id: Fundraisers
+slug: Fundraisers
+code:
+  code: null
+title:
+  title: null
+description: Organize activities to raise funds or otherwise solicit and gather
+  monetary donations or other gifts for an organization. May design and produce
+  promotional materials. May also raise awareness of the organization's work,
+  goals, and financial needs.
+$id: https://graph.org.ai/occupations/Fundraisers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Fundraisers`
+      };
+  }));
+
+# Fundraisers
+
+**O*NET Code**: 13-1131.00
+
+Organize activities to raise funds or otherwise solicit and gather monetary donations or other gifts for an organization. May design and produce promotional materials. May also raise awareness of the organization's work, goals, and financial needs.
+
+## Job Profile
+<JobZone occupation=Fundraisers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Fundraisers />
+
+### General Activities
+<Activities occupation=Fundraisers />
+
+## Qualifications
+### Skills
+<Skills occupation=Fundraisers />
+
+### Knowledge
+<Knowledge occupation=Fundraisers />
+
+### Abilities
+<Abilities occupation=Fundraisers />
+
+## Work Context
+<WorkContext occupation=Fundraisers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Fundraisers />
+
+### Industries
+<Industries occupation=Fundraisers />

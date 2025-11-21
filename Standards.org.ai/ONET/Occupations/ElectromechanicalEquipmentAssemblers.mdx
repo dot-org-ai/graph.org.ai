@@ -1,0 +1,69 @@
+---
+id: ElectromechanicalEquipmentAssemblers
+slug: ElectromechanicalEquipmentAssemblers
+code:
+  code: null
+title:
+  title: null
+description: Assemble or modify electromechanical equipment or devices, such as
+  servomechanisms, gyros, dynamometers, magnetic drums, tape drives, brakes,
+  control linkage, actuators, and appliances.
+$id: https://graph.org.ai/occupations/ElectromechanicalEquipmentAssemblers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectromechanicalEquipmentAssemblers`
+      };
+  }));
+
+# Electromechanical Equipment Assemblers
+
+**O*NET Code**: 51-2023.00
+
+Assemble or modify electromechanical equipment or devices, such as servomechanisms, gyros, dynamometers, magnetic drums, tape drives, brakes, control linkage, actuators, and appliances.
+
+## Job Profile
+<JobZone occupation=ElectromechanicalEquipmentAssemblers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectromechanicalEquipmentAssemblers />
+
+### General Activities
+<Activities occupation=ElectromechanicalEquipmentAssemblers />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectromechanicalEquipmentAssemblers />
+
+### Knowledge
+<Knowledge occupation=ElectromechanicalEquipmentAssemblers />
+
+### Abilities
+<Abilities occupation=ElectromechanicalEquipmentAssemblers />
+
+## Work Context
+<WorkContext occupation=ElectromechanicalEquipmentAssemblers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectromechanicalEquipmentAssemblers />
+
+### Industries
+<Industries occupation=ElectromechanicalEquipmentAssemblers />

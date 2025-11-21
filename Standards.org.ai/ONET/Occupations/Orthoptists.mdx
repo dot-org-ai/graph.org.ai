@@ -1,0 +1,68 @@
+---
+id: Orthoptists
+slug: Orthoptists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and treat visual system disorders such as binocular vision
+  and eye movement impairments.
+$id: https://graph.org.ai/occupations/Orthoptists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Orthoptists`
+      };
+  }));
+
+# Orthoptists
+
+**O*NET Code**: 29-1299.02
+
+Diagnose and treat visual system disorders such as binocular vision and eye movement impairments.
+
+## Job Profile
+<JobZone occupation=Orthoptists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Orthoptists />
+
+### General Activities
+<Activities occupation=Orthoptists />
+
+## Qualifications
+### Skills
+<Skills occupation=Orthoptists />
+
+### Knowledge
+<Knowledge occupation=Orthoptists />
+
+### Abilities
+<Abilities occupation=Orthoptists />
+
+## Work Context
+<WorkContext occupation=Orthoptists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Orthoptists />
+
+### Industries
+<Industries occupation=Orthoptists />

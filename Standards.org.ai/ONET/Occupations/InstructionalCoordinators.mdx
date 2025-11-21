@@ -1,0 +1,71 @@
+---
+id: InstructionalCoordinators
+slug: InstructionalCoordinators
+code:
+  code: null
+title:
+  title: null
+description: Develop instructional material, coordinate educational content, and
+  incorporate current technology into instruction in order to provide guidelines
+  to educators and instructors for developing curricula and conducting courses.
+  May train and coach teachers. Includes educational consultants and
+  specialists, and instructional material directors.
+$id: https://graph.org.ai/occupations/InstructionalCoordinators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InstructionalCoordinators`
+      };
+  }));
+
+# Instructional Coordinators
+
+**O*NET Code**: 25-9031.00
+
+Develop instructional material, coordinate educational content, and incorporate current technology into instruction in order to provide guidelines to educators and instructors for developing curricula and conducting courses. May train and coach teachers. Includes educational consultants and specialists, and instructional material directors.
+
+## Job Profile
+<JobZone occupation=InstructionalCoordinators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InstructionalCoordinators />
+
+### General Activities
+<Activities occupation=InstructionalCoordinators />
+
+## Qualifications
+### Skills
+<Skills occupation=InstructionalCoordinators />
+
+### Knowledge
+<Knowledge occupation=InstructionalCoordinators />
+
+### Abilities
+<Abilities occupation=InstructionalCoordinators />
+
+## Work Context
+<WorkContext occupation=InstructionalCoordinators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InstructionalCoordinators />
+
+### Industries
+<Industries occupation=InstructionalCoordinators />

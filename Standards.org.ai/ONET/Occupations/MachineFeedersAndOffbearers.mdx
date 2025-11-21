@@ -1,0 +1,68 @@
+---
+id: MachineFeedersAndOffbearers
+slug: MachineFeedersAndOffbearers
+code:
+  code: null
+title:
+  title: null
+description: Feed materials into or remove materials from machines or equipment
+  that is automatic or tended by other workers.
+$id: https://graph.org.ai/occupations/MachineFeedersAndOffbearers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MachineFeedersAndOffbearers`
+      };
+  }));
+
+# Machine Feeders and Offbearers
+
+**O*NET Code**: 53-7063.00
+
+Feed materials into or remove materials from machines or equipment that is automatic or tended by other workers.
+
+## Job Profile
+<JobZone occupation=MachineFeedersAndOffbearers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MachineFeedersAndOffbearers />
+
+### General Activities
+<Activities occupation=MachineFeedersAndOffbearers />
+
+## Qualifications
+### Skills
+<Skills occupation=MachineFeedersAndOffbearers />
+
+### Knowledge
+<Knowledge occupation=MachineFeedersAndOffbearers />
+
+### Abilities
+<Abilities occupation=MachineFeedersAndOffbearers />
+
+## Work Context
+<WorkContext occupation=MachineFeedersAndOffbearers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MachineFeedersAndOffbearers />
+
+### Industries
+<Industries occupation=MachineFeedersAndOffbearers />

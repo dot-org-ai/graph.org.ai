@@ -1,0 +1,68 @@
+---
+id: CraftArtists
+slug: CraftArtists
+code:
+  code: null
+title:
+  title: null
+description: Create or reproduce handmade objects for sale and exhibition using
+  a variety of techniques, such as welding, weaving, pottery, and needlecraft.
+$id: https://graph.org.ai/occupations/CraftArtists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CraftArtists`
+      };
+  }));
+
+# Craft Artists
+
+**O*NET Code**: 27-1012.00
+
+Create or reproduce handmade objects for sale and exhibition using a variety of techniques, such as welding, weaving, pottery, and needlecraft.
+
+## Job Profile
+<JobZone occupation=CraftArtists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CraftArtists />
+
+### General Activities
+<Activities occupation=CraftArtists />
+
+## Qualifications
+### Skills
+<Skills occupation=CraftArtists />
+
+### Knowledge
+<Knowledge occupation=CraftArtists />
+
+### Abilities
+<Abilities occupation=CraftArtists />
+
+## Work Context
+<WorkContext occupation=CraftArtists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CraftArtists />
+
+### Industries
+<Industries occupation=CraftArtists />

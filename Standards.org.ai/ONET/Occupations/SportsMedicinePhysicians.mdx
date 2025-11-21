@@ -1,0 +1,68 @@
+---
+id: SportsMedicinePhysicians
+slug: SportsMedicinePhysicians
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, and help prevent injuries that occur during
+  sporting events, athletic training, and physical activities.
+$id: https://graph.org.ai/occupations/SportsMedicinePhysicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SportsMedicinePhysicians`
+      };
+  }));
+
+# Sports Medicine Physicians
+
+**O*NET Code**: 29-1229.06
+
+Diagnose, treat, and help prevent injuries that occur during sporting events, athletic training, and physical activities.
+
+## Job Profile
+<JobZone occupation=SportsMedicinePhysicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SportsMedicinePhysicians />
+
+### General Activities
+<Activities occupation=SportsMedicinePhysicians />
+
+## Qualifications
+### Skills
+<Skills occupation=SportsMedicinePhysicians />
+
+### Knowledge
+<Knowledge occupation=SportsMedicinePhysicians />
+
+### Abilities
+<Abilities occupation=SportsMedicinePhysicians />
+
+## Work Context
+<WorkContext occupation=SportsMedicinePhysicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SportsMedicinePhysicians />
+
+### Industries
+<Industries occupation=SportsMedicinePhysicians />

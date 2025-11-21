@@ -1,0 +1,68 @@
+---
+id: GradersAndSortersAgriculturalProducts
+slug: GradersAndSortersAgriculturalProducts
+code:
+  code: null
+title:
+  title: null
+description: Grade, sort, or classify unprocessed food and other agricultural
+  products by size, weight, color, or condition.
+$id: https://graph.org.ai/occupations/GradersAndSortersAgriculturalProducts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GradersAndSortersAgriculturalProducts`
+      };
+  }));
+
+# Graders and Sorters, Agricultural Products
+
+**O*NET Code**: 45-2041.00
+
+Grade, sort, or classify unprocessed food and other agricultural products by size, weight, color, or condition.
+
+## Job Profile
+<JobZone occupation=GradersAndSortersAgriculturalProducts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GradersAndSortersAgriculturalProducts />
+
+### General Activities
+<Activities occupation=GradersAndSortersAgriculturalProducts />
+
+## Qualifications
+### Skills
+<Skills occupation=GradersAndSortersAgriculturalProducts />
+
+### Knowledge
+<Knowledge occupation=GradersAndSortersAgriculturalProducts />
+
+### Abilities
+<Abilities occupation=GradersAndSortersAgriculturalProducts />
+
+## Work Context
+<WorkContext occupation=GradersAndSortersAgriculturalProducts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GradersAndSortersAgriculturalProducts />
+
+### Industries
+<Industries occupation=GradersAndSortersAgriculturalProducts />

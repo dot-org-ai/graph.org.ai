@@ -1,0 +1,67 @@
+---
+id: AthletesAndSportsCompetitors
+slug: AthletesAndSportsCompetitors
+code:
+  code: null
+title:
+  title: null
+description: Compete in athletic events.
+$id: https://graph.org.ai/occupations/AthletesAndSportsCompetitors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AthletesAndSportsCompetitors`
+      };
+  }));
+
+# Athletes and Sports Competitors
+
+**O*NET Code**: 27-2021.00
+
+Compete in athletic events.
+
+## Job Profile
+<JobZone occupation=AthletesAndSportsCompetitors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AthletesAndSportsCompetitors />
+
+### General Activities
+<Activities occupation=AthletesAndSportsCompetitors />
+
+## Qualifications
+### Skills
+<Skills occupation=AthletesAndSportsCompetitors />
+
+### Knowledge
+<Knowledge occupation=AthletesAndSportsCompetitors />
+
+### Abilities
+<Abilities occupation=AthletesAndSportsCompetitors />
+
+## Work Context
+<WorkContext occupation=AthletesAndSportsCompetitors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AthletesAndSportsCompetitors />
+
+### Industries
+<Industries occupation=AthletesAndSportsCompetitors />

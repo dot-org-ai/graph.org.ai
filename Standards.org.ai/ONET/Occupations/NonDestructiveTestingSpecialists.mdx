@@ -1,0 +1,68 @@
+---
+id: NonDestructiveTestingSpecialists
+slug: NonDestructiveTestingSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Test the safety of structures, vehicles, or vessels using x-ray,
+  ultrasound, fiber optic or related equipment.
+$id: https://graph.org.ai/occupations/NonDestructiveTestingSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NonDestructiveTestingSpecialists`
+      };
+  }));
+
+# Non-Destructive Testing Specialists
+
+**O*NET Code**: 17-3029.01
+
+Test the safety of structures, vehicles, or vessels using x-ray, ultrasound, fiber optic or related equipment.
+
+## Job Profile
+<JobZone occupation=NonDestructiveTestingSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NonDestructiveTestingSpecialists />
+
+### General Activities
+<Activities occupation=NonDestructiveTestingSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=NonDestructiveTestingSpecialists />
+
+### Knowledge
+<Knowledge occupation=NonDestructiveTestingSpecialists />
+
+### Abilities
+<Abilities occupation=NonDestructiveTestingSpecialists />
+
+## Work Context
+<WorkContext occupation=NonDestructiveTestingSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NonDestructiveTestingSpecialists />
+
+### Industries
+<Industries occupation=NonDestructiveTestingSpecialists />

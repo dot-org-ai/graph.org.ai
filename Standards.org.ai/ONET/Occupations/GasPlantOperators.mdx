@@ -1,0 +1,68 @@
+---
+id: GasPlantOperators
+slug: GasPlantOperators
+code:
+  code: null
+title:
+  title: null
+description: Distribute or process gas for utility companies and others by
+  controlling compressors to maintain specified pressures on main pipelines.
+$id: https://graph.org.ai/occupations/GasPlantOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GasPlantOperators`
+      };
+  }));
+
+# Gas Plant Operators
+
+**O*NET Code**: 51-8092.00
+
+Distribute or process gas for utility companies and others by controlling compressors to maintain specified pressures on main pipelines.
+
+## Job Profile
+<JobZone occupation=GasPlantOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GasPlantOperators />
+
+### General Activities
+<Activities occupation=GasPlantOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=GasPlantOperators />
+
+### Knowledge
+<Knowledge occupation=GasPlantOperators />
+
+### Abilities
+<Abilities occupation=GasPlantOperators />
+
+## Work Context
+<WorkContext occupation=GasPlantOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GasPlantOperators />
+
+### Industries
+<Industries occupation=GasPlantOperators />

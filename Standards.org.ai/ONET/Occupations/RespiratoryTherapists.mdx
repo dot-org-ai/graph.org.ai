@@ -1,0 +1,71 @@
+---
+id: RespiratoryTherapists
+slug: RespiratoryTherapists
+code:
+  code: null
+title:
+  title: null
+description: Assess, treat, and care for patients with breathing disorders.
+  Assume primary responsibility for all respiratory care modalities, including
+  the supervision of respiratory therapy technicians. Initiate and conduct
+  therapeutic procedures; maintain patient records; and select, assemble, check,
+  and operate equipment.
+$id: https://graph.org.ai/occupations/RespiratoryTherapists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RespiratoryTherapists`
+      };
+  }));
+
+# Respiratory Therapists
+
+**O*NET Code**: 29-1126.00
+
+Assess, treat, and care for patients with breathing disorders. Assume primary responsibility for all respiratory care modalities, including the supervision of respiratory therapy technicians. Initiate and conduct therapeutic procedures; maintain patient records; and select, assemble, check, and operate equipment.
+
+## Job Profile
+<JobZone occupation=RespiratoryTherapists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RespiratoryTherapists />
+
+### General Activities
+<Activities occupation=RespiratoryTherapists />
+
+## Qualifications
+### Skills
+<Skills occupation=RespiratoryTherapists />
+
+### Knowledge
+<Knowledge occupation=RespiratoryTherapists />
+
+### Abilities
+<Abilities occupation=RespiratoryTherapists />
+
+## Work Context
+<WorkContext occupation=RespiratoryTherapists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RespiratoryTherapists />
+
+### Industries
+<Industries occupation=RespiratoryTherapists />

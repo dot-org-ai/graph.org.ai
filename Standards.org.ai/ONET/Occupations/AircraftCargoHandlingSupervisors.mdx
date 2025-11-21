@@ -1,0 +1,72 @@
+---
+id: AircraftCargoHandlingSupervisors
+slug: AircraftCargoHandlingSupervisors
+code:
+  code: null
+title:
+  title: null
+description: Supervise and coordinate the activities of ground crew in the
+  loading, unloading, securing, and staging of aircraft cargo or baggage. May
+  determine the quantity and orientation of cargo and compute aircraft center of
+  gravity. May accompany aircraft as member of flight crew and monitor and
+  handle cargo in flight, and assist and brief passengers on safety and
+  emergency procedures. Includes loadmasters.
+$id: https://graph.org.ai/occupations/AircraftCargoHandlingSupervisors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AircraftCargoHandlingSupervisors`
+      };
+  }));
+
+# Aircraft Cargo Handling Supervisors
+
+**O*NET Code**: 53-1041.00
+
+Supervise and coordinate the activities of ground crew in the loading, unloading, securing, and staging of aircraft cargo or baggage. May determine the quantity and orientation of cargo and compute aircraft center of gravity. May accompany aircraft as member of flight crew and monitor and handle cargo in flight, and assist and brief passengers on safety and emergency procedures. Includes loadmasters.
+
+## Job Profile
+<JobZone occupation=AircraftCargoHandlingSupervisors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AircraftCargoHandlingSupervisors />
+
+### General Activities
+<Activities occupation=AircraftCargoHandlingSupervisors />
+
+## Qualifications
+### Skills
+<Skills occupation=AircraftCargoHandlingSupervisors />
+
+### Knowledge
+<Knowledge occupation=AircraftCargoHandlingSupervisors />
+
+### Abilities
+<Abilities occupation=AircraftCargoHandlingSupervisors />
+
+## Work Context
+<WorkContext occupation=AircraftCargoHandlingSupervisors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AircraftCargoHandlingSupervisors />
+
+### Industries
+<Industries occupation=AircraftCargoHandlingSupervisors />

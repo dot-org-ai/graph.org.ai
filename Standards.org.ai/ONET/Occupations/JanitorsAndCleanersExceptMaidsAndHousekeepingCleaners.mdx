@@ -1,0 +1,71 @@
+---
+id: JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners
+slug: JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners
+code:
+  code: null
+title:
+  title: null
+description: Keep buildings in clean and orderly condition. Perform heavy
+  cleaning duties, such as cleaning floors, shampooing rugs, washing walls and
+  glass, and removing rubbish. Duties may include tending furnace and boiler,
+  performing routine maintenance activities, notifying management of need for
+  repairs, and cleaning snow or debris from sidewalk.
+$id: https://graph.org.ai/occupations/JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners`
+      };
+  }));
+
+# Janitors and Cleaners, Except Maids and Housekeeping Cleaners
+
+**O*NET Code**: 37-2011.00
+
+Keep buildings in clean and orderly condition. Perform heavy cleaning duties, such as cleaning floors, shampooing rugs, washing walls and glass, and removing rubbish. Duties may include tending furnace and boiler, performing routine maintenance activities, notifying management of need for repairs, and cleaning snow or debris from sidewalk.
+
+## Job Profile
+<JobZone occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+### General Activities
+<Activities occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+## Qualifications
+### Skills
+<Skills occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+### Knowledge
+<Knowledge occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+### Abilities
+<Abilities occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+## Work Context
+<WorkContext occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />
+
+### Industries
+<Industries occupation=JanitorsAndCleanersExceptMaidsAndHousekeepingCleaners />

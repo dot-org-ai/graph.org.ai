@@ -1,0 +1,70 @@
+---
+id: OralAndMaxillofacialSurgeons
+slug: OralAndMaxillofacialSurgeons
+code:
+  code: null
+title:
+  title: null
+description: Perform surgery and related procedures on the hard and soft tissues
+  of the oral and maxillofacial regions to treat diseases, injuries, or defects.
+  May diagnose problems of the oral and maxillofacial regions. May perform
+  surgery to improve function or appearance.
+$id: https://graph.org.ai/occupations/OralAndMaxillofacialSurgeons
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$OralAndMaxillofacialSurgeons`
+      };
+  }));
+
+# Oral and Maxillofacial Surgeons
+
+**O*NET Code**: 29-1022.00
+
+Perform surgery and related procedures on the hard and soft tissues of the oral and maxillofacial regions to treat diseases, injuries, or defects. May diagnose problems of the oral and maxillofacial regions. May perform surgery to improve function or appearance.
+
+## Job Profile
+<JobZone occupation=OralAndMaxillofacialSurgeons />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=OralAndMaxillofacialSurgeons />
+
+### General Activities
+<Activities occupation=OralAndMaxillofacialSurgeons />
+
+## Qualifications
+### Skills
+<Skills occupation=OralAndMaxillofacialSurgeons />
+
+### Knowledge
+<Knowledge occupation=OralAndMaxillofacialSurgeons />
+
+### Abilities
+<Abilities occupation=OralAndMaxillofacialSurgeons />
+
+## Work Context
+<WorkContext occupation=OralAndMaxillofacialSurgeons />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=OralAndMaxillofacialSurgeons />
+
+### Industries
+<Industries occupation=OralAndMaxillofacialSurgeons />

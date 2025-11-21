@@ -1,0 +1,69 @@
+---
+id: PhysicalTherapistAides
+slug: PhysicalTherapistAides
+code:
+  code: null
+title:
+  title: null
+description: Under close supervision of a physical therapist or physical therapy
+  assistant, perform only delegated, selected, or routine tasks in specific
+  situations. These duties include preparing the patient and the treatment area.
+$id: https://graph.org.ai/occupations/PhysicalTherapistAides
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhysicalTherapistAides`
+      };
+  }));
+
+# Physical Therapist Aides
+
+**O*NET Code**: 31-2022.00
+
+Under close supervision of a physical therapist or physical therapy assistant, perform only delegated, selected, or routine tasks in specific situations. These duties include preparing the patient and the treatment area.
+
+## Job Profile
+<JobZone occupation=PhysicalTherapistAides />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhysicalTherapistAides />
+
+### General Activities
+<Activities occupation=PhysicalTherapistAides />
+
+## Qualifications
+### Skills
+<Skills occupation=PhysicalTherapistAides />
+
+### Knowledge
+<Knowledge occupation=PhysicalTherapistAides />
+
+### Abilities
+<Abilities occupation=PhysicalTherapistAides />
+
+## Work Context
+<WorkContext occupation=PhysicalTherapistAides />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhysicalTherapistAides />
+
+### Industries
+<Industries occupation=PhysicalTherapistAides />

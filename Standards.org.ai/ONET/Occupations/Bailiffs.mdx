@@ -1,0 +1,67 @@
+---
+id: Bailiffs
+slug: Bailiffs
+code:
+  code: null
+title:
+  title: null
+description: Maintain order in courts of law.
+$id: https://graph.org.ai/occupations/Bailiffs
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Bailiffs`
+      };
+  }));
+
+# Bailiffs
+
+**O*NET Code**: 33-3011.00
+
+Maintain order in courts of law.
+
+## Job Profile
+<JobZone occupation=Bailiffs />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Bailiffs />
+
+### General Activities
+<Activities occupation=Bailiffs />
+
+## Qualifications
+### Skills
+<Skills occupation=Bailiffs />
+
+### Knowledge
+<Knowledge occupation=Bailiffs />
+
+### Abilities
+<Abilities occupation=Bailiffs />
+
+## Work Context
+<WorkContext occupation=Bailiffs />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Bailiffs />
+
+### Industries
+<Industries occupation=Bailiffs />

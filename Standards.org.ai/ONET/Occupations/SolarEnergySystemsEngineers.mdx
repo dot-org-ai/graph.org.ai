@@ -1,0 +1,71 @@
+---
+id: SolarEnergySystemsEngineers
+slug: SolarEnergySystemsEngineers
+code:
+  code: null
+title:
+  title: null
+description: Perform site-specific engineering analysis or evaluation of energy
+  efficiency and solar projects involving residential, commercial, or industrial
+  customers. Design solar domestic hot water and space heating systems for new
+  and existing structures, applying knowledge of structural energy requirements,
+  local climates, solar technology, and thermodynamics.
+$id: https://graph.org.ai/occupations/SolarEnergySystemsEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SolarEnergySystemsEngineers`
+      };
+  }));
+
+# Solar Energy Systems Engineers
+
+**O*NET Code**: 17-2199.11
+
+Perform site-specific engineering analysis or evaluation of energy efficiency and solar projects involving residential, commercial, or industrial customers. Design solar domestic hot water and space heating systems for new and existing structures, applying knowledge of structural energy requirements, local climates, solar technology, and thermodynamics.
+
+## Job Profile
+<JobZone occupation=SolarEnergySystemsEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SolarEnergySystemsEngineers />
+
+### General Activities
+<Activities occupation=SolarEnergySystemsEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=SolarEnergySystemsEngineers />
+
+### Knowledge
+<Knowledge occupation=SolarEnergySystemsEngineers />
+
+### Abilities
+<Abilities occupation=SolarEnergySystemsEngineers />
+
+## Work Context
+<WorkContext occupation=SolarEnergySystemsEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SolarEnergySystemsEngineers />
+
+### Industries
+<Industries occupation=SolarEnergySystemsEngineers />

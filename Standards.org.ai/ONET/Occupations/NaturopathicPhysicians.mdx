@@ -1,0 +1,71 @@
+---
+id: NaturopathicPhysicians
+slug: NaturopathicPhysicians
+code:
+  code: null
+title:
+  title: null
+description: Diagnose, treat, and help prevent diseases using a system of
+  practice that is based on the natural healing capacity of individuals. May use
+  physiological, psychological or mechanical methods. May also use natural
+  medicines, prescription or legend drugs, foods, herbs, or other natural
+  remedies.
+$id: https://graph.org.ai/occupations/NaturopathicPhysicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NaturopathicPhysicians`
+      };
+  }));
+
+# Naturopathic Physicians
+
+**O*NET Code**: 29-1299.01
+
+Diagnose, treat, and help prevent diseases using a system of practice that is based on the natural healing capacity of individuals. May use physiological, psychological or mechanical methods. May also use natural medicines, prescription or legend drugs, foods, herbs, or other natural remedies.
+
+## Job Profile
+<JobZone occupation=NaturopathicPhysicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NaturopathicPhysicians />
+
+### General Activities
+<Activities occupation=NaturopathicPhysicians />
+
+## Qualifications
+### Skills
+<Skills occupation=NaturopathicPhysicians />
+
+### Knowledge
+<Knowledge occupation=NaturopathicPhysicians />
+
+### Abilities
+<Abilities occupation=NaturopathicPhysicians />
+
+## Work Context
+<WorkContext occupation=NaturopathicPhysicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NaturopathicPhysicians />
+
+### Industries
+<Industries occupation=NaturopathicPhysicians />

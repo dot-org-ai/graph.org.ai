@@ -1,0 +1,70 @@
+---
+id: ForeignLanguageAndLiteratureTeachersPostsecondary
+slug: ForeignLanguageAndLiteratureTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach languages and literature courses in languages other than
+  English. Includes teachers of American Sign Language (ASL). Includes both
+  teachers primarily engaged in teaching and those who do a combination of
+  teaching and research.
+$id: https://graph.org.ai/occupations/ForeignLanguageAndLiteratureTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ForeignLanguageAndLiteratureTeachersPostsecondary`
+      };
+  }));
+
+# Foreign Language and Literature Teachers, Postsecondary
+
+**O*NET Code**: 25-1124.00
+
+Teach languages and literature courses in languages other than English. Includes teachers of American Sign Language (ASL). Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />
+
+### Industries
+<Industries occupation=ForeignLanguageAndLiteratureTeachersPostsecondary />

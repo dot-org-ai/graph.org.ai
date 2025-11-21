@@ -1,0 +1,72 @@
+---
+id: ProductionPlanningAndExpeditingClerks
+slug: ProductionPlanningAndExpeditingClerks
+code:
+  code: null
+title:
+  title: null
+description: Coordinate and expedite the flow of work and materials within or
+  between departments of an establishment according to production schedule.
+  Duties include reviewing and distributing production, work, and shipment
+  schedules; conferring with department supervisors to determine progress of
+  work and completion dates; and compiling reports on progress of work,
+  inventory levels, costs, and production problems.
+$id: https://graph.org.ai/occupations/ProductionPlanningAndExpeditingClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ProductionPlanningAndExpeditingClerks`
+      };
+  }));
+
+# Production, Planning, and Expediting Clerks
+
+**O*NET Code**: 43-5061.00
+
+Coordinate and expedite the flow of work and materials within or between departments of an establishment according to production schedule. Duties include reviewing and distributing production, work, and shipment schedules; conferring with department supervisors to determine progress of work and completion dates; and compiling reports on progress of work, inventory levels, costs, and production problems.
+
+## Job Profile
+<JobZone occupation=ProductionPlanningAndExpeditingClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ProductionPlanningAndExpeditingClerks />
+
+### General Activities
+<Activities occupation=ProductionPlanningAndExpeditingClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=ProductionPlanningAndExpeditingClerks />
+
+### Knowledge
+<Knowledge occupation=ProductionPlanningAndExpeditingClerks />
+
+### Abilities
+<Abilities occupation=ProductionPlanningAndExpeditingClerks />
+
+## Work Context
+<WorkContext occupation=ProductionPlanningAndExpeditingClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ProductionPlanningAndExpeditingClerks />
+
+### Industries
+<Industries occupation=ProductionPlanningAndExpeditingClerks />

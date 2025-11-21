@@ -1,0 +1,72 @@
+---
+id: LibraryAssistantsClerical
+slug: LibraryAssistantsClerical
+code:
+  code: null
+title:
+  title: null
+description: Compile records, and sort, shelve, issue, and receive library
+  materials such as books, electronic media, pictures, cards, slides and
+  microfilm. Locate library materials for loan and replace material in shelving
+  area, stacks, or files according to identification number and title. Register
+  patrons to permit them to borrow books, periodicals, and other library
+  materials.
+$id: https://graph.org.ai/occupations/LibraryAssistantsClerical
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LibraryAssistantsClerical`
+      };
+  }));
+
+# Library Assistants, Clerical
+
+**O*NET Code**: 43-4121.00
+
+Compile records, and sort, shelve, issue, and receive library materials such as books, electronic media, pictures, cards, slides and microfilm. Locate library materials for loan and replace material in shelving area, stacks, or files according to identification number and title. Register patrons to permit them to borrow books, periodicals, and other library materials.
+
+## Job Profile
+<JobZone occupation=LibraryAssistantsClerical />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LibraryAssistantsClerical />
+
+### General Activities
+<Activities occupation=LibraryAssistantsClerical />
+
+## Qualifications
+### Skills
+<Skills occupation=LibraryAssistantsClerical />
+
+### Knowledge
+<Knowledge occupation=LibraryAssistantsClerical />
+
+### Abilities
+<Abilities occupation=LibraryAssistantsClerical />
+
+## Work Context
+<WorkContext occupation=LibraryAssistantsClerical />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LibraryAssistantsClerical />
+
+### Industries
+<Industries occupation=LibraryAssistantsClerical />

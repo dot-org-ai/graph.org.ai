@@ -1,0 +1,69 @@
+---
+id: ChiefSustainabilityOfficers
+slug: ChiefSustainabilityOfficers
+code:
+  code: null
+title:
+  title: null
+description: Communicate and coordinate with management, shareholders,
+  customers, and employees to address sustainability issues. Enact or oversee a
+  corporate sustainability strategy.
+$id: https://graph.org.ai/occupations/ChiefSustainabilityOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ChiefSustainabilityOfficers`
+      };
+  }));
+
+# Chief Sustainability Officers
+
+**O*NET Code**: 11-1011.03
+
+Communicate and coordinate with management, shareholders, customers, and employees to address sustainability issues. Enact or oversee a corporate sustainability strategy.
+
+## Job Profile
+<JobZone occupation=ChiefSustainabilityOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ChiefSustainabilityOfficers />
+
+### General Activities
+<Activities occupation=ChiefSustainabilityOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=ChiefSustainabilityOfficers />
+
+### Knowledge
+<Knowledge occupation=ChiefSustainabilityOfficers />
+
+### Abilities
+<Abilities occupation=ChiefSustainabilityOfficers />
+
+## Work Context
+<WorkContext occupation=ChiefSustainabilityOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ChiefSustainabilityOfficers />
+
+### Industries
+<Industries occupation=ChiefSustainabilityOfficers />

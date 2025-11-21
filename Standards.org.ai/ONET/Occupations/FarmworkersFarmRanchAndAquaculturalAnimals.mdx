@@ -1,0 +1,76 @@
+---
+id: FarmworkersFarmRanchAndAquaculturalAnimals
+slug: FarmworkersFarmRanchAndAquaculturalAnimals
+code:
+  code: null
+title:
+  title: null
+description: Attend to live farm, ranch, open range or aquacultural animals that
+  may include cattle, sheep, swine, goats, horses and other equines, poultry,
+  rabbits, finfish, shellfish, and bees. Attend to animals produced for animal
+  products, such as meat, fur, skins, feathers, eggs, milk, and honey. Duties
+  may include feeding, watering, herding, grazing, milking, castrating,
+  branding, de-beaking, weighing, catching, and loading animals. May maintain
+  records on animals; examine animals to detect diseases and injuries; assist in
+  birth deliveries; and administer medications, vaccinations, or insecticides as
+  appropriate. May clean and maintain animal housing areas. Includes workers who
+  shear wool from sheep and collect eggs in hatcheries.
+$id: https://graph.org.ai/occupations/FarmworkersFarmRanchAndAquaculturalAnimals
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FarmworkersFarmRanchAndAquaculturalAnimals`
+      };
+  }));
+
+# Farmworkers, Farm, Ranch, and Aquacultural Animals
+
+**O*NET Code**: 45-2093.00
+
+Attend to live farm, ranch, open range or aquacultural animals that may include cattle, sheep, swine, goats, horses and other equines, poultry, rabbits, finfish, shellfish, and bees. Attend to animals produced for animal products, such as meat, fur, skins, feathers, eggs, milk, and honey. Duties may include feeding, watering, herding, grazing, milking, castrating, branding, de-beaking, weighing, catching, and loading animals. May maintain records on animals; examine animals to detect diseases and injuries; assist in birth deliveries; and administer medications, vaccinations, or insecticides as appropriate. May clean and maintain animal housing areas. Includes workers who shear wool from sheep and collect eggs in hatcheries.
+
+## Job Profile
+<JobZone occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+### General Activities
+<Activities occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+## Qualifications
+### Skills
+<Skills occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+### Knowledge
+<Knowledge occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+### Abilities
+<Abilities occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+## Work Context
+<WorkContext occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FarmworkersFarmRanchAndAquaculturalAnimals />
+
+### Industries
+<Industries occupation=FarmworkersFarmRanchAndAquaculturalAnimals />

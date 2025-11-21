@@ -1,0 +1,71 @@
+---
+id: FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers
+slug: FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate activities of workers engaged in
+  landscaping or groundskeeping activities. Work may involve reviewing contracts
+  to ascertain service, machine, and workforce requirements; answering inquiries
+  from potential customers regarding methods, material, and price ranges; and
+  preparing estimates according to labor, material, and machine costs.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers
+
+**O*NET Code**: 37-1012.00
+
+Directly supervise and coordinate activities of workers engaged in landscaping or groundskeeping activities. Work may involve reviewing contracts to ascertain service, machine, and workforce requirements; answering inquiries from potential customers regarding methods, material, and price ranges; and preparing estimates according to labor, material, and machine costs.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfLandscapingLawnServiceAndGroundskeepingWorkers />

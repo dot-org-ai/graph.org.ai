@@ -1,0 +1,69 @@
+---
+id: AdaptedPhysicalEducationSpecialists
+slug: AdaptedPhysicalEducationSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Provide individualized physical education instruction or services
+  to children, youth, or adults with exceptional physical needs due to gross
+  motor developmental delays or other impairments.
+$id: https://graph.org.ai/occupations/AdaptedPhysicalEducationSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AdaptedPhysicalEducationSpecialists`
+      };
+  }));
+
+# Adapted Physical Education Specialists
+
+**O*NET Code**: 25-2059.01
+
+Provide individualized physical education instruction or services to children, youth, or adults with exceptional physical needs due to gross motor developmental delays or other impairments.
+
+## Job Profile
+<JobZone occupation=AdaptedPhysicalEducationSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AdaptedPhysicalEducationSpecialists />
+
+### General Activities
+<Activities occupation=AdaptedPhysicalEducationSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=AdaptedPhysicalEducationSpecialists />
+
+### Knowledge
+<Knowledge occupation=AdaptedPhysicalEducationSpecialists />
+
+### Abilities
+<Abilities occupation=AdaptedPhysicalEducationSpecialists />
+
+## Work Context
+<WorkContext occupation=AdaptedPhysicalEducationSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AdaptedPhysicalEducationSpecialists />
+
+### Industries
+<Industries occupation=AdaptedPhysicalEducationSpecialists />

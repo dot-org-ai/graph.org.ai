@@ -1,0 +1,69 @@
+---
+id: SkincareSpecialists
+slug: SkincareSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Provide skincare treatments to face and body to enhance an
+  individual's appearance. Includes electrologists and laser hair removal
+  specialists.
+$id: https://graph.org.ai/occupations/SkincareSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SkincareSpecialists`
+      };
+  }));
+
+# Skincare Specialists
+
+**O*NET Code**: 39-5094.00
+
+Provide skincare treatments to face and body to enhance an individual's appearance. Includes electrologists and laser hair removal specialists.
+
+## Job Profile
+<JobZone occupation=SkincareSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SkincareSpecialists />
+
+### General Activities
+<Activities occupation=SkincareSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=SkincareSpecialists />
+
+### Knowledge
+<Knowledge occupation=SkincareSpecialists />
+
+### Abilities
+<Abilities occupation=SkincareSpecialists />
+
+## Work Context
+<WorkContext occupation=SkincareSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SkincareSpecialists />
+
+### Industries
+<Industries occupation=SkincareSpecialists />

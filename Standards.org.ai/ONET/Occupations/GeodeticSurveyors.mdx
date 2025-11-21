@@ -1,0 +1,69 @@
+---
+id: GeodeticSurveyors
+slug: GeodeticSurveyors
+code:
+  code: null
+title:
+  title: null
+description: Measure large areas of the Earth's surface using satellite
+  observations, global navigation satellite systems (GNSS), light detection and
+  ranging (LIDAR), or related sources.
+$id: https://graph.org.ai/occupations/GeodeticSurveyors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GeodeticSurveyors`
+      };
+  }));
+
+# Geodetic Surveyors
+
+**O*NET Code**: 17-1022.01
+
+Measure large areas of the Earth's surface using satellite observations, global navigation satellite systems (GNSS), light detection and ranging (LIDAR), or related sources.
+
+## Job Profile
+<JobZone occupation=GeodeticSurveyors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GeodeticSurveyors />
+
+### General Activities
+<Activities occupation=GeodeticSurveyors />
+
+## Qualifications
+### Skills
+<Skills occupation=GeodeticSurveyors />
+
+### Knowledge
+<Knowledge occupation=GeodeticSurveyors />
+
+### Abilities
+<Abilities occupation=GeodeticSurveyors />
+
+## Work Context
+<WorkContext occupation=GeodeticSurveyors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GeodeticSurveyors />
+
+### Industries
+<Industries occupation=GeodeticSurveyors />

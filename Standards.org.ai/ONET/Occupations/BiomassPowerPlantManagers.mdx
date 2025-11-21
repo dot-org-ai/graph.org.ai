@@ -1,0 +1,69 @@
+---
+id: BiomassPowerPlantManagers
+slug: BiomassPowerPlantManagers
+code:
+  code: null
+title:
+  title: null
+description: Manage operations at biomass power generation facilities. Direct
+  work activities at plant, including supervision of operations and maintenance
+  staff.
+$id: https://graph.org.ai/occupations/BiomassPowerPlantManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BiomassPowerPlantManagers`
+      };
+  }));
+
+# Biomass Power Plant Managers
+
+**O*NET Code**: 11-3051.04
+
+Manage operations at biomass power generation facilities. Direct work activities at plant, including supervision of operations and maintenance staff.
+
+## Job Profile
+<JobZone occupation=BiomassPowerPlantManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BiomassPowerPlantManagers />
+
+### General Activities
+<Activities occupation=BiomassPowerPlantManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=BiomassPowerPlantManagers />
+
+### Knowledge
+<Knowledge occupation=BiomassPowerPlantManagers />
+
+### Abilities
+<Abilities occupation=BiomassPowerPlantManagers />
+
+## Work Context
+<WorkContext occupation=BiomassPowerPlantManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BiomassPowerPlantManagers />
+
+### Industries
+<Industries occupation=BiomassPowerPlantManagers />

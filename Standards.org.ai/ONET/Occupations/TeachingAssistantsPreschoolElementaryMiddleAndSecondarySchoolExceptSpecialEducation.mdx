@@ -1,0 +1,70 @@
+---
+id: TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation
+slug: TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation
+code:
+  code: null
+title:
+  title: null
+description: Assist a preschool, elementary, middle, or secondary school teacher
+  with instructional duties. Serve in a position for which a teacher has primary
+  responsibility for the design and implementation of educational programs and
+  services.
+$id: https://graph.org.ai/occupations/TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation`
+      };
+  }));
+
+# Teaching Assistants, Preschool, Elementary, Middle, and Secondary School, Except Special Education
+
+**O*NET Code**: 25-9042.00
+
+Assist a preschool, elementary, middle, or secondary school teacher with instructional duties. Serve in a position for which a teacher has primary responsibility for the design and implementation of educational programs and services.
+
+## Job Profile
+<JobZone occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+### General Activities
+<Activities occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+## Qualifications
+### Skills
+<Skills occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+### Knowledge
+<Knowledge occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+### Abilities
+<Abilities occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+## Work Context
+<WorkContext occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />
+
+### Industries
+<Industries occupation=TeachingAssistantsPreschoolElementaryMiddleAndSecondarySchoolExceptSpecialEducation />

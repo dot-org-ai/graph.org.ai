@@ -1,0 +1,72 @@
+---
+id: ComputerNetworkArchitects
+slug: ComputerNetworkArchitects
+code:
+  code: null
+title:
+  title: null
+description: Design and implement computer and information networks, such as
+  local area networks (LAN), wide area networks (WAN), intranets, extranets, and
+  other data communications networks. Perform network modeling, analysis, and
+  planning, including analysis of capacity needs for network infrastructures.
+  May also design network and computer security measures. May research and
+  recommend network and data communications hardware and software.
+$id: https://graph.org.ai/occupations/ComputerNetworkArchitects
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerNetworkArchitects`
+      };
+  }));
+
+# Computer Network Architects
+
+**O*NET Code**: 15-1241.00
+
+Design and implement computer and information networks, such as local area networks (LAN), wide area networks (WAN), intranets, extranets, and other data communications networks. Perform network modeling, analysis, and planning, including analysis of capacity needs for network infrastructures. May also design network and computer security measures. May research and recommend network and data communications hardware and software.
+
+## Job Profile
+<JobZone occupation=ComputerNetworkArchitects />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerNetworkArchitects />
+
+### General Activities
+<Activities occupation=ComputerNetworkArchitects />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerNetworkArchitects />
+
+### Knowledge
+<Knowledge occupation=ComputerNetworkArchitects />
+
+### Abilities
+<Abilities occupation=ComputerNetworkArchitects />
+
+## Work Context
+<WorkContext occupation=ComputerNetworkArchitects />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerNetworkArchitects />
+
+### Industries
+<Industries occupation=ComputerNetworkArchitects />

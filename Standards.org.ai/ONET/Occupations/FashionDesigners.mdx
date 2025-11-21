@@ -1,0 +1,68 @@
+---
+id: FashionDesigners
+slug: FashionDesigners
+code:
+  code: null
+title:
+  title: null
+description: Design clothing and accessories. Create original designs or adapt
+  fashion trends.
+$id: https://graph.org.ai/occupations/FashionDesigners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FashionDesigners`
+      };
+  }));
+
+# Fashion Designers
+
+**O*NET Code**: 27-1022.00
+
+Design clothing and accessories. Create original designs or adapt fashion trends.
+
+## Job Profile
+<JobZone occupation=FashionDesigners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FashionDesigners />
+
+### General Activities
+<Activities occupation=FashionDesigners />
+
+## Qualifications
+### Skills
+<Skills occupation=FashionDesigners />
+
+### Knowledge
+<Knowledge occupation=FashionDesigners />
+
+### Abilities
+<Abilities occupation=FashionDesigners />
+
+## Work Context
+<WorkContext occupation=FashionDesigners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FashionDesigners />
+
+### Industries
+<Industries occupation=FashionDesigners />

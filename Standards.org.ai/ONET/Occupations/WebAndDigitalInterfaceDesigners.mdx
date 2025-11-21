@@ -1,0 +1,76 @@
+---
+id: WebAndDigitalInterfaceDesigners
+slug: WebAndDigitalInterfaceDesigners
+code:
+  code: null
+title:
+  title: null
+description: Design digital user interfaces or websites. Develop and test
+  layouts, interfaces, functionality, and navigation menus to ensure
+  compatibility and usability across browsers or devices. May use web framework
+  applications as well as client-side code and processes. May evaluate web
+  design following web and accessibility standards, and may analyze web use
+  metrics and optimize websites for marketability and search engine ranking. May
+  design and test interfaces that facilitate the human-computer interaction and
+  maximize the usability of digital devices, websites, and software with a focus
+  on aesthetics and design. May create graphics used in websites and manage
+  website content and links.
+$id: https://graph.org.ai/occupations/WebAndDigitalInterfaceDesigners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WebAndDigitalInterfaceDesigners`
+      };
+  }));
+
+# Web and Digital Interface Designers
+
+**O*NET Code**: 15-1255.00
+
+Design digital user interfaces or websites. Develop and test layouts, interfaces, functionality, and navigation menus to ensure compatibility and usability across browsers or devices. May use web framework applications as well as client-side code and processes. May evaluate web design following web and accessibility standards, and may analyze web use metrics and optimize websites for marketability and search engine ranking. May design and test interfaces that facilitate the human-computer interaction and maximize the usability of digital devices, websites, and software with a focus on aesthetics and design. May create graphics used in websites and manage website content and links.
+
+## Job Profile
+<JobZone occupation=WebAndDigitalInterfaceDesigners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WebAndDigitalInterfaceDesigners />
+
+### General Activities
+<Activities occupation=WebAndDigitalInterfaceDesigners />
+
+## Qualifications
+### Skills
+<Skills occupation=WebAndDigitalInterfaceDesigners />
+
+### Knowledge
+<Knowledge occupation=WebAndDigitalInterfaceDesigners />
+
+### Abilities
+<Abilities occupation=WebAndDigitalInterfaceDesigners />
+
+## Work Context
+<WorkContext occupation=WebAndDigitalInterfaceDesigners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WebAndDigitalInterfaceDesigners />
+
+### Industries
+<Industries occupation=WebAndDigitalInterfaceDesigners />

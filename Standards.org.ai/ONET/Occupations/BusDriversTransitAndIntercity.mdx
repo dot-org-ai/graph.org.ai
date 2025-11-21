@@ -1,0 +1,69 @@
+---
+id: BusDriversTransitAndIntercity
+slug: BusDriversTransitAndIntercity
+code:
+  code: null
+title:
+  title: null
+description: Drive bus or motor coach, including regular route operations,
+  charters, and private carriage. May assist passengers with baggage. May
+  collect fares or tickets.
+$id: https://graph.org.ai/occupations/BusDriversTransitAndIntercity
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BusDriversTransitAndIntercity`
+      };
+  }));
+
+# Bus Drivers, Transit and Intercity
+
+**O*NET Code**: 53-3052.00
+
+Drive bus or motor coach, including regular route operations, charters, and private carriage. May assist passengers with baggage. May collect fares or tickets.
+
+## Job Profile
+<JobZone occupation=BusDriversTransitAndIntercity />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BusDriversTransitAndIntercity />
+
+### General Activities
+<Activities occupation=BusDriversTransitAndIntercity />
+
+## Qualifications
+### Skills
+<Skills occupation=BusDriversTransitAndIntercity />
+
+### Knowledge
+<Knowledge occupation=BusDriversTransitAndIntercity />
+
+### Abilities
+<Abilities occupation=BusDriversTransitAndIntercity />
+
+## Work Context
+<WorkContext occupation=BusDriversTransitAndIntercity />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BusDriversTransitAndIntercity />
+
+### Industries
+<Industries occupation=BusDriversTransitAndIntercity />

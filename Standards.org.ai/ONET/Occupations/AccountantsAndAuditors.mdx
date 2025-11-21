@@ -1,0 +1,70 @@
+---
+id: AccountantsAndAuditors
+slug: AccountantsAndAuditors
+code:
+  code: null
+title:
+  title: null
+description: Examine, analyze, and interpret accounting records to prepare
+  financial statements, give advice, or audit and evaluate statements prepared
+  by others. Install or advise on systems of recording costs or other financial
+  and budgetary data.
+$id: https://graph.org.ai/occupations/AccountantsAndAuditors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AccountantsAndAuditors`
+      };
+  }));
+
+# Accountants and Auditors
+
+**O*NET Code**: 13-2011.00
+
+Examine, analyze, and interpret accounting records to prepare financial statements, give advice, or audit and evaluate statements prepared by others. Install or advise on systems of recording costs or other financial and budgetary data.
+
+## Job Profile
+<JobZone occupation=AccountantsAndAuditors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AccountantsAndAuditors />
+
+### General Activities
+<Activities occupation=AccountantsAndAuditors />
+
+## Qualifications
+### Skills
+<Skills occupation=AccountantsAndAuditors />
+
+### Knowledge
+<Knowledge occupation=AccountantsAndAuditors />
+
+### Abilities
+<Abilities occupation=AccountantsAndAuditors />
+
+## Work Context
+<WorkContext occupation=AccountantsAndAuditors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AccountantsAndAuditors />
+
+### Industries
+<Industries occupation=AccountantsAndAuditors />

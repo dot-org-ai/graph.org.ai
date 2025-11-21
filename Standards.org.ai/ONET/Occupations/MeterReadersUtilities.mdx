@@ -1,0 +1,67 @@
+---
+id: MeterReadersUtilities
+slug: MeterReadersUtilities
+code:
+  code: null
+title:
+  title: null
+description: Read meter and record consumption of electricity, gas, water, or steam.
+$id: https://graph.org.ai/occupations/MeterReadersUtilities
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MeterReadersUtilities`
+      };
+  }));
+
+# Meter Readers, Utilities
+
+**O*NET Code**: 43-5041.00
+
+Read meter and record consumption of electricity, gas, water, or steam.
+
+## Job Profile
+<JobZone occupation=MeterReadersUtilities />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MeterReadersUtilities />
+
+### General Activities
+<Activities occupation=MeterReadersUtilities />
+
+## Qualifications
+### Skills
+<Skills occupation=MeterReadersUtilities />
+
+### Knowledge
+<Knowledge occupation=MeterReadersUtilities />
+
+### Abilities
+<Abilities occupation=MeterReadersUtilities />
+
+## Work Context
+<WorkContext occupation=MeterReadersUtilities />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MeterReadersUtilities />
+
+### Industries
+<Industries occupation=MeterReadersUtilities />

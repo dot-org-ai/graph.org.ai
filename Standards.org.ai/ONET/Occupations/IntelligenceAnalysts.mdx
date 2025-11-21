@@ -1,0 +1,70 @@
+---
+id: IntelligenceAnalysts
+slug: IntelligenceAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Gather, analyze, or evaluate information from a variety of sources,
+  such as law enforcement databases, surveillance, intelligence networks or
+  geographic information systems. Use intelligence data to anticipate and
+  prevent organized crime activities, such as terrorism.
+$id: https://graph.org.ai/occupations/IntelligenceAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$IntelligenceAnalysts`
+      };
+  }));
+
+# Intelligence Analysts
+
+**O*NET Code**: 33-3021.06
+
+Gather, analyze, or evaluate information from a variety of sources, such as law enforcement databases, surveillance, intelligence networks or geographic information systems. Use intelligence data to anticipate and prevent organized crime activities, such as terrorism.
+
+## Job Profile
+<JobZone occupation=IntelligenceAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=IntelligenceAnalysts />
+
+### General Activities
+<Activities occupation=IntelligenceAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=IntelligenceAnalysts />
+
+### Knowledge
+<Knowledge occupation=IntelligenceAnalysts />
+
+### Abilities
+<Abilities occupation=IntelligenceAnalysts />
+
+## Work Context
+<WorkContext occupation=IntelligenceAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=IntelligenceAnalysts />
+
+### Industries
+<Industries occupation=IntelligenceAnalysts />

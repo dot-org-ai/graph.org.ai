@@ -1,0 +1,69 @@
+---
+id: PhysicalTherapists
+slug: PhysicalTherapists
+code:
+  code: null
+title:
+  title: null
+description: Assess, plan, organize, and participate in rehabilitative programs
+  that improve mobility, relieve pain, increase strength, and improve or correct
+  disabling conditions resulting from disease or injury.
+$id: https://graph.org.ai/occupations/PhysicalTherapists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhysicalTherapists`
+      };
+  }));
+
+# Physical Therapists
+
+**O*NET Code**: 29-1123.00
+
+Assess, plan, organize, and participate in rehabilitative programs that improve mobility, relieve pain, increase strength, and improve or correct disabling conditions resulting from disease or injury.
+
+## Job Profile
+<JobZone occupation=PhysicalTherapists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhysicalTherapists />
+
+### General Activities
+<Activities occupation=PhysicalTherapists />
+
+## Qualifications
+### Skills
+<Skills occupation=PhysicalTherapists />
+
+### Knowledge
+<Knowledge occupation=PhysicalTherapists />
+
+### Abilities
+<Abilities occupation=PhysicalTherapists />
+
+## Work Context
+<WorkContext occupation=PhysicalTherapists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhysicalTherapists />
+
+### Industries
+<Industries occupation=PhysicalTherapists />

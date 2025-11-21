@@ -1,0 +1,68 @@
+---
+id: ManicuristsAndPedicurists
+slug: ManicuristsAndPedicurists
+code:
+  code: null
+title:
+  title: null
+description: Clean and shape customers' fingernails and toenails. May polish or
+  decorate nails.
+$id: https://graph.org.ai/occupations/ManicuristsAndPedicurists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ManicuristsAndPedicurists`
+      };
+  }));
+
+# Manicurists and Pedicurists
+
+**O*NET Code**: 39-5092.00
+
+Clean and shape customers' fingernails and toenails. May polish or decorate nails.
+
+## Job Profile
+<JobZone occupation=ManicuristsAndPedicurists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ManicuristsAndPedicurists />
+
+### General Activities
+<Activities occupation=ManicuristsAndPedicurists />
+
+## Qualifications
+### Skills
+<Skills occupation=ManicuristsAndPedicurists />
+
+### Knowledge
+<Knowledge occupation=ManicuristsAndPedicurists />
+
+### Abilities
+<Abilities occupation=ManicuristsAndPedicurists />
+
+## Work Context
+<WorkContext occupation=ManicuristsAndPedicurists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ManicuristsAndPedicurists />
+
+### Industries
+<Industries occupation=ManicuristsAndPedicurists />

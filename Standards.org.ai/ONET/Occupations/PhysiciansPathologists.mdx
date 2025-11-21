@@ -1,0 +1,68 @@
+---
+id: PhysiciansPathologists
+slug: PhysiciansPathologists
+code:
+  code: null
+title:
+  title: null
+description: Diagnose diseases and conduct lab tests using organs, body tissues,
+  and fluids. Includes medical examiners.
+$id: https://graph.org.ai/occupations/PhysiciansPathologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhysiciansPathologists`
+      };
+  }));
+
+# Physicians, Pathologists
+
+**O*NET Code**: 29-1222.00
+
+Diagnose diseases and conduct lab tests using organs, body tissues, and fluids. Includes medical examiners.
+
+## Job Profile
+<JobZone occupation=PhysiciansPathologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhysiciansPathologists />
+
+### General Activities
+<Activities occupation=PhysiciansPathologists />
+
+## Qualifications
+### Skills
+<Skills occupation=PhysiciansPathologists />
+
+### Knowledge
+<Knowledge occupation=PhysiciansPathologists />
+
+### Abilities
+<Abilities occupation=PhysiciansPathologists />
+
+## Work Context
+<WorkContext occupation=PhysiciansPathologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhysiciansPathologists />
+
+### Industries
+<Industries occupation=PhysiciansPathologists />

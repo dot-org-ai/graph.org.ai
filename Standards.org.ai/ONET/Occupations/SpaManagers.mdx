@@ -1,0 +1,69 @@
+---
+id: SpaManagers
+slug: SpaManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate activities of a spa facility.
+  Coordinate programs, schedule and direct staff, and oversee financial
+  activities.
+$id: https://graph.org.ai/occupations/SpaManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SpaManagers`
+      };
+  }));
+
+# Spa Managers
+
+**O*NET Code**: 11-9179.02
+
+Plan, direct, or coordinate activities of a spa facility. Coordinate programs, schedule and direct staff, and oversee financial activities.
+
+## Job Profile
+<JobZone occupation=SpaManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SpaManagers />
+
+### General Activities
+<Activities occupation=SpaManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=SpaManagers />
+
+### Knowledge
+<Knowledge occupation=SpaManagers />
+
+### Abilities
+<Abilities occupation=SpaManagers />
+
+## Work Context
+<WorkContext occupation=SpaManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SpaManagers />
+
+### Industries
+<Industries occupation=SpaManagers />

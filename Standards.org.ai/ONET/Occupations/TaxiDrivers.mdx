@@ -1,0 +1,68 @@
+---
+id: TaxiDrivers
+slug: TaxiDrivers
+code:
+  code: null
+title:
+  title: null
+description: Drive a motor vehicle to transport passengers on an unplanned basis
+  and charge a fare, usually based on a meter.
+$id: https://graph.org.ai/occupations/TaxiDrivers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TaxiDrivers`
+      };
+  }));
+
+# Taxi Drivers
+
+**O*NET Code**: 53-3054.00
+
+Drive a motor vehicle to transport passengers on an unplanned basis and charge a fare, usually based on a meter.
+
+## Job Profile
+<JobZone occupation=TaxiDrivers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TaxiDrivers />
+
+### General Activities
+<Activities occupation=TaxiDrivers />
+
+## Qualifications
+### Skills
+<Skills occupation=TaxiDrivers />
+
+### Knowledge
+<Knowledge occupation=TaxiDrivers />
+
+### Abilities
+<Abilities occupation=TaxiDrivers />
+
+## Work Context
+<WorkContext occupation=TaxiDrivers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TaxiDrivers />
+
+### Industries
+<Industries occupation=TaxiDrivers />

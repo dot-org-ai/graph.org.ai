@@ -1,0 +1,71 @@
+---
+id: BookkeepingAccountingAndAuditingClerks
+slug: BookkeepingAccountingAndAuditingClerks
+code:
+  code: null
+title:
+  title: null
+description: Compute, classify, and record numerical data to keep financial
+  records complete. Perform any combination of routine calculating, posting, and
+  verifying duties to obtain primary financial data for use in maintaining
+  accounting records. May also check the accuracy of figures, calculations, and
+  postings pertaining to business transactions recorded by other workers.
+$id: https://graph.org.ai/occupations/BookkeepingAccountingAndAuditingClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BookkeepingAccountingAndAuditingClerks`
+      };
+  }));
+
+# Bookkeeping, Accounting, and Auditing Clerks
+
+**O*NET Code**: 43-3031.00
+
+Compute, classify, and record numerical data to keep financial records complete. Perform any combination of routine calculating, posting, and verifying duties to obtain primary financial data for use in maintaining accounting records. May also check the accuracy of figures, calculations, and postings pertaining to business transactions recorded by other workers.
+
+## Job Profile
+<JobZone occupation=BookkeepingAccountingAndAuditingClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BookkeepingAccountingAndAuditingClerks />
+
+### General Activities
+<Activities occupation=BookkeepingAccountingAndAuditingClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=BookkeepingAccountingAndAuditingClerks />
+
+### Knowledge
+<Knowledge occupation=BookkeepingAccountingAndAuditingClerks />
+
+### Abilities
+<Abilities occupation=BookkeepingAccountingAndAuditingClerks />
+
+## Work Context
+<WorkContext occupation=BookkeepingAccountingAndAuditingClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BookkeepingAccountingAndAuditingClerks />
+
+### Industries
+<Industries occupation=BookkeepingAccountingAndAuditingClerks />

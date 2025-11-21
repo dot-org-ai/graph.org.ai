@@ -1,0 +1,77 @@
+---
+id: AircraftLaunchAndRecoveryOfficers
+slug: AircraftLaunchAndRecoveryOfficers
+code:
+  code: null
+title:
+  title: null
+description: Plan and direct the operation and maintenance of catapults,
+  arresting gear, and associated mechanical, hydraulic, and control systems
+  involved primarily in aircraft carrier takeoff and landing operations. Duties
+  include supervision of readiness and safety of arresting gear, launching
+  equipment, barricades, and visual landing aid systems; planning and
+  coordinating the design, development, and testing of launch and recovery
+  systems; preparing specifications for catapult and arresting gear
+  installations; evaluating design proposals; determining handling equipment
+  needed for new aircraft; preparing technical data and instructions for
+  operation of landing aids; and training personnel in carrier takeoff and
+  landing procedures.
+$id: https://graph.org.ai/occupations/AircraftLaunchAndRecoveryOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AircraftLaunchAndRecoveryOfficers`
+      };
+  }));
+
+# Aircraft Launch and Recovery Officers
+
+**O*NET Code**: 55-1012.00
+
+Plan and direct the operation and maintenance of catapults, arresting gear, and associated mechanical, hydraulic, and control systems involved primarily in aircraft carrier takeoff and landing operations. Duties include supervision of readiness and safety of arresting gear, launching equipment, barricades, and visual landing aid systems; planning and coordinating the design, development, and testing of launch and recovery systems; preparing specifications for catapult and arresting gear installations; evaluating design proposals; determining handling equipment needed for new aircraft; preparing technical data and instructions for operation of landing aids; and training personnel in carrier takeoff and landing procedures.
+
+## Job Profile
+<JobZone occupation=AircraftLaunchAndRecoveryOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AircraftLaunchAndRecoveryOfficers />
+
+### General Activities
+<Activities occupation=AircraftLaunchAndRecoveryOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=AircraftLaunchAndRecoveryOfficers />
+
+### Knowledge
+<Knowledge occupation=AircraftLaunchAndRecoveryOfficers />
+
+### Abilities
+<Abilities occupation=AircraftLaunchAndRecoveryOfficers />
+
+## Work Context
+<WorkContext occupation=AircraftLaunchAndRecoveryOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AircraftLaunchAndRecoveryOfficers />
+
+### Industries
+<Industries occupation=AircraftLaunchAndRecoveryOfficers />

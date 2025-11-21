@@ -1,0 +1,70 @@
+---
+id: Firefighters
+slug: Firefighters
+code:
+  code: null
+title:
+  title: null
+description: Control and extinguish fires or respond to emergency situations
+  where life, property, or the environment is at risk. Duties may include fire
+  prevention, emergency medical service, hazardous material response, search and
+  rescue, and disaster assistance.
+$id: https://graph.org.ai/occupations/Firefighters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Firefighters`
+      };
+  }));
+
+# Firefighters
+
+**O*NET Code**: 33-2011.00
+
+Control and extinguish fires or respond to emergency situations where life, property, or the environment is at risk. Duties may include fire prevention, emergency medical service, hazardous material response, search and rescue, and disaster assistance.
+
+## Job Profile
+<JobZone occupation=Firefighters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Firefighters />
+
+### General Activities
+<Activities occupation=Firefighters />
+
+## Qualifications
+### Skills
+<Skills occupation=Firefighters />
+
+### Knowledge
+<Knowledge occupation=Firefighters />
+
+### Abilities
+<Abilities occupation=Firefighters />
+
+## Work Context
+<WorkContext occupation=Firefighters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Firefighters />
+
+### Industries
+<Industries occupation=Firefighters />

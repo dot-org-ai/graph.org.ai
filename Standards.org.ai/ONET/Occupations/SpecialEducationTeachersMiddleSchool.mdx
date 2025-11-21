@@ -1,0 +1,71 @@
+---
+id: SpecialEducationTeachersMiddleSchool
+slug: SpecialEducationTeachersMiddleSchool
+code:
+  code: null
+title:
+  title: null
+description: Teach academic, social, and life skills to middle school students
+  with learning, emotional, or physical disabilities. Includes teachers who
+  specialize and work with students who are blind or have visual impairments;
+  students who are deaf or have hearing impairments; and students with
+  intellectual disabilities.
+$id: https://graph.org.ai/occupations/SpecialEducationTeachersMiddleSchool
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SpecialEducationTeachersMiddleSchool`
+      };
+  }));
+
+# Special Education Teachers, Middle School
+
+**O*NET Code**: 25-2057.00
+
+Teach academic, social, and life skills to middle school students with learning, emotional, or physical disabilities. Includes teachers who specialize and work with students who are blind or have visual impairments; students who are deaf or have hearing impairments; and students with intellectual disabilities.
+
+## Job Profile
+<JobZone occupation=SpecialEducationTeachersMiddleSchool />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SpecialEducationTeachersMiddleSchool />
+
+### General Activities
+<Activities occupation=SpecialEducationTeachersMiddleSchool />
+
+## Qualifications
+### Skills
+<Skills occupation=SpecialEducationTeachersMiddleSchool />
+
+### Knowledge
+<Knowledge occupation=SpecialEducationTeachersMiddleSchool />
+
+### Abilities
+<Abilities occupation=SpecialEducationTeachersMiddleSchool />
+
+## Work Context
+<WorkContext occupation=SpecialEducationTeachersMiddleSchool />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SpecialEducationTeachersMiddleSchool />
+
+### Industries
+<Industries occupation=SpecialEducationTeachersMiddleSchool />

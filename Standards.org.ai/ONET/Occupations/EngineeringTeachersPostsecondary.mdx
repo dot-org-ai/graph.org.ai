@@ -1,0 +1,72 @@
+---
+id: EngineeringTeachersPostsecondary
+slug: EngineeringTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses pertaining to the application of physical laws and
+  principles of engineering for the development of machines, materials,
+  instruments, processes, and services. Includes teachers of subjects such as
+  chemical, civil, electrical, industrial, mechanical, mineral, and petroleum
+  engineering. Includes both teachers primarily engaged in teaching and those
+  who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/EngineeringTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EngineeringTeachersPostsecondary`
+      };
+  }));
+
+# Engineering Teachers, Postsecondary
+
+**O*NET Code**: 25-1032.00
+
+Teach courses pertaining to the application of physical laws and principles of engineering for the development of machines, materials, instruments, processes, and services. Includes teachers of subjects such as chemical, civil, electrical, industrial, mechanical, mineral, and petroleum engineering. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=EngineeringTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EngineeringTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=EngineeringTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=EngineeringTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=EngineeringTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=EngineeringTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=EngineeringTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EngineeringTeachersPostsecondary />
+
+### Industries
+<Industries occupation=EngineeringTeachersPostsecondary />

@@ -1,0 +1,71 @@
+---
+id: HelpersInstallationMaintenanceAndRepairWorkers
+slug: HelpersInstallationMaintenanceAndRepairWorkers
+code:
+  code: null
+title:
+  title: null
+description: Help installation, maintenance, and repair workers in maintenance,
+  parts replacement, and repair of vehicles, industrial machinery, and
+  electrical and electronic equipment. Perform duties such as furnishing tools,
+  materials, and supplies to other workers; cleaning work area, machines, and
+  tools; and holding materials or tools for other workers.
+$id: https://graph.org.ai/occupations/HelpersInstallationMaintenanceAndRepairWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersInstallationMaintenanceAndRepairWorkers`
+      };
+  }));
+
+# Helpers--Installation, Maintenance, and Repair Workers
+
+**O*NET Code**: 49-9098.00
+
+Help installation, maintenance, and repair workers in maintenance, parts replacement, and repair of vehicles, industrial machinery, and electrical and electronic equipment. Perform duties such as furnishing tools, materials, and supplies to other workers; cleaning work area, machines, and tools; and holding materials or tools for other workers.
+
+## Job Profile
+<JobZone occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+### General Activities
+<Activities occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+### Knowledge
+<Knowledge occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+### Abilities
+<Abilities occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+## Work Context
+<WorkContext occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersInstallationMaintenanceAndRepairWorkers />
+
+### Industries
+<Industries occupation=HelpersInstallationMaintenanceAndRepairWorkers />

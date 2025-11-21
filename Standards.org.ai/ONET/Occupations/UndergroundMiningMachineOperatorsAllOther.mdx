@@ -1,0 +1,67 @@
+---
+id: UndergroundMiningMachineOperatorsAllOther
+slug: UndergroundMiningMachineOperatorsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All underground mining machine operators not listed separately.
+$id: https://graph.org.ai/occupations/UndergroundMiningMachineOperatorsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$UndergroundMiningMachineOperatorsAllOther`
+      };
+  }));
+
+# Underground Mining Machine Operators, All Other
+
+**O*NET Code**: 47-5049.00
+
+All underground mining machine operators not listed separately.
+
+## Job Profile
+<JobZone occupation=UndergroundMiningMachineOperatorsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=UndergroundMiningMachineOperatorsAllOther />
+
+### General Activities
+<Activities occupation=UndergroundMiningMachineOperatorsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=UndergroundMiningMachineOperatorsAllOther />
+
+### Knowledge
+<Knowledge occupation=UndergroundMiningMachineOperatorsAllOther />
+
+### Abilities
+<Abilities occupation=UndergroundMiningMachineOperatorsAllOther />
+
+## Work Context
+<WorkContext occupation=UndergroundMiningMachineOperatorsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=UndergroundMiningMachineOperatorsAllOther />
+
+### Industries
+<Industries occupation=UndergroundMiningMachineOperatorsAllOther />

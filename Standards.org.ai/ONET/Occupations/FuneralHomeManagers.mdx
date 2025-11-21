@@ -1,0 +1,69 @@
+---
+id: FuneralHomeManagers
+slug: FuneralHomeManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate the services or resources of funeral
+  homes. Includes activities such as determining prices for services or
+  merchandise and managing the facilities of funeral homes.
+$id: https://graph.org.ai/occupations/FuneralHomeManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FuneralHomeManagers`
+      };
+  }));
+
+# Funeral Home Managers
+
+**O*NET Code**: 11-9171.00
+
+Plan, direct, or coordinate the services or resources of funeral homes. Includes activities such as determining prices for services or merchandise and managing the facilities of funeral homes.
+
+## Job Profile
+<JobZone occupation=FuneralHomeManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FuneralHomeManagers />
+
+### General Activities
+<Activities occupation=FuneralHomeManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=FuneralHomeManagers />
+
+### Knowledge
+<Knowledge occupation=FuneralHomeManagers />
+
+### Abilities
+<Abilities occupation=FuneralHomeManagers />
+
+## Work Context
+<WorkContext occupation=FuneralHomeManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FuneralHomeManagers />
+
+### Industries
+<Industries occupation=FuneralHomeManagers />

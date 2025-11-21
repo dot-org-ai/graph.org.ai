@@ -1,0 +1,71 @@
+---
+id: EnergyEngineersExceptWindAndSolar
+slug: EnergyEngineersExceptWindAndSolar
+code:
+  code: null
+title:
+  title: null
+description: Design, develop, or evaluate energy-related projects or programs to
+  reduce energy costs or improve energy efficiency during the designing,
+  building, or remodeling stages of construction. May specialize in electrical
+  systems; heating, ventilation, and air-conditioning (HVAC) systems; green
+  buildings; lighting; air quality; or energy procurement.
+$id: https://graph.org.ai/occupations/EnergyEngineersExceptWindAndSolar
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnergyEngineersExceptWindAndSolar`
+      };
+  }));
+
+# Energy Engineers, Except Wind and Solar
+
+**O*NET Code**: 17-2199.03
+
+Design, develop, or evaluate energy-related projects or programs to reduce energy costs or improve energy efficiency during the designing, building, or remodeling stages of construction. May specialize in electrical systems; heating, ventilation, and air-conditioning (HVAC) systems; green buildings; lighting; air quality; or energy procurement.
+
+## Job Profile
+<JobZone occupation=EnergyEngineersExceptWindAndSolar />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnergyEngineersExceptWindAndSolar />
+
+### General Activities
+<Activities occupation=EnergyEngineersExceptWindAndSolar />
+
+## Qualifications
+### Skills
+<Skills occupation=EnergyEngineersExceptWindAndSolar />
+
+### Knowledge
+<Knowledge occupation=EnergyEngineersExceptWindAndSolar />
+
+### Abilities
+<Abilities occupation=EnergyEngineersExceptWindAndSolar />
+
+## Work Context
+<WorkContext occupation=EnergyEngineersExceptWindAndSolar />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnergyEngineersExceptWindAndSolar />
+
+### Industries
+<Industries occupation=EnergyEngineersExceptWindAndSolar />

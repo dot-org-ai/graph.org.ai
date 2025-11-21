@@ -1,0 +1,67 @@
+---
+id: FoodProcessingWorkersAllOther
+slug: FoodProcessingWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All food processing workers not listed separately.
+$id: https://graph.org.ai/occupations/FoodProcessingWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FoodProcessingWorkersAllOther`
+      };
+  }));
+
+# Food Processing Workers, All Other
+
+**O*NET Code**: 51-3099.00
+
+All food processing workers not listed separately.
+
+## Job Profile
+<JobZone occupation=FoodProcessingWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FoodProcessingWorkersAllOther />
+
+### General Activities
+<Activities occupation=FoodProcessingWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=FoodProcessingWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=FoodProcessingWorkersAllOther />
+
+### Abilities
+<Abilities occupation=FoodProcessingWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=FoodProcessingWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FoodProcessingWorkersAllOther />
+
+### Industries
+<Industries occupation=FoodProcessingWorkersAllOther />

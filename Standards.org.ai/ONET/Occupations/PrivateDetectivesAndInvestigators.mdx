@@ -1,0 +1,69 @@
+---
+id: PrivateDetectivesAndInvestigators
+slug: PrivateDetectivesAndInvestigators
+code:
+  code: null
+title:
+  title: null
+description: Gather, analyze, compile, and report information regarding
+  individuals or organizations to clients, or detect occurrences of unlawful
+  acts or infractions of rules in private establishment.
+$id: https://graph.org.ai/occupations/PrivateDetectivesAndInvestigators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PrivateDetectivesAndInvestigators`
+      };
+  }));
+
+# Private Detectives and Investigators
+
+**O*NET Code**: 33-9021.00
+
+Gather, analyze, compile, and report information regarding individuals or organizations to clients, or detect occurrences of unlawful acts or infractions of rules in private establishment.
+
+## Job Profile
+<JobZone occupation=PrivateDetectivesAndInvestigators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PrivateDetectivesAndInvestigators />
+
+### General Activities
+<Activities occupation=PrivateDetectivesAndInvestigators />
+
+## Qualifications
+### Skills
+<Skills occupation=PrivateDetectivesAndInvestigators />
+
+### Knowledge
+<Knowledge occupation=PrivateDetectivesAndInvestigators />
+
+### Abilities
+<Abilities occupation=PrivateDetectivesAndInvestigators />
+
+## Work Context
+<WorkContext occupation=PrivateDetectivesAndInvestigators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PrivateDetectivesAndInvestigators />
+
+### Industries
+<Industries occupation=PrivateDetectivesAndInvestigators />

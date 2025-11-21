@@ -1,0 +1,71 @@
+---
+id: SpecialEducationTeachersElementarySchool
+slug: SpecialEducationTeachersElementarySchool
+code:
+  code: null
+title:
+  title: null
+description: Teach academic, social, and life skills to elementary school
+  students with learning, emotional, or physical disabilities. Includes teachers
+  who specialize and work with students who are blind or have visual
+  impairments; students who are deaf or have hearing impairments; and students
+  with intellectual disabilities.
+$id: https://graph.org.ai/occupations/SpecialEducationTeachersElementarySchool
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SpecialEducationTeachersElementarySchool`
+      };
+  }));
+
+# Special Education Teachers, Elementary School
+
+**O*NET Code**: 25-2056.00
+
+Teach academic, social, and life skills to elementary school students with learning, emotional, or physical disabilities. Includes teachers who specialize and work with students who are blind or have visual impairments; students who are deaf or have hearing impairments; and students with intellectual disabilities.
+
+## Job Profile
+<JobZone occupation=SpecialEducationTeachersElementarySchool />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SpecialEducationTeachersElementarySchool />
+
+### General Activities
+<Activities occupation=SpecialEducationTeachersElementarySchool />
+
+## Qualifications
+### Skills
+<Skills occupation=SpecialEducationTeachersElementarySchool />
+
+### Knowledge
+<Knowledge occupation=SpecialEducationTeachersElementarySchool />
+
+### Abilities
+<Abilities occupation=SpecialEducationTeachersElementarySchool />
+
+## Work Context
+<WorkContext occupation=SpecialEducationTeachersElementarySchool />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SpecialEducationTeachersElementarySchool />
+
+### Industries
+<Industries occupation=SpecialEducationTeachersElementarySchool />

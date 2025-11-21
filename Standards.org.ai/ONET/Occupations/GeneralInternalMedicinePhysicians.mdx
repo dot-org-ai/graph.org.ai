@@ -1,0 +1,69 @@
+---
+id: GeneralInternalMedicinePhysicians
+slug: GeneralInternalMedicinePhysicians
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and provide nonsurgical treatment for a wide range of
+  diseases and injuries of internal organ systems. Provide care mainly for
+  adults and adolescents, and are based primarily in an outpatient care setting.
+$id: https://graph.org.ai/occupations/GeneralInternalMedicinePhysicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GeneralInternalMedicinePhysicians`
+      };
+  }));
+
+# General Internal Medicine Physicians
+
+**O*NET Code**: 29-1216.00
+
+Diagnose and provide nonsurgical treatment for a wide range of diseases and injuries of internal organ systems. Provide care mainly for adults and adolescents, and are based primarily in an outpatient care setting.
+
+## Job Profile
+<JobZone occupation=GeneralInternalMedicinePhysicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GeneralInternalMedicinePhysicians />
+
+### General Activities
+<Activities occupation=GeneralInternalMedicinePhysicians />
+
+## Qualifications
+### Skills
+<Skills occupation=GeneralInternalMedicinePhysicians />
+
+### Knowledge
+<Knowledge occupation=GeneralInternalMedicinePhysicians />
+
+### Abilities
+<Abilities occupation=GeneralInternalMedicinePhysicians />
+
+## Work Context
+<WorkContext occupation=GeneralInternalMedicinePhysicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GeneralInternalMedicinePhysicians />
+
+### Industries
+<Industries occupation=GeneralInternalMedicinePhysicians />

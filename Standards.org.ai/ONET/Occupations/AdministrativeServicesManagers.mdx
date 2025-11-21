@@ -1,0 +1,69 @@
+---
+id: AdministrativeServicesManagers
+slug: AdministrativeServicesManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate one or more administrative services of
+  an organization, such as records and information management, mail
+  distribution, and other office support services.
+$id: https://graph.org.ai/occupations/AdministrativeServicesManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AdministrativeServicesManagers`
+      };
+  }));
+
+# Administrative Services Managers
+
+**O*NET Code**: 11-3012.00
+
+Plan, direct, or coordinate one or more administrative services of an organization, such as records and information management, mail distribution, and other office support services.
+
+## Job Profile
+<JobZone occupation=AdministrativeServicesManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AdministrativeServicesManagers />
+
+### General Activities
+<Activities occupation=AdministrativeServicesManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=AdministrativeServicesManagers />
+
+### Knowledge
+<Knowledge occupation=AdministrativeServicesManagers />
+
+### Abilities
+<Abilities occupation=AdministrativeServicesManagers />
+
+## Work Context
+<WorkContext occupation=AdministrativeServicesManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AdministrativeServicesManagers />
+
+### Industries
+<Industries occupation=AdministrativeServicesManagers />

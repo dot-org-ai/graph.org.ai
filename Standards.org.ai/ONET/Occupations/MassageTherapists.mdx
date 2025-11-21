@@ -1,0 +1,69 @@
+---
+id: MassageTherapists
+slug: MassageTherapists
+code:
+  code: null
+title:
+  title: null
+description: Perform therapeutic massages of soft tissues and joints. May assist
+  in the assessment of range of motion and muscle strength, or propose client
+  therapy plans.
+$id: https://graph.org.ai/occupations/MassageTherapists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MassageTherapists`
+      };
+  }));
+
+# Massage Therapists
+
+**O*NET Code**: 31-9011.00
+
+Perform therapeutic massages of soft tissues and joints. May assist in the assessment of range of motion and muscle strength, or propose client therapy plans.
+
+## Job Profile
+<JobZone occupation=MassageTherapists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MassageTherapists />
+
+### General Activities
+<Activities occupation=MassageTherapists />
+
+## Qualifications
+### Skills
+<Skills occupation=MassageTherapists />
+
+### Knowledge
+<Knowledge occupation=MassageTherapists />
+
+### Abilities
+<Abilities occupation=MassageTherapists />
+
+## Work Context
+<WorkContext occupation=MassageTherapists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MassageTherapists />
+
+### Industries
+<Industries occupation=MassageTherapists />

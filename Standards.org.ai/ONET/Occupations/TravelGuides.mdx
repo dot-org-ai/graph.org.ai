@@ -1,0 +1,68 @@
+---
+id: TravelGuides
+slug: TravelGuides
+code:
+  code: null
+title:
+  title: null
+description: Plan, organize, and conduct long-distance travel, tours, and
+  expeditions for individuals and groups.
+$id: https://graph.org.ai/occupations/TravelGuides
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TravelGuides`
+      };
+  }));
+
+# Travel Guides
+
+**O*NET Code**: 39-7012.00
+
+Plan, organize, and conduct long-distance travel, tours, and expeditions for individuals and groups.
+
+## Job Profile
+<JobZone occupation=TravelGuides />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TravelGuides />
+
+### General Activities
+<Activities occupation=TravelGuides />
+
+## Qualifications
+### Skills
+<Skills occupation=TravelGuides />
+
+### Knowledge
+<Knowledge occupation=TravelGuides />
+
+### Abilities
+<Abilities occupation=TravelGuides />
+
+## Work Context
+<WorkContext occupation=TravelGuides />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TravelGuides />
+
+### Industries
+<Industries occupation=TravelGuides />

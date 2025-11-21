@@ -1,0 +1,68 @@
+---
+id: LawTeachersPostsecondary
+slug: LawTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in law. Includes both teachers primarily engaged in
+  teaching and those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/LawTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LawTeachersPostsecondary`
+      };
+  }));
+
+# Law Teachers, Postsecondary
+
+**O*NET Code**: 25-1112.00
+
+Teach courses in law. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=LawTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LawTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=LawTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=LawTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=LawTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=LawTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=LawTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LawTeachersPostsecondary />
+
+### Industries
+<Industries occupation=LawTeachersPostsecondary />

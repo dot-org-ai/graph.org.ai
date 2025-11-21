@@ -1,0 +1,69 @@
+---
+id: SpeechLanguagePathologists
+slug: SpeechLanguagePathologists
+code:
+  code: null
+title:
+  title: null
+description: Assess and treat persons with speech, language, voice, and fluency
+  disorders. May select alternative communication systems and teach their use.
+  May perform research related to speech and language problems.
+$id: https://graph.org.ai/occupations/SpeechLanguagePathologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SpeechLanguagePathologists`
+      };
+  }));
+
+# Speech-Language Pathologists
+
+**O*NET Code**: 29-1127.00
+
+Assess and treat persons with speech, language, voice, and fluency disorders. May select alternative communication systems and teach their use. May perform research related to speech and language problems.
+
+## Job Profile
+<JobZone occupation=SpeechLanguagePathologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SpeechLanguagePathologists />
+
+### General Activities
+<Activities occupation=SpeechLanguagePathologists />
+
+## Qualifications
+### Skills
+<Skills occupation=SpeechLanguagePathologists />
+
+### Knowledge
+<Knowledge occupation=SpeechLanguagePathologists />
+
+### Abilities
+<Abilities occupation=SpeechLanguagePathologists />
+
+## Work Context
+<WorkContext occupation=SpeechLanguagePathologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SpeechLanguagePathologists />
+
+### Industries
+<Industries occupation=SpeechLanguagePathologists />

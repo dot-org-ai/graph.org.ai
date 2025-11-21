@@ -1,0 +1,73 @@
+---
+id: DataScientists
+slug: DataScientists
+code:
+  code: null
+title:
+  title: null
+description: Develop and implement a set of techniques or analytics applications
+  to transform raw data into meaningful information using data-oriented
+  programming languages and visualization software. Apply data mining, data
+  modeling, natural language processing, and machine learning to extract and
+  analyze information from large structured and unstructured datasets.
+  Visualize, interpret, and report data findings. May create dynamic data
+  reports.
+$id: https://graph.org.ai/occupations/DataScientists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DataScientists`
+      };
+  }));
+
+# Data Scientists
+
+**O*NET Code**: 15-2051.00
+
+Develop and implement a set of techniques or analytics applications to transform raw data into meaningful information using data-oriented programming languages and visualization software. Apply data mining, data modeling, natural language processing, and machine learning to extract and analyze information from large structured and unstructured datasets. Visualize, interpret, and report data findings. May create dynamic data reports.
+
+## Job Profile
+<JobZone occupation=DataScientists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DataScientists />
+
+### General Activities
+<Activities occupation=DataScientists />
+
+## Qualifications
+### Skills
+<Skills occupation=DataScientists />
+
+### Knowledge
+<Knowledge occupation=DataScientists />
+
+### Abilities
+<Abilities occupation=DataScientists />
+
+## Work Context
+<WorkContext occupation=DataScientists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DataScientists />
+
+### Industries
+<Industries occupation=DataScientists />

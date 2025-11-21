@@ -1,0 +1,71 @@
+---
+id: MuseumTechniciansAndConservators
+slug: MuseumTechniciansAndConservators
+code:
+  code: null
+title:
+  title: null
+description: Restore, maintain, or prepare objects in museum collections for
+  storage, research, or exhibit. May work with specimens such as fossils,
+  skeletal parts, or botanicals; or artifacts, textiles, or art. May identify
+  and record objects or install and arrange them in exhibits. Includes book or
+  document conservators.
+$id: https://graph.org.ai/occupations/MuseumTechniciansAndConservators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MuseumTechniciansAndConservators`
+      };
+  }));
+
+# Museum Technicians and Conservators
+
+**O*NET Code**: 25-4013.00
+
+Restore, maintain, or prepare objects in museum collections for storage, research, or exhibit. May work with specimens such as fossils, skeletal parts, or botanicals; or artifacts, textiles, or art. May identify and record objects or install and arrange them in exhibits. Includes book or document conservators.
+
+## Job Profile
+<JobZone occupation=MuseumTechniciansAndConservators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MuseumTechniciansAndConservators />
+
+### General Activities
+<Activities occupation=MuseumTechniciansAndConservators />
+
+## Qualifications
+### Skills
+<Skills occupation=MuseumTechniciansAndConservators />
+
+### Knowledge
+<Knowledge occupation=MuseumTechniciansAndConservators />
+
+### Abilities
+<Abilities occupation=MuseumTechniciansAndConservators />
+
+## Work Context
+<WorkContext occupation=MuseumTechniciansAndConservators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MuseumTechniciansAndConservators />
+
+### Industries
+<Industries occupation=MuseumTechniciansAndConservators />

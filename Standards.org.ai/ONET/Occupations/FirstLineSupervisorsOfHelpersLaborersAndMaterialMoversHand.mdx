@@ -1,0 +1,68 @@
+---
+id: FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand
+slug: FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate the activities of helpers,
+  laborers, or material movers, hand.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand`
+      };
+  }));
+
+# First-Line Supervisors of Helpers, Laborers, and Material Movers, Hand
+
+**O*NET Code**: 53-1042.00
+
+Directly supervise and coordinate the activities of helpers, laborers, or material movers, hand.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfHelpersLaborersAndMaterialMoversHand />

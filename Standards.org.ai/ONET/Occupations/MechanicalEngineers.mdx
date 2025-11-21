@@ -1,0 +1,70 @@
+---
+id: MechanicalEngineers
+slug: MechanicalEngineers
+code:
+  code: null
+title:
+  title: null
+description: Perform engineering duties in planning and designing tools,
+  engines, machines, and other mechanically functioning equipment. Oversee
+  installation, operation, maintenance, and repair of equipment such as
+  centralized heat, gas, water, and steam systems.
+$id: https://graph.org.ai/occupations/MechanicalEngineers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MechanicalEngineers`
+      };
+  }));
+
+# Mechanical Engineers
+
+**O*NET Code**: 17-2141.00
+
+Perform engineering duties in planning and designing tools, engines, machines, and other mechanically functioning equipment. Oversee installation, operation, maintenance, and repair of equipment such as centralized heat, gas, water, and steam systems.
+
+## Job Profile
+<JobZone occupation=MechanicalEngineers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MechanicalEngineers />
+
+### General Activities
+<Activities occupation=MechanicalEngineers />
+
+## Qualifications
+### Skills
+<Skills occupation=MechanicalEngineers />
+
+### Knowledge
+<Knowledge occupation=MechanicalEngineers />
+
+### Abilities
+<Abilities occupation=MechanicalEngineers />
+
+## Work Context
+<WorkContext occupation=MechanicalEngineers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MechanicalEngineers />
+
+### Industries
+<Industries occupation=MechanicalEngineers />

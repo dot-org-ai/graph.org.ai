@@ -1,0 +1,69 @@
+---
+id: HelpersElectricians
+slug: HelpersElectricians
+code:
+  code: null
+title:
+  title: null
+description: Help electricians by performing duties requiring less skill. Duties
+  include using, supplying, or holding materials or tools, and cleaning work
+  area and equipment.
+$id: https://graph.org.ai/occupations/HelpersElectricians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersElectricians`
+      };
+  }));
+
+# Helpers--Electricians
+
+**O*NET Code**: 47-3013.00
+
+Help electricians by performing duties requiring less skill. Duties include using, supplying, or holding materials or tools, and cleaning work area and equipment.
+
+## Job Profile
+<JobZone occupation=HelpersElectricians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersElectricians />
+
+### General Activities
+<Activities occupation=HelpersElectricians />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersElectricians />
+
+### Knowledge
+<Knowledge occupation=HelpersElectricians />
+
+### Abilities
+<Abilities occupation=HelpersElectricians />
+
+## Work Context
+<WorkContext occupation=HelpersElectricians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersElectricians />
+
+### Industries
+<Industries occupation=HelpersElectricians />

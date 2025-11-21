@@ -1,0 +1,71 @@
+---
+id: Histotechnologists
+slug: Histotechnologists
+code:
+  code: null
+title:
+  title: null
+description: Apply knowledge of health and disease causes to evaluate new
+  laboratory techniques and procedures to examine tissue samples. Process and
+  prepare histological slides from tissue sections for microscopic examination
+  and diagnosis by pathologists. May solve technical or instrument problems or
+  assist with research studies.
+$id: https://graph.org.ai/occupations/Histotechnologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Histotechnologists`
+      };
+  }));
+
+# Histotechnologists
+
+**O*NET Code**: 29-2011.04
+
+Apply knowledge of health and disease causes to evaluate new laboratory techniques and procedures to examine tissue samples. Process and prepare histological slides from tissue sections for microscopic examination and diagnosis by pathologists. May solve technical or instrument problems or assist with research studies.
+
+## Job Profile
+<JobZone occupation=Histotechnologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Histotechnologists />
+
+### General Activities
+<Activities occupation=Histotechnologists />
+
+## Qualifications
+### Skills
+<Skills occupation=Histotechnologists />
+
+### Knowledge
+<Knowledge occupation=Histotechnologists />
+
+### Abilities
+<Abilities occupation=Histotechnologists />
+
+## Work Context
+<WorkContext occupation=Histotechnologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Histotechnologists />
+
+### Industries
+<Industries occupation=Histotechnologists />

@@ -1,0 +1,71 @@
+---
+id: AudioAndVideoTechnicians
+slug: AudioAndVideoTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Set up, maintain, and dismantle audio and video equipment, such as
+  microphones, sound speakers, connecting wires and cables, sound and mixing
+  boards, video cameras, video monitors and servers, and related electronic
+  equipment for live or recorded events, such as concerts, meetings,
+  conventions, presentations, podcasts, news conferences, and sporting events.
+$id: https://graph.org.ai/occupations/AudioAndVideoTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AudioAndVideoTechnicians`
+      };
+  }));
+
+# Audio and Video Technicians
+
+**O*NET Code**: 27-4011.00
+
+Set up, maintain, and dismantle audio and video equipment, such as microphones, sound speakers, connecting wires and cables, sound and mixing boards, video cameras, video monitors and servers, and related electronic equipment for live or recorded events, such as concerts, meetings, conventions, presentations, podcasts, news conferences, and sporting events.
+
+## Job Profile
+<JobZone occupation=AudioAndVideoTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AudioAndVideoTechnicians />
+
+### General Activities
+<Activities occupation=AudioAndVideoTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=AudioAndVideoTechnicians />
+
+### Knowledge
+<Knowledge occupation=AudioAndVideoTechnicians />
+
+### Abilities
+<Abilities occupation=AudioAndVideoTechnicians />
+
+## Work Context
+<WorkContext occupation=AudioAndVideoTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AudioAndVideoTechnicians />
+
+### Industries
+<Industries occupation=AudioAndVideoTechnicians />

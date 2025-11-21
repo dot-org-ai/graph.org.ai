@@ -1,0 +1,67 @@
+---
+id: TherapistsAllOther
+slug: TherapistsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All therapists not listed separately.
+$id: https://graph.org.ai/occupations/TherapistsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TherapistsAllOther`
+      };
+  }));
+
+# Therapists, All Other
+
+**O*NET Code**: 29-1129.00
+
+All therapists not listed separately.
+
+## Job Profile
+<JobZone occupation=TherapistsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TherapistsAllOther />
+
+### General Activities
+<Activities occupation=TherapistsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=TherapistsAllOther />
+
+### Knowledge
+<Knowledge occupation=TherapistsAllOther />
+
+### Abilities
+<Abilities occupation=TherapistsAllOther />
+
+## Work Context
+<WorkContext occupation=TherapistsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TherapistsAllOther />
+
+### Industries
+<Industries occupation=TherapistsAllOther />

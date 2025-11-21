@@ -1,0 +1,68 @@
+---
+id: GovernmentPropertyInspectorsAndInvestigators
+slug: GovernmentPropertyInspectorsAndInvestigators
+code:
+  code: null
+title:
+  title: null
+description: Investigate or inspect government property to ensure compliance
+  with contract agreements and government regulations.
+$id: https://graph.org.ai/occupations/GovernmentPropertyInspectorsAndInvestigators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GovernmentPropertyInspectorsAndInvestigators`
+      };
+  }));
+
+# Government Property Inspectors and Investigators
+
+**O*NET Code**: 13-1041.04
+
+Investigate or inspect government property to ensure compliance with contract agreements and government regulations.
+
+## Job Profile
+<JobZone occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+### General Activities
+<Activities occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+## Qualifications
+### Skills
+<Skills occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+### Knowledge
+<Knowledge occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+### Abilities
+<Abilities occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+## Work Context
+<WorkContext occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GovernmentPropertyInspectorsAndInvestigators />
+
+### Industries
+<Industries occupation=GovernmentPropertyInspectorsAndInvestigators />

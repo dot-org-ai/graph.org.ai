@@ -1,0 +1,69 @@
+---
+id: FinancialRiskSpecialists
+slug: FinancialRiskSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Analyze and measure exposure to credit and market risk threatening
+  the assets, earning capacity, or economic state of an organization. May make
+  recommendations to limit risk.
+$id: https://graph.org.ai/occupations/FinancialRiskSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FinancialRiskSpecialists`
+      };
+  }));
+
+# Financial Risk Specialists
+
+**O*NET Code**: 13-2054.00
+
+Analyze and measure exposure to credit and market risk threatening the assets, earning capacity, or economic state of an organization. May make recommendations to limit risk.
+
+## Job Profile
+<JobZone occupation=FinancialRiskSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FinancialRiskSpecialists />
+
+### General Activities
+<Activities occupation=FinancialRiskSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=FinancialRiskSpecialists />
+
+### Knowledge
+<Knowledge occupation=FinancialRiskSpecialists />
+
+### Abilities
+<Abilities occupation=FinancialRiskSpecialists />
+
+## Work Context
+<WorkContext occupation=FinancialRiskSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FinancialRiskSpecialists />
+
+### Industries
+<Industries occupation=FinancialRiskSpecialists />

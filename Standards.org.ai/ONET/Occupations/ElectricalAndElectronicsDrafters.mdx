@@ -1,0 +1,69 @@
+---
+id: ElectricalAndElectronicsDrafters
+slug: ElectricalAndElectronicsDrafters
+code:
+  code: null
+title:
+  title: null
+description: Prepare wiring diagrams, circuit board assembly diagrams, and
+  layout drawings used for the manufacture, installation, or repair of
+  electrical equipment.
+$id: https://graph.org.ai/occupations/ElectricalAndElectronicsDrafters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ElectricalAndElectronicsDrafters`
+      };
+  }));
+
+# Electrical and Electronics Drafters
+
+**O*NET Code**: 17-3012.00
+
+Prepare wiring diagrams, circuit board assembly diagrams, and layout drawings used for the manufacture, installation, or repair of electrical equipment.
+
+## Job Profile
+<JobZone occupation=ElectricalAndElectronicsDrafters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ElectricalAndElectronicsDrafters />
+
+### General Activities
+<Activities occupation=ElectricalAndElectronicsDrafters />
+
+## Qualifications
+### Skills
+<Skills occupation=ElectricalAndElectronicsDrafters />
+
+### Knowledge
+<Knowledge occupation=ElectricalAndElectronicsDrafters />
+
+### Abilities
+<Abilities occupation=ElectricalAndElectronicsDrafters />
+
+## Work Context
+<WorkContext occupation=ElectricalAndElectronicsDrafters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ElectricalAndElectronicsDrafters />
+
+### Industries
+<Industries occupation=ElectricalAndElectronicsDrafters />

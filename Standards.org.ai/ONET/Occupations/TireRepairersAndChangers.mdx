@@ -1,0 +1,67 @@
+---
+id: TireRepairersAndChangers
+slug: TireRepairersAndChangers
+code:
+  code: null
+title:
+  title: null
+description: Repair and replace tires.
+$id: https://graph.org.ai/occupations/TireRepairersAndChangers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TireRepairersAndChangers`
+      };
+  }));
+
+# Tire Repairers and Changers
+
+**O*NET Code**: 49-3093.00
+
+Repair and replace tires.
+
+## Job Profile
+<JobZone occupation=TireRepairersAndChangers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TireRepairersAndChangers />
+
+### General Activities
+<Activities occupation=TireRepairersAndChangers />
+
+## Qualifications
+### Skills
+<Skills occupation=TireRepairersAndChangers />
+
+### Knowledge
+<Knowledge occupation=TireRepairersAndChangers />
+
+### Abilities
+<Abilities occupation=TireRepairersAndChangers />
+
+## Work Context
+<WorkContext occupation=TireRepairersAndChangers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TireRepairersAndChangers />
+
+### Industries
+<Industries occupation=TireRepairersAndChangers />

@@ -1,0 +1,72 @@
+---
+id: CustomsBrokers
+slug: CustomsBrokers
+code:
+  code: null
+title:
+  title: null
+description: Prepare customs documentation and ensure that shipments meet all
+  applicable laws to facilitate the import and export of goods. Determine and
+  track duties and taxes payable and process payments on behalf of client. Sign
+  documents under a power of attorney. Represent clients in meetings with
+  customs officials and apply for duty refunds and tariff reclassifications.
+  Coordinate transportation and storage of imported goods.
+$id: https://graph.org.ai/occupations/CustomsBrokers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CustomsBrokers`
+      };
+  }));
+
+# Customs Brokers
+
+**O*NET Code**: 13-1041.08
+
+Prepare customs documentation and ensure that shipments meet all applicable laws to facilitate the import and export of goods. Determine and track duties and taxes payable and process payments on behalf of client. Sign documents under a power of attorney. Represent clients in meetings with customs officials and apply for duty refunds and tariff reclassifications. Coordinate transportation and storage of imported goods.
+
+## Job Profile
+<JobZone occupation=CustomsBrokers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CustomsBrokers />
+
+### General Activities
+<Activities occupation=CustomsBrokers />
+
+## Qualifications
+### Skills
+<Skills occupation=CustomsBrokers />
+
+### Knowledge
+<Knowledge occupation=CustomsBrokers />
+
+### Abilities
+<Abilities occupation=CustomsBrokers />
+
+## Work Context
+<WorkContext occupation=CustomsBrokers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CustomsBrokers />
+
+### Industries
+<Industries occupation=CustomsBrokers />

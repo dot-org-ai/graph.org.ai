@@ -1,0 +1,69 @@
+---
+id: ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers
+slug: ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend machines that extrude and form continuous
+  filaments from synthetic materials, such as liquid polymer, rayon, and
+  fiberglass.
+$id: https://graph.org.ai/occupations/ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers`
+      };
+  }));
+
+# Extruding and Forming Machine Setters, Operators, and Tenders, Synthetic and Glass Fibers
+
+**O*NET Code**: 51-6091.00
+
+Set up, operate, or tend machines that extrude and form continuous filaments from synthetic materials, such as liquid polymer, rayon, and fiberglass.
+
+## Job Profile
+<JobZone occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+### General Activities
+<Activities occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+## Qualifications
+### Skills
+<Skills occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+### Knowledge
+<Knowledge occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+### Abilities
+<Abilities occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+## Work Context
+<WorkContext occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />
+
+### Industries
+<Industries occupation=ExtrudingAndFormingMachineSettersOperatorsAndTendersSyntheticAndGlassFibers />

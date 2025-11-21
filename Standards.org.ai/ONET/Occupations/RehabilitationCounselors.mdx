@@ -1,0 +1,73 @@
+---
+id: RehabilitationCounselors
+slug: RehabilitationCounselors
+code:
+  code: null
+title:
+  title: null
+description: Counsel individuals to maximize the independence and employability
+  of persons coping with personal, social, and vocational difficulties that
+  result from birth defects, illness, disease, accidents, aging, or the stress
+  of daily life. Coordinate activities for residents of care and treatment
+  facilities. Assess client needs and design and implement rehabilitation
+  programs that may include personal and vocational counseling, training, and
+  job placement.
+$id: https://graph.org.ai/occupations/RehabilitationCounselors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RehabilitationCounselors`
+      };
+  }));
+
+# Rehabilitation Counselors
+
+**O*NET Code**: 21-1015.00
+
+Counsel individuals to maximize the independence and employability of persons coping with personal, social, and vocational difficulties that result from birth defects, illness, disease, accidents, aging, or the stress of daily life. Coordinate activities for residents of care and treatment facilities. Assess client needs and design and implement rehabilitation programs that may include personal and vocational counseling, training, and job placement.
+
+## Job Profile
+<JobZone occupation=RehabilitationCounselors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RehabilitationCounselors />
+
+### General Activities
+<Activities occupation=RehabilitationCounselors />
+
+## Qualifications
+### Skills
+<Skills occupation=RehabilitationCounselors />
+
+### Knowledge
+<Knowledge occupation=RehabilitationCounselors />
+
+### Abilities
+<Abilities occupation=RehabilitationCounselors />
+
+## Work Context
+<WorkContext occupation=RehabilitationCounselors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RehabilitationCounselors />
+
+### Industries
+<Industries occupation=RehabilitationCounselors />

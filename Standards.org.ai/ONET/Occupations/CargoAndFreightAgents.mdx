@@ -1,0 +1,71 @@
+---
+id: CargoAndFreightAgents
+slug: CargoAndFreightAgents
+code:
+  code: null
+title:
+  title: null
+description: Expedite and route movement of incoming and outgoing cargo and
+  freight shipments in airline, train, and trucking terminals and shipping
+  docks. Take orders from customers and arrange pickup of freight and cargo for
+  delivery to loading platform. Prepare and examine bills of lading to determine
+  shipping charges and tariffs.
+$id: https://graph.org.ai/occupations/CargoAndFreightAgents
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CargoAndFreightAgents`
+      };
+  }));
+
+# Cargo and Freight Agents
+
+**O*NET Code**: 43-5011.00
+
+Expedite and route movement of incoming and outgoing cargo and freight shipments in airline, train, and trucking terminals and shipping docks. Take orders from customers and arrange pickup of freight and cargo for delivery to loading platform. Prepare and examine bills of lading to determine shipping charges and tariffs.
+
+## Job Profile
+<JobZone occupation=CargoAndFreightAgents />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CargoAndFreightAgents />
+
+### General Activities
+<Activities occupation=CargoAndFreightAgents />
+
+## Qualifications
+### Skills
+<Skills occupation=CargoAndFreightAgents />
+
+### Knowledge
+<Knowledge occupation=CargoAndFreightAgents />
+
+### Abilities
+<Abilities occupation=CargoAndFreightAgents />
+
+## Work Context
+<WorkContext occupation=CargoAndFreightAgents />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CargoAndFreightAgents />
+
+### Industries
+<Industries occupation=CargoAndFreightAgents />

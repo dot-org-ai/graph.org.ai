@@ -1,0 +1,68 @@
+---
+id: BusDriversSchool
+slug: BusDriversSchool
+code:
+  code: null
+title:
+  title: null
+description: Drive a school bus to transport students. Ensure adherence to
+  safety rules. May assist students in boarding or exiting.
+$id: https://graph.org.ai/occupations/BusDriversSchool
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BusDriversSchool`
+      };
+  }));
+
+# Bus Drivers, School
+
+**O*NET Code**: 53-3051.00
+
+Drive a school bus to transport students. Ensure adherence to safety rules. May assist students in boarding or exiting.
+
+## Job Profile
+<JobZone occupation=BusDriversSchool />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BusDriversSchool />
+
+### General Activities
+<Activities occupation=BusDriversSchool />
+
+## Qualifications
+### Skills
+<Skills occupation=BusDriversSchool />
+
+### Knowledge
+<Knowledge occupation=BusDriversSchool />
+
+### Abilities
+<Abilities occupation=BusDriversSchool />
+
+## Work Context
+<WorkContext occupation=BusDriversSchool />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BusDriversSchool />
+
+### Industries
+<Industries occupation=BusDriversSchool />

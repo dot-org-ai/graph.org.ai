@@ -1,0 +1,70 @@
+---
+id: LoadingAndMovingMachineOperatorsUndergroundMining
+slug: LoadingAndMovingMachineOperatorsUndergroundMining
+code:
+  code: null
+title:
+  title: null
+description: Operate underground loading or moving machine to load or move coal,
+  ore, or rock using shuttle or mine car or conveyors. Equipment may include
+  power shovels, hoisting engines equipped with cable-drawn scraper or scoop, or
+  machines equipped with gathering arms and conveyor.
+$id: https://graph.org.ai/occupations/LoadingAndMovingMachineOperatorsUndergroundMining
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LoadingAndMovingMachineOperatorsUndergroundMining`
+      };
+  }));
+
+# Loading and Moving Machine Operators, Underground Mining
+
+**O*NET Code**: 47-5044.00
+
+Operate underground loading or moving machine to load or move coal, ore, or rock using shuttle or mine car or conveyors. Equipment may include power shovels, hoisting engines equipped with cable-drawn scraper or scoop, or machines equipped with gathering arms and conveyor.
+
+## Job Profile
+<JobZone occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+### General Activities
+<Activities occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+## Qualifications
+### Skills
+<Skills occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+### Knowledge
+<Knowledge occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+### Abilities
+<Abilities occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+## Work Context
+<WorkContext occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LoadingAndMovingMachineOperatorsUndergroundMining />
+
+### Industries
+<Industries occupation=LoadingAndMovingMachineOperatorsUndergroundMining />

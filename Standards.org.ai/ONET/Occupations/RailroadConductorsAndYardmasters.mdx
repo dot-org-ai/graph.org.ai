@@ -1,0 +1,72 @@
+---
+id: RailroadConductorsAndYardmasters
+slug: RailroadConductorsAndYardmasters
+code:
+  code: null
+title:
+  title: null
+description: Coordinate activities of switch-engine crew within railroad yard,
+  industrial plant, or similar location. Conductors coordinate activities of
+  train crew on passenger or freight trains. Yardmasters review train schedules
+  and switching orders and coordinate activities of workers engaged in railroad
+  traffic operations, such as the makeup or breakup of trains and yard
+  switching.
+$id: https://graph.org.ai/occupations/RailroadConductorsAndYardmasters
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RailroadConductorsAndYardmasters`
+      };
+  }));
+
+# Railroad Conductors and Yardmasters
+
+**O*NET Code**: 53-4031.00
+
+Coordinate activities of switch-engine crew within railroad yard, industrial plant, or similar location. Conductors coordinate activities of train crew on passenger or freight trains. Yardmasters review train schedules and switching orders and coordinate activities of workers engaged in railroad traffic operations, such as the makeup or breakup of trains and yard switching.
+
+## Job Profile
+<JobZone occupation=RailroadConductorsAndYardmasters />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RailroadConductorsAndYardmasters />
+
+### General Activities
+<Activities occupation=RailroadConductorsAndYardmasters />
+
+## Qualifications
+### Skills
+<Skills occupation=RailroadConductorsAndYardmasters />
+
+### Knowledge
+<Knowledge occupation=RailroadConductorsAndYardmasters />
+
+### Abilities
+<Abilities occupation=RailroadConductorsAndYardmasters />
+
+## Work Context
+<WorkContext occupation=RailroadConductorsAndYardmasters />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RailroadConductorsAndYardmasters />
+
+### Industries
+<Industries occupation=RailroadConductorsAndYardmasters />

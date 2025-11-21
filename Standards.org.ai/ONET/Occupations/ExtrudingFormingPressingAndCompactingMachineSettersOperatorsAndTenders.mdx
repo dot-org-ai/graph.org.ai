@@ -1,0 +1,69 @@
+---
+id: ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders
+slug: ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend machines, such as glass-forming machines,
+  plodder machines, and tuber machines, to shape and form products such as
+  glassware, food, rubber, soap, brick, tile, clay, wax, tobacco, or cosmetics.
+$id: https://graph.org.ai/occupations/ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders`
+      };
+  }));
+
+# Extruding, Forming, Pressing, and Compacting Machine Setters, Operators, and Tenders
+
+**O*NET Code**: 51-9041.00
+
+Set up, operate, or tend machines, such as glass-forming machines, plodder machines, and tuber machines, to shape and form products such as glassware, food, rubber, soap, brick, tile, clay, wax, tobacco, or cosmetics.
+
+## Job Profile
+<JobZone occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />
+
+### Industries
+<Industries occupation=ExtrudingFormingPressingAndCompactingMachineSettersOperatorsAndTenders />

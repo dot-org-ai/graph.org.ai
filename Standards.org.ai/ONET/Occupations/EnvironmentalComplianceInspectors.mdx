@@ -1,0 +1,69 @@
+---
+id: EnvironmentalComplianceInspectors
+slug: EnvironmentalComplianceInspectors
+code:
+  code: null
+title:
+  title: null
+description: Inspect and investigate sources of pollution to protect the public
+  and environment and ensure conformance with Federal, State, and local
+  regulations and ordinances.
+$id: https://graph.org.ai/occupations/EnvironmentalComplianceInspectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnvironmentalComplianceInspectors`
+      };
+  }));
+
+# Environmental Compliance Inspectors
+
+**O*NET Code**: 13-1041.01
+
+Inspect and investigate sources of pollution to protect the public and environment and ensure conformance with Federal, State, and local regulations and ordinances.
+
+## Job Profile
+<JobZone occupation=EnvironmentalComplianceInspectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnvironmentalComplianceInspectors />
+
+### General Activities
+<Activities occupation=EnvironmentalComplianceInspectors />
+
+## Qualifications
+### Skills
+<Skills occupation=EnvironmentalComplianceInspectors />
+
+### Knowledge
+<Knowledge occupation=EnvironmentalComplianceInspectors />
+
+### Abilities
+<Abilities occupation=EnvironmentalComplianceInspectors />
+
+## Work Context
+<WorkContext occupation=EnvironmentalComplianceInspectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnvironmentalComplianceInspectors />
+
+### Industries
+<Industries occupation=EnvironmentalComplianceInspectors />

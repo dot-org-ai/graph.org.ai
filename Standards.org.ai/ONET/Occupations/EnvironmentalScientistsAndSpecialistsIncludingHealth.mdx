@@ -1,0 +1,72 @@
+---
+id: EnvironmentalScientistsAndSpecialistsIncludingHealth
+slug: EnvironmentalScientistsAndSpecialistsIncludingHealth
+code:
+  code: null
+title:
+  title: null
+description: Conduct research or perform investigation for the purpose of
+  identifying, abating, or eliminating sources of pollutants or hazards that
+  affect either the environment or public health. Using knowledge of various
+  scientific disciplines, may collect, synthesize, study, report, and recommend
+  action based on data derived from measurements or observations of air, food,
+  soil, water, and other sources.
+$id: https://graph.org.ai/occupations/EnvironmentalScientistsAndSpecialistsIncludingHealth
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnvironmentalScientistsAndSpecialistsIncludingHealth`
+      };
+  }));
+
+# Environmental Scientists and Specialists, Including Health
+
+**O*NET Code**: 19-2041.00
+
+Conduct research or perform investigation for the purpose of identifying, abating, or eliminating sources of pollutants or hazards that affect either the environment or public health. Using knowledge of various scientific disciplines, may collect, synthesize, study, report, and recommend action based on data derived from measurements or observations of air, food, soil, water, and other sources.
+
+## Job Profile
+<JobZone occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+### General Activities
+<Activities occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+## Qualifications
+### Skills
+<Skills occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+### Knowledge
+<Knowledge occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+### Abilities
+<Abilities occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+## Work Context
+<WorkContext occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />
+
+### Industries
+<Industries occupation=EnvironmentalScientistsAndSpecialistsIncludingHealth />

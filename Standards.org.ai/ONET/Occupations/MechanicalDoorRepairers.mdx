@@ -1,0 +1,68 @@
+---
+id: MechanicalDoorRepairers
+slug: MechanicalDoorRepairers
+code:
+  code: null
+title:
+  title: null
+description: Install, service, or repair automatic door mechanisms and hydraulic
+  doors. Includes garage door mechanics.
+$id: https://graph.org.ai/occupations/MechanicalDoorRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MechanicalDoorRepairers`
+      };
+  }));
+
+# Mechanical Door Repairers
+
+**O*NET Code**: 49-9011.00
+
+Install, service, or repair automatic door mechanisms and hydraulic doors. Includes garage door mechanics.
+
+## Job Profile
+<JobZone occupation=MechanicalDoorRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MechanicalDoorRepairers />
+
+### General Activities
+<Activities occupation=MechanicalDoorRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=MechanicalDoorRepairers />
+
+### Knowledge
+<Knowledge occupation=MechanicalDoorRepairers />
+
+### Abilities
+<Abilities occupation=MechanicalDoorRepairers />
+
+## Work Context
+<WorkContext occupation=MechanicalDoorRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MechanicalDoorRepairers />
+
+### Industries
+<Industries occupation=MechanicalDoorRepairers />

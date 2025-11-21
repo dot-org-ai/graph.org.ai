@@ -1,0 +1,69 @@
+---
+id: RealEstateBrokers
+slug: RealEstateBrokers
+code:
+  code: null
+title:
+  title: null
+description: Operate real estate office, or work for commercial real estate
+  firm, overseeing real estate transactions. Other duties usually include
+  selling real estate or renting properties and arranging loans.
+$id: https://graph.org.ai/occupations/RealEstateBrokers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$RealEstateBrokers`
+      };
+  }));
+
+# Real Estate Brokers
+
+**O*NET Code**: 41-9021.00
+
+Operate real estate office, or work for commercial real estate firm, overseeing real estate transactions. Other duties usually include selling real estate or renting properties and arranging loans.
+
+## Job Profile
+<JobZone occupation=RealEstateBrokers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=RealEstateBrokers />
+
+### General Activities
+<Activities occupation=RealEstateBrokers />
+
+## Qualifications
+### Skills
+<Skills occupation=RealEstateBrokers />
+
+### Knowledge
+<Knowledge occupation=RealEstateBrokers />
+
+### Abilities
+<Abilities occupation=RealEstateBrokers />
+
+## Work Context
+<WorkContext occupation=RealEstateBrokers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=RealEstateBrokers />
+
+### Industries
+<Industries occupation=RealEstateBrokers />

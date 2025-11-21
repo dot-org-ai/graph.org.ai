@@ -1,0 +1,72 @@
+---
+id: SalesManagers
+slug: SalesManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate the actual distribution or movement of
+  a product or service to the customer. Coordinate sales distribution by
+  establishing sales territories, quotas, and goals and establish training
+  programs for sales representatives. Analyze sales statistics gathered by staff
+  to determine sales potential and inventory requirements and monitor the
+  preferences of customers.
+$id: https://graph.org.ai/occupations/SalesManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SalesManagers`
+      };
+  }));
+
+# Sales Managers
+
+**O*NET Code**: 11-2022.00
+
+Plan, direct, or coordinate the actual distribution or movement of a product or service to the customer. Coordinate sales distribution by establishing sales territories, quotas, and goals and establish training programs for sales representatives. Analyze sales statistics gathered by staff to determine sales potential and inventory requirements and monitor the preferences of customers.
+
+## Job Profile
+<JobZone occupation=SalesManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SalesManagers />
+
+### General Activities
+<Activities occupation=SalesManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=SalesManagers />
+
+### Knowledge
+<Knowledge occupation=SalesManagers />
+
+### Abilities
+<Abilities occupation=SalesManagers />
+
+## Work Context
+<WorkContext occupation=SalesManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SalesManagers />
+
+### Industries
+<Industries occupation=SalesManagers />

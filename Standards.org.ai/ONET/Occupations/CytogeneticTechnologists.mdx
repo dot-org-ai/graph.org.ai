@@ -1,0 +1,72 @@
+---
+id: CytogeneticTechnologists
+slug: CytogeneticTechnologists
+code:
+  code: null
+title:
+  title: null
+description: Analyze chromosomes or chromosome segments found in biological
+  specimens, such as amniotic fluids, bone marrow, solid tumors, and blood to
+  aid in the study, diagnosis, classification, or treatment of inherited or
+  acquired genetic diseases. Conduct analyses through classical cytogenetic,
+  fluorescent in situ hybridization (FISH) or array comparative genome
+  hybridization (aCGH) techniques.
+$id: https://graph.org.ai/occupations/CytogeneticTechnologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CytogeneticTechnologists`
+      };
+  }));
+
+# Cytogenetic Technologists
+
+**O*NET Code**: 29-2011.01
+
+Analyze chromosomes or chromosome segments found in biological specimens, such as amniotic fluids, bone marrow, solid tumors, and blood to aid in the study, diagnosis, classification, or treatment of inherited or acquired genetic diseases. Conduct analyses through classical cytogenetic, fluorescent in situ hybridization (FISH) or array comparative genome hybridization (aCGH) techniques.
+
+## Job Profile
+<JobZone occupation=CytogeneticTechnologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CytogeneticTechnologists />
+
+### General Activities
+<Activities occupation=CytogeneticTechnologists />
+
+## Qualifications
+### Skills
+<Skills occupation=CytogeneticTechnologists />
+
+### Knowledge
+<Knowledge occupation=CytogeneticTechnologists />
+
+### Abilities
+<Abilities occupation=CytogeneticTechnologists />
+
+## Work Context
+<WorkContext occupation=CytogeneticTechnologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CytogeneticTechnologists />
+
+### Industries
+<Industries occupation=CytogeneticTechnologists />

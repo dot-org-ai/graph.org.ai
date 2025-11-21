@@ -1,0 +1,68 @@
+---
+id: SecurityGuards
+slug: SecurityGuards
+code:
+  code: null
+title:
+  title: null
+description: Guard, patrol, or monitor premises to prevent theft, violence, or
+  infractions of rules. May operate x-ray and metal detector equipment.
+$id: https://graph.org.ai/occupations/SecurityGuards
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SecurityGuards`
+      };
+  }));
+
+# Security Guards
+
+**O*NET Code**: 33-9032.00
+
+Guard, patrol, or monitor premises to prevent theft, violence, or infractions of rules. May operate x-ray and metal detector equipment.
+
+## Job Profile
+<JobZone occupation=SecurityGuards />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SecurityGuards />
+
+### General Activities
+<Activities occupation=SecurityGuards />
+
+## Qualifications
+### Skills
+<Skills occupation=SecurityGuards />
+
+### Knowledge
+<Knowledge occupation=SecurityGuards />
+
+### Abilities
+<Abilities occupation=SecurityGuards />
+
+## Work Context
+<WorkContext occupation=SecurityGuards />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SecurityGuards />
+
+### Industries
+<Industries occupation=SecurityGuards />

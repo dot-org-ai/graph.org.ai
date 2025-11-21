@@ -1,0 +1,72 @@
+---
+id: ComputerSystemsAnalysts
+slug: ComputerSystemsAnalysts
+code:
+  code: null
+title:
+  title: null
+description: Analyze science, engineering, business, and other data processing
+  problems to develop and implement solutions to complex applications problems,
+  system administration issues, or network concerns. Perform systems management
+  and integration functions, improve existing computer systems, and review
+  computer system capabilities, workflow, and schedule limitations. May analyze
+  or recommend commercially available software.
+$id: https://graph.org.ai/occupations/ComputerSystemsAnalysts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerSystemsAnalysts`
+      };
+  }));
+
+# Computer Systems Analysts
+
+**O*NET Code**: 15-1211.00
+
+Analyze science, engineering, business, and other data processing problems to develop and implement solutions to complex applications problems, system administration issues, or network concerns. Perform systems management and integration functions, improve existing computer systems, and review computer system capabilities, workflow, and schedule limitations. May analyze or recommend commercially available software.
+
+## Job Profile
+<JobZone occupation=ComputerSystemsAnalysts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerSystemsAnalysts />
+
+### General Activities
+<Activities occupation=ComputerSystemsAnalysts />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerSystemsAnalysts />
+
+### Knowledge
+<Knowledge occupation=ComputerSystemsAnalysts />
+
+### Abilities
+<Abilities occupation=ComputerSystemsAnalysts />
+
+## Work Context
+<WorkContext occupation=ComputerSystemsAnalysts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerSystemsAnalysts />
+
+### Industries
+<Industries occupation=ComputerSystemsAnalysts />

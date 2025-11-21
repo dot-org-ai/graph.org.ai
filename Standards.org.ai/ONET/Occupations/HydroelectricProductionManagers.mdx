@@ -1,0 +1,69 @@
+---
+id: HydroelectricProductionManagers
+slug: HydroelectricProductionManagers
+code:
+  code: null
+title:
+  title: null
+description: Manage operations at hydroelectric power generation facilities.
+  Maintain and monitor hydroelectric plant equipment for efficient and safe
+  plant operations.
+$id: https://graph.org.ai/occupations/HydroelectricProductionManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HydroelectricProductionManagers`
+      };
+  }));
+
+# Hydroelectric Production Managers
+
+**O*NET Code**: 11-3051.06
+
+Manage operations at hydroelectric power generation facilities. Maintain and monitor hydroelectric plant equipment for efficient and safe plant operations.
+
+## Job Profile
+<JobZone occupation=HydroelectricProductionManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HydroelectricProductionManagers />
+
+### General Activities
+<Activities occupation=HydroelectricProductionManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=HydroelectricProductionManagers />
+
+### Knowledge
+<Knowledge occupation=HydroelectricProductionManagers />
+
+### Abilities
+<Abilities occupation=HydroelectricProductionManagers />
+
+## Work Context
+<WorkContext occupation=HydroelectricProductionManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HydroelectricProductionManagers />
+
+### Industries
+<Industries occupation=HydroelectricProductionManagers />

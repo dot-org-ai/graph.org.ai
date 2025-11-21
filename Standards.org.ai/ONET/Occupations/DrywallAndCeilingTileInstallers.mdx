@@ -1,0 +1,73 @@
+---
+id: DrywallAndCeilingTileInstallers
+slug: DrywallAndCeilingTileInstallers
+code:
+  code: null
+title:
+  title: null
+description: Apply plasterboard or other wallboard to ceilings or interior walls
+  of buildings. Apply or mount acoustical tiles or blocks, strips, or sheets of
+  shock-absorbing materials to ceilings and walls of buildings to reduce or
+  reflect sound. Materials may be of decorative quality. Includes lathers who
+  fasten wooden, metal, or rockboard lath to walls, ceilings, or partitions of
+  buildings to provide support base for plaster, fireproofing, or acoustical
+  material.
+$id: https://graph.org.ai/occupations/DrywallAndCeilingTileInstallers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$DrywallAndCeilingTileInstallers`
+      };
+  }));
+
+# Drywall and Ceiling Tile Installers
+
+**O*NET Code**: 47-2081.00
+
+Apply plasterboard or other wallboard to ceilings or interior walls of buildings. Apply or mount acoustical tiles or blocks, strips, or sheets of shock-absorbing materials to ceilings and walls of buildings to reduce or reflect sound. Materials may be of decorative quality. Includes lathers who fasten wooden, metal, or rockboard lath to walls, ceilings, or partitions of buildings to provide support base for plaster, fireproofing, or acoustical material.
+
+## Job Profile
+<JobZone occupation=DrywallAndCeilingTileInstallers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=DrywallAndCeilingTileInstallers />
+
+### General Activities
+<Activities occupation=DrywallAndCeilingTileInstallers />
+
+## Qualifications
+### Skills
+<Skills occupation=DrywallAndCeilingTileInstallers />
+
+### Knowledge
+<Knowledge occupation=DrywallAndCeilingTileInstallers />
+
+### Abilities
+<Abilities occupation=DrywallAndCeilingTileInstallers />
+
+## Work Context
+<WorkContext occupation=DrywallAndCeilingTileInstallers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=DrywallAndCeilingTileInstallers />
+
+### Industries
+<Industries occupation=DrywallAndCeilingTileInstallers />

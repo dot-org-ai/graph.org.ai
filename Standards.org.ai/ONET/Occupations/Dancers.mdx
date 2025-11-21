@@ -1,0 +1,67 @@
+---
+id: Dancers
+slug: Dancers
+code:
+  code: null
+title:
+  title: null
+description: Perform dances. May perform on stage, for broadcasting, or for video recording.
+$id: https://graph.org.ai/occupations/Dancers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Dancers`
+      };
+  }));
+
+# Dancers
+
+**O*NET Code**: 27-2031.00
+
+Perform dances. May perform on stage, for broadcasting, or for video recording.
+
+## Job Profile
+<JobZone occupation=Dancers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Dancers />
+
+### General Activities
+<Activities occupation=Dancers />
+
+## Qualifications
+### Skills
+<Skills occupation=Dancers />
+
+### Knowledge
+<Knowledge occupation=Dancers />
+
+### Abilities
+<Abilities occupation=Dancers />
+
+## Work Context
+<WorkContext occupation=Dancers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Dancers />
+
+### Industries
+<Industries occupation=Dancers />

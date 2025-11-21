@@ -1,0 +1,68 @@
+---
+id: MusiciansAndSingers
+slug: MusiciansAndSingers
+code:
+  code: null
+title:
+  title: null
+description: Play one or more musical instruments or sing. May perform on stage,
+  for broadcasting, or for sound or video recording.
+$id: https://graph.org.ai/occupations/MusiciansAndSingers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MusiciansAndSingers`
+      };
+  }));
+
+# Musicians and Singers
+
+**O*NET Code**: 27-2042.00
+
+Play one or more musical instruments or sing. May perform on stage, for broadcasting, or for sound or video recording.
+
+## Job Profile
+<JobZone occupation=MusiciansAndSingers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MusiciansAndSingers />
+
+### General Activities
+<Activities occupation=MusiciansAndSingers />
+
+## Qualifications
+### Skills
+<Skills occupation=MusiciansAndSingers />
+
+### Knowledge
+<Knowledge occupation=MusiciansAndSingers />
+
+### Abilities
+<Abilities occupation=MusiciansAndSingers />
+
+## Work Context
+<WorkContext occupation=MusiciansAndSingers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MusiciansAndSingers />
+
+### Industries
+<Industries occupation=MusiciansAndSingers />

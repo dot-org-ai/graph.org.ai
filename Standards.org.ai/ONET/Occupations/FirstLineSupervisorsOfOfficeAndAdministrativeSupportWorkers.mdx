@@ -1,0 +1,68 @@
+---
+id: FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers
+slug: FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers
+code:
+  code: null
+title:
+  title: null
+description: Directly supervise and coordinate the activities of clerical and
+  administrative support workers.
+$id: https://graph.org.ai/occupations/FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers`
+      };
+  }));
+
+# First-Line Supervisors of Office and Administrative Support Workers
+
+**O*NET Code**: 43-1011.00
+
+Directly supervise and coordinate the activities of clerical and administrative support workers.
+
+## Job Profile
+<JobZone occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+### General Activities
+<Activities occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+### Knowledge
+<Knowledge occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+### Abilities
+<Abilities occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+## Work Context
+<WorkContext occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />
+
+### Industries
+<Industries occupation=FirstLineSupervisorsOfOfficeAndAdministrativeSupportWorkers />

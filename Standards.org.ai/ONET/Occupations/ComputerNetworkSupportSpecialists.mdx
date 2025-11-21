@@ -1,0 +1,70 @@
+---
+id: ComputerNetworkSupportSpecialists
+slug: ComputerNetworkSupportSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Analyze, test, troubleshoot, and evaluate existing network systems,
+  such as local area networks (LAN), wide area networks (WAN), cloud networks,
+  servers, and other data communications networks. Perform network maintenance
+  to ensure networks operate correctly with minimal interruption.
+$id: https://graph.org.ai/occupations/ComputerNetworkSupportSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerNetworkSupportSpecialists`
+      };
+  }));
+
+# Computer Network Support Specialists
+
+**O*NET Code**: 15-1231.00
+
+Analyze, test, troubleshoot, and evaluate existing network systems, such as local area networks (LAN), wide area networks (WAN), cloud networks, servers, and other data communications networks. Perform network maintenance to ensure networks operate correctly with minimal interruption.
+
+## Job Profile
+<JobZone occupation=ComputerNetworkSupportSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerNetworkSupportSpecialists />
+
+### General Activities
+<Activities occupation=ComputerNetworkSupportSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerNetworkSupportSpecialists />
+
+### Knowledge
+<Knowledge occupation=ComputerNetworkSupportSpecialists />
+
+### Abilities
+<Abilities occupation=ComputerNetworkSupportSpecialists />
+
+## Work Context
+<WorkContext occupation=ComputerNetworkSupportSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerNetworkSupportSpecialists />
+
+### Industries
+<Industries occupation=ComputerNetworkSupportSpecialists />

@@ -1,0 +1,74 @@
+---
+id: SailorsAndMarineOilers
+slug: SailorsAndMarineOilers
+code:
+  code: null
+title:
+  title: null
+description: Stand watch to look for obstructions in path of vessel, measure
+  water depth, turn wheel on bridge, or use emergency equipment as directed by
+  captain, mate, or pilot. Break out, rig, overhaul, and store cargo-handling
+  gear, stationary rigging, and running gear. Perform a variety of maintenance
+  tasks to preserve the painted surface of the ship and to maintain line and
+  ship equipment. Must hold government-issued certification and tankerman
+  certification when working aboard liquid-carrying vessels. Includes able
+  seamen and ordinary seamen.
+$id: https://graph.org.ai/occupations/SailorsAndMarineOilers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SailorsAndMarineOilers`
+      };
+  }));
+
+# Sailors and Marine Oilers
+
+**O*NET Code**: 53-5011.00
+
+Stand watch to look for obstructions in path of vessel, measure water depth, turn wheel on bridge, or use emergency equipment as directed by captain, mate, or pilot. Break out, rig, overhaul, and store cargo-handling gear, stationary rigging, and running gear. Perform a variety of maintenance tasks to preserve the painted surface of the ship and to maintain line and ship equipment. Must hold government-issued certification and tankerman certification when working aboard liquid-carrying vessels. Includes able seamen and ordinary seamen.
+
+## Job Profile
+<JobZone occupation=SailorsAndMarineOilers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SailorsAndMarineOilers />
+
+### General Activities
+<Activities occupation=SailorsAndMarineOilers />
+
+## Qualifications
+### Skills
+<Skills occupation=SailorsAndMarineOilers />
+
+### Knowledge
+<Knowledge occupation=SailorsAndMarineOilers />
+
+### Abilities
+<Abilities occupation=SailorsAndMarineOilers />
+
+## Work Context
+<WorkContext occupation=SailorsAndMarineOilers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SailorsAndMarineOilers />
+
+### Industries
+<Industries occupation=SailorsAndMarineOilers />

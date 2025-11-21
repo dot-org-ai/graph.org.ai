@@ -1,0 +1,67 @@
+---
+id: BuildingCleaningWorkersAllOther
+slug: BuildingCleaningWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All building cleaning workers not listed separately.
+$id: https://graph.org.ai/occupations/BuildingCleaningWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BuildingCleaningWorkersAllOther`
+      };
+  }));
+
+# Building Cleaning Workers, All Other
+
+**O*NET Code**: 37-2019.00
+
+All building cleaning workers not listed separately.
+
+## Job Profile
+<JobZone occupation=BuildingCleaningWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BuildingCleaningWorkersAllOther />
+
+### General Activities
+<Activities occupation=BuildingCleaningWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=BuildingCleaningWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=BuildingCleaningWorkersAllOther />
+
+### Abilities
+<Abilities occupation=BuildingCleaningWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=BuildingCleaningWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BuildingCleaningWorkersAllOther />
+
+### Industries
+<Industries occupation=BuildingCleaningWorkersAllOther />

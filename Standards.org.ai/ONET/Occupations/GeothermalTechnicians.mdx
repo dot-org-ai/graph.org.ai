@@ -1,0 +1,71 @@
+---
+id: GeothermalTechnicians
+slug: GeothermalTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Perform technical activities at power plants or individual
+  installations necessary for the generation of power from geothermal energy
+  sources. Monitor and control operating activities at geothermal power
+  generation facilities and perform maintenance and repairs as necessary.
+  Install, test, and maintain residential and commercial geothermal heat pumps.
+$id: https://graph.org.ai/occupations/GeothermalTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GeothermalTechnicians`
+      };
+  }));
+
+# Geothermal Technicians
+
+**O*NET Code**: 49-9099.01
+
+Perform technical activities at power plants or individual installations necessary for the generation of power from geothermal energy sources. Monitor and control operating activities at geothermal power generation facilities and perform maintenance and repairs as necessary. Install, test, and maintain residential and commercial geothermal heat pumps.
+
+## Job Profile
+<JobZone occupation=GeothermalTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GeothermalTechnicians />
+
+### General Activities
+<Activities occupation=GeothermalTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=GeothermalTechnicians />
+
+### Knowledge
+<Knowledge occupation=GeothermalTechnicians />
+
+### Abilities
+<Abilities occupation=GeothermalTechnicians />
+
+## Work Context
+<WorkContext occupation=GeothermalTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GeothermalTechnicians />
+
+### Industries
+<Industries occupation=GeothermalTechnicians />

@@ -1,0 +1,72 @@
+---
+id: BillAndAccountCollectors
+slug: BillAndAccountCollectors
+code:
+  code: null
+title:
+  title: null
+description: Locate and notify customers of delinquent accounts by mail,
+  telephone, or personal visit to solicit payment. Duties include receiving
+  payment and posting amount to customer's account, preparing statements to
+  credit department if customer fails to respond, initiating repossession
+  proceedings or service disconnection, and keeping records of collection and
+  status of accounts.
+$id: https://graph.org.ai/occupations/BillAndAccountCollectors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BillAndAccountCollectors`
+      };
+  }));
+
+# Bill and Account Collectors
+
+**O*NET Code**: 43-3011.00
+
+Locate and notify customers of delinquent accounts by mail, telephone, or personal visit to solicit payment. Duties include receiving payment and posting amount to customer's account, preparing statements to credit department if customer fails to respond, initiating repossession proceedings or service disconnection, and keeping records of collection and status of accounts.
+
+## Job Profile
+<JobZone occupation=BillAndAccountCollectors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BillAndAccountCollectors />
+
+### General Activities
+<Activities occupation=BillAndAccountCollectors />
+
+## Qualifications
+### Skills
+<Skills occupation=BillAndAccountCollectors />
+
+### Knowledge
+<Knowledge occupation=BillAndAccountCollectors />
+
+### Abilities
+<Abilities occupation=BillAndAccountCollectors />
+
+## Work Context
+<WorkContext occupation=BillAndAccountCollectors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BillAndAccountCollectors />
+
+### Industries
+<Industries occupation=BillAndAccountCollectors />

@@ -1,0 +1,69 @@
+---
+id: MedicalAndClinicalLaboratoryTechnicians
+slug: MedicalAndClinicalLaboratoryTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Perform routine medical laboratory tests for the diagnosis,
+  treatment, and prevention of disease. May work under the supervision of a
+  medical technologist.
+$id: https://graph.org.ai/occupations/MedicalAndClinicalLaboratoryTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MedicalAndClinicalLaboratoryTechnicians`
+      };
+  }));
+
+# Medical and Clinical Laboratory Technicians
+
+**O*NET Code**: 29-2012.00
+
+Perform routine medical laboratory tests for the diagnosis, treatment, and prevention of disease. May work under the supervision of a medical technologist.
+
+## Job Profile
+<JobZone occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+### General Activities
+<Activities occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+### Knowledge
+<Knowledge occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+### Abilities
+<Abilities occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+## Work Context
+<WorkContext occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MedicalAndClinicalLaboratoryTechnicians />
+
+### Industries
+<Industries occupation=MedicalAndClinicalLaboratoryTechnicians />

@@ -1,0 +1,69 @@
+---
+id: NursingInstructorsAndTeachersPostsecondary
+slug: NursingInstructorsAndTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Demonstrate and teach patient care in classroom and clinical units
+  to nursing students. Includes both teachers primarily engaged in teaching and
+  those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/NursingInstructorsAndTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NursingInstructorsAndTeachersPostsecondary`
+      };
+  }));
+
+# Nursing Instructors and Teachers, Postsecondary
+
+**O*NET Code**: 25-1072.00
+
+Demonstrate and teach patient care in classroom and clinical units to nursing students. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=NursingInstructorsAndTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NursingInstructorsAndTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=NursingInstructorsAndTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=NursingInstructorsAndTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=NursingInstructorsAndTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=NursingInstructorsAndTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=NursingInstructorsAndTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NursingInstructorsAndTeachersPostsecondary />
+
+### Industries
+<Industries occupation=NursingInstructorsAndTeachersPostsecondary />

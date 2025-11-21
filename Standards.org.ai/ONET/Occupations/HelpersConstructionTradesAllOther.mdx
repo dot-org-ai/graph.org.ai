@@ -1,0 +1,67 @@
+---
+id: HelpersConstructionTradesAllOther
+slug: HelpersConstructionTradesAllOther
+code:
+  code: null
+title:
+  title: null
+description: All construction trades helpers not listed separately.
+$id: https://graph.org.ai/occupations/HelpersConstructionTradesAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HelpersConstructionTradesAllOther`
+      };
+  }));
+
+# Helpers, Construction Trades, All Other
+
+**O*NET Code**: 47-3019.00
+
+All construction trades helpers not listed separately.
+
+## Job Profile
+<JobZone occupation=HelpersConstructionTradesAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HelpersConstructionTradesAllOther />
+
+### General Activities
+<Activities occupation=HelpersConstructionTradesAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=HelpersConstructionTradesAllOther />
+
+### Knowledge
+<Knowledge occupation=HelpersConstructionTradesAllOther />
+
+### Abilities
+<Abilities occupation=HelpersConstructionTradesAllOther />
+
+## Work Context
+<WorkContext occupation=HelpersConstructionTradesAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HelpersConstructionTradesAllOther />
+
+### Industries
+<Industries occupation=HelpersConstructionTradesAllOther />

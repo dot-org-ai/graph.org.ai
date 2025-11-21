@@ -1,0 +1,72 @@
+---
+id: SurgicalTechnologists
+slug: SurgicalTechnologists
+code:
+  code: null
+title:
+  title: null
+description: Assist in operations, under the supervision of surgeons, registered
+  nurses, or other surgical personnel. May help set up operating room, prepare
+  and transport patients for surgery, adjust lights and equipment, pass
+  instruments and other supplies to surgeons and surgeons' assistants, hold
+  retractors, cut sutures, and help count sponges, needles, supplies, and
+  instruments.
+$id: https://graph.org.ai/occupations/SurgicalTechnologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SurgicalTechnologists`
+      };
+  }));
+
+# Surgical Technologists
+
+**O*NET Code**: 29-2055.00
+
+Assist in operations, under the supervision of surgeons, registered nurses, or other surgical personnel. May help set up operating room, prepare and transport patients for surgery, adjust lights and equipment, pass instruments and other supplies to surgeons and surgeons' assistants, hold retractors, cut sutures, and help count sponges, needles, supplies, and instruments.
+
+## Job Profile
+<JobZone occupation=SurgicalTechnologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SurgicalTechnologists />
+
+### General Activities
+<Activities occupation=SurgicalTechnologists />
+
+## Qualifications
+### Skills
+<Skills occupation=SurgicalTechnologists />
+
+### Knowledge
+<Knowledge occupation=SurgicalTechnologists />
+
+### Abilities
+<Abilities occupation=SurgicalTechnologists />
+
+## Work Context
+<WorkContext occupation=SurgicalTechnologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SurgicalTechnologists />
+
+### Industries
+<Industries occupation=SurgicalTechnologists />

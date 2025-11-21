@@ -1,0 +1,67 @@
+---
+id: PhysicalScientistsAllOther
+slug: PhysicalScientistsAllOther
+code:
+  code: null
+title:
+  title: null
+description: All physical scientists not listed separately.
+$id: https://graph.org.ai/occupations/PhysicalScientistsAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PhysicalScientistsAllOther`
+      };
+  }));
+
+# Physical Scientists, All Other
+
+**O*NET Code**: 19-2099.00
+
+All physical scientists not listed separately.
+
+## Job Profile
+<JobZone occupation=PhysicalScientistsAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PhysicalScientistsAllOther />
+
+### General Activities
+<Activities occupation=PhysicalScientistsAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=PhysicalScientistsAllOther />
+
+### Knowledge
+<Knowledge occupation=PhysicalScientistsAllOther />
+
+### Abilities
+<Abilities occupation=PhysicalScientistsAllOther />
+
+## Work Context
+<WorkContext occupation=PhysicalScientistsAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PhysicalScientistsAllOther />
+
+### Industries
+<Industries occupation=PhysicalScientistsAllOther />

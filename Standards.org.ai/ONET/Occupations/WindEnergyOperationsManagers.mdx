@@ -1,0 +1,68 @@
+---
+id: WindEnergyOperationsManagers
+slug: WindEnergyOperationsManagers
+code:
+  code: null
+title:
+  title: null
+description: Manage wind field operations, including personnel, maintenance
+  activities, financial activities, and planning.
+$id: https://graph.org.ai/occupations/WindEnergyOperationsManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WindEnergyOperationsManagers`
+      };
+  }));
+
+# Wind Energy Operations Managers
+
+**O*NET Code**: 11-9199.09
+
+Manage wind field operations, including personnel, maintenance activities, financial activities, and planning.
+
+## Job Profile
+<JobZone occupation=WindEnergyOperationsManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WindEnergyOperationsManagers />
+
+### General Activities
+<Activities occupation=WindEnergyOperationsManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=WindEnergyOperationsManagers />
+
+### Knowledge
+<Knowledge occupation=WindEnergyOperationsManagers />
+
+### Abilities
+<Abilities occupation=WindEnergyOperationsManagers />
+
+## Work Context
+<WorkContext occupation=WindEnergyOperationsManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WindEnergyOperationsManagers />
+
+### Industries
+<Industries occupation=WindEnergyOperationsManagers />

@@ -1,0 +1,72 @@
+---
+id: Nannies
+slug: Nannies
+code:
+  code: null
+title:
+  title: null
+description: Care for children in private households and provide support and
+  expertise to parents in satisfying children's physical, emotional,
+  intellectual, and social needs. Duties may include meal planning and
+  preparation, laundry and clothing care, organization of play activities and
+  outings, discipline, intellectual stimulation, language activities, and
+  transportation.
+$id: https://graph.org.ai/occupations/Nannies
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Nannies`
+      };
+  }));
+
+# Nannies
+
+**O*NET Code**: 39-9011.01
+
+Care for children in private households and provide support and expertise to parents in satisfying children's physical, emotional, intellectual, and social needs. Duties may include meal planning and preparation, laundry and clothing care, organization of play activities and outings, discipline, intellectual stimulation, language activities, and transportation.
+
+## Job Profile
+<JobZone occupation=Nannies />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Nannies />
+
+### General Activities
+<Activities occupation=Nannies />
+
+## Qualifications
+### Skills
+<Skills occupation=Nannies />
+
+### Knowledge
+<Knowledge occupation=Nannies />
+
+### Abilities
+<Abilities occupation=Nannies />
+
+## Work Context
+<WorkContext occupation=Nannies />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Nannies />
+
+### Industries
+<Industries occupation=Nannies />

@@ -1,0 +1,69 @@
+---
+id: WindTurbineServiceTechnicians
+slug: WindTurbineServiceTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Inspect, diagnose, adjust, or repair wind turbines. Perform
+  maintenance on wind turbine equipment including resolving electrical,
+  mechanical, and hydraulic malfunctions.
+$id: https://graph.org.ai/occupations/WindTurbineServiceTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WindTurbineServiceTechnicians`
+      };
+  }));
+
+# Wind Turbine Service Technicians
+
+**O*NET Code**: 49-9081.00
+
+Inspect, diagnose, adjust, or repair wind turbines. Perform maintenance on wind turbine equipment including resolving electrical, mechanical, and hydraulic malfunctions.
+
+## Job Profile
+<JobZone occupation=WindTurbineServiceTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WindTurbineServiceTechnicians />
+
+### General Activities
+<Activities occupation=WindTurbineServiceTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=WindTurbineServiceTechnicians />
+
+### Knowledge
+<Knowledge occupation=WindTurbineServiceTechnicians />
+
+### Abilities
+<Abilities occupation=WindTurbineServiceTechnicians />
+
+## Work Context
+<WorkContext occupation=WindTurbineServiceTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WindTurbineServiceTechnicians />
+
+### Industries
+<Industries occupation=WindTurbineServiceTechnicians />

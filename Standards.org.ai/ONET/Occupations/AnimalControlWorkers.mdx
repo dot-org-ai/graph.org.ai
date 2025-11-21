@@ -1,0 +1,68 @@
+---
+id: AnimalControlWorkers
+slug: AnimalControlWorkers
+code:
+  code: null
+title:
+  title: null
+description: Handle animals for the purpose of investigations of mistreatment,
+  or control of abandoned, dangerous, or unattended animals.
+$id: https://graph.org.ai/occupations/AnimalControlWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AnimalControlWorkers`
+      };
+  }));
+
+# Animal Control Workers
+
+**O*NET Code**: 33-9011.00
+
+Handle animals for the purpose of investigations of mistreatment, or control of abandoned, dangerous, or unattended animals.
+
+## Job Profile
+<JobZone occupation=AnimalControlWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AnimalControlWorkers />
+
+### General Activities
+<Activities occupation=AnimalControlWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=AnimalControlWorkers />
+
+### Knowledge
+<Knowledge occupation=AnimalControlWorkers />
+
+### Abilities
+<Abilities occupation=AnimalControlWorkers />
+
+## Work Context
+<WorkContext occupation=AnimalControlWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AnimalControlWorkers />
+
+### Industries
+<Industries occupation=AnimalControlWorkers />

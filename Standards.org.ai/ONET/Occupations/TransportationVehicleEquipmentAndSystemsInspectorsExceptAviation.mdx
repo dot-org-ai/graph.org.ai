@@ -1,0 +1,68 @@
+---
+id: TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation
+slug: TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation
+code:
+  code: null
+title:
+  title: null
+description: Inspect and monitor transportation equipment, vehicles, or systems
+  to ensure compliance with regulations and safety standards.
+$id: https://graph.org.ai/occupations/TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation`
+      };
+  }));
+
+# Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation
+
+**O*NET Code**: 53-6051.07
+
+Inspect and monitor transportation equipment, vehicles, or systems to ensure compliance with regulations and safety standards.
+
+## Job Profile
+<JobZone occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+### General Activities
+<Activities occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+## Qualifications
+### Skills
+<Skills occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+### Knowledge
+<Knowledge occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+### Abilities
+<Abilities occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+## Work Context
+<WorkContext occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />
+
+### Industries
+<Industries occupation=TransportationVehicleEquipmentAndSystemsInspectorsExceptAviation />

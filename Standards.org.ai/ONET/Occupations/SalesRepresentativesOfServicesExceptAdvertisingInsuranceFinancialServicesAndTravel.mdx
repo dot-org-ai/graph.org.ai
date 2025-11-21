@@ -1,0 +1,68 @@
+---
+id: SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel
+slug: SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel
+code:
+  code: null
+title:
+  title: null
+description: Sell services to individuals or businesses. May describe options or
+  resolve client problems.
+$id: https://graph.org.ai/occupations/SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel`
+      };
+  }));
+
+# Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel
+
+**O*NET Code**: 41-3091.00
+
+Sell services to individuals or businesses. May describe options or resolve client problems.
+
+## Job Profile
+<JobZone occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+### General Activities
+<Activities occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+## Qualifications
+### Skills
+<Skills occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+### Knowledge
+<Knowledge occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+### Abilities
+<Abilities occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+## Work Context
+<WorkContext occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />
+
+### Industries
+<Industries occupation=SalesRepresentativesOfServicesExceptAdvertisingInsuranceFinancialServicesAndTravel />

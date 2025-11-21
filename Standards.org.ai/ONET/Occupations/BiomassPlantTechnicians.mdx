@@ -1,0 +1,67 @@
+---
+id: BiomassPlantTechnicians
+slug: BiomassPlantTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Control and monitor biomass plant activities and perform maintenance as needed.
+$id: https://graph.org.ai/occupations/BiomassPlantTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$BiomassPlantTechnicians`
+      };
+  }));
+
+# Biomass Plant Technicians
+
+**O*NET Code**: 51-8013.03
+
+Control and monitor biomass plant activities and perform maintenance as needed.
+
+## Job Profile
+<JobZone occupation=BiomassPlantTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=BiomassPlantTechnicians />
+
+### General Activities
+<Activities occupation=BiomassPlantTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=BiomassPlantTechnicians />
+
+### Knowledge
+<Knowledge occupation=BiomassPlantTechnicians />
+
+### Abilities
+<Abilities occupation=BiomassPlantTechnicians />
+
+## Work Context
+<WorkContext occupation=BiomassPlantTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=BiomassPlantTechnicians />
+
+### Industries
+<Industries occupation=BiomassPlantTechnicians />

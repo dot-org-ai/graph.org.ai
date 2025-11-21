@@ -1,0 +1,68 @@
+---
+id: CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders
+slug: CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders
+code:
+  code: null
+title:
+  title: null
+description: Set up, operate, or tend machines to crush, grind, or polish
+  materials, such as coal, glass, grain, stone, food, or rubber.
+$id: https://graph.org.ai/occupations/CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders`
+      };
+  }));
+
+# Crushing, Grinding, and Polishing Machine Setters, Operators, and Tenders
+
+**O*NET Code**: 51-9021.00
+
+Set up, operate, or tend machines to crush, grind, or polish materials, such as coal, glass, grain, stone, food, or rubber.
+
+## Job Profile
+<JobZone occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+### General Activities
+<Activities occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+## Qualifications
+### Skills
+<Skills occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+### Knowledge
+<Knowledge occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+### Abilities
+<Abilities occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+## Work Context
+<WorkContext occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />
+
+### Industries
+<Industries occupation=CrushingGrindingAndPolishingMachineSettersOperatorsAndTenders />

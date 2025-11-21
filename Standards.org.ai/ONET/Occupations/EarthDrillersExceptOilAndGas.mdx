@@ -1,0 +1,70 @@
+---
+id: EarthDrillersExceptOilAndGas
+slug: EarthDrillersExceptOilAndGas
+code:
+  code: null
+title:
+  title: null
+description: Operate a variety of drills such as rotary, churn, and pneumatic to
+  tap subsurface water and salt deposits, to remove core samples during mineral
+  exploration or soil testing, and to facilitate the use of explosives in mining
+  or construction. Includes horizontal and earth boring machine operators.
+$id: https://graph.org.ai/occupations/EarthDrillersExceptOilAndGas
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EarthDrillersExceptOilAndGas`
+      };
+  }));
+
+# Earth Drillers, Except Oil and Gas
+
+**O*NET Code**: 47-5023.00
+
+Operate a variety of drills such as rotary, churn, and pneumatic to tap subsurface water and salt deposits, to remove core samples during mineral exploration or soil testing, and to facilitate the use of explosives in mining or construction. Includes horizontal and earth boring machine operators.
+
+## Job Profile
+<JobZone occupation=EarthDrillersExceptOilAndGas />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EarthDrillersExceptOilAndGas />
+
+### General Activities
+<Activities occupation=EarthDrillersExceptOilAndGas />
+
+## Qualifications
+### Skills
+<Skills occupation=EarthDrillersExceptOilAndGas />
+
+### Knowledge
+<Knowledge occupation=EarthDrillersExceptOilAndGas />
+
+### Abilities
+<Abilities occupation=EarthDrillersExceptOilAndGas />
+
+## Work Context
+<WorkContext occupation=EarthDrillersExceptOilAndGas />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EarthDrillersExceptOilAndGas />
+
+### Industries
+<Industries occupation=EarthDrillersExceptOilAndGas />

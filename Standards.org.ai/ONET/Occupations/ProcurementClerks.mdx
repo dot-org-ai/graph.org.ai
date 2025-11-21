@@ -1,0 +1,68 @@
+---
+id: ProcurementClerks
+slug: ProcurementClerks
+code:
+  code: null
+title:
+  title: null
+description: Compile information and records to draw up purchase orders for
+  procurement of materials and services.
+$id: https://graph.org.ai/occupations/ProcurementClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ProcurementClerks`
+      };
+  }));
+
+# Procurement Clerks
+
+**O*NET Code**: 43-3061.00
+
+Compile information and records to draw up purchase orders for procurement of materials and services.
+
+## Job Profile
+<JobZone occupation=ProcurementClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ProcurementClerks />
+
+### General Activities
+<Activities occupation=ProcurementClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=ProcurementClerks />
+
+### Knowledge
+<Knowledge occupation=ProcurementClerks />
+
+### Abilities
+<Abilities occupation=ProcurementClerks />
+
+## Work Context
+<WorkContext occupation=ProcurementClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ProcurementClerks />
+
+### Industries
+<Industries occupation=ProcurementClerks />

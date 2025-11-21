@@ -1,0 +1,73 @@
+---
+id: ForestAndConservationWorkers
+slug: ForestAndConservationWorkers
+code:
+  code: null
+title:
+  title: null
+description: Under supervision, perform manual labor necessary to develop,
+  maintain, or protect areas such as forests, forested areas, woodlands,
+  wetlands, and rangelands through such activities as raising and transporting
+  seedlings; combating insects, pests, and diseases harmful to plant life; and
+  building structures to control water, erosion, and leaching of soil. Includes
+  forester aides, seedling pullers, tree planters, and gatherers of nontimber
+  forestry products such as pine straw.
+$id: https://graph.org.ai/occupations/ForestAndConservationWorkers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ForestAndConservationWorkers`
+      };
+  }));
+
+# Forest and Conservation Workers
+
+**O*NET Code**: 45-4011.00
+
+Under supervision, perform manual labor necessary to develop, maintain, or protect areas such as forests, forested areas, woodlands, wetlands, and rangelands through such activities as raising and transporting seedlings; combating insects, pests, and diseases harmful to plant life; and building structures to control water, erosion, and leaching of soil. Includes forester aides, seedling pullers, tree planters, and gatherers of nontimber forestry products such as pine straw.
+
+## Job Profile
+<JobZone occupation=ForestAndConservationWorkers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ForestAndConservationWorkers />
+
+### General Activities
+<Activities occupation=ForestAndConservationWorkers />
+
+## Qualifications
+### Skills
+<Skills occupation=ForestAndConservationWorkers />
+
+### Knowledge
+<Knowledge occupation=ForestAndConservationWorkers />
+
+### Abilities
+<Abilities occupation=ForestAndConservationWorkers />
+
+## Work Context
+<WorkContext occupation=ForestAndConservationWorkers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ForestAndConservationWorkers />
+
+### Industries
+<Industries occupation=ForestAndConservationWorkers />

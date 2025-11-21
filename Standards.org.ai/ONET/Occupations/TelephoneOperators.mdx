@@ -1,0 +1,71 @@
+---
+id: TelephoneOperators
+slug: TelephoneOperators
+code:
+  code: null
+title:
+  title: null
+description: Provide information by accessing alphabetical, geographical, or
+  other directories. Assist customers with special billing requests, such as
+  charges to a third party and credits or refunds for incorrectly dialed numbers
+  or bad connections. May handle emergency calls and assist children or people
+  with physical disabilities to make telephone calls.
+$id: https://graph.org.ai/occupations/TelephoneOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TelephoneOperators`
+      };
+  }));
+
+# Telephone Operators
+
+**O*NET Code**: 43-2021.00
+
+Provide information by accessing alphabetical, geographical, or other directories. Assist customers with special billing requests, such as charges to a third party and credits or refunds for incorrectly dialed numbers or bad connections. May handle emergency calls and assist children or people with physical disabilities to make telephone calls.
+
+## Job Profile
+<JobZone occupation=TelephoneOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TelephoneOperators />
+
+### General Activities
+<Activities occupation=TelephoneOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=TelephoneOperators />
+
+### Knowledge
+<Knowledge occupation=TelephoneOperators />
+
+### Abilities
+<Abilities occupation=TelephoneOperators />
+
+## Work Context
+<WorkContext occupation=TelephoneOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TelephoneOperators />
+
+### Industries
+<Industries occupation=TelephoneOperators />

@@ -1,0 +1,70 @@
+---
+id: Pharmacists
+slug: Pharmacists
+code:
+  code: null
+title:
+  title: null
+description: Dispense drugs prescribed by physicians and other health
+  practitioners and provide information to patients about medications and their
+  use. May advise physicians and other health practitioners on the selection,
+  dosage, interactions, and side effects of medications.
+$id: https://graph.org.ai/occupations/Pharmacists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$Pharmacists`
+      };
+  }));
+
+# Pharmacists
+
+**O*NET Code**: 29-1051.00
+
+Dispense drugs prescribed by physicians and other health practitioners and provide information to patients about medications and their use. May advise physicians and other health practitioners on the selection, dosage, interactions, and side effects of medications.
+
+## Job Profile
+<JobZone occupation=Pharmacists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=Pharmacists />
+
+### General Activities
+<Activities occupation=Pharmacists />
+
+## Qualifications
+### Skills
+<Skills occupation=Pharmacists />
+
+### Knowledge
+<Knowledge occupation=Pharmacists />
+
+### Abilities
+<Abilities occupation=Pharmacists />
+
+## Work Context
+<WorkContext occupation=Pharmacists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=Pharmacists />
+
+### Industries
+<Industries occupation=Pharmacists />

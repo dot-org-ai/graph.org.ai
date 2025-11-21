@@ -1,0 +1,68 @@
+---
+id: ClinicalDataManagers
+slug: ClinicalDataManagers
+code:
+  code: null
+title:
+  title: null
+description: Apply knowledge of health care and database management to analyze
+  clinical data, and to identify and report trends.
+$id: https://graph.org.ai/occupations/ClinicalDataManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ClinicalDataManagers`
+      };
+  }));
+
+# Clinical Data Managers
+
+**O*NET Code**: 15-2051.02
+
+Apply knowledge of health care and database management to analyze clinical data, and to identify and report trends.
+
+## Job Profile
+<JobZone occupation=ClinicalDataManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ClinicalDataManagers />
+
+### General Activities
+<Activities occupation=ClinicalDataManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=ClinicalDataManagers />
+
+### Knowledge
+<Knowledge occupation=ClinicalDataManagers />
+
+### Abilities
+<Abilities occupation=ClinicalDataManagers />
+
+## Work Context
+<WorkContext occupation=ClinicalDataManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ClinicalDataManagers />
+
+### Industries
+<Industries occupation=ClinicalDataManagers />

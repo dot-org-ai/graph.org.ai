@@ -1,0 +1,70 @@
+---
+id: ClinicalNurseSpecialists
+slug: ClinicalNurseSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Direct nursing staff in the provision of patient care in a clinical
+  practice setting, such as a hospital, hospice, clinic, or home. Ensure
+  adherence to established clinical policies, protocols, regulations, and
+  standards.
+$id: https://graph.org.ai/occupations/ClinicalNurseSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ClinicalNurseSpecialists`
+      };
+  }));
+
+# Clinical Nurse Specialists
+
+**O*NET Code**: 29-1141.04
+
+Direct nursing staff in the provision of patient care in a clinical practice setting, such as a hospital, hospice, clinic, or home. Ensure adherence to established clinical policies, protocols, regulations, and standards.
+
+## Job Profile
+<JobZone occupation=ClinicalNurseSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ClinicalNurseSpecialists />
+
+### General Activities
+<Activities occupation=ClinicalNurseSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=ClinicalNurseSpecialists />
+
+### Knowledge
+<Knowledge occupation=ClinicalNurseSpecialists />
+
+### Abilities
+<Abilities occupation=ClinicalNurseSpecialists />
+
+## Work Context
+<WorkContext occupation=ClinicalNurseSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ClinicalNurseSpecialists />
+
+### Industries
+<Industries occupation=ClinicalNurseSpecialists />

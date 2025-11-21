@@ -1,0 +1,69 @@
+---
+id: PharmacyTechnicians
+slug: PharmacyTechnicians
+code:
+  code: null
+title:
+  title: null
+description: Prepare medications under the direction of a pharmacist. May
+  measure, mix, count out, label, and record amounts and dosages of medications
+  according to prescription orders.
+$id: https://graph.org.ai/occupations/PharmacyTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PharmacyTechnicians`
+      };
+  }));
+
+# Pharmacy Technicians
+
+**O*NET Code**: 29-2052.00
+
+Prepare medications under the direction of a pharmacist. May measure, mix, count out, label, and record amounts and dosages of medications according to prescription orders.
+
+## Job Profile
+<JobZone occupation=PharmacyTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PharmacyTechnicians />
+
+### General Activities
+<Activities occupation=PharmacyTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=PharmacyTechnicians />
+
+### Knowledge
+<Knowledge occupation=PharmacyTechnicians />
+
+### Abilities
+<Abilities occupation=PharmacyTechnicians />
+
+## Work Context
+<WorkContext occupation=PharmacyTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PharmacyTechnicians />
+
+### Industries
+<Industries occupation=PharmacyTechnicians />

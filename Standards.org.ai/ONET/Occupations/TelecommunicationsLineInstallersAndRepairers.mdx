@@ -1,0 +1,67 @@
+---
+id: TelecommunicationsLineInstallersAndRepairers
+slug: TelecommunicationsLineInstallersAndRepairers
+code:
+  code: null
+title:
+  title: null
+description: Install and repair telecommunications cable, including fiber optics.
+$id: https://graph.org.ai/occupations/TelecommunicationsLineInstallersAndRepairers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TelecommunicationsLineInstallersAndRepairers`
+      };
+  }));
+
+# Telecommunications Line Installers and Repairers
+
+**O*NET Code**: 49-9052.00
+
+Install and repair telecommunications cable, including fiber optics.
+
+## Job Profile
+<JobZone occupation=TelecommunicationsLineInstallersAndRepairers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TelecommunicationsLineInstallersAndRepairers />
+
+### General Activities
+<Activities occupation=TelecommunicationsLineInstallersAndRepairers />
+
+## Qualifications
+### Skills
+<Skills occupation=TelecommunicationsLineInstallersAndRepairers />
+
+### Knowledge
+<Knowledge occupation=TelecommunicationsLineInstallersAndRepairers />
+
+### Abilities
+<Abilities occupation=TelecommunicationsLineInstallersAndRepairers />
+
+## Work Context
+<WorkContext occupation=TelecommunicationsLineInstallersAndRepairers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TelecommunicationsLineInstallersAndRepairers />
+
+### Industries
+<Industries occupation=TelecommunicationsLineInstallersAndRepairers />

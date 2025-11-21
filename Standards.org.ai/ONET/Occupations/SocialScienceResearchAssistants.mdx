@@ -1,0 +1,69 @@
+---
+id: SocialScienceResearchAssistants
+slug: SocialScienceResearchAssistants
+code:
+  code: null
+title:
+  title: null
+description: Assist social scientists in laboratory, survey, and other social
+  science research. May help prepare findings for publication and assist in
+  laboratory analysis, quality control, or data management.
+$id: https://graph.org.ai/occupations/SocialScienceResearchAssistants
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SocialScienceResearchAssistants`
+      };
+  }));
+
+# Social Science Research Assistants
+
+**O*NET Code**: 19-4061.00
+
+Assist social scientists in laboratory, survey, and other social science research. May help prepare findings for publication and assist in laboratory analysis, quality control, or data management.
+
+## Job Profile
+<JobZone occupation=SocialScienceResearchAssistants />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SocialScienceResearchAssistants />
+
+### General Activities
+<Activities occupation=SocialScienceResearchAssistants />
+
+## Qualifications
+### Skills
+<Skills occupation=SocialScienceResearchAssistants />
+
+### Knowledge
+<Knowledge occupation=SocialScienceResearchAssistants />
+
+### Abilities
+<Abilities occupation=SocialScienceResearchAssistants />
+
+## Work Context
+<WorkContext occupation=SocialScienceResearchAssistants />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SocialScienceResearchAssistants />
+
+### Industries
+<Industries occupation=SocialScienceResearchAssistants />

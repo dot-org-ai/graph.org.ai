@@ -1,0 +1,70 @@
+---
+id: ObstetriciansAndGynecologists
+slug: ObstetriciansAndGynecologists
+code:
+  code: null
+title:
+  title: null
+description: Provide medical care related to pregnancy or childbirth. Diagnose,
+  treat, and help prevent diseases of women, particularly those affecting the
+  reproductive system. May also provide general care to women. May perform both
+  medical and gynecological surgery functions.
+$id: https://graph.org.ai/occupations/ObstetriciansAndGynecologists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ObstetriciansAndGynecologists`
+      };
+  }));
+
+# Obstetricians and Gynecologists
+
+**O*NET Code**: 29-1218.00
+
+Provide medical care related to pregnancy or childbirth. Diagnose, treat, and help prevent diseases of women, particularly those affecting the reproductive system. May also provide general care to women. May perform both medical and gynecological surgery functions.
+
+## Job Profile
+<JobZone occupation=ObstetriciansAndGynecologists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ObstetriciansAndGynecologists />
+
+### General Activities
+<Activities occupation=ObstetriciansAndGynecologists />
+
+## Qualifications
+### Skills
+<Skills occupation=ObstetriciansAndGynecologists />
+
+### Knowledge
+<Knowledge occupation=ObstetriciansAndGynecologists />
+
+### Abilities
+<Abilities occupation=ObstetriciansAndGynecologists />
+
+## Work Context
+<WorkContext occupation=ObstetriciansAndGynecologists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ObstetriciansAndGynecologists />
+
+### Industries
+<Industries occupation=ObstetriciansAndGynecologists />

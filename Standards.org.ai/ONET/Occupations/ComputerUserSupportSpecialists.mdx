@@ -1,0 +1,71 @@
+---
+id: ComputerUserSupportSpecialists
+slug: ComputerUserSupportSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Provide technical assistance to computer users. Answer questions or
+  resolve computer problems for clients in person, via telephone, or
+  electronically. May provide assistance concerning the use of computer hardware
+  and software, including printing, installation, word processing, electronic
+  mail, and operating systems.
+$id: https://graph.org.ai/occupations/ComputerUserSupportSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ComputerUserSupportSpecialists`
+      };
+  }));
+
+# Computer User Support Specialists
+
+**O*NET Code**: 15-1232.00
+
+Provide technical assistance to computer users. Answer questions or resolve computer problems for clients in person, via telephone, or electronically. May provide assistance concerning the use of computer hardware and software, including printing, installation, word processing, electronic mail, and operating systems.
+
+## Job Profile
+<JobZone occupation=ComputerUserSupportSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ComputerUserSupportSpecialists />
+
+### General Activities
+<Activities occupation=ComputerUserSupportSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=ComputerUserSupportSpecialists />
+
+### Knowledge
+<Knowledge occupation=ComputerUserSupportSpecialists />
+
+### Abilities
+<Abilities occupation=ComputerUserSupportSpecialists />
+
+## Work Context
+<WorkContext occupation=ComputerUserSupportSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ComputerUserSupportSpecialists />
+
+### Industries
+<Industries occupation=ComputerUserSupportSpecialists />

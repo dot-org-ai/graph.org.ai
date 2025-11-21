@@ -1,0 +1,73 @@
+---
+id: SemiconductorProcessingTechnicians
+slug: SemiconductorProcessingTechnicians
+code:
+  code: null
+title:
+  title: null
+description: "Perform any or all of the following functions in the manufacture
+  of electronic semiconductors: load semiconductor material into furnace; saw
+  formed ingots into segments; load individual segment into crystal growing
+  chamber and monitor controls; locate crystal axis in ingot using x-ray
+  equipment and saw ingots into wafers; and clean, polish, and load wafers into
+  series of special purpose furnaces, chemical baths, and equipment used to form
+  circuitry and change conductive properties."
+$id: https://graph.org.ai/occupations/SemiconductorProcessingTechnicians
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SemiconductorProcessingTechnicians`
+      };
+  }));
+
+# Semiconductor Processing Technicians
+
+**O*NET Code**: 51-9141.00
+
+Perform any or all of the following functions in the manufacture of electronic semiconductors: load semiconductor material into furnace; saw formed ingots into segments; load individual segment into crystal growing chamber and monitor controls; locate crystal axis in ingot using x-ray equipment and saw ingots into wafers; and clean, polish, and load wafers into series of special purpose furnaces, chemical baths, and equipment used to form circuitry and change conductive properties.
+
+## Job Profile
+<JobZone occupation=SemiconductorProcessingTechnicians />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SemiconductorProcessingTechnicians />
+
+### General Activities
+<Activities occupation=SemiconductorProcessingTechnicians />
+
+## Qualifications
+### Skills
+<Skills occupation=SemiconductorProcessingTechnicians />
+
+### Knowledge
+<Knowledge occupation=SemiconductorProcessingTechnicians />
+
+### Abilities
+<Abilities occupation=SemiconductorProcessingTechnicians />
+
+## Work Context
+<WorkContext occupation=SemiconductorProcessingTechnicians />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SemiconductorProcessingTechnicians />
+
+### Industries
+<Industries occupation=SemiconductorProcessingTechnicians />

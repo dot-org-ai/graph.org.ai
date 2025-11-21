@@ -1,0 +1,68 @@
+---
+id: MotionPictureProjectionists
+slug: MotionPictureProjectionists
+code:
+  code: null
+title:
+  title: null
+description: Set up and operate motion picture projection and related sound
+  reproduction equipment.
+$id: https://graph.org.ai/occupations/MotionPictureProjectionists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MotionPictureProjectionists`
+      };
+  }));
+
+# Motion Picture Projectionists
+
+**O*NET Code**: 39-3021.00
+
+Set up and operate motion picture projection and related sound reproduction equipment.
+
+## Job Profile
+<JobZone occupation=MotionPictureProjectionists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MotionPictureProjectionists />
+
+### General Activities
+<Activities occupation=MotionPictureProjectionists />
+
+## Qualifications
+### Skills
+<Skills occupation=MotionPictureProjectionists />
+
+### Knowledge
+<Knowledge occupation=MotionPictureProjectionists />
+
+### Abilities
+<Abilities occupation=MotionPictureProjectionists />
+
+## Work Context
+<WorkContext occupation=MotionPictureProjectionists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MotionPictureProjectionists />
+
+### Industries
+<Industries occupation=MotionPictureProjectionists />

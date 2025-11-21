@@ -1,0 +1,68 @@
+---
+id: AthleticTrainers
+slug: AthleticTrainers
+code:
+  code: null
+title:
+  title: null
+description: Evaluate and treat musculoskeletal injuries or illnesses. Provide
+  preventive, therapeutic, emergency, and rehabilitative care.
+$id: https://graph.org.ai/occupations/AthleticTrainers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AthleticTrainers`
+      };
+  }));
+
+# Athletic Trainers
+
+**O*NET Code**: 29-9091.00
+
+Evaluate and treat musculoskeletal injuries or illnesses. Provide preventive, therapeutic, emergency, and rehabilitative care.
+
+## Job Profile
+<JobZone occupation=AthleticTrainers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AthleticTrainers />
+
+### General Activities
+<Activities occupation=AthleticTrainers />
+
+## Qualifications
+### Skills
+<Skills occupation=AthleticTrainers />
+
+### Knowledge
+<Knowledge occupation=AthleticTrainers />
+
+### Abilities
+<Abilities occupation=AthleticTrainers />
+
+## Work Context
+<WorkContext occupation=AthleticTrainers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AthleticTrainers />
+
+### Industries
+<Industries occupation=AthleticTrainers />

@@ -1,0 +1,67 @@
+---
+id: GroundsMaintenanceWorkersAllOther
+slug: GroundsMaintenanceWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All grounds maintenance workers not listed separately.
+$id: https://graph.org.ai/occupations/GroundsMaintenanceWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$GroundsMaintenanceWorkersAllOther`
+      };
+  }));
+
+# Grounds Maintenance Workers, All Other
+
+**O*NET Code**: 37-3019.00
+
+All grounds maintenance workers not listed separately.
+
+## Job Profile
+<JobZone occupation=GroundsMaintenanceWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=GroundsMaintenanceWorkersAllOther />
+
+### General Activities
+<Activities occupation=GroundsMaintenanceWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=GroundsMaintenanceWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=GroundsMaintenanceWorkersAllOther />
+
+### Abilities
+<Abilities occupation=GroundsMaintenanceWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=GroundsMaintenanceWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=GroundsMaintenanceWorkersAllOther />
+
+### Industries
+<Industries occupation=GroundsMaintenanceWorkersAllOther />

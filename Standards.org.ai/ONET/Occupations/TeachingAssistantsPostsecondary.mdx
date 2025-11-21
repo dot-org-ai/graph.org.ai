@@ -1,0 +1,70 @@
+---
+id: TeachingAssistantsPostsecondary
+slug: TeachingAssistantsPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Assist faculty or other instructional staff in postsecondary
+  institutions by performing instructional support activities, such as
+  developing teaching materials, leading discussion groups, preparing and giving
+  examinations, and grading examinations or papers.
+$id: https://graph.org.ai/occupations/TeachingAssistantsPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$TeachingAssistantsPostsecondary`
+      };
+  }));
+
+# Teaching Assistants, Postsecondary
+
+**O*NET Code**: 25-9044.00
+
+Assist faculty or other instructional staff in postsecondary institutions by performing instructional support activities, such as developing teaching materials, leading discussion groups, preparing and giving examinations, and grading examinations or papers.
+
+## Job Profile
+<JobZone occupation=TeachingAssistantsPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=TeachingAssistantsPostsecondary />
+
+### General Activities
+<Activities occupation=TeachingAssistantsPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=TeachingAssistantsPostsecondary />
+
+### Knowledge
+<Knowledge occupation=TeachingAssistantsPostsecondary />
+
+### Abilities
+<Abilities occupation=TeachingAssistantsPostsecondary />
+
+## Work Context
+<WorkContext occupation=TeachingAssistantsPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=TeachingAssistantsPostsecondary />
+
+### Industries
+<Industries occupation=TeachingAssistantsPostsecondary />

@@ -1,0 +1,68 @@
+---
+id: ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining
+slug: ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining
+code:
+  code: null
+title:
+  title: null
+description: Operate or tend machinery at surface mining site, equipped with
+  scoops, shovels, or buckets to excavate and load loose materials.
+$id: https://graph.org.ai/occupations/ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining`
+      };
+  }));
+
+# Excavating and Loading Machine and Dragline Operators, Surface Mining
+
+**O*NET Code**: 47-5022.00
+
+Operate or tend machinery at surface mining site, equipped with scoops, shovels, or buckets to excavate and load loose materials.
+
+## Job Profile
+<JobZone occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+### General Activities
+<Activities occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+## Qualifications
+### Skills
+<Skills occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+### Knowledge
+<Knowledge occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+### Abilities
+<Abilities occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+## Work Context
+<WorkContext occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />
+
+### Industries
+<Industries occupation=ExcavatingAndLoadingMachineAndDraglineOperatorsSurfaceMining />

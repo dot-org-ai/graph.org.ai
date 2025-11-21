@@ -1,0 +1,71 @@
+---
+id: HotelMotelAndResortDeskClerks
+slug: HotelMotelAndResortDeskClerks
+code:
+  code: null
+title:
+  title: null
+description: Accommodate hotel, motel, and resort patrons by registering and
+  assigning rooms to guests, issuing room keys or cards, transmitting and
+  receiving messages, keeping records of occupied rooms and guests' accounts,
+  making and confirming reservations, and presenting statements to and
+  collecting payments from departing guests.
+$id: https://graph.org.ai/occupations/HotelMotelAndResortDeskClerks
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$HotelMotelAndResortDeskClerks`
+      };
+  }));
+
+# Hotel, Motel, and Resort Desk Clerks
+
+**O*NET Code**: 43-4081.00
+
+Accommodate hotel, motel, and resort patrons by registering and assigning rooms to guests, issuing room keys or cards, transmitting and receiving messages, keeping records of occupied rooms and guests' accounts, making and confirming reservations, and presenting statements to and collecting payments from departing guests.
+
+## Job Profile
+<JobZone occupation=HotelMotelAndResortDeskClerks />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=HotelMotelAndResortDeskClerks />
+
+### General Activities
+<Activities occupation=HotelMotelAndResortDeskClerks />
+
+## Qualifications
+### Skills
+<Skills occupation=HotelMotelAndResortDeskClerks />
+
+### Knowledge
+<Knowledge occupation=HotelMotelAndResortDeskClerks />
+
+### Abilities
+<Abilities occupation=HotelMotelAndResortDeskClerks />
+
+## Work Context
+<WorkContext occupation=HotelMotelAndResortDeskClerks />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=HotelMotelAndResortDeskClerks />
+
+### Industries
+<Industries occupation=HotelMotelAndResortDeskClerks />

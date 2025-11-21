@@ -1,0 +1,68 @@
+---
+id: WaitersAndWaitresses
+slug: WaitersAndWaitresses
+code:
+  code: null
+title:
+  title: null
+description: Take orders and serve food and beverages to patrons at tables in
+  dining establishment.
+$id: https://graph.org.ai/occupations/WaitersAndWaitresses
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WaitersAndWaitresses`
+      };
+  }));
+
+# Waiters and Waitresses
+
+**O*NET Code**: 35-3031.00
+
+Take orders and serve food and beverages to patrons at tables in dining establishment.
+
+## Job Profile
+<JobZone occupation=WaitersAndWaitresses />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WaitersAndWaitresses />
+
+### General Activities
+<Activities occupation=WaitersAndWaitresses />
+
+## Qualifications
+### Skills
+<Skills occupation=WaitersAndWaitresses />
+
+### Knowledge
+<Knowledge occupation=WaitersAndWaitresses />
+
+### Abilities
+<Abilities occupation=WaitersAndWaitresses />
+
+## Work Context
+<WorkContext occupation=WaitersAndWaitresses />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WaitersAndWaitresses />
+
+### Industries
+<Industries occupation=WaitersAndWaitresses />

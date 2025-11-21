@@ -1,0 +1,36 @@
+---
+id: OrganizingPlanningAndPrioritizingWork/PlanEventsOrPrograms/PlanCommunityProgramsOrActivitiesForTheGeneralPublic/ParticipateInCampusAndCommunityEvents_5706
+title: Participate in campus and community events.
+description: Participate in campus and community events.
+type: Core
+activitySlug: OrganizingPlanningAndPrioritizingWork
+iwaSlug: PlanEventsOrPrograms
+dwaSlug: PlanCommunityProgramsOrActivitiesForTheGeneralPublic
+slug: ParticipateInCampusAndCommunityEvents_5706
+$id: https://graph.org.ai/tasks/ParticipateInCampusAndCommunityEvents_5706
+$type: Task
+source: ONET
+---
+# Participate in campus and community events.
+
+Participate in campus and community events.
+
+## Hierarchy
+
+**Activity**: <Activity id="OrganizingPlanningAndPrioritizingWork"></Activity>**IWA**: <IWA id="PlanEventsOrPrograms"></IWA>**DWA**:<DWA id="PlanCommunityProgramsOrActivitiesForTheGeneralPublic"></DWA>
+
+## Relationships
+
+### Occupations
+
+<Occupations task="ParticipateInCampusAndCommunityEvents_5706"></Occupations>
+
+### Tools & Tech
+
+<Tools task="ParticipateInCampusAndCommunityEvents_5706"></Tools>
+
+<Tech task="ParticipateInCampusAndCommunityEvents_5706"></Tech>
+
+### Related Processes
+
+<Processes task="ParticipateInCampusAndCommunityEvents_5706"></Processes>

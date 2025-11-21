@@ -1,0 +1,70 @@
+---
+id: AcuteCareNurses
+slug: AcuteCareNurses
+code:
+  code: null
+title:
+  title: null
+description: Provide advanced nursing care for patients with acute conditions
+  such as heart attacks, respiratory distress syndrome, or shock. May care for
+  pre- and post-operative patients or perform advanced, invasive diagnostic or
+  therapeutic procedures.
+$id: https://graph.org.ai/occupations/AcuteCareNurses
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$AcuteCareNurses`
+      };
+  }));
+
+# Acute Care Nurses
+
+**O*NET Code**: 29-1141.01
+
+Provide advanced nursing care for patients with acute conditions such as heart attacks, respiratory distress syndrome, or shock. May care for pre- and post-operative patients or perform advanced, invasive diagnostic or therapeutic procedures.
+
+## Job Profile
+<JobZone occupation=AcuteCareNurses />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=AcuteCareNurses />
+
+### General Activities
+<Activities occupation=AcuteCareNurses />
+
+## Qualifications
+### Skills
+<Skills occupation=AcuteCareNurses />
+
+### Knowledge
+<Knowledge occupation=AcuteCareNurses />
+
+### Abilities
+<Abilities occupation=AcuteCareNurses />
+
+## Work Context
+<WorkContext occupation=AcuteCareNurses />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=AcuteCareNurses />
+
+### Industries
+<Industries occupation=AcuteCareNurses />

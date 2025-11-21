@@ -1,0 +1,69 @@
+---
+id: PostalServiceMailCarriers
+slug: PostalServiceMailCarriers
+code:
+  code: null
+title:
+  title: null
+description: Sort and deliver mail for the United States Postal Service (USPS).
+  Deliver mail on established route by vehicle or on foot. Includes postal
+  service mail carriers employed by USPS contractors.
+$id: https://graph.org.ai/occupations/PostalServiceMailCarriers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$PostalServiceMailCarriers`
+      };
+  }));
+
+# Postal Service Mail Carriers
+
+**O*NET Code**: 43-5052.00
+
+Sort and deliver mail for the United States Postal Service (USPS). Deliver mail on established route by vehicle or on foot. Includes postal service mail carriers employed by USPS contractors.
+
+## Job Profile
+<JobZone occupation=PostalServiceMailCarriers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=PostalServiceMailCarriers />
+
+### General Activities
+<Activities occupation=PostalServiceMailCarriers />
+
+## Qualifications
+### Skills
+<Skills occupation=PostalServiceMailCarriers />
+
+### Knowledge
+<Knowledge occupation=PostalServiceMailCarriers />
+
+### Abilities
+<Abilities occupation=PostalServiceMailCarriers />
+
+## Work Context
+<WorkContext occupation=PostalServiceMailCarriers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=PostalServiceMailCarriers />
+
+### Industries
+<Industries occupation=PostalServiceMailCarriers />

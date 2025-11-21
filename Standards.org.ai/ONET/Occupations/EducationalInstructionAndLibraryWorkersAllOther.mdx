@@ -1,0 +1,67 @@
+---
+id: EducationalInstructionAndLibraryWorkersAllOther
+slug: EducationalInstructionAndLibraryWorkersAllOther
+code:
+  code: null
+title:
+  title: null
+description: All educational instruction and library workers not listed separately.
+$id: https://graph.org.ai/occupations/EducationalInstructionAndLibraryWorkersAllOther
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EducationalInstructionAndLibraryWorkersAllOther`
+      };
+  }));
+
+# Educational Instruction and Library Workers, All Other
+
+**O*NET Code**: 25-9099.00
+
+All educational instruction and library workers not listed separately.
+
+## Job Profile
+<JobZone occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+### General Activities
+<Activities occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+## Qualifications
+### Skills
+<Skills occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+### Knowledge
+<Knowledge occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+### Abilities
+<Abilities occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+## Work Context
+<WorkContext occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EducationalInstructionAndLibraryWorkersAllOther />
+
+### Industries
+<Industries occupation=EducationalInstructionAndLibraryWorkersAllOther />

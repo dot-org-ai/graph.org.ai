@@ -1,0 +1,68 @@
+---
+id: MusicalInstrumentRepairersAndTuners
+slug: MusicalInstrumentRepairersAndTuners
+code:
+  code: null
+title:
+  title: null
+description: Repair percussion, stringed, reed, or wind instruments. May
+  specialize in one area, such as piano tuning.
+$id: https://graph.org.ai/occupations/MusicalInstrumentRepairersAndTuners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MusicalInstrumentRepairersAndTuners`
+      };
+  }));
+
+# Musical Instrument Repairers and Tuners
+
+**O*NET Code**: 49-9063.00
+
+Repair percussion, stringed, reed, or wind instruments. May specialize in one area, such as piano tuning.
+
+## Job Profile
+<JobZone occupation=MusicalInstrumentRepairersAndTuners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MusicalInstrumentRepairersAndTuners />
+
+### General Activities
+<Activities occupation=MusicalInstrumentRepairersAndTuners />
+
+## Qualifications
+### Skills
+<Skills occupation=MusicalInstrumentRepairersAndTuners />
+
+### Knowledge
+<Knowledge occupation=MusicalInstrumentRepairersAndTuners />
+
+### Abilities
+<Abilities occupation=MusicalInstrumentRepairersAndTuners />
+
+## Work Context
+<WorkContext occupation=MusicalInstrumentRepairersAndTuners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MusicalInstrumentRepairersAndTuners />
+
+### Industries
+<Industries occupation=MusicalInstrumentRepairersAndTuners />

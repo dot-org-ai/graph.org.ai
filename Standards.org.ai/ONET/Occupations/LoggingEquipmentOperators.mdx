@@ -1,0 +1,71 @@
+---
+id: LoggingEquipmentOperators
+slug: LoggingEquipmentOperators
+code:
+  code: null
+title:
+  title: null
+description: Drive logging tractor or wheeled vehicle equipped with one or more
+  accessories, such as bulldozer blade, frontal shear, grapple, logging arch,
+  cable winches, hoisting rack, or crane boom, to fell tree; to skid, load,
+  unload, or stack logs; or to pull stumps or clear brush. Includes operating
+  stand-alone logging machines, such as log chippers.
+$id: https://graph.org.ai/occupations/LoggingEquipmentOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LoggingEquipmentOperators`
+      };
+  }));
+
+# Logging Equipment Operators
+
+**O*NET Code**: 45-4022.00
+
+Drive logging tractor or wheeled vehicle equipped with one or more accessories, such as bulldozer blade, frontal shear, grapple, logging arch, cable winches, hoisting rack, or crane boom, to fell tree; to skid, load, unload, or stack logs; or to pull stumps or clear brush. Includes operating stand-alone logging machines, such as log chippers.
+
+## Job Profile
+<JobZone occupation=LoggingEquipmentOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LoggingEquipmentOperators />
+
+### General Activities
+<Activities occupation=LoggingEquipmentOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=LoggingEquipmentOperators />
+
+### Knowledge
+<Knowledge occupation=LoggingEquipmentOperators />
+
+### Abilities
+<Abilities occupation=LoggingEquipmentOperators />
+
+## Work Context
+<WorkContext occupation=LoggingEquipmentOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LoggingEquipmentOperators />
+
+### Industries
+<Industries occupation=LoggingEquipmentOperators />

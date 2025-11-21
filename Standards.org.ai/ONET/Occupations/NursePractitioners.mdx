@@ -1,0 +1,71 @@
+---
+id: NursePractitioners
+slug: NursePractitioners
+code:
+  code: null
+title:
+  title: null
+description: Diagnose and treat acute, episodic, or chronic illness,
+  independently or as part of a healthcare team. May focus on health promotion
+  and disease prevention. May order, perform, or interpret diagnostic tests such
+  as lab work and x rays. May prescribe medication. Must be registered nurses
+  who have specialized graduate education.
+$id: https://graph.org.ai/occupations/NursePractitioners
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NursePractitioners`
+      };
+  }));
+
+# Nurse Practitioners
+
+**O*NET Code**: 29-1171.00
+
+Diagnose and treat acute, episodic, or chronic illness, independently or as part of a healthcare team. May focus on health promotion and disease prevention. May order, perform, or interpret diagnostic tests such as lab work and x rays. May prescribe medication. Must be registered nurses who have specialized graduate education.
+
+## Job Profile
+<JobZone occupation=NursePractitioners />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NursePractitioners />
+
+### General Activities
+<Activities occupation=NursePractitioners />
+
+## Qualifications
+### Skills
+<Skills occupation=NursePractitioners />
+
+### Knowledge
+<Knowledge occupation=NursePractitioners />
+
+### Abilities
+<Abilities occupation=NursePractitioners />
+
+## Work Context
+<WorkContext occupation=NursePractitioners />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NursePractitioners />
+
+### Industries
+<Industries occupation=NursePractitioners />

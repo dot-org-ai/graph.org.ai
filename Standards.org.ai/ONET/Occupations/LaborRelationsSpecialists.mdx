@@ -1,0 +1,69 @@
+---
+id: LaborRelationsSpecialists
+slug: LaborRelationsSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Resolve disputes between workers and managers, negotiate collective
+  bargaining agreements, or coordinate grievance procedures to handle employee
+  complaints.
+$id: https://graph.org.ai/occupations/LaborRelationsSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$LaborRelationsSpecialists`
+      };
+  }));
+
+# Labor Relations Specialists
+
+**O*NET Code**: 13-1075.00
+
+Resolve disputes between workers and managers, negotiate collective bargaining agreements, or coordinate grievance procedures to handle employee complaints.
+
+## Job Profile
+<JobZone occupation=LaborRelationsSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=LaborRelationsSpecialists />
+
+### General Activities
+<Activities occupation=LaborRelationsSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=LaborRelationsSpecialists />
+
+### Knowledge
+<Knowledge occupation=LaborRelationsSpecialists />
+
+### Abilities
+<Abilities occupation=LaborRelationsSpecialists />
+
+## Work Context
+<WorkContext occupation=LaborRelationsSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=LaborRelationsSpecialists />
+
+### Industries
+<Industries occupation=LaborRelationsSpecialists />

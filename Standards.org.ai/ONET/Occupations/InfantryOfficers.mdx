@@ -1,0 +1,73 @@
+---
+id: InfantryOfficers
+slug: InfantryOfficers
+code:
+  code: null
+title:
+  title: null
+description: Direct, train, and lead infantry units in ground combat operations.
+  Duties include directing deployment of infantry weapons, vehicles, and
+  equipment; directing location, construction, and camouflage of infantry
+  positions and equipment; managing field communications operations;
+  coordinating with armor, artillery, and air support units; performing
+  strategic and tactical planning, including battle plan development; and
+  leading basic reconnaissance operations.
+$id: https://graph.org.ai/occupations/InfantryOfficers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InfantryOfficers`
+      };
+  }));
+
+# Infantry Officers
+
+**O*NET Code**: 55-1016.00
+
+Direct, train, and lead infantry units in ground combat operations. Duties include directing deployment of infantry weapons, vehicles, and equipment; directing location, construction, and camouflage of infantry positions and equipment; managing field communications operations; coordinating with armor, artillery, and air support units; performing strategic and tactical planning, including battle plan development; and leading basic reconnaissance operations.
+
+## Job Profile
+<JobZone occupation=InfantryOfficers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InfantryOfficers />
+
+### General Activities
+<Activities occupation=InfantryOfficers />
+
+## Qualifications
+### Skills
+<Skills occupation=InfantryOfficers />
+
+### Knowledge
+<Knowledge occupation=InfantryOfficers />
+
+### Abilities
+<Abilities occupation=InfantryOfficers />
+
+## Work Context
+<WorkContext occupation=InfantryOfficers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InfantryOfficers />
+
+### Industries
+<Industries occupation=InfantryOfficers />

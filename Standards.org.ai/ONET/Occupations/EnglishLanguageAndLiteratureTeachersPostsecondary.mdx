@@ -1,0 +1,69 @@
+---
+id: EnglishLanguageAndLiteratureTeachersPostsecondary
+slug: EnglishLanguageAndLiteratureTeachersPostsecondary
+code:
+  code: null
+title:
+  title: null
+description: Teach courses in English language and literature, including
+  linguistics and comparative literature. Includes both teachers primarily
+  engaged in teaching and those who do a combination of teaching and research.
+$id: https://graph.org.ai/occupations/EnglishLanguageAndLiteratureTeachersPostsecondary
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnglishLanguageAndLiteratureTeachersPostsecondary`
+      };
+  }));
+
+# English Language and Literature Teachers, Postsecondary
+
+**O*NET Code**: 25-1123.00
+
+Teach courses in English language and literature, including linguistics and comparative literature. Includes both teachers primarily engaged in teaching and those who do a combination of teaching and research.
+
+## Job Profile
+<JobZone occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+### General Activities
+<Activities occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+## Qualifications
+### Skills
+<Skills occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+### Knowledge
+<Knowledge occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+### Abilities
+<Abilities occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+## Work Context
+<WorkContext occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />
+
+### Industries
+<Industries occupation=EnglishLanguageAndLiteratureTeachersPostsecondary />

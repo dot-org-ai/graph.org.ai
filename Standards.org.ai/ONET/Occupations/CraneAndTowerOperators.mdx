@@ -1,0 +1,68 @@
+---
+id: CraneAndTowerOperators
+slug: CraneAndTowerOperators
+code:
+  code: null
+title:
+  title: null
+description: Operate mechanical boom and cable or tower and cable equipment to
+  lift and move materials, machines, or products in many directions.
+$id: https://graph.org.ai/occupations/CraneAndTowerOperators
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CraneAndTowerOperators`
+      };
+  }));
+
+# Crane and Tower Operators
+
+**O*NET Code**: 53-7021.00
+
+Operate mechanical boom and cable or tower and cable equipment to lift and move materials, machines, or products in many directions.
+
+## Job Profile
+<JobZone occupation=CraneAndTowerOperators />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CraneAndTowerOperators />
+
+### General Activities
+<Activities occupation=CraneAndTowerOperators />
+
+## Qualifications
+### Skills
+<Skills occupation=CraneAndTowerOperators />
+
+### Knowledge
+<Knowledge occupation=CraneAndTowerOperators />
+
+### Abilities
+<Abilities occupation=CraneAndTowerOperators />
+
+## Work Context
+<WorkContext occupation=CraneAndTowerOperators />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CraneAndTowerOperators />
+
+### Industries
+<Industries occupation=CraneAndTowerOperators />

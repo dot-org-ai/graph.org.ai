@@ -1,0 +1,70 @@
+---
+id: InsuranceAppraisersAutoDamage
+slug: InsuranceAppraisersAutoDamage
+code:
+  code: null
+title:
+  title: null
+description: Appraise automobile or other vehicle damage to determine repair
+  costs for insurance claim settlement. Prepare insurance forms to indicate
+  repair cost or cost estimates and recommendations. May seek agreement with
+  automotive repair shop on repair costs.
+$id: https://graph.org.ai/occupations/InsuranceAppraisersAutoDamage
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$InsuranceAppraisersAutoDamage`
+      };
+  }));
+
+# Insurance Appraisers, Auto Damage
+
+**O*NET Code**: 13-1032.00
+
+Appraise automobile or other vehicle damage to determine repair costs for insurance claim settlement. Prepare insurance forms to indicate repair cost or cost estimates and recommendations. May seek agreement with automotive repair shop on repair costs.
+
+## Job Profile
+<JobZone occupation=InsuranceAppraisersAutoDamage />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=InsuranceAppraisersAutoDamage />
+
+### General Activities
+<Activities occupation=InsuranceAppraisersAutoDamage />
+
+## Qualifications
+### Skills
+<Skills occupation=InsuranceAppraisersAutoDamage />
+
+### Knowledge
+<Knowledge occupation=InsuranceAppraisersAutoDamage />
+
+### Abilities
+<Abilities occupation=InsuranceAppraisersAutoDamage />
+
+## Work Context
+<WorkContext occupation=InsuranceAppraisersAutoDamage />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=InsuranceAppraisersAutoDamage />
+
+### Industries
+<Industries occupation=InsuranceAppraisersAutoDamage />

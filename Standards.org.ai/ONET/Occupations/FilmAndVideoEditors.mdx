@@ -1,0 +1,69 @@
+---
+id: FilmAndVideoEditors
+slug: FilmAndVideoEditors
+code:
+  code: null
+title:
+  title: null
+description: Edit moving images on film, video, or other media. May work with a
+  producer or director to organize images for final production. May edit or
+  synchronize soundtracks with images.
+$id: https://graph.org.ai/occupations/FilmAndVideoEditors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FilmAndVideoEditors`
+      };
+  }));
+
+# Film and Video Editors
+
+**O*NET Code**: 27-4032.00
+
+Edit moving images on film, video, or other media. May work with a producer or director to organize images for final production. May edit or synchronize soundtracks with images.
+
+## Job Profile
+<JobZone occupation=FilmAndVideoEditors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FilmAndVideoEditors />
+
+### General Activities
+<Activities occupation=FilmAndVideoEditors />
+
+## Qualifications
+### Skills
+<Skills occupation=FilmAndVideoEditors />
+
+### Knowledge
+<Knowledge occupation=FilmAndVideoEditors />
+
+### Abilities
+<Abilities occupation=FilmAndVideoEditors />
+
+## Work Context
+<WorkContext occupation=FilmAndVideoEditors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FilmAndVideoEditors />
+
+### Industries
+<Industries occupation=FilmAndVideoEditors />

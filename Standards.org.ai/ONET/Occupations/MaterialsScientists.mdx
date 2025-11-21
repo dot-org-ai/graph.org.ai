@@ -1,0 +1,73 @@
+---
+id: MaterialsScientists
+slug: MaterialsScientists
+code:
+  code: null
+title:
+  title: null
+description: Research and study the structures and chemical properties of
+  various natural and synthetic or composite materials, including metals,
+  alloys, rubber, ceramics, semiconductors, polymers, and glass. Determine ways
+  to strengthen or combine materials or develop new materials with new or
+  specific properties for use in a variety of products and applications.
+  Includes glass scientists, ceramic scientists, metallurgical scientists, and
+  polymer scientists.
+$id: https://graph.org.ai/occupations/MaterialsScientists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$MaterialsScientists`
+      };
+  }));
+
+# Materials Scientists
+
+**O*NET Code**: 19-2032.00
+
+Research and study the structures and chemical properties of various natural and synthetic or composite materials, including metals, alloys, rubber, ceramics, semiconductors, polymers, and glass. Determine ways to strengthen or combine materials or develop new materials with new or specific properties for use in a variety of products and applications. Includes glass scientists, ceramic scientists, metallurgical scientists, and polymer scientists.
+
+## Job Profile
+<JobZone occupation=MaterialsScientists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=MaterialsScientists />
+
+### General Activities
+<Activities occupation=MaterialsScientists />
+
+## Qualifications
+### Skills
+<Skills occupation=MaterialsScientists />
+
+### Knowledge
+<Knowledge occupation=MaterialsScientists />
+
+### Abilities
+<Abilities occupation=MaterialsScientists />
+
+## Work Context
+<WorkContext occupation=MaterialsScientists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=MaterialsScientists />
+
+### Industries
+<Industries occupation=MaterialsScientists />

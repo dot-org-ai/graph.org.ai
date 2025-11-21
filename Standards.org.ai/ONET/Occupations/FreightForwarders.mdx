@@ -1,0 +1,70 @@
+---
+id: FreightForwarders
+slug: FreightForwarders
+code:
+  code: null
+title:
+  title: null
+description: Research rates, routings, or modes of transport for shipment of
+  products. Maintain awareness of regulations affecting the international
+  movement of cargo. Make arrangements for additional services, such as storage
+  or inland transportation.
+$id: https://graph.org.ai/occupations/FreightForwarders
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$FreightForwarders`
+      };
+  }));
+
+# Freight Forwarders
+
+**O*NET Code**: 43-5011.01
+
+Research rates, routings, or modes of transport for shipment of products. Maintain awareness of regulations affecting the international movement of cargo. Make arrangements for additional services, such as storage or inland transportation.
+
+## Job Profile
+<JobZone occupation=FreightForwarders />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=FreightForwarders />
+
+### General Activities
+<Activities occupation=FreightForwarders />
+
+## Qualifications
+### Skills
+<Skills occupation=FreightForwarders />
+
+### Knowledge
+<Knowledge occupation=FreightForwarders />
+
+### Abilities
+<Abilities occupation=FreightForwarders />
+
+## Work Context
+<WorkContext occupation=FreightForwarders />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=FreightForwarders />
+
+### Industries
+<Industries occupation=FreightForwarders />

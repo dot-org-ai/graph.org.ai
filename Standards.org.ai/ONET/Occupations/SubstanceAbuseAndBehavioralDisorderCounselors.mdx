@@ -1,0 +1,69 @@
+---
+id: SubstanceAbuseAndBehavioralDisorderCounselors
+slug: SubstanceAbuseAndBehavioralDisorderCounselors
+code:
+  code: null
+title:
+  title: null
+description: Counsel and advise individuals with alcohol, tobacco, drug, or
+  other problems, such as gambling and eating disorders. May counsel
+  individuals, families, or groups or engage in prevention programs.
+$id: https://graph.org.ai/occupations/SubstanceAbuseAndBehavioralDisorderCounselors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$SubstanceAbuseAndBehavioralDisorderCounselors`
+      };
+  }));
+
+# Substance Abuse and Behavioral Disorder Counselors
+
+**O*NET Code**: 21-1011.00
+
+Counsel and advise individuals with alcohol, tobacco, drug, or other problems, such as gambling and eating disorders. May counsel individuals, families, or groups or engage in prevention programs.
+
+## Job Profile
+<JobZone occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+### General Activities
+<Activities occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+## Qualifications
+### Skills
+<Skills occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+### Knowledge
+<Knowledge occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+### Abilities
+<Abilities occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+## Work Context
+<WorkContext occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=SubstanceAbuseAndBehavioralDisorderCounselors />
+
+### Industries
+<Industries occupation=SubstanceAbuseAndBehavioralDisorderCounselors />

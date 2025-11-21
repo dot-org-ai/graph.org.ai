@@ -1,0 +1,72 @@
+---
+id: CoachesAndScouts
+slug: CoachesAndScouts
+code:
+  code: null
+title:
+  title: null
+description: Instruct or coach groups or individuals in the fundamentals of
+  sports for the primary purpose of competition. Demonstrate techniques and
+  methods of participation. May evaluate athletes' strengths and weaknesses as
+  possible recruits or to improve the athletes' technique to prepare them for
+  competition. Those required to hold teaching certifications should be reported
+  in the appropriate teaching category.
+$id: https://graph.org.ai/occupations/CoachesAndScouts
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$CoachesAndScouts`
+      };
+  }));
+
+# Coaches and Scouts
+
+**O*NET Code**: 27-2022.00
+
+Instruct or coach groups or individuals in the fundamentals of sports for the primary purpose of competition. Demonstrate techniques and methods of participation. May evaluate athletes' strengths and weaknesses as possible recruits or to improve the athletes' technique to prepare them for competition. Those required to hold teaching certifications should be reported in the appropriate teaching category.
+
+## Job Profile
+<JobZone occupation=CoachesAndScouts />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=CoachesAndScouts />
+
+### General Activities
+<Activities occupation=CoachesAndScouts />
+
+## Qualifications
+### Skills
+<Skills occupation=CoachesAndScouts />
+
+### Knowledge
+<Knowledge occupation=CoachesAndScouts />
+
+### Abilities
+<Abilities occupation=CoachesAndScouts />
+
+## Work Context
+<WorkContext occupation=CoachesAndScouts />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=CoachesAndScouts />
+
+### Industries
+<Industries occupation=CoachesAndScouts />

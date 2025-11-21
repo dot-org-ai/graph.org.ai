@@ -1,0 +1,68 @@
+---
+id: WaterResourceSpecialists
+slug: WaterResourceSpecialists
+code:
+  code: null
+title:
+  title: null
+description: Design or implement programs and strategies related to water
+  resource issues such as supply, quality, and regulatory compliance issues.
+$id: https://graph.org.ai/occupations/WaterResourceSpecialists
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$WaterResourceSpecialists`
+      };
+  }));
+
+# Water Resource Specialists
+
+**O*NET Code**: 11-9121.02
+
+Design or implement programs and strategies related to water resource issues such as supply, quality, and regulatory compliance issues.
+
+## Job Profile
+<JobZone occupation=WaterResourceSpecialists />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=WaterResourceSpecialists />
+
+### General Activities
+<Activities occupation=WaterResourceSpecialists />
+
+## Qualifications
+### Skills
+<Skills occupation=WaterResourceSpecialists />
+
+### Knowledge
+<Knowledge occupation=WaterResourceSpecialists />
+
+### Abilities
+<Abilities occupation=WaterResourceSpecialists />
+
+## Work Context
+<WorkContext occupation=WaterResourceSpecialists />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=WaterResourceSpecialists />
+
+### Industries
+<Industries occupation=WaterResourceSpecialists />

@@ -1,0 +1,68 @@
+---
+id: EnergyAuditors
+slug: EnergyAuditors
+code:
+  code: null
+title:
+  title: null
+description: Conduct energy audits of buildings, building systems, or process
+  systems. May also conduct investment grade audits of buildings or systems.
+$id: https://graph.org.ai/occupations/EnergyAuditors
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$EnergyAuditors`
+      };
+  }));
+
+# Energy Auditors
+
+**O*NET Code**: 47-4011.01
+
+Conduct energy audits of buildings, building systems, or process systems. May also conduct investment grade audits of buildings or systems.
+
+## Job Profile
+<JobZone occupation=EnergyAuditors />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=EnergyAuditors />
+
+### General Activities
+<Activities occupation=EnergyAuditors />
+
+## Qualifications
+### Skills
+<Skills occupation=EnergyAuditors />
+
+### Knowledge
+<Knowledge occupation=EnergyAuditors />
+
+### Abilities
+<Abilities occupation=EnergyAuditors />
+
+## Work Context
+<WorkContext occupation=EnergyAuditors />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=EnergyAuditors />
+
+### Industries
+<Industries occupation=EnergyAuditors />

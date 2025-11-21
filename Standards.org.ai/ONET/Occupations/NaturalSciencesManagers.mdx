@@ -1,0 +1,69 @@
+---
+id: NaturalSciencesManagers
+slug: NaturalSciencesManagers
+code:
+  code: null
+title:
+  title: null
+description: Plan, direct, or coordinate activities in such fields as life
+  sciences, physical sciences, mathematics, statistics, and research and
+  development in these fields.
+$id: https://graph.org.ai/occupations/NaturalSciencesManagers
+$type: Occupation
+source: ONET
+---
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/Occupation%20Data.txt')
+  .then(rows => rows
+      .filter(row => row['Title'] && row['O*NET-SOC Code'])
+      .map(row => {
+      const title = row['Title'];
+      const code = row['O*NET-SOC Code'];
+      const description = row['Description'];
+      // PascalCase for Component/File naming
+      const slug = _.upperFirst(_.camelCase(title));
+      
+      return {
+          id: slug, // Filename
+          slug: slug,
+          code: code,
+          title: title,
+          description: description,
+          $id: `https://graph.org.ai/occupations/$NaturalSciencesManagers`
+      };
+  }));
+
+# Natural Sciences Managers
+
+**O*NET Code**: 11-9121.00
+
+Plan, direct, or coordinate activities in such fields as life sciences, physical sciences, mathematics, statistics, and research and development in these fields.
+
+## Job Profile
+<JobZone occupation=NaturalSciencesManagers />
+
+## Work Activities
+### Core Tasks
+<Tasks occupation=NaturalSciencesManagers />
+
+### General Activities
+<Activities occupation=NaturalSciencesManagers />
+
+## Qualifications
+### Skills
+<Skills occupation=NaturalSciencesManagers />
+
+### Knowledge
+<Knowledge occupation=NaturalSciencesManagers />
+
+### Abilities
+<Abilities occupation=NaturalSciencesManagers />
+
+## Work Context
+<WorkContext occupation=NaturalSciencesManagers />
+
+## Labor Market
+### Wages & Trends
+<Wages occupation=NaturalSciencesManagers />
+
+### Industries
+<Industries occupation=NaturalSciencesManagers />
