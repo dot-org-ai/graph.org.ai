@@ -4,7 +4,7 @@ $type: https://schema.org.ai/Verb
 $context: https://schema.org.ai
 ---
 
-# Encodes
+# `encodes`
 
 The act of encoding.
 
