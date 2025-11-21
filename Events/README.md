@@ -1,23 +1,41 @@
 ---
-: https://events.org.ai
-: https://schema.org.ai/Domain
-: https://schema.org.ai
+$id: https://graph.org.ai/Events
+$type: https://schema.org.ai/Event
+$context: https://schema.org.ai
 ---
 
 # Events
 
-Unified event model connecting verbs to 5W+H (Who, What, Where, When, Why, How), extending EPCIS.
+**Events** are discrete occurrences or milestones within the graph. They serve as the historical record of state changes and can act as triggers for future Actions.
 
-## Types
+## Participants
 
-- Event
+Events always record the **Actor** (Person, Human, or Code) responsible for the change, ensuring accountability and traceability.
 
-## Properties
+## Characteristics
 
-- who
-- what
-- where
-- when
-- why
-- how
+- **Immutable**: Once recorded, an Event cannot be changed.
+- **Temporal**: All events are anchored in time.
+- **Causal**: Events are often the result of Actions and the cause of Reactions (Triggers).
 
+## Usage
+
+Events are used for:
+- **Audit Logs**: Tracking what happened.
+- **Event-Driven Architecture**: Triggering [Agents](../Agents/) to perform new [Actions](../Actions/).
+- **State History**: Reconstructing the past states of [Nouns](../Nouns/).
+
+## Structure
+
+```mermaid
+graph TD
+    Events --> Actor
+    Events --> StateChange[State Change]
+    Events --> Time[Timestamp]
+    Events --> Triggers[Triggers]
+    Events --> Logs[Audit Log]
+    
+    Actor --> Person
+    Actor --> Human
+    Actor --> Code
+```

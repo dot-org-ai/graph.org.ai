@@ -1,15 +1,27 @@
 ---
-: https://tech.org.ai
-: https://schema.org.ai/Domain
-: https://schema.org.ai
+$id: https://graph.org.ai/Things/Tech
+$type: https://schema.org.ai/Class
+$context: https://schema.org.ai
 ---
 
-# Tech
+# Technology
 
-Technology stacks and software.
+**Technology** represents the tools, frameworks, and systems that enable digital and physical operations.
 
-## Types
+## Core Pillars
 
-- Technology
-- Stack
+- **[APIs](apis/)**: Interfaces for software interaction.
+- **[Code](code/)**: Source code and scripts (linked to [Code](../../Code/)).
+- **[Models](models/)**: AI and statistical models.
+- **[Robotics](robotics/)**: Hardware automation.
+- **[Security](security/)**: Protection and encryption protocols.
 
+## Structure
+
+```mermaid
+graph TD
+    Tech --> APIs
+    Tech --> Models
+    Tech --> Robotics
+    Tech --> Security
+```
