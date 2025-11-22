@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-10-26T11:05:41.612Z",
+  "parser": "v2-deduplicated",
+  "stats": {
+    "processesGenerated": 6414,
+    "universalProcesses": 2329,
+    "industryUniqueProcesses": 4085,
+    "conceptsGenerated": 9829,
+    "verbsGenerated": 501,
+    "totalFiles": 20100,
+    "sourceProcesses": 37623,
+    "uniqueProcessNames": 6414,
+    "deduplicationRatio": "5.87"
+  }
+}

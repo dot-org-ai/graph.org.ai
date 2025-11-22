@@ -1,0 +1,39 @@
+{
+  "timestamp": "2025-10-25T20:10:10.208Z",
+  "parser": "v2",
+  "stats": {
+    "processesGenerated": 37623,
+    "conceptsGenerated": 11151,
+    "verbsGenerated": 439,
+    "industriesProcessed": 17,
+    "totalFiles": 60100,
+    "expansionRatio": 1.2893708635674985
+  },
+  "industries": [
+    "aerospace-and-defense",
+    "airline",
+    "automotive",
+    "-banking",
+    "broadcasting",
+    "education",
+    "city-government",
+    "life-sciences",
+    "consumer-electronics",
+    "petroleum-downstream",
+    "petroleum-upstream",
+    "healthcare-provider",
+    "property-and-casualty-insurance",
+    "unknown",
+    "utilities",
+    "retail",
+    "consumer-products"
+  ],
+  "summary": {
+    "totalProcesses": 37623,
+    "totalFiles": 60100,
+    "expansionRatio": "1.29",
+    "verbs": 439,
+    "concepts": 11151,
+    "industries": 17
+  }
+}
