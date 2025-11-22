@@ -1,0 +1,545 @@
+# OnlineBusiness Operational Model
+
+## Core Abstraction
+
+An OnlineBusiness operates primarily through digital channels with global reach, leveraging technology for scalability and automation.
+
+## GraphDL Statements
+
+```graphdl
+OnlineBusiness.isA.Business
+OnlineBusiness.operates.Digitally
+OnlineBusiness.has.GlobalReach
+OnlineBusiness.requires.InternetConnection
+OnlineBusiness.uses.CloudInfrastructure
+OnlineBusiness.employs.RemoteWorker
+OnlineBusiness.automates.Process
+OnlineBusiness.tracks.DigitalMetric
+OnlineBusiness.optimizes.Conversion
+OnlineBusiness.scales.Rapidly
+```
+
+## Customer Journey
+
+### The Funnel
+
+```
+Visitor → User → Customer → Advocate
+```
+
+### Detailed Journey
+
+```graphdl
+Visitor.visits.Website
+Visitor.views.LandingPage
+Visitor.consumes.Content
+Visitor.clicks.CTA
+
+User.signedUp.FromVisitor
+User.provides.Email
+User.creates.Account
+User.receives.WelcomeEmail
+User.completes.Onboarding
+User.activates.Feature
+User.experiences.AhaMoment
+
+Customer.converts.FromUser
+Customer.subscribes.ToPlan
+Customer.provides.PaymentMethod
+Customer.receives.Invoice
+Customer.uses.Product
+Customer.achieves.Outcome
+Customer.renews.Subscription
+Customer.expands.Usage
+Customer.upgrades.Plan
+
+Advocate.refers.NewCustomer
+Advocate.writes.Review
+Advocate.creates.Testimonial
+Advocate.participates.InCaseStudy
+```
+
+## Core Nouns (Entities)
+
+### People
+- **Visitor** - Anonymous traffic
+- **User** - Signed up, not paying
+- **Customer** - Paying subscriber
+- **Advocate** - Promoter, referrer
+- **Champion** - Power user, internal advocate
+
+### Financial
+- **Subscription** - Recurring payment agreement
+- **Invoice** - Payment request
+- **Payment** - Transaction
+- **Refund** - Return of payment
+- **Credit** - Account balance
+- **MRR** - Monthly Recurring Revenue
+- **ARR** - Annual Recurring Revenue
+- **LTV** - Lifetime Value
+- **CAC** - Customer Acquisition Cost
+
+### Product
+- **Feature** - Product capability
+- **Integration** - Connection to external system
+- **API** - Programmatic interface
+- **Workspace** - Customer environment
+- **Project** - Customer work container
+- **Asset** - Customer-created resource
+
+### Marketing
+- **Campaign** - Marketing initiative
+- **Lead** - Potential customer contact
+- **Content** - Blog, guide, video
+- **SEO** - Search optimization
+- **Ad** - Paid promotion
+- **Email** - Communication message
+- **Webinar** - Educational event
+
+## Metrics/KPIs/OKRs
+
+### North Star Metrics
+
+```graphdl
+OnlineBusiness.tracks.ActiveUsers
+OnlineBusiness.tracks.MRR
+OnlineBusiness.tracks.ARR
+OnlineBusiness.tracks.GrowthRate
+```
+
+### Acquisition Metrics
+
+```
+Traffic (visitors/month)
+Signup Rate (signups/visitors)
+CAC (cost to acquire customer)
+Payback Period (months to recover CAC)
+Traffic Sources (organic, paid, referral, direct)
+Landing Page Conversion Rate
+```
+
+### Activation Metrics
+
+```
+Activation Rate (activated users / signups)
+Time to Activation
+Onboarding Completion Rate
+Time to First Value
+Aha Moment Achievement Rate
+```
+
+### Revenue Metrics
+
+```
+MRR (Monthly Recurring Revenue)
+ARR (Annual Recurring Revenue)
+ARPU (Average Revenue Per User)
+Expansion MRR
+Contraction MRR
+Net New MRR
+```
+
+### Retention Metrics
+
+```
+Churn Rate (monthly %)
+Retention Rate
+Logo Churn (customer count)
+Revenue Churn (MRR)
+Net Revenue Retention (NRR)
+Cohort Retention
+```
+
+### Engagement Metrics
+
+```
+DAU (Daily Active Users)
+WAU (Weekly Active Users)
+MAU (Monthly Active Users)
+DAU/MAU Ratio (stickiness)
+Feature Adoption Rate
+Session Duration
+Session Frequency
+```
+
+### Growth Metrics
+
+```
+Month-over-Month Growth
+Year-over-Year Growth
+Quick Ratio ((New + Expansion) / (Contraction + Churn))
+LTV/CAC Ratio (target: 3+)
+Viral Coefficient
+```
+
+## Financial Systems
+
+### Payment Infrastructure
+
+```graphdl
+OnlineBusiness.uses.Stripe
+OnlineBusiness.uses.StripeConnect
+OnlineBusiness.uses.PlatformDo
+OnlineBusiness.processes.Subscription
+OnlineBusiness.handles.Billing
+OnlineBusiness.manages.Payout
+OnlineBusiness.tracks.Revenue
+OnlineBusiness.calculates.MRR
+
+Stripe.processes.Payment
+Stripe.creates.Customer
+Stripe.creates.Subscription
+Stripe.sends.Invoice
+Stripe.handles.Webhook
+Stripe.manages.PaymentMethod
+Stripe.handles.Dunning
+
+StripeConnect.enables.Marketplace
+StripeConnect.splits.Payment
+StripeConnect.manages.ConnectedAccount
+StripeConnect.handles.Payout
+StripeConnect.manages.PlatformFee
+
+PlatformDo.manages.SaaS
+PlatformDo.handles.Provisioning
+PlatformDo.manages.Subscription
+PlatformDo.tracks.Usage
+PlatformDo.calculates.Billing
+```
+
+### Revenue Models
+
+```
+- Subscription (monthly/annual)
+- Usage-based (per API call, per seat)
+- Freemium (free tier + paid upgrade)
+- Free trial (14-day, 30-day)
+- Tiered pricing (starter, professional, enterprise)
+- Per-seat pricing
+- Hybrid (base + usage)
+```
+
+## Teams & Departments
+
+### Growth Team
+
+```graphdl
+GrowthTeam.drives.Acquisition
+GrowthTeam.optimizes.Conversion
+GrowthTeam.runs.Experiment
+GrowthTeam.analyzes.Funnel
+GrowthTeam.improves.Activation
+
+GrowthTeam.employs.GrowthManager
+GrowthTeam.employs.GrowthMarketer
+GrowthTeam.employs.DataAnalyst
+GrowthTeam.employs.GrowthEngineer
+```
+
+### Marketing Team
+
+```graphdl
+MarketingTeam.creates.Content
+MarketingTeam.runs.Campaign
+MarketingTeam.manages.SEO
+MarketingTeam.manages.SEM
+MarketingTeam.builds.Brand
+MarketingTeam.generates.Demand
+
+MarketingTeam.employs.ContentWriter
+MarketingTeam.employs.SEOSpecialist
+MarketingTeam.employs.PaidMediaManager
+MarketingTeam.employs.DesignDirector
+```
+
+### Sales Team
+
+```graphdl
+SalesTeam.qualifies.Lead
+SalesTeam.conducts.Demo
+SalesTeam.closes.Deal
+SalesTeam.manages.Pipeline
+SalesTeam.forecasts.Revenue
+
+SalesTeam.employs.SDR
+SalesTeam.employs.AE
+SalesTeam.employs.SalesEngineer
+```
+
+### Customer Success Team
+
+```graphdl
+CustomerSuccessTeam.onboards.Customer
+CustomerSuccessTeam.ensures.Adoption
+CustomerSuccessTeam.drives.Retention
+CustomerSuccessTeam.identifies.UpSell
+CustomerSuccessTeam.prevents.Churn
+
+CustomerSuccessTeam.employs.CSM
+CustomerSuccessTeam.employs.OnboardingSpecialist
+CustomerSuccessTeam.employs.TechnicalAccountManager
+```
+
+### Product Team
+
+```graphdl
+ProductTeam.defines.Roadmap
+ProductTeam.prioritizes.Feature
+ProductTeam.conducts.UserResearch
+ProductTeam.analyzes.Usage
+ProductTeam.ships.Release
+
+ProductTeam.employs.ProductManager
+ProductTeam.employs.ProductDesigner
+ProductTeam.employs.UserResearcher
+ProductTeam.employs.ProductAnalyst
+```
+
+### Engineering Team
+
+```graphdl
+EngineeringTeam.builds.Product
+EngineeringTeam.maintains.Codebase
+EngineeringTeam.deploys.Release
+EngineeringTeam.monitors.Performance
+EngineeringTeam.fixes.Bug
+
+EngineeringTeam.employs.SoftwareEngineer
+EngineeringTeam.employs.FrontendEngineer
+EngineeringTeam.employs.BackendEngineer
+EngineeringTeam.employs.FullStackEngineer
+```
+
+### DevOps Team
+
+```graphdl
+DevOpsTeam.manages.Infrastructure
+DevOpsTeam.automates.Deployment
+DevOpsTeam.monitors.Uptime
+DevOpsTeam.ensures.Security
+DevOpsTeam.optimizes.Performance
+
+DevOpsTeam.employs.DevOpsEngineer
+DevOpsTeam.employs.SREEngineer
+DevOpsTeam.employs.SecurityEngineer
+```
+
+### Finance Team
+
+```graphdl
+FinanceTeam.tracks.Revenue
+FinanceTeam.manages.Expenses
+FinanceTeam.forecasts.Cash
+FinanceTeam.reports.Metrics
+FinanceTeam.closes.Books
+
+FinanceTeam.employs.Controller
+FinanceTeam.employs.FinanceAnalyst
+FinanceTeam.employs.Accountant
+```
+
+## Systems & Tools
+
+### Marketing Stack
+
+```
+Website: Webflow, Next.js, WordPress
+Analytics: Google Analytics, Mixpanel, Amplitude
+SEO: Ahrefs, SEMrush
+Email: SendGrid, Mailgun, Resend
+Marketing Automation: HubSpot, Marketo
+Ads: Google Ads, Facebook Ads
+CRM: Salesforce, HubSpot
+Landing Pages: Unbounce, Instapage
+```
+
+### Product Stack
+
+```
+Product Analytics: Mixpanel, Amplitude, PostHog
+User Feedback: Intercom, UserVoice
+Feature Flags: LaunchDarkly, Flagsmith
+A/B Testing: Optimizely, VWO
+Session Recording: FullStory, LogRocket
+```
+
+### Engineering Stack
+
+```
+Source Control: GitHub, GitLab
+CI/CD: GitHub Actions, CircleCI, Jenkins
+Cloud: AWS, GCP, Azure
+Database: PostgreSQL, MongoDB, MySQL
+Cache: Redis, Memcached
+Queue: RabbitMQ, SQS, Kafka
+Monitoring: Datadog, New Relic, Sentry
+```
+
+### Customer Success Stack
+
+```
+Support: Intercom, Zendesk, Front
+Onboarding: Appcues, WalkMe, Pendo
+Health Scoring: Gainsight, ChurnZero
+Video Calls: Zoom, Google Meet
+Documentation: Notion, GitBook, Docusaurus
+```
+
+## Autonomous Operations
+
+### AI Agent Assignments
+
+```graphdl
+AIMarketingAgent.writes.Content
+AIMarketingAgent.optimizes.SEO
+AIMarketingAgent.creates.AdCopy
+AIMarketingAgent.manages.SocialMedia
+
+AISalesAgent.qualifies.Lead
+AISalesAgent.schedules.Demo
+AISalesAgent.follows.Up
+AISalesAgent.updates.CRM
+
+AISupportAgent.answers.Question
+AISupportAgent.resolves.Ticket
+AISupportAgent.provides.Documentation
+AISupportAgent.escalates.ToHuman
+
+AIAnalyticsAgent.analyzes.Data
+AIAnalyticsAgent.generates.Report
+AIAnalyticsAgent.identifies.Trend
+AIAnalyticsAgent.recommends.Action
+
+AIEngineeringAgent.writes.Code
+AIEngineeringAgent.reviews.PR
+AIEngineeringAgent.fixes.Bug
+AIEngineeringAgent.generates.Test
+```
+
+## Core Processes
+
+### Acquisition Process
+
+```
+1. Visitor Discovery
+   - SEO content ranking
+   - Paid ad click
+   - Social media post
+   - Referral link
+
+2. Landing Page
+   - Value proposition
+   - Social proof
+   - Clear CTA
+   - Low friction
+
+3. Signup
+   - Email capture
+   - Password creation
+   - Email verification
+   - Welcome email
+```
+
+### Activation Process
+
+```
+1. Onboarding
+   - Welcome screen
+   - Setup wizard
+   - First action prompt
+   - Quick win
+
+2. Aha Moment
+   - Core value delivery
+   - Success confirmation
+   - Next steps
+
+3. Habit Formation
+   - Regular usage prompts
+   - Email nudges
+   - In-app notifications
+```
+
+### Monetization Process
+
+```
+1. Trial Start
+   - Feature access
+   - Usage tracking
+   - Engagement monitoring
+
+2. Trial Nurture
+   - Usage tips
+   - Success stories
+   - Upgrade prompts
+
+3. Conversion
+   - Upgrade CTA
+   - Plan selection
+   - Payment collection
+   - Invoice generation
+```
+
+### Retention Process
+
+```
+1. Usage Monitoring
+   - Activity tracking
+   - Health scoring
+   - Churn prediction
+
+2. Engagement
+   - Feature adoption
+   - Regular check-ins
+   - Success milestones
+
+3. Renewal
+   - Renewal reminder
+   - Payment processing
+   - Subscription continuation
+```
+
+### Expansion Process
+
+```
+1. Upsell Opportunities
+   - Usage limits approaching
+   - Feature requests
+   - Team growth
+
+2. Expansion Offer
+   - Upgrade recommendation
+   - Additional features
+   - Higher tier benefits
+
+3. Expansion Close
+   - Plan upgrade
+   - Payment adjustment
+   - MRR expansion
+```
+
+## OKRs Example
+
+### Objective: Achieve Product-Market Fit
+
+**Key Results:**
+- Reach 100 paying customers
+- Achieve NPS score of 50+
+- Reduce churn to <5% monthly
+- Reach 40% activation rate
+
+### Objective: Scale Acquisition
+
+**Key Results:**
+- Grow MRR 20% month-over-month
+- Reduce CAC by 30%
+- Achieve LTV/CAC ratio of 3+
+- Generate 10,000 monthly visitors
+
+### Objective: Improve Retention
+
+**Key Results:**
+- Increase NRR to 110%
+- Reduce logo churn to <3%
+- Achieve 90-day retention of 70%
+- Increase feature adoption to 60%

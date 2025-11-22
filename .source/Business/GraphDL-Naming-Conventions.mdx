@@ -1,0 +1,360 @@
+# GraphDL Naming Conventions
+
+## PascalCase for All Concepts
+
+GraphDL uses **PascalCase** (UpperCamelCase) for all nouns, verbs, and concepts to ensure consistency and readability.
+
+## General Rules
+
+### Subjects and Objects (Nouns)
+All entities, concepts, and business names use PascalCase:
+
+```graphdl
+✅ Good:
+Business.has.Department
+Developer.creates.APIKey
+CustomerJourney.includes.ActivationStep
+APIHyperText.uses.PlatformDo
+
+❌ Bad:
+business.has.department
+Developer.creates.api_key
+customer_journey.includes.activation_step
+API.HT.uses.platform-do
+```
+
+### Predicates (Verbs/Relationships)
+Verbs and relationships also use camelCase starting with lowercase for the first word:
+
+```graphdl
+✅ Good:
+Business.operatesIn.Industry
+Developer.signedUp.OnDate
+Customer.subscribes.ToPlan
+Process.automatedBy.AIAgent
+
+❌ Bad:
+Business.operates_in.Industry
+Developer.signed_up.on_date
+Customer.Subscribes.To_Plan
+```
+
+## Specific Patterns
+
+### Multi-Word Nouns
+
+Remove all spaces, hyphens, and underscores - use PascalCase:
+
+```graphdl
+✅ Good:
+CustomerSuccessDepartment
+MonthlyRecurringRevenue
+CustomerAcquisitionCost
+LifetimeValue
+AnnualRecurringRevenue
+ChurnRate
+NetRevenueRetention
+
+❌ Bad:
+Customer_Success_Department
+Monthly_Recurring_Revenue
+customer-acquisition-cost
+lifetime_value
+annual-recurring-revenue
+churn_rate
+net_revenue_retention
+```
+
+### Acronyms
+
+Treat acronyms as words, capitalize only the first letter when part of a compound:
+
+```graphdl
+✅ Good:
+APIBusiness
+APIKey
+APIEndpoint
+SaaS
+SaS (Services-as-Software)
+OAuth
+MonthlyRecurringRevenue (MRR)
+AnnualRecurringRevenue (ARR)
+CustomerAcquisitionCost (CAC)
+
+❌ Bad:
+API_Business
+ApiKey
+API_Endpoint
+SaaS (when acronym only - spell it out: SoftwareAsAService)
+saas
+OAUTH
+MRR (use full name in GraphDL)
+```
+
+### Company/Product Names
+
+Use the official capitalization, converted to PascalCase if needed:
+
+```graphdl
+✅ Good:
+APIHyperText (for API.HT)
+PlatformDo (for Platform.do)
+BusinessOrgAi (for Business.org.ai)
+StripeConnect
+GitHubLogin
+GoogleLogin
+
+❌ Bad:
+API_HT
+Platform.do (keep dots in display only)
+Business.org.ai
+stripe_connect
+github_login
+```
+
+### Compound Concepts
+
+Join related words into single PascalCase concepts:
+
+```graphdl
+✅ Good:
+CustomerJourney
+DeveloperExperience
+UserOnboarding
+PaymentProcessing
+DataSource
+RateLimit
+UsageMetering
+
+❌ Bad:
+Customer_Journey
+DeveloperExperience (but written as two: Developer.Experience)
+User_Onboarding
+payment-processing
+data_source
+rate_limit
+```
+
+### Action/State Concepts
+
+States and actions follow the same PascalCase rule:
+
+```graphdl
+✅ Good:
+TrialStarted
+PaymentFailed
+SubscriptionRenewed
+UserActivated
+FeatureReleased
+APICallMade
+
+❌ Bad:
+trial_started
+Payment_Failed
+subscription_renewed
+user-activated
+```
+
+## Examples by Domain
+
+### Business Types
+
+```graphdl
+LocalBusiness.isA.Business
+OnlineBusiness.isA.Business
+APIBusiness.isA.OnlineBusiness
+SaaS.isA.OnlineBusiness
+SaS.isA.OnlineBusiness
+Marketplace.isA.OnlineBusiness
+DirectoryBusiness.isA.OnlineBusiness
+AgenticBusiness.isA.OnlineBusiness
+```
+
+### Departments
+
+```graphdl
+EngineeringDepartment.isPartOf.Business
+ProductDepartment.isPartOf.Business
+MarketingDepartment.isPartOf.Business
+SalesDepartment.isPartOf.Business
+CustomerSuccessDepartment.isPartOf.Business
+HumanResourcesDepartment.isPartOf.Business
+InformationTechnologyDepartment.isPartOf.Business
+```
+
+### Processes
+
+```graphdl
+DeveloperOnboarding.isA.Process
+CreditPurchase.isA.Process
+APIIntegration.isA.Process
+UsageMetering.isA.Process
+BillingCycle.isA.Process
+```
+
+### Metrics
+
+```graphdl
+MonthlyRecurringRevenue.measures.Revenue
+AnnualRecurringRevenue.measures.Revenue
+ChurnRate.measures.Retention
+CustomerAcquisitionCost.measures.Efficiency
+LifetimeValue.measures.CustomerValue
+NetRevenueRetention.measures.Growth
+```
+
+### Customer Journey
+
+```graphdl
+Visitor.visits.Website
+Visitor.becomes.User
+User.signedUp.WithEmail
+User.verifies.Email
+User.completes.Onboarding
+User.performs.FirstAction
+User.achieves.AhaMoment
+User.becomes.Customer
+Customer.subscribes.ToPlan
+Customer.uses.Product
+Customer.renews.Subscription
+Customer.becomes.Advocate
+Advocate.refers.NewCustomer
+```
+
+### Platform Infrastructure
+
+```graphdl
+PlatformDo.provides.Infrastructure
+PlatformDoPayments.handles.Payment
+PlatformDoOAuth.authenticates.User
+PlatformDoDatabase.stores.Data
+PlatformDoFunctions.runs.Code
+PlatformDoWorkflows.orchestrates.Process
+PlatformDoAgents.provides.AI
+PlatformDoSites.hosts.Website
+```
+
+### API Business Specifics
+
+```graphdl
+Developer.creates.APIKey
+APIKey.authenticates.Request
+Request.calls.Endpoint
+Endpoint.returns.Response
+Response.cached.BySystem
+Usage.metered.PerRequest
+Credit.debited.PerCall
+RateLimit.enforced.PerKey
+```
+
+## Common Patterns
+
+### Has/Contains Relationships
+
+```graphdl
+Business.has.Department
+Business.has.Employee
+Business.has.Location
+Department.contains.Team
+Team.contains.Member
+Workspace.contains.Project
+```
+
+### Is/Extends Relationships
+
+```graphdl
+APIBusiness.isA.Business
+SaaS.isA.OnlineBusiness
+Developer.isA.Customer
+EngineeringDepartment.isA.Department
+```
+
+### Performs/Executes Actions
+
+```graphdl
+Developer.performs.Integration
+System.executes.Workflow
+Agent.processes.Request
+Team.delivers.Feature
+```
+
+### Tracks/Measures Metrics
+
+```graphdl
+Business.tracks.Revenue
+System.measures.Performance
+Analytics.tracks.Conversion
+Dashboard.displays.Metric
+```
+
+## TypeScript Interface Naming
+
+When GraphDL concepts map to TypeScript, maintain PascalCase:
+
+```typescript
+// GraphDL: APIKey
+interface APIKey {
+  id: string
+  key: string
+  secret: string
+}
+
+// GraphDL: DeveloperAccount
+interface DeveloperAccount {
+  email: string
+  apiKeys: APIKey[]
+}
+
+// GraphDL: SubscriptionPlan
+interface SubscriptionPlan {
+  name: string
+  price: number
+  features: Feature[]
+}
+```
+
+## Database Schema Naming
+
+While databases often use snake_case, the GraphDL semantic layer uses PascalCase:
+
+```graphdl
+# GraphDL (PascalCase)
+Developer.has.APIKey
+APIKey.authenticates.Request
+
+# Database (snake_case - handled by ORM)
+CREATE TABLE developers (id, email, created_at);
+CREATE TABLE api_keys (id, developer_id, key, secret);
+```
+
+The mapping layer (ORM/query builder) handles the conversion.
+
+## File Naming
+
+GraphDL relationship files use PascalCase with descriptive names:
+
+```
+✅ Good:
+Business.Relationships.tsv
+Department.Relationships.tsv
+APIBusiness.Relationships.tsv
+CustomerJourney.Relationships.tsv
+
+❌ Bad:
+business-relationships.tsv
+department_relationships.tsv
+api-business.tsv
+customer_journey.tsv
+```
+
+## Summary
+
+**Core Principle:** Everything in GraphDL uses PascalCase for maximum consistency and readability.
+
+- ✅ **Nouns:** PascalCase (Business, Developer, APIKey)
+- ✅ **Verbs:** camelCase (creates, signedUp, operatesIn)
+- ✅ **Multi-word:** PascalCase (CustomerJourney, MonthlyRecurringRevenue)
+- ✅ **Acronyms:** Treat as words (APIBusiness, SaaS, OAuth)
+- ✅ **Company names:** PascalCase version (PlatformDo, BusinessOrgAi)
+
+This creates a clean, consistent semantic layer that's easy to read, write, and query across all business domains!
