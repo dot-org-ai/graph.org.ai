@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, real, blob } from 'drizzle-orm/sqlite-core'
+import { sqliteTable, text, integer, real, blob, index } from 'drizzle-orm/sqlite-core'
 import { sql } from 'drizzle-orm'
 
 /**
@@ -7,23 +7,32 @@ import { sql } from 'drizzle-orm'
  */
 export const things = sqliteTable('things', {
   // Core identifiers
-  ns: text('ns').notNull(),           // Namespace (e.g., 'schema.org', 'onet', 'unspsc')
+  ns: text('ns').notNull(),           // Full namespace origin (e.g., 'https://schema.org', 'https://occupations.org.ai')
   type: text('type').notNull(),       // Type within namespace (e.g., 'Person', 'Occupation', 'Product')
-  id: text('id').notNull(),           // Unique ID within ns/type
+  id: text('id').notNull(),           // TitleCase name (e.g., 'ChiefExecutive', 'ArmHandSteadiness')
 
-  // URL - defaults to ns/type/id but can be custom
+  // URL - fully qualified with namespace path
   url: text('url').primaryKey().notNull(),
+
+  // Names and codes
+  name: text('name'),                         // Original unchanged name/title
+  code: text('code'),                         // Original source code/ID (e.g., '11-1011.00', '1.A.2.a')
 
   // Content and metadata
   data: text('data', { mode: 'json' }),      // Structured data as JSON
-  code: text('code'),                         // Optional code/script content
   content: text('content'),                   // Text content (markdown, etc.)
   meta: text('meta', { mode: 'json' }),      // Metadata as JSON
 
   // Timestamps
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(unixepoch())`),
   updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull().default(sql`(unixepoch())`),
-})
+}, (table) => ({
+  // Indexes for performance with large datasets
+  nsIdx: index('things_ns_idx').on(table.ns),
+  typeIdx: index('things_type_idx').on(table.type),
+  nsTypeIdx: index('things_ns_type_idx').on(table.ns, table.type),
+  idIdx: index('things_id_idx').on(table.id),
+}))
 
 /**
  * Relationships table - Connects things via predicates
@@ -38,8 +47,9 @@ export const relationships = sqliteTable('relationships', {
   reverse: text('reverse'),                   // Optional reverse predicate name
   to: text('to').notNull(),                   // Target thing URL
 
-  // Optional metadata about the relationship
-  meta: text('meta', { mode: 'json' }),
+  // Optional metadata and content about the relationship
+  data: text('data', { mode: 'json' }),
+  content: text('content'),
 
   // Timestamps
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(unixepoch())`),
@@ -68,7 +78,10 @@ export const searches = sqliteTable('searches', {
 
   // Timestamps
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(unixepoch())`),
-})
+}, (table) => ({
+  // Index for URL lookups
+  urlIdx: index('searches_url_idx').on(table.url),
+}))
 
 // Type exports for TypeScript
 export type Thing = typeof things.$inferSelect

@@ -88,7 +88,7 @@ export class SqliteStorage implements StorageAdapter {
 }
 
 /**
- * ClickHouse storage adapter
+ * ClickHouse storage adapter with streaming inserts
  */
 export class ClickHouseStorage implements StorageAdapter {
   backend: StorageBackend = 'clickhouse'
@@ -101,19 +101,21 @@ export class ClickHouseStorage implements StorageAdapter {
   async insertThings(things: NewThing[]): Promise<void> {
     if (things.length === 0) return
 
+    // Use streaming insert for better performance with large datasets
     await this.client.insert({
-      table: 'mdxdb.things',
+      table: 'default.things',
       values: things.map(thing => ({
         url: thing.url,
         ns: thing.ns,
         type: thing.type,
         id: thing.id,
-        data: thing.data || {},
+        name: thing.name || '',
         code: thing.code || '',
+        data: thing.data || {},
         content: thing.content || '',
         meta: thing.meta || {},
-        created_at: new Date(),
-        updated_at: new Date(),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       })),
       format: 'JSONEachRow',
     })
@@ -127,14 +129,15 @@ export class ClickHouseStorage implements StorageAdapter {
     if (relationships.length === 0) return
 
     await this.client.insert({
-      table: 'mdxdb.relationships',
+      table: 'default.relationships',
       values: relationships.map(rel => ({
         from: rel.from,
         predicate: rel.predicate,
         reverse: rel.reverse || '',
         to: rel.to,
-        meta: rel.meta || {},
-        created_at: new Date(),
+        data: rel.data || {},
+        content: rel.content || '',
+        createdAt: new Date(),
       })),
       format: 'JSONEachRow',
     })
@@ -148,7 +151,7 @@ export class ClickHouseStorage implements StorageAdapter {
     if (searches.length === 0) return
 
     await this.client.insert({
-      table: 'mdxdb.searches',
+      table: 'default.searches',
       values: searches.map(search => {
         // Convert Buffer to Float32Array if needed
         let embedding: number[]
@@ -168,7 +171,7 @@ export class ClickHouseStorage implements StorageAdapter {
           text: search.text,
           embedding,
           meta: search.meta || {},
-          created_at: new Date(),
+          createdAt: new Date(),
         }
       }),
       format: 'JSONEachRow',
