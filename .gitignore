@@ -17,6 +17,9 @@ dist/
 build/
 *.tgz
 
+# Turborepo
+.turbo
+
 # macOS
 .DS_Store
 .AppleDouble
@@ -39,6 +42,9 @@ Temporary Items
 
 .env
 
+# Interim outputs (testing data)
+.output/
+
 # Generated data files
 Integrations.org.ai/*.json
 Integrations.org.ai/*.log
@@ -47,8 +53,9 @@ Integrations.org.ai/Events/
 Integrations.org.ai/Actions/
 Integrations.org.ai/Searches/
 Integrations.org.ai/Nouns/
-Products.org.ai/
-Services.org.ai/
+# Legacy folders (now in .org.ai submodules)
+# Products.org.ai/
+# Services.org.ai/
 
 # mdxdb database files
 .mdxdb/source.db
