@@ -1,0 +1,30 @@
+[submodule ".org.ai/schema.org.ai"]
+	path = .org.ai/schema.org.ai
+	url = https://github.com/dot-org-ai/schema.org.ai
+[submodule ".org.ai/occupations.org.ai"]
+	path = .org.ai/occupations.org.ai
+	url = https://github.com/dot-org-ai/occupations.org.ai
+[submodule ".org.ai/products.org.ai"]
+	path = .org.ai/products.org.ai
+	url = https://github.com/dot-org-ai/products.org.ai
+[submodule ".org.ai/services.org.ai"]
+	path = .org.ai/services.org.ai
+	url = https://github.com/dot-org-ai/services.org.ai
+[submodule ".org.ai/industries.org.ai"]
+	path = .org.ai/industries.org.ai
+	url = https://github.com/dot-org-ai/industries.org.ai
+[submodule ".org.ai/tasks.org.ai"]
+	path = .org.ai/tasks.org.ai
+	url = https://github.com/dot-org-ai/tasks.org.ai
+[submodule ".org.ai/language.org.ai"]
+	path = .org.ai/language.org.ai
+	url = https://github.com/dot-org-ai/language.org.ai
+[submodule ".org.ai/verbs.org.ai"]
+	path = .org.ai/verbs.org.ai
+	url = https://github.com/dot-org-ai/verbs.org.ai
+[submodule ".org.ai/nouns.org.ai"]
+	path = .org.ai/nouns.org.ai
+	url = https://github.com/dot-org-ai/nouns.org.ai
+[submodule ".org.ai/process.org.ai"]
+	path = .org.ai/process.org.ai
+	url = https://github.com/dot-org-ai/process.org.ai

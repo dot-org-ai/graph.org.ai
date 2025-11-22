@@ -1,0 +1,52 @@
+{
+  "name": "@org.ai/{{domainName}}",
+  "version": "0.1.0",
+  "description": "{{description}}",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "org.ai",
+    "ontology",
+    "{{domainName}}",
+    "mdx",
+    "typescript"
+  ],
+  "author": "org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://{{domain}}",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dot-org-ai/{{domain}}"
+  },
+  "bugs": {
+    "url": "https://github.com/dot-org-ai/{{domain}}/issues"
+  },
+  "dependencies": {
+    "@org.ai/schema": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "eslint": "^8.0.0"
+  }
+}
