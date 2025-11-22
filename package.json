@@ -1,5 +1,13 @@
 {
+    "name": "@graph.org.ai/root",
+    "version": "0.0.0",
+    "private": true,
     "type": "module",
+    "scripts": {
+        "dev": "pnpm --filter @graph.org.ai/site dev",
+        "build": "pnpm --filter @graph.org.ai/site build",
+        "ingest": "pnpm --filter @graph.org.ai/scripts run ingest"
+    },
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.13",
         "@types/node": "^24.10.1",
@@ -8,6 +16,7 @@
     },
     "dependencies": {
         "@ai-sdk/google": "^2.0.40",
+        "@clickhouse/client": "^1.14.0",
         "ai": "^5.0.99",
         "better-sqlite3": "^12.4.6",
         "dotenv": "^17.2.3",
