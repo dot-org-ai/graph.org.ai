@@ -1,0 +1,214 @@
+
+> @graph.org.ai/site@0.0.0 test:unit /Users/nathanclevenger/projects/graph.org.ai/.site
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.0.13 [39m[90m/Users/nathanclevenger/projects/graph.org.ai/.site[39m
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetAllTypes[2m > [22m[2mshould return array of type strings
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:14:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetAllTypes[2m > [22m[2mshould return unique types
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:22:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetTypeCount[2m > [22m[2mshould return number for valid type
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:30:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetTypeCount[2m > [22m[2mshould return 0 for non-existent type
+[22m[39mError fetching type count from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getTypeCount (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:204:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:39:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetSampleThingsByType[2m > [22m[2mshould return array of things
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:46:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetSampleThingsByType[2m > [22m[2mshould respect limit parameter
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:54:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetSampleThingsByType[2m > [22m[2mshould return things with required properties
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:63:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetSampleThingsByType[2m > [22m[2mshould filter for TitleCase names
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:81:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetDomains[2m > [22m[2mshould return array of domain strings
+[22m[39mError fetching domains from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getDomains (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:46:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:100:23
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetDomains[2m > [22m[2mshould return unique domains
+[22m[39mError fetching domains from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getDomains (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:46:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:108:23
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetPage[2m > [22m[2mshould return thing for valid url
+[22m[39mError fetching all types from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getAllTypes (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:184:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:116:21
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+[90mstderr[2m | tests/unit/source.test.ts[2m > [22m[2mClickHouse Queries[2m > [22m[2mgetPage[2m > [22m[2mshould return undefined for non-existent page
+[22m[39mError fetching page from ClickHouse: TypeError: Cannot read properties of undefined (reading 'json')
+    at Module.getPage (/Users/nathanclevenger/projects/graph.org.ai/.mdxdb/clickhouse-queries.ts:89:32)
+[90m    at processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at [90m/Users/nathanclevenger/projects/graph.org.ai/.site/[39mtests/unit/source.test.ts:132:20
+    at file:///Users/nathanclevenger/projects/graph.org.ai/node_modules/[4m.pnpm[24m/@vitest+runner@4.0.13/node_modules/[4m@vitest/runner[24m/dist/index.js:912:20
+
+ [32m✓[39m tests/unit/source.test.ts [2m([22m[2m12 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+[90mstdout[2m | tests/integration/type-page.test.tsx[2m > [22m[2mType Page Integration Tests[2m > [22m[2mData Flow for Type Page[2m > [22m[2mCRITICAL: type with count > 0 must have samples
+[22m[39mType: Ability
+Count: 52
+Samples returned: 0
+
+[90mstdout[2m | tests/integration/type-page.test.tsx[2m > [22m[2mType Page Integration Tests[2m > [22m[2mEdge Cases[2m > [22m[2mshould handle types with no TitleCase items
+[22m[39mTesting Ability: count=52, samples=0
+
+[90mstderr[2m | tests/integration/type-page.test.tsx[2m > [22m[2mType Page Integration Tests[2m > [22m[2mEdge Cases[2m > [22m[2mshould handle types with no TitleCase items
+[22m[39m❌ BUG FOUND: Ability has 52 items but getSampleThingsByType returns 0
+  This means the TitleCase filter is excluding ALL results
+
+ [31m❯[39m tests/integration/type-page.test.tsx [2m([22m[2m9 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[33m 1056[2mms[22m[39m
+       [32m✓[39m should have valid test data[32m 1[2mms[22m[39m
+[31m       [31m×[31m CRITICAL: type with count > 0 must have samples[39m[32m 2[2mms[22m[39m
+       [32m✓[39m should group samples by domain correctly[32m 0[2mms[22m[39m
+       [32m✓[39m should have valid URLs for all samples[32m 0[2mms[22m[39m
+       [32m✓[39m should display correct pluralization[32m 0[2mms[22m[39m
+[31m       [31m×[31m should handle types with no TitleCase items[39m[32m 246[2mms[22m[39m
+       [32m✓[39m should handle empty state gracefully[32m 63[2mms[22m[39m
+       [32m✓[39m should return samples in reasonable time[32m 63[2mms[22m[39m
+       [32m✓[39m should handle large limits efficiently[32m 162[2mms[22m[39m
+[90mstderr[2m | tests/unit/clickhouse-queries.test.ts[2m > [22m[2mClickHouse Queries - Data Integrity[2m > [22m[2mgetSampleThingsByType - CRITICAL[2m > [22m[2mCRITICAL: should not filter out ALL results
+[22m[39mFILTER TOO STRICT: Type "Ability" has 52 items but 0 samples!
+
+ [31m❯[39m tests/unit/clickhouse-queries.test.ts [2m([22m[2m26 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[33m 3963[2mms[22m[39m
+       [32m✓[39m should return array of type strings[32m 268[2mms[22m[39m
+       [32m✓[39m should return unique types[32m 66[2mms[22m[39m
+       [32m✓[39m should return sorted types[32m 131[2mms[22m[39m
+       [32m✓[39m should handle database errors gracefully[32m 60[2mms[22m[39m
+       [32m✓[39m should return number >= 0 for valid type[32m 121[2mms[22m[39m
+[31m       [31m×[31m should return exact count matching sample queries[39m[32m 181[2mms[22m[39m
+       [32m✓[39m should return 0 for non-existent type[32m 62[2mms[22m[39m
+       [32m✓[39m should be case-sensitive[32m 288[2mms[22m[39m
+       [32m✓[39m should return array of things[32m 116[2mms[22m[39m
+[31m       [31m×[31m CRITICAL: should return data when count > 0[39m[32m 219[2mms[22m[39m
+       [32m✓[39m should respect limit parameter[32m 118[2mms[22m[39m
+       [32m✓[39m should return things with all required properties[32m 118[2mms[22m[39m
+       [32m✓[39m should handle TitleCase filtering correctly[32m 107[2mms[22m[39m
+[31m       [31m×[31m CRITICAL: should not filter out ALL results[39m[32m 240[2mms[22m[39m
+       [32m✓[39m should return array of domain strings[32m 54[2mms[22m[39m
+       [32m✓[39m should return unique domains[32m 64[2mms[22m[39m
+       [32m✓[39m should return sorted domains[32m 55[2mms[22m[39m
+       [32m✓[39m should return types for valid domain[32m 135[2mms[22m[39m
+       [32m✓[39m should return empty array for invalid domain[32m 55[2mms[22m[39m
+       [32m✓[39m should return thing for valid url[32m 164[2mms[22m[39m
+       [32m✓[39m should return undefined for non-existent page[32m 63[2mms[22m[39m
+       [32m✓[39m should handle URL encoding correctly[32m 126[2mms[22m[39m
+       [33m[2m✓[22m[39m should return lightweight metadata only [33m 344[2mms[22m[39m
+       [33m[2m✓[22m[39m should filter by type when provided [33m 374[2mms[22m[39m
+       [32m✓[39m should return number >= 0[32m 201[2mms[22m[39m
+       [32m✓[39m should match actual page count[32m 233[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 5 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m tests/integration/type-page.test.tsx[2m > [22mType Page Integration Tests[2m > [22mData Flow for Type Page[2m > [22mCRITICAL: type with count > 0 must have samples
+[31m[1mAssertionError[22m: expected 0 to be greater than 0[39m
+[36m [2m❯[22m tests/integration/type-page.test.tsx:[2m31:36[22m[39m
+    [90m 29| [39m      [35mif[39m (typeCount [33m>[39m [34m0[39m) {
+    [90m 30| [39m        [90m// THIS WILL FAIL if the bug exists[39m
+    [90m 31| [39m        [34mexpect[39m(typeSamples[33m.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m0[39m)[33m;[39m
+    [90m   | [39m                                   [31m^[39m
+    [90m 32| [39m        [34mexpect[39m(typeSamples[33m.[39mlength)[33m.[39m[34mtoBeLessThanOrEqual[39m([34m100[39m)[33m;[39m
+    [90m 33| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/integration/type-page.test.tsx[2m > [22mType Page Integration Tests[2m > [22mEdge Cases[2m > [22mshould handle types with no TitleCase items
+[31m[1mAssertionError[22m: expected 0 to be greater than 0[39m
+[36m [2m❯[22m tests/integration/type-page.test.tsx:[2m115:34[22m[39m
+    [90m113| [39m        [90m// This assertion should catch the bug[39m
+    [90m114| [39m        [35mif[39m (count [33m>[39m [34m0[39m) {
+    [90m115| [39m          [34mexpect[39m(samples[33m.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m0[39m)[33m;[39m
+    [90m   | [39m                                 [31m^[39m
+    [90m116| [39m        }
+    [90m117| [39m      }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/clickhouse-queries.test.ts[2m > [22mClickHouse Queries - Data Integrity[2m > [22mgetTypeCount[2m > [22mshould return exact count matching sample queries
+[31m[1mAssertionError[22m: expected 0 to be greater than 0[39m
+[36m [2m❯[22m tests/unit/clickhouse-queries.test.ts:[2m54:34[22m[39m
+    [90m 52| [39m
+    [90m 53| [39m        [35mif[39m (count [33m>[39m [34m0[39m) {
+    [90m 54| [39m          [34mexpect[39m(samples[33m.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m0[39m)[33m;[39m
+    [90m   | [39m                                 [31m^[39m
+    [90m 55| [39m        } [35melse[39m {
+    [90m 56| [39m          [34mexpect[39m(samples[33m.[39mlength)[33m.[39m[34mtoBe[39m([34m0[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/clickhouse-queries.test.ts[2m > [22mClickHouse Queries - Data Integrity[2m > [22mgetSampleThingsByType - CRITICAL[2m > [22mCRITICAL: should return data when count > 0
+[31m[1mAssertionError[22m: expected 0 to be greater than 0[39m
+[36m [2m❯[22m tests/unit/clickhouse-queries.test.ts:[2m100:34[22m[39m
+    [90m 98| [39m        [90m// THIS IS THE BUG: If count > 0, samples should NOT be empty[39m
+    [90m 99| [39m        [35mif[39m (count [33m>[39m [34m0[39m) {
+    [90m100| [39m          [34mexpect[39m(samples[33m.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m0[39m)[33m;[39m
+    [90m   | [39m                                 [31m^[39m
+    [90m101| [39m          console.log(`Type: ${type}, Count: ${count}, Samples: ${samp…
+    [90m102| [39m        }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m tests/unit/clickhouse-queries.test.ts[2m > [22mClickHouse Queries - Data Integrity[2m > [22mgetSampleThingsByType - CRITICAL[2m > [22mCRITICAL: should not filter out ALL results
+[31m[1mAssertionError[22m: expected 0 to be greater than 0[39m
+[36m [2m❯[22m tests/unit/clickhouse-queries.test.ts:[2m169:36[22m[39m
+    [90m167| [39m            console.error(`FILTER TOO STRICT: Type "${type}" has ${cou…
+    [90m168| [39m            [90m// This test should FAIL to expose the bug[39m
+    [90m169| [39m            [34mexpect[39m(samples[33m.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m0[39m)[33m;[39m
+    [90m   | [39m                                   [31m^[39m
+    [90m170| [39m          }
+    [90m171| [39m        }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m5 failed[39m[22m[2m | [22m[1m[32m42 passed[39m[22m[90m (47)[39m
+[2m   Start at [22m 09:24:50
+[2m   Duration [22m 4.75s[2m (transform 134ms, setup 562ms, collect 123ms, tests 5.03s, environment 1.28s, prepare 17ms)[22m
+
+ ELIFECYCLE  Command failed with exit code 1.
