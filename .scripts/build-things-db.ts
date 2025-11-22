@@ -33,52 +33,101 @@ import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
 migrate(things, { migrationsFolder: '.mdxdb/migrations' })
 
 /**
- * Normalize URL from source.db format to org.ai format
+ * Convert string to TitleCase (remove spaces, capitalize words)
  */
-function normalizeURL(sourceURL: string, ns: string, type: string, id: string): string {
-  // Map namespace to org.ai domain
+function toTitleCase(str: string): string {
+  return str
+    .split(/[\s-]+/)
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join('')
+}
+
+/**
+ * Normalize URL from source.db format to org.ai format
+ * Uses human-readable names instead of codes
+ */
+function normalizeURL(thing: any): string {
+  const { ns, type, id, data } = thing
+
+  // Map source namespace to core domain
   const domainMap: Record<string, string> = {
     'schema.org': 'schema.org.ai',
-    'onet': 'onet.org.ai',
-    'unspsc': 'unspsc.org.ai',
-    'apqc': 'apqc.org.ai',
-    'model': 'model.org.ai',
+    'onet': 'occupations.org.ai',
+    'unspsc': 'products.org.ai',
+    'apqc': 'processes.org.ai',
+    'model': 'models.org.ai',
   }
 
   const domain = domainMap[ns] || `${ns}.org.ai`
 
-  // Remove namespace prefix from ID if present (e.g., schema:Person -> Person)
-  let cleanId = id
-  if (cleanId.startsWith(`${ns}:`)) {
-    cleanId = cleanId.slice(ns.length + 1)
+  // Extract human-readable name from data
+  let name = ''
+
+  if (ns === 'schema.org') {
+    // For schema.org, remove 'schema:' prefix from ID
+    name = id.replace(/^schema:/, '')
+  } else if (ns === 'onet') {
+    // For O*NET, use title from data
+    name = data?.title || id
+  } else if (ns === 'unspsc') {
+    // For UNSPSC, use title from data
+    name = data?.title || id
+  } else if (ns === 'apqc') {
+    // For APQC, use name from data
+    name = data?.name || id
+  } else if (ns === 'model') {
+    // For models, use name from data
+    name = data?.name || id
+  } else {
+    name = id
   }
-  if (cleanId.startsWith('schema:')) {
-    cleanId = cleanId.slice(7)
-  }
+
+  // Convert to TitleCase and remove special characters
+  name = toTitleCase(name)
+    .replace(/[^a-zA-Z0-9]/g, '')
 
   // For schema.org, don't include type in URL
   if (ns === 'schema.org') {
-    return `https://${domain}/${cleanId}`
+    return `https://${domain}/${name}`
   }
 
-  // For other ontologies, include type
-  return `https://${domain}/${type}/${cleanId}`
+  // For other domains, format is domain/Name (no type prefix)
+  return `https://${domain}/${name}`
 }
 
 /**
  * Build URL mapping from source URLs to normalized URLs
+ * Handles collisions by appending the original ID
  */
 function buildURLMapping(): Map<string, string> {
   const mapping = new Map<string, string>()
+  const urlUsage = new Map<string, number>() // Track URL usage for collision detection
 
   const allThings = source.select().from(schema.things).all()
 
   for (const thing of allThings) {
-    const normalizedURL = normalizeURL(thing.url, thing.ns, thing.type, thing.id)
+    let normalizedURL = normalizeURL(thing)
+
+    // Check for collision
+    if (urlUsage.has(normalizedURL)) {
+      // Collision detected - append the original ID to make it unique
+      const count = urlUsage.get(normalizedURL)!
+      urlUsage.set(normalizedURL, count + 1)
+
+      // Clean the ID for URL safety
+      const cleanId = thing.id.replace(/[^a-zA-Z0-9-]/g, '')
+      normalizedURL = `${normalizedURL}-${cleanId}`
+    } else {
+      urlUsage.set(normalizedURL, 1)
+    }
+
     mapping.set(thing.url, normalizedURL)
   }
 
   console.log(`  Built URL mapping for ${mapping.size} things`)
+  const collisions = Array.from(urlUsage.values()).filter(count => count > 1).length
+  console.log(`  Resolved ${collisions} URL collisions`)
+
   return mapping
 }
 
