@@ -1,0 +1,74 @@
+---
+$id: https://{{domain}}/{{TypeName}}
+$type: Type
+name: {{TypeName}}
+subClassOf: {{parentType}}
+description: {{description}}
+---
+
+# {{TypeName}}
+
+{{description}}
+
+## Properties
+
+{{#each properties}}
+### {{name}}
+
+- **Type**: {{type}}
+- **Description**: {{description}}
+{{#if required}}- **Required**: Yes{{/if}}
+{{/each}}
+
+## Examples
+
+### Basic Example
+
+```mdx
+---
+$type: {{TypeName}}
+name: Example {{TypeName}}
+{{#each requiredProperties}}
+{{name}}: {{exampleValue}}
+{{/each}}
+---
+
+# Example {{TypeName}}
+
+Content goes here...
+```
+
+### TypeScript Example
+
+```typescript
+import { {{TypeName}} } from '@org.ai/{{domainName}}'
+
+const example: {{TypeName}} = {
+  $type: '{{TypeName}}',
+  name: 'Example',
+  {{#each requiredProperties}}
+  {{name}}: {{exampleValue}},
+  {{/each}}
+}
+```
+
+## Related Types
+
+{{#each relatedTypes}}
+- [{{this}}]({{this}}.mdx)
+{{/each}}
+
+## Parent Type
+
+[{{parentType}}]({{parentType}}.mdx)
+
+## Child Types
+
+{{#each childTypes}}
+- [{{this}}]({{this}}.mdx)
+{{/each}}
+
+## See Also
+
+- [{{domain}} Documentation](https://{{domain}})
+- [Schema.org.ai](https://schema.org.ai)

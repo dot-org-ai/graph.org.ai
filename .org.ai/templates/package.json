@@ -1,0 +1,26 @@
+{
+  "name": "@org.ai/templates",
+  "version": "0.1.0",
+  "description": "Centralized templates for .org.ai domain generation",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "create-domain": "tsx scripts/create-domain.ts",
+    "generate": "tsx scripts/generate-content.ts"
+  },
+  "bin": {
+    "create-domain": "./scripts/create-domain.ts"
+  },
+  "keywords": [
+    "org.ai",
+    "templates",
+    "ontology"
+  ],
+  "author": "org.ai",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
