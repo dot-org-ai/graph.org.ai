@@ -105,11 +105,9 @@ jobs:
           CLICKHOUSE_PASSWORD=${{ secrets.CLICKHOUSE_PASSWORD }}
           EOF
 
-      - name: Ingest Wikipedia
-        if: ${{ github.event.inputs.source == 'wikipedia' || github.event.inputs.source == 'all' }}
+      - name: Create ingestion wrapper script
         working-directory: ./dumpster-dive
         run: |
-          # Create wrapper script
           cat > ingest-wikipedia.sh <<'SCRIPT'
           #!/bin/bash
           set -a
@@ -119,7 +117,10 @@ jobs:
           SCRIPT
           chmod +x ingest-wikipedia.sh
 
-          # Run ingestion
+      - name: Ingest Wikipedia
+        if: ${{ github.event.inputs.source == 'wikipedia' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
           ./ingest-wikipedia.sh ../.source/Wikipedia/enwiki-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wikipedia
 
       - name: Ingest Wikinews
