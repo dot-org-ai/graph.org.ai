@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: initiate
+$context: https://verbs.org.ai
+name: initiate
+canonicalForm: initiate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Starting or beginning a process, action, project, or sequence of events
+predicate: initiates
+event: initiated
+activity: initiating
+actor: Initiator
+object: Initiation
+inverse: initiatedBy
+---
+
+# Initiate
+
+Beginning or starting a process, project, action, or interaction that sets something in motion or establishes a new direction.
+
+## O*NET Context
+
+Work activity focused on taking the first step to begin a process, project, meeting, or change initiative that will engage other people or systems.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Project.initiate({ scope: 'product-launch', timeline: '6-months', stakeholders: team })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.initiates.Project
+$.Team.initiates.Change
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.initiated, async (event) => {
+  await $.Kickoff.schedule({ projectId: event.projectId })
+  await $.Budget.allocate({ projectId: event.projectId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInitiation = $.Leader.initiating.Transformation
+console.log(`Project initialization: ${activeInitiation.stage}`)
+```
+
+### Role (Actor)
+```typescript
+const initiator: $.Initiator = await $.findAgent({ responsibility: 'project-startup' })
+initiator.beginProjectPhase(projectDetails)
+```
+
+### Concept (Abstraction)
+```typescript
+const initiation: $.Initiation = {
+  subjectId: project.id,
+  startDate: today(),
+  triggers: [],
+  predecessors: completedTasks,
+  successCriteria: requirements
+}
+```
+
+### Inverse (Passive)
+```typescript
+const originators = await db.related($.Process, $.initiatedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Project Management:**
+- Initiating new development projects
+- Initiating change management processes
+- Initiating quality improvement initiatives
+- Starting sprint cycles or iterations
+
+**Business Operations:**
+- Initiating customer relationships or accounts
+- Initiating procurement processes
+- Initiating investigations or audits
+- Starting new business partnerships
+
+**Process Execution:**
+- Initiating meetings or discussions
+- Starting workflow processes
+- Launching product releases
+- Commencing operational reviews
+
+## Related Verbs
+- start - Beginning an activity or process
+- launch - Publicly introducing or beginning something
+- establish - Creating something for the first time
+- begin - Commencing an action

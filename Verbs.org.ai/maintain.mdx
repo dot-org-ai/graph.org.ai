@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: maintain
+$context: https://verbs.org.ai
+name: maintain
+canonicalForm: maintain
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Keeping equipment, systems, or processes in proper working condition through regular upkeep
+predicate: maintains
+event: maintained
+activity: maintaining
+actor: Maintainer
+object: Maintenance
+inverse: maintainedBy
+---
+
+# Maintain
+
+Keeping equipment, systems, or processes in proper working condition through regular upkeep, repair, and preventive measures.
+
+## O*NET Context
+
+Work activity focused on preserving the operational condition of machinery, infrastructure, software systems, or organizational processes. Includes preventive maintenance, routine inspections, repairs, and upgrades to ensure continuous performance and prevent breakdowns.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Equipment.maintain({ schedule: 'quarterly', checkpoints: ['lubrication', 'inspection', 'calibration'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Technician.maintains.Machinery
+$.Database.maintains.Integrity
+```
+
+### Event (Past Tense)
+```typescript
+on($.System.maintained, async (event) => {
+  await $.Log.record({ action: 'maintenance-completed', equipment: event.equipmentId, timestamp: event.date })
+  await $.Schedule.updateNext({ asset: event.equipmentId, maintenanceDate: futureDate() })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeSupport = $.Team.maintaining.LegacySystem
+console.log(`Currently maintaining: ${activeSupport.systemName} - Version: ${activeSupport.version}`)
+```
+
+### Role (Actor)
+```typescript
+const maintainer: $.Maintainer = await $.findAgent({ expertise: 'equipment-maintenance' })
+maintainer.performRoutineChecks(equipment)
+```
+
+### Concept (Abstraction)
+```typescript
+const maintenance: $.Maintenance = {
+  assetId: equipment.id,
+  lastPerformed: previousDate(),
+  nextScheduled: futureDate(),
+  maintenanceType: 'preventive',
+  hoursRequired: 8,
+  partsReplaced: ['filter', 'lubricant']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const technicians = await db.related($.Equipment, $.maintainedBy, $.Technician)
+```
+
+## Usage Examples
+
+**Equipment Maintenance:**
+- Technician maintains manufacturing equipment with scheduled service intervals
+- Mechanic maintains vehicle fleet to ensure operational readiness
+- HVAC specialist maintains climate control systems in building
+- IT technician maintains network infrastructure
+
+**System Upkeep:**
+- Database administrator maintains server performance through optimization
+- Software team maintains legacy codebase with bug fixes and patches
+- Facilities staff maintains building systems and utilities
+- Quality team maintains process standards and documentation
+
+**Preventive Care:**
+- Maintenance crew performs preventive maintenance to avoid costly breakdowns
+- Support team maintains customer satisfaction through regular communication
+- Organization maintains compliance standards through ongoing monitoring
+- Manager maintains team morale and productivity through regular engagement
+
+## Related Verbs
+- repair - Fixing broken or damaged items
+- inspect - Examining for condition or defects
+- service - Providing maintenance or care
+- manage - Controlling overall operations

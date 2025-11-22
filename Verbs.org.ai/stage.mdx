@@ -1,0 +1,158 @@
+---
+$type: Verb
+$id: stage
+$context: https://verbs.org.ai
+name: stage
+canonicalForm: stage
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:staging_outbound
+description: Preparing goods for shipment or further processing
+predicate: stages
+event: staged
+activity: staging
+actor: Stager
+object: Staging
+inverse: stagedBy
+---
+
+# Stage
+
+GS1 CBV Business Step: Preparing goods for shipment or further processing.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.stage()
+```
+
+### Predicate (Relationship)
+```typescript
+$.WarehouseArea.stages.Items
+```
+
+### Event (Past Tense)
+```typescript
+on($.Items.staged, async ({subject}) => {
+  // Handle staging completion event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.DistributionCenter.staging.Orders
+```
+
+### Role (Actor)
+```typescript
+$.Stager
+```
+
+### Concept (Abstraction)
+```typescript
+$.Staging
+```
+
+### Inverse (Passive)
+```typescript
+$.Order.stagedBy.DistributionCenter
+```
+
+## Context
+
+In warehouse and logistics operations, staging is the process of preparing goods for shipment or distribution:
+
+- **Order staging**: Gathering items from inventory for specific orders
+- **Outbound preparation**: Organizing items for shipment
+- **Zone picking**: Staging items in preparation zones
+- **Consolidation**: Combining multiple orders for efficient shipment
+- **Quality check**: Verifying items before staging
+- **Label and pack preparation**: Readying items for final packaging
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record staging operation
+const stagingEvent = await $.Event.create({
+  type: 'staging_outbound',
+  bizStep: 'urn:epcglobal:cbv:bizstep:staging_outbound',
+  epcList: ['urn:epc:id:sgtin:product-sku-001', 'urn:epc:id:sgtin:product-sku-002'],
+  readPoint: 'urn:epc:id:sgln:staging-area-id',
+  bizLocation: 'urn:epc:id:sgln:warehouse-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'in_progress'
+})
+
+// Create staging work
+const stagingWork = await $.StagingArea.create({
+  stagingId: 'staging-20250129-0001',
+  orderId: 'order-id-001',
+  customerId: 'customer-id-123',
+  items: [
+    { sku: 'product-001', quantity: 2, location: 'A-12-3' },
+    { sku: 'product-002', quantity: 1, location: 'B-08-5' }
+  ],
+  priority: 'standard',
+  targetShipDate: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
+  status: 'in_progress'
+})
+
+// Pick items from inventory to staging area
+const pickedItems = await $.Inventory.pick({
+  orderId: 'order-id-001',
+  warehouseId: 'warehouse-1',
+  items: [
+    { sku: 'product-001', quantity: 2 },
+    { sku: 'product-002', quantity: 1 }
+  ],
+  stagingAreaId: 'staging-area-001'
+})
+
+// Stage items for shipment
+const stagedItems = await $.Order.stage({
+  orderId: 'order-id-001',
+  stagingId: 'staging-20250129-0001',
+  items: pickedItems,
+  location: 'staging-area-001',
+  timestamp: new Date().toISOString()
+})
+
+// Quality check before shipping
+const qualityCheck = await $.QualityControl.verify({
+  orderId: 'order-id-001',
+  stagingId: 'staging-20250129-0001',
+  checkedBy: 'inspector-001',
+  passed: true,
+  notes: 'All items verified and in good condition'
+})
+
+// Update staging status
+const completedStaging = await $.StagingArea.update({
+  stagingId: 'staging-20250129-0001',
+  status: 'ready_to_ship',
+  completionTime: new Date().toISOString()
+})
+
+// Emit staging completion notification
+on($.Items.staged, async (event) => {
+  await send($.Notification.send, {
+    type: 'staging_complete',
+    stagingId: event.stagingId,
+    orderId: event.orderId,
+    itemCount: event.items.length,
+    readyForShipping: true
+  })
+})
+```
+
+## Related Verbs
+
+- **pick**: Selecting items from inventory for staging
+- **pack**: Packaging staged items
+- **load**: Loading staged items onto transport
+- **ship**: Dispatching staged items
+- **depart**: Leaving warehouse with staged shipment

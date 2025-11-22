@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: revise
+$context: https://verbs.org.ai
+name: revise
+canonicalForm: revise
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making changes or corrections to improve documents, plans, or work products
+predicate: revises
+event: revised
+activity: revising
+actor: Reviser
+object: Revision
+inverse: revisedBy
+---
+
+# Revise
+
+Making changes, corrections, or improvements to documents, plans, work products, or processes to enhance quality, accuracy, or effectiveness.
+
+## O*NET Context
+
+Work activity focused on editing and updating materials to fix errors, improve clarity, incorporate feedback, or adapt to changing requirements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Editor.revise({ document: manuscript, feedback: comments })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Author.revises.Manuscript
+$.Team.revises.Strategy
+```
+
+### Event (Past Tense)
+```typescript
+on($.Draft.revised, async (event) => {
+  await $.Version.save({ changes: event.modifications })
+  await $.Stakeholder.notify({ status: 'updated-version' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRevision = $.Writing.revising.Proposal
+console.log(`Iteration ${activeRevision.versionNumber}`)
+```
+
+### Role (Actor)
+```typescript
+const reviser: $.Reviser = await $.findAgent({ expertise: 'editing' })
+reviser.improveDocument(draft)
+```
+
+### Concept (Abstraction)
+```typescript
+const revision: $.Revision = {
+  documentId: original.id,
+  versionNumber: 3,
+  changes: ['added examples', 'rewrote section 2'],
+  status: 'pending-approval',
+  revisedAt: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const manuscripts = await db.related($.Paper, $.revisedBy, $.Editor)
+```
+
+## Usage Examples
+
+**Document Management:**
+- Revising reports based on feedback
+- Updating proposals with new information
+- Editing manuscripts for clarity and accuracy
+- Modifying policies to reflect changes
+
+**Project Management:**
+- Revising project plans based on progress
+- Updating timelines and schedules
+- Modifying scope based on stakeholder input
+- Adjusting budgets and resource allocations
+
+**Software Development:**
+- Revising code based on review feedback
+- Updating documentation to match implementation
+- Modifying designs based on requirements changes
+- Improving algorithms based on performance data
+
+## Related Verbs
+- edit - Preparing text for publication
+- modify - Changing something in specific ways
+- update - Making something current
+- improve - Making something better

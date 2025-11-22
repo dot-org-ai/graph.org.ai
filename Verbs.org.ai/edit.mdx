@@ -1,0 +1,98 @@
+---
+$type: Verb
+$id: edit
+$context: https://verbs.org.ai
+name: edit
+canonicalForm: edit
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Revising or modifying content to correct or improve it
+predicate: edits
+event: edited
+activity: editing
+actor: Editor
+object: Editing
+inverse: editedBy
+---
+
+# Edit
+
+Revising or modifying content to correct errors, improve clarity, or update information.
+
+## Schema.org Context
+
+A schema.org Action representing the revision and refinement of content. Common in document management, publishing, and software development.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Document.edit({ changes: updates, editor: staff, timestamp: now(), reason: 'improvement' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Editor.edits.Document
+$.Developer.edits.Code
+$.Publisher.edits.Content
+```
+
+### Event (Past Tense)
+```typescript
+on($.Article.edited, async (event) => {
+  await $.Version.save({ content: event.newContent, editor: event.editorId, changes: event.diff })
+  await $.Team.notify({ message: `${event.documentTitle} updated by ${event.editorName}` })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const editingSession = $.Editor.editing.Manuscript
+console.log(`Currently editing: ${editingSession.documentTitle}`)
+```
+
+### Role (Actor)
+```typescript
+const editor: $.Editor = await $.findAgent({ role: 'editor', expertise: 'technical' })
+await editor.reviewAndRefine(document, styleGuide)
+```
+
+### Concept (Abstraction)
+```typescript
+const editing: $.Editing = {
+  documentId: document.id,
+  timestamp: now(),
+  editorId: editor.id,
+  changesCount: 15,
+  status: 'in_review',
+  versionNumber: 3,
+  previousEditor: previousEditor.id
+}
+```
+
+### Inverse (Passive)
+```typescript
+const editors = await db.related($.Document, $.editedBy, $.Person)
+```
+
+## Usage Examples
+
+**Document Management:**
+- Editor revises article for publication
+- Manager edits employee evaluation
+- Legal reviews and edits contract
+
+**Content Production:**
+- Designer edits graphics
+- Developer edits source code
+- Translator edits localized content
+
+**Business Rules:**
+- Edit requires proper permissions
+- Edits trigger version history
+- Major edits require review approval
+
+## Related Verbs
+- create - Authoring original content
+- review - Evaluating for quality
+- publish - Making final version available

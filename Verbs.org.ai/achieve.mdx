@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: achieve
+$context: https://verbs.org.ai
+name: achieve
+canonicalForm: achieve
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Accomplish or attain a goal or result through effort or action.
+predicate: achieves
+event: achieved
+activity: achieving
+actor: Achiever
+object: Achievement
+inverse: achievedBy
+---
+
+# Achieve
+
+The action of accomplishing or attaining a desired goal or result through sustained effort. In the context of Schema.org Actions, achieve represents the successful completion of a task or objective.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.achieve()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.achieves.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.achieved, async ({subject}) => {
+  // Handle achievement event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.achieving.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Achiever}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Achievement}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.achievedBy.{Subject}
+```

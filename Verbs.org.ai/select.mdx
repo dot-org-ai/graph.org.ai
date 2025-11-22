@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: select
+$context: https://verbs.org.ai
+name: select
+canonicalForm: select
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Choosing items, options, or individuals from a set of alternatives based on specific criteria or requirements
+predicate: selects
+event: selected
+activity: selecting
+actor: Selector
+object: Selection
+inverse: selectedBy
+---
+
+# Select
+
+Choosing items, options, or individuals from a set of alternatives based on specific criteria, requirements, or preferences.
+
+## O*NET Context
+
+Work activity focused on examining available options and choosing the most appropriate items, candidates, or alternatives to meet particular needs or standards.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Hiring.select({ candidates: pool, criteria: 'skills-match', count: 5 })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.selects.Employee
+$.Quality.selects.Material
+$.Customer.selects.Product
+```
+
+### Event (Past Tense)
+```typescript
+on($.Candidate.selected, async (event) => {
+  await $.Notification.send({ to: event.candidate, status: 'hired' })
+  await $.Onboarding.initiate({ employeeId: event.candidate.id })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeSelection = $.Committee.selecting.Candidates
+console.log(`Currently selecting from ${activeSelection.poolSize} candidates`)
+```
+
+### Role (Actor)
+```typescript
+const selector: $.Selector = await $.findAgent({ role: 'hiring-manager' })
+selector.chooseBestCandidates(applicationPool)
+```
+
+### Concept (Abstraction)
+```typescript
+const selection: $.Selection = {
+  criteria: ['experience', 'skills', 'cultural-fit'],
+  alternatives: candidates,
+  chosenOption: selectedCandidate,
+  rationale: 'Best overall match',
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const choosingAgents = await db.related($.Product, $.selectedBy, $.Customer)
+```
+
+## Usage Examples
+
+**Recruitment:**
+- Selecting qualified candidates from job applications
+- Choosing top performers for promotion opportunities
+- Selecting team members for special projects
+- Choosing contractors based on expertise
+
+**Procurement:**
+- Selecting suppliers based on quality and pricing
+- Choosing materials that meet specifications
+- Selecting vendors for service contracts
+- Choosing equipment for organizational needs
+
+**Decision Making:**
+- Selecting options based on risk analysis
+- Choosing strategies that align with objectives
+- Selecting solutions that fit constraints
+- Choosing approaches based on resource availability
+
+## Related Verbs
+- choose - Making a preference between options
+- identify - Recognizing specific items
+- evaluate - Assessing quality or suitability
+- determine - Establishing or deciding definitively

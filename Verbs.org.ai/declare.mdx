@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: declare
+$context: https://verbs.org.ai
+name: declare
+canonicalForm: declare
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To announce, state, or proclaim something formally or officially; make a declaration.
+predicate: declares
+event: declared
+activity: declaring
+actor: Declarer
+object: Declaration
+inverse: declaredBy
+---
+
+# Declare
+
+The action of formally announcing, stating, or proclaiming something officially or publicly. Declare represents the act of making a formal assertion or announcement.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.declare()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.declares.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.declared, async ({subject}) => {
+  // Handle declaration event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.declaring.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Declarer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Declaration}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.declaredBy.{Subject}
+```

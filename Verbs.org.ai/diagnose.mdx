@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: diagnose
+$context: https://verbs.org.ai
+name: diagnose
+canonicalForm: diagnose
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To identify the nature or cause of a problem, disease, or condition through examination and analysis
+predicate: diagnoses
+event: diagnosed
+activity: diagnosing
+actor: Diagnostician
+object: Diagnosis
+inverse: diagnosedBy
+---
+
+# Diagnose
+
+To identify the nature, cause, or underlying factors of a problem, disease, malfunction, or condition through systematic examination, analysis, and investigation. This verb encompasses activities such as medical diagnosis, troubleshooting technical systems, analyzing business problems, and determining root causes of issues.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.diagnose()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.diagnoses.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.diagnosed, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.diagnosing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Diagnostician
+```
+
+### Concept (Abstraction)
+```typescript
+$.Diagnosis
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.diagnosedBy.{Subject}
+```

@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: analyze
+$context: https://verbs.org.ai
+name: analyze
+canonicalForm: analyze
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Examining information or data to identify patterns, relationships, or solutions
+predicate: analyzes
+event: analyzed
+activity: analyzing
+actor: Analyzer
+object: Analysis
+inverse: analyzedBy
+---
+
+# Analyze
+
+Examining information or data systematically to identify patterns, relationships, problems, or solutions.
+
+## O*NET Context
+
+Work activity focused on examining and interpreting data, information, or complex systems to understand their structure, relationships, and implications.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Data.analyze({ parameters: 'statistical', depth: 'comprehensive' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Analyst.analyzes.Dataset
+$.Team.analyzes.Requirements
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.analyzed, async (event) => {
+  await $.Report.generate({ findings: event.results })
+  await $.Stakeholder.notify({ status: 'analysis-complete' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeAnalysis = $.Team.analyzing.Requirements
+console.log(`Currently analyzing: ${activeAnalysis.scope}`)
+```
+
+### Role (Actor)
+```typescript
+const analyzer: $.Analyzer = await $.findAgent({ expertise: 'data-analysis' })
+analyzer.examineData(dataset)
+```
+
+### Concept (Abstraction)
+```typescript
+const analysis: $.Analysis = {
+  subjectId: project.id,
+  methodology: 'quantitative',
+  findings: [],
+  recommendations: [],
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const researchers = await db.related($.Document, $.analyzedBy, $.Analyst)
+```
+
+## Usage Examples
+
+**Business Analysis:**
+- Analyzing market data to identify trends
+- Examining business requirements for system design
+- Analyzing financial statements for performance metrics
+- Evaluating customer feedback patterns
+
+**Technical Analysis:**
+- Analyzing code for performance bottlenecks
+- Examining system logs for errors or anomalies
+- Analyzing network traffic for security threats
+- Reviewing test results to identify failures
+
+**Research:**
+- Analyzing experimental data for statistical significance
+- Examining literature to synthesize findings
+- Analyzing survey responses to extract insights
+- Evaluating research methodology
+
+## Related Verbs
+- examine - Inspecting in detail
+- investigate - Conducting systematic inquiry
+- evaluate - Assessing value or quality
+- interpret - Explaining meaning or significance

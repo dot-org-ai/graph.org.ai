@@ -1,0 +1,92 @@
+---
+$type: Verb
+$id: control
+$context: https://verbs.org.ai
+name: control
+canonicalForm: control
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Managing or regulating the operation, flow, or behavior of systems, processes, or people
+predicate: controls
+event: controlled
+activity: controlling
+actor: Controller
+object: Control
+inverse: controlledBy
+---
+
+# Control
+
+Managing, regulating, or directing the operation or behavior of systems, equipment, processes, or personnel to maintain desired standards or outcomes.
+
+## O*NET Context
+
+Work activity involving the operation and management of systems, machinery, or processes to ensure they function according to specifications. Common in manufacturing, utilities, transportation, and operational management roles.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ProductionLine.control({ settings: 'standard', monitoring: true })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Operator.controls.Equipment
+$.Manager.controls.Team
+$.System.controls.Workflow
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.controlled, async (event) => {
+  await $.QualityAssurance.verify(event.parameters)
+  await $.Log.record({ timestamp: event.time, operator: event.operator })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const management = $.Factory.controlling.Production
+console.log(`Actively controlling: ${management.activeCount} systems`)
+```
+
+### Role (Actor)
+```typescript
+const controller: $.Controller = await $.findAgent({ certification: 'PLC programming' })
+await controller.manageProcess(process)
+```
+
+### Concept (Abstraction)
+```typescript
+const control: $.Control = {
+  systemId: system.id,
+  parameters: { temperature: 450, pressure: 2.5 },
+  tolerance: 0.1,
+  alerts: ['high-temp-warning', 'pressure-deviation'],
+  lastAdjusted: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const systems = await db.related($.Process, $.controlledBy, $.Operator)
+```
+
+## Usage Examples
+
+**Manufacturing & Operations:**
+- Operator controls manufacturing equipment settings
+- Technician controls airflow in HVAC system
+- Manager controls project timeline and resources
+
+**Business Rules:**
+- Control requires proper certification or training
+- Parameters must stay within tolerance ranges
+- Control changes must be documented and logged
+
+## Related Verbs
+- operate - Running or using equipment
+- manage - Directing or overseeing activities
+- monitor - Observing and checking systems
+- regulate - Maintaining conformity to standards

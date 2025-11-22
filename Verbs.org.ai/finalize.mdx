@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: finalize
+$context: https://verbs.org.ai
+name: finalize
+canonicalForm: finalize
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Complete and put into final form; make definite or conclusive; settle finally.
+predicate: finalizes
+event: finalized
+activity: finalizing
+actor: Finalizer
+object: Finalization
+inverse: finalizedBy
+---
+
+# Finalize
+
+The action of completing something and putting it into final or definitive form, making something conclusive or settled, or bringing something to its final state. In the context of Schema.org Actions, finalize represents the process of concluding and establishing something in its completed state.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.finalize()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.finalizes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.finalized, async ({subject}) => {
+  // Handle finalization event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.finalizing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Finalizer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Finalization}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.finalizedBy.{Subject}
+```

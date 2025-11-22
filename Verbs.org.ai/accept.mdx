@@ -1,0 +1,89 @@
+---
+$type: Verb
+$id: accept
+$context: https://verbs.org.ai
+name: accept
+canonicalForm: accept
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Accepting receipt of goods or materials
+predicate: accepts
+event: accepted
+activity: accepting
+actor: Accepter
+object: Acceptance
+inverse: acceptedBy
+---
+
+# Accept
+
+Accepting receipt of goods or materials into inventory or possession.
+
+## GS1 Context
+
+Business step for formally accepting received goods. This is a critical operation in supply chain management where a receiving party acknowledges receipt and takes possession of goods.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.accept({ timestamp: now(), notes: 'Quality verified' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.accepts.Shipment
+$.Receiver.accepts.DeliveryTerms
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.accepted, async (event) => {
+  await $.Inventory.increment(event.items)
+  await $.Notification.send({ recipient: event.supplier })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const inbound = $.Warehouse.accepting.Goods
+console.log(`Currently accepting: ${inbound.currentCount} items`)
+```
+
+### Role (Actor)
+```typescript
+const accepter: $.Accepter = await $.findAgent({ permissions: 'receive' })
+accepter.acknowledgeReceipt(shipment)
+```
+
+### Concept (Abstraction)
+```typescript
+const acceptance: $.Acceptance = {
+  orderId: order.id,
+  timestamp: now(),
+  signedBy: user.id,
+  conditions: ['inspected', 'counted', 'verified']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suppliers = await db.related($.Shipment, $.acceptedBy, $.Warehouse)
+```
+
+## Usage Examples
+
+**Supply Chain Receiving:**
+- Receiving department accepts goods from carrier
+- Quality assurance accepts items after inspection
+- Warehouse manager accepts delivery into inventory
+
+**Business Rules:**
+- Cannot accept goods without valid PO
+- Acceptance triggers invoice reconciliation
+- Acceptance updates inventory balances
+
+## Related Verbs
+- receive - Taking delivery of goods
+- inspect - Examining for quality or compliance
+- hold - Retaining possession temporarily before acceptance

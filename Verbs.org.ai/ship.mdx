@@ -1,0 +1,160 @@
+---
+$type: Verb
+$id: ship
+$context: https://verbs.org.ai
+name: ship
+canonicalForm: ship
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:shipping
+description: Dispatching goods for delivery to destination
+predicate: ships
+event: shipped
+activity: shipping
+actor: Shipper
+object: Shipment
+inverse: shippedBy
+---
+
+# Ship
+
+GS1 CBV Business Step: Dispatching goods for delivery to destination.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.ship()
+```
+
+### Predicate (Relationship)
+```typescript
+$.Carrier.ships.Package
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.shipped, async ({subject}) => {
+  // Handle shipment dispatch event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.DistributionCenter.shipping.Orders
+```
+
+### Role (Actor)
+```typescript
+$.Shipper
+```
+
+### Concept (Abstraction)
+```typescript
+$.Shipment
+```
+
+### Inverse (Passive)
+```typescript
+$.Package.shippedBy.Carrier
+```
+
+## Context
+
+In logistics and order fulfillment, shipping is the process of dispatching goods to their final destination:
+
+- **Order fulfillment**: Shipping orders to customers
+- **Inter-warehouse transfer**: Moving inventory between locations
+- **Direct shipment**: Vendor-managed shipments
+- **Last-mile delivery**: Final delivery to recipients
+- **Carrier dispatch**: Handoff to shipping carriers
+- **International shipping**: Cross-border shipments
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record shipping operation
+const shippingEvent = await $.Event.create({
+  type: 'shipping',
+  bizStep: 'urn:epcglobal:cbv:bizstep:shipping',
+  epcList: ['urn:epc:id:sgtin:product-sku-123'],
+  readPoint: 'urn:epc:id:sgln:distribution-center-id',
+  bizLocation: 'urn:epc:id:sgln:warehouse-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'in_progress'
+})
+
+// Create shipment record
+const shipment = await $.Shipment.create({
+  shipmentId: 'ship-20250129-00001',
+  orderId: 'order-id-001',
+  customerId: 'customer-id-123',
+  items: [
+    { sku: 'product-001', quantity: 2 },
+    { sku: 'product-002', quantity: 1 }
+  ],
+  shipper: 'warehouse-1',
+  recipient: '123 Main St, Springfield, IL 62701',
+  carrier: 'FedEx',
+  trackingNumber: '794000089024',
+  estimatedDeliveryDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+  shippingDate: new Date().toISOString(),
+  status: 'dispatched'
+})
+
+// Update inventory status
+const shippedInventory = await $.Inventory.ship({
+  shipmentId: 'ship-20250129-00001',
+  warehouseId: 'warehouse-1',
+  items: [
+    { sku: 'product-001', quantity: 2 },
+    { sku: 'product-002', quantity: 1 }
+  ]
+})
+
+// Create label and manifest
+const shippingLabel = await $.ShippingLabel.create({
+  shipmentId: 'ship-20250129-00001',
+  carrier: 'FedEx',
+  trackingNumber: '794000089024',
+  recipientAddress: '123 Main St, Springfield, IL 62701',
+  weight: 2.5,
+  dimensions: { length: 12, width: 8, height: 4 }
+})
+
+// Emit shipment notification
+on($.Shipment.shipped, async (event) => {
+  await send($.Notification.send, {
+    type: 'shipment_dispatched',
+    shipmentId: event.shipmentId,
+    customerId: event.customerId,
+    orderId: event.orderId,
+    carrier: event.carrier,
+    trackingNumber: event.trackingNumber,
+    estimatedDelivery: event.estimatedDeliveryDate
+  })
+})
+
+// Send tracking information to customer
+const customerNotification = await $.Email.send({
+  to: 'customer@example.com',
+  template: 'shipment_notification',
+  data: {
+    orderNumber: 'order-id-001',
+    trackingUrl: `https://tracking.fedex.com/${shipment.trackingNumber}`,
+    estimatedDelivery: shipment.estimatedDeliveryDate
+  }
+})
+```
+
+## Related Verbs
+
+- **load**: Loading goods onto transport vehicle
+- **depart**: Leaving warehouse location with shipment
+- **transport**: Moving shipment between locations
+- **arrive**: Shipment arriving at destination
+- **unload**: Unloading shipment at destination
+- **receive**: Recipient taking delivery

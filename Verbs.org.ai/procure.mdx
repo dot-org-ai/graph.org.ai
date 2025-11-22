@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: procure
+$context: https://verbs.org.ai
+name: procure
+canonicalForm: procure
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Obtain needed goods or services through formal purchasing processes
+predicate: procures
+event: procured
+activity: procuring
+actor: Procurer
+object: Procurement
+inverse: procuredBy
+---
+
+# Procure
+
+Obtaining needed goods or services through formal purchasing processes that include requisitioning, supplier selection, negotiation, and order management.
+
+## APQC Process Context
+
+Supply chain sourcing activity where organizations identify requirements, select suppliers, negotiate terms, and execute purchase orders for goods and services.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Procurement.procure({ requirement, suppliers, evaluation })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Buyer.procures.Goods
+$.Organization.procures.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Requisition.procured, async (event) => {
+  await $.PurchaseOrder.create(event)
+  await $.Budget.record(event.cost)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const sourcing = $.Procurement.procuring.Materials
+```
+
+### Actor (Role)
+```typescript
+const procurer: $.Procurer = await $.findAgent({ role: 'procurement' })
+```
+
+### Object (Abstraction)
+```typescript
+const procurement: $.Procurement = {
+  requisitionId: request.id,
+  selectedSupplier: vendor.id,
+  items: [...],
+  totalCost: 50000,
+  paymentTerms: '30 days net',
+  deliveryDate: date,
+  purchaseOrder: 'PO-2025-001',
+  status: 'ordered'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const procured = await db.related($.Item, $.procuredBy, $.Supplier)
+```
+
+## APQC Process Category
+
+Category 2: Source/Procure
+- Subcategory: Procure materials and services
+- Process: Procure goods and services
+
+## Business Rules
+
+- Procurement requires documented requirement
+- Supplier must be qualified and approved
+- Cost must be within budget authority
+- Terms must comply with contracts and policies
+- Purchase order must be issued before delivery
+
+## Related Verbs
+- acquire - Obtaining goods or resources
+- purchase - Commercial buying transaction
+- request - Initiating a need
+- negotiate - Discussing and agreeing
+- receive - Taking delivery of goods
+

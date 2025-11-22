@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: streamline
+$context: https://verbs.org.ai
+name: streamline
+canonicalForm: streamline
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Simplify and improve efficiency of processes and operations
+predicate: streamlines
+event: streamlined
+activity: streamlining
+actor: Streamliner
+object: Streamlining
+inverse: streamlinedBy
+---
+
+# Streamline
+
+Simplifying and improving the efficiency of processes and operations by removing unnecessary steps, reducing complexity, and optimizing workflows.
+
+## APQC Process Context
+
+Continuous improvement activity where organizations eliminate waste, reduce cycle time, and enhance operational efficiency through process redesign.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ProcessImprovement.streamline({ process, inefficiencies })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.streamlines.Process
+$.Department.streamlines.Workflow
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.streamlined, async (event) => {
+  await $.Performance.measureImprovement(event)
+  await $.Team.adoptNewProcess(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const optimization = $.Organization.streamlining.Operation
+```
+
+### Actor (Role)
+```typescript
+const streamliner: $.Streamliner = await $.findAgent({ expertise: 'process-improvement' })
+```
+
+### Object (Abstraction)
+```typescript
+const streamlining: $.Streamlining = {
+  processId: process.id,
+  previousCycleTime: 10,
+  newCycleTime: 5,
+  costSavings: 50000,
+  improvementDate: now(),
+  status: 'implemented'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const improved = await db.related($.Process, $.streamlinedBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Manage continuous improvement
+- Process: Manage process improvement initiatives
+
+## Business Rules
+
+- Improvements must be measured and validated
+- Changes must be documented
+- Training must be provided
+- Performance must be monitored
+- Results must be communicated
+
+## Related Verbs
+- improve - Making better or enhancing
+- simplify - Reducing complexity
+- optimize - Making most effective
+- eliminate - Removing or getting rid of
+- redesign - Reconfiguring for improvement
+

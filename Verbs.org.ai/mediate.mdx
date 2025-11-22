@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: mediate
+$context: https://verbs.org.ai
+name: mediate
+canonicalForm: mediate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Acting as an intermediary or neutral party to resolve conflicts or facilitate agreements between parties
+predicate: mediates
+event: mediated
+activity: mediating
+actor: Mediator
+object: Mediation
+inverse: mediatedBy
+---
+
+# Mediate
+
+Acting as an intermediary or neutral party to resolve conflicts, facilitate communication, or reach agreements between parties.
+
+## O*NET Context
+
+Work activity focused on bringing together parties with differing interests to find common ground and resolve disputes. Includes active listening, problem-solving, negotiation skills, and facilitating productive dialogue to reach mutually acceptable solutions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Dispute.mediate({ parties: [party1, party2], issues: [...], goal: 'mutual-agreement' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Counselor.mediates.FamilyConflict
+$.Facilitator.mediates.TeamDispute
+```
+
+### Event (Past Tense)
+```typescript
+on($.Conflict.mediated, async (event) => {
+  await $.Agreement.document({ mediator: event.mediatorId, parties: event.parties, terms: event.settlement })
+  await $.Notification.send({ recipients: event.parties, message: 'resolution-reached' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeDialogue = $.Arbitrator.mediating.LaborDispute
+console.log(`Currently mediating: ${activeDialogue.subject} - Session: ${activeDialogue.sessionNumber}`)
+```
+
+### Role (Actor)
+```typescript
+const mediator: $.Mediator = await $.findAgent({ certification: 'certified-mediator', experience: '10-years' })
+mediator.facilitateNegotiation(parties)
+```
+
+### Concept (Abstraction)
+```typescript
+const mediation: $.Mediation = {
+  mediatorId: person.id,
+  parties: [partyA.id, partyB.id],
+  issuesInDispute: [...],
+  processStarted: now(),
+  status: 'in-progress',
+  hoursSpent: 12,
+  resolutionApproach: 'collaborative-problem-solving'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const neutralThirds = await db.related($.Conflict, $.mediatedBy, $.Professional)
+```
+
+## Usage Examples
+
+**Conflict Resolution:**
+- Mediator mediates workplace dispute between two employees
+- Labor arbitrator mediates contract negotiation between union and management
+- Family counselor mediates parent-child conflict
+- Ombudsman mediates complaint between customer and company
+
+**Business Negotiation:**
+- Business broker mediates merger and acquisition discussions
+- Trade representative mediates international trade disputes
+- Insurance adjuster mediates claim disputes
+- Real estate agent mediates between buyers and sellers
+
+**Community and Social:**
+- Community mediator mediates neighborhood disputes
+- School counselor mediates student conflicts
+- Church leader mediates family disagreements
+- Non-profit facilitator mediates community planning sessions
+
+**Stakeholder Management:**
+- Project manager mediates competing stakeholder interests
+- Department head mediates resource allocation disputes
+- Executive mediates inter-departmental conflicts
+- Board member mediates governance disagreements
+
+## Related Verbs
+- negotiate - Discussing to reach agreement
+- facilitate - Making a process easier
+- counsel - Providing guidance
+- resolve - Finding solutions

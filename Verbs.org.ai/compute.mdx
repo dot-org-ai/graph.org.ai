@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: compute
+$context: https://verbs.org.ai
+name: compute
+canonicalForm: compute
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To calculate or determine by mathematical operations or logical reasoning; to process data.
+predicate: computes
+event: computed
+activity: computing
+actor: Computer
+object: Computation
+inverse: computedBy
+---
+
+# Compute
+
+The action of performing calculations, processing information, or deriving results through mathematical or logical operations. This semantic form encompasses data processing and algorithmic execution.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.compute()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.computes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.computed, async ({subject}) => {
+  // Handle computed event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.computing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Computer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Computation
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.computedBy.{Subject}
+```
+
+## Usage Context
+
+The "compute" action applies to various domains:
+- Data processing: transformation, aggregation, analysis
+- Calculations: mathematics, statistics, financial
+- Algorithms: machine learning, optimization, simulation
+- Systems: hardware operations, software execution

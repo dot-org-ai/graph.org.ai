@@ -1,0 +1,90 @@
+---
+$type: Verb
+$id: acquire
+$context: https://verbs.org.ai
+name: acquire
+canonicalForm: acquire
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Obtain or purchase goods, services, or resources
+predicate: acquires
+event: acquired
+activity: acquiring
+actor: Acquirer
+object: Acquisition
+inverse: acquiredBy
+---
+
+# Acquire
+
+Obtaining or purchasing goods, services, or resources through procurement and sourcing processes.
+
+## APQC Process Context
+
+Strategic sourcing and procurement activity where organizations identify, select, and obtain goods or services needed for operations, capital assets, or resale.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Procurement.acquire({ supplier, item, quantity, terms })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.acquires.Goods
+$.Buyer.acquires.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Request.acquired, async (event) => {
+  await $.Inventory.add(event.item, event.quantity)
+  await $.Supplier.recordSale(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const purchasing = $.Department.acquiring.Resources
+```
+
+### Actor (Role)
+```typescript
+const acquirer: $.Acquirer = await $.findAgent({ role: 'procurement' })
+```
+
+### Object (Abstraction)
+```typescript
+const acquisition: $.Acquisition = {
+  supplierId: supplier.id,
+  items: [...],
+  totalCost: amount,
+  status: 'completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suppliers = await db.related($.Item, $.acquiredBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop Sourcing Strategy
+- Process: Identify and select suppliers
+
+## Business Rules
+
+- Acquisition requires approved purchase requisition
+- Must comply with procurement policies and spend limits
+- Triggers accounts payable and inventory processes
+- Price and terms must align with contracts
+
+## Related Verbs
+- procure - Formal purchasing process
+- purchase - Commercial transaction
+- contract - Establishing legal terms for acquisition
+- receive - Taking delivery of acquired goods
+

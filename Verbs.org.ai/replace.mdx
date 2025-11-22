@@ -1,0 +1,125 @@
+---
+$type: Verb
+$id: replace
+$context: https://verbs.org.ai
+name: replace
+canonicalForm: replace
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:replacing
+description: Substituting one item for another
+predicate: replaces
+event: replaced
+activity: replacing
+actor: Replacer
+object: Replacement
+inverse: replacedBy
+---
+
+# Replace
+
+GS1 CBV Business Step: Substituting one item for another.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Product.replace()
+```
+
+### Predicate (Relationship)
+```typescript
+$.NewProduct.replaces.OldProduct
+```
+
+### Event (Past Tense)
+```typescript
+on($.Item.replaced, async ({subject}) => {
+  // Handle replacement event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Facility.replacing.Equipment
+```
+
+### Role (Actor)
+```typescript
+$.Replacer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Replacement
+```
+
+### Inverse (Passive)
+```typescript
+$.OldItem.replacedBy.NewItem
+```
+
+## Context
+
+In supply chain and retail operations, replacement occurs when items are substituted due to various reasons:
+
+- **Warranty replacement**: Replacing defective items under warranty
+- **Return and exchange**: Customer-initiated product swaps
+- **Stock rotation**: Replacing old stock with newer inventory
+- **Equipment upgrade**: Replacing with improved versions
+- **End-of-life**: Replacing obsolete items
+- **Damage recovery**: Replacing damaged goods with new ones
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record replacement operation
+const replacementEvent = await $.Event.create({
+  type: 'replacing',
+  bizStep: 'urn:epcglobal:cbv:bizstep:replacing',
+  epcList: ['urn:epc:id:sgtin:new-item-...'],
+  readPoint: 'urn:epc:id:sgln:retail-location-id',
+  bizLocation: 'urn:epc:id:sgln:store-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'in_progress'
+})
+
+// Create replacement record
+const replacement = await $.Replacement.create({
+  originalItemId: 'defective-item-123',
+  replacementItemId: 'new-item-456',
+  reason: 'warranty_defect',
+  customerId: 'customer-id-789',
+  orderId: 'order-id-001',
+  replacementDate: new Date().toISOString()
+})
+
+// Update inventory
+const updatedInventory = await $.Inventory.replace({
+  oldItemId: 'defective-item-123',
+  newItemId: 'new-item-456',
+  location: 'warehouse-1',
+  returnOldItem: true
+})
+
+// Emit replacement notification
+on($.Item.replaced, async (event) => {
+  await send($.Notification.send, {
+    type: 'replacement_complete',
+    originalItemId: event.originalItemId,
+    replacementItemId: event.replacementItemId,
+    customerId: event.customerId
+  })
+})
+```
+
+## Related Verbs
+
+- **accept**: Accepting replacement items
+- **remove**: Taking away items being replaced
+- **install**: Installing replacement items
+- **repair**: Alternative to replacement for fixing items
+- **receive**: Receiving replacement items from supplier

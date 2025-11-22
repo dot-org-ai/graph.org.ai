@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: hold
+$context: https://verbs.org.ai
+name: hold
+canonicalForm: hold
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:holding
+description: Retaining possession of goods or objects, typically in storage.
+predicate: holds
+event: held
+activity: holding
+actor: Holder
+object: Holding
+inverse: heldBy
+---
+
+# Hold
+
+The action of retaining possession of goods or objects, typically in storage. In GS1 CBV Business Steps, holding represents the period during which inventory is kept in a location pending further action, such as picking for fulfillment or disposal.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.hold()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.holds.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.held, async ({subject}) => {
+  // Handle holding event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.holding.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Holder}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Holding}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.heldBy.{Subject}
+```

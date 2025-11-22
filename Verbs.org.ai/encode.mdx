@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: encode
+$context: https://verbs.org.ai
+name: encode
+canonicalForm: encode
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:encoding
+description: Writing data to an RFID tag, barcode, or other storage medium.
+predicate: encodes
+event: encoded
+activity: encoding
+actor: Encoder
+object: Encoding
+inverse: encodedBy
+---
+
+# Encode
+
+The action of writing data to an RFID tag, barcode, or other storage medium. In GS1 CBV Business Steps, encoding captures product information and identifiers to enable automatic identification and tracking throughout the supply chain.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.encode()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.encodes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.encoded, async ({subject}) => {
+  // Handle encoding event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.encoding.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Encoder}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Encoding}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.encodedBy.{Subject}
+```

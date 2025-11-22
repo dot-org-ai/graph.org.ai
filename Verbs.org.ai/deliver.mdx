@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: deliver
+$context: https://verbs.org.ai
+name: deliver
+canonicalForm: deliver
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Transporting and handing over goods to a recipient
+predicate: delivers
+event: delivered
+activity: delivering
+actor: Deliverer
+object: Delivery
+inverse: deliveredBy
+---
+
+# Deliver
+
+Transporting and handing over goods to a recipient at a specified location.
+
+## Schema.org Context
+
+A schema.org Action representing the delivery of physical goods or services to a destination. This is a fundamental operation in commerce, logistics, and service provisioning.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.deliver({ recipient: customer, address: destination, timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Carrier.delivers.Package
+$.Supplier.delivers.Goods
+$.Vendor.delivers.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Package.delivered, async (event) => {
+  await $.Customer.notify({ status: 'arrived', trackingId: event.trackingId })
+  await $.Inventory.decrement(event.items)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const inTransit = $.Carrier.delivering.Shipments
+console.log(`Currently delivering: ${inTransit.count} shipments`)
+```
+
+### Role (Actor)
+```typescript
+const deliverer: $.Deliverer = await $.findAgent({ credentials: 'delivery' })
+await deliverer.confirm(packageId, recipient)
+```
+
+### Concept (Abstraction)
+```typescript
+const delivery: $.Delivery = {
+  shipmentId: shipment.id,
+  timestamp: now(),
+  recipient: customer.name,
+  address: destination.address,
+  signedBy: customer.signature
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suppliers = await db.related($.Shipment, $.deliveredBy, $.Carrier)
+```
+
+## Usage Examples
+
+**E-Commerce Fulfillment:**
+- Shipping carrier delivers packages to customers
+- Last-mile delivery completion
+- Delivery confirmation and receipt
+
+**Service Delivery:**
+- Consultant delivers finished project
+- Trainer delivers course materials
+- Vendor delivers supplies to business
+
+**Business Rules:**
+- Cannot deliver without confirmed address
+- Delivery triggers payment settlement
+- Delivery updates customer satisfaction metrics
+
+## Related Verbs
+- ship - Initiating transport
+- receive - Taking delivery of goods
+- transport - Moving goods in transit

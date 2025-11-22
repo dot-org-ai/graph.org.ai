@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: extract
+$context: https://verbs.org.ai
+name: extract
+canonicalForm: extract
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Remove, pull out, or obtain something from a location, source, or substance; derive or obtain from text.
+predicate: extracts
+event: extracted
+activity: extracting
+actor: Extractor
+object: Extraction
+inverse: extractedBy
+---
+
+# Extract
+
+The action of removing, pulling out, or obtaining something from a location, source, or substance, or deriving information from a document or text. In the context of Schema.org Actions, extract represents the process of isolating or obtaining specific elements from a larger whole.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.extract()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.extracts.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.extracted, async ({subject}) => {
+  // Handle extraction event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.extracting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Extractor}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Extraction}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.extractedBy.{Subject}
+```

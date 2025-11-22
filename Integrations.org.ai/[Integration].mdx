@@ -1,0 +1,98 @@
+---
+$id: https://graph.org.ai/integrations/{slug}
+$type: Integration
+source: "{app_url}"
+id: "{id}"
+slug: "{slug}"
+name: "{name}"
+canonical_id: "{canonical_id}"
+---
+
+export const items = fetch('https://zapier.com/api/v4/services')
+  .then(res => res.json())
+  .then(data => {
+    const allResults = [];
+    let results = data.results;
+    allResults.push(...results);
+
+    // Note: In production, you'd paginate through all pages
+    // For now, we'll use the fetched data from services.json if available
+
+    return allResults.map(service => ({
+      id: service.id,
+      slug: service.slug,
+      canonical_id: service.canonical_id,
+      name: service.name,
+      description: service.description,
+      external_url: service.app_url,
+      learn_more_url: service.learn_more_url,
+      image: service.image,
+      primary_color: service.primary_color,
+      categories: service.categories,
+      popularity: service.popularity,
+      is_featured: service.is_featured,
+      is_premium: service.is_premium,
+      zap_usage_count: service.zap_usage_count,
+      hashtag: service.hashtag,
+      reads: service.reads || [],
+      writes: service.writes || [],
+      searches: service.searches || [],
+      $id: `https://graph.org.ai/integrations/${service.slug}`
+    }));
+  });
+
+# {name}
+
+{description}
+
+## Details
+
+**Slug**: `{slug}`
+**ID**: `{id}`
+**Canonical ID**: `{canonical_id}`
+**Popularity Rank**: {popularity}
+**Zap Usage Count**: {zap_usage_count}
+
+## Links
+
+- [App Page]({external_url})
+- [Learn More]({learn_more_url})
+- [Zapier Integration Page](https://zapier.com/apps/{slug}/integrations)
+
+## Categories
+
+{categories.map(cat => `- [${cat.title}](${cat.url})`).join('\n')}
+
+## Triggers (Reads)
+
+{reads && reads.length > 0 ? reads.map(r => `
+### ${r.name}
+
+**Key**: \`${r.key}\`
+**Type**: Trigger
+${r.description}
+`).join('\n') : 'No triggers available.'}
+
+## Actions (Writes)
+
+{writes && writes.length > 0 ? writes.map(w => `
+### ${w.name}
+
+**Key**: \`${w.key}\`
+**Type**: Action
+${w.description}
+`).join('\n') : 'No actions available.'}
+
+## Searches
+
+{searches && searches.length > 0 ? searches.map(s => `
+### ${s.name}
+
+**Key**: \`${s.key}\`
+**Type**: Search
+${s.description}
+`).join('\n') : 'No searches available.'}
+
+## Integration Overview
+
+{integration_overview_html}

@@ -1,0 +1,28 @@
+---
+$id: https://graph.org.ai/services/{slug}
+$type: Service
+title: "{name}"
+---
+
+export const items = fetch(env.INTEGRATIONS_URL + '/services')
+  .then(res => res.json())
+  .then(data => {
+      return data.map(svc => {
+          const slug = _.upperFirst(_.camelCase(svc.name));
+          return {
+              id: slug,
+              slug: slug,
+              name: svc.name,
+              description: svc.description,
+              $id: `https://graph.org.ai/services/${slug}`,
+              actions: svc.actions
+          };
+      });
+  });
+
+# {name}
+
+{description}
+
+## Capabilities
+<Actions service="{slug}" />

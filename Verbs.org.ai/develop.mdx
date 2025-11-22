@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: develop
+$context: https://verbs.org.ai
+name: develop
+canonicalForm: develop
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To create, improve, or advance something gradually or systematically; to bring something to a more advanced or complete state
+predicate: develops
+event: developed
+activity: developing
+actor: Developer
+object: Development
+inverse: developedBy
+---
+
+# Develop
+
+To create, improve, or advance something gradually or systematically, bringing it to a more advanced, refined, or complete state. This verb encompasses activities such as designing new products, improving existing processes, building capabilities, advancing knowledge, and creating strategic plans and solutions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.develop()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.develops.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.developed, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.developing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Developer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Development
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.developedBy.{Subject}
+```

@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: observe
+$context: https://verbs.org.ai
+name: observe
+canonicalForm: observe
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Watching carefully and noticing details, behaviors, or changes in a situation
+predicate: observes
+event: observed
+activity: observing
+actor: Observer
+object: Observation
+inverse: observedBy
+---
+
+# Observe
+
+Watching carefully and noticing details, behaviors, changes, or patterns in a situation or environment.
+
+## O*NET Context
+
+Work activity focused on watching and noting the behavior, condition, or performance of people, equipment, processes, or situations to gain information or ensure proper functioning.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.System.observe({ parameters: 'performance', frequency: 'continuous' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Observer.observes.Process
+$.Inspector.observes.Equipment
+```
+
+### Event (Past Tense)
+```typescript
+on($.Anomaly.observed, async (event) => {
+  await $.Alert.generate({ severity: event.severity })
+  await $.Technician.notify({ issue: event.anomaly })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeObservation = $.Team.observing.ProductionLine
+console.log(`Currently observing: ${activeObservation.target}`)
+```
+
+### Role (Actor)
+```typescript
+const observer: $.Observer = await $.findAgent({ expertise: 'quality-assurance' })
+await observer.watchSystem({ duration: '8-hours' })
+```
+
+### Concept (Abstraction)
+```typescript
+const observation: $.Observation = {
+  observerId: observer.id,
+  targetId: subject.id,
+  timestamp: now(),
+  findings: [],
+  anomalies: []
+}
+```
+
+### Inverse (Passive)
+```typescript
+const records = await db.related($.Process, $.observedBy, $.Observer)
+```
+
+## Usage Examples
+
+**Quality Assurance:**
+- Observing manufacturing processes for defects
+- Observing employee performance and compliance
+- Observing equipment operation for malfunctions
+- Observing safety protocols in work areas
+
+**Research & Testing:**
+- Observing experimental results and behavior
+- Observing animal or plant behavior in natural settings
+- Observing student performance and learning patterns
+- Observing customer reactions to new products
+
+**Monitoring & Surveillance:**
+- Observing security camera feeds for suspicious activity
+- Observing network traffic for unusual patterns
+- Observing vital signs during medical procedures
+- Observing weather patterns and conditions
+
+## Related Verbs
+- monitor - Continuously tracking and watching
+- inspect - Examining closely for quality or compliance
+- examine - Looking at in detail
+- assess - Evaluating based on observations

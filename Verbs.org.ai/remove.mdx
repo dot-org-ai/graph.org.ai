@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: remove
+$context: https://verbs.org.ai
+name: remove
+canonicalForm: remove
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Taking away items from a location or active use
+predicate: removes
+event: removed
+activity: removing
+actor: Remover
+object: Removal
+inverse: removedBy
+---
+
+# Remove
+
+Taking away items from a location or active use.
+
+## GS1 Context
+
+Business step for formally removing items from inventory, storage locations, or active service. This operation applies to various scenarios including shelf removal, equipment decommissioning, or inventory write-offs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.InventoryItem.remove({ reason: 'expired', timestamp: now(), location: 'Aisle-B' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.removes.ExpiredGoods
+$.Store.removes.DiscontinuedItems
+```
+
+### Event (Past Tense)
+```typescript
+on($.Item.removed, async (event) => {
+  await $.Inventory.decrease({ sku: event.sku, quantity: event.quantity })
+  await $.Accounting.recordWriteOff({ itemId: event.id, reason: event.reason })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const disposal = $.Warehouse.removing.DamagedInventory
+console.log(`Currently removing: ${disposal.count} items`)
+```
+
+### Role (Actor)
+```typescript
+const remover: $.Remover = await $.findAgent({ permissions: 'inventory-disposal' })
+await remover.processRemoval(item)
+```
+
+### Concept (Abstraction)
+```typescript
+const removal: $.Removal = {
+  itemId: item.id,
+  timestamp: now(),
+  remover: user.id,
+  reason: 'quality-issue',
+  location: location,
+  disposalMethod: 'recycling'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const removers = await db.related($.Item, $.removedBy, $.QualityTeam)
+```
+
+## Usage Examples
+
+**Inventory Management:**
+- Removing expired items from shelves
+- Removing damaged goods from inventory
+- Removing discontinued products
+- Removing recalled items from circulation
+
+**Business Rules:**
+- Removal must be documented with reason and timestamp
+- Removed items must be deducted from inventory
+- High-value removals require approval
+- Removal triggers accounting adjustments
+
+## Related Verbs
+- destroy - Permanently removing from use
+- unload - Removing from transport vehicle
+- unpack - Removing from packaging
+- decommission - Removing an object from active use
+- take - Comprehensive inventory count

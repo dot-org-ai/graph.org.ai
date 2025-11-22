@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: choose
+$context: https://verbs.org.ai
+name: choose
+canonicalForm: choose
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Selecting one or more items from a collection
+predicate: chooses
+event: chosen
+activity: choosing
+actor: Chooser
+object: Choice
+inverse: chosenBy
+---
+
+# Choose
+
+Schema.org Action: Selecting one or more items from a collection.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.choose()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.chooses.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.chosen, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.choosing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Chooser
+```
+
+### Concept (Abstraction)
+```typescript
+$.Choice
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.chosenBy.{Subject}
+```

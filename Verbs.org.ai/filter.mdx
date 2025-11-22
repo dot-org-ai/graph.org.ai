@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: filter
+$context: https://verbs.org.ai
+name: filter
+canonicalForm: filter
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Remove impurities or unwanted elements from something; select or distinguish items based on criteria.
+predicate: filters
+event: filtered
+activity: filtering
+actor: Filterer
+object: Filter
+inverse: filteredBy
+---
+
+# Filter
+
+The action of removing impurities or unwanted elements from a substance or data set, or selecting items based on specific criteria or conditions. In the context of Schema.org Actions, filter represents the process of isolating desired elements while removing or excluding others.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.filter()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.filters.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.filtered, async ({subject}) => {
+  // Handle filter event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.filtering.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Filterer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Filter}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.filteredBy.{Subject}
+```

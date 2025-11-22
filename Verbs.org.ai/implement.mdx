@@ -1,0 +1,104 @@
+---
+$type: Verb
+$id: implement
+$context: https://verbs.org.ai
+name: implement
+canonicalForm: implement
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Putting a plan, system, or decision into action or effect
+predicate: implements
+event: implemented
+activity: implementing
+actor: Implementer
+object: Implementation
+inverse: implementedBy
+---
+
+# Implement
+
+Putting a plan, system, decision, or strategy into action or effect, making something work in practice.
+
+## O*NET Context
+
+Essential execution work activity across all occupations including managers, technologists, engineers, and project coordinators. Involves translating plans into concrete actions, installing systems, and ensuring decisions are carried out effectively.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.System.implement({ strategy: plan, timeline: '90-days', resources: budget })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Team.implements.Initiative
+$.Organization.implements.Policy
+```
+
+### Event (Past Tense)
+```typescript
+on($.Change.implemented, async (event) => {
+  await $.Training.deliver({ stakeholders: event.affectedUsers })
+  await $.Monitor.track({ system: event.system })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const deployment = $.Project.implementing.NewSystem
+console.log(`Progress: ${deployment.percentComplete}%`)
+```
+
+### Role (Actor)
+```typescript
+const implementer: $.Implementer = await $.findAgent({ expertise: 'project-delivery' })
+implementer.executeChanges(plan)
+```
+
+### Concept (Abstraction)
+```typescript
+const implementation: $.Implementation = {
+  initiative: 'digital-transformation',
+  scope: ['process', 'technology', 'people'],
+  phases: ['plan', 'deploy', 'optimize'],
+  startDate: '2025-01-01',
+  completionDate: '2025-12-31',
+  budget: 500000
+}
+```
+
+### Inverse (Passive)
+```typescript
+const teams = await db.related($.Strategy, $.implementedBy, $.Department)
+```
+
+## Usage Examples
+
+**System Implementation:**
+- IT teams implement software systems
+- Engineers implement technical solutions
+- Architects implement building designs
+
+**Process Change:**
+- Organizations implement new procedures
+- Managers implement policy updates
+- Teams implement process improvements
+
+**Project Execution:**
+- Project managers implement initiatives
+- Coordinators implement timelines
+- Leaders implement strategic plans
+
+**Business Rules:**
+- Implementation plans include detailed steps and timelines
+- Resource allocation tracked throughout
+- Regular progress reviews and adjustments
+- Completion verified against requirements
+- Training and communication completed before rollout
+
+## Related Verbs
+- execute - Carrying out actions
+- deploy - Putting into use
+- install - Setting up systems
+- apply - Making use of knowledge

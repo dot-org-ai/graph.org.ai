@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: research
+$context: https://verbs.org.ai
+name: research
+canonicalForm: research
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Conducting systematic inquiry to discover or verify facts and information
+predicate: researches
+event: researched
+activity: researching
+actor: Researcher
+object: Research
+inverse: researchedBy
+---
+
+# Research
+
+Conducting systematic inquiry and investigation to discover, verify, or understand facts, information, and knowledge relevant to work activities.
+
+## O*NET Context
+
+Work activity focused on conducting investigations, gathering information, reviewing literature, and analyzing data to support decision-making and knowledge development.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Scientist.research({ topic: 'climate trends', methodology: 'quantitative' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Team.researches.Market
+$.Institute.researches.Disease
+```
+
+### Event (Past Tense)
+```typescript
+on($.Study.researched, async (event) => {
+  await $.Report.generate({ findings: event.results })
+  await $.Team.present({ data: event.conclusions })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeResearch = $.Laboratory.researching.NewTreatment
+console.log(`Research status: ${activeResearch.progress}%`)
+```
+
+### Role (Actor)
+```typescript
+const researcher: $.Researcher = await $.findAgent({ expertise: 'biomedical' })
+researcher.conductStudy(protocol)
+```
+
+### Concept (Abstraction)
+```typescript
+const research: $.Research = {
+  title: 'Market Analysis 2025',
+  subjectId: company.id,
+  methodology: 'mixed-methods',
+  budget: 50000,
+  status: 'in-progress',
+  startDate: '2025-01-01'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const topics = await db.related($.Paper, $.researchedBy, $.Researcher)
+```
+
+## Usage Examples
+
+**Academic Research:**
+- Researching peer-reviewed literature for thesis work
+- Investigating scientific theories and methodologies
+- Conducting experiments to test hypotheses
+- Analyzing research data for patterns and conclusions
+
+**Business Intelligence:**
+- Researching competitive market conditions
+- Investigating customer preferences and trends
+- Analyzing industry benchmarks and best practices
+- Studying regulatory requirements and compliance
+
+**Technical Development:**
+- Researching emerging technologies and frameworks
+- Investigating technical solutions to problems
+- Analyzing code performance and optimization opportunities
+- Studying design patterns and architectural approaches
+
+## Related Verbs
+- investigate - Conducting detailed inquiry
+- analyze - Examining data systematically
+- examine - Inspecting something thoroughly
+- study - Learning through careful attention

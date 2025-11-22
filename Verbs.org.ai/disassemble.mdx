@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: disassemble
+$context: https://verbs.org.ai
+name: disassemble
+canonicalForm: disassemble
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:disassembling
+description: Breaking down a finished product into its component parts.
+predicate: disassembles
+event: disassembled
+activity: disassembling
+actor: Disassembler
+object: Disassembly
+inverse: disassembledBy
+---
+
+# Disassemble
+
+The action of breaking down a finished product into its component parts. In GS1 CBV Business Steps, disassembling reverses the assembly process and may be used for product recycling, repair, or reconfiguration.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.disassemble()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.disassembles.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.disassembled, async ({subject}) => {
+  // Handle disassembly event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.disassembling.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Disassembler}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Disassembly}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.disassembledBy.{Subject}
+```

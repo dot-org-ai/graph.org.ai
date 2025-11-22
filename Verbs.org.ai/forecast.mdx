@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: forecast
+$context: https://verbs.org.ai
+name: forecast
+canonicalForm: forecast
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Predicting or estimating future trends, events, or conditions
+predicate: forecasts
+event: forecasted
+activity: forecasting
+actor: Forecaster
+object: Forecast
+inverse: forecastedBy
+---
+
+# Forecast
+
+Predicting or estimating future trends, events, or conditions based on current data, historical patterns, and analytical methods.
+
+## O*NET Context
+
+Critical work activity across many occupations including meteorologists, financial analysts, market researchers, and business planners. Involves collecting data, identifying patterns, and making informed predictions about future outcomes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Market.forecast({ horizon: '2025', methodology: 'trend-analysis' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Analyst.forecasts.Demand
+$.Model.forecasts.Revenue
+```
+
+### Event (Past Tense)
+```typescript
+on($.Trend.forecasted, async (event) => {
+  await $.Dashboard.update({ prediction: event.data })
+  await $.Alert.send({ stakeholders: event.recipients })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const prediction = $.Team.forecasting.Q4Results
+console.log(`Confidence level: ${prediction.confidence}%`)
+```
+
+### Role (Actor)
+```typescript
+const forecaster: $.Forecaster = await $.findAgent({ expertise: 'analytics' })
+forecaster.generateProjection(dataset)
+```
+
+### Concept (Abstraction)
+```typescript
+const forecast: $.Forecast = {
+  timeframe: '2025',
+  methodology: 'statistical-model',
+  confidenceInterval: 0.95,
+  variables: ['price', 'demand', 'competition']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const analysts = await db.related($.Market, $.forecastedBy, $.ResearchTeam)
+```
+
+## Usage Examples
+
+**Business Planning:**
+- Financial analysts forecast revenue growth for quarterly earnings
+- Supply chain managers forecast demand to optimize inventory
+- Marketing teams forecast customer acquisition costs
+
+**Technical Analysis:**
+- Weather forecasters predict atmospheric conditions
+- Economists forecast inflation and GDP growth
+- Technology experts forecast industry trends
+
+**Business Rules:**
+- Forecasts based on minimum data period (e.g., 3 years historical)
+- Confidence intervals must be specified
+- Regular forecast updates when new data arrives
+- Comparison with actual results for validation
+
+## Related Verbs
+- predict - Making specific claims about future events
+- analyze - Examining data patterns
+- estimate - Making approximate calculations
+- monitor - Tracking current conditions

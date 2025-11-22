@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: optimize
+$context: https://verbs.org.ai
+name: optimize
+canonicalForm: optimize
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Improving efficiency or performance by adjusting variables and removing inefficiencies
+predicate: optimizes
+event: optimized
+activity: optimizing
+actor: Optimizer
+object: Optimization
+inverse: optimizedBy
+---
+
+# Optimize
+
+Improving efficiency or performance by adjusting variables, removing inefficiencies, and finding the best possible solution.
+
+## O*NET Context
+
+Work activity focused on examining and improving the efficiency, effectiveness, or performance of processes, systems, or operations to achieve maximum results with minimum resources.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Process.optimize({ metric: 'throughput', target: 'maximum' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Optimizer.optimizes.Workflow
+$.Engineer.optimizes.Performance
+```
+
+### Event (Past Tense)
+```typescript
+on($.System.optimized, async (event) => {
+  await $.Metrics.update({ improvement: event.gainPercent })
+  await $.Team.celebrate({ achievement: 'efficiency-milestone' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeOptimization = $.Team.optimizing.QueryPerformance
+console.log(`Currently optimizing: ${activeOptimization.aspect}`)
+```
+
+### Role (Actor)
+```typescript
+const optimizer: $.Optimizer = await $.findAgent({ expertise: 'performance-tuning' })
+await optimizer.analyzeAndImprove({ system })
+```
+
+### Concept (Abstraction)
+```typescript
+const optimization: $.Optimization = {
+  optimizerId: optimizer.id,
+  targetId: subject.id,
+  baselineMetrics: {},
+  improvedMetrics: {},
+  percentageGain: 0,
+  costSavings: 0
+}
+```
+
+### Inverse (Passive)
+```typescript
+const improvements = await db.related($.System, $.optimizedBy, $.Optimizer)
+```
+
+## Usage Examples
+
+**Business Process Optimization:**
+- Optimizing supply chain efficiency
+- Optimizing production workflows and schedules
+- Optimizing cost structures and resource allocation
+- Optimizing customer service operations
+
+**Software & Systems:**
+- Optimizing database queries and indexes
+- Optimizing code performance and memory usage
+- Optimizing network bandwidth and latency
+- Optimizing system resource utilization
+
+**Manufacturing & Operations:**
+- Optimizing production line throughput
+- Optimizing equipment maintenance schedules
+- Optimizing inventory levels and turnover
+- Optimizing energy consumption and waste
+
+## Related Verbs
+- improve - Making better or enhancing
+- streamline - Simplifying and making more efficient
+- refine - Making fine adjustments for better results
+- enhance - Increasing quality or value

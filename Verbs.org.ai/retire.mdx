@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: retire
+$context: https://verbs.org.ai
+name: retire
+canonicalForm: retire
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Remove assets or systems from service at end of lifecycle
+predicate: retires
+event: retired
+activity: retiring
+actor: Retirer
+object: Retirement
+inverse: retiredBy
+---
+
+# Retire
+
+Removing assets, systems, equipment, or products from active service at the end of their useful lifecycle through structured retirement processes.
+
+## APQC Process Context
+
+Asset management and operational activity where organizations systematically remove, dispose of, or archive resources that have reached end-of-life or become obsolete.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.AssetManagement.retire({ asset, reason, timeline })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.retires.Equipment
+$.Company.retires.System
+```
+
+### Event (Past Tense)
+```typescript
+on($.Asset.retired, async (event) => {
+  await $.Finance.recordDisposal(event)
+  await $.Records.archive(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const decommissioning = $.Organization.retiring.Asset
+```
+
+### Actor (Role)
+```typescript
+const retirer: $.Retirer = await $.findAgent({ role: 'asset-management' })
+```
+
+### Object (Abstraction)
+```typescript
+const retirement: $.Retirement = {
+  assetId: equipment.id,
+  purchaseDate: oldDate,
+  retirementDate: now(),
+  bookValue: 0,
+  disposalMethod: 'salvage',
+  recoveredValue: 500,
+  status: 'retired'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const retired = await db.related($.Asset, $.retiredBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 4: Enable
+- Subcategory: Manage organizational resources
+- Process: Manage fixed assets
+
+## Business Rules
+
+- Retirement must follow asset lifecycle policies
+- Disposal method must comply with regulations
+- Records must be updated and archived
+- Any salvage or recovery value must be recorded
+- Environmental and safety requirements must be met
+
+## Related Verbs
+- decommission - Removing from service
+- dispose - Eliminating or getting rid of
+- archive - Preserving records
+- discontinue - Ending availability
+- abandon - Leaving behind or discarding
+

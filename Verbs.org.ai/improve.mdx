@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: improve
+$context: https://verbs.org.ai
+name: improve
+canonicalForm: improve
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making something better or enhancing quality, performance, or value
+predicate: improves
+event: improved
+activity: improving
+actor: Improver
+object: Improvement
+inverse: improvedBy
+---
+
+# Improve
+
+Making something better, enhancing quality, performance, efficiency, or value through changes or refinements.
+
+## O*NET Context
+
+Continuous improvement work activity essential to most occupations including operations managers, quality engineers, process specialists, and innovators. Involves analyzing current state, identifying shortcomings, and implementing enhancements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Process.improve({ metrics: ['efficiency', 'quality'], target: '25%' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Team.improves.Outcomes
+$.Initiative.improves.Performance
+```
+
+### Event (Past Tense)
+```typescript
+on($.Metric.improved, async (event) => {
+  await $.Stakeholder.communicate({ achievement: event.result })
+  await $.Baseline.update({ newTarget: event.newValue })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const optimization = $.Org.improving.Efficiency
+console.log(`Target improvement: ${optimization.goalPercentage}%`)
+```
+
+### Role (Actor)
+```typescript
+const improver: $.Improver = await $.findAgent({ expertise: 'continuous-improvement' })
+improver.optimizeProcess(system)
+```
+
+### Concept (Abstraction)
+```typescript
+const improvement: $.Improvement = {
+  area: 'production-efficiency',
+  baseline: 75,
+  target: 90,
+  method: 'lean-methodology',
+  timeline: '6-months',
+  expectedSavings: 250000
+}
+```
+
+### Inverse (Passive)
+```typescript
+const managers = await db.related($.Quality, $.improvedBy, $.Team)
+```
+
+## Usage Examples
+
+**Quality Enhancement:**
+- Teams improve product quality
+- Departments improve service levels
+- Organizations improve customer satisfaction
+
+**Performance Optimization:**
+- Engineers improve system performance
+- Analysts improve process efficiency
+- Managers improve team productivity
+
+**Continuous Improvement:**
+- Facilities improve working conditions
+- IT improves system reliability
+- HR improves employee experience
+
+**Business Rules:**
+- Improvements measured against baseline metrics
+- Documentation of improvement methodology
+- Regular tracking of improvement progress
+- Return on investment calculated
+- Best practices documented and shared
+- Continuous cycle of measurement and refinement
+
+## Related Verbs
+- enhance - Adding value or capabilities
+- optimize - Making as effective as possible
+- refine - Making more precise or perfect
+- upgrade - Replacing with something better

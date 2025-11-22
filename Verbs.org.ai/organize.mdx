@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: organize
+$context: https://verbs.org.ai
+name: organize
+canonicalForm: organize
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Arranging, structuring, or coordinating elements into a systematic order or coherent whole
+predicate: organizes
+event: organized
+activity: organizing
+actor: Organizer
+object: Organization
+inverse: organizedBy
+---
+
+# Organize
+
+Arranging, structuring, or coordinating elements into a systematic order or coherent whole for effective management or operation.
+
+## O*NET Context
+
+Work activity focused on arranging, planning, and coordinating work, materials, people, or information in an orderly and efficient manner to accomplish goals and facilitate operations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Workspace.organize({ system: 'alphabetical', frequency: 'weekly' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organizer.organizes.Resources
+$.Manager.organizes.Team
+```
+
+### Event (Past Tense)
+```typescript
+on($.System.organized, async (event) => {
+  await $.Efficiency.measure({ baseline: event.previousState })
+  await $.Team.notify({ message: 'System reorganized' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeOrganization = $.Department.organizing.Inventory
+console.log(`Currently organizing: ${activeOrganization.category}`)
+```
+
+### Role (Actor)
+```typescript
+const organizer: $.Organizer = await $.findAgent({ expertise: 'logistics' })
+await organizer.restructureWorkflow({ department })
+```
+
+### Concept (Abstraction)
+```typescript
+const organization: $.Organization = {
+  organizerId: organizer.id,
+  subjectId: subject.id,
+  structure: 'hierarchical',
+  taxonomy: [],
+  indexing: 'optimized',
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const archives = await db.related($.Files, $.organizedBy, $.Organizer)
+```
+
+## Usage Examples
+
+**Administrative Organization:**
+- Organizing files and documents into filing systems
+- Organizing meetings and scheduling appointments
+- Organizing office supplies and workspace
+- Organizing records and databases
+
+**Team & Project Organization:**
+- Organizing team members into working groups
+- Organizing project tasks and timelines
+- Organizing resources for optimal allocation
+- Organizing workflow processes
+
+**Event & Business Organization:**
+- Organizing conferences, meetings, or events
+- Organizing business operations and procedures
+- Organizing inventory systems
+- Organizing information and data structures
+
+## Related Verbs
+- arrange - Putting in orderly sequence
+- coordinate - Working together harmoniously
+- structure - Creating an organized framework
+- categorize - Classifying into groups

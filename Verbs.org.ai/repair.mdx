@@ -1,0 +1,125 @@
+---
+$type: Verb
+$id: repair
+$context: https://verbs.org.ai
+name: repair
+canonicalForm: repair
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:repairing
+description: Fixing or restoring goods or materials
+predicate: repairs
+event: repaired
+activity: repairing
+actor: Repairer
+object: Repair
+inverse: repairedBy
+---
+
+# Repair
+
+GS1 CBV Business Step: Fixing or restoring goods or materials.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Equipment.repair()
+```
+
+### Predicate (Relationship)
+```typescript
+$.Technician.repairs.Device
+```
+
+### Event (Past Tense)
+```typescript
+on($.Equipment.repaired, async ({subject}) => {
+  // Handle repair completion event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.ServiceCenter.repairing.Product
+```
+
+### Role (Actor)
+```typescript
+$.Repairer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Repair
+```
+
+### Inverse (Passive)
+```typescript
+$.Device.repairedBy.ServiceCenter
+```
+
+## Context
+
+In supply chain and service operations, repair occurs when equipment or products are restored to functional condition:
+
+- **Maintenance repair**: Regular maintenance-driven repairs
+- **Warranty repair**: Repairing under warranty coverage
+- **Damage repair**: Restoring damaged goods
+- **Component replacement**: Replacing faulty parts
+- **Functionality restoration**: Returning to operational status
+- **Quality assurance**: Testing after repair completion
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record repair operation
+const repairEvent = await $.Event.create({
+  type: 'repairing',
+  bizStep: 'urn:epcglobal:cbv:bizstep:repairing',
+  epcList: ['urn:epc:id:sgtin:...'],
+  readPoint: 'urn:epc:id:sgln:service-center-id',
+  bizLocation: 'urn:epc:id:sgln:repair-facility-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'in_progress'
+})
+
+// Create repair work order
+const repairOrder = await $.WorkOrder.create({
+  type: 'repair',
+  productId: 'device-sku-123',
+  issueDescription: 'Display malfunction',
+  assignedTechnician: 'tech-id-001',
+  priority: 'high',
+  estimatedCompletionDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)
+})
+
+// Update product status
+const repairedProduct = await $.Product.repair({
+  productId: 'device-id',
+  repairId: repairOrder.id,
+  technician: 'tech-id-001',
+  partsReplaced: ['display-unit', 'power-cord'],
+  completionDate: new Date().toISOString()
+})
+
+// Emit repair completion notification
+on($.Equipment.repaired, async (event) => {
+  await send($.Notification.send, {
+    type: 'repair_complete',
+    equipmentId: event.equipmentId,
+    repairId: event.repairId,
+    repairedBy: event.repairedBy
+  })
+})
+```
+
+## Related Verbs
+
+- **install**: Putting repaired items into service
+- **inspect**: Examining for quality before/after repair
+- **decommission**: Removing items that cannot be repaired
+- **replace**: Substituting irreparable items with new ones

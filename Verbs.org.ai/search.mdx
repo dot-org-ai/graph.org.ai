@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: search
+$context: https://verbs.org.ai
+name: search
+canonicalForm: search
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Looking for or attempting to locate specific information, items, or resources
+predicate: searches
+event: searched
+activity: searching
+actor: Searcher
+object: Search
+inverse: searchedFor
+---
+
+# Search
+
+Looking for or attempting to locate specific information, items, resources, or records through investigation, inquiry, or examination.
+
+## O*NET Context
+
+Work activity focused on seeking, investigating, or exploring to find needed information, items, or solutions to support work activities and problem-solving.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Detective.search({ location: 'scene', objective: 'evidence' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Researcher.searches.Database
+$.Team.searches.Solution
+```
+
+### Event (Past Tense)
+```typescript
+on($.Query.searched, async (event) => {
+  await $.Result.compile({ findings: event.matches })
+  await $.Report.generate({ summary: event.statistics })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeSearch = $.Library.searching.Records
+console.log(`${activeSearch.resultsFound} items matched`)
+```
+
+### Role (Actor)
+```typescript
+const searcher: $.Searcher = await $.findAgent({ specialty: 'investigation' })
+searcher.locateResources(criteria)
+```
+
+### Concept (Abstraction)
+```typescript
+const search: $.Search = {
+  query: 'error logs 2025-10-29',
+  scope: 'system-wide',
+  resultsCount: 143,
+  executedAt: now(),
+  duration: 2300
+}
+```
+
+### Inverse (Passive)
+```typescript
+const targets = await db.related($.Document, $.searchedFor, $.Analyst)
+```
+
+## Usage Examples
+
+**Information Retrieval:**
+- Searching databases for specific records or documents
+- Looking for information in libraries or archives
+- Researching online resources and references
+- Hunting for answers in documentation or manuals
+
+**Investigative Work:**
+- Searching for evidence at a location
+- Investigating records for discrepancies
+- Looking for patterns in data
+- Locating missing persons or items
+
+**Business Operations:**
+- Searching for vendor or supplier information
+- Looking for best practices and benchmarks
+- Investigating cost-saving opportunities
+- Seeking solutions to operational problems
+
+## Related Verbs
+- find - Locating something specific
+- seek - Attempting to locate or obtain
+- hunt - Pursuing something persistently
+- explore - Investigating something thoroughly

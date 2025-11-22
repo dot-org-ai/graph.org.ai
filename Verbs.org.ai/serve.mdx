@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: serve
+$context: https://verbs.org.ai
+name: serve
+canonicalForm: serve
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Providing services, products, or support to customers, clients, or patrons to meet their needs or requirements
+predicate: serves
+event: served
+activity: serving
+actor: Server
+object: Service
+inverse: servedBy
+---
+
+# Serve
+
+Providing services, products, or support to customers, clients, or patrons to meet their needs, expectations, or requirements.
+
+## O*NET Context
+
+Work activity focused on delivering goods, services, or assistance directly to end-users or customers in a professional or commercial context.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Staff.serve({ customer: client, service: 'consultation', duration: '1-hour' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Restaurant.serves.Food
+$.Employee.serves.Customer
+$.Organization.serves.Community
+```
+
+### Event (Past Tense)
+```typescript
+on($.Customer.served, async (event) => {
+  await $.Feedback.request({ customerId: event.customer.id })
+  await $.Transaction.record({ serviceType: event.service, timestamp: event.timestamp })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeService = $.Waitstaff.serving.Table
+console.log(`Currently serving ${activeService.partySize} guests`)
+```
+
+### Role (Actor)
+```typescript
+const server: $.Server = await $.findAgent({ role: 'customer-service-representative' })
+server.attendToCustomerNeeds(client)
+```
+
+### Concept (Abstraction)
+```typescript
+const service: $.Service = {
+  provider: organization.id,
+  customer: client.id,
+  type: 'consultation',
+  deliveryMethod: 'in-person',
+  quality: 'excellent',
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const servingOrganizations = await db.related($.Customer, $.servedBy, $.Business)
+```
+
+## Usage Examples
+
+**Customer Service:**
+- Serving customers at retail counter or checkout
+- Providing telephone or email support to clients
+- Delivering goods or services to patrons
+- Attending to customer inquiries and requests
+
+**Hospitality:**
+- Serving food and beverages in restaurants
+- Providing accommodation services in hotels
+- Delivering room service and amenities
+- Managing guest needs and requests
+
+**Professional Services:**
+- Serving clients as a consultant or advisor
+- Providing legal or medical services
+- Offering financial planning assistance
+- Delivering training or educational services
+
+## Related Verbs
+- assist - Helping or supporting someone
+- provide - Making something available
+- deliver - Bringing goods or services to destination
+- support - Helping to sustain or maintain

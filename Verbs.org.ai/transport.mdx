@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: transport
+$context: https://verbs.org.ai
+name: transport
+canonicalForm: transport
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:transporting
+description: Moving goods or materials between locations or in transit
+predicate: transports
+event: transported
+activity: transporting
+actor: Transporter
+object: Transportation
+inverse: transportedBy
+---
+
+# Transport
+
+GS1 CBV Business Step: Moving goods or materials between locations or in transit. This business step represents the physical movement of products through the supply chain, including in-transit operations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Carrier.transport(shipment)
+```
+
+### Predicate (Relationship)
+```typescript
+$.LogisticsProvider.transports.Cargo
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.transported, async ({origin, destination, carrier}) => {
+  // Handle transportation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Route.transporting.Products
+```
+
+### Role (Actor)
+```typescript
+$.Transporter
+```
+
+### Concept (Abstraction)
+```typescript
+$.Transportation
+```
+
+### Inverse (Passive)
+```typescript
+$.Shipment.transportedBy.Carrier
+```

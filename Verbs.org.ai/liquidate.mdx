@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: liquidate
+$context: https://verbs.org.ai
+name: liquidate
+canonicalForm: liquidate
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Sell off remaining inventory or assets to convert to cash
+predicate: liquidates
+event: liquidated
+activity: liquidating
+actor: Liquidator
+object: Liquidation
+inverse: liquidatedBy
+---
+
+# Liquidate
+
+Selling off remaining inventory, excess stock, or assets to convert them into cash, often due to discontinuation, overstock, or asset disposal needs.
+
+## APQC Process Context
+
+Inventory and asset management activity where organizations dispose of surplus or obsolete items through sales at reduced prices to minimize holding costs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.AssetManagement.liquidate({ inventory, price, timeline })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.liquidates.Inventory
+$.Company.liquidates.Asset
+```
+
+### Event (Past Tense)
+```typescript
+on($.Inventory.liquidated, async (event) => {
+  await $.Finance.recordProceeds(event)
+  await $.Inventory.adjustBalance(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const clearance = $.Warehouse.liquidating.Inventory
+```
+
+### Actor (Role)
+```typescript
+const liquidator: $.Liquidator = await $.findAgent({ role: 'inventory' })
+```
+
+### Object (Abstraction)
+```typescript
+const liquidation: $.Liquidation = {
+  inventoryId: item.id,
+  quantity: 500,
+  originalValue: 50000,
+  salePrice: 25000,
+  saleDate: now(),
+  proceeds: 25000,
+  status: 'completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const liquidated = await db.related($.Inventory, $.liquidatedBy, $.Warehouse)
+```
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Manage inventory and fulfillment
+- Process: Manage inventory
+
+## Business Rules
+
+- Liquidation requires approval based on value
+- Pricing must balance cash recovery with speed
+- All applicable disposal rules must be followed
+- Proceeds must be recorded and reconciled
+- Inventory records must be updated
+
+## Related Verbs
+- sell - Transferring ownership for payment
+- dispose - Removing from operations
+- discontinue - Ending availability
+- auction - Offering to highest bidder
+- clearance - Quick sale at reduced price
+

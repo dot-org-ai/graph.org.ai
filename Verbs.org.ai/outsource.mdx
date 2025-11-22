@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: outsource
+$context: https://verbs.org.ai
+name: outsource
+canonicalForm: outsource
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Transfer operations or functions to external service providers
+predicate: outsources
+event: outsourced
+activity: outsourcing
+actor: Outsourcer
+object: Outsourcing
+inverse: outsourcedBy
+---
+
+# Outsource
+
+Transferring operations, functions, or services to external service providers or vendors to reduce costs, access specialized expertise, or focus on core competencies.
+
+## APQC Process Context
+
+Strategic sourcing and vendor management activity where organizations delegate specific business functions to external parties through contractual arrangements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.OperationsStrategy.outsource({ function, vendor, scope })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.outsources.Function
+$.Company.outsources.Operation
+```
+
+### Event (Past Tense)
+```typescript
+on($.Operation.outsourced, async (event) => {
+  await $.Contract.execute(event.agreement)
+  await $.Transition.manage(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const delegation = $.Organization.outsourcing.Service
+```
+
+### Actor (Role)
+```typescript
+const outsourcer: $.Outsourcer = await $.findAgent({ role: 'operations' })
+```
+
+### Object (Abstraction)
+```typescript
+const outsourcing: $.Outsourcing = {
+  functionId: operation.id,
+  vendor: vendor.id,
+  scope: 'IT support',
+  startDate: date,
+  contractTerm: '3 years',
+  serviceLevels: [...],
+  status: 'active'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const operations = await db.related($.Function, $.outsourcedBy, $.Vendor)
+```
+
+## APQC Process Category
+
+Category 2: Source/Procure
+- Subcategory: Develop supplier relationships
+- Process: Develop outsourcing partnerships
+
+## Business Rules
+
+- Outsourcing decision must be strategically justified
+- Service level agreements must be clearly defined
+- Transition plan must minimize disruption
+- Performance monitoring must be ongoing
+- Contract terms must align with business needs
+
+## Related Verbs
+- contract - Establishing legal agreements
+- delegate - Assigning responsibility
+- manage - Overseeing operations
+- monitor - Observing performance
+- transition - Moving operations
+

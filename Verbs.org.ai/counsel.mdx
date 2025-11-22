@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: counsel
+$context: https://verbs.org.ai
+name: counsel
+canonicalForm: counsel
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Providing guidance, support, and advice to individuals regarding personal, professional, or emotional matters
+predicate: counsels
+event: counseled
+activity: counseling
+actor: Counselor
+object: Counseling
+inverse: counseledBy
+---
+
+# Counsel
+
+Providing guidance, support, advice, and recommendations to individuals regarding personal development, career choices, emotional issues, or behavioral concerns through discussion and professional expertise.
+
+## O*NET Context
+
+Work activity involving one-on-one or group guidance sessions to help individuals understand problems, develop coping strategies, and make informed decisions. Common in counseling, social work, human resources, and educational roles.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Client.counsel({ issue: 'career transition', sessions: 6, format: 'weekly' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Counselor.counsels.Client
+$.HRManager.counsels.Employee
+$.Therapist.counsels.Patient
+```
+
+### Event (Past Tense)
+```typescript
+on($.Session.counseled, async (event) => {
+  await $.Notes.record({ counselorId: event.counselor, progress: event.outcomes })
+  await $.FollowUp.schedule({ nextSession: event.recommendedDate })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const support = $.Organization.counseling.Employees
+console.log(`Counseling: ${support.activeClients} individuals in ${support.programs} programs`)
+```
+
+### Role (Actor)
+```typescript
+const counselor: $.Counselor = await $.findAgent({ credentials: 'LCSW', specialization: 'grief support' })
+await counselor.supportClient(client)
+```
+
+### Concept (Abstraction)
+```typescript
+const counseling: $.Counseling = {
+  clientId: client.id,
+  counselorId: counselor.id,
+  focus: 'work-life balance',
+  startDate: now(),
+  goals: ['reduce stress', 'improve time management'],
+  progress: 'moderate',
+  confidential: true
+}
+```
+
+### Inverse (Passive)
+```typescript
+const clients = await db.related($.Counselor, $.counseledBy, $.Organization)
+```
+
+## Usage Examples
+
+**Mental Health & Wellness:**
+- Therapist counsels patient on anxiety management
+- Career counselor guides job seeker through transition
+- School counselor advises student on college selection
+
+**Employee Relations:**
+- HR specialist counsels employee on performance improvement
+- Manager counsels team member on workplace conduct
+- EAP counselor provides confidential support
+
+**Business Rules:**
+- Counseling requires privacy and confidentiality protections
+- Licensed professionals must maintain required credentials
+- Session notes must comply with regulatory requirements
+- Client consent required for all guidance activities
+
+## Related Verbs
+- advise - Offering recommendations or guidance
+- consult - Providing professional expert opinion
+- coach - Training or instructing for skill development
+- support - Providing assistance and encouragement

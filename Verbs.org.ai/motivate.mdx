@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: motivate
+$context: https://verbs.org.ai
+name: motivate
+canonicalForm: motivate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Stimulating or inspiring people to take action or achieve goals through encouragement and incentives
+predicate: motivates
+event: motivated
+activity: motivating
+actor: Motivator
+object: Motivation
+inverse: motivatedBy
+---
+
+# Motivate
+
+Stimulating or inspiring people to take action or achieve goals through encouragement, incentives, and recognition of effort.
+
+## O*NET Context
+
+Work activity focused on influencing human behavior and commitment toward organizational or personal objectives. Includes providing encouragement, recognition, incentives, and removing barriers to help individuals and teams achieve their best performance.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Team.motivate({ approach: 'recognition-program', incentives: [...], goals: [...], timeframe: 'quarterly' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Leader.motivates.Team
+$.Manager.motivates.Employee
+```
+
+### Event (Past Tense)
+```typescript
+on($.Person.motivated, async (event) => {
+  await $.Goal.accelerate({ person: event.personId, engagement: 'high' })
+  await $.Achievement.celebrate({ milestone: event.trigger, recognizedPerson: event.personId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInspiration = $.Coach.motivating.Athlete
+console.log(`Currently motivating: ${activeInspiration.person} - Morale: ${activeInspiration.moraleLevel}`)
+```
+
+### Role (Actor)
+```typescript
+const motivator: $.Motivator = await $.findAgent({ expertise: 'leadership', trait: 'inspirational' })
+motivator.inspireTeam(objectives)
+```
+
+### Concept (Abstraction)
+```typescript
+const motivation: $.Motivation = {
+  motivateeId: person.id,
+  motivatorId: leader.id,
+  motivationStrategy: 'intrinsic-reward',
+  goalsSetTogether: [...],
+  progressTracked: true,
+  engagementLevel: 'high',
+  resultingPerformance: 'exceeds-expectations'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const influencers = await db.related($.Person, $.motivatedBy, $.Leader)
+```
+
+## Usage Examples
+
+**Team Leadership:**
+- Manager motivates team through clear goals and recognition programs
+- Team lead motivates developers through mentoring and growth opportunities
+- Executive motivates organization with inspiring vision and mission
+- Supervisor motivates staff through positive feedback and rewards
+
+**Personal Development:**
+- Coach motivates athlete through personalized training and encouragement
+- Mentor motivates mentee to overcome challenges and achieve goals
+- Teacher motivates students through engaging lessons and constructive feedback
+- Therapist motivates client toward positive behavioral change
+
+**Sales and Business:**
+- Sales manager motivates sales team through incentive programs and targets
+- Business owner motivates employees through profit-sharing and advancement
+- Marketing director motivates campaign team with stretch goals
+- Customer service manager motivates representatives through recognition
+
+**Community and Social:**
+- Community organizer motivates residents to participate in initiatives
+- Non-profit director motivates volunteers through meaningful work
+- Social worker motivates clients toward recovery and independence
+- Volunteer coordinator motivates helpers through appreciation and impact stories
+
+## Related Verbs
+- inspire - Stimulating creative or emotional response
+- encourage - Giving support and confidence
+- guide - Providing direction and advice
+- lead - Directing people toward objectives

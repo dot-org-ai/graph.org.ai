@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: investigate
+$context: https://verbs.org.ai
+name: investigate
+canonicalForm: investigate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Conducting a systematic and detailed examination to discover facts or solve a problem
+predicate: investigates
+event: investigated
+activity: investigating
+actor: Investigator
+object: Investigation
+inverse: investigatedBy
+---
+
+# Investigate
+
+Conducting a systematic and detailed examination of a subject, problem, or situation to discover facts, find solutions, or establish understanding.
+
+## O*NET Context
+
+Work activity focused on examining details thoroughly, gathering evidence, analyzing information, and drawing conclusions to solve problems, answer questions, or establish facts.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Detective.investigate({ case: incident, scope: 'full', priority: 'high' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Auditor.investigates.Records
+$.Engineer.investigates.Failure
+```
+
+### Event (Past Tense)
+```typescript
+on($.Case.investigated, async (event) => {
+  await $.Report.compile({ findings: event.results })
+  await $.Management.notify({ conclusion: event.determination })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInvestigation = $.Team.investigating.Incident
+console.log(`Investigation status: ${activeInvestigation.progress}%`)
+```
+
+### Role (Actor)
+```typescript
+const investigator: $.Investigator = await $.findAgent({ expertise: 'problem-solving' })
+investigator.examineEvidence(caseFiles)
+```
+
+### Concept (Abstraction)
+```typescript
+const investigation: $.Investigation = {
+  subjectId: case.id,
+  timeline: events,
+  evidence: items,
+  witnesses: people,
+  findings: conclusions,
+  status: 'in-progress'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const researchers = await db.related($.Crime, $.investigatedBy, $.Detective)
+```
+
+## Usage Examples
+
+**Problem Solving:**
+- Investigating system failures or outages
+- Investigating performance issues
+- Investigating quality problems
+- Investigating accidents or incidents
+
+**Compliance:**
+- Investigating compliance violations
+- Auditing financial records
+- Investigating complaints or grievances
+- Conducting internal investigations
+
+**Research:**
+- Investigating scientific hypotheses
+- Investigating market opportunities
+- Investigating customer needs
+- Conducting feasibility studies
+
+## Related Verbs
+- analyze - Examining information to understand patterns
+- examine - Inspecting something in detail
+- research - Conducting systematic study
+- inspect - Examining closely for quality or condition

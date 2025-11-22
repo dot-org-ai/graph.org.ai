@@ -1,0 +1,109 @@
+---
+$type: Verb
+$id: examine
+$context: https://verbs.org.ai
+name: examine
+canonicalForm: examine
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Inspecting or investigating something carefully and thoroughly
+predicate: examines
+event: examined
+activity: examining
+actor: Examiner
+object: Examination
+inverse: examinedBy
+---
+
+# Examine
+
+Inspecting, investigating, or scrutinizing something carefully and systematically to determine condition, content, quality, or compliance.
+
+## O*NET Context
+
+Work activity involving careful inspection or investigation of objects, documents, systems, or conditions. Common in quality assurance, healthcare, law enforcement, inspection, and diagnostic roles where detailed examination is central to work quality.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Inspector.examine({ item: productId, criteria: 'defect-checklist' })
+await $.Physician.examine($.Patient, { focus: 'cardiovascular-system' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.QualityControl.examines.Product
+$.Detective.examines.Evidence
+$.Auditor.examines.Record
+```
+
+### Event (Past Tense)
+```typescript
+on($.Sample.examined, async (event) => {
+  await $.TestResult.record({ sample: event.sample, findings: event.findings })
+  await $.Notification.send({ recipient: event.requester })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const inspection = $.Lab.examining.Specimens
+console.log(`Specimens in examination queue: ${inspection.queueLength}`)
+```
+
+### Role (Actor)
+```typescript
+const examiner: $.Examiner = await $.findAgent({ certification: 'quality-auditor' })
+await examiner.inspectFacility(location)
+```
+
+### Concept (Abstraction)
+```typescript
+const examination: $.Examination = {
+  subject: itemId,
+  examinationType: 'quality-assurance',
+  examinationDate: '2025-10-29',
+  findings: ['acceptable', 'minor-flaw'],
+  passed: true,
+  examiner: staffId
+}
+```
+
+### Inverse (Passive)
+```typescript
+const inspectors = await db.related($.Product, $.examinedBy, $.Inspector)
+```
+
+## Usage Examples
+
+**Quality Assurance:**
+- QA technician examines manufactured products for defects
+- Inspector examines construction work for code compliance
+- Auditor examines financial records for accuracy
+- Compliance officer examines processes for regulatory adherence
+
+**Healthcare:**
+- Physician examines patient to diagnose condition
+- Radiologist examines medical imaging for abnormalities
+- Lab technician examines samples for markers
+- Dentist examines teeth for decay and issues
+
+**Investigation:**
+- Investigator examines crime scene evidence
+- Forensic expert examines physical evidence
+- Insurance adjuster examines damage claim
+- Safety officer examines incident site
+
+**Business Rules:**
+- Examination should be documented thoroughly
+- Examination criteria should be standardized
+- Examination results should be recorded with timestamp
+- Examination expertise required varies by domain
+
+## Related Verbs
+- inspect - Looking at carefully for quality or compliance
+- analyze - Breaking down into components to understand
+- investigate - Inquiring into or examining systematically
+- review - Looking over to check quality or accuracy
+- assess - Judging the nature or quality

@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: modify
+$context: https://verbs.org.ai
+name: modify
+canonicalForm: modify
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Changing or altering something to suit different requirements, conditions, or preferences
+predicate: modifies
+event: modified
+activity: modifying
+actor: Modifier
+object: Modification
+inverse: modifiedBy
+---
+
+# Modify
+
+Changing or altering something to suit different requirements, conditions, or preferences while maintaining core functionality or purpose.
+
+## O*NET Context
+
+Work activity focused on adapting, adjusting, or updating systems, products, processes, or designs to improve performance, meet new requirements, or address changing conditions. Includes customization, enhancement, and adaptation while preserving essential characteristics.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.System.modify({ parameters: { timeout: 5000, retries: 3 }, appliesTo: 'production' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Engineer.modifies.Blueprint
+$.Developer.modifies.SourceCode
+```
+
+### Event (Past Tense)
+```typescript
+on($.Software.modified, async (event) => {
+  await $.VersionControl.commit({ change: event.changes, author: event.engineer, reason: event.rationale })
+  await $.Testing.initiate({ version: event.newVersion, scope: event.impactedModules })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeAdjustment = $.Technician.modifying.Equipment
+console.log(`Currently modifying: ${activeAdjustment.component} - Progress: ${activeAdjustment.percentComplete}%`)
+```
+
+### Role (Actor)
+```typescript
+const modifier: $.Modifier = await $.findAgent({ expertise: 'system-customization' })
+modifier.adaptConfiguration(system, requirements)
+```
+
+### Concept (Abstraction)
+```typescript
+const modification: $.Modification = {
+  originalId: object.id,
+  changeType: 'customization',
+  parametersChanged: [...],
+  approvedBy: manager.id,
+  implementedDate: now(),
+  version: 'v2.1',
+  rationale: 'performance-improvement'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const updaters = await db.related($.Product, $.modifiedBy, $.Developer)
+```
+
+## Usage Examples
+
+**Software Development:**
+- Developer modifies source code to fix bugs or add features
+- Engineer modifies system architecture to improve scalability
+- Administrator modifies configuration settings for different environments
+- Technical lead modifies API endpoints for backward compatibility
+
+**Product Customization:**
+- Manufacturer modifies product design to meet customer requirements
+- Installer modifies equipment settings for specific application
+- Technician modifies software settings for optimal performance
+- Vendor modifies package options to match customer needs
+
+**Process Improvement:**
+- Manager modifies workflow process to increase efficiency
+- Quality team modifies testing procedures based on findings
+- Operations modifies logistics route to reduce costs
+- HR modifies policy to comply with new regulations
+
+**Design and Engineering:**
+- Architect modifies building plans based on site conditions
+- Mechanic modifies engine specifications for different fuel
+- Designer modifies layout to improve user experience
+- Engineer modifies material selection for cost reduction
+
+## Related Verbs
+- customize - Tailoring to specific needs
+- adapt - Adjusting to new circumstances
+- adjust - Making fine-tuning changes
+- update - Bringing to current version

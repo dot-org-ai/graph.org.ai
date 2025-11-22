@@ -1,0 +1,108 @@
+---
+$type: Verb
+$id: establish
+$context: https://verbs.org.ai
+name: establish
+canonicalForm: establish
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Creating, founding, or setting up something new
+predicate: establishes
+event: established
+activity: establishing
+actor: Establisher
+object: Establishment
+inverse: establishedBy
+---
+
+# Establish
+
+Creating, founding, or setting up something new such as procedures, relationships, organizations, or standards.
+
+## O*NET Context
+
+Work activity involving creating new systems, procedures, policies, or organizations. Common in management, entrepreneurship, strategic planning, and organizational development roles where the goal is to create and implement new structures.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Executive.establish({ entity: 'subsidiary', jurisdiction: 'Delaware' })
+await $.Manager.establish($.Procedure, { name: 'Quality Assurance Process' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.establishes.Policy
+$.Founder.establishes.Company
+$.Manager.establishes.Procedure
+```
+
+### Event (Past Tense)
+```typescript
+on($.Organization.established, async (event) => {
+  await $.Registration.file({ entity: event.organization })
+  await $.Notification.send({ recipient: event.founder })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const setup = $.Company.establishing.Department
+console.log(`Currently establishing: ${setup.phaseProgress}% complete`)
+```
+
+### Role (Actor)
+```typescript
+const establisher: $.Establisher = await $.findAgent({ expertise: 'startup' })
+await establisher.registerBusiness(config)
+```
+
+### Concept (Abstraction)
+```typescript
+const establishment: $.Establishment = {
+  type: 'nonprofit-organization',
+  foundingDate: '2025-10-29',
+  founder: userId,
+  location: 'New York, NY',
+  mission: 'Community education'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const founders = await db.related($.Company, $.establishedBy, $.Founder)
+```
+
+## Usage Examples
+
+**Organizational:**
+- Executive establishes new business division
+- Founder establishes startup company
+- Manager establishes new department
+- Director establishes organizational structure
+
+**Procedural:**
+- Manager establishes quality standards
+- Team lead establishes team norms and expectations
+- Administrator establishes security protocols
+- Supervisor establishes work procedures
+
+**Relational:**
+- Account manager establishes client relationship
+- Diplomat establishes diplomatic relations
+- Partner establishes business partnership
+- Vendor establishes supplier relationship
+
+**Business Rules:**
+- Establishment requires proper authorization
+- Establishment should follow legal and regulatory requirements
+- Establishment creates formal documentation
+- Establishment marks a beginning point for tracking and accountability
+
+## Related Verbs
+- create - Making something new exist
+- found - Establishing an organization or institution
+- form - Shaping or organizing elements into a structure
+- organize - Arranging elements into a system
+- initiate - Starting or beginning something

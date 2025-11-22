@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: market
+$context: https://verbs.org.ai
+name: market
+canonicalForm: market
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Promote and advertise products or services to target customers
+predicate: markets
+event: marketed
+activity: marketing
+actor: Marketer
+object: Marketing
+inverse: marketedBy
+---
+
+# Market
+
+Promoting and advertising products or services to target customers through various channels and strategies to generate demand and brand awareness.
+
+## APQC Process Context
+
+Customer development and demand management activity where organizations communicate product value, build brand awareness, and drive customer acquisition through marketing programs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Sales.market({ product, audience, channels })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.markets.Product
+$.Company.markets.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Campaign.marketed, async (event) => {
+  await $.Analytics.trackEngagement(event)
+  await $.Sales.followUp(event.leads)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const promotion = $.Organization.marketing.Product
+```
+
+### Actor (Role)
+```typescript
+const marketer: $.Marketer = await $.findAgent({ expertise: 'marketing' })
+```
+
+### Object (Abstraction)
+```typescript
+const marketing: $.Marketing = {
+  productId: product.id,
+  campaign: 'Spring Launch 2025',
+  channels: ['digital', 'social', 'email'],
+  budget: 50000,
+  targetAudience: 'enterprise',
+  startDate: now(),
+  status: 'active'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const campaigns = await db.related($.Product, $.marketedBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 2: Source/Procure
+- Subcategory: Manage customer relationships
+- Process: Develop customer relationships
+
+## Business Rules
+
+- Marketing must align with product strategy
+- Target audience must be clearly identified
+- Budget must be approved before execution
+- Campaign effectiveness must be measured
+- Results must inform future marketing decisions
+
+## Related Verbs
+- promote - Advancing or supporting something
+- advertise - Making known publicly
+- sell - Transferring ownership for payment
+- brand - Creating identity and perception
+- engage - Building customer relationships
+

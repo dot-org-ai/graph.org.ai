@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: oversee
+$context: https://verbs.org.ai
+name: oversee
+canonicalForm: oversee
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Supervising, monitoring, and taking responsibility for the work of others or operations
+predicate: oversees
+event: oversaw
+activity: overseeing
+actor: Overseer
+object: Oversight
+inverse: overseenBy
+---
+
+# Oversee
+
+Supervising, monitoring, and taking responsibility for the work of others or operations to ensure quality and compliance.
+
+## O*NET Context
+
+Work activity focused on supervising and monitoring the work of other employees or the operations of a department, project, or function to ensure quality standards, deadlines, and objectives are met.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Project.oversee({ scope: 'full-lifecycle', authority: 'executive' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Supervisor.oversees.Team
+$.Director.oversees.Department
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.oversaw, async (event) => {
+  await $.Report.generate({ status: 'completion' })
+  await $.Stakeholder.brief({ results: event.outcomes })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeOversight = $.Executive.overseeing.MajorInitiative
+console.log(`Currently overseeing: ${activeOversight.initiative}`)
+```
+
+### Role (Actor)
+```typescript
+const overseer: $.Overseer = await $.findAgent({ title: 'project-manager' })
+await overseer.manageDeliverables({ project })
+```
+
+### Concept (Abstraction)
+```typescript
+const oversight: $.Oversight = {
+  overseeerId: overseer.id,
+  entityId: entity.id,
+  scope: 'operational',
+  responsibilities: [],
+  authority: 'full',
+  reportingStructure: {}
+}
+```
+
+### Inverse (Passive)
+```typescript
+const teams = await db.related($.Department, $.overseenBy, $.Overseer)
+```
+
+## Usage Examples
+
+**Management & Supervision:**
+- Overseeing day-to-day operations of a team
+- Overseeing department budgets and spending
+- Overseeing employee performance and development
+- Overseeing workplace compliance and safety
+
+**Project & Program Management:**
+- Overseeing major capital projects
+- Overseeing multiple initiatives simultaneously
+- Overseeing vendor and contractor performance
+- Overseeing quality assurance processes
+
+**Strategic Leadership:**
+- Overseeing organizational strategy implementation
+- Overseeing business unit operations
+- Overseeing regulatory compliance
+- Overseeing risk management programs
+
+## Related Verbs
+- supervise - Directly managing and directing
+- manage - Having authority over operations
+- control - Maintaining authority and discipline
+- monitor - Tracking progress and performance

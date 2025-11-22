@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: assign
+$context: https://verbs.org.ai
+name: assign
+canonicalForm: assign
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Indicating the object to be assigned
+predicate: assigns
+event: assigned
+activity: assigning
+actor: Assigner
+object: Assignment
+inverse: assignedBy
+---
+
+# Assign
+
+Schema.org Action: Indicating the object to be assigned.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.assign()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.assigns.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.assigned, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.assigning.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Assigner
+```
+
+### Concept (Abstraction)
+```typescript
+$.Assignment
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.assignedBy.{Subject}
+```

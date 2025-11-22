@@ -1,0 +1,98 @@
+---
+$type: Verb
+$id: educate
+$context: https://verbs.org.ai
+name: educate
+canonicalForm: educate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Teaching others through instruction and training
+predicate: educates
+event: educated
+activity: educating
+actor: Educator
+object: Education
+inverse: educatedBy
+---
+
+# Educate
+
+Teaching others through instruction, training, or learning development activities.
+
+## O*NET Context
+
+Work activity involving instructing employees or customers on how to accomplish job-related tasks. This is a core competency for trainers, educators, managers, and customer service professionals.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Employee.educate({ topic: 'Safety Procedures', duration: '2 hours' })
+await $.Trainer.educate($.NewHires, { curriculum: 'onboarding' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Instructor.educates.Student
+$.Organization.educates.Workforce
+$.Trainer.educates.Learner
+```
+
+### Event (Past Tense)
+```typescript
+on($.Student.educated, async (event) => {
+  await $.Certificate.issue({ learner: event.student })
+  await $.Notification.send({ recipient: event.instructor })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const training = $.Organization.educating.Employees
+console.log(`Currently educating: ${training.participantCount} employees`)
+```
+
+### Role (Actor)
+```typescript
+const educator: $.Educator = await $.findAgent({ expertise: 'technical-training' })
+await educator.prepareLesson(module)
+```
+
+### Concept (Abstraction)
+```typescript
+const education: $.Education = {
+  topic: 'Product Knowledge',
+  targetAudience: 'Sales Team',
+  duration: 120,
+  completionRate: 0.92
+}
+```
+
+### Inverse (Passive)
+```typescript
+const trainers = await db.related($.Student, $.educatedBy, $.Trainer)
+```
+
+## Usage Examples
+
+**Corporate Training:**
+- HR manager educates new employees on company policies
+- Product manager educates sales team on new features
+- Technical trainer educates support team on troubleshooting procedures
+
+**Customer-Facing:**
+- Sales associate educates customer on product benefits
+- Service technician educates user on equipment operation
+- Consultant educates client on best practices
+
+**Business Rules:**
+- Education should be tracked and documented
+- Educators must have subject matter expertise
+- Education completion should trigger certification processes
+
+## Related Verbs
+- train - Providing formal instruction with specific skills focus
+- instruct - Giving detailed directions or guidance
+- explain - Making something clear and understandable
+- demonstrate - Showing how something works
+- guide - Providing direction and support

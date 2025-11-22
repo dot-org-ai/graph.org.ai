@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: demonstrate
+$context: https://verbs.org.ai
+name: demonstrate
+canonicalForm: demonstrate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Showing, proving, or exhibiting something through explanation, illustration, or practical example
+predicate: demonstrates
+event: demonstrated
+activity: demonstrating
+actor: Demonstrator
+object: Demonstration
+inverse: demonstratedBy
+---
+
+# Demonstrate
+
+Showing, illustrating, or proving something through explanation, example, hands-on practice, or performance to enhance understanding or establish validity.
+
+## O*NET Context
+
+Work activity involving the illustration and explanation of concepts, procedures, or capabilities. Common in training, education, sales, customer service, and product showcase roles.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Trainer.demonstrate({ skill: 'equipment operation', audience: 15, duration: '30 min' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Instructor.demonstrates.Technique
+$.SalesRep.demonstrates.Product
+$.Engineer.demonstrates.Solution
+```
+
+### Event (Past Tense)
+```typescript
+on($.Training.demonstrated, async (event) => {
+  await $.Attendance.record({ participants: event.audience, skill: event.topic })
+  await $.Feedback.collect({ demonstrator: event.instructor })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const education = $.School.demonstrating.Curriculum
+console.log(`Demonstrating: ${education.skills.length} skills to ${education.students} students`)
+```
+
+### Role (Actor)
+```typescript
+const demonstrator: $.Demonstrator = await $.findAgent({ expertise: ['software', 'presentations', 'audience engagement'] })
+await demonstrator.showFeatures(product)
+```
+
+### Concept (Abstraction)
+```typescript
+const demonstration: $.Demonstration = {
+  topic: 'software features',
+  demonstrator: instructor.id,
+  audience: ['prospects', 'partners'],
+  audienceSize: 50,
+  duration: '1 hour',
+  materials: ['slides', 'live demo', 'samples'],
+  objectives: ['educate', 'build confidence', 'generate interest'],
+  recorded: true
+}
+```
+
+### Inverse (Passive)
+```typescript
+const learners = await db.related($.Skill, $.demonstratedBy, $.Instructor)
+```
+
+## Usage Examples
+
+**Education & Training:**
+- Teacher demonstrates chemistry experiment to students
+- Trainer demonstrates software features to new employees
+- Coach demonstrates athletic technique to team members
+
+**Sales & Marketing:**
+- Sales representative demonstrates product capabilities
+- Engineer demonstrates technical solution to client
+- Vendor demonstrates equipment at trade show
+
+**Business Rules:**
+- Demonstrations require clear learning objectives
+- Audience must have appropriate background knowledge
+- Demonstrations should include opportunities for practice
+- Results should be documented for training records
+
+## Related Verbs
+- explain - Providing detailed clarification
+- teach - Instructing or imparting knowledge
+- show - Making visible or observable
+- perform - Carrying out or presenting an action

@@ -7,7 +7,7 @@ import { validate, parse } from 'mdxld';
 import * as fs from 'fs/promises';
 import { evaluateMdx } from './evaluator.js';
 import { MdxDbMcpServer } from './mcp.js';
-import { renderToMarkdown } from '@mdxui/markdown';
+import * as dotenv from 'dotenv';
 
 const program = new Command();
 
@@ -55,6 +55,11 @@ program
     const db = new MdxDbFs(rootDir);
     try {
         const filePath = path.resolve(rootDir, file);
+        
+        // Load .env from the file's directory
+        const envPath = path.join(path.dirname(filePath), '.env');
+        dotenv.config({ path: envPath });
+
         const content = await fs.readFile(filePath, 'utf-8');
         
         console.log(`Evaluating ${file}...`);
@@ -88,23 +93,11 @@ program
                          // Or we can just match until the end of the last semicolon? No, hard to find nested.
                          // Let's try matching until '\n#' if it exists.
                          
-                         const exportRegex = /export\s+const\s+items\s+=\s+CSV\.fetch[\s\S]*?\n(?=#)/;
-                         if (exportRegex.test(contentStr)) {
-                             contentStr = contentStr.replace(exportRegex, '');
-                         } else {
-                             // Fallback: try to match until the last semicolon logic (which failed) 
-                             // or just assume we can strip everything before the first '#'
-                             const hashIndex = contentStr.indexOf('\n#');
-                             if (hashIndex !== -1) {
-                                 // Check if export is before it
-                                 if (contentStr.indexOf('export const items') < hashIndex) {
-                                     contentStr = contentStr.substring(hashIndex);
-                                 }
-                             }
-                         }
+                         const exportRegex = /export\s+const\s+items\s+=[\s\S]*\}\);/;
+                         contentStr = contentStr.replace(exportRegex, '');
                          
                          // Debug content
-                         // console.log('DEBUG Content:', contentStr.substring(0, 200));
+                         console.log('DEBUG Content:', contentStr.substring(0, 400));
 
                          const newMetadata: any = { ...item };
                          const templateMeta = { ...templateDoc };
@@ -127,41 +120,15 @@ program
                              }
                          }
                          
-                         // Render content to Markdown
-                         // Inject item properties into global scope so {title}, {slug} work
-                         // We must clean them up after to avoid pollution?
-                         const globalAny = global as any;
-                         for (const [k, v] of Object.entries(item)) {
-                             globalAny[k] = v;
-                         }
-
-                         // Stub components to preserve them as tags in the output
-                         const knownComponents = [
-                             'Tasks', 'Skills', 'Industries', 'JobZone', 'Activities', 
-                             'Knowledge', 'Abilities', 'WorkContext', 'WorkStyles', 
-                             'WorkValues', 'Tech', 'Tools', 'Wages', 'JobZone',
-                             'Activity', 'IWA', 'DWA', 'Processes', 
-                             'SubIndustries', 'CrossReferences', 'Products', 'Inputs', 'Outputs',
-                             'ProductFamily', 'ProductClass', 'Companies',
-                             'Providers', 'SubProcesses', 'KPIs',
-                             'SubSectors', 'Classifications', 'RelatedTasks',
-                             'Occupations'
-                         ];
-                         
-                         const stubs: any = {};
-                         for (const name of knownComponents) {
-                             stubs[name] = (props: any) => ({ type: name, props });
-                         }
-
-                         const renderedContent = await renderToMarkdown(contentStr, { 
-                             context: { ...item, db, ...stubs },
-                             keepTags: knownComponents
-                         });
-                         
-                         // Cleanup globals
-                         for (const k of Object.keys(item)) {
-                             delete globalAny[k];
-                         }
+                        // Simple string interpolation instead of complex MDX rendering
+                        let renderedContent = contentStr.replace(/\{([a-zA-Z0-9_\.]+)\}/g, (match: string, key: string) => {
+                            const keys = key.split('.');
+                            let value: any = item;
+                            for (const k of keys) {
+                                value = value?.[k];
+                            }
+                            return value !== undefined && value !== null ? String(value) : '';
+                        });
 
                          const newItem = {
                             ...newMetadata,
@@ -219,6 +186,11 @@ if (!process.argv.slice(2).length) {
 
 async function processFile(filePath: string, rootDir: string, db: MdxDbFs) {
     const fullPath = path.join(rootDir, filePath);
+    
+    // Load .env from the file's directory
+    const envPath = path.join(path.dirname(fullPath), '.env');
+    dotenv.config({ path: envPath });
+
     try {
         const content = await fs.readFile(fullPath, 'utf-8');
         

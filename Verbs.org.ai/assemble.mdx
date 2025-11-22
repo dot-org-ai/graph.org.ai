@@ -1,0 +1,97 @@
+---
+$type: Verb
+$id: assemble
+$context: https://verbs.org.ai
+name: assemble
+canonicalForm: assemble
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Combining components into a finished product
+predicate: assembles
+event: assembled
+activity: assembling
+actor: Assembler
+object: Assembly
+inverse: assembledBy
+---
+
+# Assemble
+
+Combining components or parts into a finished product or higher-level unit.
+
+## GS1 Context
+
+Business step in manufacturing and production where individual components are combined according to specifications to create finished goods or sub-assemblies. Critical for inventory tracking and bill-of-materials (BOM) management.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Product.assemble({
+  components: [componentA, componentB, componentC],
+  workOrder: woId,
+  timestamp: now()
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Factory.assembles.Electronics
+$.Robot.assembles.Subassemblies
+```
+
+### Event (Past Tense)
+```typescript
+on($.Unit.assembled, async (event) => {
+  await $.Inventory.consume(event.bom)
+  await $.QualityControl.schedule({ unit: event.unitId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const productionLine = $.Factory.assembling.Units
+console.log(`Current output: ${productionLine.unitsPerHour}`)
+```
+
+### Role (Actor)
+```typescript
+const assembler: $.Assembler = $.Robot({ model: 'ABB-IRB-6700' })
+assembler.startLine()
+```
+
+### Concept (Abstraction)
+```typescript
+const assembly: $.Assembly = {
+  productId: product.id,
+  components: bom,
+  assemblyTime: duration,
+  workOrder: wo.id,
+  timestamp: now(),
+  quality: 'passed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const products = await db.related($.Component, $.assembledBy, $.Product)
+```
+
+## Usage Examples
+
+**Manufacturing:**
+- Robot assembles circuit boards on production line
+- Worker assembles furniture from components
+- Machine assembles engines from subassemblies
+- Line assembles complete vehicles from modules
+
+**Business Rules:**
+- Assembly requires all BOM components to be in stock
+- Assembly updates component inventory
+- Assembly triggers next stage in production
+- Assembly records create traceability trail
+
+## Related Verbs
+- disassemble - Breaking down into components
+- create - Creating class-level instances
+- stock - Placing components in storage

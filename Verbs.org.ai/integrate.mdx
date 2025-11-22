@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: integrate
+$context: https://verbs.org.ai
+name: integrate
+canonicalForm: integrate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Combining or coordinating separate elements into a unified or cohesive whole
+predicate: integrates
+event: integrated
+activity: integrating
+actor: Integrator
+object: Integration
+inverse: integratedBy
+---
+
+# Integrate
+
+Combining or coordinating separate components, systems, teams, or processes into a unified, cohesive, and functioning whole.
+
+## O*NET Context
+
+Work activity focused on bringing together diverse elements, ensuring compatibility, and creating seamless connections between parts to achieve unified functionality.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.System.integrate({ components: [system1, system2], standard: 'REST-API', protocol: 'async' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Platform.integrates.Services
+$.Team.integrates.Efforts
+```
+
+### Event (Past Tense)
+```typescript
+on($.System.integrated, async (event) => {
+  await $.Testing.runFullSuite({ integratedSystem: event.system })
+  await $.Deployment.schedule({ readiness: 'verified' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeIntegration = $.Team.integrating.CrossFunctional
+console.log(`Integration progress: ${activeIntegration.completionPercent}%`)
+```
+
+### Role (Actor)
+```typescript
+const integrator: $.Integrator = await $.findAgent({ expertise: 'systems-integration' })
+integrator.unifyArchitecture(components)
+```
+
+### Concept (Abstraction)
+```typescript
+const integration: $.Integration = {
+  subjectId: project.id,
+  components: elements,
+  compatibilityLevel: 'full',
+  dataFlow: mappings,
+  testCoverage: percentage
+}
+```
+
+### Inverse (Passive)
+```typescript
+const creators = await db.related($.Solution, $.integratedBy, $.Architect)
+```
+
+## Usage Examples
+
+**System Integration:**
+- Integrating software systems
+- Integrating hardware and software
+- Integrating databases and applications
+- Combining legacy and modern systems
+
+**Team Integration:**
+- Integrating new employees into teams
+- Merging departmental efforts
+- Coordinating cross-functional projects
+- Combining team skills and perspectives
+
+**Process Integration:**
+- Integrating business processes
+- Harmonizing workflow procedures
+- Combining workflow steps
+- Unifying operational standards
+
+## Related Verbs
+- combine - Joining things together
+- coordinate - Organizing elements to work together
+- synchronize - Making elements work in harmony
+- unify - Making something whole

@@ -1,0 +1,92 @@
+---
+$type: Verb
+$id: audit
+$context: https://verbs.org.ai
+name: audit
+canonicalForm: audit
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Examine and verify compliance with standards and procedures
+predicate: audits
+event: audited
+activity: auditing
+actor: Auditor
+object: Audit
+inverse: auditedBy
+---
+
+# Audit
+
+Examining and verifying organizational processes, records, and systems for compliance with standards, regulations, and internal policies.
+
+## APQC Process Context
+
+Independent evaluation and assessment of processes, controls, and compliance to provide assurance and identify improvement opportunities.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Compliance.audit({ subject, scope, criteria })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Auditor.audits.Process
+$.InternalAudit.audits.FinancialControl
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.audited, async (event) => {
+  await $.Report.generate(event.findings)
+  await $.Management.notifyOfResults(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const review = $.Organization.auditing.Compliance
+```
+
+### Actor (Role)
+```typescript
+const auditor: $.Auditor = await $.findAgent({ certification: 'CIA' })
+```
+
+### Object (Abstraction)
+```typescript
+const audit: $.Audit = {
+  processId: process.id,
+  scope: 'operational',
+  findings: [...],
+  recommendations: [...],
+  status: 'completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const procedures = await db.related($.Control, $.auditedBy, $.AuditDepartment)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop and manage enterprise risk management
+- Process: Conduct compliance and risk assessments
+
+## Business Rules
+
+- Audit requires documented standards and criteria
+- Auditor must be independent from area being audited
+- Findings require formal documentation and reporting
+- Management must respond to recommendations
+
+## Related Verbs
+- assess - Evaluating performance or capability
+- inspect - Examining physical items or processes
+- verify - Confirming accuracy or compliance
+- review - Examining for quality or correctness
+- control - Enforcing standards and procedures
+

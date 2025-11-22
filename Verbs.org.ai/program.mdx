@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: program
+$context: https://verbs.org.ai
+name: program
+canonicalForm: program
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Writing computer code, creating instructions, or scheduling operations or events
+predicate: programs
+event: programmed
+activity: programming
+actor: Programmer
+object: Programming
+inverse: programmedBy
+---
+
+# Program
+
+Writing computer code, creating instructions, or scheduling operations and events to control systems or perform specific functions.
+
+## O*NET Context
+
+Work activity focused on writing software code, configuring systems with code, or scheduling activities and operations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Developer.program({ language: 'typescript', functionality: 'authentication', testing: 'comprehensive' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Developer.programs.Application
+$.System.programs.Automation
+```
+
+### Event (Past Tense)
+```typescript
+on($.Software.programmed, async (event) => {
+  await $.Testing.execute({ version: event.version })
+  await $.Deployment.prepare({ artifact: event.artifact })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeProgramming = $.Developer.programming.Feature
+console.log(`Currently programming: ${activeProgramming.featureName}`)
+```
+
+### Role (Actor)
+```typescript
+const programmer: $.Programmer = await $.findAgent({ expertise: 'software-development' })
+await programmer.writeCode(specifications)
+```
+
+### Concept (Abstraction)
+```typescript
+const programming: $.Programming = {
+  subjectId: project.id,
+  language: '',
+  requirements: [],
+  codeLines: 0,
+  coverage: 0,
+  status: 'in-progress'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const developers = await db.related($.Software, $.programmedBy, $.Developer)
+```
+
+## Usage Examples
+
+**Software Development:**
+- Programming applications
+- Programming web services
+- Programming algorithms
+- Programming data processing systems
+
+**System Configuration:**
+- Programming automated workflows
+- Programming system automation
+- Programming event scheduling
+- Programming process automation
+
+**Firmware Programming:**
+- Programming embedded systems
+- Programming microcontrollers
+- Programming device firmware
+- Programming IoT devices
+
+**Business Automation:**
+- Programming business logic
+- Programming integration processes
+- Programming batch operations
+- Programming scheduled tasks
+
+## Related Verbs
+- code - Writing source code
+- configure - Setting up systems
+- schedule - Assigning specific times
+- develop - Creating and improving

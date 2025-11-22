@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: activate
+$context: https://verbs.org.ai
+name: activate
+canonicalForm: activate
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Make something active or operational; start or enable a process or system.
+predicate: activates
+event: activated
+activity: activating
+actor: Activator
+object: Activation
+inverse: activatedBy
+---
+
+# Activate
+
+The action of making something active, operational, or functional. This includes enabling systems, initiating processes, or putting mechanisms into working condition.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.activate()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.activates.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on.{Subject}.activated(async ({subject}) => {
+  // Handle activation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.activating.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Activator}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Activation}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.activatedBy.{Subject}
+```

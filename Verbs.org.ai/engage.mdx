@@ -1,0 +1,102 @@
+---
+$type: Verb
+$id: engage
+$context: https://verbs.org.ai
+name: engage
+canonicalForm: engage
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Actively involving others in interaction, communication, or activity
+predicate: engages
+event: engaged
+activity: engaging
+actor: Engager
+object: Engagement
+inverse: engagedBy
+---
+
+# Engage
+
+Actively involving others in interaction, participation, or collaboration through communication and participation activities.
+
+## O*NET Context
+
+Work activity involving drawing others into discussion, collaboration, or participation. Common in customer service, sales, management, and team leadership roles where interaction and participation are central to work success.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.SalesRep.engage({ customer: customerId, topic: 'product-demo' })
+await $.Manager.engage($.Team, { activity: 'brainstorming-session' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Customer.engages.Representative
+$.Employee.engages.Colleague
+$.Participant.engages.Discussion
+```
+
+### Event (Past Tense)
+```typescript
+on($.Customer.engaged, async (event) => {
+  await $.Interaction.record({ participant: event.customer })
+  await $.CRM.updateStatus({ account: event.account, status: 'active' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const engagement = $.Organization.engaging.Customers
+console.log(`Active customer engagement: ${engagement.activeCount}`)
+```
+
+### Role (Actor)
+```typescript
+const engager: $.Engager = await $.findAgent({ skillSet: 'communication' })
+await engager.facilitateDiscussion(group)
+```
+
+### Concept (Abstraction)
+```typescript
+const engagement: $.Engagement = {
+  participant: customerId,
+  channel: 'video-call',
+  duration: 45,
+  sentiment: 'positive',
+  nextAction: 'follow-up-email'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const representatives = await db.related($.Customer, $.engagedBy, $.Representative)
+```
+
+## Usage Examples
+
+**Customer Engagement:**
+- Sales representative engages prospect in conversation
+- Customer service engages customer to resolve issue
+- Account manager engages key stakeholders in planning
+- Marketing engages audience through social media
+
+**Employee Engagement:**
+- Manager engages team in project planning
+- HR engages employees in training programs
+- Supervisor engages worker in performance discussion
+- Leader engages organization in strategic initiative
+
+**Business Rules:**
+- Engagement should be tracked and documented
+- Engagement metrics should measure participation quality
+- Engagement requires active listening and responsiveness
+- Engagement builds relationships and trust
+
+## Related Verbs
+- communicate - Sharing information and ideas
+- interact - Exchanging influence or activity
+- participate - Taking part in an activity
+- involve - Including someone in an activity
+- collaborate - Working together toward shared goals

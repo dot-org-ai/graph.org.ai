@@ -1,0 +1,113 @@
+---
+$type: Verb
+$id: repackage
+$context: https://verbs.org.ai
+name: repackage
+canonicalForm: repackage
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:repackaging
+description: Changing packaging of goods or materials
+predicate: repackages
+event: repackaged
+activity: repackaging
+actor: Repackager
+object: Repackaging
+inverse: repackagedBy
+---
+
+# Repackage
+
+GS1 CBV Business Step: Changing packaging of goods or materials.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.repackage()
+```
+
+### Predicate (Relationship)
+```typescript
+$.Item.repackages.Package
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.repackaged, async ({subject}) => {
+  // Handle repackaging event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Facility.repackaging.Shipment
+```
+
+### Role (Actor)
+```typescript
+$.Repackager
+```
+
+### Concept (Abstraction)
+```typescript
+$.Repackaging
+```
+
+### Inverse (Passive)
+```typescript
+$.Package.repackagedBy.Facility
+```
+
+## Context
+
+In supply chain operations, repackaging occurs when goods need to be transferred to different packaging for various reasons:
+
+- **Consolidation**: Combining multiple items into single package
+- **Size changes**: Transferring to different size containers
+- **Protective packaging**: Adding protective materials
+- **Labeling**: Applying new labels or RFID tags
+- **Compliance**: Meeting specific packaging requirements
+- **Distribution**: Preparing for different distribution channels
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record repackaging operation
+const repackagingEvent = await $.Event.create({
+  type: 'repackaging',
+  bizStep: 'urn:epcglobal:cbv:bizstep:repackaging',
+  epcList: ['urn:epc:id:sgtin:...'],
+  readPoint: 'urn:epc:id:sgln:facility-id',
+  bizLocation: 'urn:epc:id:sgln:warehouse-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'in_progress'
+})
+
+// Update inventory system
+const repackagedItems = await $.Inventory.repackage({
+  sourcePackage: 'original-package-id',
+  targetPackage: 'new-package-id',
+  itemCount: 50,
+  facility: 'warehouse-1'
+})
+
+// Emit repackaging notification
+on($.Shipment.repackaged, async (event) => {
+  await send($.Notification.send, {
+    type: 'repackaging_complete',
+    shipmentId: event.shipmentId,
+    newPackageId: event.newPackageId
+  })
+})
+```
+
+## Related Verbs
+
+- **pack**: Initial packaging into containers
+- **unpack**: Removing items from packages
+- **stage**: Preparing for shipment (may involve repackaging)
+- **collect**: Gathering items before repackaging

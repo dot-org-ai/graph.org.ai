@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: discuss
+$context: https://verbs.org.ai
+name: discuss
+canonicalForm: discuss
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To exchange views, ideas, or opinions about a topic; to talk over or debate a subject with others
+predicate: discusses
+event: discussed
+activity: discussing
+actor: Discussant
+object: Discussion
+inverse: discussedBy
+---
+
+# Discuss
+
+To exchange, explore, and talk over views, ideas, opinions, or information about a topic with others. This verb encompasses activities such as team meetings, consultation, debate, collaboration on problem-solving, and exchanging professional opinions on matters of mutual interest.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.discuss()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.discusses.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.discussed, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.discussing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Discussant
+```
+
+### Concept (Abstraction)
+```typescript
+$.Discussion
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.discussedBy.{Subject}
+```

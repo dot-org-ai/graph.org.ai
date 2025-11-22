@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: assist
+$context: https://verbs.org.ai
+name: assist
+canonicalForm: assist
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Helping, supporting, or providing aid to another person or process to accomplish tasks or goals
+predicate: assists
+event: assisted
+activity: assisting
+actor: Assistant
+object: Assistance
+inverse: assistedBy
+---
+
+# Assist
+
+Helping, supporting, or providing aid to another person, team, or process to accomplish tasks, goals, or objectives.
+
+## O*NET Context
+
+Work activity focused on providing support and help to enable others to perform their work effectively or to accomplish shared objectives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Team.assist({ target: project, supportType: 'technical' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Employee.assists.Manager
+$.Specialist.assists.Department
+```
+
+### Event (Past Tense)
+```typescript
+on($.Person.assisted, async (event) => {
+  await $.Log.record({ helper: event.assistant, recipient: event.recipient })
+  await $.Notification.send({ message: 'Support provided' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const currentSupport = $.Support.assisting.Customers
+console.log(`Currently assisting ${currentSupport.queue.length} requests`)
+```
+
+### Role (Actor)
+```typescript
+const assistant: $.Assistant = await $.findAgent({ availability: 'available' })
+assistant.helpWithTask(task)
+```
+
+### Concept (Abstraction)
+```typescript
+const assistance: $.Assistance = {
+  requestId: request.id,
+  assistantId: agent.id,
+  typeOfSupport: 'technical-guidance',
+  startTime: now(),
+  status: 'in-progress'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const supportProviders = await db.related($.Task, $.assistedBy, $.Specialist)
+```
+
+## Usage Examples
+
+**Customer Support:**
+- Assisting customers with product questions
+- Providing technical support to users
+- Helping resolve customer issues
+- Supporting complaint resolution
+
+**Team Collaboration:**
+- Assisting team members with complex tasks
+- Providing mentoring and guidance
+- Supporting project execution
+- Helping junior staff develop skills
+
+**Administrative Support:**
+- Assisting with scheduling and coordination
+- Providing administrative services
+- Supporting event organization
+- Helping with data entry and documentation
+
+## Related Verbs
+- help - Providing aid or support
+- support - Providing backing or resources
+- guide - Directing or advising
+- mentor - Providing guidance and wisdom

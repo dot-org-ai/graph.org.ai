@@ -83,14 +83,16 @@ export async function renderToMarkdown(mdxContent: string, options: any = {}): P
   const keepTags = options.keepTags || [];
 
   // 1. Evaluate MDX
+  // Make context variables available during evaluation
+  const evaluationContext = { ...context, ...runtime };
   const { default: Content } = await evaluate(mdxContent, {
-    ...runtime,
+    ...evaluationContext,
     useDynamicImport: true,
     baseUrl: import.meta.url,
   } as any);
 
   // 2. Render to HTML (async)
-  const element = Content({ components: context });
+  const element = Content(context);
   const html = await renderToHtml(element);
 
   // 3. HTML -> Markdown

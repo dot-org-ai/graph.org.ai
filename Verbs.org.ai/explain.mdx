@@ -1,0 +1,114 @@
+---
+$type: Verb
+$id: explain
+$context: https://verbs.org.ai
+name: explain
+canonicalForm: explain
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making something clear or understandable through description or discussion
+predicate: explains
+event: explained
+activity: explaining
+actor: Explainer
+object: Explanation
+inverse: explainedBy
+---
+
+# Explain
+
+Making something clear or understandable by providing description, interpretation, or clarification through communication.
+
+## O*NET Context
+
+Work activity involving clarifying complex information, processes, or concepts to help others understand. Common in education, training, customer service, management, and technical roles where clear communication and understanding are essential.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Instructor.explain({ topic: 'quantum-mechanics', audience: 'introductory' })
+await $.Technician.explain($.Problem, { customer: customerId, depth: 'non-technical' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Trainer.explains.Concept
+$.Manager.explains.Decision
+$.Customer.explains.Requirement
+```
+
+### Event (Past Tense)
+```typescript
+on($.Concept.explained, async (event) => {
+  await $.Understanding.record({ learner: event.learner, topic: event.topic })
+  await $.Feedback.request({ recipient: event.learner })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const instruction = $.Classroom.explaining.CurricularContent
+console.log(`Current topic: ${instruction.topic} (${instruction.progress}% complete)`)
+```
+
+### Role (Actor)
+```typescript
+const explainer: $.Explainer = await $.findAgent({ skillSet: 'communication' })
+await explainer.clarifyMisunderstanding(student, concept)
+```
+
+### Concept (Abstraction)
+```typescript
+const explanation: $.Explanation = {
+  topic: 'Revenue Recognition',
+  audience: 'accounting-staff',
+  method: 'workshop',
+  duration: 90,
+  understandingLevel: 0.85
+}
+```
+
+### Inverse (Passive)
+```typescript
+const teachers = await db.related($.Concept, $.explainedBy, $.Instructor)
+```
+
+## Usage Examples
+
+**Education and Training:**
+- Teacher explains mathematical concept to students
+- Trainer explains software features to new users
+- Instructor explains procedure to trainees
+- Mentor explains best practices to protégé
+
+**Customer Service:**
+- Support agent explains product features to customer
+- Technician explains repair process to customer
+- Representative explains billing charges to client
+- Consultant explains recommendations to stakeholder
+
+**Management and Clarification:**
+- Manager explains organizational changes to team
+- Executive explains strategic direction to employees
+- Project lead explains requirements to team
+- Supervisor explains performance feedback to employee
+
+**Technical Communication:**
+- Engineer explains design to development team
+- IT specialist explains system to users
+- Scientist explains research findings to audience
+- Architect explains design approach to stakeholders
+
+**Business Rules:**
+- Explanation should match audience expertise level
+- Explanation should use appropriate terminology
+- Explanation benefits from examples and clarification
+- Explanation success should verify understanding
+
+## Related Verbs
+- clarify - Making clear or removing confusion
+- describe - Giving an account of characteristics
+- instruct - Providing detailed directions or guidance
+- educate - Teaching others through training
+- communicate - Sharing information and ideas

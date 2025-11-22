@@ -35,3 +35,15 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+.env
+
+# Generated data files
+Integrations.org.ai/*.json
+Integrations.org.ai/*.log
+Integrations.org.ai/Apps/
+Integrations.org.ai/Events/
+Integrations.org.ai/Actions/
+Integrations.org.ai/Searches/
+Integrations.org.ai/Nouns/

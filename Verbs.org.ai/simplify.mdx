@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: simplify
+$context: https://verbs.org.ai
+name: simplify
+canonicalForm: simplify
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making something less complex, easier to understand, or more straightforward by removing unnecessary elements or reducing complications
+predicate: simplifies
+event: simplified
+activity: simplifying
+actor: Simplifier
+object: Simplification
+inverse: simplifiedBy
+---
+
+# Simplify
+
+Making something less complex, easier to understand, or more straightforward by removing unnecessary elements, reducing complications, or streamlining processes.
+
+## O*NET Context
+
+Work activity focused on reducing complexity, eliminating unnecessary steps or components, and making systems, processes, or information more accessible and manageable.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Process.simplify({ complexity: 'high', goal: 'user-friendly', efficiency: 'optimize' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Developer.simplifies.Code
+$.Designer.simplifies.Interface
+$.Manager.simplifies.Workflow
+```
+
+### Event (Past Tense)
+```typescript
+on($.System.simplified, async (event) => {
+  await $.Documentation.update({ changes: event.modifications })
+  await $.Team.notify({ message: 'Process has been streamlined' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeSimplification = $.Engineer.simplifying.Architecture
+console.log(`Currently streamlining: ${activeSimplification.scope}`)
+```
+
+### Role (Actor)
+```typescript
+const simplifier: $.Simplifier = await $.findAgent({ expertise: 'process-optimization' })
+simplifier.streamlineOperations(complexSystem)
+```
+
+### Concept (Abstraction)
+```typescript
+const simplification: $.Simplification = {
+  originalState: complexStructure,
+  changesApplied: ['removed-redundancy', 'reduced-steps', 'improved-clarity'],
+  improvements: { usability: '+40%', efficiency: '+30%' },
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const simplifyingAgents = await db.related($.Code, $.simplifiedBy, $.Developer)
+```
+
+## Usage Examples
+
+**Software Development:**
+- Simplifying code to improve readability and maintainability
+- Reducing software complexity through refactoring
+- Streamlining algorithms for better performance
+- Eliminating redundant features or functionality
+
+**Process Improvement:**
+- Simplifying administrative procedures
+- Reducing steps in business workflows
+- Eliminating unnecessary approvals or checkpoints
+- Streamlining customer-facing processes
+
+**Communication:**
+- Simplifying technical documentation for general audiences
+- Reducing jargon in explanations or presentations
+- Clarifying complex concepts for easier understanding
+- Streamlining reports for better readability
+
+## Related Verbs
+- improve - Making something better or enhancing quality
+- streamline - Making more efficient and less complicated
+- reduce - Decreasing in size, amount, or complexity
+- clarify - Making clear or easier to understand

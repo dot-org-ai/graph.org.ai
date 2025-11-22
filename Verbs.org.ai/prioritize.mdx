@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: prioritize
+$context: https://verbs.org.ai
+name: prioritize
+canonicalForm: prioritize
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Determining the order of importance or sequence in which tasks or items should be addressed
+predicate: prioritizes
+event: prioritized
+activity: prioritizing
+actor: Prioritizer
+object: Prioritization
+inverse: prioritizedBy
+---
+
+# Prioritize
+
+Determining the order of importance or sequence in which tasks, items, or actions should be addressed based on criteria.
+
+## O*NET Context
+
+Work activity focused on ranking or sequencing work based on urgency, importance, resources, or organizational objectives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Manager.prioritize({ items: taskList, criteria: ['urgency', 'impact', 'resources'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Team.prioritizes.Tasks
+$.Project.prioritizes.Resources
+```
+
+### Event (Past Tense)
+```typescript
+on($.Tasks.prioritized, async (event) => {
+  await $.Team.communicate({ sequence: event.sequence })
+  await $.Timeline.update({ order: event.priorityOrder })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePrioritization = $.Manager.prioritizing.Workload
+console.log(`Currently prioritizing: ${activePrioritization.itemCount} items`)
+```
+
+### Role (Actor)
+```typescript
+const prioritizer: $.Prioritizer = await $.findAgent({ expertise: 'resource-allocation' })
+await prioritizer.rankItems(requests)
+```
+
+### Concept (Abstraction)
+```typescript
+const prioritization: $.Prioritization = {
+  subjectId: workload.id,
+  items: [],
+  criteria: [],
+  sequence: [],
+  rationale: '',
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const managers = await db.related($.Tasks, $.prioritizedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Workload Management:**
+- Prioritizing daily tasks and activities
+- Prioritizing project assignments
+- Prioritizing maintenance requests
+- Prioritizing customer inquiries
+
+**Resource Allocation:**
+- Prioritizing budget spending
+- Prioritizing staff assignments
+- Prioritizing equipment usage
+- Prioritizing facility access
+
+**Project Management:**
+- Prioritizing project features and deliverables
+- Prioritizing risk mitigation efforts
+- Prioritizing quality issues to address
+- Prioritizing stakeholder requirements
+
+**Strategic Planning:**
+- Prioritizing organizational initiatives
+- Prioritizing market opportunities
+- Prioritizing research directions
+- Prioritizing product development
+
+## Related Verbs
+- organize - Putting in systematic order
+- rank - Arranging in sequence
+- schedule - Assigning specific times
+- allocate - Distributing resources

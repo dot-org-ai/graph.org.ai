@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: report
+$context: https://verbs.org.ai
+name: report
+canonicalForm: report
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Presenting information, findings, or status updates in a structured format to inform stakeholders or fulfill requirements
+predicate: reports
+event: reported
+activity: reporting
+actor: Reporter
+object: Report
+inverse: reportedBy
+---
+
+# Report
+
+Presenting information, findings, or status updates in a structured format to inform stakeholders, document progress, or fulfill organizational and compliance requirements.
+
+## O*NET Context
+
+Work activity focused on gathering data, synthesizing information, and presenting it in organized formats such as written documents, presentations, or dashboards to communicate status, findings, or recommendations to relevant audiences.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Management.report({
+  reportType: 'quarterly-performance',
+  audience: 'executives',
+  data: performanceMetrics
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.reports.Status.to.Executive
+$.Analyst.reports.Findings.to.Client
+```
+
+### Event (Past Tense)
+```typescript
+on($.Report.reported, async (event) => {
+  await $.Distribution.send({ recipients: event.stakeholders })
+  await $.Archive.store({ reportData: event.content })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeReporting = $.Team.reporting.ProjectProgress
+console.log(`Reports generated this month: ${activeReporting.count}`)
+```
+
+### Role (Actor)
+```typescript
+const reporter: $.Reporter = await $.findAgent({
+  expertise: 'data-analysis'
+})
+reporter.compileAndPresent(sourceData, audience)
+```
+
+### Concept (Abstraction)
+```typescript
+const report: $.Report = {
+  reportId: generateId(),
+  title: 'Q4 Performance Summary',
+  author: analyst.name,
+  dateGenerated: now(),
+  keyFindings: [],
+  recommendations: []
+}
+```
+
+### Inverse (Passive)
+```typescript
+const authoredBy = await db.related($.Document, $.reportedBy, $.Analyst)
+```
+
+## Usage Examples
+
+**Business Reporting:**
+- Reporting financial performance to shareholders
+- Presenting sales metrics to management
+- Documenting project status for stakeholders
+- Communicating operational metrics to leadership
+
+**Compliance Reporting:**
+- Reporting regulatory compliance status
+- Documenting incident reports for authorities
+- Filing environmental impact assessments
+- Submitting tax and financial reports
+
+**Technical Reporting:**
+- Reporting system performance and availability
+- Documenting security incidents and resolutions
+- Presenting data analysis findings
+- Communicating infrastructure metrics
+
+## Related Verbs
+- inform - Providing information or knowledge
+- present - Displaying or demonstrating to audience
+- communicate - Sharing information with others
+- document - Creating formal written records

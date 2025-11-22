@@ -1,0 +1,108 @@
+---
+$type: Verb
+$id: count
+$context: https://verbs.org.ai
+name: count
+canonicalForm: count
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Periodic inventory counting (cycle_counting)
+predicate: counts
+event: counted
+activity: counting
+actor: Counter
+object: Count
+inverse: countedBy
+---
+
+# Count
+
+Performing a periodic inventory count, typically as part of cycle counting operations to verify stock levels and identify discrepancies.
+
+## GS1 Context
+
+Business step for conducting partial or full inventory counts to maintain accurate stock records. Cycle counting is a continuous counting process that checks inventory accuracy without requiring full warehouse shutdowns, as opposed to "take" which is comprehensive stock-taking.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Inventory.count({
+  location: aisle,
+  timestamp: now(),
+  verifiedBy: userId
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.counts.Items
+$.Auditor.counts.Stock
+```
+
+### Event (Past Tense)
+```typescript
+on($.Inventory.counted, async (event) => {
+  const discrepancy = await $.System.compareRecords(event)
+  if (discrepancy.variance > threshold) {
+    await $.Audit.log(discrepancy)
+  }
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const audit = $.Warehouse.counting.Inventory
+console.log(`${audit.progressPercent}% counted, ${audit.itemsRemaining} to go`)
+```
+
+### Role (Actor)
+```typescript
+const counter: $.Counter = $.StockAuditor({ location: warehouse })
+counter.verifySection(section)
+```
+
+### Concept (Abstraction)
+```typescript
+const count: $.Count = {
+  inventoryId: inventory.id,
+  countDate: now(),
+  countedBy: user.id,
+  methodology: 'cycle_count',
+  items: [
+    { sku: 'SKU001', physicalCount: 50, systemCount: 48 }
+  ],
+  variance: 2
+}
+```
+
+### Inverse (Passive)
+```typescript
+const counts = await db.related($.Location, $.countedBy, $.Auditor)
+```
+
+## Usage Examples
+
+**Inventory Management:**
+- Warehouse staff count items in specific aisle
+- Cycle counter verifies high-value SKUs weekly
+- Auditor counts slow-moving inventory monthly
+- Physical inventory count before financial close
+
+**Business Rules:**
+- Count requires witness or verification
+- Count identifies variances against system
+- Count initiates adjustment transactions
+- Count frequency based on inventory category (ABC analysis)
+
+**Frequency Strategies:**
+- A Items: Weekly or bi-weekly counts
+- B Items: Monthly counts
+- C Items: Quarterly counts
+- Spot counts for high-variance locations
+
+## Related Verbs
+- take - Comprehensive inventory count (stock_taking)
+- store - Keeping in inventory
+- inspect - Examining for quality or compliance
+- remove - Taking away from a location

@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: archive
+$context: https://verbs.org.ai
+name: archive
+canonicalForm: archive
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Store or preserve items for long-term retention; move to historical record.
+predicate: archives
+event: archived
+activity: archiving
+actor: Archivist
+object: Archive
+inverse: archivedBy
+---
+
+# Archive
+
+The action of preserving, storing, or removing items from active use while maintaining them for historical reference or long-term retention. Archive represents the transition from active to preserved status.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.archive()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.archives.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.archived, async ({subject}) => {
+  // Handle archive event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.archiving.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Archivist}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Archive}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.archivedBy.{Subject}
+```

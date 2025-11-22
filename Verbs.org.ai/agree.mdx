@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: agree
+$context: https://verbs.org.ai
+name: agree
+canonicalForm: agree
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Consent or assent to something; reach mutual understanding or acceptance.
+predicate: agrees
+event: agreed
+activity: agreeing
+actor: Agreer
+object: Agreement
+inverse: agreedTo
+---
+
+# Agree
+
+The action of reaching consensus, giving consent, or achieving mutual acceptance. Agree represents alignment of perspectives or commitment to shared terms.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.agree()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.agrees.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.agreed, async ({subject}) => {
+  // Handle agreement event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.agreeing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Agreer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Agreement}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.agreedTo.{Subject}
+```

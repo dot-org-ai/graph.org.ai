@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: drive
+$context: https://verbs.org.ai
+name: drive
+canonicalForm: drive
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To operate a vehicle; to propel or cause to move forward; to motivate or compel action toward a goal
+predicate: drives
+event: drove
+activity: driving
+actor: Driver
+object: Drive
+inverse: drivenBy
+---
+
+# Drive
+
+To operate or control a vehicle, or to propel and cause movement; alternatively, to motivate, compel, or push forward action toward a goal or objective. This verb encompasses activities such as operating vehicles and equipment, moving cargo, motivating teams, pursuing strategic initiatives, and propelling organizational progress.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.drive()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.drives.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.drove, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.driving.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Driver
+```
+
+### Concept (Abstraction)
+```typescript
+$.Drive
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.drivenBy.{Subject}
+```

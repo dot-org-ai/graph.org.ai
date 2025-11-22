@@ -1,0 +1,138 @@
+---
+$type: Verb
+$id: reserve
+$context: https://verbs.org.ai
+name: reserve
+canonicalForm: reserve
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:reserving
+description: Setting aside goods for future use or allocation
+predicate: reserves
+event: reserved
+activity: reserving
+actor: Reserver
+object: Reservation
+inverse: reservedBy
+---
+
+# Reserve
+
+GS1 CBV Business Step: Setting aside goods for future use or allocation.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Inventory.reserve()
+```
+
+### Predicate (Relationship)
+```typescript
+$.Order.reserves.Stock
+```
+
+### Event (Past Tense)
+```typescript
+on($.Stock.reserved, async ({subject}) => {
+  // Handle reservation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.WarehouseSystem.reserving.Items
+```
+
+### Role (Actor)
+```typescript
+$.Reserver
+```
+
+### Concept (Abstraction)
+```typescript
+$.Reservation
+```
+
+### Inverse (Passive)
+```typescript
+$.Stock.reservedBy.Order
+```
+
+## Context
+
+In inventory management and order fulfillment, reservation occurs when inventory is allocated to specific orders or purposes:
+
+- **Order fulfillment**: Allocating stock to specific orders
+- **Purchase orders**: Setting aside items for buyers
+- **Back-order management**: Reserving future stock
+- **Event planning**: Holding inventory for scheduled events
+- **Allocation**: Assigning items to departments or locations
+- **Commitment tracking**: Ensuring availability for planned deliveries
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record reservation operation
+const reservationEvent = await $.Event.create({
+  type: 'reserving',
+  bizStep: 'urn:epcglobal:cbv:bizstep:reserving',
+  epcList: ['urn:epc:id:sgtin:item-sku-123'],
+  readPoint: 'urn:epc:id:sgln:warehouse-id',
+  bizLocation: 'urn:epc:id:sgln:inventory-location-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'in_progress'
+})
+
+// Create reservation
+const reservation = await $.Reservation.create({
+  orderId: 'order-id-001',
+  customerId: 'customer-id-123',
+  items: [
+    { sku: 'product-sku-001', quantity: 10, price: 29.99 },
+    { sku: 'product-sku-002', quantity: 5, price: 49.99 }
+  ],
+  expirationDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+  status: 'active'
+})
+
+// Update inventory with reservation
+const reservedInventory = await $.Inventory.reserve({
+  orderId: 'order-id-001',
+  items: [
+    { sku: 'product-sku-001', quantity: 10 },
+    { sku: 'product-sku-002', quantity: 5 }
+  ],
+  warehouseId: 'warehouse-1',
+  reservationId: reservation.id
+})
+
+// Query reserved items
+const reservedItems = await db.list($.Stock, {
+  filter: {
+    status: 'reserved',
+    orderId: 'order-id-001'
+  }
+})
+
+// Emit reservation notification
+on($.Stock.reserved, async (event) => {
+  await send($.Notification.send, {
+    type: 'reservation_confirmed',
+    orderId: event.orderId,
+    customerId: event.customerId,
+    expiresAt: event.expirationDate
+  })
+})
+```
+
+## Related Verbs
+
+- **unreserve**: Releasing reserved inventory
+- **pick**: Selecting reserved items for fulfillment
+- **stage**: Preparing reserved items for shipment
+- **pack**: Packaging reserved items
+- **ship**: Delivering reserved items

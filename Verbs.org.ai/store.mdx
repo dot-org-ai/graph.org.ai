@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: store
+$context: https://verbs.org.ai
+name: store
+canonicalForm: store
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:storing
+description: Keeping goods or materials in inventory or storage
+predicate: stores
+event: stored
+activity: storing
+actor: Storer
+object: Storage
+inverse: storedBy
+---
+
+# Store
+
+GS1 CBV Business Step: Keeping goods or materials in inventory or storage. This business step represents the action of maintaining items in a warehouse, storage facility, or inventory management system.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Inventory.store(item)
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.stores.Products
+```
+
+### Event (Past Tense)
+```typescript
+on($.Item.stored, async ({item, location}) => {
+  // Handle storage event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Operation.storing.Products
+```
+
+### Role (Actor)
+```typescript
+$.Storer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Storage
+```
+
+### Inverse (Passive)
+```typescript
+$.Product.storedBy.Warehouse
+```

@@ -1,0 +1,98 @@
+---
+$type: Verb
+$id: download
+$context: https://verbs.org.ai
+name: download
+canonicalForm: download
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Transferring data from a remote source to a local device
+predicate: downloads
+event: downloaded
+activity: downloading
+actor: Downloader
+object: Download
+inverse: downloadedBy
+---
+
+# Download
+
+Transferring data from a remote source to a local device for storage or use.
+
+## Schema.org Context
+
+A schema.org Action representing the retrieval and local storage of digital content. Essential in web, software, and data management contexts.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.User.download({ file: document, destination: 'local', timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Client.downloads.Software
+$.User.downloads.Document
+$.System.downloads.Update
+```
+
+### Event (Past Tense)
+```typescript
+on($.File.downloaded, async (event) => {
+  await $.Analytics.recordDownload({ fileId: event.fileId, userId: event.userId })
+  await $.Notification.send({ user: event.userId, message: 'Download complete' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeDownload = $.System.downloading.LargeFile
+console.log(`Download progress: ${activeDownload.percentComplete}%`)
+```
+
+### Role (Actor)
+```typescript
+const downloader: $.Downloader = await $.findAgent({ access: 'content' })
+await downloader.retrieveAndStore(contentId, targetLocation)
+```
+
+### Concept (Abstraction)
+```typescript
+const download: $.Download = {
+  fileId: file.id,
+  fileName: file.name,
+  timestamp: now(),
+  size: file.size,
+  transferTime: duration,
+  sourceUrl: file.url,
+  downloadedBy: user.id
+}
+```
+
+### Inverse (Passive)
+```typescript
+const sources = await db.related($.File, $.downloadedBy, $.User)
+```
+
+## Usage Examples
+
+**Software Distribution:**
+- User downloads application installer
+- System downloads security patches
+- Developer downloads library packages
+
+**Content Retrieval:**
+- User downloads document for offline access
+- System downloads media file
+- Client downloads database backup
+
+**Business Rules:**
+- Download may require authentication
+- Download triggers license verification
+- Download tracks usage metrics
+
+## Related Verbs
+- upload - Sending data to remote source
+- install - Setting up downloaded software
+- transfer - Moving data between sources

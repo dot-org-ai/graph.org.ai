@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: onboard
+$context: https://verbs.org.ai
+name: onboard
+canonicalForm: onboard
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Integrate new employees, customers, or suppliers into organizational systems
+predicate: onboards
+event: onboarded
+activity: onboarding
+actor: Onboarder
+object: Onboarding
+inverse: onboardedBy
+---
+
+# Onboard
+
+Integrating new employees, customers, suppliers, or partners into organizational systems, processes, and operations through structured orientation and setup activities.
+
+## APQC Process Context
+
+Human resource and relationship management activity where organizations prepare new team members or partners with necessary information, access, and training to become productive contributors.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.HumanResources.onboard({ person, role, department })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.onboards.Employee
+$.Company.onboards.Supplier
+```
+
+### Event (Past Tense)
+```typescript
+on($.Hire.onboarded, async (event) => {
+  await $.Systems.grantAccess(event.person)
+  await $.Training.scheduleOrientation(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const integration = $.HumanResources.onboarding.NewHire
+```
+
+### Actor (Role)
+```typescript
+const onboarder: $.Onboarder = await $.findAgent({ role: 'hr' })
+```
+
+### Object (Abstraction)
+```typescript
+const onboarding: $.Onboarding = {
+  personId: hire.id,
+  role: 'Software Engineer',
+  department: 'Engineering',
+  startDate: now(),
+  orientation: 'completed',
+  systemAccess: 'granted',
+  training: 'scheduled',
+  status: 'complete'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const hires = await db.related($.Employee, $.onboardedBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 4: Enable
+- Subcategory: Manage human resources
+- Process: Develop and manage workforce
+
+## Business Rules
+
+- Onboarding requires documented process
+- All required systems access must be provisioned
+- Orientation must cover key policies and procedures
+- Manager must be engaged in integration
+- Progress must be tracked until productivity
+
+## Related Verbs
+- hire - Bringing into employment
+- train - Providing skills development
+- integrate - Combining into organizational structure
+- authorize - Granting permissions
+- assign - Allocating responsibility
+

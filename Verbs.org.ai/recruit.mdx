@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: recruit
+$context: https://verbs.org.ai
+name: recruit
+canonicalForm: recruit
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Identifying, attracting, and enrolling qualified candidates or participants for positions, programs, or initiatives
+predicate: recruits
+event: recruited
+activity: recruiting
+actor: Recruiter
+object: Recruitment
+inverse: recruitedBy
+---
+
+# Recruit
+
+Identifying, attracting, and enrolling qualified individuals to fill positions, join programs, or participate in initiatives.
+
+## O*NET Context
+
+Work activity focused on sourcing talent, evaluating candidate qualifications, and engaging potential participants to build teams, workforces, or program membership aligned with organizational needs and objectives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.HumanResources.recruit({
+  position: 'software-engineer',
+  qualifications: requiredSkills,
+  urgency: 'high'
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Company.recruits.Talent
+$.Program.recruits.Participants
+```
+
+### Event (Past Tense)
+```typescript
+on($.Candidate.recruited, async (event) => {
+  await $.Onboarding.initiate({ candidateId: event.id })
+  await $.Welcome.send({ email: event.email })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRecruitment = $.Recruiter.recruiting.TechTalent
+console.log(`Currently recruiting: ${activeRecruitment.openPositions} roles`)
+```
+
+### Role (Actor)
+```typescript
+const recruiter: $.Recruiter = await $.findAgent({
+  expertise: 'talent-acquisition'
+})
+recruiter.evaluateCandidates(candidates)
+```
+
+### Concept (Abstraction)
+```typescript
+const recruitment: $.Recruitment = {
+  campaignId: campaign.id,
+  sourceChannels: ['linkedin', 'referral', 'job-board'],
+  candidates: [],
+  hireCount: 0,
+  startDate: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const hiringManagers = await db.related($.Position, $.recruitedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Talent Acquisition:**
+- Recruiting software engineers from universities and companies
+- Sourcing sales professionals through networking events
+- Attracting healthcare workers to fill staffing shortages
+- Recruiting volunteers for community service programs
+
+**Program Enrollment:**
+- Recruiting students for training and educational programs
+- Attracting participants for research studies
+- Enrolling members for professional development initiatives
+- Recruiting team members for special projects
+
+**Candidate Engagement:**
+- Identifying passive candidates through professional networks
+- Attracting applications through targeted job postings
+- Conducting candidate interviews and assessments
+- Making offer letters and finalizing enrollments
+
+## Related Verbs
+- interview - Conducting candidate assessments
+- select - Choosing qualified candidates
+- hire - Formalizing employment arrangements
+- enroll - Registering participants in programs

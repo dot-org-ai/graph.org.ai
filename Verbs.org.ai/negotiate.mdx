@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: negotiate
+$context: https://verbs.org.ai
+name: negotiate
+canonicalForm: negotiate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Discussing and reaching agreement on terms, conditions, or solutions through dialogue
+predicate: negotiates
+event: negotiated
+activity: negotiating
+actor: Negotiator
+object: Negotiation
+inverse: negotiatedBy
+---
+
+# Negotiate
+
+Discussing and reaching agreement on terms, conditions, or solutions through dialogue and compromise.
+
+## O*NET Context
+
+Work activity focused on discussing and arranging the terms of an agreement or transaction with other parties, including salary, contract terms, pricing, or other conditions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Party.negotiate({ terms: 'contract', scope: 'employment' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Negotiator.negotiates.Terms
+$.Vendor.negotiates.PricePoint
+```
+
+### Event (Past Tense)
+```typescript
+on($.Contract.negotiated, async (event) => {
+  await $.Agreement.finalize({ terms: event.agreedTerms })
+  await $.Stakeholder.notify({ status: 'negotiation-complete' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeNegotiation = $.Team.negotiating.ContractTerms
+console.log(`Currently negotiating: ${activeNegotiation.subject}`)
+```
+
+### Role (Actor)
+```typescript
+const negotiator: $.Negotiator = await $.findAgent({ expertise: 'contract-negotiation' })
+await negotiator.conductSession({ parties: [seller, buyer] })
+```
+
+### Concept (Abstraction)
+```typescript
+const negotiation: $.Negotiation = {
+  partyIds: [party1.id, party2.id],
+  subject: 'employment-contract',
+  proposedTerms: [],
+  agreedTerms: [],
+  status: 'in-progress'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const agreements = await db.related($.Contract, $.negotiatedBy, $.Negotiator)
+```
+
+## Usage Examples
+
+**Business Negotiations:**
+- Negotiating salary and benefits with a new employer
+- Negotiating contract terms with vendors
+- Negotiating pricing with suppliers
+- Negotiating lease agreements with landlords
+
+**Sales & Procurement:**
+- Negotiating product prices and volume discounts
+- Negotiating delivery terms and schedules
+- Negotiating payment terms and conditions
+- Negotiating service level agreements
+
+**Conflict Resolution:**
+- Negotiating settlements in disputes
+- Negotiating compromises between stakeholders
+- Negotiating resource allocation among teams
+- Negotiating project scope with clients
+
+## Related Verbs
+- discuss - Exchanging views and ideas
+- coordinate - Working together toward common goals
+- mediate - Facilitating agreement between parties
+- convince - Persuading someone to accept a viewpoint

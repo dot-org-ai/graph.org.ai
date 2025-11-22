@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: handle
+$context: https://verbs.org.ai
+name: handle
+canonicalForm: handle
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Managing, dealing with, or taking care of something or someone
+predicate: handles
+event: handled
+activity: handling
+actor: Handler
+object: Handling
+inverse: handledBy
+---
+
+# Handle
+
+Managing, dealing with, or taking care of something or someone, whether physical objects, situations, or responsibilities.
+
+## O*NET Context
+
+Broad work activity across many occupations including customer service representatives, logistics workers, nurses, and administrative professionals. Encompasses both physical handling of materials and figurative handling of situations or responsibilities.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Team.handle({ request: ticket, priority: 'high' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Department.handles.Complaints
+$.Specialist.handles.Emergencies
+```
+
+### Event (Past Tense)
+```typescript
+on($.Case.handled, async (event) => {
+  await $.Customer.notify({ status: 'resolved', reference: event.caseId })
+  await $.Log.record({ resolution: event.outcome })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const service = $.Support.handling.Inquiries
+console.log(`Average handling time: ${service.avgResolutionTime}`)
+```
+
+### Role (Actor)
+```typescript
+const handler: $.Handler = await $.findAgent({ skills: 'customer-service' })
+handler.resolveIssue(complaint)
+```
+
+### Concept (Abstraction)
+```typescript
+const handling: $.Handling = {
+  itemType: 'package',
+  careLevel: 'fragile',
+  procedures: ['protective-wrapping', 'careful-placement'],
+  restrictions: ['temperature-controlled', 'upright']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const agents = await db.related($.Request, $.handledBy, $.Support)
+```
+
+## Usage Examples
+
+**Customer Service:**
+- Support teams handle customer inquiries
+- Resolution specialists handle complaints
+- Representatives handle service requests
+
+**Logistics & Operations:**
+- Warehouses handle inventory movement
+- Couriers handle package delivery
+- Staff handle equipment and materials
+
+**Healthcare & Professional:**
+- Nurses handle patient care
+- Managers handle personnel issues
+- Administrators handle paperwork and scheduling
+
+**Business Rules:**
+- Handling procedures documented by item type
+- Fragile items require special handling protocols
+- Chain of custody maintained for critical items
+- Handling tracked with timestamps and responsible party
+
+## Related Verbs
+- manage - Directing and organizing
+- process - Working through a system
+- deal - Coping with or addressing
+- transport - Moving from one place to another

@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: approve
+$context: https://verbs.org.ai
+name: approve
+canonicalForm: approve
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Formally agree to or officially sanction something; give authorization.
+predicate: approves
+event: approved
+activity: approving
+actor: Approver
+object: Approval
+inverse: approvedBy
+---
+
+# Approve
+
+The action of giving formal consent, official authorization, or sanction to a proposal, request, or action. Approve represents official validation and permission.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.approve()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.approves.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.approved, async ({subject}) => {
+  // Handle approval event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.approving.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Approver}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Approval}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.approvedBy.{Subject}
+```

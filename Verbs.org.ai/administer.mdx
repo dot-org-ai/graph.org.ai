@@ -1,0 +1,90 @@
+---
+$type: Verb
+$id: administer
+$context: https://verbs.org.ai
+name: administer
+canonicalForm: administer
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Manage the execution and control of operational processes
+predicate: administers
+event: administered
+activity: administering
+actor: Administrator
+object: Administration
+inverse: administeredBy
+---
+
+# Administer
+
+Managing the execution and control of operational processes, policies, and systems to ensure compliance and effectiveness.
+
+## APQC Process Context
+
+Administrative control and management activities that oversee operational processes, enforce policies, and maintain organizational standards and procedures.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Operations.administer({ policy, scope, enforcement })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Management.administers.Process
+$.Department.administers.Policy
+```
+
+### Event (Past Tense)
+```typescript
+on($.Policy.administered, async (event) => {
+  await $.Audit.record(event)
+  await $.Compliance.verify(event.policy)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const management = $.Organization.administering.Standards
+```
+
+### Actor (Role)
+```typescript
+const administrator: $.Administrator = await $.findAgent({ role: 'operations' })
+```
+
+### Object (Abstraction)
+```typescript
+const administration: $.Administration = {
+  policyId: policy.id,
+  scope: ['department', 'site'],
+  appliedDate: now(),
+  status: 'active'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const policies = await db.related($.Process, $.administeredBy, $.Management)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Manage Organizational Resources
+- Process: Manage policies and procedures
+
+## Business Rules
+
+- Administration requires documented authority
+- Must follow governance framework
+- Requires audit trail and compliance documentation
+- Changes require approval and communication
+
+## Related Verbs
+- manage - Overseeing broader operations
+- control - Enforcing standards and limits
+- monitor - Observing compliance and performance
+- govern - Setting strategic direction
+

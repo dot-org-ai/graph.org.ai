@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: discontinue
+$context: https://verbs.org.ai
+name: discontinue
+canonicalForm: discontinue
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: End or stop production or support of a product or service
+predicate: discontinues
+event: discontinued
+activity: discontinuing
+actor: Discontinuer
+object: Discontinuation
+inverse: discontinuedBy
+---
+
+# Discontinue
+
+Ending or ceasing production, sale, or support of products or services that no longer meet business objectives or market demand.
+
+## APQC Process Context
+
+Product lifecycle management activity where organizations formally end the availability and support of products or services through structured processes.
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Manage product quality
+- Process: Manage product/service discontinuation
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ProductManagement.discontinue({ product, reason, timeline })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.discontinues.Product
+$.Company.discontinues.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Product.discontinued, async (event) => {
+  await $.Inventory.liquidate(event.product)
+  await $.Customer.notifyOfDiscontinuation(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const phaseOut = $.ProductManagement.discontinuing.Product
+```
+
+### Actor (Role)
+```typescript
+const discontinuer: $.Discontinuer = await $.findAgent({ role: 'product-management' })
+```
+
+### Object (Abstraction)
+```typescript
+const discontinuation: $.Discontinuation = {
+  productId: product.id,
+  reason: 'low-demand',
+  lastOrderDate: date,
+  supportEndDate: date,
+  status: 'end-of-life',
+  communicationSent: true
+}
+```
+
+### Inverse (Passive)
+```typescript
+const discontinued = await db.related($.Product, $.discontinuedBy, $.Organization)
+```
+
+## Business Rules
+
+- Discontinuation requires formal decision and approval
+- Customers must be notified with sufficient notice
+- Supply chain must be managed for existing orders
+- Warranty and support obligations must be honored
+- Product documentation must be archived
+
+## Related Verbs
+- retire - Ending use or operation
+- liquidate - Selling remaining inventory
+- close - Ending operations or processes
+- eliminate - Removing from operations
+- archive - Preserving records for reference
+

@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: unreserve
+$context: https://verbs.org.ai
+name: unreserve
+canonicalForm: unreserve
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:unreserving
+description: Releasing inventory that was previously reserved or held for future use
+predicate: unreserves
+event: unreserved
+activity: unreserving
+actor: Unreserver
+object: Unreserving
+inverse: unreservedBy
+---
+
+# Unreserve
+
+GS1 CBV Business Step: Releasing inventory that was previously reserved or held for future use. This business step represents the cancellation or release of reserved stock back into available inventory, freeing up inventory for other purposes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Inventory.unreserve(reservation)
+```
+
+### Predicate (Relationship)
+```typescript
+$.System.unreserves.ReservedStock
+```
+
+### Event (Past Tense)
+```typescript
+on($.Reservation.unreserved, async ({item, quantity}) => {
+  // Handle unreservation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Process.unreserving.Items
+```
+
+### Role (Actor)
+```typescript
+$.Unreserver
+```
+
+### Concept (Abstraction)
+```typescript
+$.Unreserving
+```
+
+### Inverse (Passive)
+```typescript
+$.Stock.unreservedBy.System
+```

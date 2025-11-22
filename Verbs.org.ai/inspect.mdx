@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: inspect
+$context: https://verbs.org.ai
+name: inspect
+canonicalForm: inspect
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Examining goods or materials for quality, compliance, or condition verification
+predicate: inspects
+event: inspected
+activity: inspecting
+actor: Inspector
+object: Inspection
+inverse: inspectedBy
+---
+
+# Inspect
+
+Examining goods or materials for quality, compliance, or condition verification.
+
+## GS1 Context
+
+Business step for formally inspecting received goods or products during various supply chain stages. This is a critical operation in quality management where items are examined to ensure they meet specifications, standards, and requirements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.inspect({ timestamp: now(), findings: 'Passed QC' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.QualityAssurance.inspects.Goods
+$.Warehouse.inspects.Shipment
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.inspected, async (event) => {
+  await $.Quality.record({ shipmentId: event.id, status: event.result })
+  if (!event.passed) await $.Notification.escalate({ priority: 'high' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const inspection = $.Warehouse.inspecting.DeliveryItems
+console.log(`Currently inspecting: ${inspection.count} items`)
+```
+
+### Role (Actor)
+```typescript
+const inspector: $.Inspector = await $.findAgent({ certification: 'QA' })
+await inspector.verify(shipment)
+```
+
+### Concept (Abstraction)
+```typescript
+const inspection: $.Inspection = {
+  shipmentId: shipment.id,
+  timestamp: now(),
+  inspector: user.id,
+  findings: ['defect-found', 'incomplete-count'],
+  passed: false
+}
+```
+
+### Inverse (Passive)
+```typescript
+const inspectors = await db.related($.Goods, $.inspectedBy, $.QualityDepartment)
+```
+
+## Usage Examples
+
+**Quality Assurance:**
+- Receiving inspection of incoming goods
+- In-process inspection during manufacturing
+- Final inspection before shipment
+- Regulatory compliance inspection
+
+**Business Rules:**
+- Inspection cannot be bypassed for critical SKUs
+- Inspection results must be documented
+- Failed inspection triggers escalation workflow
+- Inspection timeline must meet SLA requirements
+
+## Related Verbs
+- accept - Taking receipt of goods
+- receive - Taking delivery of goods
+- verify - Confirming accuracy or authenticity
+- repair - Fixing defects found during inspection

@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: consign
+$context: https://verbs.org.ai
+name: consign
+canonicalForm: consign
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Handing over responsibility for shipment
+predicate: consigns
+event: consigned
+activity: consigning
+actor: Consigner
+object: Consignment
+inverse: consignedBy
+---
+
+# Consign
+
+Handing over goods to a carrier or third party with responsibility for delivery, or delivering goods to a sales agent for sale on consignment basis.
+
+## GS1 Context
+
+Business step marking the transfer of custody and responsibility for goods to a shipping carrier, logistics provider, or sales agent. The consigner retains ownership while the consignee assumes delivery or sales responsibility.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.consign({
+  carrier: carrierId,
+  goods: manifestItems,
+  terms: shippingTerms,
+  timestamp: now()
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.consigns.Goods
+$.Manufacturer.consigns.RetailPartner
+```
+
+### Event (Past Tense)
+```typescript
+on($.Goods.consigned, async (event) => {
+  await $.Tracking.create({ shipmentId: event.shipmentId })
+  await $.Notification.dispatch($.Carrier)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const logistics = $.Port.consigning.Containers
+console.log(`${logistics.pending} containers awaiting consignment`)
+```
+
+### Role (Actor)
+```typescript
+const consigner: $.Consigner = $.Shipper
+consigner.setupDeliveryAccount(destination)
+```
+
+### Concept (Abstraction)
+```typescript
+const consignment: $.Consignment = {
+  shipmentId: shipment.id,
+  consignorId: shipper.id,
+  consigneeId: receiver.id,
+  carrier: carrier.id,
+  date: now(),
+  terms: 'FCA',
+  value: totalValue
+}
+```
+
+### Inverse (Passive)
+```typescript
+const shipments = await db.related($.Carrier, $.consignedBy, $.Shipper)
+```
+
+## Usage Examples
+
+**Freight & Logistics:**
+- Shipper consigns goods to freight carrier
+- Warehouse consigns full container to logistics company
+- Port authority consigns imports to customs broker
+- Exporter consigns goods to international freight forwarder
+
+**Retail & Sales:**
+- Manufacturer consigns inventory to retail partner
+- Distributor consigns products to retail outlet
+- Wholesaler consigns goods for consignment sales
+
+**Business Rules:**
+- Consignment transfers delivery responsibility
+- Consignment documents must be prepared
+- Consignment initiates tracking workflow
+- Consignment terms determine payment and returns
+
+## Related Verbs
+- ship - Dispatching for delivery
+- load - Placing onto a transport vehicle
+- receive - Taking delivery of goods
+- hold - Retaining possession

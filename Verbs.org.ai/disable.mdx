@@ -1,0 +1,97 @@
+---
+$type: Verb
+$id: disable
+$context: https://verbs.org.ai
+name: disable
+canonicalForm: disable
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Making something inoperative or unavailable
+predicate: disables
+event: disabled
+activity: disabling
+actor: Disabler
+object: Disabling
+inverse: disabledBy
+---
+
+# Disable
+
+Making something inoperative, unavailable, or unable to function.
+
+## Schema.org Context
+
+A schema.org Action representing the deactivation or restriction of access to resources, features, or accounts. Commonly used in system administration, security, and access control.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Account.disable({ reason: 'policy_violation', timestamp: now(), approvedBy: admin })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Administrator.disables.Feature
+$.Security.disables.Access
+$.System.disables.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Account.disabled, async (event) => {
+  await $.Notification.send({ target: event.accountOwner, message: 'Account disabled' })
+  await $.Audit.log({ action: 'account_disabled', accountId: event.accountId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const disablingProcess = $.System.disabling.OldFeatures
+console.log(`Disabling ${disablingProcess.count} deprecated features`)
+```
+
+### Role (Actor)
+```typescript
+const disabler: $.Disabler = await $.findAgent({ permissions: 'admin' })
+await disabler.restrictAccess(userId, resource)
+```
+
+### Concept (Abstraction)
+```typescript
+const disabling: $.Disabling = {
+  targetId: resource.id,
+  targetType: 'Feature',
+  timestamp: now(),
+  reason: 'maintenance',
+  effectiveness: 'immediate',
+  reversible: true
+}
+```
+
+### Inverse (Passive)
+```typescript
+const adminActions = await db.related($.Feature, $.disabledBy, $.Administrator)
+```
+
+## Usage Examples
+
+**Account Management:**
+- Administrator disables suspicious user account
+- System disables expired accounts
+- Support team disables account on user request
+
+**Feature Management:**
+- Developer disables beta feature
+- System disables access during maintenance
+- Manager disables deprecated functionality
+
+**Business Rules:**
+- Cannot disable critical system features
+- Disabling requires authorization
+- Disabling triggers audit log entries
+
+## Related Verbs
+- enable - Making something operational again
+- deactivate - Turning off a service
+- delete - Removing entirely

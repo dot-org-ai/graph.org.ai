@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: dispatch
+$context: https://verbs.org.ai
+name: dispatch
+canonicalForm: dispatch
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Send out orders, shipments, or personnel to designated locations
+predicate: dispatches
+event: dispatched
+activity: dispatching
+actor: Dispatcher
+object: Dispatch
+inverse: dispatchedBy
+---
+
+# Dispatch
+
+Sending out or releasing orders, shipments, personnel, or vehicles to designated locations to fulfill operations or delivery requirements.
+
+## APQC Process Context
+
+Supply chain and logistics activity where organizations send goods, people, or resources from one location to another to meet customer or operational needs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Logistics.dispatch({ shipment, destination, personnel })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.dispatches.Shipment
+$.Organization.dispatches.Vehicle
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.dispatched, async (event) => {
+  await $.Tracking.activate(event.shipmentId)
+  await $.Customer.notifyOfShipment(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const outbound = $.Warehouse.dispatching.Shipment
+```
+
+### Actor (Role)
+```typescript
+const dispatcher: $.Dispatcher = await $.findAgent({ role: 'warehouse-operations' })
+```
+
+### Object (Abstraction)
+```typescript
+const dispatch: $.Dispatch = {
+  shipmentId: order.id,
+  destination: address,
+  contents: items,
+  dispatchedTime: now(),
+  trackingNumber: 'TRK-123456',
+  status: 'in-transit'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const shipments = await db.related($.Shipment, $.dispatchedBy, $.Warehouse)
+```
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Deliver products and services
+- Process: Ship products and services
+
+## Business Rules
+
+- Dispatch requires completed order verification
+- Shipment must match customer specifications
+- Dispatch timing must meet customer requirements
+- Tracking information must be provided
+- Dispatch records must be maintained
+
+## Related Verbs
+- ship - Moving goods to destination
+- deliver - Providing goods to customer
+- release - Making available or sending out
+- transport - Moving from one location to another
+- schedule - Planning timing of dispatch
+

@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: comment
+$context: https://verbs.org.ai
+name: comment
+canonicalForm: comment
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To make remarks or observations, typically in response to something or someone; to provide feedback or notes.
+predicate: comments
+event: commented
+activity: commenting
+actor: Commenter
+object: Commentary
+inverse: commentedBy
+---
+
+# Comment
+
+The action of making a remark, observation, or note about something. This semantic form encompasses the provision of feedback, annotations, or contributions to a discussion.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.comment()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.comments.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.commented, async ({subject}) => {
+  // Handle commented event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.commenting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Commenter
+```
+
+### Concept (Abstraction)
+```typescript
+$.Commentary
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.commentedBy.{Subject}
+```
+
+## Usage Context
+
+The "comment" action applies to various domains:
+- Social media: posts, articles, photos
+- Development: code review, pull requests
+- Collaboration: documents, shared content
+- Discussion: forums, messaging, meetings

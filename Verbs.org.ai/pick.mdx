@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: pick
+$context: https://verbs.org.ai
+name: pick
+canonicalForm: pick
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Selecting items from inventory for fulfillment or use
+predicate: picks
+event: picked
+activity: picking
+actor: Picker
+object: Picking
+inverse: pickedBy
+---
+
+# Pick
+
+Selecting items from inventory for fulfillment or use.
+
+## GS1 Context
+
+Business step for formally selecting items from warehouse inventory in response to orders or other requests. This is a critical operation in fulfillment workflows where items are selected from various locations in the warehouse.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.pick({ itemIds: [item1, item2], timestamp: now(), location: 'Aisle-C' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.picks.Inventory
+$.FulfillmentWorker.picks.SKU
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.picked, async (event) => {
+  await $.QualityCheck.queue({ orderId: event.orderId, items: event.items })
+  if (event.allItemsAvailable) await $.Packing.schedule({ orderId: event.orderId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const fulfillment = $.Warehouse.picking.CustomerOrders
+console.log(`Currently picking: ${fulfillment.count} orders, ${fulfillment.items} items`)
+```
+
+### Role (Actor)
+```typescript
+const picker: $.Picker = await $.findAgent({ location: 'warehouse', available: true })
+await picker.selectItems(order)
+```
+
+### Concept (Abstraction)
+```typescript
+const picking: $.Picking = {
+  orderId: order.id,
+  timestamp: now(),
+  picker: user.id,
+  items: order.items,
+  pickingTime: calculateDuration(startTime),
+  accuracy: validatePick(order)
+}
+```
+
+### Inverse (Passive)
+```typescript
+const pickers = await db.related($.Order, $.pickedBy, $.WarehouseStaff)
+```
+
+## Usage Examples
+
+**Order Fulfillment:**
+- Picking customer order items from warehouse
+- Picking items for retail shelf replenishment
+- Picking components for manufacturing orders
+- Picking items for returns processing
+
+**Business Rules:**
+- Picking must follow order verification and availability check
+- Items must be selected from correct warehouse locations
+- Picked items must match order specifications exactly
+- Picking completion updates inventory allocations
+
+## Related Verbs
+- collect - Gathering objects together
+- pack - Placing into packaging
+- ship - Dispatching for delivery
+- stock - Placing in storage
+- reserve - Setting aside for future use

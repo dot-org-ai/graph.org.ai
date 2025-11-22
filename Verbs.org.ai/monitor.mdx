@@ -1,0 +1,109 @@
+---
+$type: Verb
+$id: monitor
+$context: https://verbs.org.ai
+name: monitor
+canonicalForm: monitor
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Observing, tracking, or keeping watch over activities, conditions, or performance to detect changes or problems
+predicate: monitors
+event: monitored
+activity: monitoring
+actor: Monitor
+object: Monitoring
+inverse: monitoredBy
+---
+
+# Monitor
+
+Observing, tracking, or keeping watch over activities, conditions, or performance to detect changes, identify problems, or ensure compliance.
+
+## O*NET Context
+
+Work activity focused on continuous observation and assessment of systems, processes, personnel, or conditions. Includes using instruments, surveillance, reports, or metrics to track status, detect anomalies, and trigger appropriate responses.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.System.monitor({ metrics: ['cpu', 'memory', 'network'], frequency: 'real-time', alertThreshold: 80 })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Operator.monitors.ProductionLine
+$.Administrator.monitors.ServerHealth
+```
+
+### Event (Past Tense)
+```typescript
+on($.Status.monitored, async (event) => {
+  if (event.anomalyDetected) {
+    await $.Alert.escalate({ severity: event.severity, recipients: event.onCall })
+  }
+  await $.Dashboard.update({ metrics: event.currentStatus })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeWatch = $.Team.monitoring.SystemPerformance
+console.log(`Currently monitoring: ${activeWatch.system} - Status: ${activeWatch.status}`)
+```
+
+### Role (Actor)
+```typescript
+const monitor: $.Monitor = await $.findAgent({ expertise: 'systems-monitoring', availability: '24/7' })
+monitor.trackMetrics(system)
+```
+
+### Concept (Abstraction)
+```typescript
+const monitoring: $.Monitoring = {
+  subjectId: system.id,
+  monitorType: 'continuous',
+  metricsTracked: ['performance', 'uptime', 'errors'],
+  frequency: 'real-time',
+  startDate: now(),
+  alertsGenerated: 3,
+  averageResponseTime: 120000 // milliseconds
+}
+```
+
+### Inverse (Passive)
+```typescript
+const observers = await db.related($.Service, $.monitoredBy, $.Operations)
+```
+
+## Usage Examples
+
+**System and Infrastructure:**
+- Network administrator monitors server performance and network traffic
+- IT operations monitors system uptime and response times
+- Database administrator monitors query performance and storage
+- Security team monitors access logs for suspicious activity
+
+**Production Management:**
+- Supervisor monitors production line output and quality
+- Facility manager monitors equipment operation and maintenance needs
+- Quality inspector monitors manufacturing process for defects
+- Logistics coordinator monitors shipment status and delivery
+
+**Compliance and Safety:**
+- Safety officer monitors workplace for hazards and violations
+- Compliance manager monitors regulatory adherence and documentation
+- Auditor monitors financial transactions for irregularities
+- Health inspector monitors sanitation and food safety standards
+
+**Performance and Progress:**
+- Manager monitors employee productivity and project progress
+- Coach monitors athlete performance during training
+- Teacher monitors student engagement and learning progress
+- Customer success monitors account health and satisfaction
+
+## Related Verbs
+- observe - Watching carefully
+- track - Following progress or movement
+- supervise - Overseeing operations
+- inspect - Examining for condition or defects

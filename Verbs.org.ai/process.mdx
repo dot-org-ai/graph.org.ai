@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: process
+$context: https://verbs.org.ai
+name: process
+canonicalForm: process
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Performing a series of steps or operations to handle, handle, or transform something
+predicate: processes
+event: processed
+activity: processing
+actor: Processor
+object: Processing
+inverse: processedBy
+---
+
+# Process
+
+Performing a series of steps or operations to handle, treat, or transform something into a desired state or output.
+
+## O*NET Context
+
+Work activity focused on following established procedures or steps to convert inputs into outputs, handle transactions, or manage workflows.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Transaction.process({ type: 'payment', amount: value, verification: 'complete' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.System.processes.Orders
+$.Department.processes.Applications
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.processed, async (event) => {
+  await $.Inventory.update({ items: event.items })
+  await $.Customer.notify({ status: 'order-processing' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeProcessing = $.System.processing.Transactions
+console.log(`Currently processing: ${activeProcessing.count} items`)
+```
+
+### Role (Actor)
+```typescript
+const processor: $.Processor = await $.findAgent({ expertise: 'data-processing' })
+await processor.handleRequests(queue)
+```
+
+### Concept (Abstraction)
+```typescript
+const processing: $.Processing = {
+  subjectId: transaction.id,
+  inputData: {},
+  outputData: {},
+  steps: [],
+  status: 'pending',
+  errorLog: []
+}
+```
+
+### Inverse (Passive)
+```typescript
+const departments = await db.related($.Applications, $.processedBy, $.Department)
+```
+
+## Usage Examples
+
+**Financial Processing:**
+- Processing invoices for payment
+- Processing expense reports
+- Processing payroll transactions
+- Processing loan applications
+
+**Data Processing:**
+- Processing customer information
+- Processing survey responses
+- Processing database records
+- Processing transactional data
+
+**Manufacturing Processing:**
+- Processing raw materials
+- Processing inventory items
+- Processing quality inspections
+- Processing production orders
+
+**Administrative Processing:**
+- Processing job applications
+- Processing permit requests
+- Processing claims and appeals
+- Processing documentation
+
+## Related Verbs
+- handle - Managing or dealing with
+- manage - Directing or controlling
+- operate - Using or running equipment
+- compile - Assembling information

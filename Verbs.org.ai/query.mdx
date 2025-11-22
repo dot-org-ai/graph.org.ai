@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: query
+$context: https://verbs.org.ai
+name: query
+canonicalForm: query
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Asking questions or requesting information to obtain specific data or clarification
+predicate: queries
+event: queried
+activity: querying
+actor: Querier
+object: Query
+inverse: queriedBy
+---
+
+# Query
+
+Asking questions or making requests for specific information, data, or clarification from databases, systems, or other sources.
+
+## O*NET Context
+
+Work activity focused on requesting information through questions, database searches, or inquiry processes to obtain answers, data, or clarification needed for tasks or decisions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Database.query({ table: 'customers', conditions: { status: 'active' } })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Analyst.queries.Database
+$.Support.queries.KnowledgeBase
+$.Researcher.queries.Archive
+```
+
+### Event (Past Tense)
+```typescript
+on($.Request.queried, async (event) => {
+  await $.System.processResults({ query: event.id })
+  await $.Log.record({ queryTime: event.duration })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeQuery = $.System.querying.LargeDataset
+console.log(`Query progress: ${activeQuery.completionPercent}%`)
+```
+
+### Role (Actor)
+```typescript
+const querier: $.Querier = await $.findAgent({ expertise: 'database-management' })
+await querier.searchRecords(criteria)
+```
+
+### Concept (Abstraction)
+```typescript
+const query: $.Query = {
+  statement: 'SELECT * FROM orders WHERE date > 2024-01-01',
+  source: 'database',
+  parameters: { dateRange: 'last-quarter' },
+  timeout: 30000,
+  resultSize: 1500
+}
+```
+
+### Inverse (Passive)
+```typescript
+const questioners = await db.related($.Information, $.queriedBy, $.User)
+```
+
+## Usage Examples
+
+**Database Management:**
+- Querying customer records for specific information
+- Searching transaction histories
+- Retrieving product inventory data
+- Requesting employee records
+
+**Customer Service:**
+- Asking clarifying questions to understand needs
+- Querying account information
+- Requesting status updates
+- Seeking missing information
+
+**Research and Analysis:**
+- Querying online databases for sources
+- Requesting historical data
+- Searching knowledge bases
+- Inquiring about specific cases
+
+**System Administration:**
+- Querying system logs for errors
+- Searching for configuration information
+- Requesting performance metrics
+- Investigating system issues
+
+## Related Verbs
+- ask - Requesting information or assistance
+- search - Looking for specific information
+- request - Asking for something formally
+- inquire - Asking questions to learn details

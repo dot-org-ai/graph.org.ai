@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: operate
+$context: https://verbs.org.ai
+name: operate
+canonicalForm: operate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Controlling and directing the functioning of machinery, equipment, systems, or organizations
+predicate: operates
+event: operated
+activity: operating
+actor: Operator
+object: Operation
+inverse: operatedBy
+---
+
+# Operate
+
+Controlling and directing the functioning of machinery, equipment, systems, or organizations to achieve desired outcomes.
+
+## O*NET Context
+
+Work activity focused on running, controlling, and directing the performance of machines, equipment, vehicles, or complex systems to accomplish work tasks or produce results.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Equipment.operate({ mode: 'production', parameters: { speed: 100 } })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Operator.operates.Machinery
+$.Technician.operates.System
+```
+
+### Event (Past Tense)
+```typescript
+on($.Equipment.operated, async (event) => {
+  await $.Log.record({ equipment: event.equipmentId, duration: event.duration })
+  await $.Maintenance.schedule({ basedOn: 'usage' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeOperation = $.Factory.operating.AssemblyLine
+console.log(`Currently operating: ${activeOperation.equipment}`)
+```
+
+### Role (Actor)
+```typescript
+const operator: $.Operator = await $.findAgent({ license: 'heavy-machinery' })
+await operator.runCycle({ duration: '8-hours' })
+```
+
+### Concept (Abstraction)
+```typescript
+const operation: $.Operation = {
+  operatorId: operator.id,
+  equipmentId: equipment.id,
+  startTime: now(),
+  targetOutput: 1000,
+  actualOutput: 0,
+  parameters: {}
+}
+```
+
+### Inverse (Passive)
+```typescript
+const operators = await db.related($.Equipment, $.operatedBy, $.Operator)
+```
+
+## Usage Examples
+
+**Manufacturing & Production:**
+- Operating industrial machinery and assembly equipment
+- Operating computerized manufacturing systems
+- Operating heavy equipment like forklifts and loaders
+- Operating production lines and conveyors
+
+**Transportation & Vehicles:**
+- Operating motor vehicles and commercial trucks
+- Operating aircraft, trains, or ships
+- Operating utility vehicles and equipment
+- Operating specialized transportation systems
+
+**Technology & Systems:**
+- Operating computer systems and networks
+- Operating data centers and servers
+- Operating telecommunications equipment
+- Operating security and surveillance systems
+
+## Related Verbs
+- control - Managing or regulating
+- manage - Directing and overseeing
+- run - Executing or carrying out
+- drive - Propelling or directing forward

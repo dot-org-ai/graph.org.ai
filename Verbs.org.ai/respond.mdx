@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: respond
+$context: https://verbs.org.ai
+name: respond
+canonicalForm: respond
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Reacting to or answering inquiries, requests, or communications from others
+predicate: responds
+event: responded
+activity: responding
+actor: Responder
+object: Response
+inverse: respondedTo
+---
+
+# Respond
+
+Reacting to or answering inquiries, requests, communications, or situations in work activities by providing appropriate replies or actions.
+
+## O*NET Context
+
+Work activity focused on answering questions, providing information, taking action in reaction to requests, and engaging in two-way communication with others.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Support.respond({ inquiry: ticket.id, message: 'We are investigating...' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Agent.responds.Query
+$.Team.responds.Emergency
+```
+
+### Event (Past Tense)
+```typescript
+on($.Request.responded, async (event) => {
+  await $.Ticket.update({ status: 'awaiting-feedback' })
+  await $.Log.record({ type: 'response-sent', timestamp: now() })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeResponses = $.CustomerService.responding.Inquiries
+console.log(`Handling ${activeResponses.count} active conversations`)
+```
+
+### Role (Actor)
+```typescript
+const responder: $.Responder = await $.findAgent({ role: 'support-agent' })
+responder.answerCustomer(query)
+```
+
+### Concept (Abstraction)
+```typescript
+const response: $.Response = {
+  requestId: inquiry.id,
+  message: 'Your question has been received',
+  sendTime: now(),
+  status: 'sent',
+  channel: 'email'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const inquiries = await db.related($.Question, $.respondedTo, $.Support)
+```
+
+## Usage Examples
+
+**Customer Communication:**
+- Responding to customer inquiries and complaints
+- Answering questions about products or services
+- Providing status updates on orders or requests
+- Offering assistance and guidance to customers
+
+**Emergency Response:**
+- Responding to emergency calls or alerts
+- Taking action in response to critical situations
+- Providing immediate assistance or intervention
+- Coordinating response efforts with team members
+
+**Administrative Tasks:**
+- Answering emails and messages from colleagues
+- Responding to requests for information or reports
+- Reacting to schedule changes or special requests
+- Providing feedback or approval when needed
+
+## Related Verbs
+- answer - Providing a reply to a question
+- react - Responding quickly to stimuli
+- reply - Sending a message in return
+- address - Dealing with something directly

@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: manufacture
+$context: https://verbs.org.ai
+name: manufacture
+canonicalForm: manufacture
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Produce goods through transformation of raw materials or components
+predicate: manufactures
+event: manufactured
+activity: manufacturing
+actor: Manufacturer
+object: Manufactured
+inverse: manufacturedBy
+---
+
+# Manufacture
+
+Producing goods through the transformation of raw materials, components, or parts into finished products using labor, machinery, and processes.
+
+## APQC Process Context
+
+Production process where organizations convert inputs through defined manufacturing processes to create products meeting quality and specification standards.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Production.manufacture({ design, materials, quantity })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Factory.manufactures.Product
+$.Organization.manufactures.Component
+```
+
+### Event (Past Tense)
+```typescript
+on($.Product.manufactured, async (event) => {
+  await $.Quality.inspect(event.product)
+  await $.Inventory.stock(event.product)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const production = $.Factory.manufacturing.Product
+```
+
+### Actor (Role)
+```typescript
+const manufacturer: $.Manufacturer = await $.findAgent({ role: 'production' })
+```
+
+### Object (Abstraction)
+```typescript
+const manufactured: $.Manufactured = {
+  productId: design.id,
+  batchNumber: 'BATCH-2025-001',
+  quantity: 1000,
+  startDate: now(),
+  completionDate: now(),
+  qualityStatus: 'passed',
+  status: 'completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const products = await db.related($.Product, $.manufacturedBy, $.Factory)
+```
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Produce and deliver products
+- Process: Produce/manufacture products
+
+## Business Rules
+
+- Manufacturing must follow approved specifications
+- Quality standards must be met during production
+- Production must be scheduled and planned
+- Raw materials must be available and verified
+- Finished goods must be inspected before release
+
+## Related Verbs
+- produce - Creating output from inputs
+- assemble - Combining components
+- process - Transforming through operations
+- inspect - Examining for quality
+- package - Preparing for delivery
+

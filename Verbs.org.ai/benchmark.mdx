@@ -1,0 +1,92 @@
+---
+$type: Verb
+$id: benchmark
+$context: https://verbs.org.ai
+name: benchmark
+canonicalForm: benchmark
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Compare performance against industry standards or best practices
+predicate: benchmarks
+event: benchmarked
+activity: benchmarking
+actor: Benchmarker
+object: Benchmark
+inverse: benchmarkedBy
+---
+
+# Benchmark
+
+Comparing organizational performance, processes, and practices against industry standards, competitors, or best-in-class organizations.
+
+## APQC Process Context
+
+Performance measurement and comparison activity that identifies performance gaps and improvement opportunities through comparison with external standards and peer organizations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Performance.benchmark({ process, peer, metrics })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.benchmarks.IndustryStandard
+$.Department.benchmarks.BestPractice
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.benchmarked, async (event) => {
+  await $.Analysis.compare(event.metrics)
+  await $.Strategy.identifyImprovements(event.gaps)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const evaluation = $.Organization.benchmarking.Performance
+```
+
+### Actor (Role)
+```typescript
+const benchmarker: $.Benchmarker = await $.findAgent({ expertise: 'performance' })
+```
+
+### Object (Abstraction)
+```typescript
+const benchmark: $.Benchmark = {
+  processId: process.id,
+  peers: [...companies],
+  metrics: { cycle: 5, cost: 100, quality: 98 },
+  gap: 'improvement opportunity identified',
+  status: 'completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const standards = await db.related($.Process, $.benchmarkedBy, $.Industry)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Measure and analyze organizational performance
+- Process: Conduct performance analysis and benchmarking
+
+## Business Rules
+
+- Benchmarking requires comparable data from peers
+- Metrics must be clearly defined and measurable
+- Comparison must account for contextual differences
+- Gaps should drive improvement initiatives
+
+## Related Verbs
+- measure - Quantifying performance
+- analyze - Examining data and results
+- compare - Evaluating differences
+- assess - Evaluating capability or performance
+- improve - Making enhancements based on findings
+

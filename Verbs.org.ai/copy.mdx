@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: copy
+$context: https://verbs.org.ai
+name: copy
+canonicalForm: copy
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To make a duplicate or reproduction of something; replicate or reproduce.
+predicate: copies
+event: copied
+activity: copying
+actor: Copier
+object: Copy
+inverse: copiedBy
+---
+
+# Copy
+
+The action of duplicating, replicating, or reproducing something to create an identical or near-identical version. Copy represents the creation of a reproduction.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.copy()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.copies.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.copied, async ({subject}) => {
+  // Handle copy event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.copying.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Copier}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Copy}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.copiedBy.{Subject}
+```

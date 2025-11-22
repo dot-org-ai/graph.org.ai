@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: create
+$context: https://verbs.org.ai
+name: create
+canonicalForm: create
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Creating a class-level instance
+predicate: creates
+event: created
+activity: creating
+actor: Creator
+object: Creation
+inverse: createdBy
+---
+
+# Create
+
+Creating a new class-level instance or bringing something into existence. The foundational operation for instantiating any entity in the system.
+
+## GS1 Context
+
+Business step marking the creation of a new trackable entity, such as an order, shipment, or inventory batch. This is the initiating action that begins most business processes in supply chain operations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.create({
+  customerId: customer.id,
+  items: lineItems,
+  timestamp: now()
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.System.creates.Orders
+$.User.creates.Documents
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.created, async (event) => {
+  await $.Notification.send({ recipient: event.customer })
+  await $.Fulfillment.schedule(event.items)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const production = $.Factory.creating.Units
+console.log(`Creating at rate of ${production.unitsPerHour} units/hour`)
+```
+
+### Role (Actor)
+```typescript
+const creator: $.Creator = $.User({ role: 'order_creator' })
+creator.submitNewOrder(orderData)
+```
+
+### Concept (Abstraction)
+```typescript
+const creation: $.Creation = {
+  entityId: entity.id,
+  entityType: 'Order',
+  createdAt: now(),
+  createdBy: user.id,
+  createdFrom: sourceEntity,
+  initialState: 'pending'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const orders = await db.related($.User, $.createdBy, $.Order)
+```
+
+## Usage Examples
+
+**Business Operations:**
+- User creates a new purchase order
+- System creates shipment from order
+- Warehouse creates picking list from order
+- Manager creates inventory adjustment
+- Application creates audit log entry
+
+**Data Management:**
+- Create customer account
+- Create product catalog entry
+- Create batch record for manufacturing
+- Create policy or contract document
+
+**Business Rules:**
+- Create must provide required fields
+- Create initializes entity in valid state
+- Create triggers downstream workflows
+- Create is immutable (cannot undo, only delete)
+- Create events are logged for audit trail
+
+## Related Verbs
+- delete - Remove permanently
+- commission - Assigning a unique identity to an object
+- establish - Create or set up (Schema.org equivalent)

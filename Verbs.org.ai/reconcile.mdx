@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: reconcile
+$context: https://verbs.org.ai
+name: reconcile
+canonicalForm: reconcile
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Verify that accounts or records match and resolve discrepancies
+predicate: reconciles
+event: reconciled
+activity: reconciling
+actor: Reconciler
+object: Reconciliation
+inverse: reconciledBy
+---
+
+# Reconcile
+
+Verifying that accounts, records, or systems match expected values and resolving any discrepancies through investigation and adjustment.
+
+## APQC Process Context
+
+Financial and operational control activity where organizations ensure internal records align with external documentation and identify and correct variances.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Accounting.reconcile({ account, externalStatement })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Finance.reconciles.Account
+$.Inventory.reconciles.Record
+```
+
+### Event (Past Tense)
+```typescript
+on($.Account.reconciled, async (event) => {
+  await $.Variance.analyze(event.differences)
+  await $.Finance.closeAccount(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const verification = $.Accounting.reconciling.Account
+```
+
+### Actor (Role)
+```typescript
+const reconciler: $.Reconciler = await $.findAgent({ role: 'accounting' })
+```
+
+### Object (Abstraction)
+```typescript
+const reconciliation: $.Reconciliation = {
+  accountId: account.id,
+  period: '2025-09',
+  internalBalance: 100000,
+  externalStatement: 100000,
+  variance: 0,
+  reconciliationDate: now(),
+  status: 'reconciled'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const accounts = await db.related($.Record, $.reconciledBy, $.Finance)
+```
+
+## APQC Process Category
+
+Category 4: Enable
+- Subcategory: Manage financial resources
+- Process: Manage accounting and financial closing
+
+## Business Rules
+
+- Reconciliation must occur at defined intervals
+- Internal and external records must be obtained
+- Differences must be investigated and explained
+- Adjustments must be documented and approved
+- Reconciliation records must be retained
+
+## Related Verbs
+- verify - Confirming accuracy
+- match - Comparing for alignment
+- analyze - Examining differences
+- adjust - Correcting discrepancies
+- close - Finalizing periods
+

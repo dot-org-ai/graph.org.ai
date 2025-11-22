@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: fulfill
+$context: https://verbs.org.ai
+name: fulfill
+canonicalForm: fulfill
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Complete orders and deliver products or services to customers
+predicate: fulfills
+event: fulfilled
+activity: fulfilling
+actor: Fulfiller
+object: Fulfillment
+inverse: fulfilledBy
+---
+
+# Fulfill
+
+Completing customer orders by picking, packing, and shipping products or delivering services within agreed timeframes and quality standards.
+
+## APQC Process Context
+
+Order-to-delivery process where organizations ensure customer requests are met completely and on time through coordinated warehouse, logistics, and service delivery activities.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.OrderManagement.fulfill({ order, items, destination })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.fulfills.Order
+$.ServiceProvider.fulfills.Request
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.fulfilled, async (event) => {
+  await $.Customer.confirmReceipt(event)
+  await $.Finance.recordRevenue(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const processing = $.Warehouse.fulfilling.Order
+```
+
+### Actor (Role)
+```typescript
+const fulfiller: $.Fulfiller = await $.findAgent({ role: 'fulfillment' })
+```
+
+### Object (Abstraction)
+```typescript
+const fulfillment: $.Fulfillment = {
+  orderId: order.id,
+  items: [...],
+  shipmentDate: now(),
+  estimatedDelivery: date,
+  trackingNumber: 'TRK-123456',
+  status: 'delivered',
+  signature: 'received'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const orders = await db.related($.Order, $.fulfilledBy, $.Warehouse)
+```
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Deliver products and services
+- Process: Fulfill customer orders
+
+## Business Rules
+
+- Fulfillment requires validated customer order
+- Items must be available or ordered
+- Quality must meet customer specifications
+- Delivery must occur within promised timeframe
+- Fulfillment completion must be confirmed
+
+## Related Verbs
+- order - Customer request initiation
+- pick - Selecting items from inventory
+- pack - Preparing shipment
+- dispatch - Sending shipment
+- deliver - Providing to customer
+- invoice - Billing for delivery
+

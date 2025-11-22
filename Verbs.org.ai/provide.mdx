@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: provide
+$context: https://verbs.org.ai
+name: provide
+canonicalForm: provide
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Supplying, furnishing, or making something available to someone
+predicate: provides
+event: provided
+activity: providing
+actor: Provider
+object: Provision
+inverse: providedBy
+---
+
+# Provide
+
+Supplying, furnishing, or making something available to someone or for a purpose.
+
+## O*NET Context
+
+Work activity focused on supplying services, resources, information, or goods to customers, clients, team members, or organizational needs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Service.provide({ offering: 'consulting', clients: ['enterprise', 'startup'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Vendor.provides.Materials
+$.Support.provides.Assistance
+$.Company.provides.Benefits
+```
+
+### Event (Past Tense)
+```typescript
+on($.Resource.provided, async (event) => {
+  await $.Recipient.acknowledge({ resource: event.details })
+  await $.Audit.log({ provision: event.id })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeProvision = $.Department.providing.Services
+console.log(`Currently serving: ${activeProvision.clientCount} clients`)
+```
+
+### Role (Actor)
+```typescript
+const provider: $.Provider = await $.findAgent({ expertise: 'service-delivery' })
+await provider.deliverService(client)
+```
+
+### Concept (Abstraction)
+```typescript
+const provision: $.Provision = {
+  itemType: 'service',
+  description: 'Technical support',
+  recipient: clientId,
+  terms: 'monthly-subscription',
+  startDate: date,
+  availability: '24/7'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suppliers = await db.related($.Service, $.providedBy, $.Vendor)
+```
+
+## Usage Examples
+
+**Customer Service:**
+- Providing technical support to customers
+- Offering product information and guidance
+- Delivering after-sales service
+- Providing training to users
+
+**Human Resources:**
+- Providing employee benefits and compensation
+- Offering professional development opportunities
+- Providing workplace accommodations
+- Delivering wellness programs
+
+**Supply Chain:**
+- Providing raw materials to manufacturers
+- Supplying finished goods to retailers
+- Providing logistics and distribution services
+- Offering inventory management
+
+**Professional Services:**
+- Providing consulting expertise
+- Offering legal or accounting services
+- Providing financial advisory services
+- Delivering customized solutions
+
+## Related Verbs
+- supply - Providing goods or services regularly
+- furnish - Providing or equipping with something
+- deliver - Bringing something to a destination
+- offer - Presenting something for acceptance

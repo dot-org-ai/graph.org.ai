@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: apply
+$context: https://verbs.org.ai
+name: apply
+canonicalForm: apply
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Submit a formal request or use something in practice; put into effect.
+predicate: applies
+event: applied
+activity: applying
+actor: Applicant
+object: Application
+inverse: appliedBy
+---
+
+# Apply
+
+The action of submitting a request, utilizing a method or technology, or putting knowledge or principles into practical use. Apply represents both formal petition and practical implementation.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.apply()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.applies.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.applied, async ({subject}) => {
+  // Handle application event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.applying.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Applicant}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Application}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.appliedBy.{Subject}
+```

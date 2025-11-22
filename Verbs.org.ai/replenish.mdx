@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: replenish
+$context: https://verbs.org.ai
+name: replenish
+canonicalForm: replenish
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Restock or refill inventory to maintain required levels
+predicate: replenishes
+event: replenished
+activity: replenishing
+actor: Replenisher
+object: Replenishment
+inverse: replenishedBy
+---
+
+# Replenish
+
+Restocking or refilling inventory levels to maintain adequate supplies for operations, sales, or customer service based on demand forecasts.
+
+## APQC Process Context
+
+Inventory management activity where organizations order and receive goods to maintain stock levels that support operational and customer service needs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Inventory.replenish({ sku, quantity, reorderPoint })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.replenishes.Stock
+$.Organization.replenishes.Supply
+```
+
+### Event (Past Tense)
+```typescript
+on($.Stock.replenished, async (event) => {
+  await $.Inventory.updateLevel(event.sku, event.quantity)
+  await $.Finance.recordPurchase(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const stocking = $.Warehouse.replenishing.Inventory
+```
+
+### Actor (Role)
+```typescript
+const replenisher: $.Replenisher = await $.findAgent({ role: 'inventory' })
+```
+
+### Object (Abstraction)
+```typescript
+const replenishment: $.Replenishment = {
+  sku: product.id,
+  quantityOrdered: 500,
+  reorderPoint: 100,
+  currentLevel: 50,
+  expectedDelivery: date,
+  supplier: vendor.id,
+  status: 'on-order'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const restocked = await db.related($.Stock, $.replenishedBy, $.Warehouse)
+```
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Manage inventory and fulfillment
+- Process: Manage inventory
+
+## Business Rules
+
+- Replenishment must be triggered at defined levels
+- Quantity must align with demand forecasts
+- Supplier must be reliable and timely
+- Stock-out situations must be prevented
+- Inventory records must be accurate
+
+## Related Verbs
+- order - Requesting goods
+- receive - Taking delivery
+- stock - Placing goods in inventory
+- manage - Overseeing inventory
+- forecast - Predicting future demand
+

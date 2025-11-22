@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: find
+$context: https://verbs.org.ai
+name: find
+canonicalForm: find
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Locate, discover, or obtain something that was sought; determine or establish the existence or location of.
+predicate: finds
+event: found
+activity: finding
+actor: Finder
+object: Finding
+inverse: foundBy
+---
+
+# Find
+
+The action of locating, discovering, or obtaining something that was being sought, or determining and establishing the existence, location, or identity of something. In the context of Schema.org Actions, find represents the successful discovery or location of an object or information.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.find()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.finds.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.found, async ({subject}) => {
+  // Handle finding event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.finding.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Finder}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Finding}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.foundBy.{Subject}
+```

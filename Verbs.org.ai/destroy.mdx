@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: destroy
+$context: https://verbs.org.ai
+name: destroy
+canonicalForm: destroy
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:destroying
+description: Permanently removing an object from use through destruction or disposal.
+predicate: destroys
+event: destroyed
+activity: destroying
+actor: Destroyer
+object: Destruction
+inverse: destroyedBy
+---
+
+# Destroy
+
+The action of permanently removing an object from use through destruction or disposal. In GS1 CBV Business Steps, destroying marks the final disposition of goods that are no longer usable or needed.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.destroy()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.destroys.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.destroyed, async ({subject}) => {
+  // Handle destruction event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.destroying.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Destroyer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Destruction}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.destroyedBy.{Subject}
+```

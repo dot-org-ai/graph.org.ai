@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: manage
+$context: https://verbs.org.ai
+name: manage
+canonicalForm: manage
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Directing, controlling, or overseeing activities, resources, or personnel to achieve organizational objectives
+predicate: manages
+event: managed
+activity: managing
+actor: Manager
+object: Management
+inverse: managedBy
+---
+
+# Manage
+
+Directing, controlling, or overseeing activities, resources, or personnel to achieve organizational objectives and ensure effective operations.
+
+## O*NET Context
+
+Work activity focused on coordinating people, resources, processes, and information to accomplish organizational goals. Includes planning, decision-making, delegation, monitoring, and adjustment of operations to maintain effectiveness and efficiency.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Project.manage({ scope: 'product-launch', timeline: '6-months', budget: 500000, stakeholders: [...] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.manages.Team
+$.Department.manages.Budget
+```
+
+### Event (Past Tense)
+```typescript
+on($.Initiative.managed, async (event) => {
+  await $.Report.generate({ initiative: event.initiativeId, performance: event.metrics })
+  await $.Stakeholder.notify({ status: 'management-complete', outcome: event.result })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeDirection = $.Executive.managing.StrategicInitiative
+console.log(`Currently managing: ${activeDirection.name} - Progress: ${activeDirection.percentComplete}%`)
+```
+
+### Role (Actor)
+```typescript
+const manager: $.Manager = await $.findAgent({ level: 'senior', expertise: 'project-management' })
+manager.overseeDelivery(initiative)
+```
+
+### Concept (Abstraction)
+```typescript
+const management: $.Management = {
+  managerId: person.id,
+  entityId: project.id,
+  scope: 'comprehensive',
+  responsibilities: ['planning', 'monitoring', 'reporting'],
+  startDate: now(),
+  endDate: futureDate(),
+  performance: 'on-track'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const supervisors = await db.related($.Team, $.managedBy, $.Manager)
+```
+
+## Usage Examples
+
+**People Management:**
+- Manager manages team of developers with clear goals and accountability
+- Supervisor manages workforce scheduling and resource allocation
+- Director manages department budget and strategic initiatives
+- Coach manages athlete performance and development
+
+**Project Management:**
+- Project manager manages complex product development from conception to launch
+- Program director manages portfolio of related initiatives
+- Product manager manages feature development and roadmap
+- Operations manager manages daily business processes
+
+**Resource Management:**
+- Finance manager manages organizational budget and expenditures
+- Inventory manager manages warehouse stock levels and ordering
+- HR manager manages talent acquisition, development, and retention
+- IT manager manages technology infrastructure and systems
+
+**Performance Management:**
+- Manager manages team performance through evaluation and feedback
+- Executive manages organizational strategy and long-term direction
+- Coordinator manages event logistics and vendor relationships
+- Administrator manages office operations and administrative functions
+
+## Related Verbs
+- direct - Giving guidance or instruction
+- oversee - Supervising or monitoring
+- coordinate - Organizing activities together
+- control - Regulating or restraining

@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: review
+$context: https://verbs.org.ai
+name: review
+canonicalForm: review
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Examining or assessing materials, documents, or work to verify quality and accuracy
+predicate: reviews
+event: reviewed
+activity: reviewing
+actor: Reviewer
+object: Review
+inverse: reviewedBy
+---
+
+# Review
+
+Examining or assessing materials, documents, work, or performance to verify quality, accuracy, compliance, and suitability for intended use.
+
+## O*NET Context
+
+Work activity focused on examining information, documents, or work products to check for correctness, quality, completeness, and adherence to standards or policies.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.QA.review({ content: document, criteria: ['accuracy', 'completeness', 'compliance'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.reviews.Report
+$.Auditor.reviews.Process
+```
+
+### Event (Past Tense)
+```typescript
+on($.Document.reviewed, async (event) => {
+  await $.Status.update({ approval: event.approved })
+  await $.Archive.store({ review: event })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeReview = $.QualityControl.reviewing.Batch
+console.log(`Currently reviewing: ${activeReview.itemCount} items`)
+```
+
+### Role (Actor)
+```typescript
+const reviewer: $.Reviewer = await $.findAgent({ role: 'quality-assurance' })
+reviewer.assessDeliverables(products)
+```
+
+### Concept (Abstraction)
+```typescript
+const review: $.Review = {
+  documentId: doc.id,
+  reviewer: user.id,
+  findings: ['minor typo', 'calculation error'],
+  approved: false,
+  completedAt: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const documents = await db.related($.Paper, $.reviewedBy, $.Editor)
+```
+
+## Usage Examples
+
+**Quality Assurance:**
+- Reviewing code for quality and best practices
+- Examining products for defects or inconsistencies
+- Checking documents for accuracy and completeness
+- Verifying compliance with standards or regulations
+
+**Performance Management:**
+- Reviewing employee work and performance
+- Assessing project deliverables and outcomes
+- Evaluating proposal or application submissions
+- Examining test results and data quality
+
+**Administrative Oversight:**
+- Reviewing budgets and expenditures
+- Examining contracts before execution
+- Checking reports for accuracy and clarity
+- Assessing training materials or procedures
+
+## Related Verbs
+- examine - Inspecting something in detail
+- inspect - Looking at something carefully
+- evaluate - Assessing value or quality
+- assess - Judging or analyzing something

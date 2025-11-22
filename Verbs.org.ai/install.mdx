@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: install
+$context: https://verbs.org.ai
+name: install
+canonicalForm: install
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Putting equipment or products into service or operational use
+predicate: installs
+event: installed
+activity: installing
+actor: Installer
+object: Installation
+inverse: installedBy
+---
+
+# Install
+
+Putting equipment or products into service or operational use.
+
+## GS1 Context
+
+Business step for formally installing equipment, systems, or products into operational service. This applies to manufacturing equipment, retail fixtures, customer installations, or any scenario where goods transition from inventory to active use.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Equipment.install({ location: 'Floor-2A', technician: techId, timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Customer.installs.Equipment
+$.Retailer.installs.PointOfSale
+```
+
+### Event (Past Tense)
+```typescript
+on($.Equipment.installed, async (event) => {
+  await $.Inventory.transfer({ from: 'incoming', to: 'active-assets' })
+  await $.Maintenance.schedule({ equipmentId: event.id, interval: '90d' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const deployment = $.Store.installing.CheckoutSystems
+console.log(`Currently installing: ${deployment.count} stations`)
+```
+
+### Role (Actor)
+```typescript
+const installer: $.Installer = await $.findAgent({ skills: 'equipment-setup' })
+await installer.commission(equipment, location)
+```
+
+### Concept (Abstraction)
+```typescript
+const installation: $.Installation = {
+  equipmentId: equipment.id,
+  location: location,
+  timestamp: now(),
+  technician: techId,
+  commissioning: { verified: true, testedAt: now() }
+}
+```
+
+### Inverse (Passive)
+```typescript
+const installers = await db.related($.Equipment, $.installedBy, $.TechTeam)
+```
+
+## Usage Examples
+
+**Equipment Installation:**
+- Manufacturing line equipment installation
+- Retail POS system deployment
+- Customer equipment setup and commissioning
+- Facility fixture installation
+
+**Business Rules:**
+- Installation requires completion of training for equipment
+- Equipment cannot be used until installation is verified
+- Installation completion triggers warranty activation
+- Installation location must be documented for tracking
+
+## Related Verbs
+- commission - Assigning a unique identity to equipment
+- repair - Fixing or servicing installed equipment
+- remove - Taking equipment out of service
+- stage - Preparing equipment for installation

@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: certify
+$context: https://verbs.org.ai
+name: certify
+canonicalForm: certify
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Formally attest or validate that standards are met
+predicate: certifies
+event: certified
+activity: certifying
+actor: Certifier
+object: Certification
+inverse: certifiedBy
+---
+
+# Certify
+
+Formally attesting, validating, or confirming that products, processes, people, or systems meet established standards or requirements.
+
+## APQC Process Context
+
+Quality assurance and validation activity where qualified parties formally verify and document that something meets specified criteria, standards, or requirements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Quality.certify({ subject, standard, evidence })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Auditor.certifies.Process
+$.ExternalBody.certifies.Product
+```
+
+### Event (Past Tense)
+```typescript
+on($.System.certified, async (event) => {
+  await $.Certificate.issue(event.subject, event.standard)
+  await $.Registry.record(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const validation = $.Organization.certifying.Compliance
+```
+
+### Actor (Role)
+```typescript
+const certifier: $.Certifier = await $.findAgent({ authorization: 'ISO9001' })
+```
+
+### Object (Abstraction)
+```typescript
+const certification: $.Certification = {
+  subjectId: process.id,
+  standard: 'ISO 9001:2015',
+  expiryDate: futureDate,
+  certificateNumber: 'C-2025-001',
+  status: 'valid'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const certified = await db.related($.Process, $.certifiedBy, $.AuditingBody)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop and manage enterprise compliance
+- Process: Manage compliance and certifications
+
+## Business Rules
+
+- Certification requires independent assessment
+- Certifier must have proper credentials and authority
+- Certification has defined validity period
+- Non-compliance requires corrective action
+- Certification status must be maintained and monitored
+
+## Related Verbs
+- audit - Examining for compliance
+- verify - Confirming accuracy or compliance
+- validate - Testing against requirements
+- approve - Authorizing and accepting
+- control - Maintaining standards
+

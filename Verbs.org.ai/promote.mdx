@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: promote
+$context: https://verbs.org.ai
+name: promote
+canonicalForm: promote
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Advancing someone's career position or publicizing and encouraging the adoption of something
+predicate: promotes
+event: promoted
+activity: promoting
+actor: Promoter
+object: Promotion
+inverse: promotedBy
+---
+
+# Promote
+
+Advancing someone's career position or publicizing, encouraging the adoption, support, or awareness of something.
+
+## O*NET Context
+
+Work activity focused on marketing products or services, advocating for ideas, or advancing employees to higher positions within an organization.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Marketing.promote({ product: 'service', audience: 'target-market', channels: ['digital', 'traditional'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.promotes.Employee
+$.Company.promotes.Brand
+```
+
+### Event (Past Tense)
+```typescript
+on($.Employee.promoted, async (event) => {
+  await $.Announcement.send({ audience: 'organization', newTitle: event.newTitle })
+  await $.Compensation.update({ newSalary: event.newSalary })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePromotion = $.Team.promoting.Campaign
+console.log(`Currently promoting: ${activePromotion.reachEstimate} potential customers`)
+```
+
+### Role (Actor)
+```typescript
+const promoter: $.Promoter = await $.findAgent({ expertise: 'marketing-communications' })
+await promoter.launchCampaign(strategy)
+```
+
+### Concept (Abstraction)
+```typescript
+const promotion: $.Promotion = {
+  subjectId: product.id,
+  type: 'marketing',
+  targets: [],
+  channels: [],
+  budget: 0,
+  timeline: { start: date, end: date },
+  objectives: []
+}
+```
+
+### Inverse (Passive)
+```typescript
+const campaigns = await db.related($.Brand, $.promotedBy, $.Marketing)
+```
+
+## Usage Examples
+
+**Career Advancement:**
+- Promoting employees to management positions
+- Promoting managers to leadership roles
+- Promoting team members for increased responsibilities
+- Promoting internal candidates to open positions
+
+**Product Marketing:**
+- Promoting new products to market
+- Promoting brand awareness
+- Promoting product features and benefits
+- Promoting sales and special offers
+
+**Communications and Advocacy:**
+- Promoting organizational initiatives
+- Promoting health and safety awareness
+- Promoting compliance and policies
+- Promoting company culture and values
+
+**Sales Promotion:**
+- Promoting special pricing or bundles
+- Promoting loyalty programs
+- Promoting customer referral programs
+- Promoting seasonal campaigns
+
+## Related Verbs
+- market - Promoting and selling products
+- advance - Moving forward or improving
+- publicize - Making widely known
+- advocate - Supporting or recommending

@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: unpack
+$context: https://verbs.org.ai
+name: unpack
+canonicalForm: unpack
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:unpacking
+description: Removing goods or materials from packaging or containers
+predicate: unpacks
+event: unpacked
+activity: unpacking
+actor: Unpacker
+object: Unpacking
+inverse: unpackedBy
+---
+
+# Unpack
+
+GS1 CBV Business Step: Removing goods or materials from packaging or containers. This business step represents the opening, unwrapping, and removal of products from their packaging materials or shipping containers.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ReceivingArea.unpack(package)
+```
+
+### Predicate (Relationship)
+```typescript
+$.Worker.unpacks.Package
+```
+
+### Event (Past Tense)
+```typescript
+on($.Box.unpacked, async ({contents, location}) => {
+  // Handle unpacking event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Operation.unpacking.Contents
+```
+
+### Role (Actor)
+```typescript
+$.Unpacker
+```
+
+### Concept (Abstraction)
+```typescript
+$.Unpacking
+```
+
+### Inverse (Passive)
+```typescript
+$.Product.unpackedBy.Worker
+```

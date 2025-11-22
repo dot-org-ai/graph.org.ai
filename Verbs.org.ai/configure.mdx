@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: configure
+$context: https://verbs.org.ai
+name: configure
+canonicalForm: configure
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To arrange, set up, or adjust components or settings to prepare for use or operation.
+predicate: configures
+event: configured
+activity: configuring
+actor: Configurator
+object: Configuration
+inverse: configuredBy
+---
+
+# Configure
+
+The action of setting up, arranging, or adjusting elements to achieve a desired state or operational mode. This semantic form encompasses system setup, parameter adjustment, and component arrangement.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.configure()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.configures.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.configured, async ({subject}) => {
+  // Handle configured event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.configuring.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Configurator
+```
+
+### Concept (Abstraction)
+```typescript
+$.Configuration
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.configuredBy.{Subject}
+```
+
+## Usage Context
+
+The "configure" action applies to various domains:
+- Systems administration: servers, networks, applications
+- Software setup: preferences, options, integrations
+- Hardware assembly: devices, components, peripherals
+- Deployment: environments, features, parameters

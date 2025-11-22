@@ -1,0 +1,167 @@
+---
+$type: Verb
+$id: stock
+$context: https://verbs.org.ai
+name: stock
+canonicalForm: stock
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:stocking
+description: Placing goods into storage or inventory location
+predicate: stocks
+event: stocked
+activity: stocking
+actor: Stocker
+object: Stocking
+inverse: stockedBy
+---
+
+# Stock
+
+GS1 CBV Business Step: Placing goods into storage or inventory location.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Warehouse.stock()
+```
+
+### Predicate (Relationship)
+```typescript
+$.WarehouseWorker.stocks.Shelf
+```
+
+### Event (Past Tense)
+```typescript
+on($.Inventory.stocked, async ({subject}) => {
+  // Handle stocking completion event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.DistributionCenter.stocking.Products
+```
+
+### Role (Actor)
+```typescript
+$.Stocker
+```
+
+### Concept (Abstraction)
+```typescript
+$.Stocking
+```
+
+### Inverse (Passive)
+```typescript
+$.Shelf.stockedBy.WarehouseWorker
+```
+
+## Context
+
+In warehouse and inventory management, stocking is the process of placing goods into storage locations:
+
+- **Receiving stocking**: Placing newly received items into storage
+- **Shelf stocking**: Placing items on retail shelves
+- **Bin stocking**: Placing items in storage bins or locations
+- **Replenishment**: Refilling storage locations with fresh inventory
+- **Inventory organization**: Arranging items for efficient retrieval
+- **FIFO management**: Rotating stock for first-in-first-out practices
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record stocking operation
+const stockingEvent = await $.Event.create({
+  type: 'stocking',
+  bizStep: 'urn:epcglobal:cbv:bizstep:stocking',
+  epcList: ['urn:epc:id:sgtin:product-sku-123'],
+  readPoint: 'urn:epc:id:sgln:warehouse-location-id',
+  bizLocation: 'urn:epc:id:sgln:warehouse-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'completed'
+})
+
+// Create stocking record
+const stockingRecord = await $.StockingOperation.create({
+  stockingId: 'stock-20250129-001',
+  warehouseId: 'warehouse-1',
+  items: [
+    { sku: 'product-001', quantity: 100, bin: 'A-12-3', expiry: '2026-01-15' },
+    { sku: 'product-002', quantity: 50, bin: 'B-08-5', expiry: '2025-06-30' }
+  ],
+  stocker: 'worker-id-001',
+  supervisor: 'supervisor-id-001',
+  timestamp: new Date().toISOString(),
+  status: 'completed'
+})
+
+// Update inventory with stocking information
+const updatedInventory = await $.Inventory.stock({
+  warehouseId: 'warehouse-1',
+  items: [
+    { sku: 'product-001', quantity: 100, location: 'A-12-3' },
+    { sku: 'product-002', quantity: 50, location: 'B-08-5' }
+  ]
+})
+
+// Update location availability
+const locationUpdate = await $.Location.update({
+  locationId: 'A-12-3',
+  itemSku: 'product-001',
+  quantityStocked: 100,
+  lastRestockDate: new Date().toISOString()
+})
+
+// Track stocking productivity
+const productivityMetric = await $.Metric.create({
+  type: 'stocking_productivity',
+  stocker: 'worker-id-001',
+  date: new Date().toISOString().split('T')[0],
+  itemsStocked: 150,
+  timeSpent: 45, // minutes
+  itemsPerHour: (150 / (45 / 60))
+})
+
+// Emit stocking completion notification
+on($.Inventory.stocked, async (event) => {
+  await send($.Notification.send, {
+    type: 'stocking_complete',
+    stockingId: event.stockingId,
+    warehouseId: event.warehouseId,
+    itemsStocked: event.items.length,
+    totalUnits: event.totalQuantity
+  })
+})
+
+// Query stocked inventory
+const stockedItems = await db.list($.Stock, {
+  filter: {
+    warehouseId: 'warehouse-1',
+    lastStockingDate: { $gte: Date.now() - 24 * 60 * 60 * 1000 }
+  }
+})
+
+// Monitor inventory levels
+const lowStockAlert = await $.Alert.create({
+  type: 'low_stock',
+  sku: 'product-001',
+  currentQuantity: 10,
+  minimumThreshold: 50,
+  location: 'A-12-3',
+  recommendedRestockQuantity: 200
+})
+```
+
+## Related Verbs
+
+- **receive**: Receiving items before stocking
+- **unpack**: Unpacking items before stocking
+- **pick**: Picking items from stock for orders
+- **pack**: Packaging items from stock
+- **store**: Storing items (similar but often used for long-term storage)

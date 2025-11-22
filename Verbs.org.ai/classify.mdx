@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: classify
+$context: https://verbs.org.ai
+name: classify
+canonicalForm: classify
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Assigning a category or classification to an object
+predicate: classifies
+event: classified
+activity: classifying
+actor: Classifier
+object: Classification
+inverse: classifiedBy
+---
+
+# Classify
+
+Schema.org Action: Assigning a category or classification to an object.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.classify()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.classifies.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.classified, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.classifying.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Classifier
+```
+
+### Concept (Abstraction)
+```typescript
+$.Classification
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.classifiedBy.{Subject}
+```

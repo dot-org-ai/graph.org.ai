@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: request
+$context: https://verbs.org.ai
+name: request
+canonicalForm: request
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Asking for or formally soliciting something needed for work activities
+predicate: requests
+event: requested
+activity: requesting
+actor: Requester
+object: Request
+inverse: requestedBy
+---
+
+# Request
+
+Asking for or formally soliciting something needed for work activities, such as information, resources, assistance, or approval.
+
+## O*NET Context
+
+Work activity focused on asking for or seeking needed items, information, support, or authorization to accomplish job tasks and responsibilities.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Employee.request({ item: 'additional resources', priority: 'high' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.requests.Budget
+$.Team.requests.Support
+```
+
+### Event (Past Tense)
+```typescript
+on($.Resource.requested, async (event) => {
+  await $.Manager.approve({ requestId: event.id })
+  await $.Notification.send({ type: 'request-submitted' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const pendingRequests = $.Department.requesting.Equipment
+console.log(`Requesting: ${pendingRequests.count} items`)
+```
+
+### Role (Actor)
+```typescript
+const requester: $.Requester = await $.findAgent({ role: 'employee' })
+requester.submitRequest(form)
+```
+
+### Concept (Abstraction)
+```typescript
+const request: $.Request = {
+  subjectId: employee.id,
+  itemRequested: 'office supplies',
+  urgency: 'normal',
+  status: 'pending',
+  submittedAt: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const recipients = await db.related($.Document, $.requestedBy, $.Department)
+```
+
+## Usage Examples
+
+**Business Operations:**
+- Requesting approval for expenditures or purchases
+- Asking for additional staffing or resources
+- Submitting requests for information or reports
+- Soliciting feedback or input from stakeholders
+
+**Administrative Tasks:**
+- Requesting leave or time off
+- Asking for schedule adjustments
+- Submitting access requests for systems or facilities
+- Requesting training or professional development
+
+**Customer Service:**
+- Requesting clarification from customers
+- Asking for additional information to process requests
+- Soliciting customer preferences or requirements
+- Requesting updates on order status
+
+## Related Verbs
+- ask - Posing a question or inquiry
+- solicit - Seeking or requesting something actively
+- demand - Insisting on something firmly
+- require - Stating what is necessary

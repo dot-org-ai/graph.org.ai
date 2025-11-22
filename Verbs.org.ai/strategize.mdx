@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: strategize
+$context: https://verbs.org.ai
+name: strategize
+canonicalForm: strategize
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Develop comprehensive plans and strategic direction for operations
+predicate: strategizes
+event: strategized
+activity: strategizing
+actor: Strategist
+object: Strategy
+inverse: strategizedBy
+---
+
+# Strategize
+
+Developing comprehensive strategic plans and directional frameworks that guide organizational decision-making and resource allocation.
+
+## APQC Process Context
+
+Strategic planning activity where senior leadership defines organizational objectives, competitive positioning, and approaches to achieve long-term goals.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Leadership.strategize({ objectives, markets, timeline })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Leadership.strategizes.Direction
+$.Organization.strategizes.Approach
+```
+
+### Event (Past Tense)
+```typescript
+on($.Plan.strategized, async (event) => {
+  await $.Budget.allocateBasedOnStrategy(event)
+  await $.Organization.alignToStrategy(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const planning = $.Leadership.strategizing.Direction
+```
+
+### Actor (Role)
+```typescript
+const strategist: $.Strategist = await $.findAgent({ role: 'strategy' })
+```
+
+### Object (Abstraction)
+```typescript
+const strategy: $.Strategy = {
+  organizationId: company.id,
+  period: '2025-2027',
+  objectives: [...],
+  targets: {...},
+  initiatives: [...],
+  approvalDate: now(),
+  status: 'approved'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const strategies = await db.related($.Direction, $.strategizedBy, $.Leadership)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop organizational vision and strategy
+- Process: Develop and implement organizational strategy
+
+## Business Rules
+
+- Strategy must align with mission and vision
+- Stakeholder input must be obtained
+- Feasibility must be assessed
+- Resources must be allocated
+- Progress must be monitored
+
+## Related Verbs
+- plan - Establishing detailed approaches
+- define - Setting boundaries and specifications
+- analyze - Examining for insights
+- forecast - Predicting future conditions
+- monitor - Tracking progress and performance
+

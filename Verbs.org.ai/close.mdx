@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: close
+$context: https://verbs.org.ai
+name: close
+canonicalForm: close
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To move or cause to move into a position where something is no longer open; to shut or seal.
+predicate: closes
+event: closed
+activity: closing
+actor: Closer
+object: Closure
+inverse: closedBy
+---
+
+# Close
+
+The action of closing or shutting something, moving it into a sealed or secure state. This semantic form encompasses actions that result in something becoming shut, sealed, terminated, or no longer accessible.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.close()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.closes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.closed, async ({subject}) => {
+  // Handle closed event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.closing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Closer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Closure
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.closedBy.{Subject}
+```
+
+## Usage Context
+
+The "close" action applies to various domains:
+- Physical objects: doors, windows, containers
+- Digital systems: applications, connections, sessions
+- Business processes: accounts, orders, cases
+- Temporal boundaries: meetings, events, periods

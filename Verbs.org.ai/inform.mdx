@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: inform
+$context: https://verbs.org.ai
+name: inform
+canonicalForm: inform
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Providing information, knowledge, or communication to other people or systems
+predicate: informs
+event: informed
+activity: informing
+actor: Informer
+object: Information
+inverse: informedBy
+---
+
+# Inform
+
+Communicating knowledge, facts, or information to others in order to enhance understanding or facilitate decision-making.
+
+## O*NET Context
+
+Work activity focused on conveying information, updates, or knowledge to colleagues, clients, or stakeholders to ensure shared understanding and informed decision-making.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Team.inform({ recipients: 'all-stakeholders', content: message, priority: 'high' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.informs.Team
+$.Communication.informs.Decision
+```
+
+### Event (Past Tense)
+```typescript
+on($.Stakeholder.informed, async (event) => {
+  await $.AuditLog.record({ action: 'informed', timestamp: event.timestamp })
+  await $.Notification.acknowledge({ status: 'received' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInforming = $.Manager.informing.DirectReports
+console.log(`Currently informing: ${activeInforming.scope}`)
+```
+
+### Role (Actor)
+```typescript
+const informer: $.Informer = await $.findAgent({ role: 'communicator' })
+informer.briefTeam(updates)
+```
+
+### Concept (Abstraction)
+```typescript
+const information: $.Information = {
+  subjectId: project.id,
+  content: details,
+  recipients: audience,
+  deliveryChannel: 'email',
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const senders = await db.related($.Team, $.informedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Internal Communication:**
+- Informing team members of policy changes
+- Informing management of project status
+- Informing stakeholders of risks or issues
+- Providing regular briefings or updates
+
+**External Communication:**
+- Informing customers of service changes
+- Informing clients of project progress
+- Informing regulatory bodies of compliance status
+- Sending notifications to partners
+
+**Knowledge Transfer:**
+- Informing staff of new procedures
+- Briefing team on industry developments
+- Sharing best practices and lessons learned
+- Educating others about system changes
+
+## Related Verbs
+- communicate - Exchanging information in both directions
+- explain - Making something clear or understandable
+- educate - Teaching knowledge or skills
+- present - Formally sharing information

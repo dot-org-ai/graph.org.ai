@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: assess
+$context: https://verbs.org.ai
+name: assess
+canonicalForm: assess
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Evaluating or determining the nature, value, or extent of something through examination
+predicate: assesses
+event: assessed
+activity: assessing
+actor: Assessor
+object: Assessment
+inverse: assessedBy
+---
+
+# Assess
+
+Evaluating or determining the nature, value, quality, extent, or impact of something through systematic examination and judgment.
+
+## O*NET Context
+
+Work activity focused on evaluating performance, capabilities, risks, or conditions to make informed decisions or recommendations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Employee.assess({ criteria: ['performance', 'competence', 'potential'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.assesses.Performance
+$.Auditor.assesses.Risk
+```
+
+### Event (Past Tense)
+```typescript
+on($.Product.assessed, async (event) => {
+  await $.Report.create({ rating: event.rating, details: event.findings })
+  await $.Stakeholder.notify({ assessment: event.result })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const currentAssessment = $.Team.assessing.ProjectRisk
+console.log(`Currently assessing: ${currentAssessment.scope}`)
+```
+
+### Role (Actor)
+```typescript
+const assessor: $.Assessor = await $.findAgent({ qualifications: 'certified-evaluator' })
+assessor.evaluatePerformance(employee)
+```
+
+### Concept (Abstraction)
+```typescript
+const assessment: $.Assessment = {
+  subjectId: employee.id,
+  evaluationType: 'performance-review',
+  criteria: ['skills', 'productivity', 'teamwork'],
+  rating: 'exceeds-expectations',
+  timestamp: now(),
+  reviewer: user.id
+}
+```
+
+### Inverse (Passive)
+```typescript
+const evaluators = await db.related($.Employee, $.assessedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Performance Evaluation:**
+- Assessing employee performance against objectives
+- Evaluating student learning and progress
+- Rating product quality and compliance
+- Measuring project success
+
+**Risk Assessment:**
+- Assessing financial risks in investments
+- Evaluating security vulnerabilities
+- Assessing operational risks
+- Determining compliance risk levels
+
+**Capability Assessment:**
+- Assessing technical skills of candidates
+- Evaluating team capabilities
+- Determining readiness for deployment
+- Assessing organizational maturity
+
+## Related Verbs
+- evaluate - Forming judgment about worth or value
+- analyze - Examining in detail
+- examine - Inspecting closely
+- measure - Determining size, quantity, or degree
