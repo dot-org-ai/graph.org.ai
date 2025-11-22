@@ -33,9 +33,13 @@ async function setup() {
 
     // Create things table with JSON field
     console.log('📊 Creating things table...')
+
+    // Drop if exists to allow clean rebuild
+    await client.command({ query: 'DROP TABLE IF EXISTS mdxdb.things' })
+
     await client.command({
       query: `
-        CREATE TABLE IF NOT EXISTS mdxdb.things
+        CREATE TABLE mdxdb.things
         (
           url String,
           ns String,
@@ -57,9 +61,13 @@ async function setup() {
 
     // Create relationships table
     console.log('🔗 Creating relationships table...')
+
+    // Drop if exists to allow clean rebuild
+    await client.command({ query: 'DROP TABLE IF EXISTS mdxdb.relationships' })
+
     await client.command({
       query: `
-        CREATE TABLE IF NOT EXISTS mdxdb.relationships
+        CREATE TABLE mdxdb.relationships
         (
           from String,
           predicate String,
@@ -77,9 +85,13 @@ async function setup() {
 
     // Create searches table with vector similarity index
     console.log('🔍 Creating searches table with vector index...')
+
+    // Drop if exists to allow clean rebuild
+    await client.command({ query: 'DROP TABLE IF EXISTS mdxdb.searches' })
+
     await client.command({
       query: `
-        CREATE TABLE IF NOT EXISTS mdxdb.searches
+        CREATE TABLE mdxdb.searches
         (
           url String,
           text String,

@@ -6,31 +6,49 @@
  * Reads from source.db and creates a normalized view where all URLs follow:
  * https://[ontology].org.ai/[Name]
  *
+ * Usage:
+ *   tsx .scripts/build-things-db.ts [storage-backend]
+ *
+ * Storage backends:
+ *   sqlite (default) - Store in SQLite database
+ *   clickhouse       - Store in ClickHouse database
+ *
  * For example:
  * - schema:Person -> https://schema.org.ai/Person
- * - onet occupation 11-1011.00 -> https://onet.org.ai/Occupation/11-1011.00
- * - unspsc commodity 10101501 -> https://unspsc.org.ai/Commodity/10101501
+ * - onet occupation 11-1011.00 -> https://occupations.org.ai/ChiefExecutives
+ * - unspsc commodity 10101501 -> https://products.org.ai/Cats
  */
 
 import Database from 'better-sqlite3'
 import { drizzle } from 'drizzle-orm/better-sqlite3'
 import * as schema from '../.mdxdb/schema.js'
 import type { NewThing, NewRelationship } from '../.mdxdb/schema.js'
+import { createStorage, type StorageBackend } from '../.mdxdb/storage.js'
 
-console.log('🚀 Building things.db from source.db...')
+// Get storage backend from CLI args
+const storageBackend = (process.argv[2] || 'sqlite') as StorageBackend
+
+console.log('🚀 Building normalized things database...')
+console.log(`📦 Storage backend: ${storageBackend}\n`)
 
 // Open source.db for reading
 const sourceDb = new Database('.mdxdb/source.db', { readonly: true })
 const source = drizzle(sourceDb, { schema })
 
-// Create things.db for writing
-const thingsDb = new Database('.mdxdb/things.db')
-thingsDb.pragma('journal_mode = WAL')
-const things = drizzle(thingsDb, { schema })
+// Create storage adapter
+const storage = createStorage(storageBackend)
 
-// Import migrations
-import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
-migrate(things, { migrationsFolder: '.mdxdb/migrations' })
+// If using SQLite, run migrations
+if (storageBackend === 'sqlite') {
+  const thingsDb = new Database('.mdxdb/things.db')
+  thingsDb.pragma('journal_mode = WAL')
+  const things = drizzle(thingsDb, { schema })
+
+  import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
+  migrate(things, { migrationsFolder: '.mdxdb/migrations' })
+
+  thingsDb.close()
+}
 
 /**
  * Convert string to TitleCase (remove spaces, capitalize words)
@@ -158,15 +176,15 @@ async function migrateThings(urlMapping: Map<string, string>) {
     })
   }
 
-  // Batch insert
+  // Batch insert using storage adapter
   const CHUNK_SIZE = 1000
   for (let i = 0; i < normalizedThings.length; i += CHUNK_SIZE) {
     const chunk = normalizedThings.slice(i, i + CHUNK_SIZE)
     console.log(`  Inserting things ${i + 1}-${Math.min(i + CHUNK_SIZE, normalizedThings.length)}...`)
-    await things.insert(schema.things).values(chunk)
+    await storage.insertThings(chunk)
   }
 
-  console.log(`  ✅ Migrated ${normalizedThings.length} things`)
+  console.log(`  ✅ Migrated ${normalizedThings.length} things to ${storageBackend}`)
 }
 
 /**
@@ -197,15 +215,15 @@ async function migrateRelationships(urlMapping: Map<string, string>) {
     })
   }
 
-  // Batch insert
+  // Batch insert using storage adapter
   const CHUNK_SIZE = 1000
   for (let i = 0; i < normalizedRels.length; i += CHUNK_SIZE) {
     const chunk = normalizedRels.slice(i, i + CHUNK_SIZE)
     console.log(`  Inserting relationships ${i + 1}-${Math.min(i + CHUNK_SIZE, normalizedRels.length)}...`)
-    await things.insert(schema.relationships).values(chunk)
+    await storage.insertRelationships(chunk)
   }
 
-  console.log(`  ✅ Migrated ${normalizedRels.length} relationships`)
+  console.log(`  ✅ Migrated ${normalizedRels.length} relationships to ${storageBackend}`)
 }
 
 /**
@@ -227,29 +245,15 @@ async function main() {
     const endTime = Date.now()
     const duration = ((endTime - startTime) / 1000).toFixed(2)
 
-    console.log(`\n✅ things.db built successfully in ${duration}s!`)
-
-    // Show statistics
-    const thingsCount = things.select().from(schema.things).all().length
-    const relationshipsCount = things.select().from(schema.relationships).all().length
-
-    console.log(`\n📊 Statistics:`)
-    console.log(`   Things: ${thingsCount.toLocaleString()}`)
-    console.log(`   Relationships: ${relationshipsCount.toLocaleString()}`)
-
-    // Show sample URLs
-    console.log(`\n🔗 Sample normalized URLs:`)
-    const samples = things.select().from(schema.things).limit(10).all()
-    samples.forEach(thing => {
-      console.log(`   ${thing.ns}/${thing.type}/${thing.id} -> ${thing.url}`)
-    })
+    console.log(`\n✅ Normalized things database built successfully in ${duration}s!`)
+    console.log(`📦 Storage backend: ${storageBackend}`)
 
   } catch (error) {
-    console.error('❌ Error building things.db:', error)
+    console.error('❌ Error building normalized database:', error)
     process.exit(1)
   } finally {
     sourceDb.close()
-    thingsDb.close()
+    await storage.close()
   }
 }
 
