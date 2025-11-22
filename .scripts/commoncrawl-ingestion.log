@@ -1,0 +1,50 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+
+🌐 Ingesting Common Crawl Host-Level Hyperlink Graph
+
+   Dataset: cc-main-2025-aug-sep-oct
+   Nodes: 468.4 million hosts
+   Edges: 8.0 billion hyperlinks
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Downloading cc-main-2025-aug-sep-oct-host-vertices.paths.gz...
+✅ Downloaded
+
+📦 Extracting paths list...
+✅ Extracted
+
+   Found 16 data files
+
+📥 Downloading cc-main-2025-aug-sep-oct-host-edges.paths.gz...
+✅ Downloaded
+
+📦 Extracting paths list...
+✅ Extracted
+
+   Found 32 data files
+
+🔷 Processing vertices (nodes)...
+
+   [1/16] part-00000-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+
+❌ Error: Cannot parse input: expected '\n' before: 'aaa.1111\n1\taaa.11111\n2\taaa.115\n3\taaa.3\n4\taaa.5\n5\taaa.82\n6\taaa.aaa\n7\taaa.aaa.242.133\n8\taaa.aaa.aa.aa\n9\taaa.aaa.aaa\n10\taaa.aaa.aaa.aaa\n11\taaa.aaaa\n12\taaa.aaaaa\n13': (at row 1)
+: 
+Row 1:
+Column 0,   name: c1, type: String, parsed text: "0"
+Column 1,   name: c2, type: UInt64, ERROR: text "aaa.1111<LINE FEED>1" is not like UInt64
+
+: (in file/uri https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2025-aug-sep-oct/host/vertices/part-00000-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz): While executing ParallelParsingBlockInputFormat: While executing URL. 
+
+Stack trace:
+Error: Cannot parse input: expected '\n' before: 'aaa.1111\n1\taaa.11111\n2\taaa.115\n3\taaa.3\n4\taaa.5\n5\taaa.82\n6\taaa.aaa\n7\taaa.aaa.242.133\n8\taaa.aaa.aa.aa\n9\taaa.aaa.aaa\n10\taaa.aaa.aaa.aaa\n11\taaa.aaaa\n12\taaa.aaaaa\n13': (at row 1)
+: 
+Row 1:
+Column 0,   name: c1, type: String, parsed text: "0"
+Column 1,   name: c2, type: UInt64, ERROR: text "aaa.1111<LINE FEED>1" is not like UInt64
+
+: (in file/uri https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2025-aug-sep-oct/host/vertices/part-00000-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz): While executing ParallelParsingBlockInputFormat: While executing URL. 
+    at parseError (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client-common@1.14.0/node_modules/packages/client-common/src/error/error.ts:31:12)
+    at ClientRequest.onResponse (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client@1.14.0/node_modules/packages/client-node/src/connection/node_base_connection.ts:567:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

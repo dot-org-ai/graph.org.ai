@@ -1,0 +1,40 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+
+🌐 Ingesting Common Crawl Host-Level Edges (Hyperlinks)
+
+   Dataset: cc-main-2025-aug-sep-oct
+   Edges: 8.0 billion hyperlinks
+   Method: dictGet() lookups (no JOINs)
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Downloading cc-main-2025-aug-sep-oct-host-edges.paths.gz...
+✅ Downloaded
+
+📦 Extracting paths list...
+✅ Extracted
+
+   Found 32 data files
+
+🔶 Processing edges (relationships)...
+
+   [1/32] part-00000-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+      Inserted 0 edges (skipped 272,406,171 with missing domains)
+
+   [2/32] part-00001-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+      Inserted 0 edges (skipped 251,933,886 with missing domains)
+
+   [3/32] part-00002-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+      Inserted 0 edges (skipped 282,743,890 with missing domains)
+
+   [4/32] part-00003-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+      Inserted 0 edges (skipped 286,068,819 with missing domains)
+
+   [5/32] part-00004-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+      Inserted 0 edges (skipped 272,297,817 with missing domains)
+
+   [6/32] part-00005-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+      Inserted 0 edges (skipped 241,988,229 with missing domains)
+
+   [7/32] part-00006-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz

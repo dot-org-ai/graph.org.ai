@@ -1,0 +1,38 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+
+🌐 Wikidata → ClickHouse Cloud Ingestion
+
+📡 Connecting to: https://jr0jywmccu.us-east-1.aws.clickhouse.cloud:8443
+
+🔍 Testing connection...
+✅ Connected successfully
+
+📋 Found 23 SQL statements to execute
+
+
+📝 [1/23] Creating database...
+✅ [1/23] Creating database complete
+
+📝 [2/23] Creating things table...
+✅ [2/23] Creating things table complete
+
+📝 [3/23] Creating relationships table...
+✅ [3/23] Creating relationships table complete
+
+📝 [4/23] Creating searches table...
+✅ [4/23] Creating searches table complete
+
+📝 [5/23] Creating staging table...
+✅ [5/23] Creating staging table complete
+
+================================================================================
+🚨 LONG-RUNNING OPERATION STARTING
+This will stream 130GB from Wikimedia (24-48 hours)
+Monitor progress in ClickHouse Cloud console
+================================================================================
+
+
+📝 [6/23] STREAMING WIKIDATA DATA (24-48 hours)...
+❌ [6/23] STREAMING WIKIDATA DATA (24-48 hours) failed: Timeout error.
+
+❌ Fatal error: Timeout error.

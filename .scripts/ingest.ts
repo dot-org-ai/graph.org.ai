@@ -292,53 +292,104 @@ async function ingestONET(): Promise<void> {
 // ============================================================================
 
 async function ingestGS1(): Promise<void> {
-  console.log('\n=� Ingesting GS1...');
+  console.log('\n📦 Ingesting GS1...');
 
   const GS1_DIR = path.join(SOURCE_DIR, 'GS1');
 
   try {
-    // GS1 Web Vocabulary - EPCIS & CBV
-    // Note: GS1 data may require authentication or special access
-    // For now, we'll create placeholder structure
-
-    console.log('  9  GS1 EPCIS/CBV data requires authentication');
-    console.log('  9  Please manually download GS1 standards from https://www.gs1.org/');
-    console.log('  9  Suggested files:');
-    console.log('      - EPCIS Event definitions');
-    console.log('      - CBV Standard vocabulary');
-    console.log('      - GS1 identifiers (GTIN, GLN, SSCC, etc.)');
-
     // Create directory structure
     if (!fs.existsSync(GS1_DIR)) {
       fs.mkdirSync(GS1_DIR, { recursive: true });
     }
 
-    // Create a README for manual steps
+    // Fetch EPCIS JSON-LD vocabulary (publicly available)
+    console.log('  Fetching EPCIS vocabulary from GS1...');
+    try {
+      const epcisUrl = 'https://ref.gs1.org/epcis';
+      const epcisData = await fetchJSON(epcisUrl);
+
+      // Extract relevant entities from JSON-LD
+      const epcisEntities: any[] = [];
+
+      // Process @graph if it exists
+      if (epcisData['@graph'] && Array.isArray(epcisData['@graph'])) {
+        for (const item of epcisData['@graph']) {
+          epcisEntities.push({
+            id: item['@id'] || '',
+            type: item['@type'] || '',
+            label: item['rdfs:label'] || item['label'] || '',
+            comment: item['rdfs:comment'] || item['comment'] || '',
+            subClassOf: item['rdfs:subClassOf']?.['@id'] || '',
+          });
+        }
+      }
+
+      if (epcisEntities.length > 0) {
+        writeTSV(path.join(GS1_DIR, 'GS1.EPCIS.Vocabulary.tsv'), epcisEntities);
+      }
+    } catch (error) {
+      console.log('  ⚠️  Error fetching EPCIS vocabulary:', error instanceof Error ? error.message : error);
+    }
+
+    // Fetch CBV JSON-LD vocabulary (publicly available)
+    console.log('  Fetching CBV (Core Business Vocabulary) from GS1...');
+    try {
+      const cbvUrl = 'https://ref.gs1.org/cbv';
+      const cbvData = await fetchJSON(cbvUrl);
+
+      // Extract relevant entities from JSON-LD
+      const cbvEntities: any[] = [];
+
+      // Process @graph if it exists
+      if (cbvData['@graph'] && Array.isArray(cbvData['@graph'])) {
+        for (const item of cbvData['@graph']) {
+          cbvEntities.push({
+            id: item['@id'] || '',
+            type: item['@type'] || '',
+            label: item['rdfs:label'] || item['label'] || '',
+            comment: item['rdfs:comment'] || item['comment'] || '',
+            subClassOf: item['rdfs:subClassOf']?.['@id'] || '',
+          });
+        }
+      }
+
+      if (cbvEntities.length > 0) {
+        writeTSV(path.join(GS1_DIR, 'GS1.CBV.Vocabulary.tsv'), cbvEntities);
+      }
+    } catch (error) {
+      console.log('  ⚠️  Error fetching CBV vocabulary:', error instanceof Error ? error.message : error);
+    }
+
+    // Create a README with information about GS1 vocabularies
     const readme = `# GS1 Data Sources
 
-## Required Manual Downloads
+## Automatically Fetched
 
-GS1 standards data is not freely available via public APIs. Please download the following:
+1. **EPCIS Vocabulary**: https://ref.gs1.org/epcis (JSON-LD)
+   - Event types, actions, business steps, dispositions
+   - Saved as: GS1.EPCIS.Vocabulary.tsv
 
-1. **EPCIS Standard**: https://www.gs1.org/standards/epcis
-2. **CBV (Core Business Vocabulary)**: https://www.gs1.org/standards/epcis
-3. **GS1 Identifiers**: https://www.gs1.org/standards/id-keys
-4. **GPC (Global Product Classification)**: https://www.gs1.org/standards/gpc
+2. **CBV (Core Business Vocabulary)**: https://ref.gs1.org/cbv (JSON-LD)
+   - Business steps, dispositions, source/destination types
+   - Saved as: GS1.CBV.Vocabulary.tsv
 
-## File Format
+## Additional Resources
 
-Convert downloaded files to TSV format with camelCase column names and save as:
-- GS1.EPCIS.Events.tsv
-- GS1.CBV.Vocabulary.tsv
-- GS1.Identifiers.tsv
-- GS1.GPC.tsv
+- Documentation: https://ref.gs1.org/docs/epcis/
+- Examples: https://ref.gs1.org/docs/epcis/examples
+- GS1 Web Vocabulary: https://www.gs1.org/voc/
+
+## Optional Manual Downloads
+
+For additional GS1 data, you may want to download:
+- **GPC (Global Product Classification)**: https://www.gs1.org/standards/gpc
+- **GS1 Identifiers**: https://www.gs1.org/standards/id-keys
 `;
 
     fs.writeFileSync(path.join(GS1_DIR, 'README.md'), readme);
-    console.log('   Created GS1 directory with README');
 
   } catch (error) {
-    console.error('  L Error with GS1 setup:', error);
+    console.error('  ❌ Error ingesting GS1:', error);
   }
 }
 
@@ -792,18 +843,129 @@ async function ingestAdvanceCTE(): Promise<void> {
 // ============================================================================
 
 async function ingestBLS(): Promise<void> {
-  console.log('\n📦 Ingesting BLS Industry-Occupation Matrix...');
+  console.log('\n📦 Ingesting BLS Data...');
 
   const BLS_DIR = path.join(SOURCE_DIR, 'BLS');
 
   try {
-    // Check if manually downloaded Excel files exist
+    // Check if manually downloaded files exist
+    const oesDataTSVPath = path.join(BLS_DIR, 'oe.data.1.AllData');
+    const oesNationalPath = path.join(BLS_DIR, 'oesm24all', 'all_data_M_2024.xlsx');
+    const stemPath = path.join(BLS_DIR, 'stem_2024.xlsx');
+    const educationPath = path.join(BLS_DIR, 'education_2024.xlsx');
     const byIndustryPath = path.join(BLS_DIR, 'BLS.IndustryOccupationMatrix.ByIndustry.xlsx');
     const byOccupationPath = path.join(BLS_DIR, 'BLS.IndustryOccupationMatrix.ByOccupation.xlsx');
     const socAcsCrosswalkPath = path.join(BLS_DIR, 'BLS.SOC-ACS-Crosswalk.xlsx');
     const socCpsCrosswalkPath = path.join(BLS_DIR, 'BLS.SOC-CPS-Crosswalk.xlsx');
 
     let filesFound = false;
+
+    // Process large OES TSV data file (much faster than XLSX)
+    if (fs.existsSync(oesDataTSVPath)) {
+      console.log('  Processing OES All Data TSV (317MB)...');
+      const content = fs.readFileSync(oesDataTSVPath, 'utf-8');
+      const lines = content.split('\n');
+
+      if (lines.length > 1) {
+        // Parse header
+        const headers = lines[0].split('\t').map(h => h.trim());
+
+        // Parse data rows
+        const data: any[] = [];
+        for (let i = 1; i < lines.length; i++) {
+          if (i % 100000 === 0) {
+            console.log(`    Processed ${i.toLocaleString()} rows...`);
+          }
+          const line = lines[i].trim();
+          if (!line) continue;
+
+          const values = line.split('\t');
+          const row: any = {};
+          headers.forEach((header, idx) => {
+            row[header] = values[idx] || '';
+          });
+          data.push(row);
+        }
+
+        console.log(`    Total rows parsed: ${data.length.toLocaleString()}`);
+        writeTSV(path.join(BLS_DIR, 'BLS.OES.AllData.tsv'), data);
+        filesFound = true;
+      }
+    } else {
+      console.log('  ℹ️  OES all data TSV not found at oe.data.1.AllData');
+    }
+
+    // Process STEM Excel file
+    if (fs.existsSync(stemPath)) {
+      console.log('  Processing STEM 2024 data...');
+      const buffer = fs.readFileSync(stemPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+
+      for (const sheetName of workbook.SheetNames) {
+        const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+        if (data.length > 0) {
+          const sanitizedSheetName = sheetName.replace(/[^a-zA-Z0-9]/g, '_');
+          writeTSV(path.join(BLS_DIR, `BLS.STEM.${sanitizedSheetName}.tsv`), data);
+        }
+      }
+      filesFound = true;
+    } else {
+      console.log('  ℹ️  STEM data not found at stem_2024.xlsx');
+    }
+
+    // Process Education Excel file
+    if (fs.existsSync(educationPath)) {
+      console.log('  Processing Education 2024 data...');
+      const buffer = fs.readFileSync(educationPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+
+      for (const sheetName of workbook.SheetNames) {
+        const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+        if (data.length > 0) {
+          const sanitizedSheetName = sheetName.replace(/[^a-zA-Z0-9]/g, '_');
+          writeTSV(path.join(BLS_DIR, `BLS.Education.${sanitizedSheetName}.tsv`), data);
+        }
+      }
+      filesFound = true;
+    } else {
+      console.log('  ℹ️  Education data not found at education_2024.xlsx');
+    }
+
+    // Process OES National Data (May 2024) - Skip if TSV was processed
+    if (!fs.existsSync(oesDataTSVPath) && fs.existsSync(oesNationalPath)) {
+      console.log('  Processing OES May 2024 National Data from XLSX...');
+      const buffer = fs.readFileSync(oesNationalPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+
+      // Process all sheets (typically has national, state, metro area data)
+      for (const sheetName of workbook.SheetNames) {
+        console.log(`    Processing sheet: ${sheetName}`);
+        const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+
+        // Convert column names to camelCase
+        const camelCaseData = data.map((row: any) => {
+          const newRow: any = {};
+          for (const key in row) {
+            const camelKey = key
+              .toLowerCase()
+              .replace(/[^a-z0-9]+(.)/g, (_, char) => char.toUpperCase())
+              .replace(/^[^a-z]+/, '');
+            newRow[camelKey] = row[key];
+          }
+          return newRow;
+        });
+
+        const sanitizedSheetName = sheetName.replace(/[^a-zA-Z0-9]/g, '_');
+        writeTSV(path.join(BLS_DIR, `BLS.OES.${sanitizedSheetName}.tsv`), camelCaseData);
+      }
+
+      console.log(`  ✅ Processed ${workbook.SheetNames.length} sheets from OES data`);
+      filesFound = true;
+    } else if (fs.existsSync(oesDataTSVPath)) {
+      console.log('  ✅ Skipped XLSX processing (TSV already processed)');
+    } else {
+      console.log('  ℹ️  OES national data not found at oesm24all/all_data_M_2024.xlsx');
+    }
 
     // Process Industry-Occupation Matrix by Industry
     if (fs.existsSync(byIndustryPath)) {

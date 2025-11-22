@@ -21,36 +21,36 @@ async function setup() {
 
   console.log('✅ ClickHouse is available\n')
 
-  const client = getClickHouseClient()
+  // Connect without specifying database first
+  const systemClient = getClickHouseClient({ database: 'default' })
 
   try {
-    // Create database if it doesn't exist
-    console.log('📦 Creating database...')
-    await client.command({
-      query: 'CREATE DATABASE IF NOT EXISTS mdxdb',
-    })
-    console.log('✅ Database created\n')
+    // Use default database - no need to create custom database
+    console.log('📦 Using default database\n')
+
+    const client = systemClient
 
     // Create things table with JSON field
     console.log('📊 Creating things table...')
 
     // Drop if exists to allow clean rebuild
-    await client.command({ query: 'DROP TABLE IF EXISTS mdxdb.things' })
+    await client.command({ query: 'DROP TABLE IF EXISTS default.things' })
 
     await client.command({
       query: `
-        CREATE TABLE mdxdb.things
+        CREATE TABLE default.things
         (
           url String,
           ns String,
           type String,
           id String,
-          data JSON,
+          name String,
           code String,
+          data JSON,
           content String,
           meta JSON,
-          created_at DateTime DEFAULT now(),
-          updated_at DateTime DEFAULT now()
+          createdAt DateTime DEFAULT now(),
+          updatedAt DateTime DEFAULT now()
         )
         ENGINE = MergeTree()
         ORDER BY (ns, type, url)
@@ -63,18 +63,19 @@ async function setup() {
     console.log('🔗 Creating relationships table...')
 
     // Drop if exists to allow clean rebuild
-    await client.command({ query: 'DROP TABLE IF EXISTS mdxdb.relationships' })
+    await client.command({ query: 'DROP TABLE IF EXISTS default.relationships' })
 
     await client.command({
       query: `
-        CREATE TABLE mdxdb.relationships
+        CREATE TABLE default.relationships
         (
           from String,
           predicate String,
           reverse String,
           to String,
-          meta JSON,
-          created_at DateTime DEFAULT now()
+          data JSON,
+          content String,
+          createdAt DateTime DEFAULT now()
         )
         ENGINE = MergeTree()
         ORDER BY (from, predicate, to)
@@ -87,17 +88,17 @@ async function setup() {
     console.log('🔍 Creating searches table with vector index...')
 
     // Drop if exists to allow clean rebuild
-    await client.command({ query: 'DROP TABLE IF EXISTS mdxdb.searches' })
+    await client.command({ query: 'DROP TABLE IF EXISTS default.searches' })
 
     await client.command({
       query: `
-        CREATE TABLE mdxdb.searches
+        CREATE TABLE default.searches
         (
           url String,
           text String,
           embedding Array(Float32),
           meta JSON,
-          created_at DateTime DEFAULT now()
+          createdAt DateTime DEFAULT now()
         )
         ENGINE = MergeTree()
         ORDER BY url
@@ -107,12 +108,13 @@ async function setup() {
     console.log('✅ Searches table created\n')
 
     // Create vector similarity index using HNSW (Hierarchical Navigable Small World)
+    // Parameters: type, distance_function, quantization, dimension, m, ef_construction
     console.log('📐 Creating vector similarity index...')
     await client.command({
       query: `
-        ALTER TABLE mdxdb.searches
+        ALTER TABLE default.searches
         ADD INDEX embedding_hnsw embedding
-        TYPE vector_similarity('hnsw', 'cosineDistance')
+        TYPE vector_similarity('hnsw', 'cosineDistance', 768)
         GRANULARITY 1000
       `,
     }).catch((err) => {
@@ -128,14 +130,14 @@ async function setup() {
     console.log('📊 Creating materialized views...')
     await client.command({
       query: `
-        CREATE MATERIALIZED VIEW IF NOT EXISTS mdxdb.things_by_type
+        CREATE MATERIALIZED VIEW IF NOT EXISTS default.things_by_type
         ENGINE = SummingMergeTree()
         ORDER BY (type, ns)
         AS SELECT
           type,
           ns,
           count() as count
-        FROM mdxdb.things
+        FROM default.things
         GROUP BY type, ns
       `,
     })
@@ -144,10 +146,10 @@ async function setup() {
     console.log('=' .repeat(80))
     console.log('\n✅ ClickHouse schema setup complete!')
     console.log('\nTables created:')
-    console.log('  - mdxdb.things (with JSON data field)')
-    console.log('  - mdxdb.relationships (with JSON meta field)')
-    console.log('  - mdxdb.searches (with vector similarity index)')
-    console.log('  - mdxdb.things_by_type (materialized view)')
+    console.log('  - default.things (with JSON data field and camelCase fields)')
+    console.log('  - default.relationships (with JSON data field, content, and camelCase fields)')
+    console.log('  - default.searches (with vector similarity index and camelCase fields)')
+    console.log('  - default.things_by_type (materialized view)')
     console.log('\n' + '='.repeat(80))
 
   } catch (error) {

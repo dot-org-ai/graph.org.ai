@@ -1,0 +1,18 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+
+📍 Ingesting GeoNames (Local Download Method)
+
+🔍 Testing connection...
+✅ Connected
+
+✅ ZIP file already exists, skipping download
+
+✅ TXT file already exists, skipping extraction
+
+📊 Streaming to ClickHouse...
+   Batch: 2025-11-22 17:33:30
+   Records: 11+ million
+
+   100,000 records (2,632 rows/sec)
+   200,000 records (2,778 rows/sec)
+   300,000 records (2,609 rows/sec)

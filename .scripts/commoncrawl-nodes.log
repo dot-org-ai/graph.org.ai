@@ -1,0 +1,77 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+
+🌐 Ingesting Common Crawl Host-Level Hyperlink Graph
+
+   Dataset: cc-main-2025-aug-sep-oct
+   Nodes: 468.4 million hosts
+   Edges: 8.0 billion hyperlinks
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Downloading cc-main-2025-aug-sep-oct-host-vertices.paths.gz...
+✅ Downloaded
+
+📦 Extracting paths list...
+✅ Extracted
+
+   Found 16 data files
+
+🔷 Processing vertices (nodes)...
+
+   [1/16] part-00000-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 27,278,796 vertices
+
+   [2/16] part-00001-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 26,055,642 vertices
+
+   [3/16] part-00002-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 37,746,912 vertices
+
+   [4/16] part-00003-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 26,080,530 vertices
+
+   [5/16] part-00004-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 16,848,563 vertices
+
+   [6/16] part-00005-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 27,397,741 vertices
+
+   [7/16] part-00006-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 32,953,141 vertices
+
+   [8/16] part-00007-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 30,571,072 vertices
+
+   [9/16] part-00008-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 32,589,298 vertices
+
+   [10/16] part-00009-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 34,430,511 vertices
+
+   [11/16] part-00010-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 20,296,482 vertices
+
+   [12/16] part-00011-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 35,594,415 vertices
+
+   [13/16] part-00012-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 45,896,424 vertices
+
+   [14/16] part-00013-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 30,486,823 vertices
+
+   [15/16] part-00014-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 25,436,658 vertices
+
+   [16/16] part-00015-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+      Inserted 18,739,340 vertices
+
+✅ Total vertices ingested: 468,402,348
+
+✅ Common Crawl vertices ingestion complete!
+
+📝 Summary:
+   - Vertices → domains table (id, name, url)
+   - Next: Create dictionary and ingest edges
+

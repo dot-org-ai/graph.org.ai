@@ -1,0 +1,33 @@
+🚀 Starting complete knowledge graph build...
+
+Options:
+  Skip ingest: true
+  Skip SQLite: false
+  Skip ClickHouse: false
+
+⏭️  Skipping source data ingestion
+
+================================================================================
+📦 Step 2/3: Building normalized things.db (SQLite)
+================================================================================
+
+🚀 Building normalized things database...
+📦 Storage backend: sqlite
+
+❌ Error building normalized database: SqliteError: no such table: things
+    at Database.prepare (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/better-sqlite3@12.4.6/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at BetterSQLiteSession.prepareQuery (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/drizzle-orm@0.44.7_@opentelemetry+api@1.9.0_@types+better-sqlite3@7.6.13_better-sqlite3@12.4.6/node_modules/src/better-sqlite3/session.ts:60:28)
+    at BetterSQLiteSession.prepareOneTimeQuery (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/drizzle-orm@0.44.7_@opentelemetry+api@1.9.0_@types+better-sqlite3@7.6.13_better-sqlite3@12.4.6/node_modules/src/sqlite-core/session.ts:250:15)
+    at SQLiteSelectBase._prepare (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/drizzle-orm@0.44.7_@opentelemetry+api@1.9.0_@types+better-sqlite3@7.6.13_better-sqlite3@12.4.6/node_modules/src/sqlite-core/query-builders/select.ts:916:85)
+    at SQLiteSelectBase.all (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/drizzle-orm@0.44.7_@opentelemetry+api@1.9.0_@types+better-sqlite3@7.6.13_better-sqlite3@12.4.6/node_modules/src/sqlite-core/query-builders/select.ts:950:15)
+    at buildURLMapping (/Users/nathanclevenger/projects/graph.org.ai/.scripts/build-things-db.ts:124:57)
+    at main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/build-things-db.ts:239:24)
+    at <anonymous> (/Users/nathanclevenger/projects/graph.org.ai/.scripts/build-things-db.ts:262:1)
+    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26) {
+  code: 'SQLITE_ERROR'
+}
+
+❌ Step 2/3: Building normalized things.db (SQLite) failed!
+
+❌ Build pipeline failed!

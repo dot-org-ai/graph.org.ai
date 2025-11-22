@@ -1,0 +1,26 @@
+📦 Storage backend: clickhouse
+
+🚀 Starting database ingestion...
+
+📦 Ingesting Schema.org...
+  Found 920 types
+  Found 1510 properties
+  Inserting 2430 things...
+  Inserting 5350 relationships...
+
+📦 Ingesting O*NET...
+  Found 1016 occupations
+  Found 62580 skill entries
+  Found 59004 knowledge entries
+  Found 92976 ability entries
+  Found 73308 work activity entries
+  Found 297676 work context entries
+  Found 14304 work style entries
+  Found 7866 work value entries
+  Found 8307 interest entries
+  Found 161559 task ratings
+❌ Error during ingestion: TypeError: Cannot read properties of undefined (reading 'split')
+    at toTitleCase (/Users/nathanclevenger/projects/graph.org.ai/.scripts/ingest-db.ts:48:6)
+    at ingestONET (/Users/nathanclevenger/projects/graph.org.ai/.scripts/ingest-db.ts:402:26)
+    at main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/ingest-db.ts:840:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
