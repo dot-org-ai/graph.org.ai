@@ -54,8 +54,9 @@ async function main() {
     });
     console.log('✅ Created domains table\n');
 
-    // Create dictionary with max 1M entries (configurable)
-    console.log('📖 Creating domains dictionary (max 1M entries)...');
+    // Create dictionary with CACHE layout for on-demand lookups
+    // CACHE will query source table on miss and keep hot entries in memory
+    console.log('📖 Creating domains dictionary (CACHE layout with 1M size)...');
     await client.exec({
       query: `
         CREATE DICTIONARY public.domains_dict (
@@ -71,7 +72,7 @@ async function main() {
           DB 'public'
           TABLE 'domains'
         ))
-        LAYOUT(HASHED(SIZE_IN_CELLS 1000000))
+        LAYOUT(CACHE(SIZE_IN_CELLS 1000000))
         LIFETIME(MIN 300 MAX 360)
       `
     });

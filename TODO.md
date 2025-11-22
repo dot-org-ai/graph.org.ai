@@ -6,16 +6,22 @@
   - [x] Schema.org Types & Properties (920 types, 1510 properties)
   - [x] O*NET (25+ tables/files, ~900K rows total)
   - [ ] GS1 (EPCIS, CBV, Identifiers, and Ontologies for each) - Requires manual download
-  - [ ] NAICS Industries - Requires manual XLSX conversion (see .source/NAICS/README.md)
+  - [x] NAICS Industries (2,144 industries from 2-6 digit codes) - Downloaded from Census
   - [ ] NAPCS Products/Services - Requires manual download
   - [ ] UNSPSC Products/Services - Requires registration (see .source/UNSPSC/README.md)
-  - [x] APQC Process (1,921 processes, 37,623 industry variants)
+  - [x] APQC Cross-Industry Processes (1,921 processes) - From APQC_PCF_7.4.xlsx
+  - [x] APQC Industry-Specific Processes (18 industry PCF Excel files - 37,708 total processes) - Aerospace, Airline, Automotive, Banking, Broadcasting, City Government, Consumer Electronics, Consumer Products, Education, Healthcare Provider, Health Insurance, Life Sciences, Petroleum Downstream, Petroleum Upstream, Property & Casualty Insurance, Retail, Utilities
+  - [x] O*NET Emerging Tasks (328 tasks) - From ONET.EmergingTasks.tsv
+  - [x] O*NET Task Statements (18,797 tasks) - From ONET.TaskStatements.tsv
+  - [x] O*NET Work Activities (73,308 ratings) - From ONET.WorkActivities.tsv
+  - [x] O*NET IWA Reference (332 intermediate activities) - From ONET.IWAReference.tsv
+  - [x] O*NET DWA Reference (2,087 detailed activities) - From ONET.DWAReference.tsv
+  - [x] All 41 O*NET database files converted to TSV with simplified camelCase headers
   - [ ] Simple Icons / React Icons - API error, requires manual download
   - [x] .do Models, Providers, Labs (342 models from OpenRouter)
   - [ ] .do Integrations - API authentication required
   - [x] BLS Industry-Occupation Matrix - NAICS x SOC employment data (manual download required)
   - [x] Advance CTE Framework Crosswalk - CIP, SOC, NAICS, Career Clusters
-  - [ ] APQC Industry-Specific PCFs - Contains NAICS alignments per industry
   - [ ] BLS OES (Occupational Employment and Wage Statistics) - May 2024 salary/wage data for ~830 occupations
   - [ ] BLS JOLTS (Job Openings and Labor Turnover) - Job availability and turnover data
 
@@ -67,6 +73,12 @@
 - [ ] Services.DigitalScore.tsv - Digital vs physical score per service
 - [ ] DigitalScore.Methodology.md - Documentation of scoring rubric and aggregation weights
 
+### Departments
+- [ ] Departments.Taxonomy.tsv - Standard business departments (Marketing, Sales, HR, Finance, IT, Operations, etc.)
+- [ ] Departments.Processes.tsv - Map APQC processes to department(s)
+- [ ] Departments.Occupations.tsv - Map occupations to typical departments
+- [ ] Departments.Hierarchy.tsv - Department reporting structures and relationships
+
 ### Crosswalks (Connecting Entities)
 - [x] Download BLS Industry-Occupation Matrix (NAICS x SOC employment data) - README created
 - [x] Download Advance CTE Framework Crosswalk (CIP-SOC-NAICS-Career Clusters) - 15,575 records
@@ -75,12 +87,13 @@
 - [x] Education.CareerClusters.tsv - 4,725 CIP to Career Cluster mappings
 - [x] CareerClusters.Taxonomy.tsv - 14 Career Clusters with sub-cluster hierarchies
 - [x] InterdisciplinaryOccupations.tsv - 125 SOCs spanning multiple clusters
-- [ ] Industries.Processes.tsv - NAICS to APQC process mappings
+- [ ] Industries.Processes.tsv - NAICS to APQC process mappings (from industry-specific PCFs)
 - [ ] Industries.Occupations.tsv - NAICS to SOC/O*NET occupation mappings (from BLS)
 - [ ] Occupations.Industries.tsv - SOC/O*NET to NAICS industry mappings (from BLS)
 - [ ] Occupations.Processes.tsv - SOC/O*NET to APQC process mappings
 - [ ] Processes.Industries.tsv - APQC to NAICS mappings (from industry-specific PCFs)
 - [ ] Processes.Occupations.tsv - APQC to SOC/O*NET mappings
+- [ ] Processes.Departments.tsv - APQC processes to department(s)
 - [ ] Processes.CompanySize.tsv - APQC processes applicable by company size (revenue/employees)
 - [ ] Industries.Products.tsv - NAICS industries that produce each product/service
 - [ ] Industries.ProductsConsumed.tsv - NAICS industries that consume products (raw materials, components, assets, supplies)

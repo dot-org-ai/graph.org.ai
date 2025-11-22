@@ -1,0 +1,11 @@
+packages:
+  - '.site'
+  - '.scripts'
+  - '.mdxdb'
+  - '.packages/@mdxui/json'
+  - '.packages/@mdxui/markdown'
+  - '.packages/@mdxui/api'
+  - '.packages/@mdxdb/api'
+  - '.packages/@mdxdb/clickhouse'
+  # Temporarily disabled due to catalog issues
+  # - '.packages/**'
