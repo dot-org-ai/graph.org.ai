@@ -150,6 +150,55 @@ FinancialAnalyst.analyze.MarketData.in.SpreadsheetApplication
 - **Verbs**: Manually curated from O*NET, APQC, GS1, and Schema.org vocabularies
 - **Other Parts of Speech**: Standard English grammar references
 
+## Adding New Verbs - Iterative Workflow
+
+### 1. Discover Missing Verbs
+
+```bash
+npx tsx .scripts/discover-missing-verbs.ts
+```
+
+Generates `.output/MissingVerbs.tsv` with all verbs found in APQC/ONET that aren't in our lexicon.
+
+### 2. Generate Conjugation Template
+
+```bash
+npx tsx .scripts/add-verbs-template.ts
+```
+
+Creates `.output/NewVerbs.Template.tsv` with auto-generated conjugations (frequency ≥ 2).
+
+### 3. Manual Review & Correction
+
+**⚠️ Auto-generation has known issues - review carefully!**
+
+Common fixes needed:
+
+| Generated | Correct | Pattern |
+|-----------|---------|---------|
+| Defination | Definition | -ine → -inition |
+| Traination | Training | Use gerund as noun |
+| Supportation | Support | Simple noun form |
+| trainned | trained | Don't double after 'ai' |
+| writedBy | writtenBy | Irregular passive |
+
+### 4. Add Descriptions
+
+Replace all `TODO: Add description` with context from APQC/ONET usage.
+
+### 5. Append to Verbs File
+
+```bash
+tail -n +2 .output/NewVerbs.Template.tsv >> .enrichment/Language/Language.Verbs.tsv
+```
+
+### 6. Re-run Parser
+
+```bash
+npx tsx .scripts/batch-parse-apqc.ts
+npx tsx .scripts/batch-parse-onet.ts
+```
+
 ## Updates
 
 To update verbs from MDX files:
