@@ -1,85 +1,134 @@
 # Digital Score Methodology
 
-Quantifies the extent to which tasks, processes, occupations, industries, products, and services are digital vs. physical.
+Quantifies the extent to which tasks, processes, occupations, industries, products, and services can be executed via AI agent tool calls (API accessibility) vs. requiring physical execution.
+
+## Core Principle
+
+**Digital Score = "Can an AI agent make a tool call to execute this?"**
+
+This framework measures API/tool accessibility for AI agents, not human involvement or physical infrastructure requirements. A task requiring human approval is still pure digital if the AI can execute it via API and a human reviews it digitally.
+
+## Scoring Hierarchy
+
+**Bottom-Up Aggregation Strategy:**
+
+1. **Tasks** (O*NET) - Score individually and precisely
+   - Direct 4-dimensional scoring for each task
+   - Most granular level - foundation for all aggregation
+
+2. **Occupations** (SOC) - Aggregate from tasks with O*NET weights
+   - Formula: `OccupationScore = Σ(TaskScore × IM × RT) / Σ(IM × RT)`
+   - Uses O*NET Importance (IM) and Relevance (RT) ratings
+   - Weighted average reflects real occupation composition
+
+3. **Industries** (NAICS) - Aggregate from occupations with BLS employment weights
+   - Formula: `IndustryScore = Σ(OccupationScore × Employment) / TotalEmployment`
+   - Uses BLS Industry-Occupation Employment Matrix
+   - Reflects actual workforce composition by industry
+
+4. **Processes** (APQC) - Score directly (not aggregated)
+   - Higher-level abstractions scored using 4-dimensional framework
+   - Direct scoring more accurate than task aggregation for processes
+   - Validation against occupation/industry scores
+
+5. **Products/Services** (UNSPSC) - Score directly
+   - Based on AI agent interaction capability via APIs
+   - Direct scoring for specific products/services
+   - Not aggregated (each is unique)
+
+**Key Insight**: Precision at the task level enables accurate aggregation to occupations and industries using empirical weights from O*NET and BLS.
 
 ## Score Values
 
 | Score | Meaning | Examples |
 |-------|---------|----------|
-| `1.0` | Pure Digital | Software development, data analysis, digital marketing |
-| `0.75-0.99` | Primarily Digital | Remote customer service, online education, e-commerce |
-| `0.50-0.74` | Hybrid (Digital-leaning) | Graphic design, financial analysis, telemedicine |
-| `0.26-0.49` | Hybrid (Physical-leaning) | Retail with POS systems, manufacturing with automation |
-| `0.01-0.25` | Primarily Physical | Construction, agriculture, personal care services |
-| `0.0` | Pure Physical | Manual labor, hands-on healthcare, physical installation |
-| `null` | Context-dependent | Activities that can be either (e.g., "communicate") |
+| `1.0` | Pure Digital | API calls, SaaS operations, phone/video calls, code execution, data queries, email, scheduling, file PRs |
+| `0.75-0.99` | Primarily Digital | Digital processes with minor physical touchpoints (e.g., robotics with digital control, 3D printing from digital files) |
+| `0.50-0.74` | Hybrid (Digital-leaning) | Processes that are partly executable via API, partly require physical actions |
+| `0.26-0.49` | Hybrid (Physical-leaning) | Primarily physical with digital monitoring/planning support |
+| `0.01-0.25` | Primarily Physical | Physical work with minimal digital tool support |
+| `0.0` | Pure Physical | No API/tool call possible (hands-on physical work, in-person services) |
+| `null` | Context-dependent | Execution modality varies by context (e.g., "meeting" can be digital, physical, or hybrid) |
 
 ## Scoring Dimensions
 
 ### 1. Tasks (O*NET Tasks)
 
-Tasks are scored based on:
+Tasks are scored based on **AI agent tool call accessibility**:
 
-**Digital Indicators (+):**
-- Computer/software use required
-- Data processing or analysis
-- Digital communication (email, video conferencing)
-- Online research or information gathering
-- Digital content creation
-- Remote/virtual execution possible
+**Pure Digital (1.0) - AI can execute via tool call:**
+- API calls, database queries, code execution
+- Email, messaging, scheduling, notifications
+- Phone calls, video conferencing (AI can join/host)
+- File operations, data analysis, report generation
+- SaaS operations, cloud services
+- Digital content creation/editing
 
-**Physical Indicators (-):**
-- Physical objects or materials handled
+**Primarily Physical (0.0-0.25) - No tool call possible:**
+- Physical object manipulation
 - In-person presence required
-- Physical tools/equipment operation
-- Manual dexterity or physical effort
-- On-site location requirement
+- Hands-on work, manual assembly
+- Physical installation, construction
+- Personal care services
+
+**Hybrid - Partial tool call execution:**
+- Mix of API-accessible and physical components
+- Digital planning/monitoring + physical execution
+- Robotics with API control (digital) moving physical objects
+
+**Context-Dependent (null):**
+- Task description doesn't specify modality
+- Could be executed digitally OR physically
+- Examples: "communicate", "coordinate", "meet", "review"
 
 **Scoring Process:**
-1. Analyze task description for digital vs. physical keywords
-2. Check O*NET Work Context data:
-   - "Electronic Mail" (4-195.4)
-   - "Spend Time Using Your Hands" (4-170.1)
-   - "Work With Work Group or Team" vs. "Work Remotely"
-   - "Importance of Being Exact or Accurate" with computers
-3. Apply weighted score based on primary modality
-4. Mark as `null` if task is modality-agnostic
+1. Ask: "Can an AI make a tool call to execute this task?"
+2. If yes → 1.0 (pure digital)
+3. If no, ask: "Does it require physical manipulation/presence?"
+4. If yes → 0.0-0.25 (physical)
+5. If mixed → 0.26-0.99 (hybrid, based on digital/physical ratio)
+6. If modality unspecified → null
 
 **Examples:**
 ```
 Task: "Write software code to meet computer application requirements"
-Score: 1.0 (Pure digital)
+Score: 1.0 (AI can execute via code generation API)
 
-Task: "Analyze financial data using spreadsheet software"
-Score: 0.95 (Primarily digital, minor physical interaction with computer)
+Task: "Send email to clients"
+Score: 1.0 (AI can make API call to send email)
+
+Task: "Join video conference with team"
+Score: 1.0 (AI can join/host video calls)
 
 Task: "Install electrical wiring in buildings"
-Score: 0.1 (Primarily physical, minimal digital tools)
+Score: 0.0 (Requires physical presence and manipulation)
 
 Task: "Communicate with team members"
-Score: null (Can be digital or physical)
+Score: null (Could be email/phone [1.0] or in-person [0.0])
+
+Task: "Schedule meeting with stakeholders"
+Score: 1.0 (AI can make calendar API call - whether meeting is digital or physical is irrelevant)
 ```
 
 ### 2. Processes (APQC Processes)
 
-Process scores are calculated by:
+**Primary Approach**: Score processes directly, rather than aggregating from tasks.
 
-**Bottom-Up Aggregation:**
-1. Identify typical tasks required for each process
-2. Map tasks to O*NET task scores
-3. Calculate weighted average based on task importance/frequency
-4. Weight by role distribution (which occupations perform this process)
+**Rationale**:
+- Processes are higher-level abstractions than tasks
+- Process digital scores depend on available APIs/tools for that process
+- Direct scoring is more accurate than task aggregation for processes
 
-**Top-Down Indicators:**
-- Industry digital maturity (from Industry scores)
-- Process automation potential
-- Software/system requirements
-- Remote execution feasibility
+**Scoring Method**: Use 4-dimensional framework directly on each process:
+1. **Action Score**: Can AI initiate this process via API?
+2. **Event Score**: Can process state changes be digitally represented? (usually 1.0)
+3. **Activity Score**: Digital/physical mix during process execution
+4. **Result Score**: Digital accessibility of process outputs
 
-**Formula:**
-```
-ProcessScore = Σ(TaskScore × TaskFrequency × RoleWeight) / Σ(TaskFrequency × RoleWeight)
-```
+**Validation**: Cross-check process scores against:
+- Occupation scores for roles performing the process
+- Industry digital maturity scores
+- Technology/software requirements for the process
 
 **Examples:**
 ```
@@ -127,23 +176,28 @@ Score: 0.15 (Primarily physical with digital diagnostic tools)
 
 ### 4. Industries (NAICS Industries)
 
-Industry scores derived from:
+**Primary Approach**: Aggregate from occupation-level scores using BLS employment data.
 
-**Occupation Mix:**
+**Bottom-Up Aggregation:**
 ```
 IndustryScore = Σ(OccupationScore × EmploymentCount) / TotalEmployment
 ```
 
 Where:
-- OccupationScore = Digital score for each occupation
-- EmploymentCount = BLS Industry-Occupation Matrix employment
-- TotalEmployment = Total industry employment
+- **OccupationScore**: Digital score for each occupation (aggregated from tasks)
+- **EmploymentCount**: BLS Industry-Occupation Matrix employment for this occupation in this industry
+- **TotalEmployment**: Total employment in the industry
 
-**Industry Characteristics:**
-- Primary output (digital products/services vs. physical goods)
-- Production methods (automation level)
-- Digital transformation maturity
-- Remote work prevalence
+**Data Source**: BLS Industry-Occupation Employment Matrix
+- Available at `.source/BLS/` (if present) or BLS website
+- Provides employment counts by SOC code within each NAICS industry
+- Updated annually by BLS
+
+**Validation**: Cross-check against:
+- Primary industry output (digital products/services vs. physical goods)
+- Industry digital transformation maturity reports
+- Remote work prevalence statistics
+- Technology adoption levels
 
 **Examples:**
 ```
@@ -159,60 +213,87 @@ Score: 0.2 (Primarily physical with digital planning/management)
 
 ### 5. Products
 
-Product scores based on:
+Product scores based on **AI agent interaction capability**:
 
-**Product Nature:**
-- **Pure Digital (1.0):** Software, digital media, online services, data
-- **Primarily Digital (0.75-0.99):** IoT devices, smart products, SaaS
-- **Hybrid (0.25-0.74):** Physical products with digital components
-- **Primarily Physical (0.01-0.24):** Traditional goods with minimal digital features
-- **Pure Physical (0.0):** Raw materials, basic manufactured goods
+**Pure Digital (1.0) - AI can interact via API:**
+- Software, SaaS, APIs, digital services
+- Digital media, data, information products
+- Cloud services, web applications
+- AI can purchase, provision, configure, use via tool calls
 
-**Dimensions:**
-- Delivery method (download vs. shipping)
-- Usage (digital interface vs. physical operation)
-- Components (digital vs. physical parts)
-- Lifecycle management (digital updates vs. physical maintenance)
+**Primarily Physical (0.0-0.25) - No API interaction:**
+- Raw materials, commodities
+- Physical goods with no digital interface
+- Products requiring physical possession/manipulation
+- Examples: lumber, food ingredients, raw metals
+
+**Hybrid - Digital interface to physical product:**
+- IoT devices with APIs (AI can control)
+- Smart products with digital interfaces
+- Physical products ordered/configured via API
+- Score based on extent of digital control vs. physical interaction
 
 **Examples:**
 ```
 Product: "Microsoft Office 365"
-Score: 1.0 (Pure digital, cloud-delivered software)
+Score: 1.0 (AI can purchase license, configure, use via API)
+
+Product: "Stripe Payment API"
+Score: 1.0 (Pure digital, AI can make API calls)
+
+Product: "AWS EC2 Instance"
+Score: 1.0 (AI can provision and manage via API)
 
 Product: "Tesla Model 3"
-Score: 0.65 (Physical vehicle with extensive digital systems)
+Score: 0.65 (Physical car, but AI can order via API, monitor/control some features digitally)
 
 Product: "Lumber"
-Score: 0.0 (Pure physical commodity)
+Score: 0.0 (Pure physical commodity, no API interaction)
 ```
+
+**Key Principle:** Human involvement is irrelevant. If an AI can order a physical product via API (e.g., Amazon API), that ordering process is 1.0 digital, even though the product itself is physical.
 
 ### 6. Services
 
-Service scores based on:
+Service scores based on **AI agent execution capability**:
 
-**Delivery Method:**
-- Remote/online delivery capability
-- Digital tools and platforms used
-- Physical presence requirements
-- Customer interaction modality
+**Pure Digital (1.0) - AI can execute via tool calls:**
+- SaaS services with APIs
+- Digital platforms (cloud, hosting, CDN)
+- Communication services (email, phone, video)
+- Data services, analytics, monitoring
+- Financial services with APIs (payments, transfers)
+- AI can fully execute the service via tool calls
 
-**Service Characteristics:**
-- Information-based vs. physical action
-- Automation potential
-- Digital transformation level
-- Output format (digital vs. physical)
+**Primarily Physical (0.0-0.25) - Requires human physical presence:**
+- In-person services (healthcare, personal care)
+- Physical installation, construction
+- Hands-on repair, maintenance
+- Services requiring physical manipulation
+
+**Hybrid - Mix of digital and physical delivery:**
+- Services that can be requested/managed via API but require physical execution
+- Score based on what portion AI can execute vs. requires human physical work
 
 **Examples:**
 ```
-Service: "Cloud computing infrastructure"
-Score: 1.0 (Pure digital service)
+Service: "AWS Lambda compute"
+Score: 1.0 (AI can create, invoke, manage via API)
 
-Service: "Online education"
-Score: 0.9 (Primarily digital with some physical materials)
+Service: "Phone consultation"
+Score: 1.0 (AI can make phone calls, participate in consultation)
 
-Service: "In-home healthcare"
-Score: 0.1 (Primarily physical with digital record-keeping)
+Service: "Document review service"
+Score: 1.0 (AI can receive docs via API, analyze, return results)
+
+Service: "In-home plumbing repair"
+Score: 0.1 (Can be scheduled via API [1.0], but execution is physical [0.0])
+
+Service: "Haircut"
+Score: 0.0 (Requires physical presence and manipulation)
 ```
+
+**Key Distinction:** The service delivery mechanism, not the output. A service that produces a physical result but is executed digitally scores high (e.g., 3D printing service = 0.9, as AI can submit files and order prints via API).
 
 ## Scoring Process
 
@@ -253,12 +334,24 @@ Score: 0.1 (Primarily physical with digital record-keeping)
 ## Weighting Factors
 
 ### Task Aggregation (Occupations)
+
+**Primary Approach**: Score individual tasks precisely, then aggregate to occupation level using O*NET weights.
+
 ```
-Weight = TaskImportance × TaskFrequency × TaskRelevance
+OccupationScore = Σ(TaskDigitalScore × IM × RT) / Σ(IM × RT)
 ```
-- TaskImportance: O*NET IM scale (0-100)
-- TaskFrequency: O*NET FT scale (0-100)
-- TaskRelevance: 0.0-1.0 (task applicability to occupation)
+
+Where:
+- **TaskDigitalScore**: Individual task action score (0.0-1.0)
+- **IM**: O*NET Importance scale (1-5) - how important is this task to the occupation?
+- **RT**: O*NET Relevance scale (0-100) - how relevant is this task to the occupation?
+
+**Data Source**: `.source/ONET/ONET.TaskRatings.tsv`
+- IM scale: 1 (not important) to 5 (extremely important)
+- FT scale: 0-100 (percentage distribution across frequency categories 1-7)
+- RT scale: 0-100 (percentage of occupation incumbents who perform this task)
+
+**Note**: FT (Frequency) is available but not used in aggregation, as IM × RT captures both importance and prevalence.
 
 ### Occupation Aggregation (Industries)
 ```
