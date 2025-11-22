@@ -1,11 +1,11 @@
-import Database from 'better-sqlite3';
+import { db } from '@graph.org.ai/mdxdb/db';
+import { things } from '@graph.org.ai/mdxdb/schema';
+import { eq, sql, and } from 'drizzle-orm';
 import type { Page } from 'fumadocs-core/source';
 import path from 'path';
 
-// Initialize database connection
-const dbPath = path.join(process.cwd(), '../.mdxdb/source.db');
-const db = new Database(dbPath);
-db.pragma('journal_mode = WAL');
+// Database path for Page.path property
+const dbPath = path.join(process.cwd(), '../.mdxdb/things.db');
 
 export interface DBPage extends Page {
   data: {
@@ -27,9 +27,13 @@ export interface DBPage extends Page {
 
 /**
  * Custom source that loads pages from SQLite database
+ * Optimized for large-scale use with hundreds of thousands of pages
  */
 export class DatabaseSource {
   private cache: Map<string, DBPage> = new Map();
+  private domainCache: Map<string, string[]> = new Map(); // Cache domain type lists
+  private domainsListCache: string[] | null = null; // Cache domains list
+  private pageTreeCache: Map<string, any> = new Map(); // Cache page trees by domain
 
   /**
    * Get a page by domain and slug
@@ -47,23 +51,14 @@ export class DatabaseSource {
       ? `${domain}/${slugPath}`
       : domain;
 
-    const stmt = db.prepare('SELECT * FROM things WHERE url = ?');
-    const result = stmt.get(url) as any;
+    const result = db.select().from(things).where(eq(things.url, url)).get();
 
     if (!result) {
       return undefined;
     }
 
-    // Parse JSON fields
-    if (result.data && typeof result.data === 'string') {
-      result.data = JSON.parse(result.data);
-    }
-    if (result.meta && typeof result.meta === 'string') {
-      result.meta = JSON.parse(result.meta);
-    }
-
     const page: DBPage = {
-      url: `/${domain}/${slugPath}`,
+      url: `/docs/${domain}.org.ai/${slugPath}`,
       slugs: slug || [],
       path: dbPath, // Physical file path - using db path as placeholder
       data: {
@@ -87,20 +82,12 @@ export class DatabaseSource {
    * Get all pages for a specific domain
    */
   getPages(domain: string): DBPage[] {
-    const stmt = db.prepare('SELECT * FROM things WHERE ns = ?');
-    const results = stmt.all(domain) as any[];
+    const results = db.select().from(things).where(eq(things.ns, domain)).all();
 
-    return results.map((result: any) => {
-      // Parse JSON fields
-      if (result.data && typeof result.data === 'string') {
-        result.data = JSON.parse(result.data);
-      }
-      if (result.meta && typeof result.meta === 'string') {
-        result.meta = JSON.parse(result.meta);
-      }
+    return results.map((result) => {
       const slugs = result.url.split('/').filter(Boolean);
       return {
-        url: `/${result.url}`,
+        url: `/docs/${result.ns}.org.ai/${result.url.split('/').slice(1).join('/')}`,
         slugs,
         path: dbPath, // Physical file path - using db path as placeholder
         data: {
@@ -122,20 +109,12 @@ export class DatabaseSource {
    * Get all pages across all domains
    */
   getAllPages(): DBPage[] {
-    const stmt = db.prepare('SELECT * FROM things');
-    const results = stmt.all() as any[];
+    const results = db.select().from(things).all();
 
-    return results.map((result: any) => {
-      // Parse JSON fields
-      if (result.data && typeof result.data === 'string') {
-        result.data = JSON.parse(result.data);
-      }
-      if (result.meta && typeof result.meta === 'string') {
-        result.meta = JSON.parse(result.meta);
-      }
+    return results.map((result) => {
       const slugs = result.url.split('/').filter(Boolean);
       return {
-        url: `/${result.url}`,
+        url: `/docs/${result.ns}.org.ai/${result.url.split('/').slice(1).join('/')}`,
         slugs,
         path: dbPath, // Physical file path - using db path as placeholder
         data: {
@@ -165,11 +144,81 @@ export class DatabaseSource {
 
   /**
    * Get list of unique domains
+   * Cached for performance with large datasets
    */
   getDomains(): string[] {
-    const stmt = db.prepare('SELECT DISTINCT ns FROM things');
-    const results = stmt.all() as { ns: string }[];
-    return results.map(r => r.ns);
+    if (this.domainsListCache) {
+      return this.domainsListCache;
+    }
+
+    const results = db.selectDistinct({ ns: things.ns }).from(things).all();
+    this.domainsListCache = results.map(r => r.ns);
+    return this.domainsListCache;
+  }
+
+  /**
+   * Get types for a specific domain
+   * Cached to avoid repeated queries
+   */
+  getDomainTypes(domain: string): string[] {
+    if (this.domainCache.has(domain)) {
+      return this.domainCache.get(domain)!;
+    }
+
+    const results = db
+      .selectDistinct({ type: things.type })
+      .from(things)
+      .where(eq(things.ns, domain))
+      .all();
+
+    const types = results.map(r => r.type);
+    this.domainCache.set(domain, types);
+    return types;
+  }
+
+  /**
+   * Get lightweight page metadata for sidebar
+   * Only loads title, url, type - not full content
+   * Optimized for rendering large sidebars
+   */
+  getPageMetadata(domain: string, type?: string): Array<{ url: string; title: string; type: string }> {
+    const whereConditions = type
+      ? and(eq(things.ns, domain), eq(things.type, type))
+      : eq(things.ns, domain);
+
+    const results = db
+      .select({
+        url: things.url,
+        id: things.id,
+        type: things.type,
+      })
+      .from(things)
+      .where(whereConditions)
+      .all();
+
+    return results.map(r => ({
+      url: `/docs/${domain}.org.ai/${r.url.split('/').slice(1).join('/')}`,
+      title: r.id,
+      type: r.type,
+    }));
+  }
+
+  /**
+   * Get count of pages for a domain/type
+   * Used for pagination calculations
+   */
+  getPageCount(domain: string, type?: string): number {
+    const whereConditions = type
+      ? and(eq(things.ns, domain), eq(things.type, type))
+      : eq(things.ns, domain);
+
+    const result = db
+      .select({ count: sql<number>`count(*)` })
+      .from(things)
+      .where(whereConditions)
+      .get();
+
+    return result?.count ?? 0;
   }
 
   /**
@@ -300,30 +349,27 @@ export class DatabaseSource {
   search(query: string, domain?: string): DBPage[] {
     const searchPattern = `%${query}%`;
 
-    let stmt;
-    let results: any[];
-
+    let results;
     if (domain) {
-      stmt = db.prepare(
-        'SELECT * FROM things WHERE ns = ? AND (id LIKE ? OR content LIKE ?)'
-      );
-      results = stmt.all(domain, searchPattern, searchPattern) as any[];
+      results = db
+        .select()
+        .from(things)
+        .where(
+          sql`${things.ns} = ${domain} AND (${things.id} LIKE ${searchPattern} OR ${things.content} LIKE ${searchPattern})`
+        )
+        .all();
     } else {
-      stmt = db.prepare('SELECT * FROM things WHERE id LIKE ? OR content LIKE ?');
-      results = stmt.all(searchPattern, searchPattern) as any[];
+      results = db
+        .select()
+        .from(things)
+        .where(sql`${things.id} LIKE ${searchPattern} OR ${things.content} LIKE ${searchPattern}`)
+        .all();
     }
 
-    return results.map((result: any) => {
-      // Parse JSON fields
-      if (result.data && typeof result.data === 'string') {
-        result.data = JSON.parse(result.data);
-      }
-      if (result.meta && typeof result.meta === 'string') {
-        result.meta = JSON.parse(result.meta);
-      }
+    return results.map((result) => {
       const slugs = result.url.split('/').filter(Boolean);
       return {
-        url: `/${result.url}`,
+        url: `/docs/${result.ns}.org.ai/${result.url.split('/').slice(1).join('/')}`,
         slugs,
         path: dbPath, // Physical file path - using db path as placeholder
         data: {
