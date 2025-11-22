@@ -72,6 +72,18 @@ This creates:
 
 ## Usage
 
+### Build Normalized Database in ClickHouse
+
+```bash
+# Build normalized things with Zod validation to ClickHouse
+tsx .scripts/build-things-db.ts clickhouse
+```
+
+This reads from source.db (SQLite) and writes the normalized, validated knowledge graph directly to ClickHouse with:
+- Semantic URLs (https://occupations.org.ai/ChiefExecutives)
+- Zod schema validation
+- Domain mapping (onet → occupations.org.ai, etc.)
+
 ### Generate Embeddings to ClickHouse
 
 ```bash
@@ -80,15 +92,6 @@ tsx .scripts/generate-embeddings.ts clickhouse
 ```
 
 The script reads from the SQLite source database and writes embeddings to ClickHouse, supporting massive scale.
-
-### Ingest Data to ClickHouse
-
-Future ingestion scripts will support targeting ClickHouse directly:
-
-```bash
-# Ingest data directly to ClickHouse (coming soon)
-tsx .scripts/ingest-db.ts clickhouse
-```
 
 ## Schema
 
