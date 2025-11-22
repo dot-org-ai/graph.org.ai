@@ -49,11 +49,4 @@ Integrations.org.ai/Searches/
 Integrations.org.ai/Nouns/
 Products.org.ai/
 Services.org.ai/
-
-# mdxdb database files
-.mdxdb/source.db
-.mdxdb/source.db-shm
-.mdxdb/source.db-wal
-.mdxdb/things.db
-.mdxdb/things.db-shm
-.mdxdb/things.db-wal
+.source/UNSPSC/UNSPSC.Codes.tsv

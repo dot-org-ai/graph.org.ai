@@ -424,19 +424,20 @@ async function ingestUNSPSC(): Promise<void> {
 
     console.log(`  ℹ️  Found ${data.length} rows in UNSPSC XLSX`);
 
-    // The UNSPSC XLSX structure typically has columns like:
-    // Segment, Segment Title, Family, Family Title, Class, Class Title, Commodity, Commodity Title
-    const codes = data.map((row: any) => ({
-      segmentCode: row['Segment'] || row['SEGMENT'] || '',
-      segmentTitle: row['Segment Title'] || row['SEGMENT TITLE'] || '',
-      familyCode: row['Family'] || row['FAMILY'] || '',
-      familyTitle: row['Family Title'] || row['FAMILY TITLE'] || '',
-      classCode: row['Class'] || row['CLASS'] || '',
-      classTitle: row['Class Title'] || row['CLASS TITLE'] || '',
-      commodityCode: row['Commodity'] || row['COMMODITY'] || '',
-      commodityTitle: row['Commodity Title'] || row['COMMODITY TITLE'] || '',
-      definition: row['Definition'] || row['DEFINITION'] || '',
-    }));
+    // Skip copyright/header rows (first 6 rows) and use proper column mapping
+    // Columns: __EMPTY_2=Segment, UNSPSC UNv260801=Segment Title, __EMPTY_4=Family, __EMPTY_5=Family Title,
+    //          __EMPTY_7=Class, __EMPTY_8=Class Title, __EMPTY_10=Commodity, __EMPTY_11=Commodity Title, __EMPTY_12=Commodity Definition
+    const codes = data.slice(6).map((row: any) => ({
+      segmentCode: row['__EMPTY_2'] || '',
+      segmentTitle: row['UNSPSC UNv260801'] || '',
+      familyCode: row['__EMPTY_4'] || '',
+      familyTitle: row['__EMPTY_5'] || '',
+      classCode: row['__EMPTY_7'] || '',
+      classTitle: row['__EMPTY_8'] || '',
+      commodityCode: row['__EMPTY_10'] || '',
+      commodityTitle: row['__EMPTY_11'] || '',
+      definition: row['__EMPTY_12'] || '',
+    })).filter(row => row.segmentCode || row.familyCode || row.classCode || row.commodityCode);
 
     writeTSV(path.join(UNSPSC_DIR, 'UNSPSC.Codes.tsv'), codes);
 
@@ -722,6 +723,140 @@ async function ingestIntegrations(): Promise<void> {
 }
 
 // ============================================================================
+// Advance CTE Framework Crosswalk Ingestion
+// ============================================================================
+
+async function ingestAdvanceCTE(): Promise<void> {
+  console.log('\n📦 Ingesting Advance CTE Framework Crosswalk...');
+
+  const ADVANCECTE_DIR = path.join(SOURCE_DIR, 'AdvanceCTE');
+
+  try {
+    // Check if Excel files exist
+    const fullCrosswalkPath = path.join(ADVANCECTE_DIR, 'Full_Framework_Crosswalk.xlsx');
+    const cipCrosswalkPath = path.join(ADVANCECTE_DIR, 'CIP_Career_Clusters_Crosswalk.xlsx');
+    const socCrosswalkPath = path.join(ADVANCECTE_DIR, 'SOC_Career_Clusters_Crosswalk.xlsx');
+    const naicsCrosswalkPath = path.join(ADVANCECTE_DIR, 'NAICS_Subclusters_Crosswalk.xlsx');
+
+    // Process Full Framework Crosswalk
+    if (fs.existsSync(fullCrosswalkPath)) {
+      const buffer = fs.readFileSync(fullCrosswalkPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(ADVANCECTE_DIR, 'AdvanceCTE.FullCrosswalk.tsv'), data);
+    } else {
+      console.log('  ℹ️  Full_Framework_Crosswalk.xlsx not found');
+    }
+
+    // Process CIP Career Clusters Crosswalk
+    if (fs.existsSync(cipCrosswalkPath)) {
+      const buffer = fs.readFileSync(cipCrosswalkPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(ADVANCECTE_DIR, 'AdvanceCTE.CIP-CareerClusters.tsv'), data);
+    } else {
+      console.log('  ℹ️  CIP_Career_Clusters_Crosswalk.xlsx not found');
+    }
+
+    // Process SOC Career Clusters Crosswalk
+    if (fs.existsSync(socCrosswalkPath)) {
+      const buffer = fs.readFileSync(socCrosswalkPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(ADVANCECTE_DIR, 'AdvanceCTE.SOC-CareerClusters.tsv'), data);
+    } else {
+      console.log('  ℹ️  SOC_Career_Clusters_Crosswalk.xlsx not found');
+    }
+
+    // Process NAICS Subclusters Crosswalk
+    if (fs.existsSync(naicsCrosswalkPath)) {
+      const buffer = fs.readFileSync(naicsCrosswalkPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(ADVANCECTE_DIR, 'AdvanceCTE.NAICS-CareerClusters.tsv'), data);
+    } else {
+      console.log('  ℹ️  NAICS_Subclusters_Crosswalk.xlsx not found');
+    }
+
+  } catch (error) {
+    console.error('  ❌ Error ingesting Advance CTE:', error);
+  }
+}
+
+// ============================================================================
+// BLS Industry-Occupation Matrix Ingestion
+// ============================================================================
+
+async function ingestBLS(): Promise<void> {
+  console.log('\n📦 Ingesting BLS Industry-Occupation Matrix...');
+
+  const BLS_DIR = path.join(SOURCE_DIR, 'BLS');
+
+  try {
+    // Check if manually downloaded Excel files exist
+    const byIndustryPath = path.join(BLS_DIR, 'BLS.IndustryOccupationMatrix.ByIndustry.xlsx');
+    const byOccupationPath = path.join(BLS_DIR, 'BLS.IndustryOccupationMatrix.ByOccupation.xlsx');
+    const socAcsCrosswalkPath = path.join(BLS_DIR, 'BLS.SOC-ACS-Crosswalk.xlsx');
+    const socCpsCrosswalkPath = path.join(BLS_DIR, 'BLS.SOC-CPS-Crosswalk.xlsx');
+
+    let filesFound = false;
+
+    // Process Industry-Occupation Matrix by Industry
+    if (fs.existsSync(byIndustryPath)) {
+      const buffer = fs.readFileSync(byIndustryPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(BLS_DIR, 'BLS.IndustryOccupationMatrix.ByIndustry.tsv'), data);
+      filesFound = true;
+    }
+
+    // Process Industry-Occupation Matrix by Occupation
+    if (fs.existsSync(byOccupationPath)) {
+      const buffer = fs.readFileSync(byOccupationPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(BLS_DIR, 'BLS.IndustryOccupationMatrix.ByOccupation.tsv'), data);
+      filesFound = true;
+    }
+
+    // Process SOC-ACS Crosswalk
+    if (fs.existsSync(socAcsCrosswalkPath)) {
+      const buffer = fs.readFileSync(socAcsCrosswalkPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(BLS_DIR, 'BLS.SOC-ACS-Crosswalk.tsv'), data);
+      filesFound = true;
+    }
+
+    // Process SOC-CPS Crosswalk
+    if (fs.existsSync(socCpsCrosswalkPath)) {
+      const buffer = fs.readFileSync(socCpsCrosswalkPath);
+      const workbook = XLSX.read(buffer, { type: 'buffer' });
+      const sheetName = workbook.SheetNames[0];
+      const data = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+      writeTSV(path.join(BLS_DIR, 'BLS.SOC-CPS-Crosswalk.tsv'), data);
+      filesFound = true;
+    }
+
+    if (!filesFound) {
+      console.log('  ℹ️  No BLS data files found. Please download manually from:');
+      console.log('      https://www.bls.gov/emp/tables.htm');
+      console.log('      See .source/BLS/README.md for instructions');
+    }
+
+  } catch (error) {
+    console.error('  ❌ Error ingesting BLS:', error);
+  }
+}
+
+// ============================================================================
 // Main Execution
 // ============================================================================
 
@@ -740,6 +875,8 @@ async function main() {
   await ingestIcons();
   await ingestModels();
   await ingestIntegrations();
+  await ingestAdvanceCTE();
+  await ingestBLS();
 
   console.log('\n Data ingestion complete!\n');
 }
