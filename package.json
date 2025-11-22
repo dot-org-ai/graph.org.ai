@@ -1,9 +1,11 @@
 {
     "type": "module",
     "devDependencies": {
+        "@types/node": "^24.10.1",
         "tsx": "^4.20.6"
     },
     "dependencies": {
+        "xlsx": "^0.18.5",
         "zod": "^4.1.12"
     }
 }
