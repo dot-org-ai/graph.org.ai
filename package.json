@@ -3,24 +3,32 @@
     "version": "0.0.0",
     "private": true,
     "type": "module",
+    "packageManager": "pnpm@10.18.2",
     "scripts": {
-        "dev": "pnpm --filter @graph.org.ai/site dev",
-        "build": "pnpm --filter @graph.org.ai/site build",
+        "dev": "turbo dev",
+        "build": "turbo build",
+        "lint": "turbo lint",
+        "type-check": "turbo type-check",
+        "clean": "turbo clean",
         "ingest": "pnpm --filter @graph.org.ai/scripts run ingest"
     },
     "devDependencies": {
         "@types/better-sqlite3": "^7.6.13",
         "@types/node": "^24.10.1",
         "drizzle-kit": "^0.31.7",
-        "tsx": "^4.20.6"
+        "tsx": "^4.20.6",
+        "turbo": "^2.6.1"
     },
     "dependencies": {
         "@ai-sdk/google": "^2.0.40",
         "@clickhouse/client": "^1.14.0",
         "ai": "^5.0.99",
-        "better-sqlite3": "^12.4.6",
         "dotenv": "^17.2.3",
         "drizzle-orm": "^0.44.7",
+        "dumpster-dip": "^2.0.0",
+        "split2": "^4.2.0",
+        "unbzip2-stream": "^1.4.3",
+        "wtf_wikipedia": "^10.4.0",
         "xlsx": "^0.18.5",
         "zod": "^4.1.12"
     }

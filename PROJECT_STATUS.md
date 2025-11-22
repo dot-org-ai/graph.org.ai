@@ -57,6 +57,16 @@ Building a comprehensive knowledge graph connecting:
 - [x] `.scripts/process-advancecte.ts` - Multi-sheet Excel processor
 - [x] `.scripts/create-career-cluster-enrichments.ts` - Enrichment generator
 
+## 🚧 Phase 2: Economic Data Integration
+
+### Status: ⏸️ PAUSED - Manual Download Required
+
+**Current Blocker**: BLS OES data requires manual browser download (automated download blocked)
+
+**Action Required**: Manual download of `national_M2024_dl.xlsx` from https://www.bls.gov/oes/tables.htm
+
+**See**: `.source/BLS/MANUAL_DOWNLOAD_NOTE.md` for instructions
+
 ## 🚧 In Progress (Phase 2)
 
 ### Data Sources to Ingest

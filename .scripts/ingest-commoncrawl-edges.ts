@@ -83,20 +83,18 @@ async function ingestEdges(pathsFiles: string[], batchTimestamp: string) {
     console.log(`   [${i + 1}/${pathsFiles.length}] ${path.basename(url)}`);
 
     // Format: fromIndex TAB toIndex
-    // Direct JOIN with domains table (no dictionary needed at this scale)
+    // Use dictGet() with CACHE layout - queries source table on miss
     const insertQuery = `
       INSERT INTO public.relationships (ns, \`from\`, predicate, reverse, \`to\`, createdAt, updatedAt)
       SELECT
         'web.org.ai' AS ns,
-        d1.url AS \`from\`,
+        dictGet('public.domains_dict', 'url', c1) AS \`from\`,
         'linksTo' AS predicate,
         'linksFrom' AS reverse,
-        d2.url AS \`to\`,
+        dictGet('public.domains_dict', 'url', c2) AS \`to\`,
         toDateTime('${batchTimestamp}') AS createdAt,
         toDateTime('${batchTimestamp}') AS updatedAt
-      FROM url('${url}', 'TabSeparated', 'c1 UInt64, c2 UInt64') AS edges
-      INNER JOIN public.domains AS d1 ON edges.c1 = d1.id
-      INNER JOIN public.domains AS d2 ON edges.c2 = d2.id
+      FROM url('${url}', 'TabSeparated', 'c1 UInt64, c2 UInt64')
     `;
 
     await client.exec({
