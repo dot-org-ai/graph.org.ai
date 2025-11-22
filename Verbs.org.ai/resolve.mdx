@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: resolve
+$context: https://verbs.org.ai
+name: resolve
+canonicalForm: resolve
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Finding solutions to problems or reaching agreement on disputed issues
+predicate: resolves
+event: resolved
+activity: resolving
+actor: Resolver
+object: Resolution
+inverse: resolvedBy
+---
+
+# Resolve
+
+Finding solutions to problems, settling disputes, or reaching definitive conclusions about issues encountered in work activities.
+
+## O*NET Context
+
+Work activity focused on working through problems, conflicts, or technical issues to reach workable solutions and clear resolutions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Manager.resolve({ issue: 'staffing conflict', approach: 'mediation' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Engineer.resolves.Bug
+$.Manager.resolves.Dispute
+```
+
+### Event (Past Tense)
+```typescript
+on($.Issue.resolved, async (event) => {
+  await $.Ticket.close({ resolution: event.solution })
+  await $.Team.notify({ status: 'resolved', details: event.summary })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeResolution = $.IT.resolving.SystemDowntime
+console.log(`Issue resolution: ${activeResolution.progress}% complete`)
+```
+
+### Role (Actor)
+```typescript
+const resolver: $.Resolver = await $.findAgent({ specialty: 'conflict-resolution' })
+resolver.mediateDispute(parties)
+```
+
+### Concept (Abstraction)
+```typescript
+const resolution: $.Resolution = {
+  issueId: problem.id,
+  solution: 'implemented workaround',
+  rootCause: 'configuration error',
+  status: 'implemented',
+  resolvedAt: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const cases = await db.related($.Conflict, $.resolvedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Problem Solving:**
+- Resolving technical issues and system failures
+- Finding solutions to operational problems
+- Troubleshooting equipment or software errors
+- Developing workarounds for limitations
+
+**Conflict Management:**
+- Resolving disputes between team members
+- Settling disagreements with clients or vendors
+- Mediating conflicts over resources or priorities
+- Reaching agreements on contentious issues
+
+**Customer Service:**
+- Resolving customer complaints and issues
+- Finding solutions to service problems
+- Addressing billing or shipping disputes
+- Providing remedies for service failures
+
+## Related Verbs
+- solve - Finding answers to problems
+- settle - Reaching agreement on issues
+- fix - Repairing something broken
+- address - Dealing with a situation

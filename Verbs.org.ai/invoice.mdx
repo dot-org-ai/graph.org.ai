@@ -1,0 +1,97 @@
+---
+$type: Verb
+$id: invoice
+$context: https://verbs.org.ai
+name: invoice
+canonicalForm: invoice
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Create and send billing documents for goods or services delivered
+predicate: invoices
+event: invoiced
+activity: invoicing
+actor: Invoicer
+object: Invoice
+inverse: invoicedBy
+---
+
+# Invoice
+
+Creating and issuing billing documents that request payment for products delivered or services rendered to customers.
+
+## APQC Process Context
+
+Billing and revenue process where organizations document goods delivered or services provided and request payment from customers within defined terms.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Finance.invoice({ customer, items, amount, terms })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.invoices.Customer
+$.Vendor.invoices.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.invoiced, async (event) => {
+  await $.ArPayable.recordInvoice(event)
+  await $.Customer.receiveInvoice(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const billing = $.Finance.invoicing.Sales
+```
+
+### Actor (Role)
+```typescript
+const invoicer: $.Invoicer = await $.findAgent({ role: 'billing' })
+```
+
+### Object (Abstraction)
+```typescript
+const invoice: $.Invoice = {
+  customerId: customer.id,
+  invoiceNumber: 'INV-2025-001',
+  items: [...],
+  subtotal: 10000,
+  tax: 800,
+  total: 10800,
+  dueDate: date,
+  paymentTerms: '30 days',
+  status: 'sent'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const invoices = await db.related($.Order, $.invoicedBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 4: Enable
+- Subcategory: Manage customer billing
+- Process: Manage customer billing and collections
+
+## Business Rules
+
+- Invoice must match delivery and customer agreement
+- Invoice amounts must be accurate and complete
+- Invoice must be issued within contractual timeframe
+- Invoice terms must comply with contract
+- Invoice must be tracked for payment collection
+
+## Related Verbs
+- deliver - Providing goods or services
+- charge - Imposing a fee or cost
+- bill - Creating charge documents
+- collect - Gathering payment
+- reconcile - Confirming amounts match
+

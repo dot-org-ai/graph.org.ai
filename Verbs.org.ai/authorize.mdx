@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: authorize
+$context: https://verbs.org.ai
+name: authorize
+canonicalForm: authorize
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Granting a permission or authority
+predicate: authorizes
+event: authorized
+activity: authorizing
+actor: Authorizer
+object: Authorization
+inverse: authorizedBy
+---
+
+# Authorize
+
+Schema.org Action: Granting a permission or authority.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.authorize()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.authorizes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.authorized, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.authorizing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Authorizer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Authorization
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.authorizedBy.{Subject}
+```

@@ -1,0 +1,112 @@
+---
+$id: https://graph.org.ai/integrations/apps/{categorySlug}/{slug}
+$type: App
+source: "{app_url}"
+id: "{id}"
+slug: "{slug}"
+name: "{name}"
+canonical_id: "{canonical_id}"
+category: "{categorySlug}"
+popularity: "{popularity}"
+usage_count: "{zap_usage_count}"
+---
+
+export const items = JSONFile.fetch('./services.json')
+  .then(services => {
+    // Deduplicate by slug (each service appears once)
+    const unique = new Map();
+
+    services.forEach(service => {
+      if (!unique.has(service.slug)) {
+        unique.set(service.slug, service);
+      }
+    });
+
+    return Array.from(unique.values()).map(service => {
+      const category = service.categories && service.categories[0];
+      if (!category) return null;
+
+      const categorySlug = _.upperFirst(_.camelCase(category.slug || ''));
+      const description = (service.description || '').replace(/Zapier/gi, 'this platform');
+
+      const reads = service.reads || [];
+      const writes = service.writes || [];
+      const searches = service.searches || [];
+      const categories = service.categories;
+
+      return {
+        id: `Apps/${categorySlug}/${service.slug}`,
+        slug: service.slug,
+        name: service.name,
+        canonical_id: service.canonical_id,
+        app_url: service.app_url || service.external_url || '',
+        learn_more_url: service.learn_more_url,
+        api_docs_url: service.api_docs_url,
+        description,
+        primary_color: service.primary_color,
+        popularity: service.popularity || 0,
+        zap_usage_count: service.zap_usage_count || 0,
+        is_featured: service.is_featured,
+        is_premium: service.is_premium,
+        categorySlug,
+        categoryTitle: category.title,
+        logo_url: service.images?.url_128x128 || '',
+        // Store arrays for component lookup
+        categories,
+        reads,
+        writes,
+        searches,
+        // Pre-computed strings for template
+        categoriesList: categories.map(c => `- [${c.title}](../Categories/${_.upperFirst(_.camelCase(c.slug))}.md)`).join('\n'),
+        readsList: reads.slice(0, 10).map(r => `- ${r.name}: ${r.description}`).join('\n'),
+        readsMore: reads.length > 10 ? `\n_...and ${reads.length - 10} more events_` : '',
+        writesList: writes.slice(0, 10).map(w => `- ${w.name}: ${w.description}`).join('\n'),
+        writesMore: writes.length > 10 ? `\n_...and ${writes.length - 10} more actions_` : '',
+        searchesList: searches.slice(0, 10).map(s => `- ${s.name}: ${s.description}`).join('\n'),
+        searchesMore: searches.length > 10 ? `\n_...and ${searches.length - 10} more searches_` : '',
+        $id: `https://graph.org.ai/integrations/apps/${service.slug}`
+      };
+    }).filter(Boolean);
+  });
+
+<img src="{logo_url}" alt="{name}" />
+
+# {name}
+
+{description}
+
+## Details
+
+| Property | Value |
+|----------|-------|
+| **ID** | `{id}` |
+| **Category** | [{categoryTitle}](../Categories/{categorySlug}.md) |
+| **Popularity Rank** | {popularity} |
+| **Usage Count** | {zap_usage_count} |
+| **Primary Color** | {primary_color} |
+| **Featured** | {is_featured} |
+| **Premium** | {is_premium} |
+
+## Links
+
+| Link | URL |
+|------|-----|
+| **Website** | [{app_url}]({app_url}) |
+| **Learn More** | [{learn_more_url}]({learn_more_url}) |
+| **API Documentation** | [{api_docs_url}]({api_docs_url}) |
+
+## Categories
+
+{categoriesList}
+
+## Events ({reads.length})
+
+{readsList}{readsMore}
+
+## Actions ({writes.length})
+
+{writesList}{writesMore}
+
+## Searches ({searches.length})
+
+{searchesList}{searchesMore}

@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: budget
+$context: https://verbs.org.ai
+name: budget
+canonicalForm: budget
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Plan and allocate financial resources for future periods
+predicate: budgets
+event: budgeted
+activity: budgeting
+actor: Budgeter
+object: Budget
+inverse: budgetedBy
+---
+
+# Budget
+
+Planning and allocating financial resources across departments and activities for future operating periods based on strategic objectives.
+
+## APQC Process Context
+
+Financial planning process where organizations establish spending plans, allocate resources across business units, and set financial targets for the upcoming period.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Finance.budget({ period, departments, amounts })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Finance.budgets.Department
+$.Organization.budgets.CapitalProject
+```
+
+### Event (Past Tense)
+```typescript
+on($.Budget.budgeted, async (event) => {
+  await $.Approval.request(event.budget)
+  await $.Department.notifyOfAllocation(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const planning = $.Finance.budgeting.Resources
+```
+
+### Actor (Role)
+```typescript
+const budgeter: $.Budgeter = await $.findAgent({ role: 'finance' })
+```
+
+### Object (Abstraction)
+```typescript
+const budget: $.Budget = {
+  period: '2025-Q1',
+  departments: { sales: 500000, ops: 300000 },
+  contingency: 50000,
+  status: 'approved',
+  approvedDate: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const budgets = await db.related($.Department, $.budgetedBy, $.Finance)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop and manage enterprise financial resources
+- Process: Develop financial plan and budget
+
+## Business Rules
+
+- Budget must align with strategic plan
+- All departments must submit budget requests
+- Budget requires approval by finance leadership
+- Actual spending must be monitored against budget
+- Budget changes require formal approval
+
+## Related Verbs
+- plan - Establishing strategies and approaches
+- allocate - Distributing resources
+- forecast - Projecting future financial performance
+- control - Managing spending against budget
+- measure - Tracking actual versus budget
+

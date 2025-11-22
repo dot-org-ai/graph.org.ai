@@ -1,0 +1,158 @@
+---
+$type: Verb
+$id: sell
+$context: https://verbs.org.ai
+name: sell
+canonicalForm: sell
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:retail_selling
+description: Point of sale transaction and retail selling
+predicate: sells
+event: sold
+activity: selling
+actor: Seller
+object: Sale
+inverse: soldBy
+---
+
+# Sell
+
+GS1 CBV Business Step: Point of sale transaction and retail selling.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Retailer.sell()
+```
+
+### Predicate (Relationship)
+```typescript
+$.Store.sells.Product
+```
+
+### Event (Past Tense)
+```typescript
+on($.Transaction.sold, async ({subject}) => {
+  // Handle sale completion event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.SalesAssociate.selling.Items
+```
+
+### Role (Actor)
+```typescript
+$.Seller
+```
+
+### Concept (Abstraction)
+```typescript
+$.Sale
+```
+
+### Inverse (Passive)
+```typescript
+$.Product.soldBy.Store
+```
+
+## Context
+
+In retail operations and commerce, selling represents the point-of-sale transaction where goods are transferred to customers:
+
+- **Retail transactions**: In-store or online point-of-sale
+- **Direct sales**: Sales between merchant and customer
+- **Wholesale sales**: Bulk sales to retailers
+- **E-commerce**: Online selling platforms
+- **Payment processing**: Financial transaction completion
+- **Customer acquisition**: Creating new customer relationships
+
+## Implementation Example
+
+```typescript
+import { $ } from 'sdk.do'
+
+// Record sale operation
+const saleEvent = await $.Event.create({
+  type: 'retail_selling',
+  bizStep: 'urn:epcglobal:cbv:bizstep:retail_selling',
+  epcList: ['urn:epc:id:sgtin:product-sku-123'],
+  readPoint: 'urn:epc:id:sgln:store-location-id',
+  bizLocation: 'urn:epc:id:sgln:store-id',
+  timestamp: new Date().toISOString(),
+  action: 'OBSERVE',
+  disposition: 'completed'
+})
+
+// Create sale transaction
+const sale = await $.Sale.create({
+  transactionId: 'txn-20250129-00001',
+  customerId: 'customer-id-456',
+  storeId: 'store-id-001',
+  items: [
+    { sku: 'product-001', quantity: 2, price: 29.99, total: 59.98 },
+    { sku: 'product-002', quantity: 1, price: 49.99, total: 49.99 }
+  ],
+  subtotal: 109.97,
+  tax: 8.80,
+  total: 118.77,
+  paymentMethod: 'credit_card',
+  timestamp: new Date().toISOString(),
+  status: 'completed'
+})
+
+// Update inventory from sale
+const updatedInventory = await $.Inventory.sell({
+  storeId: 'store-id-001',
+  items: [
+    { sku: 'product-001', quantity: 2 },
+    { sku: 'product-002', quantity: 1 }
+  ],
+  saleId: sale.transactionId
+})
+
+// Create customer order record
+const order = await $.Order.create({
+  orderId: sale.transactionId,
+  customerId: 'customer-id-456',
+  orderDate: new Date().toISOString(),
+  lineItems: sale.items,
+  total: sale.total,
+  status: 'delivered',
+  fulfillmentType: 'in_store_pickup'
+})
+
+// Emit sale completion notification
+on($.Transaction.sold, async (event) => {
+  await send($.Notification.send, {
+    type: 'sale_completed',
+    transactionId: event.transactionId,
+    customerId: event.customerId,
+    total: event.total,
+    receiptEmail: event.customerEmail
+  })
+})
+
+// Update sales metrics
+const salesMetric = await $.Metric.update({
+  type: 'daily_sales',
+  storeId: 'store-id-001',
+  date: new Date().toISOString().split('T')[0],
+  increment: {
+    transactionCount: 1,
+    revenue: sale.total,
+    unitsSold: 3
+  }
+})
+```
+
+## Related Verbs
+
+- **accept**: Customer accepting terms of sale
+- **pack**: Packaging sold items for delivery
+- **ship**: Delivering sold items to customer
+- **collect**: Collecting payment for sales
+- **dispense**: Dispensing sold items to customer

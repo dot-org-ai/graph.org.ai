@@ -1,0 +1,103 @@
+---
+$type: Verb
+$id: decide
+$context: https://verbs.org.ai
+name: decide
+canonicalForm: decide
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making a choice or determination among options or alternatives based on analysis and judgment
+predicate: decides
+event: decided
+activity: deciding
+actor: Decider
+object: Decision
+inverse: decidedBy
+---
+
+# Decide
+
+Making a choice or determination between alternatives, courses of action, or options based on analysis, judgment, authority, or prescribed criteria.
+
+## O*NET Context
+
+Work activity involving the evaluation of options and selection of courses of action. Common in management, leadership, professional judgment roles, and any position requiring decision-making authority.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Leadership.decide({ options: alternatives, criteria: priorities, consultation: required })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.decides.Strategy
+$.Board.decides.Policy
+$.Judge.decides.Case
+```
+
+### Event (Past Tense)
+```typescript
+on($.Issue.decided, async (event) => {
+  await $.Plan.create({ decision: event.choice, rationale: event.reasoning })
+  await $.Stakeholders.notify({ outcome: event.result })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const deliberation = $.Board.deciding.Proposal
+console.log(`Deciding on: ${deliberation.options.length} options, timeline: ${deliberation.deadline}`)
+```
+
+### Role (Actor)
+```typescript
+const decider: $.Decider = await $.findAgent({ authority: 'executive', level: 'C-suite' })
+await decider.determineDirection(options)
+```
+
+### Concept (Abstraction)
+```typescript
+const decision: $.Decision = {
+  decisionId: uuid(),
+  issue: 'market expansion',
+  alternatives: ['domestic', 'international', 'hybrid'],
+  selectedOption: 'hybrid',
+  criteria: ['profitability', 'risk', 'timeline'],
+  reasoning: 'balanced growth with controlled risk',
+  decidedBy: executive.id,
+  date: now(),
+  reversible: false,
+  impact: 'strategic'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const outcomes = await db.related($.Strategy, $.decidedBy, $.Executive)
+```
+
+## Usage Examples
+
+**Management & Leadership:**
+- Manager decides on hiring between candidates
+- Executive decides on company acquisition or divestment
+- Director decides on resource allocation
+
+**Professional Services:**
+- Judge decides on legal case outcome
+- Doctor decides on treatment plan
+- Engineer decides on design specifications
+
+**Business Rules:**
+- Decisions require appropriate authority level
+- Criteria must be documented before deciding
+- Major decisions may require consultation or approval
+- Decision reversibility affects decision-making process
+
+## Related Verbs
+- choose - Selecting from available options
+- determine - Establishing or concluding something
+- recommend - Suggesting a course of action
+- analyze - Examining to support decision-making

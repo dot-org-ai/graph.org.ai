@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: interview
+$context: https://verbs.org.ai
+name: interview
+canonicalForm: interview
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Conducting a formal conversation or questioning to gather information or assess candidates
+predicate: interviews
+event: interviewed
+activity: interviewing
+actor: Interviewer
+object: Interview
+inverse: interviewedBy
+---
+
+# Interview
+
+Conducting formal conversations with individuals through structured questioning to gather information, assess qualifications, or understand perspectives.
+
+## O*NET Context
+
+Work activity focused on engaging in one-on-one or small group conversations to collect data, evaluate candidates, understand needs, or gain insights into experiences or knowledge.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Recruiter.interview({ candidate: person, position: role, format: 'behavioral' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Interviewer.interviews.Candidate
+$.Researcher.interviews.Subject
+```
+
+### Event (Past Tense)
+```typescript
+on($.Candidate.interviewed, async (event) => {
+  await $.Feedback.collect({ interviewId: event.id })
+  await $.Assessment.score({ candidateId: event.candidateId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInterviewing = $.Team.interviewing.Applicants
+console.log(`Candidates reviewed: ${activeInterviewing.count}`)
+```
+
+### Role (Actor)
+```typescript
+const interviewer: $.Interviewer = await $.findAgent({ expertise: 'talent-assessment' })
+interviewer.evaluateCandidate(applicant)
+```
+
+### Concept (Abstraction)
+```typescript
+const interview: $.Interview = {
+  interviewerId: interviewer.id,
+  subjectId: candidate.id,
+  questions: script,
+  startTime: when,
+  duration: minutes,
+  rating: score
+}
+```
+
+### Inverse (Passive)
+```typescript
+const candidates = await db.related($.Job, $.interviewedBy, $.Recruiter)
+```
+
+## Usage Examples
+
+**Recruitment:**
+- Interviewing job candidates
+- Assessing candidate qualifications
+- Evaluating cultural fit
+- Conducting panel interviews
+
+**Research:**
+- Interviewing study participants
+- Gathering customer insights
+- Collecting employee feedback
+- Conducting user research
+
+**Investigation:**
+- Interviewing witnesses or subjects
+- Gathering testimony or statements
+- Conducting needs assessments
+- Interviewing stakeholders
+
+## Related Verbs
+- question - Asking for information
+- discuss - Talking with someone about something
+- assess - Evaluating capabilities or quality
+- investigate - Conducting systematic inquiry

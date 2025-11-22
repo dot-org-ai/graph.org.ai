@@ -1,0 +1,108 @@
+---
+$type: Verb
+$id: purchase
+$context: https://verbs.org.ai
+name: purchase
+canonicalForm: purchase
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Acquiring goods, services, or assets by buying them in exchange for payment
+predicate: purchases
+event: purchased
+activity: purchasing
+actor: Purchaser
+object: Purchase
+inverse: purchasedBy
+---
+
+# Purchase
+
+Acquiring goods, services, or assets by buying them in exchange for money or other consideration.
+
+## O*NET Context
+
+Work activity focused on procuring materials, equipment, services, or supplies required for business operations, projects, or resale through buying transactions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Procurement.purchase({ item: 'equipment', quantity: 50, vendor: vendorId })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Company.purchases.Materials
+$.Buyer.purchases.Inventory
+$.Client.purchases.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.purchased, async (event) => {
+  await $.Vendor.invoice({ order: event.id })
+  await $.Inventory.receive({ shipment: event.purchaseId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePurchasing = $.Team.purchasing.OfficeSupplies
+console.log(`Procurement status: ${activePurchasing.stage}`)
+```
+
+### Role (Actor)
+```typescript
+const purchaser: $.Purchaser = await $.findAgent({ expertise: 'procurement' })
+await purchaser.buyGoods(specification)
+```
+
+### Concept (Abstraction)
+```typescript
+const purchase: $.Purchase = {
+  purchaseOrderId: 'PO-2024-001',
+  vendor: vendorId,
+  items: [{sku, quantity, unitPrice}],
+  totalAmount: 5000,
+  purchaseDate: date,
+  expectedDelivery: futureDate,
+  paymentTerms: 'Net 30'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const buyers = await db.related($.Product, $.purchasedBy, $.Customer)
+```
+
+## Usage Examples
+
+**Procurement:**
+- Purchasing raw materials for manufacturing
+- Buying office supplies and equipment
+- Procuring professional services
+- Purchasing inventory for retail
+
+**Capital Acquisition:**
+- Purchasing company vehicles
+- Buying real estate or facilities
+- Acquiring technology and software licenses
+- Purchasing manufacturing equipment
+
+**Business Operations:**
+- Purchasing utilities and services
+- Buying insurance and warranties
+- Purchasing maintenance and repairs
+- Acquiring tools and supplies
+
+**Vendor Management:**
+- Purchasing from preferred vendors
+- Negotiating purchase terms
+- Managing purchase orders
+- Processing vendor payments
+
+## Related Verbs
+- buy - Acquiring something in exchange for money
+- acquire - Obtaining possession of something
+- procure - Obtaining through effort or negotiation
+- order - Requesting goods or services

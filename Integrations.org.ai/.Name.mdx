@@ -1,0 +1,24 @@
+---
+# Field mappings for API data
+# Format: frontmatter_key: api_field_name
+# Use null or blank to ignore/delete a field
+---
+
+# Field Mapping Configuration
+
+This file defines how API fields map to frontmatter keys in generated MDX files.
+
+## Format
+
+```yaml
+frontmatter_key: api_field_name
+ignore_field: null
+```
+
+## Current Mappings
+
+- `id`: Direct from API `id` field
+- `slug`: Direct from API `slug` field
+- `name`: Direct from API `name` field
+- `source`: Mapped from `app_url` or `external_url`
+- `usage_count`: Mapped from `zap_usage_count`

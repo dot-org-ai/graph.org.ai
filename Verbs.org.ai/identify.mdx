@@ -1,0 +1,102 @@
+---
+$type: Verb
+$id: identify
+$context: https://verbs.org.ai
+name: identify
+canonicalForm: identify
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Recognizing, naming, or determining the nature of something
+predicate: identifies
+event: identified
+activity: identifying
+actor: Identifier
+object: Identification
+inverse: identifiedBy
+---
+
+# Identify
+
+Recognizing, naming, or determining the nature, character, or essence of something or someone.
+
+## O*NET Context
+
+Critical analytical work activity across numerous occupations including scientists, diagnosticians, inspectors, and investigators. Involves observation, comparison, and classification to recognize and name entities, problems, or solutions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Diagnostic.identify({ specimen: sample, method: 'analysis' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Inspector.identifies.Defects
+$.Analyst.identifies.Patterns
+```
+
+### Event (Past Tense)
+```typescript
+on($.Issue.identified, async (event) => {
+  await $.Alert.send({ stakeholders: event.impactedParties })
+  await $.Remediation.plan({ problem: event.issue })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const assessment = $.Quality.identifying.Issues
+console.log(`Issues found: ${assessment.defectCount}`)
+```
+
+### Role (Actor)
+```typescript
+const identifier: $.Identifier = await $.findAgent({ expertise: 'diagnosis' })
+identifier.analyzeAndClassify(data)
+```
+
+### Concept (Abstraction)
+```typescript
+const identification: $.Identification = {
+  subject: 'specimen-42',
+  classification: 'bacteria-type-a',
+  confidence: 0.95,
+  method: 'microscopy',
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const detectives = await db.related($.Suspect, $.identifiedBy, $.Police)
+```
+
+## Usage Examples
+
+**Scientific Research:**
+- Biologists identify species from samples
+- Chemists identify compounds through testing
+- Geologists identify rock and mineral types
+
+**Quality & Safety:**
+- Inspectors identify defects in products
+- Safety engineers identify hazards
+- Auditors identify compliance issues
+
+**Diagnosis & Investigation:**
+- Doctors identify diseases from symptoms
+- Mechanics identify car problems
+- Investigators identify suspects or causes
+
+**Business Rules:**
+- Identification methods documented with confidence levels
+- Chain of custody maintained for evidence
+- Multiple confirmations for critical identifications
+- Record audit trail for identification decisions
+
+## Related Verbs
+- recognize - Noticing something familiar
+- classify - Assigning to categories
+- diagnose - Identifying medical conditions
+- detect - Discovering something present

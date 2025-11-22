@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: commission
+$context: https://verbs.org.ai
+name: commission
+canonicalForm: commission
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Assigning a unique identity to an object
+predicate: commissions
+event: commissioned
+activity: commissioning
+actor: Commissioner
+object: Commission
+inverse: commissionedBy
+---
+
+# Commission
+
+Assigning a unique identity or serial number to an object, making it trackable within a system. Also refers to putting a system or equipment into active service.
+
+## GS1 Context
+
+Business step in supply chain where objects (particularly RFID-tagged items) are assigned unique identifiers (EPC codes, serial numbers, or asset tags) and registered into a tracking system. Critical for traceability and anti-counterfeiting.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.AssetTag.commission({
+  serialNumber: generatedSerial,
+  objectType: 'Item',
+  owner: customerId,
+  timestamp: now()
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.System.commissions.Equipment
+$.Registry.commissions.Assets
+```
+
+### Event (Past Tense)
+```typescript
+on($.Device.commissioned, async (event) => {
+  await $.Registry.register({
+    identifier: event.id,
+    timestamp: event.timestamp
+  })
+  await $.Notification.send($.Owner)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const production = $.Factory.commissioning.Units
+console.log(`${production.unitsToday} units commissioned today`)
+```
+
+### Role (Actor)
+```typescript
+const commissioner: $.Commissioner = $.Admin({ permission: 'system_commissioning' })
+commissioner.registerNewDevice(device)
+```
+
+### Concept (Abstraction)
+```typescript
+const commission: $.Commission = {
+  identifier: uniqueId,
+  objectId: object.id,
+  timestamp: now(),
+  commissioner: user.id,
+  status: 'active',
+  registryUrl: trackingSystemUrl
+}
+```
+
+### Inverse (Passive)
+```typescript
+const assets = await db.related($.SerialNumber, $.commissionedBy, $.Factory)
+```
+
+## Usage Examples
+
+**Asset Management:**
+- Commission equipment upon receipt and installation
+- Commission IT devices when added to network
+- Commission vehicles with registration numbers
+- Commission RFID tags with EPC codes
+
+**Manufacturing & Supply Chain:**
+- Commission batch of products with unique identifiers
+- Commission production equipment at start of lifecycle
+- Commission returned items for resale after refurbishment
+
+**Business Rules:**
+- Commission must assign globally unique identifier
+- Commission triggers creation of asset record
+- Commission enables tracking and traceability
+- Commission cannot be reversed (immutable)
+
+## Related Verbs
+- decommission - Removing an object from active use
+- create - Creating class-level instances
+- encode - Writing data to an RFID tag

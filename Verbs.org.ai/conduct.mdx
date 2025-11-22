@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: conduct
+$context: https://verbs.org.ai
+name: conduct
+canonicalForm: conduct
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Directing, leading, managing, or carrying out activities, events, or operations in a structured manner
+predicate: conducts
+event: conducted
+activity: conducting
+actor: Conductor
+object: Conduct
+inverse: conductedBy
+---
+
+# Conduct
+
+Directing, leading, managing, or carrying out activities, events, operations, or investigations in a structured and systematic manner.
+
+## O*NET Context
+
+Work activity focused on leading, managing, or directing work activities, meetings, interviews, or operations to achieve specific objectives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Meeting.conduct({ participants: [user1, user2], duration: 60, agenda: topics })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.conducts.Meeting
+$.Researcher.conducts.Study
+```
+
+### Event (Past Tense)
+```typescript
+on($.Investigation.conducted, async (event) => {
+  await $.Report.generate({ findings: event.results })
+  await $.Stakeholder.notify({ conclusion: event.outcome })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeOperation = $.Team.conducting.Research
+console.log(`Currently conducting: ${activeOperation.title}`)
+```
+
+### Role (Actor)
+```typescript
+const conductor: $.Conductor = await $.findAgent({ expertise: 'leadership' })
+conductor.manageMeeting(meetingDetails)
+```
+
+### Concept (Abstraction)
+```typescript
+const conduct: $.Conduct = {
+  eventId: meeting.id,
+  conductType: 'performance',
+  leader: user.id,
+  participants: 25,
+  startTime: now(),
+  duration: 120,
+  notes: 'Successfully completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const leaders = await db.related($.Operation, $.conductedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Meeting and Event Management:**
+- Conducting staff meetings
+- Managing client meetings
+- Running presentations
+- Facilitating group discussions
+
+**Research and Investigation:**
+- Conducting interviews and surveys
+- Managing research studies
+- Investigating complaints or issues
+- Auditing operations
+
+**Operations Management:**
+- Managing manufacturing processes
+- Directing project execution
+- Overseeing team activities
+- Controlling workflow execution
+
+## Related Verbs
+- manage - Organizing and controlling
+- direct - Guiding or leading
+- lead - Going ahead or taking command
+- oversee - Supervising or monitoring

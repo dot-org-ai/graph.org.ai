@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: unload
+$context: https://verbs.org.ai
+name: unload
+canonicalForm: unload
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:unloading
+description: Removing goods or materials from a transport vehicle or container
+predicate: unloads
+event: unloaded
+activity: unloading
+actor: Unloader
+object: Unloading
+inverse: unloadedBy
+---
+
+# Unload
+
+GS1 CBV Business Step: Removing goods or materials from a transport vehicle or container. This business step represents the discharge of cargo from trucks, containers, or other conveyances at receiving locations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ReceivingStation.unload(vehicle)
+```
+
+### Predicate (Relationship)
+```typescript
+$.Dock.unloads.Cargo
+```
+
+### Event (Past Tense)
+```typescript
+on($.Vehicle.unloaded, async ({location, items}) => {
+  // Handle unloading completion
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Facility.unloading.Shipment
+```
+
+### Role (Actor)
+```typescript
+$.Unloader
+```
+
+### Concept (Abstraction)
+```typescript
+$.Unloading
+```
+
+### Inverse (Passive)
+```typescript
+$.Cargo.unloadedBy.Dock
+```

@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: customize
+$context: https://verbs.org.ai
+name: customize
+canonicalForm: customize
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Modify or tailor products or services for specific customer needs
+predicate: customizes
+event: customized
+activity: customizing
+actor: Customizer
+object: Customization
+inverse: customizedBy
+---
+
+# Customize
+
+Modifying or tailoring products, services, or configurations to meet specific customer requirements, preferences, or unique needs.
+
+## APQC Process Context
+
+Product and service delivery activity where organizations adapt standard offerings to match customer specifications while maintaining quality and efficiency.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Product.customize({ specification, customer, requirements })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manufacturer.customizes.Product
+$.ServiceProvider.customizes.Solution
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.customized, async (event) => {
+  await $.Production.schedule(event.specifications)
+  await $.Customer.confirmSpecifications(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const adaptation = $.Manufacturing.customizing.Product
+```
+
+### Actor (Role)
+```typescript
+const customizer: $.Customizer = await $.findAgent({ skill: 'product-design' })
+```
+
+### Object (Abstraction)
+```typescript
+const customization: $.Customization = {
+  customerId: customer.id,
+  baseProduct: product.id,
+  specifications: { color: 'blue', size: 'L' },
+  approvedDate: now(),
+  status: 'in-production'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const customizations = await db.related($.Product, $.customizedBy, $.Customer)
+```
+
+## APQC Process Category
+
+Category 3: Make/Deliver
+- Subcategory: Manage customer service and support
+- Process: Develop product specifications based on customer needs
+
+## Business Rules
+
+- Customization must be within product capabilities
+- Specifications must be clearly documented
+- Customization must not compromise quality standards
+- Customization may affect pricing and delivery
+- Customer approval required before execution
+
+## Related Verbs
+- configure - Setting parameters for operation
+- design - Creating specifications
+- modify - Changing existing structure
+- manufacture - Producing customized items
+- deliver - Providing customized solution
+

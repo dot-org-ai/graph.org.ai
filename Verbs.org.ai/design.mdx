@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: design
+$context: https://verbs.org.ai
+name: design
+canonicalForm: design
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Creating plans, specifications, or layouts for new products, systems, structures, or processes
+predicate: designs
+event: designed
+activity: designing
+actor: Designer
+object: Design
+inverse: designedBy
+---
+
+# Design
+
+Creating plans, specifications, layouts, blueprints, or conceptual frameworks for new or modified products, systems, structures, services, or processes based on requirements and constraints.
+
+## O*NET Context
+
+Work activity involving the creation of specifications and plans that guide development, construction, or implementation. Common in engineering, architecture, product development, and UX/UI roles.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Engineer.design({ system: 'manufacturing line', timeline: '3 months', constraints: ['budget', 'space', 'safety'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Architect.designs.Building
+$.Engineer.designs.Bridge
+$.Designer.designs.Interface
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.designed, async (event) => {
+  await $.Specification.finalize({ designer: event.creator, version: event.revision })
+  await $.Review.schedule({ stakeholders: event.reviewers })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const creation = $.Studio.designing.Campaign
+console.log(`Designing: ${creation.concepts} concepts, ${creation.iterations} iterations`)
+```
+
+### Role (Actor)
+```typescript
+const designer: $.Designer = await $.findAgent({ skills: ['CAD', 'systems thinking', 'user-centered design'], portfolio: 'strong' })
+await designer.createBlueprints(requirements)
+```
+
+### Concept (Abstraction)
+```typescript
+const design: $.Design = {
+  projectId: project.id,
+  designerId: designer.id,
+  purpose: 'e-commerce platform',
+  phases: ['research', 'wireframes', 'prototypes', 'specifications'],
+  constraints: ['responsive', 'accessibility', 'performance'],
+  deliverables: ['mockups', 'technical specs', 'design system'],
+  tools: ['Figma', 'AutoCAD', 'Confluence'],
+  status: 'in-review'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const blueprints = await db.related($.System, $.designedBy, $.Engineer)
+```
+
+## Usage Examples
+
+**Architecture & Engineering:**
+- Architect designs office building with sustainable features
+- Civil engineer designs bridge with load calculations
+- Industrial engineer designs production facility layout
+
+**Product & Software:**
+- UX designer designs mobile application interface
+- Product manager designs feature specifications
+- System architect designs cloud infrastructure
+
+**Business Rules:**
+- Designs must meet all regulatory and safety requirements
+- Design process should include stakeholder input
+- Designs require approval before implementation
+- Design changes must be documented and versioned
+
+## Related Verbs
+- plan - Preparing detailed procedures or schedules
+- create - Bringing something new into existence
+- develop - Elaborating or working through details
+- specify - Stating exact requirements or characteristics

@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: arrange
+$context: https://verbs.org.ai
+name: arrange
+canonicalForm: arrange
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Organizing, positioning, or setting up items, events, or schedules in a particular order or configuration
+predicate: arranges
+event: arranged
+activity: arranging
+actor: Arranger
+object: Arrangement
+inverse: arrangedBy
+---
+
+# Arrange
+
+Organizing, positioning, or setting up items, events, or schedules in a particular order or configuration for a specific purpose.
+
+## O*NET Context
+
+Work activity focused on organizing and coordinating elements into a desired configuration, sequence, or layout to achieve operational efficiency or meet specific requirements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Schedule.arrange({ participants: [user1, user2], duration: 60 })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.arranges.Meeting
+$.Coordinator.arranges.Event
+```
+
+### Event (Past Tense)
+```typescript
+on($.Conference.arranged, async (event) => {
+  await $.Notification.send({ recipients: event.attendees })
+  await $.Venue.confirm({ date: event.date })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const currentArrangement = $.Team.arranging.Transportation
+console.log(`Currently arranging for ${currentArrangement.participants} people`)
+```
+
+### Role (Actor)
+```typescript
+const arranger: $.Arranger = await $.findAgent({ permissions: 'event-coordination' })
+arranger.setupEvent(eventDetails)
+```
+
+### Concept (Abstraction)
+```typescript
+const arrangement: $.Arrangement = {
+  eventId: event.id,
+  configuration: 'theater-style',
+  participants: 150,
+  timestamp: now(),
+  approvedBy: user.id
+}
+```
+
+### Inverse (Passive)
+```typescript
+const organizers = await db.related($.Meeting, $.arrangedBy, $.Coordinator)
+```
+
+## Usage Examples
+
+**Event Coordination:**
+- Arranging conference seating and logistics
+- Organizing meeting room setup and equipment
+- Coordinating travel arrangements for participants
+- Planning event schedules and timelines
+
+**Workspace Organization:**
+- Arranging furniture and equipment in workspace
+- Organizing file systems and storage
+- Setting up workstations
+- Positioning materials for accessibility
+
+**Schedule Planning:**
+- Arranging meeting times across time zones
+- Organizing project timelines
+- Scheduling resources and personnel
+- Planning production sequences
+
+## Related Verbs
+- organize - Putting in order or establishing structure
+- coordinate - Bringing elements together in harmony
+- schedule - Assigning times for activities
+- setup - Preparing for operation or use

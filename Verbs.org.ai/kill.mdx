@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: kill
+$context: https://verbs.org.ai
+name: kill
+canonicalForm: kill
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Permanently disabling or deactivating an RFID tag or tracking device
+predicate: kills
+event: killed
+activity: killing
+actor: Killer
+object: Killing
+inverse: killedBy
+---
+
+# Kill
+
+Permanently disabling or deactivating an RFID tag or tracking device.
+
+## GS1 Context
+
+Business step for formally disabling RFID tags or similar tracking devices. This operation is used at the end of product lifecycle, at final point of sale, or when tracking is no longer needed. The term "kill" is specific to RFID terminology, meaning to permanently write a kill code to the tag.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.RFIDTag.kill({ timestamp: now(), reason: 'point-of-sale' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Retailer.kills.RFIDTag
+$.WarehouseSystem.kills.TrackingDevice
+```
+
+### Event (Past Tense)
+```typescript
+on($.RFIDTag.killed, async (event) => {
+  await $.Tracking.logTermination({ tagId: event.id, reason: event.reason })
+  await $.Inventory.markDeactivated({ serialNumber: event.serialNumber })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const deactivation = $.Checkout.killing.CustomerRFIDs
+console.log(`Currently deactivating: ${deactivation.count} tags`)
+```
+
+### Role (Actor)
+```typescript
+const killer: $.Killer = await $.findAgent({ permissions: 'rfid-deactivation' })
+await killer.terminateTracking(tag)
+```
+
+### Concept (Abstraction)
+```typescript
+const killing: $.Killing = {
+  tagId: tag.id,
+  timestamp: now(),
+  reason: 'retail-point-of-sale',
+  operator: user.id,
+  serialNumber: tag.epc
+}
+```
+
+### Inverse (Passive)
+```typescript
+const deactivators = await db.related($.RFIDTag, $.killedBy, $.RetailCheckout)
+```
+
+## Usage Examples
+
+**RFID Tag Management:**
+- Deactivating product RFID tags at point of sale
+- Ending asset tracking at lifecycle conclusion
+- Preventing reuse of tracking tags
+- Supply chain end-point operations
+
+**Business Rules:**
+- Killing must be recorded with timestamp and reason
+- Killed tags cannot be reactivated
+- Kill event must trigger tracking termination
+- Kill reasons must be categorized for audit purposes
+
+## Related Verbs
+- create - Creating new RFID tags or tracking devices
+- decommission - Removing an object from active use
+- destroy - Permanently removing from use
+- encode - Writing data to an RFID tag

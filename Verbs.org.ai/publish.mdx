@@ -1,0 +1,108 @@
+---
+$type: Verb
+$id: publish
+$context: https://verbs.org.ai
+name: publish
+canonicalForm: publish
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making content, information, or material publicly available through print, digital, or other media
+predicate: publishes
+event: published
+activity: publishing
+actor: Publisher
+object: Publication
+inverse: publishedBy
+---
+
+# Publish
+
+Making content, information, research, or material publicly available through print, digital media, or other distribution channels.
+
+## O*NET Context
+
+Work activity focused on preparing, processing, and distributing written, visual, or multimedia content for public consumption, including books, articles, reports, software, and digital media.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ContentTeam.publish({ article: manuscript, platforms: ['web', 'print', 'social'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Author.publishes.Article
+$.Studio.publishes.Music
+$.Press.publishes.Book
+```
+
+### Event (Past Tense)
+```typescript
+on($.Document.published, async (event) => {
+  await $.Audience.access({ publication: event.id })
+  await $.Analytics.track({ event: 'publication-released' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePublishing = $.Editor.publishing.ResearchPaper
+console.log(`Publishing status: ${activePublishing.completionPercent}%`)
+```
+
+### Role (Actor)
+```typescript
+const publisher: $.Publisher = await $.findAgent({ expertise: 'content-distribution' })
+await publisher.releaseContent(manuscript)
+```
+
+### Concept (Abstraction)
+```typescript
+const publication: $.Publication = {
+  title: 'Annual Report 2024',
+  format: ['PDF', 'HTML', 'Print'],
+  author: authorId,
+  releaseDate: date,
+  audience: 'public',
+  channels: ['website', 'social-media', 'print'],
+  distribution: 50000
+}
+```
+
+### Inverse (Passive)
+```typescript
+const creators = await db.related($.Article, $.publishedBy, $.Author)
+```
+
+## Usage Examples
+
+**Academic and Research:**
+- Publishing peer-reviewed research papers
+- Publishing journal articles
+- Publishing research findings
+- Publishing academic books and textbooks
+
+**Content Creation:**
+- Publishing blog posts and articles
+- Publishing news and press releases
+- Publishing multimedia content
+- Publishing white papers and reports
+
+**Software and Digital:**
+- Publishing software updates and releases
+- Publishing mobile applications
+- Publishing open-source projects
+- Publishing digital products
+
+**Media and Entertainment:**
+- Publishing books and novels
+- Publishing magazines and newspapers
+- Publishing music recordings
+- Publishing video content
+
+## Related Verbs
+- release - Making something available or public
+- distribute - Spreading or delivering widely
+- disseminate - Spreading information broadly
+- broadcast - Transmitting to a wide audience

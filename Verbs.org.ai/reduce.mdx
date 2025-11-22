@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: reduce
+$context: https://verbs.org.ai
+name: reduce
+canonicalForm: reduce
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Decreasing the size, amount, intensity, or complexity of something through systematic action or process
+predicate: reduces
+event: reduced
+activity: reducing
+actor: Reducer
+object: Reduction
+inverse: reducedBy
+---
+
+# Reduce
+
+Decreasing the size, amount, intensity, or complexity of something through systematic action, optimization, or elimination processes.
+
+## O*NET Context
+
+Work activity focused on minimizing waste, lowering costs, decreasing complexity, or diminishing the scope or scale of operations, processes, or resources to improve efficiency and effectiveness.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Operations.reduce({
+  target: 'carbon-emissions',
+  percentage: 25,
+  timeframe: '2-years'
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Company.reduces.Costs
+$.Process.reduces.Complexity
+```
+
+### Event (Past Tense)
+```typescript
+on($.Emissions.reduced, async (event) => {
+  await $.Reporting.generate({ metrics: event.data })
+  await $.Stakeholder.notify({ achievement: event.percentReduction })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeReduction = $.Team.reducing.OperationalCosts
+console.log(`Cost reduction progress: ${activeReduction.percentSaved}%`)
+```
+
+### Role (Actor)
+```typescript
+const reducer: $.Reducer = await $.findAgent({
+  expertise: 'process-optimization'
+})
+reducer.eliminateWaste(currentProcess)
+```
+
+### Concept (Abstraction)
+```typescript
+const reduction: $.Reduction = {
+  initiativeId: initiative.id,
+  baseline: originalValue,
+  currentValue: newValue,
+  percentChange: calculatePercent(),
+  methodology: 'lean-six-sigma'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const optimizers = await db.related($.Cost, $.reducedBy, $.Analyst)
+```
+
+## Usage Examples
+
+**Cost Optimization:**
+- Reducing operating expenses through process improvement
+- Decreasing procurement costs via supplier consolidation
+- Minimizing waste in manufacturing processes
+- Lowering energy consumption in facilities
+
+**Complexity Management:**
+- Reducing system complexity through architecture refactoring
+- Simplifying workflow steps and eliminating redundancies
+- Decreasing the number of manual approval steps
+- Consolidating duplicate systems and platforms
+
+**Resource Optimization:**
+- Reducing headcount through automation
+- Decreasing material usage in production
+- Lowering inventory levels while maintaining service
+- Minimizing environmental impact and emissions
+
+## Related Verbs
+- optimize - Improving efficiency and effectiveness
+- minimize - Keeping at lowest possible level
+- decrease - Making smaller in size or amount
+- simplify - Making less complex or complicated

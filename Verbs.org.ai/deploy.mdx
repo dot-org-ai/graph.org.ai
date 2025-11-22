@@ -1,0 +1,97 @@
+---
+$type: Verb
+$id: deploy
+$context: https://verbs.org.ai
+name: deploy
+canonicalForm: deploy
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Moving or positioning something into active use
+predicate: deploys
+event: deployed
+activity: deploying
+actor: Deployer
+object: Deployment
+inverse: deployedBy
+---
+
+# Deploy
+
+Moving or positioning something into active use or a target location for operation.
+
+## Schema.org Context
+
+A schema.org Action representing deployment of resources, software, or personnel. Commonly used in technology and organizational contexts for putting resources into production.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Application.deploy({ environment: 'production', version: '2.1.0', timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.DevOps.deploys.Software
+$.Manager.deploys.Team
+$.System.deploys.Resources
+```
+
+### Event (Past Tense)
+```typescript
+on($.Application.deployed, async (event) => {
+  await $.Monitoring.startTracking(event.applicationId)
+  await $.Team.notify({ message: `${event.version} deployed successfully` })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const currentDeploy = $.Pipeline.deploying.Release
+console.log(`Currently deploying version: ${currentDeploy.version}`)
+```
+
+### Role (Actor)
+```typescript
+const deployer: $.Deployer = await $.findAgent({ permissions: 'deployment' })
+await deployer.executeDeployment(releaseId, environment)
+```
+
+### Concept (Abstraction)
+```typescript
+const deployment: $.Deployment = {
+  applicationId: app.id,
+  version: '2.1.0',
+  environment: 'production',
+  timestamp: now(),
+  approvedBy: admin.id,
+  status: 'successful'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const deployments = await db.related($.Application, $.deployedBy, $.DevOps)
+```
+
+## Usage Examples
+
+**Software Release:**
+- DevOps team deploys new application version
+- Automated deployment to production servers
+- Rollback on deployment failure
+
+**Resource Allocation:**
+- Manager deploys team members to project
+- Organization deploys capital to initiatives
+- Military deploys forces to location
+
+**Business Rules:**
+- Cannot deploy without passing tests
+- Deployment requires approval
+- Deployment triggers rollover procedures
+
+## Related Verbs
+- execute - Running deployed software
+- activate - Making deployed resource available
+- configure - Setting up for deployment

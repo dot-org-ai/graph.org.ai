@@ -1,0 +1,114 @@
+---
+$type: Verb
+$id: facilitate
+$context: https://verbs.org.ai
+name: facilitate
+canonicalForm: facilitate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making something easier or helping to bring about an outcome
+predicate: facilitates
+event: facilitated
+activity: facilitating
+actor: Facilitator
+object: Facilitation
+inverse: facilitatedBy
+---
+
+# Facilitate
+
+Making something easier or more possible; enabling, supporting, or helping to bring about a desired outcome through coordination or assistance.
+
+## O*NET Context
+
+Work activity involving supporting, enabling, or coordinating efforts to help groups or individuals achieve goals. Common in management, training, meetings, conflict resolution, and team leadership roles where the focus is on enabling others' success.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Manager.facilitate({ activity: 'team-meeting', goal: 'align-objectives' })
+await $.Mediator.facilitate($.Negotiation, { parties: [party1, party2] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Facilitator.facilitates.GroupDiscussion
+$.Manager.facilitates.Collaboration
+$.Leader.facilitates.Teamwork
+```
+
+### Event (Past Tense)
+```typescript
+on($.Meeting.facilitated, async (event) => {
+  await $.Minutes.record({ meeting: event.meeting, attendees: event.participants })
+  await $.FollowUp.schedule({ actionItems: event.decisions })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const coordination = $.Department.facilitating.ProjectWork
+console.log(`Facilitating: ${coordination.activeProjects} concurrent projects`)
+```
+
+### Role (Actor)
+```typescript
+const facilitator: $.Facilitator = await $.findAgent({ skillSet: 'group-dynamics' })
+await facilitator.conductWorkshop(group)
+```
+
+### Concept (Abstraction)
+```typescript
+const facilitation: $.Facilitation = {
+  facilitationType: 'conflict-resolution',
+  participants: 12,
+  duration: 120,
+  outcome: 'agreement-reached',
+  satisfactionRating: 4.5
+}
+```
+
+### Inverse (Passive)
+```typescript
+const facilitators = await db.related($.Initiative, $.facilitatedBy, $.Facilitator)
+```
+
+## Usage Examples
+
+**Meeting and Group Leadership:**
+- Meeting facilitator guides group discussion
+- Workshop leader facilitates learning activity
+- Scrum master facilitates development team coordination
+- Conference organizer facilitates networking
+
+**Conflict Resolution:**
+- Mediator facilitates negotiation between parties
+- HR specialist facilitates workplace conflict resolution
+- Manager facilitates team conflict discussion
+- Counselor facilitates family discussion
+
+**Business Operations:**
+- Project manager facilitates cross-functional teamwork
+- Business analyst facilitates requirement gathering
+- Process improvement specialist facilitates workflow redesign
+- Change management leader facilitates organizational transformation
+
+**Collaboration Support:**
+- Team lead facilitates knowledge sharing
+- Coordinator facilitates remote team communication
+- Executive assistant facilitates executive decision-making
+- Administrator facilitates administrative processes
+
+**Business Rules:**
+- Facilitation requires neutral perspective
+- Facilitator should ensure all voices are heard
+- Facilitation outcomes should be documented
+- Facilitation success measured by participant satisfaction and goal achievement
+
+## Related Verbs
+- coordinate - Arranging elements to work together
+- enable - Making something possible
+- support - Providing assistance or backing
+- manage - Organizing and controlling activities
+- mediate - Intervening to help resolve conflicts

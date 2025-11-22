@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: compare
+$context: https://verbs.org.ai
+name: compare
+canonicalForm: compare
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To examine similarities and differences between two or more things; to estimate or judge the relative value of alternatives.
+predicate: compares
+event: compared
+activity: comparing
+actor: Comparer
+object: Comparison
+inverse: comparedBy
+---
+
+# Compare
+
+The action of examining and contrasting multiple items to identify similarities, differences, and relative qualities. This semantic form encompasses analysis and evaluation of alternatives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.compare()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.compares.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.compared, async ({subject}) => {
+  // Handle compared event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.comparing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Comparer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Comparison
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.comparedBy.{Subject}
+```
+
+## Usage Context
+
+The "compare" action applies to various domains:
+- Product evaluation: features, pricing, specs
+- Analytics: metrics, performance, trends
+- Decision-making: options, alternatives, trade-offs
+- Quality assurance: expected vs. actual, benchmarking

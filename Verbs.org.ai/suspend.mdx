@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: suspend
+$context: https://verbs.org.ai
+name: suspend
+canonicalForm: suspend
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Temporarily halt or pause operations, services, or access
+predicate: suspends
+event: suspended
+activity: suspending
+actor: Suspender
+object: Suspension
+inverse: suspendedBy
+---
+
+# Suspend
+
+Temporarily halting or pausing operations, services, access, or activities pending resolution of issues or changes in business conditions.
+
+## APQC Process Context
+
+Operations and access control activity where organizations temporarily stop activities while maintaining the ability to resume when conditions change or issues are resolved.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Operations.suspend({ item, reason, duration })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.suspends.Operation
+$.System.suspends.Access
+```
+
+### Event (Past Tense)
+```typescript
+on($.Operation.suspended, async (event) => {
+  await $.Notification.informStakeholders(event)
+  await $.Schedule.blockResource(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const pause = $.Organization.suspending.Activity
+```
+
+### Actor (Role)
+```typescript
+const suspender: $.Suspender = await $.findAgent({ role: 'management' })
+```
+
+### Object (Abstraction)
+```typescript
+const suspension: $.Suspension = {
+  itemId: operation.id,
+  reason: 'investigation-in-progress',
+  suspensionDate: now(),
+  expectedResumption: futureDate,
+  status: 'suspended',
+  notificationSent: true
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suspended = await db.related($.Operation, $.suspendedBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Manage organizational resources
+- Process: Manage operational controls
+
+## Business Rules
+
+- Suspension must be documented with justification
+- Affected parties must be notified
+- Expected resumption timeline must be set
+- Impact must be assessed and communicated
+- Conditions for resumption must be defined
+
+## Related Verbs
+- pause - Stopping temporarily
+- halt - Ceasing activity
+- discontinue - Ending permanently
+- freeze - Stopping without change
+- restrict - Limiting access or use
+

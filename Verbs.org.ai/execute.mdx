@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: execute
+$context: https://verbs.org.ai
+name: execute
+canonicalForm: execute
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Carry out or perform a task, plan, or instruction; put into action.
+predicate: executes
+event: executed
+activity: executing
+actor: Executor
+object: Execution
+inverse: executedBy
+---
+
+# Execute
+
+The action of carrying out or performing a task, plan, instruction, or judgment with authority and precision. In the context of Schema.org Actions, execute represents the formal implementation of a decision or command.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.execute()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.executes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.executed, async ({subject}) => {
+  // Handle execution event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.executing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Executor}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Execution}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.executedBy.{Subject}
+```

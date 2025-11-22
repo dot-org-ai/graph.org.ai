@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: register
+$context: https://verbs.org.ai
+name: register
+canonicalForm: register
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Officially enrolling, recording, or listing someone or something in a formal system or database for identification or tracking
+predicate: registers
+event: registered
+activity: registering
+actor: Registrar
+object: Registration
+inverse: registeredBy
+---
+
+# Register
+
+Officially enrolling, recording, or listing someone or something in a formal system, database, or registry for identification, tracking, or compliance purposes.
+
+## O*NET Context
+
+Work activity focused on formally documenting and enrolling individuals or items into official systems, maintaining registration records, and ensuring proper tracking and authorization for regulatory, administrative, or operational purposes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Registry.register({
+  entityType: 'business',
+  name: 'Acme Corp',
+  jurisdiction: 'state'
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Clerk.registers.Vehicle
+$.Administrator.registers.User
+```
+
+### Event (Past Tense)
+```typescript
+on($.Account.registered, async (event) => {
+  await $.Verification.send({ email: event.email })
+  await $.Welcome.initiate({ userId: event.id })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRegistration = $.Staff.registering.Students
+console.log(`Registered so far: ${activeRegistration.count}`)
+```
+
+### Role (Actor)
+```typescript
+const registrar: $.Registrar = await $.findAgent({
+  permissions: 'enrollment-authority'
+})
+registrar.enrollNewMember(applicant)
+```
+
+### Concept (Abstraction)
+```typescript
+const registration: $.Registration = {
+  registrantId: person.id,
+  registrationType: 'professional-license',
+  registrationNumber: generateNumber(),
+  issueDate: now(),
+  expiryDate: addYears(now(), 2)
+}
+```
+
+### Inverse (Passive)
+```typescript
+const registeredBy = await db.related($.License, $.registeredBy, $.Authority)
+```
+
+## Usage Examples
+
+**Administrative:**
+- Registering new employees in payroll system
+- Recording vehicle registration with DMV
+- Enrolling students in school system
+- Listing vendors in procurement database
+
+**Compliance & Licensing:**
+- Registering businesses with regulatory agencies
+- Recording professional licenses and certifications
+- Enrolling in compliance training programs
+- Documenting property registrations
+
+**Digital Services:**
+- Registering new user accounts
+- Enrolling participants in online courses
+- Recording event attendee registrations
+- Listing members in organization directory
+
+## Related Verbs
+- enroll - Admitting to a program or institution
+- record - Documenting in a system
+- list - Adding to a catalog or inventory
+- certify - Officially confirming or authorizing

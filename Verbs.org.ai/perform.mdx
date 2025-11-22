@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: perform
+$context: https://verbs.org.ai
+name: perform
+canonicalForm: perform
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Executing, carrying out, or presenting an action or task to achieve a desired result
+predicate: performs
+event: performed
+activity: performing
+actor: Performer
+object: Performance
+inverse: performedBy
+---
+
+# Perform
+
+Executing, carrying out, or presenting an action or task to achieve a desired result or complete an objective.
+
+## O*NET Context
+
+Work activity focused on executing work tasks, carrying out responsibilities, or presenting services to accomplish objectives and meet organizational or customer requirements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Task.perform({ priority: 'high', deadline: 'urgent' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Employee.performs.Duty
+$.Technician.performs.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.Task.performed, async (event) => {
+  await $.Quality.validate({ output: event.result })
+  await $.Supervisor.verify({ completion: event.timestamp })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePerformance = $.Team.performing.MaintenanceWork
+console.log(`Currently performing: ${activePerformance.task}`)
+```
+
+### Role (Actor)
+```typescript
+const performer: $.Performer = await $.findAgent({ skillLevel: 'expert' })
+await performer.executeTask({ task, standards: 'ISO-certified' })
+```
+
+### Concept (Abstraction)
+```typescript
+const performance: $.Performance = {
+  performerId: performer.id,
+  taskId: task.id,
+  startTime: now(),
+  completionTime: null,
+  qualityRating: 0,
+  metrics: {}
+}
+```
+
+### Inverse (Passive)
+```typescript
+const completions = await db.related($.Service, $.performedBy, $.Performer)
+```
+
+## Usage Examples
+
+**Job Duties & Responsibilities:**
+- Performing daily job responsibilities
+- Performing assigned tasks and projects
+- Performing customer service functions
+- Performing administrative and clerical duties
+
+**Technical & Skilled Work:**
+- Performing repairs and maintenance
+- Performing surgical or medical procedures
+- Performing installation and setup
+- Performing quality testing and inspection
+
+**Professional & Creative Work:**
+- Performing presentations and public speaking
+- Performing entertainment or artistic work
+- Performing research and analysis
+- Performing consulting services
+
+## Related Verbs
+- execute - Carrying out plans or orders
+- accomplish - Successfully completing a task
+- conduct - Leading or directing an activity
+- deliver - Providing the promised outcome

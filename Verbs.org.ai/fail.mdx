@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: fail
+$context: https://verbs.org.ai
+name: fail
+canonicalForm: fail
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Be unsuccessful in achieving an objective or task; cease to function or work.
+predicate: fails
+event: failed
+activity: failing
+actor: Failer
+object: Failure
+inverse: failedBy
+---
+
+# Fail
+
+The action of being unsuccessful in achieving an intended objective, task, or requirement, or the state of ceasing to function or work properly. In the context of Schema.org Actions, fail represents the inability or cessation of successful completion.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.fail()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.fails.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.failed, async ({subject}) => {
+  // Handle failure event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.failing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Failer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Failure}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.failedBy.{Subject}
+```

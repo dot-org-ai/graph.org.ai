@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: schedule
+$context: https://verbs.org.ai
+name: schedule
+canonicalForm: schedule
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Planning and organizing activities, meetings, or work to occur at specific times
+predicate: schedules
+event: scheduled
+activity: scheduling
+actor: Scheduler
+object: Schedule
+inverse: scheduledBy
+---
+
+# Schedule
+
+Planning and organizing activities, meetings, work tasks, or resources to occur at specific times and in proper sequence.
+
+## O*NET Context
+
+Work activity focused on arranging and coordinating the timing of work, appointments, meetings, or project milestones to ensure efficient workflow and resource allocation.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Manager.schedule({ meeting: 'planning session', time: '2025-11-05T14:00:00Z' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Coordinator.schedules.Appointment
+$.Team.schedules.Project
+```
+
+### Event (Past Tense)
+```typescript
+on($.Meeting.scheduled, async (event) => {
+  await $.Calendar.add({ event: event.details })
+  await $.Participant.notify({ invitation: event.invites })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeScheduling = $.HR.scheduling.Interviews
+console.log(`${activeScheduling.count} slots available`)
+```
+
+### Role (Actor)
+```typescript
+const scheduler: $.Scheduler = await $.findAgent({ role: 'administrative' })
+scheduler.coordinateMeetings(attendees)
+```
+
+### Concept (Abstraction)
+```typescript
+const schedule: $.Schedule = {
+  projectId: project.id,
+  duration: '6 months',
+  milestones: [
+    { name: 'Phase 1', date: '2025-12-01' },
+    { name: 'Phase 2', date: '2026-02-01' }
+  ],
+  status: 'approved'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const events = await db.related($.Meeting, $.scheduledBy, $.Coordinator)
+```
+
+## Usage Examples
+
+**Appointment Management:**
+- Scheduling customer appointments and consultations
+- Booking meeting rooms and facilities
+- Arranging interviews with candidates
+- Planning delivery windows and service calls
+
+**Project Management:**
+- Scheduling project milestones and deadlines
+- Planning resource allocation and assignments
+- Coordinating team work schedules
+- Organizing workflow sequences
+
+**Staff Coordination:**
+- Scheduling employee shifts and rotations
+- Planning vacation and time-off approvals
+- Coordinating meeting times across departments
+- Organizing training sessions and workshops
+
+## Related Verbs
+- plan - Creating a detailed scheme
+- arrange - Putting things in order
+- organize - Coordinating components
+- coordinate - Harmonizing multiple elements

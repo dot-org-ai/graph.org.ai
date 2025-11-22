@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: enter
+$context: https://verbs.org.ai
+name: enter
+canonicalForm: enter
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:entering_exiting
+description: Passing through a portal or boundary, such as entering a facility or geographic location.
+predicate: enters
+event: entered
+activity: entering
+actor: Enterer
+object: Entry
+inverse: enteredBy
+---
+
+# Enter
+
+The action of passing through a portal or boundary, such as entering a facility or geographic location. In GS1 CBV Business Steps, entering marks the moment when goods or a vehicle crosses a boundary into a new location, such as a warehouse, store, or geographic region.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.enter()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.enters.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.entered, async ({subject}) => {
+  // Handle entry event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.entering.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Enterer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Entry}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.enteredBy.{Subject}
+```

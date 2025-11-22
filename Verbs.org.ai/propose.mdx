@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: propose
+$context: https://verbs.org.ai
+name: propose
+canonicalForm: propose
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Putting forward an idea, plan, or solution for consideration or discussion
+predicate: proposes
+event: proposed
+activity: proposing
+actor: Proposer
+object: Proposal
+inverse: proposedBy
+---
+
+# Propose
+
+Putting forward an idea, plan, or solution for consideration, discussion, or decision by others.
+
+## O*NET Context
+
+Work activity focused on presenting ideas, plans, or solutions to stakeholders, clients, or team members for evaluation, feedback, or approval.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Team.propose({ idea: 'expansion-strategy', stakeholders: ['board', 'investors'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.proposes.Initiative
+$.Engineer.proposes.Solution
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.proposed, async (event) => {
+  await $.Committee.review({ proposal: event.details })
+  await $.Stakeholder.notify({ status: 'proposal-submitted' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeProposal = $.Team.proposing.NewStrategy
+console.log(`Currently proposing: ${activeProposal.description}`)
+```
+
+### Role (Actor)
+```typescript
+const proposer: $.Proposer = await $.findAgent({ expertise: 'strategic-planning' })
+await proposer.presentIdea(idea)
+```
+
+### Concept (Abstraction)
+```typescript
+const proposal: $.Proposal = {
+  title: 'Market Expansion',
+  description: 'Strategic plan for new markets',
+  objectives: [],
+  budget: 500000,
+  timeline: '12 months',
+  submittedBy: userId,
+  status: 'pending-review'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const authors = await db.related($.Proposal, $.proposedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Business Planning:**
+- Proposing new product features based on market research
+- Presenting cost reduction initiatives to leadership
+- Suggesting organizational restructuring improvements
+- Proposing new partnership opportunities
+
+**Project Management:**
+- Proposing project timelines and resource allocation
+- Presenting risk mitigation strategies
+- Proposing workflow improvements
+- Suggesting alternative approaches to challenges
+
+**Innovation and Strategy:**
+- Proposing R&D initiatives
+- Presenting new technology adoption plans
+- Proposing business model changes
+- Suggesting market entry strategies
+
+## Related Verbs
+- suggest - Offering an idea informally
+- present - Formally displaying or explaining
+- recommend - Advising a specific course of action
+- discuss - Talking through ideas with others

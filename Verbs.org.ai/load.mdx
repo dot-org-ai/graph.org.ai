@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: load
+$context: https://verbs.org.ai
+name: load
+canonicalForm: load
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Placing goods onto a transport vehicle for shipment or transfer
+predicate: loads
+event: loaded
+activity: loading
+actor: Loader
+object: Loading
+inverse: loadedBy
+---
+
+# Load
+
+Placing goods onto a transport vehicle for shipment or transfer.
+
+## GS1 Context
+
+Business step for formally loading goods onto trucks, containers, aircraft, or other transport vehicles. This is a critical operation in outbound logistics where inventory transitions from warehouse storage to active transportation.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.load({ vehicle: truckId, timestamp: now(), manifest: manifestId })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.loads.Truck
+$.Logistics.loads.Container
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.loaded, async (event) => {
+  await $.Transport.schedule({ vehicleId: event.vehicle, departure: event.plannedTime })
+  await $.Notification.send({ recipient: event.destination, template: 'shipment-loaded' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const dispatch = $.Dock.loading.OutboundShipments
+console.log(`Currently loading: ${dispatch.count} pallets, ${dispatch.weight}kg`)
+```
+
+### Role (Actor)
+```typescript
+const loader: $.Loader = await $.findAgent({ location: 'dock-3', available: true })
+await loader.arrangeShipment(manifest)
+```
+
+### Concept (Abstraction)
+```typescript
+const loading: $.Loading = {
+  shipmentId: shipment.id,
+  vehicleId: vehicle.id,
+  timestamp: now(),
+  loader: user.id,
+  items: manifest.items,
+  weight: calculateWeight(manifest)
+}
+```
+
+### Inverse (Passive)
+```typescript
+const handlers = await db.related($.Container, $.loadedBy, $.WarehouseStaff)
+```
+
+## Usage Examples
+
+**Outbound Logistics:**
+- Loading packages onto delivery trucks
+- Loading pallets onto shipping containers
+- Loading cargo onto aircraft
+- Cross-dock operations loading
+
+**Business Rules:**
+- Loading must follow manifest verification
+- Vehicle capacity constraints must be respected
+- Weight distribution must meet regulatory standards
+- Loading completion triggers manifest finalization
+
+## Related Verbs
+- unload - Removing from transport vehicle
+- ship - Dispatching for delivery
+- transport - Moving between locations
+- pick - Selecting items for fulfillment
+- pack - Placing into packaging

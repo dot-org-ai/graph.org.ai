@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: convert
+$context: https://verbs.org.ai
+name: convert
+canonicalForm: convert
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To change something into a different form, substance, or state; transform or convert.
+predicate: converts
+event: converted
+activity: converting
+actor: Converter
+object: Conversion
+inverse: convertedBy
+---
+
+# Convert
+
+The action of changing, transforming, or converting something from one form, state, or substance into another. Convert represents a fundamental change or transformation.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.convert()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.converts.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.converted, async ({subject}) => {
+  // Handle conversion event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.converting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Converter}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Conversion}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.convertedBy.{Subject}
+```

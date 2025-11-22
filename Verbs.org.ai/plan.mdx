@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: plan
+$context: https://verbs.org.ai
+name: plan
+canonicalForm: plan
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Deciding on a course of action or determining what will be done to achieve objectives
+predicate: plans
+event: planned
+activity: planning
+actor: Planner
+object: Plan
+inverse: plannedBy
+---
+
+# Plan
+
+Deciding on a course of action or determining what steps will be taken to achieve objectives and goals.
+
+## O*NET Context
+
+Work activity focused on developing strategies, schedules, and procedures to accomplish organizational objectives or project goals.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Project.plan({ timeline: 'quarterly', budget: amount, resources: team })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.plans.Project
+$.Team.plans.Timeline
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.planned, async (event) => {
+  await $.Team.notify({ status: 'plan-approved', timeline: event.timeline })
+  await $.Budget.allocate(event.budget)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePlanning = $.Team.planning.Initiative
+console.log(`Currently planning: ${activePlanning.scope}`)
+```
+
+### Role (Actor)
+```typescript
+const planner: $.Planner = await $.findAgent({ expertise: 'strategic-planning' })
+await planner.developStrategy(initiative)
+```
+
+### Concept (Abstraction)
+```typescript
+const plan: $.Plan = {
+  subjectId: project.id,
+  objectives: [],
+  milestones: [],
+  timeline: { start: date, end: date },
+  budget: 0,
+  resources: [],
+  constraints: []
+}
+```
+
+### Inverse (Passive)
+```typescript
+const managers = await db.related($.Initiative, $.plannedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Strategic Planning:**
+- Planning organizational strategy for the year
+- Planning marketing campaigns
+- Planning resource allocation
+- Planning organizational restructuring
+
+**Project Planning:**
+- Planning project timelines and milestones
+- Planning staffing and resource requirements
+- Planning budget allocation
+- Planning contingency measures
+
+**Operational Planning:**
+- Planning daily operations and schedules
+- Planning inventory management
+- Planning maintenance schedules
+- Planning training programs
+
+## Related Verbs
+- schedule - Assigning specific times
+- organize - Arranging in systematic order
+- coordinate - Working together on something
+- prepare - Getting ready for something

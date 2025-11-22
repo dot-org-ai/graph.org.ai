@@ -1,0 +1,97 @@
+---
+$type: Verb
+$id: discover
+$context: https://verbs.org.ai
+name: discover
+canonicalForm: discover
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Finding or learning about something previously unknown
+predicate: discovers
+event: discovered
+activity: discovering
+actor: Discoverer
+object: Discovery
+inverse: discoveredBy
+---
+
+# Discover
+
+Finding or learning about something previously unknown or hidden.
+
+## Schema.org Context
+
+A schema.org Action representing the act of finding, encountering, or learning about new information, resources, or opportunities. Used in research, exploration, and information retrieval contexts.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Researcher.discover({ topic: 'pattern', methodology: 'analysis', timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Scientist.discovers.Pattern
+$.Explorer.discovers.Location
+$.System.discovers.Anomaly
+```
+
+### Event (Past Tense)
+```typescript
+on($.Insight.discovered, async (event) => {
+  await $.Team.notify({ announcement: `New pattern discovered: ${event.pattern}` })
+  await $.Knowledge.record(event.insight)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const explorationProcess = $.Team.discovering.Opportunities
+console.log(`Currently exploring ${explorationProcess.candidateCount} opportunities`)
+```
+
+### Role (Actor)
+```typescript
+const discoverer: $.Discoverer = await $.findAgent({ skills: 'research' })
+await discoverer.investigateArea(topic, department)
+```
+
+### Concept (Abstraction)
+```typescript
+const discovery: $.Discovery = {
+  what: 'new_market_segment',
+  when: now(),
+  discoveredBy: researcher.id,
+  significance: 'high',
+  impact: 'strategic',
+  documentation: fullReport
+}
+```
+
+### Inverse (Passive)
+```typescript
+const researchers = await db.related($.Insight, $.discoveredBy, $.Scientist)
+```
+
+## Usage Examples
+
+**Research and Development:**
+- Scientist discovers new material properties
+- Analyst discovers market opportunity
+- System discovers performance anomaly
+
+**Search and Retrieval:**
+- Search engine discovers new webpage
+- Crawler discovers broken links
+- User discovers relevant resource
+
+**Business Rules:**
+- Discoveries must be documented
+- Significant discoveries trigger review
+- Discoveries may lead to IP protection
+
+## Related Verbs
+- search - Actively looking for something
+- find - Locating something specific
+- detect - Identifying through analysis

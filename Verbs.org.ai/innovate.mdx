@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: innovate
+$context: https://verbs.org.ai
+name: innovate
+canonicalForm: innovate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Creating or introducing new ideas, methods, products, or approaches
+predicate: innovates
+event: innovated
+activity: innovating
+actor: Innovator
+object: Innovation
+inverse: innovatedBy
+---
+
+# Innovate
+
+Developing and introducing new ideas, methods, products, processes, or approaches that create value and improve upon existing solutions.
+
+## O*NET Context
+
+Work activity focused on generating creative solutions, developing novel approaches, and implementing new methods to improve effectiveness, efficiency, or outcomes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Team.innovate({ domain: 'customer-experience', approach: 'design-thinking', resources: budget })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Company.innovates.Solutions
+$.Department.innovates.Processes
+```
+
+### Event (Past Tense)
+```typescript
+on($.Solution.innovated, async (event) => {
+  await $.Patent.file({ inventionId: event.solutionId })
+  await $.Market.test({ prototype: event.solution })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInnovation = $.Lab.innovating.NextGeneration
+console.log(`Innovation pipeline: ${activeInnovation.status}`)
+```
+
+### Role (Actor)
+```typescript
+const innovator: $.Innovator = await $.findAgent({ expertise: 'creative-problem-solving' })
+innovator.developNewApproach(challenge)
+```
+
+### Concept (Abstraction)
+```typescript
+const innovation: $.Innovation = {
+  subjectId: project.id,
+  noveltyLevel: 'breakthrough',
+  investmentRequired: amount,
+  expectedImpact: metrics,
+  timeToMarket: timeline
+}
+```
+
+### Inverse (Passive)
+```typescript
+const originators = await db.related($.Patent, $.innovatedBy, $.Engineer)
+```
+
+## Usage Examples
+
+**Product Innovation:**
+- Innovating new product features
+- Innovating service delivery methods
+- Creating new business models
+- Developing innovative solutions to problems
+
+**Process Innovation:**
+- Innovating workflow procedures
+- Implementing new technologies
+- Redesigning operational processes
+- Innovating communication methods
+
+**Strategic Innovation:**
+- Innovating organizational structures
+- Creating new markets or segments
+- Pioneering industry approaches
+- Innovating value propositions
+
+## Related Verbs
+- create - Bringing something new into existence
+- develop - Building or advancing something
+- improve - Making something better
+- design - Planning something new

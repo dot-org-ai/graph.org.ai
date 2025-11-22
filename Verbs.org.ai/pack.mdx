@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: pack
+$context: https://verbs.org.ai
+name: pack
+canonicalForm: pack
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Placing items into packaging for shipment, storage, or sale
+predicate: packs
+event: packed
+activity: packing
+actor: Packer
+object: Packing
+inverse: packedBy
+---
+
+# Pack
+
+Placing items into packaging for shipment, storage, or sale.
+
+## GS1 Context
+
+Business step for formally packing items into boxes, containers, or other packaging. This operation occurs during fulfillment, manufacturing, or preparation for storage and is essential for protecting goods and enabling efficient logistics.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.pack({ items: itemIds, packaging: packageId, timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.packs.Shipment
+$.Fulfillment.packs.OrderItems
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.packed, async (event) => {
+  await $.Shipping.generateLabel({ packageId: event.packageId, address: event.destination })
+  await $.Notification.send({ recipient: event.customer, template: 'order-packed' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const fulfillment = $.WarehouseFulfillment.packing.CustomerOrders
+console.log(`Currently packing: ${fulfillment.count} orders, ${fulfillment.items} items`)
+```
+
+### Role (Actor)
+```typescript
+const packer: $.Packer = await $.findAgent({ station: 'packing-3', trained: true })
+await packer.prepareShipment(order)
+```
+
+### Concept (Abstraction)
+```typescript
+const packing: $.Packing = {
+  orderId: order.id,
+  timestamp: now(),
+  packer: user.id,
+  items: order.items,
+  packageId: package.id,
+  weight: calculateWeight(order.items),
+  dimensions: package.dimensions
+}
+```
+
+### Inverse (Passive)
+```typescript
+const packers = await db.related($.Order, $.packedBy, $.WarehouseStaff)
+```
+
+## Usage Examples
+
+**Order Fulfillment:**
+- Packing customer orders for shipment
+- Packing items for retail shelf display
+- Packing components for manufacturing assembly
+- Bulk packing for warehouse storage
+
+**Business Rules:**
+- Packing must occur after items are picked and verified
+- Items must match order specifications before packing
+- Packaging must be appropriate for item type
+- Packing completion updates inventory status
+
+## Related Verbs
+- pick - Selecting items for fulfillment
+- unpack - Removing from packaging
+- repackage - Changing packaging
+- ship - Dispatching for delivery
+- load - Placing onto a transport vehicle

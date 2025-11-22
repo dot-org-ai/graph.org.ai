@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: evaluate
+$context: https://verbs.org.ai
+name: evaluate
+canonicalForm: evaluate
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Assess or determine the significance, value, or condition of something; appraise or judge.
+predicate: evaluates
+event: evaluated
+activity: evaluating
+actor: Evaluator
+object: Evaluation
+inverse: evaluatedBy
+---
+
+# Evaluate
+
+The action of systematically assessing or determining the value, merit, or significance of a person, object, or situation. In the context of Schema.org Actions, evaluate represents the process of making judgments based on careful analysis and consideration.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.evaluate()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.evaluates.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.evaluated, async ({subject}) => {
+  // Handle evaluation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.evaluating.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Evaluator}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Evaluation}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.evaluatedBy.{Subject}
+```

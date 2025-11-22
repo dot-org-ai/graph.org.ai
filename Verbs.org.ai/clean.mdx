@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: clean
+$context: https://verbs.org.ai
+name: clean
+canonicalForm: clean
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Removing dirt, waste, or unwanted material from surfaces, objects, or areas to maintain cleanliness and hygiene
+predicate: cleans
+event: cleaned
+activity: cleaning
+actor: Cleaner
+object: Cleaning
+inverse: cleanedBy
+---
+
+# Clean
+
+Removing dirt, waste, contaminants, or unwanted material from surfaces, objects, areas, or data to maintain cleanliness, hygiene, functionality, or quality.
+
+## O*NET Context
+
+Work activity focused on maintaining cleanliness and sanitation of physical spaces, equipment, or data through systematic removal of unwanted material.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Facility.clean({ area: 'office', thoroughness: 'deep' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Janitor.cleans.BuildingSpace
+$.DataEngineer.cleans.Dataset
+```
+
+### Event (Past Tense)
+```typescript
+on($.Area.cleaned, async (event) => {
+  await $.Inspection.conduct({ location: event.area })
+  await $.Log.record({ timestamp: event.timestamp, inspector: user.id })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const currentCleaning = $.Team.cleaning.Facility
+console.log(`Currently cleaning: ${currentCleaning.sections} sections`)
+```
+
+### Role (Actor)
+```typescript
+const cleaner: $.Cleaner = await $.findAgent({ certification: 'housekeeping' })
+cleaner.sanitizeArea(workspace)
+```
+
+### Concept (Abstraction)
+```typescript
+const cleaning: $.Cleaning = {
+  spaceId: location.id,
+  cleaningType: 'daily-maintenance',
+  scope: ['floors', 'surfaces', 'restrooms'],
+  startTime: now(),
+  supervisor: user.id,
+  certifications: ['standard', 'sanitization']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const cleanedBy = await db.related($.Workspace, $.cleanedBy, $.Facility)
+```
+
+## Usage Examples
+
+**Facility Maintenance:**
+- Cleaning office spaces and common areas
+- Maintaining restroom facilities
+- Cleaning equipment and machinery
+- Removing waste and debris
+
+**Sanitation:**
+- Sanitizing surfaces and touchpoints
+- Disinfecting work areas
+- Maintaining hygiene standards
+- Cleaning for health and safety
+
+**Data Quality:**
+- Cleaning data for accuracy
+- Removing duplicate records
+- Sanitizing sensitive information
+- Preparing data for analysis
+
+## Related Verbs
+- sanitize - Making safe from microorganisms
+- maintain - Keeping in good condition
+- prepare - Making ready for use
+- remove - Taking away or eliminating

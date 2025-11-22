@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: void
+$context: https://verbs.org.ai
+name: void
+canonicalForm: void
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:void_shipping
+description: Canceling or nullifying a shipment or transaction
+predicate: voids
+event: voided
+activity: voiding
+actor: Voider
+object: Voiding
+inverse: voidedBy
+---
+
+# Void
+
+GS1 CBV Business Step: Canceling or nullifying a shipment or transaction (void shipping). This business step represents the cancellation of a previously created shipment, order, or transaction, removing it from active processing.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.ShippingManager.void(shipment)
+```
+
+### Predicate (Relationship)
+```typescript
+$.System.voids.Shipment
+```
+
+### Event (Past Tense)
+```typescript
+on($.Order.voided, async ({reason, timestamp}) => {
+  // Handle void event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Process.voiding.Transaction
+```
+
+### Role (Actor)
+```typescript
+$.Voider
+```
+
+### Concept (Abstraction)
+```typescript
+$.Voiding
+```
+
+### Inverse (Passive)
+```typescript
+$.Shipment.voidedBy.System
+```

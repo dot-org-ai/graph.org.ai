@@ -1,9 +1,36 @@
 ---
 $id: https://graph.org.ai/activities/{id}
-$type: Activity
-source: ONET
+$type: DetailedWorkActivity
+source: O*NET
+dwaId: "{id}"
+dwaTitle: "{title}"
 ---
 
-# {name}
+export const items = CSV.fetch('https://www.onetcenter.org/dl_files/database/db_30_0_text/DWA%20Reference.txt')
+  .then(rows => {
+      return rows.map(row => {
+          const dwaId = row['DWA ID'];
+          const title = row['DWA Title'];
 
-<Occupations activity={id} />
+          return {
+              id: dwaId,
+              slug: dwaId,
+              dwaId: dwaId,
+              title: title,
+              dwaTitle: title,
+              iwaId: row['IWA ID'],
+              elementId: row['Element ID'],
+              $id: `https://graph.org.ai/activities/${dwaId}`
+          };
+      });
+  });
+
+# {title}
+
+**DWA ID**: {id}
+
+This detailed work activity represents a specific type of work task that can be performed across multiple occupations.
+
+## Related Information
+
+Browse the folder to see which tasks and occupations involve this activity.

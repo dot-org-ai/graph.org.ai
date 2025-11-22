@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: document
+$context: https://verbs.org.ai
+name: document
+canonicalForm: document
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To record, write, or create written evidence or proof of something; to create documentation for reference and records
+predicate: documents
+event: documented
+activity: documenting
+actor: Documentarian
+object: Documentation
+inverse: documentedBy
+---
+
+# Document
+
+To record, write, or create written evidence, proof, or documentation of information, procedures, findings, or events. This verb encompasses activities such as creating written records, maintaining organizational documentation, producing technical manuals, writing reports, and creating evidence trails for compliance and reference purposes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.document()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.documents.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.documented, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.documenting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Documentarian
+```
+
+### Concept (Abstraction)
+```typescript
+$.Documentation
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.documentedBy.{Subject}
+```

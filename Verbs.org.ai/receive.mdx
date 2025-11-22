@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: receive
+$context: https://verbs.org.ai
+name: receive
+canonicalForm: receive
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Taking delivery of goods from a supplier or carrier
+predicate: receives
+event: received
+activity: receiving
+actor: Receiver
+object: Receipt
+inverse: receivedBy
+---
+
+# Receive
+
+Taking delivery of goods from a supplier or carrier.
+
+## GS1 Context
+
+Business step for formally receiving goods that have been shipped by a supplier or carrier. This is the initial inbound logistics operation where physical goods arrive at a facility and are acknowledged by the receiving party.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.receive({ carrierProof: poNumber, timestamp: now(), location: 'Dock-1' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.receives.Shipment
+$.Retailer.receives.Delivery
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.received, async (event) => {
+  await $.Inspection.schedule({ shipmentId: event.id, priority: 'standard' })
+  await $.Notification.send({ recipient: event.supplier, template: 'delivery-received' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const inbound = $.ReceivingDock.receiving.InboundShipments
+console.log(`Currently receiving: ${inbound.count} shipments, ${inbound.items} items`)
+```
+
+### Role (Actor)
+```typescript
+const receiver: $.Receiver = await $.findAgent({ location: 'dock', permissions: 'inbound' })
+await receiver.acknowledgeDelivery(shipment)
+```
+
+### Concept (Abstraction)
+```typescript
+const receipt: $.Receipt = {
+  shipmentId: shipment.id,
+  timestamp: now(),
+  receiver: user.id,
+  location: location,
+  items: shipment.items,
+  condition: 'unopened'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suppliers = await db.related($.Shipment, $.receivedBy, $.Warehouse)
+```
+
+## Usage Examples
+
+**Inbound Logistics:**
+- Receiving shipment from supplier
+- Receiving delivery from carrier
+- Receiving returned merchandise
+- Cross-dock receiving operations
+
+**Business Rules:**
+- Receipt must be acknowledged with POD or signature
+- Receipt initiates inspection and acceptance workflow
+- Goods cannot be used until inspection is complete
+- Receipt timing affects invoice reconciliation
+
+## Related Verbs
+- accept - Taking receipt of goods formally
+- inspect - Examining for quality or compliance
+- unload - Removing from transport vehicle
+- consign - Handing over responsibility for shipment

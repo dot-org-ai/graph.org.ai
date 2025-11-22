@@ -1,0 +1,97 @@
+---
+$type: Verb
+$id: distribute
+$context: https://verbs.org.ai
+name: distribute
+canonicalForm: distribute
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Spreading or dividing something among multiple recipients or locations
+predicate: distributes
+event: distributed
+activity: distributing
+actor: Distributor
+object: Distribution
+inverse: distributedBy
+---
+
+# Distribute
+
+Spreading or dividing something among multiple recipients, locations, or channels.
+
+## Schema.org Context
+
+A schema.org Action representing the dissemination of goods, information, or resources to multiple parties. Fundamental in supply chain, media, and communication contexts.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Publisher.distribute({ content: document, channels: ['email', 'web', 'social'], timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Distributor.distributes.Products
+$.Publisher.distributes.Content
+$.Network.distributes.Data
+```
+
+### Event (Past Tense)
+```typescript
+on($.Content.distributed, async (event) => {
+  await $.Analytics.track({ contentId: event.contentId, recipients: event.recipientCount })
+  await $.Notification.notifyRecipients(event.recipients)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const distributionPhase = $.Logistics.distributing.Inventory
+console.log(`Distributing to ${distributionPhase.locations.length} locations`)
+```
+
+### Role (Actor)
+```typescript
+const distributor: $.Distributor = await $.findAgent({ specialization: 'logistics' })
+await distributor.allocateAndShip(inventory, destinations)
+```
+
+### Concept (Abstraction)
+```typescript
+const distribution: $.Distribution = {
+  itemId: product.id,
+  recipients: ['location1', 'location2', 'location3'],
+  timestamp: now(),
+  quantity: 1000,
+  method: 'direct',
+  completionTarget: futureDate
+}
+```
+
+### Inverse (Passive)
+```typescript
+const distributors = await db.related($.Content, $.distributedBy, $.Publisher)
+```
+
+## Usage Examples
+
+**Supply Chain:**
+- Distributor delivers products to retail stores
+- Warehouse distributes inventory to branches
+- Logistics company distributes orders
+
+**Content Distribution:**
+- Publisher distributes newsletter to subscribers
+- Network distributes streaming content
+- Organization distributes policy documentation
+
+**Business Rules:**
+- Distribution must reach all designated recipients
+- Distribution triggers tracking and verification
+- Distribution can be partial or full
+
+## Related Verbs
+- deliver - Moving to specific location
+- ship - Initiating transport
+- publish - Making content available

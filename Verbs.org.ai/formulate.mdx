@@ -1,0 +1,96 @@
+---
+$type: Verb
+$id: formulate
+$context: https://verbs.org.ai
+name: formulate
+canonicalForm: formulate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Creating or developing a specific formula, plan, or theory
+predicate: formulates
+event: formulated
+activity: formulating
+actor: Formulator
+object: Formulation
+inverse: formulatedBy
+---
+
+# Formulate
+
+Creating or developing a specific formula, plan, theory, or approach by combining elements in a structured way.
+
+## O*NET Context
+
+Common work activity in scientific, technical, and professional roles including chemists, engineers, strategists, and policy makers. Involves systematic thinking to create solutions, strategies, or compositions that address specific objectives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Chemistry.formulate({ target: 'compound', constraints: ['pH: 7', 'stable'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Scientist.formulates.Hypothesis
+$.Organization.formulates.Strategy
+```
+
+### Event (Past Tense)
+```typescript
+on($.Plan.formulated, async (event) => {
+  await $.Review.schedule({ stakeholders: event.approvers })
+  await $.Document.archive({ reference: event.planId })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const development = $.Team.formulating.NewApproach
+console.log(`Current draft version: ${development.version}`)
+```
+
+### Role (Actor)
+```typescript
+const formulator: $.Formulator = await $.findAgent({ expertise: 'design' })
+formulator.createSolution(requirements)
+```
+
+### Concept (Abstraction)
+```typescript
+const formulation: $.Formulation = {
+  type: 'chemical',
+  components: ['ingredient-a', 'ingredient-b'],
+  proportions: [0.6, 0.4],
+  properties: ['stable', 'pH-neutral']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const researchers = await db.related($.Theory, $.formulatedBy, $.UniversityDept)
+```
+
+## Usage Examples
+
+**Scientific Development:**
+- Chemists formulate new drug compounds
+- Researchers formulate theories about natural phenomena
+- Engineers formulate design specifications
+
+**Strategic Planning:**
+- Executives formulate corporate strategy
+- Policy makers formulate regulations
+- Teams formulate project approaches
+
+**Business Rules:**
+- Formulations must document all components and ratios
+- Peer review required before finalization
+- Change control process for existing formulations
+- Approval workflows based on complexity level
+
+## Related Verbs
+- design - Creating specifications or plans
+- develop - Building and improving concepts
+- create - Making something new
+- compose - Combining elements together

@@ -1,0 +1,98 @@
+---
+$type: Verb
+$id: enable
+$context: https://verbs.org.ai
+name: enable
+canonicalForm: enable
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Making something operational, available, or capable of functioning
+predicate: enables
+event: enabled
+activity: enabling
+actor: Enabler
+object: Enabling
+inverse: enabledBy
+---
+
+# Enable
+
+Making something operational, available, or capable of functioning.
+
+## Schema.org Context
+
+A schema.org Action representing the activation or provision of access to resources, features, or capabilities. Complementary to disable and essential in system administration and access control.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Feature.enable({ user: customer, timestamp: now(), tier: 'premium' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Administrator.enables.Feature
+$.System.enables.Permission
+$.Service.enables.Capability
+```
+
+### Event (Past Tense)
+```typescript
+on($.Account.enabled, async (event) => {
+  await $.Notification.send({ target: event.accountOwner, message: 'Account activated' })
+  await $.Service.provision({ accountId: event.accountId, features: event.grantedFeatures })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const enablingPhase = $.System.enabling.NewFeatures
+console.log(`Activating ${enablingPhase.featureCount} new features for users`)
+```
+
+### Role (Actor)
+```typescript
+const enabler: $.Enabler = await $.findAgent({ permissions: 'system_admin' })
+await enabler.grantAccess(userId, resource, level)
+```
+
+### Concept (Abstraction)
+```typescript
+const enabling: $.Enabling = {
+  targetId: feature.id,
+  targetType: 'Feature',
+  timestamp: now(),
+  enabledFor: user.id,
+  accessLevel: 'full',
+  expirationDate: futureDate,
+  reason: 'subscription_upgrade'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const administrators = await db.related($.Feature, $.enabledBy, $.Administrator)
+```
+
+## Usage Examples
+
+**Account Management:**
+- System enables account after verification
+- Administrator enables user access
+- Service enables premium features for subscriber
+
+**Feature Activation:**
+- Developer enables experimental feature
+- Product manager enables feature for beta group
+- System enables auto-renewal on account
+
+**Business Rules:**
+- Enabling requires valid authorization
+- Enabling triggers provisioning workflows
+- Enabling can be time-limited or permanent
+
+## Related Verbs
+- disable - Making something inoperative
+- activate - Turning on functionality
+- authorize - Granting permission

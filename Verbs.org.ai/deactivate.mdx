@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: deactivate
+$context: https://verbs.org.ai
+name: deactivate
+canonicalForm: deactivate
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To turn off, disable, or remove from active use; make inactive.
+predicate: deactivates
+event: deactivated
+activity: deactivating
+actor: Deactivator
+object: Deactivation
+inverse: deactivatedBy
+---
+
+# Deactivate
+
+The action of turning off, disabling, or removing something from active status or operation. Deactivate represents the process of rendering something inactive or non-functional.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.deactivate()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.deactivates.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.deactivated, async ({subject}) => {
+  // Handle deactivation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.deactivating.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Deactivator}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Deactivation}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.deactivatedBy.{Subject}
+```

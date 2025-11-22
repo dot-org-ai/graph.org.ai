@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: delete
+$context: https://verbs.org.ai
+name: delete
+canonicalForm: delete
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To remove, erase, or destroy; eliminate something permanently or temporarily.
+predicate: deletes
+event: deleted
+activity: deleting
+actor: Deleter
+object: Deletion
+inverse: deletedBy
+---
+
+# Delete
+
+The action of removing, erasing, or destroying something to eliminate it from a system or location. Delete represents the removal or elimination of data, files, or objects.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.delete()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.deletes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.deleted, async ({subject}) => {
+  // Handle deletion event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.deleting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Deleter}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Deletion}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.deletedBy.{Subject}
+```

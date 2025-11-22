@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: complete
+$context: https://verbs.org.ai
+name: complete
+canonicalForm: complete
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To finish or bring to an end; to make whole or entire by adding what is missing.
+predicate: completes
+event: completed
+activity: completing
+actor: Completer
+object: Completion
+inverse: completedBy
+---
+
+# Complete
+
+The action of finishing or concluding something, bringing it to its final state or accomplishing all required elements. This semantic form encompasses the fulfillment of objectives and the finalization of processes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.complete()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.completes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.completed, async ({subject}) => {
+  // Handle completed event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.completing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Completer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Completion
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.completedBy.{Subject}
+```
+
+## Usage Context
+
+The "complete" action applies to various domains:
+- Project management: tasks, milestones, deliverables
+- Forms and surveys: questionnaires, applications, registrations
+- Workflows: multi-step processes, pipelines
+- Learning: courses, assignments, certifications

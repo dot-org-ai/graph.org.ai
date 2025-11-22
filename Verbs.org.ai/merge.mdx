@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: merge
+$context: https://verbs.org.ai
+name: merge
+canonicalForm: merge
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Combine entities, data, or operations into a single consolidated unit
+predicate: merges
+event: merged
+activity: merging
+actor: Merger
+object: Merger
+inverse: mergedWith
+---
+
+# Merge
+
+Combining or consolidating separate entities, departments, systems, data, or operations into a single unified structure or organization.
+
+## APQC Process Context
+
+Strategic and operational activity where organizations consolidate duplicate, overlapping, or aligned operations to improve efficiency, reduce costs, or strengthen market position.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Organization.merge({ entity1, entity2, integration })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Department.merges.Team
+$.Company.merges.BusinessUnit
+```
+
+### Event (Past Tense)
+```typescript
+on($.Consolidation.merged, async (event) => {
+  await $.Integration.synchronize(event.systems)
+  await $.Communications.announceChange(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const integration = $.Organization.merging.Operations
+```
+
+### Actor (Role)
+```typescript
+const merger: $.Merger = await $.findAgent({ role: 'strategic-planning' })
+```
+
+### Object (Abstraction)
+```typescript
+const merger: $.Merger = {
+  entity1: dept1.id,
+  entity2: dept2.id,
+  effectiveDate: date,
+  newStructure: {...},
+  integrationPlan: [...],
+  status: 'completed'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const consolidated = await db.related($.Entity, $.mergedWith, $.Organization)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Manage organizational resources
+- Process: Design and reorganize organizational structure
+
+## Business Rules
+
+- Merge requires strategic justification and approval
+- Integration plan must be documented
+- System and process alignment must be planned
+- Duplicate resources must be consolidated
+- Stakeholder communication is critical
+
+## Related Verbs
+- combine - Joining separate elements
+- consolidate - Bringing together for efficiency
+- integrate - Combining into unified whole
+- reorganize - Restructuring for optimization
+- align - Making consistent or coordinated
+

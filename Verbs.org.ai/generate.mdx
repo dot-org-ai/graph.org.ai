@@ -1,0 +1,102 @@
+---
+$type: Verb
+$id: generate
+$context: https://verbs.org.ai
+name: generate
+canonicalForm: generate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Producing or creating something from raw materials or processes
+predicate: generates
+event: generated
+activity: generating
+actor: Generator
+object: Generation
+inverse: generatedBy
+---
+
+# Generate
+
+Producing or creating something through a process or action, whether physical output, data, ideas, or value.
+
+## O*NET Context
+
+Fundamental work activity across numerous occupations including manufacturers, software developers, artists, and scientists. Encompasses both creative generation (ideas, designs) and productive generation (goods, energy, data).
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Power.generate({ type: 'solar', capacity: '10MW' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Plant.generates.Electricity
+$.Algorithm.generates.Recommendations
+```
+
+### Event (Past Tense)
+```typescript
+on($.Output.generated, async (event) => {
+  await $.Quality.assess({ item: event.output })
+  await $.Inventory.record({ quantity: event.units })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const production = $.Factory.generating.Components
+console.log(`Current output: ${production.unitsPerHour} units/hour`)
+```
+
+### Role (Actor)
+```typescript
+const generator: $.Generator = await $.findAgent({ capability: 'produce' })
+generator.createOutput(specification)
+```
+
+### Concept (Abstraction)
+```typescript
+const generation: $.Generation = {
+  source: 'renewable-energy',
+  volume: 10000000,
+  unit: 'kWh',
+  timestamp: now(),
+  efficiency: 0.92
+}
+```
+
+### Inverse (Passive)
+```typescript
+const sources = await db.related($.Data, $.generatedBy, $.System)
+```
+
+## Usage Examples
+
+**Manufacturing:**
+- Factories generate products from raw materials
+- Machines generate precise components
+- Production lines generate consistent output
+
+**Technology:**
+- Systems generate reports automatically
+- Algorithms generate recommendations
+- AI models generate text or images
+
+**Energy/Resource:**
+- Power plants generate electricity
+- Wells generate oil or natural gas
+- Processes generate heat or waste products
+
+**Business Rules:**
+- Generation tracked with timestamp and source
+- Quality metrics recorded for all generation
+- Capacity constraints enforced
+- Waste or byproducts documented
+
+## Related Verbs
+- produce - Manufacturing tangible goods
+- create - Bringing something into existence
+- synthesize - Combining elements into new form
+- emit - Releasing or sending out

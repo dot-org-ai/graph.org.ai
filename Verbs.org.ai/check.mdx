@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: check
+$context: https://verbs.org.ai
+name: check
+canonicalForm: check
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Checking an object for correctness or validity
+predicate: checks
+event: checked
+activity: checking
+actor: Checker
+object: Check
+inverse: checkedBy
+---
+
+# Check
+
+Schema.org Action: Checking an object for correctness or validity.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.check()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.checks.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.checked, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.checking.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Checker
+```
+
+### Concept (Abstraction)
+```typescript
+$.Check
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.checkedBy.{Subject}
+```

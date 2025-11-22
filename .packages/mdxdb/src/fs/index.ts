@@ -46,11 +46,14 @@ class MdxDbFsCollection<T> implements MdxDbCollection<T> {
     const doc = data as MdxLdDocument;
     // Precedence: id (explicit local id) > $id (json-ld id) > code (business id)
     let id = (doc as any).id || (doc as any).$id || (doc as any).code;
-    
-    if (!id) {
+
+    if (!id && id !== 0) {
         throw new Error("Document requires an id (or code) field to be created.");
     }
-    
+
+    // Convert to string if needed
+    id = String(id);
+
     if (id.startsWith('http')) {
         id = id.split('/').pop();
     }
@@ -77,8 +80,10 @@ class MdxDbFsCollection<T> implements MdxDbCollection<T> {
     return data;
   }
 
-  async get(id: string): Promise<T | null> {
-    const parts = id.split('/');
+  async get(id: string | number): Promise<T | null> {
+    // Convert to string if needed
+    const idStr = String(id);
+    const parts = idStr.split('/');
     const safeParts = parts.map(p => p.replace(/[^a-zA-Z0-9.\-_]/g, '_'));
     const safeId = safeParts.join(path.sep);
     const base = path.join(this.rootDir, this.name, safeId);
@@ -102,9 +107,10 @@ class MdxDbFsCollection<T> implements MdxDbCollection<T> {
     return null;
   }
 
-  async set(id: string, data: T): Promise<T> {
+  async set(id: string | number, data: T): Promise<T> {
     // Determine path
-    const parts = id.split('/');
+    const idStr = String(id);
+    const parts = idStr.split('/');
     const safeParts = parts.map(p => p.replace(/[^a-zA-Z0-9.\-_]/g, '_'));
     const safeId = safeParts.join(path.sep);
     
@@ -129,7 +135,7 @@ class MdxDbFsCollection<T> implements MdxDbCollection<T> {
     return data;
   }
 
-  async update(id: string, data: Partial<T>): Promise<T> {
+  async update(id: string | number, data: Partial<T>): Promise<T> {
     const current = await this.get(id);
     if (!current) {
         throw new Error(`Document with id ${id} not found.`);
@@ -141,8 +147,9 @@ class MdxDbFsCollection<T> implements MdxDbCollection<T> {
     return updated;
   }
 
-  async delete(id: string): Promise<boolean> {
-    const parts = id.split('/');
+  async delete(id: string | number): Promise<boolean> {
+    const idStr = String(id);
+    const parts = idStr.split('/');
     const safeParts = parts.map(p => p.replace(/[^a-zA-Z0-9.\-_]/g, '_'));
     const safeId = safeParts.join(path.sep);
     const base = path.join(this.rootDir, this.name, safeId);

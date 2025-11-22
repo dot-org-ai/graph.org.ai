@@ -1,0 +1,91 @@
+---
+$type: Verb
+$id: arrive
+$context: https://verbs.org.ai
+name: arrive
+canonicalForm: arrive
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Arriving at a location
+predicate: arrives
+event: arrived
+activity: arriving
+actor: Arriver
+object: Arrival
+inverse: arrivedBy
+---
+
+# Arrive
+
+Arriving at a location, typically marking the completion of transportation or the beginning of a new operational phase.
+
+## GS1 Context
+
+Business step marking the physical arrival of goods at a designated location. This triggers location-based processes such as receiving, inspection, and acceptance workflows.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Shipment.arrive({ location: warehouseId, timestamp: now() })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Package.arrives.Destination
+$.Truck.arrives.Distribution.Center
+```
+
+### Event (Past Tense)
+```typescript
+on($.Shipment.arrived, async (event) => {
+  await $.Notification.alert({ facility: event.location })
+  await $.Status.update($.InTransit, $.Arrived)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const traffic = $.Port.arriving.Containers
+console.log(`${traffic.count} containers arriving this hour`)
+```
+
+### Role (Actor)
+```typescript
+const arriver: $.Arriver = $.Carrier
+const delivery = arriver.scheduleArrival(destination)
+```
+
+### Concept (Abstraction)
+```typescript
+const arrival: $.Arrival = {
+  shipmentId: shipment.id,
+  location: destinationId,
+  timestamp: now(),
+  condition: 'good',
+  documentUrl: proofOfDeliveryUrl
+}
+```
+
+### Inverse (Passive)
+```typescript
+const shipments = await db.related($.Location, $.arrivedBy, $.Shipment)
+```
+
+## Usage Examples
+
+**Logistics Operations:**
+- Truck arrives at distribution center
+- Container arrives at port
+- Package arrives at local delivery hub
+- Flight arrives at airport terminal
+
+**Business Rules:**
+- Arrival triggers notification to receiving party
+- Arrival initiates clock for time-sensitive goods
+- Arrival updates shipment status and ETA accuracy
+
+## Related Verbs
+- depart - Leaving a location
+- transport - Moving between locations
+- accept - Taking possession upon arrival

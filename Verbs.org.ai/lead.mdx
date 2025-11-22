@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: lead
+$context: https://verbs.org.ai
+name: lead
+canonicalForm: lead
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Guiding, directing, or influencing a group toward a goal or objective
+predicate: leads
+event: led
+activity: leading
+actor: Leader
+object: Leadership
+inverse: ledBy
+---
+
+# Lead
+
+Guiding, directing, or influencing individuals or groups toward achieving goals, providing vision and direction while supporting and enabling their efforts.
+
+## O*NET Context
+
+Work activity focused on taking charge of a group or initiative, establishing direction, motivating others, making decisions, and accepting responsibility for outcomes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Manager.lead({ team: group, direction: vision, duration: '12-months' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Executive.leads.Department
+$.Team.leads.Initiative
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.led, async (event) => {
+  await $.Results.analyze({ leaderId: event.leaderId, outcomes: event.results })
+  await $.Team.evaluate({ feedback: 'leadership-effectiveness' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeLeadership = $.Manager.leading.Transformation
+console.log(`Leading: ${activeLeadership.scope}`)
+```
+
+### Role (Actor)
+```typescript
+const leader: $.Leader = await $.findAgent({ role: 'director' })
+leader.guideTeam(objectives)
+```
+
+### Concept (Abstraction)
+```typescript
+const leadership: $.Leadership = {
+  leaderId: manager.id,
+  scope: domain,
+  vision: goals,
+  style: approach,
+  startDate: when,
+  successMetrics: kpis
+}
+```
+
+### Inverse (Passive)
+```typescript
+const managers = await db.related($.Team, $.ledBy, $.Director)
+```
+
+## Usage Examples
+
+**Team Leadership:**
+- Leading project teams to completion
+- Leading departments or divisions
+- Leading cross-functional initiatives
+- Supervising direct reports
+
+**Strategic Leadership:**
+- Leading organizational change
+- Leading strategic initiatives
+- Leading business growth efforts
+- Providing leadership in new markets
+
+**Operational Leadership:**
+- Leading daily operations
+- Leading meetings and discussions
+- Leading process improvements
+- Guiding team decision-making
+
+## Related Verbs
+- direct - Controlling or guiding something
+- manage - Overseeing and organizing activities
+- oversee - Supervising from a senior position
+- guide - Showing someone the way or providing direction

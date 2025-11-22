@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: debug
+$context: https://verbs.org.ai
+name: debug
+canonicalForm: debug
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Identifying and resolving errors, defects, or malfunctions in systems, software, or processes
+predicate: debugs
+event: debugged
+activity: debugging
+actor: Debugger
+object: Debugging
+inverse: debuggedBy
+---
+
+# Debug
+
+Systematically identifying, analyzing, and resolving errors, defects, malfunctions, or anomalies in software code, hardware systems, or operational processes through testing and troubleshooting.
+
+## O*NET Context
+
+Work activity involving the diagnosis and correction of technical problems. Common in software development, IT support, manufacturing quality control, and systems administration roles.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Application.debug({ breakpoints: true, logging: 'verbose', timeout: '5 min' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Developer.debugs.Code
+$.Technician.debugs.Hardware
+$.Engineer.debugs.System
+```
+
+### Event (Past Tense)
+```typescript
+on($.Issue.debugged, async (event) => {
+  await $.Issue.resolve({ rootCause: event.cause, fix: event.solution })
+  await $.Log.record({ debugger: event.engineer, timeSpent: event.duration })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const troubleshooting = $.Application.debugging.Feature
+console.log(`Debugging: ${troubleshooting.errors} issues, ${troubleshooting.progress}% resolved`)
+```
+
+### Role (Actor)
+```typescript
+const debugger: $.Debugger = await $.findAgent({ expertise: ['JavaScript', 'profiling tools', 'system tracing'] })
+await debugger.resolveIssue(bug)
+```
+
+### Concept (Abstraction)
+```typescript
+const debugging: $.Debugging = {
+  issueId: issue.id,
+  startTime: now(),
+  affectedSystems: ['api', 'database', 'cache'],
+  rootCause: 'race condition in concurrent writes',
+  severity: 'critical',
+  resolution: 'implement mutex locking',
+  testCases: ['concurrency-001', 'concurrency-002']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const issues = await db.related($.Application, $.debuggedBy, $.Developer)
+```
+
+## Usage Examples
+
+**Software Development:**
+- Developer debugs application crash in production
+- QA engineer debugs test failures in CI pipeline
+- Support engineer debugs customer-reported errors
+
+**System Administration:**
+- Administrator debugs network connectivity issues
+- Technician debugs hardware malfunction symptoms
+- DBA debugs database query performance problems
+
+**Business Rules:**
+- Debugging requires access to system logs and traces
+- Root causes must be documented for prevention
+- Fixes must be tested before deployment
+- Critical issues require escalation protocols
+
+## Related Verbs
+- test - Examining systems for correct functioning
+- analyze - Examining in detail for understanding
+- troubleshoot - Solving operational problems
+- fix - Correcting defects or problems

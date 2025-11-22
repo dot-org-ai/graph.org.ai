@@ -1,0 +1,98 @@
+---
+$type: Verb
+$id: collect
+$context: https://verbs.org.ai
+name: collect
+canonicalForm: collect
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+description: Gathering objects together
+predicate: collects
+event: collected
+activity: collecting
+actor: Collector
+object: Collection
+inverse: collectedBy
+---
+
+# Collect
+
+Gathering or accumulating objects, items, or goods together from multiple sources or locations.
+
+## GS1 Context
+
+Business step involving the consolidation of items, often used in fulfillment operations where products are gathered from a warehouse and combined for shipment. Also applies to data collection and metrics aggregation.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Order.collect({
+  items: lineItems,
+  location: pickingAreaId,
+  timestamp: now()
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Warehouse.collects.Items
+$.DistributionCenter.collects.Shipments
+```
+
+### Event (Past Tense)
+```typescript
+on($.Batch.collected, async (event) => {
+  await $.QualityCheck.initiate({ batch: event.batchId })
+  await $.Staging.prepare(event.items)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const fulfillment = $.Warehouse.collecting.Orders
+console.log(`Collecting for ${fulfillment.pendingOrders} orders`)
+```
+
+### Role (Actor)
+```typescript
+const collector: $.Collector = $.Worker({ department: 'fulfillment' })
+collector.assignPickList(orders)
+```
+
+### Concept (Abstraction)
+```typescript
+const collection: $.Collection = {
+  orderId: order.id,
+  items: lineItems,
+  collectedAt: now(),
+  collectedBy: worker.id,
+  verifiedCount: quantity,
+  location: aisle
+}
+```
+
+### Inverse (Passive)
+```typescript
+const orders = await db.related($.Item, $.collectedBy, $.Order)
+```
+
+## Usage Examples
+
+**Fulfillment Operations:**
+- Worker collects items from warehouse shelves for an order
+- System collects multiple smaller shipments into consolidated container
+- Collector gathers returns from customers
+- Distribution center collects items from multiple suppliers
+
+**Business Rules:**
+- Collection initiates picking workflow
+- Collection must match order requirements
+- Collection triggers verification and quality check
+- Collection updates inventory allocation
+
+## Related Verbs
+- pick - Selecting for fulfillment
+- pack - Placing into packaging
+- load - Placing onto a transport vehicle
+- dispense - Allocating or distributing

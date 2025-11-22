@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: solve
+$context: https://verbs.org.ai
+name: solve
+canonicalForm: solve
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Finding answers or solutions to problems, challenges, or questions through analysis, reasoning, or experimentation
+predicate: solves
+event: solved
+activity: solving
+actor: Solver
+object: Solution
+inverse: solvedBy
+---
+
+# Solve
+
+Finding answers or solutions to problems, challenges, or questions through analysis, reasoning, experimentation, or investigation.
+
+## O*NET Context
+
+Work activity focused on identifying and resolving issues, overcoming obstacles, and developing answers or remedies to address specific problems or challenges.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Problem.solve({ complexity: 'medium', timeline: '2-weeks', methodology: 'systematic' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Engineer.solves.Technical Issue
+$.Consultant.solves.Business Problem
+$.Analyst.solves.Data Challenge
+```
+
+### Event (Past Tense)
+```typescript
+on($.Problem.solved, async (event) => {
+  await $.Stakeholder.notify({ resolution: event.solution, impact: event.benefit })
+  await $.Documentation.record({ solution: event.solution, lessons: event.insights })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeSolvingEffort = $.Team.solving.CriticalIssue
+console.log(`Currently addressing: ${activeSolvingEffort.description}`)
+```
+
+### Role (Actor)
+```typescript
+const solver: $.Solver = await $.findAgent({ expertise: 'problem-solving' })
+solver.addressingChallenge(currentIssue)
+```
+
+### Concept (Abstraction)
+```typescript
+const solution: $.Solution = {
+  problemId: issue.id,
+  approach: 'root-cause analysis',
+  steps: ['diagnose', 'design-fix', 'implement', 'verify'],
+  effectiveness: 'resolves-issue',
+  preventiveMeasures: true,
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const resolvingAgents = await db.related($.Problem, $.solvedBy, $.Expert)
+```
+
+## Usage Examples
+
+**Technical Support:**
+- Solving software bugs and system errors
+- Resolving network connectivity issues
+- Addressing hardware malfunctions
+- Troubleshooting application problems
+
+**Problem Analysis:**
+- Solving mathematical or analytical problems
+- Resolving conflicts or disputes
+- Finding solutions to operational challenges
+- Addressing supply chain disruptions
+
+**Investigation:**
+- Solving mysteries or cases through investigation
+- Resolving inconsistencies in data or reports
+- Finding answers through research and testing
+- Addressing security vulnerabilities
+
+## Related Verbs
+- resolve - Settling or concluding definitively
+- analyze - Examining to identify problems or patterns
+- fix - Repairing or correcting something
+- investigate - Conducting systematic inquiry

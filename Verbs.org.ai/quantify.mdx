@@ -1,0 +1,108 @@
+---
+$type: Verb
+$id: quantify
+$context: https://verbs.org.ai
+name: quantify
+canonicalForm: quantify
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Measuring or expressing something in numerical or mathematical terms
+predicate: quantifies
+event: quantified
+activity: quantifying
+actor: Quantifier
+object: Quantification
+inverse: quantifiedBy
+---
+
+# Quantify
+
+Measuring, counting, or expressing something in numerical, mathematical, or measurable terms to determine its amount, size, or extent.
+
+## O*NET Context
+
+Work activity focused on assigning numerical values, measurements, or quantities to data, materials, results, or outcomes for analysis, reporting, or decision-making purposes.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Analysis.quantify({ data: dataset, metrics: ['cost', 'impact', 'risk'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Analyst.quantifies.Impact
+$.Auditor.quantifies.Variance
+$.Engineer.quantifies.Defects
+```
+
+### Event (Past Tense)
+```typescript
+on($.Measurement.quantified, async (event) => {
+  await $.Report.include({ metric: event.value })
+  await $.Database.store({ quantification: event })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeQuantification = $.Team.quantifying.ResourceUsage
+console.log(`Quantifying: ${activeQuantification.completionPercent}%`)
+```
+
+### Role (Actor)
+```typescript
+const quantifier: $.Quantifier = await $.findAgent({ expertise: 'data-analysis' })
+await quantifier.measureValue(attribute)
+```
+
+### Concept (Abstraction)
+```typescript
+const quantification: $.Quantification = {
+  subject: 'performance-improvement',
+  metric: 'percentage-increase',
+  baselineValue: 100,
+  measuredValue: 125,
+  increase: 25,
+  unit: 'percent',
+  confidence: 0.95
+}
+```
+
+### Inverse (Passive)
+```typescript
+const measurements = await db.related($.Outcome, $.quantifiedBy, $.Analyst)
+```
+
+## Usage Examples
+
+**Financial Analysis:**
+- Quantifying project costs and budgets
+- Measuring revenue and profit margins
+- Calculating financial returns
+- Determining budget variances
+
+**Performance Measurement:**
+- Quantifying productivity gains
+- Measuring quality improvements
+- Calculating error rates
+- Determining efficiency metrics
+
+**Research and Analysis:**
+- Quantifying survey responses
+- Measuring statistical significance
+- Calculating sample sizes
+- Determining trend magnitudes
+
+**Risk Management:**
+- Quantifying financial risks
+- Measuring operational risks
+- Calculating probability and impact
+- Determining risk exposure
+
+## Related Verbs
+- measure - Determining the size or amount
+- calculate - Computing using mathematics
+- count - Determining the number of items
+- assess - Evaluating or estimating value

@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: connect
+$context: https://verbs.org.ai
+name: connect
+canonicalForm: connect
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To join or link together; establish a connection or relationship between entities.
+predicate: connects
+event: connected
+activity: connecting
+actor: Connector
+object: Connection
+inverse: connectedBy
+---
+
+# Connect
+
+The action of joining, linking, or establishing a relationship between two or more entities. Connect represents establishing a bond or association.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.connect()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.connects.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.connected, async ({subject}) => {
+  // Handle connection event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.connecting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Connector}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Connection}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.connectedBy.{Subject}
+```

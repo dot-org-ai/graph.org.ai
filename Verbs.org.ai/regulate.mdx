@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: regulate
+$context: https://verbs.org.ai
+name: regulate
+canonicalForm: regulate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Controlling, governing, or maintaining something within specified parameters through rules, standards, or enforcement
+predicate: regulates
+event: regulated
+activity: regulating
+actor: Regulator
+object: Regulation
+inverse: regulatedBy
+---
+
+# Regulate
+
+Controlling, governing, or maintaining something within specified parameters through the application of rules, standards, or enforcement mechanisms.
+
+## O*NET Context
+
+Work activity focused on ensuring compliance with established rules, standards, or parameters by monitoring, controlling, or adjusting systems, processes, or behaviors to maintain desired conditions and prevent deviations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.EnvironmentalAgency.regulate({
+  sector: 'manufacturing',
+  standard: 'emissions-limits',
+  enforcementLevel: 'strict'
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.RegulatoryBody.regulates.Industry
+$.GovernmentAgency.regulates.Provider
+```
+
+### Event (Past Tense)
+```typescript
+on($.Business.regulated, async (event) => {
+  await $.Compliance.verify({ businessId: event.id })
+  await $.Report.file({ regulatoryData: event.data })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRegulation = $.Inspector.regulating.IndustrialCompliance
+console.log(`Facilities inspected: ${activeRegulation.inspectionCount}`)
+```
+
+### Role (Actor)
+```typescript
+const regulator: $.Regulator = await $.findAgent({
+  authority: 'regulatory-oversight'
+})
+regulator.enforceComplianceStandards(businesses)
+```
+
+### Concept (Abstraction)
+```typescript
+const regulation: $.Regulation = {
+  regulationId: generateId(),
+  industry: 'pharmaceuticals',
+  requirements: ['gmp-compliance', 'quality-testing'],
+  effectiveDate: now(),
+  penalties: { violation: amount }
+}
+```
+
+### Inverse (Passive)
+```typescript
+const oversight = await db.related($.Industry, $.regulatedBy, $.Agency)
+```
+
+## Usage Examples
+
+**Environmental Regulation:**
+- Regulating emissions from industrial facilities
+- Controlling water quality and pollution standards
+- Enforcing environmental protection standards
+- Managing hazardous waste handling requirements
+
+**Financial Regulation:**
+- Regulating banking and lending practices
+- Enforcing consumer protection standards
+- Controlling financial market operations
+- Managing insurance industry compliance
+
+**Professional Regulation:**
+- Regulating medical and healthcare practitioners
+- Enforcing professional licensing standards
+- Controlling professional conduct and ethics
+- Managing disciplinary procedures
+
+## Related Verbs
+- enforce - Compelling obedience to rules
+- control - Exercising power over operations
+- govern - Directing through authority
+- monitor - Observing and checking

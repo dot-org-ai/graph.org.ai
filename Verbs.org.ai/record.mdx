@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: record
+$context: https://verbs.org.ai
+name: record
+canonicalForm: record
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Documenting information, data, or observations in a systematic manner for preservation, reference, or compliance purposes
+predicate: records
+event: recorded
+activity: recording
+actor: Recorder
+object: Record
+inverse: recordedBy
+---
+
+# Record
+
+Documenting information, data, or observations systematically for preservation, reference, audit trails, or compliance purposes.
+
+## O*NET Context
+
+Work activity focused on capturing, documenting, and maintaining accurate records of transactions, observations, measurements, or events in formats suitable for retrieval, analysis, or regulatory compliance.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Database.record({
+  type: 'transaction',
+  timestamp: now(),
+  details: transactionData
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Administrator.records.Event
+$.System.records.Measurement
+```
+
+### Event (Past Tense)
+```typescript
+on($.Data.recorded, async (event) => {
+  await $.Audit.log({ recordId: event.id, timestamp: event.timestamp })
+  await $.Notification.send({ recipients: event.approvers })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRecording = $.Clerk.recording.Transactions
+console.log(`Recording status: ${activeRecording.progress}%`)
+```
+
+### Role (Actor)
+```typescript
+const recorder: $.Recorder = await $.findAgent({
+  permissions: 'data-entry'
+})
+recorder.documentObservations(observations)
+```
+
+### Concept (Abstraction)
+```typescript
+const record: $.Record = {
+  id: generateId(),
+  content: data,
+  timestamp: now(),
+  metadata: { source, version },
+  archived: false
+}
+```
+
+### Inverse (Passive)
+```typescript
+const documentedBy = await db.related($.Transaction, $.recordedBy, $.Clerk)
+```
+
+## Usage Examples
+
+**Administrative:**
+- Recording employee attendance and hours worked
+- Documenting meeting minutes and decisions
+- Maintaining inventory counts and stock levels
+- Recording customer complaints and resolutions
+
+**Technical:**
+- Recording system logs and error events
+- Documenting code changes and commits
+- Capturing performance metrics and monitoring data
+- Recording network traffic and security events
+
+**Compliance:**
+- Recording financial transactions for audit trails
+- Documenting quality control inspections
+- Maintaining regulatory compliance records
+- Recording consent and authorization documentation
+
+## Related Verbs
+- document - Creating formal written records
+- log - Entering information into a system
+- capture - Obtaining and preserving data
+- register - Officially enrolling or listing

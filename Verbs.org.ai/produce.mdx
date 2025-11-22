@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: produce
+$context: https://verbs.org.ai
+name: produce
+canonicalForm: produce
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making or generating something, whether through manufacturing, creation, or preparation
+predicate: produces
+event: produced
+activity: producing
+actor: Producer
+object: Production
+inverse: producedBy
+---
+
+# Produce
+
+Making or generating something, whether through manufacturing, creation, preparation, or generation of goods or outputs.
+
+## O*NET Context
+
+Work activity focused on manufacturing goods, creating content, generating reports, or producing deliverables through organized effort.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Facility.produce({ product: 'widgets', quantity: 1000, timeline: 'monthly' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Company.produces.Goods
+$.Team.produces.Content
+```
+
+### Event (Past Tense)
+```typescript
+on($.Goods.produced, async (event) => {
+  await $.Quality.inspect({ items: event.quantity })
+  await $.Shipping.prepare({ destination: event.destination })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeProduction = $.Facility.producing.Inventory
+console.log(`Currently producing: ${activeProduction.outputPerHour} units/hour`)
+```
+
+### Role (Actor)
+```typescript
+const producer: $.Producer = await $.findAgent({ expertise: 'manufacturing' })
+await producer.createOutput(specifications)
+```
+
+### Concept (Abstraction)
+```typescript
+const production: $.Production = {
+  subjectId: facility.id,
+  productType: '',
+  quantity: 0,
+  timeline: { start: date, end: date },
+  resources: [],
+  costPerUnit: 0,
+  outputQuality: {}
+}
+```
+
+### Inverse (Passive)
+```typescript
+const facilities = await db.related($.Goods, $.producedBy, $.Facility)
+```
+
+## Usage Examples
+
+**Manufacturing Production:**
+- Producing goods for distribution
+- Producing components for assembly
+- Producing packaged products
+- Producing industrial materials
+
+**Content Production:**
+- Producing reports and documentation
+- Producing marketing materials
+- Producing training content
+- Producing technical documentation
+
+**Media Production:**
+- Producing videos and films
+- Producing audio content
+- Producing photographs
+- Producing web content
+
+**Service Production:**
+- Producing customer deliverables
+- Producing consulting outputs
+- Producing analysis and findings
+- Producing proposals and quotes
+
+## Related Verbs
+- manufacture - Making goods in quantity
+- create - Making something new
+- generate - Producing or bringing into being
+- assemble - Putting together components

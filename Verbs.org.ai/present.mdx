@@ -1,0 +1,107 @@
+---
+$type: Verb
+$id: present
+$context: https://verbs.org.ai
+name: present
+canonicalForm: present
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Giving information or displaying something to an audience in a prepared manner
+predicate: presents
+event: presented
+activity: presenting
+actor: Presenter
+object: Presentation
+inverse: presentedBy
+---
+
+# Present
+
+Giving information or displaying something to an audience in a prepared, organized manner.
+
+## O*NET Context
+
+Work activity focused on communicating information, ideas, or findings to audiences through speeches, demonstrations, or visual displays.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Presenter.present({ topic: 'findings', audience: 'executives', format: 'slideshow' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Analyst.presents.Findings
+$.Executive.presents.Strategy
+```
+
+### Event (Past Tense)
+```typescript
+on($.Proposal.presented, async (event) => {
+  await $.Stakeholder.gather({ feedback: true })
+  await $.Decision.schedule({ timeline: '1-week' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePresentation = $.Speaker.presenting.Webinar
+console.log(`Currently presenting to ${activePresentation.attendeeCount} participants`)
+```
+
+### Role (Actor)
+```typescript
+const presenter: $.Presenter = await $.findAgent({ expertise: 'public-speaking' })
+await presenter.deliverPresentation(slides)
+```
+
+### Concept (Abstraction)
+```typescript
+const presentation: $.Presentation = {
+  subjectId: topic.id,
+  title: '',
+  content: [],
+  audience: { type: '', size: 0 },
+  format: 'slideshow',
+  duration: 0,
+  objectives: []
+}
+```
+
+### Inverse (Passive)
+```typescript
+const speakers = await db.related($.Findings, $.presentedBy, $.Speaker)
+```
+
+## Usage Examples
+
+**Business Presentations:**
+- Presenting quarterly business results
+- Presenting investment proposals
+- Presenting product demonstrations
+- Presenting strategic plans to leadership
+
+**Academic Presentations:**
+- Presenting research findings at conferences
+- Presenting thesis work to committee
+- Presenting case studies to students
+- Presenting data analysis results
+
+**Sales Presentations:**
+- Presenting product features to potential customers
+- Presenting pricing proposals to clients
+- Presenting company capabilities to prospects
+- Presenting solutions to business problems
+
+**Team Communications:**
+- Presenting project status updates
+- Presenting training materials to staff
+- Presenting policy changes to employees
+- Presenting performance metrics
+
+## Related Verbs
+- communicate - Exchanging information
+- explain - Making clear or understandable
+- demonstrate - Showing how something works
+- inform - Providing information

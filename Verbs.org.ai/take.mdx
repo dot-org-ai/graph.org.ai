@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: take
+$context: https://verbs.org.ai
+name: take
+canonicalForm: take
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:stock_taking
+description: Conducting a comprehensive inventory count or stock audit
+predicate: takes
+event: taken
+activity: taking
+actor: Taker
+object: Taking
+inverse: takenBy
+---
+
+# Take
+
+GS1 CBV Business Step: Conducting a comprehensive inventory count or stock audit (stock taking). This business step represents the systematic counting and verification of all inventory to ensure accurate stock records.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Warehouse.take(inventory)
+```
+
+### Predicate (Relationship)
+```typescript
+$.CountingTeam.takes.Inventory
+```
+
+### Event (Past Tense)
+```typescript
+on($.Inventory.taken, async ({location, count}) => {
+  // Handle stock count completion
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.Operation.taking.StockCount
+```
+
+### Role (Actor)
+```typescript
+$.Taker
+```
+
+### Concept (Abstraction)
+```typescript
+$.Taking
+```
+
+### Inverse (Passive)
+```typescript
+$.Inventory.takenBy.CountingTeam
+```

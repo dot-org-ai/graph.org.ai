@@ -1,0 +1,94 @@
+---
+$type: Verb
+$id: standardize
+$context: https://verbs.org.ai
+name: standardize
+canonicalForm: standardize
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Establish uniform methods, formats, or practices across organization
+predicate: standardizes
+event: standardized
+activity: standardizing
+actor: Standardizer
+object: Standardization
+inverse: standardizedBy
+---
+
+# Standardize
+
+Establishing uniform methods, formats, practices, and procedures across the organization to ensure consistency and improve efficiency.
+
+## APQC Process Context
+
+Process improvement and governance activity where organizations define and implement standard approaches to reduce variation and improve quality and efficiency.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Operations.standardize({ process, procedure, scope })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.standardizes.Process
+$.Department.standardizes.Procedure
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.standardized, async (event) => {
+  await $.Training.scheduleRollout(event.standard)
+  await $.Compliance.monitorAdherence(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const normalization = $.Organization.standardizing.Procedure
+```
+
+### Actor (Role)
+```typescript
+const standardizer: $.Standardizer = await $.findAgent({ role: 'process-improvement' })
+```
+
+### Object (Abstraction)
+```typescript
+const standardization: $.Standardization = {
+  processId: process.id,
+  standardDefinition: {...},
+  scope: 'enterprise-wide',
+  effectiveDate: date,
+  documentation: [...],
+  status: 'active'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const standards = await db.related($.Process, $.standardizedBy, $.Organization)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop and implement operational plans
+- Process: Define and manage processes
+
+## Business Rules
+
+- Standardization requires stakeholder input
+- Standard must be documented clearly
+- Implementation timeline must be communicated
+- Training must be provided
+- Compliance must be monitored
+
+## Related Verbs
+- define - Establishing specifications or boundaries
+- implement - Putting into effect
+- normalize - Making standard or typical
+- establish - Setting up or creating
+- enforce - Requiring compliance
+

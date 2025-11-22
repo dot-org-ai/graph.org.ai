@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: endorse
+$context: https://verbs.org.ai
+name: endorse
+canonicalForm: endorse
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Give approval or permission to; publicly declare support for; recommend as worthy.
+predicate: endorses
+event: endorsed
+activity: endorsing
+actor: Endorser
+object: Endorsement
+inverse: endorsedBy
+---
+
+# Endorse
+
+The action of publicly declaring support for or approval of a person, product, statement, or cause. In the context of Schema.org Actions, endorse represents the formal act of recommending something as worthy or trustworthy.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.endorse()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.endorses.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.endorsed, async ({subject}) => {
+  // Handle endorsement event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.endorsing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Endorser}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Endorsement}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.endorsedBy.{Subject}
+```

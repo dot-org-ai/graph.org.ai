@@ -1,0 +1,109 @@
+---
+$type: Verb
+$id: refer
+$context: https://verbs.org.ai
+name: refer
+canonicalForm: refer
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Directing someone to another person, resource, or service for assistance, information, or specialized support
+predicate: refers
+event: referred
+activity: referring
+actor: Referrer
+object: Referral
+inverse: referredBy
+---
+
+# Refer
+
+Directing or recommending someone to another person, resource, service, or specialist for assistance, information, or specialized support.
+
+## O*NET Context
+
+Work activity focused on channeling individuals to appropriate resources, specialists, or services based on their needs, qualifications, or circumstances to ensure they receive optimal support or expertise.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.HealthcareProvider.refer({
+  patientId: patient.id,
+  specialist: 'cardiology',
+  reason: diagnosis
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.CaseWorker.refers.Client.to.Specialist
+$.System.refers.User.to.Resource
+```
+
+### Event (Past Tense)
+```typescript
+on($.Client.referred, async (event) => {
+  await $.Notification.send({
+    recipient: event.specialist,
+    referralDetails: event.data
+  })
+  await $.Tracking.log({ referralId: event.id })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeReferral = $.Counselor.referring.Student.to.Services
+console.log(`Pending referrals: ${activeReferral.count}`)
+```
+
+### Role (Actor)
+```typescript
+const referrer: $.Referrer = await $.findAgent({
+  permissions: 'case-management'
+})
+referrer.connectClientToServices(client, needs)
+```
+
+### Concept (Abstraction)
+```typescript
+const referral: $.Referral = {
+  referrerName: referrer.name,
+  recipientName: client.name,
+  reason: presentingIssue,
+  targetService: 'mental-health',
+  timestamp: now(),
+  status: 'pending'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const providers = await db.related($.Patient, $.referredBy, $.Physician)
+```
+
+## Usage Examples
+
+**Healthcare:**
+- Referring patients to specialists for advanced care
+- Directing individuals to mental health services
+- Recommending patients to rehabilitation facilities
+- Connecting people to preventive health resources
+
+**Education:**
+- Referring students to academic support services
+- Directing learners to remedial programs
+- Recommending participants to skills training
+- Connecting students to mental health counseling
+
+**Case Management:**
+- Referring individuals to social services
+- Directing clients to job training programs
+- Recommending people to housing assistance
+- Connecting families to community resources
+
+## Related Verbs
+- recommend - Suggesting as suitable or worthy
+- direct - Showing the way or guiding
+- channel - Routing through appropriate pathways
+- connect - Linking to resources or people

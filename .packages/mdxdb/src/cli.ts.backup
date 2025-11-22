@@ -1,0 +1,265 @@
+#!/usr/bin/env node
+import { Command } from 'commander';
+import chokidar from 'chokidar';
+import * as path from 'path';
+import { MdxDbFs } from './fs/index.js';
+import { validate, parse } from 'mdxld';
+import * as fs from 'fs/promises';
+import { evaluateMdx } from './evaluator.js';
+import { MdxDbMcpServer } from './mcp.js';
+import { renderToMarkdown } from '@mdxui/markdown';
+import * as dotenv from 'dotenv';
+
+const program = new Command();
+
+program
+  .command('mcp')
+  .description('Start the MCP server (stdio)')
+  .action(async () => {
+    const rootDir = process.cwd();
+    const server = new MdxDbMcpServer(rootDir);
+    await server.start();
+  });
+
+program
+  .name('mdxdb')
+  .description('Database interface, watcher, and generator for MDX files')
+  .version('0.0.1');
+
+program
+  .command('watch')
+  .description('Watch for file changes and validate')
+  .action(async () => {
+    const rootDir = process.cwd();
+    console.log(`Starting mdxdb watcher in ${rootDir}...`);
+
+    const db = new MdxDbFs(rootDir);
+    
+    const watcher = chokidar.watch('**/*.{md,mdx}', {
+      cwd: rootDir,
+      ignored: ['**/node_modules/**', '**/.git/**', '**/.packages/**'],
+      ignoreInitial: false
+    });
+
+    watcher
+      .on('add', path => processFile(path, rootDir, db))
+      .on('change', path => processFile(path, rootDir, db))
+      .on('unlink', path => console.log(`File removed: ${path}`));
+  });
+
+program
+  .command('generate <file>')
+  .alias('ingest')
+  .description('Ingest data and generate files using the logic in the MDX file')
+  .action(async (file) => {
+    const rootDir = process.cwd();
+    const db = new MdxDbFs(rootDir);
+    try {
+        const filePath = path.resolve(rootDir, file);
+        
+        // Load .env from the file's directory
+        const envPath = path.join(path.dirname(filePath), '.env');
+        dotenv.config({ path: envPath });
+
+        const content = await fs.readFile(filePath, 'utf-8');
+        
+        console.log(`Evaluating ${file}...`);
+        const exports = await evaluateMdx(content, db);
+        
+        if (exports.items) {
+            const items = await exports.items;
+            console.log(`Found ${Array.isArray(items) ? items.length : 0} items. Processing...`);
+            
+            if (Array.isArray(items)) {
+                 // Derive collection name from directory
+                 // Try to find the segment ending in .org.ai
+                 const pathParts = path.dirname(file).split(path.sep);
+                 let dirName = pathParts.find(p => p.endsWith('.org.ai'));
+                 if (!dirName) {
+                     // Fallback to immediate parent
+                     dirName = pathParts.pop();
+                 }
+                 
+                 if (dirName) {
+                     const collection = db.collection(dirName);
+                     let createdCount = 0;
+                     let updatedCount = 0;
+
+                     for (const item of items) {
+                         const templateDoc = parse(content);
+                         let contentStr = (templateDoc as any).$content || (templateDoc as any).content || '';
+                         
+                         // Remove export statements robustly by matching until the first markdown header
+                         // This assumes the export block is followed by the markdown content starting with # or similar
+                         // Or we can just match until the end of the last semicolon? No, hard to find nested.
+                         // Let's try matching until '\n#' if it exists.
+                         
+                         const exportRegex = /export\s+const\s+items\s+=[\s\S]*\}\);/;
+                         contentStr = contentStr.replace(exportRegex, '');
+                         
+                         // Debug content
+                         console.log('DEBUG Content:', contentStr.substring(0, 400));
+
+                         const newMetadata: any = { ...item };
+                         const templateMeta = { ...templateDoc };
+                         delete (templateMeta as any).$content;
+                         delete (templateMeta as any).content;
+                         delete (templateMeta as any).data;
+                         
+                         // Interpolate metadata
+                         const interpolate = (str: string, data: any) => {
+                             return str.replace(/\{([a-zA-Z0-9_]+)\}/g, (match, key) => {
+                                 return data[key] !== undefined ? data[key] : match;
+                             });
+                         };
+
+                         for (const [key, val] of Object.entries(templateMeta)) {
+                             if (typeof val === 'string') {
+                                 newMetadata[key] = interpolate(val, item);
+                             } else {
+                                 newMetadata[key] = val;
+                             }
+                         }
+                         
+                         // Render content to Markdown
+                         // Inject item properties into global scope so {title}, {slug} work
+                         // We must clean them up after to avoid pollution?
+                         const globalAny = global as any;
+                         for (const [k, v] of Object.entries(item)) {
+                             globalAny[k] = v;
+                         }
+
+                         // Stub components to preserve them as tags in the output
+                         const knownComponents = [
+                             'Tasks', 'Skills', 'Industries', 'JobZone', 'Activities', 
+                             'Knowledge', 'Abilities', 'WorkContext', 'WorkStyles', 
+                             'WorkValues', 'Tech', 'Tools', 'Wages', 'JobZone',
+                             'Activity', 'IWA', 'DWA', 'Processes', 
+                             'SubIndustries', 'CrossReferences', 'Products', 'Inputs', 'Outputs',
+                             'ProductFamily', 'ProductClass', 'Companies',
+                             'Providers', 'SubProcesses', 'KPIs',
+                             'SubSectors', 'Classifications', 'RelatedTasks',
+                             'Occupations',
+                             'Actions', 'Events', 'Nouns'
+                         ];
+                         
+                         const stubs: any = {};
+                         for (const name of knownComponents) {
+                             stubs[name] = (props: any) => ({ type: name, props });
+                         }
+
+                         const renderedContent = await renderToMarkdown(contentStr, { 
+                             context: { ...item, db, ...stubs },
+                             keepTags: knownComponents
+                         });
+                         
+                         // Cleanup globals
+                         for (const k of Object.keys(item)) {
+                             delete globalAny[k];
+                         }
+
+                         const newItem = {
+                            ...newMetadata,
+                            $content: renderedContent
+                         };
+
+                         // Prefer explicit local ID over global $id
+                         const newId = newItem.id || newItem.$id || newItem.code;
+                         
+                         if (newId) {
+                             // TODO: Consider checking if existing item is different before write?
+                             // For now, upsert (set) is fine, but create/update logic in CLI was:
+                             const existing = await collection.get(newId);
+                             if (existing) {
+                                 await collection.update(newId, newItem);
+                                 updatedCount++;
+                             } else {
+                                 try {
+                                     await collection.create(newItem);
+                                     createdCount++;
+                                 } catch (e: any) {
+                                     if (e.message && e.message.includes('already exists')) {
+                                         await collection.update(newId, newItem);
+                                         updatedCount++;
+                                     } else {
+                                         throw e;
+                                     }
+                                 }
+                             }
+                         } else {
+                             console.warn('Item missing ID:', item);
+                         }
+                     }
+                     console.log(`Generation complete: ${createdCount} created, ${updatedCount} updated.`);
+                 } else {
+                     console.error("Could not determine collection from directory.");
+                 }
+            }
+        } else {
+            console.log('No items exported.');
+        }
+        
+    } catch (error) {
+        console.error('Error:', error);
+    }
+  });
+
+// Default action if no command provided (fallback to watch? or help?)
+// User said: "by default if you run it with no args, it should watch"
+if (!process.argv.slice(2).length) {
+    program.parse([...process.argv, 'watch']);
+} else {
+    program.parse();
+}
+
+async function processFile(filePath: string, rootDir: string, db: MdxDbFs) {
+    const fullPath = path.join(rootDir, filePath);
+    
+    // Load .env from the file's directory
+    const envPath = path.join(path.dirname(fullPath), '.env');
+    dotenv.config({ path: envPath });
+
+    try {
+        const content = await fs.readFile(fullPath, 'utf-8');
+        
+        // 1. Validation
+        const doc = parse(content);
+        const validation = validate(doc);
+        if (!validation.success) {
+            console.error(`❌ Invalid MDX-LD in ${filePath}:`, validation.error);
+            return;
+        } else {
+             // console.log(`✅ Validated ${filePath}`);
+        }
+
+        // 2. Reverse Updates / Relationship Consistency
+        // TODO: Implement schema-aware relationship updates.
+        // For now, we just log that we processed it.
+        // To do this properly, we need to know:
+        // - Which fields are relationships?
+        // - What is the inverse property?
+        // Example: Occupation.mdx has 'tasks: [id1, id2]'.
+        // We need to find Task files for id1, id2 and ensure they have 'occupations: [thisId]'.
+        
+        // Naive implementation attempt for "tasks" <-> "occupations" (hardcoded for demo)
+        const data = (doc as any);
+        if (data.tasks && Array.isArray(data.tasks)) {
+             const occupationId = data.$id || data.id || data.code;
+             if (!occupationId) return; // Can't link without ID
+
+             const tasksCollection = db.collection('Tasks.org.ai'); // Guessing collection name logic?
+             // Or maybe we assume unique IDs across DB? mdxdb doesn't enforce that yet.
+             // Let's look for the file.
+             
+             for (const taskId of data.tasks) {
+                 // This assumes we can find the task by ID or we have to search.
+                 // MdxDbFs.get() expects an ID that maps to a filename.
+                 // But 'taskId' might be a URI.
+                 // Let's skip complex logic for this step until we have a robust ID resolution.
+             }
+        }
+
+    } catch (err) {
+        console.error(`Error processing ${filePath}:`, err);
+    }
+}

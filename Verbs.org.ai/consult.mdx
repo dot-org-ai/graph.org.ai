@@ -1,0 +1,90 @@
+---
+$type: Verb
+$id: consult
+$context: https://verbs.org.ai
+name: consult
+canonicalForm: consult
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Providing professional advice or seeking expert opinion
+predicate: consults
+event: consulted
+activity: consulting
+actor: Consultant
+object: Consultation
+inverse: consultedBy
+---
+
+# Consult
+
+Providing professional advice, recommendations, or guidance on a particular matter; seeking expert opinion or input from specialists.
+
+## O*NET Context
+
+Work activity involving the provision of professional or expert advice to clients, stakeholders, or colleagues. This is a key activity in knowledge-intensive roles such as consulting, advising, and professional services.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Client.consult({ topic: 'business strategy', duration: '2 hours' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.consults.Expert
+$.Organization.consults.Consultant
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.consulted, async (event) => {
+  await $.Documentation.update({ consultantId: event.consultant })
+  await $.Invoice.create({ amount: event.fee })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const advisory = $.Client.consulting.Strategy
+console.log(`Currently consulting on: ${advisory.topic}`)
+```
+
+### Role (Actor)
+```typescript
+const consultant: $.Consultant = await $.findAgent({ expertise: 'financial planning' })
+await consultant.adviseClient(client)
+```
+
+### Concept (Abstraction)
+```typescript
+const consultation: $.Consultation = {
+  clientId: client.id,
+  topic: 'organizational restructuring',
+  date: now(),
+  recommendations: ['implement agile', 'reduce overhead'],
+  followUp: date + 30days
+}
+```
+
+### Inverse (Passive)
+```typescript
+const clients = await db.related($.Project, $.consultedBy, $.Consultant)
+```
+
+## Usage Examples
+
+**Professional Services:**
+- Management consultant advises on business transformation
+- Legal consultant provides guidance on contract terms
+- IT consultant recommends technology solutions
+
+**Business Rules:**
+- Consultation requires documented scope and objectives
+- Fees based on expertise level and duration
+- Follow-up recommendations documented in writing
+
+## Related Verbs
+- advise - Offering guidance or recommendations
+- counsel - Providing personal or professional guidance
+- discuss - Exchanging ideas or views

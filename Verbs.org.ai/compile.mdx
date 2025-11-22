@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: compile
+$context: https://verbs.org.ai
+name: compile
+canonicalForm: compile
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Collecting, assembling, and organizing information or materials from multiple sources into a unified document or system
+predicate: compiles
+event: compiled
+activity: compiling
+actor: Compiler
+object: Compilation
+inverse: compiledBy
+---
+
+# Compile
+
+Collecting, assembling, and organizing information, materials, or code from multiple sources into a unified, organized document, database, or system.
+
+## O*NET Context
+
+Work activity focused on gathering and assembling diverse information or materials into cohesive reports, documents, or systems for use or distribution.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Report.compile({ sources: [doc1, doc2, doc3], format: 'pdf' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Researcher.compiles.Data
+$.Developer.compiles.Code
+```
+
+### Event (Past Tense)
+```typescript
+on($.Document.compiled, async (event) => {
+  await $.Email.send({ recipients: event.stakeholders, attachment: event.result })
+  await $.Archive.store({ document: event })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const currentWork = $.Team.compiling.AnnualReport
+console.log(`Currently compiling ${currentWork.sections} sections`)
+```
+
+### Role (Actor)
+```typescript
+const compiler: $.Compiler = await $.findAgent({ skills: 'documentation' })
+compiler.assembleReport(data)
+```
+
+### Concept (Abstraction)
+```typescript
+const compilation: $.Compilation = {
+  projectId: project.id,
+  compilationType: 'annual-report',
+  sources: ['finance', 'operations', 'hr'],
+  status: 'in-progress',
+  deadline: date,
+  assignedTo: user.id
+}
+```
+
+### Inverse (Passive)
+```typescript
+const compiledBy = await db.related($.Report, $.compiledBy, $.Researcher)
+```
+
+## Usage Examples
+
+**Report Generation:**
+- Compiling financial reports from accounting data
+- Assembling annual reports from departmental submissions
+- Gathering and organizing research findings
+- Creating comprehensive status reports
+
+**Data Management:**
+- Compiling customer data from multiple systems
+- Assembling product inventory information
+- Organizing historical records
+- Creating data compilations for analysis
+
+**Software Development:**
+- Compiling source code into executable programs
+- Assembling compiled code modules
+- Building applications from components
+- Creating distribution packages
+
+## Related Verbs
+- gather - Collecting or bringing together
+- assemble - Putting pieces together
+- organize - Arranging in order
+- consolidate - Combining into a unified whole

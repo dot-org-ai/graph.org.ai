@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: attach
+$context: https://verbs.org.ai
+name: attach
+canonicalForm: attach
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Indicating the object to be attached
+predicate: attaches
+event: attached
+activity: attaching
+actor: Attacher
+object: Attachment
+inverse: attachedBy
+---
+
+# Attach
+
+Schema.org Action: Indicating the object to be attached.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.attach()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.attaches.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.attached, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.attaching.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Attacher
+```
+
+### Concept (Abstraction)
+```typescript
+$.Attachment
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.attachedBy.{Subject}
+```

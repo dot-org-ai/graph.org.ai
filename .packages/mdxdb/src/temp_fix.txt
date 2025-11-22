@@ -1,0 +1,10 @@
+                        // Simple string interpolation instead of complex MDX rendering
+                        // This avoids HTML->Markdown conversion that escapes everything
+                        let renderedContent = contentStr.replace(/\{([a-zA-Z0-9_\.]+)\}/g, (match, key) => {
+                            const keys = key.split('.');
+                            let value: any = item;
+                            for (const k of keys) {
+                                value = value?.[k];
+                            }
+                            return value !== undefined && value !== null ? String(value) : '';
+                        });

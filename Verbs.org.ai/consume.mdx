@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: consume
+$context: https://verbs.org.ai
+name: consume
+canonicalForm: consume
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To use up or take in resources, materials, or products; to use something completely.
+predicate: consumes
+event: consumed
+activity: consuming
+actor: Consumer
+object: Consumption
+inverse: consumedBy
+---
+
+# Consume
+
+The action of using up, depleting, or taking in resources, materials, products, or services. Consume represents the utilization or depletion of something.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.consume()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.consumes.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.consumed, async ({subject}) => {
+  // Handle consumption event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.consuming.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Consumer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Consumption}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.consumedBy.{Subject}
+```

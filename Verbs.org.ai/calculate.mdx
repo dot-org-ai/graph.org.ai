@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: calculate
+$context: https://verbs.org.ai
+name: calculate
+canonicalForm: calculate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Computing or determining mathematical values or results based on data and formulas
+predicate: calculates
+event: calculated
+activity: calculating
+actor: Calculator
+object: Calculation
+inverse: calculatedBy
+---
+
+# Calculate
+
+Computing or determining mathematical values, results, or quantities based on data, formulas, and logical operations.
+
+## O*NET Context
+
+Work activity focused on performing mathematical operations and computations to produce results for analysis, forecasting, or decision-making.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Mathematics.calculate({ formula: 'ROI', inputs: { revenue, cost, investment } })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Accountant.calculates.Tax
+$.Engineer.calculates.Load
+```
+
+### Event (Past Tense)
+```typescript
+on($.Report.calculated, async (event) => {
+  await $.Email.send({ recipient: stakeholder, attachment: event.result })
+  await $.Database.store({ calculation: event })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeComputation = $.System.calculating.Payroll
+console.log(`Currently calculating for ${activeComputation.employees} employees`)
+```
+
+### Role (Actor)
+```typescript
+const calculator: $.Calculator = await $.findAgent({ skills: 'mathematical-analysis' })
+calculator.computeResult(dataset)
+```
+
+### Concept (Abstraction)
+```typescript
+const calculation: $.Calculation = {
+  operationId: op.id,
+  formula: 'compound-interest',
+  inputs: { principal: 10000, rate: 0.05, time: 5 },
+  result: 12762.82,
+  timestamp: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const computedBy = await db.related($.Result, $.calculatedBy, $.System)
+```
+
+## Usage Examples
+
+**Financial Calculations:**
+- Calculating taxes and deductions
+- Computing loan payments and interest
+- Determining ROI and financial metrics
+- Calculating payroll and benefits
+
+**Engineering Calculations:**
+- Computing load-bearing capacity
+- Calculating material quantities
+- Determining dimensions and angles
+- Computing energy requirements
+
+**Statistical Analysis:**
+- Calculating averages and percentages
+- Computing standard deviation
+- Determining statistical significance
+- Computing probability distributions
+
+## Related Verbs
+- compute - Performing mathematical operations
+- measure - Determining quantity or magnitude
+- quantify - Expressing as a quantity
+- estimate - Approximating a value or quantity

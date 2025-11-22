@@ -1,0 +1,106 @@
+---
+$type: Verb
+$id: protect
+$context: https://verbs.org.ai
+name: protect
+canonicalForm: protect
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Taking actions to keep someone or something safe from harm, damage, or loss
+predicate: protects
+event: protected
+activity: protecting
+actor: Protector
+object: Protection
+inverse: protectedBy
+---
+
+# Protect
+
+Taking actions or measures to keep someone or something safe from harm, damage, loss, theft, or other adverse conditions.
+
+## O*NET Context
+
+Work activity focused on implementing safeguards, security measures, and preventative actions to ensure safety, security, and preservation of assets, data, or individuals.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Security.protect({ assets: ['data', 'infrastructure'], level: 'maximum' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.SecurityTeam.protects.Facility
+$.System.protects.UserData
+```
+
+### Event (Past Tense)
+```typescript
+on($.Network.protected, async (event) => {
+  await $.Log.record({ action: 'protection-activated', timestamp: now() })
+  await $.Admin.notify({ status: 'security-measures-enabled' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeProtection = $.System.protecting.CriticalAssets
+console.log(`Protection status: ${activeProtection.level}`)
+```
+
+### Role (Actor)
+```typescript
+const protector: $.Protector = await $.findAgent({ expertise: 'security' })
+await protector.implementSafeguards(facility)
+```
+
+### Concept (Abstraction)
+```typescript
+const protection: $.Protection = {
+  type: 'physical-security',
+  scope: ['facility', 'equipment'],
+  measures: ['surveillance', 'access-control'],
+  status: 'active',
+  lastAudit: date,
+  certifications: ['ISO-27001']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const guardians = await db.related($.Asset, $.protectedBy, $.SecurityTeam)
+```
+
+## Usage Examples
+
+**Physical Security:**
+- Protecting facilities from unauthorized access
+- Safeguarding equipment from damage or theft
+- Implementing surveillance and monitoring
+- Maintaining secure perimeters
+
+**Information Security:**
+- Protecting customer data from breaches
+- Securing network infrastructure
+- Implementing encryption and access controls
+- Protecting intellectual property
+
+**Workplace Safety:**
+- Protecting employees from hazards
+- Maintaining OSHA compliance
+- Implementing safety protocols
+- Providing protective equipment
+
+**Risk Management:**
+- Protecting financial assets
+- Safeguarding business continuity
+- Implementing disaster recovery measures
+- Protecting against fraud
+
+## Related Verbs
+- safeguard - Ensuring safety or security
+- defend - Protecting against attack or criticism
+- secure - Making safe or obtaining possession
+- preserve - Keeping something in good condition

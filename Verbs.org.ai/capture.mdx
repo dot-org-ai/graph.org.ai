@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: capture
+$context: https://verbs.org.ai
+name: capture
+canonicalForm: capture
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Recording an observation or information
+predicate: captures
+event: captured
+activity: capturing
+actor: Capturer
+object: Capture
+inverse: capturedBy
+---
+
+# Capture
+
+Schema.org Action: Recording an observation or information.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.capture()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.captures.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.captured, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.capturing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Capturer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Capture
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.capturedBy.{Subject}
+```

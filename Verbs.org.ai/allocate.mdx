@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: allocate
+$context: https://verbs.org.ai
+name: allocate
+canonicalForm: allocate
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Distribute or assign resources, responsibilities, or opportunities.
+predicate: allocates
+event: allocated
+activity: allocating
+actor: Allocator
+object: Allocation
+inverse: allocatedBy
+---
+
+# Allocate
+
+The action of distributing, assigning, or setting aside resources, personnel, or responsibilities according to a plan or need. Allocate represents deliberate assignment of assets.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.allocate()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.allocates.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.allocated, async ({subject}) => {
+  // Handle allocation event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.allocating.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Allocator}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Allocation}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.allocatedBy.{Subject}
+```

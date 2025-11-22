@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: interpret
+$context: https://verbs.org.ai
+name: interpret
+canonicalForm: interpret
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Explaining the meaning or significance of information, data, language, or events
+predicate: interprets
+event: interpreted
+activity: interpreting
+actor: Interpreter
+object: Interpretation
+inverse: interpretedBy
+---
+
+# Interpret
+
+Explaining the meaning, significance, or implications of information, data, language, symbols, or events to create understanding.
+
+## O*NET Context
+
+Work activity focused on making sense of complex information, explaining meaning to others, and translating data or communication into understandable and actionable insights.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Data.interpret({ source: rawData, context: businessContext, audience: 'executives' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Analyst.interprets.Results
+$.Translator.interprets.Language
+```
+
+### Event (Past Tense)
+```typescript
+on($.Report.interpreted, async (event) => {
+  await $.Presentation.create({ insights: event.meaning })
+  await $.Stakeholder.notify({ explanation: event.interpretation })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeInterpretation = $.Team.interpreting.MarketTrends
+console.log(`Analyzing: ${activeInterpretation.focus}`)
+```
+
+### Role (Actor)
+```typescript
+const interpreter: $.Interpreter = await $.findAgent({ expertise: 'data-analysis' })
+interpreter.explainPatterns(dataset)
+```
+
+### Concept (Abstraction)
+```typescript
+const interpretation: $.Interpretation = {
+  sourceId: data.id,
+  meaning: explanation,
+  context: businessContext,
+  implications: consequences,
+  confidence: level
+}
+```
+
+### Inverse (Passive)
+```typescript
+const explainers = await db.related($.Findings, $.interpretedBy, $.Analyst)
+```
+
+## Usage Examples
+
+**Data Interpretation:**
+- Interpreting statistical analysis results
+- Explaining financial metrics
+- Translating research findings
+- Explaining test results
+
+**Communication:**
+- Interpreting customer feedback
+- Translating technical concepts for non-technical audiences
+- Explaining policy changes to staff
+- Clarifying requirements or specifications
+
+**Analysis:**
+- Interpreting market data
+- Explaining system behavior or logs
+- Translating business rules into technical requirements
+- Explaining the significance of findings
+
+## Related Verbs
+- explain - Making something clear or understandable
+- analyze - Examining information to understand patterns
+- translate - Converting from one form to another
+- clarify - Making something easier to understand

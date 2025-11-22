@@ -1,0 +1,109 @@
+---
+$type: Verb
+$id: estimate
+$context: https://verbs.org.ai
+name: estimate
+canonicalForm: estimate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Judging or calculating approximate values, quantities, or outcomes
+predicate: estimates
+event: estimated
+activity: estimating
+actor: Estimator
+object: Estimate
+inverse: estimatedBy
+---
+
+# Estimate
+
+Judging, calculating, or approximating values, quantities, costs, time periods, or outcomes based on available information.
+
+## O*NET Context
+
+Work activity involving making judgments or calculations about quantities, values, or outcomes. Common in construction, project management, accounting, engineering, and sales roles where accurate estimations directly impact business operations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Contractor.estimate({ project: 'renovation', scope: buildingDetails })
+await $.Analyst.estimate($.Revenue, { period: 'Q4', method: 'historical-trend' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Contractor.estimates.ProjectCost
+$.Analyst.estimates.MarketSize
+$.Appraiser.estimates.PropertyValue
+```
+
+### Event (Past Tense)
+```typescript
+on($.Bid.estimated, async (event) => {
+  await $.Quote.generate({ project: event.project, amount: event.estimate })
+  await $.Notification.send({ recipient: event.client })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const forecasting = $.Department.estimating.Budget
+console.log(`Estimating complete: ${forecasting.phase}: ${forecasting.accuracy}% confidence`)
+```
+
+### Role (Actor)
+```typescript
+const estimator: $.Estimator = await $.findAgent({ expertise: 'cost-analysis' })
+await estimator.calculateProjectBudget(specs)
+```
+
+### Concept (Abstraction)
+```typescript
+const estimate: $.Estimate = {
+  project: projectId,
+  baseAmount: 50000,
+  contingency: 0.15,
+  totalEstimate: 57500,
+  confidence: 0.92,
+  dateGenerated: '2025-10-29'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const estimators = await db.related($.Project, $.estimatedBy, $.Estimator)
+```
+
+## Usage Examples
+
+**Construction and Trades:**
+- Contractor estimates project costs and timeline
+- Builder estimates material quantities
+- Electrician estimates labor and materials
+- Plumber estimates repair costs
+
+**Business and Finance:**
+- Financial analyst estimates revenue projections
+- Budget manager estimates departmental costs
+- Sales manager estimates deal probability and close timeline
+- CFO estimates cash flow requirements
+
+**Project Management:**
+- Project manager estimates task duration
+- Resource manager estimates staffing needs
+- Risk analyst estimates probability and impact
+- Scope manager estimates deliverables and effort
+
+**Business Rules:**
+- Estimates should use consistent methodologies
+- Estimates require documented assumptions
+- Estimates should include confidence levels
+- Estimate accuracy should be tracked and reviewed
+
+## Related Verbs
+- calculate - Computing values precisely
+- evaluate - Assessing quality or value
+- forecast - Predicting future values or outcomes
+- assess - Judging quality or amount
+- measure - Determining exact dimensions or quantities

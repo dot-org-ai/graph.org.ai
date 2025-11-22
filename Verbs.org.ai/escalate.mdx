@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: escalate
+$context: https://verbs.org.ai
+name: escalate
+canonicalForm: escalate
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Raise issues or concerns to higher authority or management levels
+predicate: escalates
+event: escalated
+activity: escalating
+actor: Escalator
+object: Escalation
+inverse: escalatedBy
+---
+
+# Escalate
+
+Raising issues, problems, or concerns to higher authority or management levels when normal resolution processes are insufficient or decisions require senior input.
+
+## APQC Process Context
+
+Issue and conflict management activity where organizations route unresolved matters through hierarchy to achieve timely resolution and appropriate decision-making.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.IssueManagement.escalate({ issue, reason, level })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Supervisor.escalates.Issue
+$.Department.escalates.Concern
+```
+
+### Event (Past Tense)
+```typescript
+on($.Issue.escalated, async (event) => {
+  await $.Management.notifyOfEscalation(event)
+  await $.SLA.trackResolutionTime(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const priority = $.Organization.escalating.CriticalIssue
+```
+
+### Actor (Role)
+```typescript
+const escalator: $.Escalator = await $.findAgent({ role: 'support' })
+```
+
+### Object (Abstraction)
+```typescript
+const escalation: $.Escalation = {
+  issueId: issue.id,
+  originalOwner: user.id,
+  escalatedTo: manager.id,
+  reason: 'unresolved-sla',
+  priority: 'high',
+  status: 'escalated',
+  escalatedDate: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const escalations = await db.related($.Issue, $.escalatedBy, $.Department)
+```
+
+## APQC Process Category
+
+Category 4: Enable
+- Subcategory: Manage customer service and support
+- Process: Resolve customer issues and complaints
+
+## Business Rules
+
+- Escalation requires documented justification
+- Clear escalation path must be defined
+- Timeline for escalation must be specified
+- Senior level must be involved within SLA
+- Resolution status must be communicated to originator
+
+## Related Verbs
+- notify - Informing of issues
+- manage - Overseeing resolution
+- report - Documenting the issue
+- resolve - Finding solution
+- communicate - Providing updates
+

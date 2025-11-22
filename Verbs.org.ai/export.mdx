@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: export
+$context: https://verbs.org.ai
+name: export
+canonicalForm: export
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Send out or transfer data, goods, or information to an external location, system, or format.
+predicate: exports
+event: exported
+activity: exporting
+actor: Exporter
+object: Export
+inverse: exportedBy
+---
+
+# Export
+
+The action of sending out, transferring, or extracting data or goods from a system, location, or format to an external destination. In the context of Schema.org Actions, export represents the process of making information or resources available outside their current context.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.export()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.exports.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.exported, async ({subject}) => {
+  // Handle export event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.exporting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Exporter}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Export}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.exportedBy.{Subject}
+```

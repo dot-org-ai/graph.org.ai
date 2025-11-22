@@ -1,0 +1,99 @@
+---
+$type: Verb
+$id: learn
+$context: https://verbs.org.ai
+name: learn
+canonicalForm: learn
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Acquiring knowledge, skills, or understanding through study, experience, or instruction
+predicate: learns
+event: learned
+activity: learning
+actor: Learner
+object: Learning
+inverse: learnedBy
+---
+
+# Learn
+
+Acquiring knowledge, skills, or understanding through study, experience, or instruction.
+
+## O*NET Context
+
+Work activity focused on obtaining new information, competencies, or expertise through formal education, training, self-study, or experience-based development. Critical for professional development and adaptation to new systems or methodologies.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Employee.learn({ subject: 'new-software', duration: '40-hours', format: 'instructor-led' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Team.learns.NewTechnology
+$.Organization.learns.BestPractices
+```
+
+### Event (Past Tense)
+```typescript
+on($.Professional.learned, async (event) => {
+  await $.Certification.issue({ recipient: event.person, skill: event.skill })
+  await $.Dashboard.update({ accomplishment: event.learningOutcome })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeTraining = $.Developer.learning.AdvancedArchitecture
+console.log(`Currently learning: ${activeTraining.module}`)
+```
+
+### Role (Actor)
+```typescript
+const learner: $.Learner = await $.findAgent({ status: 'in-training' })
+learner.completeModule(trainingCourse)
+```
+
+### Concept (Abstraction)
+```typescript
+const learning: $.Learning = {
+  subjectId: employee.id,
+  courseId: course.id,
+  progressPercent: 65,
+  assessmentScore: 87,
+  completionDate: futureDate()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const instructors = await db.related($.Knowledge, $.learnedBy, $.Professional)
+```
+
+## Usage Examples
+
+**Training and Development:**
+- Employee learns new software during onboarding
+- Team learns industry best practices through workshops
+- Manager learns leadership techniques in professional development program
+- Technician learns equipment operation through certification course
+
+**Education and Skill Building:**
+- Student learns course material through lectures and assignments
+- Professional learns emerging technologies through self-directed learning
+- Team member learns compliance requirements during mandatory training
+- Worker learns specialized skills through apprenticeship
+
+**Organizational Learning:**
+- Organization learns from customer feedback and market research
+- Team learns from past projects to improve processes
+- Department learns new regulatory requirements through training
+- Company learns emerging trends through industry participation
+
+## Related Verbs
+- teach - Providing instruction or guidance
+- train - Conducting structured skill development
+- educate - Formal education and development
+- develop - Building capabilities over time

@@ -1,0 +1,108 @@
+---
+$type: Verb
+$id: recommend
+$context: https://verbs.org.ai
+name: recommend
+canonicalForm: recommend
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Suggesting or endorsing a course of action, product, or solution based on analysis or judgment
+predicate: recommends
+event: recommended
+activity: recommending
+actor: Recommender
+object: Recommendation
+inverse: recommendedBy
+---
+
+# Recommend
+
+Suggesting or endorsing a particular course of action, solution, product, or approach based on analysis, experience, or professional judgment.
+
+## O*NET Context
+
+Work activity focused on providing professional suggestions or endorsements based on expertise, analysis, or best practices to guide decision-making or actions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Advisor.recommend({ option: solution, basis: 'cost-benefit-analysis', confidence: 0.92 })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Expert.recommends.Approach
+$.Consultant.recommends.Strategy
+$.Doctor.recommends.Treatment
+```
+
+### Event (Past Tense)
+```typescript
+on($.Suggestion.recommended, async (event) => {
+  await $.Decision.consider({ recommendation: event.id })
+  await $.Stakeholder.review({ proposal: event.details })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRecommendation = $.Team.recommending.Solutions
+console.log(`Evaluating: ${activeRecommendation.candidateCount} options`)
+```
+
+### Role (Actor)
+```typescript
+const recommender: $.Recommender = await $.findAgent({ expertise: 'strategic-advisory' })
+await recommender.endorseApproach(option)
+```
+
+### Concept (Abstraction)
+```typescript
+const recommendation: $.Recommendation = {
+  description: 'Implement cloud migration strategy',
+  rationale: 'Improved scalability and cost efficiency',
+  priority: 'high',
+  expectedOutcome: '30% cost reduction',
+  timeline: '6 months',
+  recommendedBy: advisorId,
+  confidence: 0.88
+}
+```
+
+### Inverse (Passive)
+```typescript
+const advisors = await db.related($.Solution, $.recommendedBy, $.Expert)
+```
+
+## Usage Examples
+
+**Business Strategy:**
+- Recommending market expansion strategies
+- Suggesting process improvements
+- Endorsing organizational changes
+- Recommending vendor selections
+
+**Professional Advice:**
+- Recommending medical treatments
+- Suggesting legal approaches
+- Endorsing financial investments
+- Recommending career paths
+
+**Product and Service:**
+- Recommending products to customers
+- Suggesting service packages
+- Endorsing solutions for problems
+- Recommending best practices
+
+**Quality and Safety:**
+- Recommending safety improvements
+- Suggesting quality enhancements
+- Endorsing compliance measures
+- Recommending preventative actions
+
+## Related Verbs
+- suggest - Offering an idea informally
+- advise - Giving professional guidance
+- endorse - Expressing approval or support
+- propose - Putting forward for consideration

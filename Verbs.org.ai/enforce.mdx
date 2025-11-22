@@ -1,0 +1,100 @@
+---
+$type: Verb
+$id: enforce
+$context: https://verbs.org.ai
+name: enforce
+canonicalForm: enforce
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Compelling compliance with rules, standards, or requirements
+predicate: enforces
+event: enforced
+activity: enforcing
+actor: Enforcer
+object: Enforcement
+inverse: enforcedBy
+---
+
+# Enforce
+
+Compelling or requiring adherence to rules, standards, regulations, or requirements through authority or action.
+
+## O*NET Context
+
+Work activity involving ensuring compliance with policies, procedures, regulations, or safety standards. Common in supervisory, security, legal, and compliance roles where monitoring and corrective actions are required.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Manager.enforce({ policy: 'attendance-policy', consequence: 'written-warning' })
+await $.Security.enforce($.SiteRules, { violation: 'trespassing' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.enforces.CompanyPolicy
+$.RegulatorBody.enforces.SafetyStandard
+$.Supervisor.enforces.WorkRule
+```
+
+### Event (Past Tense)
+```typescript
+on($.Policy.enforced, async (event) => {
+  await $.Audit.log({ rule: event.policy, action: 'enforcement' })
+  await $.Notification.send({ recipient: event.violator, type: 'warning' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const enforcement = $.Department.enforcing.SafteyRegulation
+console.log(`Active enforcement actions: ${enforcement.activeCount}`)
+```
+
+### Role (Actor)
+```typescript
+const enforcer: $.Enforcer = await $.findAgent({ authority: 'compliance' })
+await enforcer.investigateViolation(incident)
+```
+
+### Concept (Abstraction)
+```typescript
+const enforcement: $.Enforcement = {
+  policy: 'No Smoking',
+  method: 'on-site patrol',
+  penalties: ['warning', 'suspension'],
+  successRate: 0.95
+}
+```
+
+### Inverse (Passive)
+```typescript
+const authorities = await db.related($.Rule, $.enforcedBy, $.Authority)
+```
+
+## Usage Examples
+
+**Workplace Compliance:**
+- Manager enforces attendance policies
+- Safety officer enforces workplace safety regulations
+- HR enforces code of conduct policies
+- Supervisor enforces production standards
+
+**Legal and Regulatory:**
+- Government agency enforces environmental regulations
+- Court enforces contractual obligations
+- Compliance officer enforces regulatory requirements
+
+**Business Rules:**
+- Enforcement requires documented violations
+- Enforcement actions must follow due process
+- Enforcement history should be tracked and audited
+- Enforcement requires proper authority and authorization
+
+## Related Verbs
+- regulate - Establishing or controlling by rules
+- monitor - Observing and tracking compliance
+- comply - Meeting requirements or standards
+- penalize - Imposing consequences for violations
+- require - Demanding or obligating action

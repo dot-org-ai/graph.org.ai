@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: depart
+$context: https://verbs.org.ai
+name: depart
+canonicalForm: depart
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:departing
+description: Leaving a location, typically as part of a transportation or logistics operation.
+predicate: departs
+event: departed
+activity: departing
+actor: Departer
+object: Departure
+inverse: departedBy
+---
+
+# Depart
+
+The action of leaving a location, typically as part of a transportation or logistics operation. In GS1 CBV Business Steps, departing marks the moment when goods or a vehicle leaves a location to begin transit.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.depart()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.departs.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.departed, async ({subject}) => {
+  // Handle departure event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.departing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Departer}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Departure}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.departedBy.{Subject}
+```

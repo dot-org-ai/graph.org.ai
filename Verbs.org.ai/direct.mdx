@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: direct
+$context: https://verbs.org.ai
+name: direct
+canonicalForm: direct
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To guide, control, or supervise the actions, activities, or operations of people or processes; to point or aim something toward a target
+predicate: directs
+event: directed
+activity: directing
+actor: Director
+object: Direction
+inverse: directedBy
+---
+
+# Direct
+
+To guide, control, supervise, or manage the actions, activities, operations, or movements of people, teams, projects, or processes. This verb encompasses activities such as managing team operations, supervising personnel, controlling processes, setting strategic direction, and aiming or pointing something toward a goal.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.direct()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.directs.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.directed, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.directing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Director
+```
+
+### Concept (Abstraction)
+```typescript
+$.Direction
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.directedBy.{Subject}
+```

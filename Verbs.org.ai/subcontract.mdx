@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: subcontract
+$context: https://verbs.org.ai
+name: subcontract
+canonicalForm: subcontract
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Assign portions of contracted work to secondary vendors
+predicate: subcontracts
+event: subcontracted
+activity: subcontracting
+actor: Subcontracter
+object: Subcontract
+inverse: subcontractedBy
+---
+
+# Subcontract
+
+Assigning portions of contracted work to secondary vendors or subcontractors while maintaining responsibility for overall delivery and quality.
+
+## APQC Process Context
+
+Vendor management and procurement activity where organizations delegate portions of contracted work to qualified subcontractors based on specialization or capacity needs.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.VendorManagement.subcontract({ contract, workPackage, subvendor })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Contractor.subcontracts.Work
+$.Vendor.subcontracts.Service
+```
+
+### Event (Past Tense)
+```typescript
+on($.WorkPackage.subcontracted, async (event) => {
+  await $.Contract.createSubcontract(event)
+  await $.VendorManagement.monitorPerformance(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const delegation = $.Vendor.subcontracting.Work
+```
+
+### Actor (Role)
+```typescript
+const subcontracter: $.Subcontracter = await $.findAgent({ role: 'vendor-management' })
+```
+
+### Object (Abstraction)
+```typescript
+const subcontract: $.Subcontract = {
+  parentContractId: contract.id,
+  subvendorId: vendor.id,
+  workPackage: 'technical-support',
+  amount: 50000,
+  duration: '6 months',
+  sla: [...],
+  status: 'active'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const subcontracts = await db.related($.Work, $.subcontractedBy, $.Vendor)
+```
+
+## APQC Process Category
+
+Category 2: Source/Procure
+- Subcategory: Develop supplier relationships
+- Process: Manage supplier performance
+
+## Business Rules
+
+- Subcontracting must be authorized in prime contract
+- Subvendor must be qualified and approved
+- Primary contractor remains accountable for performance
+- Service levels and terms must be defined
+- Payment must be contingent on performance
+
+## Related Verbs
+- contract - Establishing binding agreements
+- delegate - Assigning responsibility
+- outsource - Transferring operations
+- manage - Overseeing performance
+- monitor - Tracking activities
+

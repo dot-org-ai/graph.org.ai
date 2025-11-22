@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: determine
+$context: https://verbs.org.ai
+name: determine
+canonicalForm: determine
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To establish or discover the exact nature or value of something; to decide or resolve a matter
+predicate: determines
+event: determined
+activity: determining
+actor: Determiner
+object: Determination
+inverse: determinedBy
+---
+
+# Determine
+
+To establish or discover the exact nature or value of something through analysis, investigation, or decision-making. This verb encompasses activities such as establishing facts, making resolutions, setting parameters, and resolving questions about the nature or status of entities, processes, or conditions.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.determine()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.determines.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.determined, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.determining.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Determiner
+```
+
+### Concept (Abstraction)
+```typescript
+$.Determination
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.determinedBy.{Subject}
+```

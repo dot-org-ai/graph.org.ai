@@ -1,0 +1,95 @@
+---
+$type: Verb
+$id: contract
+$context: https://verbs.org.ai
+name: contract
+canonicalForm: contract
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Establish a formal binding agreement between parties
+predicate: contracts
+event: contracted
+activity: contracting
+actor: Contracter
+object: Contract
+inverse: contractedWith
+---
+
+# Contract
+
+Establishing formal binding agreements between an organization and external parties (suppliers, vendors, service providers) that define terms, conditions, and obligations.
+
+## APQC Process Context
+
+Procurement and vendor management activity where organizations negotiate, document, and execute legal agreements that specify scope, pricing, terms, and performance expectations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Procurement.contract({ supplier, scope, terms, price })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.contracts.Supplier
+$.Company.contracts.VendorService
+```
+
+### Event (Past Tense)
+```typescript
+on($.Agreement.contracted, async (event) => {
+  await $.SupplierManagement.recordContract(event)
+  await $.Finance.setupPaymentTerms(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const negotiation = $.Procurement.contracting.Terms
+```
+
+### Actor (Role)
+```typescript
+const contracter: $.Contracter = await $.findAgent({ role: 'procurement' })
+```
+
+### Object (Abstraction)
+```typescript
+const contract: $.Contract = {
+  supplierId: supplier.id,
+  scope: 'goods and services',
+  terms: { paymentTerms: '30 days', delivery: 'FOB' },
+  amount: 100000,
+  duration: '1 year',
+  status: 'executed',
+  signedDate: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const suppliers = await db.related($.Service, $.contractedWith, $.Organization)
+```
+
+## APQC Process Category
+
+Category 2: Source/Procure
+- Subcategory: Develop supplier relationships
+- Process: Negotiate supplier contracts
+
+## Business Rules
+
+- Contract must be approved by legal and management
+- All material terms must be documented
+- Contract must comply with organizational policies
+- Contract changes require formal change orders
+- Contract performance must be monitored
+
+## Related Verbs
+- acquire - Obtaining goods or services
+- procure - Formal purchasing process
+- negotiate - Discussing and reaching agreement
+- approve - Authorizing contract
+- manage - Overseeing contract execution
+

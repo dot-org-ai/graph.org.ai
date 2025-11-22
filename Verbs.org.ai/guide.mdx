@@ -1,0 +1,101 @@
+---
+$type: Verb
+$id: guide
+$context: https://verbs.org.ai
+name: guide
+canonicalForm: guide
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Directing, leading, or providing direction to someone or something
+predicate: guides
+event: guided
+activity: guiding
+actor: Guide
+object: Guidance
+inverse: guidedBy
+---
+
+# Guide
+
+Directing, leading, or providing direction to someone or something toward a goal or through a process.
+
+## O*NET Context
+
+Essential work activity in leadership, mentoring, education, and service roles including managers, teachers, counselors, and tour guides. Involves providing direction, advice, and support to help others navigate situations or achieve objectives.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Mentor.guide({ mentee: user, objectives: ['skills', 'career-path'] })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Manager.guides.Team
+$.Expert.guides.Learner
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.guided, async (event) => {
+  await $.Participant.acknowledge({ guidance: event.guidance })
+  await $.Progress.record({ milestone: event.checkpoint })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const mentoring = $.Coach.guiding.Athlete
+console.log(`Current focus: ${mentoring.currentPhase}`)
+```
+
+### Role (Actor)
+```typescript
+const guide: $.Guide = await $.findAgent({ expertise: 'domain', availability: 'full-time' })
+guide.directTeam(project)
+```
+
+### Concept (Abstraction)
+```typescript
+const guidance: $.Guidance = {
+  objective: 'skill-development',
+  methods: ['demonstration', 'feedback', 'practice'],
+  timeline: '12-weeks',
+  successCriteria: ['mastery', 'independence']
+}
+```
+
+### Inverse (Passive)
+```typescript
+const mentors = await db.related($.Employee, $.guidedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Education & Training:**
+- Teachers guide students through curriculum
+- Trainers guide employees through onboarding
+- Coaches guide athletes in skill development
+
+**Business Leadership:**
+- Managers guide teams toward goals
+- Directors guide organizational strategy
+- Senior staff guide junior colleagues
+
+**Customer Service:**
+- Tour guides lead visitors through locations
+- Support specialists guide customers through processes
+- Consultants guide clients through implementations
+
+**Business Rules:**
+- Guidance documented in formal plans
+- Regular check-ins to assess progress
+- Adjustment of guidance based on feedback
+- Mentoring relationships tracked
+
+## Related Verbs
+- lead - Taking charge and directing
+- direct - Commanding or instructing
+- mentor - Teaching and developing
+- advise - Offering counsel and recommendations

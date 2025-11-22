@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: confirm
+$context: https://verbs.org.ai
+name: confirm
+canonicalForm: confirm
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To establish or strengthen the truth or validity of something; to acknowledge or verify.
+predicate: confirms
+event: confirmed
+activity: confirming
+actor: Confirmer
+object: Confirmation
+inverse: confirmedBy
+---
+
+# Confirm
+
+The action of verifying, validating, or establishing the accuracy or validity of information. This semantic form encompasses acknowledgment, approval, and verification activities.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.confirm()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.confirms.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.confirmed, async ({subject}) => {
+  // Handle confirmed event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.confirming.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Confirmer
+```
+
+### Concept (Abstraction)
+```typescript
+$.Confirmation
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.confirmedBy.{Subject}
+```
+
+## Usage Context
+
+The "confirm" action applies to various domains:
+- Transactions: orders, payments, reservations
+- Communication: acknowledgments, receipts, notifications
+- Verification: identity, authenticity, compliance
+- Decisions: approvals, authorizations, commitments

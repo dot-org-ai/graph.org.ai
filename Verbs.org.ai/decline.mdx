@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: decline
+$context: https://verbs.org.ai
+name: decline
+canonicalForm: decline
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To politely refuse or reject something; express unwillingness to accept or participate.
+predicate: declines
+event: declined
+activity: declining
+actor: Decliner
+object: Decline
+inverse: declinedBy
+---
+
+# Decline
+
+The action of politely refusing, rejecting, or expressing unwillingness to accept, participate in, or undertake something. Decline represents a formal or courteous rejection.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.decline()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.declines.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.declined, async ({subject}) => {
+  // Handle decline event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.declining.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Decliner}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Decline}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.declinedBy.{Subject}
+```

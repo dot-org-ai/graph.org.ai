@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: cancel
+$context: https://verbs.org.ai
+name: cancel
+canonicalForm: cancel
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Canceling an action that was previously scheduled
+predicate: cancels
+event: canceled
+activity: canceling
+actor: Canceler
+object: Cancellation
+inverse: canceledBy
+---
+
+# Cancel
+
+Schema.org Action: Canceling an action that was previously scheduled.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.cancel()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.cancels.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.canceled, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.canceling.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Canceler
+```
+
+### Concept (Abstraction)
+```typescript
+$.Cancellation
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.canceledBy.{Subject}
+```

@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: decommission
+$context: https://verbs.org.ai
+name: decommission
+canonicalForm: decommission
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:decommissioning
+description: Removing an object from active use, typically after it has reached the end of its operational life.
+predicate: decommissions
+event: decommissioned
+activity: decommissioning
+actor: Decommissioner
+object: Decommissioning
+inverse: decommissionedBy
+---
+
+# Decommission
+
+The action of removing an object from active use, typically after it has reached the end of its operational life or is no longer needed. In GS1 CBV Business Steps, decommissioning marks the formal end of an asset's operational service period.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.decommission()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.decommissions.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.decommissioned, async ({subject}) => {
+  // Handle decommissioning event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.decommissioning.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Decommissioner}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Decommissioning}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.decommissionedBy.{Subject}
+```

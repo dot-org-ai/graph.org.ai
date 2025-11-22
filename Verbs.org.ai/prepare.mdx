@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: prepare
+$context: https://verbs.org.ai
+name: prepare
+canonicalForm: prepare
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Making ready or getting something into a suitable condition for use or action
+predicate: prepares
+event: prepared
+activity: preparing
+actor: Preparer
+object: Preparation
+inverse: preparedBy
+---
+
+# Prepare
+
+Making ready or getting something into a suitable condition for use, action, or consumption.
+
+## O*NET Context
+
+Work activity focused on readying materials, documents, equipment, or people for specific purposes or operations.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Document.prepare({ format: 'pdf', audience: 'stakeholders' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Staff.prepares.Materials
+$.Technician.prepares.Equipment
+```
+
+### Event (Past Tense)
+```typescript
+on($.Document.prepared, async (event) => {
+  await $.Manager.review({ content: event.content })
+  await $.Distribution.send({ recipients: event.targetAudience })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activePreparation = $.Team.preparing.Deliverables
+console.log(`Currently preparing: ${activePreparation.items}`)
+```
+
+### Role (Actor)
+```typescript
+const preparer: $.Preparer = await $.findAgent({ expertise: 'content-preparation' })
+await preparer.formatDocuments(list)
+```
+
+### Concept (Abstraction)
+```typescript
+const preparation: $.Preparation = {
+  subjectId: resource.id,
+  steps: [],
+  timeline: { start: date, end: date },
+  quality: 'verified',
+  readyForUse: false
+}
+```
+
+### Inverse (Passive)
+```typescript
+const technicians = await db.related($.Equipment, $.preparedBy, $.Technician)
+```
+
+## Usage Examples
+
+**Document Preparation:**
+- Preparing reports for presentation
+- Preparing proposals for submission
+- Preparing contracts for review
+- Preparing tax documents for filing
+
+**Food Preparation:**
+- Preparing meals for service
+- Preparing ingredients for cooking
+- Preparing food for packaging
+- Preparing menus for customers
+
+**Equipment Preparation:**
+- Preparing machinery for operation
+- Preparing tools for use
+- Preparing vehicles for service
+- Preparing instruments for testing
+
+**Training Preparation:**
+- Preparing materials for training sessions
+- Preparing lesson plans for instruction
+- Preparing facilities for training
+- Preparing participants for assessment
+
+## Related Verbs
+- arrange - Organizing components
+- organize - Putting in order
+- assemble - Putting together
+- clean - Making ready and sanitary

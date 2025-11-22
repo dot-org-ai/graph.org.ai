@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: draft
+$context: https://verbs.org.ai
+name: draft
+canonicalForm: draft
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: To prepare a preliminary version of a written document, plan, or design; to create an initial or rough version for review and refinement
+predicate: drafts
+event: drafted
+activity: drafting
+actor: Drafter
+object: Draft
+inverse: draftedBy
+---
+
+# Draft
+
+To prepare a preliminary, initial, or rough version of a document, plan, design, or proposal. This verb encompasses activities such as writing initial versions of reports, preparing design sketches, creating working documents, outlining plans, and developing preliminary versions intended for review, refinement, and finalization.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.draft()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.drafts.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.drafted, async ({subject}) => {
+  // Handle event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.drafting.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Drafter
+```
+
+### Concept (Abstraction)
+```typescript
+$.Draft
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.draftedBy.{Subject}
+```

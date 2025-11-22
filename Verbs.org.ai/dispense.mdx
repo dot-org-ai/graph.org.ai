@@ -1,0 +1,60 @@
+---
+$type: Verb
+$id: dispense
+$context: https://verbs.org.ai
+name: dispense
+canonicalForm: dispense
+source: https://ref.gs1.org/cbv/2.0.0/
+vocabulary: CBV 2.0
+bizStepUrn: urn:epcglobal:cbv:bizstep:dispensing
+description: Allocating or distributing goods to recipients, often in measured quantities.
+predicate: dispenses
+event: dispensed
+activity: dispensing
+actor: Dispenser
+object: Dispensing
+inverse: dispensedBy
+---
+
+# Dispense
+
+The action of allocating or distributing goods to recipients, often in measured quantities. In GS1 CBV Business Steps, dispensing is commonly used in retail and healthcare settings where products are distributed to customers or patients.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.dispense()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.dispenses.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.dispensed, async ({subject}) => {
+  // Handle dispensing event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.dispensing.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Dispenser}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Dispensing}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.dispensedBy.{Subject}
+```

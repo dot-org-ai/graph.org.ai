@@ -1,0 +1,105 @@
+---
+$type: Verb
+$id: refine
+$context: https://verbs.org.ai
+name: refine
+canonicalForm: refine
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Improving the quality, clarity, or effectiveness of something through iterative adjustment, purification, or enhancement
+predicate: refines
+event: refined
+activity: refining
+actor: Refiner
+object: Refinement
+inverse: refinedBy
+---
+
+# Refine
+
+Improving the quality, clarity, precision, or effectiveness of something through iterative adjustment, purification, or systematic enhancement.
+
+## O*NET Context
+
+Work activity focused on optimizing processes, products, or approaches by making incremental improvements, removing impurities or inefficiencies, and perfecting details to achieve higher standards of quality or performance.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.DesignTeam.refine({
+  designElement: prototype,
+  focusArea: 'user-experience',
+  iterations: 3
+})
+```
+
+### Predicate (Relationship)
+```typescript
+$.Engineer.refines.Design
+$.Analyst.refines.Process
+```
+
+### Event (Past Tense)
+```typescript
+on($.Product.refined, async (event) => {
+  await $.Testing.initiate({ specifications: event.updated })
+  await $.Team.notify({ improvement: event.changes })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeRefinement = $.Developer.refining.Algorithm
+console.log(`Current optimization level: ${activeRefinement.efficiency}%`)
+```
+
+### Role (Actor)
+```typescript
+const refiner: $.Refiner = await $.findAgent({
+  expertise: 'quality-improvement'
+})
+refiner.enhanceProcess(currentWorkflow)
+```
+
+### Concept (Abstraction)
+```typescript
+const refinement: $.Refinement = {
+  targetId: product.id,
+  improvements: [],
+  qualityMetrics: {},
+  feedbackIncorporated: true,
+  version: 'v2.1'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const improvedBy = await db.related($.Process, $.refinedBy, $.Consultant)
+```
+
+## Usage Examples
+
+**Product Development:**
+- Refining product designs based on user feedback
+- Improving prototypes through iterative testing
+- Enhancing features for better usability
+- Purifying materials for higher quality outputs
+
+**Process Improvement:**
+- Refining workflows to eliminate bottlenecks
+- Improving procedures based on lessons learned
+- Enhancing documentation for clarity
+- Optimizing resource allocation processes
+
+**Quality Assurance:**
+- Refining specifications for manufacturing
+- Improving quality standards and metrics
+- Enhancing testing procedures
+- Perfecting calibration of equipment
+
+## Related Verbs
+- improve - Making better in quality or performance
+- enhance - Making greater or more effective
+- optimize - Fine-tuning for best results
+- polish - Perfecting through careful work

@@ -1,0 +1,110 @@
+---
+$type: Verb
+$id: measure
+$context: https://verbs.org.ai
+name: measure
+canonicalForm: measure
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Determining the size, quantity, extent, or magnitude of something using specific units or standards
+predicate: measures
+event: measured
+activity: measuring
+actor: Measurer
+object: Measurement
+inverse: measuredBy
+---
+
+# Measure
+
+Determining the size, quantity, extent, or magnitude of something using specific units, standards, or instruments.
+
+## O*NET Context
+
+Work activity focused on obtaining quantitative or qualitative data about objects, systems, or outcomes. Includes using instruments, conducting tests, evaluating metrics, and establishing standards to assess performance, quality, or progress.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Product.measure({ dimensions: 'length-width-height', units: 'metric', precision: '0.1mm' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Inspector.measures.Quality
+$.Analyst.measures.Performance
+```
+
+### Event (Past Tense)
+```typescript
+on($.Component.measured, async (event) => {
+  await $.QualityReport.document({ componentId: event.id, measurements: event.data })
+  if (event.withinSpecification) {
+    await $.Batch.approve({ batchId: event.batchId })
+  }
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const activeAssessment = $.Team.measuring.SystemPerformance
+console.log(`Currently measuring: ${activeAssessment.metric} - Current value: ${activeAssessment.value}${activeAssessment.unit}`)
+```
+
+### Role (Actor)
+```typescript
+const measurer: $.Measurer = await $.findAgent({ expertise: 'quality-assurance', certification: 'ISO' })
+measurer.conductTest(sample)
+```
+
+### Concept (Abstraction)
+```typescript
+const measurement: $.Measurement = {
+  subjectId: object.id,
+  metric: 'performance',
+  value: 95.7,
+  unit: 'percentage',
+  standardDeviation: 2.3,
+  timestamp: now(),
+  instrument: 'precision-scale',
+  verifiedBy: technician.id
+}
+```
+
+### Inverse (Passive)
+```typescript
+const auditors = await db.related($.Process, $.measuredBy, $.QualityAssurance)
+```
+
+## Usage Examples
+
+**Quality Control:**
+- Inspector measures product dimensions against specifications
+- Technician measures electrical output to ensure proper operation
+- Quality team measures defect rates to monitor production
+- Auditor measures compliance metrics against standards
+
+**Performance Evaluation:**
+- Analyst measures system response time and throughput
+- Manager measures employee productivity and output
+- Researcher measures experimental results for significance
+- Evaluator measures student learning outcomes
+
+**Scientific and Technical Measurement:**
+- Scientist measures chemical composition of compounds
+- Engineer measures structural stress and load capacity
+- Technician measures temperature, pressure, and flow rates
+- Lab specialist measures specimens for analysis
+
+**Business Metrics:**
+- Controller measures financial performance and ratios
+- Sales manager measures revenue and sales conversion
+- Marketing analyst measures campaign effectiveness
+- HR specialist measures employee engagement and satisfaction
+
+## Related Verbs
+- analyze - Examining data in detail
+- assess - Evaluating quality or value
+- evaluate - Determining significance or worth
+- quantify - Expressing as a quantity or number

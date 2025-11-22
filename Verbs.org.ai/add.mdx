@@ -1,0 +1,59 @@
+---
+$type: Verb
+$id: add
+$context: https://verbs.org.ai
+name: add
+canonicalForm: add
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: Put or place something together with another item; combine or append.
+predicate: adds
+event: added
+activity: adding
+actor: Adder
+object: Addition
+inverse: addedBy
+---
+
+# Add
+
+The action of combining, appending, or incorporating something into a collection or system. Add represents the operation of uniting items or values together.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.add()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.adds.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.added, async ({subject}) => {
+  // Handle addition event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.adding.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.{Adder}
+```
+
+### Concept (Abstraction)
+```typescript
+$.{Addition}
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.addedBy.{Subject}
+```

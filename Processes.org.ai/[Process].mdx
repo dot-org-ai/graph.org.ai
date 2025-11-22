@@ -1,5 +1,5 @@
 ---
-$id: https://graph.org.ai/processes/{slug}
+$id: https://process.org.ai/{name}
 $type: Process
 source: APQC
 title: {title}
@@ -10,8 +10,8 @@ title: {title}
 {description}
 
 ## Process Flow
-**Parent Process**: <Process id={parentSlug} />
-**Sub-Processes**: <SubProcesses process={slug} />
+<Process id={parentSlug} />
+<SubProcesses process={slug} />
 
 ## Metrics (KPIs)
 <KPIs process={slug} />

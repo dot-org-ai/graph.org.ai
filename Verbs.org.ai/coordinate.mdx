@@ -1,0 +1,92 @@
+---
+$type: Verb
+$id: coordinate
+$context: https://verbs.org.ai
+name: coordinate
+canonicalForm: coordinate
+source: https://www.onetonline.org/
+vocabulary: O*NET 28.0
+description: Organizing and harmonizing activities, efforts, or resources across multiple parties
+predicate: coordinates
+event: coordinated
+activity: coordinating
+actor: Coordinator
+object: Coordination
+inverse: coordinatedBy
+---
+
+# Coordinate
+
+Organizing and harmonizing the activities, efforts, resources, or timing of multiple people, teams, or processes to work together effectively toward shared goals.
+
+## O*NET Context
+
+Work activity involving the integration and synchronization of multiple work streams, departments, or stakeholders. Common in project management, event planning, logistics, and team leadership roles.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Event.coordinate({ teams: ['logistics', 'marketing', 'operations'], timeline: '6 months' })
+```
+
+### Predicate (Relationship)
+```typescript
+$.ProjectManager.coordinates.Team
+$.LogisticsManager.coordinates.Distribution
+$.EventPlanner.coordinates.Vendors
+```
+
+### Event (Past Tense)
+```typescript
+on($.Project.coordinated, async (event) => {
+  await $.Communication.notify(event.teams, { status: 'synchronized' })
+  await $.Timeline.update({ phase: 'execution' })
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const effort = $.Organization.coordinating.Initiative
+console.log(`Coordinating: ${effort.teams.length} teams, ${effort.milestones} milestones`)
+```
+
+### Role (Actor)
+```typescript
+const coordinator: $.Coordinator = await $.findAgent({ skills: ['project management', 'stakeholder relations'] })
+await coordinator.syncTeams(teams)
+```
+
+### Concept (Abstraction)
+```typescript
+const coordination: $.Coordination = {
+  initiativeId: initiative.id,
+  teams: ['development', 'qa', 'deployment'],
+  schedule: cronJob('daily sync at 9am'),
+  dependencies: ['design-complete', 'resources-allocated'],
+  status: 'in-progress'
+}
+```
+
+### Inverse (Passive)
+```typescript
+const initiatives = await db.related($.Team, $.coordinatedBy, $.Manager)
+```
+
+## Usage Examples
+
+**Project & Operations Management:**
+- Project manager coordinates cross-functional teams
+- Event coordinator synchronizes vendor activities
+- Logistics coordinator aligns transportation and warehousing
+
+**Business Rules:**
+- Coordination requires clear communication channels
+- All teams must acknowledge and confirm schedules
+- Changes require re-synchronization with stakeholders
+
+## Related Verbs
+- organize - Arranging elements into a coherent structure
+- manage - Directing or overseeing activities
+- facilitate - Making something easier or possible
+- collaborate - Working jointly with others

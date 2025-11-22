@@ -1,0 +1,67 @@
+---
+$type: Verb
+$id: communicate
+$context: https://verbs.org.ai
+name: communicate
+canonicalForm: communicate
+source: https://schema.org/Action
+vocabulary: Schema.org 27.0
+description: To convey or exchange information, ideas, or feelings between parties; to impart knowledge or establish understanding.
+predicate: communicates
+event: communicated
+activity: communicating
+actor: Communicator
+object: Communication
+inverse: communicatedBy
+---
+
+# Communicate
+
+The action of sharing or exchanging information, ideas, or messages between two or more parties. This semantic form encompasses the transmission of knowledge, intentions, and understanding.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.{Subject}.communicate()
+```
+
+### Predicate (Relationship)
+```typescript
+$.{Subject}.communicates.{Object}
+```
+
+### Event (Past Tense)
+```typescript
+on($.{Subject}.communicated, async ({subject}) => {
+  // Handle communicated event
+})
+```
+
+### Activity (Gerund)
+```typescript
+$.{Subject}.communicating.{Object}
+```
+
+### Role (Actor)
+```typescript
+$.Communicator
+```
+
+### Concept (Abstraction)
+```typescript
+$.Communication
+```
+
+### Inverse (Passive)
+```typescript
+$.{Object}.communicatedBy.{Subject}
+```
+
+## Usage Context
+
+The "communicate" action applies to various domains:
+- Messaging: emails, chat, notifications
+- Meetings: conversations, conferences, presentations
+- Broadcasting: announcements, publications
+- Coordination: team updates, status reports

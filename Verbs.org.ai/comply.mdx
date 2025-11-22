@@ -1,0 +1,93 @@
+---
+$type: Verb
+$id: comply
+$context: https://verbs.org.ai
+name: comply
+canonicalForm: comply
+source: https://www.apqc.org/
+vocabulary: APQC PCF 7.0
+description: Act in accordance with laws, regulations, or organizational policies
+predicate: complies
+event: complied
+activity: complying
+actor: Complier
+object: Compliance
+inverse: compliedWith
+---
+
+# Comply
+
+Acting in accordance with applicable laws, regulations, standards, and organizational policies to ensure legal and regulatory conformity.
+
+## APQC Process Context
+
+Governance and risk management activity where organizations ensure that all operations, processes, and decisions conform to legal, regulatory, and internal policy requirements.
+
+## Semantic Forms
+
+### Action (Base Form)
+```typescript
+await $.Operations.comply({ regulation, evidence, documentation })
+```
+
+### Predicate (Relationship)
+```typescript
+$.Organization.complies.Regulation
+$.Department.complies.Policy
+```
+
+### Event (Past Tense)
+```typescript
+on($.Process.complied, async (event) => {
+  await $.Audit.recordCompliance(event)
+  await $.Risk.updateStatus(event)
+})
+```
+
+### Activity (Ongoing Process)
+```typescript
+const adherence = $.Organization.complying.Regulations
+```
+
+### Actor (Role)
+```typescript
+const complier: $.Complier = await $.findAgent({ role: 'compliance' })
+```
+
+### Object (Abstraction)
+```typescript
+const compliance: $.Compliance = {
+  regulationId: regulation.id,
+  applicableEntity: 'organization-wide',
+  evidenceDocuments: [...],
+  status: 'compliant',
+  lastVerified: now()
+}
+```
+
+### Inverse (Passive)
+```typescript
+const regulations = await db.related($.Process, $.compliedWith, $.RegulatoryBody)
+```
+
+## APQC Process Category
+
+Category 1: Plan & Organize
+- Subcategory: Develop and manage enterprise compliance
+- Process: Manage regulatory compliance
+
+## Business Rules
+
+- Compliance requirements must be identified and documented
+- Compliance must be continuously monitored and verified
+- Non-compliance triggers corrective action
+- All employees must understand applicable requirements
+- Compliance documentation must be maintained
+
+## Related Verbs
+- govern - Setting rules and requirements
+- administer - Managing policy enforcement
+- audit - Examining for compliance
+- control - Enforcing standards
+- report - Documenting compliance status
+
