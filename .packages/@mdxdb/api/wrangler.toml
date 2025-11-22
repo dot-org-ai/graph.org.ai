@@ -1,0 +1,20 @@
+name = "mdxdb-api"
+main = "src/worker-ch.ts"
+compatibility_date = "2024-11-22"
+compatibility_flags = ["nodejs_compat"]
+
+[observability]
+enabled = true
+
+# Environment variables (use .dev.vars for local development)
+[vars]
+CLICKHOUSE_URL = "http://localhost:8123"
+CLICKHOUSE_DATABASE = "mdxdb"
+CLICKHOUSE_USERNAME = "default"
+
+# Secrets (use wrangler secret put for production)
+# CLICKHOUSE_PASSWORD
+
+# For local development
+[dev]
+port = 8787

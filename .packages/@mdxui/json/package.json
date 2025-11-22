@@ -1,7 +1,7 @@
 {
-  "name": "@mdxui/markdown",
+  "name": "@mdxui/json",
   "version": "0.0.1",
-  "description": "Render and evaluate MDX to Markdown",
+  "description": "Render and evaluate MDX to JSON",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,7 @@
   },
   "keywords": [
     "mdx",
-    "markdown",
+    "json",
     "render"
   ],
   "license": "MIT",
@@ -30,14 +30,8 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^3.0.0",
-    "hast-util-to-html": "^9.0.5",
-    "hast-util-to-mdast": "^10.1.2",
-    "mdast-util-gfm": "^3.1.0",
-    "mdast-util-to-markdown": "^2.1.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "rehype-parse": "^9.0.1",
-    "unified": "^11.0.0",
     "vfile": "^6.0.0",
     "vfile-matter": "^5.0.0"
   }

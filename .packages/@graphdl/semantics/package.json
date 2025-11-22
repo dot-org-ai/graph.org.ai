@@ -1,0 +1,34 @@
+{
+  "name": "@graphdl/semantics",
+  "version": "0.1.0",
+  "description": "GraphDL semantic parser for converting natural language to graph notation",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "generate": "tsx scripts/generate-lexicons.ts",
+    "prebuild": "pnpm generate",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "pretest": "pnpm generate",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "@vitest/ui": "^2.1.9",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.9"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
