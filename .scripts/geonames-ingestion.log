@@ -1,0 +1,42 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+
+📍 Ingesting GeoNames to Source Table (Direct URL Streaming)
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Streaming GeoNames allCountries.txt directly from URL...
+   Source: https://download.geonames.org/export/dump/allCountries.zip
+   Batch: 2025-11-22 16:50:28
+   Records: 11+ million
+   Method: Direct ClickHouse url() streaming
+
+⚠️  This is a large dataset - will take 10-30 minutes
+
+🚀 Starting direct ingestion...
+
+📊 Executing INSERT FROM url()...
+   ClickHouse will stream directly from geonames.org
+
+
+❌ Error: Cannot parse input: expected '\t' before: '\n@\f��\n3-��F7�=C�z�\bYҕĵ��\b˦W��/Q\t�K��0q_)0����\\�ސ#�_�<y�*3�NN����":O�����<y�|��V����g�������?����O��?ٓ����h������ݻ�w�O�.<��o�у�������=.d����f': (at row 1)
+: 
+Row 1:
+Column 0,   name: c1,  type: String, parsed text: "PK<0x03><0x04><0x14><ASCII NUL><BACKSPACE><BACKSPACE><BACKSPACE><ASCII NUL>�<0x1C>v[<ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><0x10><ASCII NUL><ASCII NUL><ASCII NUL>allCountries.txt��ݓ<0x1C>�u/�<�W�<0x1B>^<0x06>w+�+<0x1F>A�C�<0x01>"
+ERROR: Line feed found where tab is expected. It's like your file has less columns than expected.
+And if your file has the right number of columns, maybe it has an unescaped backslash in value before tab, which causes the tab to be escaped.
+
+: (in file/uri https://download.geonames.org/export/dump/allCountries.zip): While executing ParallelParsingBlockInputFormat: While executing URL. 
+
+Stack trace:
+Error: Cannot parse input: expected '\t' before: '\n@\f��\n3-��F7�=C�z�\bYҕĵ��\b˦W��/Q\t�K��0q_)0����\\�ސ#�_�<y�*3�NN����":O�����<y�|��V����g�������?����O��?ٓ����h������ݻ�w�O�.<��o�у�������=.d����f': (at row 1)
+: 
+Row 1:
+Column 0,   name: c1,  type: String, parsed text: "PK<0x03><0x04><0x14><ASCII NUL><BACKSPACE><BACKSPACE><BACKSPACE><ASCII NUL>�<0x1C>v[<ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><ASCII NUL><0x10><ASCII NUL><ASCII NUL><ASCII NUL>allCountries.txt��ݓ<0x1C>�u/�<�W�<0x1B>^<0x06>w+�+<0x1F>A�C�<0x01>"
+ERROR: Line feed found where tab is expected. It's like your file has less columns than expected.
+And if your file has the right number of columns, maybe it has an unescaped backslash in value before tab, which causes the tab to be escaped.
+
+: (in file/uri https://download.geonames.org/export/dump/allCountries.zip): While executing ParallelParsingBlockInputFormat: While executing URL. 
+    at parseError (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client-common@1.14.0/node_modules/packages/client-common/src/error/error.ts:31:12)
+    at ClientRequest.onResponse (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client@1.14.0/node_modules/packages/client-node/src/connection/node_base_connection.ts:567:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

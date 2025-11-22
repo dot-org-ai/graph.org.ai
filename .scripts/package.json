@@ -1,0 +1,24 @@
+{
+  "name": "@graph.org.ai/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ingest": "tsx ingest.ts"
+  },
+  "dependencies": {
+    "@graph.org.ai/mdxdb": "workspace:*",
+    "@ai-sdk/google": "^2.0.40",
+    "ai": "^5.0.99",
+    "better-sqlite3": "^12.4.6",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "xlsx": "^0.18.5",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6"
+  }
+}

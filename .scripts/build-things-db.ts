@@ -21,6 +21,7 @@
 
 import Database from 'better-sqlite3'
 import { drizzle } from 'drizzle-orm/better-sqlite3'
+import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
 import * as schema from '../.mdxdb/schema.js'
 import type { NewThing, NewRelationship } from '../.mdxdb/schema.js'
 import { createStorage, type StorageBackend } from '../.mdxdb/storage.js'
@@ -44,7 +45,6 @@ if (storageBackend === 'sqlite') {
   thingsDb.pragma('journal_mode = WAL')
   const things = drizzle(thingsDb, { schema })
 
-  import { migrate } from 'drizzle-orm/better-sqlite3/migrator'
   migrate(things, { migrationsFolder: '.mdxdb/migrations' })
 
   thingsDb.close()
@@ -177,7 +177,8 @@ async function migrateThings(urlMapping: Map<string, string>) {
   }
 
   // Batch insert using storage adapter
-  const CHUNK_SIZE = 1000
+  // Use larger batches for ClickHouse (100k), smaller for SQLite (1k)
+  const CHUNK_SIZE = storageBackend === 'clickhouse' ? 100000 : 1000
   for (let i = 0; i < normalizedThings.length; i += CHUNK_SIZE) {
     const chunk = normalizedThings.slice(i, i + CHUNK_SIZE)
     console.log(`  Inserting things ${i + 1}-${Math.min(i + CHUNK_SIZE, normalizedThings.length)}...`)
@@ -216,7 +217,8 @@ async function migrateRelationships(urlMapping: Map<string, string>) {
   }
 
   // Batch insert using storage adapter
-  const CHUNK_SIZE = 1000
+  // Use larger batches for ClickHouse (100k), smaller for SQLite (1k)
+  const CHUNK_SIZE = storageBackend === 'clickhouse' ? 100000 : 1000
   for (let i = 0; i < normalizedRels.length; i += CHUNK_SIZE) {
     const chunk = normalizedRels.slice(i, i + CHUNK_SIZE)
     console.log(`  Inserting relationships ${i + 1}-${Math.min(i + CHUNK_SIZE, normalizedRels.length)}...`)

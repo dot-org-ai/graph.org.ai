@@ -1,0 +1,12 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+
+🌐 Starting Wikidata Stream to ClickHouse Cloud
+
+📡 Server: https://jr0jywmccu.us-east-1.aws.clickhouse.cloud:8443
+
+🔍 Testing connection...
+✅ Connected
+
+📋 Checking schema...
+❌ Tables not found. Run setup first:
+   npx tsx .scripts/run-wikidata-ingestion.ts

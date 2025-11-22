@@ -1,0 +1,33 @@
+🚀 Setting up ClickHouse schema...
+
+✅ ClickHouse is available
+
+📦 Creating database...
+✅ Database created
+
+📊 Creating things table...
+✅ Things table created
+
+🔗 Creating relationships table...
+✅ Relationships table created
+
+🔍 Creating searches table with vector index...
+✅ Searches table created
+
+📐 Creating vector similarity index...
+✅ Vector similarity index created
+
+📊 Creating materialized views...
+✅ Materialized views created
+
+================================================================================
+
+✅ ClickHouse schema setup complete!
+
+Tables created:
+  - mdxdb.things (with JSON data field)
+  - mdxdb.relationships (with JSON meta field)
+  - mdxdb.searches (with vector similarity index)
+  - mdxdb.things_by_type (materialized view)
+
+================================================================================

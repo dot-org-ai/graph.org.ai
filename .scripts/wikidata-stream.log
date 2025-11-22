@@ -1,0 +1,28 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+
+🌐 Starting Wikidata Stream to ClickHouse Cloud
+
+📡 Server: https://jr0jywmccu.us-east-1.aws.clickhouse.cloud:8443
+
+🔍 Testing connection...
+✅ Connected
+
+📋 Checking schema...
+❌ Tables not found. Run setup first:
+   npx tsx .scripts/run-wikidata-ingestion.ts
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+
+🌐 Starting Wikidata Stream to ClickHouse Cloud
+
+📡 Server: https://jr0jywmccu.us-east-1.aws.clickhouse.cloud:8443
+
+🔍 Testing connection...
+✅ Connected
+
+📋 Checking schema...
+✅ Schema ready
+
+🚀 Submitting streaming query...
+   This will run server-side for 24-48 hours
+   You can close this script - the query continues on the server
+
