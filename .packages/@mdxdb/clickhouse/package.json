@@ -1,0 +1,37 @@
+{
+  "name": "@mdxdb/clickhouse",
+  "version": "0.0.1",
+  "description": "ClickHouse client for mdxdb with Node.js and Web support",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./web": {
+      "import": "./dist/web.js",
+      "types": "./dist/web.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "clickhouse",
+    "mdxdb",
+    "database",
+    "web"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^1.7.0",
+    "@clickhouse/client-web": "^1.7.0",
+    "dotenv": "^16.4.7"
+  }
+}

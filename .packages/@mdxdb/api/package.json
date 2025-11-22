@@ -1,0 +1,46 @@
+{
+  "name": "@mdxdb/api",
+  "version": "0.0.1",
+  "description": "Hono-based REST API for mdxdb with Things, Relationships, and Search",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "wrangler dev src/worker-ch.ts",
+    "dev:node": "tsx test-server-ch.ts",
+    "dev:sqlite": "tsx test-server.ts",
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev",
+    "test:clickhouse": "tsx test-server-ch.ts",
+    "test:local": "tsx test-server.ts"
+  },
+  "keywords": [
+    "mdx",
+    "database",
+    "api",
+    "hono",
+    "rest"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@hono/node-server": "^1.13.7",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.0.0",
+    "wrangler": "^3.94.0"
+  },
+  "dependencies": {
+    "@mdxdb/clickhouse": "workspace:*",
+    "@mdxui/api": "workspace:*",
+    "hono": "^4.0.0",
+    "zod": "^4.1.12"
+  }
+}
