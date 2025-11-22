@@ -73,18 +73,76 @@ const products = await semanticSearch('pets and animals', {
 ```typescript
 import { findSimilar } from './.mdxdb/vector-search.js'
 
+// Find similar things (any type)
 const similar = await findSimilar('https://occupations.org.ai/ChiefExecutives', {
   limit: 10,
   threshold: 0.7
 })
+
+// Find similar things of a specific type
+const similarOccupations = await findSimilar('https://occupations.org.ai/ChiefExecutives', {
+  limit: 5,
+  type: 'Occupation',
+  threshold: 0.7
+})
+
+// Find similar things across multiple types
+const skillsAndKnowledge = await findSimilar('https://occupations.org.ai/ChiefExecutives', {
+  limit: 10,
+  types: ['Skill', 'Knowledge'],
+  threshold: 0.6
+})
 ```
 
-## Demo
+### Find Similar by Type
 
-Run the vector search demo:
+Get the top N most similar things for each specified type:
+
+```typescript
+import { findSimilarByType } from './.mdxdb/vector-search.js'
+
+// Get top 5 similar things for each type
+const byType = await findSimilarByType('https://occupations.org.ai/ChiefExecutives', {
+  types: ['Occupation', 'Skill', 'Knowledge', 'Process'],
+  limitPerType: 5,
+  threshold: 0.6
+})
+
+// Returns: Map<string, SearchResult[]>
+for (const [type, results] of byType.entries()) {
+  console.log(`${type}:`, results.length, 'results')
+}
+```
+
+### Find Most Similar of Each Type
+
+Get the single best match for each type in the database:
+
+```typescript
+import { findMostSimilarOfEachType } from './.mdxdb/vector-search.js'
+
+// Find the most similar thing of each type
+const bestMatches = await findMostSimilarOfEachType('https://occupations.org.ai/ChiefExecutives', {
+  threshold: 0.5,
+  excludeTypes: ['Type', 'Property'] // Optionally exclude certain types
+})
+
+// Returns: Map<string, SearchResult>
+for (const [type, result] of bestMatches.entries()) {
+  console.log(`Best ${type}: ${result.thing.url} (${result.score.toFixed(4)})`)
+}
+```
+
+## Demos
+
+Run the vector search demos:
 
 ```bash
+# Basic semantic search
 tsx .scripts/demo-vector-search.ts
+
+# Advanced similarity search with type filtering
+tsx .scripts/demo-similarity.ts
 ```
 
 ## Embedding Model

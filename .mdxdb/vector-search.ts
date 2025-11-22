@@ -167,9 +167,12 @@ export async function findSimilar(
   options: {
     limit?: number
     threshold?: number
+    namespace?: string
+    type?: string
+    types?: string[]
   } = {}
 ): Promise<SearchResult[]> {
-  const { limit = 10, threshold = 0.5 } = options
+  const { limit = 10, threshold = 0.5, namespace, type, types } = options
 
   // Get the thing's search entry
   const entry = db.prepare('SELECT * FROM searches WHERE url = ?').get(url) as {
@@ -185,8 +188,35 @@ export async function findSimilar(
 
   const queryVector = bufferToVector(entry.embedding)
 
-  // Get all other search entries
-  const searchEntries = db.prepare('SELECT * FROM searches WHERE url != ?').all(url) as Array<{
+  // Build query for search entries (excluding the source thing)
+  let searchQuery = 'SELECT * FROM searches WHERE url != ?'
+  const params: any[] = [url]
+
+  if (namespace || type || types) {
+    searchQuery += ' AND ('
+    const conditions: string[] = []
+
+    if (namespace) {
+      conditions.push("json_extract(meta, '$.ns') = ?")
+      params.push(namespace)
+    }
+
+    if (type) {
+      conditions.push("json_extract(meta, '$.type') = ?")
+      params.push(type)
+    }
+
+    if (types && types.length > 0) {
+      const typeConditions = types.map(() => "json_extract(meta, '$.type') = ?").join(' OR ')
+      conditions.push(`(${typeConditions})`)
+      params.push(...types)
+    }
+
+    searchQuery += conditions.join(' AND ')
+    searchQuery += ')'
+  }
+
+  const searchEntries = db.prepare(searchQuery).all(...params) as Array<{
     url: string
     text: string
     embedding: Buffer
@@ -238,6 +268,179 @@ export async function findSimilar(
   }
 
   return searchResults
+}
+
+/**
+ * Find the most similar things of each specified type
+ * Returns top N results for each type
+ */
+export async function findSimilarByType(
+  url: string,
+  options: {
+    types: string[]
+    limitPerType?: number
+    threshold?: number
+  }
+): Promise<Map<string, SearchResult[]>> {
+  const { types, limitPerType = 5, threshold = 0.5 } = options
+
+  // Get the thing's search entry
+  const entry = db.prepare('SELECT * FROM searches WHERE url = ?').get(url) as {
+    url: string
+    text: string
+    embedding: Buffer
+    meta: string
+  } | undefined
+
+  if (!entry) {
+    return new Map()
+  }
+
+  const queryVector = bufferToVector(entry.embedding)
+  const resultsByType = new Map<string, SearchResult[]>()
+
+  // Find similar things for each type
+  for (const targetType of types) {
+    const searchEntries = db.prepare(
+      "SELECT * FROM searches WHERE url != ? AND json_extract(meta, '$.type') = ?"
+    ).all(url, targetType) as Array<{
+      url: string
+      text: string
+      embedding: Buffer
+      meta: string
+    }>
+
+    // Calculate similarities
+    const results: Array<{
+      url: string
+      text: string
+      score: number
+    }> = []
+
+    for (const otherEntry of searchEntries) {
+      const vector = bufferToVector(otherEntry.embedding)
+      const similarity = cosineSimilarity(queryVector, vector)
+
+      if (similarity >= threshold) {
+        results.push({
+          url: otherEntry.url,
+          text: otherEntry.text,
+          score: similarity,
+        })
+      }
+    }
+
+    // Sort by score descending and limit
+    results.sort((a, b) => b.score - a.score)
+    const topResults = results.slice(0, limitPerType)
+
+    // Fetch full thing data
+    const searchResults: SearchResult[] = []
+
+    for (const result of topResults) {
+      const thing = things.select()
+        .from(schema.things)
+        .where((t: any) => t.url === result.url)
+        .get()
+
+      if (thing) {
+        searchResults.push({
+          thing,
+          score: result.score,
+          text: result.text,
+        })
+      }
+    }
+
+    if (searchResults.length > 0) {
+      resultsByType.set(targetType, searchResults)
+    }
+  }
+
+  return resultsByType
+}
+
+/**
+ * Find the single most similar thing of each type across all types
+ * Returns the top match for each type found in the database
+ */
+export async function findMostSimilarOfEachType(
+  url: string,
+  options: {
+    threshold?: number
+    excludeTypes?: string[]
+  } = {}
+): Promise<Map<string, SearchResult>> {
+  const { threshold = 0.5, excludeTypes = [] } = options
+
+  // Get the thing's search entry
+  const entry = db.prepare('SELECT * FROM searches WHERE url = ?').get(url) as {
+    url: string
+    text: string
+    embedding: Buffer
+    meta: string
+  } | undefined
+
+  if (!entry) {
+    return new Map()
+  }
+
+  const queryVector = bufferToVector(entry.embedding)
+
+  // Get all distinct types
+  const allTypes = db.prepare(
+    "SELECT DISTINCT json_extract(meta, '$.type') as type FROM searches"
+  ).all() as Array<{ type: string }>
+
+  const resultsByType = new Map<string, SearchResult>()
+
+  // Find most similar thing for each type
+  for (const { type: targetType } of allTypes) {
+    if (excludeTypes.includes(targetType)) {
+      continue
+    }
+
+    const searchEntries = db.prepare(
+      "SELECT * FROM searches WHERE url != ? AND json_extract(meta, '$.type') = ?"
+    ).all(url, targetType) as Array<{
+      url: string
+      text: string
+      embedding: Buffer
+      meta: string
+    }>
+
+    let bestMatch: { url: string; text: string; score: number } | null = null
+
+    for (const otherEntry of searchEntries) {
+      const vector = bufferToVector(otherEntry.embedding)
+      const similarity = cosineSimilarity(queryVector, vector)
+
+      if (similarity >= threshold && (!bestMatch || similarity > bestMatch.score)) {
+        bestMatch = {
+          url: otherEntry.url,
+          text: otherEntry.text,
+          score: similarity,
+        }
+      }
+    }
+
+    if (bestMatch) {
+      const thing = things.select()
+        .from(schema.things)
+        .where((t: any) => t.url === bestMatch!.url)
+        .get()
+
+      if (thing) {
+        resultsByType.set(targetType, {
+          thing,
+          score: bestMatch.score,
+          text: bestMatch.text,
+        })
+      }
+    }
+  }
+
+  return resultsByType
 }
 
 /**
