@@ -5,6 +5,13 @@
  *
  * Uses Google's gemini-embedding-001 model via the Vercel AI SDK
  * to generate embeddings for semantic search.
+ *
+ * Usage:
+ *   tsx .scripts/generate-embeddings.ts [storage-backend]
+ *
+ * Storage backends:
+ *   sqlite (default) - Store in SQLite database
+ *   clickhouse       - Store in ClickHouse database
  */
 
 import 'dotenv/config'
@@ -14,6 +21,10 @@ import Database from 'better-sqlite3'
 import { drizzle } from 'drizzle-orm/better-sqlite3'
 import * as schema from '../.mdxdb/schema.js'
 import type { NewSearch } from '../.mdxdb/schema.js'
+import { createStorage, type StorageBackend } from '../.mdxdb/storage.js'
+
+// Get storage backend from CLI args
+const storageBackend = (process.argv[2] || 'sqlite') as StorageBackend
 
 // Check environment variables
 if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
@@ -26,8 +37,8 @@ if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
 // Initialize embedding model
 const embeddingModel = google.textEmbeddingModel('gemini-embedding-001')
 
-// Open database
-const db = new Database('.mdxdb/things.db')
+// Open source database (always read from SQLite)
+const db = new Database('.mdxdb/things.db', { readonly: true })
 const things = drizzle(db, { schema })
 
 /**
@@ -69,14 +80,20 @@ function createSearchText(thing: any): string {
  */
 async function generateEmbeddings() {
   console.log('🚀 Generating embeddings...\n')
+  console.log(`📦 Storage backend: ${storageBackend}\n`)
+
+  // Create storage adapter
+  const storage = createStorage(storageBackend)
 
   // Get all things
   const allThings = things.select().from(schema.things).all()
   console.log(`📊 Total things: ${allThings.length.toLocaleString()}\n`)
 
-  // Clear existing search entries
-  console.log('🗑️  Clearing existing search entries...')
-  db.prepare('DELETE FROM searches').run()
+  // Clear existing search entries (only for SQLite, ClickHouse handled in setup)
+  if (storageBackend === 'sqlite') {
+    console.log('🗑️  Clearing existing search entries...')
+    db.prepare('DELETE FROM searches').run()
+  }
 
   // Process in batches to avoid memory issues and rate limits
   const BATCH_SIZE = 100
@@ -136,16 +153,12 @@ async function generateEmbeddings() {
         },
       }))
 
-      // Insert in chunks to avoid SQLite limits
-      const CHUNK_SIZE = 50
-      for (let j = 0; j < searches.length; j += CHUNK_SIZE) {
-        const chunk = searches.slice(j, j + CHUNK_SIZE)
-        await things.insert(schema.searches).values(chunk)
-      }
+      // Insert using storage adapter
+      await storage.insertSearches(searches)
 
       totalProcessed += validThings.length
 
-      console.log(`   💾 Saved to database\n`)
+      console.log(`   💾 Saved to ${storageBackend}\n`)
 
       // Rate limiting - wait 1 second between batches
       if (i < batches - 1) {
@@ -160,14 +173,13 @@ async function generateEmbeddings() {
 
   console.log('✅ Embedding generation complete!\n')
   console.log(`📊 Summary:`)
+  console.log(`   Storage backend: ${storageBackend}`)
   console.log(`   Processed: ${totalProcessed.toLocaleString()}`)
   console.log(`   Skipped: ${totalSkipped.toLocaleString()}`)
   console.log(`   Total: ${allThings.length.toLocaleString()}`)
 
-  // Show statistics
-  const searchCount = db.prepare('SELECT COUNT(*) as count FROM searches').get() as { count: number }
-  console.log(`\n💾 Search entries in database: ${searchCount.count.toLocaleString()}`)
-
+  // Close connections
+  await storage.close()
   db.close()
 }
 
