@@ -1,0 +1,162 @@
+name: Ingest Wikimedia Dumps
+
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: 'Which Wikimedia source to ingest'
+        required: true
+        type: choice
+        options:
+          - wikipedia
+          - wikinews
+          - wiktionary
+          - wikiquote
+          - wikibooks
+          - wikiversity
+          - all
+
+env:
+  CLICKHOUSE_URL: ${{ secrets.CLICKHOUSE_URL }}
+  CLICKHOUSE_USERNAME: ${{ secrets.CLICKHOUSE_USERNAME }}
+  CLICKHOUSE_PASSWORD: ${{ secrets.CLICKHOUSE_PASSWORD }}
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6 hours for large dumps
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Checkout dumpster-dive
+        uses: actions/checkout@v4
+        with:
+          repository: nathanclevenger/dumpster-dive
+          path: dumpster-dive
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies in dumpster-dive
+        working-directory: ./dumpster-dive
+        run: |
+          npm install
+          npm install @clickhouse/client dotenv
+
+      - name: Download Wikipedia dump
+        if: ${{ github.event.inputs.source == 'wikipedia' || github.event.inputs.source == 'all' }}
+        run: |
+          mkdir -p .source/Wikipedia
+          cd .source/Wikipedia
+          # Download with resume support
+          wget -c https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2
+          # Decompress
+          bzip2 -d enwiki-latest-pages-articles.xml.bz2
+
+      - name: Download Wikinews dump
+        if: ${{ github.event.inputs.source == 'wikinews' || github.event.inputs.source == 'all' }}
+        run: |
+          mkdir -p .source/Wikinews
+          cd .source/Wikinews
+          wget -c https://dumps.wikimedia.org/enwikinews/latest/enwikinews-latest-pages-articles.xml.bz2
+          bzip2 -d enwikinews-latest-pages-articles.xml.bz2
+
+      - name: Download Wiktionary dump
+        if: ${{ github.event.inputs.source == 'wiktionary' || github.event.inputs.source == 'all' }}
+        run: |
+          mkdir -p .source/Wiktionary
+          cd .source/Wiktionary
+          wget -c https://dumps.wikimedia.org/enwiktionary/latest/enwiktionary-latest-pages-articles.xml.bz2
+          bzip2 -d enwiktionary-latest-pages-articles.xml.bz2
+
+      - name: Download Wikiquote dump
+        if: ${{ github.event.inputs.source == 'wikiquote' || github.event.inputs.source == 'all' }}
+        run: |
+          mkdir -p .source/Wikiquote
+          cd .source/Wikiquote
+          wget -c https://dumps.wikimedia.org/enwikiquote/latest/enwikiquote-latest-pages-articles.xml.bz2
+          bzip2 -d enwikiquote-latest-pages-articles.xml.bz2
+
+      - name: Download Wikibooks dump
+        if: ${{ github.event.inputs.source == 'wikibooks' || github.event.inputs.source == 'all' }}
+        run: |
+          mkdir -p .source/Wikibooks
+          cd .source/Wikibooks
+          wget -c https://dumps.wikimedia.org/enwikibooks/latest/enwikibooks-latest-pages-articles.xml.bz2
+          bzip2 -d enwikibooks-latest-pages-articles.xml.bz2
+
+      - name: Download Wikiversity dump
+        if: ${{ github.event.inputs.source == 'wikiversity' || github.event.inputs.source == 'all' }}
+        run: |
+          mkdir -p .source/Wikiversity
+          cd .source/Wikiversity
+          wget -c https://dumps.wikimedia.org/enwikiversity/latest/enwikiversity-latest-pages-articles.xml.bz2
+          bzip2 -d enwikiversity-latest-pages-articles.xml.bz2
+
+      - name: Create .env file
+        run: |
+          cat > .env <<EOF
+          CLICKHOUSE_URL=${{ secrets.CLICKHOUSE_URL }}
+          CLICKHOUSE_USERNAME=${{ secrets.CLICKHOUSE_USERNAME }}
+          CLICKHOUSE_PASSWORD=${{ secrets.CLICKHOUSE_PASSWORD }}
+          EOF
+
+      - name: Ingest Wikipedia
+        if: ${{ github.event.inputs.source == 'wikipedia' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
+          # Create wrapper script
+          cat > ingest-wikipedia.sh <<'SCRIPT'
+          #!/bin/bash
+          set -a
+          source ../.env
+          set +a
+          USE_CLICKHOUSE=true node bin/dumpster.js "$@"
+          SCRIPT
+          chmod +x ingest-wikipedia.sh
+
+          # Run ingestion
+          ./ingest-wikipedia.sh ../.source/Wikipedia/enwiki-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wikipedia
+
+      - name: Ingest Wikinews
+        if: ${{ github.event.inputs.source == 'wikinews' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
+          ./ingest-wikipedia.sh ../.source/Wikinews/enwikinews-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wikinews
+
+      - name: Ingest Wiktionary
+        if: ${{ github.event.inputs.source == 'wiktionary' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
+          ./ingest-wikipedia.sh ../.source/Wiktionary/enwiktionary-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wiktionary
+
+      - name: Ingest Wikiquote
+        if: ${{ github.event.inputs.source == 'wikiquote' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
+          ./ingest-wikipedia.sh ../.source/Wikiquote/enwikiquote-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wikiquote
+
+      - name: Ingest Wikibooks
+        if: ${{ github.event.inputs.source == 'wikibooks' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
+          ./ingest-wikipedia.sh ../.source/Wikibooks/enwikibooks-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wikibooks
+
+      - name: Ingest Wikiversity
+        if: ${{ github.event.inputs.source == 'wikiversity' || github.event.inputs.source == 'all' }}
+        working-directory: ./dumpster-dive
+        run: |
+          ./ingest-wikipedia.sh ../.source/Wikiversity/enwikiversity-latest-pages-articles.xml --batch_size=500 --clickhouse_table=wikiversity
+
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingestion-logs-${{ github.event.inputs.source }}
+          path: |
+            dumpster-dive/*.log
+            .source/**/download.log
