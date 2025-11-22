@@ -20,11 +20,28 @@ let client: ClickHouseClient | null = null
 /**
  * Get or create ClickHouse client instance
  */
-export function getClickHouseClient(): ClickHouseClient {
+export function getClickHouseClient(options?: { database?: string }): ClickHouseClient {
+  const dbName = options?.database || config.database
+
+  // Always create a new client if database is specified and different
+  if (options?.database) {
+    return createClient({
+      url: config.url,
+      database: dbName,
+      username: config.username,
+      password: config.password,
+      request_timeout: 30000,
+      compression: {
+        request: true,
+        response: true,
+      },
+    })
+  }
+
   if (!client) {
     client = createClient({
       url: config.url,
-      database: config.database,
+      database: dbName,
       username: config.username,
       password: config.password,
       request_timeout: 30000,

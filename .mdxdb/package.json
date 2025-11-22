@@ -1,0 +1,26 @@
+{
+  "name": "@graph.org.ai/mdxdb",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./schema": "./schema.ts",
+    "./db": "./db.ts",
+    "./clickhouse-queries": "./clickhouse-queries.ts",
+    "./clickhouse-client": "./clickhouse-client.ts"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^1.7.0",
+    "better-sqlite3": "^12.4.6",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.44.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "drizzle-kit": "^0.31.7"
+  },
+  "peerDependencies": {
+    "better-sqlite3": ">=12.0.0",
+    "drizzle-orm": ">=0.40.0"
+  }
+}

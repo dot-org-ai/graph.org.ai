@@ -165,6 +165,15 @@ The HNSW (Hierarchical Navigable Small World) index provides:
 - **SQLite**: ~200MB for 164K things with embeddings
 - **ClickHouse**: ~50MB for same data (4x compression)
 
+### Batch Insert Optimization
+
+The storage layer automatically uses optimal batch sizes:
+
+- **ClickHouse**: 100,000 rows per batch for maximum throughput
+- **SQLite**: 1,000 rows per batch to avoid lock contention
+
+This is handled automatically by the storage adapter based on the backend.
+
 ### Query Performance
 
 | Operation | SQLite | ClickHouse |
