@@ -1,4 +1,14 @@
 *.tsv filter=lfs diff=lfs merge=lfs -text
+*.xlsx filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.log filter=lfs diff=lfs merge=lfs -text
+.source/BLS/** filter=lfs diff=lfs merge=lfs -text
+.source/CommonCrawl/** filter=lfs diff=lfs merge=lfs -text
+.source/GeoNames/** filter=lfs diff=lfs merge=lfs -text
+.source/ONET/** filter=lfs diff=lfs merge=lfs -text
+.source/Language/** filter=lfs diff=lfs merge=lfs -text
+.source/NAPCS/** filter=lfs diff=lfs merge=lfs -text
+.data/** filter=lfs diff=lfs merge=lfs -text
 .data/Services-Parsed-Full.json filter=lfs diff=lfs merge=lfs -text
 .data/Services-Parsed.json filter=lfs diff=lfs merge=lfs -text
 .data/Services-Only.tsv filter=lfs diff=lfs merge=lfs -text
