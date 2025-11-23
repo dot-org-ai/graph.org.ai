@@ -72,6 +72,26 @@ export async function getDomainTypes(domain: string): Promise<string[]> {
 }
 
 /**
+ * Get types for a specific domain with counts
+ */
+export async function getDomainTypesWithCounts(domain: string): Promise<Array<{ type: string; count: number }>> {
+  const client = getClickHouseClient()
+  try {
+    const result = await client.query({
+      query: 'SELECT type, count(*) as count FROM things WHERE ns = {ns:String} GROUP BY type ORDER BY type',
+      query_params: { ns: domain },
+      format: 'JSONEachRow',
+    })
+
+    const data = (await result.json()) as Array<{ type: string; count: string }>
+    return data.map(r => ({ type: r.type, count: parseInt(r.count) }))
+  } catch (error) {
+    console.error('Error fetching domain types with counts from ClickHouse:', error)
+    return []
+  }
+}
+
+/**
  * Get a page by domain and slug
  */
 export async function getPage(domain: string, slug?: string[]): Promise<ClickHouseThing | undefined> {
@@ -231,5 +251,85 @@ export async function getSampleThingsByType(type: string, limit: number = 5): Pr
   } catch (error) {
     console.error('Error fetching sample things from ClickHouse:', error)
     return []
+  }
+}
+
+/**
+ * Get paginated things by type with cursor-based pagination
+ * @param type - The type to filter by
+ * @param limit - Number of items per page (default 50)
+ * @param after - Cursor (ID) to get items after
+ * @param before - Cursor (ID) to get items before
+ */
+export async function getPaginatedThingsByType(
+  type: string,
+  limit: number = 50,
+  after?: string,
+  before?: string
+): Promise<{ things: ClickHouseThing[]; hasMore: boolean; hasPrev: boolean }> {
+  const client = getClickHouseClient()
+  try {
+    let query: string
+    let query_params: any
+
+    if (after) {
+      // Get items after cursor
+      query = `
+        SELECT * FROM things
+        WHERE type = {type:String} AND id > {after:String}
+        ORDER BY id
+        LIMIT {limit:UInt32}
+      `
+      query_params = { type, after, limit: limit + 1 } // Get one extra to check hasMore
+    } else if (before) {
+      // Get items before cursor (reverse order, then flip)
+      query = `
+        SELECT * FROM things
+        WHERE type = {type:String} AND id < {before:String}
+        ORDER BY id DESC
+        LIMIT {limit:UInt32}
+      `
+      query_params = { type, before, limit: limit + 1 } // Get one extra to check hasPrev
+    } else {
+      // Get first page
+      query = `
+        SELECT * FROM things
+        WHERE type = {type:String}
+        ORDER BY id
+        LIMIT {limit:UInt32}
+      `
+      query_params = { type, limit: limit + 1 } // Get one extra to check hasMore
+    }
+
+    const result = await client.query({
+      query,
+      query_params,
+      format: 'JSONEachRow',
+    })
+
+    let data = (await result.json()) as ClickHouseThing[]
+
+    // Check if there are more items
+    const hasMore = data.length > limit
+    const hasPrev = !!after || !!before
+
+    // Remove the extra item used for hasMore check
+    if (hasMore) {
+      data = data.slice(0, limit)
+    }
+
+    // If we used before cursor, we got items in reverse order, so flip them back
+    if (before) {
+      data = data.reverse()
+    }
+
+    return {
+      things: data,
+      hasMore: before ? (data.length === limit) : hasMore,
+      hasPrev: before ? hasMore : !!after,
+    }
+  } catch (error) {
+    console.error('Error fetching paginated things from ClickHouse:', error)
+    return { things: [], hasMore: false, hasPrev: false }
   }
 }

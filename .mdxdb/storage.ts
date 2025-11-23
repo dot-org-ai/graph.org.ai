@@ -103,7 +103,7 @@ export class ClickHouseStorage implements StorageAdapter {
 
     // Use streaming insert for better performance with large datasets
     await this.client.insert({
-      table: 'default.things',
+      table: 'things',  // Use just 'things' - database is specified in client config
       values: things.map(thing => ({
         url: thing.url,
         ns: thing.ns,
@@ -129,7 +129,7 @@ export class ClickHouseStorage implements StorageAdapter {
     if (relationships.length === 0) return
 
     await this.client.insert({
-      table: 'default.relationships',
+      table: 'relationships',
       values: relationships.map(rel => ({
         from: rel.from,
         predicate: rel.predicate,
@@ -151,7 +151,7 @@ export class ClickHouseStorage implements StorageAdapter {
     if (searches.length === 0) return
 
     await this.client.insert({
-      table: 'default.searches',
+      table: 'searches',
       values: searches.map(search => {
         // Convert Buffer to Float32Array if needed
         let embedding: number[]

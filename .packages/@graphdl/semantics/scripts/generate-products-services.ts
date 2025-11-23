@@ -45,6 +45,19 @@ function toEntityTypes(text: string, parser: GraphDLParser, shortNames?: Map<str
     }
   }
 
+  // Check for slash-separated alternatives (e.g., "Brushes/Applicators")
+  if (text.includes('/')) {
+    const parts = text.split('/').map(p => p.trim()).filter(p => p)
+    if (parts.length > 1) {
+      const allEntities: string[] = []
+      for (const part of parts) {
+        const partEntities = toEntityTypes(part, parser, shortNames)
+        allEntities.push(...partEntities)
+      }
+      return allEntities
+    }
+  }
+
   // Check for " and " or " or " conjunctions
   const conjMatch = text.match(/^(.+?)\s+(and|or)\s+(.+)$/i)
   if (conjMatch) {
