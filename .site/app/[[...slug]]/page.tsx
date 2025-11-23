@@ -1,12 +1,25 @@
-import { source, getAllTypes, getTypeCount, getSampleThingsByType, getDomainTypes, getDomains } from '@/lib/source';
+import { source, getAllTypes, getTypeCount, getSampleThingsByType, getPaginatedThingsByType, getDomainTypes, getDomains } from '@/lib/source';
 import { DocsPage, DocsBody } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { pluralize } from '@/lib/pluralize';
 
 interface PageProps {
   params: Promise<{
     slug?: string[];
+  }>;
+  searchParams: Promise<{
+    after?: string;
+    before?: string;
   }>;
 }
 
@@ -66,6 +79,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
 export default async function Page(props: PageProps) {
   const params = await props.params;
+  const searchParams = await props.searchParams;
 
   // Check if this is a single-slug route (could be domain or type)
   if (params.slug && params.slug.length === 1) {
@@ -132,14 +146,14 @@ export default async function Page(props: PageProps) {
                                 href={`/${thing.url}`}
                                 className="block text-sm hover:text-primary transition-colors truncate"
                               >
-                                {thing.id}
+                                {thing.name || thing.data?.title || thing.id}
                               </Link>
                             ))}
                             <Link
                               href={`/${type}`}
                               className="block text-xs text-primary hover:underline mt-2 pt-2 border-t"
                             >
-                              View all {type}s →
+                              View all {pluralize(type)} →
                             </Link>
                           </div>
                         )}
@@ -157,70 +171,115 @@ export default async function Page(props: PageProps) {
         </div>
       );
     } else if (allTypes.includes(slug)) {
-      // This is a type page - show all items of this type across all domains
+      // This is a type page - show paginated items of this type
       const type = slug;
       const count = await getTypeCount(type);
-      const samples = await getSampleThingsByType(type, 100);
+      const PAGE_SIZE = 50;
+
+      // Get paginated data
+      const { things, hasMore, hasPrev } = await getPaginatedThingsByType(
+        type,
+        PAGE_SIZE,
+        searchParams.after,
+        searchParams.before
+      );
 
       // Group by domain
-      const byDomain = samples.reduce((acc, thing) => {
+      const byDomain = things.reduce((acc, thing) => {
         if (!acc[thing.ns]) {
           acc[thing.ns] = [];
         }
         acc[thing.ns].push(thing);
         return acc;
-      }, {} as Record<string, typeof samples>);
+      }, {} as Record<string, typeof things>);
+
+      // Calculate cursors for pagination
+      const firstId = things.length > 0 ? things[0].id : undefined;
+      const lastId = things.length > 0 ? things[things.length - 1].id : undefined;
+
+      // Determine primary namespace (if all items are from the same namespace)
+      const namespaces = Object.keys(byDomain);
+      const primaryNamespace = namespaces.length === 1 ? namespaces[0] : null;
 
       return (
         <DocsPage toc={[]}>
           <DocsBody>
-            <div className="mb-8">
-              <Link href="/" className="text-sm text-muted-foreground hover:text-primary">
-                ← Back to home
-              </Link>
-            </div>
+            <Breadcrumb className="mb-6">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/">.org.ai</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                {primaryNamespace && (
+                  <>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href={`/${primaryNamespace}`}>
+                        {primaryNamespace}.org.ai
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                  </>
+                )}
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{pluralize(type)}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
 
-            <h1>{type}s</h1>
-            <p className="text-muted-foreground text-lg mb-6">
-              {count.toLocaleString()} {type.toLowerCase()}{count !== 1 ? 's' : ''} in the knowledge graph
-            </p>
+            <h1>{pluralize(type)}</h1>
 
             {Object.keys(byDomain).length > 0 ? (
-              <div className="space-y-8">
-                {Object.entries(byDomain).map(([domain, things]) => (
-                  <div key={domain} className="border rounded-lg p-6">
-                    <h2 className="text-2xl font-semibold mb-4">
-                      <Link href={`/${domain}`} className="hover:text-primary">
-                        {domain}
-                      </Link>
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                      {things.map((thing) => (
-                        <Link
-                          key={thing.url}
-                          href={`/${thing.url}`}
-                          className="block p-3 border rounded hover:border-primary hover:bg-accent transition-colors"
-                        >
-                          <div className="font-medium truncate">{thing.id}</div>
-                          {thing.data?.description && (
-                            <div className="text-sm text-muted-foreground mt-1 line-clamp-2">
-                              {thing.data.description}
-                            </div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                    {count > 100 && (
-                      <div className="mt-4 text-sm text-muted-foreground">
-                        Showing {things.length} of {count.toLocaleString()} {type.toLowerCase()}s
+              <>
+                <div className="space-y-8 mb-8">
+                  {Object.entries(byDomain).map(([domain, things]) => (
+                    <div key={domain}>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                        {things.map((thing) => (
+                          <Link
+                            key={thing.url}
+                            href={`/${thing.url}`}
+                            className="block p-3 border rounded hover:border-primary hover:bg-accent transition-colors no-underline"
+                          >
+                            <div className="font-medium">{thing.name || thing.data?.title || thing.id}</div>
+                          </Link>
+                        ))}
                       </div>
-                    )}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Pagination controls */}
+                {(hasPrev || hasMore) && (
+                  <div className="flex justify-between items-center border-t pt-6">
+                    <div>
+                      {hasPrev && firstId && (
+                        <Link
+                          href={`/${type}?before=${encodeURIComponent(firstId)}`}
+                          className="inline-flex items-center gap-2 px-4 py-2 border rounded hover:bg-accent transition-colors"
+                        >
+                          ← Previous {PAGE_SIZE}
+                        </Link>
+                      )}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Page {things.length} items
+                    </div>
+                    <div>
+                      {hasMore && lastId && (
+                        <Link
+                          href={`/${type}?after=${encodeURIComponent(lastId)}`}
+                          className="inline-flex items-center gap-2 px-4 py-2 border rounded hover:bg-accent transition-colors"
+                        >
+                          Next {PAGE_SIZE} →
+                        </Link>
+                      )}
+                    </div>
                   </div>
-                ))}
-              </div>
+                )}
+              </>
             ) : (
               <div className="text-center py-12 text-muted-foreground">
-                <p>No {type.toLowerCase()}s found</p>
+                <p>No {pluralize(type).toLowerCase()} found</p>
               </div>
             )}
           </DocsBody>
@@ -282,32 +341,12 @@ export default async function Page(props: PageProps) {
 
                   return (
                     <div key={type} className="p-6 border rounded-lg hover:border-primary hover:shadow-md transition-all group">
-                      <Link href={`/${type}`} className="block">
+                      <Link href={`/${type}`} className="block no-underline">
                         <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">{type}</h3>
                         <div className="text-sm text-muted-foreground space-y-2">
                           <p className="font-medium">{count.toLocaleString()} items</p>
                         </div>
                       </Link>
-                      {samples.length > 0 && (
-                        <div className="mt-3 space-y-1 text-muted-foreground">
-                          <p className="text-xs font-semibold uppercase tracking-wide">Examples:</p>
-                          {samples.map((thing) => (
-                            <Link
-                              key={thing.url}
-                              href={`/${thing.url}`}
-                              className="block text-sm hover:text-primary transition-colors truncate"
-                            >
-                              {thing.id}
-                            </Link>
-                          ))}
-                          <Link
-                            href={`/${type}`}
-                            className="block text-xs text-primary hover:underline mt-2 pt-2 border-t"
-                          >
-                            View all {type}s →
-                          </Link>
-                        </div>
-                      )}
                     </div>
                   );
                 }))}
@@ -332,12 +371,55 @@ export default async function Page(props: PageProps) {
     notFound();
   }
 
+  // Build breadcrumb trail from slug
+  const breadcrumbItems = [];
+  breadcrumbItems.push({ label: '.org.ai', href: '/' });
+
+  if (params.slug && params.slug.length > 0) {
+    let currentPath = '';
+    for (let i = 0; i < params.slug.length; i++) {
+      const segment = params.slug[i];
+      currentPath += `/${segment}`;
+
+      // For the last item, use the page title if available
+      const isLast = i === params.slug.length - 1;
+      const label = isLast && page.data.title ? page.data.title : segment;
+
+      breadcrumbItems.push({
+        label,
+        href: currentPath,
+        isLast,
+      });
+    }
+  }
+
   return (
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
     >
       <DocsBody>
+        <Breadcrumb className="mb-6">
+          <BreadcrumbList>
+            {breadcrumbItems.flatMap((item, index) => {
+              const elements = [];
+              elements.push(
+                <BreadcrumbItem key={`item-${index}`}>
+                  {item.isLast ? (
+                    <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                  ) : (
+                    <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+                  )}
+                </BreadcrumbItem>
+              );
+              if (index < breadcrumbItems.length - 1) {
+                elements.push(<BreadcrumbSeparator key={`sep-${index}`} />);
+              }
+              return elements;
+            })}
+          </BreadcrumbList>
+        </Breadcrumb>
+
         <h1>{page.data.title}</h1>
         {page.data.description && (
           <p className="text-muted-foreground text-lg mb-6">

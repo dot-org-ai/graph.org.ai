@@ -1,0 +1,356 @@
+---
+# Root Navigation Configuration for graph.org.ai
+# This defines the top-level taxonomy structure and sidebar organization
+
+domain: graph.org.ai
+title: Graph.org.ai Knowledge Graph
+description: Universal knowledge graph connecting occupations, processes, products, industries, and more
+
+# Root-level taxonomies (shown as tabs at the very top)
+taxonomies:
+  # Always present - takes you back to root
+  - domain: graph.org.ai
+    title: .org.ai
+    icon: Home
+    url: /
+    description: Knowledge graph home
+
+  # Industry Verticals (first 8 most important)
+  - domain: retail.org.ai
+    title: Retail
+    icon: ShoppingCart
+    category: industry-vertical
+    color: "#E74C3C"
+    description: Retail trade operations, occupations, and processes
+
+  - domain: healthcare.org.ai
+    title: Healthcare
+    icon: Heart
+    category: industry-vertical
+    color: "#3498DB"
+    description: Healthcare delivery and medical occupations
+
+  - domain: technology.org.ai
+    title: Technology
+    icon: Cpu
+    category: industry-vertical
+    color: "#9B59B6"
+    description: Software, IT, and technology industry
+
+  - domain: manufacturing.org.ai
+    title: Manufacturing
+    icon: Factory
+    category: industry-vertical
+    color: "#34495E"
+    description: Production and assembly operations
+
+  - domain: finance.org.ai
+    title: Finance
+    icon: DollarSign
+    category: industry-vertical
+    color: "#27AE60"
+    description: Banking, insurance, and financial services
+
+  - domain: construction.org.ai
+    title: Construction
+    icon: HardHat
+    category: industry-vertical
+    color: "#F39C12"
+    description: Building and infrastructure
+
+  - domain: hospitality.org.ai
+    title: Hospitality
+    icon: Coffee
+    category: industry-vertical
+    color: "#E67E22"
+    description: Hotels, restaurants, and events
+
+  - domain: energy.org.ai
+    title: Energy
+    icon: Zap
+    category: industry-vertical
+    color: "#F1C40F"
+    description: Energy and utilities
+
+  # Functional Domains (key business functions)
+  - domain: law.org.ai
+    title: Law
+    icon: Scale
+    category: functional-domain
+    color: "#2C3E50"
+    description: Legal, compliance, and regulatory
+
+  - domain: marketing.org.ai
+    title: Marketing
+    icon: Target
+    category: functional-domain
+    color: "#E91E63"
+    description: Marketing, advertising, and branding
+
+  - domain: sales.org.ai
+    title: Sales
+    icon: TrendingUp
+    category: functional-domain
+    color: "#FF5722"
+    description: Sales processes and roles
+
+  - domain: hr.org.ai
+    title: HR
+    icon: Users
+    category: functional-domain
+    color: "#00BCD4"
+    description: Human resources and talent management
+
+  # Thematic Areas (cross-cutting themes)
+  - domain: sustainability.org.ai
+    title: Sustainability
+    icon: Leaf
+    category: thematic-area
+    color: "#4CAF50"
+    description: Environmental and green initiatives
+
+  - domain: digital.org.ai
+    title: Digital
+    icon: Smartphone
+    category: thematic-area
+    color: "#2196F3"
+    description: Digital transformation and automation
+
+  - domain: innovation.org.ai
+    title: Innovation
+    icon: Lightbulb
+    category: thematic-area
+    color: "#FF9800"
+    description: R&D and emerging technologies
+
+  # Reference Taxonomies (browse by data type)
+  - domain: industries.org.ai
+    title: Industries
+    icon: Building
+    category: reference
+    color: "#607D8B"
+    description: NAICS industry classifications
+
+  - domain: occupations.org.ai
+    title: Occupations
+    icon: Briefcase
+    category: reference
+    color: "#795548"
+    description: O*NET occupation taxonomy
+
+  - domain: processes.org.ai
+    title: Processes
+    icon: GitBranch
+    category: reference
+    color: "#9E9E9E"
+    description: APQC business processes
+
+  - domain: products.org.ai
+    title: Products
+    icon: Package
+    category: reference
+    color: "#8BC34A"
+    description: UNSPSC product taxonomy
+
+# Entity types that appear within taxonomies
+entity_types:
+  - name: Occupation
+    plural: Occupations
+    icon: Users
+    source: occupations.org.ai
+    description: Jobs and roles
+
+  - name: Process
+    plural: Processes
+    icon: GitBranch
+    source: processes.org.ai
+    description: Business processes
+
+  - name: Task
+    plural: Tasks
+    icon: CheckSquare
+    source: occupations.org.ai
+    description: Work tasks
+
+  - name: Skill
+    plural: Skills
+    icon: Award
+    source: occupations.org.ai
+    description: Competencies and abilities
+
+  - name: Product
+    plural: Products
+    icon: Package
+    source: products.org.ai
+    description: Products and commodities
+
+  - name: Service
+    plural: Services
+    icon: Briefcase
+    source: services.org.ai
+    description: Service offerings
+
+  - name: Industry
+    plural: Industries
+    icon: Building
+    source: industries.org.ai
+    description: Industry classifications
+
+  - name: Technology
+    plural: Technologies
+    icon: Cpu
+    source: occupations.org.ai
+    description: Tools and technologies
+
+  - name: Tool
+    plural: Tools
+    icon: Tool
+    source: occupations.org.ai
+    description: Physical and software tools
+
+# Sidebar hierarchy configuration
+sidebar:
+  # At root level (/)
+  root:
+    tabs:
+      - .org.ai
+      - Retail
+      - Healthcare
+      - Technology
+      - Finance
+      - Law
+      - Marketing
+      - Sustainability
+      - Digital
+      - Industries
+      - Occupations
+      - Processes
+
+  # At taxonomy level (/retail)
+  taxonomy:
+    tabs:
+      - .org.ai           # Always first - go back to root
+      - "{current}"       # Current taxonomy (e.g., "Retail")
+      - "{related}"       # Related taxonomies (from YAML config)
+    sidebar:
+      - Overview
+      - Occupations
+      - Processes
+      - Products
+      - Services
+      - Tasks
+      - Skills
+      - Tools
+      - Technologies
+      - Industries
+
+  # At type level (/retail/Occupation/...)
+  type:
+    tabs:
+      - .org.ai
+      - "{taxonomy}"      # Parent taxonomy
+      - "{type}"          # Current type (e.g., "Occupations")
+    sidebar:
+      - "{hierarchy}"     # Type-specific hierarchy (from builder functions)
+
+# URL structure
+urls:
+  # Root
+  root: /
+
+  # Taxonomy home
+  taxonomy: /{taxonomy}
+
+  # Type listing
+  type_list: /{taxonomy}/{type}
+
+  # Individual entity
+  entity: /{taxonomy}/{type}/{id}
+
+  # Search within taxonomy
+  search: /{taxonomy}/search
+
+# Navigation behavior
+navigation:
+  # How many tabs to show at once
+  max_tabs: 12
+
+  # Show type counts in sidebar
+  show_counts: true
+
+  # Default sidebar open level
+  default_open_level: 1
+
+  # Enable breadcrumbs
+  breadcrumbs: true
+
+# Implementation notes
+implementation:
+  # Phase 1: Start with these 5 pilot taxonomies
+  pilot_taxonomies:
+    - retail.org.ai
+    - law.org.ai
+    - sustainability.org.ai
+    - industries.org.ai
+    - digital.org.ai
+
+  # Query strategy
+  query_strategy: hybrid  # materialized views + query-time filtering
+
+  # Cache frequently accessed taxonomies
+  cache_enabled: true
+  cache_ttl: 3600  # 1 hour
+
+---
+
+# Graph.org.ai Knowledge Graph
+
+Welcome to the universal knowledge graph connecting **321,780+ entities** across occupations, processes, products, industries, and more.
+
+## Browse by Industry
+
+Explore industry-specific knowledge graphs:
+
+- **[Retail](./retail)** - Retail trade operations
+- **[Healthcare](./healthcare)** - Medical and healthcare
+- **[Technology](./technology)** - Software and IT
+- **[Finance](./finance)** - Financial services
+- **[Construction](./construction)** - Building and infrastructure
+
+## Browse by Function
+
+Explore functional domains:
+
+- **[Law](./law)** - Legal and compliance
+- **[Marketing](./marketing)** - Marketing and advertising
+- **[Sales](./sales)** - Sales processes
+- **[HR](./hr)** - Human resources
+
+## Browse by Theme
+
+Explore thematic areas:
+
+- **[Sustainability](./sustainability)** - Environmental initiatives
+- **[Digital](./digital)** - Digital transformation
+- **[Innovation](./innovation)** - Emerging technologies
+
+## Browse by Type
+
+Explore reference taxonomies:
+
+- **[Industries](./industries)** - NAICS classifications
+- **[Occupations](./occupations)** - O*NET occupation taxonomy
+- **[Processes](./processes)** - APQC business processes
+- **[Products](./products)** - UNSPSC product taxonomy
+
+## How It Works
+
+This knowledge graph connects entities from multiple authoritative sources:
+
+- **O*NET** - Occupations, tasks, skills, and more
+- **APQC** - Business process framework
+- **UNSPSC** - Products and services codes
+- **NAICS** - Industry classifications
+- **Career Clusters** - Education and career pathways
+
+Navigate by **industry**, **function**, or **theme** to discover relevant occupations, processes, products, and more in context.

@@ -127,6 +127,234 @@ function generateStructuredData(thing: ClickHouseThing): {
   return { headings, contents };
 }
 
+/**
+ * Format domain name for display
+ * E.g., "schema.org" -> "Schema.org.ai", "onet" -> "O*NET.org.ai"
+ */
+function formatDomainName(domain: string): string {
+  const domainMap: Record<string, string> = {
+    'schema.org': 'Schema.org.ai',
+    'onet': 'O*NET.org.ai',
+    'apqc': 'APQC.org.ai',
+    'unspsc': 'UNSPSC.org.ai',
+    'model': 'Models.org.ai',
+  };
+
+  return domainMap[domain] || `${domain.charAt(0).toUpperCase() + domain.slice(1)}.org.ai`;
+}
+
+/**
+ * Build a domain-specific page tree (for dynamic sidebar)
+ * Shallow structure - just shows types, clicking into a type will reposition sidebar
+ */
+async function buildDomainPageTree(domain: string): Promise<any> {
+  const types = await clickhouseQueries.getDomainTypesWithCounts(domain);
+  const displayName = formatDomainName(domain);
+
+  // Create flat list of type links - no deep nesting
+  const typeNodes = types.map((typeInfo) => ({
+    $id: `${domain}:${typeInfo.type}`,
+    type: 'page' as const,
+    name: `${typeInfo.type}s (${typeInfo.count.toLocaleString()})`,
+    description: `${typeInfo.count} ${typeInfo.type} entities`,
+    icon: undefined,
+    url: `/${typeInfo.type}`,
+    $ref: {
+      source: 'clickhouse',
+      domain,
+      type: typeInfo.type,
+    },
+  }));
+
+  return {
+    $id: `root:${domain}`,
+    name: displayName,
+    description: `Browse ${displayName}`,
+    icon: undefined,
+    index: {
+      $id: `root:${domain}:index`,
+      type: 'page' as const,
+      name: displayName,
+      description: `${displayName} overview`,
+      url: `/${domain}`,
+      icon: undefined,
+    },
+    children: typeNodes,
+  };
+}
+
+/**
+ * Build a type-specific page tree (for dynamic sidebar when viewing a type)
+ */
+async function buildTypePageTree(type: string, namespace?: string): Promise<any> {
+  // If we have a namespace, show just that namespace's items
+  if (namespace) {
+    const displayName = formatDomainName(namespace);
+    const types = await clickhouseQueries.getDomainTypesWithCounts(namespace);
+
+    const typeNodes = types.map((typeInfo) => ({
+      $id: `${namespace}:${typeInfo.type}`,
+      type: 'page' as const,
+      name: `${typeInfo.type}s (${typeInfo.count.toLocaleString()})`,
+      description: `${typeInfo.count} ${typeInfo.type} entities`,
+      icon: undefined,
+      url: `/${typeInfo.type}`,
+      $ref: {
+        source: 'clickhouse',
+        domain: namespace,
+        type: typeInfo.type,
+      },
+    }));
+
+    return {
+      $id: `root:${namespace}`,
+      name: displayName,
+      description: `Browse ${displayName}`,
+      icon: undefined,
+      index: {
+        $id: `root:${namespace}:index`,
+        type: 'page' as const,
+        name: displayName,
+        description: `${displayName} overview`,
+        url: `/${namespace}`,
+        icon: undefined,
+      },
+      children: typeNodes,
+    };
+  }
+
+  // Otherwise, show all types
+  const allTypes = await clickhouseQueries.getAllTypes();
+  const typeNodes = await Promise.all(allTypes.map(async (t) => {
+    const count = await clickhouseQueries.getTypeCount(t);
+    return {
+      $id: `type:${t}`,
+      type: 'page' as const,
+      name: `${t}s (${count.toLocaleString()})`,
+      description: `${count} ${t} entities`,
+      icon: undefined,
+      url: `/${t}`,
+      $ref: {
+        source: 'clickhouse',
+        type: t,
+      },
+    };
+  }));
+
+  return {
+    $id: 'root:global',
+    name: '.org.ai',
+    description: 'Browse all types',
+    icon: undefined,
+    children: typeNodes,
+  };
+}
+
+/**
+ * Build custom page tree with database domains
+ * Following Fumadocs structure with proper $id properties
+ * Organized in semantic hierarchy
+ */
+async function buildPageTree(): Promise<any> {
+  // Get the MDX page tree as base
+  const mdxTree = mdxSource.pageTree;
+
+  // Get domains from database
+  const domains = await clickhouseQueries.getDomains();
+  const domainMap = new Map<string, any>();
+
+  // Build individual domain nodes
+  for (const domain of domains) {
+    const types = await clickhouseQueries.getDomainTypesWithCounts(domain);
+    const displayName = formatDomainName(domain);
+
+    // Create child nodes for each type
+    const typeNodes = types.slice(0, 10).map((typeInfo) => ({
+      $id: `db:${domain}/${typeInfo.type}`,
+      type: 'page' as const,
+      name: `${typeInfo.type} (${typeInfo.count})`,
+      description: `${typeInfo.count} ${typeInfo.type} entities`,
+      icon: undefined,
+      url: `/${domain}/${typeInfo.type}`,
+      $ref: {
+        source: 'clickhouse',
+        domain,
+        type: typeInfo.type,
+      },
+    }));
+
+    domainMap.set(domain, {
+      type: 'folder' as const,
+      name: displayName,
+      icon: undefined,
+      root: undefined,
+      defaultOpen: undefined,
+      description: `${displayName} entities`,
+      index: {
+        $id: `db:${domain}`,
+        type: 'page' as const,
+        name: `${displayName} Overview`,
+        description: `Browse ${displayName} entities`,
+        icon: undefined,
+        url: `/${domain}`,
+        $ref: {
+          source: 'clickhouse',
+          domain,
+        },
+      },
+      children: typeNodes,
+      $id: `db:${domain}`,
+      $ref: undefined,
+    });
+  }
+
+  // Build shallow top-level domain links - clicking into one will reorganize sidebar
+  const topLevelNodes = [];
+
+  // Get all available domains and create simple links
+  for (const [domain, domainNode] of domainMap.entries()) {
+    const types = await clickhouseQueries.getDomainTypesWithCounts(domain);
+    const totalCount = types.reduce((sum, t) => sum + t.count, 0);
+    const displayName = formatDomainName(domain);
+
+    topLevelNodes.push({
+      $id: `domain:${domain}`,
+      type: 'page' as const,
+      name: `${displayName} (${totalCount.toLocaleString()})`,
+      description: `${totalCount.toLocaleString()} items across ${types.length} types`,
+      icon: undefined,
+      url: `/${domain}`,
+      $ref: {
+        source: 'clickhouse',
+        domain,
+      },
+    });
+  }
+
+  // Sort domains in a semantic order
+  const domainOrder = ['language', 'onet', 'apqc', 'schema.org', 'unspsc', 'model'];
+  topLevelNodes.sort((a, b) => {
+    const aDomain = a.$id.replace('domain:', '');
+    const bDomain = b.$id.replace('domain:', '');
+    const aIndex = domainOrder.indexOf(aDomain);
+    const bIndex = domainOrder.indexOf(bDomain);
+
+    if (aIndex === -1 && bIndex === -1) return aDomain.localeCompare(bDomain);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
+
+  // Combine MDX children with top-level domains
+  return {
+    ...mdxTree,
+    children: [
+      ...(mdxTree.children || []),
+      ...topLevelNodes,
+    ],
+  };
+}
+
 // Combined source - domain pages at root, no /docs prefix
 export const source = {
   getPage: async (slug?: string[]) => {
@@ -147,7 +375,7 @@ export const source = {
         slugs: slug,
         path: `clickhouse://${domain}/${remainingSlug.join('/')}`,
         data: {
-          title: thing.id,
+          title: thing.data?.name || thing.data?.title || thing.id,
           description: extractDescription(thing),
           body: formatContent(thing),
           domain: thing.ns,
@@ -176,7 +404,70 @@ export const source = {
     return [...mdxSource.generateParams() /*, ...dbSource.generateParams()*/];
   },
 
-  pageTree: mdxSource.pageTree,
+  get pageTree() {
+    // Return a promise that resolves to the combined page tree
+    return buildPageTree();
+  },
+
+  // Get context-aware page tree based on current route
+  getContextPageTree: async (slug?: string[]) => {
+    if (!slug || slug.length === 0) {
+      // Homepage - show global tree
+      return buildPageTree();
+    }
+
+    const firstSegment = slug[0];
+
+    // Check if first segment is a domain
+    const domains = await clickhouseQueries.getDomains();
+    if (domains.includes(firstSegment)) {
+      // This is a domain route - show domain-specific sidebar with root folder
+      const tree = await buildDomainPageTree(firstSegment);
+      return {
+        name: '.org.ai',
+        children: [{
+          ...tree,
+          type: 'folder' as const,
+          root: true,
+        }],
+      };
+    }
+
+    // Check if first segment is a type
+    const allTypes = await clickhouseQueries.getAllTypes();
+    if (allTypes.includes(firstSegment)) {
+      // This is a type route - determine if it has a single namespace
+      const things = await clickhouseQueries.getSampleThingsByType(firstSegment, 5);
+      const namespaces = [...new Set(things.map(t => t.ns))];
+
+      if (namespaces.length === 1) {
+        // All items are from one namespace - show that namespace's sidebar with root folder
+        const tree = await buildTypePageTree(firstSegment, namespaces[0]);
+        return {
+          name: '.org.ai',
+          children: [{
+            ...tree,
+            type: 'folder' as const,
+            root: true,
+          }],
+        };
+      } else {
+        // Mixed namespaces - show all types
+        const tree = await buildTypePageTree(firstSegment);
+        return {
+          name: '.org.ai',
+          children: [{
+            ...tree,
+            type: 'folder' as const,
+            root: true,
+          }],
+        };
+      }
+    }
+
+    // Default to global tree
+    return buildPageTree();
+  },
 };
 
 export function getPageImage(page: InferPageType<typeof mdxSource>) {
@@ -255,4 +546,16 @@ export async function getTypeCount(type: string) {
  */
 export async function getSampleThingsByType(type: string, limit?: number) {
   return await clickhouseQueries.getSampleThingsByType(type, limit);
+}
+
+/**
+ * Get paginated things by type with cursor-based pagination
+ */
+export async function getPaginatedThingsByType(
+  type: string,
+  limit?: number,
+  after?: string,
+  before?: string
+) {
+  return await clickhouseQueries.getPaginatedThingsByType(type, limit, after, before);
 }

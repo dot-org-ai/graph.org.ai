@@ -33,65 +33,22 @@ test.describe('Homepage', () => {
     // Should have a type heading
     await expect(firstCard.locator('h3')).toBeVisible();
 
-    // Should have item count
-    await expect(firstCard.getByText(/\d+.*items/)).toBeVisible();
+    // Should have item count (no longer showing "items" text, just the number with toLocaleString)
+    await expect(firstCard.getByText(/\d+/)).toBeVisible();
   });
 
-  test('type cards should display examples', async ({ page }) => {
-    await page.waitForSelector('h2:has-text("Explore by Type")', { timeout: 10000 });
-
-    const cards = page.locator('[class*="grid"] > div[class*="border"]');
-    const cardCount = await cards.count();
-
-    // Check first few cards for examples
-    for (let i = 0; i < Math.min(3, cardCount); i++) {
-      const card = cards.nth(i);
-      const examplesLabel = card.getByText('Examples:', { exact: false });
-
-      if (await examplesLabel.isVisible()) {
-        // Should have example links
-        const exampleLinks = card.locator('a[href^="/"]').filter({ hasNotText: 'View all' });
-        const linkCount = await exampleLinks.count();
-        expect(linkCount).toBeGreaterThan(0);
-        expect(linkCount).toBeLessThanOrEqual(3);
-      }
-    }
-  });
-
-  test('example links should be clickable and navigate correctly', async ({ page }) => {
+  test('type cards should be simple without examples', async ({ page }) => {
     await page.waitForSelector('h2:has-text("Explore by Type")', { timeout: 10000 });
 
     const firstCard = page.locator('[class*="grid"] > div[class*="border"]').first();
-    const exampleLink = firstCard.locator('a[href^="/"]').filter({ hasNotText: 'View all' }).first();
 
-    if (await exampleLink.isVisible()) {
-      const href = await exampleLink.getAttribute('href');
-      expect(href).toBeTruthy();
-      expect(href).toMatch(/^\//); // Should start with /
+    // Cards should NOT show example items (simplified design)
+    const examplesLabel = firstCard.getByText('Examples:', { exact: false });
+    await expect(examplesLabel).not.toBeVisible();
 
-      // Click and verify navigation
-      await exampleLink.click();
-      await page.waitForLoadState('networkidle');
-      expect(page.url()).toContain(href!);
-    }
-  });
-
-  test('"View all" links should be present', async ({ page }) => {
-    await page.waitForSelector('h2:has-text("Explore by Type")', { timeout: 10000 });
-
-    const cards = page.locator('[class*="grid"] > div[class*="border"]');
-    const cardCount = await cards.count();
-
-    // Check first few cards
-    for (let i = 0; i < Math.min(3, cardCount); i++) {
-      const card = cards.nth(i);
-      const viewAllLink = card.locator('a:has-text("View all")');
-
-      if (await viewAllLink.isVisible()) {
-        const href = await viewAllLink.getAttribute('href');
-        expect(href).toBeTruthy();
-      }
-    }
+    // Cards should NOT show "View all" links (just click the whole card)
+    const viewAllLink = firstCard.locator('a:has-text("View all")');
+    await expect(viewAllLink).not.toBeVisible();
   });
 
   test('CRITICAL: type cards should be clickable as a whole', async ({ page }) => {
@@ -114,13 +71,14 @@ test.describe('Homepage', () => {
     expect(page.url()).not.toBe('http://localhost:3000/');
   });
 
-  test('documentation link should be present and work', async ({ page }) => {
-    const docsLink = page.getByRole('link', { name: 'View Documentation' });
-    await expect(docsLink).toBeVisible();
+  test('should have sidebar with domain navigation', async ({ page }) => {
+    // The new design has a sidebar instead of a separate documentation link
+    const sidebar = page.locator('aside#nd-sidebar');
+    await expect(sidebar).toBeVisible();
 
-    await docsLink.click();
-    await page.waitForLoadState('networkidle');
-    expect(page.url()).toContain('/docs');
+    // Sidebar should show domain links on homepage
+    const domainLinks = page.locator('aside a[href^="/"]');
+    await expect(domainLinks.first()).toBeVisible({ timeout: 5000 });
   });
 
   test('should handle empty state gracefully', async ({ page }) => {
