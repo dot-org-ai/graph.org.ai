@@ -1,0 +1,12 @@
+name = "batch-embeddings"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+workers_dev = true
+
+# Environment variables (set via secrets)
+# CLICKHOUSE_URL
+# CLICKHOUSE_USERNAME
+# CLICKHOUSE_PASSWORD
+
+[ai]
+binding = "AI"

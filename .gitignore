@@ -65,3 +65,12 @@ Integrations.org.ai/Nouns/
 .mdxdb/things.db-shm
 .mdxdb/things.db-wal
 .env
+
+# Wikipedia/Wikimedia dumps (metadata only, not raw dumps)
+.source/Wikipedia/
+.source/Wikibooks/
+.source/Wikidata/
+.source/Wikinews/
+.source/Wikiquote/
+.source/Wikiversity/
+.source/Wiktionary/
