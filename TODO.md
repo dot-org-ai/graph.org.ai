@@ -138,6 +138,24 @@
 
 - [ ]
 
+## Embeddings & Search
+
+- [x] Create searches table with vector similarity index (HNSW, cosine distance, 768-dim)
+- [x] Implement batch-embeddings.ts for Cloudflare Workers AI integration
+- [x] Configure bge-m3 model (768-dimensional embeddings)
+- [ ] Add CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN to .env
+- [ ] Generate embeddings for 533,834 items in things table
+  - 409,159 Commodities
+  - 75,416 Processes
+  - 22,985 Classes
+  - 12,381 Tools
+  - 4,530 Properties
+  - 3,048 Occupations
+  - 2,760 Types
+  - And 12 other entity types
+- [ ] Test vector similarity search queries
+- [ ] Create search API endpoints
+
 ## MDX Primitivies
 
 - [ ] mdxld
