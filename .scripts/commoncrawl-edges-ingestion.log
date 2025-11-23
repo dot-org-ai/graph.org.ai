@@ -1,0 +1,30 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+
+🌐 Ingesting Common Crawl Host-Level Edges (Hyperlinks)
+
+   Dataset: cc-main-2025-aug-sep-oct
+   Edges: 8.0 billion hyperlinks
+   Method: dictGet() lookups (no JOINs)
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Downloading cc-main-2025-aug-sep-oct-host-edges.paths.gz...
+✅ Downloaded
+
+📦 Extracting paths list...
+✅ Extracted
+
+   Found 32 data files
+
+🔶 Processing edges (relationships)...
+
+   [1/32] part-00000-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+
+❌ Error: Timeout exceeded: elapsed 611309.92632 ms, maximum: 600000 ms. 
+
+Stack trace:
+Error: Timeout exceeded: elapsed 611309.92632 ms, maximum: 600000 ms. 
+    at parseError (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client-common@1.14.0/node_modules/packages/client-common/src/error/error.ts:31:12)
+    at ClientRequest.onResponse (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client@1.14.0/node_modules/packages/client-node/src/connection/node_base_connection.ts:567:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

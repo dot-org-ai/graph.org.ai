@@ -1,0 +1,14 @@
+[dotenv@17.2.3] injecting env (7) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+================================================================================
+Cloudflare Batch Embeddings - bge-m3
+================================================================================
+
+📋 Batch #1
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare AI...
+❌ Error: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (213969) exceeded this model context window limit (60000). (80ae75dc-38da-46ea-b8a2-b7a6bec9f8bc)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:89:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:133:22)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:179:23)

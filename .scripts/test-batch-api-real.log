@@ -1,0 +1,79 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Testing Batch API with query/contexts format...
+
+Submit response: {
+  "result": {
+    "status": "queued",
+    "request_id": "3f50dcb4-e872-40e5-8549-a7c090334d5c",
+    "model": "@cf/baai/omni-bge-m3"
+  },
+  "success": true,
+  "errors": [],
+  "messages": []
+}
+
+Request ID: 3f50dcb4-e872-40e5-8549-a7c090334d5c
+Polling for results...
+
+Attempt 1: queued
+Attempt 2: queued
+Attempt 3: queued
+Attempt 4: queued
+Attempt 5: queued
+Attempt 6: queued
+Attempt 7: queued
+Attempt 8: queued
+Attempt 9: queued
+Attempt 10: queued
+Attempt 11: queued
+Attempt 12: queued
+Attempt 13: queued
+Attempt 14: queued
+Attempt 15: queued
+Attempt 16: queued
+Attempt 17: queued
+Attempt 18: queued
+Attempt 19: queued
+Attempt 20: queued
+Attempt 21: queued
+Attempt 22: queued
+Attempt 23: queued
+Attempt 24: queued
+Attempt 25: queued
+Attempt 26: queued
+Attempt 27: queued
+Attempt 28: queued
+Attempt 29: queued
+Attempt 30: queued
+Attempt 31: queued
+Attempt 32: queued
+Attempt 33: queued
+Attempt 34: queued
+Attempt 35: queued
+Attempt 36: queued
+Attempt 37: queued
+Attempt 38: queued
+Attempt 39: queued
+Attempt 40: queued
+Attempt 41: queued
+Attempt 42: queued
+Attempt 43: queued
+Attempt 44: queued
+Attempt 45: queued
+Attempt 46: queued
+Attempt 47: queued
+Attempt 48: queued
+Attempt 49: queued
+Attempt 50: queued
+Attempt 51: queued
+Attempt 52: queued
+Attempt 53: queued
+Attempt 54: queued
+Attempt 55: queued
+Attempt 56: queued
+Attempt 57: queued
+Attempt 58: queued
+Attempt 59: queued
+Attempt 60: queued
+
+❌ Timeout

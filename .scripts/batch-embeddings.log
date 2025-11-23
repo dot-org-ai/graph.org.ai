@@ -1,0 +1,14 @@
+[dotenv@17.2.3] injecting env (7) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+================================================================================
+Cloudflare Batch Embeddings - bge-m3
+================================================================================
+
+📋 Batch #1
+
+📦 Processing batch of 1000 items...
+  🚀 Submitting to Cloudflare Batch API...
+❌ Error: Error: Batch submission failed: 400 {"success":false,"errors":[{"code":7000,"message":"No route for that URI"}],"messages":[],"result":null}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:90:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:149:17)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:217:23)

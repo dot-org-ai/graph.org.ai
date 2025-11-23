@@ -1,0 +1,1882 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+================================================================================
+Cloudflare Batch Embeddings - bge-m3 (unlimited parallel batches)
+================================================================================
+
+📤 Phase 1: Submitting batches...
+
+[Batch #1]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (53d59cb2-ac52-4cd3-8bcb-23e44200b30a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #2]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (c44a214c-4d18-40b5-8a16-3a21501e0b14)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #3]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (90f63727-bbce-45a5-96ad-f8042c88bf86)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #4]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (2dd903e5-1676-40b6-baa9-367a92805b7a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #5]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (47c52732-58dd-49e2-94da-9dc3e7564375)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #6]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (650881ed-0193-4d15-a556-1d670e037308)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #7]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (c5a23ea0-20b7-41f0-8dfb-e846b6311fc9)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #8]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (660ca9c0-33bf-4f54-8549-7ff319df5188)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #9]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (37135901-444d-4dc3-b98c-f4fe9b6a2658)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #10]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (ab0cd091-53e7-439c-8b12-654817d78868)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #11]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (4ba07e2d-72fb-47bb-95b9-1a4559d11eb0)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #12]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (1c588f3e-ae69-4808-9af5-3286b7f16190)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #13]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (b7caf787-f7d4-4cad-ad7e-69d8625f27ea)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #14]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (7c8da6cd-8376-465c-a637-48c55ad99ce1)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #15]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (9347fe0b-8e32-420b-97d1-27a456ab529e)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #16]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (c8c1ed9e-f457-4f08-aee8-5cfd1fe670d5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #17]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (b4f631e6-a950-4fc0-9146-cf439567d983)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #18]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (9c2a2417-69a4-440f-a936-87083c00554a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #19]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (671dc171-8eb7-442e-a14f-add3bfc2a849)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #20]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (07e40d9c-1cb5-4f1b-9b21-ed151c876997)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #21]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (b055a9b2-647f-4303-bef2-bf469c432611)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #22]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (09006eab-6c6e-4ec0-bbf6-d658a1687453)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #23]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (5ec8e67f-7c93-4378-a22b-677db6f679b1)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #24]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (ae4175ed-14b9-47bf-9091-6ffc5d7a0d03)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #25]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (1794258e-a99e-4412-9a97-fb535f85b58e)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #26]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (ad8091a6-bd23-4a9c-ad96-e72f4c5cab5c)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #27]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (6e946001-869d-4c93-8c10-c2ee7b9de20f)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #28]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (5d263319-1d08-4c15-a85e-c31ba99cb512)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #29]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (729005c4-07cf-46c9-8c66-80fb5d672981)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #30]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (bcb813fb-7183-4860-927e-c0f99febf699)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #31]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (636d31ef-0769-42a3-b0bb-bdfef4cd05c9)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #32]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (a3c6fa47-6398-4f91-b50f-09b604141460)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #33]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (c8237cdb-ff61-4237-a525-4847652c48f1)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #34]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (1f1398f3-e2ff-4b37-a594-32b693ca2cb5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #35]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (62ad4798-fcb6-4a36-9aa0-974e90a68f3d)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #36]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (89e5228e-bd54-4673-8178-53a71effe5ac)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #37]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (41fae5b5-0683-4cbd-8446-05618ecf1333)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #38]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (32b2c9c8-6d7b-416b-b7ec-033b4259ba31)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #39]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (80ea63f3-1b58-4d76-ad8b-ba2ebd4e83e6)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #40]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (3819194) exceeded this model context window limit (60000). (5a72ada4-62ef-45b7-b5dd-6180d6a2bf67)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #41]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (745e9752-f796-4a84-89ab-69b4f592a6ed)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #42]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (af3e5fb1-a5db-46ef-8f0b-969a74e01d68)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #43]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (ef0b663e-2634-4feb-b0c1-11e51942adc2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #44]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (6829c3d6-e171-4fbf-8f90-02bee30294de)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #45]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (610d057a-bf2e-4afa-89d6-fef263477fea)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #46]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (b66713c4-8df2-4a44-a815-39128b53edea)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #47]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (a7252b5d-c13c-4421-b14f-016b00e2f22b)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #48]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (e059f631-3e1a-4768-8253-73b3b19eea44)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #49]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8d5c25a0-4295-4abb-82aa-fe55de882d92)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #50]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (3e09155a-035a-4090-817c-a2d59372d90b)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #51]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (03a48b21-2ec0-43ef-8f22-56507a876d33)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #52]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (3819194) exceeded this model context window limit (60000). (0ca01eb0-8916-457f-87c0-312d9899fec8)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #53]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (31d7b44d-0bff-47e4-bbcc-577e85063862)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #54]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (84509b88-8b53-48c5-8f6e-27d634623604)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #55]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (e1299193-8415-4642-bfb1-2c5a5f440a31)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #56]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (cf7a8b3f-1372-4187-ba68-85e65d1cce17)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #57]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (aa1a7073-d172-4b8b-b65c-d75c610fe3bf)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #58]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (fb556a63-2922-42cd-b691-437a94bfce69)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #59]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (1ff5f037-9f77-43d0-9cd7-ff9eae1ae3f9)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #60]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (6e8f249e-0212-4e69-8e87-2e96317def76)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #61]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (263ea133-4c47-4a73-853f-b964877c58bd)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #62]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (ff1f7b49-d82c-4242-b67a-26b9d192c7cc)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #63]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (3f3705b6-b62b-4926-b1b6-6bf1748e6f56)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #64]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (30e00ed6-4987-42c5-a1cd-94cd25752bd5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #65]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (83183cf1-940e-4787-9495-3a3b23ead470)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #66]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (9536538d-3a0b-4d5c-a12c-df8498cfb108)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #67]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (600f7466-faf8-4b9f-aa6d-6b8d17d67e64)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #68]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (299ea0e8-7db5-4bc8-a12a-96c3b612b3ab)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #69]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (4d430afb-d42d-4e6c-8a7f-8dcea4036cf7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #70]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (3819194) exceeded this model context window limit (60000). (2ce2aec3-9003-47b3-b5f0-7fc28e72ff60)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #71]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (d9e39933-f0e8-49c2-98d4-92b6cb3bb138)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #72]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (f3817a1d-4e41-406a-a7c7-257ceb1521e6)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #73]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (f8ca72a2-9dd0-4062-967d-6be511b80f59)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #74]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (3c173ce7-dad2-4d4d-97c0-dbfe564d38ce)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #75]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (60cac9f4-b2da-4fe8-a33b-6bf5cff16ba7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #76]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (aaf42389-5b0b-4529-ac3c-15cb1f068d28)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #77]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (5a726e49-b59b-48ab-b7d8-ee8db0f20381)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #78]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (6e790a62-0641-4e61-8291-79de4a515ab7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #79]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (ea5edd98-94e8-47d2-b4ce-7e2ca16478f5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #80]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (90676081-6555-4b20-85b3-29c46c1013ac)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #81]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (67aeeac7-d792-4af0-a5fb-6acf7edd3b99)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #82]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (bf3abf29-8957-47d9-8b68-369a7e8c40f0)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #83]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (718c3417-ca2f-4e0a-9245-b1d4dd618e2d)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #84]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (96963b9c-09f5-4cf0-8360-d3796123b728)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #85]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (be71fe2d-57dc-4d3e-a3b4-d14a9ad55ed2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #86]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (1e347f00-ee39-42ba-b2bc-54532198b61c)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #87]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (6d58fe95-7d95-4e46-ad2b-45a68501c919)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #88]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d536c9c4-55b5-4678-bc78-63dfb8a9850a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #89]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (adde0b57-af5d-4b79-8728-8e9eab24446c)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #90]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (8c7a3d94-fb66-4e36-83f2-1e07eeafb3a5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #91]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (abe64123-0a2a-49b6-8ad8-45d96dd967ac)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #92]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (336a43fc-1621-4e00-8152-013213bc6c95)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #93]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (50a4c2fb-0e62-4948-926b-d9db1a6d00aa)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #94]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (3819194) exceeded this model context window limit (60000). (bca55dce-9c76-46b3-a40f-20fbc1ba927a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #95]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (665db7c4-6e81-440a-9aae-5c1369bdaefe)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #96]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (c02ccf66-941e-4656-bce9-b7848a4696d4)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #97]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (d4003eb2-7f75-4f78-9c96-f04468ce7e67)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #98]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (3c112522-00e3-444b-9754-1a7a7ffb0fcb)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #99]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d00395b1-9c0e-4caa-8ad8-4f1779340939)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #100]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d7de02f7-9f2a-467b-a07b-d4fb6d3c5566)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #101]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8a26dddd-7fe1-4e0f-81ea-adc6d4bf7737)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #102]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (b23c1e4d-0bb7-4d10-af51-bf2a30fc19d2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #103]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (de636e21-bb21-46f2-8449-66022eac811f)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #104]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (e128381a-fc36-4631-9bda-1bc5d1fc2f35)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #105]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (699ae733-5fd2-4079-9668-0fe1b20c1fe6)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #106]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (27e32fd2-95c5-4215-a9c8-4bf50167d948)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #107]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (53ebc6d1-3939-4094-9cc1-4211accdd5bb)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #108]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (b0700da3-8f32-4a39-b4c1-f3335ce9f662)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #109]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (1ddf9ab9-ab77-402b-967d-c698e4a31eb2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #110]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8a8e3431-9344-4513-8367-c7800e22c7e5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #111]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (ae4c5863-a2f5-4d9d-8cea-991805aad2b2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #112]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (8b08fe8d-6e23-4502-a687-0484ae51103d)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #113]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (ba9aed2c-6395-4684-8cd6-2205a7fe8e8d)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #114]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (7d77c65b-c1e6-4d46-9f73-e7f81df7eb31)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #115]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (05e2c515-8168-4125-b05a-2e5f29f03f5e)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #116]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (628c74da-0871-4078-aa7a-30ba7e78c1cc)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #117]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (ba25ecbb-8f49-4357-a32d-e5675a7ccbac)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #118]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (3fc99171-59a4-46b6-9428-3541da82deba)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #119]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (c599e7fa-6806-40b7-b412-e945204edf84)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #120]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (2e8e34c0-b05c-404c-8d15-e7015c649e99)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #121]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (62f41b75-4676-491e-a0f1-253a193c19c5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #122]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (1479a822-a281-44c0-b668-ab398175df35)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #123]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8eb34eb3-d28e-4912-8350-feb4a7d10460)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #124]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (44d9f010-27d6-45bd-92b8-6436673c5d22)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #125]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d0f17b3f-875a-4a94-85cd-60a284721b79)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #126]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (6ac56d31-936a-429b-8df1-e282f37ca48a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #127]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (ae8b9719-c606-439c-8525-88a891fc55de)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #128]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (3819194) exceeded this model context window limit (60000). (9d08b8bc-00c3-4d5b-99c9-460d5dc66e82)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #129]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (58c4bd13-4b89-4664-b8a4-54c7950bfd5b)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #130]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (3afda4b1-2f96-4d48-8cf2-38beb215f74b)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #131]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (a0a5f189-785b-4d70-b0d4-8f8ec33e74b8)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #132]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (74f659ed-621b-40d1-9fef-e517f1677424)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #133]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (bc8637b5-3804-4906-abe0-9e38842ab480)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #134]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (88fdf520-4a5d-4239-93be-e6bb862cf8e2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #135]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (fe6b3afa-313a-4025-8acd-1499bb1e279f)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #136]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (466e448d-46f5-445f-8e62-b6f68dbcb0d7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #137]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (bd693904-c047-4d9b-b741-66eec42fab8a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #138]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (bc044c11-c4ef-4ba5-8160-8e6809f1e594)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #139]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (711ca6a1-bfb6-4588-8462-c76ffc1133c2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #140]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (70f7827b-9cda-41a2-a034-6e9fd3dcd89c)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #141]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (3819194) exceeded this model context window limit (60000). (f3c29759-b66a-4306-8f50-acc5edf98e2e)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #142]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (711e8ee2-f5ec-4e00-8923-140c6eb8a7fb)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #143]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (a884dd3e-d7e3-4d9a-9877-2916f72491c6)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #144]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6319738) exceeded this model context window limit (60000). (f3390a1f-c5f7-4331-8d2c-8f9fd4c06210)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #145]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (a5340e3e-4c38-4080-b34b-ec3b83d10bfc)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #146]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (883ff453-bafa-42e7-bdf3-b0834377b352)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #147]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (4a08f076-9aab-4a91-91ec-1a6b3de69259)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #148]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (28988410-f431-4e97-a500-482fc56eb539)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #149]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8d7536e8-39cd-4972-8ba0-e3ba16b114c8)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #150]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (93a91817-0595-495d-b1c3-c8d6dc61869b)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #151]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (80d290f3-57a9-4983-a193-338bc166ccf9)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #152]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (e7ea17c7-df88-434a-aceb-d635fc9d084c)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #153]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (67e79c21-e06d-432c-835d-4e73072658d1)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #154]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (b91b3c9d-4406-4d0b-8562-d95f3f0b43f7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #155]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (9cf0b233-441e-4e92-a9cf-1c248bd36742)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #156]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8a82954b-bc0d-443e-aae4-2e38ca5e18c2)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #157]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (82cf543f-e6c0-484b-9c48-e0ba142dd5e4)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #158]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (bab0f7da-fa89-4fb3-9112-a234ab237494)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #159]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d3b0815b-45ad-4ef5-a03c-90a9a24e51e7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #160]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (f7873d41-b641-4a9f-9f98-92e2bce03e3c)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #161]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (8d06bba2-8080-40e3-8142-87d215465968)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #162]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (08c9e665-17b8-40d4-b097-46e0ffa77eaa)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #163]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d977f44d-24e4-4267-bc6c-a1e40f1903ec)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #164]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (b485c2bc-681b-4b3e-93de-64052807cbeb)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #165]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (68de98f4-7e26-451b-aa92-3327ae171038)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #166]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (efd44a94-eb82-48b1-ae6a-54def016b8a6)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #167]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (257cc784-d612-49d4-96bc-0b821a3e0e22)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #168]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (0d27fef3-f0ae-43e3-8da9-d01d0c0d0fc1)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #169]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (3fe7b7f9-d476-493f-9dc2-df9939979c09)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #170]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (5fdee89d-912a-4bee-aa4b-fce0031e2970)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #171]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (06929acf-3cb0-4ce5-b419-6ec0b2a935d5)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #172]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (6260163) exceeded this model context window limit (60000). (fc4588a4-a81e-4bc5-b8cb-2936cc4bc765)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #173]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (b99ac03f-3638-4625-a668-e93b1b7bdfb0)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #174]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (899a59e3-74e8-4baf-93c6-50824d24103b)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #175]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (3ca13032-1a73-4b47-afcb-d098ed271c2a)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #176]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (bed0d6f4-580d-4398-8390-6c10836d55af)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #177]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (9db0ea7e-a805-42b6-8d4b-fe86f88442b7)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #178]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (d6b21905-1b73-428c-b7bf-caa2d76e2903)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #179]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (70a28890-eb44-4890-90cd-c691fa0956af)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #180]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (b9c43147-0e8f-4d38-a344-76cb8a60de9d)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #181]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (e2f89aeb-0178-481c-889a-1545f623606e)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #182]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (7c5c9530-6f7a-49c2-8ba1-70e05d15c6c1)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #183]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (840a46b7-c7fc-44b9-9c40-7009d60fe424)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #184]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (1b27b2c7-7b2b-4f69-bfd4-b82882c7f56f)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #185]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5217487) exceeded this model context window limit (60000). (bb0e8dbb-6496-46ec-ac78-3169cb8ac971)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #186]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (80ecc8be-51dd-4b22-8ee7-388917d627f8)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+
+[Batch #187]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 413 {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (5454812) exceeded this model context window limit (60000). (5b92f6b7-d4fb-4027-b4d5-7459444b4175)","code":5021}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:91:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:185:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:221:21)
+❌ Error: Error: read ECONNRESET
+    at TLSWrap.onStreamRead (node:internal/stream_base_commons:216:20) {
+  errno: -54,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}

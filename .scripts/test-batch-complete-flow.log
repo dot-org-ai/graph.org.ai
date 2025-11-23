@@ -1,0 +1,32 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Testing complete batch embeddings flow...
+
+Got 3 test items
+
+1. Submitting batch...
+Submit result: SUCCESS
+Request ID: ae0394a3-4f56-4bd1-8c43-ed8633bb5e44
+
+2. Polling for results...
+  Still polling... (30s elapsed, status: queued)
+  Still polling... (60s elapsed, status: queued)
+  Still polling... (90s elapsed, status: queued)
+  Still polling... (120s elapsed, status: queued)
+  Still polling... (150s elapsed, status: queued)
+  Still polling... (180s elapsed, status: queued)
+  Still polling... (210s elapsed, status: queued)
+  Still polling... (240s elapsed, status: queued)
+  Still polling... (270s elapsed, status: queued)
+  Still polling... (300s elapsed, status: queued)
+  Still polling... (330s elapsed, status: queued)
+  Still polling... (360s elapsed, status: queued)
+  Still polling... (390s elapsed, status: queued)
+  Still polling... (420s elapsed, status: queued)
+  Still polling... (450s elapsed, status: queued)
+  Still polling... (480s elapsed, status: queued)
+  Still polling... (510s elapsed, status: queued)
+  Still polling... (540s elapsed, status: queued)
+  Still polling... (570s elapsed, status: queued)
+Error: Timeout
+    at test (/Users/nathanclevenger/projects/graph.org.ai/.scripts/test-batch-complete-flow.ts:114:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

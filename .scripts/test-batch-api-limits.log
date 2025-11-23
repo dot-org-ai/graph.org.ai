@@ -1,0 +1,38 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+================================================================================
+Cloudflare Batch API Limits Testing - BGE-M3
+================================================================================
+
+  Testing 10 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (297b6f5c-fdcd-4808-91f9-1fe8b06f0af6)","code":3043}],"success":false,"result":{},"messages":[]}
+
+  Testing 25 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (e003f4e9-d009-46a2-8270-1feab03861bf)","code":3043}],"success":false,"result":{},"messages":[]}
+
+  Testing 50 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (cabb60f5-b8ac-404e-9e5b-d09fac18f923)","code":3043}],"success":false,"result":{},"messages":[]}
+
+  Testing 100 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (a08da622-207c-453b-b7b2-7f9b542126b6)","code":3043}],"success":false,"result":{},"messages":[]}
+
+  Testing 200 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (a3c54d29-c295-4fb4-9f26-d9123e558409)","code":3043}],"success":false,"result":{},"messages":[]}
+
+  Testing 500 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (13de6273-a67c-4b19-ac0f-de141b9f9510)","code":3043}],"success":false,"result":{},"messages":[]}
+
+  Testing 1000 requests per batch...
+    ❌ Failed: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (0e751479-a56f-4eee-a21e-eec16b4190e4)","code":3043}],"success":false,"result":{},"messages":[]}
+
+================================================================================
+Summary
+================================================================================
+
+Failed batch sizes:
+    10 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (297b6f5c-fdcd-4808-91f9-1fe8b06f0af6)","code":3043}],"success":false,"result":{},"messages":[]}
+    25 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (e003f4e9-d009-46a2-8270-1feab03861bf)","code":3043}],"success":false,"result":{},"messages":[]}
+    50 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (cabb60f5-b8ac-404e-9e5b-d09fac18f923)","code":3043}],"success":false,"result":{},"messages":[]}
+   100 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (a08da622-207c-453b-b7b2-7f9b542126b6)","code":3043}],"success":false,"result":{},"messages":[]}
+   200 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (a3c54d29-c295-4fb4-9f26-d9123e558409)","code":3043}],"success":false,"result":{},"messages":[]}
+   500 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (13de6273-a67c-4b19-ac0f-de141b9f9510)","code":3043}],"success":false,"result":{},"messages":[]}
+  1000 requests: HTTP 500: {"errors":[{"message":"AiError: AiError: inference error (0e751479-a56f-4eee-a21e-eec16b4190e4)","code":3043}],"success":false,"result":{},"messages":[]}

@@ -1,0 +1,24 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: ⚙️  override existing env vars with { override: true }
+
+📍 Ingesting GeoNames (Local Download Method)
+
+🔍 Testing connection...
+✅ Connected
+
+✅ ZIP file already exists, skipping download
+
+✅ TXT file already exists, skipping extraction
+
+📊 Streaming to ClickHouse...
+   Batch: 2025-11-22 17:43:40
+   Records: 11+ million
+
+   100,000 records (2,703 rows/sec)
+   200,000 records (2,469 rows/sec)
+   300,000 records (2,439 rows/sec)
+   400,000 records (2,564 rows/sec)
+   500,000 records (2,646 rows/sec)
+   600,000 records (2,667 rows/sec)
+   700,000 records (2,602 rows/sec)
+   800,000 records (2,556 rows/sec)
+   900,000 records (2,514 rows/sec)

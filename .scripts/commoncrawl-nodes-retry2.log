@@ -1,0 +1,30 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+
+🌐 Ingesting Common Crawl Host-Level Hyperlink Graph
+
+   Dataset: cc-main-2025-aug-sep-oct
+   Nodes: 468.4 million hosts
+   Edges: 8.0 billion hyperlinks
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Downloading cc-main-2025-aug-sep-oct-host-vertices.paths.gz...
+✅ Downloaded
+
+📦 Extracting paths list...
+✅ Extracted
+
+   Found 16 data files
+
+🔷 Processing vertices (nodes)...
+
+   [1/16] part-00000-13a4f798-f552-4c50-98b3-b88be127958f-c000.txt.gz
+
+❌ Error: No such column url in table public.domains (5e4a1db7-e8ae-43b0-a323-04bc0a5eb572). 
+
+Stack trace:
+Error: No such column url in table public.domains (5e4a1db7-e8ae-43b0-a323-04bc0a5eb572). 
+    at parseError (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client-common@1.14.0/node_modules/packages/client-common/src/error/error.ts:31:12)
+    at ClientRequest.onResponse (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client@1.14.0/node_modules/packages/client-node/src/connection/node_base_connection.ts:567:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

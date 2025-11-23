@@ -1,0 +1,17 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+================================================================================
+Cloudflare Batch Embeddings - bge-m3
+================================================================================
+
+📋 Batch #1
+
+📦 Processing batch of 100 items...
+  🚀 Submitting to Cloudflare AI...
+  ✅ Received 100 embeddings
+❌ Error: ClickHouseError: Array values in column with vector similarity index have 1024 elements, expects 768 elements. 
+    at parseError (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client-common@1.14.0/node_modules/packages/client-common/src/error/error.ts:31:12)
+    at ClientRequest.onResponse (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client@1.14.0/node_modules/packages/client-node/src/connection/node_base_connection.ts:567:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+  code: '117',
+  type: 'INCORRECT_DATA'
+}

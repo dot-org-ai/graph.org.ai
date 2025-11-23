@@ -47,3 +47,11 @@
       Inserted 0 edges (skipped 246,482,515 with missing domains)
 
    [10/32] part-00009-329f4bcf-4df6-45f2-8766-1f22eaf31e2e-c000.txt.gz
+
+❌ Error: Timeout exceeded: elapsed 604474.94804 ms, maximum: 600000 ms. 
+
+Stack trace:
+Error: Timeout exceeded: elapsed 604474.94804 ms, maximum: 600000 ms. 
+    at parseError (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client-common@1.14.0/node_modules/packages/client-common/src/error/error.ts:31:12)
+    at ClientRequest.onResponse (/Users/nathanclevenger/projects/graph.org.ai/node_modules/.pnpm/@clickhouse+client@1.14.0/node_modules/packages/client-node/src/connection/node_base_connection.ts:567:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

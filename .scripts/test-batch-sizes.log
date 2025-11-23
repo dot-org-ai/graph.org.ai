@@ -1,0 +1,44 @@
+[dotenv@17.2.3] injecting env (7) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+================================================================================
+Cloudflare BGE-M3 Batch Size Testing
+================================================================================
+
+📝 Testing SHORT text (15 chars) - Finding Cloudflare limits...
+
+  Testing batch size 100...
+    ✅ Success - 100 embeddings in 460ms (5ms/item)
+  Testing batch size 500...
+    ✅ Success - 500 embeddings in 844ms (2ms/item)
+  Testing batch size 1000...
+    ✅ Success - 1000 embeddings in 1798ms (2ms/item)
+  Testing batch size 5000...
+    ✅ Success - 5000 embeddings in 7511ms (2ms/item)
+  Testing batch size 10000...
+    ✅ Success - 10000 embeddings in 18561ms (2ms/item)
+  Testing batch size 50000...
+    ❌ Failed - HTTP 413: {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (212509) exceeded this model context window limit (60000). (19918c59-fa2f-42fd-a838-6f121da7d525)","code":5021}],"success":false,"result":{},"messages":[]}
+    ⏸️  Hit limit, stopping tests
+
+================================================================================
+Summary
+================================================================================
+
+Successful configurations:
+  short   text x  100 items = 460ms (5ms/item)
+  short   text x  500 items = 844ms (2ms/item)
+  short   text x 1000 items = 1798ms (2ms/item)
+  short   text x 5000 items = 7511ms (2ms/item)
+  short   text x 10000 items = 18561ms (2ms/item)
+
+Failed configurations:
+  short   text x 50000 items: HTTP 413: {"errors":[{"message":"AiError: Ai: The estimated number of input and maximum output tokens (212509) exceeded this model context window limit (60000). (19918c59-fa2f-42fd-a838-6f121da7d525)","code":5021}],"success":false,"result":{},"messages":[]}
+
+================================================================================
+Recommendations
+================================================================================
+
+  Maximum successful batch size: 10000
+  Average time per item: 2ms
+
+  Recommended batch size: 100
+  (Balance between throughput and error recovery)

@@ -1,0 +1,15 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+
+📚 Wikipedia XML → ClickHouse Ingestion
+
+   File: enwiki-latest-pages-articles.xml
+   Size: 104.84 GB
+
+🔍 Testing connection...
+✅ Connected
+
+📖 Starting XML stream...
+
+Fatal error: TypeError: xmlStream.on is not a function
+    at main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/ingest-wikipedia-clickhouse.ts:235:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

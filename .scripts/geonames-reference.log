@@ -1,0 +1,31 @@
+[dotenv@17.2.3] injecting env (5) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+
+📚 Ingesting GeoNames Reference Data
+
+   Countries, Timezones, Languages
+
+🔍 Testing connection...
+✅ Connected
+
+📥 Downloading reference files...
+
+   File already exists: countryInfo.txt
+   File already exists: timeZones.txt
+   File already exists: iso-languagecodes.txt
+
+🌍 Ingesting countries...
+✅ Inserted 252 countries
+
+🕐 Ingesting timezones...
+✅ Inserted 418 timezones
+
+🗣️  Ingesting languages...
+✅ Inserted 185 languages
+
+✅ GeoNames reference data ingestion complete!
+
+📝 Summary:
+   - Countries → things table (type=Country)
+   - Timezones → things table (type=TimeZone)
+   - Languages → things table (type=Language)
+

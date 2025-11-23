@@ -1,0 +1,469 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+================================================================================
+Cloudflare Batch Embeddings - bge-m3 (50 parallel batches)
+================================================================================
+
+📤 Phase 1: Submitting batches...
+
+[Batch #1]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: ef8eb285-7a23-4597-8f04-1a830b29bbba
+  ✅ Submitted request ID: ef8eb285-7a23-4597-8f04-1a830b29bbba
+
+[Batch #2]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 472c81fb-47a2-4b00-8444-fe6d832b4298
+  ✅ Submitted request ID: 472c81fb-47a2-4b00-8444-fe6d832b4298
+
+[Batch #3]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 0247b162-d442-4608-9ca2-4f2bd0a99c06
+  ✅ Submitted request ID: 0247b162-d442-4608-9ca2-4f2bd0a99c06
+
+[Batch #4]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 1c949452-3a6f-4067-9286-e657a7c11fe6
+  ✅ Submitted request ID: 1c949452-3a6f-4067-9286-e657a7c11fe6
+
+[Batch #5]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: bff874e5-ce62-476d-9fb5-b4d1739ad4a8
+  ✅ Submitted request ID: bff874e5-ce62-476d-9fb5-b4d1739ad4a8
+
+[Batch #6]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 6fb86e9d-0752-444f-9334-b3c2c5d410c4
+  ✅ Submitted request ID: 6fb86e9d-0752-444f-9334-b3c2c5d410c4
+
+[Batch #7]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 0c4665a9-0183-4554-81b7-368fd70ad245
+  ✅ Submitted request ID: 0c4665a9-0183-4554-81b7-368fd70ad245
+
+[Batch #8]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 3151363f-a0bf-4069-b445-7df9b5ab45bb
+  ✅ Submitted request ID: 3151363f-a0bf-4069-b445-7df9b5ab45bb
+
+[Batch #9]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: cbed0e71-ae5b-4ebb-a6f2-fcbb8a41c14e
+  ✅ Submitted request ID: cbed0e71-ae5b-4ebb-a6f2-fcbb8a41c14e
+
+[Batch #10]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 9e3f81d3-52db-4894-99df-6a0586906df4
+  ✅ Submitted request ID: 9e3f81d3-52db-4894-99df-6a0586906df4
+
+[Batch #11]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 5fbadbcf-3306-4767-a87d-0d6adffddd9b
+  ✅ Submitted request ID: 5fbadbcf-3306-4767-a87d-0d6adffddd9b
+
+[Batch #12]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 1ebca48e-785f-4db9-b7ec-03511180076b
+  ✅ Submitted request ID: 1ebca48e-785f-4db9-b7ec-03511180076b
+
+[Batch #13]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: d8fd3b0b-5a06-46d9-a407-f683e198b506
+  ✅ Submitted request ID: d8fd3b0b-5a06-46d9-a407-f683e198b506
+
+[Batch #14]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 98d0fbb8-365c-4723-bb8f-2ff02ebe28bd
+  ✅ Submitted request ID: 98d0fbb8-365c-4723-bb8f-2ff02ebe28bd
+
+[Batch #15]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 8a68197f-a0fa-4ce9-a116-9ae37d1fc065
+  ✅ Submitted request ID: 8a68197f-a0fa-4ce9-a116-9ae37d1fc065
+
+[Batch #16]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 328829c0-b76e-4f27-a86b-44b527129f84
+  ✅ Submitted request ID: 328829c0-b76e-4f27-a86b-44b527129f84
+
+[Batch #17]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: faf63884-d65f-4b1f-9420-f0b2a0fb53dc
+  ✅ Submitted request ID: faf63884-d65f-4b1f-9420-f0b2a0fb53dc
+
+[Batch #18]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 90e23454-a499-47ed-8f81-d37b32b9d060
+  ✅ Submitted request ID: 90e23454-a499-47ed-8f81-d37b32b9d060
+
+[Batch #19]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: ae9cf26c-0f20-4283-a301-dbab6b953912
+  ✅ Submitted request ID: ae9cf26c-0f20-4283-a301-dbab6b953912
+
+[Batch #20]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 8c742b48-bbdf-443c-a2c2-38cd9ba77502
+  ✅ Submitted request ID: 8c742b48-bbdf-443c-a2c2-38cd9ba77502
+
+[Batch #21]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 77812be3-55ee-4ac2-b19e-a4f34af1e445
+  ✅ Submitted request ID: 77812be3-55ee-4ac2-b19e-a4f34af1e445
+
+[Batch #22]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: fdf59976-2ff6-4201-accc-8ff7f42b6e41
+  ✅ Submitted request ID: fdf59976-2ff6-4201-accc-8ff7f42b6e41
+
+[Batch #23]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: a3726866-73ed-4dd7-ae9f-3a823742ab6e
+  ✅ Submitted request ID: a3726866-73ed-4dd7-ae9f-3a823742ab6e
+
+[Batch #24]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 97c24546-ce1d-421f-bba2-87ff7331cf64
+  ✅ Submitted request ID: 97c24546-ce1d-421f-bba2-87ff7331cf64
+
+[Batch #25]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 0ffaac08-c4a7-47e0-9b3b-227267fcb192
+  ✅ Submitted request ID: 0ffaac08-c4a7-47e0-9b3b-227267fcb192
+
+[Batch #26]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: b7f5c3e7-24d5-4722-84d6-61df90233426
+  ✅ Submitted request ID: b7f5c3e7-24d5-4722-84d6-61df90233426
+
+[Batch #27]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 7030af93-98f0-4efb-9a47-ec8f7a77bd0b
+  ✅ Submitted request ID: 7030af93-98f0-4efb-9a47-ec8f7a77bd0b
+
+[Batch #28]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 786ba6ce-de8d-4b14-ab3f-e0b3be981914
+  ✅ Submitted request ID: 786ba6ce-de8d-4b14-ab3f-e0b3be981914
+
+[Batch #29]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 68a26162-1c5d-444f-9303-8c15422a44fa
+  ✅ Submitted request ID: 68a26162-1c5d-444f-9303-8c15422a44fa
+
+[Batch #30]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: c2fcaf90-6106-4e3a-b90a-82906c1496eb
+  ✅ Submitted request ID: c2fcaf90-6106-4e3a-b90a-82906c1496eb
+
+[Batch #31]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 406f86b3-8bc9-4001-b576-8fd461c61e0c
+  ✅ Submitted request ID: 406f86b3-8bc9-4001-b576-8fd461c61e0c
+
+[Batch #32]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 4a84ea00-2076-4f84-a235-9fbf878cf223
+  ✅ Submitted request ID: 4a84ea00-2076-4f84-a235-9fbf878cf223
+
+[Batch #33]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 90df4b93-1a6b-426b-bc0c-794b0e28d68f
+  ✅ Submitted request ID: 90df4b93-1a6b-426b-bc0c-794b0e28d68f
+
+[Batch #34]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 4e6e1723-1c03-4ca2-adac-516db8f4e241
+  ✅ Submitted request ID: 4e6e1723-1c03-4ca2-adac-516db8f4e241
+
+[Batch #35]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 54132adb-ea83-4e3f-8a53-243cb1bfad94
+  ✅ Submitted request ID: 54132adb-ea83-4e3f-8a53-243cb1bfad94
+
+[Batch #36]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 230dd1aa-eae9-45f1-be7c-dcf1fc916279
+  ✅ Submitted request ID: 230dd1aa-eae9-45f1-be7c-dcf1fc916279
+
+[Batch #37]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 41d65c69-9c77-4edb-b4ac-2acb81a3cf4a
+  ✅ Submitted request ID: 41d65c69-9c77-4edb-b4ac-2acb81a3cf4a
+
+[Batch #38]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: cbe4267d-21ed-4e0e-bdb1-9d8f3b0e5b51
+  ✅ Submitted request ID: cbe4267d-21ed-4e0e-bdb1-9d8f3b0e5b51
+
+[Batch #39]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 4e4f76f1-ad17-40f1-a8d3-5d35fc49d20e
+  ✅ Submitted request ID: 4e4f76f1-ad17-40f1-a8d3-5d35fc49d20e
+
+[Batch #40]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 76b54502-ddd8-4ee5-937c-155c9ce55421
+  ✅ Submitted request ID: 76b54502-ddd8-4ee5-937c-155c9ce55421
+
+[Batch #41]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 41572c6f-4f25-4df0-87f6-9dbee0434487
+  ✅ Submitted request ID: 41572c6f-4f25-4df0-87f6-9dbee0434487
+
+[Batch #42]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: f5036c3e-cd6e-409c-9f52-307c50e3a292
+  ✅ Submitted request ID: f5036c3e-cd6e-409c-9f52-307c50e3a292
+
+[Batch #43]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 63f83a60-b0d6-4321-9dc6-3a9aab72e707
+  ✅ Submitted request ID: 63f83a60-b0d6-4321-9dc6-3a9aab72e707
+
+[Batch #44]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 46f56b51-5579-4384-8e4b-4b3336fa3aa6
+  ✅ Submitted request ID: 46f56b51-5579-4384-8e4b-4b3336fa3aa6
+
+[Batch #45]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 1fee518d-0728-41ec-ac55-02380de01a60
+  ✅ Submitted request ID: 1fee518d-0728-41ec-ac55-02380de01a60
+
+[Batch #46]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: fca8c97f-5904-4e51-8caf-02a918969f5b
+  ✅ Submitted request ID: fca8c97f-5904-4e51-8caf-02a918969f5b
+
+[Batch #47]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: ab39d4f3-9462-4a19-bea6-c7a07fbe15b9
+  ✅ Submitted request ID: ab39d4f3-9462-4a19-bea6-c7a07fbe15b9
+
+[Batch #48]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: 9a5090a3-079c-40d2-aa3b-e0ccebcadbe4
+  ✅ Submitted request ID: 9a5090a3-079c-40d2-aa3b-e0ccebcadbe4
+
+[Batch #49]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: d1887611-ea69-4627-858d-7c099e80e0e5
+  ✅ Submitted request ID: d1887611-ea69-4627-858d-7c099e80e0e5
+
+[Batch #50]
+
+📦 Processing batch of 10000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  📦 Split into 100 requests with 10000 total contexts
+  📋 Batch queued with ID: ed2ebb2c-6a29-403a-a5eb-32cf00e61e40
+  ✅ Submitted request ID: ed2ebb2c-6a29-403a-a5eb-32cf00e61e40
+
+✅ Submitted 50 batches
+⏳ Total items queued: 500000
+
+📥 Phase 2: Polling for results (this may take a while)...
+Note: Batch API is 50% cheaper but slower than sync API
+
+
+Submitted batch request IDs:
+  1. ef8eb285-7a23-4597-8f04-1a830b29bbba (10000 items)
+  2. 472c81fb-47a2-4b00-8444-fe6d832b4298 (10000 items)
+  3. 0247b162-d442-4608-9ca2-4f2bd0a99c06 (10000 items)
+  4. 1c949452-3a6f-4067-9286-e657a7c11fe6 (10000 items)
+  5. bff874e5-ce62-476d-9fb5-b4d1739ad4a8 (10000 items)
+  6. 6fb86e9d-0752-444f-9334-b3c2c5d410c4 (10000 items)
+  7. 0c4665a9-0183-4554-81b7-368fd70ad245 (10000 items)
+  8. 3151363f-a0bf-4069-b445-7df9b5ab45bb (10000 items)
+  9. cbed0e71-ae5b-4ebb-a6f2-fcbb8a41c14e (10000 items)
+  10. 9e3f81d3-52db-4894-99df-6a0586906df4 (10000 items)
+  11. 5fbadbcf-3306-4767-a87d-0d6adffddd9b (10000 items)
+  12. 1ebca48e-785f-4db9-b7ec-03511180076b (10000 items)
+  13. d8fd3b0b-5a06-46d9-a407-f683e198b506 (10000 items)
+  14. 98d0fbb8-365c-4723-bb8f-2ff02ebe28bd (10000 items)
+  15. 8a68197f-a0fa-4ce9-a116-9ae37d1fc065 (10000 items)
+  16. 328829c0-b76e-4f27-a86b-44b527129f84 (10000 items)
+  17. faf63884-d65f-4b1f-9420-f0b2a0fb53dc (10000 items)
+  18. 90e23454-a499-47ed-8f81-d37b32b9d060 (10000 items)
+  19. ae9cf26c-0f20-4283-a301-dbab6b953912 (10000 items)
+  20. 8c742b48-bbdf-443c-a2c2-38cd9ba77502 (10000 items)
+  21. 77812be3-55ee-4ac2-b19e-a4f34af1e445 (10000 items)
+  22. fdf59976-2ff6-4201-accc-8ff7f42b6e41 (10000 items)
+  23. a3726866-73ed-4dd7-ae9f-3a823742ab6e (10000 items)
+  24. 97c24546-ce1d-421f-bba2-87ff7331cf64 (10000 items)
+  25. 0ffaac08-c4a7-47e0-9b3b-227267fcb192 (10000 items)
+  26. b7f5c3e7-24d5-4722-84d6-61df90233426 (10000 items)
+  27. 7030af93-98f0-4efb-9a47-ec8f7a77bd0b (10000 items)
+  28. 786ba6ce-de8d-4b14-ab3f-e0b3be981914 (10000 items)
+  29. 68a26162-1c5d-444f-9303-8c15422a44fa (10000 items)
+  30. c2fcaf90-6106-4e3a-b90a-82906c1496eb (10000 items)
+  31. 406f86b3-8bc9-4001-b576-8fd461c61e0c (10000 items)
+  32. 4a84ea00-2076-4f84-a235-9fbf878cf223 (10000 items)
+  33. 90df4b93-1a6b-426b-bc0c-794b0e28d68f (10000 items)
+  34. 4e6e1723-1c03-4ca2-adac-516db8f4e241 (10000 items)
+  35. 54132adb-ea83-4e3f-8a53-243cb1bfad94 (10000 items)
+  36. 230dd1aa-eae9-45f1-be7c-dcf1fc916279 (10000 items)
+  37. 41d65c69-9c77-4edb-b4ac-2acb81a3cf4a (10000 items)
+  38. cbe4267d-21ed-4e0e-bdb1-9d8f3b0e5b51 (10000 items)
+  39. 4e4f76f1-ad17-40f1-a8d3-5d35fc49d20e (10000 items)
+  40. 76b54502-ddd8-4ee5-937c-155c9ce55421 (10000 items)
+  41. 41572c6f-4f25-4df0-87f6-9dbee0434487 (10000 items)
+  42. f5036c3e-cd6e-409c-9f52-307c50e3a292 (10000 items)
+  43. 63f83a60-b0d6-4321-9dc6-3a9aab72e707 (10000 items)
+  44. 46f56b51-5579-4384-8e4b-4b3336fa3aa6 (10000 items)
+  45. 1fee518d-0728-41ec-ac55-02380de01a60 (10000 items)
+  46. fca8c97f-5904-4e51-8caf-02a918969f5b (10000 items)
+  47. ab39d4f3-9462-4a19-bea6-c7a07fbe15b9 (10000 items)
+  48. 9a5090a3-079c-40d2-aa3b-e0ccebcadbe4 (10000 items)
+  49. d1887611-ea69-4627-858d-7c099e80e0e5 (10000 items)
+  50. ed2ebb2c-6a29-403a-a5eb-32cf00e61e40 (10000 items)
+
+================================================================================
+✅ Batches submitted! Monitor progress by polling request IDs
+================================================================================

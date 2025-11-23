@@ -1,0 +1,67 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: ⚙️  override existing env vars with { override: true }
+
+🔄 Starting transformation: public.sources → things + relationships
+
+📡 Server: https://jr0jywmccu.us-east-1.aws.clickhouse.cloud:8443
+
+🔍 Testing connection...
+✅ Connected
+
+📋 Creating graph schema...
+
+✅ Created public.things table
+✅ Created public.relationships table
+
+📥 Transforming TLDs...
+✅ Transformed TLDs from public.sources
+
+📥 Transforming currencies...
+✅ Transformed currencies from public.sources
+
+📥 Transforming airports...
+✅ Transformed airports from public.sources
+📥 Creating Airport → Country relationships...
+✅ Created 3024 Airport → Country relationships
+
+📥 Creating Country things from airports...
+✅ Created Country things from airports
+
+📊 Transformation Summary:
+
+Things by type:
+  TLD                   7190 things
+  Airport               3024 things
+  Currency               638 things
+  Country                 47 things
+
+Relationships:
+  Airport -[LOCATED_IN]-> Country: 3024
+
+✅ Total: 10899 things, 3024 relationships
+
+📝 Example things:
+
+Airports:
+  airport:03N
+    Name: Utirik Airport
+    IATA: UTK, Country: MH
+  airport:07FA
+    Name: Ocean Reef Club Airport
+    IATA: OCA, Country: US
+  airport:0CO2
+    Name: Crested Butte Airpark
+    IATA: CSE, Country: US
+
+Currencies:
+  currency:ADP: Andorran Peseta (ADP)
+  currency:ADP: Andorran Peseta (ADP)
+  currency:AED: UAE Dirham (AED)
+
+✅ Transformation complete!
+
+💡 Next steps:
+   - Query things: SELECT * FROM public.things WHERE type = 'Airport' LIMIT 10
+   - Query relationships: SELECT * FROM public.relationships LIMIT 10
+   - Add more data sources to public.sources
+   - Create additional transformation logic
+

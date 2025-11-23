@@ -1,0 +1,332 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops
+================================================================================
+Cloudflare Batch Embeddings - bge-m3 (unlimited parallel batches)
+================================================================================
+
+📤 Phase 1: Submitting batches...
+
+[Batch #1]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #2]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #3]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #4]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #5]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #6]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #7]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #8]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #9]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #10]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #11]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #12]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #13]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #14]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #15]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #16]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #17]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #18]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #19]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #20]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #21]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #22]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #23]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #24]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #25]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #26]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #27]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #28]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #29]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #30]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #31]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+
+[Batch #32]
+
+📦 Processing batch of 50000 items...
+  🚀 Submitting to Cloudflare Batch API...
+  ❌ Error submitting batch: Error: Batch submission failed: 500 {"errors":[{"message":"Server Error","code":6001}],"success":false,"result":{},"messages":[]}
+    at submitBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:94:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async processBatch (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:197:31)
+    at async main (/Users/nathanclevenger/projects/graph.org.ai/.scripts/batch-embeddings.ts:233:21)
+❌ Error: Error: read ECONNRESET
+    at TLSWrap.onStreamRead (node:internal/stream_base_commons:216:20) {
+  errno: -54,
+  code: 'ECONNRESET',
+  syscall: 'read'
+}

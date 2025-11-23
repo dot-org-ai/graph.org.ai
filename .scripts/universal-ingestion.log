@@ -1,0 +1,47 @@
+[dotenv@17.2.3] injecting env (8) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+
+🌍 Universal Data Ingestion to public.sources
+
+📡 Server: https://jr0jywmccu.us-east-1.aws.clickhouse.cloud:8443
+
+🔍 Testing connection...
+✅ Connected
+
+📋 Checking schema...
+✅ Schema ready
+
+🚀 Ingesting 10 data sources...
+
+
+📥 Ingesting: tlds
+   URL: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+   Format: LineAsString
+   Batch: 2025-11-22 20:50:22
+
+✅ tlds ingested successfully
+
+
+📥 Ingesting: currencies
+   URL: https://raw.githubusercontent.com/datasets/currency-codes/master/data/codes-all.csv
+   Format: CSV
+   Batch: 2025-11-22 20:50:23
+
+✅ currencies ingested successfully
+
+
+📥 Ingesting: airports
+   URL: https://davidmegginson.github.io/ourairports-data/airports.csv
+   Format: CSVWithNames
+   Batch: 2025-11-22 20:50:23
+
+✅ airports ingested successfully
+
+
+📥 Ingesting: stock_exchanges
+   URL: https://raw.githubusercontent.com/datasets/exchange-codes/master/data/exchange-codes.csv
+   Format: CSVWithNames
+   Batch: 2025-11-22 20:50:24
+
+❌ Error ingesting stock_exchanges: Received error from remote server https://raw.githubusercontent.com/datasets/exchange-codes/master/data/exchange-codes.csv. HTTP status code: 404 'Not Found', body length: 14 bytes, body: '404: Not Found': The table structure cannot be extracted from a CSVWithNames format file. You can specify the structure manually. 
+
+❌ Error: Received error from remote server https://raw.githubusercontent.com/datasets/exchange-codes/master/data/exchange-codes.csv. HTTP status code: 404 'Not Found', body length: 14 bytes, body: '404: Not Found': The table structure cannot be extracted from a CSVWithNames format file. You can specify the structure manually. 
