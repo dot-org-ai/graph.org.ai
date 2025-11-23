@@ -44,6 +44,8 @@ Temporary Items
 
 # Interim outputs (testing data)
 .output/
+.temp/
+.wrangler/
 
 # Generated data files
 Integrations.org.ai/*.json
