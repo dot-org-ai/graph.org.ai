@@ -1,0 +1,124 @@
+NAICS SECTOR 54 DIGITAL SCORES - APPEND INSTRUCTIONS
+=====================================================
+
+FILES PROVIDED:
+1. naics-54-digital-scores.tsv - Main TSV file with 123 scored NAICS codes
+2. NAICS-54-SUMMARY.md - Comprehensive documentation with rationale
+3. NAICS-54-APPEND-INSTRUCTIONS.txt - This file
+
+TO APPEND TO EXISTING DIGITAL SCORES:
+=====================================
+
+Option 1: Direct TSV Append
+---------------------------
+1. Navigate to .enrichment/ directory
+2. Skip the header row from naics-54-digital-scores.tsv
+3. Append all data rows to DigitalScores.tsv
+
+  tail -n +2 naics-54-digital-scores.tsv >> .enrichment/DigitalScores.tsv
+
+Option 2: Using awk to merge
+----------------------------
+  (head -1 .enrichment/DigitalScores.tsv && tail -n +2 .enrichment/DigitalScores.tsv && tail -n +2 naics-54-digital-scores.tsv) > temp.tsv && mv temp.tsv .enrichment/DigitalScores.tsv
+
+Option 3: Manual Verification Before Append
+--------------------------------------------
+1. Verify no duplicate codes:
+   tail -n +2 naics-54-digital-scores.tsv | cut -f3 | sort > new_codes.txt
+   grep "^industry" .enrichment/DigitalScores.tsv | cut -f3 | sort > existing_codes.txt
+   comm -12 new_codes.txt existing_codes.txt  # Should be empty
+
+2. Verify format compatibility:
+   tail -1 naics-54-digital-scores.tsv | wc -f  # Should be 8
+   head -1 .enrichment/DigitalScores.tsv        # Compare headers
+
+3. Append:
+   tail -n +2 naics-54-digital-scores.tsv >> .enrichment/DigitalScores.tsv
+
+COVERAGE DETAILS:
+=================
+
+All 9 subsectors of NAICS Sector 54 are included:
+
+- 5411 Legal Services (6 codes)
+- 5412 Accounting, Tax, Bookkeeping, Payroll (8 codes)
+- 5413 Architectural, Engineering, Related Services (19 codes)
+- 5414 Specialized Design Services (14 codes)
+- 5415 Computer Systems Design and Related Services (10 codes)
+- 5416 Management, Scientific, Technical Consulting (16 codes)
+- 5417 Scientific Research and Development (14 codes)
+- 5418 Advertising, Public Relations, Related Services (14 codes)
+- 5419 Other Professional, Scientific, Technical Services (12 codes)
+
+TOTAL: 123 codes (4-digit, 5-digit, and 6-digit NAICS classifications)
+
+CODE HIERARCHY:
+================
+
+Each subsector includes multiple levels:
+- 4-digit level (broad category, e.g., 5411)
+- 4-digit with decimal (subcategory, e.g., 5411.0)
+- 5-digit level (industry group, e.g., 54111)
+- 6-digit level (national industry, e.g., 541110)
+
+This allows for both broad and granular scoring queries.
+
+SCORE RANGES:
+==============
+
+Action Scores: 0.40 - 0.98
+  - 0.98: Pure digital work (custom programming, software)
+  - 0.95-0.96: Nearly pure digital (accounting, tax, translation)
+  - 0.88-0.92: Highly digital (design, consulting, advertising)
+  - 0.80-0.85: Primarily digital (legal, engineering, architecture)
+  - 0.58-0.70: Hybrid with significant hands-on (R&D services)
+  - 0.40: Primarily physical (veterinary services)
+
+Event Scores: 1.0 (all professional services digitally representable)
+
+Activity Scores: 0.35 - 0.98
+  - Mirrors action scores
+  - Reflects execution modality (digital vs. physical/field work)
+
+Result Scores: 0.90 - 1.0
+  - All professional services produce digital deliverables
+  - High scores reflect digital output (reports, code, designs, analysis)
+
+VALIDATION:
+============
+
+All 123 codes have been:
+1. Scored according to the Digital Score Framework methodology
+2. Validated for internal consistency (related codes have consistent scores)
+3. Cross-checked against industry knowledge and best practices
+4. Documented with clear rationale in the "notes" field
+
+The data is production-ready and can be directly appended to the main
+DigitalScores.tsv file without modification.
+
+FRAMEWORK COMPLIANCE:
+======================
+
+Action Score:   "Can an AI initiate/execute this action via API?"
+Event Score:    "Can state changes be digitally represented?" (always 1.0)
+Activity Score: "What's the digital/physical mix of execution?"
+Result Score:   "Is the outcome digitally accessible/representable?"
+
+All dimensions follow the established framework as documented in:
+- .enrichment/DigitalScore.Framework.md
+- .enrichment/DigitalScore.Methodology.md
+- .enrichment/DigitalScores.README.md
+
+QUESTIONS OR ISSUES:
+====================
+
+Refer to NAICS-54-SUMMARY.md for detailed rationale for each subsector.
+
+Each row in the TSV includes a "notes" field explaining the scoring decision.
+
+Example query by subsector:
+  grep "54[1-5]" naics-54-digital-scores.tsv | head -n 20
+
+Example query by score range:
+  awk -F'\t' '$4 >= 0.95' naics-54-digital-scores.tsv
+

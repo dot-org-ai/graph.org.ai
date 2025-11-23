@@ -1,0 +1,421 @@
+# Retail Industry Virtual Taxonomy
+# Complete configuration for retail.org.ai
+
+# Basic metadata
+domain: retail.org.ai
+title: Retail Industry Knowledge Graph
+tagline: Operations, Occupations, and Processes for Retail
+description: |
+  Comprehensive taxonomy of retail industry knowledge, including
+  occupations, business processes, products, services, and skills
+  specific to retail operations. Covers both brick-and-mortar and
+  e-commerce retail across all product categories.
+
+# Visual identity
+category: industry-vertical
+icon: ShoppingCart
+color: "#E74C3C"
+theme: retail
+
+# Taxonomy relationships
+parent: null
+children: []
+related:
+  - hospitality.org.ai      # Customer service overlap
+  - marketing.org.ai        # Sales and advertising
+  - supply-chain.org.ai     # Inventory and logistics
+
+# Source domain filters
+sources:
+
+  # Industries (NAICS)
+  industries:
+    include:
+      naics_codes:
+        - "44-45"  # Retail Trade (all subcodes)
+      career_clusters:
+        - "Marketing & Sales"
+        - "Hospitality, Events, & Tourism"
+    score:
+      naics_44_45: 1.0       # Perfect match
+      career_cluster: 0.8    # Strong match
+
+  # Occupations (O*NET/SOC)
+  occupations:
+    include:
+      # Direct NAICS match
+      naics_codes:
+        - "44-45"
+
+      # SOC major groups
+      soc_major_groups:
+        - "41"  # Sales and Related Occupations
+
+      # Career clusters
+      career_clusters:
+        - "Marketing & Sales"
+        - "Hospitality, Events, & Tourism"
+
+      # Title keywords
+      title_keywords:
+        - retail
+        - sales
+        - cashier
+        - stocker
+        - merchandis
+        - buyer
+        - clerk
+
+    exclude:
+      # Exclude wholesale
+      soc_codes:
+        - "41-9000"  # Sales workers, all other
+      title_keywords:
+        - wholesale
+        - industrial
+        - technical
+
+    score:
+      naics_exact: 1.0
+      soc_41: 0.9
+      career_cluster: 0.8
+      title_keyword: 0.7
+
+  # Processes (APQC)
+  processes:
+    include:
+      # APQC process categories
+      categories:
+        - "3.0"   # Market and Sell Products/Services
+        - "3.1"   # Understand markets, customers, and capabilities
+        - "3.2"   # Develop marketing strategy
+        - "3.3"   # Develop sales strategy
+        - "3.4"   # Develop and manage marketing plans
+        - "3.5"   # Develop and manage sales plans
+        - "4.1"   # Plan for and acquire resources
+        - "4.2"   # Procure materials and services
+        - "5.1"   # Plan and align supply chain resources
+        - "5.2"   # Procure materials and services
+        - "5.3"   # Produce/Manufacture/Deliver product
+        - "5.4"   # Deliver service to customer
+        - "5.5"   # Manage logistics and warehousing
+
+      # Industry-specific variants
+      industry_variants:
+        - Retail
+        - Consumer Products
+
+      # Keywords
+      keywords:
+        - retail
+        - merchandis
+        - customer
+        - sales
+        - inventory
+        - checkout
+        - store
+        - shop
+        - e-commerce
+        - point of sale
+
+    score:
+      category_3: 1.0       # Marketing/Sales processes
+      industry_variant: 1.0 # Retail-specific processes
+      category_4_5: 0.8     # Supply/logistics processes
+      keyword_match: 0.6
+
+  # Products (UNSPSC)
+  products:
+    include:
+      # UNSPSC segments (consumer goods)
+      segments:
+        - "44"  # Office Equipment and Accessories
+        - "45"  # Printing and Photographic Equipment
+        - "46"  # Defense and Law Enforcement Equipment
+        - "53"  # Apparel and Luggage
+
+      # Keywords
+      keywords:
+        - retail
+        - consumer
+        - merchandise
+        - apparel
+        - clothing
+        - footwear
+        - accessories
+        - electronics
+        - home goods
+
+    score:
+      segment_match: 1.0
+      keyword_match: 0.7
+
+  # Services (NAPCS)
+  services:
+    include:
+      # NAPCS codes
+      codes:
+        - "44"  # Retail services
+        - "45"  # Retail trade services
+
+      keywords:
+        - retail
+        - sales
+        - customer service
+
+    score:
+      code_match: 1.0
+      keyword_match: 0.7
+
+  # Tasks (O*NET)
+  tasks:
+    include:
+      # Auto-include from filtered occupations
+      from_occupations: auto
+
+      # Additional keyword filters
+      keywords:
+        - customer
+        - sales
+        - merchandis
+        - inventory
+        - checkout
+        - transaction
+        - display
+        - stock
+        - price
+
+      # Digital score range (all types of tasks)
+      digital_scores: [0.0, 1.0]
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.6
+
+  # Skills (O*NET)
+  skills:
+    include:
+      from_occupations: auto
+
+      keywords:
+        - customer
+        - sales
+        - persuasion
+        - service
+        - communication
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.7
+
+  # Knowledge (O*NET)
+  knowledge:
+    include:
+      from_occupations: auto
+
+      keywords:
+        - customer
+        - sales
+        - retail
+        - merchandis
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.7
+
+  # Work Activities (O*NET)
+  work_activities:
+    include:
+      from_occupations: auto
+
+      dwa_keywords:
+        - "Selling or Influencing Others"
+        - "Performing for or Working Directly with the Public"
+        - "Communicating with People Outside the Organization"
+
+    score:
+      from_occupation: 1.0
+      dwa_match: 0.9
+
+  # Technologies & Tools (O*NET)
+  technologies:
+    include:
+      from_occupations: auto
+
+      keywords:
+        - pos
+        - point of sale
+        - inventory
+        - retail
+        - barcode
+        - scanner
+        - cash register
+        - e-commerce
+        - shopping cart
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.8
+
+# Entity type configuration
+types:
+  - name: Occupation
+    source: occupations.org.ai
+    icon: Users
+    count_estimate: 50
+    description: Retail occupations and roles
+
+  - name: Process
+    source: processes.org.ai
+    icon: GitBranch
+    count_estimate: 200
+    description: Retail business processes
+
+  - name: Task
+    source: occupations.org.ai
+    icon: CheckSquare
+    count_estimate: 500
+    description: Tasks performed in retail
+
+  - name: Skill
+    source: occupations.org.ai
+    icon: Award
+    count_estimate: 100
+    description: Skills needed for retail
+
+  - name: Product
+    source: products.org.ai
+    icon: Package
+    count_estimate: 5000
+    description: Products sold in retail
+
+  - name: Service
+    source: services.org.ai
+    icon: Briefcase
+    count_estimate: 50
+    description: Retail services
+
+  - name: Tool
+    source: occupations.org.ai
+    icon: Tool
+    count_estimate: 50
+    description: Tools used in retail
+
+  - name: Technology
+    source: occupations.org.ai
+    icon: Cpu
+    count_estimate: 100
+    description: Technologies used in retail
+
+  - name: Industry
+    source: industries.org.ai
+    icon: Building
+    count_estimate: 20
+    description: Retail industry classifications
+
+# Navigation configuration
+navigation:
+  primary:
+    - Occupations
+    - Processes
+    - Products
+
+  secondary:
+    - Tasks
+    - Skills
+    - Tools
+    - Technologies
+    - Services
+    - Industries
+
+  sidebar_order:
+    - Overview
+    - Occupations
+    - Processes
+    - Products
+    - Services
+    - Tasks
+    - Skills
+    - Tools
+    - Technologies
+    - Industries
+
+# Search and discovery
+tags:
+  - retail
+  - commerce
+  - sales
+  - merchandising
+  - customer-service
+  - e-commerce
+  - brick-and-mortar
+  - point-of-sale
+
+# Metadata for search engines
+seo:
+  keywords:
+    - retail jobs
+    - retail careers
+    - retail processes
+    - retail operations
+    - sales occupations
+    - merchandising
+    - customer service
+
+# Metrics and analytics
+metrics:
+  enabled: true
+  track:
+    - entity_count_by_type
+    - relationship_density
+    - digital_score_distribution
+    - wage_statistics
+    - employment_trends
+
+  dashboards:
+    - name: Retail Overview
+      widgets:
+        - type: entity_counts
+        - type: wage_distribution
+        - type: digital_transformation
+
+    - name: Occupations
+      widgets:
+        - type: occupation_list
+        - type: wage_comparison
+        - type: skill_requirements
+
+# Sample queries for testing
+sample_queries:
+  - title: Top 10 Retail Occupations by Employment
+    description: Most common retail jobs
+    query: |
+      SELECT * FROM retail_occupations
+      ORDER BY employment DESC
+      LIMIT 10
+
+  - title: High-Digital Retail Processes
+    description: Most digital retail processes
+    query: |
+      SELECT * FROM retail_processes
+      WHERE digital_score > 0.8
+      ORDER BY digital_score DESC
+
+  - title: Retail Customer Service Skills
+    description: Skills for customer-facing roles
+    query: |
+      SELECT * FROM retail_skills
+      WHERE name ILIKE '%customer%'
+      ORDER BY importance DESC
+
+# Version and changelog
+version: 1.0.0
+last_updated: 2025-11-22
+changelog:
+  - version: 1.0.0
+    date: 2025-11-22
+    changes:
+      - Initial retail taxonomy configuration
+      - Defined filters for all entity types
+      - Added scoring criteria
+      - Configured navigation and metrics

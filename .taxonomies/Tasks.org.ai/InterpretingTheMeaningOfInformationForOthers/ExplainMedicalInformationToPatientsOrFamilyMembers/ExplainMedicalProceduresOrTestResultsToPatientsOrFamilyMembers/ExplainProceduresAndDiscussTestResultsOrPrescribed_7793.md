@@ -1,0 +1,38 @@
+---
+id: InterpretingTheMeaningOfInformationForOthers/ExplainMedicalInformationToPatientsOrFamilyMembers/ExplainMedicalProceduresOrTestResultsToPatientsOrFamilyMembers/ExplainProceduresAndDiscussTestResultsOrPrescribed_7793
+title: Explain procedures and discuss test results or prescribed treatments with
+  patients.
+description: Explain procedures and discuss test results or prescribed
+  treatments with patients.
+type: Core
+activitySlug: InterpretingTheMeaningOfInformationForOthers
+iwaSlug: ExplainMedicalInformationToPatientsOrFamilyMembers
+dwaSlug: ExplainMedicalProceduresOrTestResultsToPatientsOrFamilyMembers
+slug: ExplainProceduresAndDiscussTestResultsOrPrescribed_7793
+$id: https://graph.org.ai/tasks/ExplainProceduresAndDiscussTestResultsOrPrescribed_7793
+$type: Task
+source: ONET
+---
+# Explain procedures and discuss test results or prescribed treatments with patients.
+
+Explain procedures and discuss test results or prescribed treatments with patients.
+
+## Hierarchy
+
+**Activity**: <Activity id="InterpretingTheMeaningOfInformationForOthers"></Activity>**IWA**: <IWA id="ExplainMedicalInformationToPatientsOrFamilyMembers"></IWA>**DWA**:<DWA id="ExplainMedicalProceduresOrTestResultsToPatientsOrFamilyMembers"></DWA>
+
+## Relationships
+
+### Occupations
+
+<Occupations task="ExplainProceduresAndDiscussTestResultsOrPrescribed_7793"></Occupations>
+
+### Tools & Tech
+
+<Tools task="ExplainProceduresAndDiscussTestResultsOrPrescribed_7793"></Tools>
+
+<Tech task="ExplainProceduresAndDiscussTestResultsOrPrescribed_7793"></Tech>
+
+### Related Processes
+
+<Processes task="ExplainProceduresAndDiscussTestResultsOrPrescribed_7793"></Processes>

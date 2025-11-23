@@ -1,0 +1,484 @@
+# Sustainability & Environmental Virtual Taxonomy
+# Complete configuration for sustainability.org.ai
+
+# Basic metadata
+domain: sustainability.org.ai
+title: Sustainability & Environmental Knowledge Graph
+tagline: Environmental Processes, Green Technology, and Sustainable Practices
+description: |
+  Comprehensive taxonomy of sustainability and environmental knowledge,
+  including green occupations, sustainable processes, renewable energy,
+  conservation practices, and environmental compliance. Focuses on
+  digital transformation for environmental impact.
+
+# Visual identity
+category: thematic-area
+icon: Leaf
+color: "#27AE60"
+theme: sustainability
+
+# Taxonomy relationships
+parent: null
+children: []
+related:
+  - energy.org.ai           # Energy sector overlap
+  - agriculture.org.ai      # Sustainable agriculture
+  - compliance.org.ai       # Environmental compliance
+  - innovation.org.ai       # Green innovation
+
+# Source domain filters
+sources:
+
+  # Industries (NAICS)
+  industries:
+    include:
+      naics_codes:
+        - "22"    # Utilities (renewable energy)
+        - "221"   # Electric power generation
+        - "2211"  # Electric power generation, transmission, distribution
+        - "5413"  # Environmental consulting
+        - "562"   # Waste management and remediation
+
+      career_clusters:
+        - "Energy & Natural Resources"
+        - "Agriculture"
+
+      keywords:
+        - renewable
+        - solar
+        - wind
+        - sustainable
+        - environmental
+        - conservation
+        - recycling
+        - green
+
+    score:
+      naics_22: 1.0
+      career_cluster: 0.9
+      keyword_match: 0.8
+
+  # Occupations (O*NET/SOC)
+  occupations:
+    include:
+      # Specific SOC codes for environmental occupations
+      soc_codes:
+        - "11-1011.03"  # Chief Sustainability Officers
+        - "19-1031"     # Conservation Scientists
+        - "19-2041"     # Environmental Scientists and Specialists
+        - "17-2081"     # Environmental Engineers
+        - "19-4042"     # Environmental Science and Protection Technicians
+        - "11-9199.09"  # Solar Energy Installation Managers
+        - "11-9199.10"  # Wind Energy Development Managers
+        - "47-4099.03"  # Solar Energy Installation Workers
+
+      # Title keywords
+      title_keywords:
+        - environmental
+        - sustainability
+        - conservation
+        - renewable
+        - solar
+        - wind
+        - green
+        - climate
+        - carbon
+        - energy efficiency
+        - recycling
+        - waste management
+
+      # Career clusters
+      career_clusters:
+        - "Energy & Natural Resources"
+        - "Agriculture"
+
+    score:
+      sustainability_soc: 1.0
+      title_keyword: 0.9
+      career_cluster: 0.8
+
+  # Processes (APQC)
+  processes:
+    include:
+      # APQC categories
+      categories:
+        - "2.2"   # Manage environmental health and safety
+        - "5.1"   # Plan and align supply chain resources (sustainability)
+        - "12.6"  # Manage environmental sustainability
+
+      # Keywords for sustainability-focused processes
+      keywords:
+        - environmental
+        - sustainability
+        - green
+        - renewable
+        - carbon
+        - emissions
+        - waste
+        - recycling
+        - conservation
+        - energy efficiency
+        - climate
+        - circular economy
+        - eco-friendly
+        - biodegradable
+        - sustainable
+
+      # Favor processes with high digital scores
+      digital_scores: [0.5, 1.0]
+
+    score:
+      category_match: 1.0
+      keyword_match: 0.8
+      high_digital: 0.3  # Bonus for digital processes
+
+  # Products (UNSPSC)
+  products:
+    include:
+      # UNSPSC segments for green products
+      segments:
+        - "26"  # Renewable Energy and Power Generation (if exists)
+        - "39"  # Electrical and Electronic Components
+
+      # Keywords
+      keywords:
+        - solar
+        - wind
+        - renewable
+        - recycl
+        - sustainable
+        - organic
+        - biodegradable
+        - eco-friendly
+        - green
+        - energy efficient
+        - led
+        - electric vehicle
+        - battery
+        - compost
+
+    score:
+      segment_match: 1.0
+      keyword_match: 0.8
+
+  # Services (NAPCS)
+  services:
+    include:
+      codes:
+        - "5413"  # Environmental consulting
+
+      keywords:
+        - environmental
+        - sustainability
+        - renewable energy
+        - conservation
+        - waste management
+        - recycling
+        - energy efficiency
+
+    score:
+      code_match: 1.0
+      keyword_match: 0.8
+
+  # Tasks (O*NET)
+  tasks:
+    include:
+      from_occupations: auto
+
+      # Sustainability-focused keywords
+      keywords:
+        - environmental
+        - sustainability
+        - conservation
+        - renewable
+        - emissions
+        - carbon
+        - waste
+        - recycling
+        - energy efficiency
+        - climate
+        - green
+
+      # Favor emerging tasks (new sustainability roles)
+      emerging_tasks: true
+
+      # Favor digital tasks
+      digital_scores: [0.6, 1.0]
+
+    score:
+      from_occupation: 1.0
+      emerging: 0.3      # Bonus for emerging tasks
+      high_digital: 0.2  # Bonus for digital
+      keyword_match: 0.7
+
+  # Skills (O*NET)
+  skills:
+    include:
+      from_occupations: auto
+
+      keywords:
+        - environmental
+        - sustainability
+        - science
+        - analysis
+        - monitoring
+        - compliance
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.8
+
+  # Knowledge (O*NET)
+  knowledge:
+    include:
+      from_occupations: auto
+
+      keywords:
+        - environmental
+        - biology
+        - chemistry
+        - physics
+        - engineering
+        - law and government
+        - geography
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.9
+
+  # Work Activities (O*NET)
+  work_activities:
+    include:
+      from_occupations: auto
+
+      dwa_keywords:
+        - "Analyzing Data or Information"
+        - "Monitor Processes, Materials, or Surroundings"
+        - "Evaluating Information to Determine Compliance"
+        - "Documenting/Recording Information"
+
+    score:
+      from_occupation: 1.0
+      dwa_match: 0.9
+
+  # Technologies & Tools
+  technologies:
+    include:
+      from_occupations: auto
+
+      keywords:
+        - environmental monitoring
+        - renewable energy
+        - solar
+        - wind
+        - energy management
+        - carbon tracking
+        - sustainability software
+        - emissions monitoring
+        - gis
+        - remote sensing
+
+    score:
+      from_occupation: 1.0
+      keyword_match: 0.9
+
+# Entity types
+types:
+  - name: Occupation
+    source: occupations.org.ai
+    icon: Users
+    count_estimate: 60
+    description: Environmental and sustainability occupations
+
+  - name: Process
+    source: processes.org.ai
+    icon: GitBranch
+    count_estimate: 100
+    description: Sustainable and environmental processes
+
+  - name: Task
+    source: occupations.org.ai
+    icon: CheckSquare
+    count_estimate: 300
+    description: Sustainability-focused tasks
+
+  - name: Skill
+    source: occupations.org.ai
+    icon: Award
+    count_estimate: 70
+    description: Environmental skills
+
+  - name: Knowledge
+    source: occupations.org.ai
+    icon: BookOpen
+    count_estimate: 40
+    description: Environmental knowledge areas
+
+  - name: Product
+    source: products.org.ai
+    icon: Package
+    count_estimate: 1000
+    description: Green and sustainable products
+
+  - name: Service
+    source: services.org.ai
+    icon: Briefcase
+    count_estimate: 80
+    description: Environmental services
+
+  - name: Tool
+    source: occupations.org.ai
+    icon: Tool
+    count_estimate: 50
+    description: Environmental monitoring tools
+
+  - name: Technology
+    source: occupations.org.ai
+    icon: Cpu
+    count_estimate: 80
+    description: Green technology and software
+
+  - name: Industry
+    source: industries.org.ai
+    icon: Building
+    count_estimate: 15
+    description: Environmental industries
+
+# Navigation
+navigation:
+  primary:
+    - Occupations
+    - Processes
+    - Technologies
+
+  secondary:
+    - Tasks
+    - Skills
+    - Products
+    - Services
+    - Tools
+    - Knowledge
+
+  featured_sections:
+    - name: Renewable Energy
+      types: [Occupation, Technology, Product]
+
+    - name: Conservation
+      types: [Occupation, Process, Task]
+
+    - name: Waste Management
+      types: [Process, Service, Product]
+
+# Search and discovery
+tags:
+  - sustainability
+  - environmental
+  - renewable-energy
+  - green-technology
+  - conservation
+  - climate-change
+  - carbon-footprint
+  - circular-economy
+  - waste-management
+  - energy-efficiency
+
+seo:
+  keywords:
+    - sustainability careers
+    - environmental jobs
+    - green technology
+    - renewable energy
+    - conservation
+    - environmental compliance
+    - sustainable practices
+    - climate change solutions
+
+# Metrics and analytics
+metrics:
+  enabled: true
+  track:
+    - entity_count_by_type
+    - digital_score_distribution
+    - emerging_task_ratio
+    - renewable_energy_coverage
+
+  dashboards:
+    - name: Sustainability Overview
+      widgets:
+        - type: entity_counts
+        - type: digital_transformation_score
+        - type: emerging_roles
+
+    - name: Renewable Energy
+      widgets:
+        - type: occupation_list
+        - type: technology_list
+        - type: product_categories
+
+    - name: Environmental Impact
+      widgets:
+        - type: process_digital_scores
+        - type: automation_potential
+        - type: carbon_reduction_opportunities
+
+  highlight_metrics:
+    - average_digital_score: "Focus on digital/automated environmental processes"
+    - emerging_task_ratio: "Track new sustainability roles"
+    - renewable_energy_jobs: "Growth in green energy sector"
+
+# Special features for sustainability
+features:
+  - name: Digital Score Emphasis
+    description: Favor automated/digital processes for environmental efficiency
+    enabled: true
+
+  - name: Emerging Task Tracking
+    description: Highlight new sustainability-focused tasks and roles
+    enabled: true
+
+  - name: Carbon Impact Estimation
+    description: Future feature to estimate carbon impact of processes
+    enabled: false
+
+  - name: Renewable Energy Pathways
+    description: Career pathways in renewable energy
+    enabled: true
+
+# Sample queries
+sample_queries:
+  - title: Chief Sustainability Officers
+    query: |
+      SELECT * FROM sustainability_occupations
+      WHERE id = 'ChiefSustainabilityOfficers'
+
+  - title: High-Digital Environmental Processes
+    query: |
+      SELECT * FROM sustainability_processes
+      WHERE digital_score > 0.8
+      ORDER BY digital_score DESC
+
+  - title: Renewable Energy Technologies
+    query: |
+      SELECT * FROM sustainability_technologies
+      WHERE name ILIKE '%solar%'
+         OR name ILIKE '%wind%'
+         OR name ILIKE '%renewable%'
+
+  - title: Emerging Sustainability Tasks
+    query: |
+      SELECT * FROM sustainability_tasks
+      WHERE emerging = true
+      ORDER BY created_at DESC
+
+# Version
+version: 1.0.0
+last_updated: 2025-11-22
+changelog:
+  - version: 1.0.0
+    date: 2025-11-22
+    changes:
+      - Initial sustainability taxonomy configuration
+      - Focus on renewable energy and conservation
+      - Emphasis on digital/automated processes
+      - Included emerging tasks tracking
+      - Configured environmental metrics
