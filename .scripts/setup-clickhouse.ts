@@ -25,20 +25,22 @@ async function setup() {
   const systemClient = getClickHouseClient({ database: 'default' })
 
   try {
-    // Use default database - no need to create custom database
-    console.log('📦 Using default database\n')
+    // Create mdxdb database if it doesn't exist
+    console.log('📦 Creating mdxdb database if not exists\n')
+    await systemClient.command({ query: 'CREATE DATABASE IF NOT EXISTS mdxdb' })
 
-    const client = systemClient
+    // Use mdxdb database
+    const client = getClickHouseClient()
 
     // Create things table with JSON field
     console.log('📊 Creating things table...')
 
     // Drop if exists to allow clean rebuild
-    await client.command({ query: 'DROP TABLE IF EXISTS default.things' })
+    await client.command({ query: 'DROP TABLE IF EXISTS things' })
 
     await client.command({
       query: `
-        CREATE TABLE default.things
+        CREATE TABLE things
         (
           url String,
           ns String,
@@ -63,11 +65,11 @@ async function setup() {
     console.log('🔗 Creating relationships table...')
 
     // Drop if exists to allow clean rebuild
-    await client.command({ query: 'DROP TABLE IF EXISTS default.relationships' })
+    await client.command({ query: 'DROP TABLE IF EXISTS relationships' })
 
     await client.command({
       query: `
-        CREATE TABLE default.relationships
+        CREATE TABLE relationships
         (
           from String,
           predicate String,
@@ -88,11 +90,11 @@ async function setup() {
     console.log('🔍 Creating searches table with vector index...')
 
     // Drop if exists to allow clean rebuild
-    await client.command({ query: 'DROP TABLE IF EXISTS default.searches' })
+    await client.command({ query: 'DROP TABLE IF EXISTS searches' })
 
     await client.command({
       query: `
-        CREATE TABLE default.searches
+        CREATE TABLE searches
         (
           url String,
           text String,
@@ -112,7 +114,7 @@ async function setup() {
     console.log('📐 Creating vector similarity index...')
     await client.command({
       query: `
-        ALTER TABLE default.searches
+        ALTER TABLE searches
         ADD INDEX embedding_hnsw embedding
         TYPE vector_similarity('hnsw', 'cosineDistance', 768)
         GRANULARITY 1000
@@ -130,14 +132,14 @@ async function setup() {
     console.log('📊 Creating materialized views...')
     await client.command({
       query: `
-        CREATE MATERIALIZED VIEW IF NOT EXISTS default.things_by_type
+        CREATE MATERIALIZED VIEW IF NOT EXISTS things_by_type
         ENGINE = SummingMergeTree()
         ORDER BY (type, ns)
         AS SELECT
           type,
           ns,
           count() as count
-        FROM default.things
+        FROM things
         GROUP BY type, ns
       `,
     })
@@ -146,10 +148,10 @@ async function setup() {
     console.log('=' .repeat(80))
     console.log('\n✅ ClickHouse schema setup complete!')
     console.log('\nTables created:')
-    console.log('  - default.things (with JSON data field and camelCase fields)')
-    console.log('  - default.relationships (with JSON data field, content, and camelCase fields)')
-    console.log('  - default.searches (with vector similarity index and camelCase fields)')
-    console.log('  - default.things_by_type (materialized view)')
+    console.log('  - mdxdb.things (with JSON data field and camelCase fields)')
+    console.log('  - mdxdb.relationships (with JSON data field, content, and camelCase fields)')
+    console.log('  - mdxdb.searches (with vector similarity index and camelCase fields)')
+    console.log('  - mdxdb.things_by_type (materialized view)')
     console.log('\n' + '='.repeat(80))
 
   } catch (error) {

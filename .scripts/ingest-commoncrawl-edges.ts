@@ -7,7 +7,8 @@
  * from the domains dictionary (no JOINs at this scale).
  *
  * Format: fromIndex TAB toIndex
- * Uses dictGet('public.domains_dict', 'url', nodeIndex) for URL resolution
+ * Uses dictGet('public.domains_dict', 'name', nodeIndex) for hostname resolution
+ * Converts reversed hostname (aaa.1111) to normal URL (https://1111.aaa)
  */
 
 import { createClient } from '@clickhouse/client';
@@ -84,14 +85,15 @@ async function ingestEdges(pathsFiles: string[], batchTimestamp: string) {
 
     // Format: fromIndex TAB toIndex
     // Use dictGet() with CACHE layout - queries source table on miss
+    // Dictionary now stores normal format (1111.aaa), just prepend https://
     const insertQuery = `
       INSERT INTO public.relationships (ns, \`from\`, predicate, reverse, \`to\`, createdAt, updatedAt)
       SELECT
         'web.org.ai' AS ns,
-        dictGet('public.domains_dict', 'url', c1) AS \`from\`,
+        concat('https://', dictGet('public.domains_dict', 'name', c1)) AS \`from\`,
         'linksTo' AS predicate,
         'linksFrom' AS reverse,
-        dictGet('public.domains_dict', 'url', c2) AS \`to\`,
+        concat('https://', dictGet('public.domains_dict', 'name', c2)) AS \`to\`,
         toDateTime('${batchTimestamp}') AS createdAt,
         toDateTime('${batchTimestamp}') AS updatedAt
       FROM url('${url}', 'TabSeparated', 'c1 UInt64, c2 UInt64')

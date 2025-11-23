@@ -32,6 +32,9 @@ const client = createClient({
   username: process.env.CLICKHOUSE_USERNAME || 'default',
   password: process.env.CLICKHOUSE_PASSWORD,
   request_timeout: 7200000, // 2 hours
+  keep_alive: {
+    enabled: true,
+  },
 });
 
 const GEONAMES_URL = 'https://download.geonames.org/export/dump/allCountries.zip';

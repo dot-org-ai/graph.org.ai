@@ -1,63 +1,63 @@
 #!/usr/bin/env tsx
 
-import { createClient } from '@clickhouse/client';
-import dotenv from 'dotenv';
-dotenv.config({ path: '.env' });
+import { createClient } from '@clickhouse/client'
+import { config } from 'dotenv'
 
-const client = createClient({
-  url: process.env.CLICKHOUSE_URL,
+config()
+
+const clickhouse = createClient({
+  url: process.env.CLICKHOUSE_URL || 'http://localhost:8123',
   username: process.env.CLICKHOUSE_USERNAME || 'default',
-  password: process.env.CLICKHOUSE_PASSWORD,
-});
+  password: process.env.CLICKHOUSE_PASSWORD || '',
+  database: 'mdxdb',
+})
 
-async function main() {
-  console.log('\n📊 ClickHouse Public Database Status\n');
-
-  // List tables
-  const tables = await client.query({
-    query: 'SHOW TABLES FROM public',
-    format: 'JSONEachRow',
-  });
-  const tableList = await tables.json<any>();
-  console.log('✅ Tables in public database:');
-  for (const t of tableList) {
-    console.log(`   - ${t.name}`);
-  }
-
-  // Check staging count
+async function checkStatus() {
   try {
-    const count = await client.query({
-      query: 'SELECT count() as count FROM public.wikidata_staging',
-      format: 'JSONEachRow',
-    });
-    const data = await count.json<any>();
-    const rowCount = Number(data[0]?.count || 0);
-    console.log(`\n📥 Wikidata Staging: ${rowCount.toLocaleString()} rows`);
-  } catch (e) {
-    console.log('\n📥 Wikidata Staging: 0 rows (streaming just started)');
-  }
+    // Total things with content
+    const totalResult = await clickhouse.query({
+      query: 'SELECT count() as total FROM things WHERE length(content) > 0',
+      format: 'JSONEachRow'
+    })
+    const totalData = await totalResult.json<Array<{ total: string }>>()
+    const total = parseInt(totalData[0]?.total || '0')
 
-  // Check running queries
-  const queries = await client.query({
-    query: `SELECT query_id, user, elapsed, substring(query, 1, 100) as query_preview
-            FROM system.processes
-            WHERE query LIKE '%wikidata%' OR query LIKE '%staging%'
-            ORDER BY elapsed DESC`,
-    format: 'JSONEachRow',
-  });
-  const runningQueries = await queries.json<any>();
-  if (runningQueries.length > 0) {
-    console.log('\n🔄 Running Queries:');
-    for (const q of runningQueries) {
-      console.log(`   Query ID: ${q.query_id}`);
-      console.log(`   Elapsed: ${Math.round(q.elapsed)}s`);
-      console.log(`   Preview: ${q.query_preview}...`);
-    }
-  } else {
-    console.log('\n✅ No active Wikidata queries (streaming completed or waiting to start)');
-  }
+    // Total embeddings created
+    const embeddedResult = await clickhouse.query({
+      query: 'SELECT count() as embedded FROM searches',
+      format: 'JSONEachRow'
+    })
+    const embeddedData = await embeddedResult.json<Array<{ embedded: string }>>()
+    const embedded = parseInt(embeddedData[0]?.embedded || '0')
 
-  await client.close();
+    // Things still needing embeddings
+    const needResult = await clickhouse.query({
+      query: 'SELECT count() as need FROM things WHERE url NOT IN (SELECT url FROM searches) AND length(content) > 0',
+      format: 'JSONEachRow'
+    })
+    const needData = await needResult.json<Array<{ need: string }>>()
+    const need = parseInt(needData[0]?.need || '0')
+
+    console.log('================================================================================')
+    console.log('Batch Embeddings Status')
+    console.log('================================================================================')
+    console.log(`Total things with content:    ${total.toLocaleString()}`)
+    console.log(`Embeddings created:            ${embedded.toLocaleString()}`)
+    console.log(`Things still needing:          ${need.toLocaleString()}`)
+    console.log(`Completion percentage:         ${((embedded / total) * 100).toFixed(2)}%`)
+    console.log('================================================================================')
+    console.log(`\nBatches submitted:             1,084`)
+    console.log(`Items per batch:               5,000`)
+    console.log(`Total items queued:            5,420,000`)
+    console.log(`Batches completed:             ${Math.floor(embedded / 5000).toLocaleString()}`)
+    console.log(`Batches remaining:             ${Math.ceil(need / 5000).toLocaleString()}`)
+    console.log('================================================================================')
+
+    await clickhouse.close()
+  } catch (error) {
+    console.error('Error:', error)
+    process.exit(1)
+  }
 }
 
-main().catch(console.error);
+checkStatus().catch(console.error)

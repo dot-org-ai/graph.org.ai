@@ -54,10 +54,10 @@ async function main() {
           content String CODEC(ZSTD),       -- Markdown content
           meta String CODEC(ZSTD),          -- Metadata/external references
           createdAt DateTime DEFAULT now(), -- When thing was created
-          updatedAt DateTime DEFAULT now()  -- When thing was last updated
-        ) ENGINE = MergeTree()
-        PARTITION BY ns
-        ORDER BY (ns, type, id)
+          updatedAt DateTime DEFAULT now(), -- When thing was last updated
+          version UInt64 DEFAULT 1          -- Version number for ReplacingMergeTree (can be incremented or use timestamp)
+        ) ENGINE = ReplacingMergeTree(version)
+        ORDER BY (ns, id, version)
         SETTINGS index_granularity = 8192
       `
     });
@@ -75,9 +75,10 @@ async function main() {
 
     console.log('\n✅ Things table ready!\n');
     console.log('📝 Schema notes:');
-    console.log('  - camelCase naming for createdAt and updatedAt');
-    console.log('  - Partitioned by ns for efficient querying');
-    console.log('  - Ordered by (ns, type, id)\n');
+    console.log('  - ReplacingMergeTree engine with version column');
+    console.log('  - No partitioning (would create too many partitions)');
+    console.log('  - Ordered by (ns, id, version) - type not in sorting key');
+    console.log('  - version is UInt64 DEFAULT 1 (can increment or use timestamp)\n');
 
   } catch (error) {
     console.error('\n❌ Error:', error instanceof Error ? error.message : error);

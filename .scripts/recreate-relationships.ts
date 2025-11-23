@@ -64,8 +64,7 @@ async function main() {
           createdAt DateTime DEFAULT now(), -- When relationship was created
           updatedAt DateTime DEFAULT now()  -- When relationship was last updated
         ) ENGINE = MergeTree()
-        PARTITION BY ns
-        ORDER BY (ns, \`from\`, predicate, \`to\`)
+        ORDER BY (\`to\`)
         SETTINGS index_granularity = 8192
       `
     });
@@ -83,11 +82,11 @@ async function main() {
 
     console.log('\n✅ Relationships table ready!\n');
     console.log('📝 Schema notes:');
-    console.log('  - No id column (use combination of ns, from, predicate, to)');
-    console.log('  - ns is the namespace from the "from" thing');
+    console.log('  - MergeTree engine (no versioning needed)');
+    console.log('  - Ordered by `to` only (primary query pattern)');
+    console.log('  - No partitioning (would create too many partitions)');
     console.log('  - from and to are full URLs');
-    console.log('  - data contains only relationship properties');
-    console.log('  - camelCase naming for createdAt and updatedAt\n');
+    console.log('  - data contains only relationship properties\n');
 
   } catch (error) {
     console.error('\n❌ Error:', error instanceof Error ? error.message : error);

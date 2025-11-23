@@ -935,6 +935,97 @@ async function ingestModels() {
 }
 
 /**
+ * Ingest Language data (Verbs, Nouns, Concepts, etc.)
+ */
+async function ingestLanguage() {
+  console.log('\n📚 Processing Language data...')
+
+  const languageDir = join(PROJECT_ROOT, SOURCE_DIR, 'Language')
+  const files = readdirSync(languageDir).filter(f => f.endsWith('.tsv'))
+
+  console.log(`  Found ${files.length} language files`)
+
+  for (const file of files) {
+    const filePath = join(languageDir, file)
+    const content = readFileSync(filePath, 'utf-8')
+    const lines = content.split('\n').filter(line => line.trim())
+
+    if (lines.length === 0) continue
+
+    // Extract type from filename (e.g., "Language.Verbs.tsv" -> "Verb")
+    const typeMatch = file.match(/Language\.(\w+)\.tsv/)
+    if (!typeMatch) {
+      console.warn(`  Skipping ${file}: unexpected filename format`)
+      continue
+    }
+    const typePlural = typeMatch[1]
+    const type = typePlural.endsWith('s') ? typePlural.slice(0, -1) : typePlural
+
+    // Parse header
+    const header = lines[0].split('\t')
+    const things: NewThing[] = []
+
+    // Process each row
+    for (let i = 1; i < lines.length; i++) {
+      const values = lines[i].split('\t')
+      if (values.length < header.length) continue
+
+      const row: any = {}
+      header.forEach((key, idx) => {
+        row[key] = values[idx] || ''
+      })
+
+      // Build data object from all columns except id/name/title/description
+      const data: any = {}
+      header.forEach((key, idx) => {
+        if (key !== 'id' && key !== 'name' && key !== 'title' && key !== 'description') {
+          data[key] = values[idx] || ''
+        }
+      })
+
+      // Determine id and name based on the type
+      let id: string
+      let name: string
+
+      if (type === 'Verb') {
+        // Verbs use canonicalForm as both id and name
+        id = `language:verb:${row.canonicalForm}`
+        name = row.canonicalForm
+        // Include all conjugations in data
+        data.canonicalForm = row.canonicalForm
+      } else if (type === 'Concept') {
+        // Concepts have an explicit id field
+        id = `language:concept:${row.id}`
+        name = row.id
+        data.id = row.id
+      } else {
+        // Other types (Pronouns, Prepositions, Determiners, Adverbs, Conjunctions)
+        // Use the first column as id
+        const word = row.id || row.word || values[0]
+        id = `language:${type.toLowerCase()}:${word}`
+        name = word
+      }
+
+      things.push({
+        ns: 'language',
+        type,
+        id,
+        name,
+        url: id.replace(/:/g, '/'),
+        data,
+        content: row.description || '',
+        meta: { source: file },
+      })
+    }
+
+    if (things.length > 0) {
+      console.log(`  Inserting ${things.length} ${type}s from ${file}...`)
+      await storage.insertThings(things)
+    }
+  }
+}
+
+/**
  * Main ingestion function
  */
 async function main() {
@@ -948,6 +1039,7 @@ async function main() {
     await ingestUNSPSC()
     await ingestAPQC()
     await ingestModels()
+    await ingestLanguage()
 
     const endTime = Date.now()
     const duration = ((endTime - startTime) / 1000).toFixed(2)

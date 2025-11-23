@@ -4,11 +4,11 @@
  * Ingest Common Crawl Hyperlink Graph (Host-Level)
  *
  * Ingests the Common Crawl host-level hyperlink graph:
- * - Vertices (468M nodes) → domains table with id + name + url
+ * - Vertices (468M nodes) → domains table with id (nodeIndex) + name (reversed hostname)
  * - Edges (8B edges) → relationships table using dictGet() for URL lookups
  *
- * Note: Hostnames are in reverse DNS notation (com.example.subdomain)
- * and need to be converted to full URLs (https://subdomain.example.com)
+ * Note: Hostnames are stored in reverse DNS notation (com.example.subdomain)
+ * and converted to URLs in queries using dictGet() + string manipulation
  */
 
 import { createClient } from '@clickhouse/client';
@@ -38,6 +38,7 @@ const client = createClient({
 const BASE_URL = 'https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2025-aug-sep-oct/host';
 const VERTICES_PATHS_URL = `${BASE_URL}/cc-main-2025-aug-sep-oct-host-vertices.paths.gz`;
 const EDGES_PATHS_URL = `${BASE_URL}/cc-main-2025-aug-sep-oct-host-edges.paths.gz`;
+const RANKINGS_URL = `${BASE_URL}/cc-main-2025-aug-sep-oct-host-ranks.txt.gz`;
 
 /**
  * Download and extract a .paths.gz file to get list of data file URLs
@@ -72,10 +73,40 @@ async function downloadPathsList(url: string, localFile: string): Promise<string
 }
 
 /**
- * Process vertices files → domains table using url()
+ * Process vertices files → domains AND things tables with rankings
  */
 async function ingestVertices(pathsFiles: string[], batchTimestamp: string) {
   console.log('🔷 Processing vertices (nodes)...\n');
+
+  // First, create a temp table and load rankings
+  console.log('📊 Loading rankings data...');
+  await client.exec({
+    query: `
+      CREATE TABLE IF NOT EXISTS temp_rankings (
+        harmonicc_pos UInt64,
+        harmonicc_val Float64,
+        pr_pos UInt64,
+        pr_val Float64,
+        host_rev String
+      ) ENGINE = Memory
+    `
+  });
+
+  await client.exec({
+    query: `
+      INSERT INTO temp_rankings
+      SELECT
+        c1 AS harmonicc_pos,
+        c2 AS harmonicc_val,
+        c3 AS pr_pos,
+        c4 AS pr_val,
+        c5 AS host_rev
+      FROM url('${RANKINGS_URL}', 'TabSeparatedWithNames',
+        'harmonicc_pos UInt64, harmonicc_val Float64, pr_pos UInt64, pr_val Float64, host_rev String')
+      WHERE harmonicc_pos > 0  -- Skip header row
+    `
+  });
+  console.log('✅ Rankings loaded\n');
 
   let totalVertices = 0;
 
@@ -83,26 +114,50 @@ async function ingestVertices(pathsFiles: string[], batchTimestamp: string) {
     const url = pathsFiles[i];
     console.log(`   [${i + 1}/${pathsFiles.length}] ${path.basename(url)}`);
 
-    // Format: nodeIndex TAB reversedHostname
-    // Insert using ClickHouse url() function - stream directly from remote URL
-    const insertQuery = `
-      INSERT INTO public.domains (id, name, url, createdAt)
+    // Insert into domains table
+    const domainsInsert = `
+      INSERT INTO public.domains (id, name)
       SELECT
-        c1 AS id,  -- nodeIndex as UInt64
-        c2 AS name,  -- Reversed hostname
-        concat('https://', arrayStringConcat(arrayReverse(splitByChar('.', c2)), '.')) AS url,
-        toDateTime('${batchTimestamp}') AS createdAt
+        c1 AS id,
+        arrayStringConcat(arrayReverse(splitByChar('.', c2)), '.') AS name
       FROM url('${url}', 'TabSeparated', 'c1 UInt64, c2 String')
     `;
 
     await client.exec({
-      query: insertQuery,
+      query: domainsInsert,
       clickhouse_settings: {
         max_execution_time: 600,
       }
     });
 
-    // Get count - also use url()
+    // Insert into things table with rankings data
+    const thingsInsert = `
+      INSERT INTO public.things (ns, type, id, url, data, createdAt, updatedAt, version)
+      SELECT
+        'web.org.ai' AS ns,
+        'Host' AS type,
+        arrayStringConcat(arrayReverse(splitByChar('.', v.c2)), '.') AS id,
+        concat('https://', arrayStringConcat(arrayReverse(splitByChar('.', v.c2)), '.')) AS url,
+        JSONExtractRaw('{' ||
+          '"harmonicc_pos":' || toString(r.harmonicc_pos) || ',' ||
+          '"harmonicc_val":' || toString(r.harmonicc_val) || ',' ||
+          '"pr_pos":' || toString(r.pr_pos) || ',' ||
+          '"pr_val":' || toString(r.pr_val) ||
+        '}') AS data,
+        toDateTime('${batchTimestamp}') AS createdAt,
+        toDateTime('${batchTimestamp}') AS updatedAt,
+        1 AS version
+      FROM url('${url}', 'TabSeparated', 'c1 UInt64, c2 String') AS v
+      LEFT JOIN temp_rankings AS r ON v.c2 = r.host_rev
+    `;
+
+    await client.exec({
+      query: thingsInsert,
+      clickhouse_settings: {
+        max_execution_time: 600,
+      }
+    });
+
     const countResult = await client.query({
       query: `SELECT count() as count FROM url('${url}', 'TabSeparated', 'c1 UInt64, c2 String')`,
       format: 'JSONEachRow',
@@ -111,8 +166,11 @@ async function ingestVertices(pathsFiles: string[], batchTimestamp: string) {
     const count = parseInt(countData[0].count);
     totalVertices += count;
 
-    console.log(`      Inserted ${count.toLocaleString()} vertices\n`);
+    console.log(`      Inserted ${count.toLocaleString()} to domains and things\n`);
   }
+
+  // Cleanup temp table
+  await client.exec({ query: 'DROP TABLE IF EXISTS temp_rankings' });
 
   console.log(`✅ Total vertices ingested: ${totalVertices.toLocaleString()}\n`);
 }
@@ -149,8 +207,9 @@ async function main() {
 
     console.log('✅ Common Crawl vertices ingestion complete!\n');
     console.log('📝 Summary:');
-    console.log('   - Vertices → domains table (id, name, url)');
-    console.log('   - Next: Create dictionary and ingest edges\n');
+    console.log('   - Vertices → domains table (id, name)');
+    console.log('   - Vertices → things table (ns, type, id, url, data with rankings)');
+    console.log('   - Next: Ingest edges\n');
 
   } catch (error) {
     console.error('\n❌ Error:', error instanceof Error ? error.message : error);

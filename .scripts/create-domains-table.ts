@@ -43,10 +43,8 @@ async function main() {
     await client.exec({
       query: `
         CREATE TABLE public.domains (
-          id UInt64,                        -- Node index from Common Crawl
-          name String,                      -- Reversed domain name (com.example.subdomain)
-          url String,                       -- Full URL (https://subdomain.example.com)
-          createdAt DateTime DEFAULT now()
+          id UInt64,    -- Node index from Common Crawl
+          name String   -- Reversed domain name (com.example.subdomain)
         ) ENGINE = MergeTree()
         ORDER BY id
         SETTINGS index_granularity = 8192
@@ -61,7 +59,7 @@ async function main() {
       query: `
         CREATE DICTIONARY public.domains_dict (
           id UInt64,
-          url String
+          name String
         )
         PRIMARY KEY id
         SOURCE(CLICKHOUSE(
