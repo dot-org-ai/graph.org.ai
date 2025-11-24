@@ -19,6 +19,7 @@
 .data/Services.tsv filter=lfs diff=lfs merge=lfs -text
 .data/Tasks.tsv filter=lfs diff=lfs merge=lfs -text
 .data/Business.Concepts.Usage.tsv filter=lfs diff=lfs merge=lfs -text
+.data/UNSPSC.Relationships.tsv filter=lfs diff=lfs merge=lfs -text
 .data/Services-Parsed-Full.json filter=lfs diff=lfs merge=lfs -text
 .data/Services-Parsed.json filter=lfs diff=lfs merge=lfs -text
 .data/Services-Only.tsv filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,936 @@
+id	code	name	familyCode
+
+ArtistsPaintingDrawingSupplies	70010100	Artists Painting/Drawing Supplies	70010000
+ArtsCraftsNeedleworkStorageOrganizers	70011600	Arts/Crafts/Needlework Storage/Organizers	70010000
+ArtsCraftsNeedleworkSupplies	70011400	Arts/Crafts/Needlework Supplies	70010000
+ArtsCraftsNeedleworkTools	70011500	Arts/Crafts/Needlework Tools	70010000
+ArtsCraftsNeedleworkVarietyPacks	70011300	Arts/Crafts/Needlework Variety Packs	70010000
+PaperCardMakingCraftSupplies	70010700	Paper/Card Making Craft Supplies	70010000
+AudioVisualAccessories	68010700	Audio Visual Accessories	68010000
+AudioVisualEquipmentVarietyPacks	68010800	Audio Visual Equipment Variety Packs	68010000
+HomeAudioEquipment	68010400	Home Audio Equipment	68010000
+PortableAudioVideo	68010300	Portable Audio/Video	68010000
+Televisions	68010100	Televisions	68010000
+VideoReceivingInstallation	68010900	Video Receiving/Installation	68010000
+VideoRecordingPlayback	68010200	Video Recording/Playback	68010000
+PreRecordedOrDigitalContentMedia	68040100	Pre-Recorded or Digital Content Media	68040000
+RecordableMedia	68040200	Recordable Media	68040000
+AudioVisualPhotographyVarietyPacks	68050100	Audio Visual/Photography Variety Packs	68050000
+CarAudio	68030200	Car Audio	68030000
+CarVideoNavigation	68030100	Car Video/Navigation	68030000
+InCarElectronicsVarietyPacks	68030300	In-car Electronics Variety Packs	68030000
+Optics	68020200	Optics	68020000
+Photography	68020100	Photography	68020000
+PhotographyPrintingDarkRoomEquipment	68020300	Photography Printing/Dark Room Equipment	68020000
+PhotographyOpticsVarietyPacks	68020400	Photography/Optics Variety Packs	68020000
+BeautyPersonalCareHygieneVarietyPacks	53220100	Beauty/Personal Care/Hygiene Variety Packs	53220000
+BodyMassageToning	53201000	Body Massage/Toning	53200000
+Aromatherapy	53161500	Aromatherapy	53160000
+CosmeticMakeupProducts	53161000	Cosmetic/MakeUp Products	53160000
+CosmeticsFragrancesVarietyPacks	53161400	Cosmetics/Fragrances Variety Packs	53160000
+Fragrances	53161300	Fragrances	53160000
+NailCosmeticCareProducts	53161200	Nail Cosmetic/Care Products	53160000
+HairCareProducts	53141100	Hair Care Products	53140000
+HairProductsVarietyPacks	53141200	Hair Products Variety Packs	53140000
+HairRemovalMaskingProducts	53141000	Hair Removal/Masking Products	53140000
+MaternityProducts	53240100	Maternity Products	53240000
+AdultIncontinence	53181300	Adult Incontinence	53180000
+BabyDiapersAccessories	53181700	Baby Diapers/Accessories	53180000
+ChildIncontinence	53181800	Child Incontinence	53180000
+FeminineNursingHygiene	53181200	Feminine/Nursing Hygiene	53180000
+GeneralPersonalHygiene	53181100	General Personal Hygiene	53180000
+OralHygiene	53181500	Oral Hygiene	53180000
+PersonalHygieneProductsVarietyPacks	53181600	Personal Hygiene Products Variety Packs	53180000
+SexualToysAids	53230100	Sexual Toys/Aids	53230000
+BodyWashing	53131300	Body Washing	53130000
+SkinCare	53131100	Skin Care	53130000
+SkinProductsVarietyPacks	53131400	Skin Products Variety Packs	53130000
+SkinTanningProducts	53131200	Skin Tanning Products	53130000
+TattoosPermanent	53250100	Tattoos - Permanent	53250000
+Abrasives	83011800	Abrasives	83010000
+AccessCoversPanels	83012500	Access Covers/Panels	83010000
+AsphaltConcreteMasonry	83010600	Asphalt/Concrete/Masonry	83010000
+BuildingProductsOther	83012400	Building Products - Other	83010000
+BuildingProductsVarietyPacks	83010500	Building Products Variety Packs	83010000
+CurtainPartsAccessories	83012000	Curtain Parts/Accessories	83010000
+DeckingRailing	83011500	Decking/Railing	83010000
+DoorHardware	83011200	Door Hardware	83010000
+Doors	83011100	Doors	83010000
+FixingsFastenersHardware	83011900	Fixings/Fasteners Hardware	83010000
+Glass	83011300	Glass	83010000
+GutteringDrainage	83011400	Guttering/Drainage	83010000
+Insulation	83010300	Insulation	83010000
+LumberWoodPanelGypsum	83010800	Lumber/Wood Panel/Gypsum	83010000
+MouldingsMillworkStairParts	83011000	Mouldings/Millwork/Stair Parts	83010000
+OutdoorRoofShelterStructures	83012600	Outdoor Roof/Shelter Structures	83010000
+Painting	83010400	Painting	83010000
+Roofing	83011700	Roofing	83010000
+SealantsFillersAdhesivesDefectAgents	83012100	Sealants/Fillers/Adhesives/Defect Agents	83010000
+SidingExteriorTrim	83012300	Siding/Exterior Trim	83010000
+StructuralComponentsAssemblies	83010700	Structural Components/Assemblies	83010000
+WallCeilingFlooringCoverings	83010100	Wall/Ceiling/Flooring Coverings	83010000
+WindowPartsAccessories	83010900	Window Parts/Accessories	83010000
+Windows	83012200	Windows	83010000
+CampingCookingDrinkingEatingEquipment	74010400	Camping Cooking/Drinking/Eating Equipment	74010000
+CampingFurnitureFurnishings	74010300	Camping Furniture/Furnishings	74010000
+CampingHeatingLightingEquipment	74010200	Camping Heating/Lighting Equipment	74010000
+CampingVarietyPacks	74010600	Camping Variety Packs	74010000
+CampingWashingSanitaryEquipment	74010500	Camping Washing/Sanitary Equipment	74010000
+TentsWeatherStructures	74010100	Tents/Weather Structures	74010000
+Cleaners	47101600	Cleaners	47100000
+CleaningVarietyPacks	47102000	Cleaning Variety Packs	47100000
+DishCare	47102100	Dish Care	47100000
+FreshenersDeodorisers	47101500	Fresheners/Deodorisers	47100000
+Laundry	47101700	Laundry	47100000
+SurfaceCare	47101900	Surface Care	47100000
+CleaningHygieneProductsVarietyPacks	47190100	Cleaning/Hygiene Products Variety Packs	47190000
+CleaningAids	47200200	Cleaning Aids	47200000
+LaundryAndIroningAids	47200300	Laundry and Ironing Aids	47200000
+ProductSuppliesDispensers	47200100	Product Supplies Dispensers	47200000
+IndustrialFloorCleaning	47220100	Industrial Floor Cleaning	47220000
+WasteStorageProducts	47210100	Waste Storage Products	47210000
+Activewear	67030100	Activewear	67030000
+ClothingAccessories	67010100	Clothing Accessories	67010000
+ClothingVarietyPacks	67011100	Clothing Variety Packs	67010000
+FullBodyWear	67010200	Full Body Wear	67010000
+LowerBodyWearBottoms	67010300	Lower Body Wear/Bottoms	67010000
+UpperBodyWearTops	67010800	Upper Body Wear/Tops	67010000
+ProtectiveWear	67050100	Protective Wear	67050000
+Sleepwear	67020100	Sleepwear	67020000
+Swimwear	67060100	Swimwear	67060000
+Underwear	67040100	Underwear	67040000
+CommunicationAccessories	66010100	Communication Accessories	66010000
+CommunicationVarietyPacks	66010400	Communication Variety Packs	66010000
+FixedCommunicationDevices	66010200	Fixed Communication Devices	66010000
+MobileCommunicationDevicesServices	66010300	Mobile Communication Devices/Services	66010000
+Signage	66010500	Signage	66010000
+ComputerComponents	65010200	Computer Components	65010000
+ComputerDrives	65010300	Computer Drives	65010000
+ComputerNetworkingEquipment	65010800	Computer Networking Equipment	65010000
+ComputerVideoGameAccessories	65010100	Computer/Video Game Accessories	65010000
+ComputerVideoGameControlInputDevices	65010600	Computer/Video Game Control/Input Devices	65010000
+ComputerVideoGamePeripherals	65010700	Computer/Video Game Peripherals	65010000
+ComputerVideoGameSoftware	65010400	Computer/Video Game Software	65010000
+Computers	65010500	Computers	65010000
+ComputersVideoGamesVarietyPacks	65010900	Computers/Video Games Variety Packs	65010000
+VideoGameConsoles	65011000	Video Game Consoles	65010000
+BrassicaVegetablesCabbageType	94022200	Brassica Vegetables (Cabbage Type)	94020000
+CerealsAndGrainsCrops	94021900	Cereals and Grains Crops	94020000
+CropsForBeverages	94021800	Crops for Beverages	94020000
+CropsForProductionOfAnnonafruit	94020100	Crops for Production of Annonafruit	94020000
+CropsForProductionOfBananaFruit	94020200	Crops for Production of Banana Fruit	94020000
+CropsForProductionOfBerriesAndSmallFruit	94020500	Crops for Production of Berries and Small Fruit	94020000
+CropsForProductionOfCitrusAndOtherRutaceaeFruits	94020600	Crops for Production of Citrus and Other Rutaceae Fruits	94020000
+CropsForProductionOfEdibleCactusfruits	94020800	Crops for Production of Edible Cactusfruits	94020000
+CropsForProductionOfEdibleFruitFromOtherTreesAndPlants	94021500	Crops for Production of Edible Fruit from Other Trees and Plants	94020000
+CropsForProductionOfEdibleFruitFromPalmtrees	94020900	Crops for Production of Edible Fruit from Palmtrees	94020000
+CropsForProductionOfEdibleFruitFromPhyllantaceaeTrees	94021400	Crops for Production of Edible Fruit from Phyllantaceae trees	94020000
+CropsForProductionOfEdibleFruitFromSapoteTrees	94021300	Crops for Production of Edible Fruit from Sapote trees	94020000
+CropsForProductionOfEdibleFruitsFromSoapberrytrees	94021200	Crops for Production of Edible Fruits from Soapberrytrees	94020000
+CropsForProductionOfEdibleGroundnuts	94021700	Crops for Production of Edible Groundnuts	94020000
+CropsForProductionOfEdibleMyrtletreeFruits	94021000	Crops for Production of Edible Myrtletree Fruits	94020000
+CropsForProductionOfEdibleNuts	94021600	Crops for Production of Edible Nuts	94020000
+CropsForProductionOfEdibleSumacfruits	94021100	Crops for Production of Edible Sumacfruits	94020000
+CropsForProductionOfStonefruits	94020700	Crops for Production of Stonefruits	94020000
+EdibleBulbCrops	94020400	Edible Bulb Crops	94020000
+EdibleFunghi	94022600	Edible Funghi	94020000
+EdibleHerbs	94023500	Edible Herbs	94020000
+EdibleLegumeCrops	94022300	Edible Legume Crops	94020000
+EdiblePomefruitCrops	94020300	Edible Pomefruit Crops	94020000
+EdibleSpices	94023600	Edible Spices	94020000
+FruitingVegetableCropsSolanaceae	94022700	Fruiting Vegetable Crops - Solanaceae	94020000
+FruitingVegetableCropsSquashAndGourds	94022800	Fruiting Vegetable Crops - Squash And Gourds	94020000
+FruitingVegetablesOther	94022900	Fruiting Vegetables - Other	94020000
+LeafVegetableCropsBrassicaceae	94023200	Leaf Vegetable Crops - Brassicaceae	94020000
+LeafVegetableCropsCichoryplants	94023000	Leaf Vegetable Crops - Cichoryplants	94020000
+LeafVegetableCropsLettuceplants	94023100	Leaf Vegetable Crops - Lettuceplants	94020000
+LeafVegetableCropsOther	94023400	Leaf Vegetable Crops - Other	94020000
+LeafVegetableCropsSpinachtype	94023300	Leaf Vegetable Crops - Spinachtype	94020000
+StemVegetables	94022400	Stem Vegetables	94020000
+SugarCrops	94022000	Sugar Crops	94020000
+VegetableCropsEdibleRootsTubersAndRhizomes	94022500	Vegetable Crops - Edible roots, Tubers and Rhizomes	94020000
+VegetableOilSeedCrops	94022100	Vegetable Oil-seed Crops	94020000
+CropsForLatexProductionLatexCrops	94010200	Crops for latex production (Latex crops)	94010000
+CropsForNaturalFibreAndResinsProductionFibreCrops	94010100	Crops for natural fibre and resins production (Fibre crops)	94010000
+CropsForProductionOfNaturalPigmentsResinsAndWaxes	94010300	Crops for production of natural pigments, resins and waxes	94010000
+NonToxicPlantsForMedicinesAndEssentialOils	94010700	Non-toxic Plants for Medicines and Essential Oils	94010000
+ToxicPlantForMedicines	94010800	Toxic Plant for Medicines	94010000
+CrucifeiraFeedCrops	94030200	Crucifeira Feed Crops	94030000
+GraminoidsGrasses	94030100	Graminoids (Grasses)	94030000
+LegumeFeedCrops	94030300	Legume Feed Crops	94030000
+OtherFeedCrops	94030400	Other Feed Crops	94030000
+CrossSegment	58010100	Cross Segment	58010000
+CablingWiringManagementControl	78040100	Cabling/Wiring Management/Control	78040000
+ElectricalCables	78040300	Electrical Cables	78040000
+ElectricalWiring	78040400	Electrical Wiring	78040000
+BatteriesChargers	78021100	Batteries/Chargers	78020000
+ElectricalConnection	78020500	Electrical Connection	78020000
+ElectricalDistribution	78020600	Electrical Distribution	78020000
+ElectricalGeneration	78021200	Electrical Generation	78020000
+ElectricLampsLightBulbsLighting	78030300	Electric Lamps/Light Bulbs/Lighting	78030000
+ElectricLightingAccessories	78030200	Electric Lighting Accessories	78030000
+ElectricLightingControlComponents	78030100	Electric Lighting Control Components	78030000
+ElectricalLightingOther	78030500	Electrical Lighting - Other	78030000
+PortableElectricLighting	78030400	Portable Electric Lighting	78030000
+ElectronicCommunicationComponents	78050100	Electronic Communication Components	78050000
+GeneralElectricalHardware	78060100	General Electrical Hardware	78060000
+FluidsFuelStorage	87020200	Fluids/Fuel Storage	87020000
+FuelAdditives	87010200	Fuel Additives	87010000
+FuelsFuelAdditivesVarietyPacks	87010500	Fuels/Fuel Additives Variety Packs	87010000
+FuelsIgnitionAids	87010100	Fuels/Ignition Aids	87010000
+TechnicalGases	87030100	Technical Gases	87030000
+AnimalDerivedEdibleProductsPreparedProcessed	50410100	Animal-derived Edible Products - Prepared/Processed	50410000
+AnimalDerivedEdibleProductsUnpreparedUnprocessed	50410200	Animal-derived Edible Products - Unprepared/Unprocessed	50410000
+AlcoholicBeveragesIncludesDeAlcoholisedVariants	50202200	Alcoholic Beverages (Includes De-Alcoholised Variants)	50200000
+BeveragesVarietyPacks	50202500	Beverages Variety Packs	50200000
+CoffeeCoffeeSubstitutes	50202600	Coffee/Coffee Substitutes	50200000
+CoffeeTeaSubstitutes	50201700	Coffee/Tea/Substitutes	50200000
+NonAlcoholicBeveragesNotReadyToDrink	50202400	Non Alcoholic Beverages - Not Ready to Drink	50200000
+NonAlcoholicBeveragesReadyToDrink	50202300	Non Alcoholic Beverages - Ready to Drink	50200000
+TeaAndInfusionsTisanes	50202700	Tea and Infusions/Tisanes	50200000
+BakingCookingMixesSupplies	50181700	Baking/Cooking Mixes/Supplies	50180000
+BiscuitsCookies	50182100	Biscuits/Cookies	50180000
+Bread	50181900	Bread	50180000
+BreadBakeryProductsVarietyPacks	50182300	Bread/Bakery Products Variety Packs	50180000
+SavouryBakeryProducts	50182200	Savoury Bakery Products	50180000
+SweetBakeryProducts	50182000	Sweet Bakery Products	50180000
+CerealGrainPulseProductsVarietyPacks	50221300	Cereal/Grain/Pulse Products Variety Packs	50220000
+GrainsFlour	50221000	Grains/Flour	50220000
+ProcessedCerealProducts	50221200	Processed Cereal Products	50220000
+ConfectioneryProducts	50161800	Confectionery Products	50160000
+ConfectionerySugarSweeteningProductsVarietyPacks	50161900	Confectionery/Sugar Sweetening Products Variety Packs	50160000
+SugarsSugarSubstituteProducts	50161500	Sugars/Sugar Substitute Products	50160000
+AquaticInvertebratesPreparedProcessed	50122000	Aquatic Invertebrates - Prepared/Processed	50120000
+AquaticInvertebratesUnpreparedUnprocessed	50122300	Aquatic Invertebrates - Unprepared/Unprocessed	50120000
+AquaticInvertebratesFishShellfishSeafoodCombination	50122500	Aquatic Invertebrates/Fish/Shellfish/Seafood Combination	50120000
+AquaticPlantsPreparedProcessed	50122200	Aquatic Plants Prepared/Processed	50120000
+AquaticPlantsUnpreparedUnprocessed	50121800	Aquatic Plants Unprepared/Unprocessed	50120000
+FishPreparedProcessed	50121900	Fish - Prepared/Processed	50120000
+FishUnpreparedUnprocessed	50121500	Fish - Unprepared/Unprocessed	50120000
+SeafoodVarietyPacks	50122400	Seafood Variety Packs	50120000
+ShellfishPreparedProcessed	50122100	Shellfish Prepared/Processed	50120000
+ShellfishUnpreparedUnprocessed	50121700	Shellfish Unprepared/Unprocessed	50120000
+FoodBeverageVarietyPacks	50230100	Food/Beverage Variety Packs	50230000
+FreshGarnishFood	50360100	Fresh Garnish (Food)	50360000
+Annona	50251300	Annona	50250000
+Avocados	50251400	Avocados	50250000
+Bananas	50250700	Bananas	50250000
+BerriesSmallFruit	50251000	Berries/Small Fruit	50250000
+Citrus	50250600	Citrus	50250000
+FruitsUnpreparedUnprocessedFreshVarietyPacks	50252000	Fruits - Unprepared/Unprocessed (Fresh) Variety Packs	50250000
+Kiwifruits	50251200	Kiwifruits	50250000
+MiscellaneousFruit	50251900	Miscellaneous Fruit	50250000
+Papayas	50251700	Papayas	50250000
+Passionfruits	50251600	Passionfruits	50250000
+Persimmon	50251500	Persimmon	50250000
+Pineapples	50251100	Pineapples	50250000
+Pitayas	50251800	Pitayas	50250000
+PomeFruits	50250800	Pome Fruits	50250000
+StoneFruit	50250900	Stone Fruit	50250000
+FruitsUnpreparedUnprocessedFrozen	50270100	Fruits - Unprepared/Unprocessed (Frozen)	50270000
+FruitsUnpreparedUnprocessedShelfStable	50310100	Fruits - Unprepared/Unprocessed (Shelf Stable)	50310000
+FruitsVegetablesVarietyPacksUnpreparedUnprocessedFresh	50370100	Fruits/Vegetables Variety Packs Unprepared/Unprocessed (Fresh)	50370000
+VegetablesFruitsVarietyPackFreshCut	50370200	Vegetables/Fruits Variety Pack - Fresh Cut	50370000
+FruitsFreshCut	50380100	Fruits - Fresh Cut	50380000
+VegetablesFreshCut	50380200	Vegetables - Fresh Cut	50380000
+FruitPreparedProcessed	50102000	Fruit - Prepared/Processed	50100000
+FruitNutsSeedsCombination	50101900	Fruit/Nuts/Seeds Combination	50100000
+FruitsVegetablesNutsSeedsVarietyPacks	50102200	Fruits/Vegetables/Nuts/Seeds Variety Packs	50100000
+NutsSeedsPreparedProcessed	50101800	Nuts/Seeds - Prepared/Processed	50100000
+VegetablesPreparedProcessed	50102100	Vegetables - Prepared/Processed	50100000
+InsectsEdiblePreparedProcessed	50400100	Insects Edible - Prepared/Processed	50400000
+InsectsEdibleUnpreparedUnprocessed	50400200	Insects Edible - Unprepared/Unprocessed	50400000
+ChicoryLeaves	50350100	Chicory Leaves	50350000
+HeadLettuce	50350200	Head Lettuce	50350000
+LeafVegetablesUnpreparedUnprocessedVarietyPacks	50350600	Leaf Vegetables - Unprepared/Unprocessed Variety Packs	50350000
+LooseLeafMultileafSaladGreens	50350300	Loose Leaf/Multileaf Salad Greens	50350000
+SingleLeafSaladGreens	50350400	Single Leaf Salad Greens	50350000
+SpinachFresh	50350500	Spinach (Fresh)	50350000
+StemLettuce	50350700	Stem Lettuce	50350000
+FishSubstitutes	50390200	Fish Substitutes	50390000
+MeatSubstitutes	50390100	Meat Substitutes	50390000
+SeafoodSubstitutes	50390300	Seafood Substitutes	50390000
+MeatPoultryOtherAnimalsPreparedProcessed	50240100	Meat/Poultry/Other Animals - Prepared/Processed	50240000
+MeatPoultryOtherAnimalsUnpreparedUnprocessed	50240200	Meat/Poultry/Other Animals - Unprepared/Unprocessed	50240000
+MeatPoultryOtherAnimalsSausagesPreparedProcessed	50240300	Meat/Poultry/Other Animals Sausages - Prepared/Processed	50240000
+ButterButterSubstitutes	50131900	Butter/Butter Substitutes	50130000
+CheeseCheeseSubstitutes	50131800	Cheese/Cheese Substitutes	50130000
+CreamCreamSubstitutes	50132000	Cream/Cream Substitutes	50130000
+DairyDerivativesByProducts	50132600	Dairy Derivatives/By Products	50130000
+EggsEggsExtractsIndustrialProcess	50132300	Eggs/Eggs Extracts (Industrial Process)	50130000
+EggsEggsSubstitutes	50132500	Eggs/Eggs Substitutes	50130000
+MilkButterCreamYogurtsCheeseEggsSubstitutesVarietyPacks	50132200	Milk/Butter/Cream/Yogurts/Cheese/Eggs/Substitutes Variety Packs	50130000
+MilkMilkSubstitutes	50131700	Milk/Milk Substitutes	50130000
+YogurtYogurtSubstitutes	50132100	Yogurt/Yogurt Substitutes	50130000
+NutsSeedsUnpreparedUnprocessedInShell	50340100	Nuts/Seeds - Unprepared/Unprocessed (In Shell)	50340000
+NutsSeedsUnpreparedUnprocessedPerishable	50330100	Nuts/Seeds - Unprepared/Unprocessed (Perishable)	50330000
+FatsEdible	50151600	Fats Edible	50150000
+OilsEdible	50151500	Oils Edible	50150000
+OilsFatsEdibleVarietyPacks	50151700	Oils/Fats Edible Variety Packs	50150000
+BabyInfantFoodsBeverages	50193000	Baby/Infant - Foods/Beverages	50190000
+DairyEggBasedProductsMeals	50193500	Dairy/Egg Based Products / Meals	50190000
+DessertsDessertsSubstitutesDessertSaucesToppings	50192300	Desserts/Desserts Substitutes/Dessert Sauces/Toppings	50190000
+DoughBasedProductsMeals	50193300	Dough Based Products / Meals	50190000
+GrainBasedProductsMeals	50193200	Grain Based Products / Meals	50190000
+PastaNoodles	50192900	Pasta/Noodles	50190000
+PreparedSoups	50191500	Prepared Soups	50190000
+PreparedPreservedFoodsVarietyPacks	50193400	Prepared/Preserved Foods Variety Packs	50190000
+ReadyMadeCombinationMeals	50193800	Ready-Made Combination Meals	50190000
+SandwichesFilledRollsWraps	50192500	Sandwiches/Filled Rolls/Wraps	50190000
+Snacks	50192100	Snacks	50190000
+SweetSpreads	50192400	Sweet Spreads	50190000
+VegetableBasedProductsMeals	50193100	Vegetable Based Products / Meals	50190000
+CasingsForFoodItems	50172100	Casings for Food Items	50170000
+HerbsSpicesExtracts	50171500	Herbs/Spices/Extracts	50170000
+PicklesRelishesChutneysOlives	50171900	Pickles/Relishes/Chutneys/Olives	50170000
+SaucesSpreadsDipsCondiments	50171800	Sauces/Spreads/Dips/Condiments	50170000
+SeasoningsPreservativesExtractsVarietyPacks	50172000	Seasonings/Preservatives/Extracts Variety Packs	50170000
+VinegarsCookingWines	50171700	Vinegars/Cooking Wines	50170000
+VegetablesUnpreparedUnprocessedFrozen	50290100	Vegetables - Unprepared/Unprocessed (Frozen)	50290000
+VegetablesUnpreparedUnprocessedShelfStable	50320100	Vegetables - Unprepared/Unprocessed (Shelf Stable)	50320000
+BeansWithPods	50261400	Beans (With Pods)	50260000
+BrassicaVegetables	50261100	Brassica Vegetables	50260000
+BulbVegetables	50260200	Bulb Vegetables	50260000
+Chickpeas	50262200	Chickpeas	50260000
+Cucumbers	50260600	Cucumbers	50260000
+CucurbitsEdiblePeel	50260700	Cucurbits - Edible Peel	50260000
+CucurbitsInediblePeel	50260900	Cucurbits - Inedible Peel	50260000
+EdibleFlowers	50262000	Edible Flowers	50260000
+Ferns	50262400	Ferns	50260000
+Fungi	50261700	Fungi	50260000
+Herbs	50261300	Herbs	50260000
+Melons	50260800	Melons	50260000
+MicroVegetables	50261900	Micro Vegetables	50260000
+OtherVegetables	50261000	Other Vegetables	50260000
+PeasWithPods	50261500	Peas (With Pods)	50260000
+Peppers	50260400	Peppers	50260000
+RootTuberVegetables	50260100	Root/Tuber Vegetables	50260000
+Sapote	50262500	Sapote	50260000
+Sedges	50262700	Sedges	50260000
+SolanaceaOthers	50260500	Solanacea/Others	50260000
+StemVegetables	50261600	Stem Vegetables	50260000
+Succulent	50262300	Succulent	50260000
+SugarCanes	50262600	Sugar Canes	50260000
+TidalSeaVegetables	50262100	Tidal Sea Vegetables	50260000
+Tomatoes	50260300	Tomatoes	50260000
+VegetablesUnpreparedUnprocessedFreshVarietyPacks	50261800	Vegetables - Unprepared/Unprocessed (Fresh) Variety Packs	50260000
+AthleticFootwear	63010100	Athletic Footwear	63010000
+FootwearAccessories	63010200	Footwear Accessories	63010000
+GeneralPurposeFootwear	63010300	General Purpose Footwear	63010000
+IndoorFootwear	63010400	Indoor Footwear	63010000
+SafetyProtectiveFootwear	63010500	Safety/Protective Footwear	63010000
+BarrierContraception	51111500	Barrier Contraception	51110000
+FamilyPlanningVarietyPacks	51111800	Family Planning Variety Packs	51110000
+HormonalContraception	51111600	Hormonal Contraception	51110000
+IntraUterineContraception	51111700	Intra-uterine Contraception	51110000
+DietaryAids	51121500	Dietary Aids	51120000
+EnergyStimulantProducts	51121900	Energy/Stimulant Products	51120000
+HealthEnhancementVarietyPacks	51121800	Health Enhancement Variety Packs	51120000
+VitaminsMineralsNutritionalSupplements	51121600	Vitamins/Minerals/Nutritional Supplements	51120000
+BabyTreatmentsAids	51102200	Baby Treatments/Aids	51100000
+BladderGenitalRectalProducts	51102400	Bladder/Genital/Rectal Products	51100000
+DrugAdministration	51101600	Drug Administration	51100000
+EnteralFeedingEquipment	51103200	Enteral Feeding Equipment	51100000
+FirstAid	51101700	First Aid	51100000
+FlowerHomoeopathicHomeopathicRemedies	51102600	Flower/Homoeopathic/Homeopathic Remedies	51100000
+FootLegCareTreatments	51101800	Foot/Leg Care/Treatments	51100000
+GastrointestinalRemedyProducts	51102700	Gastrointestinal Remedy Products	51100000
+HabitTreatment	51101900	Habit Treatment	51100000
+HealthTreatmentsAidsMaterials	51103400	Health Treatments/Aids Materials	51100000
+HealthTreatmentsAidsVarietyPacks	51102300	Health Treatments/Aids Variety Packs	51100000
+OralMouthTreatments	51103300	Oral/Mouth Treatments	51100000
+PainReliefProducts	51102500	Pain Relief Products	51100000
+PersonalAids	51101500	Personal Aids	51100000
+RespiratoryAllergyProducts	51102900	Respiratory/Allergy Products	51100000
+SensoryOrgansCareTreatments	51102100	Sensory Organs Care/Treatments	51100000
+SkinScalpAidProducts	51103000	Skin/Scalp Aid Products	51100000
+SleepingStressRelievingProducts	51102800	Sleeping/Stress Relieving Products	51100000
+TravelSicknessProducts	51103100	Travel Sickness Products	51100000
+HealthcareVarietyPacks	51140100	Healthcare Variety Packs	51140000
+DiagnosticMonitors	51131500	Diagnostic Monitors	51130000
+DiagnosticTests	51131600	Diagnostic Tests	51130000
+HomeDiagnosticsVarietyPacks	51131700	Home Diagnostics Variety Packs	51130000
+MedicalDevices	51150100	Medical Devices	51150000
+PharmaceuticalDrugs	51160100	Pharmaceutical Drugs	51160000
+VeterinaryMedicalDevices	51170200	Veterinary Medical Devices	51170000
+VeterinaryPharmaceuticals	51170100	Veterinary Pharmaceuticals	51170000
+KitchenWashingAppliances	72010600	Kitchen Washing Appliances	72010000
+MajorCookingAppliances	72010300	Major Cooking Appliances	72010000
+MajorLaundryAppliances	72010500	Major Laundry Appliances	72010000
+MajorWaterDispensers	72010700	Major Water Dispensers	72010000
+RefrigeratingFreezingAppliances	72010200	Refrigerating/Freezing Appliances	72010000
+WarmingAppliances	72010400	Warming Appliances	72010000
+WasteDisposingCompactingAppliances	72010100	Waste Disposing/Compacting Appliances	72010000
+CleaningAppliances	72020400	Cleaning Appliances	72020000
+FoodBeveragePreparationAppliances	72020200	Food/Beverage Preparation Appliances	72020000
+LaundryCareAppliances	72020300	Laundry Care Appliances	72020000
+PortableAirControlAppliances	72020600	Portable Air Control Appliances	72020000
+SmallCookingHeatingAppliances	72020100	Small Cooking/Heating Appliances	72020000
+SmallDomesticAppliancesOther	72020700	Small Domestic Appliances - Other	72020000
+SmallWaterDispensers	72020500	Small Water Dispensers	72020000
+SmartHomeHomeAutomationEquipment	72020800	Smart Home/Home Automation Equipment	72020000
+Bouquets	93100100	Bouquets	93100000
+BulbsCormsRhizomesTubers	93050100	Bulbs/Corms/Rhizomes/Tubers	93050000
+AgapanthusCutFlowers	93010100	Agapanthus - Cut Flowers	93010000
+AlchemillaCutFlowers	93010200	Alchemilla - Cut Flowers	93010000
+AlstroemeriaCutFlowers	93010300	Alstroemeria - Cut Flowers	93010000
+AnemoneCutFlowers	93010400	Anemone - Cut Flowers	93010000
+AnthuriumCutFlowers	93010500	Anthurium - Cut Flowers	93010000
+AntirrhinumCutFlowers	93010600	Antirrhinum - Cut Flowers	93010000
+AsterCutFlowers	93010700	Aster - Cut Flowers	93010000
+BouvardiaCutFlowers	93010800	Bouvardia - Cut Flowers	93010000
+CelosiaCutFlowers	93010900	Celosia - Cut Flowers	93010000
+ChamelauciumCutFlowers	93011000	Chamelaucium - Cut Flowers	93010000
+ChrysanthemumCutFlowers	93011100	Chrysanthemum - Cut Flowers	93010000
+CutFlowersOther	93013500	Cut Flowers Other	93010000
+CymbidiumCutFlowers	93011200	Cymbidium - Cut Flowers	93010000
+DahliaCutFlowers	93011400	Dahlia - Cut Flowers	93010000
+DelphiniumCutFlowers	93011500	Delphinium - Cut Flowers	93010000
+DianthusCutFlowers	93011600	Dianthus - Cut Flowers	93010000
+EryngiumCutFlowers	93011700	Eryngium - Cut Flowers	93010000
+EustomaCutFlowers	93011800	Eustoma - Cut Flowers	93010000
+FreesiaCutFlowers	93011900	Freesia - Cut Flowers	93010000
+GerberaCutFlowers	93012000	Gerbera - Cut Flowers	93010000
+GladiolusCutFlowers	93012100	Gladiolus - Cut Flowers	93010000
+GypsophilaCutFlowers	93012200	Gypsophila - Cut Flowers	93010000
+HelianthusCutFlowers	93012300	Helianthus - Cut Flowers	93010000
+HippeastrumCutFlowers	93012400	Hippeastrum - Cut Flowers	93010000
+HyacinthusCutFlowers	93012500	Hyacinthus - Cut Flowers	93010000
+HydrangeaCutFlowers	93012600	Hydrangea - Cut Flowers	93010000
+HypericumCutFlowers	93012700	Hypericum - Cut Flowers	93010000
+IlexCutFlowers	93012800	Ilex - Cut Flowers	93010000
+IrisCutFlowers	93012900	Iris - Cut Flowers	93010000
+LiliumCutFlowers	93013000	Lilium - Cut Flowers	93010000
+LimoniumCutFlowers	93013100	Limonium - Cut Flowers	93010000
+MatthiolaCutFlowers	93013200	Matthiola - Cut Flowers	93010000
+NarcissusCutFlowers	93013300	Narcissus - Cut Flowers	93010000
+OrnithogalumCutFlowers	93013400	Ornithogalum - Cut Flowers	93010000
+PaeoniaCutFlowers	93013600	Paeonia - Cut Flowers	93010000
+PhalaenopsisCutFlowers	93013700	Phalaenopsis - Cut Flowers	93010000
+PhloxCutFlowers	93013800	Phlox - Cut Flowers	93010000
+PittosporumCutFlowers	93013900	Pittosporum - Cut Flowers	93010000
+RanunculusCutFlowers	93014000	Ranunculus - Cut Flowers	93010000
+RosaCutFlowers	93014100	Rosa - Cut Flowers	93010000
+SolidagoCutFlowers	93014200	Solidago - Cut Flowers	93010000
+StrelitziaCutFlowers	93014300	Strelitzia - Cut Flowers	93010000
+SyringaCutFlowers	93014400	Syringa - Cut Flowers	93010000
+TanacetumCutFlowers	93014500	Tanacetum - Cut Flowers	93010000
+TracheliumCutFlowers	93014600	Trachelium - Cut Flowers	93010000
+TulipaCutFlowers	93014700	Tulipa - Cut Flowers	93010000
+VandaCutFlowers	93014800	Vanda - Cut Flowers	93010000
+VeronicaCutFlowers	93014900	Veronica - Cut Flowers	93010000
+ViburnumCutFlowers	93015000	Viburnum - Cut Flowers	93010000
+ZantedeschiaCutFlowers	93015100	Zantedeschia - Cut Flowers	93010000
+AgapanthusCutGreens	93020100	Agapanthus - Cut Greens	93020000
+AnthuriumCutGreens	93020200	Anthurium - Cut Greens	93020000
+AsparagusCutGreens	93020300	Asparagus - Cut Greens	93020000
+AspidistraCutGreens	93020400	Aspidistra - Cut Greens	93020000
+AstilbeCutGreens	93020500	Astilbe - Cut Greens	93020000
+BrassicaCutGreens	93020600	Brassica - Cut Greens	93020000
+CarthamusCutGreens	93020700	Carthamus - Cut Greens	93020000
+CorylusCutGreens	93020800	Corylus - Cut Greens	93020000
+CrocosmiaCutGreens	93020900	Crocosmia - Cut Greens	93020000
+CucumisCutGreens	93021000	Cucumis - Cut Greens	93020000
+CucurbitaCutGreens	93021100	Cucurbita - Cut Greens	93020000
+CutGreensOther	93022400	Cut Greens Other	93020000
+CutGreensVarietyPacks	93021200	Cut Greens Variety Packs	93020000
+DracaenaCutGreens	93021300	Dracaena - Cut Greens	93020000
+EucalyptusCutGreens	93021400	Eucalyptus - Cut Greens	93020000
+EupatoriumCutGreens	93021500	Eupatorium - Cut Greens	93020000
+FatsiaCutGreens	93021600	Fatsia - Cut Greens	93020000
+GomphocarpusCutGreens	93021700	Gomphocarpus - Cut Greens	93020000
+HydrangeaCutGreens	93021800	Hydrangea - Cut Greens	93020000
+IlexCutGreens	93021900	Ilex - Cut Greens	93020000
+LeucadendronCutGreens	93022000	Leucadendron - Cut Greens	93020000
+LiliumCutGreens	93022100	Lilium - Cut Greens	93020000
+MatthiolaCutGreens	93022200	Matthiola - Cut Greens	93020000
+MonsteraCutGreens	93022300	Monstera - Cut Greens	93020000
+PanicumCutGreens	93022500	Panicum - Cut Greens	93020000
+PhysalisCutGreens	93022600	Physalis - Cut Greens	93020000
+PittosporumCutGreens	93022700	Pittosporum - Cut Greens	93020000
+QuercusCutGreens	93022800	Quercus - Cut Greens	93020000
+RosaCutGreens	93022900	Rosa - Cut Greens	93020000
+RuscusCutGreens	93023000	Ruscus - Cut Greens	93020000
+SalixCutGreens	93023100	Salix - Cut Greens	93020000
+SetariaCutGreens	93023200	Setaria - Cut Greens	93020000
+StrelitziaCutGreens	93023300	Strelitzia - Cut Greens	93020000
+SymphoricarposCutGreens	93023400	Symphoricarpos - Cut Greens	93020000
+SyringaCutGreens	93023500	Syringa - Cut Greens	93020000
+ThlaspiCutGreens	93023600	Thlaspi - Cut Greens	93020000
+ViburnumCutGreens	93023700	Viburnum - Cut Greens	93020000
+ZantedeschiaCutGreens	93023800	Zantedeschia - Cut Greens	93020000
+AechmeaLivePlants	93030100	Aechmea - Live Plants	93030000
+AeoniumLivePlants	93030200	Aeonium - Live Plants	93030000
+AgapanthusLivePlants	93030300	Agapanthus - Live Plants	93030000
+AlocasiaLivePlants	93030400	Alocasia - Live Plants	93030000
+AloeLivePlants	93030500	Aloe - Live Plants	93030000
+AlstroemeriaLivePlants	93030600	Alstroemeria - Live Plants	93030000
+AnemoneLivePlants	93030700	Anemone - Live Plants	93030000
+AngeloniaLivePlants	93030800	Angelonia - Live Plants	93030000
+AnisodonteaLivePlants	93030900	Anisodontea - Live Plants	93030000
+AnthuriumLivePlants	93031000	Anthurium - Live Plants	93030000
+AntirrhinumLivePlants	93031100	Antirrhinum - Live Plants	93030000
+ArgyranthemumLivePlants	93031200	Argyranthemum - Live Plants	93030000
+ArmeriaLivePlants	93031300	Armeria - Live Plants	93030000
+AsterLivePlants	93031400	Aster - Live Plants	93030000
+AstilbeLivePlants	93031500	Astilbe - Live Plants	93030000
+AubrietaLivePlants	93031600	Aubrieta - Live Plants	93030000
+BegoniaLivePlants	93031700	Begonia - Live Plants	93030000
+BellisLivePlants	93031800	Bellis - Live Plants	93030000
+BidensLivePlants	93031900	Bidens - Live Plants	93030000
+BougainvilleaLivePlants	93032000	Bougainvillea - Live Plants	93030000
+BrachyscomeLivePlants	93032100	Brachyscome - Live Plants	93030000
+BrassicaLivePlants	93032200	Brassica - Live Plants	93030000
+BromeliaLivePlants	93032300	Bromelia - Live Plants	93030000
+BrugmansiaLivePlants	93032400	Brugmansia - Live Plants	93030000
+CalatheaLivePlants	93032500	Calathea - Live Plants	93030000
+CalibrachoaLivePlants	93032600	Calibrachoa - Live Plants	93030000
+CalocephalusLivePlants	93032700	Calocephalus - Live Plants	93030000
+CampanulaLivePlants	93032800	Campanula - Live Plants	93030000
+CannaLivePlants	93032900	Canna - Live Plants	93030000
+CastanospermumLivePlants	93037600	Castanospermum - Live Plants	93030000
+CelosiaLivePlants	93033000	Celosia - Live Plants	93030000
+ChamaedoreaLivePlants	93033100	Chamaedorea - Live Plants	93030000
+ChlorophytumLivePlants	93033200	Chlorophytum - Live Plants	93030000
+ChrysanthemumLivePlants	93033300	Chrysanthemum - Live Plants	93030000
+CliviaLivePlants	93033400	Clivia - Live Plants	93030000
+CocosLivePlants	93033500	Cocos - Live Plants	93030000
+CodiaeumLivePlants	93033600	Codiaeum - Live Plants	93030000
+CoffeaLivePlants	93037700	Coffea - Live Plants	93030000
+CordylineLivePlants	93033700	Cordyline - Live Plants	93030000
+CoreopsisLivePlants	93033800	Coreopsis - Live Plants	93030000
+CortaderiaLivePlants	93033900	Cortaderia - Live Plants	93030000
+CosmosLivePlants	93034000	Cosmos - Live Plants	93030000
+CupheaLivePlants	93034100	Cuphea - Live Plants	93030000
+CupressusLivePlants	93034200	Cupressus - Live Plants	93030000
+CurcumaLivePlants	93034300	Curcuma - Live Plants	93030000
+CycasLivePlants	93034400	Cycas - Live Plants	93030000
+CyclamenLivePlants	93034500	Cyclamen - Live Plants	93030000
+CymbidiumLivePlants	93034600	Cymbidium - Live Plants	93030000
+CyperusLivePlants	93034700	Cyperus - Live Plants	93030000
+DahliaLivePlants	93034800	Dahlia - Live Plants	93030000
+DelphiniumLivePlants	93034900	Delphinium - Live Plants	93030000
+DendrobiumLivePlants	93035000	Dendrobium - Live Plants	93030000
+DianthusLivePlants	93035100	Dianthus - Live Plants	93030000
+DicentraLivePlants	93035200	Dicentra - Live Plants	93030000
+DieffenbachiaLivePlants	93035300	Dieffenbachia - Live Plants	93030000
+DionaeaLivePlants	93037800	Dionaea - Live Plants	93030000
+DorotheanthusLivePlants	93035400	Dorotheanthus - Live Plants	93030000
+DracaenaLivePlants	93035500	Dracaena - Live Plants	93030000
+DypsisLivePlants	93035600	Dypsis - Live Plants	93030000
+EcheveriaLivePlants	93035700	Echeveria - Live Plants	93030000
+EchinaceaLivePlants	93035800	Echinacea - Live Plants	93030000
+EpipremnumLivePlants	93035900	Epipremnum - Live Plants	93030000
+EuphorbiaLivePlants	93036000	Euphorbia - Live Plants	93030000
+EuryopsLivePlants	93036100	Euryops - Live Plants	93030000
+FargesiaLivePlants	93036200	Fargesia - Live Plants	93030000
+FeliciaLivePlants	93036300	Felicia - Live Plants	93030000
+FestucaLivePlants	93036400	Festuca - Live Plants	93030000
+FicusLivePlants	93037400	Ficus - Live Plants	93030000
+FittoniaLivePlants	93036500	Fittonia - Live Plants	93030000
+FuchsiaLivePlants	93036600	Fuchsia - Live Plants	93030000
+GardeniaLivePlants	93036700	Gardenia - Live Plants	93030000
+GauraLivePlants	93036800	Gaura - Live Plants	93030000
+GazaniaLivePlants	93036900	Gazania - Live Plants	93030000
+GentianaLivePlants	93037000	Gentiana - Live Plants	93030000
+GerberaLivePlants	93037100	Gerbera - Live Plants	93030000
+GuzmaniaLivePlants	93037200	Guzmania - Live Plants	93030000
+GypsophilaLivePlants	93037300	Gypsophila - Live Plants	93030000
+HederaLivePlants	93040100	Hedera - Live Plants	93040000
+HelianthusLivePlants	93040200	Helianthus - Live Plants	93040000
+HelichrysumLivePlants	93040300	Helichrysum - Live Plants	93040000
+HeliotropiumLivePlants	93040400	Heliotropium - Live Plants	93040000
+HelleborusLivePlants	93040500	Helleborus - Live Plants	93040000
+HeucheraLivePlants	93040600	Heuchera - Live Plants	93040000
+HibiscusLivePlants	93040700	Hibiscus - Live Plants	93040000
+HippeastrumLivePlants	93040800	Hippeastrum - Live Plants	93040000
+HordeumLivePlants	93040900	Hordeum - Live Plants	93040000
+HostaLivePlants	93041000	Hosta - Live Plants	93040000
+HoweaLivePlants	93041100	Howea - Live Plants	93040000
+HyacinthusLivePlants	93041200	Hyacinthus - Live Plants	93040000
+HydrangeaLivePlants	93041300	Hydrangea - Live Plants	93040000
+ImpatiensLivePlants	93041400	Impatiens - Live Plants	93040000
+JasminumLivePlants	93041500	Jasminum - Live Plants	93040000
+KalanchoeLivePlants	93041600	Kalanchoe - Live Plants	93040000
+LantanaLivePlants	93041700	Lantana - Live Plants	93040000
+LeucanthemumLivePlants	93041800	Leucanthemum - Live Plants	93040000
+LewisiaLivePlants	93041900	Lewisia - Live Plants	93040000
+LiliumLivePlants	93042000	Lilium - Live Plants	93040000
+LithodoraLivePlants	93042100	Lithodora - Live Plants	93040000
+LivePlantVarietyPacks	93042200	Live Plant Variety Packs	93040000
+LivePlantsOther	93044000	Live Plants Other	93040000
+LivistonaLivePlants	93042300	Livistona - Live Plants	93040000
+LobeliaLivePlants	93042400	Lobelia - Live Plants	93040000
+LotusLivePlants	93042500	Lotus - Live Plants	93040000
+LudwigiaLivePlants	93048700	Ludwigia - Live Plants	93040000
+LupinusLivePlants	93042600	Lupinus - Live Plants	93040000
+MandevillaLivePlants	93042700	Mandevilla - Live Plants	93040000
+MedinillaLivePlants	93042800	Medinilla - Live Plants	93040000
+MiltoniaLivePlants	93042900	Miltonia - Live Plants	93040000
+MusaLivePlants	93048800	Musa - Live Plants	93040000
+MuscariLivePlants	93043000	Muscari - Live Plants	93040000
+MyosotisLivePlants	93043100	Myosotis - Live Plants	93040000
+NarcissusLivePlants	93043200	Narcissus - Live Plants	93040000
+NephrolepisLivePlants	93043300	Nephrolepis - Live Plants	93040000
+NolinaLivePlants	93043400	Nolina - Live Plants	93040000
+NymphaeaLivePlants	93043500	Nymphaea - Live Plants	93040000
+OncidiumLivePlants	93043600	Oncidium - Live Plants	93040000
+OrchisLivePlants	93043700	Orchis - Live Plants	93040000
+OrnithogalumLivePlants	93043800	Ornithogalum - Live Plants	93040000
+OsteospermumLivePlants	93043900	Osteospermum - Live Plants	93040000
+PachiraLivePlants	93044100	Pachira - Live Plants	93040000
+PaeoniaLivePlants	93044200	Paeonia - Live Plants	93040000
+PapaverLivePlants	93044300	Papaver - Live Plants	93040000
+PaphiopedilumLivePlants	93044400	Paphiopedilum - Live Plants	93040000
+PelargoniumLivePlants	93044500	Pelargonium - Live Plants	93040000
+PennisetumLivePlants	93044600	Pennisetum - Live Plants	93040000
+PeperomiaLivePlants	93048900	Peperomia - Live Plants	93040000
+PetuniaLivePlants	93044700	Petunia - Live Plants	93040000
+PhalaenopsisLivePlants	93044800	Phalaenopsis - Live Plants	93040000
+PhilodendronLivePlants	93049100	Philodendron - Live Plants	93040000
+PhloxLivePlants	93044900	Phlox - Live Plants	93040000
+PhoenixLivePlants	93045000	Phoenix - Live Plants	93040000
+PileaLivePlants	93049000	Pilea - Live Plants	93040000
+PlatycodonLivePlants	93045100	Platycodon - Live Plants	93040000
+PlectranthusLivePlants	93045200	Plectranthus - Live Plants	93040000
+PolysciasLivePlants	93049200	Polyscias - Live Plants	93040000
+PortulacaLivePlants	93045300	Portulaca - Live Plants	93040000
+PrimulaLivePlants	93045400	Primula - Live Plants	93040000
+RanunculusLivePlants	93045500	Ranunculus - Live Plants	93040000
+RhapisLivePlants	93049300	Rhapis - Live Plants	93040000
+RhipsalidopsisLivePlants	93045600	Rhipsalidopsis - Live Plants	93040000
+RhododendronLivePlants	93045700	Rhododendron - Live Plants	93040000
+RosaLivePlants	93045800	Rosa - Live Plants	93040000
+SaintpauliaLivePlants	93045900	Saintpaulia - Live Plants	93040000
+SalviaLivePlants	93046000	Salvia - Live Plants	93040000
+SansevieriaLivePlants	93046100	Sansevieria - Live Plants	93040000
+SanvitaliaLivePlants	93046200	Sanvitalia - Live Plants	93040000
+SaxifragaLivePlants	93046400	Saxifraga - Live Plants	93040000
+ScheffleraLivePlants	93046500	Schefflera - Live Plants	93040000
+SchlumbergeraLivePlants	93046600	Schlumbergera - Live Plants	93040000
+SedumLivePlants	93046700	Sedum - Live Plants	93040000
+SempervivumLivePlants	93046800	Sempervivum - Live Plants	93040000
+SenecioLivePlants	93046900	Senecio - Live Plants	93040000
+SinningiaLivePlants	93047000	Sinningia - Live Plants	93040000
+SolanumLivePlants	93047100	Solanum - Live Plants	93040000
+SpathiphyllumLivePlants	93047200	Spathiphyllum - Live Plants	93040000
+StephanotisLivePlants	93047300	Stephanotis - Live Plants	93040000
+SuteraLivePlants	93047400	Sutera - Live Plants	93040000
+TagetesLivePlants	93047500	Tagetes - Live Plants	93040000
+TillandsiaLivePlants	93047600	Tillandsia - Live Plants	93040000
+TulipaLivePlants	93047700	Tulipa - Live Plants	93040000
+VandaLivePlants	93047800	Vanda - Live Plants	93040000
+VerbenaLivePlants	93047900	Verbena - Live Plants	93040000
+ViolaLivePlants	93048000	Viola - Live Plants	93040000
+VrieseaLivePlants	93048100	Vriesea - Live Plants	93040000
+XburragearaLivePlants	93048200	XBurrageara - Live Plants	93040000
+XcitrofortunellaLivePlants	93048300	XCitrofortunella - Live Plants	93040000
+YuccaLivePlants	93048400	Yucca - Live Plants	93040000
+ZamioculcasLivePlants	93048500	Zamioculcas - Live Plants	93040000
+ZantedeschiaLivePlants	93048600	Zantedeschia - Live Plants	93040000
+PlantsVarietyPacks	93060100	Plants Variety Packs	93060000
+SeedlingsReadyToGrow	93110100	Seedlings - Ready to Grow	93110000
+Seeds	93070100	Seeds	93070000
+Spores	93070200	Spores	93070000
+AbiesFir	93080200	Abies (Fir)	93080000
+Araucaria	93080300	Araucaria	93080000
+Picea	93080400	Picea	93080000
+Pinus	93080500	Pinus	93080000
+ShrubsTreesOther	93080100	Shrubs/Trees - Other	93080000
+VegetablesFungiPlants	93090100	Vegetables/Fungi Plants	93090000
+BabySanitaryFurnishings	75050100	Baby Sanitary Furnishings	75050000
+HouseholdBabyBedsMattresses	75050200	Household Baby Beds/Mattresses	75050000
+HouseholdBabySeating	75050300	Household Baby Seating	75050000
+FabricTextileFurnishingsVarietyPacks	75020300	Fabric/Textile Furnishings Variety Packs	75020000
+HouseholdBeddingOfficeFurnishings	75020100	Household/Bedding/Office Furnishings	75020000
+DisplayStands	75010700	Display Stands	75010000
+HouseholdBedsMattresses	75010400	Household Beds/Mattresses	75010000
+HouseholdOfficeFurnitureAccessories	75010600	Household/Office Furniture Accessories	75010000
+HouseholdOfficeFurnitureVarietyPacks	75010500	Household/Office Furniture Variety Packs	75010000
+HouseholdOfficeSeating	75010200	Household/Office Seating	75010000
+HouseholdOfficeStorageDisplayFurnitureScreens	75010100	Household/Office Storage/Display Furniture/Screens	75010000
+HouseholdOfficeTablesDesks	75010300	Household/Office Tables/Desks	75010000
+Clocks	75030400	Clocks	75030000
+DecorativeBannersFlags	75030700	Decorative Banners/Flags	75030000
+DecorativeBannersFlagsAccessories	75030800	Decorative Banners/Flags - Accessories	75030000
+OrnamentalFurnishingsVarietyPacks	75030600	Ornamental Furnishings Variety Packs	75030000
+Ornaments	75030100	Ornaments	75030000
+PicturesMirrorsFrames	75030200	Pictures/Mirrors/Frames	75030000
+CentrifugalPumps	11010100	Centrifugal Pumps	11010000
+FireHydrantSystems	11010300	Fire Hydrant Systems	11010000
+SubmersiblePumps	11010200	Submersible Pumps	11010000
+IndustrialPumpsStructures	11040100	Industrial Pumps -  Structures	11040000
+IndustrialPumpsEngines	11030100	Industrial Pumps - Engines	11030000
+IndustrialPumps–ReplacementPartsAccessories	11050100	Industrial Pumps – Replacement Parts/Accessories	11050000
+PneumaticsPumps	11020300	Pneumatics Pumps	11020000
+ReciprocatingPumps	11020200	Reciprocating Pumps	11020000
+RotaryPumps	11020100	Rotary Pumps	11020000
+CookwareBakeware	73040400	Cookware/Bakeware	73040000
+DisposableFoodContainers	73041000	Disposable Food Containers	73040000
+FoodMeasuringEquipment	73040300	Food Measuring Equipment	73040000
+FoodPreparationEquipment	73040600	Food Preparation Equipment	73040000
+FoodBeveragePresentationAccessories	73040900	Food/Beverage Presentation Accessories	73040000
+KitchenMerchandiseVarietyPacks	73040800	Kitchen Merchandise Variety Packs	73040000
+KitchenStorage	73040100	Kitchen Storage	73040000
+WaterBeverageEquipment	73040200	Water/Beverage Equipment	73040000
+BabyTableware	73050100	Baby Tableware	73050000
+BarwareNonDisposable	73050500	Barware (Non Disposable)	73050000
+DinnerwareNonDisposable	73050200	Dinnerware (Non Disposable)	73050000
+DrinkwareNonDisposable	73050300	Drinkware (Non Disposable)	73050000
+FlatwareNonDisposable	73051000	Flatware (Non Disposable)	73050000
+ServewareNonDisposable	73050600	Serveware (Non Disposable)	73050000
+TablewareDisposable	73050700	Tableware (Disposable)	73050000
+TablewareAccessories	73050900	Tableware Accessories	73050000
+TablewareVarietyPacks	73050800	Tableware Variety Packs	73050000
+GardenPoolsPondsWaterFeaturesAndOrnaments	81010100	Garden Pools/Ponds/Water Features and Ornaments	81010000
+LawnGardenCookingHeatingAppliances	81010800	Lawn/Garden Cooking/Heating Appliances	81010000
+LawnGardenEquipmentAndTools	81011200	Lawn/Garden Equipment and Tools	81010000
+LawnGardenFencing	81010500	Lawn/Garden Fencing	81010000
+LawnGardenFloralPlantAccessories	81011800	Lawn/Garden Floral/Plant Accessories	81010000
+LawnGardenFurnitureFurnishings	81010300	Lawn/Garden Furniture/Furnishings	81010000
+LawnGardenLighting	81011600	Lawn/Garden Lighting	81010000
+LawnGardenOutdoorStructures	81011000	Lawn/Garden Outdoor Structures	81010000
+LawnGardenSoilSoilAmendments	81011500	Lawn/Garden Soil/Soil Amendments	81010000
+LawnGardenTestingDiagnosticEquipment	81011400	Lawn/Garden Testing Diagnostic Equipment	81010000
+LawnGardenTiles	81011900	Lawn/Garden Tiles	81010000
+LawnGardenWasteDisposal	81010700	Lawn/Garden Waste Disposal	81010000
+LawnGardenWateringEquipment	81010400	Lawn/Garden Watering Equipment	81010000
+LawnGardenWeatherMonitoringObservation	81011100	Lawn/Garden Weather Monitoring/Observation	81010000
+Invertebrates	89020100	Invertebrates	89020000
+Vertebrates	89020200	Vertebrates	89020000
+LubricantsVarietyPacks	88030100	Lubricants Variety Packs	88030000
+LubricantsProtectiveCompoundsVarietyPacks	88010500	Lubricants/Protective Compounds Variety Packs	88010000
+LubricatingProducts	88010100	Lubricating Products	88010000
+ProtectiveCompounds	88010200	Protective Compounds	88010000
+LubricantsProtectiveCompoundsStorage	88020200	Lubricants/Protective Compounds Storage	88020000
+CurrencyCertificates	96010100	Currency/Certificates	96010000
+PrepaidCardsGiftCardsVouchers	96010200	PrePaid Cards/Gift Cards/Vouchers	96010000
+MusicalInstrumentAccessories	61010400	Musical Instrument Accessories	61010000
+MusicalInstrumentsNonPowered	61010200	Musical Instruments (Non Powered)	61010000
+MusicalInstrumentsPowered	61010300	Musical Instruments (Powered)	61010000
+MusicalInstrumentsAccessoriesVarietyPacks	61010500	Musical Instruments/Accessories Variety Packs	61010000
+Jewellery	64010100	Jewellery	64010000
+PersonalAccessoriesVarietyPacks	64010400	Personal Accessories Variety Packs	64010000
+PersonalCarriersAccessories	64010200	Personal Carriers/Accessories	64010000
+Watches	64010300	Watches	64010000
+PestPlantControlProducts	13010100	Pest/Plant Control Products	13010000
+PlantChemicalsTreatments	13010200	Plant Chemicals/Treatments	13010000
+PetAccessories	10101700	Pet Accessories	10100000
+PetCareVarietyPacks	10101800	Pet Care Variety Packs	10100000
+PetNutritionalSupplements	10101600	Pet Nutritional Supplements	10100000
+PetWelfareHygiene	10101500	Pet Welfare/Hygiene	10100000
+PetCareFoodVarietyPacks	10120100	Pet Care/Food Variety Packs	10120000
+PetDrinks	10111500	Pet Drinks	10110000
+PetFood	10111600	Pet Food	10110000
+PetFoodDrinksVarietyPacks	10111700	Pet Food/Drinks Variety Packs	10110000
+AirConditioningCoolingVentilationEquipment	79010600	Air Conditioning/Cooling/Ventilation Equipment	79010000
+BackflowPreventionDevices	79011000	Backflow Prevention Devices	79010000
+BathroomFittings	79010300	Bathroom Fittings	79010000
+HealthAndWellness	79011400	Health and Wellness	79010000
+HeatingEquipment	79010500	Heating Equipment	79010000
+PlumbingHeatingVentilationAirConditioning	79011300	Plumbing/Heating/Ventilation/Air Conditioning	79010000
+PlumbingHeatingVentilationAirConditioningVarietyPacks	79010700	Plumbing/Heating/Ventilation/Air Conditioning Variety Packs	79010000
+SanitaryWare	79010100	Sanitary Ware	79010000
+WasteSewageEquipment	79010900	Waste/Sewage Equipment	79010000
+WaterStorageTreatment	79010400	Water Storage/Treatment	79010000
+WaterGasSupplyCentralHeating	79010800	Water/Gas Supply/Central Heating	79010000
+BurialProducts	99010100	Burial Products	99010000
+CemeteryProducts	99010200	Cemetery Products	99010000
+RawMaterialFormed	98020100	Raw Material (Formed)	98020000
+RecycledRenewableMaterial	98020200	Recycled/Renewable Material	98020000
+WasteMaterialFormed	98020300	Waste Material (Formed)	98020000
+RawMaterialUnformed	98010100	Raw Material (Unformed)	98010000
+ProtectiveCollectiveAidsDiy	85010200	Protective Collective Aids - DIY	85010000
+BabySafetySecuritySurveillance	91050100	Baby Safety/Security/Surveillance	91050000
+EnvironmentalFireChemicalSafetyProducts	91020100	Environmental Fire/Chemical Safety Products	91020000
+WeatherNaturalDisasterSafetyProducts	91020200	Weather/Natural Disaster Safety Products	91020000
+AlarmSystems	91030100	Alarm Systems	91030000
+Barriers	91030800	Barriers	91030000
+CrowdControl	91030700	Crowd Control	91030000
+DoorWindowPerimeterSecurityProducts	91030200	Door/Window/Perimeter Security Products	91030000
+HomeBusinessFireExtinguishers	91030300	Home/Business Fire Extinguishers	91030000
+HomeBusinessSafetySecuritySurveillanceVarietyPacks	91030600	Home/Business Safety/Security/Surveillance Variety Packs	91030000
+HomeBusinessSurveillanceEquipment	91030400	Home/Business Surveillance Equipment	91030000
+Safes	91030500	Safes	91030000
+SecurityDevices	91030900	Security Devices	91030000
+PersonalSafetyDevices	91010100	Personal Safety Devices	91010000
+SafetySecuritySurveillanceVarietyPacks	91040100	Safety/Security/Surveillance Variety Packs	91040000
+BuildingConstruction&RelatedServices	95020100	Building Construction & Related Services	95020000
+AccountingServices	95010100	Accounting Services	95010000
+AdvertisingServices	95010200	Advertising Services	95010000
+ArchitecturalAndEngineeringServices	95010300	Architectural and Engineering Services	95010000
+BusinessManagement&ConsultingServices	95010400	Business Management & Consulting Services	95010000
+ComputerAndTechnologyServices	95010500	Computer and Technology Services	95010000
+LegalServices	95010600	Legal Services	95010000
+CleaningServices	95030100	Cleaning Services	95030000
+AudioVisualServices	95040100	Audio-Visual Services	95040000
+TelecommunicationsServices	95040200	Telecommunications Services	95040000
+DispensingVendingMachines	95160100	Dispensing/Vending Machines	95160000
+EducationalServices	95050100	Educational Services	95050000
+EntertainmentServices	95050200	Entertainment Services	95050000
+EnergyServices	95060100	Energy Services	95060000
+EnvironmentalServices	95060200	Environmental Services	95060000
+FinancialServices	95070100	Financial Services	95070000
+FoodAndDrinkServices	95110300	Food and Drink Services	95110000
+TemporaryAccommodationServices	95110400	Temporary Accommodation Services	95110000
+InstallationServices	95120200	Installation Services	95120000
+MaintenanceRepairServices	95120100	Maintenance/Repair Services	95120000
+HygienicAndBeautyCareServices	95130100	Hygienic and Beauty Care Services	95130000
+MedicalServices	95130200	Medical Services	95130000
+VeterinaryServices	95130300	Veterinary Services	95130000
+PackagingStorageServices	95080100	Packaging/Storage Services	95080000
+PostalServices	95090100	Postal Services	95090000
+ScientificAndTechnologicalServices	95100100	Scientific and Technological Services	95100000
+TransportationServices	95140100	Transportation Services	95140000
+TravelServices	95150100	Travel Services	95150000
+BabyExercisersTransportation	71020100	Baby Exercisers/Transportation	71020000
+CombatSportsEquipment	71010700	Combat Sports Equipment	71010000
+CycleSportsEquipment	71010800	Cycle Sports Equipment	71010000
+EquestrianSportsEquipment	71012400	Equestrian Sports Equipment	71010000
+FishingAnglingSportsEquipment	71012100	Fishing/Angling Sports Equipment	71010000
+GymnasticsSportsEquipment	71011000	Gymnastics Sports Equipment	71010000
+HuntingSportsAids	71011700	Hunting Sports Aids	71010000
+KitingParachutingSportsEquipment	71011100	Kiting/Parachuting Sports Equipment	71010000
+PersonalFitnessSportsEquipment	71010900	Personal Fitness Sports Equipment	71010000
+RacquetSportsEquipment	71010300	Racquet Sports Equipment	71010000
+ScooterSkateboardSportsEquipment	71011200	Scooter/Skateboard Sports Equipment	71010000
+SnowIceSportsEquipment	71010500	Snow/Ice Sports Equipment	71010000
+SportingFirearmsEquipment	71011600	Sporting Firearms Equipment	71010000
+SportsBallsPucksShuttlecocksFrisbeesBoomerangs	71010200	Sports Balls/Pucks/Shuttlecocks/Frisbees/Boomerangs	71010000
+SportsBatsSticksClubsCuesMallets	71010400	Sports Bats/Sticks/Clubs/Cues/Mallets	71010000
+SportsEquipmentAccessories	71011900	Sports Equipment Accessories	71010000
+SportsEquipmentVarietyPacks	71012300	Sports Equipment Variety Packs	71010000
+SportsPersonalProtectiveEquipment	71012000	Sports Personal Protective Equipment	71010000
+SportsTables	71011400	Sports Tables	71010000
+SwimmingSurfingDivingSportsEquipment	71011300	Swimming/Surfing/Diving Sports Equipment	71010000
+TargetSportsEquipment	71011500	Target Sports Equipment	71010000
+TrackFieldSportsEquipment	71010100	Track/Field Sports Equipment	71010000
+TrekkingMountaineeringSportsEquipment	71010600	Trekking/Mountaineering Sports Equipment	71010000
+WatercraftSportsEquipment	71011800	Watercraft Sports Equipment	71010000
+GiftWrapAccessories	62050100	Gift Wrap/Accessories	62050000
+GreetingCardsGiftWrapOccasionSuppliesVarietyPacks	62050200	Greeting Cards/Gift Wrap/Occasion Supplies Variety Packs	62050000
+GreetingCardsInvitations	62050300	Greeting Cards/Invitations	62050000
+OccasionSupplies	62050400	Occasion Supplies	62050000
+OfficeMachinery	62060300	Office Machinery	62060000
+OrganizationalPlanningStationery	62060400	Organizational Planning Stationery	62060000
+PostalPackagingEquipmentAidsAccessories	62060500	Postal/Packaging Equipment/Aids/Accessories	62060000
+PresentationEquipment	62060600	Presentation Equipment	62060000
+StationeryAdhesivesBindersFasteners	62060700	Stationery Adhesives/Binders/Fasteners	62060000
+StationeryCuttersTrimmers	62060800	Stationery Cutters/Trimmers	62060000
+StationeryPaperCardFilm	62061100	Stationery Paper/Card/Film	62060000
+StationeryStorageFiling	62060900	Stationery Storage/Filing	62060000
+StationeryOfficeMachineryOther	62061200	Stationery/Office Machinery - Other	62060000
+StationeryOfficeMachineryVarietyPacks	62061000	Stationery/Office Machinery Variety Packs	62060000
+WritingDesignImplementsAids	62060100	Writing/Design Implements/Aids	62060000
+StationeryOfficeMachineryOccasionSuppliesVarietyPacks	62070100	Stationery/Office Machinery/Occasion Supplies Variety Packs	62070000
+StorageBarrelsDrumsEmpty	92010300	Storage Barrels/Drums (Empty)	92010000
+StorageBottlesCylindersEmpty	92010100	Storage Bottles/Cylinders (Empty)	92010000
+PlatformHandlingSupportsConverters	92040100	Platform Handling Supports/Converters	92040000
+StorageHaulageBoxesCratesTraysEmpty	92020100	Storage/Haulage Boxes/Crates/Trays (Empty)	92020000
+BulkFreightContainersEmpty	92030100	Bulk Freight Containers (Empty)	92030000
+Books	60010200	Books	60010000
+Maps	60010400	Maps	60010000
+Periodicals	60010300	Periodicals	60010000
+TextualPrintedReferenceMaterialsVarietyPacks	60010100	Textual/Printed/Reference Materials Variety Packs	60010000
+CannabisEdibles	12010100	Cannabis - Edibles	12010000
+CannabisNonEdibles	12010200	Cannabis - Non-Edibles	12010000
+ECigarettesAndAccessories	12010400	E-Cigarettes and Accessories	12010000
+NonTobaccoNonCannabisHerbal	12010500	Non-Tobacco/Non-Cannabis Herbal	12010000
+SmokingAccessories	12010600	Smoking Accessories	12010000
+Tobacco	12010300	Tobacco	12010000
+TobaccoCannabisHerbalProductsSmokingAccessoriesVarietyPacks	12010700	Tobacco/Cannabis/Herbal Products/Smoking Accessories Variety Packs	12010000
+ToolStorage	84010100	Tool Storage	84010000
+WorkshopAids	84010200	Workshop Aids	84010000
+AirCompressors	80013400	Air Compressors	80010000
+AwlsPunchesNailsets	80011300	Awls/Punches/Nailsets	80010000
+CarpentryTools	80013600	Carpentry Tools	80010000
+CarryingLiftingClimbingHandlingEquipment	80010400	Carrying/Lifting/Climbing/Handling Equipment	80010000
+ChiselsGouges	80011500	Chisels/Gouges	80010000
+ConcreteTools	80013100	Concrete Tools	80010000
+DemolitionRemovalTools	80010500	Demolition/Removal Tools	80010000
+Drills	80011100	Drills	80010000
+DrywallTools	80010200	Drywall Tools	80010000
+Funnels	80012400	Funnels	80010000
+GrindersSharpenersScrapersSanders	80011000	Grinders/Sharpeners/Scrapers/Sanders	80010000
+HammersMalletsHatchetsAnvils	80011600	Hammers/Mallets/Hatchets/Anvils	80010000
+HeatGeneratingWeldingTools	80012700	Heat Generating/Welding Tools	80010000
+Knives	80011400	Knives	80010000
+LubricationAdhesiveTools	80013200	Lubrication/Adhesive Tools	80010000
+MasonryGlassTileTools	80010300	Masonry/Glass/Tile Tools	80010000
+MeasuringLevellingMarkingTools	80010100	Measuring/Levelling/Marking Tools	80010000
+MilitaryEngineeringSpecialtyEquipment	80012900	Military - Engineering Specialty Equipment	80010000
+NailersStaplersRivetingTools	80010600	Nailers/Staplers/Riveting Tools	80010000
+OscillatingRotaryTools	80013000	Oscillating/Rotary Tools	80010000
+PipeTubeTools	80012000	Pipe/Tube Tools	80010000
+PlanesShapersFilesRasps	80011900	Planes/Shapers/Files/Rasps	80010000
+PliersPincersGrabbersCuttingTools	80010800	Pliers/Pincers/Grabbers/Cutting Tools	80010000
+Saws	80011800	Saws	80010000
+Screwdrivers	80010700	Screwdrivers	80010000
+Sprayers	80013300	Sprayers	80010000
+ThreadingTapsDies	80012200	Threading Taps/Dies	80010000
+ToolsEquipmentOther	80012800	Tools/Equipment Other	80010000
+ToolsEquipmentVarietyPacks	80012300	Tools/Equipment Variety Packs	80010000
+VacuumCleanersEquipment	80013500	Vacuum Cleaners Equipment	80010000
+VisesClamps	80010900	Vises/Clamps	80010000
+WrenchesSpannersKeys	80011700	Wrenches/Spanners/Keys	80010000
+ServiceProvidedGamblingProducts	86020100	Service Provided Gambling Products	86020000
+BoardGamesCardsPuzzles	86010100	Board Games/Cards/Puzzles	86010000
+DevelopmentalEducationalToys	86010400	Developmental/Educational Toys	86010000
+DollsPuppetsActionFiguresSoftToys	86010200	Dolls/Puppets/Action Figures/Soft Toys	86010000
+DollsPuppetsActionFiguresSoftToysAccessories	86010300	Dolls/Puppets/Action Figures/Soft Toys Accessories	86010000
+FancyDressCostumesAccessories	86010500	Fancy Dress Costumes/Accessories	86010000
+IndoorOutdoorGamesPlayStructures	86010700	Indoor/Outdoor Games/Play Structures	86010000
+MusicalToys	86010600	Musical Toys	86010000
+RolePlayToys	86011200	Role Play Toys	86010000
+TableGames	86010800	Table Games	86010000
+ToyVehiclesNonRide	86011100	Toy Vehicles - Non-ride	86010000
+ToysRideOn	86011000	Toys - Ride-on	86010000
+ToysGamesOther	86011300	Toys/Games - Other	86010000
+ToysGamesVarietyPacks	86010900	Toys/Games Variety Packs	86010000
+AgriculturalMachinery	77070100	Agricultural Machinery	77070000
+Aircraft	77040100	Aircraft	77040000
+AutomotiveAntiTheftProducts	77013500	Automotive Anti-theft Products	77010000
+AutomotiveAntifreeze	77015100	Automotive Antifreeze	77010000
+AutomotiveAppearanceChemicals	77010400	Automotive Appearance Chemicals	77010000
+AutomotiveAppearanceFragranceAccessories	77012900	Automotive Appearance/Fragrance Accessories	77010000
+AutomotiveBatteries	77015000	Automotive Batteries	77010000
+AutomotiveBodyRepair	77010200	Automotive Body Repair	77010000
+AutomotiveBrakes	77015300	Automotive Brakes	77010000
+AutomotiveCargoManagement	77010300	Automotive Cargo Management	77010000
+AutomotiveDecorativeLighting	77014100	Automotive Decorative Lighting	77010000
+AutomotiveElectrical	77014300	Automotive Electrical	77010000
+AutomotiveExteriorAccessoriesCoveringsProtection	77012500	Automotive Exterior Accessories - Coverings/Protection	77010000
+AutomotiveExteriorAccessoriesGrillsBumpers	77012300	Automotive Exterior Accessories - Grills/Bumpers	77010000
+AutomotiveExteriorAccessoriesRunningBoardsSteps	77012200	Automotive Exterior Accessories - Running Boards/Steps	77010000
+AutomotiveExteriorAccessoriesShieldsDeflectors	77012400	Automotive Exterior Accessories - Shields/Deflectors	77010000
+AutomotiveExteriorAppearanceAccessories	77012600	Automotive Exterior Appearance Accessories	77010000
+AutomotiveFilters	77013800	Automotive Filters	77010000
+AutomotiveFluidChangeItems	77014700	Automotive Fluid Change Items	77010000
+AutomotiveFluidManagementAccessories	77014500	Automotive Fluid Management Accessories	77010000
+AutomotiveInteriorAccessoriesConvenience	77011600	Automotive Interior Accessories - Convenience	77010000
+AutomotiveInteriorAccessoriesDecorative	77012100	Automotive Interior Accessories - Decorative	77010000
+AutomotiveInteriorAccessoriesInteriorDash	77012000	Automotive Interior Accessories - Interior Dash	77010000
+AutomotiveInteriorAccessoriesInteriorFlooring	77011900	Automotive Interior Accessories - Interior Flooring	77010000
+AutomotiveInteriorAccessoriesOrganisation	77011500	Automotive Interior Accessories - Organisation	77010000
+AutomotiveInteriorAccessoriesSeats	77011400	Automotive Interior Accessories - Seats	77010000
+AutomotiveInteriorAccessoriesSteering	77011800	Automotive Interior Accessories - Steering	77010000
+AutomotiveInteriorAccessoriesSunProtection	77011700	Automotive Interior Accessories - Sun Protection	77010000
+AutomotiveLightAssemblies	77014000	Automotive Light Assemblies	77010000
+AutomotiveLightsBulbs	77013900	Automotive Lights/Bulbs	77010000
+AutomotiveMaintenanceRepair	77011200	Automotive Maintenance/Repair	77010000
+AutomotivePerformanceChemicals	77010500	Automotive Performance Chemicals	77010000
+AutomotiveSafety	77011300	Automotive Safety	77010000
+AutomotiveSparkPlugsGlowPlugsInjectors	77013700	Automotive Spark Plugs/Glow Plugs/ Injectors	77010000
+AutomotiveTowingHitch	77013100	Automotive Towing/Hitch	77010000
+AutomotiveTowingHitchElectrical	77013200	Automotive Towing/Hitch - Electrical	77010000
+AutomotiveTrailersTrailerAccessories	77013300	Automotive Trailers/Trailer Accessories	77010000
+AutomotiveTransmissionFluid	77010900	Automotive Transmission Fluid	77010000
+AutomotiveTyresWheels	77012700	Automotive Tyres/Wheels	77010000
+AutomotiveTyresWheelsAccessories	77012800	Automotive Tyres/Wheels Accessories	77010000
+AutomotiveWinchesWinchAccessories	77013400	Automotive Winches/Winch Accessories	77010000
+AutomotiveWindowWasherFluid	77014900	Automotive Window Washer Fluid	77010000
+AutomotiveWipersWiperParts	77013600	Automotive Wipers/Wiper Parts	77010000
+Cars	77030100	Cars	77030000
+MotorcyclesAllTerrainVehiclesUtilityTaskVehicles	77030200	Motorcycles/ All Terrain Vehicles/ Utility Task Vehicles	77030000
+RailEquipment	77060100	Rail Equipment	77060000
+SpecialtyVehicles	77050100	Specialty Vehicles	77050000
