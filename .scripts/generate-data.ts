@@ -745,6 +745,172 @@ function generateGS1Data(): void {
   writeTSV(path.join(DATA_DIR, 'Standards.GS1.Product.tsv'), data)
 }
 
+/**
+ * Generate Language.org.ai data
+ */
+function generateLanguageData(): void {
+  console.log('\n📊 Generating Language.org.ai data...')
+
+  const domain = 'https://language.org.ai'
+
+  // Verbs
+  const verbsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Verbs.tsv'))
+  const verbsData = verbsSource.map(row => ({
+    $id: `${domain}/Verb/${row.canonicalForm}`,
+    $type: 'https://language.org.ai/Verb',
+    $context: domain,
+    name: row.canonicalForm,
+    description: row.description || row.canonicalForm,
+    code: row.canonicalForm,
+    predicate: row.predicate || '',
+    event: row.event || '',
+    activity: row.activity || '',
+    actor: row.actor || '',
+    object: row.object || '',
+    inverse: row.inverse || '',
+    source: row.source || '',
+    vocabulary: row.vocabulary || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Verb.tsv'), verbsData)
+
+  // Concepts
+  const conceptsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Concepts.tsv'))
+  const conceptsData = conceptsSource.map(row => ({
+    $id: `${domain}/Concept/${row.id}`,
+    $type: 'https://language.org.ai/Concept',
+    $context: domain,
+    name: row.id,
+    description: row.description || row.id,
+    code: row.id,
+    baseNoun: row.baseNoun || '',
+    modifiers: row.modifiers || '',
+    category: row.category || '',
+    source: row.source || '',
+    examples: row.examples || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Concept.tsv'), conceptsData)
+
+  // Prepositions
+  const prepsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Prepositions.tsv'))
+  const prepsData = prepsSource.map(row => ({
+    $id: `${domain}/Preposition/${row.preposition}`,
+    $type: 'https://language.org.ai/Preposition',
+    $context: domain,
+    name: row.preposition,
+    description: row.description || row.preposition,
+    code: row.preposition,
+    category: row.category || '',
+    examples: row.examples || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Preposition.tsv'), prepsData)
+
+  // Adverbs
+  const adverbsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Adverbs.tsv'))
+  const adverbsData = adverbsSource.map(row => ({
+    $id: `${domain}/Adverb/${row.adverb}`,
+    $type: 'https://language.org.ai/Adverb',
+    $context: domain,
+    name: row.adverb,
+    description: row.description || row.adverb,
+    code: row.adverb,
+    category: row.category || '',
+    examples: row.examples || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Adverb.tsv'), adverbsData)
+
+  // Pronouns
+  const pronounsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Pronouns.tsv'))
+  const pronounsData = pronounsSource.map(row => ({
+    $id: `${domain}/Pronoun/${row.pronoun}`,
+    $type: 'https://language.org.ai/Pronoun',
+    $context: domain,
+    name: row.pronoun,
+    description: row.description || row.pronoun,
+    code: row.pronoun,
+    category: row.category || '',
+    examples: row.examples || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Pronoun.tsv'), pronounsData)
+
+  // Conjunctions
+  const conjsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Conjunctions.tsv'))
+  const conjsData = conjsSource.map(row => ({
+    $id: `${domain}/Conjunction/${row.conjunction}`,
+    $type: 'https://language.org.ai/Conjunction',
+    $context: domain,
+    name: row.conjunction,
+    description: row.description || row.conjunction,
+    code: row.conjunction,
+    category: row.category || '',
+    examples: row.examples || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Conjunction.tsv'), conjsData)
+
+  // Determiners
+  const detsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Determiners.tsv'))
+  const detsData = detsSource.map(row => ({
+    $id: `${domain}/Determiner/${row.determiner}`,
+    $type: 'https://language.org.ai/Determiner',
+    $context: domain,
+    name: row.determiner,
+    description: row.description || row.determiner,
+    code: row.determiner,
+    category: row.category || '',
+    examples: row.examples || '',
+  }))
+  writeTSV(path.join(DATA_DIR, 'Language.Determiner.tsv'), detsData)
+}
+
+/**
+ * Generate GeoNames.org.ai data
+ */
+function generateGeoNamesData(): void {
+  console.log('\n📊 Generating GeoNames.org.ai data...')
+
+  const domain = 'https://geonames.org.ai'
+
+  // US States
+  const statesFile = path.join(SOURCE_DIR, 'GeoNames/GeoNames.US.States.tsv')
+  if (fs.existsSync(statesFile)) {
+    const statesSource = parseTSV(statesFile)
+    const statesData = statesSource.map(row => ({
+      $id: `${domain}/State/${row.code}`,
+      $type: 'https://geonames.org.ai/State',
+      $context: domain,
+      name: row.name,
+      description: row.nameAscii || row.name,
+      code: row.code,
+      country: row.country || '',
+      admin1Code: row.admin1Code || '',
+      geonameId: row.geonameId || '',
+    }))
+    writeTSV(path.join(DATA_DIR, 'GeoNames.State.tsv'), statesData)
+  }
+
+  // Country Info
+  const countryFile = path.join(SOURCE_DIR, 'GeoNames/GeoNames.CountryInfo.tsv')
+  if (fs.existsSync(countryFile)) {
+    const countrySource = parseTSV(countryFile)
+    const countryData = countrySource
+      .filter(row => row.iSO && row.country)
+      .map(row => ({
+        $id: `${domain}/Country/${row.iSO}`,
+        $type: 'https://geonames.org.ai/Country',
+        $context: domain,
+        name: row.country,
+        description: row.country,
+        code: row.iSO,
+        iso3: row.iSO3 || '',
+        isoNumeric: row.iSONumeric || '',
+        fips: row.fIPS || '',
+        continent: row.continent || '',
+        capital: row.capital || '',
+        geonameId: row.geonameid || '',
+      }))
+    writeTSV(path.join(DATA_DIR, 'GeoNames.Country.tsv'), countryData)
+  }
+}
+
 // ============================================================================
 // Main
 // ============================================================================
@@ -760,6 +926,8 @@ async function main(): Promise<void> {
   generateAPQCData()
   generateUNSPSCData()
   generateGS1Data()
+  generateLanguageData()
+  generateGeoNamesData()
 
   console.log('\n' + '='.repeat(80))
   console.log('✅ Data generation complete!')
@@ -779,4 +947,6 @@ export {
   generateAPQCData,
   generateUNSPSCData,
   generateGS1Data,
+  generateLanguageData,
+  generateGeoNamesData,
 }
