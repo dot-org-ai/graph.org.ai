@@ -528,7 +528,7 @@ async function generatePeople() {
     roleId: string
   }> = []
 
-  // Read Roles.tsv to create sample relationships
+  // Read Roles.tsv to create relationships for ALL roles
   const rolesPath = path.join(dataDir, 'Roles.tsv')
   if (fs.existsSync(rolesPath)) {
     const rolesContent = fs.readFileSync(rolesPath, 'utf-8')
@@ -537,8 +537,8 @@ async function generatePeople() {
     const roleIdIdx = rolesHeaders.indexOf('id')
     const roleLevelIdx = rolesHeaders.indexOf('level')
 
-    // Sample relationships based on level
-    for (let i = 1; i < Math.min(rolesLines.length, 100); i++) {
+    // Map ALL roles based on their level
+    for (let i = 1; i < rolesLines.length; i++) {
       const line = rolesLines[i]
       if (!line.trim()) continue
 
@@ -555,6 +555,10 @@ async function generatePeople() {
         peopleRoles.push({ personId: 'Director', roleId })
       } else if (level === 'Manager') {
         peopleRoles.push({ personId: 'Manager', roleId })
+      } else if (level === 'Senior') {
+        peopleRoles.push({ personId: 'Specialist', roleId })
+      } else if (level === 'Junior' || level === 'Entry') {
+        peopleRoles.push({ personId: 'Employee', roleId })
       } else {
         peopleRoles.push({ personId: 'Employee', roleId })
       }
