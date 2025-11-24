@@ -11,6 +11,10 @@
 .data/ONET.Occupation.Relationships.tsv filter=lfs diff=lfs merge=lfs -text
 .data/Standards.GS1.Product.tsv filter=lfs diff=lfs merge=lfs -text
 .data/Standards.UNSPSC.Product.tsv filter=lfs diff=lfs merge=lfs -text
+.data/Tasks.Task.tsv filter=lfs diff=lfs merge=lfs -text
+.data/Products.Product.GS1.tsv filter=lfs diff=lfs merge=lfs -text
+.data/Products.Product.UNSPSC.tsv filter=lfs diff=lfs merge=lfs -text
+.data/extracted/Synonyms.tsv filter=lfs diff=lfs merge=lfs -text
 .data/Services-Parsed-Full.json filter=lfs diff=lfs merge=lfs -text
 .data/Services-Parsed.json filter=lfs diff=lfs merge=lfs -text
 .data/Services-Only.tsv filter=lfs diff=lfs merge=lfs -text
