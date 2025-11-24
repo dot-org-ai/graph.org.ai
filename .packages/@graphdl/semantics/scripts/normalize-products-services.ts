@@ -32,6 +32,55 @@ function toWikipediaStyle(text: string): string {
   return cleaned
 }
 
+// Expand names with "or" and "and" into multiple variants
+function expandEntityTypes(text: string): string[] {
+  if (!text) return []
+
+  // Check for "X or Y" patterns and expand them
+  const orPattern = /^(.+?)\s+or\s+(.+)$/i
+  const orMatch = text.match(orPattern)
+
+  if (orMatch) {
+    const [, left, right] = orMatch
+
+    // Handle patterns like "via natural or artificial opening"
+    // Need to find the common prefix/suffix
+    const leftWords = left.trim().split(/\s+/)
+    const rightWords = right.trim().split(/\s+/)
+
+    // If left has more words, it likely has the prefix
+    // e.g., "via natural" vs "artificial opening"
+    const prefix = leftWords.slice(0, -1).join(' ')
+    const leftTerm = leftWords[leftWords.length - 1]
+
+    // Check if right has a suffix that should be shared
+    const rightTerm = rightWords[0]
+    const suffix = rightWords.slice(1).join(' ')
+
+    if (prefix && suffix) {
+      // Pattern: "prefix natural or artificial suffix"
+      return [
+        `${prefix} ${leftTerm} ${suffix}`,
+        `${prefix} ${rightTerm} ${suffix}`
+      ]
+    } else if (prefix) {
+      // Pattern: "prefix natural or artificial"
+      return [
+        `${prefix} ${leftTerm}`,
+        `${prefix} ${rightTerm}`
+      ]
+    } else {
+      // Simple "X or Y"
+      return [left.trim(), right.trim()]
+    }
+  }
+
+  // Check for "X and Y" patterns - might want to keep these together or expand
+  // For now, keep them as-is (single entity)
+
+  return [text]
+}
+
 async function normalizeProducts() {
   console.log('\n📦 Normalizing Products across all standards...')
 
@@ -74,27 +123,32 @@ async function normalizeProducts() {
 
       if (!name) continue
 
-      const id = toWikipediaStyle(name)
+      // Expand product names (e.g., "natural or artificial" → 2 products)
+      const expandedNames = expandEntityTypes(name)
 
-      if (!productMap.has(id)) {
-        productMap.set(id, {
-          id,
-          name,
-          description,
-          codes: new Set(),
-          standards: new Set()
+      for (const expandedName of expandedNames) {
+        const id = toWikipediaStyle(expandedName)
+
+        if (!productMap.has(id)) {
+          productMap.set(id, {
+            id,
+            name: expandedName,
+            description,
+            codes: new Set(),
+            standards: new Set()
+          })
+        }
+
+        const product = productMap.get(id)!
+        product.codes.add(code)
+        product.standards.add('UNSPSC')
+
+        relationships.push({
+          productId: id,
+          standardCode: code,
+          standard: 'UNSPSC'
         })
       }
-
-      const product = productMap.get(id)!
-      product.codes.add(code)
-      product.standards.add('UNSPSC')
-
-      relationships.push({
-        productId: id,
-        standardCode: code,
-        standard: 'UNSPSC'
-      })
     }
   }
 
@@ -121,30 +175,35 @@ async function normalizeProducts() {
 
       if (!name) continue
 
-      const id = toWikipediaStyle(name)
+      // Expand product names (e.g., "natural or artificial" → 2 products)
+      const expandedNames = expandEntityTypes(name)
 
-      if (!productMap.has(id)) {
-        productMap.set(id, {
-          id,
-          name,
-          description,
-          codes: new Set(),
-          standards: new Set()
+      for (const expandedName of expandedNames) {
+        const id = toWikipediaStyle(expandedName)
+
+        if (!productMap.has(id)) {
+          productMap.set(id, {
+            id,
+            name: expandedName,
+            description,
+            codes: new Set(),
+            standards: new Set()
+          })
+        }
+
+        const product = productMap.get(id)!
+        product.codes.add(code)
+        product.standards.add('GS1')
+        if (description && !product.description) {
+          product.description = description
+        }
+
+        relationships.push({
+          productId: id,
+          standardCode: code,
+          standard: 'GS1'
         })
       }
-
-      const product = productMap.get(id)!
-      product.codes.add(code)
-      product.standards.add('GS1')
-      if (description && !product.description) {
-        product.description = description
-      }
-
-      relationships.push({
-        productId: id,
-        standardCode: code,
-        standard: 'GS1'
-      })
     }
   }
 
