@@ -475,6 +475,23 @@ export class StatementParser {
       }
     }
 
+    // Pattern: "Verb X and Y" (simple conjunction with no shared suffix)
+    // Example: "Develop Vision and Strategy" → ["Develop Vision", "Develop Strategy"]
+    const simpleVerbConjunction = text.match(/^(\w+)\s+(.+?)\s+(and|or)\s+(.+)$/i)
+    if (simpleVerbConjunction) {
+      const [, verb, left, conj, right] = simpleVerbConjunction
+      if (this.lexicon.verbs.has(verb.toLowerCase())) {
+        // Recursively expand both sides in case they have their own conjunctions
+        const leftExpanded = this.expandPhrase(left)
+        const rightExpanded = this.expandPhrase(right)
+
+        return [
+          ...leftExpanded.map(l => `${verb} ${l}`),
+          ...rightExpanded.map(r => `${verb} ${r}`)
+        ]
+      }
+    }
+
     return [text]
   }
 

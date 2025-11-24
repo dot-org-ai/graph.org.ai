@@ -120,9 +120,11 @@ function toCamelCase(text: string, conceptIndex: Map<string, any>, shortNames?: 
   // Split and capitalize each word, then join (but preserve concept placeholders and existing CamelCase)
   const tokens = normalized.split(/[\s\-\/,;:()]+/).filter(t => t.trim())
 
-  // Articles and common lowercase words
-  const lowercaseWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'nor', 'for', 'so', 'yet',
-                                   'to', 'from', 'with', 'without', 'in', 'on', 'at', 'by', 'of'])
+  // Articles and prepositions to keep lowercase (but NOT conjunctions like "and"/"or" - those should be filtered out)
+  const lowercaseWords = new Set(['the', 'a', 'an', 'to', 'from', 'with', 'without', 'in', 'on', 'at', 'by', 'of'])
+
+  // Conjunctions that should be completely removed from GraphDL notation
+  const conjunctions = new Set(['and', 'or', 'but', 'nor', 'for', 'so', 'yet'])
 
   const processed = tokens.map(t => {
     // If it's a concept placeholder, it will be replaced later
@@ -133,13 +135,17 @@ function toCamelCase(text: string, conceptIndex: Map<string, any>, shortNames?: 
     if (/^[A-Z][a-z]+[A-Z]/.test(t)) {
       return t
     }
-    // Keep articles and common words lowercase
+    // Filter out conjunctions completely
+    if (conjunctions.has(t.toLowerCase())) {
+      return null
+    }
+    // Keep articles and prepositions lowercase
     if (lowercaseWords.has(t.toLowerCase())) {
       return t.toLowerCase()
     }
     // Otherwise capitalize first letter only
     return t.charAt(0).toUpperCase() + t.slice(1).toLowerCase()
-  })
+  }).filter(t => t !== null)
 
   // Join with dots and replace concept placeholders with actual concept IDs
   let result = processed.join('.')
