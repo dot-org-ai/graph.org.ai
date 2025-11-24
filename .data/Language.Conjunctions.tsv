@@ -1,32 +1,32 @@
-id	type	description	category	usage
-and	Conjunction	connects words, phrases, or clauses	Coordinating	coffee and tea
-but	Conjunction	introduces a contrast or exception	Coordinating	small but powerful
-or	Conjunction	presents alternatives	Coordinating	yes or no
-nor	Conjunction	negative alternative	Coordinating	neither this nor that
-for	Conjunction	indicates reason or purpose	Coordinating	worked hard, for success
-so	Conjunction	indicates result or consequence	Coordinating	tired, so rested
-yet	Conjunction	introduces a contrasting idea	Coordinating	small yet mighty
-after	Conjunction	follows in time	Subordinating	after completion
-although	Conjunction	despite the fact that	Subordinating	although difficult
-as	Conjunction	at the same time; because	Subordinating	as requested
-because	Conjunction	for the reason that	Subordinating	because necessary
-before	Conjunction	earlier than	Subordinating	before starting
-if	Conjunction	on the condition that	Subordinating	if approved
-once	Conjunction	as soon as	Subordinating	once finished
-since	Conjunction	from a time in the past	Subordinating	since Monday
-than	Conjunction	introduces comparison	Subordinating	better than before
-that	Conjunction	introduces a clause	Subordinating	know that it works
-though	Conjunction	despite the fact	Subordinating	though challenging
-till	Conjunction	up to the time when	Subordinating	till completion
-unless	Conjunction	except on the condition that	Subordinating	unless canceled
-until	Conjunction	up to the time that	Subordinating	until approved
-when	Conjunction	at or during the time that	Subordinating	when ready
-where	Conjunction	at or in which place	Subordinating	where needed
-whereas	Conjunction	in contrast to the fact that	Subordinating	whereas others failed
-wherever	Conjunction	in or to whatever place	Subordinating	wherever possible
-whether	Conjunction	if; either	Subordinating	whether approved
-while	Conjunction	during the time that	Subordinating	while working
-both	Conjunction	the two; one and the other	Correlative	both manager and employee
-either	Conjunction	one or the other of two	Correlative	either option
-neither	Conjunction	not one nor the other	Correlative	neither option
-not	Conjunction	negation	Correlative	not only...but also
+url	ns	type	id	code	name	description	category	usage
+https://graph.org/Conjunction/And	graph.org.ai	Conjunction	And	and		connects words, phrases, or clauses	Coordinating	coffee and tea
+https://graph.org/Conjunction/But	graph.org.ai	Conjunction	But	but		introduces a contrast or exception	Coordinating	small but powerful
+https://graph.org/Conjunction/Or	graph.org.ai	Conjunction	Or	or		presents alternatives	Coordinating	yes or no
+https://graph.org/Conjunction/Nor	graph.org.ai	Conjunction	Nor	nor		negative alternative	Coordinating	neither this nor that
+https://graph.org/Conjunction/For	graph.org.ai	Conjunction	For	for		indicates reason or purpose	Coordinating	worked hard, for success
+https://graph.org/Conjunction/So	graph.org.ai	Conjunction	So	so		indicates result or consequence	Coordinating	tired, so rested
+https://graph.org/Conjunction/Yet	graph.org.ai	Conjunction	Yet	yet		introduces a contrasting idea	Coordinating	small yet mighty
+https://graph.org/Conjunction/After	graph.org.ai	Conjunction	After	after		follows in time	Subordinating	after completion
+https://graph.org/Conjunction/Although	graph.org.ai	Conjunction	Although	although		despite the fact that	Subordinating	although difficult
+https://graph.org/Conjunction/As	graph.org.ai	Conjunction	As	as		at the same time; because	Subordinating	as requested
+https://graph.org/Conjunction/Because	graph.org.ai	Conjunction	Because	because		for the reason that	Subordinating	because necessary
+https://graph.org/Conjunction/Before	graph.org.ai	Conjunction	Before	before		earlier than	Subordinating	before starting
+https://graph.org/Conjunction/If	graph.org.ai	Conjunction	If	if		on the condition that	Subordinating	if approved
+https://graph.org/Conjunction/Once	graph.org.ai	Conjunction	Once	once		as soon as	Subordinating	once finished
+https://graph.org/Conjunction/Since	graph.org.ai	Conjunction	Since	since		from a time in the past	Subordinating	since Monday
+https://graph.org/Conjunction/Than	graph.org.ai	Conjunction	Than	than		introduces comparison	Subordinating	better than before
+https://graph.org/Conjunction/That	graph.org.ai	Conjunction	That	that		introduces a clause	Subordinating	know that it works
+https://graph.org/Conjunction/Though	graph.org.ai	Conjunction	Though	though		despite the fact	Subordinating	though challenging
+https://graph.org/Conjunction/Till	graph.org.ai	Conjunction	Till	till		up to the time when	Subordinating	till completion
+https://graph.org/Conjunction/Unless	graph.org.ai	Conjunction	Unless	unless		except on the condition that	Subordinating	unless canceled
+https://graph.org/Conjunction/Until	graph.org.ai	Conjunction	Until	until		up to the time that	Subordinating	until approved
+https://graph.org/Conjunction/When	graph.org.ai	Conjunction	When	when		at or during the time that	Subordinating	when ready
+https://graph.org/Conjunction/Where	graph.org.ai	Conjunction	Where	where		at or in which place	Subordinating	where needed
+https://graph.org/Conjunction/Whereas	graph.org.ai	Conjunction	Whereas	whereas		in contrast to the fact that	Subordinating	whereas others failed
+https://graph.org/Conjunction/Wherever	graph.org.ai	Conjunction	Wherever	wherever		in or to whatever place	Subordinating	wherever possible
+https://graph.org/Conjunction/Whether	graph.org.ai	Conjunction	Whether	whether		if; either	Subordinating	whether approved
+https://graph.org/Conjunction/While	graph.org.ai	Conjunction	While	while		during the time that	Subordinating	while working
+https://graph.org/Conjunction/Both	graph.org.ai	Conjunction	Both	both		the two; one and the other	Correlative	both manager and employee
+https://graph.org/Conjunction/Either	graph.org.ai	Conjunction	Either	either		one or the other of two	Correlative	either option
+https://graph.org/Conjunction/Neither	graph.org.ai	Conjunction	Neither	neither		not one nor the other	Correlative	neither option
+https://graph.org/Conjunction/Not	graph.org.ai	Conjunction	Not	not		negation	Correlative	not only...but also

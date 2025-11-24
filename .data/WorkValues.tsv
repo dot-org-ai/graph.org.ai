@@ -1,10 +1,10 @@
-id	type	elementID	elementName
-1.B.2.a	WorkValue	1.B.2.a	Achievement
-1.B.2.b	WorkValue	1.B.2.b	Working Conditions
-1.B.2.c	WorkValue	1.B.2.c	Recognition
-1.B.2.d	WorkValue	1.B.2.d	Relationships
-1.B.2.e	WorkValue	1.B.2.e	Support
-1.B.2.f	WorkValue	1.B.2.f	Independence
-1.B.2.g	WorkValue	1.B.2.g	First Work Value High-Point
-1.B.2.h	WorkValue	1.B.2.h	Second Work Value High-Point
-1.B.2.i	WorkValue	1.B.2.i	Third Work Value High-Point
+url	ns	type	id	code	name	description	elementID	elementName
+https://onet.org/WorkValue/1B2A	onet.org.ai	WorkValue	1b2a	1.B.2.a			1.B.2.a	Achievement
+https://onet.org/WorkValue/1B2B	onet.org.ai	WorkValue	1b2b	1.B.2.b			1.B.2.b	Working Conditions
+https://onet.org/WorkValue/1B2C	onet.org.ai	WorkValue	1b2c	1.B.2.c			1.B.2.c	Recognition
+https://onet.org/WorkValue/1B2D	onet.org.ai	WorkValue	1b2d	1.B.2.d			1.B.2.d	Relationships
+https://onet.org/WorkValue/1B2E	onet.org.ai	WorkValue	1b2e	1.B.2.e			1.B.2.e	Support
+https://onet.org/WorkValue/1B2F	onet.org.ai	WorkValue	1b2f	1.B.2.f			1.B.2.f	Independence
+https://onet.org/WorkValue/1B2G	onet.org.ai	WorkValue	1b2g	1.B.2.g			1.B.2.g	First Work Value High-Point
+https://onet.org/WorkValue/1B2H	onet.org.ai	WorkValue	1b2h	1.B.2.h			1.B.2.h	Second Work Value High-Point
+https://onet.org/WorkValue/1B2I	onet.org.ai	WorkValue	1b2i	1.B.2.i			1.B.2.i	Third Work Value High-Point

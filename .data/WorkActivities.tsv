@@ -1,42 +1,42 @@
-id	type	elementID	elementName
-4.A.1.a.1	WorkActivity	4.A.1.a.1	Getting Information
-4.A.1.a.2	WorkActivity	4.A.1.a.2	Monitoring Processes, Materials, or Surroundings
-4.A.1.b.1	WorkActivity	4.A.1.b.1	Identifying Objects, Actions, and Events
-4.A.1.b.2	WorkActivity	4.A.1.b.2	Inspecting Equipment, Structures, or Materials
-4.A.1.b.3	WorkActivity	4.A.1.b.3	Estimating the Quantifiable Characteristics of Products, Events, or Information
-4.A.2.a.1	WorkActivity	4.A.2.a.1	Judging the Qualities of Objects, Services, or People
-4.A.2.a.2	WorkActivity	4.A.2.a.2	Processing Information
-4.A.2.a.3	WorkActivity	4.A.2.a.3	Evaluating Information to Determine Compliance with Standards
-4.A.2.a.4	WorkActivity	4.A.2.a.4	Analyzing Data or Information
-4.A.2.b.1	WorkActivity	4.A.2.b.1	Making Decisions and Solving Problems
-4.A.2.b.2	WorkActivity	4.A.2.b.2	Thinking Creatively
-4.A.2.b.3	WorkActivity	4.A.2.b.3	Updating and Using Relevant Knowledge
-4.A.2.b.4	WorkActivity	4.A.2.b.4	Developing Objectives and Strategies
-4.A.2.b.5	WorkActivity	4.A.2.b.5	Scheduling Work and Activities
-4.A.2.b.6	WorkActivity	4.A.2.b.6	Organizing, Planning, and Prioritizing Work
-4.A.3.a.1	WorkActivity	4.A.3.a.1	Performing General Physical Activities
-4.A.3.a.2	WorkActivity	4.A.3.a.2	Handling and Moving Objects
-4.A.3.a.3	WorkActivity	4.A.3.a.3	Controlling Machines and Processes
-4.A.3.a.4	WorkActivity	4.A.3.a.4	Operating Vehicles, Mechanized Devices, or Equipment
-4.A.3.b.1	WorkActivity	4.A.3.b.1	Working with Computers
-4.A.3.b.2	WorkActivity	4.A.3.b.2	Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment
-4.A.3.b.4	WorkActivity	4.A.3.b.4	Repairing and Maintaining Mechanical Equipment
-4.A.3.b.5	WorkActivity	4.A.3.b.5	Repairing and Maintaining Electronic Equipment
-4.A.3.b.6	WorkActivity	4.A.3.b.6	Documenting/Recording Information
-4.A.4.a.1	WorkActivity	4.A.4.a.1	Interpreting the Meaning of Information for Others
-4.A.4.a.2	WorkActivity	4.A.4.a.2	Communicating with Supervisors, Peers, or Subordinates
-4.A.4.a.3	WorkActivity	4.A.4.a.3	Communicating with People Outside the Organization
-4.A.4.a.4	WorkActivity	4.A.4.a.4	Establishing and Maintaining Interpersonal Relationships
-4.A.4.a.5	WorkActivity	4.A.4.a.5	Assisting and Caring for Others
-4.A.4.a.6	WorkActivity	4.A.4.a.6	Selling or Influencing Others
-4.A.4.a.7	WorkActivity	4.A.4.a.7	Resolving Conflicts and Negotiating with Others
-4.A.4.a.8	WorkActivity	4.A.4.a.8	Performing for or Working Directly with the Public
-4.A.4.b.1	WorkActivity	4.A.4.b.1	Coordinating the Work and Activities of Others
-4.A.4.b.2	WorkActivity	4.A.4.b.2	Developing and Building Teams
-4.A.4.b.3	WorkActivity	4.A.4.b.3	Training and Teaching Others
-4.A.4.b.4	WorkActivity	4.A.4.b.4	Guiding, Directing, and Motivating Subordinates
-4.A.4.b.5	WorkActivity	4.A.4.b.5	Coaching and Developing Others
-4.A.4.b.6	WorkActivity	4.A.4.b.6	Providing Consultation and Advice to Others
-4.A.4.c.1	WorkActivity	4.A.4.c.1	Performing Administrative Activities
-4.A.4.c.2	WorkActivity	4.A.4.c.2	Staffing Organizational Units
-4.A.4.c.3	WorkActivity	4.A.4.c.3	Monitoring and Controlling Resources
+url	ns	type	id	code	name	description	elementID	elementName
+https://onet.org/WorkActivity/4A1A1	onet.org.ai	WorkActivity	4a1a1	4.A.1.a.1			4.A.1.a.1	Getting Information
+https://onet.org/WorkActivity/4A1A2	onet.org.ai	WorkActivity	4a1a2	4.A.1.a.2			4.A.1.a.2	Monitoring Processes, Materials, or Surroundings
+https://onet.org/WorkActivity/4A1B1	onet.org.ai	WorkActivity	4a1b1	4.A.1.b.1			4.A.1.b.1	Identifying Objects, Actions, and Events
+https://onet.org/WorkActivity/4A1B2	onet.org.ai	WorkActivity	4a1b2	4.A.1.b.2			4.A.1.b.2	Inspecting Equipment, Structures, or Materials
+https://onet.org/WorkActivity/4A1B3	onet.org.ai	WorkActivity	4a1b3	4.A.1.b.3			4.A.1.b.3	Estimating the Quantifiable Characteristics of Products, Events, or Information
+https://onet.org/WorkActivity/4A2A1	onet.org.ai	WorkActivity	4a2a1	4.A.2.a.1			4.A.2.a.1	Judging the Qualities of Objects, Services, or People
+https://onet.org/WorkActivity/4A2A2	onet.org.ai	WorkActivity	4a2a2	4.A.2.a.2			4.A.2.a.2	Processing Information
+https://onet.org/WorkActivity/4A2A3	onet.org.ai	WorkActivity	4a2a3	4.A.2.a.3			4.A.2.a.3	Evaluating Information to Determine Compliance with Standards
+https://onet.org/WorkActivity/4A2A4	onet.org.ai	WorkActivity	4a2a4	4.A.2.a.4			4.A.2.a.4	Analyzing Data or Information
+https://onet.org/WorkActivity/4A2B1	onet.org.ai	WorkActivity	4a2b1	4.A.2.b.1			4.A.2.b.1	Making Decisions and Solving Problems
+https://onet.org/WorkActivity/4A2B2	onet.org.ai	WorkActivity	4a2b2	4.A.2.b.2			4.A.2.b.2	Thinking Creatively
+https://onet.org/WorkActivity/4A2B3	onet.org.ai	WorkActivity	4a2b3	4.A.2.b.3			4.A.2.b.3	Updating and Using Relevant Knowledge
+https://onet.org/WorkActivity/4A2B4	onet.org.ai	WorkActivity	4a2b4	4.A.2.b.4			4.A.2.b.4	Developing Objectives and Strategies
+https://onet.org/WorkActivity/4A2B5	onet.org.ai	WorkActivity	4a2b5	4.A.2.b.5			4.A.2.b.5	Scheduling Work and Activities
+https://onet.org/WorkActivity/4A2B6	onet.org.ai	WorkActivity	4a2b6	4.A.2.b.6			4.A.2.b.6	Organizing, Planning, and Prioritizing Work
+https://onet.org/WorkActivity/4A3A1	onet.org.ai	WorkActivity	4a3a1	4.A.3.a.1			4.A.3.a.1	Performing General Physical Activities
+https://onet.org/WorkActivity/4A3A2	onet.org.ai	WorkActivity	4a3a2	4.A.3.a.2			4.A.3.a.2	Handling and Moving Objects
+https://onet.org/WorkActivity/4A3A3	onet.org.ai	WorkActivity	4a3a3	4.A.3.a.3			4.A.3.a.3	Controlling Machines and Processes
+https://onet.org/WorkActivity/4A3A4	onet.org.ai	WorkActivity	4a3a4	4.A.3.a.4			4.A.3.a.4	Operating Vehicles, Mechanized Devices, or Equipment
+https://onet.org/WorkActivity/4A3B1	onet.org.ai	WorkActivity	4a3b1	4.A.3.b.1			4.A.3.b.1	Working with Computers
+https://onet.org/WorkActivity/4A3B2	onet.org.ai	WorkActivity	4a3b2	4.A.3.b.2			4.A.3.b.2	Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment
+https://onet.org/WorkActivity/4A3B4	onet.org.ai	WorkActivity	4a3b4	4.A.3.b.4			4.A.3.b.4	Repairing and Maintaining Mechanical Equipment
+https://onet.org/WorkActivity/4A3B5	onet.org.ai	WorkActivity	4a3b5	4.A.3.b.5			4.A.3.b.5	Repairing and Maintaining Electronic Equipment
+https://onet.org/WorkActivity/4A3B6	onet.org.ai	WorkActivity	4a3b6	4.A.3.b.6			4.A.3.b.6	Documenting/Recording Information
+https://onet.org/WorkActivity/4A4A1	onet.org.ai	WorkActivity	4a4a1	4.A.4.a.1			4.A.4.a.1	Interpreting the Meaning of Information for Others
+https://onet.org/WorkActivity/4A4A2	onet.org.ai	WorkActivity	4a4a2	4.A.4.a.2			4.A.4.a.2	Communicating with Supervisors, Peers, or Subordinates
+https://onet.org/WorkActivity/4A4A3	onet.org.ai	WorkActivity	4a4a3	4.A.4.a.3			4.A.4.a.3	Communicating with People Outside the Organization
+https://onet.org/WorkActivity/4A4A4	onet.org.ai	WorkActivity	4a4a4	4.A.4.a.4			4.A.4.a.4	Establishing and Maintaining Interpersonal Relationships
+https://onet.org/WorkActivity/4A4A5	onet.org.ai	WorkActivity	4a4a5	4.A.4.a.5			4.A.4.a.5	Assisting and Caring for Others
+https://onet.org/WorkActivity/4A4A6	onet.org.ai	WorkActivity	4a4a6	4.A.4.a.6			4.A.4.a.6	Selling or Influencing Others
+https://onet.org/WorkActivity/4A4A7	onet.org.ai	WorkActivity	4a4a7	4.A.4.a.7			4.A.4.a.7	Resolving Conflicts and Negotiating with Others
+https://onet.org/WorkActivity/4A4A8	onet.org.ai	WorkActivity	4a4a8	4.A.4.a.8			4.A.4.a.8	Performing for or Working Directly with the Public
+https://onet.org/WorkActivity/4A4B1	onet.org.ai	WorkActivity	4a4b1	4.A.4.b.1			4.A.4.b.1	Coordinating the Work and Activities of Others
+https://onet.org/WorkActivity/4A4B2	onet.org.ai	WorkActivity	4a4b2	4.A.4.b.2			4.A.4.b.2	Developing and Building Teams
+https://onet.org/WorkActivity/4A4B3	onet.org.ai	WorkActivity	4a4b3	4.A.4.b.3			4.A.4.b.3	Training and Teaching Others
+https://onet.org/WorkActivity/4A4B4	onet.org.ai	WorkActivity	4a4b4	4.A.4.b.4			4.A.4.b.4	Guiding, Directing, and Motivating Subordinates
+https://onet.org/WorkActivity/4A4B5	onet.org.ai	WorkActivity	4a4b5	4.A.4.b.5			4.A.4.b.5	Coaching and Developing Others
+https://onet.org/WorkActivity/4A4B6	onet.org.ai	WorkActivity	4a4b6	4.A.4.b.6			4.A.4.b.6	Providing Consultation and Advice to Others
+https://onet.org/WorkActivity/4A4C1	onet.org.ai	WorkActivity	4a4c1	4.A.4.c.1			4.A.4.c.1	Performing Administrative Activities
+https://onet.org/WorkActivity/4A4C2	onet.org.ai	WorkActivity	4a4c2	4.A.4.c.2			4.A.4.c.2	Staffing Organizational Units
+https://onet.org/WorkActivity/4A4C3	onet.org.ai	WorkActivity	4a4c3	4.A.4.c.3			4.A.4.c.3	Monitoring and Controlling Resources

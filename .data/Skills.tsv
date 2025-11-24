@@ -1,36 +1,36 @@
-id	type	name
-2.A.1.a	Skill	Reading Comprehension
-2.A.1.b	Skill	Active Listening
-2.A.1.c	Skill	Writing
-2.A.1.d	Skill	Speaking
-2.A.1.e	Skill	Mathematics
-2.A.1.f	Skill	Science
-2.A.2.a	Skill	Critical Thinking
-2.A.2.b	Skill	Active Learning
-2.A.2.c	Skill	Learning Strategies
-2.A.2.d	Skill	Monitoring
-2.B.1.a	Skill	Social Perceptiveness
-2.B.1.b	Skill	Coordination
-2.B.1.c	Skill	Persuasion
-2.B.1.d	Skill	Negotiation
-2.B.1.e	Skill	Instructing
-2.B.1.f	Skill	Service Orientation
-2.B.2.i	Skill	Complex Problem Solving
-2.B.3.a	Skill	Operations Analysis
-2.B.3.b	Skill	Technology Design
-2.B.3.c	Skill	Equipment Selection
-2.B.3.d	Skill	Installation
-2.B.3.e	Skill	Programming
-2.B.3.g	Skill	Operations Monitoring
-2.B.3.h	Skill	Operation and Control
-2.B.3.j	Skill	Equipment Maintenance
-2.B.3.k	Skill	Troubleshooting
-2.B.3.l	Skill	Repairing
-2.B.3.m	Skill	Quality Control Analysis
-2.B.4.e	Skill	Judgment and Decision Making
-2.B.4.g	Skill	Systems Analysis
-2.B.4.h	Skill	Systems Evaluation
-2.B.5.a	Skill	Time Management
-2.B.5.b	Skill	Management of Financial Resources
-2.B.5.c	Skill	Management of Material Resources
-2.B.5.d	Skill	Management of Personnel Resources
+url	ns	type	id	code	name	description
+https://onet.org/Skill/ReadingComprehension	onet.org.ai	Skill	ReadingComprehension	2.A.1.a	Reading Comprehension	
+https://onet.org/Skill/ActiveListening	onet.org.ai	Skill	ActiveListening	2.A.1.b	Active Listening	
+https://onet.org/Skill/Writing	onet.org.ai	Skill	Writing	2.A.1.c	Writing	
+https://onet.org/Skill/Speaking	onet.org.ai	Skill	Speaking	2.A.1.d	Speaking	
+https://onet.org/Skill/Mathematics	onet.org.ai	Skill	Mathematics	2.A.1.e	Mathematics	
+https://onet.org/Skill/Science	onet.org.ai	Skill	Science	2.A.1.f	Science	
+https://onet.org/Skill/CriticalThinking	onet.org.ai	Skill	CriticalThinking	2.A.2.a	Critical Thinking	
+https://onet.org/Skill/ActiveLearning	onet.org.ai	Skill	ActiveLearning	2.A.2.b	Active Learning	
+https://onet.org/Skill/LearningStrategies	onet.org.ai	Skill	LearningStrategies	2.A.2.c	Learning Strategies	
+https://onet.org/Skill/Monitoring	onet.org.ai	Skill	Monitoring	2.A.2.d	Monitoring	
+https://onet.org/Skill/SocialPerceptiveness	onet.org.ai	Skill	SocialPerceptiveness	2.B.1.a	Social Perceptiveness	
+https://onet.org/Skill/Coordination	onet.org.ai	Skill	Coordination	2.B.1.b	Coordination	
+https://onet.org/Skill/Persuasion	onet.org.ai	Skill	Persuasion	2.B.1.c	Persuasion	
+https://onet.org/Skill/Negotiation	onet.org.ai	Skill	Negotiation	2.B.1.d	Negotiation	
+https://onet.org/Skill/Instructing	onet.org.ai	Skill	Instructing	2.B.1.e	Instructing	
+https://onet.org/Skill/ServiceOrientation	onet.org.ai	Skill	ServiceOrientation	2.B.1.f	Service Orientation	
+https://onet.org/Skill/ComplexProblemSolving	onet.org.ai	Skill	ComplexProblemSolving	2.B.2.i	Complex Problem Solving	
+https://onet.org/Skill/OperationsAnalysis	onet.org.ai	Skill	OperationsAnalysis	2.B.3.a	Operations Analysis	
+https://onet.org/Skill/TechnologyDesign	onet.org.ai	Skill	TechnologyDesign	2.B.3.b	Technology Design	
+https://onet.org/Skill/EquipmentSelection	onet.org.ai	Skill	EquipmentSelection	2.B.3.c	Equipment Selection	
+https://onet.org/Skill/Installation	onet.org.ai	Skill	Installation	2.B.3.d	Installation	
+https://onet.org/Skill/Programming	onet.org.ai	Skill	Programming	2.B.3.e	Programming	
+https://onet.org/Skill/OperationsMonitoring	onet.org.ai	Skill	OperationsMonitoring	2.B.3.g	Operations Monitoring	
+https://onet.org/Skill/OperationAndControl	onet.org.ai	Skill	OperationAndControl	2.B.3.h	Operation and Control	
+https://onet.org/Skill/EquipmentMaintenance	onet.org.ai	Skill	EquipmentMaintenance	2.B.3.j	Equipment Maintenance	
+https://onet.org/Skill/Troubleshooting	onet.org.ai	Skill	Troubleshooting	2.B.3.k	Troubleshooting	
+https://onet.org/Skill/Repairing	onet.org.ai	Skill	Repairing	2.B.3.l	Repairing	
+https://onet.org/Skill/QualityControlAnalysis	onet.org.ai	Skill	QualityControlAnalysis	2.B.3.m	Quality Control Analysis	
+https://onet.org/Skill/JudgmentAndDecisionMaking	onet.org.ai	Skill	JudgmentAndDecisionMaking	2.B.4.e	Judgment and Decision Making	
+https://onet.org/Skill/SystemsAnalysis	onet.org.ai	Skill	SystemsAnalysis	2.B.4.g	Systems Analysis	
+https://onet.org/Skill/SystemsEvaluation	onet.org.ai	Skill	SystemsEvaluation	2.B.4.h	Systems Evaluation	
+https://onet.org/Skill/TimeManagement	onet.org.ai	Skill	TimeManagement	2.B.5.a	Time Management	
+https://onet.org/Skill/ManagementOfFinancialResources	onet.org.ai	Skill	ManagementOfFinancialResources	2.B.5.b	Management of Financial Resources	
+https://onet.org/Skill/ManagementOfMaterialResources	onet.org.ai	Skill	ManagementOfMaterialResources	2.B.5.c	Management of Material Resources	
+https://onet.org/Skill/ManagementOfPersonnelResources	onet.org.ai	Skill	ManagementOfPersonnelResources	2.B.5.d	Management of Personnel Resources	

@@ -1,58 +1,58 @@
-id	type	elementID	elementName
-4.C.1.a.2.c	WorkContext	4.C.1.a.2.c	Public Speaking
-4.C.1.a.2.f	WorkContext	4.C.1.a.2.f	Telephone Conversations
-4.C.1.a.2.h	WorkContext	4.C.1.a.2.h	E-Mail
-4.C.1.a.2.j	WorkContext	4.C.1.a.2.j	Written Letters and Memos
-4.C.1.a.2.l	WorkContext	4.C.1.a.2.l	Face-to-Face Discussions with Individuals and Within Teams
-4.C.1.a.4	WorkContext	4.C.1.a.4	Contact With Others
-4.C.1.b.1.e	WorkContext	4.C.1.b.1.e	Work With or Contribute to a Work Group or Team
-4.C.1.b.1.f	WorkContext	4.C.1.b.1.f	Deal With External Customers or the Public in General
-4.C.1.b.1.g	WorkContext	4.C.1.b.1.g	Coordinate or Lead Others in Accomplishing Work Activities
-4.C.1.c.1	WorkContext	4.C.1.c.1	Health and Safety of Other Workers
-4.C.1.c.2	WorkContext	4.C.1.c.2	Work Outcomes and Results of Other Workers
-4.C.1.d.1	WorkContext	4.C.1.d.1	Conflict Situations
-4.C.1.d.2	WorkContext	4.C.1.d.2	Dealing With Unpleasant, Angry, or Discourteous People
-4.C.1.d.3	WorkContext	4.C.1.d.3	Dealing with Violent or Physically Aggressive People
-4.C.2.a.1.a	WorkContext	4.C.2.a.1.a	Indoors, Environmentally Controlled
-4.C.2.a.1.b	WorkContext	4.C.2.a.1.b	Indoors, Not Environmentally Controlled
-4.C.2.a.1.c	WorkContext	4.C.2.a.1.c	Outdoors, Exposed to All Weather Conditions
-4.C.2.a.1.d	WorkContext	4.C.2.a.1.d	Outdoors, Under Cover
-4.C.2.a.1.e	WorkContext	4.C.2.a.1.e	In an Open Vehicle or Operating Equipment
-4.C.2.a.1.f	WorkContext	4.C.2.a.1.f	In an Enclosed Vehicle or Operate Enclosed Equipment
-4.C.2.a.3	WorkContext	4.C.2.a.3	Physical Proximity
-4.C.2.b.1.a	WorkContext	4.C.2.b.1.a	Exposed to Sounds, Noise Levels that are Distracting or Uncomfortable
-4.C.2.b.1.b	WorkContext	4.C.2.b.1.b	Exposed to Very Hot or Cold Temperatures
-4.C.2.b.1.c	WorkContext	4.C.2.b.1.c	Exposed to Extremely Bright or Inadequate Lighting Conditions
-4.C.2.b.1.d	WorkContext	4.C.2.b.1.d	Exposed to Contaminants
-4.C.2.b.1.e	WorkContext	4.C.2.b.1.e	Exposed to Cramped Work Space, Awkward Positions
-4.C.2.b.1.f	WorkContext	4.C.2.b.1.f	Exposed to Whole Body Vibration
-4.C.2.c.1.a	WorkContext	4.C.2.c.1.a	Exposed to Radiation
-4.C.2.c.1.b	WorkContext	4.C.2.c.1.b	Exposed to Disease or Infections
-4.C.2.c.1.c	WorkContext	4.C.2.c.1.c	Exposed to High Places
-4.C.2.c.1.d	WorkContext	4.C.2.c.1.d	Exposed to Hazardous Conditions
-4.C.2.c.1.e	WorkContext	4.C.2.c.1.e	Exposed to Hazardous Equipment
-4.C.2.c.1.f	WorkContext	4.C.2.c.1.f	Exposed to Minor Burns, Cuts, Bites, or Stings
-4.C.2.d.1.a	WorkContext	4.C.2.d.1.a	Spend Time Sitting
-4.C.2.d.1.b	WorkContext	4.C.2.d.1.b	Spend Time Standing
-4.C.2.d.1.c	WorkContext	4.C.2.d.1.c	Spend Time Climbing Ladders, Scaffolds, or Poles
-4.C.2.d.1.d	WorkContext	4.C.2.d.1.d	Spend Time Walking or Running
-4.C.2.d.1.e	WorkContext	4.C.2.d.1.e	Spend Time Kneeling, Crouching, Stooping, or Crawling
-4.C.2.d.1.f	WorkContext	4.C.2.d.1.f	Spend Time Keeping or Regaining Balance
-4.C.2.d.1.g	WorkContext	4.C.2.d.1.g	Spend Time Using Your Hands to Handle, Control, or Feel Objects, Tools, or Controls
-4.C.2.d.1.h	WorkContext	4.C.2.d.1.h	Spend Time Bending or Twisting Your Body
-4.C.2.d.1.i	WorkContext	4.C.2.d.1.i	Spend Time Making Repetitive Motions
-4.C.2.e.1.d	WorkContext	4.C.2.e.1.d	Wear Common Protective or Safety Equipment such as Safety Shoes, Glasses, Gloves, Hearing Protection, Hard Hats, or Life Jackets
-4.C.2.e.1.e	WorkContext	4.C.2.e.1.e	Wear Specialized Protective or Safety Equipment such as Breathing Apparatus, Safety Harness, Full Protection Suits, or Radiation Protection
-4.C.3.a.1	WorkContext	4.C.3.a.1	Consequence of Error
-4.C.3.a.2.a	WorkContext	4.C.3.a.2.a	Impact of Decisions on Co-workers or Company Results
-4.C.3.a.2.b	WorkContext	4.C.3.a.2.b	Frequency of Decision Making
-4.C.3.a.4	WorkContext	4.C.3.a.4	Freedom to Make Decisions
-4.C.3.b.2	WorkContext	4.C.3.b.2	Degree of Automation
-4.C.3.b.4	WorkContext	4.C.3.b.4	Importance of Being Exact or Accurate
-4.C.3.b.7	WorkContext	4.C.3.b.7	Importance of Repeating Same Tasks
-4.C.3.b.8	WorkContext	4.C.3.b.8	Determine Tasks, Priorities and Goals
-4.C.3.c.1	WorkContext	4.C.3.c.1	Level of Competition
-4.C.3.d.1	WorkContext	4.C.3.d.1	Time Pressure
-4.C.3.d.3	WorkContext	4.C.3.d.3	Pace Determined by Speed of Equipment
-4.C.3.d.4	WorkContext	4.C.3.d.4	Work Schedules
-4.C.3.d.8	WorkContext	4.C.3.d.8	Duration of Typical Work Week
+url	ns	type	id	code	name	description	elementID	elementName
+https://onet.org/WorkContext/4C1A2C	onet.org.ai	WorkContext	4c1a2c	4.C.1.a.2.c			4.C.1.a.2.c	Public Speaking
+https://onet.org/WorkContext/4C1A2F	onet.org.ai	WorkContext	4c1a2f	4.C.1.a.2.f			4.C.1.a.2.f	Telephone Conversations
+https://onet.org/WorkContext/4C1A2H	onet.org.ai	WorkContext	4c1a2h	4.C.1.a.2.h			4.C.1.a.2.h	E-Mail
+https://onet.org/WorkContext/4C1A2J	onet.org.ai	WorkContext	4c1a2j	4.C.1.a.2.j			4.C.1.a.2.j	Written Letters and Memos
+https://onet.org/WorkContext/4C1A2L	onet.org.ai	WorkContext	4c1a2l	4.C.1.a.2.l			4.C.1.a.2.l	Face-to-Face Discussions with Individuals and Within Teams
+https://onet.org/WorkContext/4C1A4	onet.org.ai	WorkContext	4c1a4	4.C.1.a.4			4.C.1.a.4	Contact With Others
+https://onet.org/WorkContext/4C1B1E	onet.org.ai	WorkContext	4c1b1e	4.C.1.b.1.e			4.C.1.b.1.e	Work With or Contribute to a Work Group or Team
+https://onet.org/WorkContext/4C1B1F	onet.org.ai	WorkContext	4c1b1f	4.C.1.b.1.f			4.C.1.b.1.f	Deal With External Customers or the Public in General
+https://onet.org/WorkContext/4C1B1G	onet.org.ai	WorkContext	4c1b1g	4.C.1.b.1.g			4.C.1.b.1.g	Coordinate or Lead Others in Accomplishing Work Activities
+https://onet.org/WorkContext/4C1C1	onet.org.ai	WorkContext	4c1c1	4.C.1.c.1			4.C.1.c.1	Health and Safety of Other Workers
+https://onet.org/WorkContext/4C1C2	onet.org.ai	WorkContext	4c1c2	4.C.1.c.2			4.C.1.c.2	Work Outcomes and Results of Other Workers
+https://onet.org/WorkContext/4C1D1	onet.org.ai	WorkContext	4c1d1	4.C.1.d.1			4.C.1.d.1	Conflict Situations
+https://onet.org/WorkContext/4C1D2	onet.org.ai	WorkContext	4c1d2	4.C.1.d.2			4.C.1.d.2	Dealing With Unpleasant, Angry, or Discourteous People
+https://onet.org/WorkContext/4C1D3	onet.org.ai	WorkContext	4c1d3	4.C.1.d.3			4.C.1.d.3	Dealing with Violent or Physically Aggressive People
+https://onet.org/WorkContext/4C2A1A	onet.org.ai	WorkContext	4c2a1a	4.C.2.a.1.a			4.C.2.a.1.a	Indoors, Environmentally Controlled
+https://onet.org/WorkContext/4C2A1B	onet.org.ai	WorkContext	4c2a1b	4.C.2.a.1.b			4.C.2.a.1.b	Indoors, Not Environmentally Controlled
+https://onet.org/WorkContext/4C2A1C	onet.org.ai	WorkContext	4c2a1c	4.C.2.a.1.c			4.C.2.a.1.c	Outdoors, Exposed to All Weather Conditions
+https://onet.org/WorkContext/4C2A1D	onet.org.ai	WorkContext	4c2a1d	4.C.2.a.1.d			4.C.2.a.1.d	Outdoors, Under Cover
+https://onet.org/WorkContext/4C2A1E	onet.org.ai	WorkContext	4c2a1e	4.C.2.a.1.e			4.C.2.a.1.e	In an Open Vehicle or Operating Equipment
+https://onet.org/WorkContext/4C2A1F	onet.org.ai	WorkContext	4c2a1f	4.C.2.a.1.f			4.C.2.a.1.f	In an Enclosed Vehicle or Operate Enclosed Equipment
+https://onet.org/WorkContext/4C2A3	onet.org.ai	WorkContext	4c2a3	4.C.2.a.3			4.C.2.a.3	Physical Proximity
+https://onet.org/WorkContext/4C2B1A	onet.org.ai	WorkContext	4c2b1a	4.C.2.b.1.a			4.C.2.b.1.a	Exposed to Sounds, Noise Levels that are Distracting or Uncomfortable
+https://onet.org/WorkContext/4C2B1B	onet.org.ai	WorkContext	4c2b1b	4.C.2.b.1.b			4.C.2.b.1.b	Exposed to Very Hot or Cold Temperatures
+https://onet.org/WorkContext/4C2B1C	onet.org.ai	WorkContext	4c2b1c	4.C.2.b.1.c			4.C.2.b.1.c	Exposed to Extremely Bright or Inadequate Lighting Conditions
+https://onet.org/WorkContext/4C2B1D	onet.org.ai	WorkContext	4c2b1d	4.C.2.b.1.d			4.C.2.b.1.d	Exposed to Contaminants
+https://onet.org/WorkContext/4C2B1E	onet.org.ai	WorkContext	4c2b1e	4.C.2.b.1.e			4.C.2.b.1.e	Exposed to Cramped Work Space, Awkward Positions
+https://onet.org/WorkContext/4C2B1F	onet.org.ai	WorkContext	4c2b1f	4.C.2.b.1.f			4.C.2.b.1.f	Exposed to Whole Body Vibration
+https://onet.org/WorkContext/4C2C1A	onet.org.ai	WorkContext	4c2c1a	4.C.2.c.1.a			4.C.2.c.1.a	Exposed to Radiation
+https://onet.org/WorkContext/4C2C1B	onet.org.ai	WorkContext	4c2c1b	4.C.2.c.1.b			4.C.2.c.1.b	Exposed to Disease or Infections
+https://onet.org/WorkContext/4C2C1C	onet.org.ai	WorkContext	4c2c1c	4.C.2.c.1.c			4.C.2.c.1.c	Exposed to High Places
+https://onet.org/WorkContext/4C2C1D	onet.org.ai	WorkContext	4c2c1d	4.C.2.c.1.d			4.C.2.c.1.d	Exposed to Hazardous Conditions
+https://onet.org/WorkContext/4C2C1E	onet.org.ai	WorkContext	4c2c1e	4.C.2.c.1.e			4.C.2.c.1.e	Exposed to Hazardous Equipment
+https://onet.org/WorkContext/4C2C1F	onet.org.ai	WorkContext	4c2c1f	4.C.2.c.1.f			4.C.2.c.1.f	Exposed to Minor Burns, Cuts, Bites, or Stings
+https://onet.org/WorkContext/4C2D1A	onet.org.ai	WorkContext	4c2d1a	4.C.2.d.1.a			4.C.2.d.1.a	Spend Time Sitting
+https://onet.org/WorkContext/4C2D1B	onet.org.ai	WorkContext	4c2d1b	4.C.2.d.1.b			4.C.2.d.1.b	Spend Time Standing
+https://onet.org/WorkContext/4C2D1C	onet.org.ai	WorkContext	4c2d1c	4.C.2.d.1.c			4.C.2.d.1.c	Spend Time Climbing Ladders, Scaffolds, or Poles
+https://onet.org/WorkContext/4C2D1D	onet.org.ai	WorkContext	4c2d1d	4.C.2.d.1.d			4.C.2.d.1.d	Spend Time Walking or Running
+https://onet.org/WorkContext/4C2D1E	onet.org.ai	WorkContext	4c2d1e	4.C.2.d.1.e			4.C.2.d.1.e	Spend Time Kneeling, Crouching, Stooping, or Crawling
+https://onet.org/WorkContext/4C2D1F	onet.org.ai	WorkContext	4c2d1f	4.C.2.d.1.f			4.C.2.d.1.f	Spend Time Keeping or Regaining Balance
+https://onet.org/WorkContext/4C2D1G	onet.org.ai	WorkContext	4c2d1g	4.C.2.d.1.g			4.C.2.d.1.g	Spend Time Using Your Hands to Handle, Control, or Feel Objects, Tools, or Controls
+https://onet.org/WorkContext/4C2D1H	onet.org.ai	WorkContext	4c2d1h	4.C.2.d.1.h			4.C.2.d.1.h	Spend Time Bending or Twisting Your Body
+https://onet.org/WorkContext/4C2D1I	onet.org.ai	WorkContext	4c2d1i	4.C.2.d.1.i			4.C.2.d.1.i	Spend Time Making Repetitive Motions
+https://onet.org/WorkContext/4C2E1D	onet.org.ai	WorkContext	4c2e1d	4.C.2.e.1.d			4.C.2.e.1.d	Wear Common Protective or Safety Equipment such as Safety Shoes, Glasses, Gloves, Hearing Protection, Hard Hats, or Life Jackets
+https://onet.org/WorkContext/4C2E1E	onet.org.ai	WorkContext	4c2e1e	4.C.2.e.1.e			4.C.2.e.1.e	Wear Specialized Protective or Safety Equipment such as Breathing Apparatus, Safety Harness, Full Protection Suits, or Radiation Protection
+https://onet.org/WorkContext/4C3A1	onet.org.ai	WorkContext	4c3a1	4.C.3.a.1			4.C.3.a.1	Consequence of Error
+https://onet.org/WorkContext/4C3A2A	onet.org.ai	WorkContext	4c3a2a	4.C.3.a.2.a			4.C.3.a.2.a	Impact of Decisions on Co-workers or Company Results
+https://onet.org/WorkContext/4C3A2B	onet.org.ai	WorkContext	4c3a2b	4.C.3.a.2.b			4.C.3.a.2.b	Frequency of Decision Making
+https://onet.org/WorkContext/4C3A4	onet.org.ai	WorkContext	4c3a4	4.C.3.a.4			4.C.3.a.4	Freedom to Make Decisions
+https://onet.org/WorkContext/4C3B2	onet.org.ai	WorkContext	4c3b2	4.C.3.b.2			4.C.3.b.2	Degree of Automation
+https://onet.org/WorkContext/4C3B4	onet.org.ai	WorkContext	4c3b4	4.C.3.b.4			4.C.3.b.4	Importance of Being Exact or Accurate
+https://onet.org/WorkContext/4C3B7	onet.org.ai	WorkContext	4c3b7	4.C.3.b.7			4.C.3.b.7	Importance of Repeating Same Tasks
+https://onet.org/WorkContext/4C3B8	onet.org.ai	WorkContext	4c3b8	4.C.3.b.8			4.C.3.b.8	Determine Tasks, Priorities and Goals
+https://onet.org/WorkContext/4C3C1	onet.org.ai	WorkContext	4c3c1	4.C.3.c.1			4.C.3.c.1	Level of Competition
+https://onet.org/WorkContext/4C3D1	onet.org.ai	WorkContext	4c3d1	4.C.3.d.1			4.C.3.d.1	Time Pressure
+https://onet.org/WorkContext/4C3D3	onet.org.ai	WorkContext	4c3d3	4.C.3.d.3			4.C.3.d.3	Pace Determined by Speed of Equipment
+https://onet.org/WorkContext/4C3D4	onet.org.ai	WorkContext	4c3d4	4.C.3.d.4			4.C.3.d.4	Work Schedules
+https://onet.org/WorkContext/4C3D8	onet.org.ai	WorkContext	4c3d8	4.C.3.d.8			4.C.3.d.8	Duration of Typical Work Week
