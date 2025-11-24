@@ -335,10 +335,10 @@ export class StatementParser {
       }
     }
 
-    // Check for Oxford comma verb lists: "Verb1, Verb2, and Verb3 Object"
-    const oxfordCommaMatch = text.match(/^(\w+(?:,\s*\w+)*),?\s+and\s+(\w+)\s+(.+)$/i)
+    // Check for Oxford comma verb lists: "Verb1, Verb2, and/or Verb3 Object"
+    const oxfordCommaMatch = text.match(/^(\w+(?:,\s*\w+)*),?\s+(and|or)\s+(\w+)\s+(.+)$/i)
     if (oxfordCommaMatch) {
-      const [, verbList, lastVerb, rest] = oxfordCommaMatch
+      const [, verbList, conj, lastVerb, rest] = oxfordCommaMatch
       const verbs = verbList.split(/,\s*/).concat([lastVerb])
 
       // Check if all are verbs
@@ -627,10 +627,15 @@ export class StatementParser {
 
     // Find object - collect all tokens until PREP or end
     // Keep conjunctions, adjectives, nouns, everything
+    // But stop at certain punctuation (periods, semicolons) not commas
     const objectTokens: string[] = []
-    while (i < tagged.length && tagged[i].pos !== 'PREP' && tagged[i].pos !== 'PUNCT') {
-      // Skip determiners but keep everything else
-      if (tagged[i].pos !== 'DET') {
+    while (i < tagged.length && tagged[i].pos !== 'PREP') {
+      // Stop at sentence-ending punctuation but not commas
+      if (tagged[i].pos === 'PUNCT' && (tagged[i].text === '.' || tagged[i].text === ';' || tagged[i].text === ')')) {
+        break
+      }
+      // Skip determiners and commas, but keep everything else
+      if (tagged[i].pos !== 'DET' && tagged[i].text !== ',') {
         objectTokens.push(tagged[i].text)
       }
       i++
@@ -654,9 +659,14 @@ export class StatementParser {
     }
 
     // Find complement (final phrase after preposition)
-    // Include everything except determiners and punctuation
+    // Include everything except determiners, but keep hyphens for compound words
     const complementTokens: string[] = []
-    while (i < tagged.length && tagged[i].pos !== 'PUNCT') {
+    while (i < tagged.length) {
+      // Stop at sentence-ending punctuation but not hyphens
+      if (tagged[i].pos === 'PUNCT' && (tagged[i].text === '.' || tagged[i].text === ';' || tagged[i].text === ')')) {
+        break
+      }
+      // Skip determiners but keep everything else including hyphens
       if (tagged[i].pos !== 'DET') {
         complementTokens.push(tagged[i].text)
       }
@@ -767,29 +777,60 @@ export class GraphDLParser {
     if (parse.subject) parts.push(parse.subject)
     if (parse.predicate) parts.push(parse.predicate)
     if (parse.object) {
-      // For objects, only use the main noun/phrase, skip conjunctions
-      // "quality of customer interactions" -> "quality"
-      // But preserve multi-word concepts like "customer interactions"
-      const objectWords = parse.object.split(' ')
-      // Take first significant word (capitalized noun or the whole phrase if short)
-      if (objectWords.length <= 3) {
-        parts.push(parse.object.replace(/\s+/g, ''))
-      } else {
-        // For longer phrases, take first capitalized noun or first word
-        const firstNoun = objectWords.find(w => /^[A-Z]/.test(w)) || objectWords[0]
-        parts.push(firstNoun)
+      // For objects, preserve meaningful noun phrases
+      // Handle hyphenated compounds: "cross-functional strategies" -> "CrossFunctionalStrategies"
+      // Handle multiple nouns: "roles mapping" -> "RolesMapping"
+      // But truncate at prepositions: "quality of customer" -> "Quality"
+
+      let objectPhrase = parse.object
+
+      // If there's a preposition, take only the part before it
+      const prepMatch = objectPhrase.match(/^(.+?)\s+(of|in|on|at|to|for|with|from|by)\s+/)
+      if (prepMatch) {
+        objectPhrase = prepMatch[1]
       }
+
+      // Split into words and filter out conjunctions
+      const words = objectPhrase.split(/\s+/).filter(w =>
+        w && !['and', 'or', 'but'].includes(w.toLowerCase())
+      )
+
+      // Take up to the first 3 meaningful words to avoid overly long identifiers
+      const significantWords = words.slice(0, 3)
+
+      // Convert to PascalCase, preserving hyphens as compound words
+      const pascalCase = significantWords
+        .map(word => {
+          // Handle hyphenated compounds: "cross-functional" -> "CrossFunctional"
+          return word.split('-')
+            .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+            .join('')
+        })
+        .join('')
+
+      parts.push(pascalCase)
     }
     if (parse.preposition) parts.push(parse.preposition)
     if (parse.complement) {
-      // Same logic for complement
-      const complementWords = parse.complement.split(' ')
-      if (complementWords.length <= 3) {
-        parts.push(parse.complement.replace(/\s+/g, ''))
-      } else {
-        const firstNoun = complementWords.find(w => /^[A-Z]/.test(w)) || complementWords[0]
-        parts.push(firstNoun)
-      }
+      // Apply same hyphenated compound logic for complement
+      const words = parse.complement.split(/\s+/).filter(w =>
+        w && !['and', 'or', 'but'].includes(w.toLowerCase())
+      )
+
+      // Take up to the first 3 meaningful words
+      const significantWords = words.slice(0, 3)
+
+      // Convert to PascalCase, preserving hyphens as compound words
+      const pascalCase = significantWords
+        .map(word => {
+          // Handle hyphenated compounds: "cross-channel" -> "CrossChannel"
+          return word.split('-')
+            .map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+            .join('')
+        })
+        .join('')
+
+      parts.push(pascalCase)
     }
 
     return parts.join('.')

@@ -328,13 +328,25 @@ async function main() {
   const conceptLines = conceptsContent.split('\n').slice(1).filter(l => l.trim())
   console.log(`  ✓ Copied ${conceptLines.length} concepts to ${conceptsDestPath}`)
 
-  // Copy Verbs
+  // Transform Verbs (add id and type columns for test compatibility)
   const verbsSourcePath = path.join(repoRoot, '.enrichment/Language/Language.Verbs.tsv')
   const verbsDestPath = path.join(outputDir, 'Verbs.tsv')
   const verbsContent = fs.readFileSync(verbsSourcePath, 'utf-8')
-  fs.writeFileSync(verbsDestPath, verbsContent)
-  const verbLines = verbsContent.split('\n').slice(1).filter(l => l.trim())
-  console.log(`  ✓ Copied ${verbLines.length} verbs to ${verbsDestPath}`)
+  const verbLines = verbsContent.split('\n')
+  const verbHeaders = verbLines[0].split('\t')
+
+  // Add 'id' and 'type' to headers (id = lowercase canonicalForm, type = 'Verb')
+  const newVerbHeaders = ['id', 'type', ...verbHeaders]
+  const newVerbRows = verbLines.slice(1).filter(l => l.trim()).map(line => {
+    const cols = line.split('\t')
+    const canonicalForm = cols[0] || ''
+    const id = canonicalForm.toLowerCase()  // Lowercase for verb IDs
+    return [id, 'Verb', ...cols].join('\t')
+  })
+
+  const newVerbsContent = [newVerbHeaders.join('\t'), ...newVerbRows].join('\n')
+  fs.writeFileSync(verbsDestPath, newVerbsContent)
+  console.log(`  ✓ Copied ${newVerbRows.length} verbs to ${verbsDestPath}`)
 
   // STEP 1: Parse NAICS Industries and generate expanded entities
   console.log('STEP 1: Parsing NAICS Industries...')
@@ -400,6 +412,7 @@ async function main() {
     pcfId: string
     hierarchyId: string
     name: string
+    description: string
     industry: string
   }> = []
 
@@ -428,7 +441,7 @@ async function main() {
             parts.push(toCamelCase(exp.complement, conceptIndex, shortNames))
           }
           const id = parts.join('.')
-          apqcProcesses.push({ id, pcfId, hierarchyId, name: name.trim(), industry })
+          apqcProcesses.push({ id, pcfId, hierarchyId, name: name.trim(), description: name.trim(), industry })
           processedCount++
         }
       } else {
@@ -440,7 +453,7 @@ async function main() {
           parts.push(toCamelCase(parsed.complement, conceptIndex, shortNames))
         }
         const id = parts.join('.')
-        apqcProcesses.push({ id, pcfId, hierarchyId, name: name.trim(), industry })
+        apqcProcesses.push({ id, pcfId, hierarchyId, name: name.trim(), description: name.trim(), industry })
         processedCount++
       }
     } catch (err) {
@@ -450,9 +463,9 @@ async function main() {
   console.log(`  ✓ Loaded ${processedCount} APQC process expansions across all industries`)
 
   // Write APQC output
-  const apqcTsvHeaders = ['id', 'pcfId', 'hierarchyId', 'name', 'industry']
+  const apqcTsvHeaders = ['id', 'pcfId', 'hierarchyId', 'name', 'description', 'industry']
   const apqcTsvRows = apqcProcesses.map(p =>
-    [p.id, p.pcfId, p.hierarchyId, p.name, p.industry].join('\t')
+    [p.id, p.pcfId, p.hierarchyId, p.name, p.description, p.industry].join('\t')
   )
   const apqcTsv = [apqcTsvHeaders.join('\t'), ...apqcTsvRows].join('\n')
   const apqcOutputPath = path.join(outputDir, 'Processes.tsv')
@@ -501,8 +514,10 @@ async function main() {
   const onetTasks: Array<{
     id: string
     onetCode: string
+    occupationCode: string  // Alias for onetCode for test compatibility
     taskId: string
     task: string
+    description: string  // Alias for task for test compatibility
     occupationTitle: string
   }> = []
 
@@ -535,7 +550,7 @@ async function main() {
               parts.push(toCamelCase(exp.complement, conceptIndex, shortNames))
             }
             const id = parts.join('.')
-            onetTasks.push({ id, onetCode, taskId, task: task.trim(), occupationTitle })
+            onetTasks.push({ id, onetCode, occupationCode: onetCode, taskId, task: task.trim(), description: task.trim(), occupationTitle })
             taskProcessedCount++
           }
         } else {
@@ -547,7 +562,7 @@ async function main() {
             parts.push(toCamelCase(parsed.complement, conceptIndex, shortNames))
           }
           const id = parts.join('.')
-          onetTasks.push({ id, onetCode, taskId, task: task.trim(), occupationTitle })
+          onetTasks.push({ id, onetCode, occupationCode: onetCode, taskId, task: task.trim(), description: task.trim(), occupationTitle })
           taskProcessedCount++
         }
       }
@@ -558,9 +573,9 @@ async function main() {
   console.log(`  ✓ Loaded ${taskProcessedCount} ONET task expansions`)
 
   // Write ONET output
-  const onetTsvHeaders = ['id', 'onetCode', 'taskId', 'task', 'occupationTitle']
+  const onetTsvHeaders = ['id', 'onetCode', 'occupationCode', 'taskId', 'task', 'description', 'occupationTitle']
   const onetTsvRows = onetTasks.map(t =>
-    [t.id, t.onetCode, t.taskId, t.task, t.occupationTitle].join('\t')
+    [t.id, t.onetCode, t.occupationCode, t.taskId, t.task, t.description, t.occupationTitle].join('\t')
   )
   const onetTsv = [onetTsvHeaders.join('\t'), ...onetTsvRows].join('\n')
   const onetOutputPath = path.join(outputDir, 'Tasks.tsv')

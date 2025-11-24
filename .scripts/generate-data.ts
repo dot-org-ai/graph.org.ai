@@ -109,7 +109,8 @@ function createEntity(domain: string, typeName: string, id: string, data: any) {
     ns: domain.replace('https://', ''),
     type: typeName,
     id: id,
-    ...data
+    ...data,
+    sourceUrl: data.sourceUrl || ''
   }
 }
 
@@ -335,12 +336,13 @@ function generateONETData(): void {
   const uniqueTasks = new Map<string, any>()
 
   tasksSource.forEach(row => {
-    const id = row.taskID
+    const name = row.task
+    const id = createId(name)
     if (!uniqueTasks.has(id)) {
       uniqueTasks.set(id, createEntity(domain, 'Task', id, {
-        name: row.task,
-        description: row.task,
-        code: row.taskID,
+        name: name,
+        description: name,
+        code: getCode(row.taskID, name),
         taskType: row.taskType || '',
       }))
     }

@@ -1,58 +1,58 @@
-url	ns	type	id	name	description	code	category	usage
-https://language.org.ai/Pronoun/I	language.org.ai	Pronoun	I	I	first person singular		Personal	I analyze
-https://language.org.ai/Pronoun/me	language.org.ai	Pronoun	me	me	first person singular		Personal	help me
-https://language.org.ai/Pronoun/my	language.org.ai	Pronoun	my	my	first person singular possessive		Personal	my task
-https://language.org.ai/Pronoun/mine	language.org.ai	Pronoun	mine	mine	first person singular possessive		Personal	task is mine
-https://language.org.ai/Pronoun/myself	language.org.ai	Pronoun	myself	myself	first person singular reflexive		Personal	I did it myself
-https://language.org.ai/Pronoun/we	language.org.ai	Pronoun	we	we	first person plural		Personal	we analyze
-https://language.org.ai/Pronoun/us	language.org.ai	Pronoun	us	us	first person plural		Personal	help us
-https://language.org.ai/Pronoun/our	language.org.ai	Pronoun	our	our	first person plural possessive		Personal	our task
-https://language.org.ai/Pronoun/ours	language.org.ai	Pronoun	ours	ours	first person plural possessive		Personal	task is ours
-https://language.org.ai/Pronoun/ourselves	language.org.ai	Pronoun	ourselves	ourselves	first person plural reflexive		Personal	we did it ourselves
-https://language.org.ai/Pronoun/you	language.org.ai	Pronoun	you	you	second person		Personal	you analyze
-https://language.org.ai/Pronoun/your	language.org.ai	Pronoun	your	your	second person possessive		Personal	your task
-https://language.org.ai/Pronoun/yours	language.org.ai	Pronoun	yours	yours	second person possessive		Personal	task is yours
-https://language.org.ai/Pronoun/yourself	language.org.ai	Pronoun	yourself	yourself	second person singular reflexive		Personal	you did it yourself
-https://language.org.ai/Pronoun/yourselves	language.org.ai	Pronoun	yourselves	yourselves	second person plural reflexive		Personal	you all did it yourselves
-https://language.org.ai/Pronoun/he	language.org.ai	Pronoun	he	he	third person singular masculine		Personal	he analyzes
-https://language.org.ai/Pronoun/him	language.org.ai	Pronoun	him	him	third person singular masculine		Personal	help him
-https://language.org.ai/Pronoun/his	language.org.ai	Pronoun	his	his	third person singular masculine possessive		Personal	his task
-https://language.org.ai/Pronoun/himself	language.org.ai	Pronoun	himself	himself	third person singular masculine reflexive		Personal	he did it himself
-https://language.org.ai/Pronoun/she	language.org.ai	Pronoun	she	she	third person singular feminine		Personal	she analyzes
-https://language.org.ai/Pronoun/her	language.org.ai	Pronoun	her	her	third person singular feminine		Personal	help her / her task
-https://language.org.ai/Pronoun/hers	language.org.ai	Pronoun	hers	hers	third person singular feminine possessive		Personal	task is hers
-https://language.org.ai/Pronoun/herself	language.org.ai	Pronoun	herself	herself	third person singular feminine reflexive		Personal	she did it herself
-https://language.org.ai/Pronoun/it	language.org.ai	Pronoun	it	it	third person singular neuter		Personal	it works
-https://language.org.ai/Pronoun/its	language.org.ai	Pronoun	its	its	third person singular neuter possessive		Personal	its purpose
-https://language.org.ai/Pronoun/itself	language.org.ai	Pronoun	itself	itself	third person singular neuter reflexive		Personal	it did it itself
-https://language.org.ai/Pronoun/they	language.org.ai	Pronoun	they	they	third person plural		Personal	they analyze
-https://language.org.ai/Pronoun/them	language.org.ai	Pronoun	them	them	third person plural		Personal	help them
-https://language.org.ai/Pronoun/their	language.org.ai	Pronoun	their	their	third person plural possessive		Personal	their task
-https://language.org.ai/Pronoun/theirs	language.org.ai	Pronoun	theirs	theirs	third person plural possessive		Personal	task is theirs
-https://language.org.ai/Pronoun/themselves	language.org.ai	Pronoun	themselves	themselves	third person plural reflexive		Personal	they did it themselves
-https://language.org.ai/Pronoun/this	language.org.ai	Pronoun	this	this	refers to something nearby		Demonstrative	this is good
-https://language.org.ai/Pronoun/that	language.org.ai	Pronoun	that	that	refers to something distant		Demonstrative	that is good
-https://language.org.ai/Pronoun/these	language.org.ai	Pronoun	these	these	plural of this		Demonstrative	these are good
-https://language.org.ai/Pronoun/those	language.org.ai	Pronoun	those	those	plural of that		Demonstrative	those are good
-https://language.org.ai/Pronoun/who	language.org.ai	Pronoun	who	who	refers to people (subject)		Interrogative	who analyzes
-https://language.org.ai/Pronoun/whom	language.org.ai	Pronoun	whom	whom	refers to people (object)		Interrogative	whom to ask
-https://language.org.ai/Pronoun/whose	language.org.ai	Pronoun	whose	whose	possession		Interrogative	whose task
-https://language.org.ai/Pronoun/what	language.org.ai	Pronoun	what	what	refers to things		Interrogative	what happened
-https://language.org.ai/Pronoun/which	language.org.ai	Pronoun	which	which	choice between alternatives		Interrogative	which option
-https://language.org.ai/Pronoun/who	language.org.ai	Pronoun	who	who	introduces relative clause (people)		Relative	person who analyzes
-https://language.org.ai/Pronoun/whom	language.org.ai	Pronoun	whom	whom	introduces relative clause (people)		Relative	person whom we asked
-https://language.org.ai/Pronoun/whose	language.org.ai	Pronoun	whose	whose	possession (relative)		Relative	person whose task
-https://language.org.ai/Pronoun/which	language.org.ai	Pronoun	which	which	introduces relative clause (things)		Relative	task which was completed
-https://language.org.ai/Pronoun/that	language.org.ai	Pronoun	that	that	introduces relative clause		Relative	task that was completed
-https://language.org.ai/Pronoun/anyone	language.org.ai	Pronoun	anyone	anyone	any person		Indefinite	anyone can help
-https://language.org.ai/Pronoun/anybody	language.org.ai	Pronoun	anybody	anybody	any person		Indefinite	anybody can help
-https://language.org.ai/Pronoun/anything	language.org.ai	Pronoun	anything	anything	any thing		Indefinite	anything works
-https://language.org.ai/Pronoun/everyone	language.org.ai	Pronoun	everyone	everyone	all people		Indefinite	everyone knows
-https://language.org.ai/Pronoun/everybody	language.org.ai	Pronoun	everybody	everybody	all people		Indefinite	everybody knows
-https://language.org.ai/Pronoun/everything	language.org.ai	Pronoun	everything	everything	all things		Indefinite	everything works
-https://language.org.ai/Pronoun/no_one	language.org.ai	Pronoun	no_one	no one	not anyone		Indefinite	no one knows
-https://language.org.ai/Pronoun/nobody	language.org.ai	Pronoun	nobody	nobody	not anybody		Indefinite	nobody knows
-https://language.org.ai/Pronoun/nothing	language.org.ai	Pronoun	nothing	nothing	not anything		Indefinite	nothing works
-https://language.org.ai/Pronoun/someone	language.org.ai	Pronoun	someone	someone	some person		Indefinite	someone knows
-https://language.org.ai/Pronoun/somebody	language.org.ai	Pronoun	somebody	somebody	some person		Indefinite	somebody knows
-https://language.org.ai/Pronoun/something	language.org.ai	Pronoun	something	something	some thing		Indefinite	something works
+url	ns	type	id	name	description	code	category	usage	sourceUrl
+https://language.org.ai/Pronoun/I	language.org.ai	Pronoun	I	I	first person singular		Personal	I analyze	
+https://language.org.ai/Pronoun/me	language.org.ai	Pronoun	me	me	first person singular		Personal	help me	
+https://language.org.ai/Pronoun/my	language.org.ai	Pronoun	my	my	first person singular possessive		Personal	my task	
+https://language.org.ai/Pronoun/mine	language.org.ai	Pronoun	mine	mine	first person singular possessive		Personal	task is mine	
+https://language.org.ai/Pronoun/myself	language.org.ai	Pronoun	myself	myself	first person singular reflexive		Personal	I did it myself	
+https://language.org.ai/Pronoun/we	language.org.ai	Pronoun	we	we	first person plural		Personal	we analyze	
+https://language.org.ai/Pronoun/us	language.org.ai	Pronoun	us	us	first person plural		Personal	help us	
+https://language.org.ai/Pronoun/our	language.org.ai	Pronoun	our	our	first person plural possessive		Personal	our task	
+https://language.org.ai/Pronoun/ours	language.org.ai	Pronoun	ours	ours	first person plural possessive		Personal	task is ours	
+https://language.org.ai/Pronoun/ourselves	language.org.ai	Pronoun	ourselves	ourselves	first person plural reflexive		Personal	we did it ourselves	
+https://language.org.ai/Pronoun/you	language.org.ai	Pronoun	you	you	second person		Personal	you analyze	
+https://language.org.ai/Pronoun/your	language.org.ai	Pronoun	your	your	second person possessive		Personal	your task	
+https://language.org.ai/Pronoun/yours	language.org.ai	Pronoun	yours	yours	second person possessive		Personal	task is yours	
+https://language.org.ai/Pronoun/yourself	language.org.ai	Pronoun	yourself	yourself	second person singular reflexive		Personal	you did it yourself	
+https://language.org.ai/Pronoun/yourselves	language.org.ai	Pronoun	yourselves	yourselves	second person plural reflexive		Personal	you all did it yourselves	
+https://language.org.ai/Pronoun/he	language.org.ai	Pronoun	he	he	third person singular masculine		Personal	he analyzes	
+https://language.org.ai/Pronoun/him	language.org.ai	Pronoun	him	him	third person singular masculine		Personal	help him	
+https://language.org.ai/Pronoun/his	language.org.ai	Pronoun	his	his	third person singular masculine possessive		Personal	his task	
+https://language.org.ai/Pronoun/himself	language.org.ai	Pronoun	himself	himself	third person singular masculine reflexive		Personal	he did it himself	
+https://language.org.ai/Pronoun/she	language.org.ai	Pronoun	she	she	third person singular feminine		Personal	she analyzes	
+https://language.org.ai/Pronoun/her	language.org.ai	Pronoun	her	her	third person singular feminine		Personal	help her / her task	
+https://language.org.ai/Pronoun/hers	language.org.ai	Pronoun	hers	hers	third person singular feminine possessive		Personal	task is hers	
+https://language.org.ai/Pronoun/herself	language.org.ai	Pronoun	herself	herself	third person singular feminine reflexive		Personal	she did it herself	
+https://language.org.ai/Pronoun/it	language.org.ai	Pronoun	it	it	third person singular neuter		Personal	it works	
+https://language.org.ai/Pronoun/its	language.org.ai	Pronoun	its	its	third person singular neuter possessive		Personal	its purpose	
+https://language.org.ai/Pronoun/itself	language.org.ai	Pronoun	itself	itself	third person singular neuter reflexive		Personal	it did it itself	
+https://language.org.ai/Pronoun/they	language.org.ai	Pronoun	they	they	third person plural		Personal	they analyze	
+https://language.org.ai/Pronoun/them	language.org.ai	Pronoun	them	them	third person plural		Personal	help them	
+https://language.org.ai/Pronoun/their	language.org.ai	Pronoun	their	their	third person plural possessive		Personal	their task	
+https://language.org.ai/Pronoun/theirs	language.org.ai	Pronoun	theirs	theirs	third person plural possessive		Personal	task is theirs	
+https://language.org.ai/Pronoun/themselves	language.org.ai	Pronoun	themselves	themselves	third person plural reflexive		Personal	they did it themselves	
+https://language.org.ai/Pronoun/this	language.org.ai	Pronoun	this	this	refers to something nearby		Demonstrative	this is good	
+https://language.org.ai/Pronoun/that	language.org.ai	Pronoun	that	that	refers to something distant		Demonstrative	that is good	
+https://language.org.ai/Pronoun/these	language.org.ai	Pronoun	these	these	plural of this		Demonstrative	these are good	
+https://language.org.ai/Pronoun/those	language.org.ai	Pronoun	those	those	plural of that		Demonstrative	those are good	
+https://language.org.ai/Pronoun/who	language.org.ai	Pronoun	who	who	refers to people (subject)		Interrogative	who analyzes	
+https://language.org.ai/Pronoun/whom	language.org.ai	Pronoun	whom	whom	refers to people (object)		Interrogative	whom to ask	
+https://language.org.ai/Pronoun/whose	language.org.ai	Pronoun	whose	whose	possession		Interrogative	whose task	
+https://language.org.ai/Pronoun/what	language.org.ai	Pronoun	what	what	refers to things		Interrogative	what happened	
+https://language.org.ai/Pronoun/which	language.org.ai	Pronoun	which	which	choice between alternatives		Interrogative	which option	
+https://language.org.ai/Pronoun/who	language.org.ai	Pronoun	who	who	introduces relative clause (people)		Relative	person who analyzes	
+https://language.org.ai/Pronoun/whom	language.org.ai	Pronoun	whom	whom	introduces relative clause (people)		Relative	person whom we asked	
+https://language.org.ai/Pronoun/whose	language.org.ai	Pronoun	whose	whose	possession (relative)		Relative	person whose task	
+https://language.org.ai/Pronoun/which	language.org.ai	Pronoun	which	which	introduces relative clause (things)		Relative	task which was completed	
+https://language.org.ai/Pronoun/that	language.org.ai	Pronoun	that	that	introduces relative clause		Relative	task that was completed	
+https://language.org.ai/Pronoun/anyone	language.org.ai	Pronoun	anyone	anyone	any person		Indefinite	anyone can help	
+https://language.org.ai/Pronoun/anybody	language.org.ai	Pronoun	anybody	anybody	any person		Indefinite	anybody can help	
+https://language.org.ai/Pronoun/anything	language.org.ai	Pronoun	anything	anything	any thing		Indefinite	anything works	
+https://language.org.ai/Pronoun/everyone	language.org.ai	Pronoun	everyone	everyone	all people		Indefinite	everyone knows	
+https://language.org.ai/Pronoun/everybody	language.org.ai	Pronoun	everybody	everybody	all people		Indefinite	everybody knows	
+https://language.org.ai/Pronoun/everything	language.org.ai	Pronoun	everything	everything	all things		Indefinite	everything works	
+https://language.org.ai/Pronoun/no_one	language.org.ai	Pronoun	no_one	no one	not anyone		Indefinite	no one knows	
+https://language.org.ai/Pronoun/nobody	language.org.ai	Pronoun	nobody	nobody	not anybody		Indefinite	nobody knows	
+https://language.org.ai/Pronoun/nothing	language.org.ai	Pronoun	nothing	nothing	not anything		Indefinite	nothing works	
+https://language.org.ai/Pronoun/someone	language.org.ai	Pronoun	someone	someone	some person		Indefinite	someone knows	
+https://language.org.ai/Pronoun/somebody	language.org.ai	Pronoun	somebody	somebody	some person		Indefinite	somebody knows	
+https://language.org.ai/Pronoun/something	language.org.ai	Pronoun	something	something	some thing		Indefinite	something works	

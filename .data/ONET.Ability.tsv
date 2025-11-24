@@ -1,53 +1,53 @@
-url	ns	type	id	name	description	code
-https://onet.org.ai/Ability/Oral_Comprehension	onet.org.ai	Ability	Oral_Comprehension	Oral Comprehension	Oral Comprehension	1.A.1.a.1
-https://onet.org.ai/Ability/Written_Comprehension	onet.org.ai	Ability	Written_Comprehension	Written Comprehension	Written Comprehension	1.A.1.a.2
-https://onet.org.ai/Ability/Oral_Expression	onet.org.ai	Ability	Oral_Expression	Oral Expression	Oral Expression	1.A.1.a.3
-https://onet.org.ai/Ability/Written_Expression	onet.org.ai	Ability	Written_Expression	Written Expression	Written Expression	1.A.1.a.4
-https://onet.org.ai/Ability/Fluency_of_Ideas	onet.org.ai	Ability	Fluency_of_Ideas	Fluency of Ideas	Fluency of Ideas	1.A.1.b.1
-https://onet.org.ai/Ability/Originality	onet.org.ai	Ability	Originality	Originality	Originality	1.A.1.b.2
-https://onet.org.ai/Ability/Problem_Sensitivity	onet.org.ai	Ability	Problem_Sensitivity	Problem Sensitivity	Problem Sensitivity	1.A.1.b.3
-https://onet.org.ai/Ability/Deductive_Reasoning	onet.org.ai	Ability	Deductive_Reasoning	Deductive Reasoning	Deductive Reasoning	1.A.1.b.4
-https://onet.org.ai/Ability/Inductive_Reasoning	onet.org.ai	Ability	Inductive_Reasoning	Inductive Reasoning	Inductive Reasoning	1.A.1.b.5
-https://onet.org.ai/Ability/Information_Ordering	onet.org.ai	Ability	Information_Ordering	Information Ordering	Information Ordering	1.A.1.b.6
-https://onet.org.ai/Ability/Category_Flexibility	onet.org.ai	Ability	Category_Flexibility	Category Flexibility	Category Flexibility	1.A.1.b.7
-https://onet.org.ai/Ability/Mathematical_Reasoning	onet.org.ai	Ability	Mathematical_Reasoning	Mathematical Reasoning	Mathematical Reasoning	1.A.1.c.1
-https://onet.org.ai/Ability/Number_Facility	onet.org.ai	Ability	Number_Facility	Number Facility	Number Facility	1.A.1.c.2
-https://onet.org.ai/Ability/Memorization	onet.org.ai	Ability	Memorization	Memorization	Memorization	1.A.1.d.1
-https://onet.org.ai/Ability/Speed_of_Closure	onet.org.ai	Ability	Speed_of_Closure	Speed of Closure	Speed of Closure	1.A.1.e.1
-https://onet.org.ai/Ability/Flexibility_of_Closure	onet.org.ai	Ability	Flexibility_of_Closure	Flexibility of Closure	Flexibility of Closure	1.A.1.e.2
-https://onet.org.ai/Ability/Perceptual_Speed	onet.org.ai	Ability	Perceptual_Speed	Perceptual Speed	Perceptual Speed	1.A.1.e.3
-https://onet.org.ai/Ability/Spatial_Orientation	onet.org.ai	Ability	Spatial_Orientation	Spatial Orientation	Spatial Orientation	1.A.1.f.1
-https://onet.org.ai/Ability/Visualization	onet.org.ai	Ability	Visualization	Visualization	Visualization	1.A.1.f.2
-https://onet.org.ai/Ability/Selective_Attention	onet.org.ai	Ability	Selective_Attention	Selective Attention	Selective Attention	1.A.1.g.1
-https://onet.org.ai/Ability/Time_Sharing	onet.org.ai	Ability	Time_Sharing	Time Sharing	Time Sharing	1.A.1.g.2
-https://onet.org.ai/Ability/Arm-Hand_Steadiness	onet.org.ai	Ability	Arm-Hand_Steadiness	Arm-Hand Steadiness	Arm-Hand Steadiness	1.A.2.a.1
-https://onet.org.ai/Ability/Manual_Dexterity	onet.org.ai	Ability	Manual_Dexterity	Manual Dexterity	Manual Dexterity	1.A.2.a.2
-https://onet.org.ai/Ability/Finger_Dexterity	onet.org.ai	Ability	Finger_Dexterity	Finger Dexterity	Finger Dexterity	1.A.2.a.3
-https://onet.org.ai/Ability/Control_Precision	onet.org.ai	Ability	Control_Precision	Control Precision	Control Precision	1.A.2.b.1
-https://onet.org.ai/Ability/Multilimb_Coordination	onet.org.ai	Ability	Multilimb_Coordination	Multilimb Coordination	Multilimb Coordination	1.A.2.b.2
-https://onet.org.ai/Ability/Response_Orientation	onet.org.ai	Ability	Response_Orientation	Response Orientation	Response Orientation	1.A.2.b.3
-https://onet.org.ai/Ability/Rate_Control	onet.org.ai	Ability	Rate_Control	Rate Control	Rate Control	1.A.2.b.4
-https://onet.org.ai/Ability/Reaction_Time	onet.org.ai	Ability	Reaction_Time	Reaction Time	Reaction Time	1.A.2.c.1
-https://onet.org.ai/Ability/Wrist-Finger_Speed	onet.org.ai	Ability	Wrist-Finger_Speed	Wrist-Finger Speed	Wrist-Finger Speed	1.A.2.c.2
-https://onet.org.ai/Ability/Speed_of_Limb_Movement	onet.org.ai	Ability	Speed_of_Limb_Movement	Speed of Limb Movement	Speed of Limb Movement	1.A.2.c.3
-https://onet.org.ai/Ability/Static_Strength	onet.org.ai	Ability	Static_Strength	Static Strength	Static Strength	1.A.3.a.1
-https://onet.org.ai/Ability/Explosive_Strength	onet.org.ai	Ability	Explosive_Strength	Explosive Strength	Explosive Strength	1.A.3.a.2
-https://onet.org.ai/Ability/Dynamic_Strength	onet.org.ai	Ability	Dynamic_Strength	Dynamic Strength	Dynamic Strength	1.A.3.a.3
-https://onet.org.ai/Ability/Trunk_Strength	onet.org.ai	Ability	Trunk_Strength	Trunk Strength	Trunk Strength	1.A.3.a.4
-https://onet.org.ai/Ability/Stamina	onet.org.ai	Ability	Stamina	Stamina	Stamina	1.A.3.b.1
-https://onet.org.ai/Ability/Extent_Flexibility	onet.org.ai	Ability	Extent_Flexibility	Extent Flexibility	Extent Flexibility	1.A.3.c.1
-https://onet.org.ai/Ability/Dynamic_Flexibility	onet.org.ai	Ability	Dynamic_Flexibility	Dynamic Flexibility	Dynamic Flexibility	1.A.3.c.2
-https://onet.org.ai/Ability/Gross_Body_Coordination	onet.org.ai	Ability	Gross_Body_Coordination	Gross Body Coordination	Gross Body Coordination	1.A.3.c.3
-https://onet.org.ai/Ability/Gross_Body_Equilibrium	onet.org.ai	Ability	Gross_Body_Equilibrium	Gross Body Equilibrium	Gross Body Equilibrium	1.A.3.c.4
-https://onet.org.ai/Ability/Near_Vision	onet.org.ai	Ability	Near_Vision	Near Vision	Near Vision	1.A.4.a.1
-https://onet.org.ai/Ability/Far_Vision	onet.org.ai	Ability	Far_Vision	Far Vision	Far Vision	1.A.4.a.2
-https://onet.org.ai/Ability/Visual_Color_Discrimination	onet.org.ai	Ability	Visual_Color_Discrimination	Visual Color Discrimination	Visual Color Discrimination	1.A.4.a.3
-https://onet.org.ai/Ability/Night_Vision	onet.org.ai	Ability	Night_Vision	Night Vision	Night Vision	1.A.4.a.4
-https://onet.org.ai/Ability/Peripheral_Vision	onet.org.ai	Ability	Peripheral_Vision	Peripheral Vision	Peripheral Vision	1.A.4.a.5
-https://onet.org.ai/Ability/Depth_Perception	onet.org.ai	Ability	Depth_Perception	Depth Perception	Depth Perception	1.A.4.a.6
-https://onet.org.ai/Ability/Glare_Sensitivity	onet.org.ai	Ability	Glare_Sensitivity	Glare Sensitivity	Glare Sensitivity	1.A.4.a.7
-https://onet.org.ai/Ability/Hearing_Sensitivity	onet.org.ai	Ability	Hearing_Sensitivity	Hearing Sensitivity	Hearing Sensitivity	1.A.4.b.1
-https://onet.org.ai/Ability/Auditory_Attention	onet.org.ai	Ability	Auditory_Attention	Auditory Attention	Auditory Attention	1.A.4.b.2
-https://onet.org.ai/Ability/Sound_Localization	onet.org.ai	Ability	Sound_Localization	Sound Localization	Sound Localization	1.A.4.b.3
-https://onet.org.ai/Ability/Speech_Recognition	onet.org.ai	Ability	Speech_Recognition	Speech Recognition	Speech Recognition	1.A.4.b.4
-https://onet.org.ai/Ability/Speech_Clarity	onet.org.ai	Ability	Speech_Clarity	Speech Clarity	Speech Clarity	1.A.4.b.5
+url	ns	type	id	name	description	code	sourceUrl
+https://onet.org.ai/Ability/Oral_Comprehension	onet.org.ai	Ability	Oral_Comprehension	Oral Comprehension	Oral Comprehension	1.A.1.a.1	
+https://onet.org.ai/Ability/Written_Comprehension	onet.org.ai	Ability	Written_Comprehension	Written Comprehension	Written Comprehension	1.A.1.a.2	
+https://onet.org.ai/Ability/Oral_Expression	onet.org.ai	Ability	Oral_Expression	Oral Expression	Oral Expression	1.A.1.a.3	
+https://onet.org.ai/Ability/Written_Expression	onet.org.ai	Ability	Written_Expression	Written Expression	Written Expression	1.A.1.a.4	
+https://onet.org.ai/Ability/Fluency_of_Ideas	onet.org.ai	Ability	Fluency_of_Ideas	Fluency of Ideas	Fluency of Ideas	1.A.1.b.1	
+https://onet.org.ai/Ability/Originality	onet.org.ai	Ability	Originality	Originality	Originality	1.A.1.b.2	
+https://onet.org.ai/Ability/Problem_Sensitivity	onet.org.ai	Ability	Problem_Sensitivity	Problem Sensitivity	Problem Sensitivity	1.A.1.b.3	
+https://onet.org.ai/Ability/Deductive_Reasoning	onet.org.ai	Ability	Deductive_Reasoning	Deductive Reasoning	Deductive Reasoning	1.A.1.b.4	
+https://onet.org.ai/Ability/Inductive_Reasoning	onet.org.ai	Ability	Inductive_Reasoning	Inductive Reasoning	Inductive Reasoning	1.A.1.b.5	
+https://onet.org.ai/Ability/Information_Ordering	onet.org.ai	Ability	Information_Ordering	Information Ordering	Information Ordering	1.A.1.b.6	
+https://onet.org.ai/Ability/Category_Flexibility	onet.org.ai	Ability	Category_Flexibility	Category Flexibility	Category Flexibility	1.A.1.b.7	
+https://onet.org.ai/Ability/Mathematical_Reasoning	onet.org.ai	Ability	Mathematical_Reasoning	Mathematical Reasoning	Mathematical Reasoning	1.A.1.c.1	
+https://onet.org.ai/Ability/Number_Facility	onet.org.ai	Ability	Number_Facility	Number Facility	Number Facility	1.A.1.c.2	
+https://onet.org.ai/Ability/Memorization	onet.org.ai	Ability	Memorization	Memorization	Memorization	1.A.1.d.1	
+https://onet.org.ai/Ability/Speed_of_Closure	onet.org.ai	Ability	Speed_of_Closure	Speed of Closure	Speed of Closure	1.A.1.e.1	
+https://onet.org.ai/Ability/Flexibility_of_Closure	onet.org.ai	Ability	Flexibility_of_Closure	Flexibility of Closure	Flexibility of Closure	1.A.1.e.2	
+https://onet.org.ai/Ability/Perceptual_Speed	onet.org.ai	Ability	Perceptual_Speed	Perceptual Speed	Perceptual Speed	1.A.1.e.3	
+https://onet.org.ai/Ability/Spatial_Orientation	onet.org.ai	Ability	Spatial_Orientation	Spatial Orientation	Spatial Orientation	1.A.1.f.1	
+https://onet.org.ai/Ability/Visualization	onet.org.ai	Ability	Visualization	Visualization	Visualization	1.A.1.f.2	
+https://onet.org.ai/Ability/Selective_Attention	onet.org.ai	Ability	Selective_Attention	Selective Attention	Selective Attention	1.A.1.g.1	
+https://onet.org.ai/Ability/Time_Sharing	onet.org.ai	Ability	Time_Sharing	Time Sharing	Time Sharing	1.A.1.g.2	
+https://onet.org.ai/Ability/Arm-Hand_Steadiness	onet.org.ai	Ability	Arm-Hand_Steadiness	Arm-Hand Steadiness	Arm-Hand Steadiness	1.A.2.a.1	
+https://onet.org.ai/Ability/Manual_Dexterity	onet.org.ai	Ability	Manual_Dexterity	Manual Dexterity	Manual Dexterity	1.A.2.a.2	
+https://onet.org.ai/Ability/Finger_Dexterity	onet.org.ai	Ability	Finger_Dexterity	Finger Dexterity	Finger Dexterity	1.A.2.a.3	
+https://onet.org.ai/Ability/Control_Precision	onet.org.ai	Ability	Control_Precision	Control Precision	Control Precision	1.A.2.b.1	
+https://onet.org.ai/Ability/Multilimb_Coordination	onet.org.ai	Ability	Multilimb_Coordination	Multilimb Coordination	Multilimb Coordination	1.A.2.b.2	
+https://onet.org.ai/Ability/Response_Orientation	onet.org.ai	Ability	Response_Orientation	Response Orientation	Response Orientation	1.A.2.b.3	
+https://onet.org.ai/Ability/Rate_Control	onet.org.ai	Ability	Rate_Control	Rate Control	Rate Control	1.A.2.b.4	
+https://onet.org.ai/Ability/Reaction_Time	onet.org.ai	Ability	Reaction_Time	Reaction Time	Reaction Time	1.A.2.c.1	
+https://onet.org.ai/Ability/Wrist-Finger_Speed	onet.org.ai	Ability	Wrist-Finger_Speed	Wrist-Finger Speed	Wrist-Finger Speed	1.A.2.c.2	
+https://onet.org.ai/Ability/Speed_of_Limb_Movement	onet.org.ai	Ability	Speed_of_Limb_Movement	Speed of Limb Movement	Speed of Limb Movement	1.A.2.c.3	
+https://onet.org.ai/Ability/Static_Strength	onet.org.ai	Ability	Static_Strength	Static Strength	Static Strength	1.A.3.a.1	
+https://onet.org.ai/Ability/Explosive_Strength	onet.org.ai	Ability	Explosive_Strength	Explosive Strength	Explosive Strength	1.A.3.a.2	
+https://onet.org.ai/Ability/Dynamic_Strength	onet.org.ai	Ability	Dynamic_Strength	Dynamic Strength	Dynamic Strength	1.A.3.a.3	
+https://onet.org.ai/Ability/Trunk_Strength	onet.org.ai	Ability	Trunk_Strength	Trunk Strength	Trunk Strength	1.A.3.a.4	
+https://onet.org.ai/Ability/Stamina	onet.org.ai	Ability	Stamina	Stamina	Stamina	1.A.3.b.1	
+https://onet.org.ai/Ability/Extent_Flexibility	onet.org.ai	Ability	Extent_Flexibility	Extent Flexibility	Extent Flexibility	1.A.3.c.1	
+https://onet.org.ai/Ability/Dynamic_Flexibility	onet.org.ai	Ability	Dynamic_Flexibility	Dynamic Flexibility	Dynamic Flexibility	1.A.3.c.2	
+https://onet.org.ai/Ability/Gross_Body_Coordination	onet.org.ai	Ability	Gross_Body_Coordination	Gross Body Coordination	Gross Body Coordination	1.A.3.c.3	
+https://onet.org.ai/Ability/Gross_Body_Equilibrium	onet.org.ai	Ability	Gross_Body_Equilibrium	Gross Body Equilibrium	Gross Body Equilibrium	1.A.3.c.4	
+https://onet.org.ai/Ability/Near_Vision	onet.org.ai	Ability	Near_Vision	Near Vision	Near Vision	1.A.4.a.1	
+https://onet.org.ai/Ability/Far_Vision	onet.org.ai	Ability	Far_Vision	Far Vision	Far Vision	1.A.4.a.2	
+https://onet.org.ai/Ability/Visual_Color_Discrimination	onet.org.ai	Ability	Visual_Color_Discrimination	Visual Color Discrimination	Visual Color Discrimination	1.A.4.a.3	
+https://onet.org.ai/Ability/Night_Vision	onet.org.ai	Ability	Night_Vision	Night Vision	Night Vision	1.A.4.a.4	
+https://onet.org.ai/Ability/Peripheral_Vision	onet.org.ai	Ability	Peripheral_Vision	Peripheral Vision	Peripheral Vision	1.A.4.a.5	
+https://onet.org.ai/Ability/Depth_Perception	onet.org.ai	Ability	Depth_Perception	Depth Perception	Depth Perception	1.A.4.a.6	
+https://onet.org.ai/Ability/Glare_Sensitivity	onet.org.ai	Ability	Glare_Sensitivity	Glare Sensitivity	Glare Sensitivity	1.A.4.a.7	
+https://onet.org.ai/Ability/Hearing_Sensitivity	onet.org.ai	Ability	Hearing_Sensitivity	Hearing Sensitivity	Hearing Sensitivity	1.A.4.b.1	
+https://onet.org.ai/Ability/Auditory_Attention	onet.org.ai	Ability	Auditory_Attention	Auditory Attention	Auditory Attention	1.A.4.b.2	
+https://onet.org.ai/Ability/Sound_Localization	onet.org.ai	Ability	Sound_Localization	Sound Localization	Sound Localization	1.A.4.b.3	
+https://onet.org.ai/Ability/Speech_Recognition	onet.org.ai	Ability	Speech_Recognition	Speech Recognition	Speech Recognition	1.A.4.b.4	
+https://onet.org.ai/Ability/Speech_Clarity	onet.org.ai	Ability	Speech_Clarity	Speech Clarity	Speech Clarity	1.A.4.b.5	

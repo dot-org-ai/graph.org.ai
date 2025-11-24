@@ -22,6 +22,13 @@ async function main() {
     "Analyze, negotiate, resolve, and confirm workforce funding and staffing",
     "Monitor/analyze product/service lifecycle",
     "Manage product/service master data (item master, bill of materials, routings)",
+
+    // Problem statements from TSV validation failures:
+    "Coordinate and align cross-functional and process strategies",  // Currently: Companies.coordinate.Cross
+    "Compute, retrace, or adjust existing surveys of features such as highway alignments, property boundaries, utilities, control and other surveys to match the ground elevation-dependent grids, geodetic grids, or property boundaries and to ensure accuracy and continuity of data used in engineering, surveying, or construction projects.",  // Currently: GeodeticSurveyors.compute
+    "Determine (and develop instruments where necessary) the data to be collected, including perception and background surveys, student performance data, observation checklists, comparable schools' data, etc..",  // Currently: Schools.determine
+    "Direct, plan, or implement policies, objectives, or activities of organizations or businesses to ensure continuing operations, to maximize returns on investments, or to increase productivity.",  // Currently: ChiefExecutives.direct
+    "Perform job-specific roles mapping and value-added analyses",  // Currently: Companies.perform.Job
   ]
 
   console.log('GraphDL Parser - Comprehensive Review')

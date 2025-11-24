@@ -1,3 +1,1142 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f803538b67c4a40d932bc4f7ebe04c332aae3ebc7f7620e3afbb0a5b106360f3
-size 72747
+canonicalForm	description	predicate	event	activity	actor	object	inverse	source	vocabulary
+accept	Accepting receipt of goods or materials	accepts	accepted	accepting	Accepter	Acceptance	acceptedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+achieve	Accomplish or attain a goal or result through effort or action.	achieves	achieved	achieving	Achiever	Achievement	achievedBy	https://schema.org/Action	Schema.org 27.0
+acquire	Obtain or purchase goods, services, or resources	acquires	acquired	acquiring	Acquirer	Acquisition	acquiredBy	https://www.apqc.org/	APQC PCF 7.0
+activate	Make something active or operational; start or enable a process or system.	activates	activated	activating	Activator	Activation	activatedBy	https://schema.org/Action	Schema.org 27.0
+add	Put or place something together with another item; combine or append.	adds	added	adding	Adder	Addition	addedBy	https://schema.org/Action	Schema.org 27.0
+administer	Manage the execution and control of operational processes	administers	administered	administering	Administrator	Administration	administeredBy	https://www.apqc.org/	APQC PCF 7.0
+agree	Consent or assent to something; reach mutual understanding or acceptance.	agrees	agreed	agreeing	Agreer	Agreement	agreedTo	https://schema.org/Action	Schema.org 27.0
+allocate	Distribute or assign resources, responsibilities, or opportunities.	allocates	allocated	allocating	Allocator	Allocation	allocatedBy	https://schema.org/Action	Schema.org 27.0
+analyze	Examining information or data to identify patterns, relationships, or solutions	analyzes	analyzed	analyzing	Analyzer	Analysis	analyzedBy	https://www.onetonline.org/	O*NET 28.0
+apply	Submit a formal request or use something in practice; put into effect.	applies	applied	applying	Applicant	Application	appliedBy	https://schema.org/Action	Schema.org 27.0
+approve	Formally agree to or officially sanction something; give authorization.	approves	approved	approving	Approver	Approval	approvedBy	https://schema.org/Action	Schema.org 27.0
+archive	Store or preserve items for long-term retention; move to historical record.	archives	archived	archiving	Archivist	Archive	archivedBy	https://schema.org/Action	Schema.org 27.0
+arrange	Organizing, positioning, or setting up items, events, or schedules in a particular order or configuration	arranges	arranged	arranging	Arranger	Arrangement	arrangedBy	https://www.onetonline.org/	O*NET 28.0
+arrive	Arriving at a location	arrives	arrived	arriving	Arriver	Arrival	arrivedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+assemble	Combining components into a finished product	assembles	assembled	assembling	Assembler	Assembly	assembledBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+assess	Evaluating or determining the nature, value, or extent of something through examination	assesses	assessed	assessing	Assessor	Assessment	assessedBy	https://www.onetonline.org/	O*NET 28.0
+assign	Indicating the object to be assigned	assigns	assigned	assigning	Assigner	Assignment	assignedBy	https://schema.org/Action	Schema.org 27.0
+assist	Helping, supporting, or providing aid to another person or process to accomplish tasks or goals	assists	assisted	assisting	Assistant	Assistance	assistedBy	https://www.onetonline.org/	O*NET 28.0
+attach	Indicating the object to be attached	attaches	attached	attaching	Attacher	Attachment	attachedBy	https://schema.org/Action	Schema.org 27.0
+audit	Examine and verify compliance with standards and procedures	audits	audited	auditing	Auditor	Audit	auditedBy	https://www.apqc.org/	APQC PCF 7.0
+authorize	Granting a permission or authority	authorizes	authorized	authorizing	Authorizer	Authorization	authorizedBy	https://schema.org/Action	Schema.org 27.0
+benchmark	Compare performance against industry standards or best practices	benchmarks	benchmarked	benchmarking	Benchmarker	Benchmark	benchmarkedBy	https://www.apqc.org/	APQC PCF 7.0
+budget	Plan and allocate financial resources for future periods	budgets	budgeted	budgeting	Budgeter	Budget	budgetedBy	https://www.apqc.org/	APQC PCF 7.0
+calculate	Computing or determining mathematical values or results based on data and formulas	calculates	calculated	calculating	Calculator	Calculation	calculatedBy	https://www.onetonline.org/	O*NET 28.0
+cancel	Canceling an action that was previously scheduled	cancels	canceled	canceling	Canceler	Cancellation	canceledBy	https://schema.org/Action	Schema.org 27.0
+capture	Recording an observation or information	captures	captured	capturing	Capturer	Capture	capturedBy	https://schema.org/Action	Schema.org 27.0
+certify	Formally attest or validate that standards are met	certifies	certified	certifying	Certifier	Certification	certifiedBy	https://www.apqc.org/	APQC PCF 7.0
+check	Checking an object for correctness or validity	checks	checked	checking	Checker	Check	checkedBy	https://schema.org/Action	Schema.org 27.0
+choose	Selecting one or more items from a collection	chooses	chosen	choosing	Chooser	Choice	chosenBy	https://schema.org/Action	Schema.org 27.0
+classify	Assigning a category or classification to an object	classifies	classified	classifying	Classifier	Classification	classifiedBy	https://schema.org/Action	Schema.org 27.0
+clean	Removing dirt, waste, or unwanted material from surfaces, objects, or areas to maintain cleanliness and hygiene	cleans	cleaned	cleaning	Cleaner	Cleaning	cleanedBy	https://www.onetonline.org/	O*NET 28.0
+close	To move or cause to move into a position where something is no longer open; to shut or seal.	closes	closed	closing	Closer	Closure	closedBy	https://schema.org/Action	Schema.org 27.0
+collect	Gathering objects together	collects	collected	collecting	Collector	Collection	collectedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+comment	To make remarks or observations, typically in response to something or someone; to provide feedback or notes.	comments	commented	commenting	Commenter	Commentary	commentedBy	https://schema.org/Action	Schema.org 27.0
+commission	Assigning a unique identity to an object	commissions	commissioned	commissioning	Commissioner	Commission	commissionedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+communicate	To convey or exchange information, ideas, or feelings between parties; to impart knowledge or establish understanding.	communicates	communicated	communicating	Communicator	Communication	communicatedBy	https://schema.org/Action	Schema.org 27.0
+compare	To examine similarities and differences between two or more things; to estimate or judge the relative value of alternatives.	compares	compared	comparing	Comparer	Comparison	comparedBy	https://schema.org/Action	Schema.org 27.0
+compile	Collecting, assembling, and organizing information or materials from multiple sources into a unified document or system	compiles	compiled	compiling	Compiler	Compilation	compiledBy	https://www.onetonline.org/	O*NET 28.0
+complete	To finish or bring to an end; to make whole or entire by adding what is missing.	completes	completed	completing	Completer	Completion	completedBy	https://schema.org/Action	Schema.org 27.0
+comply	Act in accordance with laws, regulations, or organizational policies	complies	complied	complying	Complier	Compliance	compliedWith	https://www.apqc.org/	APQC PCF 7.0
+compute	To calculate or determine by mathematical operations or logical reasoning; to process data.	computes	computed	computing	Computer	Computation	computedBy	https://schema.org/Action	Schema.org 27.0
+conduct	Directing, leading, managing, or carrying out activities, events, or operations in a structured manner	conducts	conducted	conducting	Conductor	Conduct	conductedBy	https://www.onetonline.org/	O*NET 28.0
+configure	To arrange, set up, or adjust components or settings to prepare for use or operation.	configures	configured	configuring	Configurator	Configuration	configuredBy	https://schema.org/Action	Schema.org 27.0
+confirm	To establish or strengthen the truth or validity of something; to acknowledge or verify.	confirms	confirmed	confirming	Confirmer	Confirmation	confirmedBy	https://schema.org/Action	Schema.org 27.0
+connect	To join or link together; establish a connection or relationship between entities.	connects	connected	connecting	Connector	Connection	connectedBy	https://schema.org/Action	Schema.org 27.0
+consign	Handing over responsibility for shipment	consigns	consigned	consigning	Consigner	Consignment	consignedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+consult	Providing professional advice or seeking expert opinion	consults	consulted	consulting	Consultant	Consultation	consultedBy	https://www.onetonline.org/	O*NET 28.0
+consume	To use up or take in resources, materials, or products; to use something completely.	consumes	consumed	consuming	Consumer	Consumption	consumedBy	https://schema.org/Action	Schema.org 27.0
+contract	Establish a formal binding agreement between parties	contracts	contracted	contracting	Contracter	Contract	contractedWith	https://www.apqc.org/	APQC PCF 7.0
+control	Managing or regulating the operation, flow, or behavior of systems, processes, or people	controls	controlled	controlling	Controller	Control	controlledBy	https://www.onetonline.org/	O*NET 28.0
+convert	To change something into a different form, substance, or state; transform or convert.	converts	converted	converting	Converter	Conversion	convertedBy	https://schema.org/Action	Schema.org 27.0
+coordinate	Organizing and harmonizing activities, efforts, or resources across multiple parties	coordinates	coordinated	coordinating	Coordinator	Coordination	coordinatedBy	https://www.onetonline.org/	O*NET 28.0
+copy	To make a duplicate or reproduction of something; replicate or reproduce.	copies	copied	copying	Copier	Copy	copiedBy	https://schema.org/Action	Schema.org 27.0
+counsel	Providing guidance, support, and advice to individuals regarding personal, professional, or emotional matters	counsels	counseled	counseling	Counselor	Counseling	counseledBy	https://www.onetonline.org/	O*NET 28.0
+count	Periodic inventory counting (cycle_counting)	counts	counted	counting	Counter	Count	countedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+create	Creating a class-level instance	creates	created	creating	Creator	Creation	createdBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+customize	Modify or tailor products or services for specific customer needs	customizes	customized	customizing	Customizer	Customization	customizedBy	https://www.apqc.org/	APQC PCF 7.0
+deactivate	To turn off, disable, or remove from active use; make inactive.	deactivates	deactivated	deactivating	Deactivator	Deactivation	deactivatedBy	https://schema.org/Action	Schema.org 27.0
+debug	Identifying and resolving errors, defects, or malfunctions in systems, software, or processes	debugs	debugged	debugging	Debugger	Debugging	debuggedBy	https://www.onetonline.org/	O*NET 28.0
+decide	Making a choice or determination among options or alternatives based on analysis and judgment	decides	decided	deciding	Decider	Decision	decidedBy	https://www.onetonline.org/	O*NET 28.0
+declare	To announce, state, or proclaim something formally or officially; make a declaration.	declares	declared	declaring	Declarer	Declaration	declaredBy	https://schema.org/Action	Schema.org 27.0
+decline	To politely refuse or reject something; express unwillingness to accept or participate.	declines	declined	declining	Decliner	Decline	declinedBy	https://schema.org/Action	Schema.org 27.0
+decommission	Removing an object from active use, typically after it has reached the end of its operational life.	decommissions	decommissioned	decommissioning	Decommissioner	Decommissioning	decommissionedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+delete	To remove, erase, or destroy; eliminate something permanently or temporarily.	deletes	deleted	deleting	Deleter	Deletion	deletedBy	https://schema.org/Action	Schema.org 27.0
+deliver	Transporting and handing over goods to a recipient	delivers	delivered	delivering	Deliverer	Delivery	deliveredBy	https://schema.org/Action	Schema.org 27.0
+demonstrate	Showing, proving, or exhibiting something through explanation, illustration, or practical example	demonstrates	demonstrated	demonstrating	Demonstrator	Demonstration	demonstratedBy	https://www.onetonline.org/	O*NET 28.0
+depart	Leaving a location, typically as part of a transportation or logistics operation.	departs	departed	departing	Departer	Departure	departedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+deploy	Moving or positioning something into active use	deploys	deployed	deploying	Deployer	Deployment	deployedBy	https://schema.org/Action	Schema.org 27.0
+design	Creating plans, specifications, or layouts for new products, systems, structures, or processes	designs	designed	designing	Designer	Design	designedBy	https://www.onetonline.org/	O*NET 28.0
+destroy	Permanently removing an object from use through destruction or disposal.	destroys	destroyed	destroying	Destroyer	Destruction	destroyedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+determine	To establish or discover the exact nature or value of something; to decide or resolve a matter	determines	determined	determining	Determiner	Determination	determinedBy	https://www.onetonline.org/	O*NET 28.0
+develop	To create, improve, or advance something gradually or systematically; to bring something to a more advanced or complete state	develops	developed	developing	Developer	Development	developedBy	https://www.onetonline.org/	O*NET 28.0
+diagnose	To identify the nature or cause of a problem, disease, or condition through examination and analysis	diagnoses	diagnosed	diagnosing	Diagnostician	Diagnosis	diagnosedBy	https://www.onetonline.org/	O*NET 28.0
+direct	To guide, control, or supervise the actions, activities, or operations of people or processes; to point or aim something toward a target	directs	directed	directing	Director	Direction	directedBy	https://www.onetonline.org/	O*NET 28.0
+disable	Making something inoperative or unavailable	disables	disabled	disabling	Disabler	Disabling	disabledBy	https://schema.org/Action	Schema.org 27.0
+disassemble	Breaking down a finished product into its component parts.	disassembles	disassembled	disassembling	Disassembler	Disassembly	disassembledBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+discontinue	End or stop production or support of a product or service	discontinues	discontinued	discontinuing	Discontinuer	Discontinuation	discontinuedBy	https://www.apqc.org/	APQC PCF 7.0
+discover	Finding or learning about something previously unknown	discovers	discovered	discovering	Discoverer	Discovery	discoveredBy	https://schema.org/Action	Schema.org 27.0
+discuss	To exchange views, ideas, or opinions about a topic; to talk over or debate a subject with others	discusses	discussed	discussing	Discussant	Discussion	discussedBy	https://www.onetonline.org/	O*NET 28.0
+dispatch	Send out orders, shipments, or personnel to designated locations	dispatches	dispatched	dispatching	Dispatcher	Dispatch	dispatchedBy	https://www.apqc.org/	APQC PCF 7.0
+dispense	Allocating or distributing goods to recipients, often in measured quantities.	dispenses	dispensed	dispensing	Dispenser	Dispensing	dispensedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+distribute	Spreading or dividing something among multiple recipients or locations	distributes	distributed	distributing	Distributor	Distribution	distributedBy	https://schema.org/Action	Schema.org 27.0
+document	To record, write, or create written evidence or proof of something; to create documentation for reference and records	documents	documented	documenting	Documentarian	Documentation	documentedBy	https://www.onetonline.org/	O*NET 28.0
+download	Transferring data from a remote source to a local device	downloads	downloaded	downloading	Downloader	Download	downloadedBy	https://schema.org/Action	Schema.org 27.0
+draft	To prepare a preliminary version of a written document, plan, or design; to create an initial or rough version for review and refinement	drafts	drafted	drafting	Drafter	Draft	draftedBy	https://www.onetonline.org/	O*NET 28.0
+drive	To operate a vehicle; to propel or cause to move forward; to motivate or compel action toward a goal	drives	drove	driving	Driver	Drive	drivenBy	https://www.onetonline.org/	O*NET 28.0
+edit	Revising or modifying content to correct or improve it	edits	edited	editing	Editor	Editing	editedBy	https://schema.org/Action	Schema.org 27.0
+educate	Teaching others through instruction and training	educates	educated	educating	Educator	Education	educatedBy	https://www.onetonline.org/	O*NET 28.0
+enable	Making something operational, available, or capable of functioning	enables	enabled	enabling	Enabler	Enabling	enabledBy	https://schema.org/Action	Schema.org 27.0
+encode	Writing data to an RFID tag, barcode, or other storage medium.	encodes	encoded	encoding	Encoder	Encoding	encodedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+endorse	Give approval or permission to; publicly declare support for; recommend as worthy.	endorses	endorsed	endorsing	Endorser	Endorsement	endorsedBy	https://schema.org/Action	Schema.org 27.0
+enforce	Compelling compliance with rules, standards, or requirements	enforces	enforced	enforcing	Enforcer	Enforcement	enforcedBy	https://www.onetonline.org/	O*NET 28.0
+engage	Actively involving others in interaction, communication, or activity	engages	engaged	engaging	Engager	Engagement	engagedBy	https://www.onetonline.org/	O*NET 28.0
+enter	Passing through a portal or boundary, such as entering a facility or geographic location.	enters	entered	entering	Enterer	Entry	enteredBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+escalate	Raise issues or concerns to higher authority or management levels	escalates	escalated	escalating	Escalator	Escalation	escalatedBy	https://www.apqc.org/	APQC PCF 7.0
+establish	Creating, founding, or setting up something new	establishes	established	establishing	Establisher	Establishment	establishedBy	https://www.onetonline.org/	O*NET 28.0
+estimate	Judging or calculating approximate values, quantities, or outcomes	estimates	estimated	estimating	Estimator	Estimate	estimatedBy	https://www.onetonline.org/	O*NET 28.0
+evaluate	Assess or determine the significance, value, or condition of something; appraise or judge.	evaluates	evaluated	evaluating	Evaluator	Evaluation	evaluatedBy	https://schema.org/Action	Schema.org 27.0
+examine	Inspecting or investigating something carefully and thoroughly	examines	examined	examining	Examiner	Examination	examinedBy	https://www.onetonline.org/	O*NET 28.0
+execute	Carry out or perform a task, plan, or instruction; put into action.	executes	executed	executing	Executor	Execution	executedBy	https://schema.org/Action	Schema.org 27.0
+explain	Making something clear or understandable through description or discussion	explains	explained	explaining	Explainer	Explanation	explainedBy	https://www.onetonline.org/	O*NET 28.0
+export	Send out or transfer data, goods, or information to an external location, system, or format.	exports	exported	exporting	Exporter	Export	exportedBy	https://schema.org/Action	Schema.org 27.0
+extract	Remove, pull out, or obtain something from a location, source, or substance; derive or obtain from text.	extracts	extracted	extracting	Extractor	Extraction	extractedBy	https://schema.org/Action	Schema.org 27.0
+facilitate	Making something easier or helping to bring about an outcome	facilitates	facilitated	facilitating	Facilitator	Facilitation	facilitatedBy	https://www.onetonline.org/	O*NET 28.0
+fail	Be unsuccessful in achieving an objective or task; cease to function or work.	fails	failed	failing	Failer	Failure	failedBy	https://schema.org/Action	Schema.org 27.0
+filter	Remove impurities or unwanted elements from something; select or distinguish items based on criteria.	filters	filtered	filtering	Filterer	Filter	filteredBy	https://schema.org/Action	Schema.org 27.0
+finalize	Complete and put into final form; make definite or conclusive; settle finally.	finalizes	finalized	finalizing	Finalizer	Finalization	finalizedBy	https://schema.org/Action	Schema.org 27.0
+find	Locate, discover, or obtain something that was sought; determine or establish the existence or location of.	finds	found	finding	Finder	Finding	foundBy	https://schema.org/Action	Schema.org 27.0
+forecast	Predicting or estimating future trends, events, or conditions	forecasts	forecasted	forecasting	Forecaster	Forecast	forecastedBy	https://www.onetonline.org/	O*NET 28.0
+formulate	Creating or developing a specific formula, plan, or theory	formulates	formulated	formulating	Formulator	Formulation	formulatedBy	https://www.onetonline.org/	O*NET 28.0
+fulfill	Complete orders and deliver products or services to customers	fulfills	fulfilled	fulfilling	Fulfiller	Fulfillment	fulfilledBy	https://www.apqc.org/	APQC PCF 7.0
+generate	Producing or creating something from raw materials or processes	generates	generated	generating	Generator	Generation	generatedBy	https://www.onetonline.org/	O*NET 28.0
+guide	Directing, leading, or providing direction to someone or something	guides	guided	guiding	Guide	Guidance	guidedBy	https://www.onetonline.org/	O*NET 28.0
+handle	Managing, dealing with, or taking care of something or someone	handles	handled	handling	Handler	Handling	handledBy	https://www.onetonline.org/	O*NET 28.0
+hold	Retaining possession of goods or objects, typically in storage.	holds	held	holding	Holder	Holding	heldBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+identify	Recognizing, naming, or determining the nature of something	identifies	identified	identifying	Identifier	Identification	identifiedBy	https://www.onetonline.org/	O*NET 28.0
+implement	Putting a plan, system, or decision into action or effect	implements	implemented	implementing	Implementer	Implementation	implementedBy	https://www.onetonline.org/	O*NET 28.0
+improve	Making something better or enhancing quality, performance, or value	improves	improved	improving	Improver	Improvement	improvedBy	https://www.onetonline.org/	O*NET 28.0
+inform	Providing information, knowledge, or communication to other people or systems	informs	informed	informing	Informer	Information	informedBy	https://www.onetonline.org/	O*NET 28.0
+initiate	Starting or beginning a process, action, project, or sequence of events	initiates	initiated	initiating	Initiator	Initiation	initiatedBy	https://www.onetonline.org/	O*NET 28.0
+innovate	Creating or introducing new ideas, methods, products, or approaches	innovates	innovated	innovating	Innovator	Innovation	innovatedBy	https://www.onetonline.org/	O*NET 28.0
+inspect	Examining goods or materials for quality, compliance, or condition verification	inspects	inspected	inspecting	Inspector	Inspection	inspectedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+install	Putting equipment or products into service or operational use	installs	installed	installing	Installer	Installation	installedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+integrate	Combining or coordinating separate elements into a unified or cohesive whole	integrates	integrated	integrating	Integrator	Integration	integratedBy	https://www.onetonline.org/	O*NET 28.0
+interpret	Explaining the meaning or significance of information, data, language, or events	interprets	interpreted	interpreting	Interpreter	Interpretation	interpretedBy	https://www.onetonline.org/	O*NET 28.0
+interview	Conducting a formal conversation or questioning to gather information or assess candidates	interviews	interviewed	interviewing	Interviewer	Interview	interviewedBy	https://www.onetonline.org/	O*NET 28.0
+investigate	Conducting a systematic and detailed examination to discover facts or solve a problem	investigates	investigated	investigating	Investigator	Investigation	investigatedBy	https://www.onetonline.org/	O*NET 28.0
+invoice	Create and send billing documents for goods or services delivered	invoices	invoiced	invoicing	Invoicer	Invoice	invoicedBy	https://www.apqc.org/	APQC PCF 7.0
+kill	Permanently disabling or deactivating an RFID tag or tracking device	kills	killed	killing	Killer	Killing	killedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+lead	Guiding, directing, or influencing a group toward a goal or objective	leads	led	leading	Leader	Leadership	ledBy	https://www.onetonline.org/	O*NET 28.0
+learn	Acquiring knowledge, skills, or understanding through study, experience, or instruction	learns	learned	learning	Learner	Learning	learnedBy	https://www.onetonline.org/	O*NET 28.0
+liquidate	Sell off remaining inventory or assets to convert to cash	liquidates	liquidated	liquidating	Liquidator	Liquidation	liquidatedBy	https://www.apqc.org/	APQC PCF 7.0
+load	Placing goods onto a transport vehicle for shipment or transfer	loads	loaded	loading	Loader	Loading	loadedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+maintain	Keeping equipment, systems, or processes in proper working condition through regular upkeep	maintains	maintained	maintaining	Maintainer	Maintenance	maintainedBy	https://www.onetonline.org/	O*NET 28.0
+manage	Directing, controlling, or overseeing activities, resources, or personnel to achieve organizational objectives	manages	managed	managing	Manager	Management	managedBy	https://www.onetonline.org/	O*NET 28.0
+manufacture	Produce goods through transformation of raw materials or components	manufactures	manufactured	manufacturing	Manufacturer	Manufactured	manufacturedBy	https://www.apqc.org/	APQC PCF 7.0
+market	Promote and advertise products or services to target customers	markets	marketed	marketing	Marketer	Marketing	marketedBy	https://www.apqc.org/	APQC PCF 7.0
+measure	Determining the size, quantity, extent, or magnitude of something using specific units or standards	measures	measured	measuring	Measurer	Measurement	measuredBy	https://www.onetonline.org/	O*NET 28.0
+mediate	Acting as an intermediary or neutral party to resolve conflicts or facilitate agreements between parties	mediates	mediated	mediating	Mediator	Mediation	mediatedBy	https://www.onetonline.org/	O*NET 28.0
+merge	Combine entities, data, or operations into a single consolidated unit	merges	merged	merging	Merger	Merger	mergedWith	https://www.apqc.org/	APQC PCF 7.0
+modify	Changing or altering something to suit different requirements, conditions, or preferences	modifies	modified	modifying	Modifier	Modification	modifiedBy	https://www.onetonline.org/	O*NET 28.0
+monitor	Observing, tracking, or keeping watch over activities, conditions, or performance to detect changes or problems	monitors	monitored	monitoring	Monitor	Monitoring	monitoredBy	https://www.onetonline.org/	O*NET 28.0
+motivate	Stimulating or inspiring people to take action or achieve goals through encouragement and incentives	motivates	motivated	motivating	Motivator	Motivation	motivatedBy	https://www.onetonline.org/	O*NET 28.0
+negotiate	Discussing and reaching agreement on terms, conditions, or solutions through dialogue	negotiates	negotiated	negotiating	Negotiator	Negotiation	negotiatedBy	https://www.onetonline.org/	O*NET 28.0
+observe	Watching carefully and noticing details, behaviors, or changes in a situation	observes	observed	observing	Observer	Observation	observedBy	https://www.onetonline.org/	O*NET 28.0
+onboard	Integrate new employees, customers, or suppliers into organizational systems	onboards	onboarded	onboarding	Onboarder	Onboarding	onboardedBy	https://www.apqc.org/	APQC PCF 7.0
+operate	Controlling and directing the functioning of machinery, equipment, systems, or organizations	operates	operated	operating	Operator	Operation	operatedBy	https://www.onetonline.org/	O*NET 28.0
+optimize	Improving efficiency or performance by adjusting variables and removing inefficiencies	optimizes	optimized	optimizing	Optimizer	Optimization	optimizedBy	https://www.onetonline.org/	O*NET 28.0
+organize	Arranging, structuring, or coordinating elements into a systematic order or coherent whole	organizes	organized	organizing	Organizer	Organization	organizedBy	https://www.onetonline.org/	O*NET 28.0
+outsource	Transfer operations or functions to external service providers	outsources	outsourced	outsourcing	Outsourcer	Outsourcing	outsourcedBy	https://www.apqc.org/	APQC PCF 7.0
+oversee	Supervising, monitoring, and taking responsibility for the work of others or operations	oversees	oversaw	overseeing	Overseer	Oversight	overseenBy	https://www.onetonline.org/	O*NET 28.0
+pack	Placing items into packaging for shipment, storage, or sale	packs	packed	packing	Packer	Packing	packedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+participate	Taking part in an activity, discussion, project, or group effort	participates	participated	participating	Participant	Participation	participatedBy	https://www.onetonline.org/	O*NET 28.0
+perform	Executing, carrying out, or presenting an action or task to achieve a desired result	performs	performed	performing	Performer	Performance	performedBy	https://www.onetonline.org/	O*NET 28.0
+pick	Selecting items from inventory for fulfillment or use	picks	picked	picking	Picker	Picking	pickedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+plan	Deciding on a course of action or determining what will be done to achieve objectives	plans	planned	planning	Planner	Plan	plannedBy	https://www.onetonline.org/	O*NET 28.0
+prepare	Making ready or getting something into a suitable condition for use or action	prepares	prepared	preparing	Preparer	Preparation	preparedBy	https://www.onetonline.org/	O*NET 28.0
+present	Giving information or displaying something to an audience in a prepared manner	presents	presented	presenting	Presenter	Presentation	presentedBy	https://www.onetonline.org/	O*NET 28.0
+prioritize	Determining the order of importance or sequence in which tasks or items should be addressed	prioritizes	prioritized	prioritizing	Prioritizer	Prioritization	prioritizedBy	https://www.onetonline.org/	O*NET 28.0
+process	Performing a series of steps or operations to handle, handle, or transform something	processes	processed	processing	Processor	Processing	processedBy	https://www.onetonline.org/	O*NET 28.0
+procure	Obtain needed goods or services through formal purchasing processes	procures	procured	procuring	Procurer	Procurement	procuredBy	https://www.apqc.org/	APQC PCF 7.0
+produce	Making or generating something, whether through manufacturing, creation, or preparation	produces	produced	producing	Producer	Production	producedBy	https://www.onetonline.org/	O*NET 28.0
+program	Writing computer code, creating instructions, or scheduling operations or events	programs	programmed	programming	Programmer	Programming	programmedBy	https://www.onetonline.org/	O*NET 28.0
+promote	Advancing someone's career position or publicizing and encouraging the adoption of something	promotes	promoted	promoting	Promoter	Promotion	promotedBy	https://www.onetonline.org/	O*NET 28.0
+propose	Putting forward an idea, plan, or solution for consideration or discussion	proposes	proposed	proposing	Proposer	Proposal	proposedBy	https://www.onetonline.org/	O*NET 28.0
+protect	Taking actions to keep someone or something safe from harm, damage, or loss	protects	protected	protecting	Protector	Protection	protectedBy	https://www.onetonline.org/	O*NET 28.0
+provide	Supplying, furnishing, or making something available to someone	provides	provided	providing	Provider	Provision	providedBy	https://www.onetonline.org/	O*NET 28.0
+publish	Making content, information, or material publicly available through print, digital, or other media	publishes	published	publishing	Publisher	Publication	publishedBy	https://www.onetonline.org/	O*NET 28.0
+purchase	Acquiring goods, services, or assets by buying them in exchange for payment	purchases	purchased	purchasing	Purchaser	Purchase	purchasedBy	https://www.onetonline.org/	O*NET 28.0
+quantify	Measuring or expressing something in numerical or mathematical terms	quantifies	quantified	quantifying	Quantifier	Quantification	quantifiedBy	https://www.onetonline.org/	O*NET 28.0
+query	Asking questions or requesting information to obtain specific data or clarification	queries	queried	querying	Querier	Query	queriedBy	https://www.onetonline.org/	O*NET 28.0
+receive	Taking delivery of goods from a supplier or carrier	receives	received	receiving	Receiver	Receipt	receivedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+recommend	Suggesting or endorsing a course of action, product, or solution based on analysis or judgment	recommends	recommended	recommending	Recommender	Recommendation	recommendedBy	https://www.onetonline.org/	O*NET 28.0
+reconcile	Verify that accounts or records match and resolve discrepancies	reconciles	reconciled	reconciling	Reconciler	Reconciliation	reconciledBy	https://www.apqc.org/	APQC PCF 7.0
+record	Documenting information, data, or observations in a systematic manner for preservation, reference, or compliance purposes	records	recorded	recording	Recorder	Record	recordedBy	https://www.onetonline.org/	O*NET 28.0
+recruit	Identifying, attracting, and enrolling qualified candidates or participants for positions, programs, or initiatives	recruits	recruited	recruiting	Recruiter	Recruitment	recruitedBy	https://www.onetonline.org/	O*NET 28.0
+reduce	Decreasing the size, amount, intensity, or complexity of something through systematic action or process	reduces	reduced	reducing	Reducer	Reduction	reducedBy	https://www.onetonline.org/	O*NET 28.0
+refer	Directing someone to another person, resource, or service for assistance, information, or specialized support	refers	referred	referring	Referrer	Referral	referredBy	https://www.onetonline.org/	O*NET 28.0
+refine	Improving the quality, clarity, or effectiveness of something through iterative adjustment, purification, or enhancement	refines	refined	refining	Refiner	Refinement	refinedBy	https://www.onetonline.org/	O*NET 28.0
+register	Officially enrolling, recording, or listing someone or something in a formal system or database for identification or tracking	registers	registered	registering	Registrar	Registration	registeredBy	https://www.onetonline.org/	O*NET 28.0
+regulate	Controlling, governing, or maintaining something within specified parameters through rules, standards, or enforcement	regulates	regulated	regulating	Regulator	Regulation	regulatedBy	https://www.onetonline.org/	O*NET 28.0
+remove	Taking away items from a location or active use	removes	removed	removing	Remover	Removal	removedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+repackage	Changing packaging of goods or materials	repackages	repackaged	repackaging	Repackager	Repackaging	repackagedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+repair	Fixing or restoring goods or materials	repairs	repaired	repairing	Repairer	Repair	repairedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+replace	Substituting one item for another	replaces	replaced	replacing	Replacer	Replacement	replacedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+replenish	Restock or refill inventory to maintain required levels	replenishes	replenished	replenishing	Replenisher	Replenishment	replenishedBy	https://www.apqc.org/	APQC PCF 7.0
+report	Presenting information, findings, or status updates in a structured format to inform stakeholders or fulfill requirements	reports	reported	reporting	Reporter	Report	reportedBy	https://www.onetonline.org/	O*NET 28.0
+request	Asking for or formally soliciting something needed for work activities	requests	requested	requesting	Requester	Request	requestedBy	https://www.onetonline.org/	O*NET 28.0
+research	Conducting systematic inquiry to discover or verify facts and information	researches	researched	researching	Researcher	Research	researchedBy	https://www.onetonline.org/	O*NET 28.0
+reserve	Setting aside goods for future use or allocation	reserves	reserved	reserving	Reserver	Reservation	reservedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+resolve	Finding solutions to problems or reaching agreement on disputed issues	resolves	resolved	resolving	Resolver	Resolution	resolvedBy	https://www.onetonline.org/	O*NET 28.0
+respond	Reacting to or answering inquiries, requests, or communications from others	responds	responded	responding	Responder	Response	respondedTo	https://www.onetonline.org/	O*NET 28.0
+retire	Remove assets or systems from service at end of lifecycle	retires	retired	retiring	Retirer	Retirement	retiredBy	https://www.apqc.org/	APQC PCF 7.0
+review	Examining or assessing materials, documents, or work to verify quality and accuracy	reviews	reviewed	reviewing	Reviewer	Review	reviewedBy	https://www.onetonline.org/	O*NET 28.0
+revise	Making changes or corrections to improve documents, plans, or work products	revises	revised	revising	Reviser	Revision	revisedBy	https://www.onetonline.org/	O*NET 28.0
+schedule	Planning and organizing activities, meetings, or work to occur at specific times	schedules	scheduled	scheduling	Scheduler	Schedule	scheduledBy	https://www.onetonline.org/	O*NET 28.0
+search	Looking for or attempting to locate specific information, items, or resources	searches	searched	searching	Searcher	Search	searchedFor	https://www.onetonline.org/	O*NET 28.0
+select	Choosing items, options, or individuals from a set of alternatives based on specific criteria or requirements	selects	selected	selecting	Selector	Selection	selectedBy	https://www.onetonline.org/	O*NET 28.0
+sell	Point of sale transaction and retail selling	sells	sold	selling	Seller	Sale	soldBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+serve	Providing services, products, or support to customers, clients, or patrons to meet their needs or requirements	serves	served	serving	Server	Service	servedBy	https://www.onetonline.org/	O*NET 28.0
+ship	Dispatching goods for delivery to destination	ships	shipped	shipping	Shipper	Shipment	shippedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+simplify	Making something less complex, easier to understand, or more straightforward by removing unnecessary elements or reducing complications	simplifies	simplified	simplifying	Simplifier	Simplification	simplifiedBy	https://www.onetonline.org/	O*NET 28.0
+solve	Finding answers or solutions to problems, challenges, or questions through analysis, reasoning, or experimentation	solves	solved	solving	Solver	Solution	solvedBy	https://www.onetonline.org/	O*NET 28.0
+stage	Preparing goods for shipment or further processing	stages	staged	staging	Stager	Staging	stagedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+standardize	Establish uniform methods, formats, or practices across organization	standardizes	standardized	standardizing	Standardizer	Standardization	standardizedBy	https://www.apqc.org/	APQC PCF 7.0
+stock	Placing goods into storage or inventory location	stocks	stocked	stocking	Stocker	Stocking	stockedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+store	Keeping goods or materials in inventory or storage	stores	stored	storing	Storer	Storage	storedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+strategize	Develop comprehensive plans and strategic direction for operations	strategizes	strategized	strategizing	Strategist	Strategy	strategizedBy	https://www.apqc.org/	APQC PCF 7.0
+streamline	Simplify and improve efficiency of processes and operations	streamlines	streamlined	streamlining	Streamliner	Streamlining	streamlinedBy	https://www.apqc.org/	APQC PCF 7.0
+subcontract	Assign portions of contracted work to secondary vendors	subcontracts	subcontracted	subcontracting	Subcontracter	Subcontract	subcontractedBy	https://www.apqc.org/	APQC PCF 7.0
+suspend	Temporarily halt or pause operations, services, or access	suspends	suspended	suspending	Suspender	Suspension	suspendedBy	https://www.apqc.org/	APQC PCF 7.0
+take	Conducting a comprehensive inventory count or stock audit	takes	taken	taking	Taker	Taking	takenBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+transport	Moving goods or materials between locations or in transit	transports	transported	transporting	Transporter	Transportation	transportedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+unload	Removing goods or materials from a transport vehicle or container	unloads	unloaded	unloading	Unloader	Unloading	unloadedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+unpack	Removing goods or materials from packaging or containers	unpacks	unpacked	unpacking	Unpacker	Unpacking	unpackedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+unreserve	Releasing inventory that was previously reserved or held for future use	unreserves	unreserved	unreserving	Unreserver	Unreserving	unreservedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+void	Canceling or nullifying a shipment or transaction	voids	voided	voiding	Voider	Voiding	voidedBy	https://ref.gs1.org/cbv/2.0.0/	CBV 2.0
+define	To establish the meaning, scope, or boundaries of something. To specify requirements or parameters clearly.	defines	defined	defining	Definer	Definition	definedBy	APQC/ONET	Discovered
+use	To employ or utilize something for a particular purpose. To apply a tool, method, or resource in practice.	uses	used	using	User	Usage	usedBy	APQC/ONET	Discovered
+understand	To comprehend or grasp the meaning, nature, or importance of something. To have knowledge or insight about a subject.	understands	understood	understanding	Understander	Understanding	understoodBy	APQC/ONET	Discovered
+write	To compose text, documentation, or code. To create written materials or records.	writes	wrote	writing	Writer	Writing	writtenBy	APQC/ONET	Discovered
+track	To monitor, record, or follow the progress of something over time. To maintain records of status or changes.	tracks	tracked	tracking	Tracker	Track	trackedBy	APQC/ONET	Discovered
+train	To teach skills or knowledge to others. To develop capabilities through instruction and practice.	trains	trained	training	Trainer	Training	trainedBy	APQC/ONET	Discovered
+validate	To verify that something meets requirements or standards. To confirm accuracy, correctness, or compliance.	validates	validated	validating	Validator	Validation	validatedBy	APQC/ONET	Discovered
+test	To examine or evaluate something to verify its quality, performance, or functionality. To conduct trials or experiments.	tests	tested	testing	Tester	Test	testedBy	APQC/ONET	Discovered
+align	To arrange or position things in proper coordination. To ensure consistency or agreement between elements.	aligns	aligned	aligning	Aligner	Alignment	alignedBy	APQC/ONET	Discovered
+solicit	To request or seek input, feedback, or participation from others. To actively ask for contributions or responses.	solicits	solicited	soliciting	Solicitor	Solicitation	solicitedBy	APQC/ONET	Discovered
+support	To provide assistance, resources, or backing to enable work or operations to continue	supports	supported	supporting	Supporter	Support	supportedBy	APQC/ONET	Discovered
+derive	To obtain or extract something from a source through analysis or calculation	derives	derived	deriving	Deriver	Derivation	derivedBy	APQC/ONET	Discovered
+collaborate	To work jointly with others toward a common goal or outcome	collaborates	collaborated	collaborating	Collaborator	Collaboration	collaboratedBy	APQC/ONET	Discovered
+order	To arrange items in sequence or to request goods and services	orders	ordered	ordering	Orderer	Order	orderedBy	APQC/ONET	Discovered
+adjust	To make small changes or modifications to improve fit or accuracy	adjusts	adjusted	adjusting	Adjuster	Adjustment	adjustedBy	APQC/ONET	Discovered
+teach	To impart knowledge or skills through instruction and guidance	teaches	taught	teaching	Teacher	Teaching	taughtBy	APQC/ONET	Discovered
+build	To construct or create something by assembling parts or materials	builds	built	building	Builder	Build	builtBy	APQC/ONET	Discovered
+obtain	To acquire or get possession of something through effort or request	obtains	obtained	obtaining	Obtainer	Obtainment	obtainedBy	APQC/ONET	Discovered
+ensure	To make certain that something will occur or be the case	ensures	ensured	ensuring	Ensurer	Assurance	ensuredBy	APQC/ONET	Discovered
+gather	To collect or assemble information, materials, or people from various sources	gathers	gathered	gathering	Gatherer	Gathering	gatheredBy	APQC/ONET	Discovered
+post	To publish or display information, content, or materials in a public or accessible location. Commonly used in digital contexts for sharing content online or in physical contexts for displaying notices.	posts	posted	posting	Poster	Post	postedBy	APQC/ONET	Discovered
+contact	To communicate with or reach out to a person or organization for information, coordination, or relationship building. Essential for business communication and networking activities.	contacts	contacted	contacting	Contact	Contact	contactedBy	APQC/ONET	Discovered
+mentor	To guide, advise, and support someone's professional or personal development through experienced counsel. A key activity in talent development and knowledge transfer.	mentors	mentored	mentoring	Mentor	Mentorship	mentoredBy	APQC/ONET	Discovered
+match	To pair or align items, people, or criteria based on compatibility or correspondence. Used in recruiting, resource allocation, and pattern recognition processes.	matches	matched	matching	Matcher	Match	matchedBy	APQC/ONET	Discovered
+model	To create a representation, simulation, or exemplar of a system, process, or behavior. Used in analysis, planning, and demonstration activities.	models	modeled	modeling	Modeler	Model	modeledBy	APQC/ONET	Discovered
+calibrate	To adjust, standardize, or fine-tune equipment, processes, or measurements to ensure accuracy and consistency. Critical for quality control and precision operations.	calibrates	calibrated	calibrating	Calibrator	Calibration	calibratedBy	APQC/ONET	Discovered
+set	To establish, configure, or position something in a specific state or location. Involves defining parameters, arranging items, or initializing systems.	sets	set	setting	Setter	Set	setBy	APQC/ONET	Discovered
+make	To create, produce, or manufacture something through effort or process. A fundamental productive activity across all industries and functions.	makes	made	making	Maker	Make	madeBy	APQC/ONET	Discovered
+screen	To evaluate, filter, or examine candidates, materials, or information against defined criteria. Common in hiring, quality control, and security processes.	screens	screened	screening	Screener	Screen	screenedBy	APQC/ONET	Discovered
+hire	To employ or engage a person for work or services in exchange for compensation. A core human resources function for building organizational capability.	hires	hired	hiring	Hirer	Hire	hiredBy	APQC/ONET	Discovered
+reward	To give recognition, compensation, or incentive to someone for their achievements, performance, or contributions. Commonly used in employee recognition and incentive programs.	rewards	rewarded	rewarding	Rewarder	Reward	rewardedBy	APQC/ONET	Discovered
+relocate	To move personnel, equipment, or operations from one location to another. Often involves strategic business decisions or workforce management.	relocates	relocated	relocating	Relocator	Relocation	relocatedBy	APQC/ONET	Discovered
+triage	To prioritize and categorize tasks, issues, or cases based on urgency and importance. Critical in customer support, healthcare, and incident management.	triages	triaged	triaging	Triager	Triage	triagedBy	APQC/ONET	Discovered
+verify	To confirm the accuracy, validity, or authenticity of information, data, or credentials. Essential in quality control and compliance processes.	verifies	verified	verifying	Verifier	Verification	verifiedBy	APQC/ONET	Discovered
+issue	To officially distribute, assign, or publish documents, equipment, or directives. Includes issuing purchase orders, permits, or communications.	issues	issued	issuing	Issuer	Issue	issuedBy	APQC/ONET	Discovered
+cut	To reduce, eliminate, or physically separate materials or resources. Used in manufacturing, cost reduction, and resource management contexts.	cuts	cut	cutting	Cutter	Cut	cutBy	APQC/ONET	Discovered
+troubleshoot	To diagnose and resolve problems in systems, equipment, or processes. Critical skill in IT support, maintenance, and technical services.	troubleshoots	troubleshot	troubleshooting	Troubleshooter	Troubleshooting	troubleshotBy	APQC/ONET	Discovered
+secure	To obtain or make safe and protected from threats or risks. Encompasses both acquiring resources and implementing security measures.	secures	secured	securing	Securer	Security	securedBy	APQC/ONET	Discovered
+update	To revise, modify, or bring information and systems to current state. Essential in maintaining accurate records and modern systems.	updates	updated	updating	Updater	Update	updatedBy	APQC/ONET	Discovered
+specify	To define requirements, parameters, or details precisely. Important in requirements gathering, procurement, and design processes.	specifies	specified	specifying	Specifier	Specification	specifiedBy	APQC/ONET	Discovered
+incorporate	To combine or unite elements into a single entity or system. Often used in contexts of integrating new components, forming legal entities, or including elements into a larger whole.	incorporates	incorporated	incorporating	Incorporator	Incorporation	incorporatedBy	APQC/ONET	Discovered
+release	To make available, distribute, or free something for use or distribution. Can refer to product launches, information disclosure, or granting freedom from obligations.	releases	released	releasing	Releaser	Release	releasedBy	APQC/ONET	Discovered
+service	To perform maintenance, repair, or provide ongoing support for equipment, systems, or customer needs. Involves ensuring continued operation and meeting requirements.	services	serviced	servicing	Servicer	Service	servicedBy	APQC/ONET	Discovered
+notify	To formally inform or give notice to parties about events, changes, or required actions. Ensures stakeholders receive timely communication.	notifies	notified	notifying	Notifier	Notification	notifiedBy	APQC/ONET	Discovered
+submit	To present or deliver documents, proposals, or work for consideration, approval, or processing. Involves formal presentation to authorities or decision-makers.	submits	submitted	submitting	Submitter	Submission	submittedBy	APQC/ONET	Discovered
+open	To initiate, begin, or make accessible a process, account, facility, or opportunity. Can refer to starting new operations or providing access.	opens	opened	opening	Opener	Opening	openedBy	APQC/ONET	Discovered
+liaise	To establish and maintain communication and coordination between parties or departments. Involves acting as a connection point to facilitate collaboration.	liaises	liaised	liaising	Liaison	Liaison	liaisedBy	APQC/ONET	Discovered
+appraise	To assess, evaluate, or estimate the value, quality, or performance of assets, employees, or situations. Provides formal judgments based on established criteria.	appraises	appraised	appraising	Appraiser	Appraisal	appraisedBy	APQC/ONET	Discovered
+consolidate	To combine multiple elements, accounts, or operations into a unified whole for efficiency or clarity. Often involves merging financial records or organizational units.	consolidates	consolidated	consolidating	Consolidator	Consolidation	consolidatedBy	APQC/ONET	Discovered
+transfer	To move, convey, or relocate something from one place, person, or system to another. Includes physical movement, ownership changes, or data migration between locations or entities.	transfers	transferred	transferring	Transferrer	Transfer	transferredBy	APQC/ONET	Discovered
+pilot	To test, trial, or operate a new program, system, or initiative on a small scale before full implementation. Involves conducting experimental or preliminary runs to validate approaches.	pilots	piloted	piloting	Pilot	Pilot	pilotedBy	APQC/ONET	Discovered
+file	To submit documents officially or organize materials in a systematic filing system. Used in business processes for document management and regulatory compliance.	files	filed	filing	Filer	File	filedBy	APQC/ONET	Discovered
+construct	To build or create structures, systems, or frameworks. Used in business processes for developing infrastructure, assembling components, or formulating plans.	constructs	constructed	constructing	Constructor	Construction	constructedBy	APQC/ONET	Discovered
+undertake	To begin, commit to, or assume responsibility for a task or project. Used in business processes when initiating new initiatives or accepting obligations.	undertakes	undertook	undertaking	Undertaker	Undertaking	undertakenBy	APQC/ONET	Discovered
+scope	To define or determine the extent, boundaries, or requirements of a project or initiative. Used in business processes for planning and establishing project parameters.	scopes	scoped	scoping	Scoper	Scope	scopedBy	APQC/ONET	Discovered
+sustain	To maintain, support, or keep operational over time. Used in business processes for ongoing operations, maintaining standards, or providing continuous support.	sustains	sustained	sustaining	Sustainer	Sustenance	sustainedBy	APQC/ONET	Discovered
+inventory	To count, catalog, or systematically record items in stock. Used in business processes for asset management, stock control, and physical verification of materials.	inventories	inventoried	inventorying	Inventorier	Inventory	inventoriedBy	APQC/ONET	Discovered
+read	To interpret written or printed information, or to review and understand documents. Used in business processes for data analysis, document review, and information gathering.	reads	read	reading	Reader	Reading	readBy	APQC/ONET	Discovered
+move	To relocate, transfer, or shift items, resources, or operations from one location or state to another. Used in business processes for logistics, resource allocation, and organizational changes.	moves	moved	moving	Mover	Move	movedBy	APQC/ONET	Discovered
+account	Provide an explanation or be responsible for something	accounts	accounted	accounting	Accountant	Account	accountedBy
+adapt	Modify or adjust to new conditions or requirements	adapts	adapted	adapting	Adapter	Adaptation	adaptedBy
+address	Deal with or direct attention to a matter or person	addresses	addressed	addressing	Addresser	Address	addressedBy
+adopt	Take on or formally approve a course of action	adopts	adopted	adopting	Adopter	Adoption	adoptedBy
+alert	Make aware of a potential danger or important information	alerts	alerted	alerting	Alerter	Alert	alertedBy
+allow	Permit or enable something to happen	allows	allowed	allowing	Allower	Allowance	allowedBy
+answer	Provide a response to a question or action	answers	answered	answering	Answerer	Answer	answeredBy
+ascertain	Determine the facts or details of something with certainty	ascertains	ascertained	ascertaining	Ascertainer	Ascertainment	ascertainedBy
+assure	Make someone confident or certain about something	assures	assured	assuring	Assurer	Assurance	assuredBy
+augment	Make something greater in size or quantity	augments	augmented	augmenting	Augmenter	Augmentation	augmentedBy
+authenticate	Verify the origin or validity of something	authenticates	authenticated	authenticating	Authenticator	Authentication	authenticatedBy
+automate	Convert a process to be operated automatically	automates	automated	automating	Automator	Automation	automatedBy
+avoid	Keep away from or prevent something from happening	avoids	avoided	avoiding	Avoider	Avoidance	avoidedBy
+Balance	Distribute weight or maintain equilibrium in work processes or resources	balances	balanced	balancing	Balancer	Balance	balancedBy
+Become	Develop into or grow to be something different	becomes	became	becoming	Becomer	Becoming	becomeBy
+Boost	Increase or improve performance, productivity, or effectiveness	boosts	boosted	boosting	Booster	Boost	boostedBy
+Bridge	Connect or span gaps between different departments, systems, or perspectives	bridges	bridged	bridging	Bridger	Bridge	bridgedBy
+Bundle	Combine multiple items or services into a single package or offering	bundles	bundled	bundling	Bundler	Bundle	bundledBy
+Buy	Acquire or purchase goods or services for organizational use	buys	bought	buying	Buyer	Buy	boughtBy
+Carry	Transport, convey, or maintain responsibility for tasks or items	carries	carried	carrying	Carrier	Carry	carriedBy
+Change	Alter, transform, or modify processes, systems, or approaches	changes	changed	changing	Changer	Change	changedBy
+Clarify	Make something clear or easier to understand in communication	clarifies	clarified	clarifying	Clarifier	Clarification	clarifiedBy
+Coach	Guide, train, or develop individuals to improve performance	coaches	coached	coaching	Coach	Coaching	coachedBy
+Combine	Join or merge multiple elements into an integrated whole	combines	combined	combining	Combiner	Combination	combinedBy
+Commence	Begin or start a project, activity, or business operation	commences	commenced	commencing	Commencer	Commencement	commencedBy
+Confer	Consult or discuss with colleagues to exchange ideas or make decisions	confers	conferred	conferring	Conferrer	Conferral	conferredBy
+Consider	Give thought to or evaluate options, factors, or proposals carefully	considers	considered	considering	Considerer	Consideration	consideredBy
+Correct	Fix errors or adjust something to make it accurate or proper	corrects	corrected	correcting	Corrector	Correction	correctedBy
+Correspond	Communicate or be in agreement with someone or something; exchange letters or messages	corresponds	corresponded	corresponding	Correspondent	Correspondence	correspondedWith
+Craft	Create or make something skillfully with careful attention to detail	crafts	crafted	crafting	Crafter	Craft	craftedBy
+Describe	Provide details or an account of something; explain characteristics or features	describes	described	describing	Describer	Description	describedBy
+Detect	Discover or identify the presence of something, often something hidden or subtle	detects	detected	detecting	Detector	Detection	detectedBy
+Dig	Excavate or search deeply into something; investigate thoroughly	digs	dug	digging	Digger	Dig	dugBy
+Display	Show or present something prominently for others to see; exhibit	displays	displayed	displaying	Displayer	Display	displayedBy
+Disseminate	Spread or distribute information, ideas, or knowledge widely	disseminates	disseminated	disseminating	Disseminator	Dissemination	disseminatedBy
+Distill	Extract the essential meaning or most important elements from something; refine or purify	distills	distilled	distilling	Distiller	Distillation	distilledBy
+Draw	Attract or pull something toward oneself; create a visual representation; conclude or infer	draws	drew	drawing	Drawer	Drawing	drawnBy
+Eliminate	Remove, get rid of, or exclude someone or something completely	eliminates	eliminated	eliminating	Eliminator	Elimination	eliminatedBy
+Encourage	Give support, confidence, or motivation to someone to do something	encourages	encouraged	encouraging	Encourager	Encouragement	encouragedBy
+Enhance	Make something better, stronger, or more effective; improve	enhances	enhanced	enhancing	Enhancer	Enhancement	enhancedBy
+Evolve	Develop gradually or change over time; progress or advance	evolves	evolved	evolving	Evolver	Evolution	evolvedBy
+Expand	Make something larger, wider, or more extensive; increase in size or scope	expands	expanded	expanding	Expander	Expansion	expandedBy
+Expedite	Speed up a process; make something happen faster or more quickly	expedites	expedited	expediting	Expediter	Expedition	expeditedBy
+Explore	Investigate or examine something thoroughly to discover information or possibilities	explores	explored	exploring	Explorer	Exploration	exploredBy
+Express	Convey ideas, opinions, or emotions clearly and effectively	expresses	expressed	expressing	Expresser	Expression	expressedBy
+Extend	Stretch out, enlarge, or increase the scope or duration of something	extends	extended	extending	Extender	Extension	extendedBy
+Fill	Complete a space or make something full by adding content or material	fills	filled	filling	Filler	Filling	filledBy
+Follow	Move or proceed in the same direction, or comply with instructions or guidance	follows	followed	following	Follower	Following	followedBy
+Form	Shape, create, or develop something into a specific structure or arrangement	forms	formed	forming	Former	Formation	formedBy
+Formalize	Make something official or put it into a standardized format	formalizes	formalized	formalizing	Formalizer	Formalization	formalizedBy
+Gain	Obtain, achieve, or increase something desired such as knowledge or advantage	gains	gained	gaining	Gainer	Gain	gainedBy
+Get	Obtain, acquire, or receive something needed or desired	gets	gotten	getting	Getter	Getting	gottenBy
+Give	Provide, offer, or transfer something to another person or entity	gives	gave	giving	Giver	Gift	givenBy
+Glean	Gradually collect or gather information, knowledge, or resources from various sources	gleans	gleaned	gleaning	Gleaner	Gleaning	gleaned By
+Govern	Direct, control, or manage an organization, process, or situation according to rules	governs	governed	governing	Governor	Governance	governedBy
+Grow	Increase in size, value, scope, or importance over time	grows	grew	growing	Grower	Growth	grownBy
+Hand	Give, pass, or deliver something to another person	hands	handed	handing	Handler	Handoff	handedBy
+Harvest	Gather, collect, or extract the results or benefits of previous efforts	harvests	harvested	harvesting	Harvester	Harvest	harvestedBy
+have	Possess, own, or maintain control or responsibility for something	has	had	having	Haver	Having	hadBy
+help	Provide assistance, support, or aid to someone to accomplish a task	helps	helped	helping	Helper	Help	helpedBy
+hoist	Lift or raise something to a higher position using equipment or effort	hoists	hoisted	hoisting	Hoister	Hoist	hoisedBy
+import	Bring in goods, data, or concepts from outside sources into a system	imports	imported	importing	Importer	Import	importedBy
+include	Contain or comprise as a constituent part; add something to a group	includes	included	including	Includer	Inclusion	includedBy
+increase	Make something greater in size, amount, degree, or intensity	increases	increased	increasing	Increaser	Increase	increasedBy
+indicate	Point out, show, or suggest that something is the case	indicates	indicated	indicating	Indicator	Indication	indicatedBy
+ingest	Take in or consume data, information, or substances for processing	ingests	ingested	ingesting	Ingester	Ingestion	ingestedBy
+interact	Engage in communication or activity with others or systems	interacts	interacted	interacting	Interactor	Interaction	interactedBy
+introduce	Present, bring in, or make someone aware of something new	introduces	introduced	introducing	Introducer	Introduction	introducedBy
+invest	Commit resources, time, or capital with expectation of return or benefit	invests	invested	investing	Investor	Investment	investedBy
+invite	Request or encourage someone's presence or participation in an event	invites	invited	inviting	Inviter	Invitation	invitedBy
+keep	Maintain, retain, or continue to have or do something over time	keeps	kept	keeping	Keeper	Keeping	keptBy
+label	Assign a name, description, or category to identify something	labels	labeled	labeling	Labeler	Label	labeledBy
+launch	Initiate or start a process, project, or activity formally	launches	launched	launching	Launcher	Launch	launchedBy
+Leverage	Use or employ a resource, skill, or advantage strategically to achieve maximum benefit	leverages	leveraged	leveraging	Leverager	Leverage	leveragedBy
+Locate	Find or determine the position or place of something or someone	locates	located	locating	Locator	Location	locatedBy
+Log	Record information systematically in a document, database, or register	logs	logged	logging	Logger	Log	loggedBy
+Maximize	Increase to the greatest possible extent or highest achievable level	maximizes	maximized	maximizing	Maximizer	Maximization	maximizedBy
+Meet	Satisfy a requirement, expectation, or obligation	meets	met	meeting	Meeter	Meeting	metBy
+Minimize	Reduce to the smallest possible extent or lowest acceptable level	minimizes	minimized	minimizing	Minimizer	Minimization	minimizedBy
+Mitigate	Make less severe, reduce the impact or seriousness of a problem	mitigates	mitigated	mitigating	Mitigator	Mitigation	mitigatedBy
+Mix	Combine different elements, substances, or groups together	mixes	mixed	mixing	Mixer	Mixture	mixedBy
+Offer	Present, propose, or make available something for consideration or acceptance	offers	offered	offering	Offerer	Offering	offeredBy
+Offset	Counterbalance or compensate for something by using an opposite force or factor	offsets	offset	offsetting	Offsetter	Offset	offsetBy
+Orchestrate	Plan, organize, and coordinate complex activities or efforts	orchestrates	orchestrated	orchestrating	Orchestrator	Orchestration	orchestratedBy
+Outline	Describe or mark the main points, structure, or shape of something	outlines	outlined	outlining	Outliner	Outline	outlinedBy
+Pay	Give money in exchange for goods or services, or give attention to something	pays	paid	paying	Payer	Payment	paidBy
+Personalize	Customize or adapt something to meet individual preferences or requirements	personalizes	personalized	personalizing	Personalizer	Personalization	personalizedBy
+Place	Put or position something in a particular location or situation	places	placed	placing	Placer	Placement	placedBy
+Predict	Make a forecast or determination about future outcomes or events	predicts	predicted	predicting	Predictor	Prediction	predictedBy
+Prevent	Stop or hinder something from happening or occurring	prevents	prevented	preventing	Preventer	Prevention	preventedBy
+Prove	Demonstrate or establish the truth or validity of something	proves	proved	proving	Prover	Proof	provedBy
+Put	Place or position something in a specific location or state	puts	put	putting	Putter	Placement	putBy
+Qualify	Meet the necessary requirements or standards for something	qualifies	qualified	qualifying	Qualifier	Qualification	qualifiedBy
+Reach	Arrive at or attain a particular level or destination	reaches	reached	reaching	Reacher	Reach	reachedBy
+React	Respond or take action in response to something	reacts	reacted	reacting	Reactor	Reaction	reactedBy
+Realign	Adjust or reposition something to correct alignment or focus	realigns	realigned	realigning	Realigner	Realignment	realignedBy
+Recognize	Identify or acknowledge something as valid or worthy	recognizes	recognized	recognizing	Recognizer	Recognition	recognizedBy
+Recover	Return to a normal state or retrieve something lost	recovers	recovered	recovering	Recoverer	Recovery	recoveredBy
+Reflect	Consider carefully or demonstrate a particular quality or characteristic	reflects	reflected	reflecting	Reflector	Reflection	reflectedBy
+Relate	Show a connection between things or communicate information	relates	related	relating	Relater	Relation	relatedBy
+Remediate	Take corrective action to fix or address a problem	remediates	remediated	remediating	Remediator	Remediation	remediatedBy
+Replicate	Make an exact copy or reproduce something	replicates	replicated	replicating	Replicator	Replication	replicatedBy
+Retain	Keep or maintain possession of something	retains	retained	retaining	Retainer	Retention	retainedBy
+retrieve	Obtain and bring back information or data from a storage system	retrieves	retrieved	retrieving	Retriever	Retrieval	retrievedBy
+return	Give back or send something to its original location or owner	returns	returned	returning	Returner	Return	returnedBy
+revamp	Completely renovate or redesign something for improvement	revamps	revamped	revamping	Revamper	Revamp	revampedBy
+rework	Reshape or redo work to improve quality or efficiency	reworks	reworked	reworking	Reworker	Rework	reworkedBy
+route	Direct or send something along a specific path or channel	routes	routed	routing	Router	Route	routedBy
+run	Execute or operate a system, process, or program	runs	ran	running	Runner	Run	runBy
+save	Store or preserve data, documents, or resources for future use	saves	saved	saving	Saver	Saving	savedBy
+scan	Examine or review documents or data systematically for information	scans	scanned	scanning	Scanner	Scan	scannedBy
+scout	Explore or investigate an area to gather intelligence or assess conditions	scouts	scouted	scouting	Scout	Scout	scoutedBy
+see	Perceive or understand information visually or conceptually	sees	saw	seeing	Seer	Sight	seenBy
+seek	Actively search for or pursue specific information or resources	seeks	sought	seeking	Seeker	Seek	soughtBy
+send	Dispatch or transmit something to a recipient or destination	sends	sent	sending	Sender	Sending	sentBy
+settle	Resolve a dispute or establish an agreement definitively	settles	settled	settling	Settler	Settlement	settledBy
+share	Distribute or communicate information to multiple stakeholders	shares	shared	sharing	Sharer	Sharing	sharedBy
+shift	Move or transfer responsibility, focus, or resources to a different state	shifts	shifted	shifting	Shifter	Shift	shiftedBy
+source	Obtain or identify the origin or primary location of something	sources	sourced	sourcing	Sourcer	Source	sourcedBy
+speak	Communicate information or ideas verbally to an audience	speaks	spoke	speaking	Speaker	Speech	spokenBy
+start	Begin or initiate an activity, process, or organization	starts	started	starting	Starter	Start	startedBy
+stop	Cease or halt an activity or operation	stops	stopped	stopping	Stopper	Stop	stoppedBy
+strengthen	Make something stronger or more robust in capacity	strengthens	strengthened	strengthening	Strengthener	Strengthening	strengthenedBy
+suggest	Propose an idea or course of action for consideration	suggests	suggested	suggesting	Suggester	Suggestion	suggestedBy
+summarize	Present a concise overview of the main points	summarizes	summarized	summarizing	Summarizer	Summary	summarizedBy
+supervise	Direct and oversee the work of subordinates or a process	supervises	supervised	supervising	Supervisor	Supervision	supervisedBy
+supplement	Add something additional to complete or enhance	supplements	supplemented	supplementing	Supplementer	Supplement	supplementedBy
+supply	Provide or furnish something that is needed	supplies	supplied	supplying	Supplier	Supply	suppliedBy
+survey	Examine or assess a situation, opinion, or property	surveys	surveyed	surveying	Surveyor	Survey	surveyedBy
+switch	Change from one thing to another or reverse a position	switches	switched	switching	Switcher	Switch	switchedBy
+synthesize	Combine elements into a unified whole or integrate information	synthesizes	synthesized	synthesizing	Synthesizer	Synthesis	synthesizedBy
+tap	Strike lightly or access a resource for use	taps	tapped	tapping	Tapper	Tap	tappedBy
+target	Direct efforts toward achieving a specific goal or audience	targets	targeted	targeting	Targeter	Target	targetedBy
+tint	Apply a slight shade or color variation to something	tints	tinted	tinting	Tinter	Tint	tintedBy
+transform	Fundamentally change the form, nature, or function of something	transforms	transformed	transforming	Transformer	Transformation	transformedBy
+translate	Convert text or communication from one language or format to another	translates	translated	translating	Translator	Translation	translatedBy
+uncover	Discover or reveal hidden information, issues, or insights	uncovers	uncovered	uncovering	Uncoverer	Discovery	uncoveredBy
+unlock	Release restrictions or enable access to resources, opportunities, or potential	unlocks	unlocked	unlocking	Unlocker	Unlock	unlockedBy
+upgrade	Improve the quality, capability, or version of something to a higher standard	upgrades	upgraded	upgrading	Upgrader	Upgrade	upgradedBy
+upload	Transfer data or files from a local device to a server or cloud system	uploads	uploaded	uploading	Uploader	Upload	uploadedBy
+utilize	Make practical and effective use of something for a specific purpose or goal	utilizes	utilized	utilizing	Utilizer	Utilization	utilizedBy
+Position	Place or arrange something in a particular location or role	positions	positioned	positioning	Positioner	Positioning	positionedBy
+Time	Schedule or coordinate the scheduling of events or activities	times	timed	timing	Timer	Timing	timedBy
+Sample	Select or extract a representative subset from a larger population	samples	sampled	sampling	Sampler	Sampling	sampledBy
+Fund	Provide financial resources or capital to support operations or projects	funds	funded	funding	Funder	Funding	fundedBy
+Score	Achieve points or evaluate performance against predetermined criteria	scores	scored	scoring	Scorer	Scoring	scoredBy
+Price	Determine or set the cost of goods or services	prices	priced	pricing	Pricer	Pricing	pricedBy
+Finance	Provide capital or monetary resources to support business operations	finances	financed	financing	Financer	Financing	financedBy
+License	Grant official permission or authority to operate or perform activities	licenses	licensed	licensing	Licenser	Licensing	licensedBy
+Warehouse	Store or hold goods in a facility for inventory management	warehouses	warehoused	warehousing	Warehouser	Warehousing	warehoused By
+Reprocess	Treat or process something again to improve quality or compliance	reprocesses	reprocessed	reprocessing	Reprocessor	Reprocessing	reprocessedBy
+Resource	Allocate or provide necessary materials, assets, or human capital	resources	resourced	resourcing	Resourcer	Resourcing	resourcedBy
+Restructure	Reorganize or redesign an organization or system for improved efficiency	restructures	restructured	restructuring	Restructurer	Restructuring	restructuredBy
+Resume	Continue or recommence an activity that was previously paused	resumes	resumed	resuming	Resumer	Resuming	resumedBy
+Map	Create a representation or plan showing relationships or locations	maps	mapped	mapping	Mapper	Mapping	mappedBy
+Work	Perform tasks or labor to accomplish objectives or goals	works	worked	working	Worker	Working	workedByrefresh	To update, renew, or restore something to a current or improved state; to make something feel new or revitalized	refreshes	refreshed	refreshing	Refresher	Refreshment	refreshedBy
+advise	To advise	advises	advised	advising	adviser	advisation		generated	general
+study	To study	studies	studied	studying	studyer	studyation		generated	general
+instruct	To instruct	instructs	instructed	instructing	instructer	instruction		generated	general
+attend	To attend	attends	attended	attending	attender	attendation		generated	general
+act	To act	acts	acted	acting	acter	action		generated	general
+turn	To turn	turns	turned	turning	turner	turnation		generated	general
+lay	To lay	lays	layed	laying	layer	layation		generated	general
+researchresolve	To researchresolve	researchresolves	researchresolved	researchresolving	researchresolver	researchresolvation		generated	general
+correspondnegotiate	To correspondnegotiate	correspondnegotiates	correspondnegotiated	correspondnegotiating	correspondnegotiater	correspondnegotiatation		generated	general
+fabricate	To fabricate	fabricates	fabricated	fabricating	fabricater	fabricatation		generated	general
+prescribe	To prescribe	prescribes	prescribed	prescribing	prescriber	prescribation		generated	general
+trim	To trim	trims	trimmed	trimming	trimer	trimation		generated	general
+mark	To mark	marks	marked	marking	marker	markation		generated	general
+weigh	To weigh	weighs	weighed	weighing	weigher	weighation		generated	general
+sort	To sort	sorts	sorted	sorting	sorter	sortion		generated	general
+fit	To fit	fits	fitted	fitting	fiter	fition		generated	general
+visit	To visit	visits	visitted	visitting	visiter	visition		generated	general
+transmit	To transmit	transmits	transmitted	transmitting	transmiter	transmition		generated	general
+greet	To greet	greets	greeted	greeting	greeter	greetion		generated	general
+treat	To treat	treats	treated	treating	treater	treation		generated	general
+signal	To signal	signals	signalled	signalling	signaler	signalation		generated	general
+dispose	To dispose	disposes	disposed	disposing	disposer	disposation		generated	general
+mount	To mount	mounts	mounted	mounting	mounter	mountion		generated	general
+access	To access	accesses	accessed	accessing	accesser	accessation		generated	general
+appoint	To appoint	appoints	appointed	appointing	appointer	appointion		generated	general
+represent	To represent	represents	represented	representing	representer	represention		generated	general
+devise	To devise	devises	devised	devising	deviser	devisation		generated	general
+requisition	To requisition	requisitions	requisitioned	requisitioning	requisitioner	requisitionation		generated	general
+insert	To insert	inserts	inserted	inserting	inserter	insertion		generated	general
+wash	To wash	washes	washed	washing	washer	washation		generated	general
+recruitsource	To recruitsource	recruitsources	recruitsourced	recruitsourcing	recruitsourcer	recruitsourcation		generated	general
+unwind	To unwind	unwinds	unwinded	unwinding	unwinder	unwindation		generated	general
+reengineer	To reengineer	reengineers	reengineered	reengineering	reengineerer	reengineeration		generated	general
+testify	To testify	testifies	testified	testifying	testifyer	testifyation		generated	general
+terminate	To terminate	terminates	terminated	terminating	terminater	terminatation		generated	general
+processreview	To processreview	processreviews	processreviewed	processreviewing	processreviewer	processreviewation		generated	general
+createdistribute	To createdistribute	createdistributes	createdistributed	createdistributing	createdistributer	createdistributation		generated	general
+monitormanage	To monitormanage	monitormanages	monitormanaged	monitormanaging	monitormanager	monitormanagation		generated	general
+prepareanalyze	To prepareanalyze	prepareanalyzes	prepareanalyzed	prepareanalyzing	prepareanalyzer	prepareanalyzation		generated	general
+managetrack	To managetrack	managetracks	managetracked	managetracking	managetracker	managetrackation		generated	general
+createmaintain	To createmaintain	createmaintains	createmaintained	createmaintaining	createmaintainer	createmaintaination		generated	general
+redeploy	To redeploy	redeploys	redeployed	redeploying	redeployer	redeployation		generated	general
+managecollect	To managecollect	managecollects	managecollected	managecollecting	managecollecter	managecollection		generated	general
+articulate	To articulate	articulates	articulated	articulating	articulater	articulatation		generated	general
+monitoranalyze	To monitoranalyze	monitoranalyzes	monitoranalyzed	monitoranalyzing	monitoranalyzer	monitoranalyzation		generated	general
+asses	To asses	asseses	assessed	assessing	asseser	assesation		generated	general
+maintainoptimize	To maintainoptimize	maintainoptimizes	maintainoptimized	maintainoptimizing	maintainoptimizer	maintainoptimization		generated	general
+scheduleoptimize	To scheduleoptimize	scheduleoptimizes	scheduleoptimized	scheduleoptimizing	scheduleoptimizer	scheduleoptimization		generated	general
+analyzeapprove	To analyzeapprove	analyzeapproves	analyzeapproved	analyzeapproving	analyzeapprover	analyzeapprovation		generated	general
+reinstate	To reinstate	reinstates	reinstated	reinstating	reinstater	reinstatation		generated	general
+receivedeposit	To receivedeposit	receivedeposits	receivedepositted	receivedepositting	receivedepositer	receivedeposition		generated	general
+closecapitalize	To closecapitalize	closecapitalizes	closecapitalized	closecapitalizing	closecapitalizer	closecapitalization		generated	general
+maintainmanage	To maintainmanage	maintainmanages	maintainmanaged	maintainmanaging	maintainmanager	maintainmanagation		generated	general
+identifydedicate	To identifydedicate	identifydedicates	identifydedicated	identifydedicating	identifydedicater	identifydedicatation		generated	general
+amend	To amend	amends	amended	amending	amender	amendation		generated	general
+engageretain	To engageretain	engageretains	engageretained	engageretaining	engageretainer	engageretaination		generated	general
+establishclarify	To establishclarify	establishclarifies	establishclarified	establishclarifying	establishclarifyer	establishclarifyation		generated	general
+enhancemodify	To enhancemodify	enhancemodifies	enhancemodified	enhancemodifying	enhancemodifyer	enhancemodifyation		generated	general
+patrol	To patrol	patrols	patrolled	patrolling	patroler	patrolation		generated	general
+lift	To lift	lifts	lifted	lifting	lifter	liftion		generated	general
+migrate	To migrate	migrates	migrated	migrating	migrater	migratation		generated	general
+modifyrevise	To modifyrevise	modifyrevises	modifyrevised	modifyrevising	modifyreviser	modifyrevisation		generated	general
+completefinalize	To completefinalize	completefinalizes	completefinalized	completefinalizing	completefinalizer	completefinalization		generated	general
+maintainupdate	To maintainupdate	maintainupdates	maintainupdated	maintainupdating	maintainupdater	maintainupdatation		generated	general
+operationalize	To operationalize	operationalizes	operationalized	operationalizing	operationalizer	operationalization		generated	general
+approvechange	To approvechange	approvechanges	approvechanged	approvechanging	approvechanger	approvechangation		generated	general
+canceldeactivate	To canceldeactivate	canceldeactivates	canceldeactivated	canceldeactivating	canceldeactivater	canceldeactivatation		generated	general
+renewreplace	To renewreplace	renewreplaces	renewreplaced	renewreplacing	renewreplacer	renewreplacation		generated	general
+dismantle	To dismantle	dismantles	dismantled	dismantling	dismantler	dismantlation		generated	general
+acquiresecure	To acquiresecure	acquiresecures	acquiresecured	acquiresecuring	acquiresecurer	acquiresecuration		generated	general
+drill	To drill	drills	drilled	drilling	driller	drillation		generated	general
+smooth	To smooth	smooths	smoothed	smoothing	smoother	smoothation		generated	general
+deduplicate	To deduplicate	deduplicates	deduplicated	deduplicating	deduplicater	deduplicatation		generated	general
+salvage	To salvage	salvages	salvaged	salvaging	salvager	salvagation		generated	general
+cover	To cover	covers	coverred	coverring	coverer	coveration		generated	general
+spray	To spray	sprays	sprayed	spraying	sprayer	sprayation		generated	general
+shape	To shape	shapes	shaped	shaping	shaper	shapation		generated	general
+tend	To tend	tends	tended	tending	tender	tendation		generated	general
+identifyreceive	To identifyreceive	identifyreceives	identifyreceived	identifyreceiving	identifyreceiver	identifyreceivation		generated	general
+submitpresent	To submitpresent	submitpresents	submitpresented	submitpresenting	submitpresenter	submitpresention		generated	general
+rerun	To rerun	reruns	rerunned	rerunning	reruner	rerunation		generated	general
+solicittrack	To solicittrack	solicittracks	solicittracked	solicittracking	solicittracker	solicittrackation		generated	general
+produceassembletest	To produceassembletest	produceassembletests	produceassembletested	produceassembletesting	produceassembletester	produceassembletestion		generated	general
+produceassemble	To produceassemble	produceassembles	produceassembled	produceassembling	produceassembler	produceassemblation		generated	general
+identifyperform	To identifyperform	identifyperforms	identifyperformed	identifyperforming	identifyperformer	identifyperformation		generated	general
+feed	To feed	feeds	feeded	feeding	feeder	feedation		generated	general
+listen	To listen	listens	listenned	listenning	listener	listenation		generated	general
+reassemble	To reassemble	reassembles	reassembled	reassembling	reassembler	reassemblation		generated	general
+fasten	To fasten	fastens	fastenned	fastenning	fastener	fastenation		generated	general
+press	To press	presses	pressed	pressing	presser	pressation		generated	general
+erect	To erect	erects	erected	erecting	erecter	erection		generated	general
+lubricate	To lubricate	lubricates	lubricated	lubricating	lubricater	lubricatation		generated	general
+dress	To dress	dresses	dressed	dressing	dresser	dressation		generated	general
+grind	To grind	grinds	grinded	grinding	grinder	grindation		generated	general
+input	To input	inputs	inputted	inputting	inputer	inpution		generated	general
+compose	To compose	composes	composed	composing	composer	composation		generated	general
+photograph	To photograph	photographs	photographed	photographing	photographer	photographation		generated	general
+finish	To finish	finishes	finished	finishing	finisher	finishation		generated	general
+trace	To trace	traces	traced	tracing	tracer	tracation		generated	general
+manipulate	To manipulate	manipulates	manipulated	manipulating	manipulater	manipulatation		generated	general
+relay	To relay	relays	relayed	relaying	relayer	relayation		generated	general
+care	To care	cares	cared	caring	carer	caration		generated	general
+spread	To spread	spreads	spreaded	spreading	spreader	spreadation		generated	general
+thread	To thread	threads	threaded	threading	threader	threadation		generated	general
+package	To package	packages	packaged	packaging	packager	packagation		generated	general
+call	To call	calls	called	calling	caller	callation		generated	general
+travel	To travel	travels	travelled	travelling	traveler	travelation		generated	general
+splice	To splice	splices	spliced	splicing	splicer	splication		generated	general
+accompany	To accompany	accompanies	accompanied	accompanying	accompanyer	accompanyation		generated	general
+pour	To pour	pours	poured	pouring	pourer	pouration		generated	general
+climb	To climb	climbs	climbed	climbing	climber	climbation		generated	general
+weld	To weld	welds	welded	welding	welder	weldation		generated	general
+pull	To pull	pulls	pulled	pulling	puller	pullation		generated	general
+stay	To stay	stays	stayed	staying	stayer	stayation		generated	general
+specialize	To specialize	specializes	specialized	specializing	specializer	specialization		generated	general
+clear	To clear	clears	cleared	clearing	clearer	clearation		generated	general
+grade	To grade	grades	graded	grading	grader	gradation		generated	general
+brush	To brush	brushes	brushed	brushing	brusher	brushation		generated	general
+wrap	To wrap	wraps	wrapped	wrapping	wraper	wrapation		generated	general
+scrape	To scrape	scrapes	scraped	scraping	scraper	scrapation		generated	general
+sweep	To sweep	sweeps	sweeped	sweeping	sweeper	sweepation		generated	general
+seal	To seal	seals	sealed	sealing	sealer	sealation		generated	general
+paint	To paint	paints	painted	painting	painter	paintion		generated	general
+push	To push	pushes	pushed	pushing	pusher	pushation		generated	general
+advocate	To advocate	advocates	advocated	advocating	advocater	advocatation		generated	general
+talk	To talk	talks	talked	talking	talker	talkation		generated	general
+employ	To employ	employs	employed	employing	employer	employation		generated	general
+raise	To raise	raises	raised	raising	raiser	raisation		generated	general
+sew	To sew	sews	sewed	sewing	sewer	sewation		generated	general
+transcribe	To transcribe	transcribes	transcribed	transcribing	transcriber	transcribation		generated	general
+announce	To announce	announces	announced	announcing	announcer	announcation		generated	general
+separate	To separate	separates	separated	separating	separater	separatation		generated	general
+escort	To escort	escorts	escorted	escorting	escorter	escortion		generated	general
+rotate	To rotate	rotates	rotated	rotating	rotater	rotatation		generated	general
+bolt	To bolt	bolts	bolted	bolting	bolter	boltion		generated	general
+immerse	To immerse	immerses	immersed	immersing	immerser	immersation		generated	general
+lower	To lower	lowers	lowered	lowering	lowerer	loweration		generated	general
+code	To code	codes	coded	coding	coder	codation		generated	general
+sponsor	To sponsor	sponsors	sponsorred	sponsorring	sponsorer	sponsoration		generated	general
+polish	To polish	polishes	polished	polishing	polisher	polishation		generated	general
+sharpen	To sharpen	sharpens	sharpenned	sharpenning	sharpener	sharpenation		generated	general
+restore	To restore	restores	restored	restoring	restorer	restoration		generated	general
+phase	To phase	phases	phased	phasing	phaser	phasation		generated	general
+exchange	To exchange	exchanges	exchanged	exchanging	exchanger	exchangation		generated	general
+restock	To restock	restocks	restocked	restocking	restocker	restockation		generated	general
+exercise	To exercise	exercises	exercised	exercising	exerciser	exercisation		generated	general
+break	To break	breaks	breaked	breaking	breaker	breakation		generated	general
+type	To type	types	typed	typing	typer	typation		generated	general
+restrain	To restrain	restrains	restrained	restraining	restrainer	restraination		generated	general
+dust	To dust	dusts	dusted	dusting	duster	dustion		generated	general
+question	To question	questions	questioned	questioning	questioner	questionation		generated	general
+hang	To hang	hangs	hanged	hanging	hanger	hangation		generated	general
+rent	To rent	rents	rented	renting	renter	rention		generated	general
+stamp	To stamp	stamps	stamped	stamping	stamper	stampation		generated	general
+string	To string	strings	stringed	stringing	stringer	stringation		generated	general
+dump	To dump	dumps	dumped	dumping	dumper	dumpation		generated	general
+hammer	To hammer	hammers	hammerred	hammerring	hammerer	hammeration		generated	general
+setup	To setup	setups	setupped	setupping	setuper	setupation		generated	general
+rebuild	To rebuild	rebuilds	rebuilded	rebuilding	rebuilder	rebuildation		generated	general
+sign	To sign	signs	signed	signing	signer	signation		generated	general
+structure	To structure	structures	structured	structuring	structurer	structuration		generated	general
+overhaul	To overhaul	overhauls	overhauled	overhauling	overhauler	overhaulation		generated	general
+show	To show	shows	showed	showing	shower	showation		generated	general
+contribute	To contribute	contributes	contributed	contributing	contributer	contributation		generated	general
+quote	To quote	quotes	quoted	quoting	quoter	quotation		generated	general
+adhere	To adhere	adheres	adhered	adhering	adherer	adheration		generated	general
+ask	To ask	asks	asked	asking	asker	askation		generated	general
+audition	To audition	auditions	auditioned	auditioning	auditioner	auditionation		generated	general
+heat	To heat	heats	heated	heating	heater	heation		generated	general
+massage	To massage	massages	massaged	massaging	massager	massagation		generated	general
+roll	To roll	rolls	rolled	rolling	roller	rollation		generated	general
+stand	To stand	stands	standed	standing	stander	standation		generated	general
+walk	To walk	walks	walked	walking	walker	walkation		generated	general
+tie	To tie	ties	tied	tying	tier	tiation		generated	general
+nail	To nail	nails	nailed	nailing	nailer	nailation		generated	general
+chip	To chip	chips	chipped	chipping	chiper	chipation		generated	general
+sprinkle	To sprinkle	sprinkles	sprinkled	sprinkling	sprinkler	sprinklation		generated	general
+preheat	To preheat	preheats	preheated	preheating	preheater	preheation		generated	general
+stack	To stack	stacks	stacked	stacking	stacker	stackation		generated	general
+recycle	To recycle	recycles	recycled	recycling	recycler	recyclation		generated	general
+project	To project	projects	projected	projecting	projecter	projection		generated	general
+disaggregate	To disaggregate	disaggregates	disaggregated	disaggregating	disaggregater	disaggregatation		generated	general
+back	To back	backs	backed	backing	backer	backation		generated	general
+book	To book	books	booked	booking	booker	bookation		generated	general
+deposit	To deposit	deposits	depositted	depositting	depositer	deposition		generated	general
+light	To light	lights	lighted	lighting	lighter	lightion		generated	general
+render	To render	renders	renderred	renderring	renderer	renderation		generated	general
+involve	To involve	involves	involved	involving	involver	involvation		generated	general
+handover	To handover	handovers	handoverred	handoverring	handoverer	handoveration		generated	general
+cement	To cement	cements	cemented	cementing	cementer	cemention		generated	general
+rate	To rate	rates	rated	rating	rater	ratation		generated	general
+shut	To shut	shuts	shutted	shutting	shuter	shution		generated	general
+warn	To warn	warns	warned	warning	warner	warnation		generated	general
+furnish	To furnish	furnishes	furnished	furnishing	furnisher	furnishation		generated	general
+duplicate	To duplicate	duplicates	duplicated	duplicating	duplicater	duplicatation		generated	general
+preserve	To preserve	preserves	preserved	preserving	preserver	preservation		generated	general
+key	To key	keys	keyed	keying	keyer	keyation		generated	general
+decontaminate	To decontaminate	decontaminates	decontaminated	decontaminating	decontaminater	decontaminatation		generated	general
+aid	To aid	aids	aided	aiding	aider	aidation		generated	general
+visually	To visually	visuallies	visuallied	visuallying	visuallyer	visuallyation		generated	general
+distinguish	To distinguish	distinguishes	distinguished	distinguishing	distinguisher	distinguishation		generated	general
+rule	To rule	rules	ruled	ruling	ruler	rulation		generated	general
+tutor	To tutor	tutors	tutorred	tutorring	tutorer	tutoration		generated	general
+decorate	To decorate	decorates	decorated	decorating	decorater	decoratation		generated	general
+sing	To sing	sings	singed	singing	singer	singation		generated	general
+play	To play	plays	played	playing	player	playation		generated	general
+expose	To expose	exposes	exposed	exposing	exposer	exposation		generated	general
+disinfect	To disinfect	disinfects	disinfected	disinfecting	disinfecter	disinfection		generated	general
+cool	To cool	cools	cooled	cooling	cooler	coolation		generated	general
+plant	To plant	plants	planted	planting	planter	plantion		generated	general
+shovel	To shovel	shovels	shovelled	shovelling	shoveler	shovelation		generated	general
+join	To join	joins	joined	joining	joiner	joination		generated	general
+cash	To cash	cashes	cashed	cashing	casher	cashation		generated	general
+mail	To mail	mails	mailed	mailing	mailer	mailation		generated	general
+fold	To fold	folds	folded	folding	folder	foldation		generated	general
+steer	To steer	steers	steered	steering	steerer	steeration		generated	general
+straighten	To straighten	straightens	straightenned	straightenning	straightener	straightenation		generated	general
+bore	To bore	bores	bored	boring	borer	boration		generated	general
+stretch	To stretch	stretches	stretched	stretching	stretcher	stretchation		generated	general
+buff	To buff	buffs	buffed	buffing	buffer	buffation		generated	general
+level	To level	levels	levelled	levelling	leveler	levelation		generated	general
+mold	To mold	molds	molded	molding	molder	moldation		generated	general
+wet	To wet	wets	weted	weting	weter	wetion		generated	general
+sand	To sand	sands	sanded	sanding	sander	sandation		generated	general
+cure	To cure	cures	cured	curing	curer	curation		generated	general
+bend	To bend	bends	bended	bending	bender	bendation		generated	general
+solder	To solder	solders	solderred	solderring	solderer	solderation		generated	general
+tighten	To tighten	tightens	tightenned	tightenning	tightener	tightenation		generated	general
+refinish	To refinish	refinishes	refinished	refinishing	refinisher	refinishation		generated	general
+melt	To melt	melts	melted	melting	melter	meltion		generated	general
+demolish	To demolish	demolishes	demolished	demolishing	demolisher	demolishation		generated	general
+renew	To renew	renews	renewed	renewing	renewer	renewation		generated	general
+interface	To interface	interfaces	interfaced	interfacing	interfacer	interfacation		generated	general
+simulate	To simulate	simulates	simulated	simulating	simulater	simulatation		generated	general
+aggregate	To aggregate	aggregates	aggregated	aggregating	aggregater	aggregatation		generated	general
+pass	To pass	passes	passed	passing	passer	passation		generated	general
+collate	To collate	collates	collated	collating	collater	collatation		generated	general
+embed	To embed	embeds	embedded	embedding	embeder	embedation		generated	general
+network	To network	networks	networked	networking	networker	networkation		generated	general
+adjudicate	To adjudicate	adjudicates	adjudicated	adjudicating	adjudicater	adjudicatation		generated	general
+discharge	To discharge	discharges	discharged	discharging	discharger	dischargation		generated	general
+affix	To affix	affixes	affixed	affixing	affixer	affixation		generated	general
+flag	To flag	flags	flagged	flagging	flager	flagation		generated	general
+profile	To profile	profiles	profiled	profiling	profiler	profilation		generated	general
+circulate	To circulate	circulates	circulated	circulating	circulater	circulatation		generated	general
+redesign	To redesign	redesigns	redesigned	redesigning	redesigner	redesignation		generated	general
+alter	To alter	alters	alterred	alterring	alterer	alteration		generated	general
+plot	To plot	plots	plotted	plotting	ploter	plotion		generated	general
+reproduce	To reproduce	reproduces	reproduced	reproducing	reproducer	reproducation		generated	general
+isolate	To isolate	isolates	isolated	isolating	isolater	isolatation		generated	general
+sketch	To sketch	sketches	sketched	sketching	sketcher	sketchation		generated	general
+water	To water	waters	waterred	waterring	waterer	wateration		generated	general
+practice	To practice	practices	practiced	practicing	practicer	practication		generated	general
+proofread	To proofread	proofreads	proofreaded	proofreading	proofreader	proofreadation		generated	general
+synchronize	To synchronize	synchronizes	synchronized	synchronizing	synchronizer	synchronization		generated	general
+patch	To patch	patches	patched	patching	patcher	patchation		generated	general
+view	To view	views	viewed	viewing	viewer	viewation		generated	general
+bleach	To bleach	bleaches	bleached	bleaching	bleacher	bleachation		generated	general
+compound	To compound	compounds	compounded	compounding	compounder	compoundation		generated	general
+inject	To inject	injects	injected	injecting	injecter	injection		generated	general
+feel	To feel	feels	feeled	feeling	feeler	feelation		generated	general
+stain	To stain	stains	stained	staining	stainer	staination		generated	general
+comfort	To comfort	comforts	comforted	comforting	comforter	comfortion		generated	general
+scrub	To scrub	scrubs	scrubbed	scrubbing	scruber	scrubation		generated	general
+bathe	To bathe	bathes	bathed	bathing	bather	bathation		generated	general
+sterilize	To sterilize	sterilizes	sterilized	sterilizing	sterilizer	sterilization		generated	general
+clamp	To clamp	clamps	clamped	clamping	clamper	clampation		generated	general
+apprehend	To apprehend	apprehends	apprehended	apprehending	apprehender	apprehendation		generated	general
+rescue	To rescue	rescues	rescued	rescuing	rescuer	rescuation		generated	general
+note	To note	notes	noted	noting	noter	notation		generated	general
+wind	To wind	winds	winded	winding	winder	windation		generated	general
+cook	To cook	cooks	cooked	cooking	cooker	cookation		generated	general
+bake	To bake	bakes	baked	baking	baker	bakation		generated	general
+carve	To carve	carves	carved	carving	carver	carvation		generated	general
+vacuum	To vacuum	vacuums	vacuumed	vacuuming	vacuumer	vacuumation		generated	general
+slice	To slice	slices	sliced	slicing	slicer	slication		generated	general
+prune	To prune	prunes	pruned	pruning	pruner	prunation		generated	general
+haul	To haul	hauls	hauled	hauling	hauler	haulation		generated	general
+reset	To reset	resets	resetted	resetting	reseter	resetion		generated	general
+page	To page	pages	paged	paging	pager	pagation		generated	general
+stencil	To stencil	stencils	stencilled	stencilling	stenciler	stencilation		generated	general
+print	To print	prints	printed	printing	printer	printion		generated	general
+saw	To saw	saws	sawed	sawing	sawer	sawation		generated	general
+disconnect	To disconnect	disconnects	disconnected	disconnecting	disconnecter	disconnection		generated	general
+waterproof	To waterproof	waterproofs	waterproofed	waterproofing	waterproofer	waterproofation		generated	general
+scribe	To scribe	scribes	scribed	scribing	scriber	scribation		generated	general
+ride	To ride	rides	rided	riding	rider	ridation		generated	general
+glue	To glue	glues	glued	gluing	gluer	gluation		generated	general
+withdraw	To withdraw	withdraws	withdrawed	withdrawing	withdrawer	withdrawation		generated	general
+oil	To oil	oils	oiled	oiling	oiler	oilation		generated	general
+rewire	To rewire	rewires	rewired	rewiring	rewirer	rewiration		generated	general
+tune	To tune	tunes	tuned	tuning	tuner	tunation		generated	general
+drain	To drain	drains	drained	draining	drainer	draination		generated	general
+rinse	To rinse	rinses	rinsed	rinsing	rinser	rinsation		generated	general
+unclamp	To unclamp	unclamps	unclamped	unclamping	unclamper	unclampation		generated	general
+couple	To couple	couples	coupled	coupling	coupler	couplation		generated	general
+refuel	To refuel	refuels	refueled	refueling	refueler	refuelation		generated	general
+tow	To tow	tows	towed	towing	tower	towation		generated	general
+setdevelop	To setdevelop	setdevelops	setdevelopped	setdevelopping	setdeveloper	setdevelopation		generated	general
+quarantine	To quarantine	quarantines	quarantined	quarantining	quarantiner	quarantination		generated	general
+certifyapprove	To certifyapprove	certifyapproves	certifyapproved	certifyapproving	certifyapprover	certifyapprovation		generated	general
+broadcast	To broadcast	broadcasts	broadcasted	broadcasting	broadcaster	broadcastion		generated	general
+trackmanage	To trackmanage	trackmanages	trackmanaged	trackmanaging	trackmanager	trackmanagation		generated	general
+strike	To strike	strikes	striked	striking	striker	strikation		generated	general
+recommendnot	To recommendnot	recommendnots	recommendnotted	recommendnotting	recommendnoter	recommendnotion		generated	general
+reinforce	To reinforce	reinforces	reinforced	reinforcing	reinforcer	reinforcation		generated	general
+trade	To trade	trades	traded	trading	trader	tradation		generated	general
+acquireprocess	To acquireprocess	acquireprocesses	acquireprocessed	acquireprocessing	acquireprocesser	acquireprocessation		generated	general
+plug	To plug	plugs	plugged	plugging	pluger	plugation		generated	general
+perforate	To perforate	perforates	perforated	perforating	perforater	perforatation		generated	general
+correlate	To correlate	correlates	correlated	correlating	correlater	correlatation		generated	general
+characterize	To characterize	characterizes	characterized	characterizing	characterizer	characterization		generated	general
+remind	To remind	reminds	reminded	reminding	reminder	remindation		generated	general
+enroll	To enroll	enrolls	enrolled	enrolling	enroller	enrollation		generated	general
+nominate	To nominate	nominates	nominated	nominating	nominater	nominatation		generated	general
+preside	To preside	presides	presided	presiding	presider	presidation		generated	general
+hear	To hear	hears	heared	hearing	hearer	hearation		generated	general
+diagram	To diagram	diagrams	diagrammed	diagramming	diagramer	diagramation		generated	general
+engineer	To engineer	engineers	engineered	engineering	engineerer	engineeration		generated	general
+impose	To impose	imposes	imposed	imposing	imposer	imposation		generated	general
+arrest	To arrest	arrests	arrested	arresting	arrester	arrestion		generated	general
+shade	To shade	shades	shaded	shading	shader	shadation		generated	general
+conserve	To conserve	conserves	conserved	conserving	conserver	conservation		generated	general
+transplant	To transplant	transplants	transplanted	transplanting	transplanter	transplantion		generated	general
+divide	To divide	divides	divided	dividing	divider	dividation		generated	general
+brief	To brief	briefs	briefed	briefing	briefer	briefation		generated	general
+thin	To thin	thins	thinned	thinning	thiner	thination		generated	general
+assimilate	To assimilate	assimilates	assimilated	assimilating	assimilater	assimilatation		generated	general
+laminate	To laminate	laminates	laminated	laminating	laminater	laminatation		generated	general
+advertise	To advertise	advertises	advertised	advertising	advertiser	advertisation		generated	general
+cue	To cue	cues	cued	cuing	cuer	cuation		generated	general
+experiment	To experiment	experiments	experimented	experimenting	experimenter	experimention		generated	general
+transpose	To transpose	transposes	transposed	transposing	transposer	transposation		generated	general
+improvise	To improvise	improvises	improvised	improvising	improviser	improvisation		generated	general
+vary	To vary	varies	varied	varying	varyer	varyation		generated	general
+compress	To compress	compresses	compressed	compressing	compresser	compressation		generated	general
+substitute	To substitute	substitutes	substituted	substituting	substituter	substitutation		generated	general
+tear	To tear	tears	teared	tearing	tearer	tearation		generated	general
+euthanize	To euthanize	euthanizes	euthanized	euthanizing	euthanizer	euthanization		generated	general
+admit	To admit	admits	admitted	admitting	admiter	admition		generated	general
+incise	To incise	incises	incised	incising	inciser	incisation		generated	general
+groom	To groom	grooms	groomed	grooming	groomer	groomation		generated	general
+discipline	To discipline	disciplines	disciplined	disciplining	discipliner	disciplination		generated	general
+extinguish	To extinguish	extinguishes	extinguished	extinguishing	extinguisher	extinguishation		generated	general
+guard	To guard	guards	guarded	guarding	guarder	guardation		generated	general
+block	To block	blocks	blocked	blocking	blocker	blockation		generated	general
+watch	To watch	watches	watched	watching	watcher	watchation		generated	general
+shop	To shop	shops	shopped	shopping	shoper	shopation		generated	general
+portion	To portion	portions	portioned	portioning	portioner	portionation		generated	general
+butcher	To butcher	butchers	butcherred	butcherring	butcherer	butcheration		generated	general
+grill	To grill	grills	grilled	grilling	griller	grillation		generated	general
+stir	To stir	stirs	stirred	stirring	stirer	stiration		generated	general
+attempt	To attempt	attempts	attempted	attempting	attempter	attemption		generated	general
+garnish	To garnish	garnishes	garnished	garnishing	garnisher	garnishation		generated	general
+wipe	To wipe	wipes	wiped	wiping	wiper	wipation		generated	general
+strip	To strip	strips	stripped	stripping	striper	stripation		generated	general
+mow	To mow	mows	mowed	mowing	mower	mowation		generated	general
+steamclean	To steamclean	steamcleans	steamcleaned	steamcleaning	steamcleaner	steamcleanation		generated	general
+empty	To empty	empties	emptied	emptying	emptyer	emptyation		generated	general
+embalm	To embalm	embalms	embalmed	embalming	embalmer	embalmation		generated	general
+shampoo	To shampoo	shampooes	shampooed	shampooing	shampooer	shampooation		generated	general
+shave	To shave	shaves	shaved	shaving	shaver	shavation		generated	general
+cleanse	To cleanse	cleanses	cleansed	cleansing	cleanser	cleansation		generated	general
+bag	To bag	bags	bagged	bagging	bager	bagation		generated	general
+converse	To converse	converses	conversed	conversing	converser	conversation		generated	general
+emphasize	To emphasize	emphasizes	emphasized	emphasizing	emphasizer	emphasization		generated	general
+pose	To pose	poses	posed	posing	poser	posation		generated	general
+persuade	To persuade	persuades	persuaded	persuading	persuader	persuadation		generated	general
+leave	To leave	leaves	leaved	leaving	leaver	leavation		generated	general
+discard	To discard	discards	discarded	discarding	discarder	discardation		generated	general
+skin	To skin	skins	skinned	skinning	skiner	skination		generated	general
+tag	To tag	tags	tagged	tagging	tager	tagation		generated	general
+anchor	To anchor	anchors	anchorred	anchorring	anchorer	anchoration		generated	general
+blend	To blend	blends	blended	blending	blender	blendation		generated	general
+mop	To mop	mops	mopped	mopping	moper	mopation		generated	general
+staple	To staple	staples	stapled	stapling	stapler	staplation		generated	general
+punch	To punch	punches	punched	punching	puncher	punchation		generated	general
+maneuver	To maneuver	maneuvers	maneuverred	maneuverring	maneuverer	maneuveration		generated	general
+force	To force	forces	forced	forcing	forcer	forcation		generated	general
+line	To line	lines	lined	lining	liner	lination		generated	general
+prime	To prime	primes	primed	priming	primer	primation		generated	general
+soak	To soak	soaks	soaked	soaking	soaker	soakation		generated	general
+dismount	To dismount	dismounts	dismounted	dismounting	dismounter	dismountion		generated	general
+list	To list	lists	listed	listing	lister	listion		generated	general
+manually	To manually	manuallies	manuallied	manuallying	manuallyer	manuallyation		generated	general
+slide	To slide	slides	slided	sliding	slider	slidation		generated	general
+crank	To crank	cranks	cranked	cranking	cranker	crankation		generated	general
+refill	To refill	refills	refilled	refilling	refiller	refillation		generated	general
+skim	To skim	skims	skimmed	skimming	skimer	skimation		generated	general
+ignite	To ignite	ignites	ignited	igniting	igniter	ignitation		generated	general
+anneal	To anneal	anneals	annealed	annealing	annealer	annealation		generated	general
+presoak	To presoak	presoaks	presoaked	presoaking	presoaker	presoakation		generated	general
+grease	To grease	greases	greased	greasing	greaser	greasation		generated	general
+preprocess	To preprocess	preprocesses	preprocessed	preprocessing	preprocesser	preprocessation		generated	general
+gauge	To gauge	gauges	gauged	gauging	gauger	gaugation		generated	general
+dislodge	To dislodge	dislodges	dislodged	dislodging	dislodger	dislodgation		generated	general
+engrave	To engrave	engraves	engraved	engraving	engraver	engravation		generated	general
+depress	To depress	depresses	depressed	depressing	depresser	depressation		generated	general
+park	To park	parks	parked	parking	parker	parkation		generated	general
+pump	To pump	pumps	pumped	pumping	pumper	pumpation		generated	general
+begin	To begin	begins	beginned	beginning	beginer	begination		generated	general
+focus	To focus	focuses	focussed	focussing	focuser	focusation		generated	general
+influence	To influence	influences	influenced	influencing	influencer	influencation		generated	general
+segment	To segment	segments	segmented	segmenting	segmenter	segmention		generated	general
+reevaluate	To reevaluate	reevaluates	reevaluated	reevaluating	reevaluater	reevaluatation		generated	general
+revaluate	To revaluate	revaluates	revaluated	revaluating	revaluater	revaluatation		generated	general
+reschedule	To reschedule	reschedules	rescheduled	rescheduling	rescheduler	reschedulation		generated	general
+downgradeupgrade	To downgradeupgrade	downgradeupgrades	downgradeupgraded	downgradeupgrading	downgradeupgrader	downgradeupgradation		generated	general
+physically	To physically	physicallies	physicallied	physicallying	physicallyer	physicallyation		generated	general
+maintains	To maintains	maintainses	maintainsed	maintainsing	maintainser	maintainsation		generated	general
+populate	To populate	populates	populated	populating	populater	populatation		generated	general
+deice	To deice	deices	deiced	deicing	deicer	deication		generated	general
+carryout	To carryout	carryouts	carryouted	carryouting	carryouter	carryoution		generated	general
+identifyestablish	To identifyestablish	identifyestablishes	identifyestablished	identifyestablishing	identifyestablisher	identifyestablishation		generated	general
+selectcomplete	To selectcomplete	selectcompletes	selectcompleted	selectcompleting	selectcompleter	selectcompletation		generated	general
+engineerdesign	To engineerdesign	engineerdesigns	engineerdesigned	engineerdesigning	engineerdesigner	engineerdesignation		generated	general
+improvevalidate	To improvevalidate	improvevalidates	improvevalidated	improvevalidating	improvevalidater	improvevalidatation		generated	general
+evaluateimprovise	To evaluateimprovise	evaluateimprovises	evaluateimprovised	evaluateimprovising	evaluateimproviser	evaluateimprovisation		generated	general
+approveaccept	To approveaccept	approveaccepts	approveaccepted	approveaccepting	approveaccepter	approveacception		generated	general
+testverify	To testverify	testverifies	testverified	testverifying	testverifyer	testverifyation		generated	general
+after	To after	afters	afterred	afterring	afterer	afteration		generated	general
+fleet	To fleet	fleets	fleeted	fleeting	fleeter	fleetion		generated	general
+instill	To instill	instills	instilled	instilling	instiller	instillation		generated	general
+proposedefine	To proposedefine	proposedefines	proposedefined	proposedefining	proposedefiner	proposedefination		generated	general
+defineimplement	To defineimplement	defineimplements	defineimplemented	defineimplementing	defineimplementer	defineimplemention		generated	general
+feedback	To feedback	feedbacks	feedbacked	feedbacking	feedbacker	feedbackation		generated	general
+planning	To planning	plannings	planninged	planninging	planninger	planningation		generated	general
+inbound	To inbound	inbounds	inbounded	inbounding	inbounder	inboundation		generated	general
+transportation	To transportation	transportations	transportationed	transportationing	transportationer	transportationation		generated	general
+explode	To explode	explodes	exploded	exploding	exploder	explodation		generated	general
+backflush	To backflush	backflushes	backflushed	backflushing	backflusher	backflushation		generated	general
+sequence	To sequence	sequences	sequenced	sequencing	sequencer	sequencation		generated	general
+production	To production	productions	productioned	productioning	productioner	productionation		generated	general
+developdistribute	To developdistribute	developdistributes	developdistributed	developdistributing	developdistributer	developdistributation		generated	general
+followup	To followup	followups	followuped	followuping	followuper	followupation		generated	general
+shoot	To shoot	shoots	shooted	shooting	shooter	shootion		generated	general
+live	To live	lives	lived	living	liver	livation		generated	general
+searchbrowse	To searchbrowse	searchbrowses	searchbrowsed	searchbrowsing	searchbrowser	searchbrowsation		generated	general
+markinmarkout	To markinmarkout	markinmarkouts	markinmarkouted	markinmarkouting	markinmarkouter	markinmarkoution		generated	general
+selectrecord	To selectrecord	selectrecords	selectrecorded	selectrecording	selectrecorder	selectrecordation		generated	general
+layback	To layback	laybacks	laybacked	laybacking	laybacker	laybackation		generated	general
+resubmit	To resubmit	resubmits	resubmitted	resubmitting	resubmiter	resubmition		generated	general
+upfront	To upfront	upfronts	upfronted	upfronting	upfronter	upfrontion		generated	general
+definedesign	To definedesign	definedesigns	definedesigned	definedesigning	definedesigner	definedesignation		generated	general
+identifymaintain	To identifymaintain	identifymaintains	identifymaintained	identifymaintaining	identifymaintainer	identifymaintaination		generated	general
+coordination	To coordination	coordinations	coordinationed	coordinationing	coordinationer	coordinationation		generated	general
+changeupdate	To changeupdate	changeupdates	changeupdated	changeupdating	changeupdater	changeupdatation		generated	general
+screenselect	To screenselect	screenselects	screenselected	screenselecting	screenselecter	screenselection		generated	general
+differentiate	To differentiate	differentiates	differentiated	differentiating	differentiater	differentiatation		generated	general
+engageidentify	To engageidentify	engageidentifies	engageidentified	engageidentifying	engageidentifyer	engageidentifyation		generated	general
+crossservice	To crossservice	crossservices	crossserviced	crossservicing	crossservicer	crossservication		generated	general
+monitormaintain	To monitormaintain	monitormaintains	monitormaintained	monitormaintaining	monitormaintainer	monitormaintaination		generated	general
+parole	To parole	paroles	paroled	paroling	paroler	parolation		generated	general
+reroute	To reroute	reroutes	rerouted	rerouting	rerouter	reroutation		generated	general
+selectdefine	To selectdefine	selectdefines	selectdefined	selectdefining	selectdefiner	selectdefination		generated	general
+levee	To levee	levees	leveeed	leveeing	leveeer	leveation		generated	general
+bid	To bid	bids	bidded	bidding	bider	bidation		generated	general
+detail	To detail	details	detailed	detailing	detailer	detailation		generated	general
+gathercreate	To gathercreate	gathercreates	gathercreated	gathercreating	gathercreater	gathercreatation		generated	general
+pursue	To pursue	pursues	pursued	pursuing	pursuer	pursuation		generated	general
+case	To case	cases	cased	casing	caser	casation		generated	general
+exit	To exit	exits	exited	exiting	exiter	exition		generated	general
+value	To value	values	valued	valuing	valuer	valuation		generated	general
+golive	To golive	golives	golived	goliving	goliver	golivation		generated	general
+stratify	To stratify	stratifies	stratified	stratifying	stratifyer	stratifyation		generated	general
+preregister	To preregister	preregisters	preregisterred	preregisterring	preregisterer	preregisteration		generated	general
+continuously	To continuously	continuouslies	continuouslied	continuouslying	continuouslyer	continuouslyation		generated	general
+cycle	To cycle	cycles	cycled	cycling	cycler	cyclation		generated	general
+rectify	To rectify	rectifies	rectified	rectifying	rectifyer	rectifyation		generated	general
+underwrite	To underwrite	underwrites	underwrited	underwriting	underwriter	underwritation		generated	general
+premium	To premium	premiums	premiumed	premiuming	premiumer	premiumation		generated	general
+credential	To credential	credentials	credentialed	credentialing	credentialer	credentialation		generated	general
+simulatecalculate	To simulatecalculate	simulatecalculates	simulatecalculated	simulatecalculating	simulatecalculater	simulatecalculatation		generated	general
+merchandise	To merchandise	merchandises	merchandised	merchandising	merchandiser	merchandisation		generated	general
+refineupdate	To refineupdate	refineupdates	refineupdated	refineupdating	refineupdater	refineupdatation		generated	general
+searchfile	To searchfile	searchfiles	searchfiled	searchfiling	searchfiler	searchfilation		generated	general
+debate	To debate	debates	debated	debating	debater	debatation		generated	general
+vote	To vote	votes	voted	voting	voter	votation		generated	general
+delegate	To delegate	delegates	delegated	delegating	delegater	delegatation		generated	general
+inquire	To inquire	inquires	inquired	inquiring	inquirer	inquiration		generated	general
+witness	To witness	witnesses	witnessed	witnessing	witnesser	witnessation		generated	general
+insure	To insure	insures	insured	insuring	insurer	insuration		generated	general
+remotely	To remotely	remotelies	remotelied	remotelying	remotelyer	remotelyation		generated	general
+reorganize	To reorganize	reorganizes	reorganized	reorganizing	reorganizer	reorganization		generated	general
+disclose	To disclose	discloses	disclosed	disclosing	discloser	disclosation		generated	general
+decrease	To decrease	decreases	decreased	decreasing	decreaser	decreasation		generated	general
+disburse	To disburse	disburses	disbursed	disbursing	disburser	disbursation		generated	general
+encrypt	To encrypt	encrypts	encrypted	encrypting	encrypter	encryption		generated	general
+delineate	To delineate	delineates	delineated	delineating	delineater	delineatation		generated	general
+crossbreed	To crossbreed	crossbreeds	crossbreeded	crossbreeding	crossbreeder	crossbreedation		generated	general
+revisit	To revisit	revisits	revisitted	revisitting	revisiter	revisition		generated	general
+tailor	To tailor	tailors	tailorred	tailorring	tailorer	tailoration		generated	general
+induce	To induce	induces	induced	inducing	inducer	inducation		generated	general
+taste	To taste	tastes	tasted	tasting	taster	tastation		generated	general
+reconstruct	To reconstruct	reconstructs	reconstructed	reconstructing	reconstructer	reconstruction		generated	general
+intervene	To intervene	intervenes	intervened	intervening	intervener	intervenation		generated	general
+pray	To pray	prays	prayed	praying	prayer	prayation		generated	general
+publicize	To publicize	publicizes	publicized	publicizing	publicizer	publicization		generated	general
+probate	To probate	probates	probated	probating	probater	probatation		generated	general
+sentence	To sentence	sentences	sentenced	sentencing	sentencer	sentencation		generated	general
+award	To award	awards	awarded	awarding	awarder	awardation		generated	general
+grant	To grant	grants	granted	granting	granter	grantion		generated	general
+arbitrate	To arbitrate	arbitrates	arbitrated	arbitrating	arbitrater	arbitratation		generated	general
+catalogue	To catalogue	catalogues	catalogued	cataloguing	cataloguer	cataloguation		generated	general
+claim	To claim	claims	claimed	claiming	claimer	claimation		generated	general
+conceptualize	To conceptualize	conceptualizes	conceptualized	conceptualizing	conceptualizer	conceptualization		generated	general
+frame	To frame	frames	framed	framing	framer	framation		generated	general
+script	To script	scripts	scripted	scripting	scripter	scription		generated	general
+portray	To portray	portrays	portrayed	portraying	portrayer	portrayation		generated	general
+tell	To tell	tells	telled	telling	teller	tellation		generated	general
+officiate	To officiate	officiates	officiated	officiating	officiater	officiatation		generated	general
+judge	To judge	judges	judged	judging	judger	judgation		generated	general
+harmonize	To harmonize	harmonizes	harmonized	harmonizing	harmonizer	harmonization		generated	general
+restage	To restage	restages	restaged	restaging	restager	restagation		generated	general
+rewrite	To rewrite	rewrites	rewrited	rewriting	rewriter	rewritation		generated	general
+memorize	To memorize	memorizes	memorized	memorizing	memorizer	memorization		generated	general
+sightread	To sightread	sightreads	sightreaded	sightreading	sightreader	sightreadation		generated	general
+host	To host	hosts	hosted	hosting	hoster	hostion		generated	general
+moderate	To moderate	moderates	moderated	moderating	moderater	moderatation		generated	general
+invent	To invent	invents	invented	inventing	inventer	invention		generated	general
+preview	To preview	previews	previewed	previewing	previewer	previewation		generated	general
+piece	To piece	pieces	pieced	piecing	piecer	piecation		generated	general
+pretest	To pretest	pretests	pretested	pretesting	pretester	pretestion		generated	general
+surgically	To surgically	surgicallies	surgicallied	surgicallying	surgicallyer	surgicallyation		generated	general
+inoculate	To inoculate	inoculates	inoculated	inoculating	inoculater	inoculatation		generated	general
+chair	To chair	chairs	chaired	chairing	chairer	chairation		generated	general
+stabilize	To stabilize	stabilizes	stabilized	stabilizing	stabilizer	stabilization		generated	general
+immunize	To immunize	immunizes	immunized	immunizing	immunizer	immunization		generated	general
+chart	To chart	charts	charted	charting	charter	chartion		generated	general
+cultivate	To cultivate	cultivates	cultivated	cultivating	cultivater	cultivatation		generated	general
+freeze	To freeze	freezes	freezed	freezing	freezer	freezation		generated	general
+intravenously	To intravenously	intravenouslies	intravenouslied	intravenouslying	intravenouslyer	intravenouslyation		generated	general
+immobilize	To immobilize	immobilizes	immobilized	immobilizing	immobilizer	immobilization		generated	general
+prepack	To prepack	prepacks	prepacked	prepacking	prepacker	prepackation		generated	general
+postoperatively	To postoperatively	postoperativelies	postoperativelied	postoperativelying	postoperativelyer	postoperativelyation		generated	general
+suture	To suture	sutures	sutured	suturing	suturer	suturation		generated	general
+entertain	To entertain	entertains	entertained	entertaining	entertainer	entertaination		generated	general
+undress	To undress	undresses	undressed	undressing	undresser	undressation		generated	general
+purge	To purge	purges	purged	purging	purger	purgation		generated	general
+convey	To convey	conveys	conveyed	conveying	conveyer	conveyation		generated	general
+cooperate	To cooperate	cooperates	cooperated	cooperating	cooperater	cooperatation		generated	general
+orient	To orient	orients	oriented	orienting	orienter	oriention		generated	general
+subpoena	To subpoena	subpoenas	subpoenaed	subpoenaing	subpoenaer	subpoenaation		generated	general
+restrict	To restrict	restricts	restricted	restricting	restricter	restriction		generated	general
+summon	To summon	summons	summonned	summonning	summoner	summonation		generated	general
+look	To look	looks	looked	looking	looker	lookation		generated	general
+link	To link	links	linked	linking	linker	linkation		generated	general
+seize	To seize	seizes	seized	seizing	seizer	seization		generated	general
+appear	To appear	appears	appeared	appearing	appearer	appearation		generated	general
+detain	To detain	detains	detained	detaining	detainer	detaination		generated	general
+institute	To institute	institutes	instituted	instituting	instituter	institutation		generated	general
+lock	To lock	locks	locked	locking	locker	lockation		generated	general
+challenge	To challenge	challenges	challenged	challenging	challenger	challengation		generated	general
+confiscate	To confiscate	confiscates	confiscated	confiscating	confiscater	confiscatation		generated	general
+buckle	To buckle	buckles	buckled	buckling	buckler	bucklation		generated	general
+evacuate	To evacuate	evacuates	evacuated	evacuating	evacuater	evacuatation		generated	general
+precook	To precook	precooks	precooked	precooking	precooker	precookation		generated	general
+apportion	To apportion	apportions	apportioned	apportioning	apportioner	apportionation		generated	general
+peel	To peel	peels	peeled	peeling	peeler	peelation		generated	general
+season	To season	seasons	seasonned	seasonning	seasoner	seasonation		generated	general
+brew	To brew	brews	brewed	brewing	brewer	brewation		generated	general
+bring	To bring	brings	bringed	bringing	bringer	bringation		generated	general
+total	To total	totals	totalled	totalling	totaler	totalation		generated	general
+tour	To tour	tours	toured	touring	tourer	touration		generated	general
+rake	To rake	rakes	raked	raking	raker	rakation		generated	general
+cable	To cable	cables	cabled	cabling	cabler	cablation		generated	general
+split	To split	splits	splitted	splitting	spliter	splition		generated	general
+retrain	To retrain	retrains	retrained	retraining	retrainer	retraination		generated	general
+do	To do	does	doed	doing	doer	doation		generated	general
+anesthetize	To anesthetize	anesthetizes	anesthetized	anesthetizing	anesthetizer	anesthetization		generated	general
+deal	To deal	deals	dealed	dealing	dealer	dealation		generated	general
+seat	To seat	seats	seated	seating	seater	seation		generated	general
+refuse	To refuse	refuses	refused	refusing	refuser	refusation		generated	general
+conform	To conform	conforms	conformed	conforming	conformer	conformation		generated	general
+reshape	To reshape	reshapes	reshaped	reshaping	reshaper	reshapation		generated	general
+pulverize	To pulverize	pulverizes	pulverized	pulverizing	pulverizer	pulverization		generated	general
+drape	To drape	drapes	draped	draping	draper	drapation		generated	general
+curl	To curl	curls	curled	curling	curler	curlation		generated	general
+comb	To comb	combs	combed	combing	comber	combation		generated	general
+roughen	To roughen	roughens	roughenned	roughenning	roughener	roughenation		generated	general
+whiten	To whiten	whitens	whitenned	whitenning	whitener	whitenation		generated	general
+sanitize	To sanitize	sanitizes	sanitized	sanitizing	sanitizer	sanitization		generated	general
+chaperone	To chaperone	chaperones	chaperoned	chaperoning	chaperoner	chaperonation		generated	general
+ticket	To ticket	tickets	ticketted	ticketting	ticketer	ticketion		generated	general
+forward	To forward	forwards	forwarded	forwarding	forwarder	forwardation		generated	general
+wear	To wear	wears	weared	wearing	wearer	wearation		generated	general
+telephone	To telephone	telephones	telephoned	telephoning	telephoner	telephonation		generated	general
+interrupt	To interrupt	interrupts	interrupted	interrupting	interrupter	interruption		generated	general
+fix	To fix	fixes	fixed	fixing	fixer	fixation		generated	general
+debit	To debit	debits	debitted	debitting	debiter	debition		generated	general
+datestamp	To datestamp	datestamps	datestamped	datestamping	datestamper	datestampation		generated	general
+lend	To lend	lends	lended	lending	lender	lendation		generated	general
+rewrap	To rewrap	rewraps	rewrapped	rewrapping	rewraper	rewrapation		generated	general
+electronically	To electronically	electronicallies	electronicallied	electronicallying	electronicallyer	electronicallyation		generated	general
+reformat	To reformat	reformats	reformatted	reformatting	reformater	reformation		generated	general
+typeset	To typeset	typesets	typesetted	typesetting	typeseter	typesetion		generated	general
+brand	To brand	brands	branded	branding	brander	brandation		generated	general
+clip	To clip	clips	clipped	clipping	cliper	clipation		generated	general
+exhibit	To exhibit	exhibits	exhibitted	exhibitting	exhibiter	exhibition		generated	general
+irrigate	To irrigate	irrigates	irrigated	irrigating	irrigater	irrigatation		generated	general
+herd	To herd	herds	herded	herding	herder	herdation		generated	general
+segregate	To segregate	segregates	segregated	segregating	segregater	segregatation		generated	general
+fight	To fight	fights	fighted	fighting	fighter	fightion		generated	general
+jab	To jab	jabs	jabbed	jabbing	jaber	jabation		generated	general
+bell	To bell	bells	belled	belling	beller	bellation		generated	general
+precast	To precast	precasts	precasted	precasting	precaster	precastion		generated	general
+raze	To raze	razes	razed	razing	razer	razation		generated	general
+countersink	To countersink	countersinks	countersinked	countersinking	countersinker	countersinkation		generated	general
+rough	To rough	roughs	roughed	roughing	rougher	roughation		generated	general
+space	To space	spaces	spaced	spacing	spacer	spacation		generated	general
+glaze	To glaze	glazes	glazed	glazing	glazer	glazation		generated	general
+excavate	To excavate	excavates	excavated	excavating	excavater	excavatation		generated	general
+chop	To chop	chops	chopped	chopping	choper	chopation		generated	general
+blast	To blast	blasts	blasted	blasting	blaster	blastion		generated	general
+screed	To screed	screeds	screeded	screeding	screeder	screedation		generated	general
+compact	To compact	compacts	compacted	compacting	compacter	compaction		generated	general
+resurface	To resurface	resurfaces	resurfaced	resurfacing	resurfacer	resurfacation		generated	general
+steady	To steady	steadies	steadied	steadying	steadyer	steadyation		generated	general
+cap	To cap	caps	capped	capping	caper	capation		generated	general
+retract	To retract	retracts	retracted	retracting	retracter	retraction		generated	general
+reposition	To reposition	repositions	repositioned	repositioning	repositioner	repositionation		generated	general
+pry	To pry	pries	pried	prying	pryer	pryation		generated	general
+advance	To advance	advances	advanced	advancing	advancer	advancation		generated	general
+unscrew	To unscrew	unscrews	unscrewed	unscrewing	unscrewer	unscrewation		generated	general
+reinstall	To reinstall	reinstalls	reinstalled	reinstalling	reinstaller	reinstallation		generated	general
+designate	To designate	designates	designated	designating	designater	designatation		generated	general
+reface	To reface	refaces	refaced	refacing	refacer	refacation		generated	general
+rewind	To rewind	rewinds	rewinded	rewinding	rewinder	rewindation		generated	general
+chain	To chain	chains	chained	chaining	chainer	chaination		generated	general
+retrofit	To retrofit	retrofits	retrofitted	retrofitting	retrofiter	retrofition		generated	general
+recondition	To recondition	reconditions	reconditioned	reconditioning	reconditioner	reconditionation		generated	general
+idle	To idle	idles	idled	idling	idler	idlation		generated	general
+remount	To remount	remounts	remounted	remounting	remounter	remountion		generated	general
+unbolt	To unbolt	unbolts	unbolted	unbolting	unbolter	unboltion		generated	general
+inflate	To inflate	inflates	inflated	inflating	inflater	inflatation		generated	general
+braze	To braze	brazes	brazed	brazing	brazer	brazation		generated	general
+bill	To bill	bills	billed	billing	biller	billation		generated	general
+shrinkfit	To shrinkfit	shrinkfits	shrinkfitted	shrinkfitting	shrinkfiter	shrinkfition		generated	general
+reline	To reline	relines	relined	relining	reliner	relination		generated	general
+dry	To dry	dries	dried	drying	dryer	dryation		generated	general
+demagnetize	To demagnetize	demagnetizes	demagnetized	demagnetizing	demagnetizer	demagnetization		generated	general
+descend	To descend	descends	descended	descending	descender	descendation		generated	general
+tilt	To tilt	tilts	tilted	tilting	tilter	tiltion		generated	general
+backfill	To backfill	backfills	backfilled	backfilling	backfiller	backfillation		generated	general
+layout	To layout	layouts	layouted	layouting	layouter	layoution		generated	general
+tackweld	To tackweld	tackwelds	tackwelded	tackwelding	tackwelder	tackweldation		generated	general
+heattreat	To heattreat	heattreats	heattreated	heattreating	heattreater	heattreation		generated	general
+pat	To pat	pats	patted	patting	pater	pation		generated	general
+bond	To bond	bonds	bonded	bonding	bonder	bondation		generated	general
+mask	To mask	masks	masked	masking	masker	maskation		generated	general
+sever	To sever	severs	severred	severring	severer	severation		generated	general
+shackle	To shackle	shackles	shackled	shackling	shackler	shacklation		generated	general
+slit	To slit	slits	slitted	slitting	sliter	slition		generated	general
+stun	To stun	stuns	stunned	stunning	stuner	stunation		generated	general
+homogenize	To homogenize	homogenizes	homogenized	homogenizing	homogenizer	homogenization		generated	general
+reel	To reel	reels	reeled	reeling	reeler	reelation		generated	general
+hone	To hone	hones	honed	honing	honer	honation		generated	general
+machine	To machine	machines	machined	machining	machiner	machination		generated	general
+kindle	To kindle	kindles	kindled	kindling	kindler	kindlation		generated	general
+wire	To wire	wires	wired	wiring	wirer	wiration		generated	general
+sift	To sift	sifts	sifted	sifting	sifter	siftion		generated	general
+visualize	To visualize	visualizes	visualized	visualizing	visualizer	visualization		generated	general
+brace	To brace	braces	braced	bracing	bracer	bracation		generated	general
+scale	To scale	scales	scaled	scaling	scaler	scalation		generated	general
+stitch	To stitch	stitches	stitched	stitching	stitcher	stitchation		generated	general
+bind	To bind	binds	binded	binding	binder	bindation		generated	general
+imprint	To imprint	imprints	imprinted	imprinting	imprinter	imprintion		generated	general
+iron	To iron	irons	ironned	ironning	ironer	ironation		generated	general
+shrink	To shrink	shrinks	shrinked	shrinking	shrinker	shrinkation		generated	general
+moisten	To moisten	moistens	moistenned	moistenning	moistener	moistenation		generated	general
+tape	To tape	tapes	taped	taping	taper	tapation		generated	general
+baste	To baste	bastes	basted	basting	baster	bastation		generated	general
+dye	To dye	dyes	dyed	dying	dyer	dyation		generated	general
+resew	To resew	resews	resewed	resewing	resewer	resewation		generated	general
+let	To let	lets	letted	letting	leter	letion		generated	general
+ravel	To ravel	ravels	ravelled	ravelling	raveler	ravelation		generated	general
+interweave	To interweave	interweaves	interweaved	interweaving	interweaver	interweavation		generated	general
+dip	To dip	dips	dipped	dipping	diper	dipation		generated	general
+distress	To distress	distresses	distressed	distressing	distresser	distressation		generated	general
+fire	To fire	fires	fired	firing	firer	firation		generated	general
+defrost	To defrost	defrosts	defrosted	defrosting	defroster	defrostion		generated	general
+flush	To flush	flushes	flushed	flushing	flusher	flushation		generated	general
+reject	To reject	rejects	rejected	rejecting	rejecter	rejection		generated	general
+unroll	To unroll	unrolls	unrolled	unrolling	unroller	unrollation		generated	general
+swab	To swab	swabs	swabed	swabing	swaber	swabation		generated	general
+plate	To plate	plates	plated	plating	plater	platation		generated	general
+soften	To soften	softens	softenned	softenning	softener	softenation		generated	general
+pierce	To pierce	pierces	pierced	piercing	piercer	piercation		generated	general
+rout	To rout	routs	routed	routing	router	roution		generated	general
+conceal	To conceal	conceals	concealed	concealing	concealer	concealation		generated	general
+etch	To etch	etches	etched	etching	etcher	etchation		generated	general
+reprint	To reprint	reprints	reprinted	reprinting	reprinter	reprintion		generated	general
+retouch	To retouch	retouches	retouched	retouching	retoucher	retouchation		generated	general
+neutralize	To neutralize	neutralizes	neutralized	neutralizing	neutralizer	neutralization		generated	general
+sandblast	To sandblast	sandblasts	sandblasted	sandblasting	sandblaster	sandblastion		generated	general
+blow	To blow	blows	blowed	blowing	blower	blowation		generated	general
+superimpose	To superimpose	superimposes	superimposed	superimposing	superimposer	superimposation		generated	general
+rub	To rub	rubs	rubbed	rubbing	ruber	rubation		generated	general
+copilot	To copilot	copilots	copilotted	copilotting	copiloter	copilotion		generated	general
+fly	To fly	flies	flied	flying	flyer	flyation		generated	general
+anticipate	To anticipate	anticipates	anticipated	anticipating	anticipater	anticipatation		generated	general
+reassure	To reassure	reassures	reassured	reassuring	reassurer	reassuration		generated	general
+earn	To earn	earns	earned	earning	earner	earnation		generated	general
+obey	To obey	obeys	obeyed	obeying	obeyer	obeyation		generated	general
+spot	To spot	spots	spotted	spotting	spoter	spotion		generated	general
+dock	To dock	docks	docked	docking	docker	dockation		generated	general
+degrease	To degrease	degreases	degreased	degreasing	degreaser	degreasation		generated	general
+radio	To radio	radioes	radioed	radioing	radioer	radioation		generated	general
+itemize	To itemize	itemizes	itemized	itemizing	itemizer	itemization		generated	general

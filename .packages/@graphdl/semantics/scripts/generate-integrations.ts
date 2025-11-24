@@ -78,9 +78,14 @@ async function main() {
   const servicesData = JSON.parse(fs.readFileSync(path.join(integrationsDir, 'services.json'), 'utf-8'))
 
   const triggers: Array<{
+    url: string
+    ns: string
+    type: string
     id: string
     name: string
     description: string
+    code: string
+    sourceUrl: string
     appSlug: string
     appName: string
     key: string
@@ -88,9 +93,14 @@ async function main() {
   }> = []
 
   const searches: Array<{
+    url: string
+    ns: string
+    type: string
     id: string
     name: string
     description: string
+    code: string
+    sourceUrl: string
     appSlug: string
     appName: string
     key: string
@@ -98,9 +108,14 @@ async function main() {
   }> = []
 
   const actions: Array<{
+    url: string
+    ns: string
+    type: string
     id: string
     name: string
     description: string
+    code: string
+    sourceUrl: string
     appSlug: string
     appName: string
     key: string
@@ -116,9 +131,14 @@ async function main() {
       for (const read of service.reads) {
         const id = toPascalCase(read.name)
         triggers.push({
+          url: `https://triggers.org.ai/${id}`,
+          ns: 'triggers.org.ai',
+          type: 'Trigger',
           id,
           name: read.name,
           description: read.description || '',
+          code: read.key !== id ? read.key : '',
+          sourceUrl: '',
           appSlug,
           appName,
           key: read.key,
@@ -132,9 +152,14 @@ async function main() {
       for (const search of service.searches) {
         const id = toPascalCase(search.name)
         searches.push({
+          url: `https://searches.org.ai/${id}`,
+          ns: 'searches.org.ai',
+          type: 'Search',
           id,
           name: search.name,
           description: search.description || '',
+          code: search.key !== id ? search.key : '',
+          sourceUrl: '',
           appSlug,
           appName,
           key: search.key,
@@ -148,9 +173,14 @@ async function main() {
       for (const write of service.writes) {
         const id = toPascalCase(write.name)
         actions.push({
+          url: `https://actions.org.ai/${id}`,
+          ns: 'actions.org.ai',
+          type: 'Action',
           id,
           name: write.name,
           description: write.description || '',
+          code: write.key !== id ? write.key : '',
+          sourceUrl: '',
           appSlug,
           appName,
           key: write.key,
@@ -163,9 +193,9 @@ async function main() {
   // Sort and write Triggers
   triggers.sort((a, b) => a.id.localeCompare(b.id))
   const triggersPath = path.join(dataDir, 'Triggers.tsv')
-  const triggersHeaders = ['id', 'name', 'description', 'appSlug', 'appName', 'key', 'isImportant']
+  const triggersHeaders = ['url', 'ns', 'type', 'id', 'name', 'description', 'code', 'sourceUrl', 'appSlug', 'appName', 'key', 'isImportant']
   const triggersRows = triggers.map(t =>
-    `${t.id}\t${t.name}\t${t.description}\t${t.appSlug}\t${t.appName}\t${t.key}\t${t.isImportant}`
+    `${t.url}\t${t.ns}\t${t.type}\t${t.id}\t${t.name}\t${t.description}\t${t.code}\t${t.sourceUrl}\t${t.appSlug}\t${t.appName}\t${t.key}\t${t.isImportant}`
   )
 
   fs.writeFileSync(triggersPath, triggersHeaders.join('\t') + '\n' + triggersRows.join('\n'))
@@ -174,9 +204,9 @@ async function main() {
   // Sort and write Searches
   searches.sort((a, b) => a.id.localeCompare(b.id))
   const searchesPath = path.join(dataDir, 'Searches.tsv')
-  const searchesHeaders = ['id', 'name', 'description', 'appSlug', 'appName', 'key', 'isImportant']
+  const searchesHeaders = ['url', 'ns', 'type', 'id', 'name', 'description', 'code', 'sourceUrl', 'appSlug', 'appName', 'key', 'isImportant']
   const searchesRows = searches.map(s =>
-    `${s.id}\t${s.name}\t${s.description}\t${s.appSlug}\t${s.appName}\t${s.key}\t${s.isImportant}`
+    `${s.url}\t${s.ns}\t${s.type}\t${s.id}\t${s.name}\t${s.description}\t${s.code}\t${s.sourceUrl}\t${s.appSlug}\t${s.appName}\t${s.key}\t${s.isImportant}`
   )
 
   fs.writeFileSync(searchesPath, searchesHeaders.join('\t') + '\n' + searchesRows.join('\n'))
@@ -185,9 +215,9 @@ async function main() {
   // Sort and write Actions
   actions.sort((a, b) => a.id.localeCompare(b.id))
   const actionsPath = path.join(dataDir, 'Actions.tsv')
-  const actionsHeaders = ['id', 'name', 'description', 'appSlug', 'appName', 'key', 'isImportant']
+  const actionsHeaders = ['url', 'ns', 'type', 'id', 'name', 'description', 'code', 'sourceUrl', 'appSlug', 'appName', 'key', 'isImportant']
   const actionsRows = actions.map(a =>
-    `${a.id}\t${a.name}\t${a.description}\t${a.appSlug}\t${a.appName}\t${a.key}\t${a.isImportant}`
+    `${a.url}\t${a.ns}\t${a.type}\t${a.id}\t${a.name}\t${a.description}\t${a.code}\t${a.sourceUrl}\t${a.appSlug}\t${a.appName}\t${a.key}\t${a.isImportant}`
   )
 
   fs.writeFileSync(actionsPath, actionsHeaders.join('\t') + '\n' + actionsRows.join('\n'))
