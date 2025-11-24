@@ -1,0 +1,67 @@
+Business Relationships Conversion Report
+=========================================
+
+Generated: 2025-11-24
+
+Source Files Processed:
+- Business.Relationships.tsv (81 relationships)
+- AgenticBusiness.Relationships.tsv (129 relationships)
+- APIBusiness.Relationships.tsv (60 relationships)
+- DatasetBusiness.Relationships.tsv (67 relationships)
+- Department.Relationships.tsv (85 relationships)
+- DirectoryBusiness.Relationships.tsv (74 relationships)
+- Enterprise.Relationships.tsv (63 relationships)
+- LocalBusiness.Relationships.tsv (133 relationships)
+- Marketplace.Relationships.tsv (69 relationships)
+- OnlineBusiness.Relationships.tsv (95 relationships)
+- SaaS.Relationships.tsv (69 relationships)
+- ServicesBusiness.Relationships.tsv (93 relationships)
+- Startup.Relationships.tsv (59 relationships)
+
+Output File:
+- BusinessTypes.Relationships.tsv
+
+Statistics:
+- Total relationships parsed: 1,077
+- Unique relationships: 1,077
+- Lines in output file: 1,078 (including header)
+
+Format:
+- TSV (Tab-Separated Values) with header
+- Columns: ns, from, to, predicate, reverse
+- All URLs are fully qualified
+
+Namespace Distribution:
+- https://business.org.ai - Primary namespace for business entities
+- https://industries.org.ai - For industry entities
+- https://occupations.org.ai - For occupation entities
+
+Top Entity Types (by relationship count):
+- AgenticBusiness: 26 relationships
+- SaaS: 25 relationships
+- Marketplace: 22 relationships
+- DatasetBusiness: 21 relationships
+- APIBusiness: 21 relationships
+- DirectoryBusiness: 19 relationships
+- Business: 17 relationships
+- Startup: 16 relationships
+- ServicesBusiness: 16 relationships
+- Enterprise: 15 relationships
+
+Reverse Predicate Mappings:
+- has → isPartOf
+- uses → usedBy
+- offers → offeredBy
+- performs → performedBy
+- employs → employedBy
+- operatesIn → hasOrganization
+- isA → hasSubclass
+- manages → managedBy
+- requires → requiredBy
+- and many more...
+
+Notes:
+- GraphDL format (Subject.predicate.Object) successfully converted to TSV
+- All predicates mapped to appropriate reverse predicates
+- Duplicate relationships removed (none found)
+- Entities categorized into appropriate namespaces
