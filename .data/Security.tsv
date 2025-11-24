@@ -1,0 +1,46 @@
+id	name	description	category	severity
+ApiAuthentication	API Authentication	Weak API authentication	API Security	High
+ApiInjection	API Injection	API parameter manipulation	API Security	High
+ApiRateLimiting	API Rate Limiting	Missing or weak rate limits	API Security	Medium
+AuthenticationFailures	Authentication Failures	Weak authentication mechanisms	OWASP Top 10	Critical
+BrokenAccessControl	Broken Access Control	Unauthorized access to resources	OWASP Top 10	Critical
+BufferOverflow	Buffer Overflow	Memory corruption vulnerability	Memory Safety	Critical
+CloudMisconfiguration	Cloud Misconfiguration	Insecure cloud resource settings	Cloud Security	Critical
+CommandInjection	Command Injection	OS command execution	Injection	Critical
+ContainerEscape	Container Escape	Breaking out of container isolation	Container Security	Critical
+CorsMisconfiguration	CORS Misconfiguration	Improper cross-origin resource sharing	Web Security	Medium
+CryptographicFailures	Cryptographic Failures	Weak or missing encryption	OWASP Top 10	High
+Csrf	CSRF	Cross-Site Request Forgery	Web Security	Medium
+DataIntegrityFailures	Data Integrity Failures	Unverified software updates	OWASP Top 10	High
+DataLeak	Data Leak	Unintentional data exposure	Data Security	Critical
+Ddos	DDoS	Distributed Denial of Service	Availability	Critical
+Dos	DoS	Denial of Service attack	Availability	High
+GraphqlInjection	GraphQL Injection	GraphQL query manipulation	API Security	High
+IamMisconfiguration	IAM Misconfiguration	Improper identity and access management	Cloud Security	High
+Injection	Injection	SQL, NoSQL, OS command injection	OWASP Top 10	Critical
+InsecureContainerRegistry	Insecure Container Registry	Unprotected container registry	Container Security	Medium
+InsecureDeserialization	Insecure Deserialization	Unsafe object deserialization	Data Security	High
+InsecureDesign	Insecure Design	Security design flaws	OWASP Top 10	High
+InsecureJwt	Insecure JWT	Weak JSON Web Token implementation	Authentication	High
+InsecureTls	Insecure TLS	Weak transport layer security	Network Security	High
+LdapInjection	LDAP Injection	LDAP query manipulation	Injection	High
+LoggingFailures	Logging Failures	Insufficient logging and monitoring	OWASP Top 10	Medium
+ManMiddle	Man-in-the-Middle	Intercepting network communications	Network Security	Critical
+OauthMisconfiguration	OAuth Misconfiguration	Improper OAuth setup	Authentication	High
+OpenRedirect	Open Redirect	Unvalidated URL redirection	Web Security	Medium
+PathTraversal	Path Traversal	Unauthorized file system access	Access Control	High
+PiiExposure	PII Exposure	Personal Identifiable Information leak	Privacy	Critical
+PrivilegeEscalation	Privilege Escalation	Unauthorized privilege gain	Authorization	Critical
+RaceCondition	Race Condition	Timing-dependent security flaw	Concurrency	Medium
+S3BucketExposure	S3 Bucket Exposure	Publicly accessible S3 buckets	Cloud Security	Critical
+SecurityMisconfiguration	Security Misconfiguration	Insecure default configurations	OWASP Top 10	High
+SensitiveDataExposure	Sensitive Data Exposure	Unprotected sensitive information	Data Security	Critical
+SessionFixation	Session Fixation	Session ID manipulation	Authentication	Medium
+SessionHijacking	Session Hijacking	Unauthorized session takeover	Authentication	High
+SqlInjection	SQL Injection	Database query manipulation	Injection	Critical
+Ssrf	SSRF	Server-Side Request Forgery	OWASP Top 10	High
+VulnerableComponents	Vulnerable Components	Use of vulnerable dependencies	OWASP Top 10	High
+VulnerableContainerImage	Vulnerable Container Image	Container with known vulnerabilities	Container Security	High
+WeakPasswordPolicy	Weak Password Policy	Insufficient password requirements	Authentication	High
+Xss	XSS	Cross-Site Scripting vulnerability	Web Security	High
+Xxe	XXE	XML External Entity attack	Injection	High

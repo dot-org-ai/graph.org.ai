@@ -1,0 +1,24 @@
+id	name	domain	type	size
+AudioSet	AudioSet	AudioClassification	Sound Events	Large
+CensusData	US Census Data	Demographics	Population Data	Large
+CIFAR10	CIFAR-10	ComputerVision	Image Classification	Medium
+COCO	MS COCO	ComputerVision	Object Detection	Large
+CommonCrawl	Common Crawl	NaturalLanguageProcessing	Web Text	Massive
+DataGov	Data.gov	Government	Public Data	Massive
+EarthObservation	Earth Observation Data	Environment	Satellite Imagery	Massive
+GenBank	GenBank	Genomics	DNA Sequences	Massive
+GLUE	GLUE Benchmark	NaturalLanguageProcessing	Language Understanding	Medium
+ImageNet	ImageNet	ComputerVision	Image Classification	Large
+Kaggle	Kaggle Datasets	General	Various	Various
+LibriSpeech	LibriSpeech	SpeechRecognition	Audio Books	Large
+MIMIC	MIMIC-III	Healthcare	Clinical Data	Large
+MNIST	MNIST	ComputerVision	Handwritten Digits	Medium
+NOAA	NOAA Climate Data	Climate	Weather Data	Massive
+NYCTaxi	NYC Taxi Data	Transportation	Trip Records	Large
+OpenDataPortal	Open Data Portal	Government	Various	Large
+OpenStreetMap	OpenStreetMap	Geography	Geographic Data	Massive
+ProteinDataBank	Protein Data Bank	Biochemistry	Protein Structures	Large
+SQuAD	SQuAD	NaturalLanguageProcessing	Question Answering	Medium
+WikipediaCorpus	Wikipedia Corpus	NaturalLanguageProcessing	Text Corpus	Large
+WorldBank	World Bank Open Data	Economics	Economic Indicators	Large
+YahooFinance	Yahoo Finance	Finance	Stock Market Data	Large

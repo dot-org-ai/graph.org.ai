@@ -1,0 +1,42 @@
+id	name	description	category	type
+401k	401k	Employer-sponsored retirement savings plan	Retirement	Account
+AutoInsurance	Auto Insurance	Insurance for vehicles against loss or damage	Insurance	Insurance Policy
+AutoLoan	Auto Loan	A loan to purchase a vehicle	Credit	Secured Loan
+Bond	Bond	A fixed-income instrument representing a loan	Investment	Security
+BusinessLoan	Business Loan	A loan for business purposes	Credit	Loan
+CertificateDeposit	Certificate of Deposit	A time deposit with a fixed term and interest rate	Banking	Account
+CheckingAccount	Checking Account	A transactional deposit account held at a financial institution	Banking	Account
+Commodity	Commodity	A basic good used in commerce that is interchangeable	Investment	Asset
+CreditCard	Credit Card	A payment card issued to users for payment of goods and services	Credit	Revolving Credit
+Cryptocurrency	Cryptocurrency	A digital or virtual currency using cryptography	Investment	Digital Asset
+DebitCard	Debit Card	A payment card that deducts money directly from a bank account	Banking	Payment Card
+DisabilityInsurance	Disability Insurance	Insurance providing income if unable to work	Insurance	Insurance Policy
+EstatePlanning	Estate Planning	Planning for the disposal of an estate	Service	Advisory
+Etf	ETF	Exchange-traded fund that tracks an index or basket of assets	Investment	Fund
+FinancialPlanning	Financial Planning	Professional guidance on financial matters	Service	Advisory
+Fsa	FSA	Flexible Spending Account for healthcare expenses	Healthcare	Account
+Future	Future	A standardized contract to buy or sell at a predetermined price	Derivative	Contract
+HealthInsurance	Health Insurance	Insurance covering medical expenses	Insurance	Insurance Policy
+HedgeFund	Hedge Fund	A pooled investment fund using advanced strategies	Investment	Fund
+HomeInsurance	Home Insurance	Insurance for private homes	Insurance	Insurance Policy
+Hsa	HSA	Health Savings Account with tax advantages	Healthcare	Account
+IndexFund	Index Fund	A mutual fund or ETF designed to track a market index	Investment	Fund
+InvestmentManagement	Investment Management	Professional management of securities and assets	Service	Advisory
+Ira	IRA	Individual Retirement Account with tax advantages	Retirement	Account
+LifeInsurance	Life Insurance	Insurance paying a sum on the death of the insured	Insurance	Insurance Policy
+LineCredit	Line of Credit	A flexible loan from a financial institution	Credit	Revolving Credit
+MoneyMarketAccount	Money Market Account	An interest-bearing account with check-writing privileges	Banking	Account
+Mortgage	Mortgage	A loan secured by real property	Credit	Secured Loan
+MutualFund	Mutual Fund	An investment vehicle pooling money from multiple investors	Investment	Fund
+Option	Option	A contract giving the right to buy or sell at a specific price	Derivative	Contract
+PersonalLoan	Personal Loan	An unsecured loan for personal use	Credit	Loan
+PrivateEquity	Private Equity	Investment in private companies not listed on public exchanges	Investment	Fund
+RealEstateInvestmentTrust	Real Estate Investment Trust	A company that owns income-producing real estate	Investment	Security
+RetirementPlanning	Retirement Planning	Planning for financial security in retirement	Service	Advisory
+RothIra	Roth IRA	Individual retirement account with tax-free withdrawals	Retirement	Account
+SavingsAccount	Savings Account	A deposit account held at a financial institution	Banking	Account
+Stock	Stock	An equity security representing ownership in a corporation	Investment	Security
+StudentLoan	Student Loan	A loan to pay for educational expenses	Credit	Loan
+Swap	Swap	A derivative contract to exchange cash flows	Derivative	Contract
+TaxPlanning	Tax Planning	Analysis and planning to minimize tax liability	Service	Advisory
+WealthManagement	Wealth Management	Investment advisory and financial planning services	Service	Advisory

@@ -1,0 +1,21 @@
+id	name	description	format	resolution
+Mp4	MP4	MPEG-4 video format	MP4	Various
+Mov	MOV	QuickTime video format	MOV	Various
+Avi	AVI	Audio Video Interleave format	AVI	Various
+Wmv	WMV	Windows Media Video format	WMV	Various
+Webm	WebM	Web video format	WebM	Various
+Flv	FLV	Flash video format	FLV	Various
+Mkv	MKV	Matroska video format	MKV	Various
+Threegp	3GP	Mobile video format	3GP	Mobile
+Mpeg	MPEG	MPEG video format	MPEG	Various
+Hd720p	HD 720p	720p HD video	Various	720p
+Hd1080p	HD 1080p	1080p Full HD video	Various	1080p
+Uhd4k	4K UHD	4K ultra high definition	Various	4K
+Uhd8k	8K UHD	8K ultra high definition	Various	8K
+VerticalVideo	Vertical Video	Portrait/vertical format	Various	Mobile
+SquareVideo	Square Video	1:1 square format	Various	Social
+ShortFormVideo	Short-Form Video	Short video content	Various	Mobile
+LongFormVideo	Long-Form Video	Extended video content	Various	Various
+LiveVideo	Live Video	Live streaming video	Stream	Various
+ThreeSixtyVideo	360° Video	360-degree immersive video	Various	Various
+VrVideo	VR Video	Virtual reality video	Various	Stereoscopic
