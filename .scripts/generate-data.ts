@@ -302,15 +302,16 @@ function generateONETData(): void {
   const uniqueTechnology = new Map<string, any>()
 
   technologySource.forEach(row => {
-    const id = `${row.commodityCode}-${createId(row.example)}`
-    if (!uniqueTechnology.has(id)) {
-      uniqueTechnology.set(id, {
-        $id: `${domain}/Technology/${id}`,
+    const name = row.example
+    const urlId = createId(name)
+    if (!uniqueTechnology.has(urlId)) {
+      uniqueTechnology.set(urlId, {
+        $id: `${domain}/Technology/${urlId}`,
         $type: 'https://onet.org.ai/Technology',
         $context: domain,
-        name: row.example,
-        description: row.commodityTitle || row.example,
-        code: row.commodityCode,
+        name: name,
+        description: row.commodityTitle || name,
+        code: getCode(row.commodityCode, name),
         commodityTitle: row.commodityTitle || '',
         hotTechnology: row.hotTechnology === 'Y',
         inDemand: row.inDemand === 'Y',
@@ -324,15 +325,16 @@ function generateONETData(): void {
   const uniqueTools = new Map<string, any>()
 
   toolsSource.forEach(row => {
-    const id = `${row.commodityCode}-${createId(row.example)}`
-    if (!uniqueTools.has(id)) {
-      uniqueTools.set(id, {
-        $id: `${domain}/Tool/${id}`,
+    const name = row.example
+    const urlId = createId(name)
+    if (!uniqueTools.has(urlId)) {
+      uniqueTools.set(urlId, {
+        $id: `${domain}/Tool/${urlId}`,
         $type: 'https://onet.org.ai/Tool',
         $context: domain,
-        name: row.example,
-        description: row.commodityTitle || row.example,
-        code: row.commodityCode,
+        name: name,
+        description: row.commodityTitle || name,
+        code: getCode(row.commodityCode, name),
         commodityTitle: row.commodityTitle || '',
       })
     }
@@ -503,13 +505,13 @@ function generateONETData(): void {
     if (row.oNETSOCCode) {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
-        const id = `${row.commodityCode}-${createId(row.example)}`
+        const urlId = createId(row.example)
         relationships.push({
           ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'usesTechnology',
           reverse: 'technologyFor',
-          to: `${domain}/Technology/${id}`,
+          to: `${domain}/Technology/${urlId}`,
         })
       }
     }
@@ -520,13 +522,13 @@ function generateONETData(): void {
     if (row.oNETSOCCode) {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
-        const id = `${row.commodityCode}-${createId(row.example)}`
+        const urlId = createId(row.example)
         relationships.push({
           ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'usesTool',
           reverse: 'toolFor',
-          to: `${domain}/Tool/${id}`,
+          to: `${domain}/Tool/${urlId}`,
         })
       }
     }
