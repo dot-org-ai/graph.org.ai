@@ -91,6 +91,13 @@ function createId(name: string): string {
     .replace(/\?/g, '')
 }
 
+/**
+ * Get code field only if different from name (otherwise empty for null in DB)
+ */
+function getCode(code: string, name: string): string {
+  return code && code !== name ? code : ''
+}
+
 // ============================================================================
 // Data Generators
 // ============================================================================
@@ -761,7 +768,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.canonicalForm,
     description: row.description || row.canonicalForm,
-    code: row.canonicalForm,
+    code: getCode(row.canonicalForm, row.canonicalForm),
     predicate: row.predicate || '',
     event: row.event || '',
     activity: row.activity || '',
@@ -781,7 +788,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.id,
     description: row.description || row.id,
-    code: row.id,
+    code: getCode(row.id, row.id),
     baseNoun: row.baseNoun || '',
     modifiers: row.modifiers || '',
     category: row.category || '',
@@ -798,7 +805,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.id,
     description: row.description || row.id,
-    code: row.id,
+    code: getCode(row.id, row.id),
     category: row.category || '',
     usage: row.usage || '',
   }))
@@ -812,7 +819,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.id,
     description: row.description || row.id,
-    code: row.id,
+    code: getCode(row.id, row.id),
     category: row.category || '',
     usage: row.usage || '',
   }))
@@ -826,7 +833,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.id,
     description: row.description || row.id,
-    code: row.id,
+    code: getCode(row.id, row.id),
     category: row.category || '',
     usage: row.usage || '',
   }))
@@ -840,7 +847,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.id,
     description: row.description || row.id,
-    code: row.id,
+    code: getCode(row.id, row.id),
     category: row.category || '',
     usage: row.usage || '',
   }))
@@ -854,7 +861,7 @@ function generateLanguageData(): void {
     $context: domain,
     name: row.id,
     description: row.description || row.id,
-    code: row.id,
+    code: getCode(row.id, row.id),
     category: row.category || '',
     usage: row.usage || '',
   }))
