@@ -1,40 +1,40 @@
-$id	$type	$context	name	description	code	category	examples
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		indefinite article (singular)		Article	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		indefinite article before vowel sound		Article	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		definite article		Article	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		the whole quantity of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		one more; a different one		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		one or some of a thing		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		the two; one and the other		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		every one of two or more		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		one or the other of two		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		as much as required		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		all of a group		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a small number of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a smaller number of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a small amount of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a smaller amount of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a large number of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a greater amount		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		the greatest amount		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		a great amount of		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		not one nor the other		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		not any		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		alternative; different		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		more than two but not many		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		an unspecified amount		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		enough; adequate		Quantifier	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		referring to a specific thing nearby		Demonstrative	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		referring to a specific thing		Demonstrative	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		plural of this		Demonstrative	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		plural of that		Demonstrative	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to me		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to you		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to him		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to her		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to it		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to us		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		belonging to them		Possessive	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		asking for information		Interrogative	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		asking for choice		Interrogative	
-https://language.org.ai/Determiner/undefined	https://language.org.ai/Determiner	https://language.org.ai		asking about possession		Interrogative	
+$id	$type	$context	name	description	code	category	usage
+https://language.org.ai/Determiner/a	https://language.org.ai/Determiner	https://language.org.ai	a	indefinite article (singular)	a	Article	a document
+https://language.org.ai/Determiner/an	https://language.org.ai/Determiner	https://language.org.ai	an	indefinite article before vowel sound	an	Article	an email
+https://language.org.ai/Determiner/the	https://language.org.ai/Determiner	https://language.org.ai	the	definite article	the	Article	the report
+https://language.org.ai/Determiner/all	https://language.org.ai/Determiner	https://language.org.ai	all	the whole quantity of	all	Quantifier	all employees
+https://language.org.ai/Determiner/another	https://language.org.ai/Determiner	https://language.org.ai	another	one more; a different one	another	Quantifier	another approach
+https://language.org.ai/Determiner/any	https://language.org.ai/Determiner	https://language.org.ai	any	one or some of a thing	any	Quantifier	any questions
+https://language.org.ai/Determiner/both	https://language.org.ai/Determiner	https://language.org.ai	both	the two; one and the other	both	Quantifier	both options
+https://language.org.ai/Determiner/each	https://language.org.ai/Determiner	https://language.org.ai	each	every one of two or more	each	Quantifier	each employee
+https://language.org.ai/Determiner/either	https://language.org.ai/Determiner	https://language.org.ai	either	one or the other of two	either	Quantifier	either option
+https://language.org.ai/Determiner/enough	https://language.org.ai/Determiner	https://language.org.ai	enough	as much as required	enough	Quantifier	enough resources
+https://language.org.ai/Determiner/every	https://language.org.ai/Determiner	https://language.org.ai	every	all of a group	every	Quantifier	every day
+https://language.org.ai/Determiner/few	https://language.org.ai/Determiner	https://language.org.ai	few	a small number of	few	Quantifier	few issues
+https://language.org.ai/Determiner/fewer	https://language.org.ai/Determiner	https://language.org.ai	fewer	a smaller number of	fewer	Quantifier	fewer errors
+https://language.org.ai/Determiner/little	https://language.org.ai/Determiner	https://language.org.ai	little	a small amount of	little	Quantifier	little time
+https://language.org.ai/Determiner/less	https://language.org.ai/Determiner	https://language.org.ai	less	a smaller amount of	less	Quantifier	less effort
+https://language.org.ai/Determiner/many	https://language.org.ai/Determiner	https://language.org.ai	many	a large number of	many	Quantifier	many customers
+https://language.org.ai/Determiner/more	https://language.org.ai/Determiner	https://language.org.ai	more	a greater amount	more	Quantifier	more data
+https://language.org.ai/Determiner/most	https://language.org.ai/Determiner	https://language.org.ai	most	the greatest amount	most	Quantifier	most people
+https://language.org.ai/Determiner/much	https://language.org.ai/Determiner	https://language.org.ai	much	a great amount of	much	Quantifier	much work
+https://language.org.ai/Determiner/neither	https://language.org.ai/Determiner	https://language.org.ai	neither	not one nor the other	neither	Quantifier	neither option
+https://language.org.ai/Determiner/no	https://language.org.ai/Determiner	https://language.org.ai	no	not any	no	Quantifier	no problems
+https://language.org.ai/Determiner/other	https://language.org.ai/Determiner	https://language.org.ai	other	alternative; different	other	Quantifier	other methods
+https://language.org.ai/Determiner/several	https://language.org.ai/Determiner	https://language.org.ai	several	more than two but not many	several	Quantifier	several approaches
+https://language.org.ai/Determiner/some	https://language.org.ai/Determiner	https://language.org.ai	some	an unspecified amount	some	Quantifier	some data
+https://language.org.ai/Determiner/sufficient	https://language.org.ai/Determiner	https://language.org.ai	sufficient	enough; adequate	sufficient	Quantifier	sufficient evidence
+https://language.org.ai/Determiner/this	https://language.org.ai/Determiner	https://language.org.ai	this	referring to a specific thing nearby	this	Demonstrative	this document
+https://language.org.ai/Determiner/that	https://language.org.ai/Determiner	https://language.org.ai	that	referring to a specific thing	that	Demonstrative	that report
+https://language.org.ai/Determiner/these	https://language.org.ai/Determiner	https://language.org.ai	these	plural of this	these	Demonstrative	these files
+https://language.org.ai/Determiner/those	https://language.org.ai/Determiner	https://language.org.ai	those	plural of that	those	Demonstrative	those records
+https://language.org.ai/Determiner/my	https://language.org.ai/Determiner	https://language.org.ai	my	belonging to me	my	Possessive	my task
+https://language.org.ai/Determiner/your	https://language.org.ai/Determiner	https://language.org.ai	your	belonging to you	your	Possessive	your project
+https://language.org.ai/Determiner/his	https://language.org.ai/Determiner	https://language.org.ai	his	belonging to him	his	Possessive	his role
+https://language.org.ai/Determiner/her	https://language.org.ai/Determiner	https://language.org.ai	her	belonging to her	her	Possessive	her assignment
+https://language.org.ai/Determiner/its	https://language.org.ai/Determiner	https://language.org.ai	its	belonging to it	its	Possessive	its purpose
+https://language.org.ai/Determiner/our	https://language.org.ai/Determiner	https://language.org.ai	our	belonging to us	our	Possessive	our team
+https://language.org.ai/Determiner/their	https://language.org.ai/Determiner	https://language.org.ai	their	belonging to them	their	Possessive	their goals
+https://language.org.ai/Determiner/what	https://language.org.ai/Determiner	https://language.org.ai	what	asking for information	what	Interrogative	what data
+https://language.org.ai/Determiner/which	https://language.org.ai/Determiner	https://language.org.ai	which	asking for choice	which	Interrogative	which option
+https://language.org.ai/Determiner/whose	https://language.org.ai/Determiner	https://language.org.ai	whose	asking about possession	whose	Interrogative	whose responsibility

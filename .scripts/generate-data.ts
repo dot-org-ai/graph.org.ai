@@ -793,70 +793,70 @@ function generateLanguageData(): void {
   // Prepositions
   const prepsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Prepositions.tsv'))
   const prepsData = prepsSource.map(row => ({
-    $id: `${domain}/Preposition/${row.preposition}`,
+    $id: `${domain}/Preposition/${createId(row.id)}`,
     $type: 'https://language.org.ai/Preposition',
     $context: domain,
-    name: row.preposition,
-    description: row.description || row.preposition,
-    code: row.preposition,
+    name: row.id,
+    description: row.description || row.id,
+    code: row.id,
     category: row.category || '',
-    examples: row.examples || '',
+    usage: row.usage || '',
   }))
   writeTSV(path.join(DATA_DIR, 'Language.Preposition.tsv'), prepsData)
 
   // Adverbs
   const adverbsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Adverbs.tsv'))
   const adverbsData = adverbsSource.map(row => ({
-    $id: `${domain}/Adverb/${row.adverb}`,
+    $id: `${domain}/Adverb/${createId(row.id)}`,
     $type: 'https://language.org.ai/Adverb',
     $context: domain,
-    name: row.adverb,
-    description: row.description || row.adverb,
-    code: row.adverb,
+    name: row.id,
+    description: row.description || row.id,
+    code: row.id,
     category: row.category || '',
-    examples: row.examples || '',
+    usage: row.usage || '',
   }))
   writeTSV(path.join(DATA_DIR, 'Language.Adverb.tsv'), adverbsData)
 
   // Pronouns
   const pronounsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Pronouns.tsv'))
   const pronounsData = pronounsSource.map(row => ({
-    $id: `${domain}/Pronoun/${row.pronoun}`,
+    $id: `${domain}/Pronoun/${createId(row.id)}`,
     $type: 'https://language.org.ai/Pronoun',
     $context: domain,
-    name: row.pronoun,
-    description: row.description || row.pronoun,
-    code: row.pronoun,
+    name: row.id,
+    description: row.description || row.id,
+    code: row.id,
     category: row.category || '',
-    examples: row.examples || '',
+    usage: row.usage || '',
   }))
   writeTSV(path.join(DATA_DIR, 'Language.Pronoun.tsv'), pronounsData)
 
   // Conjunctions
   const conjsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Conjunctions.tsv'))
   const conjsData = conjsSource.map(row => ({
-    $id: `${domain}/Conjunction/${row.conjunction}`,
+    $id: `${domain}/Conjunction/${createId(row.id)}`,
     $type: 'https://language.org.ai/Conjunction',
     $context: domain,
-    name: row.conjunction,
-    description: row.description || row.conjunction,
-    code: row.conjunction,
+    name: row.id,
+    description: row.description || row.id,
+    code: row.id,
     category: row.category || '',
-    examples: row.examples || '',
+    usage: row.usage || '',
   }))
   writeTSV(path.join(DATA_DIR, 'Language.Conjunction.tsv'), conjsData)
 
   // Determiners
   const detsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Determiners.tsv'))
   const detsData = detsSource.map(row => ({
-    $id: `${domain}/Determiner/${row.determiner}`,
+    $id: `${domain}/Determiner/${createId(row.id)}`,
     $type: 'https://language.org.ai/Determiner',
     $context: domain,
-    name: row.determiner,
-    description: row.description || row.determiner,
-    code: row.determiner,
+    name: row.id,
+    description: row.description || row.id,
+    code: row.id,
     category: row.category || '',
-    examples: row.examples || '',
+    usage: row.usage || '',
   }))
   writeTSV(path.join(DATA_DIR, 'Language.Determiner.tsv'), detsData)
 }
