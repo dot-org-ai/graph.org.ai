@@ -128,6 +128,12 @@ function cleanSchemaPrefix(value: string): string {
   return value.replace(/schema:/g, '')
 }
 
+// Helper to convert to camelCase (lowercase first letter)
+function toCamelCase(value: string): string {
+  if (!value) return ''
+  return value.charAt(0).toLowerCase() + value.slice(1)
+}
+
 // ============================================================================
 // Data Generators
 // ============================================================================
@@ -792,7 +798,7 @@ function generateLanguageData(): void {
   // Verbs
   const verbsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Verbs.tsv'))
   const verbsData = verbsSource.map(row => {
-    const id = row.canonicalForm
+    const id = toCamelCase(row.canonicalForm)
     return createEntity(domain, 'Verb', id, {
       name: row.canonicalForm,
       description: row.description || row.canonicalForm,
