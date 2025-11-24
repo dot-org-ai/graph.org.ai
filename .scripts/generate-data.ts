@@ -111,6 +111,17 @@ function createEntity(domain: string, typeName: string, id: string, data: any) {
   }
 }
 
+// Special helper for Schema.org entities that don't have type in URL
+function createSchemaEntity(domain: string, typeName: string, id: string, data: any) {
+  return {
+    url: `${domain}/${id}`,
+    ns: domain.replace('https://', ''),
+    type: typeName,
+    id: id,
+    ...data
+  }
+}
+
 // ============================================================================
 // Data Generators
 // ============================================================================
@@ -127,7 +138,7 @@ function generateSchemaOrgData(): void {
   const typesSource = parseTSV(path.join(SOURCE_DIR, 'Schema.org/Schema.org.Types.tsv'))
   const typesData = typesSource.map(row => {
     const id = row.label || row.name
-    return createEntity(domain, 'Class', id, {
+    return createSchemaEntity(domain, 'Class', id, {
       name: row.label || row.name,
       description: row.comment || row.description || '',
       code: row.id || '',
@@ -141,7 +152,7 @@ function generateSchemaOrgData(): void {
   const propsSource = parseTSV(path.join(SOURCE_DIR, 'Schema.org/Schema.org.Properties.tsv'))
   const propsData = propsSource.map(row => {
     const id = row.label || row.name
-    return createEntity(domain, 'Property', id, {
+    return createSchemaEntity(domain, 'Property', id, {
       name: row.label || row.name,
       description: row.comment || row.description || '',
       code: row.id || '',
@@ -160,12 +171,14 @@ function generateSchemaOrgData(): void {
     if (row.subClassOf) {
       const fromClass = typesData.find(t => t.code === row.id)
       if (fromClass) {
+        // Extract the class name and remove schema: prefix if present
+        const className = row.subClassOf.split('/').pop().replace('schema:', '')
         relationships.push({
           ns: 'schema.org.ai',
           from: fromClass.url,
           predicate: 'subClassOf',
           reverse: 'superClassOf',
-          to: `${domain}/${row.subClassOf.split('/').pop()}`,
+          to: `${domain}/${className}`,
         })
       }
     }
@@ -178,12 +191,14 @@ function generateSchemaOrgData(): void {
       if (prop) {
         const domains = row.domainIncludes.split(',').map((d: string) => d.trim())
         domains.forEach((domainUrl: string) => {
+          // Extract the class name and remove schema: prefix if present
+          const className = domainUrl.split('/').pop().replace('schema:', '')
           relationships.push({
             ns: 'schema.org.ai',
             from: prop.url,
             predicate: 'domainIncludes',
             reverse: 'hasProperty',
-            to: `${domain}/${domainUrl.split('/').pop()}`,
+            to: `${domain}/${className}`,
           })
         })
       }
