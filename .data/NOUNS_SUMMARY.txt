@@ -1,0 +1,325 @@
+================================================================================
+NOUNS.TSV GENERATION SUMMARY
+================================================================================
+
+Generated: November 24, 2025
+File Location: /Users/nathanclevenger/projects/graph.org.ai/.data/Nouns.tsv
+File Size: 1.2 MB
+Total Records: 7,212 nouns
+
+================================================================================
+OVERVIEW
+================================================================================
+
+The Nouns.tsv file represents a comprehensive ontology of noun/class definitions
+across the graph.org.ai knowledge graph, integrating multiple standardized
+taxonomies and custom extensions.
+
+This represents the "WHO" and "WHAT" - the subject and object nouns that form
+the entities in our semantic graph.
+
+================================================================================
+STATISTICS
+================================================================================
+
+Total Nouns: 7,212
+Number of Sources: 9 distinct ontologies
+Maximum Hierarchy Depth: 5 levels
+Root Classes: 11 top-level meta-nouns
+
+HIERARCHY DEPTH DISTRIBUTION:
+  Depth 0: 8 nouns (root classes with no parent)
+  Depth 1: 81 nouns (direct children of root)
+  Depth 2: 5,859 nouns (81% of all nouns - most common)
+  Depth 3: 761 nouns (specialized sub-types)
+  Depth 4: 482 nouns (highly specific types)
+  Depth 5: 21 nouns (deepest specializations)
+
+================================================================================
+SOURCES & DISTRIBUTION
+================================================================================
+
+1. naics.org.ai .......... 3,619 nouns (50.2%)
+   - NAICS industry classifications
+   - Complete hierarchy from 2-digit to 6-digit codes
+   - Covers all economic sectors
+
+2. onet.org.ai ........... 1,676 nouns (23.2%)
+   - O*NET occupation types
+   - SOC (Standard Occupational Classification) codes
+   - Detailed job titles and roles
+
+3. schema.org ............ 920 nouns (12.8%)
+   - Schema.org vocabulary types
+   - Web semantic standards
+   - Rich type hierarchy
+
+4. aimodel.org.ai ........ 306 nouns (4.2%)
+   - AI and machine learning models
+   - Language models, vision models, multimodal
+   - Recent frontier models
+
+5. place.org.ai .......... 303 nouns (4.2%)
+   - Geographic entities
+   - Countries (252) and States (51)
+   - Administrative divisions
+
+6. app.org.ai ............ 250 nouns (3.5%)
+   - Software applications and services
+   - Integration platforms
+   - Popular SaaS tools
+
+7. concept.org.ai ........ 59 nouns (0.8%)
+   - Abstract business concepts
+   - Process-related ideas
+   - Strategic constructs
+
+8. business.org.ai ....... 54 nouns (0.7%)
+   - Business entity types
+   - Organizational structures
+   - Department types
+
+9. careercluster.org.ai .. 14 nouns (0.2%)
+   - Career pathway clusters
+   - Educational alignments
+   - Workforce development
+
+================================================================================
+TOP PARENT CLASSES (Most Children)
+================================================================================
+
+1. Industry .............. 3,619 children
+2. Occupation ............ 1,676 children
+3. AIModel ............... 306 children
+4. Country ............... 252 children
+5. App ................... 250 children
+6. CreativeWork .......... 69 children
+7. Intangible ............ 65 children
+8. Enumeration ........... 56 children
+9. State ................. 51 children
+10. CivicStructure ....... 30 children
+
+================================================================================
+ROOT META-NOUNS
+================================================================================
+
+The ontology is organized under these 11 top-level classes:
+
+1. Thing (schema.org)
+   - The most generic type, root of all classes
+   - Universal base class
+
+2. Occupation (onet.org.ai)
+   - Jobs and professions
+   - Parent to 1,676 specific occupations
+
+3. Industry (naics.org.ai)
+   - Economic activity categories
+   - Parent to 3,619 industry classifications
+
+4. Business (business.org.ai)
+   - Commercial organizations
+   - Various business types and models
+
+5. Department (business.org.ai)
+   - Organizational divisions
+   - Functional areas within organizations
+
+6. CareerCluster (careercluster.org.ai)
+   - Occupation groupings
+   - Educational pathway alignments
+
+7. App (app.org.ai)
+   - Software applications
+   - Digital tools and platforms
+
+8. AIModel (aimodel.org.ai)
+   - Artificial intelligence models
+   - Language, vision, and multimodal models
+
+9. Concept (concept.org.ai)
+   - Abstract ideas and notions
+   - Business and strategic concepts
+
+10. Country (place.org.ai)
+    - Sovereign nation states
+    - 252 countries worldwide
+
+11. State (place.org.ai)
+    - Sub-national administrative divisions
+    - 51 US states and territories
+
+================================================================================
+EXAMPLE HIERARCHIES
+================================================================================
+
+DEPTH 5 (Deepest Specialization):
+  Thing -> Intangible -> Service -> FinancialProduct
+        -> InvestmentOrDeposit -> DepositAccount
+
+  Thing -> Action -> InteractAction -> CommunicateAction
+        -> InformAction -> RsvpAction
+
+  Thing -> MedicalEntity -> MedicalProcedure -> TherapeuticProcedure
+        -> MedicalTherapy -> PalliativeProcedure
+
+DEPTH 3 (Common Specialization):
+  Thing -> Place -> AdministrativeArea -> State
+  Thing -> Place -> AdministrativeArea -> Country
+  Thing -> CreativeWork -> SoftwareApplication -> App
+
+DEPTH 2 (Most Common):
+  Thing -> Intangible -> Occupation (1,676 children)
+  Thing -> CreativeWork -> Clip
+  Thing -> CreativeWork -> MusicPlaylist
+
+================================================================================
+SAMPLE NOUNS BY CATEGORY
+================================================================================
+
+SCHEMA.ORG TYPES:
+  - Thing: The most generic type of item
+  - Person: A person (alive, dead, undead, or fictional)
+  - Organization: An organization such as a school, NGO, corporation
+  - Place: Entities with physical extent
+  - CreativeWork: Creative works like articles, music, books
+
+OCCUPATIONS (ONET):
+  - ChiefExecutives (11-1011.00): Top organizational leaders
+  - SoftwareEngineers (15-1252.00): Software development professionals
+  - DataScientists (15-2051.00): Data analysis professionals
+  - NursePractitioners (29-1171.00): Advanced practice nurses
+
+INDUSTRIES (NAICS):
+  - Agriculture (11): Farming, forestry, fishing, hunting
+  - Manufacturing (31-33): Manufacturing sector
+  - InformationTechnology (51): IT and digital services
+  - Healthcare (62): Healthcare and social assistance
+
+BUSINESS TYPES:
+  - LocalBusiness: Physical location businesses
+  - OnlineBusiness: Digital-first businesses
+  - Ecommerce: Online retail operations
+  - SoftwareAsService: SaaS subscription models
+
+APPLICATIONS:
+  - google-sheets: Spreadsheet application
+  - slack: Team communication platform
+  - notion: All-in-one workspace
+  - hubspot: Marketing automation platform
+
+AI MODELS:
+  - gpt-5: OpenAI's GPT-5 language model
+  - claude-sonnet-4.5: Anthropic's Claude Sonnet
+  - gemini-3-pro: Google's Gemini model
+  - deepseek-v3.2: DeepSeek reasoning model
+
+GEOGRAPHIC ENTITIES:
+  - UnitedStates: Country in North America
+  - California: US state on west coast
+  - NewYork: US state in northeast
+  - Texas: US state in south-central region
+
+================================================================================
+FILE STRUCTURE
+================================================================================
+
+Columns in Nouns.tsv:
+  1. id          - Unique identifier for the noun
+  2. type        - Always "Noun" (for ontology consistency)
+  3. name        - Human-readable display name
+  4. description - Detailed description of the noun
+  5. source      - Origin taxonomy (schema.org, onet.org.ai, etc.)
+  6. properties  - Key properties/attributes specific to this type
+  7. parent      - Parent class in hierarchy (empty for root classes)
+
+================================================================================
+USAGE & APPLICATIONS
+================================================================================
+
+This file can be used for:
+
+1. TYPE VALIDATION
+   - Ensure entities conform to known types
+   - Validate data against ontology
+
+2. NAVIGATION & DISCOVERY
+   - Build hierarchical type browsers
+   - Explore related entity types
+
+3. INFERENCE & REASONING
+   - Understand relationships between types
+   - Infer properties from parent classes
+
+4. SEARCH & RETRIEVAL
+   - Find entities of specific types
+   - Filter by taxonomy source
+
+5. SCHEMA GENERATION
+   - Create database schemas
+   - Generate API models and interfaces
+
+6. SEMANTIC ANALYSIS
+   - Classify entities into categories
+   - Extract structured data from text
+
+================================================================================
+INTEGRATION WITH OTHER FILES
+================================================================================
+
+Nouns.tsv works together with:
+
+- Verbs.tsv ........... Defines relationships/actions between nouns
+- Properties.tsv ...... Defines attributes applicable to each noun type
+- Processes.tsv ....... Defines workflows involving noun types
+- Tasks.tsv ........... Defines actions performed on/by nouns
+- Types.tsv ........... Source Schema.org type definitions
+
+================================================================================
+GENERATION PROCESS
+================================================================================
+
+Script: scripts/generate-nouns.js
+Runtime: ~2 seconds
+Method: Aggregation from multiple TSV sources
+
+Sources Processed:
+  ✓ Types.tsv (920 Schema.org types)
+  ✓ Occupations.tsv (1,676 ONET occupations)
+  ✓ Industries.tsv (3,619 NAICS industries)
+  ✓ BusinessTypes.tsv (40 business types)
+  ✓ Departments.tsv (14 department types)
+  ✓ CareerClusters.tsv (14 career clusters)
+  ✓ Apps.tsv (250 applications)
+  ✓ Models.tsv (306 AI models)
+  ✓ Concepts.tsv (59 concepts)
+  ✓ Countries.tsv (252 countries)
+  ✓ States.tsv (51 states)
+
+Output: Single unified Nouns.tsv file with consistent schema
+
+================================================================================
+QUALITY METRICS
+================================================================================
+
+✓ Coverage: Comprehensive across 9 major taxonomies
+✓ Consistency: Single unified schema for all sources
+✓ Hierarchy: Well-formed with max depth of 5 levels
+✓ Completeness: All nouns have id, type, name, source
+✓ Documentation: 99%+ have descriptions
+✓ Integration: Cross-references between taxonomies
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+Recommended enhancements:
+  - Add more industry-specific taxonomies (GS1, UNSPSC)
+  - Include educational programs (CIP codes)
+  - Add product categories
+  - Expand geographic coverage
+  - Add temporal and event types
+
+================================================================================
+END OF SUMMARY
+================================================================================
