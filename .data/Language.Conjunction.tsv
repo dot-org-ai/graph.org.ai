@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99b236d41aecb7945895cc090a04e39c6f542fc8c8b268733c7ff12cb938e2f0
-size 4557
+$id	$type	$context	name	description	code	category	examples
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		connects words, phrases, or clauses		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		introduces a contrast or exception		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		presents alternatives		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		negative alternative		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		indicates reason or purpose		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		indicates result or consequence		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		introduces a contrasting idea		Coordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		follows in time		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		despite the fact that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		at the same time; because		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		for the reason that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		earlier than		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		on the condition that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		as soon as		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		from a time in the past		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		introduces comparison		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		introduces a clause		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		despite the fact		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		up to the time when		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		except on the condition that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		up to the time that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		at or during the time that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		at or in which place		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		in contrast to the fact that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		in or to whatever place		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		if; either		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		during the time that		Subordinating	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		the two; one and the other		Correlative	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		one or the other of two		Correlative	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		not one nor the other		Correlative	
+https://language.org.ai/Conjunction/undefined	https://language.org.ai/Conjunction	https://language.org.ai		negation		Correlative	

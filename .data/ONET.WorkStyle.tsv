@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea0046976e0404197a790997575b5241402dd3a68f88b1147886e93a05ff3444
-size 2184
+$id	$type	$context	name	description	code
+https://onet.org.ai/WorkStyle/Achievement_Effort	https://onet.org.ai/WorkStyle	https://onet.org.ai	Achievement/Effort	Achievement/Effort	1.C.1.a
+https://onet.org.ai/WorkStyle/Persistence	https://onet.org.ai/WorkStyle	https://onet.org.ai	Persistence	Persistence	1.C.1.b
+https://onet.org.ai/WorkStyle/Initiative	https://onet.org.ai/WorkStyle	https://onet.org.ai	Initiative	Initiative	1.C.1.c
+https://onet.org.ai/WorkStyle/Leadership	https://onet.org.ai/WorkStyle	https://onet.org.ai	Leadership	Leadership	1.C.2.b
+https://onet.org.ai/WorkStyle/Cooperation	https://onet.org.ai/WorkStyle	https://onet.org.ai	Cooperation	Cooperation	1.C.3.a
+https://onet.org.ai/WorkStyle/Concern_for_Others	https://onet.org.ai/WorkStyle	https://onet.org.ai	Concern for Others	Concern for Others	1.C.3.b
+https://onet.org.ai/WorkStyle/Social_Orientation	https://onet.org.ai/WorkStyle	https://onet.org.ai	Social Orientation	Social Orientation	1.C.3.c
+https://onet.org.ai/WorkStyle/Self-Control	https://onet.org.ai/WorkStyle	https://onet.org.ai	Self-Control	Self-Control	1.C.4.a
+https://onet.org.ai/WorkStyle/Stress_Tolerance	https://onet.org.ai/WorkStyle	https://onet.org.ai	Stress Tolerance	Stress Tolerance	1.C.4.b
+https://onet.org.ai/WorkStyle/Adaptability_Flexibility	https://onet.org.ai/WorkStyle	https://onet.org.ai	Adaptability/Flexibility	Adaptability/Flexibility	1.C.4.c
+https://onet.org.ai/WorkStyle/Dependability	https://onet.org.ai/WorkStyle	https://onet.org.ai	Dependability	Dependability	1.C.5.a
+https://onet.org.ai/WorkStyle/Attention_to_Detail	https://onet.org.ai/WorkStyle	https://onet.org.ai	Attention to Detail	Attention to Detail	1.C.5.b
+https://onet.org.ai/WorkStyle/Integrity	https://onet.org.ai/WorkStyle	https://onet.org.ai	Integrity	Integrity	1.C.5.c
+https://onet.org.ai/WorkStyle/Independence	https://onet.org.ai/WorkStyle	https://onet.org.ai	Independence	Independence	1.C.6
+https://onet.org.ai/WorkStyle/Innovation	https://onet.org.ai/WorkStyle	https://onet.org.ai	Innovation	Innovation	1.C.7.a
+https://onet.org.ai/WorkStyle/Analytical_Thinking	https://onet.org.ai/WorkStyle	https://onet.org.ai	Analytical Thinking	Analytical Thinking	1.C.7.b

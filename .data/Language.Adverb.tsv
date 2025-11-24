@@ -1,3 +1,128 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7caab0ed020909e50e193ab087fb06f98df48795039a8908ffdd61b4adf7d20c
-size 16118
+$id	$type	$context	name	description	code	category	examples
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an accurate manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an active manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in fact; really		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		as an additional factor		Addition	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an adequate manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at a later time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		not quite; very nearly		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		before now; by this time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in addition; too		Addition	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at all times; on all occasions		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		once a year		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		as far as one knows		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an appropriate manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		close to; about		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an automatic manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in the most essential respects		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		for a short time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a careful manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		without doubt		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a clear manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a close manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		usually; often		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		totally; entirely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		as a result		Cause/Effect	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a consistent manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		continuously; all the time		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		without stopping		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a correct manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at the present time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		every day		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		without doubt		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a direct manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		without difficulty		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an effective manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an efficient manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		completely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		particularly; to a great extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		fundamentally; basically		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in the end; finally		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		precisely; accurately		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		only; solely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a very great degree		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		after a long time; at last		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		often; regularly		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		completely; entirely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		usually; in most cases		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a high degree		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at once; instantly		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		more and more		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an independent manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at first; at the beginning		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		on the inside; within		Location	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a great extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		probably		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		for the most part; chiefly		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		by hand; not automatically		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		once a month		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		as a necessary result		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at no time		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		usually; ordinarily		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at the present time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in an obvious manner		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		sometimes; now and then		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		frequently		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		exclusively; solely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at first; initially		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		taking everything into account		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		especially; to a great extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to some extent; not completely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a permanent manner		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a personal manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		possibly; with potential		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		exactly; accurately		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		mainly; for the most part		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		before; earlier		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		mainly; chiefly		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		most likely		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a proper manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at a fast speed		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a certain extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		not often		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to some extent; quite		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		easily; without difficulty		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in fact; actually		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		not long ago		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at regular intervals		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in relation to something else		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		again and again		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		as part of a routine		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a safe manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		rarely; not often		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		individually; apart		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a serious manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a significant manner		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a similar manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a simple manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at the same time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a small degree		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at a slow speed		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		occasionally		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in the near future		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a specific manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a strong manner		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		after; following		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a great extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a successful manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		quickly and unexpectedly		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a sufficient extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a systematic manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		for a limited time		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		at that time; next		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a thorough manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		on this day		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		with each other		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		on the day after today		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		completely; entirely		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a traditional manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		usually; in most cases		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		finally; in the end		Time	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		regrettably; unluckily		Certainty	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in most cases; generally		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a high degree		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		almost; nearly		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		once a week		Frequency	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		in a good manner		Manner	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		to a great extent		Degree	
+https://language.org.ai/Adverb/undefined	https://language.org.ai/Adverb	https://language.org.ai		on the day before today		Time	

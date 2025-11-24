@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4becdb33063e01a37278813598b3eae98700fcc49824567aa8680711d14d82c7
-size 4861
+$id	$type	$context	name	description	code
+https://onet.org.ai/Knowledge/Administration_and_Management	https://onet.org.ai/Knowledge	https://onet.org.ai	Administration and Management	Administration and Management	2.C.1.a
+https://onet.org.ai/Knowledge/Administrative	https://onet.org.ai/Knowledge	https://onet.org.ai	Administrative	Administrative	2.C.1.b
+https://onet.org.ai/Knowledge/Economics_and_Accounting	https://onet.org.ai/Knowledge	https://onet.org.ai	Economics and Accounting	Economics and Accounting	2.C.1.c
+https://onet.org.ai/Knowledge/Sales_and_Marketing	https://onet.org.ai/Knowledge	https://onet.org.ai	Sales and Marketing	Sales and Marketing	2.C.1.d
+https://onet.org.ai/Knowledge/Customer_and_Personal_Service	https://onet.org.ai/Knowledge	https://onet.org.ai	Customer and Personal Service	Customer and Personal Service	2.C.1.e
+https://onet.org.ai/Knowledge/Personnel_and_Human_Resources	https://onet.org.ai/Knowledge	https://onet.org.ai	Personnel and Human Resources	Personnel and Human Resources	2.C.1.f
+https://onet.org.ai/Knowledge/Production_and_Processing	https://onet.org.ai/Knowledge	https://onet.org.ai	Production and Processing	Production and Processing	2.C.2.a
+https://onet.org.ai/Knowledge/Food_Production	https://onet.org.ai/Knowledge	https://onet.org.ai	Food Production	Food Production	2.C.2.b
+https://onet.org.ai/Knowledge/Computers_and_Electronics	https://onet.org.ai/Knowledge	https://onet.org.ai	Computers and Electronics	Computers and Electronics	2.C.3.a
+https://onet.org.ai/Knowledge/Engineering_and_Technology	https://onet.org.ai/Knowledge	https://onet.org.ai	Engineering and Technology	Engineering and Technology	2.C.3.b
+https://onet.org.ai/Knowledge/Design	https://onet.org.ai/Knowledge	https://onet.org.ai	Design	Design	2.C.3.c
+https://onet.org.ai/Knowledge/Building_and_Construction	https://onet.org.ai/Knowledge	https://onet.org.ai	Building and Construction	Building and Construction	2.C.3.d
+https://onet.org.ai/Knowledge/Mechanical	https://onet.org.ai/Knowledge	https://onet.org.ai	Mechanical	Mechanical	2.C.3.e
+https://onet.org.ai/Knowledge/Mathematics	https://onet.org.ai/Knowledge	https://onet.org.ai	Mathematics	Mathematics	2.C.4.a
+https://onet.org.ai/Knowledge/Physics	https://onet.org.ai/Knowledge	https://onet.org.ai	Physics	Physics	2.C.4.b
+https://onet.org.ai/Knowledge/Chemistry	https://onet.org.ai/Knowledge	https://onet.org.ai	Chemistry	Chemistry	2.C.4.c
+https://onet.org.ai/Knowledge/Biology	https://onet.org.ai/Knowledge	https://onet.org.ai	Biology	Biology	2.C.4.d
+https://onet.org.ai/Knowledge/Psychology	https://onet.org.ai/Knowledge	https://onet.org.ai	Psychology	Psychology	2.C.4.e
+https://onet.org.ai/Knowledge/Sociology_and_Anthropology	https://onet.org.ai/Knowledge	https://onet.org.ai	Sociology and Anthropology	Sociology and Anthropology	2.C.4.f
+https://onet.org.ai/Knowledge/Geography	https://onet.org.ai/Knowledge	https://onet.org.ai	Geography	Geography	2.C.4.g
+https://onet.org.ai/Knowledge/Medicine_and_Dentistry	https://onet.org.ai/Knowledge	https://onet.org.ai	Medicine and Dentistry	Medicine and Dentistry	2.C.5.a
+https://onet.org.ai/Knowledge/Therapy_and_Counseling	https://onet.org.ai/Knowledge	https://onet.org.ai	Therapy and Counseling	Therapy and Counseling	2.C.5.b
+https://onet.org.ai/Knowledge/Education_and_Training	https://onet.org.ai/Knowledge	https://onet.org.ai	Education and Training	Education and Training	2.C.6
+https://onet.org.ai/Knowledge/English_Language	https://onet.org.ai/Knowledge	https://onet.org.ai	English Language	English Language	2.C.7.a
+https://onet.org.ai/Knowledge/Foreign_Language	https://onet.org.ai/Knowledge	https://onet.org.ai	Foreign Language	Foreign Language	2.C.7.b
+https://onet.org.ai/Knowledge/Fine_Arts	https://onet.org.ai/Knowledge	https://onet.org.ai	Fine Arts	Fine Arts	2.C.7.c
+https://onet.org.ai/Knowledge/History_and_Archeology	https://onet.org.ai/Knowledge	https://onet.org.ai	History and Archeology	History and Archeology	2.C.7.d
+https://onet.org.ai/Knowledge/Philosophy_and_Theology	https://onet.org.ai/Knowledge	https://onet.org.ai	Philosophy and Theology	Philosophy and Theology	2.C.7.e
+https://onet.org.ai/Knowledge/Public_Safety_and_Security	https://onet.org.ai/Knowledge	https://onet.org.ai	Public Safety and Security	Public Safety and Security	2.C.8.a
+https://onet.org.ai/Knowledge/Law_and_Government	https://onet.org.ai/Knowledge	https://onet.org.ai	Law and Government	Law and Government	2.C.8.b
+https://onet.org.ai/Knowledge/Telecommunications	https://onet.org.ai/Knowledge	https://onet.org.ai	Telecommunications	Telecommunications	2.C.9.a
+https://onet.org.ai/Knowledge/Communications_and_Media	https://onet.org.ai/Knowledge	https://onet.org.ai	Communications and Media	Communications and Media	2.C.9.b
+https://onet.org.ai/Knowledge/Transportation	https://onet.org.ai/Knowledge	https://onet.org.ai	Transportation	Transportation	2.C.10

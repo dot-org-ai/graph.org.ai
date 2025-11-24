@@ -1,3 +1,58 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ed0d53ff4d27d7798fc6c96cfb44f6ce16cb1ded3353751dce880a3f8681445f
-size 7820
+$id	$type	$context	name	description	code	category	examples
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person singular		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person singular		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person singular possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person singular possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person singular reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person plural		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person plural		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person plural possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person plural possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		first person plural reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		second person		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		second person possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		second person possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		second person singular reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		second person plural reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular masculine		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular masculine		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular masculine possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular masculine reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular feminine		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular feminine		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular feminine possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular feminine reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular neuter		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular neuter possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person singular neuter reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person plural		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person plural		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person plural possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person plural possessive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		third person plural reflexive		Personal	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		refers to something nearby		Demonstrative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		refers to something distant		Demonstrative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		plural of this		Demonstrative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		plural of that		Demonstrative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		refers to people (subject)		Interrogative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		refers to people (object)		Interrogative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		possession		Interrogative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		refers to things		Interrogative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		choice between alternatives		Interrogative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		introduces relative clause (people)		Relative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		introduces relative clause (people)		Relative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		possession (relative)		Relative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		introduces relative clause (things)		Relative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		introduces relative clause		Relative	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		any person		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		any person		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		any thing		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		all people		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		all people		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		all things		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		not anyone		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		not anybody		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		not anything		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		some person		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		some person		Indefinite	
+https://language.org.ai/Pronoun/undefined	https://language.org.ai/Pronoun	https://language.org.ai		some thing		Indefinite	

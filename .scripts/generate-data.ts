@@ -82,13 +82,13 @@ function writeRelationshipsTSV(filePath: string, relationships: any[]): void {
 }
 
 /**
- * Create URL-safe identifier from name
+ * Create Wikipedia-style identifier from name (replace spaces with underscores)
  */
 function createId(name: string): string {
   return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
+    .replace(/ /g, '_')
+    .replace(/\//g, '_')
+    .replace(/\?/g, '')
 }
 
 // ============================================================================
@@ -141,7 +141,7 @@ function generateSchemaOrgData(): void {
       const fromClass = typesData.find(t => t.code === row.id)
       if (fromClass) {
         relationships.push({
-          ns: 'schema',
+          ns: 'schema.org.ai',
           from: fromClass.$id,
           predicate: 'subClassOf',
           reverse: 'superClassOf',
@@ -159,7 +159,7 @@ function generateSchemaOrgData(): void {
         const domains = row.domainIncludes.split(',').map((d: string) => d.trim())
         domains.forEach((domain: string) => {
           relationships.push({
-            ns: 'schema',
+            ns: 'schema.org.ai',
             from: prop.$id,
             predicate: 'domainIncludes',
             reverse: 'hasProperty',
@@ -417,7 +417,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'requiresSkill',
           reverse: 'skillFor',
@@ -433,7 +433,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'requiresKnowledge',
           reverse: 'knowledgeFor',
@@ -449,7 +449,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'requiresAbility',
           reverse: 'abilityFor',
@@ -465,7 +465,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'involvesActivity',
           reverse: 'activityOf',
@@ -481,7 +481,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'hasTask',
           reverse: 'taskOf',
@@ -498,7 +498,7 @@ function generateONETData(): void {
       if (occupation) {
         const id = `${row.commodityCode}-${createId(row.example)}`
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'usesTechnology',
           reverse: 'technologyFor',
@@ -515,7 +515,7 @@ function generateONETData(): void {
       if (occupation) {
         const id = `${row.commodityCode}-${createId(row.example)}`
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'usesTool',
           reverse: 'toolFor',
@@ -531,7 +531,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'requiresWorkStyle',
           reverse: 'workStyleFor',
@@ -547,7 +547,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'alignsWithValue',
           reverse: 'valueOf',
@@ -563,7 +563,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'matchesInterest',
           reverse: 'interestOf',
@@ -579,7 +579,7 @@ function generateONETData(): void {
       const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
       if (occupation) {
         relationships.push({
-          ns: 'onet',
+          ns: 'onet.org.ai',
           from: occupation.$id,
           predicate: 'hasContext',
           reverse: 'contextOf',
@@ -862,12 +862,12 @@ function generateLanguageData(): void {
 }
 
 /**
- * Generate GeoNames.org.ai data
+ * Generate Places.org.ai data (from GeoNames source)
  */
-function generateGeoNamesData(): void {
-  console.log('\n📊 Generating GeoNames.org.ai data...')
+function generatePlacesData(): void {
+  console.log('\n📊 Generating Places.org.ai data...')
 
-  const domain = 'https://geonames.org.ai'
+  const domain = 'https://places.org.ai'
 
   // US States
   const statesFile = path.join(SOURCE_DIR, 'GeoNames/GeoNames.US.States.tsv')
@@ -875,7 +875,7 @@ function generateGeoNamesData(): void {
     const statesSource = parseTSV(statesFile)
     const statesData = statesSource.map(row => ({
       $id: `${domain}/State/${row.code}`,
-      $type: 'https://geonames.org.ai/State',
+      $type: 'https://places.org.ai/State',
       $context: domain,
       name: row.name,
       description: row.nameAscii || row.name,
@@ -884,7 +884,7 @@ function generateGeoNamesData(): void {
       admin1Code: row.admin1Code || '',
       geonameId: row.geonameId || '',
     }))
-    writeTSV(path.join(DATA_DIR, 'GeoNames.State.tsv'), statesData)
+    writeTSV(path.join(DATA_DIR, 'Places.State.tsv'), statesData)
   }
 
   // Country Info
@@ -895,7 +895,7 @@ function generateGeoNamesData(): void {
       .filter(row => row.iSO && row.country)
       .map(row => ({
         $id: `${domain}/Country/${row.iSO}`,
-        $type: 'https://geonames.org.ai/Country',
+        $type: 'https://places.org.ai/Country',
         $context: domain,
         name: row.country,
         description: row.country,
@@ -907,7 +907,7 @@ function generateGeoNamesData(): void {
         capital: row.capital || '',
         geonameId: row.geonameid || '',
       }))
-    writeTSV(path.join(DATA_DIR, 'GeoNames.Country.tsv'), countryData)
+    writeTSV(path.join(DATA_DIR, 'Places.Country.tsv'), countryData)
   }
 }
 
@@ -927,7 +927,7 @@ async function main(): Promise<void> {
   generateUNSPSCData()
   generateGS1Data()
   generateLanguageData()
-  generateGeoNamesData()
+  generatePlacesData()
 
   console.log('\n' + '='.repeat(80))
   console.log('✅ Data generation complete!')
@@ -948,5 +948,5 @@ export {
   generateUNSPSCData,
   generateGS1Data,
   generateLanguageData,
-  generateGeoNamesData,
+  generatePlacesData,
 }
