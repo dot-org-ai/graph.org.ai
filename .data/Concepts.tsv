@@ -1,0 +1,60 @@
+id	description	baseNoun	modifiers	category	source	occupations	industries	processes	tasks
+LongTermVision	Strategic direction and goals extending beyond immediate horizons	Vision	long-term	Strategic Planning	APQC PCF 7.0			Define the business concept and long-term vision	
+BusinessConcept	Fundamental idea or model underlying a business operation	Concept	business	Strategic Planning	APQC PCF 7.0			Define the business concept and long-term vision	
+ExternalEnvironment	Forces, entities, and systems outside an organization	Environment	external	Strategic Analysis	APQC PCF 7.0			Assess the external environment	
+InternalEnvironment	Organization's in-house skills, resources and capabilities	Environment	internal	Strategic Analysis	APQC PCF 7.0			Assess the internal environment	
+CustomerNeeds	Requirements and desires of customers for products/services	Needs	customer	Market Research	APQC PCF 7.0			Survey market and determine customer needs and wants	
+IntellectualProperty	Creations of the mind with commercial value	Property	intellectual	Legal	APQC PCF 7.0			Evaluate intellectual property	
+WorkingCapital	Financial metrics measuring operational efficiency	Capital	working	Finance	APQC PCF 7.0			Manage working capital	
+SupplyChain	Network between company and suppliers to produce and distribute	Chain	supply	Operations	APQC PCF 7.0			Manage supply chain	
+HumanResources	Department managing employee-related functions	Resources	human	HR	APQC PCF 7.0			Manage human resources	
+DataSecurity	Protection of digital information from unauthorized access	Security	data	Information Technology	APQC PCF 7.0			Manage data security	
+ProductDevelopment	Process of bringing new products to market	Development	product	Innovation	APQC PCF 7.0			Manage product development	
+ServiceDelivery	Process of providing services to customers	Delivery	service	Operations	APQC PCF 7.0			Manage service delivery	
+FinancialPerformance	Measure of how well a firm uses assets to generate revenue	Performance	financial	Finance	APQC PCF 7.0			Monitor financial performance	
+RiskManagement	Identification, assessment, and prioritization of risks	Management	risk	Governance	APQC PCF 7.0	ElectronicsCompanies		Implement risk management	
+QualityControl	Process ensuring products/services meet requirements	Control	quality	Operations	APQC PCF 7.0			Implement quality control	
+ChangeManagement	Structured approach to transitioning organizations	Management	change	Organizational Development	APQC PCF 7.0			Manage organizational change	
+PerformanceManagement	System for monitoring and improving organizational/employee performance	Management	performance	Operations	APQC PCF 7.0			Develop performance management processes	
+CustomerService	Assistance and advice provided to customers	Service	customer	Customer Relations	APQC PCF 7.0	AerospaceCompanies		Manage customer service operations	
+ProjectManagement	Application of knowledge and skills to achieve project objectives	Management	project	Operations	APQC PCF 7.0			Manage project execution	
+ProtectionEquipment	Devices or gear used to protect workers from hazards	Equipment	protection	Safety	ONET		ONET	Maintain respiratory protection equipment
+RespiratoryProtectionEquipment	Devices protecting workers from airborne hazards	Equipment	respiratory protection	Safety	ONET		ONET	Maintain respiratory protection equipment
+AerospaceVehicles	Aircraft and spacecraft used for air and space travel	Vehicles	aerospace	Aviation	ONET		ONET	Develop autonomous systems for uncrewed aerospace vehicles
+ResearchFindings	Results and conclusions from research studies	Findings	research	Research	ONET		ONET	Write, present, and publish research findings
+RemedialActions	Corrective measures taken to fix problems	Actions	remedial	Quality	ONET		ONET	Recommend or perform remedial actions
+GovernmentLeaders	Officials and leaders in government organizations	Leaders	government	Government	ONET	ESLInstructors	ONET	Confer with leaders of government
+CommunityLeaders	Leaders of community organizations and groups	Leaders	community	Community	ONET	ESLInstructors	ONET	Confer with leaders of community groups
+CustomerInteractions	Exchanges and communications between customers and organization	Interactions	customer	Customer Service	APQC		cross-industry	Monitor quality of customer interactions
+StaffPerformance	How well employees execute their job responsibilities	Performance	staff	Human Resources	APQC		cross-industry	Determine performance of company staff
+CompanyStaff	Employees working for the company	Staff	company	Human Resources	APQC		cross-industry	Performance of company staff
+CapitalAllocation	Distribution of financial resources across investments	Allocation	capital	Finance	APQC		petroleum-downstream,cross-industry	Within established capital allocation
+RiskLimits	Maximum acceptable levels of risk exposure	Limits	risk	Risk Management	APQC		petroleum-downstream,cross-industry	Within established risk limits
+TradingStrategy	Plan for executing trades to achieve objectives	Strategy	trading	Finance	APQC		petroleum-downstream,cross-industry	Consistent with trading strategy
+StudentAchievement	Measured learning outcomes of students	Achievement	student	Education	APQC		education	Actual student achievement
+AchievementTargets	Goals set for performance and accomplishment	Targets	achievement	Performance Management	APQC		education	Achievement targets or expectations
+PotentialValue	Estimated worth or benefit that could be realized	Value	potential	Finance	APQC		petroleum-downstream,utilities,cross-industry	Discover potential value in opportunities
+RegulatoryCapitalRequirements	Minimum capital levels mandated by regulators	Requirements	regulatory capital	Finance	APQC		property-and-casualty-insurance	Calculate regulatory capital requirements
+CreditRisks	Possibility of loss from borrower default	Risks	credit	Risk Management	APQC		property-and-casualty-insurance	Credit risks according to regulations
+IndustryRegulations	Rules and standards governing an industry sector	Regulations	industry	Compliance	APQC		property-and-casualty-insurance,cross-industry	According to industry regulations
+NationalLegislation	Laws enacted at the country level	Legislation	national	Legal	APQC		property-and-casualty-insurance	According to national legislation
+InnovationStrategies	Plans for developing new products or approaches	Strategies	innovation	Strategy	APQC		education,cross-industry	Develop innovation strategies
+StakeholderExpectations	What stakeholders anticipate or require	Expectations	stakeholder	Governance	APQC		education	Meet stakeholder expectations
+EducationalPrograms	Structured courses of study and instruction	Programs	educational	Education	APQC		education	Educational programs and support services
+SupportServices	Auxiliary services that enable core operations	Services	support	Operations	APQC		education	Educational programs and support services
+FederalTestingAgencies	Government bodies overseeing standardized tests	Agencies	federal testing	Education	APQC		education	Federal testing agencies or test publishers
+TestPublishers	Companies that create and distribute assessments	Publishers	test	Education	APQC		education	Test publishers on quality issues
+QualityIssues	Problems affecting standard or excellence	Issues	quality	Quality Control	APQC		education,cross-industry	Quality issues and needed improvements
+SuccessfulResponse	Answer or reaction that meets criteria	Response	successful	Performance	APQC		education	Requirements for successful response
+ScoringCriteria	Standards used to evaluate performance	Criteria	scoring	Assessment	APQC		education	Scoring criteria for performance tasks
+PerformanceTasks	Activities designed to demonstrate competency	Tasks	performance	Assessment	APQC		education	Performance tasks and open-ended items
+CommunicationMechanisms	Systems or methods for exchanging information	Mechanisms	communication	Operations	APQC		education	Communication mechanisms for students
+CaseManagementProcess	Coordinated approach to handling individual cases	Process	case management	Operations	APQC		education	Case management process to streamline
+ServicesDuplication	Unnecessary repetition of service provision	Duplication	services	Operations	APQC		education	Avoid duplication of services
+ComponentBlend	Mixture of elements combined for specific result	Blend	component	Manufacturing	APQC		petroleum-downstream	Component blend meets specifications
+ProductSpecifications	Detailed requirements for a product	Specifications	product	Quality	APQC		petroleum-downstream,cross-industry	Product specifications and regulatory standards
+RegulatoryStandards	Official requirements set by governing bodies	Standards	regulatory	Compliance	APQC		petroleum-downstream,cross-industry	Regulatory standards for products
+HydroelectricFacility	Power generation facility using water	Facility	hydroelectric	Energy	ONET	HydroelectricProductionManagers		Supervise hydroelectric facility operations
+GenerationEquipment	Machinery used to generate power	Equipment	generation	Energy	ONET	HydroelectricProductionManagers		Generation equipment conform to regulations
+MechanicalEquipment	Machinery and mechanical systems	Equipment	mechanical	Operations	ONET	HydroelectricProductionManagers		Mechanical equipment conform to regulations
+MaterialsPrices	Cost of raw materials and supplies	Prices	materials	Procurement	ONET	IndustrialProductionManagers		Negotiate materials prices with suppliers
