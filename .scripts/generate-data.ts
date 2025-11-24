@@ -89,6 +89,8 @@ function createId(name: string): string {
     .replace(/ /g, '_')
     .replace(/\//g, '_')
     .replace(/\?/g, '')
+    .replace(/"/g, '')  // Remove quotes
+    .replace(/'/g, '')  // Remove single quotes
 }
 
 /**
