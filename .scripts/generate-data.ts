@@ -270,6 +270,144 @@ function generateONETData(): void {
   })
   writeTSV(path.join(DATA_DIR, 'ONET.WorkActivity.tsv'), Array.from(uniqueActivities.values()))
 
+  // Tasks
+  const tasksSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.TaskStatements.tsv'))
+  const uniqueTasks = new Map<string, any>()
+
+  tasksSource.forEach(row => {
+    const id = row.taskID
+    if (!uniqueTasks.has(id)) {
+      uniqueTasks.set(id, {
+        $id: `${domain}/Task/${id}`,
+        $type: 'https://onet.org.ai/Task',
+        $context: domain,
+        name: row.task,
+        description: row.task,
+        code: row.taskID,
+        taskType: row.taskType || '',
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.Task.tsv'), Array.from(uniqueTasks.values()))
+
+  // Technology Skills
+  const technologySource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.TechnologySkills.tsv'))
+  const uniqueTechnology = new Map<string, any>()
+
+  technologySource.forEach(row => {
+    const id = `${row.commodityCode}-${createId(row.example)}`
+    if (!uniqueTechnology.has(id)) {
+      uniqueTechnology.set(id, {
+        $id: `${domain}/Technology/${id}`,
+        $type: 'https://onet.org.ai/Technology',
+        $context: domain,
+        name: row.example,
+        description: row.commodityTitle || row.example,
+        code: row.commodityCode,
+        commodityTitle: row.commodityTitle || '',
+        hotTechnology: row.hotTechnology === 'Y',
+        inDemand: row.inDemand === 'Y',
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.Technology.tsv'), Array.from(uniqueTechnology.values()))
+
+  // Tools Used
+  const toolsSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.ToolsUsed.tsv'))
+  const uniqueTools = new Map<string, any>()
+
+  toolsSource.forEach(row => {
+    const id = `${row.commodityCode}-${createId(row.example)}`
+    if (!uniqueTools.has(id)) {
+      uniqueTools.set(id, {
+        $id: `${domain}/Tool/${id}`,
+        $type: 'https://onet.org.ai/Tool',
+        $context: domain,
+        name: row.example,
+        description: row.commodityTitle || row.example,
+        code: row.commodityCode,
+        commodityTitle: row.commodityTitle || '',
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.Tool.tsv'), Array.from(uniqueTools.values()))
+
+  // Work Styles
+  const workStylesSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.WorkStyles.tsv'))
+  const uniqueWorkStyles = new Map<string, any>()
+
+  workStylesSource.forEach(row => {
+    const id = row.elementID
+    if (!uniqueWorkStyles.has(id)) {
+      uniqueWorkStyles.set(id, {
+        $id: `${domain}/WorkStyle/${createId(row.elementName)}`,
+        $type: 'https://onet.org.ai/WorkStyle',
+        $context: domain,
+        name: row.elementName,
+        description: row.elementName,
+        code: row.elementID,
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.WorkStyle.tsv'), Array.from(uniqueWorkStyles.values()))
+
+  // Work Values
+  const workValuesSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.WorkValues.tsv'))
+  const uniqueWorkValues = new Map<string, any>()
+
+  workValuesSource.forEach(row => {
+    const id = row.elementID
+    if (!uniqueWorkValues.has(id)) {
+      uniqueWorkValues.set(id, {
+        $id: `${domain}/WorkValue/${createId(row.elementName)}`,
+        $type: 'https://onet.org.ai/WorkValue',
+        $context: domain,
+        name: row.elementName,
+        description: row.elementName,
+        code: row.elementID,
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.WorkValue.tsv'), Array.from(uniqueWorkValues.values()))
+
+  // Interests
+  const interestsSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.Interests.tsv'))
+  const uniqueInterests = new Map<string, any>()
+
+  interestsSource.forEach(row => {
+    const id = row.elementID
+    if (!uniqueInterests.has(id)) {
+      uniqueInterests.set(id, {
+        $id: `${domain}/Interest/${createId(row.elementName)}`,
+        $type: 'https://onet.org.ai/Interest',
+        $context: domain,
+        name: row.elementName,
+        description: row.elementName,
+        code: row.elementID,
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.Interest.tsv'), Array.from(uniqueInterests.values()))
+
+  // Work Context
+  const workContextSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.WorkContext.tsv'))
+  const uniqueWorkContext = new Map<string, any>()
+
+  workContextSource.forEach(row => {
+    const id = row.elementID
+    if (!uniqueWorkContext.has(id)) {
+      uniqueWorkContext.set(id, {
+        $id: `${domain}/WorkContext/${createId(row.elementName)}`,
+        $type: 'https://onet.org.ai/WorkContext',
+        $context: domain,
+        name: row.elementName,
+        description: row.elementName,
+        code: row.elementID,
+      })
+    }
+  })
+  writeTSV(path.join(DATA_DIR, 'ONET.WorkContext.tsv'), Array.from(uniqueWorkContext.values()))
+
   // Generate relationships
   const relationships: any[] = []
 
@@ -332,6 +470,120 @@ function generateONETData(): void {
           predicate: 'involvesActivity',
           reverse: 'activityOf',
           to: `${domain}/WorkActivity/${createId(row.elementName)}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> Task relationships
+  tasksSource.forEach(row => {
+    if (row.oNETSOCCode && row.taskID) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'hasTask',
+          reverse: 'taskOf',
+          to: `${domain}/Task/${row.taskID}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> Technology relationships
+  technologySource.forEach(row => {
+    if (row.oNETSOCCode) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        const id = `${row.commodityCode}-${createId(row.example)}`
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'usesTechnology',
+          reverse: 'technologyFor',
+          to: `${domain}/Technology/${id}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> Tool relationships
+  toolsSource.forEach(row => {
+    if (row.oNETSOCCode) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        const id = `${row.commodityCode}-${createId(row.example)}`
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'usesTool',
+          reverse: 'toolFor',
+          to: `${domain}/Tool/${id}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> WorkStyle relationships
+  workStylesSource.forEach(row => {
+    if (row.oNETSOCCode && row.elementID) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'requiresWorkStyle',
+          reverse: 'workStyleFor',
+          to: `${domain}/WorkStyle/${createId(row.elementName)}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> WorkValue relationships
+  workValuesSource.forEach(row => {
+    if (row.oNETSOCCode && row.elementID) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'alignsWithValue',
+          reverse: 'valueOf',
+          to: `${domain}/WorkValue/${createId(row.elementName)}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> Interest relationships
+  interestsSource.forEach(row => {
+    if (row.oNETSOCCode && row.elementID) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'matchesInterest',
+          reverse: 'interestOf',
+          to: `${domain}/Interest/${createId(row.elementName)}`,
+        })
+      }
+    }
+  })
+
+  // Occupation -> WorkContext relationships
+  workContextSource.forEach(row => {
+    if (row.oNETSOCCode && row.elementID) {
+      const occupation = occupationsData.find(o => o.code === row.oNETSOCCode)
+      if (occupation) {
+        relationships.push({
+          ns: 'onet',
+          from: occupation.$id,
+          predicate: 'hasContext',
+          reverse: 'contextOf',
+          to: `${domain}/WorkContext/${createId(row.elementName)}`,
         })
       }
     }
