@@ -1,0 +1,1020 @@
+id	name	code	annual_mean	annual_median	annual_10th	annual_25th	annual_75th	annual_90th	hourly_mean	hourly_median	matched_onet
+ManagementOccupations	Management Occupations	110000	141760	122090	57010	79900	171610		68.15	58.7	false
+TopExecutives	Top Executives	111000	139860	104990	47510	68800	168490		67.24	50.48	false
+ChiefSustainabilityOfficers	Chief Sustainability Officers	111011	262930	206420	73710	126080			126.41	99.24	true
+OperationsManagers	General and Operations Managers	111021	133120	102950	47420	67160	164130		64	49.5	true
+Legislators	Legislators	111031	67390	44810	20380	29120	80350	137820			true
+AdvertisingMarketingPromotionsPublicRelationsandSalesManagers	Advertising, Marketing, Promotions, Public Relations, and Sales Managers	112000	163740	144530	73320	100740	204920		78.72	69.48	false
+PromotionsManagers	Advertising and Promotions Managers	112011	149270	126960	63000	85990	178570		71.76	61.04	true
+MarketingandSalesManagers	Marketing and Sales Managers	112020	165050	148870	73080	101200	206410		79.35	71.57	false
+MarketingManagers	Marketing Managers	112021	171520	161030	81900	111210	211080		82.46	77.42	true
+SalesManagers	Sales Managers	112022	160930	138060	66910	95910	201490		77.37	66.38	true
+PublicRelationsandFundraisingManagers	Public Relations and Fundraising Managers	112030	154950	132870	76870	99190	182080		74.49	63.88	false
+PublicRelationsManagers	Public Relations Managers	112032	163520	138520	78880	102300	198000		78.61	66.6	true
+FundraisingManagers	Fundraising Managers	112033	137290	123480	73700	92880	166420	216660	66.01	59.36	true
+OperationsSpecialtiesManagers	Operations Specialties Managers	113000	160590	140330	78600	103030	195490		77.21	67.46	false
+AdministrativeServicesandFacilitiesManagers	Administrative Services and Facilities Managers	113010	121920	106880	63940	82360	141650	188260	58.62	51.39	false
+AdministrativeServicesManagers	Administrative Services Managers	113012	126030	108390	64740	83660	147150	200010	60.59	52.11	true
+SecurityManagers	Security Managers	113013	114520	104690	62550	80150	135650	173080	55.06	50.33	true
+InformationSystemsManagers	Computer and Information Systems Managers	113021	187990	171200	104450	134350	216220		90.38	82.31	true
+InvestmentFundManagers	Investment Fund Managers	113031	180470	161700	86490	118360	214210		86.76	77.74	true
+HydroelectricProductionManagers	Hydroelectric Production Managers	113051	129180	121440	74900	94620	156330	197310	62.11	58.39	true
+PurchasingManagers	Purchasing Managers	113061	150630	139510	85500	107430	175460	219140	72.42	67.07	true
+SupplyChainManagers	Supply Chain Managers	113071	116010	102010	61200	78360	136050	180590	55.77	49.05	true
+BenefitsManagers	Compensation and Benefits Managers	113111	156230	140360	81660	105210	190890		75.11	67.48	true
+HumanResourcesManagers	Human Resources Managers	113121	160480	140030	83790	105590	189960		77.15	67.32	true
+DevelopmentManagers	Training and Development Managers	113131	140590	127090	75810	96110	169310	219990	67.59	61.1	true
+OtherManagementOccupations	Other Management Occupations	119000	121560	104030	54440	75640	154090	205860	58.44	50.01	false
+OtherAgriculturalManagers	Farmers, Ranchers, and Other Agricultural Managers	119013	97240	87980	51700	67970	115200	156530	46.75	42.3	true
+ConstructionManagers	Construction Managers	119021	119660	106980	65160	83480	139330	176990	57.53	51.43	true
+EducationandChildcareAdministrators	Education and Childcare Administrators	119030	109470	100650	55880	77100	131190	168460	52.63	48.39	false
+Daycare	Education and Childcare Administrators, Preschool and Daycare	119031	62640	56270	37060	45310	72690	96400	30.12	27.05	true
+EducationAdministratorsKindergartenThroughSecondary	Education Administrators, Kindergarten through Secondary	119032	113360	104070	72400	83840	132550	165820			true
+EducationAdministratorsPostsecondary	Education Administrators, Postsecondary	119033	124450	103960	63820	79880	140940	212420	59.83	49.98	true
+EducationAdministratorsAllOther	Education Administrators, All Other	119039	99460	89040	49490	65180	121720	158050	47.82	42.81	true
+ProductDevelopmentManagers	Biofuels/Biodiesel Technology and Product Development Managers	119041	175710	167740	111450	134930	207210		84.48	80.64	true
+FoodServiceManagers	Food Service Managers	119051	72370	65310	42380	53090	82300	105420	34.79	31.4	true
+EntertainmentandRecreationManagers	Entertainment and Recreation Managers	119070	88780	77650	46080	59450	102890	137940	42.68	37.33	false
+GamblingManagers	Gambling Managers	119071	102480	85580	51670	70190	120490	165220	49.27	41.14	true
+Gambling	Entertainment and Recreation Managers, Except Gambling	119072	87060	77180	45320	58380	101750	134680	41.86	37.11	true
+LodgingManagers	Lodging Managers	119081	77460	68130	39490	50040	90670	126990	37.24	32.76	true
+HealthServicesManagers	Medical and Health Services Managers	119111	137730	117960	69680	88560	162420	219080	66.22	56.71	true
+WaterResourceSpecialists	Water Resource Specialists	119121	173500	161180	79830	114110	214820		83.41	77.49	true
+MailSuperintendents	Postmasters and Mail Superintendents	119131	93760	92730	81430	87150	99590	109140	45.08	44.58	true
+CommunityAssociationManagers	Property, Real Estate, and Community Association Managers	119141	82720	66700	39360	49530	95760	141040	39.77	32.07	true
+CommunityServiceManagers	Social and Community Service Managers	119151	86100	78240	50020	62420	100600	129820	41.39	37.61	true
+EmergencyManagementDirectors	Emergency Management Directors	119161	97700	86130	51260	64470	119690	160420	46.97	41.41	true
+PersonalServiceManagers	Personal Service Managers	119170	78970	70560	40670	52070	95420	124950	37.97	33.92	false
+FuneralHomeManagers	Funeral Home Managers	119171	85650	76830	45820	59780	99330	132470	41.18	36.94	true
+SpaManagers	Spa Managers	119179	70620	61340	36880	47670	82890	111130	33.95	29.49	true
+SiteManagers	Brownfield Redevelopment Specialists and Site Managers	119199	149890	136550	68860	100010	179190	227590	72.06	65.65	true
+BusinessandFinancialOperationsOccupations	Business and Financial Operations Occupations	130000	93680	80920	47310	61430	109370	150040	45.04	38.9	false
+BusinessOperationsSpecialists	Business Operations Specialists	131000	91020	80410	46690	60690	108270	143140	43.76	38.66	false
+Athletes	Agents and Business Managers of Artists, Performers, and Athletes	131011	165600	96310	48530	63100	168850		79.62	46.3	true
+BuyersandPurchasingAgents	Buyers and Purchasing Agents	131020	81720	75650	46460	58670	99190	127520	39.29	36.37	false
+ClaimsAdjustersAppraisersExaminersandInvestigators	Claims Adjusters, Appraisers, Examiners, and Investigators	131030	78720	76790	47860	60220	95860	111360	37.85	36.92	false
+Investigators	Claims Adjusters, Examiners, and Investigators	131031	61680	52370	37250	41940	75310	98770	29.65	25.18	true
+InsuranceAppraisersAutoDamage	Insurance Appraisers, Auto Damage	131032	77050	76650	56690	64280	86430	101800	37.04	36.85	true
+CustomsBrokers	Customs Brokers	131041	84980	78420	46230	59130	104800	130030	40.86	37.7	true
+CostEstimators	Cost Estimators	131051	83160	77070	46330	59830	99630	128640	39.98	37.05	true
+HumanResourcesWorkers	Human Resources Workers	131070	80860	74220	45560	56540	98470	128180	38.88	35.68	false
+HumanResourcesSpecialists	Human Resources Specialists	131071	79730	72910	45440	55870	97270	126540	38.33	35.05	true
+FarmLaborContractors	Farm Labor Contractors	131074	51910	48690	29800	32860	58250	86860	24.96	23.41	true
+LaborRelationsSpecialists	Labor Relations Specialists	131075	97130	93500	49880	67670	123090	153440	46.7	44.95	true
+LogisticiansandProjectManagementSpecialists	Logisticians and Project Management Specialists	131080	104210	98070	57540	74260	129100	162670	50.1	47.15	false
+LogisticsAnalysts	Logistics Analysts	131081	87600	80880	49260	62920	104330	132110	42.12	38.89	true
+ProjectManagementSpecialists	Project Management Specialists	131082	108100	100750	59830	76950	131660	165790	51.97	48.44	true
+ManagementAnalysts	Management Analysts	131111	114710	101190	59720	76770	133140	174140	55.15	48.65	true
+EventPlanners	Meeting, Convention, and Event Planners	131121	65090	59440	35990	45610	77150	101310	31.29	28.58	true
+Fundraisers	Fundraisers	131131	73130	66490	43200	52590	85280	106960	35.16	31.97	true
+JobAnalysisSpecialists	Compensation, Benefits, and Job Analysis Specialists	131141	82920	77020	48300	59700	99210	128830	39.86	37.03	true
+DevelopmentSpecialists	Training and Development Specialists	131151	73760	65850	37510	48900	91550	120190	35.46	31.66	true
+SearchMarketingStrategists	Search Marketing Strategists	131161	86480	76950	42070	56220	104870	144610	41.58	37	true
+SecurityManagementSpecialists	Security Management Specialists	131199	92380	81270	46230	60820	110030	147830	44.41	39.07	true
+FinancialSpecialists	Financial Specialists	132000	100090	82140	48960	63030	114220	162290	48.12	39.49	false
+Auditors	Accountants and Auditors	132011	93520	81680	52780	64660	106450	141420	44.96	39.27	true
+PropertyAppraisersandAssessors	Property Appraisers and Assessors	132020	77160	65420	38480	49310	90810	122760	37.1	31.45	false
+BudgetAnalysts	Budget Analysts	132031	93920	87930	60510	72240	110380	134640	45.15	42.27	true
+CreditAnalysts	Credit Analysts	132041	98040	80970	52930	63850	113850	168840	47.14	38.93	true
+FinancialAnalystsandAdvisors	Financial Analysts and Advisors	132050	128420	99990	57870	74840	137310	213800	61.74	48.07	false
+InvestmentAnalysts	Financial and Investment Analysts	132051	116490	101350	62410	78300	132050	180550	56.01	48.73	true
+PersonalFinancialAdvisors	Personal Financial Advisors	132052	160210	102140	49990	70620	172540		77.02	49.11	true
+InsuranceUnderwriters	Insurance Underwriters	132053	90830	79880	51640	63070	104820	138020	43.67	38.4	true
+FinancialRiskSpecialists	Financial Risk Specialists	132054	119930	106000	62270	80280	145020	182310	57.66	50.96	true
+FinancialExaminers	Financial Examiners	132061	103650	90400	53420	66800	127210	171540	49.83	43.46	true
+CreditCounselorsandLoanOfficers	Credit Counselors and Loan Officers	132070	83360	69040	38550	49470	100090	138030	40.08	33.19	false
+CreditCounselors	Credit Counselors	132071	55890	50480	38980	45420	61760	77920	26.87	24.27	true
+LoanOfficers	Loan Officers	132072	86020	74180	38490	50460	101920	145780	41.35	35.66	true
+TaxExaminersCollectorsandPreparersandRevenueAgents	Tax Examiners, Collectors and Preparers, and Revenue Agents	132080	62530	56160	34770	41540	77130	100410	30.06	27	false
+RevenueAgents	Tax Examiners and Collectors, and Revenue Agents	132081	67570	59740	40020	46820	79330	110300	32.49	28.72	true
+TaxPreparers	Tax Preparers	132082	58860	50560	30500	37750	75590	96240	28.3	24.31	true
+Analysts	Fraud Examiners, Investigators and Analysts	132099	93890	80190	46420	60140	109120	151780	45.14	38.55	true
+ComputerandMathematicalOccupations	Computer and Mathematical Occupations	150000	116810	105850	54100	76350	146650	180110	56.16	50.89	false
+ComputerOccupations	Computer Occupations	151200	116770	105990	53340	76180	147220	180110	56.14	50.96	false
+ComputerandInformationAnalysts	Computer and Information Analysts	151210	116130	106890	64450	82550	137190	170060	55.83	51.39	false
+HealthInformaticsSpecialists	Health Informatics Specialists	151211	111960	103790	63160	80900	132360	166030	53.83	49.9	true
+InformationSecurityAnalysts	Information Security Analysts	151212	127730	124910	69660	92160	159600	186420	61.41	60.05	true
+InformationResearchScientists	Computer and Information Research Scientists	151221	152310	140910	80670	102710	181210	232120	73.23	67.74	true
+ComputerSupportSpecialists	Computer Support Specialists	151230	67530	61550	39520	48290	79020	101310	32.47	29.59	false
+ComputerNetworkSupportSpecialists	Computer Network Support Specialists	151231	79610	73340	46010	56720	95710	124470	38.27	35.26	true
+ComputerUserSupportSpecialists	Computer User Support Specialists	151232	64990	60340	38780	47580	77010	98010	31.25	29.01	true
+DatabaseandNetworkAdministratorsandArchitects	Database and Network Administrators and Architects	151240	115840	107480	63580	81390	138940	172190	55.69	51.67	false
+TelecommunicationsEngineeringSpecialists	Telecommunications Engineering Specialists	151241	135890	130390	79520	102120	164440	198030	65.33	62.69	true
+DatabaseAdministrators	Database Administrators	151242	107440	104620	56820	76100	132850	160890	51.65	50.3	true
+DataWarehousingSpecialists	Data Warehousing Specialists	151243	142620	135980	81630	107900	169480	209990	68.57	65.37	true
+ComputerSystemsAdministrators	Network and Computer Systems Administrators	151244	101190	96800	60320	75860	123390	150320	48.65	46.54	true
+SoftwareandWebDevelopersProgrammersandTesters	Software and Web Developers, Programmers, and Testers	151250	135910	129320	71740	97560	165910	207830	65.34	62.17	false
+ComputerProgrammers	Computer Programmers	151251	103640	98670	52190	71860	128960	162090	49.83	47.44	true
+SoftwareDevelopers	Software Developers	151252	144570	133080	79850	103050	169000	211450	69.5	63.98	true
+Testers	Software Quality Assurance Analysts and Testers	151253	110260	102610	60690	79520	131870	166960	53.01	49.33	true
+WebDevelopers	Web Developers	151254	98790	90930	48560	63140	124300	162870	47.5	43.72	true
+VideoGameDesigners	Video Game Designers	151255	111450	98090	47840	64990	141860	192180	53.58	47.16	true
+InformationTechnologyProjectManagers	Information Technology Project Managers	151299	116700	108970	52650	76360	147530	176800	56.11	52.39	true
+MathematicalScienceOccupations	Mathematical Science Occupations	152000	117190	104620	60000	78300	140930	180180	56.34	50.3	false
+Actuaries	Actuaries	152011	134990	125770	75240	90970	164860	206430	64.9	60.47	true
+Mathematicians	Mathematicians	152021	122520	121680	63430	85720	153340	187660	58.91	58.5	true
+OperationsResearchAnalysts	Operations Research Analysts	152031	99120	91290	53910	66910	124120	159280	47.66	43.89	true
+Biostatisticians	Biostatisticians	152041	112330	103300	60390	79210	137610	170700	54.01	49.66	true
+ClinicalDataManagers	Clinical Data Managers	152051	124590	112590	63650	82630	155810	194410	59.9	54.13	true
+BioinformaticsTechnicians	Bioinformatics Technicians	152099	84700	71490	40330	52440	101920	154140	40.72	34.37	true
+ArchitectureandEngineeringOccupations	Architecture and Engineering Occupations	170000	103980	97310	55550	74040	128080	164360	49.99	46.79	false
+ArchitectsSurveyorsandCartographers	Architects, Surveyors, and Cartographers	171000	93330	82990	50410	64320	107020	139070	44.87	39.9	false
+ArchitectsExceptNaval	Architects, Except Naval	171010	101090	94010	59280	74280	120910	157600	48.6	45.2	false
+Naval	Architects, Except Landscape and Naval	171011	103390	96690	60510	76110	123300	159800	49.71	46.49	true
+LandscapeArchitects	Landscape Architects	171012	88000	79660	51990	62650	101580	132250	42.31	38.3	true
+SurveyorsCartographersandPhotogrammetrists	Surveyors, Cartographers, and Photogrammetrists	171020	77920	74120	44870	56480	95650	117910	37.46	35.64	false
+Photogrammetrists	Cartographers and Photogrammetrists	171021	82860	78380	50500	62860	99650	121440	39.84	37.68	true
+GeodeticSurveyors	Geodetic Surveyors	171022	76730	72740	43680	53590	94550	116330	36.89	34.97	true
+Engineers	Engineers	172000	116760	106070	70240	83570	137090	173010	56.13	50.99	false
+AerospaceEngineers	Aerospace Engineers	172011	141180	134830	85350	104740	174480	205850	67.88	64.82	true
+AgriculturalEngineers	Agricultural Engineers	172021	84240	84630	43020	49930	103940	132700	40.5	40.69	true
+BiomedicalEngineers	Bioengineers and Biomedical Engineers	172031	115020	106950	71860	86630	133570	165060	55.3	51.42	true
+ChemicalEngineers	Chemical Engineers	172041	128430	121860	78520	96040	152290	182150	61.75	58.59	true
+WaterWastewaterEngineers	Water/Wastewater Engineers	172051	107050	99590	65920	78790	128290	160990	51.47	47.88	true
+ComputerHardwareEngineers	Computer Hardware Engineers	172061	156770	155020	85430	115500	185380	223820	75.37	74.53	true
+ElectricalandElectronicsEngineers	Electrical and Electronics Engineers	172070	124810	118780	76190	92390	150530	181390	60	57.11	false
+ElectricalEngineers	Electrical Engineers	172071	120980	111910	74670	87590	141630	175460	58.16	53.8	true
+RadioFrequencyIdentificationDeviceSpecialists	Radio Frequency Identification Device Specialists	172072	132500	127590	79390	98920	164000	199060	63.7	61.34	true
+EnvironmentalEngineers	Environmental Engineers	172081	110570	104170	64950	80510	130830	161910	53.16	50.08	true
+IndustrialEngineersIncludingHealthandSafety	Industrial Engineers, Including Health and Safety	172110	108260	101490	69390	81990	127810	158310	52.05	48.79	false
+ProtectionEngineers	Fire-Prevention and Protection Engineers	172111	113770	109660	62050	85400	136150	166670	54.7	52.72	true
+ManufacturingEngineers	Manufacturing Engineers	172112	107900	101140	70000	81910	127480	157140	51.87	48.63	true
+NavalArchitects	Marine Engineers and Naval Architects	172121	116680	105670	79700	88480	133780	167660	56.1	50.8	true
+MaterialsEngineers	Materials Engineers	172131	116380	108310	68040	85820	138370	172000	55.95	52.07	true
+AutomotiveEngineers	Automotive Engineers	172141	110080	102320	68740	81800	130290	161240	52.92	49.19	true
+MiningSafetyEngineers	Mining and Geological Engineers, Including Mining Safety Engineers	172151	108940	101020	62500	81040	129860	163740	52.37	48.57	true
+NuclearEngineers	Nuclear Engineers	172161	134980	127520	88290	103010	157600	187430	64.89	61.31	true
+PetroleumEngineers	Petroleum Engineers	172171	153560	141280	78840	107330	191100	228790	73.83	67.92	true
+SolarEnergySystemsEngineers	Solar Energy Systems Engineers	172199	121720	117750	62840	85750	152670	183510	58.52	56.61	true
+DraftersEngineeringTechniciansandMappingTechnicians	Drafters, Engineering Technicians, and Mapping Technicians	173000	71540	66390	44480	53010	83360	103510	34.39	31.92	false
+Drafters	Drafters	173010	70760	65380	44960	54270	81250	101020	34.02	31.44	false
+CivilDrafters	Architectural and Civil Drafters	173011	68860	64280	44040	52880	79510	98190	33.11	30.9	true
+ElectronicsDrafters	Electrical and Electronics Drafters	173012	77960	73720	48680	58800	91780	110180	37.48	35.44	true
+MechanicalDrafters	Mechanical Drafters	173013	74040	68510	46500	56470	85580	107600	35.59	32.94	true
+DraftersAllOther	Drafters, All Other	173019	66530	62010	42170	50970	77750	96620	31.99	29.81	true
+EngineeringTechnologistsandTechniciansExceptDrafters	Engineering Technologists and Technicians, Except Drafters	173020	74100	70070	46300	56250	86200	106440	35.63	33.69	false
+Technicians	Aerospace Engineering and Operations Technologists and Technicians	173021	69940	62970	40670	48860	81900	105150	33.63	30.27	true
+RoboticsTechnicians	Robotics Technicians	173024	75710	70760	47770	58570	87320	109580	36.4	34.02	true
+AutomotiveEngineeringTechnicians	Automotive Engineering Technicians	173027	72450	68730	46940	57330	82980	100890	34.83	33.04	true
+PhotonicsTechnicians	Photonics Technicians	173029	79740	77390	47010	59700	97760	114630	38.34	37.21	true
+MappingTechnicians	Surveying and Mapping Technicians	173031	56890	51940	36910	44180	65240	80870	27.35	24.97	true
+LifePhysicalandSocialScienceOccupations	Life, Physical, and Social Science Occupations	190000	89690	78980	45480	59050	107440	145910	43.12	37.97	false
+LifeScientists	Life Scientists	191000	101980	90500	54430	67110	127520	163500	49.03	43.51	false
+AgriculturalandFoodScientists	Agricultural and Food Scientists	191010	88590	78770	47050	60900	104170	140080	42.59	37.87	false
+AnimalScientists	Animal Scientists	191011	104970	79120	48440	59610	128450	235750	50.47	38.04	true
+Technologists	Food Scientists and Technologists	191012	123070	117960	61990	82450	154900	191880	59.17	56.71	true
+PlantScientists	Soil and Plant Scientists	191013	83040	71410	45320	57950	98110	131440	39.92	34.33	true
+BiologicalScientists	Biological Scientists	191020	100730	93340	54120	67720	125990	161990	48.43	44.88	false
+Biophysicists	Biochemists and Biophysicists	191021	115570	103650	64890	78730	134460	168900	55.56	49.83	true
+Microbiologists	Microbiologists	191022	95200	87330	51220	63920	120750	150650	45.77	41.98	true
+WildlifeBiologists	Zoologists and Wildlife Biologists	191023	77920	72860	48240	58360	90590	113350	37.46	35.03	true
+Biologists	Biologists	191029	100440	93330	54500	67950	121350	159780	48.29	44.87	true
+ConservationScientistsandForesters	Conservation Scientists and Foresters	191030	74410	69060	45880	55500	87050	106660	35.77	33.2	false
+ParkNaturalists	Park Naturalists	191031	74310	67950	45260	53190	87980	107720	35.73	32.67	true
+Foresters	Foresters	191032	74670	70660	49240	58810	85450	103220	35.9	33.97	true
+MedicalScientists	Medical Scientists	191040	111430	99770	61770	76820	132900	167600	53.57	47.97	false
+Epidemiologists	Epidemiologists	191041	112690	100590	61860	77260	133870	168210	54.18	48.36	true
+LifeScientistsAllOther	Life Scientists, All Other	191099	101940	87800	52360	66340	123720	168860	49.01	42.21	true
+PhysicalScientists	Physical Scientists	192000	104070	92750	53870	66800	129100	169070	50.03	44.59	false
+AstronomersandPhysicists	Astronomers and Physicists	192010	163850	166290	78590	113860	210260		78.77	79.95	false
+Astronomers	Astronomers	192011	134430	132170	70730	94990	177690	191880	64.63	63.54	true
+Physicists	Physicists	192012	166000	166290	80020	117450	210260		79.81	79.95	true
+SpaceScientists	Atmospheric and Space Scientists	192021	103980	97450	49990	69440	128940	160710	49.99	46.85	true
+ChemistsandMaterialsScientists	Chemists and Materials Scientists	192030	97350	86620	54160	64880	123170	156530	46.8	41.64	false
+Chemists	Chemists	192031	95940	84150	53210	63930	120210	154430	46.13	40.46	true
+MaterialsScientists	Materials Scientists	192032	111410	104160	61460	79980	134140	168500	53.56	50.08	true
+EnvironmentalScientistsandGeoscientists	Environmental Scientists and Geoscientists	192040	93630	82660	51200	63540	109500	145450	45.02	39.74	false
+IndustrialEcologists	Industrial Ecologists	192041	88640	80060	50130	62090	103730	134830	42.62	38.49	true
+Geographers	Geoscientists, Except Hydrologists and Geographers	192042	98160	97200	62390	75590	117190	133680	47.19	46.73	true
+Hydrologists	Hydrologists	192043	98130	92060	60010	73330	114940	139420	47.18	44.26	true
+SocialScientistsandRelatedWorkers	Social Scientists and Related Workers	193000	101290	92900	53840	70310	124860	157950	48.7	44.66	false
+EnvironmentalEconomists	Environmental Economists	193011	130910	115440	62340	82260	166030	212710	62.94	55.5	true
+SurveyResearchers	Survey Researchers	193022	73470	63380	36950	46110	85370	118730	35.32	30.47	true
+Psychologists	Psychologists	193030	102100	94310	54860	71140	126340	157330	49.09	45.34	false
+IndustrialOrganizationalPsychologists	Industrial-Organizational Psychologists	193032	134400	109840	51880	80790	198170	224590	64.62	52.81	true
+CounselingPsychologists	Clinical and Counseling Psychologists	193033	106850	95830	50470	67470	131510	170150	51.37	46.07	true
+SchoolPsychologists	School Psychologists	193034	93610	86930	60880	73240	108210	132320	45.01	41.79	true
+ClinicalNeuropsychologists	Clinical Neuropsychologists	193039	111340	117580	51410	73820	145200	163570	53.53	56.53	true
+Sociologists	Sociologists	193041	111670	101690	60710	78150	134780	168590	53.69	48.89	true
+RegionalPlanners	Urban and Regional Planners	193051	89730	83720	55590	66210	104450	128550	43.14	40.25	true
+MiscellaneousSocialScientistsandRelatedWorkers	Miscellaneous Social Scientists and Related Workers	193090	102840	96660	55580	73570	127210	162610	49.44	46.47	false
+Archeologists	Anthropologists and Archeologists	193091	71070	64910	44510	51240	83080	104510	34.17	31.21	true
+Historians	Historians	193093	78470	74050	38630	55190	96330	128500	37.73	35.6	true
+PoliticalScientists	Political Scientists	193094	137600	139380	74750	103030	172050	191880	66.15	67.01	true
+TransportationPlanners	Transportation Planners	193099	106440	100340	62570	79210	127880	160810	51.17	48.24	true
+LifePhysicalandSocialScienceTechnicians	Life, Physical, and Social Science Technicians	194000	61200	55810	36830	45070	72510	94100	29.42	26.83	false
+AgriculturalandFoodScienceTechnicians	Agricultural and Food Science Technicians	194010	52030	48480	35610	40240	60250	71710	25.01	23.31	false
+PrecisionAgricultureTechnicians	Precision Agriculture Technicians	194012	49680	46790	32860	38480	59370	69010	23.88	22.49	true
+FoodScienceTechnicians	Food Science Technicians	194013	54400	49430	37760	43990	60940	75100	26.15	23.76	true
+BiologicalTechnicians	Biological Technicians	194021	58020	52000	38060	45380	66410	81990	27.89	25	true
+ChemicalTechnicians	Chemical Technicians	194031	61300	57790	39030	46680	72940	90990	29.47	27.78	true
+EnvironmentalScienceandGeoscienceTechnicians	Environmental Science and Geoscience Technicians	194040	57470	49690	35730	38920	64950	88500	27.63	23.89	false
+Health	Environmental Science and Protection Technicians, Including Health	194042	56770	49490	36130	38050	64170	85630	27.29	23.79	true
+HydrologicTechnicians	Geological Technicians, Except Hydrologic Technicians	194043	64410	58570	40330	47450	79790	94310	30.97	28.16	true
+NuclearMonitoringTechnicians	Nuclear Monitoring Technicians	194051	100730	104240	64370	83330	113710	126890	48.43	50.11	true
+SocialScienceResearchAssistants	Social Science Research Assistants	194061	63560	58040	36410	46190	73060	100620	30.56	27.9	true
+ConservationTechnicians	Forest and Conservation Technicians	194071	56660	54310	36190	42560	66020	80790	27.24	26.11	true
+MiscellaneousLifePhysicalandSocialScienceTechnicians	Miscellaneous Life, Physical, and Social Science Technicians	194090	66910	61570	38320	47370	79360	102280	32.17	29.6	false
+ForensicScienceTechnicians	Forensic Science Technicians	194092	75260	67440	45560	53310	88710	110710	36.18	32.42	true
+RemoteSensingTechnicians	Remote Sensing Technicians	194099	64640	60130	37310	46270	77990	101870	31.08	28.91	true
+OccupationalHealthandSafetySpecialistsandTechnicians	Occupational Health and Safety Specialists and Technicians	195010	83770	78900	47790	59620	101490	127140	40.27	37.93	false
+SafetySpecialists	Occupational Health and Safety Specialists	195011	88660	83910	50610	64410	105390	130460	42.63	40.34	true
+SafetyTechnicians	Occupational Health and Safety Technicians	195012	63800	58440	40550	49510	74810	94670	30.67	28.1	true
+CommunityandSocialServiceOccupations	Community and Social Service Occupations	210000	63030	57530	37710	45700	75080	96710	30.31	27.66	false
+CounselorsSocialWorkersandOtherCommunityandSocialServiceSpecialists	Counselors, Social Workers, and Other Community and Social Service Specialists	211000	62980	57480	37830	45750	75090	96620	30.28	27.64	false
+Counselors	Counselors	211010	66370	60200	39090	47350	78230	100680	31.91	28.94	false
+Advisors	Educational, Guidance, and Career Counselors and Advisors	211012	71520	65140	43580	51690	83490	105870	34.38	31.32	true
+FamilyTherapists	Marriage and Family Therapists	211013	72720	63780	42610	48600	85020	111610	34.96	30.66	true
+RehabilitationCounselors	Rehabilitation Counselors	211015	51260	46110	34480	38700	59040	77200	24.64	22.17	true
+Substanceabusebehavioraldisorderandmentalhealthcounselors	Substance abuse, behavioral disorder, and mental health counselors	211018	65100	59190	39090	47170	76230	98210	31.3	28.46	false
+CounselorsAllOther	Counselors, All Other	211019	58070	49830	36160	42760	66510	91420	27.92	23.96	true
+SocialWorkers	Social Workers	211020	67050	61330	41580	48680	78500	99500	32.23	29.49	false
+SchoolSocialWorkers	Child, Family, and School Social Workers	211021	62920	58570	40580	47480	74060	94030	30.25	28.16	true
+HealthcareSocialWorkers	Healthcare Social Workers	211022	72030	68090	45030	55360	83410	100870	34.63	32.74	true
+SubstanceAbuseSocialWorkers	Mental Health and Substance Abuse Social Workers	211023	68290	60060	39620	46550	78980	104130	32.83	28.88	true
+SocialWorkersAllOther	Social Workers, All Other	211029	74680	69480	44530	52010	95390	112740	35.91	33.4	true
+MiscellaneousCommunityandSocialServiceSpecialists	Miscellaneous Community and Social Service Specialists	211090	54460	48790	35130	40340	61990	80260	26.18	23.46	false
+HealthEducationSpecialists	Health Education Specialists	211091	71700	63000	42210	49880	84460	112900	34.47	30.29	true
+CorrectionalTreatmentSpecialists	Probation Officers and Correctional Treatment Specialists	211092	71530	64520	45390	52580	84030	106290	34.39	31.02	true
+HumanServiceAssistants	Social and Human Service Assistants	211093	47090	45120	33280	37770	53040	63850	22.64	21.69	true
+CommunityHealthWorkers	Community Health Workers	211094	55970	51030	37930	44370	63150	78560	26.91	24.54	true
+SocialServiceSpecialistsAllOther	Community and Social Service Specialists, All Other	211099	58360	54940	36470	45420	67590	83210	28.06	26.41	true
+ReligiousWorkers	Religious Workers	212000	64360	58570	35140	43400	74750	98600	30.94	28.16	false
+Clergy	Clergy	212011	67160	60820	37140	47220	76340	99720	32.29	29.24	true
+Education	Directors, Religious Activities and Education	212021	65040	54840	33990	42210	74990	106530	31.27	26.37	true
+ReligiousWorkersAllOther	Religious Workers, All Other	212099	49830	45120	29120	34700	60310	75920	23.96	21.69	true
+LegalOccupations	Legal Occupations	230000	137680	99990	47110	62410	170520		66.19	48.07	false
+LawyersJudgesandRelatedWorkers	Lawyers, Judges, and Related Workers	231000	177570	144040	65610	97730	212100		85.37	69.25	false
+LawyersandJudicialLawClerks	Lawyers and Judicial Law Clerks	231010	180790	148600	67920	98810	214490		86.92	71.44	false
+Lawyers	Lawyers	231011	182760	151160	72780	99760	215420		87.86	72.67	true
+JudicialLawClerks	Judicial Law Clerks	231012	69850	60400	42000	49840	78060	113150	33.58	29.04	true
+JudgesMagistratesandOtherJudicialWorkers	Judges, Magistrates, and Other Judicial Workers	231020	128190	123220	48950	68900	175040	210890	61.63	59.24	false
+HearingOfficers	Administrative Law Judges, Adjudicators, and Hearing Officers	231021	122620	115230	56970	76920	161290	203990	58.95	55.4	true
+Conciliators	Arbitrators, Mediators, and Conciliators	231022	91170	67710	46200	60030	101010	133480	43.83	32.55	true
+Magistrates	Judges, Magistrate Judges, and Magistrates	231023	143110	156210	46520	86060	189890	216540	68.8	75.1	true
+LegalSupportWorkers	Legal Support Workers	232000	67810	60930	39280	47950	78680	100950	32.6	29.3	false
+LegalAssistants	Paralegals and Legal Assistants	232011	66510	61010	39710	48190	78280	98990	31.98	29.33	true
+MiscellaneousLegalSupportWorkers	Miscellaneous Legal Support Workers	232090	72800	60550	38170	46950	81390	130510	35	29.11	false
+Searchers	Title Examiners, Abstractors, and Searchers	232093	59600	54980	36710	45020	70290	87240	28.65	26.43	true
+LegalSupportWorkersAllOther	Legal Support Workers, All Other	232099	86220	68760	41510	50960	103460	176950	41.45	33.06	true
+EducationalInstructionandLibraryOccupations	Educational Instruction and Library Occupations	250000	65900	59220	30790	39870	78250	104360	31.69	28.47	false
+PostsecondaryTeachers	Postsecondary Teachers	251000	102410	81600	47010	61300	125900	180630			false
+BusinessTeachersPostsecondary	Business Teachers, Postsecondary	251011	113840	97270	46460	63040	140360	210530			true
+MathandComputerScienceTeachersPostsecondary	Math and Computer Science Teachers, Postsecondary	251020	98400	82390	48470	62160	124840	168080			false
+ComputerScienceTeachersPostsecondary	Computer Science Teachers, Postsecondary	251021	105830	96690	48910	65200	132200	172380			true
+MathematicalScienceTeachersPostsecondary	Mathematical Science Teachers, Postsecondary	251022	92880	79350	48150	60880	106270	161020			true
+EngineeringandArchitectureTeachersPostsecondary	Engineering and Architecture Teachers, Postsecondary	251030	117670	105690	59690	79300	135710	184300			false
+ArchitectureTeachersPostsecondary	Architecture Teachers, Postsecondary	251031	110360	101480	59590	78090	129310	166720			true
+EngineeringTeachersPostsecondary	Engineering Teachers, Postsecondary	251032	119340	106120	59790	80060	136400	200650			true
+LifeSciencesTeachersPostsecondary	Life Sciences Teachers, Postsecondary	251040	100900	83920	50520	64140	125210	167290			false
+AgriculturalSciencesTeachersPostsecondary	Agricultural Sciences Teachers, Postsecondary	251041	97790	86350	49080	63980	123290	160870			true
+BiologicalScienceTeachersPostsecondary	Biological Science Teachers, Postsecondary	251042	101340	83460	50760	64010	125310	169560			true
+ConservationScienceTeachersPostsecondary	Forestry and Conservation Science Teachers, Postsecondary	251043	103780	100830	58670	81380	125080	154630			true
+PhysicalSciencesTeachersPostsecondary	Physical Sciences Teachers, Postsecondary	251050	105460	95520	53030	65540	129500	173630			false
+SpaceSciencesTeachersPostsecondary	Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary	251051	112950	101390	53310	66620	135500	199260			true
+ChemistryTeachersPostsecondary	Chemistry Teachers, Postsecondary	251052	103030	86220	52870	64980	125920	171600			true
+EnvironmentalScienceTeachersPostsecondary	Environmental Science Teachers, Postsecondary	251053	100360	87710	50670	64360	124680	164290			true
+PhysicsTeachersPostsecondary	Physics Teachers, Postsecondary	251054	105460	97360	54880	66730	130150	169740			true
+SocialSciencesTeachersPostsecondary	Social Sciences Teachers, Postsecondary	251060	100440	83360	48980	63260	123760	171090			false
+ArcheologyTeachersPostsecondary	Anthropology and Archeology Teachers, Postsecondary	251061	102530	95770	51380	67410	122870	169090			true
+CulturalStudiesTeachersPostsecondary	Area, Ethnic, and Cultural Studies Teachers, Postsecondary	251062	97350	84290	51130	64320	107810	164650			true
+EconomicsTeachersPostsecondary	Economics Teachers, Postsecondary	251063	133140	119980	57550	80850	166600	217160			true
+GeographyTeachersPostsecondary	Geography Teachers, Postsecondary	251064	99020	86730	49990	66400	120220	164350			true
+PoliticalScienceTeachersPostsecondary	Political Science Teachers, Postsecondary	251065	105160	94680	50490	65330	127480	173380			true
+PsychologyTeachersPostsecondary	Psychology Teachers, Postsecondary	251066	93530	80330	47870	62290	106640	158900			true
+SociologyTeachersPostsecondary	Sociology Teachers, Postsecondary	251067	97270	82540	49330	64130	113000	167240			true
+SocialSciencesTeachersPostsecondaryAllOther	Social Sciences Teachers, Postsecondary, All Other	251069	92950	75040	45280	59550	105390	176350			true
+HealthTeachersPostsecondary	Health Teachers, Postsecondary	251070	125490	100370	50700	66140	161410	228330			false
+HealthSpecialtiesTeachersPostsecondary	Health Specialties Teachers, Postsecondary	251071	137900	105620	51760	74400	176090				true
+TeachersPostsecondary	Nursing Instructors and Teachers, Postsecondary	251072	87090	79940	47950	62210	102020	130040			true
+EducationandLibraryScienceTeachersPostsecondary	Education and Library Science Teachers, Postsecondary	251080	78870	73050	39070	51490	96340	126420			false
+EducationTeachersPostsecondary	Education Teachers, Postsecondary	251081	78500	72090	38650	50630	96260	126450			true
+LibraryScienceTeachersPostsecondary	Library Science Teachers, Postsecondary	251082	84320	78630	53590	62130	97020	126200			true
+LawCriminalJusticeandSocialWorkTeachersPostsecondary	Law, Criminal Justice, and Social Work Teachers, Postsecondary	251110	109320	87870	47790	63010	131060	204930			false
+LawEnforcementTeachersPostsecondary	Criminal Justice and Law Enforcement Teachers, Postsecondary	251111	84820	71470	45640	56100	99730	143130			true
+LawTeachersPostsecondary	Law Teachers, Postsecondary	251112	139950	126650	58330	84540	173580				true
+SocialWorkTeachersPostsecondary	Social Work Teachers, Postsecondary	251113	81880	76210	45370	57080	98570	129280			true
+ArtsCommunicationsHistoryandHumanitiesTeachersPostsecondary	Arts, Communications, History, and Humanities Teachers, Postsecondary	251120	94900	79060	47260	60520	105820	165110			false
+MusicTeachersPostsecondary	Art, Drama, and Music Teachers, Postsecondary	251121	102240	80190	47040	60730	121600	194530			true
+CommunicationsTeachersPostsecondary	Communications Teachers, Postsecondary	251122	90340	77800	47100	60060	103230	160210			true
+LiteratureTeachersPostsecondary	English Language and Literature Teachers, Postsecondary	251123	90400	78270	47540	59780	103730	154800			true
+ForeignLanguageTeachers	Foreign Language and Literature Teachers, Postsecondary	251124	87670	77010	47090	59790	101680	134960			true
+HistoryTeachersPostsecondary	History Teachers, Postsecondary	251125	93710	81500	47730	62370	106770	158140			true
+ReligionTeachersPostsecondary	Philosophy and Religion Teachers, Postsecondary	251126	88210	78050	47550	60980	101680	134910			true
+MiscellaneousPostsecondaryTeachers	Miscellaneous Postsecondary Teachers	251190	83780	68800	39260	50180	100740	150860			false
+ConsumerSciencesTeachersPostsecondary	Family and Consumer Sciences Teachers, Postsecondary	251192	84450	77280	47580	56870	99530	133180			true
+FitnessStudiesTeachersPostsecondary	Recreation and Fitness Studies Teachers, Postsecondary	251193	87980	75890	44150	57290	101420	158240			true
+CareerTechnicalEducationTeachersPostsecondary	Career/Technical Education Teachers, Postsecondary	251194	68710	61490	38680	48030	80070	106580	33.03	29.56	true
+PostsecondaryTeachersAllOther	Postsecondary Teachers, All Other	251199	94470	78490	39720	55500	122510	172850			true
+PreschoolElementaryMiddleSecondaryandSpecialEducationTeachers	Preschool, Elementary, Middle, Secondary, and Special Education Teachers	252000	68130	61960	39620	49540	79020	101290			false
+PreschoolandKindergartenTeachers	Preschool and Kindergarten Teachers	252010	46680	40090	28810	34440	55780	73380	22.44	19.27	false
+SpecialEducation	Preschool Teachers, Except Special Education	252011	69790	62340	46440	50680	79410	102010			true
+ElementaryandMiddleSchoolTeachers	Elementary and Middle School Teachers	252020	69860	62500	46620	51140	79400	101670			false
+CareerTechnicalEducation	Middle School Teachers, Except Special and Career/Technical Education	252022	73700	64580	47330	57800	83010	104670			true
+CareerTechnicalEducationTeachersMiddleSchool	Career/Technical Education Teachers, Middle School	252023	68690	63620	47090	55920	78270	98430			true
+SecondarySchoolTeachers	Secondary School Teachers	252030	73420	64530	47460	57950	82340	103860			false
+CareerTechnicalEducationTeachersSecondarySchool	Career/Technical Education Teachers, Secondary School	252032	70550	63910	48840	58840	78650	98720			true
+SpecialEducationTeachers	Special Education Teachers	252050	72230	64270	47380	57270	81510	103290			false
+SpecialEducationTeachersPreschool	Special Education Teachers, Preschool	252051	72610	62190	38740	49370	81330	132530			true
+SpecialEducationTeachersKindergartenandElementarySchool	Special Education Teachers, Kindergarten and Elementary School	252052	70150	63000	47590	57050	79320	100620			false
+SpecialEducationTeachersMiddleSchool	Special Education Teachers, Middle School	252057	72310	64880	48070	58590	81940	102730			true
+SpecialEducationTeachersSecondarySchool	Special Education Teachers, Secondary School	252058	74610	69590	47930	58180	87140	106050			true
+AdaptedPhysicalEducationSpecialists	Adapted Physical Education Specialists	252059	74180	67430	43220	53470	87890	109360			true
+OtherTeachersandInstructors	Other Teachers and Instructors	253000	51270	44220	28070	34010	59860	81070	24.65	21.26	false
+ESLInstructors	Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors	253011	64660	59950	39750	47950	76580	95750	31.09	28.82	true
+SelfEnrichmentTeachers	Self-Enrichment Teachers	253021	53330	45590	28980	35410	62180	90780	25.64	21.92	true
+SubstituteTeachersShortTerm	Substitute Teachers, Short-Term	253031	44930	38470	26240	31310	51930	63460	21.6	18.5	true
+Tutors	Tutors	253041	47780	40090	28430	33410	55380	78810	22.97	19.27	true
+InstructorsAllOther	Teachers and Instructors, All Other	253099	71610	64690	33280	46700	93180	116690			true
+LibrariansCuratorsandArchivists	Librarians, Curators, and Archivists	254000	60220	57100	31600	40410	74800	96030	28.95	27.45	false
+ArchivistsCuratorsandMuseumTechnicians	Archivists, Curators, and Museum Technicians	254010	62900	57100	34840	43000	76040	98490	30.24	27.45	false
+Archivists	Archivists	254011	67620	61570	39330	47890	79850	104780	32.51	29.6	true
+Curators	Curators	254012	70060	61770	37110	47270	81350	105520	33.68	29.7	true
+Conservators	Museum Technicians and Conservators	254013	53630	47460	30720	37460	62990	82790	25.78	22.82	true
+MediaCollectionsSpecialists	Librarians and Media Collections Specialists	254022	69180	64320	38920	50920	80640	100880	33.26	30.92	true
+LibraryTechnicians	Library Technicians	254031	43050	39970	27890	33510	49740	60960	20.7	19.22	true
+OtherEducationalInstructionandLibraryOccupations	Other Educational Instruction and Library Occupations	259000	42980	36690	24960	30140	47800	69330			false
+HomeManagementEducators	Farm and Home Management Educators	259021	60470	58120	36780	46010	69110	85230	29.07	27.94	true
+InstructionalCoordinators	Instructional Coordinators	259031	77600	74720	46560	59120	94780	115410	37.31	35.92	true
+TeachingAssistants	Teaching Assistants	259040	37140	35550	23900	29330	43850	50180			false
+TeachingAssistantsPostsecondary	Teaching Assistants, Postsecondary	259044	47560	44930	28020	32640	60410	73560			true
+TeachingAssistantsExceptPostsecondary	Teaching Assistants, Except Postsecondary	259045	35960	35240	23710	29120	40400	48140			false
+LibraryWorkersAllOther	Educational Instruction and Library Workers, All Other	259099	55700	48400	24160	33280	68800	95310	26.78	23.27	true
+ArtsDesignEntertainmentSportsandMediaOccupations	Arts, Design, Entertainment, Sports, and Media Occupations	270000	77040	60140	32540	41290	88370	129110	37.04	28.91	false
+ArtandDesignWorkers	Art and Design Workers	271000	67730	53180	32030	37950	79040	117530	32.56	25.57	false
+ArtistsandRelatedWorkers	Artists and Related Workers	271010	110770	99060	44670	64880	139330	186820	53.25	47.63	false
+ArtDirectors	Art Directors	271011	128100	111040	61060	80130	160460	211410	61.59	53.38	true
+CraftArtists	Craft Artists	271012	45340	38480	22620	31350	52070	65850	21.8	18.5	true
+Illustrators	Fine Artists, Including Painters, Sculptors, and Illustrators	271013	76450	60560	26420	39740	89630	140660	36.76	29.12	true
+Animators	Special Effects Artists and Animators	271014	110110	99800	57220	73030	135600	174630	52.94	47.98	true
+RelatedWorkersAllOther	Artists and Related Workers, All Other	271019	57030	46370	28060	35040	66240	95850	27.42	22.29	true
+Designers	Designers	271020	60890	49020	31550	37110	73080	99390	29.28	23.57	false
+IndustrialDesigners	Commercial and Industrial Designers	271021	88000	79450	49390	62040	103170	134840	42.31	38.2	true
+FashionDesigners	Fashion Designers	271022	122430	80690	35970	53730	107990	169620	58.86	38.79	true
+FloralDesigners	Floral Designers	271023	37700	36120	27260	30200	43420	48690	18.13	17.37	true
+GraphicDesigners	Graphic Designers	271024	68610	61300	37600	47200	79000	103030	32.98	29.47	true
+InteriorDesigners	Interior Designers	271025	71430	63490	38480	49770	80830	106090	34.34	30.52	true
+WindowTrimmers	Merchandise Displayers and Window Trimmers	271026	40540	37350	30050	33580	44750	53800	19.49	17.96	true
+ExhibitDesigners	Set and Exhibit Designers	271027	78450	66280	35990	48920	100020	129420	37.71	31.87	true
+DesignersAllOther	Designers, All Other	271029	78000	66220	36530	46850	95330	131950	37.5	31.84	true
+EntertainersandPerformersSportsandRelatedWorkers	Entertainers and Performers, Sports and Related Workers	272000	85710	54870	29390	37510	91210	156550	41.21	26.38	false
+ActorsProducersandDirectors	Actors, Producers, and Directors	272010	109660	78000	36650	49920	128380	199460	52.72	37.5	false
+Actors	Actors	272011							44.4	23.33	true
+MediaTechnicalDirectorsManagers	Media Technical Directors/Managers	272012	114280	83480	43060	59810	131160	198530	54.94	40.13	true
+AthletesCoachesUmpiresandRelatedWorkers	Athletes, Coaches, Umpires, and Related Workers	272020	68880	45920	27230	33780	62490	98200			false
+SportsCompetitors	Athletes and Sports Competitors	272021	259750	62360	24960	36750	130770				true
+Scouts	Coaches and Scouts	272022	58910	45920	27490	33960	61930	93980			true
+OtherSportsOfficials	Umpires, Referees, and Other Sports Officials	272023	52800	38820	25070	30920	53560	93180			true
+DancersandChoreographers	Dancers and Choreographers	272030	62740	51020	29850	35790	77700	106740	30.16	24.53	false
+Dancers	Dancers	272031							30.3	23.97	true
+Choreographers	Choreographers	272032	62020	55600	33080	39600	71190	94090	29.82	26.73	true
+MusiciansSingersandRelatedWorkers	Musicians, Singers, and Related Workers	272040							51.57	38.76	false
+Composers	Music Directors and Composers	272041	84230	63670	34990	47330	96590	157010	40.5	30.61	true
+Singers	Musicians and Singers	272042							55.13	42.45	true
+MiscellaneousEntertainersandPerformersSportsandRelatedWorkers	Miscellaneous Entertainers and Performers, Sports and Related Workers	272090							30.98	20.99	false
+Radio	Disc Jockeys, Except Radio	272091							33.25	20.59	true
+MediaandCommunicationWorkers	Media and Communication Workers	273000	83030	70300	37830	50090	98130	130600	39.92	33.8	false
+RadioDiscJockeys	Broadcast Announcers and Radio Disc Jockeys	273011	80110	45680	26000	33280	72080	131780	38.52	21.96	true
+Journalists	News Analysts, Reporters, and Journalists	273023	106030	60280	34590	40420	97460	162430	50.98	28.98	true
+PublicRelationsSpecialists	Public Relations Specialists	273031	80310	69780	40750	51970	95940	129480	38.61	33.55	true
+WritersandEditors	Writers and Editors	273040	87570	78100	41320	57400	101120	135160	42.1	37.55	false
+Editors	Editors	273041	85700	75260	36200	50210	101210	140840	41.2	36.18	true
+TechnicalWriters	Technical Writers	273042	92330	91670	54400	68640	102740	130430	44.39	44.07	true
+CreativeWriters	Poets, Lyricists and Creative Writers	273043	85780	72270	41080	52890	98320	133680	41.24	34.75	true
+MiscellaneousMediaandCommunicationWorkers	Miscellaneous Media and Communication Workers	273090	71560	62500	36610	46950	87500	114990	34.4	30.05	false
+Translators	Interpreters and Translators	273091	64950	59440	35630	45020	80020	99830	31.22	28.58	true
+SimultaneousCaptioners	Court Reporters and Simultaneous Captioners	273092	74630	67310	39100	50210	92710	127020	35.88	32.36	true
+CommunicationWorkersAllOther	Media and Communication Workers, All Other	273099	84870	71770	38530	52690	99520	148070	40.81	34.51	true
+MediaandCommunicationEquipmentWorkers	Media and Communication Equipment Workers	274000	67410	56480	33160	40500	81380	117490	32.41	27.15	false
+BroadcastSoundandLightingTechnicians	Broadcast, Sound, and Lighting Technicians	274010	64710	56600	33980	43250	77630	104610	31.11	27.21	false
+VideoTechnicians	Audio and Video Technicians	274011	61370	54830	35290	43860	73590	98190	29.51	26.36	true
+BroadcastTechnicians	Broadcast Technicians	274012	64220	53920	29190	36900	80390	115400	30.87	25.92	true
+SoundEngineeringTechnicians	Sound Engineering Technicians	274014	79280	66430	36600	47680	99950	134980	38.12	31.94	true
+LightingTechnicians	Lighting Technicians	274015	70000	60560	36340	47100	83340	117690	33.65	29.11	true
+Photographers	Photographers	274021	55650	42520	29610	34790	62370	94760	26.76	20.44	true
+TelevisionVideoandFilmCameraOperatorsandEditors	Television, Video, and Film Camera Operators and Editors	274030	81850	70570	37600	49420	102310	134840	39.35	33.93	false
+Film	Camera Operators, Television, Video, and Film	274031	79870	68810	36240	48060	102400	131420	38.4	33.08	true
+VideoEditors	Film and Video Editors	274032	83530	70980	39170	50230	101570	145900	40.16	34.12	true
+CommunicationEquipmentWorkersAllOther	Media and Communication Equipment Workers, All Other	274099	78350	67190	35670	48490	102650	133650	37.67	32.3	true
+HealthcarePractitionersandTechnicalOccupations	Healthcare Practitioners and Technical Occupations	290000	105220	83090	43940	61680	118400	169250	50.59	39.95	false
+HealthcareDiagnosingorTreatingPractitioners	Healthcare Diagnosing or Treating Practitioners	291000	128550	101370	66160	80170	134700	212870	61.8	48.74	false
+Chiropractors	Chiropractors	291011	91830	79000	44780	59320	104000	149990	44.15	37.98	true
+Dentists	Dentists	291020	207750	179210	84740	127660			99.88	86.16	false
+DentistsGeneral	Dentists, General	291021	196100	172790	83860	126090	220380		94.28	83.07	true
+MaxillofacialSurgeons	Oral and Maxillofacial Surgeons	291022	360240		82960	236780			173.19		true
+Orthodontists	Orthodontists	291023	254620		98560	137320			122.41		true
+Prosthodontists	Prosthodontists	291024	258660		97370	232000			124.36		true
+DentistsAllOtherSpecialists	Dentists, All Other Specialists	291029	246530	225770	75360	172780			118.52	108.54	true
+Nutritionists	Dietitians and Nutritionists	291031	74770	73850	48830	61260	85200	101760	35.95	35.5	true
+Optometrists	Optometrists	291041	140940	134830	70060	103310	163710	203210	67.76	64.82	true
+Pharmacists	Pharmacists	291051	137210	137480	86930	127250	158620	172040	65.97	66.1	true
+AnesthesiologistAssistants	Anesthesiologist Assistants	291071	136900	133260	95240	113770	160160	182200	65.82	64.07	true
+Podiatrists	Podiatrists	291081	163960	152800	57500	91130	217960		78.83	73.46	true
+Therapists	Therapists	291120	95220	95010	61810	77190	108640	130070	45.78	45.68	false
+VisionRehabilitationTherapists	Low Vision Therapists, Orientation and Mobility Specialists, and Vision Rehabilitation Therapists	291122	98240	98340	67090	80490	110460	129830	47.23	47.28	true
+PhysicalTherapists	Physical Therapists	291123	102400	101020	74420	83470	117190	132500	49.23	48.57	true
+RadiationTherapists	Radiation Therapists	291124	110820	101990	77860	86520	120360	141550	53.28	49.03	true
+RecreationalTherapists	Recreational Therapists	291125	65350	60280	39520	48230	77680	96600	31.42	28.98	true
+RespiratoryTherapists	Respiratory Therapists	291126	84260	80450	61900	68410	95530	108820	40.51	38.68	true
+SpeechLanguagePathologists	Speech-Language Pathologists	291127	95840	95410	60480	75310	112510	132850	46.08	45.87	true
+ExercisePhysiologists	Exercise Physiologists	291128	59620	58160	40930	48650	65430	79830	28.66	27.96	true
+MusicTherapists	Music Therapists	291129	73800	65010	38840	49510	85010	120050	35.48	31.26	true
+Veterinarians	Veterinarians	291131	140270	125510	70350	98420	161610	212890	67.44	60.34	true
+ClinicalNurseSpecialists	Clinical Nurse Specialists	291141	98430	93600	66030	78610	107960	135320	47.32	45	true
+NurseAnesthetists	Nurse Anesthetists	291151	231700	223210	137230	187110			111.39	107.31	true
+NurseMidwives	Nurse Midwives	291161	128110	128790	74670	104260	146520	177040	61.59	61.92	true
+NursePractitioners	Nurse Practitioners	291171	132000	129210	97960	109940	149570	169950	63.46	62.12	true
+Audiologists	Audiologists	291181	95320	92120	61930	76440	109330	129830	45.83	44.29	true
+Physicians	Physicians	291210	272320		72540	138460			130.92		false
+Anesthesiologists	Anesthesiologists	291211	336640		124450	186680			161.85		true
+Cardiologists	Cardiologists	291212	432490		119970	230100			207.93		true
+Dermatologists	Dermatologists	291213	347810		118540	172510			167.22		true
+EmergencyMedicinePhysicians	Emergency Medicine Physicians	291214	320700		114680	181070			154.19		true
+FamilyMedicinePhysicians	Family Medicine Physicians	291215	256830	238380	81330	167580			123.47	114.61	true
+GeneralInternalMedicinePhysicians	General Internal Medicine Physicians	291216	262710	236350	70100	135240			126.31	113.63	true
+Neurologists	Neurologists	291217	286310		83500	140970			137.65		true
+Gynecologists	Obstetricians and Gynecologists	291218	281130		94750	188130			135.16		true
+PediatriciansGeneral	Pediatricians, General	291221	222340	210130	96240	159510			106.89	101.03	true
+PhysiciansPathologists	Physicians, Pathologists	291222	266020		83930	165940			127.89		true
+Psychiatrists	Psychiatrists	291223	269120		77360	141290			129.39		true
+Radiologists	Radiologists	291224	359820		82810	204330			172.99		true
+SportsMedicinePhysicians	Sports Medicine Physicians	291229	253470		66860	95080			121.86		true
+Surgeons	Surgeons	291240	354760		81870	180340			170.56		false
+Pediatric	Ophthalmologists, Except Pediatric	291241	365060		83390	209730			175.51		true
+PediatricSurgeons	Pediatric Surgeons	291243	450810		189720				216.74		true
+SurgeonsAllOther	Surgeons, All Other	291249	371280		77290	139070			178.5		true
+MiscellaneousHealthcareDiagnosingorTreatingPractitioners	Miscellaneous Healthcare Diagnosing or Treating Practitioners	291290	97910	94920	64720	79880	105250	126840	47.07	45.64	false
+Acupuncturists	Acupuncturists	291291	89750	78140	41840	54090	107120	158540	43.15	37.57	true
+DentalHygienists	Dental Hygienists	291292	93890	94260	66470	80060	102920	120060	45.14	45.32	true
+Orthoptists	Orthoptists	291299	128680	113730	65210	83350	161350	194000	61.86	54.68	true
+HealthTechnologistsandTechnicians	Health Technologists and Technicians	292000	59310	54270	36380	42650	71510	87540	28.51	26.09	false
+ClinicalLaboratoryTechnologistsandTechnicians	Clinical Laboratory Technologists and Technicians	292010	65320	61890	38020	46580	80010	97990	31.41	29.75	false
+DiagnosticRelatedTechnologistsandTechnicians	Diagnostic Related Technologists and Technicians	292030	83760	80660	50760	64600	99150	118500	40.27	38.78	false
+DiagnosticMedicalSonographers	Diagnostic Medical Sonographers	292032	92550	89340	64760	78080	103630	123170	44.49	42.95	true
+NuclearMedicineTechnologists	Nuclear Medicine Technologists	292033	99690	97020	75570	83020	108190	128090	47.93	46.64	true
+MagneticResonanceImagingTechnologists	Magnetic Resonance Imaging Technologists	292035	91020	88180	64910	78150	102440	121420	43.76	42.4	true
+MedicalDosimetrists	Medical Dosimetrists	292036	141420	138110	103760	125600	157840	176360	67.99	66.4	true
+EmergencyMedicalTechniciansandParamedics	Emergency Medical Technicians and Paramedics	292040	50460	46350	33790	38240	58770	74760	24.26	22.28	false
+EmergencyMedicalTechnicians	Emergency Medical Technicians	292042	35550	34330	25460	29580	38000	46630	17.09	16.51	true
+Paramedics	Paramedics	292043	60610	58410	40130	47920	68420	82420	29.14	28.08	true
+HealthPractitionerSupportTechnologistsandTechnicians	Health Practitioner Support Technologists and Technicians	292050	47370	45010	34730	37250	51710	64650	22.77	21.64	false
+DieteticTechnicians	Dietetic Technicians	292051	39560	37040	28280	32460	44290	53440	19.02	17.81	true
+PharmacyTechnicians	Pharmacy Technicians	292052	44800	43460	35100	36920	48580	59450	21.54	20.9	true
+PsychiatricTechnicians	Psychiatric Technicians	292053	45000	42590	32980	37170	48910	60150	21.64	20.47	true
+SurgicalTechnologists	Surgical Technologists	292055	65810	62830	43290	51740	77140	90700	31.64	30.21	true
+OphthalmicMedicalTechnicians	Ophthalmic Medical Technicians	292057	45360	44080	34210	37100	49730	60810	21.81	21.19	true
+LicensedVocationalNurses	Licensed Practical and Licensed Vocational Nurses	292061	64150	62340	47960	55220	73160	80510	30.84	29.97	true
+MedicalRecordsSpecialists	Medical Records Specialists	292072	55970	50250	35780	41600	64070	80950	26.91	24.16	true
+OpticiansDispensing	Opticians, Dispensing	292081	49970	46560	34470	37900	59680	73240	24.02	22.38	true
+MiscellaneousHealthTechnologistsandTechnicians	Miscellaneous Health Technologists and Technicians	292090	58050	49600	37390	41650	64660	85560	27.91	23.84	false
+Prosthetists	Orthotists and Prosthetists	292091	81330	78310	46220	59990	98880	118730	39.1	37.65	true
+HearingAidSpecialists	Hearing Aid Specialists	292092	63930	61560	36950	47150	78110	91000	30.74	29.6	true
+PatientRepresentatives	Patient Representatives	292099	56370	48790	37290	40740	62280	81290	27.1	23.46	true
+OtherHealthcarePractitionersandTechnicalOccupations	Other Healthcare Practitioners and Technical Occupations	299000	70950	62820	39200	48950	84430	110140	34.11	30.2	false
+MedicalRegistrars	Health Information Technologists and Medical Registrars	299021	73410	67310	39120	48400	92410	112130	35.3	32.36	true
+MiscellaneousHealthPractitionersandTechnicalWorkers	Miscellaneous Health Practitioners and Technical Workers	299090	69940	61890	39330	49190	82170	108890	33.63	29.76	false
+AthleticTrainers	Athletic Trainers	299091	63960	60250	45380	51590	70880	84100			true
+GeneticCounselors	Genetic Counselors	299092	102890	98910	78680	87060	113220	137780	49.47	47.55	true
+SurgicalAssistants	Surgical Assistants	299093	67190	60290	39540	49140	80860	102390	32.3	28.99	true
+Midwives	Midwives	299099	73200	64030	37220	45250	91000	127340	35.19	30.78	true
+HealthcareSupportOccupations	Healthcare Support Occupations	310000	39650	37180	27980	33380	44850	51980	19.06	17.87	false
+HomeHealthandPersonalCareAidesandNursingAssistantsOrderliesandPsychiatricAides	Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides	311100	36690	35940	27050	31870	39950	46360	17.64	17.28	false
+HomeHealthandPersonalCareAides	Home Health and Personal Care Aides	311120	34990	34900	25600	30370	37980	44190	16.82	16.78	false
+NursingAssistantsOrderliesandPsychiatricAides	Nursing Assistants, Orderlies, and Psychiatric Aides	311130	41290	39470	31400	36200	46070	50300	19.85	18.98	false
+NursingAssistants	Nursing Assistants	311131	41270	39530	31390	36260	46070	50140	19.84	19.01	true
+Orderlies	Orderlies	311132	40070	37700	31610	34850	43160	49570	19.27	18.12	true
+PsychiatricAides	Psychiatric Aides	311133	43610	41590	30920	35930	48770	58530	20.97	20	true
+OccupationalTherapyandPhysicalTherapistAssistantsandAides	Occupational Therapy and Physical Therapist Assistants and Aides	312000	60070	61730	31410	41430	75130	83090	28.88	29.68	false
+OccupationalTherapyAssistantsandAides	Occupational Therapy Assistants and Aides	312010	66020	66050	38900	57200	76760	85360	31.74	31.76	false
+OccupationalTherapyAssistants	Occupational Therapy Assistants	312011	68540	68340	49070	59950	77340	86930	32.95	32.86	true
+OccupationalTherapyAides	Occupational Therapy Aides	312012	41850	37370	27970	34840	44190	65580	20.12	17.97	true
+PhysicalTherapistAssistantsandAides	Physical Therapist Assistants and Aides	312020	57990	60050	29880	37020	74310	82510	27.88	28.87	false
+PhysicalTherapistAssistants	Physical Therapist Assistants	312021	67160	65510	46020	58240	77270	87630	32.29	31.5	true
+PhysicalTherapistAides	Physical Therapist Aides	312022	35510	34520	24960	29710	38240	46930	17.07	16.59	true
+OtherHealthcareSupportOccupations	Other Healthcare Support Occupations	319000	46380	45000	34090	37500	50110	60900	22.3	21.64	false
+MassageTherapists	Massage Therapists	319011	63430	57950	33280	44870	77170	97450	30.5	27.86	true
+MiscellaneousHealthcareSupportOccupations	Miscellaneous Healthcare Support Occupations	319090	45410	44720	34140	37440	49290	59700	21.83	21.5	false
+DentalAssistants	Dental Assistants	319091	48860	47300	36190	39520	56910	61780	23.49	22.74	true
+MedicalAssistants	Medical Assistants	319092	44720	44200	35020	37610	48160	57830	21.5	21.25	true
+MedicalEquipmentPreparers	Medical Equipment Preparers	319093	48990	46490	35400	38910	56160	67070	23.56	22.35	true
+MedicalTranscriptionists	Medical Transcriptionists	319094	39210	37550	26370	31200	45680	53890	18.85	18.05	true
+PharmacyAides	Pharmacy Aides	319095	40290	37000	29360	34450	42570	58660	19.37	17.79	true
+LaboratoryAnimalCaretakers	Veterinary Assistants and Laboratory Animal Caretakers	319096	38990	37320	29160	34320	44550	48150	18.74	17.94	true
+Phlebotomists	Phlebotomists	319097	44390	43660	34860	37540	48170	57750	21.34	20.99	true
+EndoscopyTechnicians	Endoscopy Technicians	319099	48760	46050	32450	37570	57650	68180	23.44	22.14	true
+ProtectiveServiceOccupations	Protective Service Occupations	330000	61000	50580	32040	37580	76140	104000	29.33	24.32	false
+SupervisorsofProtectiveServiceWorkers	Supervisors of Protective Service Workers	331000	93120	87050	47990	62060	117400	144610	44.77	41.85	false
+FirstLineSupervisorsofLawEnforcementWorkers	First-Line Supervisors of Law Enforcement Workers	331010	103570	99130	56100	73910	126530	159450	49.79	47.66	false
+FirstLineSupervisorsOfCorrectionalOfficers	First-Line Supervisors of Correctional Officers	331011	82260	76310	50340	56890	102190	125170	39.55	36.69	true
+Detectives	First-Line Supervisors of Police and Detectives	331012	110990	105980	62370	80940	133520	165050	53.36	50.95	true
+PreventionWorkers	First-Line Supervisors of Firefighting and Prevention Workers	331021	97030	92430	53970	72240	115990	142300	46.65	44.44	true
+MiscellaneousFirstLineSupervisorsProtectiveServiceWorkers	Miscellaneous First-Line Supervisors, Protective Service Workers	331090	65320	60190	38200	46760	79180	96480	31.4	28.94	false
+FirstLineSupervisorsOfSecurityWorkers	First-Line Supervisors of Security Workers	331091	62990	58610	37800	46070	74700	93930	30.28	28.18	true
+FirstLineSupervisorsOfProtectiveServiceWorkersAllOther	First-Line Supervisors of Protective Service Workers, All Other	331099	73320	74960	40750	51860	90600	102360	35.25	36.04	true
+FirefightingandPreventionWorkers	Firefighting and Prevention Workers	332000	64820	59870	34780	44650	78120	103460	31.16	28.79	false
+Firefighters	Firefighters	332011	63890	59530	34490	44180	77410	101330	30.72	28.62	true
+FireInspectors	Fire Inspectors	332020	83210	75480	42730	56440	100720	137250	40.01	36.29	false
+PreventionSpecialists	Forest Fire Inspectors and Prevention Specialists	332022	61820	52380	33590	41000	77780	100450	29.72	25.19	true
+LawEnforcementWorkers	Law Enforcement Workers	333000	75550	70530	45170	53810	92790	111590	36.32	33.91	false
+BailiffsCorrectionalOfficersandJailers	Bailiffs, Correctional Officers, and Jailers	333010	62730	57950	41310	47460	75400	93580	30.16	27.86	false
+Bailiffs	Bailiffs	333011	62180	57050	32950	43420	77880	93950	29.89	27.43	true
+Jailers	Correctional Officers and Jailers	333012	62760	57970	41750	47520	75330	93000	30.17	27.87	true
+IntelligenceAnalysts	Intelligence Analysts	333021	98770	93580	54160	68390	120080	159410	47.48	44.99	true
+GameWardens	Fish and Game Wardens	333031	67990	68180	35670	53260	82100	94470	32.69	32.78	true
+ParkingEnforcementWorkers	Parking Enforcement Workers	333041	51840	47150	35410	39930	61210	76030	24.92	22.67	true
+PoliceOfficers	Police Officers	333050	79380	76300	47650	59020	97230	115330	38.16	36.68	false
+BorderProtectionOfficers	Customs and Border Protection Officers	333051	79320	76290	47640	58980	97190	115280	38.14	36.68	true
+RailroadPolice	Transit and Railroad Police	333052	91820	82320	58370	65920	114040	141870	44.14	39.58	true
+OtherProtectiveServiceWorkers	Other Protective Service Workers	339000	43140	38230	29310	34480	47020	61720	20.74	18.38	false
+AnimalControlWorkers	Animal Control Workers	339011	49240	45830	32880	38160	57110	69990	23.67	22.03	true
+SecurityGuardsandGamblingSurveillanceOfficers	Security Guards and Gambling Surveillance Officers	339030	42920	38390	29830	35130	46690	59600	20.64	18.46	false
+GamblingInvestigators	Gambling Surveillance Officers and Gambling Investigators	339031	46710	43900	34020	37410	50610	62360	22.46	21.11	true
+SecurityGuards	Security Guards	339032	42890	38370	29800	35100	46660	59580	20.62	18.45	true
+MiscellaneousProtectiveServiceWorkers	Miscellaneous Protective Service Workers	339090	41960	37120	27390	31760	46520	63960	20.18	17.85	false
+Flaggers	Crossing Guards and Flaggers	339091	42910	37700	29940	34280	46920	61440	20.63	18.13	true
+OtherRecreationalProtectiveServiceWorkers	Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers	339092	34700	33720	24860	28840	37750	44600	16.68	16.21	true
+TransportationSecurityScreeners	Transportation Security Screeners	339093	61840	63360	45010	52210	69990	75940	29.73	30.46	true
+SchoolBusMonitors	School Bus Monitors	339094	35270	34980	27250	31200	38840	43240	16.96	16.82	true
+RetailLossPreventionSpecialists	Retail Loss Prevention Specialists	339099	48210	41600	30620	35540	54310	72670	23.18	20	true
+FoodPreparationandServingRelatedOccupations	Food Preparation and Serving Related Occupations	350000	36020	34130	22720	28160	38770	49230	17.32	16.41	false
+SupervisorsofFoodPreparationandServingWorkers	Supervisors of Food Preparation and Serving Workers	351010	47540	44140	29600	35840	56990	71920	22.85	21.22	false
+HeadCooks	Chefs and Head Cooks	351011	64720	60990	36000	47710	76790	96030	31.11	29.32	true
+ServingWorkers	First-Line Supervisors of Food Preparation and Serving Workers	351012	44900	42010	29340	35400	50920	63420	21.59	20.2	true
+CooksandFoodPreparationWorkers	Cooks and Food Preparation Workers	352000	35460	35450	24490	29360	39190	46250	17.05	17.04	false
+Cooks	Cooks	352010	35950	35760	24960	29590	40270	46690	17.28	17.19	false
+CooksFastFood	Cooks, Fast Food	352011	31140	30160	22370	26540	35710	38980	14.97	14.5	true
+Cafeteria	Cooks, Institution and Cafeteria	352012	37310	36450	26800	30530	42860	48320	17.94	17.53	true
+CooksPrivateHousehold	Cooks, Private Household	352013	51290	44530	38240	42800	47150	92480	24.66	21.41	true
+CooksRestaurant	Cooks, Restaurant	352014	37730	36830	28010	31310	43610	47340	18.14	17.71	true
+CooksShortOrder	Cooks, Short Order	352015	35660	35620	23770	30160	39990	46010	17.14	17.12	true
+CooksAllOther	Cooks, All Other	352019	38000	36210	26430	31200	42230	49600	18.27	17.41	true
+FoodPreparationWorkers	Food Preparation Workers	352021	33940	34220	23490	28740	37540	44260	16.32	16.45	true
+FoodandBeverageServingWorkers	Food and Beverage Serving Workers	353000	34650	31470	21880	27040	36830	47920	16.66	15.13	false
+Bartenders	Bartenders	353011	39880	33530	19930	25790	46790	71920	19.17	16.12	true
+Baristas	Baristas	353023	31350	30480	22620	27150	35440	38800	15.07	14.65	true
+Waitresses	Waiters and Waitresses	353031	38360	33760	18500	25690	45350	62510	18.44	16.23	true
+FoodServersNonrestaurant	Food Servers, Nonrestaurant	353041	35030	34460	26590	29800	37550	44770	16.84	16.57	true
+OtherFoodPreparationandServingRelatedWorkers	Other Food Preparation and Serving Related Workers	359000	33380	32680	22600	27830	36620	43970	16.05	15.71	false
+BartenderHelpers	Dining Room and Cafeteria Attendants and Bartender Helpers	359011	34190	32670	22260	27830	36880	46380	16.44	15.71	true
+Dishwashers	Dishwashers	359021	33220	33670	23960	28740	36750	41600	15.97	16.19	true
+CoffeeShop	Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop	359031	32030	30380	22010	26630	35840	42600	15.4	14.61	true
+ServingRelatedWorkersAllOther	Food Preparation and Serving Related Workers, All Other	359099	35990	34830	24040	29890	38860	47360	17.3	16.74	true
+BuildingandGroundsCleaningandMaintenanceOccupations	Building and Grounds Cleaning and Maintenance Occupations	370000	39540	36790	28120	31600	44980	55120	19.01	17.69	false
+FirstLineSupervisorsofBuildingandGroundsCleaningandMaintenanceWorkers	First-Line Supervisors of Building and Grounds Cleaning and Maintenance Workers	371010	54580	49990	36020	41820	63080	78050	26.24	24.03	false
+JanitorialWorkers	First-Line Supervisors of Housekeeping and Janitorial Workers	371011	51170	47520	34390	38600	60330	74190	24.6	22.85	true
+GroundskeepingWorkers	First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers	371012	40880	38090	29990	35250	45870	53900	19.66	18.31	true
+BuildingCleaningandPestControlWorkers	Building Cleaning and Pest Control Workers	372000	37400	35750	27420	30520	41420	49040	17.98	17.19	false
+BuildingCleaningWorkers	Building Cleaning Workers	372010	37140	35630	27320	30410	40600	48670	17.86	17.13	false
+Janitors	Janitors and Cleaners, Except Maids and Housekeeping Cleaners	372011	37460	35930	27570	30830	41650	49040	18.01	17.27	true
+HousekeepingCleaners	Maids and Housekeeping Cleaners	372012	36180	34660	26800	29630	38510	47590	17.39	16.66	true
+BuildingCleaningWorkersAllOther	Building Cleaning Workers, All Other	372019	44150	42360	30640	35610	48400	61640	21.23	20.37	true
+PestControlWorkers	Pest Control Workers	372021	45800	44730	32460	37060	49300	61410	22.02	21.51	true
+GroundsMaintenanceWorkers	Grounds Maintenance Workers	373010	41750	38470	30140	35470	46390	56460	20.07	18.5	false
+ApplicatorsVegetation	Pesticide Handlers, Sprayers, and Applicators, Vegetation	373012	45960	45200	34590	38040	50960	58910	22.1	21.73	true
+Pruners	Tree Trimmers and Pruners	373013	54970	50430	37660	43690	63130	78900	26.43	24.25	true
+GroundsMaintenanceWorkersAllOther	Grounds Maintenance Workers, All Other	373019	47180	43410	30790	37810	52830	76090	22.68	20.87	true
+PersonalCareandServiceOccupations	Personal Care and Service Occupations	390000	39410	35110	24220	29220	44400	59320	18.95	16.88	false
+SupervisorsofPersonalCareandServiceWorkers	Supervisors of Personal Care and Service Workers	391000	52440	48050	33070	38410	61560	77160	25.21	23.1	false
+FirstLineSupervisorsofEntertainmentandRecreationWorkers	First-Line Supervisors of Entertainment and Recreation Workers	391010	53820	49100	33520	38980	63310	79130	25.87	23.61	false
+FirstLineSupervisorsOfGamblingServicesWorkers	First-Line Supervisors of Gambling Services Workers	391013	62600	61590	38360	49190	74080	82370	30.1	29.61	true
+GamblingServices	First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services	391014	51400	46900	32960	37960	60190	76430	24.71	22.55	true
+FirstLineSupervisorsOfPersonalServiceWorkers	First-Line Supervisors of Personal Service Workers	391022	50920	47080	32150	37800	59330	73800	24.48	22.64	true
+AnimalCareandServiceWorkers	Animal Care and Service Workers	392000	35490	33860	24960	28980	37620	47410	17.06	16.28	false
+AnimalTrainers	Animal Trainers	392011	45780	38750	29120	32870	48900	70800	22.01	18.63	true
+AnimalCaretakers	Animal Caretakers	392021	34750	33470	24500	28870	37160	46480	16.71	16.09	true
+EntertainmentAttendantsandRelatedWorkers	Entertainment Attendants and Related Workers	393000	33380	31200	22240	26430	35990	44710	16.05	15	false
+GamblingServicesWorkers	Gambling Services Workers	393010	39450	33280	22420	24950	43040	70610	18.97	16	false
+GamblingDealers	Gambling Dealers	393011	40420	33280	22340	24480	45430	73530	19.43	16	true
+Runners	Gambling and Sports Book Writers and Runners	393012	32570	30460	22200	24960	36310	45900	15.66	14.65	true
+GamblingServiceWorkersAllOther	Gambling Service Workers, All Other	393019	37590	34530	22880	27570	38950	56740	18.07	16.6	true
+MotionPictureProjectionists	Motion Picture Projectionists	393021	50290	38180	24160	29250	75380	82040	24.18	18.35	true
+TicketTakers	Ushers, Lobby Attendants, and Ticket Takers	393031	31770	31150	22880	27140	35650	40210	15.27	14.98	true
+MiscellaneousEntertainmentAttendantsandRelatedWorkers	Miscellaneous Entertainment Attendants and Related Workers	393090	32180	31020	22040	26430	35700	42640	15.47	14.91	false
+RecreationAttendants	Amusement and Recreation Attendants	393091	31350	30490	21940	26430	35360	39940	15.07	14.66	true
+CostumeAttendants	Costume Attendants	393092	65890	54810	33610	39240	83090	115240	31.68	26.35	true
+DressingRoomAttendants	Locker Room, Coatroom, and Dressing Room Attendants	393093	36490	34800	23530	29120	41530	50790	17.54	16.73	true
+FuneralServiceWorkers	Funeral Service Workers	394000	45890	39170	28300	31670	53830	73810	22.06	18.83	false
+EmbalmersandCrematoryOperators	Embalmers and Crematory Operators	394010	51630	48610	32600	38140	59350	73740	24.82	23.37	false
+Embalmers	Embalmers	394011	57520	56280	35160	46160	64760	78740	27.65	27.06	true
+CrematoryOperators	Crematory Operators	394012	44790	42880	31970	35890	49800	60260	21.53	20.62	true
+FuneralAttendants	Funeral Attendants	394021	35900	34610	26820	29420	39230	46690	17.26	16.64	true
+FuneralArrangers	Morticians, Undertakers, and Funeral Arrangers	394031	56340	49800	31470	38470	67140	85940	27.09	23.94	true
+PersonalAppearanceWorkers	Personal Appearance Workers	395000	42480	35310	25580	30220	47040	63900	20.42	16.98	false
+BarbersHairdressersHairstylistsandCosmetologists	Barbers, Hairdressers, Hairstylists and Cosmetologists	395010	43710	35420	24960	29120	48670	71360	21.01	17.03	false
+Barbers	Barbers	395011	47800	38960	27770	32050	59180	78440	22.98	18.73	true
+Cosmetologists	Hairdressers, Hairstylists, and Cosmetologists	395012	43460	35250	24580	29060	48300	70220	20.89	16.95	true
+MiscellaneousPersonalAppearanceWorkers	Miscellaneous Personal Appearance Workers	395090	40810	35260	27360	31620	44290	58770	19.62	16.95	false
+Performance	Makeup Artists, Theatrical and Performance	395091	75410	50280	22010	28850	132530	157090	36.25	24.17	true
+Pedicurists	Manicurists and Pedicurists	395092	36910	34660	27910	31510	37660	47990	17.74	16.66	true
+Shampooers	Shampooers	395093	30830	31470	22880	27390	35610	35970	14.82	15.13	true
+SkincareSpecialists	Skincare Specialists	395094	48670	41560	27160	34130	55860	77330	23.4	19.98	true
+BaggagePortersBellhopsandConcierges	Baggage Porters, Bellhops, and Concierges	396010	39190	36810	28360	32560	43600	54340	18.84	17.7	false
+Bellhops	Baggage Porters and Bellhops	396011	36960	36020	25480	29830	40780	48490	17.77	17.32	true
+Concierges	Concierges	396012	40770	37320	30770	33860	45700	58050	19.6	17.94	true
+TourandTravelGuides	Tour and Travel Guides	397010	43090	36660	26890	31250	45910	59930	20.72	17.63	false
+OtherPersonalCareandServiceWorkers	Other Personal Care and Service Workers	399000	39230	35550	24680	29590	44270	58190	18.86	17.09	false
+Nannies	Nannies	399011	33140	32050	22900	28000	36960	44560	15.93	15.41	true
+RecreationandFitnessWorkers	Recreation and Fitness Workers	399030	44190	37420	26590	31400	49530	68740	21.25	17.99	false
+GroupFitnessInstructors	Exercise Trainers and Group Fitness Instructors	399031	51360	46180	27580	34090	60920	82050	24.69	22.2	true
+RecreationWorkers	Recreation Workers	399032	37170	35380	25640	30460	41120	49460	17.87	17.01	true
+ResidentialAdvisors	Residential Advisors	399041	41590	39180	28490	33890	47590	58350	19.99	18.84	true
+ServiceWorkersAllOther	Personal Care and Service Workers, All Other	399099	37990	37900	24980	32450	39190	49300	18.27	18.22	true
+SalesandRelatedOccupations	Sales and Related Occupations	410000	54070	37460	27060	31010	59880	98860	26	18.01	false
+FirstLineSupervisorsofSalesWorkers	First-Line Supervisors of Sales Workers	411010	59830	49510	32630	38710	66960	95170	28.77	23.81	false
+FirstLineSupervisorsOfRetailSalesWorkers	First-Line Supervisors of Retail Sales Workers	411011	52350	47320	31120	37580	60510	76560	25.17	22.75	true
+FirstLineSupervisorsOfNonRetailSalesWorkers	First-Line Supervisors of Non-Retail Sales Workers	411012	97870	84130	48880	62730	118190	162120	47.06	40.45	true
+RetailSalesWorkers	Retail Sales Workers	412000	35470	33690	24170	28630	37090	46540	17.05	16.2	false
+Cashiers	Cashiers	412010	31810	31190	23070	27780	35410	38220	15.29	14.99	false
+BoothCashiers	Gambling Change Persons and Booth Cashiers	412012	36820	34810	22810	28870	39350	49190	17.7	16.74	true
+CounterandRentalClerksandPartsSalespersons	Counter and Rental Clerks and Parts Salespersons	412020	43180	38100	28150	33280	48340	61900	20.76	18.32	false
+RentalClerks	Counter and Rental Clerks	412021	43700	38540	28580	34200	48290	62030	21.01	18.53	true
+PartsSalespersons	Parts Salespersons	412022	42390	37440	27770	30630	48410	61750	20.38	18	true
+RetailSalespersons	Retail Salespersons	412031	37150	34580	25600	29140	37850	47930	17.86	16.62	true
+SalesRepresentativesServices	Sales Representatives, Services	413000	86380	64200	37400	47620	100010	159790	41.53	30.87	false
+AdvertisingSalesAgents	Advertising Sales Agents	413011	76350	61460	33480	44980	91430	133540	36.71	29.55	true
+InsuranceSalesAgents	Insurance Sales Agents	413021	81510	60370	36390	45520	91150	135660	39.19	29.02	true
+FinancialServicesSalesAgents	Securities, Commodities, and Financial Services Sales Agents	413031	110400	78140	47080	51600	129480	215210	53.08	37.57	true
+TravelAgents	Travel Agents	413041	52690	48450	33280	38760	60880	74160	25.33	23.29	true
+Travel	Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel	413091	81260	66260	36930	47120	98780	142040	39.07	31.86	true
+SalesRepresentativesWholesaleandManufacturing	Sales Representatives, Wholesale and Manufacturing	414010	87690	74100	38910	50820	103200	155930	42.16	35.63	false
+Assessors	Solar Sales Representatives and Assessors	414011	114520	100070	48840	65640	146150	194890	55.06	48.11	true
+ScientificProducts	Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products	414012	81470	66780	37860	49040	97570	134470	39.17	32.11	true
+OtherSalesandRelatedWorkers	Other Sales and Related Workers	419000	68850	49720	29840	36300	83020	130790	33.1	23.91	false
+ModelsDemonstratorsandProductPromoters	Models, Demonstrators, and Product Promoters	419010	46610	38760	30920	34200	52790	66460	22.41	18.64	false
+ProductPromoters	Demonstrators and Product Promoters	419011	43730	37960	30910	33860	50100	60320	21.03	18.25	true
+Models	Models	419012	81540	89990	38010	45760	89990	124380	39.2	43.26	true
+RealEstateBrokersandSalesAgents	Real Estate Brokers and Sales Agents	419020	75240	58960	33280	40180	92540	134140	36.17	28.35	false
+RealEstateBrokers	Real Estate Brokers	419021	91660	72280	36920	48200	114220	166730	44.07	34.75	true
+RealEstateSalesAgents	Real Estate Sales Agents	419022	70970	56320	31940	38940	85440	125140	34.12	27.08	true
+SalesEngineers	Sales Engineers	419031	130410	121520	70580	90690	159200	202670	62.7	58.42	true
+Telemarketers	Telemarketers	419041	36340	34410	24620	29120	38640	48930	17.47	16.54	true
+MiscellaneousSalesandRelatedWorkers	Miscellaneous Sales and Related Workers	419090	56270	46000	27960	34530	65330	94920	27.05	22.11	false
+RelatedWorkers	Door-to-Door Sales Workers, News and Street Vendors, and Related Workers	419091	39890	34530	23440	31200	42970	55970	19.18	16.6	true
+OfficeandAdministrativeSupportOccupations	Office and Administrative Support Occupations	430000	50160	46320	31800	37580	58730	74480	24.12	22.27	false
+AdministrativeSupportWorkers	First-Line Supervisors of Office and Administrative Support Workers	431011	71560	66140	43920	53190	82340	102980	34.4	31.8	true
+CommunicationsEquipmentOperators	Communications Equipment Operators	432000	42670	38600	29990	34600	47360	61580	20.52	18.56	false
+AnsweringService	Switchboard Operators, Including Answering Service	432011	42130	38370	29820	34250	46330	60940	20.26	18.45	true
+TelephoneOperators	Telephone Operators	432021	42880	39130	31440	35860	48530	57510	20.62	18.81	true
+CommunicationsEquipmentOperatorsAllOther	Communications Equipment Operators, All Other	432099	55890	49910	35980	44620	64310	89110	26.87	24	true
+FinancialClerks	Financial Clerks	433000	50200	47370	34600	39390	58260	69820	24.14	22.77	false
+AccountCollectors	Bill and Account Collectors	433011	48370	46040	33960	38290	54990	65830	23.25	22.14	true
+PostingClerks	Billing and Posting Clerks	433021	49490	47170	35760	40260	56350	64990	23.8	22.68	true
+AuditingClerks	Bookkeeping, Accounting, and Auditing Clerks	433031	52020	49210	34600	41390	60220	72660	25.01	23.66	true
+GamblingCageWorkers	Gambling Cage Workers	433041	38600	36990	27940	31870	43840	49350	18.56	17.78	true
+TimekeepingClerks	Payroll and Timekeeping Clerks	433051	56870	55290	36670	45440	65750	78830	27.34	26.58	true
+ProcurementClerks	Procurement Clerks	433061	50430	48510	36810	41240	57680	65890	24.25	23.32	true
+Tellers	Tellers	433071	40940	39340	31270	36420	45550	48270	19.68	18.91	true
+FinancialClerksAllOther	Financial Clerks, All Other	433099	55330	52150	38770	46350	61190	75860	26.6	25.07	true
+InformationandRecordClerks	Information and Record Clerks	434000	44580	41600	29990	35450	49850	62190	21.44	20	false
+BrokerageClerks	Brokerage Clerks	434011	67680	62940	47730	53880	77400	91650	32.54	30.26	true
+CorrespondenceClerks	Correspondence Clerks	434021	46610	46740	33530	38510	52480	62200	22.41	22.47	true
+LicenseClerks	Court, Municipal, and License Clerks	434031	51200	47700	34860	39730	59590	72370	24.61	22.93	true
+Clerks	Credit Authorizers, Checkers, and Clerks	434041	51050	48950	36360	42720	59520	65910	24.54	23.53	true
+CustomerServiceRepresentatives	Customer Service Representatives	434051	45380	42830	30690	35970	50140	62730	21.82	20.59	true
+EligibilityInterviewersGovernmentPrograms	Eligibility Interviewers, Government Programs	434061	53970	51500	37690	43850	61680	72280	25.95	24.76	true
+FileClerks	File Clerks	434071	43700	41270	29620	35120	50020	61080	21.01	19.84	true
+ResortDeskClerks	Hotel, Motel, and Resort Desk Clerks	434081	34740	34270	26600	29210	37430	44720	16.7	16.48	true
+Loan	Interviewers, Except Eligibility and Loan	434111	45400	43830	31980	37380	50440	60960	21.83	21.07	true
+LibraryAssistantsClerical	Library Assistants, Clerical	434121	37910	36010	25090	30190	44200	52790	18.22	17.31	true
+NewAccountsClerks	New Accounts Clerks	434141	47610	46610	36980	40050	51510	60110	22.89	22.41	true
+OrderClerks	Order Clerks	434151	46270	44660	33530	38110	51890	61680	22.24	21.47	true
+Timekeeping	Human Resources Assistants, Except Payroll and Timekeeping	434161	50950	49440	36090	42360	58560	67140	24.5	23.77	true
+InformationClerks	Receptionists and Information Clerks	434171	38480	37230	28280	32660	44070	48870	18.5	17.9	true
+TravelClerks	Reservation and Transportation Ticket Agents and Travel Clerks	434181	47720	41460	34550	37200	54930	75050	22.94	19.94	true
+RecordClerksAllOther	Information and Record Clerks, All Other	434199	50200	48360	34170	39610	58680	68850	24.14	23.25	true
+MaterialRecordingSchedulingDispatchingandDistributingWorkers	Material Recording, Scheduling, Dispatching, and Distributing Workers	435000	52440	48090	35350	40210	61520	75300	25.21	23.12	false
+FreightForwarders	Freight Forwarders	435011	55420	49900	37240	43490	62230	76350	26.64	23.99	true
+Messengers	Couriers and Messengers	435021	40060	38340	29880	35130	44630	50590	19.26	18.43	true
+Dispatchers	Dispatchers	435030	109620	107240	70760	91670	128690	144900	52.7	51.56	false
+PublicSafetyTelecommunicators	Public Safety Telecommunicators	435031	54800	50730	35640	42140	62840	78110	26.35	24.39	true
+Ambulance	Dispatchers, Except Police, Fire, and Ambulance	435032	53150	48880	34600	40240	61520	76130	25.55	23.5	true
+MeterReadersUtilities	Meter Readers, Utilities	435041	55810	49180	33980	39620	68030	86480	26.83	23.64	true
+PostalServiceWorkers	Postal Service Workers	435050	59720	57870	42390	46030	74050	75300	28.71	27.82	false
+PostalServiceClerks	Postal Service Clerks	435051	61070	61630	42600	55410	74050	74050	29.36	29.63	true
+PostalServiceMailCarriers	Postal Service Mail Carriers	435052	59880	57490	42390	46030	75300	76880	28.79	27.64	true
+ProcessingMachineOperators	Postal Service Mail Sorters, Processors, and Processing Machine Operators	435053	46050	40100	30840	34460	51590	69290	22.14	19.28	true
+ExpeditingClerks	Production, Planning, and Expediting Clerks	435061	60420	57770	38570	46600	71480	84810	29.05	27.78	true
+InventoryClerks	Shipping, Receiving, and Inventory Clerks	435071	44890	43190	32900	37040	49390	60300	21.58	20.77	true
+SamplersRecordkeeping	Weighers, Measurers, Checkers, and Samplers, Recordkeeping	435111	46660	45650	34580	38650	53060	60120	22.43	21.95	true
+SecretariesandAdministrativeAssistants	Secretaries and Administrative Assistants	436010	52070	47460	33840	38790	59990	76550	25.03	22.82	false
+ExecutiveAdministrativeAssistants	Executive Secretaries and Executive Administrative Assistants	436011	77060	74260	48300	60000	90440	107710	37.05	35.7	true
+AdministrativeAssistants	Legal Secretaries and Administrative Assistants	436012	45580	44640	35050	37880	49720	60050	21.91	21.46	true
+Executive	Secretaries and Administrative Assistants, Except Legal, Medical, and Executive	436014	47640	46290	31600	37770	55650	64150	22.9	22.26	true
+OtherOfficeandAdministrativeSupportWorkers	Other Office and Administrative Support Workers	439000	45950	44030	29710	35750	53090	64270	22.09	21.17	false
+DataEntryandInformationProcessingWorkers	Data Entry and Information Processing Workers	439020	43680	41480	31200	35760	49300	59220	21	19.94	false
+DataEntryKeyers	Data Entry Keyers	439021	42070	39850	30100	34900	47260	56930	20.22	19.16	true
+Typists	Word Processors and Typists	439022	49730	47850	35300	39740	56000	64370	23.91	23.01	true
+DesktopPublishers	Desktop Publishers	439031	60250	53620	34650	42680	71990	92880	28.97	25.78	true
+PolicyProcessingClerks	Insurance Claims and Policy Processing Clerks	439041	51980	48450	36900	41600	59500	73100	24.99	23.29	true
+PostalService	Mail Clerks and Mail Machine Operators, Except Postal Service	439051	40200	38150	29460	34440	44940	52150	19.33	18.34	true
+OfficeClerksGeneral	Office Clerks, General	439061	45470	43630	29120	35350	52560	63840	21.86	20.97	true
+Computer	Office Machine Operators, Except Computer	439071	41620	39020	29850	34420	46680	56340	20.01	18.76	true
+CopyMarkers	Proofreaders and Copy Markers	439081	52730	49210	33530	38590	62380	78040	25.35	23.66	true
+StatisticalAssistants	Statistical Assistants	439111	55470	51440	38050	45970	63620	79410	26.67	24.73	true
+AdministrativeSupportWorkersAllOther	Office and Administrative Support Workers, All Other	439199	48700	46040	30480	35390	57500	71840	23.42	22.14	true
+FarmingFishingandForestryOccupations	Farming, Fishing, and Forestry Occupations	450000	41730	36750	31470	34590	45450	58950	20.06	17.67	false
+ForestryWorkers	First-Line Supervisors of Farming, Fishing, and Forestry Workers	451011	63360	59330	39610	47660	76640	90840	30.46	28.53	true
+AgriculturalWorkers	Agricultural Workers	452000	39060	36020	30880	34260	41660	49850	18.78	17.32	false
+AgriculturalInspectors	Agricultural Inspectors	452011	55650	50990	37440	42740	64960	80240	26.75	24.51	true
+AnimalBreeders	Animal Breeders	452021	56150	52000	37130	43310	59630	89970	27	25	true
+SortersAgriculturalProducts	Graders and Sorters, Agricultural Products	452041	36080	35430	30490	33550	38010	43280	17.34	17.03	true
+MiscellaneousAgriculturalWorkers	Miscellaneous Agricultural Workers	452090	38610	35960	30830	34230	41070	48810	18.56	17.29	false
+AgriculturalEquipmentOperators	Agricultural Equipment Operators	452091	43920	42580	31240	36640	48690	57790	21.12	20.47	true
+Greenhouse	Farmworkers and Laborers, Crop, Nursery, and Greenhouse	452092	37850	35690	32260	34280	38950	46370	18.2	17.16	true
+AquaculturalAnimals	Farmworkers, Farm, Ranch, and Aquacultural Animals	452093	38580	36150	27110	31220	44280	51840	18.55	17.38	true
+AgriculturalWorkersAllOther	Agricultural Workers, All Other	452099	45780	40390	27860	33870	52730	76730	22.01	19.42	true
+ForestConservationandLoggingWorkers	Forest, Conservation, and Logging Workers	454000	51180	48390	34570	40510	59620	70840	24.61	23.27	false
+ConservationWorkers	Forest and Conservation Workers	454011	42830	43680	33050	36400	45200	54190	20.59	21	true
+LoggingWorkers	Logging Workers	454020	52650	49540	35230	42410	60810	72940	25.31	23.82	false
+Fallers	Fallers	454021	59120	53900	35620	43670	65040	84510	28.42	25.92	true
+LoggingEquipmentOperators	Logging Equipment Operators	454022	52020	49210	35050	43750	60640	72280	25.01	23.66	true
+Scalers	Log Graders and Scalers	454023	48130	46710	35050	38390	56200	63370	23.14	22.46	true
+LoggingWorkersAllOther	Logging Workers, All Other	454029	53820	52000	37260	42010	62000	72070	25.88	25	true
+ConstructionandExtractionOccupations	Construction and Extraction Occupations	470000	63920	58360	37440	46030	76820	100430	30.73	28.06	false
+SolarEnergyInstallationManagers	Solar Energy Installation Managers	471011	84500	78690	51290	62400	100200	126690	40.62	37.83	true
+ConstructionTradesWorkers	Construction Trades Workers	472000	61560	56490	37260	45560	73780	96650	29.6	27.16	false
+Boilermakers	Boilermakers	472011	76900	73340	48390	62230	93520	107600	36.97	35.26	true
+BrickmasonsBlockmasonsandStonemasons	Brickmasons, Blockmasons, and Stonemasons	472020	64240	60180	40330	48690	76340	94190	30.89	28.93	false
+Blockmasons	Brickmasons and Blockmasons	472021	65390	60800	41330	49430	77290	95560	31.44	29.23	true
+Stonemasons	Stonemasons	472022	57220	51990	37420	44820	64120	83200	27.51	25	true
+Carpenters	Carpenters	472031	64040	59310	38760	47550	75620	98370	30.79	28.51	true
+CarpetFloorandTileInstallersandFinishers	Carpet, Floor, and Tile Installers and Finishers	472040	57830	52000	35850	43520	65810	86290	27.8	25	false
+CarpetInstallers	Carpet Installers	472041	55860	49850	32830	39140	65530	83200	26.85	23.97	true
+HardTiles	Floor Layers, Except Carpet, Wood, and Hard Tiles	472042	60550	54340	37190	44760	72390	97180	29.11	26.13	true
+Finishers	Floor Sanders and Finishers	472043	48940	47260	35180	39380	57800	62790	23.53	22.72	true
+StoneSetters	Tile and Stone Setters	472044	57590	52240	36140	44540	64980	82960	27.69	25.11	true
+CementMasonsConcreteFinishersandTerrazzoWorkers	Cement Masons, Concrete Finishers, and Terrazzo Workers	472050	59380	54700	38290	46020	65890	87760	28.55	26.3	false
+ConcreteFinishers	Cement Masons and Concrete Finishers	472051	59360	54660	38290	46020	65840	87620	28.54	26.28	true
+ConstructionLaborers	Construction Laborers	472061	51260	46730	34200	38100	58910	77530	24.64	22.47	true
+ConstructionEquipmentOperators	Construction Equipment Operators	472070	64680	58320	39850	47590	75370	99930	31.1	28.04	false
+TampingEquipmentOperators	Paving, Surfacing, and Tamping Equipment Operators	472071	58660	51650	38030	44740	66060	90110	28.2	24.83	true
+PileDriverOperators	Pile Driver Operators	472072	79000	70510	46690	54750	103960	121990	37.98	33.9	true
+OtherConstructionEquipmentOperators	Operating Engineers and Other Construction Equipment Operators	472073	65180	58710	40080	47780	75750	100690	31.34	28.23	true
+DrywallInstallersCeilingTileInstallersandTapers	Drywall Installers, Ceiling Tile Installers, and Tapers	472080	63800	58800	38160	47070	74410	102920	30.68	28.27	false
+CeilingTileInstallers	Drywall and Ceiling Tile Installers	472081	62810	58140	37810	46880	72660	101380	30.2	27.95	true
+Tapers	Tapers	472082	70390	64700	43450	50780	82990	106160	33.84	31.11	true
+Electricians	Electricians	472111	69630	62350	39430	48820	81730	106030	33.47	29.98	true
+Glaziers	Glaziers	472121	60260	55440	37710	45530	68300	98780	28.97	26.65	true
+InsulationWorkers	Insulation Workers	472130	57470	50730	36950	44260	63800	83200	27.63	24.39	false
+Wall	Insulation Workers, Floor, Ceiling, and Wall	472131	53440	48680	35950	40270	60420	77160	25.69	23.41	true
+InsulationWorkersMechanical	Insulation Workers, Mechanical	472132	63540	57250	39450	47480	75300	94110	30.55	27.52	true
+PaintersandPaperhangers	Painters and Paperhangers	472140	53700	48660	36680	42480	60270	76540	25.82	23.39	false
+Maintenance	Painters, Construction and Maintenance	472141	53710	48660	36680	42510	60270	76550	25.82	23.4	true
+Paperhangers	Paperhangers	472142	51900	48260	35020	40930	58470	69470	24.95	23.2	true
+PipelayersPlumbersPipefittersandSteamfitters	Pipelayers, Plumbers, Pipefitters, and Steamfitters	472150	68870	62210	39880	48360	80880	104050	33.11	29.91	false
+Pipelayers	Pipelayers	472151	54270	48710	36840	42320	60980	80710	26.09	23.42	true
+StuccoMasons	Plasterers and Stucco Masons	472161	40880	38140	31360	35230	45290	51720	19.65	18.34	true
+RebarWorkers	Reinforcing Iron and Rebar Workers	472171	62640	59280	39470	47300	74190	95530	30.11	28.5	true
+Roofers	Roofers	472181	57090	50970	37060	45300	64010	80780	27.45	24.51	true
+SheetMetalWorkers	Sheet Metal Workers	472211	66110	60850	38030	47290	79620	102680	31.78	29.26	true
+SteelWorkers	Structural Iron and Steel Workers	472221	69270	62700	42000	49090	82780	107520	33.3	30.14	true
+SolarPhotovoltaicInstallers	Solar Photovoltaic Installers	472231	57380	51860	39070	46040	63020	80150	27.59	24.93	true
+HelpersConstructionTrades	Helpers, Construction Trades	473010	43140	40430	31360	36280	47710	57480	20.74	19.44	false
+MarbleSetters	Helpers--Brickmasons, Blockmasons, Stonemasons, and Tile and Marble Setters	473011	49730	46480	35570	38600	58080	68330	23.91	22.35	true
+HelpersCarpenters	Helpers--Carpenters	473012	42080	41600	31540	35870	46780	52380	20.23	20	true
+HelpersElectricians	Helpers--Electricians	473013	42900	39890	31200	36400	47520	56770	20.62	19.18	true
+Steamfitters	Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters	473015	41720	39270	31050	35750	46550	54860	20.06	18.88	true
+HelpersRoofers	Helpers--Roofers	473016	42070	40590	27780	34800	47570	55310	20.23	19.51	true
+HelpersConstructionTradesAllOther	Helpers, Construction Trades, All Other	473019	44040	40760	31200	36400	48500	59280	21.17	19.6	true
+OtherConstructionandRelatedWorkers	Other Construction and Related Workers	474000	62700	56520	37330	45430	74540	99280	30.15	27.17	false
+EnergyAuditors	Energy Auditors	474011	76430	72120	46560	57300	92330	112320	36.75	34.67	true
+Repairers	Elevator and Escalator Installers and Repairers	474021	36280	35950	25170	29400	41400	48090	17.44	17.29	true
+FenceErectors	Fence Erectors	474031	50550	46940	35090	39040	57070	74660	24.31	22.57	true
+HazardousMaterialsRemovalWorkers	Hazardous Materials Removal Workers	474041	55740	48490	37330	42710	62150	82480	26.8	23.31	true
+HighwayMaintenanceWorkers	Highway Maintenance Workers	474051	51410	49070	35030	41540	59600	69210	24.72	23.59	true
+MaintenanceEquipmentOperators	Rail-Track Laying and Maintenance Equipment Operators	474061	68270	67370	45720	51630	79330	84840	32.82	32.39	true
+SewerPipeCleaners	Septic Tank Servicers and Sewer Pipe Cleaners	474071	52730	49140	36500	42700	60320	73670	25.35	23.62	true
+MiscellaneousConstructionandRelatedWorkers	Miscellaneous Construction and Related Workers	474090	52910	48120	35160	39990	60960	77540	25.44	23.14	false
+ExtractionWorkers	Extraction Workers	475000	59040	56020	37820	46180	67870	82950	28.39	26.93	false
+DerrickRotaryDrillandServiceUnitOperatorsOilandGas	Derrick, Rotary Drill, and Service Unit Operators, Oil and Gas	475010	63330	59660	40340	47930	74550	91990	30.45	28.68	false
+Gas	Derrick Operators, Oil and Gas	475011	49060	47510	35650	38330	57170	64010	23.59	22.84	true
+SurfaceMiningMachineOperatorsandEarthDrillers	Surface Mining Machine Operators and Earth Drillers	475020	59680	56020	40450	47200	66440	83210	28.69	26.93	false
+DraglineOperatorsSurfaceMining	Excavating and Loading Machine and Dragline Operators, Surface Mining	475022	57860	52550	39650	46290	63630	80970	27.82	25.26	true
+Blasters	Explosives Workers, Ordnance Handling Experts, and Blasters	475032	66840	59110	45160	49860	80050	104210	32.13	28.42	true
+UndergroundMiningMachineOperators	Underground Mining Machine Operators	475040	66430	66770	45440	54730	78220	84160	31.94	32.1	false
+ContinuousMiningMachineOperators	Continuous Mining Machine Operators	475041	63920	63380	41450	50850	76850	84420	30.73	30.47	true
+RoofBoltersMining	Roof Bolters, Mining	475043	74760	76640	50880	67110	80230	87420	35.94	36.85	true
+MovingMachineOperatorsUndergroundMining	Loading and Moving Machine Operators, Underground Mining	475044	68470	68860	48310	59130	76820	82900	32.92	33.11	true
+UndergroundMiningMachineOperatorsAllOther	Underground Mining Machine Operators, All Other	475049	67830	67220	46930	50660	80440	82750	32.61	32.32	true
+RockSplittersQuarry	Rock Splitters, Quarry	475051	50540	47460	37240	39990	58290	68380	24.3	22.82	true
+HelpersExtractionWorkers	Helpers--Extraction Workers	475081	50330	48400	35770	39980	57560	68240	24.2	23.27	true
+ExtractionWorkersAllOther	Extraction Workers, All Other	475099	54780	50110	35720	39120	65350	80780	26.34	24.09	true
+InstallationMaintenanceandRepairOccupations	Installation, Maintenance, and Repair Occupations	490000	61640	58230	36190	45000	75100	94420	29.63	27.99	false
+ElectricalandElectronicEquipmentMechanicsInstallersandRepairers	Electrical and Electronic Equipment Mechanics, Installers, and Repairers	492000	65000	60980	38370	47650	78690	97870	31.25	29.32	false
+OfficeMachineRepairers	Computer, Automated Teller, and Office Machine Repairers	492011	49820	46860	35120	38290	59420	69560	23.95	22.53	true
+RadioandTelecommunicationsEquipmentInstallersandRepairers	Radio and Telecommunications Equipment Installers and Repairers	492020	66820	62710	42400	50590	80340	95640	32.13	30.15	false
+LineInstallers	Telecommunications Equipment Installers and Repairers, Except Line Installers	492022	66650	62630	42440	50580	80040	94970	32.04	30.11	true
+MiscellaneousElectricalandElectronicEquipmentMechanicsInstallersandRepairers	Miscellaneous Electrical and Electronic Equipment Mechanics, Installers, and Repairers	492090	68350	63120	39690	48750	81960	103700	32.86	30.35	false
+AvionicsTechnicians	Avionics Technicians	492091	82350	81390	49770	65170	98990	113580	39.59	39.13	true
+RelatedRepairers	Electric Motor, Power Tool, and Related Repairers	492092	58830	51680	36390	45000	64780	87040	28.28	24.85	true
+RepairersTransportationEquipment	Electrical and Electronics Installers and Repairers, Transportation Equipment	492093	80980	82730	49490	65750	95730	106110	38.93	39.77	true
+ElectricalRepairers	Electrical and Electronics Repairers, Commercial and Industrial Equipment	492094	72950	71300	44980	56750	85160	103060	35.07	34.28	true
+Relay	Electrical and Electronics Repairers, Powerhouse, Substation, and Relay	492095	97460	100940	60820	79930	114740	127970	46.86	48.53	true
+RepairersMotorVehicles	Electronic Equipment Installers and Repairers, Motor Vehicles	492096	50240	47940	31680	39970	58900	70480	24.16	23.05	true
+FireAlarmSystemsInstallers	Security and Fire Alarm Systems Installers	492098	60040	59300	38410	47330	71340	81980	28.87	28.51	true
+VehicleandMobileEquipmentMechanicsInstallersandRepairers	Vehicle and Mobile Equipment Mechanics, Installers, and Repairers	493000	58880	56220	35280	42730	72320	86250	28.31	27.03	false
+ServiceTechnicians	Aircraft Mechanics and Service Technicians	493011	56450	54950	35950	45070	65120	78820	27.14	26.42	true
+AutomotiveTechniciansandRepairers	Automotive Technicians and Repairers	493020	55780	49950	34230	38730	65230	81000	26.82	24.02	false
+Mechanics	Automotive Service Technicians and Mechanics	493023	55260	49670	33660	38140	65660	80850	26.57	23.88	true
+DieselEngineSpecialists	Bus and Truck Mechanics and Diesel Engine Specialists	493031	62480	60640	41670	49240	73690	85980	30.04	29.15	true
+HeavyVehicleandMobileEquipmentServiceTechniciansandMechanics	Heavy Vehicle and Mobile Equipment Service Technicians and Mechanics	493040	65660	62740	43630	50750	77050	89920	31.57	30.16	false
+Engines	Mobile Heavy Equipment Mechanics, Except Engines	493042	67580	63980	45450	53500	78090	92360	32.49	30.76	true
+RailCarRepairers	Rail Car Repairers	493043	67610	65680	45670	51640	80150	92000	32.5	31.58	true
+SmallEngineMechanics	Small Engine Mechanics	493050	51240	48240	34300	39700	59890	72630	24.64	23.19	false
+MotorcycleMechanics	Motorcycle Mechanics	493052	49650	47200	31770	38270	58880	70210	23.87	22.69	true
+OtherSmallEngineMechanics	Outdoor Power Equipment and Other Small Engine Mechanics	493053	48200	46560	33600	38260	56080	64540	23.18	22.38	true
+MiscellaneousVehicleandMobileEquipmentMechanicsInstallersandRepairers	Miscellaneous Vehicle and Mobile Equipment Mechanics, Installers, and Repairers	493090	41560	37960	30060	34630	46210	58090	19.98	18.25	false
+BicycleRepairers	Bicycle Repairers	493091	41550	40360	30640	35880	47560	52130	19.98	19.4	true
+RecreationalVehicleServiceTechnicians	Recreational Vehicle Service Technicians	493092	55380	50540	35480	43370	63300	76650	26.63	24.3	true
+Changers	Tire Repairers and Changers	493093	39140	37120	29880	33990	43810	48900	18.82	17.85	true
+OtherInstallationMaintenanceandRepairOccupations	Other Installation, Maintenance, and Repair Occupations	499000	58660	54790	35790	43780	70260	86930	28.2	26.34	false
+ControlandValveInstallersandRepairers	Control and Valve Installers and Repairers	499010	67810	61600	39610	48360	83220	104170	32.6	29.61	false
+MechanicalDoorRepairers	Mechanical Door Repairers	499011	54110	51050	37160	44720	61350	73160	26.01	24.54	true
+MechanicalDoor	Control and Valve Installers and Repairers, Except Mechanical Door	499012	75970	74690	43840	53060	97400	109050	36.52	35.91	true
+Installers	Heating, Air Conditioning, and Refrigeration Mechanics and Installers	499021	62690	59810	39130	47850	74820	91020	30.14	28.75	true
+HomeApplianceRepairers	Home Appliance Repairers	499031	53580	49410	33280	40280	61750	77800	25.76	23.76	true
+IndustrialMachineryInstallationRepairandMaintenanceWorkers	Industrial Machinery Installation, Repair, and Maintenance Workers	499040	66680	63500	44420	52020	77730	91610	32.06	30.53	false
+IndustrialMachineryMechanics	Industrial Machinery Mechanics	499041	67160	63760	45090	52710	78070	92730	32.29	30.65	true
+MaintenanceWorkersMachinery	Maintenance Workers, Machinery	499043	61820	60500	40080	48600	72260	83560	29.72	29.09	true
+Millwrights	Millwrights	499044	68640	65170	45100	55420	80580	93740	33	31.33	true
+Brickmasons	Refractory Materials Repairers, Except Brickmasons	499045	61480	58540	37050	48380	73940	81440	29.56	28.15	true
+LineInstallersandRepairers	Line Installers and Repairers	499050	82280	81110	46420	59460	102620	117990	39.56	38.99	false
+PrecisionInstrumentandEquipmentRepairers	Precision Instrument and Equipment Repairers	499060	65560	61430	38110	47150	78940	98470	31.52	29.54	false
+PhotographicEquipmentRepairers	Camera and Photographic Equipment Repairers	499061	53420	49300	36020	42590	62400	76550	25.69	23.7	true
+MedicalEquipmentRepairers	Medical Equipment Repairers	499062	66810	62630	39060	48100	79440	99290	32.12	30.11	true
+Tuners	Musical Instrument Repairers and Tuners	499063	49020	45320	30130	35820	56960	73430	23.57	21.79	true
+ClockRepairers	Watch and Clock Repairers	499064	62450	60690	39920	46530	77340	92570	30.03	29.18	true
+EquipmentRepairersAllOther	Precision Instrument and Equipment Repairers, All Other	499069	70420	67080	44530	52090	82030	100730	33.86	32.25	true
+RepairWorkersGeneral	Maintenance and Repair Workers, General	499071	52430	48620	33860	39050	61710	76110	25.21	23.38	true
+WindTurbineServiceTechnicians	Wind Turbine Service Technicians	499081	67580	62580	49110	58910	75640	88090	32.49	30.09	true
+MiscellaneousInstallationMaintenanceandRepairWorkers	Miscellaneous Installation, Maintenance, and Repair Workers	499090	51380	46970	32460	38080	59700	77230	24.7	22.58	false
+CommercialDivers	Commercial Divers	499092	78110	61130	39130	49370	93840	152580	37.55	29.39	true
+SafeRepairers	Locksmiths and Safe Repairers	499094	55200	50490	34750	40650	64330	79340	26.54	24.27	true
+MobileHomeInstallers	Manufactured Building and Mobile Home Installers	499095	42620	41080	30280	35290	48410	57190	20.49	19.75	true
+Riggers	Riggers	499096	66600	62060	38930	47940	79340	100480	32.02	29.84	true
+TrackSwitchRepairers	Signal and Track Switch Repairers	499097	84940	83600	57410	75680	95620	104860	40.84	40.19	true
+RepairWorkers	Helpers--Installation, Maintenance, and Repair Workers	499098	40750	38860	28770	33760	46600	54650	19.59	18.68	true
+GeothermalTechnicians	Geothermal Technicians	499099	53270	48640	35270	40700	61090	77150	25.61	23.39	true
+ProductionOccupations	Production Occupations	510000	50090	45960	32640	37390	58290	74920	24.08	22.09	false
+OperatingWorkers	First-Line Supervisors of Production and Operating Workers	511011	74540	71190	45790	56330	86770	106960	35.84	34.23	true
+AssemblersandFabricators	Assemblers and Fabricators	512000	45890	43570	32270	36990	50600	63490	22.06	20.95	false
+SystemsAssemblers	Aircraft Structure, Surfaces, Rigging, and Systems Assemblers	512011	66510	61680	46040	53180	75240	94950	31.98	29.65	true
+ElectricalElectronicsandElectromechanicalAssemblers	Electrical, Electronics, and Electromechanical Assemblers	512020	46070	44210	34160	37530	50090	61190	22.15	21.26	false
+Electricalelectronicandelectromechanicalassemblersexceptcoilwinderstapersandfinishers	Electrical, electronic, and electromechanical assemblers, except coil winders, tapers, and finishers	512028	45930	44040	34110	37450	49830	61080	22.08	21.17	false
+OtherMachineAssemblers	Engine and Other Machine Assemblers	512031	56040	52540	37950	42790	70050	74300	26.94	25.26	true
+Fitters	Structural Metal Fabricators and Fitters	512041	52740	49900	37370	44290	59810	70510	25.36	23.99	true
+Fabricators	Fiberglass Laminators and Fabricators	512051	47320	45760	35950	39230	51530	61370	22.75	22	true
+Adjusters	Timing Device Assemblers and Adjusters	512061	42410	40790	26240	27850	58440	65580	20.39	19.61	true
+MiscellaneousAssemblersandFabricators	Miscellaneous Assemblers and Fabricators	512090	44860	42210	31650	36660	49410	62030	21.57	20.29	false
+FoodProcessingWorkers	Food Processing Workers	513000	40090	38200	29200	34240	45780	51920	19.27	18.37	false
+Bakers	Bakers	513011	37670	36650	27560	31470	42570	48260	18.11	17.62	true
+ButchersandOtherMeatPoultryandFishProcessingWorkers	Butchers and Other Meat, Poultry, and Fish Processing Workers	513020	40110	38500	29480	34460	45880	50960	19.28	18.51	false
+MeatCutters	Butchers and Meat Cutters	513021	41300	38960	28850	34460	47200	57130	19.86	18.73	true
+Trimmers	Meat, Poultry, and Fish Cutters and Trimmers	513022	38640	37700	29200	34050	43450	48680	18.58	18.13	true
+MeatPackers	Slaughterers and Meat Packers	513023	40710	39790	31470	35940	45930	49460	19.57	19.13	true
+MiscellaneousFoodProcessingWorkers	Miscellaneous Food Processing Workers	513090	42090	40050	30850	35420	47670	56510	20.23	19.26	false
+Tenders	Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders	513091	44800	41230	34940	37500	48640	60390	21.54	19.82	true
+FoodBatchmakers	Food Batchmakers	513092	42830	40790	30850	35340	49010	57800	20.59	19.61	true
+FoodProcessingWorkersAllOther	Food Processing Workers, All Other	513099	39260	38420	30290	35360	43020	47470	18.88	18.47	true
+MetalWorkersandPlasticWorkers	Metal Workers and Plastic Workers	514000	52050	48660	35940	40360	60310	73550	25.02	23.39	false
+FormingMachineSettersOperatorsandTendersMetalandPlastic	Forming Machine Setters, Operators, and Tenders, Metal and Plastic	514020	49060	47460	35770	39870	55880	63980	23.59	22.82	false
+Plastic	Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic	514021	43820	41600	31940	36620	48990	58320	21.07	20	true
+MachineToolCuttingSettersOperatorsandTendersMetalandPlastic	Machine Tool Cutting Setters, Operators, and Tenders, Metal and Plastic	514030	47500	45870	35150	38630	53140	63050	22.84	22.05	false
+Machinists	Machinists	514041	57390	56150	38100	46250	64910	78760	27.59	27	true
+MetalFurnaceOperatorsTendersPourersandCasters	Metal Furnace Operators, Tenders, Pourers, and Casters	514050	55960	54100	38350	45340	63780	77260	26.91	26.01	false
+CastersMetal	Pourers and Casters, Metal	514052	51320	48940	37250	41410	59850	68030	24.68	23.53	true
+ModelMakersandPatternmakersMetalandPlastic	Model Makers and Patternmakers, Metal and Plastic	514060	63250	59530	38740	47520	74760	94570	30.41	28.62	false
+MoldersandMoldingMachineSettersOperatorsandTendersMetalandPlastic	Molders and Molding Machine Setters, Operators, and Tenders, Metal and Plastic	514070	44340	41890	32180	36450	49310	60210	21.32	20.14	false
+Coremakers	Foundry Mold and Coremakers	514071	46910	45700	36220	39370	51360	61390	22.55	21.97	true
+DieMakers	Tool and Die Makers	514111	65100	63180	44200	51200	77430	87660	31.3	30.38	true
+WeldingSolderingandBrazingWorkers	Welding, Soldering, and Brazing Workers	514120	54640	50560	37820	45090	61390	75260	26.27	24.31	false
+Brazers	Welders, Cutters, Solderers, and Brazers	514121	55100	51000	38130	45580	61610	75850	26.49	24.52	true
+MiscellaneousMetalWorkersandPlasticWorkers	Miscellaneous Metal Workers and Plastic Workers	514190	47500	45050	33810	37470	53460	64720	22.84	21.66	false
+Sharpeners	Tool Grinders, Filers, and Sharpeners	514194	51790	48970	33770	39520	60210	74120	24.9	23.54	true
+PlasticWorkersAllOther	Metal Workers and Plastic Workers, All Other	514199	45850	42750	33850	36890	49930	62800	22.05	20.56	true
+PrintingWorkers	Printing Workers	515110	46260	44830	31450	36950	52510	62530	22.24	21.55	false
+Workers	Prepress Technicians and Workers	515111	49130	47300	34270	39000	57530	65530	23.62	22.74	true
+PrintingPressOperators	Printing Press Operators	515112	46620	45160	31450	36970	54340	63060	22.41	21.71	true
+FinishingWorkers	Print Binding and Finishing Workers	515113	43040	39820	31110	36070	48240	57980	20.69	19.14	true
+TextileApparelandFurnishingsWorkers	Textile, Apparel, and Furnishings Workers	516000	36970	35580	27160	30680	40270	47840	17.78	17.11	false
+DryCleaningWorkers	Laundry and Dry-Cleaning Workers	516011	33990	33800	26270	29530	36760	42370	16.34	16.25	true
+RelatedMaterials	Pressers, Textile, Garment, and Related Materials	516021	33370	33880	24960	29060	36830	41410	16.04	16.29	true
+SewingMachineOperators	Sewing Machine Operators	516031	36680	36000	26860	31200	40810	47060	17.64	17.31	true
+ShoeandLeatherWorkers	Shoe and Leather Workers	516040	36560	36460	24960	29690	42930	47860	17.58	17.53	false
+TailorsDressmakersandSewers	Tailors, Dressmakers, and Sewers	516050	42930	39590	26830	32590	48760	60850	20.64	19.03	false
+SewersHand	Sewers, Hand	516051	34810	33760	25530	29210	38180	46320	16.74	16.23	true
+CustomSewers	Tailors, Dressmakers, and Custom Sewers	516052	44050	40860	27110	33480	49780	62490	21.18	19.64	true
+TextileMachineSettersOperatorsandTenders	Textile Machine Setters, Operators, and Tenders	516060	38820	37800	29630	34430	42400	47970	18.66	18.17	false
+MiscellaneousTextileApparelandFurnishingsWorkers	Miscellaneous Textile, Apparel, and Furnishings Workers	516090	46630	43670	31300	36360	51270	64620	22.42	21	false
+ExtrudingMachineOperators	Extruding and Forming Machine Setters, Operators, and Tenders, Synthetic and Glass Fibers	516091	47420	44980	35590	38990	54690	63650	22.8	21.63	true
+ApparelPatternmakers	Fabric and Apparel Patternmakers	516092	71630	67670	34590	44110	91080	112540	34.44	32.54	true
+Upholsterers	Upholsterers	516093	46960	46190	32190	37200	51740	63600	22.58	22.21	true
+FurnishingsWorkersAllOther	Textile, Apparel, and Furnishings Workers, All Other	516099	40410	37010	30290	32850	44810	53710	19.43	17.79	true
+Woodworkers	Woodworkers	517000	44520	43640	31330	36820	49180	59680	21.4	20.98	false
+BenchCarpenters	Cabinetmakers and Bench Carpenters	517011	47460	46020	34700	38240	54010	63220	22.82	22.12	true
+FurnitureFinishers	Furniture Finishers	517021	44310	42530	31200	36770	49020	59820	21.31	20.45	true
+ModelMakersandPatternmakersWood	Model Makers and Patternmakers, Wood	517030	59160	51920	35210	41980	78190	90560	28.44	24.96	false
+ModelMakersWood	Model Makers, Wood	517031	59780	51850	24710	40420	80380	95850	28.74	24.93	true
+PatternmakersWood	Patternmakers, Wood	517032	57920	52520	40730	45450	77410	83330	27.84	25.25	true
+WoodworkingMachineSettersOperatorsandTenders	Woodworking Machine Setters, Operators, and Tenders	517040	42330	40300	30410	35970	47660	55360	20.35	19.38	false
+TendersWood	Sawing Machine Setters, Operators, and Tenders, Wood	517041	42390	39950	29670	35550	47770	56560	20.38	19.21	true
+Sawing	Woodworking Machine Setters, Operators, and Tenders, Except Sawing	517042	42290	40440	30920	36260	47650	54340	20.33	19.44	true
+WoodworkersAllOther	Woodworkers, All Other	517099	43730	41220	30470	35890	48820	60870	21.03	19.82	true
+PlantandSystemOperators	Plant and System Operators	518000	75480	70740	42950	52290	97400	112070	36.29	34.01	false
+PowerPlantOperatorsDistributorsandDispatchers	Power Plant Operators, Distributors, and Dispatchers	518010	102100	103600	62690	81760	120990	135500	49.09	49.81	false
+NuclearPowerReactorOperators	Nuclear Power Reactor Operators	518011	122830	122610	99300	107170	131520	152690	59.05	58.95	true
+HydroelectricPlantTechnicians	Hydroelectric Plant Technicians	518013	95990	99670	59930	77400	111980	128760	46.15	47.92	true
+BoilerOperators	Stationary Engineers and Boiler Operators	518021	79710	75190	47310	60110	96420	121200	38.32	36.15	true
+SystemOperators	Water and Wastewater Treatment Plant and System Operators	518031	76290	73540	48000	57080	98050	107790	36.68	35.35	true
+MiscellaneousPlantandSystemOperators	Miscellaneous Plant and System Operators	518090	81840	81930	47930	62610	101360	109600	39.35	39.39	false
+GasPlantOperators	Gas Plant Operators	518092	85470	83400	59040	73150	100000	109350	41.09	40.1	true
+Gaugers	Petroleum Pump System Operators, Refinery Operators, and Gaugers	518093	90970	97540	59790	77970	104660	112920	43.74	46.9	true
+BiofuelsProcessingTechnicians	Biofuels Processing Technicians	518099	64490	61710	40250	47860	76910	92750	31	29.67	true
+OtherProductionOccupations	Other Production Occupations	519000	49030	45970	33560	37630	57110	69270	23.57	22.1	false
+ChemicalProcessingMachineSettersOperatorsandTenders	Chemical Processing Machine Setters, Operators, and Tenders	519010	58020	54110	36920	44810	67020	83990	27.89	26.01	false
+CrushingGrindingPolishingMixingandBlendingWorkers	Crushing, Grinding, Polishing, Mixing, and Blending Workers	519020	49330	47110	34820	39170	57410	66320	23.72	22.65	false
+PolishingWorkersHand	Grinding and Polishing Workers, Hand	519022	43550	41690	32120	36660	48410	57250	20.94	20.04	true
+CuttingWorkers	Cutting Workers	519030	45840	45140	33950	37850	51550	60310	22.04	21.7	false
+TrimmersHand	Cutters and Trimmers, Hand	519031	41960	38800	29910	33860	48790	57820	20.17	18.65	true
+Weighers	Inspectors, Testers, Sorters, Samplers, and Weighers	519061	51670	47460	34590	38740	59970	75510	24.84	22.82	true
+DiamondWorkers	Gem and Diamond Workers	519071	55030	49140	33890	38030	63210	81610	26.46	23.63	true
+DentalandOphthalmicLaboratoryTechniciansandMedicalApplianceTechnicians	Dental and Ophthalmic Laboratory Technicians and Medical Appliance Technicians	519080	49990	45820	34180	37620	58130	74550	24.04	22.03	false
+DentalLaboratoryTechnicians	Dental Laboratory Technicians	519081	54060	48310	36100	39250	62320	78680	25.99	23.23	true
+MedicalApplianceTechnicians	Medical Appliance Technicians	519082	51410	47060	36560	40300	58710	74570	24.72	22.63	true
+OphthalmicLaboratoryTechnicians	Ophthalmic Laboratory Technicians	519083	41760	38420	31250	35580	45410	55480	20.08	18.47	true
+PaintingWorkers	Painting Workers	519120	51230	47390	35200	39190	58340	72240	24.63	22.79	false
+DecoratingWorkers	Painting, Coating, and Decorating Workers	519123	44130	40860	28490	34540	50700	62770	21.22	19.64	true
+SemiconductorProcessingTechnicians	Semiconductor Processing Technicians	519141	59640	51180	35980	45320	74640	87190	28.68	24.6	true
+ComputerNumericallyControlledToolOperatorsandProgrammers	Computer Numerically Controlled Tool Operators and Programmers	519160	55240	51330	37510	44200	62690	76610	26.56	24.68	false
+ComputerNumericallyControlledToolOperators	Computer Numerically Controlled Tool Operators	519161	52900	49970	37160	42710	60980	71160	25.43	24.02	true
+ComputerNumericallyControlledToolProgrammers	Computer Numerically Controlled Tool Programmers	519162	69880	65670	45760	55960	80300	97930	33.6	31.57	true
+MiscellaneousProductionWorkers	Miscellaneous Production Workers	519190	44250	40960	31200	35730	49540	60940	21.27	19.69	false
+Engravers	Etchers and Engravers	519194	43280	40450	29530	35650	48510	60430	20.81	19.45	true
+PottersManufacturing	Potters, Manufacturing	519195	46730	45690	34950	38500	51340	61050	22.47	21.97	true
+TireBuilders	Tire Builders	519197	56230	55580	39990	48740	65410	70250	27.03	26.72	true
+HelpersProductionWorkers	Helpers--Production Workers	519198	40080	38220	30060	34390	44980	52120	19.27	18.38	true
+ProductionWorkersAllOther	Production Workers, All Other	519199	42940	38820	30370	35080	47550	59600	20.64	18.66	true
+TransportationandMaterialMovingOccupations	Transportation and Material Moving Occupations	530000	48750	42740	30390	35710	53750	70620	23.44	20.55	false
+FirstLineSupervisorsofTransportationandMaterialMovingWorkers	First-Line Supervisors of Transportation and Material Moving Workers	531040	65680	61900	41250	48750	77570	94860	31.58	29.76	false
+AircraftCargoHandlingSupervisors	Aircraft Cargo Handling Supervisors	531041	66190	63940	38010	49020	79600	96300	31.82	30.74	true
+FirstLineSupervisorsofTransportationWorkersExceptAircraftCargoHandlingSupervisors	First-Line Supervisors of Transportation Workers, Except Aircraft Cargo Handling Supervisors	531047	65670	61890	41290	48750	77520	94830	31.57	29.76	false
+AirTransportationWorkers	Air Transportation Workers	532000	155670	106500	48410	63420	199160				false
+AircraftPilotsandFlightEngineers	Aircraft Pilots and Flight Engineers	532010	233380	198100	78040	110250					false
+FlightEngineers	Airline Pilots, Copilots, and Flight Engineers	532011	280570	226600	98560	154360					true
+CommercialPilots	Commercial Pilots	532012	142960	122670	59330	81660	175050				true
+AirTrafficControllersandAirfieldOperationsSpecialists	Air Traffic Controllers and Airfield Operations Specialists	532020	110500	98920	40980	58190	161370	198810	53.13	47.56	false
+AirTrafficControllers	Air Traffic Controllers	532021	142740	144580	76090	101150	186510	210410	68.62	69.51	true
+AirfieldOperationsSpecialists	Airfield Operations Specialists	532022	67120	56750	35200	41220	78320	111030	32.27	27.28	true
+FlightAttendants	Flight Attendants	532031	78950	67130	34030	52280	98160	138040			true
+MotorVehicleOperators	Motor Vehicle Operators	533000	51770	48660	30820	38650	61330	76200	24.89	23.4	false
+DriverSalesWorkersandTruckDrivers	Driver/Sales Workers and Truck Drivers	533030	53170	49550	31630	39930	62300	77610	25.56	23.82	false
+DriverSalesWorkers	Driver/Sales Workers	533031	39670	37130	21760	29120	47590	59730	19.07	17.85	true
+TractorTrailerTruckDrivers	Heavy and Tractor-Trailer Truck Drivers	533032	58400	57440	38640	47230	65520	78800	28.08	27.62	true
+LightTruckDrivers	Light Truck Drivers	533033	47950	44140	29580	36670	52460	79630	23.05	21.22	true
+PassengerVehicleDrivers	Passenger Vehicle Drivers	533050	46500	45530	28810	35820	56160	65540	22.36	21.89	false
+BusDriversSchool	Bus Drivers, School	533051	46660	47040	27680	37490	56140	63810	22.44	22.62	true
+Intercity	Bus Drivers, Transit and Intercity	533052	58390	57440	38250	46050	69090	82640	28.07	27.61	true
+Chauffeurs	Shuttle Drivers and Chauffeurs	533053	39070	36670	27490	31460	44510	52910	18.79	17.63	true
+TaxiDrivers	Taxi Drivers	533054	39310	36220	27280	31320	40630	61920	18.9	17.42	true
+MotorVehicleOperatorsAllOther	Motor Vehicle Operators, All Other	533099	40980	36260	25690	30250	47130	64940	19.7	17.43	true
+RailTransportationWorkers	Rail Transportation Workers	534000	75090	75990	51440	62720	82460	98260	36.1	36.53	false
+LocomotiveEngineersandOperators	Locomotive Engineers and Operators	534010	79600	77400	58030	68730	83690	100380	38.27	37.21	false
+LocomotiveEngineers	Locomotive Engineers	534011	81540	77400	60980	73410	84230	100690	39.2	37.21	true
+Hostlers	Rail Yard Engineers, Dinkey Operators, and Hostlers	534013	60810	58030	44510	51770	65530	79070	29.23	27.9	true
+LocomotiveFirers	Railroad Brake, Signal, and Switch Operators and Locomotive Firers	534022	63170	65480	43750	51730	70130	80840	30.37	31.48	true
+Yardmasters	Railroad Conductors and Yardmasters	534031	75490	74080	53490	63480	82060	103350	36.29	35.62	true
+StreetcarOperators	Subway and Streetcar Operators	534041	75620	84830	52260	59500	87940	87940	36.36	40.78	true
+RailTransportationWorkersAllOther	Rail Transportation Workers, All Other	534099	53500	49330	34690	40460	64710	82620	25.72	23.72	true
+WaterTransportationWorkers	Water Transportation Workers	535000	80150	66490	36960	48100	101140	139270	38.54	31.97	false
+MarineOilers	Sailors and Marine Oilers	535011	55320	49610	33350	38450	65370	81890	26.59	23.85	true
+ShipandBoatCaptainsandOperators	Ship and Boat Captains and Operators	535020	95000	82400	43560	59500	122300	161690	45.67	39.62	false
+PilotsOfWaterVessels	Captains, Mates, and Pilots of Water Vessels	535021	97660	85540	46260	60800	124530	164230	46.95	41.13	true
+MotorboatOperators	Motorboat Operators	535022	55370	51880	31970	39860	68490	82330	26.62	24.94	true
+ShipEngineers	Ship Engineers	535031	105600	101320	56620	71720	130380	162370	50.77	48.71	true
+OtherTransportationWorkers	Other Transportation Workers	536000	40640	36060	27790	31200	42730	57410	19.54	17.34	false
+LockTenders	Bridge and Lock Tenders	536011	56520	58490	32690	43700	69530	74400	27.17	28.12	true
+ParkingAttendants	Parking Attendants	536021	34190	34600	24960	29590	37230	43840	16.44	16.63	true
+TransportationServiceAttendants	Transportation Service Attendants	536030	37510	36000	28430	31470	41290	47920	18.03	17.31	false
+WatercraftServiceAttendants	Automotive and Watercraft Service Attendants	536031	35800	34850	27870	30600	38430	45240	17.21	16.76	true
+AircraftServiceAttendants	Aircraft Service Attendants	536032	43630	41540	34320	37320	47390	55950	20.98	19.97	true
+TrafficTechnicians	Traffic Technicians	536041	61310	58480	38060	46690	74480	85810	29.48	28.12	true
+Aviation	Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation	536051	86490	85750	40090	58650	105020	137120	41.58	41.23	true
+PassengerAttendants	Passenger Attendants	536061	38480	37560	29120	32090	41180	49510	18.5	18.06	true
+TransportationWorkersAllOther	Transportation Workers, All Other	536099	45040	39630	27780	32630	53350	65810	21.65	19.05	true
+MaterialMovingWorkers	Material Moving Workers	537000	41100	38340	30100	34720	46150	55320	19.76	18.43	false
+TowerOperators	Crane and Tower Operators	537021	71560	66370	41670	50970	81630	102400	34.4	31.91	true
+DredgeOperators	Dredge Operators	537031	55820	48430	42060	46120	60300	75050	26.84	23.28	true
+WinchOperators	Hoist and Winch Operators	537041	64070	52310	33910	39220	90200	116120	30.81	25.15	true
+TractorOperators	Industrial Truck and Tractor Operators	537051	47830	46390	36500	39780	53680	61540	23	22.3	true
+LaborersandMaterialMovers	Laborers and Material Movers	537060	39690	37590	29760	34180	44860	50380	19.08	18.07	false
+Equipment	Cleaners of Vehicles and Equipment	537061	36290	35270	26740	29790	39630	47150	17.45	16.96	true
+ReclamationWorkers	Recycling and Reclamation Workers	537062	41420	38940	30810	35410	46370	53180	19.91	18.72	true
+Offbearers	Machine Feeders and Offbearers	537063	42840	39700	31480	36020	48220	57010	20.6	19.09	true
+PackagersHand	Packers and Packagers, Hand	537064	36600	35580	27050	31470	40960	46260	17.59	17.1	true
+OrderFillers	Stockers and Order Fillers	537065	38910	37090	29850	33710	43140	49200	18.71	17.83	true
+PumpingStationOperators	Pumping Station Operators	537070	67400	63940	38850	50340	80060	96100	32.4	30.74	false
+GasPumpingStationOperators	Gas Compressor and Gas Pumping Station Operators	537071	71750	71510	43950	57520	88090	98350	34.5	34.38	true
+WellheadPumpers	Pump Operators, Except Wellhead Pumpers	537072	70070	70010	39110	54450	80720	97470	33.69	33.66	true
+RecyclableMaterialCollectors	Refuse and Recyclable Material Collectors	537081	51210	48350	31810	38330	61010	75200	24.62	23.24	true
+ShipLoaders	Tank Car, Truck, and Ship Loaders	537121	60010	58070	38260	47260	71230	88120	28.85	27.92	true
+MaterialMovingWorkersAllOther	Material Moving Workers, All Other	537199	46650	41690	33280	35470	50850	64850	22.43	20.04	true

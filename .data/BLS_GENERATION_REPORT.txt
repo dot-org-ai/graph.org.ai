@@ -1,0 +1,159 @@
+================================================================================
+BLS EMPLOYMENT AND WAGE DATA GENERATION REPORT
+================================================================================
+Generated: November 24, 2024
+Source: BLS Occupational Employment and Wage Statistics (OEWS) - May 2024
+================================================================================
+
+SUMMARY
+--------
+Successfully generated three comprehensive data files from BLS source data,
+with high-quality joins to ONET occupation taxonomy.
+
+FILES GENERATED
+---------------
+
+1. Employment.tsv
+   Location: /Users/nathanclevenger/projects/graph.org.ai/.data/Employment.tsv
+   Records: 1,019 occupations
+   Data Quality: 100% have employment data
+   ONET Match: 72% (734 occupations)
+
+2. Wages.tsv  
+   Location: /Users/nathanclevenger/projects/graph.org.ai/.data/Wages.tsv
+   Records: 1,019 occupations
+   Data Completeness:
+   - Annual mean wage: 99.4% (1,013 records)
+   - Annual median wage: 97.6% (995 records)
+   - All percentiles: 93.6% (954 records)
+   - Hourly data: 90.7% (924 records)
+   ONET Match: 72% (734 occupations)
+
+3. STEMOccupations.tsv
+   Location: /Users/nathanclevenger/projects/graph.org.ai/.data/STEMOccupations.tsv
+   Records: 105 STEM occupations
+   Data Quality: 100% have both employment and wage data
+   ONET Match: 100% (105 occupations)
+
+RECORD COUNTS
+-------------
+- Employment records: 1,019
+- Wage records: 1,019
+- STEM occupations: 105
+
+SAMPLE DATA
+-----------
+
+Top 5 Employment Leaders:
+1. Office and Administrative Support Occupations - 18,218,070 employees
+2. Transportation and Material Moving Occupations - 13,645,620 employees
+3. Food Preparation and Serving Related Occupations - 13,613,490 employees
+4. Sales and Related Occupations - 13,351,680 employees
+5. Management Occupations - 10,966,830 employees
+
+Top 5 Highest Paid Occupations:
+1. Pediatric Surgeons - $450,810/year (mean)
+2. Cardiologists - $432,490/year (mean)
+3. Surgeons, All Other - $371,280/year (mean)
+4. Ophthalmologists, Except Pediatric - $365,060/year (mean)
+5. Oral and Maxillofacial Surgeons - $360,240/year (mean)
+
+Top 5 STEM Occupations by Employment:
+1. Software Developers - 1,654,440 employees ($144,570/year)
+2. Computer User Support Specialists - 697,210 employees ($64,990/year)
+3. Computer and Information Systems Managers - 645,970 employees ($187,990/year)
+4. Health Informatics Specialists - 497,800 employees ($111,960/year)
+5. Information Technology Project Managers - 439,380 employees ($151,780/year)
+
+Sample Employment Records:
+- ChiefSustainabilityOfficers: Chief Sustainability Officers - 211,850 employees
+- OperationsManagers: General and Operations Managers - 3,584,420 employees
+- MarketingManagers: Marketing Managers - 384,980 employees
+- SalesManagers: Sales Managers - 603,710 employees
+- InformationSystemsManagers: Computer and Information Systems Managers - 645,970 employees
+
+Sample Wage Records:
+- ChiefSustainabilityOfficers: Mean: $262,930, Median: $206,420
+- OperationsManagers: Mean: $133,120, Median: $102,950
+- MarketingManagers: Mean: $171,520, Median: $161,030
+- SalesManagers: Mean: $160,930, Median: $138,060
+- InformationSystemsManagers: Mean: $187,990, Median: $179,350
+
+Sample STEM Occupations:
+- InformationSystemsManagers: Computer and Information Systems Managers (11-3021)
+  645,970 employees, $187,990/year
+- InformationSecurityAnalysts: Information Security Analysts (15-1212)
+  179,430 employees, $127,730/year
+- SoftwareDevelopers: Software Developers (15-1252)
+  1,654,440 employees, $144,570/year
+- DatabaseAdministrators: Database Administrators (15-1242)
+  73,180 employees, $107,440/year
+- ComputerProgrammers: Computer Programmers (15-1251)
+  109,870 employees, $103,640/year
+
+JOIN SUCCESS RATE
+------------------
+The join with ONET occupations achieved excellent results:
+
+Overall Statistics:
+- Total BLS source records processed: 2,021,745
+- Valid BLS series parsed: 32,925
+- Unique occupations identified: 1,019
+- BLS series matched to ONET: 37.31% (12,285 series)
+- Unique occupations matched to ONET: 72% (734 occupations)
+
+By File:
+- Employment.tsv: 72% ONET match rate
+- Wages.tsv: 72% ONET match rate  
+- STEMOccupations.tsv: 100% ONET match rate
+
+The 28% unmatched occupations are primarily aggregate categories
+(e.g., "Management Occupations", "Healthcare Practitioners") that
+exist in BLS taxonomy for statistical grouping but don't have direct
+ONET detailed occupation equivalents.
+
+VALIDATION RESULTS
+------------------
+✓ All employment records have valid employment counts
+✓ 99.4% of wage records have annual mean wage data
+✓ 97.6% of wage records have annual median wage data
+✓ 100% of STEM occupations have both employment and wage data
+✓ 100% ID consistency between Employment.tsv and Wages.tsv
+✓ 100% of STEM occupation IDs found in Employment and Wages files
+
+DATA QUALITY NOTES
+------------------
+1. Code Format: Successfully mapped BLS 6-digit codes (e.g., 111011) to
+   ONET SOC format (e.g., 11-1011.00) for seamless joining.
+
+2. Missing Values: Some wage percentiles are empty due to BLS reporting
+   restrictions:
+   - Data not available or cannot be calculated
+   - Estimate not released due to quality concerns
+   - Values exceeding reporting thresholds ($100/hr or $208,000/yr)
+
+3. Occupation Hierarchy: Dataset includes both aggregate categories for
+   analysis and detailed occupations for granular insights.
+
+4. STEM Definition: Uses BLS Standard Occupational Classification Policy
+   Committee (SOCPC) definition covering domains 1 and 3 of the 2018 SOC.
+
+USAGE
+-----
+These files can be joined with ONET data files using the 'id' field:
+- Occupations.tsv - for detailed occupation descriptions
+- Tasks.tsv - for occupation-specific tasks  
+- Processes.tsv - for work processes
+- Industries.tsv - for industry-occupation relationships
+
+REGENERATION
+------------
+To regenerate these files from source data:
+  node /Users/nathanclevenger/projects/graph.org.ai/.scripts/process_bls_data.js
+
+To validate the generated files:
+  node /Users/nathanclevenger/projects/graph.org.ai/.scripts/validate_bls_data.js
+
+================================================================================
+END OF REPORT
+================================================================================

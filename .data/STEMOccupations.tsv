@@ -1,0 +1,106 @@
+id	name	code	employment	annual_mean_wage	matched_onet
+InformationSystemsManagers	Computer and Information Systems Managers	11-3021	645970	187990	true
+ProductDevelopmentManagers	Biofuels/Biodiesel Technology and Product Development Managers	11-9041	210340	175710	true
+WaterResourceSpecialists	Water Resource Specialists	11-9121	100870	173500	true
+HealthInformaticsSpecialists	Health Informatics Specialists	15-1211	497800	111960	true
+InformationSecurityAnalysts	Information Security Analysts	15-1212	179430	127730	true
+InformationResearchScientists	Computer and Information Research Scientists	15-1221	38480	152310	true
+ComputerNetworkSupportSpecialists	Computer Network Support Specialists	15-1231	146450	79610	true
+ComputerUserSupportSpecialists	Computer User Support Specialists	15-1232	697210	64990	true
+TelecommunicationsEngineeringSpecialists	Telecommunications Engineering Specialists	15-1241	177010	135890	true
+DatabaseAdministrators	Database Administrators	15-1242	73180	107440	true
+DataWarehousingSpecialists	Data Warehousing Specialists	15-1243	64770	142620	true
+ComputerSystemsAdministrators	Network and Computer Systems Administrators	15-1244	318570	101190	true
+ComputerProgrammers	Computer Programmers	15-1251	109870	103640	true
+SoftwareDevelopers	Software Developers	15-1252	1654440	144570	true
+Testers	Software Quality Assurance Analysts and Testers	15-1253	199800	110260	true
+WebDevelopers	Web Developers	15-1254	78860	98790	true
+VideoGameDesigners	Video Game Designers	15-1255	111400	111450	true
+InformationTechnologyProjectManagers	Information Technology Project Managers	15-1299	439380	116700	true
+Actuaries	Actuaries	15-2011	28340	134990	true
+Mathematicians	Mathematicians	15-2021	2220	122520	true
+OperationsResearchAnalysts	Operations Research Analysts	15-2031	107760	99120	true
+Biostatisticians	Biostatisticians	15-2041	29800	112330	true
+ClinicalDataManagers	Clinical Data Managers	15-2051	233440	124590	true
+BioinformaticsTechnicians	Bioinformatics Technicians	15-2099	4660	84700	true
+Naval	Architects, Except Landscape and Naval	17-1011	111140	103390	true
+LandscapeArchitects	Landscape Architects	17-1012	19580	88000	true
+Photogrammetrists	Cartographers and Photogrammetrists	17-1021	12790	82860	true
+GeodeticSurveyors	Geodetic Surveyors	17-1022	53080	76730	true
+AerospaceEngineers	Aerospace Engineers	17-2011	68440	141180	true
+AgriculturalEngineers	Agricultural Engineers	17-2021	1680	84240	true
+BiomedicalEngineers	Bioengineers and Biomedical Engineers	17-2031	21860	115020	true
+ChemicalEngineers	Chemical Engineers	17-2041	20330	128430	true
+WaterWastewaterEngineers	Water/Wastewater Engineers	17-2051	355410	107050	true
+ComputerHardwareEngineers	Computer Hardware Engineers	17-2061	75710	156770	true
+ElectricalEngineers	Electrical Engineers	17-2071	188790	120980	true
+RadioFrequencyIdentificationDeviceSpecialists	Radio Frequency Identification Device Specialists	17-2072	93940	132500	true
+EnvironmentalEngineers	Environmental Engineers	17-2081	37950	110570	true
+ProtectionEngineers	Fire-Prevention and Protection Engineers	17-2111	23220	113770	true
+ManufacturingEngineers	Manufacturing Engineers	17-2112	350230	107900	true
+NavalArchitects	Marine Engineers and Naval Architects	17-2121	8440	116680	true
+MaterialsEngineers	Materials Engineers	17-2131	22770	116380	true
+AutomotiveEngineers	Automotive Engineers	17-2141	286760	110080	true
+MiningSafetyEngineers	Mining and Geological Engineers, Including Mining Safety Engineers	17-2151	6770	108940	true
+NuclearEngineers	Nuclear Engineers	17-2161	14740	134980	true
+PetroleumEngineers	Petroleum Engineers	17-2171	18970	153560	true
+SolarEnergySystemsEngineers	Solar Energy Systems Engineers	17-2199	150750	121720	true
+CivilDrafters	Architectural and Civil Drafters	17-3011	109550	68860	true
+ElectronicsDrafters	Electrical and Electronics Drafters	17-3012	20020	77960	true
+MechanicalDrafters	Mechanical Drafters	17-3013	39900	74040	true
+DraftersAllOther	Drafters, All Other	17-3019	16010	66530	true
+Technicians	Aerospace Engineering and Operations Technologists and Technicians	17-3021	9060	69940	true
+Technicians	Civil Engineering Technologists and Technicians	17-3022	9060	69940	true
+Technicians	Electrical and Electronic Engineering Technologists and Technicians	17-3023	9060	69940	true
+RoboticsTechnicians	Robotics Technicians	17-3024	14680	75710	true
+Technicians	Environmental Engineering Technologists and Technicians	17-3025	9060	69940	true
+Technicians	Nanotechnology Engineering Technologists and Technicians	17-3026	9060	69940	true
+AutomotiveEngineeringTechnicians	Automotive Engineering Technicians	17-3027	37450	72450	true
+Technicians	Calibration Technologists and Technicians	17-3028	9060	69940	true
+PhotonicsTechnicians	Photonics Technicians	17-3029	64410	79740	true
+MappingTechnicians	Surveying and Mapping Technicians	17-3031	56720	56890	true
+AnimalScientists	Animal Scientists	19-1011	2470	104970	true
+Technologists	Food Scientists and Technologists	19-1012	14370	123070	true
+PlantScientists	Soil and Plant Scientists	19-1013	16600	83040	true
+Biophysicists	Biochemists and Biophysicists	19-1021	34520	115570	true
+Microbiologists	Microbiologists	19-1022	19760	95200	true
+WildlifeBiologists	Zoologists and Wildlife Biologists	19-1023	16920	77920	true
+Biologists	Biologists	19-1029	59710	100440	true
+ParkNaturalists	Park Naturalists	19-1031	25590	74310	true
+Foresters	Foresters	19-1032	9650	74670	true
+Epidemiologists	Epidemiologists	19-1041	11460	112690	true
+Epidemiologists	Medical Scientists, Except Epidemiologists	19-1042	11460	112690	true
+LifeScientistsAllOther	Life Scientists, All Other	19-1099	7320	101940	true
+Astronomers	Astronomers	19-2011	1560	134430	true
+Physicists	Physicists	19-2012	21340	166000	true
+SpaceScientists	Atmospheric and Space Scientists	19-2021	8780	103980	true
+Chemists	Chemists	19-2031	83250	95940	true
+MaterialsScientists	Materials Scientists	19-2032	8330	111410	true
+IndustrialEcologists	Industrial Ecologists	19-2041	84930	88640	true
+Geographers	Geoscientists, Except Hydrologists and Geographers	19-2042	22510	98160	true
+Hydrologists	Hydrologists	19-2043	5720	98130	true
+Technologists	Remote Sensing Scientists and Technologists	19-2099	14370	123070	true
+PrecisionAgricultureTechnicians	Precision Agriculture Technicians	19-4012	14340	49680	true
+FoodScienceTechnicians	Food Science Technicians	19-4013	14200	54400	true
+BiologicalTechnicians	Biological Technicians	19-4021	76190	58020	true
+ChemicalTechnicians	Chemical Technicians	19-4031	55640	61300	true
+Health	Environmental Science and Protection Technicians, Including Health	19-4042	39390	56770	true
+HydrologicTechnicians	Geological Technicians, Except Hydrologic Technicians	19-4043	9710	64410	true
+HydrologicTechnicians	Hydrologic Technicians	19-4044	9710	64410	true
+NuclearMonitoringTechnicians	Nuclear Monitoring Technicians	19-4051	5990	100730	true
+ConservationTechnicians	Forest and Conservation Technicians	19-4071	31080	56660	true
+ForensicScienceTechnicians	Forensic Science Technicians	19-4092	19450	75260	true
+RemoteSensingTechnicians	Remote Sensing Technicians	19-4099	71400	64640	true
+ComputerScienceTeachersPostsecondary	Computer Science Teachers, Postsecondary	25-1021	36240	105830	true
+MathematicalScienceTeachersPostsecondary	Mathematical Science Teachers, Postsecondary	25-1022	48820	92880	true
+ArchitectureTeachersPostsecondary	Architecture Teachers, Postsecondary	25-1031	9120	110360	true
+EngineeringTeachersPostsecondary	Engineering Teachers, Postsecondary	25-1032	39910	119340	true
+AgriculturalSciencesTeachersPostsecondary	Agricultural Sciences Teachers, Postsecondary	25-1041	8700	97790	true
+BiologicalScienceTeachersPostsecondary	Biological Science Teachers, Postsecondary	25-1042	53250	101340	true
+ConservationScienceTeachersPostsecondary	Forestry and Conservation Science Teachers, Postsecondary	25-1043	1310	103780	true
+SpaceSciencesTeachersPostsecondary	Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary	25-1051	11480	112950	true
+ChemistryTeachersPostsecondary	Chemistry Teachers, Postsecondary	25-1052	20390	103030	true
+EnvironmentalScienceTeachersPostsecondary	Environmental Science Teachers, Postsecondary	25-1053	7130	100360	true
+PhysicsTeachersPostsecondary	Physics Teachers, Postsecondary	25-1054	13590	105460	true
+Assessors	Solar Sales Representatives and Assessors	41-4011	293930	114520	true
+SalesEngineers	Sales Engineers	41-9031	56690	130410	true

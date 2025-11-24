@@ -1,0 +1,72 @@
+id	name	career_cluster_id	career_cluster_name	soc_count	cip_count	description
+advanced-manufacturing/engineering	Engineering	advanced-manufacturing	Advanced Manufacturing	33	143	Engineering sub-cluster within Advanced Manufacturing
+advanced-manufacturing/industrial-machinery	Industrial Machinery	advanced-manufacturing	Advanced Manufacturing	28	36	Industrial Machinery sub-cluster within Advanced Manufacturing
+advanced-manufacturing/production-automation	Production & Automation	advanced-manufacturing	Advanced Manufacturing	88	78	Production & Automation sub-cluster within Advanced Manufacturing
+advanced-manufacturing/robotics	Robotics	advanced-manufacturing	Advanced Manufacturing	5	6	Robotics sub-cluster within Advanced Manufacturing
+advanced-manufacturing/safety-quality-assurance	Safety & Quality Assurance	advanced-manufacturing	Advanced Manufacturing	10	16	Safety & Quality Assurance sub-cluster within Advanced Manufacturing
+agriculture/agribusiness	Agribusiness	agriculture	Agriculture	3	31	Agribusiness sub-cluster within Agriculture
+agriculture/agricultural-technology-automation	Agricultural Technology & Automation	agriculture	Agriculture	6	6	Agricultural Technology & Automation sub-cluster within Agriculture
+agriculture/animal-systems	Animal Systems	agriculture	Agriculture	13	59	Animal Systems sub-cluster within Agriculture
+agriculture/food-science-processing	Food Science & Processing	agriculture	Agriculture	11	20	Food Science & Processing sub-cluster within Agriculture
+agriculture/plant-systems	Plant Systems	agriculture	Agriculture	19	66	Plant Systems sub-cluster within Agriculture
+agriculture/water-systems	water systems	agriculture	Agriculture	9	55	water systems sub-cluster within Agriculture
+arts-entertainment-design/design-digital-arts	Design & Digital Arts	arts-entertainment-design	Arts, Entertainment, & Design	10	20	Design & Digital Arts sub-cluster within Arts, Entertainment, & Design
+arts-entertainment-design/fashion-interiors	Fashion & Interiors	arts-entertainment-design	Arts, Entertainment, & Design	8	15	Fashion & Interiors sub-cluster within Arts, Entertainment, & Design
+arts-entertainment-design/fine-arts	Fine Arts	arts-entertainment-design	Arts, Entertainment, & Design	5	26	Fine Arts sub-cluster within Arts, Entertainment, & Design
+arts-entertainment-design/lighting-sound-technology	Lighting & Sound Technology	arts-entertainment-design	Arts, Entertainment, & Design	6	10	Lighting & Sound Technology sub-cluster within Arts, Entertainment, & Design
+arts-entertainment-design/media-production-broadcasting	Media Production & Broadcasting	arts-entertainment-design	Arts, Entertainment, & Design	19	64	Media Production & Broadcasting sub-cluster within Arts, Entertainment, & Design
+arts-entertainment-design/performing-arts	Performing Arts	arts-entertainment-design	Arts, Entertainment, & Design	18	53	Performing Arts sub-cluster within Arts, Entertainment, & Design
+construction/architecture-civil-engineering	Architecture & Civil Engineering	construction	Construction	12	29	Architecture & Civil Engineering sub-cluster within Construction
+construction/construction-planning-development	Construction Planning & Development	construction	Construction	6	36	Construction Planning & Development sub-cluster within Construction
+construction/equipment-operation-maintenance	Equipment Operation & Maintenance	construction	Construction	19	17	Equipment Operation & Maintenance sub-cluster within Construction
+construction/skilled-trades	Skilled Trades	construction	Construction	60	42	Skilled Trades sub-cluster within Construction
+digital-technology/data-science-ai	Data Science & AI	digital-technology	Digital Technology	6	51	Data Science & AI sub-cluster within Digital Technology
+digital-technology/it-support-services	IT Support & Services	digital-technology	Digital Technology	5	11	IT Support & Services sub-cluster within Digital Technology
+digital-technology/network-systems-cybersecurity	Network Systems & Cybersecurity	digital-technology	Digital Technology	8	26	Network Systems & Cybersecurity sub-cluster within Digital Technology
+digital-technology/software-solutions	Software Solutions	digital-technology	Digital Technology	6	30	Software Solutions sub-cluster within Digital Technology
+digital-technology/web-cloud	Web & Cloud	digital-technology	Digital Technology	9	28	Web & Cloud sub-cluster within Digital Technology
+education/early-childhood-development	Early Childhood Development	education	Education	5	9	Early Childhood Development sub-cluster within Education
+education/education-administration-leadership	Education Administration & Leadership	education	Education	7	29	Education Administration & Leadership sub-cluster within Education
+education/learner-support-community-engagement	Learner Support & Community Engagement	education	Education	16	136	Learner Support & Community Engagement sub-cluster within Education
+education/teaching-training-facilitation	Teaching, Training, & Facilitation	education	Education	65	1300	Teaching, Training, & Facilitation sub-cluster within Education
+energy-natural-resources/clean-alternative-energy	Clean & Alternative Energy	energy-natural-resources	Energy & Natural Resources	13	17	Clean & Alternative Energy sub-cluster within Energy & Natural Resources
+energy-natural-resources/conservation-land-management	Conservation & Land Management	energy-natural-resources	Energy & Natural Resources	18	107	Conservation & Land Management sub-cluster within Energy & Natural Resources
+energy-natural-resources/ecological-research-development	Ecological Research & Development	energy-natural-resources	Energy & Natural Resources	25	167	Ecological Research & Development sub-cluster within Energy & Natural Resources
+energy-natural-resources/environmental-protection	Environmental Protection	energy-natural-resources	Energy & Natural Resources	9	10	Environmental Protection sub-cluster within Energy & Natural Resources
+energy-natural-resources/resource-extraction	Resource Extraction	energy-natural-resources	Energy & Natural Resources	35	44	Resource Extraction sub-cluster within Energy & Natural Resources
+energy-natural-resources/utilities	Utilities	energy-natural-resources	Energy & Natural Resources	28	32	Utilities sub-cluster within Energy & Natural Resources
+financial-services/accounting	Accounting	financial-services	Financial Services	7	13	Accounting sub-cluster within Financial Services
+financial-services/banking-credit	Banking & Credit	financial-services	Financial Services	7	10	Banking & Credit sub-cluster within Financial Services
+financial-services/financial-strategy-investments	Financial Strategy & Investments	financial-services	Financial Services	14	40	Financial Strategy & Investments sub-cluster within Financial Services
+financial-services/insurance	Insurance	financial-services	Financial Services	12	26	Insurance sub-cluster within Financial Services
+financial-services/real-estate	Real Estate	financial-services	Financial Services	4	10	Real Estate sub-cluster within Financial Services
+healthcare-human-services/behavioral-mental-health	Behavioral & Mental Health	healthcare-human-services	Healthcare & Human Services	13	63	Behavioral & Mental Health sub-cluster within Healthcare & Human Services
+healthcare-human-services/biotechnology-research-development	Biotechnology Research & Development	healthcare-human-services	Healthcare & Human Services	13	280	Biotechnology Research & Development sub-cluster within Healthcare & Human Services
+healthcare-human-services/community-social-services	Community & Social Services	healthcare-human-services	Healthcare & Human Services	16	68	Community & Social Services sub-cluster within Healthcare & Human Services
+healthcare-human-services/health-data-administration	Health Data & Administration	healthcare-human-services	Healthcare & Human Services	12	54	Health Data & Administration sub-cluster within Healthcare & Human Services
+healthcare-human-services/personal-care-services	Personal Care Services	healthcare-human-services	Healthcare & Human Services	17	35	Personal Care Services sub-cluster within Healthcare & Human Services
+healthcare-human-services/physical-health	Physical Health	healthcare-human-services	Healthcare & Human Services	87	473	Physical Health sub-cluster within Healthcare & Human Services
+hospitality-events-tourism/accommodations	Accommodations	hospitality-events-tourism	Hospitality, Events, & Tourism	7	11	Accommodations sub-cluster within Hospitality, Events, & Tourism
+hospitality-events-tourism/conferences-events	Conferences & Events	hospitality-events-tourism	Hospitality, Events, & Tourism	3	12	Conferences & Events sub-cluster within Hospitality, Events, & Tourism
+hospitality-events-tourism/culinary-food-services	Culinary & Food Services	hospitality-events-tourism	Hospitality, Events, & Tourism	18	18	Culinary & Food Services sub-cluster within Hospitality, Events, & Tourism
+hospitality-events-tourism/travel-leisure	Travel & Leisure	hospitality-events-tourism	Hospitality, Events, & Tourism	23	28	Travel & Leisure sub-cluster within Hospitality, Events, & Tourism
+management-entrepreneurship/business-information-management	Business Information Management	management-entrepreneurship	Management & Entrepreneurship	8	52	Business Information Management sub-cluster within Management & Entrepreneurship
+management-entrepreneurship/entrepreneurship-small-business	Entrepreneurship & Small Business	management-entrepreneurship	Management & Entrepreneurship	22	18	Entrepreneurship & Small Business sub-cluster within Management & Entrepreneurship
+management-entrepreneurship/leadership-operations	Leadership & Operations	management-entrepreneurship	Management & Entrepreneurship	32	200	Leadership & Operations sub-cluster within Management & Entrepreneurship
+management-entrepreneurship/project-management	Project Management	management-entrepreneurship	Management & Entrepreneurship	1	6	Project Management sub-cluster within Management & Entrepreneurship
+management-entrepreneurship/regulation	Regulation	management-entrepreneurship	Management & Entrepreneurship	5	17	Regulation sub-cluster within Management & Entrepreneurship
+marketing-sales/market-research-analytics-ethics	Market Research, Analytics, & Ethics	marketing-sales	Marketing & Sales	5	30	Market Research, Analytics, & Ethics sub-cluster within Marketing & Sales
+marketing-sales/marketing-advertising	Marketing & Advertising	marketing-sales	Marketing & Sales	4	14	Marketing & Advertising sub-cluster within Marketing & Sales
+marketing-sales/retail-customer-experience	Retail & Customer Experience	marketing-sales	Marketing & Sales	10	18	Retail & Customer Experience sub-cluster within Marketing & Sales
+marketing-sales/strategic-sales	Strategic Sales	marketing-sales	Marketing & Sales	8	13	Strategic Sales sub-cluster within Marketing & Sales
+public-service-safety/emergency-response	Emergency Response	public-service-safety	Public Service & Safety	6	22	Emergency Response sub-cluster within Public Service & Safety
+public-service-safety/judicial-systems	Judicial Systems	public-service-safety	Public Service & Safety	11	42	Judicial Systems sub-cluster within Public Service & Safety
+public-service-safety/local-state-federal-services	Local, State, & Federal Services	public-service-safety	Public Service & Safety	50	138	Local, State, & Federal Services sub-cluster within Public Service & Safety
+public-service-safety/military-national-security	Military & National Security	public-service-safety	Public Service & Safety	31	56	Military & National Security sub-cluster within Public Service & Safety
+public-service-safety/public-safety	Public Safety	public-service-safety	Public Service & Safety	26	49	Public Safety sub-cluster within Public Service & Safety
+supply-chain-transportation/air-space-transportation	Air & Space Transportation	supply-chain-transportation	Supply Chain & Transportation	12	19	Air & Space Transportation sub-cluster within Supply Chain & Transportation
+supply-chain-transportation/ground-rail-transportation	Ground & Rail Transportation	supply-chain-transportation	Supply Chain & Transportation	21	9	Ground & Rail Transportation sub-cluster within Supply Chain & Transportation
+supply-chain-transportation/maintenance-repair	Maintenance & Repair	supply-chain-transportation	Supply Chain & Transportation	28	27	Maintenance & Repair sub-cluster within Supply Chain & Transportation
+supply-chain-transportation/marine-transportation	Marine Transportation	supply-chain-transportation	Supply Chain & Transportation	8	7	Marine Transportation sub-cluster within Supply Chain & Transportation
+supply-chain-transportation/planning-logistics	Planning & Logistics	supply-chain-transportation	Supply Chain & Transportation	8	13	Planning & Logistics sub-cluster within Supply Chain & Transportation
+supply-chain-transportation/purchasing-warehousing	Purchasing & Warehousing	supply-chain-transportation	Supply Chain & Transportation	11	9	Purchasing & Warehousing sub-cluster within Supply Chain & Transportation

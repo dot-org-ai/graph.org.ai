@@ -1,0 +1,53 @@
+id	type	description	category	case	usage
+i	Pronoun	first person singular	Personal	Subjective	I analyze
+me	Pronoun	first person singular	Personal	Objective	help me
+my	Pronoun	first person singular possessive	Personal	Possessive	my task
+mine	Pronoun	first person singular possessive	Personal	Possessive	task is mine
+myself	Pronoun	first person singular reflexive	Personal	Reflexive	I did it myself
+we	Pronoun	first person plural	Personal	Subjective	we analyze
+us	Pronoun	first person plural	Personal	Objective	help us
+our	Pronoun	first person plural possessive	Personal	Possessive	our task
+ours	Pronoun	first person plural possessive	Personal	Possessive	task is ours
+ourselves	Pronoun	first person plural reflexive	Personal	Reflexive	we did it ourselves
+you	Pronoun	second person	Personal	Subjective/Objective	you analyze
+your	Pronoun	second person possessive	Personal	Possessive	your task
+yours	Pronoun	second person possessive	Personal	Possessive	task is yours
+yourself	Pronoun	second person singular reflexive	Personal	Reflexive	you did it yourself
+yourselves	Pronoun	second person plural reflexive	Personal	Reflexive	you all did it yourselves
+he	Pronoun	third person singular masculine	Personal	Subjective	he analyzes
+him	Pronoun	third person singular masculine	Personal	Objective	help him
+his	Pronoun	third person singular masculine possessive	Personal	Possessive	his task
+himself	Pronoun	third person singular masculine reflexive	Personal	Reflexive	he did it himself
+she	Pronoun	third person singular feminine	Personal	Subjective	she analyzes
+her	Pronoun	third person singular feminine	Personal	Objective/Possessive	help her / her task
+hers	Pronoun	third person singular feminine possessive	Personal	Possessive	task is hers
+herself	Pronoun	third person singular feminine reflexive	Personal	Reflexive	she did it herself
+it	Pronoun	third person singular neuter	Personal	Subjective/Objective	it works
+its	Pronoun	third person singular neuter possessive	Personal	Possessive	its purpose
+itself	Pronoun	third person singular neuter reflexive	Personal	Reflexive	it did it itself
+they	Pronoun	third person plural	Personal	Subjective	they analyze
+them	Pronoun	third person plural	Personal	Objective	help them
+their	Pronoun	third person plural possessive	Personal	Possessive	their task
+theirs	Pronoun	third person plural possessive	Personal	Possessive	task is theirs
+themselves	Pronoun	third person plural reflexive	Personal	Reflexive	they did it themselves
+this	Pronoun	refers to something nearby	Demonstrative	Singular	this is good
+that	Pronoun	refers to something distant	Demonstrative	Singular	that is good
+these	Pronoun	plural of this	Demonstrative	Plural	these are good
+those	Pronoun	plural of that	Demonstrative	Plural	those are good
+who	Pronoun	refers to people (subject)	Interrogative	Subjective	who analyzes
+whom	Pronoun	refers to people (object)	Interrogative	Objective	whom to ask
+whose	Pronoun	possession	Interrogative	Possessive	whose task
+what	Pronoun	refers to things	Interrogative	Any	what happened
+which	Pronoun	choice between alternatives	Interrogative	Any	which option
+anyone	Pronoun	any person	Indefinite	Singular	anyone can help
+anybody	Pronoun	any person	Indefinite	Singular	anybody can help
+anything	Pronoun	any thing	Indefinite	Singular	anything works
+everyone	Pronoun	all people	Indefinite	Singular	everyone knows
+everybody	Pronoun	all people	Indefinite	Singular	everybody knows
+everything	Pronoun	all things	Indefinite	Singular	everything works
+no one	Pronoun	not anyone	Indefinite	Singular	no one knows
+nobody	Pronoun	not anybody	Indefinite	Singular	nobody knows
+nothing	Pronoun	not anything	Indefinite	Singular	nothing works
+someone	Pronoun	some person	Indefinite	Singular	someone knows
+somebody	Pronoun	some person	Indefinite	Singular	somebody knows
+something	Pronoun	some thing	Indefinite	Singular	something works

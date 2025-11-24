@@ -1,0 +1,1020 @@
+id	name	code	employment	matched_onet
+ManagementOccupations	Management Occupations	110000	10966830	false
+TopExecutives	Top Executives	111000	3822780	false
+ChiefSustainabilityOfficers	Chief Sustainability Officers	111011	211850	true
+OperationsManagers	General and Operations Managers	111021	3584420	true
+Legislators	Legislators	111031	26510	true
+AdvertisingMarketingPromotionsPublicRelationsandSalesManagers	Advertising, Marketing, Promotions, Public Relations, and Sales Managers	112000	1122770	false
+PromotionsManagers	Advertising and Promotions Managers	112011	21100	true
+MarketingandSalesManagers	Marketing and Sales Managers	112020	988680	false
+MarketingManagers	Marketing Managers	112021	384980	true
+SalesManagers	Sales Managers	112022	603710	true
+PublicRelationsandFundraisingManagers	Public Relations and Fundraising Managers	112030	112980	false
+PublicRelationsManagers	Public Relations Managers	112032	76060	true
+FundraisingManagers	Fundraising Managers	112033	36920	true
+OperationsSpecialtiesManagers	Operations Specialties Managers	113000	2669000	false
+AdministrativeServicesandFacilitiesManagers	Administrative Services and Facilities Managers	113010	395230	false
+AdministrativeServicesManagers	Administrative Services Managers	113012	254140	true
+SecurityManagers	Security Managers	113013	141090	true
+InformationSystemsManagers	Computer and Information Systems Managers	113021	645970	true
+InvestmentFundManagers	Investment Fund Managers	113031	818620	true
+HydroelectricProductionManagers	Hydroelectric Production Managers	113051	234380	true
+PurchasingManagers	Purchasing Managers	113061	81240	true
+SupplyChainManagers	Supply Chain Managers	113071	213000	true
+BenefitsManagers	Compensation and Benefits Managers	113111	20070	true
+HumanResourcesManagers	Human Resources Managers	113121	215520	true
+DevelopmentManagers	Training and Development Managers	113131	44960	true
+OtherManagementOccupations	Other Management Occupations	119000	3352280	false
+OtherAgriculturalManagers	Farmers, Ranchers, and Other Agricultural Managers	119013	5910	true
+ConstructionManagers	Construction Managers	119021	348330	true
+EducationandChildcareAdministrators	Education and Childcare Administrators	119030	621000	false
+Daycare	Education and Childcare Administrators, Preschool and Daycare	119031	71620	true
+EducationAdministratorsKindergartenThroughSecondary	Education Administrators, Kindergarten through Secondary	119032	319630	true
+EducationAdministratorsPostsecondary	Education Administrators, Postsecondary	119033	176420	true
+EducationAdministratorsAllOther	Education Administrators, All Other	119039	53330	true
+ProductDevelopmentManagers	Biofuels/Biodiesel Technology and Product Development Managers	119041	210340	true
+FoodServiceManagers	Food Service Managers	119051	244230	true
+EntertainmentandRecreationManagers	Entertainment and Recreation Managers	119070	41320	false
+GamblingManagers	Gambling Managers	119071	4620	true
+Gambling	Entertainment and Recreation Managers, Except Gambling	119072	36700	true
+LodgingManagers	Lodging Managers	119081	41350	true
+HealthServicesManagers	Medical and Health Services Managers	119111	565840	true
+WaterResourceSpecialists	Water Resource Specialists	119121	100870	true
+MailSuperintendents	Postmasters and Mail Superintendents	119131	13810	true
+CommunityAssociationManagers	Property, Real Estate, and Community Association Managers	119141	296640	true
+CommunityServiceManagers	Social and Community Service Managers	119151	195490	true
+EmergencyManagementDirectors	Emergency Management Directors	119161	12570	true
+PersonalServiceManagers	Personal Service Managers	119170	23610	false
+FuneralHomeManagers	Funeral Home Managers	119171	13120	true
+SpaManagers	Spa Managers	119179	10490	true
+SiteManagers	Brownfield Redevelopment Specialists and Site Managers	119199	630980	true
+BusinessandFinancialOperationsOccupations	Business and Financial Operations Occupations	130000	10351440	false
+BusinessOperationsSpecialists	Business Operations Specialists	131000	7318320	false
+Athletes	Agents and Business Managers of Artists, Performers, and Athletes	131011	14220	true
+BuyersandPurchasingAgents	Buyers and Purchasing Agents	131020	486900	false
+ClaimsAdjustersAppraisersExaminersandInvestigators	Claims Adjusters, Appraisers, Examiners, and Investigators	131030	312810	false
+Investigators	Claims Adjusters, Examiners, and Investigators	131031	305020	true
+InsuranceAppraisersAutoDamage	Insurance Appraisers, Auto Damage	131032	7790	true
+CustomsBrokers	Customs Brokers	131041	397770	true
+CostEstimators	Cost Estimators	131051	219530	true
+HumanResourcesWorkers	Human Resources Workers	131070	982460	false
+HumanResourcesSpecialists	Human Resources Specialists	131071	917460	true
+FarmLaborContractors	Farm Labor Contractors	131074	410	true
+LaborRelationsSpecialists	Labor Relations Specialists	131075	64590	true
+LogisticiansandProjectManagementSpecialists	Logisticians and Project Management Specialists	131080	1241800	false
+LogisticsAnalysts	Logistics Analysts	131081	235640	true
+ProjectManagementSpecialists	Project Management Specialists	131082	1006160	true
+ManagementAnalysts	Management Analysts	131111	893900	true
+EventPlanners	Meeting, Convention, and Event Planners	131121	134670	true
+Fundraisers	Fundraisers	131131	105930	true
+JobAnalysisSpecialists	Compensation, Benefits, and Job Analysis Specialists	131141	102370	true
+DevelopmentSpecialists	Training and Development Specialists	131151	436610	true
+SearchMarketingStrategists	Search Marketing Strategists	131161	861140	true
+SecurityManagementSpecialists	Security Management Specialists	131199	1128200	true
+FinancialSpecialists	Financial Specialists	132000	3033120	false
+Auditors	Accountants and Auditors	132011	1448290	true
+PropertyAppraisersandAssessors	Property Appraisers and Assessors	132020	59070	false
+BudgetAnalysts	Budget Analysts	132031	47170	true
+CreditAnalysts	Credit Analysts	132041	67370	true
+FinancialAnalystsandAdvisors	Financial Analysts and Advisors	132050	775200	false
+InvestmentAnalysts	Financial and Investment Analysts	132051	340580	true
+PersonalFinancialAdvisors	Personal Financial Advisors	132052	270480	true
+InsuranceUnderwriters	Insurance Underwriters	132053	107820	true
+FinancialRiskSpecialists	Financial Risk Specialists	132054	56320	true
+FinancialExaminers	Financial Examiners	132061	62830	true
+CreditCounselorsandLoanOfficers	Credit Counselors and Loan Officers	132070	318640	false
+CreditCounselors	Credit Counselors	132071	28110	true
+LoanOfficers	Loan Officers	132072	290530	true
+TaxExaminersCollectorsandPreparersandRevenueAgents	Tax Examiners, Collectors and Preparers, and Revenue Agents	132080	127100	false
+RevenueAgents	Tax Examiners and Collectors, and Revenue Agents	132081	53530	true
+TaxPreparers	Tax Preparers	132082	73570	true
+Analysts	Fraud Examiners, Investigators and Analysts	132099	127450	true
+ComputerandMathematicalOccupations	Computer and Mathematical Occupations	150000	5192890	false
+ComputerOccupations	Computer Occupations	151200	4786660	false
+ComputerandInformationAnalysts	Computer and Information Analysts	151210	677230	false
+HealthInformaticsSpecialists	Health Informatics Specialists	151211	497800	true
+InformationSecurityAnalysts	Information Security Analysts	151212	179430	true
+InformationResearchScientists	Computer and Information Research Scientists	151221	38480	true
+ComputerSupportSpecialists	Computer Support Specialists	151230	843660	false
+ComputerNetworkSupportSpecialists	Computer Network Support Specialists	151231	146450	true
+ComputerUserSupportSpecialists	Computer User Support Specialists	151232	697210	true
+DatabaseandNetworkAdministratorsandArchitects	Database and Network Administrators and Architects	151240	633540	false
+TelecommunicationsEngineeringSpecialists	Telecommunications Engineering Specialists	151241	177010	true
+DatabaseAdministrators	Database Administrators	151242	73180	true
+DataWarehousingSpecialists	Data Warehousing Specialists	151243	64770	true
+ComputerSystemsAdministrators	Network and Computer Systems Administrators	151244	318570	true
+SoftwareandWebDevelopersProgrammersandTesters	Software and Web Developers, Programmers, and Testers	151250	2154370	false
+ComputerProgrammers	Computer Programmers	151251	109870	true
+SoftwareDevelopers	Software Developers	151252	1654440	true
+Testers	Software Quality Assurance Analysts and Testers	151253	199800	true
+WebDevelopers	Web Developers	151254	78860	true
+VideoGameDesigners	Video Game Designers	151255	111400	true
+InformationTechnologyProjectManagers	Information Technology Project Managers	151299	439380	true
+MathematicalScienceOccupations	Mathematical Science Occupations	152000	406230	false
+Actuaries	Actuaries	152011	28340	true
+Mathematicians	Mathematicians	152021	2220	true
+OperationsResearchAnalysts	Operations Research Analysts	152031	107760	true
+Biostatisticians	Biostatisticians	152041	29800	true
+ClinicalDataManagers	Clinical Data Managers	152051	233440	true
+BioinformaticsTechnicians	Bioinformatics Technicians	152099	4660	true
+ArchitectureandEngineeringOccupations	Architecture and Engineering Occupations	170000	2567210	false
+ArchitectsSurveyorsandCartographers	Architects, Surveyors, and Cartographers	171000	196590	false
+ArchitectsExceptNaval	Architects, Except Naval	171010	130720	false
+Naval	Architects, Except Landscape and Naval	171011	111140	true
+LandscapeArchitects	Landscape Architects	171012	19580	true
+SurveyorsCartographersandPhotogrammetrists	Surveyors, Cartographers, and Photogrammetrists	171020	65870	false
+Photogrammetrists	Cartographers and Photogrammetrists	171021	12790	true
+GeodeticSurveyors	Geodetic Surveyors	171022	53080	true
+Engineers	Engineers	172000	1746750	false
+AerospaceEngineers	Aerospace Engineers	172011	68440	true
+AgriculturalEngineers	Agricultural Engineers	172021	1680	true
+BiomedicalEngineers	Bioengineers and Biomedical Engineers	172031	21860	true
+ChemicalEngineers	Chemical Engineers	172041	20330	true
+WaterWastewaterEngineers	Water/Wastewater Engineers	172051	355410	true
+ComputerHardwareEngineers	Computer Hardware Engineers	172061	75710	true
+ElectricalandElectronicsEngineers	Electrical and Electronics Engineers	172070	282740	false
+ElectricalEngineers	Electrical Engineers	172071	188790	true
+RadioFrequencyIdentificationDeviceSpecialists	Radio Frequency Identification Device Specialists	172072	93940	true
+EnvironmentalEngineers	Environmental Engineers	172081	37950	true
+IndustrialEngineersIncludingHealthandSafety	Industrial Engineers, Including Health and Safety	172110	373440	false
+ProtectionEngineers	Fire-Prevention and Protection Engineers	172111	23220	true
+ManufacturingEngineers	Manufacturing Engineers	172112	350230	true
+NavalArchitects	Marine Engineers and Naval Architects	172121	8440	true
+MaterialsEngineers	Materials Engineers	172131	22770	true
+AutomotiveEngineers	Automotive Engineers	172141	286760	true
+MiningSafetyEngineers	Mining and Geological Engineers, Including Mining Safety Engineers	172151	6770	true
+NuclearEngineers	Nuclear Engineers	172161	14740	true
+PetroleumEngineers	Petroleum Engineers	172171	18970	true
+SolarEnergySystemsEngineers	Solar Energy Systems Engineers	172199	150750	true
+DraftersEngineeringTechniciansandMappingTechnicians	Drafters, Engineering Technicians, and Mapping Technicians	173000	623870	false
+Drafters	Drafters	173010	185470	false
+CivilDrafters	Architectural and Civil Drafters	173011	109550	true
+ElectronicsDrafters	Electrical and Electronics Drafters	173012	20020	true
+MechanicalDrafters	Mechanical Drafters	173013	39900	true
+DraftersAllOther	Drafters, All Other	173019	16010	true
+EngineeringTechnologistsandTechniciansExceptDrafters	Engineering Technologists and Technicians, Except Drafters	173020	381680	false
+Technicians	Aerospace Engineering and Operations Technologists and Technicians	173021	9060	true
+RoboticsTechnicians	Robotics Technicians	173024	14680	true
+AutomotiveEngineeringTechnicians	Automotive Engineering Technicians	173027	37450	true
+PhotonicsTechnicians	Photonics Technicians	173029	64410	true
+MappingTechnicians	Surveying and Mapping Technicians	173031	56720	true
+LifePhysicalandSocialScienceOccupations	Life, Physical, and Social Science Occupations	190000	1446770	false
+LifeScientists	Life Scientists	191000	374670	false
+AgriculturalandFoodScientists	Agricultural and Food Scientists	191010	33440	false
+AnimalScientists	Animal Scientists	191011	2470	true
+Technologists	Food Scientists and Technologists	191012	14370	true
+PlantScientists	Soil and Plant Scientists	191013	16600	true
+BiologicalScientists	Biological Scientists	191020	130910	false
+Biophysicists	Biochemists and Biophysicists	191021	34520	true
+Microbiologists	Microbiologists	191022	19760	true
+WildlifeBiologists	Zoologists and Wildlife Biologists	191023	16920	true
+Biologists	Biologists	191029	59710	true
+ConservationScientistsandForesters	Conservation Scientists and Foresters	191030	35250	false
+ParkNaturalists	Park Naturalists	191031	25590	true
+Foresters	Foresters	191032	9650	true
+MedicalScientists	Medical Scientists	191040	167760	false
+Epidemiologists	Epidemiologists	191041	11460	true
+LifeScientistsAllOther	Life Scientists, All Other	191099	7320	true
+PhysicalScientists	Physical Scientists	192000	259000	false
+AstronomersandPhysicists	Astronomers and Physicists	192010	22900	false
+Astronomers	Astronomers	192011	1560	true
+Physicists	Physicists	192012	21340	true
+SpaceScientists	Atmospheric and Space Scientists	192021	8780	true
+ChemistsandMaterialsScientists	Chemists and Materials Scientists	192030	91580	false
+Chemists	Chemists	192031	83250	true
+MaterialsScientists	Materials Scientists	192032	8330	true
+EnvironmentalScientistsandGeoscientists	Environmental Scientists and Geoscientists	192040	113160	false
+IndustrialEcologists	Industrial Ecologists	192041	84930	true
+Geographers	Geoscientists, Except Hydrologists and Geographers	192042	22510	true
+Hydrologists	Hydrologists	192043	5720	true
+SocialScientistsandRelatedWorkers	Social Scientists and Related Workers	193000	279960	false
+EnvironmentalEconomists	Environmental Economists	193011	15880	true
+SurveyResearchers	Survey Researchers	193022	7720	true
+Psychologists	Psychologists	193030	154860	false
+IndustrialOrganizationalPsychologists	Industrial-Organizational Psychologists	193032	1050	true
+CounselingPsychologists	Clinical and Counseling Psychologists	193033	72190	true
+SchoolPsychologists	School Psychologists	193034	63830	true
+ClinicalNeuropsychologists	Clinical Neuropsychologists	193039	17790	true
+Sociologists	Sociologists	193041	2950	true
+RegionalPlanners	Urban and Regional Planners	193051	43040	true
+MiscellaneousSocialScientistsandRelatedWorkers	Miscellaneous Social Scientists and Related Workers	193090	55510	false
+Archeologists	Anthropologists and Archeologists	193091	8070	true
+Historians	Historians	193093	3140	true
+PoliticalScientists	Political Scientists	193094	5950	true
+TransportationPlanners	Transportation Planners	193099	36970	true
+LifePhysicalandSocialScienceTechnicians	Life, Physical, and Social Science Technicians	194000	373260	false
+AgriculturalandFoodScienceTechnicians	Agricultural and Food Science Technicians	194010	28550	false
+PrecisionAgricultureTechnicians	Precision Agriculture Technicians	194012	14340	true
+FoodScienceTechnicians	Food Science Technicians	194013	14200	true
+BiologicalTechnicians	Biological Technicians	194021	76190	true
+ChemicalTechnicians	Chemical Technicians	194031	55640	true
+EnvironmentalScienceandGeoscienceTechnicians	Environmental Science and Geoscience Technicians	194040	52030	false
+Health	Environmental Science and Protection Technicians, Including Health	194042	39390	true
+HydrologicTechnicians	Geological Technicians, Except Hydrologic Technicians	194043	9710	true
+NuclearMonitoringTechnicians	Nuclear Monitoring Technicians	194051	5990	true
+SocialScienceResearchAssistants	Social Science Research Assistants	194061	32940	true
+ConservationTechnicians	Forest and Conservation Technicians	194071	31080	true
+MiscellaneousLifePhysicalandSocialScienceTechnicians	Miscellaneous Life, Physical, and Social Science Technicians	194090	90840	false
+ForensicScienceTechnicians	Forensic Science Technicians	194092	19450	true
+RemoteSensingTechnicians	Remote Sensing Technicians	194099	71400	true
+OccupationalHealthandSafetySpecialistsandTechnicians	Occupational Health and Safety Specialists and Technicians	195010	159880	false
+SafetySpecialists	Occupational Health and Safety Specialists	195011	128430	true
+SafetyTechnicians	Occupational Health and Safety Technicians	195012	31450	true
+CommunityandSocialServiceOccupations	Community and Social Service Occupations	210000	2569630	false
+CounselorsSocialWorkersandOtherCommunityandSocialServiceSpecialists	Counselors, Social Workers, and Other Community and Social Service Specialists	211000	2477920	false
+Counselors	Counselors	211010	970870	false
+Advisors	Educational, Guidance, and Career Counselors and Advisors	211012	342350	true
+FamilyTherapists	Marriage and Family Therapists	211013	65870	true
+RehabilitationCounselors	Rehabilitation Counselors	211015	88930	true
+Substanceabusebehavioraldisorderandmentalhealthcounselors	Substance abuse, behavioral disorder, and mental health counselors	211018	440380	false
+CounselorsAllOther	Counselors, All Other	211019	33340	true
+SocialWorkers	Social Workers	211020	759740	false
+SchoolSocialWorkers	Child, Family, and School Social Workers	211021	382960	true
+HealthcareSocialWorkers	Healthcare Social Workers	211022	185940	true
+SubstanceAbuseSocialWorkers	Mental Health and Substance Abuse Social Workers	211023	125910	true
+SocialWorkersAllOther	Social Workers, All Other	211029	64940	true
+MiscellaneousCommunityandSocialServiceSpecialists	Miscellaneous Community and Social Service Specialists	211090	747300	false
+HealthEducationSpecialists	Health Education Specialists	211091	65150	true
+CorrectionalTreatmentSpecialists	Probation Officers and Correctional Treatment Specialists	211092	86820	true
+HumanServiceAssistants	Social and Human Service Assistants	211093	424220	true
+CommunityHealthWorkers	Community Health Workers	211094	60730	true
+SocialServiceSpecialistsAllOther	Community and Social Service Specialists, All Other	211099	110390	true
+ReligiousWorkers	Religious Workers	212000	91710	false
+Clergy	Clergy	212011	58080	true
+Education	Directors, Religious Activities and Education	212021	21460	true
+ReligiousWorkersAllOther	Religious Workers, All Other	212099	12170	true
+LegalOccupations	Legal Occupations	230000	1273410	false
+LawyersJudgesandRelatedWorkers	Lawyers, Judges, and Related Workers	231000	810640	false
+LawyersandJudicialLawClerks	Lawyers and Judicial Law Clerks	231010	760970	false
+Lawyers	Lawyers	231011	747750	true
+JudicialLawClerks	Judicial Law Clerks	231012	13220	true
+JudgesMagistratesandOtherJudicialWorkers	Judges, Magistrates, and Other Judicial Workers	231020	49670	false
+HearingOfficers	Administrative Law Judges, Adjudicators, and Hearing Officers	231021	16230	true
+Conciliators	Arbitrators, Mediators, and Conciliators	231022	7860	true
+Magistrates	Judges, Magistrate Judges, and Magistrates	231023	25580	true
+LegalSupportWorkers	Legal Support Workers	232000	462770	false
+LegalAssistants	Paralegals and Legal Assistants	232011	367220	true
+MiscellaneousLegalSupportWorkers	Miscellaneous Legal Support Workers	232090	95550	false
+Searchers	Title Examiners, Abstractors, and Searchers	232093	48170	true
+LegalSupportWorkersAllOther	Legal Support Workers, All Other	232099	47380	true
+EducationalInstructionandLibraryOccupations	Educational Instruction and Library Occupations	250000	8947710	false
+PostsecondaryTeachers	Postsecondary Teachers	251000	1396300	false
+BusinessTeachersPostsecondary	Business Teachers, Postsecondary	251011	81780	true
+MathandComputerScienceTeachersPostsecondary	Math and Computer Science Teachers, Postsecondary	251020	85060	false
+ComputerScienceTeachersPostsecondary	Computer Science Teachers, Postsecondary	251021	36240	true
+MathematicalScienceTeachersPostsecondary	Mathematical Science Teachers, Postsecondary	251022	48820	true
+EngineeringandArchitectureTeachersPostsecondary	Engineering and Architecture Teachers, Postsecondary	251030	49030	false
+ArchitectureTeachersPostsecondary	Architecture Teachers, Postsecondary	251031	9120	true
+EngineeringTeachersPostsecondary	Engineering Teachers, Postsecondary	251032	39910	true
+LifeSciencesTeachersPostsecondary	Life Sciences Teachers, Postsecondary	251040	63270	false
+AgriculturalSciencesTeachersPostsecondary	Agricultural Sciences Teachers, Postsecondary	251041	8700	true
+BiologicalScienceTeachersPostsecondary	Biological Science Teachers, Postsecondary	251042	53250	true
+ConservationScienceTeachersPostsecondary	Forestry and Conservation Science Teachers, Postsecondary	251043	1310	true
+PhysicalSciencesTeachersPostsecondary	Physical Sciences Teachers, Postsecondary	251050	52580	false
+SpaceSciencesTeachersPostsecondary	Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary	251051	11480	true
+ChemistryTeachersPostsecondary	Chemistry Teachers, Postsecondary	251052	20390	true
+EnvironmentalScienceTeachersPostsecondary	Environmental Science Teachers, Postsecondary	251053	7130	true
+PhysicsTeachersPostsecondary	Physics Teachers, Postsecondary	251054	13590	true
+SocialSciencesTeachersPostsecondary	Social Sciences Teachers, Postsecondary	251060	121090	false
+ArcheologyTeachersPostsecondary	Anthropology and Archeology Teachers, Postsecondary	251061	5260	true
+CulturalStudiesTeachersPostsecondary	Area, Ethnic, and Cultural Studies Teachers, Postsecondary	251062	11430	true
+EconomicsTeachersPostsecondary	Economics Teachers, Postsecondary	251063	12420	true
+GeographyTeachersPostsecondary	Geography Teachers, Postsecondary	251064	3290	true
+PoliticalScienceTeachersPostsecondary	Political Science Teachers, Postsecondary	251065	17170	true
+PsychologyTeachersPostsecondary	Psychology Teachers, Postsecondary	251066	41610	true
+SociologyTeachersPostsecondary	Sociology Teachers, Postsecondary	251067	12380	true
+SocialSciencesTeachersPostsecondaryAllOther	Social Sciences Teachers, Postsecondary, All Other	251069	17540	true
+HealthTeachersPostsecondary	Health Teachers, Postsecondary	251070	303970	false
+HealthSpecialtiesTeachersPostsecondary	Health Specialties Teachers, Postsecondary	251071	229720	true
+TeachersPostsecondary	Nursing Instructors and Teachers, Postsecondary	251072	74250	true
+EducationandLibraryScienceTeachersPostsecondary	Education and Library Science Teachers, Postsecondary	251080	63190	false
+EducationTeachersPostsecondary	Education Teachers, Postsecondary	251081	59090	true
+LibraryScienceTeachersPostsecondary	Library Science Teachers, Postsecondary	251082	4100	true
+LawCriminalJusticeandSocialWorkTeachersPostsecondary	Law, Criminal Justice, and Social Work Teachers, Postsecondary	251110	49710	false
+LawEnforcementTeachersPostsecondary	Criminal Justice and Law Enforcement Teachers, Postsecondary	251111	13560	true
+LawTeachersPostsecondary	Law Teachers, Postsecondary	251112	22800	true
+SocialWorkTeachersPostsecondary	Social Work Teachers, Postsecondary	251113	13350	true
+ArtsCommunicationsHistoryandHumanitiesTeachersPostsecondary	Arts, Communications, History, and Humanities Teachers, Postsecondary	251120	248620	false
+MusicTeachersPostsecondary	Art, Drama, and Music Teachers, Postsecondary	251121	97890	true
+CommunicationsTeachersPostsecondary	Communications Teachers, Postsecondary	251122	29260	true
+LiteratureTeachersPostsecondary	English Language and Literature Teachers, Postsecondary	251123	59590	true
+ForeignLanguageTeachers	Foreign Language and Literature Teachers, Postsecondary	251124	21170	true
+HistoryTeachersPostsecondary	History Teachers, Postsecondary	251125	19860	true
+ReligionTeachersPostsecondary	Philosophy and Religion Teachers, Postsecondary	251126	20840	true
+MiscellaneousPostsecondaryTeachers	Miscellaneous Postsecondary Teachers	251190	278000	false
+ConsumerSciencesTeachersPostsecondary	Family and Consumer Sciences Teachers, Postsecondary	251192	2630	true
+FitnessStudiesTeachersPostsecondary	Recreation and Fitness Studies Teachers, Postsecondary	251193	12680	true
+CareerTechnicalEducationTeachersPostsecondary	Career/Technical Education Teachers, Postsecondary	251194	111150	true
+PostsecondaryTeachersAllOther	Postsecondary Teachers, All Other	251199	151530	true
+PreschoolElementaryMiddleSecondaryandSpecialEducationTeachers	Preschool, Elementary, Middle, Secondary, and Special Education Teachers	252000	4321590	false
+PreschoolandKindergartenTeachers	Preschool and Kindergarten Teachers	252010	559490	false
+SpecialEducation	Preschool Teachers, Except Special Education	252011	445080	true
+ElementaryandMiddleSchoolTeachers	Elementary and Middle School Teachers	252020	2027880	false
+CareerTechnicalEducation	Middle School Teachers, Except Special and Career/Technical Education	252022	620370	true
+CareerTechnicalEducationTeachersMiddleSchool	Career/Technical Education Teachers, Middle School	252023	14200	true
+SecondarySchoolTeachers	Secondary School Teachers	252030	1176990	false
+CareerTechnicalEducationTeachersSecondarySchool	Career/Technical Education Teachers, Secondary School	252032	104450	true
+SpecialEducationTeachers	Special Education Teachers	252050	557240	false
+SpecialEducationTeachersPreschool	Special Education Teachers, Preschool	252051	28200	true
+SpecialEducationTeachersKindergartenandElementarySchool	Special Education Teachers, Kindergarten and Elementary School	252052	231570	false
+SpecialEducationTeachersMiddleSchool	Special Education Teachers, Middle School	252057	95330	true
+SpecialEducationTeachersSecondarySchool	Special Education Teachers, Secondary School	252058	162780	true
+AdaptedPhysicalEducationSpecialists	Adapted Physical Education Specialists	252059	39350	true
+OtherTeachersandInstructors	Other Teachers and Instructors	253000	1125750	false
+ESLInstructors	Adult Basic Education, Adult Secondary Education, and English as a Second Language Instructors	253011	36260	true
+SelfEnrichmentTeachers	Self-Enrichment Teachers	253021	308520	true
+SubstituteTeachersShortTerm	Substitute Teachers, Short-Term	253031	481300	true
+Tutors	Tutors	253041	174660	true
+InstructorsAllOther	Teachers and Instructors, All Other	253099	125010	true
+LibrariansCuratorsandArchivists	Librarians, Curators, and Archivists	254000	238010	false
+ArchivistsCuratorsandMuseumTechnicians	Archivists, Curators, and Museum Technicians	254010	32400	false
+Archivists	Archivists	254011	7050	true
+Curators	Curators	254012	12280	true
+Conservators	Museum Technicians and Conservators	254013	13070	true
+MediaCollectionsSpecialists	Librarians and Media Collections Specialists	254022	131830	true
+LibraryTechnicians	Library Technicians	254031	73770	true
+OtherEducationalInstructionandLibraryOccupations	Other Educational Instruction and Library Occupations	259000	1866060	false
+HomeManagementEducators	Farm and Home Management Educators	259021	10260	true
+InstructionalCoordinators	Instructional Coordinators	259031	210850	true
+TeachingAssistants	Teaching Assistants	259040	1530310	false
+TeachingAssistantsPostsecondary	Teaching Assistants, Postsecondary	259044	155010	true
+TeachingAssistantsExceptPostsecondary	Teaching Assistants, Except Postsecondary	259045	1375300	false
+LibraryWorkersAllOther	Educational Instruction and Library Workers, All Other	259099	114640	true
+ArtsDesignEntertainmentSportsandMediaOccupations	Arts, Design, Entertainment, Sports, and Media Occupations	270000	2098690	false
+ArtandDesignWorkers	Art and Design Workers	271000	681550	false
+ArtistsandRelatedWorkers	Artists and Related Workers	271010	93390	false
+ArtDirectors	Art Directors	271011	50370	true
+CraftArtists	Craft Artists	271012	4370	true
+Illustrators	Fine Artists, Including Painters, Sculptors, and Illustrators	271013	10000	true
+Animators	Special Effects Artists and Animators	271014	21280	true
+RelatedWorkersAllOther	Artists and Related Workers, All Other	271019	7370	true
+Designers	Designers	271020	588160	false
+IndustrialDesigners	Commercial and Industrial Designers	271021	30250	true
+FashionDesigners	Fashion Designers	271022	20910	true
+FloralDesigners	Floral Designers	271023	40160	true
+GraphicDesigners	Graphic Designers	271024	214260	true
+InteriorDesigners	Interior Designers	271025	69580	true
+WindowTrimmers	Merchandise Displayers and Window Trimmers	271026	192480	true
+ExhibitDesigners	Set and Exhibit Designers	271027	10850	true
+DesignersAllOther	Designers, All Other	271029	9680	true
+EntertainersandPerformersSportsandRelatedWorkers	Entertainers and Performers, Sports and Related Workers	272000	550830	false
+ActorsProducersandDirectors	Actors, Producers, and Directors	272010	184070	false
+Actors	Actors	272011	38800	true
+MediaTechnicalDirectorsManagers	Media Technical Directors/Managers	272012	145270	true
+AthletesCoachesUmpiresandRelatedWorkers	Athletes, Coaches, Umpires, and Related Workers	272020	280390	false
+SportsCompetitors	Athletes and Sports Competitors	272021	14370	true
+Scouts	Coaches and Scouts	272022	250940	true
+OtherSportsOfficials	Umpires, Referees, and Other Sports Officials	272023	15080	true
+DancersandChoreographers	Dancers and Choreographers	272030	12490	false
+Dancers	Dancers	272031	9060	true
+Choreographers	Choreographers	272032	3430	true
+MusiciansSingersandRelatedWorkers	Musicians, Singers, and Related Workers	272040	50680	false
+Composers	Music Directors and Composers	272041	12330	true
+Singers	Musicians and Singers	272042	38350	true
+MiscellaneousEntertainersandPerformersSportsandRelatedWorkers	Miscellaneous Entertainers and Performers, Sports and Related Workers	272090	23210	false
+Radio	Disc Jockeys, Except Radio	272091	8170	true
+MediaandCommunicationWorkers	Media and Communication Workers	273000	634400	false
+RadioDiscJockeys	Broadcast Announcers and Radio Disc Jockeys	273011	23880	true
+Journalists	News Analysts, Reporters, and Journalists	273023	41550	true
+PublicRelationsSpecialists	Public Relations Specialists	273031	280590	true
+WritersandEditors	Writers and Editors	273040	198810	false
+Editors	Editors	273041	95480	true
+TechnicalWriters	Technical Writers	273042	55530	true
+CreativeWriters	Poets, Lyricists and Creative Writers	273043	47800	true
+MiscellaneousMediaandCommunicationWorkers	Miscellaneous Media and Communication Workers	273090	89580	false
+Translators	Interpreters and Translators	273091	53360	true
+SimultaneousCaptioners	Court Reporters and Simultaneous Captioners	273092	12630	true
+CommunicationWorkersAllOther	Media and Communication Workers, All Other	273099	23590	true
+MediaandCommunicationEquipmentWorkers	Media and Communication Equipment Workers	274000	231910	false
+BroadcastSoundandLightingTechnicians	Broadcast, Sound, and Lighting Technicians	274010	114340	false
+VideoTechnicians	Audio and Video Technicians	274011	70080	true
+BroadcastTechnicians	Broadcast Technicians	274012	21080	true
+SoundEngineeringTechnicians	Sound Engineering Technicians	274014	13050	true
+LightingTechnicians	Lighting Technicians	274015	10130	true
+Photographers	Photographers	274021	51230	true
+TelevisionVideoandFilmCameraOperatorsandEditors	Television, Video, and Film Camera Operators and Editors	274030	53330	false
+Film	Camera Operators, Television, Video, and Film	274031	24460	true
+VideoEditors	Film and Video Editors	274032	28860	true
+CommunicationEquipmentWorkersAllOther	Media and Communication Equipment Workers, All Other	274099	13020	true
+HealthcarePractitionersandTechnicalOccupations	Healthcare Practitioners and Technical Occupations	290000	9592690	false
+HealthcareDiagnosingorTreatingPractitioners	Healthcare Diagnosing or Treating Practitioners	291000	6338160	false
+Chiropractors	Chiropractors	291011	37630	true
+Dentists	Dentists	291020	130620	false
+DentistsGeneral	Dentists, General	291021	113490	true
+MaxillofacialSurgeons	Oral and Maxillofacial Surgeons	291022	5330	true
+Orthodontists	Orthodontists	291023	5150	true
+Prosthodontists	Prosthodontists	291024	760	true
+DentistsAllOtherSpecialists	Dentists, All Other Specialists	291029	5900	true
+Nutritionists	Dietitians and Nutritionists	291031	76570	true
+Optometrists	Optometrists	291041	41890	true
+Pharmacists	Pharmacists	291051	328870	true
+AnesthesiologistAssistants	Anesthesiologist Assistants	291071	155540	true
+Podiatrists	Podiatrists	291081	9520	true
+Therapists	Therapists	291120	777300	false
+VisionRehabilitationTherapists	Low Vision Therapists, Orientation and Mobility Specialists, and Vision Rehabilitation Therapists	291122	152280	true
+PhysicalTherapists	Physical Therapists	291123	248630	true
+RadiationTherapists	Radiation Therapists	291124	18700	true
+RecreationalTherapists	Recreational Therapists	291125	15060	true
+RespiratoryTherapists	Respiratory Therapists	291126	136420	true
+SpeechLanguagePathologists	Speech-Language Pathologists	291127	178790	true
+ExercisePhysiologists	Exercise Physiologists	291128	8110	true
+MusicTherapists	Music Therapists	291129	19320	true
+Veterinarians	Veterinarians	291131	80630	true
+ClinicalNurseSpecialists	Clinical Nurse Specialists	291141	3282010	true
+NurseAnesthetists	Nurse Anesthetists	291151	50350	true
+NurseMidwives	Nurse Midwives	291161	8280	true
+NursePractitioners	Nurse Practitioners	291171	307390	true
+Audiologists	Audiologists	291181	14730	true
+Physicians	Physicians	291210	727050	false
+Anesthesiologists	Anesthesiologists	291211	41890	true
+Cardiologists	Cardiologists	291212	18020	true
+Dermatologists	Dermatologists	291213	10080	true
+EmergencyMedicinePhysicians	Emergency Medicine Physicians	291214	33680	true
+FamilyMedicinePhysicians	Family Medicine Physicians	291215	107950	true
+GeneralInternalMedicinePhysicians	General Internal Medicine Physicians	291216	66640	true
+Neurologists	Neurologists	291217	7700	true
+Gynecologists	Obstetricians and Gynecologists	291218	19900	true
+PediatriciansGeneral	Pediatricians, General	291221	42960	true
+PhysiciansPathologists	Physicians, Pathologists	291222	11800	true
+Psychiatrists	Psychiatrists	291223	24800	true
+Radiologists	Radiologists	291224	26290	true
+SportsMedicinePhysicians	Sports Medicine Physicians	291229	315360	true
+Surgeons	Surgeons	291240	51400	false
+Pediatric	Ophthalmologists, Except Pediatric	291241	12110	true
+PediatricSurgeons	Pediatric Surgeons	291243	1050	true
+SurgeonsAllOther	Surgeons, All Other	291249	24080	true
+MiscellaneousHealthcareDiagnosingorTreatingPractitioners	Miscellaneous Healthcare Diagnosing or Treating Practitioners	291290	258380	false
+Acupuncturists	Acupuncturists	291291	8440	true
+DentalHygienists	Dental Hygienists	291292	219070	true
+Orthoptists	Orthoptists	291299	30870	true
+HealthTechnologistsandTechnicians	Health Technologists and Technicians	292000	3124620	false
+ClinicalLaboratoryTechnologistsandTechnicians	Clinical Laboratory Technologists and Technicians	292010	343040	false
+DiagnosticRelatedTechnologistsandTechnicians	Diagnostic Related Technologists and Technicians	292030	433560	false
+DiagnosticMedicalSonographers	Diagnostic Medical Sonographers	292032	86460	true
+NuclearMedicineTechnologists	Nuclear Medicine Technologists	292033	16960	true
+MagneticResonanceImagingTechnologists	Magnetic Resonance Imaging Technologists	292035	41530	true
+MedicalDosimetrists	Medical Dosimetrists	292036	3970	true
+EmergencyMedicalTechniciansandParamedics	Emergency Medical Technicians and Paramedics	292040	277520	false
+EmergencyMedicalTechnicians	Emergency Medical Technicians	292042	177980	true
+Paramedics	Paramedics	292043	99530	true
+HealthPractitionerSupportTechnologistsandTechnicians	Health Practitioner Support Technologists and Technicians	292050	975890	false
+DieteticTechnicians	Dietetic Technicians	292051	29950	true
+PharmacyTechnicians	Pharmacy Technicians	292052	487920	true
+PsychiatricTechnicians	Psychiatric Technicians	292053	136300	true
+SurgicalTechnologists	Surgical Technologists	292055	113890	true
+OphthalmicMedicalTechnicians	Ophthalmic Medical Technicians	292057	76520	true
+LicensedVocationalNurses	Licensed Practical and Licensed Vocational Nurses	292061	632430	true
+MedicalRecordsSpecialists	Medical Records Specialists	292072	187910	true
+OpticiansDispensing	Opticians, Dispensing	292081	79690	true
+MiscellaneousHealthTechnologistsandTechnicians	Miscellaneous Health Technologists and Technicians	292090	194570	false
+Prosthetists	Orthotists and Prosthetists	292091	9930	true
+HearingAidSpecialists	Hearing Aid Specialists	292092	10580	true
+PatientRepresentatives	Patient Representatives	292099	174060	true
+OtherHealthcarePractitionersandTechnicalOccupations	Other Healthcare Practitioners and Technical Occupations	299000	129910	false
+MedicalRegistrars	Health Information Technologists and Medical Registrars	299021	37620	true
+MiscellaneousHealthPractitionersandTechnicalWorkers	Miscellaneous Health Practitioners and Technical Workers	299090	92290	false
+AthleticTrainers	Athletic Trainers	299091	28950	true
+GeneticCounselors	Genetic Counselors	299092	3510	true
+SurgicalAssistants	Surgical Assistants	299093	22860	true
+Midwives	Midwives	299099	36970	true
+HealthcareSupportOccupations	Healthcare Support Occupations	310000	7448010	false
+HomeHealthandPersonalCareAidesandNursingAssistantsOrderliesandPsychiatricAides	Home Health and Personal Care Aides; and Nursing Assistants, Orderlies, and Psychiatric Aides	311100	5464490	false
+HomeHealthandPersonalCareAides	Home Health and Personal Care Aides	311120	3988140	false
+NursingAssistantsOrderliesandPsychiatricAides	Nursing Assistants, Orderlies, and Psychiatric Aides	311130	1476350	false
+NursingAssistants	Nursing Assistants	311131	1388430	true
+Orderlies	Orderlies	311132	53020	true
+PsychiatricAides	Psychiatric Aides	311133	34900	true
+OccupationalTherapyandPhysicalTherapistAssistantsandAides	Occupational Therapy and Physical Therapist Assistants and Aides	312000	204940	false
+OccupationalTherapyAssistantsandAides	Occupational Therapy Assistants and Aides	312010	52910	false
+OccupationalTherapyAssistants	Occupational Therapy Assistants	312011	47910	true
+OccupationalTherapyAides	Occupational Therapy Aides	312012	5000	true
+PhysicalTherapistAssistantsandAides	Physical Therapist Assistants and Aides	312020	152020	false
+PhysicalTherapistAssistants	Physical Therapist Assistants	312021	108010	true
+PhysicalTherapistAides	Physical Therapist Aides	312022	44010	true
+OtherHealthcareSupportOccupations	Other Healthcare Support Occupations	319000	1778580	false
+MassageTherapists	Massage Therapists	319011	96040	true
+MiscellaneousHealthcareSupportOccupations	Miscellaneous Healthcare Support Occupations	319090	1682540	false
+DentalAssistants	Dental Assistants	319091	375430	true
+MedicalAssistants	Medical Assistants	319092	793460	true
+MedicalEquipmentPreparers	Medical Equipment Preparers	319093	72760	true
+MedicalTranscriptionists	Medical Transcriptionists	319094	43070	true
+PharmacyAides	Pharmacy Aides	319095	41100	true
+LaboratoryAnimalCaretakers	Veterinary Assistants and Laboratory Animal Caretakers	319096	114190	true
+Phlebotomists	Phlebotomists	319097	138880	true
+EndoscopyTechnicians	Endoscopy Technicians	319099	103650	true
+ProtectiveServiceOccupations	Protective Service Occupations	330000	3654910	false
+SupervisorsofProtectiveServiceWorkers	Supervisors of Protective Service Workers	331000	390970	false
+FirstLineSupervisorsofLawEnforcementWorkers	First-Line Supervisors of Law Enforcement Workers	331010	206520	false
+FirstLineSupervisorsOfCorrectionalOfficers	First-Line Supervisors of Correctional Officers	331011	53390	true
+Detectives	First-Line Supervisors of Police and Detectives	331012	153130	true
+PreventionWorkers	First-Line Supervisors of Firefighting and Prevention Workers	331021	93680	true
+MiscellaneousFirstLineSupervisorsProtectiveServiceWorkers	Miscellaneous First-Line Supervisors, Protective Service Workers	331090	90770	false
+FirstLineSupervisorsOfSecurityWorkers	First-Line Supervisors of Security Workers	331091	70310	true
+FirstLineSupervisorsOfProtectiveServiceWorkersAllOther	First-Line Supervisors of Protective Service Workers, All Other	331099	20460	true
+FirefightingandPreventionWorkers	Firefighting and Prevention Workers	332000	349070	false
+Firefighters	Firefighters	332011	332240	true
+FireInspectors	Fire Inspectors	332020	16830	false
+PreventionSpecialists	Forest Fire Inspectors and Prevention Specialists	332022	2780	true
+LawEnforcementWorkers	Law Enforcement Workers	333000	1177270	false
+BailiffsCorrectionalOfficersandJailers	Bailiffs, Correctional Officers, and Jailers	333010	382300	false
+Bailiffs	Bailiffs	333011	16910	true
+Jailers	Correctional Officers and Jailers	333012	365380	true
+IntelligenceAnalysts	Intelligence Analysts	333021	110790	true
+GameWardens	Fish and Game Wardens	333031	6420	true
+ParkingEnforcementWorkers	Parking Enforcement Workers	333041	7770	true
+PoliceOfficers	Police Officers	333050	669990	false
+BorderProtectionOfficers	Customs and Border Protection Officers	333051	666990	true
+RailroadPolice	Transit and Railroad Police	333052	3000	true
+OtherProtectiveServiceWorkers	Other Protective Service Workers	339000	1737600	false
+AnimalControlWorkers	Animal Control Workers	339011	11790	true
+SecurityGuardsandGamblingSurveillanceOfficers	Security Guards and Gambling Surveillance Officers	339030	1251760	false
+GamblingInvestigators	Gambling Surveillance Officers and Gambling Investigators	339031	10000	true
+SecurityGuards	Security Guards	339032	1241770	true
+MiscellaneousProtectiveServiceWorkers	Miscellaneous Protective Service Workers	339090	435360	false
+Flaggers	Crossing Guards and Flaggers	339091	90180	true
+OtherRecreationalProtectiveServiceWorkers	Lifeguards, Ski Patrol, and Other Recreational Protective Service Workers	339092	143590	true
+TransportationSecurityScreeners	Transportation Security Screeners	339093	46340	true
+SchoolBusMonitors	School Bus Monitors	339094	72140	true
+RetailLossPreventionSpecialists	Retail Loss Prevention Specialists	339099	83110	true
+FoodPreparationandServingRelatedOccupations	Food Preparation and Serving Related Occupations	350000	13613490	false
+SupervisorsofFoodPreparationandServingWorkers	Supervisors of Food Preparation and Serving Workers	351010	1369780	false
+HeadCooks	Chefs and Head Cooks	351011	182320	true
+ServingWorkers	First-Line Supervisors of Food Preparation and Serving Workers	351012	1187460	true
+CooksandFoodPreparationWorkers	Cooks and Food Preparation Workers	352000	3632290	false
+Cooks	Cooks	352010	2743520	false
+CooksFastFood	Cooks, Fast Food	352011	668230	true
+Cafeteria	Cooks, Institution and Cafeteria	352012	448260	true
+CooksPrivateHousehold	Cooks, Private Household	352013	900	true
+CooksRestaurant	Cooks, Restaurant	352014	1452130	true
+CooksShortOrder	Cooks, Short Order	352015	150420	true
+CooksAllOther	Cooks, All Other	352019	23590	true
+FoodPreparationWorkers	Food Preparation Workers	352021	888770	true
+FoodandBeverageServingWorkers	Food and Beverage Serving Workers	353000	7101010	false
+Bartenders	Bartenders	353011	745610	true
+Baristas	Baristas	353023	3780930	true
+Waitresses	Waiters and Waitresses	353031	2302690	true
+FoodServersNonrestaurant	Food Servers, Nonrestaurant	353041	271780	true
+OtherFoodPreparationandServingRelatedWorkers	Other Food Preparation and Serving Related Workers	359000	1510410	false
+BartenderHelpers	Dining Room and Cafeteria Attendants and Bartender Helpers	359011	522010	true
+Dishwashers	Dishwashers	359021	471670	true
+CoffeeShop	Hosts and Hostesses, Restaurant, Lounge, and Coffee Shop	359031	427150	true
+ServingRelatedWorkersAllOther	Food Preparation and Serving Related Workers, All Other	359099	89580	true
+BuildingandGroundsCleaningandMaintenanceOccupations	Building and Grounds Cleaning and Maintenance Occupations	370000	4496150	false
+FirstLineSupervisorsofBuildingandGroundsCleaningandMaintenanceWorkers	First-Line Supervisors of Building and Grounds Cleaning and Maintenance Workers	371010	298790	false
+JanitorialWorkers	First-Line Supervisors of Housekeeping and Janitorial Workers	371011	174660	true
+GroundskeepingWorkers	First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers	371012	124130	true
+BuildingCleaningandPestControlWorkers	Building Cleaning and Pest Control Workers	372000	3167290	false
+BuildingCleaningWorkers	Building Cleaning Workers	372010	3071180	false
+Janitors	Janitors and Cleaners, Except Maids and Housekeeping Cleaners	372011	2199900	true
+HousekeepingCleaners	Maids and Housekeeping Cleaners	372012	854910	true
+BuildingCleaningWorkersAllOther	Building Cleaning Workers, All Other	372019	16370	true
+PestControlWorkers	Pest Control Workers	372021	96110	true
+GroundsMaintenanceWorkers	Grounds Maintenance Workers	373010	1030070	false
+ApplicatorsVegetation	Pesticide Handlers, Sprayers, and Applicators, Vegetation	373012	25200	true
+Pruners	Tree Trimmers and Pruners	373013	47870	true
+GroundsMaintenanceWorkersAllOther	Grounds Maintenance Workers, All Other	373019	13580	true
+PersonalCareandServiceOccupations	Personal Care and Service Occupations	390000	3159940	false
+SupervisorsofPersonalCareandServiceWorkers	Supervisors of Personal Care and Service Workers	391000	225420	false
+FirstLineSupervisorsofEntertainmentandRecreationWorkers	First-Line Supervisors of Entertainment and Recreation Workers	391010	118360	false
+FirstLineSupervisorsOfGamblingServicesWorkers	First-Line Supervisors of Gambling Services Workers	391013	25530	true
+GamblingServices	First-Line Supervisors of Entertainment and Recreation Workers, Except Gambling Services	391014	92830	true
+FirstLineSupervisorsOfPersonalServiceWorkers	First-Line Supervisors of Personal Service Workers	391022	107060	true
+AnimalCareandServiceWorkers	Animal Care and Service Workers	392000	297420	false
+AnimalTrainers	Animal Trainers	392011	20110	true
+AnimalCaretakers	Animal Caretakers	392021	277300	true
+EntertainmentAttendantsandRelatedWorkers	Entertainment Attendants and Related Workers	393000	627560	false
+GamblingServicesWorkers	Gambling Services Workers	393010	105500	false
+GamblingDealers	Gambling Dealers	393011	82980	true
+Runners	Gambling and Sports Book Writers and Runners	393012	7600	true
+GamblingServiceWorkersAllOther	Gambling Service Workers, All Other	393019	14920	true
+MotionPictureProjectionists	Motion Picture Projectionists	393021	1950	true
+TicketTakers	Ushers, Lobby Attendants, and Ticket Takers	393031	119210	true
+MiscellaneousEntertainmentAttendantsandRelatedWorkers	Miscellaneous Entertainment Attendants and Related Workers	393090	400900	false
+RecreationAttendants	Amusement and Recreation Attendants	393091	371590	true
+CostumeAttendants	Costume Attendants	393092	6290	true
+DressingRoomAttendants	Locker Room, Coatroom, and Dressing Room Attendants	393093	14960	true
+FuneralServiceWorkers	Funeral Service Workers	394000	62630	false
+EmbalmersandCrematoryOperators	Embalmers and Crematory Operators	394010	6360	false
+Embalmers	Embalmers	394011	3420	true
+CrematoryOperators	Crematory Operators	394012	2950	true
+FuneralAttendants	Funeral Attendants	394021	30560	true
+FuneralArrangers	Morticians, Undertakers, and Funeral Arrangers	394031	25700	true
+PersonalAppearanceWorkers	Personal Appearance Workers	395000	543830	false
+BarbersHairdressersHairstylistsandCosmetologists	Barbers, Hairdressers, Hairstylists and Cosmetologists	395010	313560	false
+Barbers	Barbers	395011	18100	true
+Cosmetologists	Hairdressers, Hairstylists, and Cosmetologists	395012	295460	true
+MiscellaneousPersonalAppearanceWorkers	Miscellaneous Personal Appearance Workers	395090	230270	false
+Performance	Makeup Artists, Theatrical and Performance	395091	3320	true
+Pedicurists	Manicurists and Pedicurists	395092	147820	true
+Shampooers	Shampooers	395093	8890	true
+SkincareSpecialists	Skincare Specialists	395094	70240	true
+BaggagePortersBellhopsandConcierges	Baggage Porters, Bellhops, and Concierges	396010	75430	false
+Bellhops	Baggage Porters and Bellhops	396011	31220	true
+Concierges	Concierges	396012	44200	true
+TourandTravelGuides	Tour and Travel Guides	397010	49010	false
+OtherPersonalCareandServiceWorkers	Other Personal Care and Service Workers	399000	1278640	false
+Nannies	Nannies	399011	520180	true
+RecreationandFitnessWorkers	Recreation and Fitness Workers	399030	613260	false
+GroupFitnessInstructors	Exercise Trainers and Group Fitness Instructors	399031	303620	true
+RecreationWorkers	Recreation Workers	399032	309640	true
+ResidentialAdvisors	Residential Advisors	399041	82810	true
+ServiceWorkersAllOther	Personal Care and Service Workers, All Other	399099	62390	true
+SalesandRelatedOccupations	Sales and Related Occupations	410000	13351680	false
+FirstLineSupervisorsofSalesWorkers	First-Line Supervisors of Sales Workers	411010	1332180	false
+FirstLineSupervisorsOfRetailSalesWorkers	First-Line Supervisors of Retail Sales Workers	411011	1113160	true
+FirstLineSupervisorsOfNonRetailSalesWorkers	First-Line Supervisors of Non-Retail Sales Workers	411012	219010	true
+RetailSalesWorkers	Retail Sales Workers	412000	7633890	false
+Cashiers	Cashiers	412010	3169970	false
+BoothCashiers	Gambling Change Persons and Booth Cashiers	412012	21930	true
+CounterandRentalClerksandPartsSalespersons	Counter and Rental Clerks and Parts Salespersons	412020	663680	false
+RentalClerks	Counter and Rental Clerks	412021	398620	true
+PartsSalespersons	Parts Salespersons	412022	265060	true
+RetailSalespersons	Retail Salespersons	412031	3800250	true
+SalesRepresentativesServices	Sales Representatives, Services	413000	2287740	false
+AdvertisingSalesAgents	Advertising Sales Agents	413011	97470	true
+InsuranceSalesAgents	Insurance Sales Agents	413021	469480	true
+FinancialServicesSalesAgents	Securities, Commodities, and Financial Services Sales Agents	413031	472300	true
+TravelAgents	Travel Agents	413041	59150	true
+Travel	Sales Representatives of Services, Except Advertising, Insurance, Financial Services, and Travel	413091	1189330	true
+SalesRepresentativesWholesaleandManufacturing	Sales Representatives, Wholesale and Manufacturing	414010	1560790	false
+Assessors	Solar Sales Representatives and Assessors	414011	293930	true
+ScientificProducts	Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products	414012	1266860	true
+OtherSalesandRelatedWorkers	Other Sales and Related Workers	419000	537090	false
+ModelsDemonstratorsandProductPromoters	Models, Demonstrators, and Product Promoters	419010	70120	false
+ProductPromoters	Demonstrators and Product Promoters	419011	64770	true
+Models	Models	419012	5350	true
+RealEstateBrokersandSalesAgents	Real Estate Brokers and Sales Agents	419020	240190	false
+RealEstateBrokers	Real Estate Brokers	419021	49590	true
+RealEstateSalesAgents	Real Estate Sales Agents	419022	190600	true
+SalesEngineers	Sales Engineers	419031	56690	true
+Telemarketers	Telemarketers	419041	66430	true
+MiscellaneousSalesandRelatedWorkers	Miscellaneous Sales and Related Workers	419090	103660	false
+RelatedWorkers	Door-to-Door Sales Workers, News and Street Vendors, and Related Workers	419091	4590	true
+OfficeandAdministrativeSupportOccupations	Office and Administrative Support Occupations	430000	18218070	false
+AdministrativeSupportWorkers	First-Line Supervisors of Office and Administrative Support Workers	431011	1495580	true
+CommunicationsEquipmentOperators	Communications Equipment Operators	432000	41070	false
+AnsweringService	Switchboard Operators, Including Answering Service	432011	35730	true
+TelephoneOperators	Telephone Operators	432021	3950	true
+CommunicationsEquipmentOperatorsAllOther	Communications Equipment Operators, All Other	432099	1390	true
+FinancialClerks	Financial Clerks	433000	2645000	false
+AccountCollectors	Bill and Account Collectors	433011	165020	true
+PostingClerks	Billing and Posting Clerks	433021	417500	true
+AuditingClerks	Bookkeeping, Accounting, and Auditing Clerks	433031	1455770	true
+GamblingCageWorkers	Gambling Cage Workers	433041	13490	true
+TimekeepingClerks	Payroll and Timekeeping Clerks	433051	156950	true
+ProcurementClerks	Procurement Clerks	433061	59900	true
+Tellers	Tellers	433071	339340	true
+FinancialClerksAllOther	Financial Clerks, All Other	433099	37030	true
+InformationandRecordClerks	Information and Record Clerks	434000	5311310	false
+BrokerageClerks	Brokerage Clerks	434011	40090	true
+CorrespondenceClerks	Correspondence Clerks	434021	6260	true
+LicenseClerks	Court, Municipal, and License Clerks	434031	170010	true
+Clerks	Credit Authorizers, Checkers, and Clerks	434041	11960	true
+CustomerServiceRepresentatives	Customer Service Representatives	434051	2725930	true
+EligibilityInterviewersGovernmentPrograms	Eligibility Interviewers, Government Programs	434061	156260	true
+FileClerks	File Clerks	434071	78980	true
+ResortDeskClerks	Hotel, Motel, and Resort Desk Clerks	434081	261430	true
+Loan	Interviewers, Except Eligibility and Loan	434111	157310	true
+LibraryAssistantsClerical	Library Assistants, Clerical	434121	80070	true
+NewAccountsClerks	New Accounts Clerks	434141	38030	true
+OrderClerks	Order Clerks	434151	83420	true
+Timekeeping	Human Resources Assistants, Except Payroll and Timekeeping	434161	92580	true
+InformationClerks	Receptionists and Information Clerks	434171	964530	true
+TravelClerks	Reservation and Transportation Ticket Agents and Travel Clerks	434181	127440	true
+RecordClerksAllOther	Information and Record Clerks, All Other	434199	143910	true
+MaterialRecordingSchedulingDispatchingandDistributingWorkers	Material Recording, Scheduling, Dispatching, and Distributing Workers	435000	2319860	false
+FreightForwarders	Freight Forwarders	435011	97800	true
+Messengers	Couriers and Messengers	435021	71920	true
+Dispatchers	Dispatchers	435030	312140	false
+PublicSafetyTelecommunicators	Public Safety Telecommunicators	435031	101140	true
+Ambulance	Dispatchers, Except Police, Fire, and Ambulance	435032	211000	true
+MeterReadersUtilities	Meter Readers, Utilities	435041	19620	true
+PostalServiceWorkers	Postal Service Workers	435050	526030	false
+PostalServiceClerks	Postal Service Clerks	435051	78060	true
+PostalServiceMailCarriers	Postal Service Mail Carriers	435052	336040	true
+ProcessingMachineOperators	Postal Service Mail Sorters, Processors, and Processing Machine Operators	435053	111930	true
+ExpeditingClerks	Production, Planning, and Expediting Clerks	435061	385000	true
+InventoryClerks	Shipping, Receiving, and Inventory Clerks	435071	857630	true
+SamplersRecordkeeping	Weighers, Measurers, Checkers, and Samplers, Recordkeeping	435111	49720	true
+SecretariesandAdministrativeAssistants	Secretaries and Administrative Assistants	436010	3195900	false
+ExecutiveAdministrativeAssistants	Executive Secretaries and Executive Administrative Assistants	436011	472770	true
+AdministrativeAssistants	Legal Secretaries and Administrative Assistants	436012	154540	true
+Executive	Secretaries and Administrative Assistants, Except Legal, Medical, and Executive	436014	1737820	true
+OtherOfficeandAdministrativeSupportWorkers	Other Office and Administrative Support Workers	439000	3209350	false
+DataEntryandInformationProcessingWorkers	Data Entry and Information Processing Workers	439020	171310	false
+DataEntryKeyers	Data Entry Keyers	439021	135280	true
+Typists	Word Processors and Typists	439022	36030	true
+DesktopPublishers	Desktop Publishers	439031	4000	true
+PolicyProcessingClerks	Insurance Claims and Policy Processing Clerks	439041	229070	true
+PostalService	Mail Clerks and Mail Machine Operators, Except Postal Service	439051	62730	true
+OfficeClerksGeneral	Office Clerks, General	439061	2510550	true
+Computer	Office Machine Operators, Except Computer	439071	24740	true
+CopyMarkers	Proofreaders and Copy Markers	439081	5160	true
+StatisticalAssistants	Statistical Assistants	439111	5900	true
+AdministrativeSupportWorkersAllOther	Office and Administrative Support Workers, All Other	439199	195890	true
+FarmingFishingandForestryOccupations	Farming, Fishing, and Forestry Occupations	450000	442050	false
+ForestryWorkers	First-Line Supervisors of Farming, Fishing, and Forestry Workers	451011	29530	true
+AgriculturalWorkers	Agricultural Workers	452000	373730	false
+AgriculturalInspectors	Agricultural Inspectors	452011	12090	true
+AnimalBreeders	Animal Breeders	452021	1730	true
+SortersAgriculturalProducts	Graders and Sorters, Agricultural Products	452041	26870	true
+MiscellaneousAgriculturalWorkers	Miscellaneous Agricultural Workers	452090	333040	false
+AgriculturalEquipmentOperators	Agricultural Equipment Operators	452091	30940	true
+Greenhouse	Farmworkers and Laborers, Crop, Nursery, and Greenhouse	452092	261690	true
+AquaculturalAnimals	Farmworkers, Farm, Ranch, and Aquacultural Animals	452093	35420	true
+AgriculturalWorkersAllOther	Agricultural Workers, All Other	452099	4980	true
+ForestConservationandLoggingWorkers	Forest, Conservation, and Logging Workers	454000	37740	false
+ConservationWorkers	Forest and Conservation Workers	454011	5630	true
+LoggingWorkers	Logging Workers	454020	32110	false
+Fallers	Fallers	454021	4110	true
+LoggingEquipmentOperators	Logging Equipment Operators	454022	22520	true
+Scalers	Log Graders and Scalers	454023	3310	true
+LoggingWorkersAllOther	Logging Workers, All Other	454029	2160	true
+ConstructionandExtractionOccupations	Construction and Extraction Occupations	470000	6361720	false
+SolarEnergyInstallationManagers	Solar Energy Installation Managers	471011	806080	true
+ConstructionTradesWorkers	Construction Trades Workers	472000	4691890	false
+Boilermakers	Boilermakers	472011	10170	true
+BrickmasonsBlockmasonsandStonemasons	Brickmasons, Blockmasons, and Stonemasons	472020	62260	false
+Blockmasons	Brickmasons and Blockmasons	472021	53520	true
+Stonemasons	Stonemasons	472022	8750	true
+Carpenters	Carpenters	472031	697740	true
+CarpetFloorandTileInstallersandFinishers	Carpet, Floor, and Tile Installers and Finishers	472040	82710	false
+CarpetInstallers	Carpet Installers	472041	14980	true
+HardTiles	Floor Layers, Except Carpet, Wood, and Hard Tiles	472042	24850	true
+Finishers	Floor Sanders and Finishers	472043	4140	true
+StoneSetters	Tile and Stone Setters	472044	38740	true
+CementMasonsConcreteFinishersandTerrazzoWorkers	Cement Masons, Concrete Finishers, and Terrazzo Workers	472050	206680	false
+ConcreteFinishers	Cement Masons and Concrete Finishers	472051	205230	true
+ConstructionLaborers	Construction Laborers	472061	1057660	true
+ConstructionEquipmentOperators	Construction Equipment Operators	472070	518000	false
+TampingEquipmentOperators	Paving, Surfacing, and Tamping Equipment Operators	472071	45680	true
+PileDriverOperators	Pile Driver Operators	472072	3040	true
+OtherConstructionEquipmentOperators	Operating Engineers and Other Construction Equipment Operators	472073	469270	true
+DrywallInstallersCeilingTileInstallersandTapers	Drywall Installers, Ceiling Tile Installers, and Tapers	472080	95400	false
+CeilingTileInstallers	Drywall and Ceiling Tile Installers	472081	82900	true
+Tapers	Tapers	472082	12500	true
+Electricians	Electricians	472111	742580	true
+Glaziers	Glaziers	472121	57000	true
+InsulationWorkers	Insulation Workers	472130	64250	false
+Wall	Insulation Workers, Floor, Ceiling, and Wall	472131	38610	true
+InsulationWorkersMechanical	Insulation Workers, Mechanical	472132	25640	true
+PaintersandPaperhangers	Painters and Paperhangers	472140	225700	false
+Maintenance	Painters, Construction and Maintenance	472141	224180	true
+Paperhangers	Paperhangers	472142	1520	true
+PipelayersPlumbersPipefittersandSteamfitters	Pipelayers, Plumbers, Pipefitters, and Steamfitters	472150	489520	false
+Pipelayers	Pipelayers	472151	33580	true
+StuccoMasons	Plasterers and Stucco Masons	472161	20880	true
+RebarWorkers	Reinforcing Iron and Rebar Workers	472171	14140	true
+Roofers	Roofers	472181	136740	true
+SheetMetalWorkers	Sheet Metal Workers	472211	117470	true
+SteelWorkers	Structural Iron and Steel Workers	472221	64720	true
+SolarPhotovoltaicInstallers	Solar Photovoltaic Installers	472231	28280	true
+HelpersConstructionTrades	Helpers, Construction Trades	473010	186250	false
+MarbleSetters	Helpers--Brickmasons, Blockmasons, Stonemasons, and Tile and Marble Setters	473011	15660	true
+HelpersCarpenters	Helpers--Carpenters	473012	24610	true
+HelpersElectricians	Helpers--Electricians	473013	64440	true
+Steamfitters	Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters	473015	43640	true
+HelpersRoofers	Helpers--Roofers	473016	5170	true
+HelpersConstructionTradesAllOther	Helpers, Construction Trades, All Other	473019	25510	true
+OtherConstructionandRelatedWorkers	Other Construction and Related Workers	474000	464570	false
+EnergyAuditors	Energy Auditors	474011	137210	true
+Repairers	Elevator and Escalator Installers and Repairers	474021	23340	true
+FenceErectors	Fence Erectors	474031	22640	true
+HazardousMaterialsRemovalWorkers	Hazardous Materials Removal Workers	474041	50570	true
+HighwayMaintenanceWorkers	Highway Maintenance Workers	474051	151750	true
+MaintenanceEquipmentOperators	Rail-Track Laying and Maintenance Equipment Operators	474061	16480	true
+SewerPipeCleaners	Septic Tank Servicers and Sewer Pipe Cleaners	474071	29050	true
+MiscellaneousConstructionandRelatedWorkers	Miscellaneous Construction and Related Workers	474090	33530	false
+ExtractionWorkers	Extraction Workers	475000	212920	false
+DerrickRotaryDrillandServiceUnitOperatorsOilandGas	Derrick, Rotary Drill, and Service Unit Operators, Oil and Gas	475010	68250	false
+Gas	Derrick Operators, Oil and Gas	475011	11040	true
+SurfaceMiningMachineOperatorsandEarthDrillers	Surface Mining Machine Operators and Earth Drillers	475020	51620	false
+DraglineOperatorsSurfaceMining	Excavating and Loading Machine and Dragline Operators, Surface Mining	475022	34210	true
+Blasters	Explosives Workers, Ordnance Handling Experts, and Blasters	475032	5680	true
+UndergroundMiningMachineOperators	Underground Mining Machine Operators	475040	26170	false
+ContinuousMiningMachineOperators	Continuous Mining Machine Operators	475041	14340	true
+RoofBoltersMining	Roof Bolters, Mining	475043	2230	true
+MovingMachineOperatorsUndergroundMining	Loading and Moving Machine Operators, Underground Mining	475044	6130	true
+UndergroundMiningMachineOperatorsAllOther	Underground Mining Machine Operators, All Other	475049	3480	true
+RockSplittersQuarry	Rock Splitters, Quarry	475051	3080	true
+HelpersExtractionWorkers	Helpers--Extraction Workers	475081	6720	true
+ExtractionWorkersAllOther	Extraction Workers, All Other	475099	6070	true
+InstallationMaintenanceandRepairOccupations	Installation, Maintenance, and Repair Occupations	490000	6045020	false
+ElectricalandElectronicEquipmentMechanicsInstallersandRepairers	Electrical and Electronic Equipment Mechanics, Installers, and Repairers	492000	479930	false
+OfficeMachineRepairers	Computer, Automated Teller, and Office Machine Repairers	492011	73010	true
+RadioandTelecommunicationsEquipmentInstallersandRepairers	Radio and Telecommunications Equipment Installers and Repairers	492020	165290	false
+LineInstallers	Telecommunications Equipment Installers and Repairers, Except Line Installers	492022	153890	true
+MiscellaneousElectricalandElectronicEquipmentMechanicsInstallersandRepairers	Miscellaneous Electrical and Electronic Equipment Mechanics, Installers, and Repairers	492090	241630	false
+AvionicsTechnicians	Avionics Technicians	492091	20900	true
+RelatedRepairers	Electric Motor, Power Tool, and Related Repairers	492092	16570	true
+RepairersTransportationEquipment	Electrical and Electronics Installers and Repairers, Transportation Equipment	492093	7310	true
+ElectricalRepairers	Electrical and Electronics Repairers, Commercial and Industrial Equipment	492094	59990	true
+Relay	Electrical and Electronics Repairers, Powerhouse, Substation, and Relay	492095	23040	true
+RepairersMotorVehicles	Electronic Equipment Installers and Repairers, Motor Vehicles	492096	10140	true
+FireAlarmSystemsInstallers	Security and Fire Alarm Systems Installers	492098	81510	true
+VehicleandMobileEquipmentMechanicsInstallersandRepairers	Vehicle and Mobile Equipment Mechanics, Installers, and Repairers	493000	1732480	false
+ServiceTechnicians	Aircraft Mechanics and Service Technicians	493011	136390	true
+AutomotiveTechniciansandRepairers	Automotive Technicians and Repairers	493020	863000	false
+Mechanics	Automotive Service Technicians and Mechanics	493023	688840	true
+DieselEngineSpecialists	Bus and Truck Mechanics and Diesel Engine Specialists	493031	287230	true
+HeavyVehicleandMobileEquipmentServiceTechniciansandMechanics	Heavy Vehicle and Mobile Equipment Service Technicians and Mechanics	493040	235450	false
+Engines	Mobile Heavy Equipment Mechanics, Except Engines	493042	180270	true
+RailCarRepairers	Rail Car Repairers	493043	18300	true
+SmallEngineMechanics	Small Engine Mechanics	493050	72500	false
+MotorcycleMechanics	Motorcycle Mechanics	493052	14010	true
+OtherSmallEngineMechanics	Outdoor Power Equipment and Other Small Engine Mechanics	493053	34240	true
+MiscellaneousVehicleandMobileEquipmentMechanicsInstallersandRepairers	Miscellaneous Vehicle and Mobile Equipment Mechanics, Installers, and Repairers	493090	137920	false
+BicycleRepairers	Bicycle Repairers	493091	12590	true
+RecreationalVehicleServiceTechnicians	Recreational Vehicle Service Technicians	493092	18710	true
+Changers	Tire Repairers and Changers	493093	106620	true
+OtherInstallationMaintenanceandRepairOccupations	Other Installation, Maintenance, and Repair Occupations	499000	3231930	false
+ControlandValveInstallersandRepairers	Control and Valve Installers and Repairers	499010	74890	false
+MechanicalDoorRepairers	Mechanical Door Repairers	499011	27970	true
+MechanicalDoor	Control and Valve Installers and Repairers, Except Mechanical Door	499012	46920	true
+Installers	Heating, Air Conditioning, and Refrigeration Mechanics and Installers	499021	396870	true
+HomeApplianceRepairers	Home Appliance Repairers	499031	31940	true
+IndustrialMachineryInstallationRepairandMaintenanceWorkers	Industrial Machinery Installation, Repair, and Maintenance Workers	499040	520240	false
+IndustrialMachineryMechanics	Industrial Machinery Mechanics	499041	421940	true
+MaintenanceWorkersMachinery	Maintenance Workers, Machinery	499043	56540	true
+Millwrights	Millwrights	499044	40660	true
+Brickmasons	Refractory Materials Repairers, Except Brickmasons	499045	1100	true
+LineInstallersandRepairers	Line Installers and Repairers	499050	222040	false
+PrecisionInstrumentandEquipmentRepairers	Precision Instrument and Equipment Repairers	499060	79540	false
+PhotographicEquipmentRepairers	Camera and Photographic Equipment Repairers	499061	2010	true
+MedicalEquipmentRepairers	Medical Equipment Repairers	499062	60830	true
+Tuners	Musical Instrument Repairers and Tuners	499063	5730	true
+ClockRepairers	Watch and Clock Repairers	499064	1300	true
+EquipmentRepairersAllOther	Precision Instrument and Equipment Repairers, All Other	499069	9680	true
+RepairWorkersGeneral	Maintenance and Repair Workers, General	499071	1531700	true
+WindTurbineServiceTechnicians	Wind Turbine Service Technicians	499081	11220	true
+MiscellaneousInstallationMaintenanceandRepairWorkers	Miscellaneous Installation, Maintenance, and Repair Workers	499090	363490	false
+CommercialDivers	Commercial Divers	499092	3430	true
+SafeRepairers	Locksmiths and Safe Repairers	499094	15550	true
+MobileHomeInstallers	Manufactured Building and Mobile Home Installers	499095	2610	true
+Riggers	Riggers	499096	24190	true
+TrackSwitchRepairers	Signal and Track Switch Repairers	499097	8210	true
+RepairWorkers	Helpers--Installation, Maintenance, and Repair Workers	499098	97540	true
+GeothermalTechnicians	Geothermal Technicians	499099	183690	true
+ProductionOccupations	Production Occupations	510000	8743450	false
+OperatingWorkers	First-Line Supervisors of Production and Operating Workers	511011	685140	true
+AssemblersandFabricators	Assemblers and Fabricators	512000	1874550	false
+SystemsAssemblers	Aircraft Structure, Surfaces, Rigging, and Systems Assemblers	512011	32890	true
+ElectricalElectronicsandElectromechanicalAssemblers	Electrical, Electronics, and Electromechanical Assemblers	512020	273300	false
+Electricalelectronicandelectromechanicalassemblersexceptcoilwinderstapersandfinishers	Electrical, electronic, and electromechanical assemblers, except coil winders, tapers, and finishers	512028	261140	false
+OtherMachineAssemblers	Engine and Other Machine Assemblers	512031	38420	true
+Fitters	Structural Metal Fabricators and Fitters	512041	53380	true
+Fabricators	Fiberglass Laminators and Fabricators	512051	18520	true
+Adjusters	Timing Device Assemblers and Adjusters	512061	230	true
+MiscellaneousAssemblersandFabricators	Miscellaneous Assemblers and Fabricators	512090	1457800	false
+FoodProcessingWorkers	Food Processing Workers	513000	857260	false
+Bakers	Bakers	513011	231890	true
+ButchersandOtherMeatPoultryandFishProcessingWorkers	Butchers and Other Meat, Poultry, and Fish Processing Workers	513020	348630	false
+MeatCutters	Butchers and Meat Cutters	513021	140040	true
+Trimmers	Meat, Poultry, and Fish Cutters and Trimmers	513022	141090	true
+MeatPackers	Slaughterers and Meat Packers	513023	67500	true
+MiscellaneousFoodProcessingWorkers	Miscellaneous Food Processing Workers	513090	276740	false
+Tenders	Food and Tobacco Roasting, Baking, and Drying Machine Operators and Tenders	513091	19500	true
+FoodBatchmakers	Food Batchmakers	513092	171660	true
+FoodProcessingWorkersAllOther	Food Processing Workers, All Other	513099	57920	true
+MetalWorkersandPlasticWorkers	Metal Workers and Plastic Workers	514000	1599780	false
+FormingMachineSettersOperatorsandTendersMetalandPlastic	Forming Machine Setters, Operators, and Tenders, Metal and Plastic	514020	96810	false
+Plastic	Extruding and Drawing Machine Setters, Operators, and Tenders, Metal and Plastic	514021	65700	true
+MachineToolCuttingSettersOperatorsandTendersMetalandPlastic	Machine Tool Cutting Setters, Operators, and Tenders, Metal and Plastic	514030	282640	false
+Machinists	Machinists	514041	298790	true
+MetalFurnaceOperatorsTendersPourersandCasters	Metal Furnace Operators, Tenders, Pourers, and Casters	514050	26160	false
+CastersMetal	Pourers and Casters, Metal	514052	5830	true
+ModelMakersandPatternmakersMetalandPlastic	Model Makers and Patternmakers, Metal and Plastic	514060	4800	false
+MoldersandMoldingMachineSettersOperatorsandTendersMetalandPlastic	Molders and Molding Machine Setters, Operators, and Tenders, Metal and Plastic	514070	167540	false
+Coremakers	Foundry Mold and Coremakers	514071	12720	true
+DieMakers	Tool and Die Makers	514111	55130	true
+WeldingSolderingandBrazingWorkers	Welding, Soldering, and Brazing Workers	514120	460340	false
+Brazers	Welders, Cutters, Solderers, and Brazers	514121	424040	true
+MiscellaneousMetalWorkersandPlasticWorkers	Miscellaneous Metal Workers and Plastic Workers	514190	77710	false
+Sharpeners	Tool Grinders, Filers, and Sharpeners	514194	5730	true
+PlasticWorkersAllOther	Metal Workers and Plastic Workers, All Other	514199	20270	true
+PrintingWorkers	Printing Workers	515110	204640	false
+Workers	Prepress Technicians and Workers	515111	23070	true
+PrintingPressOperators	Printing Press Operators	515112	145110	true
+FinishingWorkers	Print Binding and Finishing Workers	515113	36470	true
+TextileApparelandFurnishingsWorkers	Textile, Apparel, and Furnishings Workers	516000	464330	false
+DryCleaningWorkers	Laundry and Dry-Cleaning Workers	516011	195360	true
+RelatedMaterials	Pressers, Textile, Garment, and Related Materials	516021	26830	true
+SewingMachineOperators	Sewing Machine Operators	516031	109590	true
+ShoeandLeatherWorkers	Shoe and Leather Workers	516040	10910	false
+TailorsDressmakersandSewers	Tailors, Dressmakers, and Sewers	516050	18540	false
+SewersHand	Sewers, Hand	516051	2240	true
+CustomSewers	Tailors, Dressmakers, and Custom Sewers	516052	16290	true
+TextileMachineSettersOperatorsandTenders	Textile Machine Setters, Operators, and Tenders	516060	49910	false
+MiscellaneousTextileApparelandFurnishingsWorkers	Miscellaneous Textile, Apparel, and Furnishings Workers	516090	53200	false
+ExtrudingMachineOperators	Extruding and Forming Machine Setters, Operators, and Tenders, Synthetic and Glass Fibers	516091	14900	true
+ApparelPatternmakers	Fabric and Apparel Patternmakers	516092	2860	true
+Upholsterers	Upholsterers	516093	20990	true
+FurnishingsWorkersAllOther	Textile, Apparel, and Furnishings Workers, All Other	516099	14450	true
+Woodworkers	Woodworkers	517000	207380	false
+BenchCarpenters	Cabinetmakers and Bench Carpenters	517011	79540	true
+FurnitureFinishers	Furniture Finishers	517021	14230	true
+ModelMakersandPatternmakersWood	Model Makers and Patternmakers, Wood	517030	530	false
+ModelMakersWood	Model Makers, Wood	517031	360	true
+PatternmakersWood	Patternmakers, Wood	517032	180	true
+WoodworkingMachineSettersOperatorsandTenders	Woodworking Machine Setters, Operators, and Tenders	517040	106490	false
+TendersWood	Sawing Machine Setters, Operators, and Tenders, Wood	517041	43140	true
+Sawing	Woodworking Machine Setters, Operators, and Tenders, Except Sawing	517042	63350	true
+WoodworkersAllOther	Woodworkers, All Other	517099	6590	true
+PlantandSystemOperators	Plant and System Operators	518000	287720	false
+PowerPlantOperatorsDistributorsandDispatchers	Power Plant Operators, Distributors, and Dispatchers	518010	45630	false
+NuclearPowerReactorOperators	Nuclear Power Reactor Operators	518011	5720	true
+HydroelectricPlantTechnicians	Hydroelectric Plant Technicians	518013	30720	true
+BoilerOperators	Stationary Engineers and Boiler Operators	518021	30780	true
+SystemOperators	Water and Wastewater Treatment Plant and System Operators	518031	126750	true
+MiscellaneousPlantandSystemOperators	Miscellaneous Plant and System Operators	518090	84560	false
+GasPlantOperators	Gas Plant Operators	518092	15910	true
+Gaugers	Petroleum Pump System Operators, Refinery Operators, and Gaugers	518093	34860	true
+BiofuelsProcessingTechnicians	Biofuels Processing Technicians	518099	15950	true
+OtherProductionOccupations	Other Production Occupations	519000	2562640	false
+ChemicalProcessingMachineSettersOperatorsandTenders	Chemical Processing Machine Setters, Operators, and Tenders	519010	181610	false
+CrushingGrindingPolishingMixingandBlendingWorkers	Crushing, Grinding, Polishing, Mixing, and Blending Workers	519020	141240	false
+PolishingWorkersHand	Grinding and Polishing Workers, Hand	519022	11850	true
+CuttingWorkers	Cutting Workers	519030	54610	false
+TrimmersHand	Cutters and Trimmers, Hand	519031	7070	true
+Weighers	Inspectors, Testers, Sorters, Samplers, and Weighers	519061	591180	true
+DiamondWorkers	Gem and Diamond Workers	519071	23420	true
+DentalandOphthalmicLaboratoryTechniciansandMedicalApplianceTechnicians	Dental and Ophthalmic Laboratory Technicians and Medical Appliance Technicians	519080	64150	false
+DentalLaboratoryTechnicians	Dental Laboratory Technicians	519081	33920	true
+MedicalApplianceTechnicians	Medical Appliance Technicians	519082	11490	true
+OphthalmicLaboratoryTechnicians	Ophthalmic Laboratory Technicians	519083	18740	true
+PaintingWorkers	Painting Workers	519120	167960	false
+DecoratingWorkers	Painting, Coating, and Decorating Workers	519123	8470	true
+SemiconductorProcessingTechnicians	Semiconductor Processing Technicians	519141	32150	true
+ComputerNumericallyControlledToolOperatorsandProgrammers	Computer Numerically Controlled Tool Operators and Programmers	519160	205190	false
+ComputerNumericallyControlledToolOperators	Computer Numerically Controlled Tool Operators	519161	176950	true
+ComputerNumericallyControlledToolProgrammers	Computer Numerically Controlled Tool Programmers	519162	28230	true
+MiscellaneousProductionWorkers	Miscellaneous Production Workers	519190	638250	false
+Engravers	Etchers and Engravers	519194	8390	true
+PottersManufacturing	Potters, Manufacturing	519195	34750	true
+TireBuilders	Tire Builders	519197	20970	true
+HelpersProductionWorkers	Helpers--Production Workers	519198	167490	true
+ProductionWorkersAllOther	Production Workers, All Other	519199	277060	true
+TransportationandMaterialMovingOccupations	Transportation and Material Moving Occupations	530000	13645620	false
+FirstLineSupervisorsofTransportationandMaterialMovingWorkers	First-Line Supervisors of Transportation and Material Moving Workers	531040	615680	false
+AircraftCargoHandlingSupervisors	Aircraft Cargo Handling Supervisors	531041	10160	true
+FirstLineSupervisorsofTransportationWorkersExceptAircraftCargoHandlingSupervisors	First-Line Supervisors of Transportation Workers, Except Aircraft Cargo Handling Supervisors	531047	605510	false
+AirTransportationWorkers	Air Transportation Workers	532000	320280	false
+AircraftPilotsandFlightEngineers	Aircraft Pilots and Flight Engineers	532010	151130	false
+FlightEngineers	Airline Pilots, Copilots, and Flight Engineers	532011	99300	true
+CommercialPilots	Commercial Pilots	532012	51830	true
+AirTrafficControllersandAirfieldOperationsSpecialists	Air Traffic Controllers and Airfield Operations Specialists	532020	39040	false
+AirTrafficControllers	Air Traffic Controllers	532021	22400	true
+AirfieldOperationsSpecialists	Airfield Operations Specialists	532022	16640	true
+FlightAttendants	Flight Attendants	532031	130110	true
+MotorVehicleOperators	Motor Vehicle Operators	533000	4328760	false
+DriverSalesWorkersandTruckDrivers	Driver/Sales Workers and Truck Drivers	533030	3482310	false
+DriverSalesWorkers	Driver/Sales Workers	533031	417420	true
+TractorTrailerTruckDrivers	Heavy and Tractor-Trailer Truck Drivers	533032	2070480	true
+LightTruckDrivers	Light Truck Drivers	533033	994410	true
+PassengerVehicleDrivers	Passenger Vehicle Drivers	533050	784030	false
+BusDriversSchool	Bus Drivers, School	533051	387920	true
+Intercity	Bus Drivers, Transit and Intercity	533052	148980	true
+Chauffeurs	Shuttle Drivers and Chauffeurs	533053	229630	true
+TaxiDrivers	Taxi Drivers	533054	17510	true
+MotorVehicleOperatorsAllOther	Motor Vehicle Operators, All Other	533099	50330	true
+RailTransportationWorkers	Rail Transportation Workers	534000	101190	false
+LocomotiveEngineersandOperators	Locomotive Engineers and Operators	534010	35300	false
+LocomotiveEngineers	Locomotive Engineers	534011	31990	true
+Hostlers	Rail Yard Engineers, Dinkey Operators, and Hostlers	534013	3300	true
+LocomotiveFirers	Railroad Brake, Signal, and Switch Operators and Locomotive Firers	534022	12460	true
+Yardmasters	Railroad Conductors and Yardmasters	534031	42710	true
+StreetcarOperators	Subway and Streetcar Operators	534041	9200	true
+RailTransportationWorkersAllOther	Rail Transportation Workers, All Other	534099	1520	true
+WaterTransportationWorkers	Water Transportation Workers	535000	77710	false
+MarineOilers	Sailors and Marine Oilers	535011	31360	true
+ShipandBoatCaptainsandOperators	Ship and Boat Captains and Operators	535020	37770	false
+PilotsOfWaterVessels	Captains, Mates, and Pilots of Water Vessels	535021	35390	true
+MotorboatOperators	Motorboat Operators	535022	2380	true
+ShipEngineers	Ship Engineers	535031	8580	true
+OtherTransportationWorkers	Other Transportation Workers	536000	330140	false
+LockTenders	Bridge and Lock Tenders	536011	2720	true
+ParkingAttendants	Parking Attendants	536021	134650	true
+TransportationServiceAttendants	Transportation Service Attendants	536030	125580	false
+WatercraftServiceAttendants	Automotive and Watercraft Service Attendants	536031	98270	true
+AircraftServiceAttendants	Aircraft Service Attendants	536032	27310	true
+TrafficTechnicians	Traffic Technicians	536041	7580	true
+Aviation	Transportation Vehicle, Equipment and Systems Inspectors, Except Aviation	536051	23320	true
+PassengerAttendants	Passenger Attendants	536061	25340	true
+TransportationWorkersAllOther	Transportation Workers, All Other	536099	10960	true
+MaterialMovingWorkers	Material Moving Workers	537000	7871860	false
+TowerOperators	Crane and Tower Operators	537021	42000	true
+DredgeOperators	Dredge Operators	537031	1030	true
+WinchOperators	Hoist and Winch Operators	537041	2480	true
+TractorOperators	Industrial Truck and Tractor Operators	537051	805770	true
+LaborersandMaterialMovers	Laborers and Material Movers	537060	6784150	false
+Equipment	Cleaners of Vehicles and Equipment	537061	373960	true
+ReclamationWorkers	Recycling and Reclamation Workers	537062	2982530	true
+Offbearers	Machine Feeders and Offbearers	537063	46690	true
+PackagersHand	Packers and Packagers, Hand	537064	601440	true
+OrderFillers	Stockers and Order Fillers	537065	2779530	true
+PumpingStationOperators	Pumping Station Operators	537070	35060	false
+GasPumpingStationOperators	Gas Compressor and Gas Pumping Station Operators	537071	5110	true
+WellheadPumpers	Pump Operators, Except Wellhead Pumpers	537072	12600	true
+RecyclableMaterialCollectors	Refuse and Recyclable Material Collectors	537081	139180	true
+ShipLoaders	Tank Car, Truck, and Ship Loaders	537121	10920	true
+MaterialMovingWorkersAllOther	Material Moving Workers, All Other	537199	25190	true

@@ -1,0 +1,40 @@
+id	type	description	category	usage
+a	Determiner	indefinite article (singular)	Article	a document
+an	Determiner	indefinite article before vowel sound	Article	an email
+the	Determiner	definite article	Article	the report
+all	Determiner	the whole quantity of	Quantifier	all employees
+another	Determiner	one more; a different one	Quantifier	another approach
+any	Determiner	one or some of a thing	Quantifier	any questions
+both	Determiner	the two; one and the other	Quantifier	both options
+each	Determiner	every one of two or more	Quantifier	each employee
+either	Determiner	one or the other of two	Quantifier	either option
+enough	Determiner	as much as required	Quantifier	enough resources
+every	Determiner	all of a group	Quantifier	every day
+few	Determiner	a small number of	Quantifier	few issues
+fewer	Determiner	a smaller number of	Quantifier	fewer errors
+little	Determiner	a small amount of	Quantifier	little time
+less	Determiner	a smaller amount of	Quantifier	less effort
+many	Determiner	a large number of	Quantifier	many customers
+more	Determiner	a greater amount	Quantifier	more data
+most	Determiner	the greatest amount	Quantifier	most people
+much	Determiner	a great amount of	Quantifier	much work
+neither	Determiner	not one nor the other	Quantifier	neither option
+no	Determiner	not any	Quantifier	no problems
+other	Determiner	alternative; different	Quantifier	other methods
+several	Determiner	more than two but not many	Quantifier	several approaches
+some	Determiner	an unspecified amount	Quantifier	some data
+sufficient	Determiner	enough; adequate	Quantifier	sufficient evidence
+this	Determiner	referring to a specific thing nearby	Demonstrative	this document
+that	Determiner	referring to a specific thing	Demonstrative	that report
+these	Determiner	plural of this	Demonstrative	these files
+those	Determiner	plural of that	Demonstrative	those records
+my	Determiner	belonging to me	Possessive	my task
+your	Determiner	belonging to you	Possessive	your project
+his	Determiner	belonging to him	Possessive	his role
+her	Determiner	belonging to her	Possessive	her assignment
+its	Determiner	belonging to it	Possessive	its purpose
+our	Determiner	belonging to us	Possessive	our team
+their	Determiner	belonging to them	Possessive	their goals
+what	Determiner	asking for information	Interrogative	what data
+which	Determiner	asking for choice	Interrogative	which option
+whose	Determiner	asking about possession	Interrogative	whose responsibility
