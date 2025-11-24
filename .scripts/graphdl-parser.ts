@@ -697,13 +697,15 @@ export class GraphDLParser {
   private lexicon?: Lexicon
   private parser?: StatementParser
   private analyzer: UnknownWordAnalyzer
+  private sourceDir: string
 
-  constructor() {
+  constructor(sourceDir: string = '.source/Language') {
+    this.sourceDir = sourceDir
     this.analyzer = new UnknownWordAnalyzer()
   }
 
   async initialize(): Promise<void> {
-    const loader = new LexiconLoader()
+    const loader = new LexiconLoader(this.sourceDir)
     this.lexicon = await loader.load()
     this.parser = new StatementParser(this.lexicon)
   }
