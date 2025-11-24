@@ -4,7 +4,7 @@
  * Data Generation Script
  *
  * Generates clean .data/[Subdomain].[TypeName].tsv files from .source/ data
- * with standardized fields: $id, $type, $context, name, description, code, + source fields
+ * with standardized fields: url, ns, type, id, name, description, code, + source fields
  *
  * Output pattern:
  *   .data/Schema.[TypeName].tsv
@@ -98,6 +98,19 @@ function getCode(code: string, name: string): string {
   return code && code !== name ? code : ''
 }
 
+/**
+ * Create entity object with simplified column structure
+ */
+function createEntity(domain: string, typeName: string, id: string, data: any) {
+  return {
+    url: `${domain}/${typeName}/${id}`,
+    ns: domain.replace('https://', ''),
+    type: typeName,
+    id: id,
+    ...data
+  }
+}
+
 // ============================================================================
 // Data Generators
 // ============================================================================
@@ -112,31 +125,31 @@ function generateSchemaOrgData(): void {
 
   // Types
   const typesSource = parseTSV(path.join(SOURCE_DIR, 'Schema.org/Schema.org.Types.tsv'))
-  const typesData = typesSource.map(row => ({
-    $id: `${domain}/${row.label || row.name}`,
-    $type: 'https://schema.org.ai/Class',
-    $context: domain,
-    name: row.label || row.name,
-    description: row.comment || row.description || '',
-    code: row.id || '',
-    subClassOf: row.subClassOf || '',
-    url: row.url || row.id || '',
-  }))
+  const typesData = typesSource.map(row => {
+    const id = row.label || row.name
+    return createEntity(domain, 'Class', id, {
+      name: row.label || row.name,
+      description: row.comment || row.description || '',
+      code: row.id || '',
+      subClassOf: row.subClassOf || '',
+      sourceUrl: row.url || row.id || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Schema.Class.tsv'), typesData)
 
   // Properties
   const propsSource = parseTSV(path.join(SOURCE_DIR, 'Schema.org/Schema.org.Properties.tsv'))
-  const propsData = propsSource.map(row => ({
-    $id: `${domain}/${row.label || row.name}`,
-    $type: 'https://schema.org.ai/Property',
-    $context: domain,
-    name: row.label || row.name,
-    description: row.comment || row.description || '',
-    code: row.id || '',
-    domainIncludes: row.domainIncludes || '',
-    rangeIncludes: row.rangeIncludes || '',
-    url: row.url || row.id || '',
-  }))
+  const propsData = propsSource.map(row => {
+    const id = row.label || row.name
+    return createEntity(domain, 'Property', id, {
+      name: row.label || row.name,
+      description: row.comment || row.description || '',
+      code: row.id || '',
+      domainIncludes: row.domainIncludes || '',
+      rangeIncludes: row.rangeIncludes || '',
+      sourceUrl: row.url || row.id || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Schema.Property.tsv'), propsData)
 
   // Generate Schema relationships
@@ -149,7 +162,7 @@ function generateSchemaOrgData(): void {
       if (fromClass) {
         relationships.push({
           ns: 'schema.org.ai',
-          from: fromClass.$id,
+          from: fromClass.url,
           predicate: 'subClassOf',
           reverse: 'superClassOf',
           to: `${domain}/${row.subClassOf.split('/').pop()}`,
@@ -164,13 +177,13 @@ function generateSchemaOrgData(): void {
       const prop = propsData.find(p => p.code === row.id)
       if (prop) {
         const domains = row.domainIncludes.split(',').map((d: string) => d.trim())
-        domains.forEach((domain: string) => {
+        domains.forEach((domainUrl: string) => {
           relationships.push({
             ns: 'schema.org.ai',
-            from: prop.$id,
+            from: prop.url,
             predicate: 'domainIncludes',
             reverse: 'hasProperty',
-            to: `${domain}/${domain.split('/').pop()}`,
+            to: `${domain}/${domainUrl.split('/').pop()}`,
           })
         })
       }
@@ -190,15 +203,15 @@ function generateONETData(): void {
 
   // Occupations
   const occupationsSource = parseTSV(path.join(SOURCE_DIR, 'ONET/ONET.OccupationData.tsv'))
-  const occupationsData = occupationsSource.map(row => ({
-    $id: `${domain}/Occupation/${createId(row.title)}`,
-    $type: 'https://onet.org.ai/Occupation',
-    $context: domain,
-    name: row.title,
-    description: row.description || '',
-    code: row.oNETSOCCode,
-    url: `https://www.onetonline.org/link/summary/${row.oNETSOCCode}`,
-  }))
+  const occupationsData = occupationsSource.map(row => {
+    const id = createId(row.title)
+    return createEntity(domain, 'Occupation', id, {
+      name: row.title,
+      description: row.description || '',
+      code: row.oNETSOCCode,
+      sourceUrl: `https://www.onetonline.org/link/summary/${row.oNETSOCCode}`,
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'ONET.Occupation.tsv'), occupationsData)
 
   // Skills
@@ -206,16 +219,13 @@ function generateONETData(): void {
   const uniqueSkills = new Map<string, any>()
 
   skillsSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueSkills.has(id)) {
-      uniqueSkills.set(id, {
-        $id: `${domain}/Skill/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/Skill',
-        $context: domain,
+      uniqueSkills.set(id, createEntity(domain, 'Skill', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Skill.tsv'), Array.from(uniqueSkills.values()))
@@ -225,16 +235,13 @@ function generateONETData(): void {
   const uniqueKnowledge = new Map<string, any>()
 
   knowledgeSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueKnowledge.has(id)) {
-      uniqueKnowledge.set(id, {
-        $id: `${domain}/Knowledge/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/Knowledge',
-        $context: domain,
+      uniqueKnowledge.set(id, createEntity(domain, 'Knowledge', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Knowledge.tsv'), Array.from(uniqueKnowledge.values()))
@@ -244,16 +251,13 @@ function generateONETData(): void {
   const uniqueAbilities = new Map<string, any>()
 
   abilitiesSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueAbilities.has(id)) {
-      uniqueAbilities.set(id, {
-        $id: `${domain}/Ability/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/Ability',
-        $context: domain,
+      uniqueAbilities.set(id, createEntity(domain, 'Ability', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Ability.tsv'), Array.from(uniqueAbilities.values()))
@@ -263,16 +267,13 @@ function generateONETData(): void {
   const uniqueActivities = new Map<string, any>()
 
   activitiesSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueActivities.has(id)) {
-      uniqueActivities.set(id, {
-        $id: `${domain}/WorkActivity/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/WorkActivity',
-        $context: domain,
+      uniqueActivities.set(id, createEntity(domain, 'WorkActivity', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.WorkActivity.tsv'), Array.from(uniqueActivities.values()))
@@ -284,15 +285,12 @@ function generateONETData(): void {
   tasksSource.forEach(row => {
     const id = row.taskID
     if (!uniqueTasks.has(id)) {
-      uniqueTasks.set(id, {
-        $id: `${domain}/Task/${id}`,
-        $type: 'https://onet.org.ai/Task',
-        $context: domain,
+      uniqueTasks.set(id, createEntity(domain, 'Task', id, {
         name: row.task,
         description: row.task,
         code: row.taskID,
         taskType: row.taskType || '',
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Task.tsv'), Array.from(uniqueTasks.values()))
@@ -303,19 +301,16 @@ function generateONETData(): void {
 
   technologySource.forEach(row => {
     const name = row.example
-    const urlId = createId(name)
-    if (!uniqueTechnology.has(urlId)) {
-      uniqueTechnology.set(urlId, {
-        $id: `${domain}/Technology/${urlId}`,
-        $type: 'https://onet.org.ai/Technology',
-        $context: domain,
+    const id = createId(name)
+    if (!uniqueTechnology.has(id)) {
+      uniqueTechnology.set(id, createEntity(domain, 'Technology', id, {
         name: name,
         description: row.commodityTitle || name,
         code: getCode(row.commodityCode, name),
         commodityTitle: row.commodityTitle || '',
         hotTechnology: row.hotTechnology === 'Y',
         inDemand: row.inDemand === 'Y',
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Technology.tsv'), Array.from(uniqueTechnology.values()))
@@ -326,17 +321,14 @@ function generateONETData(): void {
 
   toolsSource.forEach(row => {
     const name = row.example
-    const urlId = createId(name)
-    if (!uniqueTools.has(urlId)) {
-      uniqueTools.set(urlId, {
-        $id: `${domain}/Tool/${urlId}`,
-        $type: 'https://onet.org.ai/Tool',
-        $context: domain,
+    const id = createId(name)
+    if (!uniqueTools.has(id)) {
+      uniqueTools.set(id, createEntity(domain, 'Tool', id, {
         name: name,
         description: row.commodityTitle || name,
         code: getCode(row.commodityCode, name),
         commodityTitle: row.commodityTitle || '',
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Tool.tsv'), Array.from(uniqueTools.values()))
@@ -346,16 +338,13 @@ function generateONETData(): void {
   const uniqueWorkStyles = new Map<string, any>()
 
   workStylesSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueWorkStyles.has(id)) {
-      uniqueWorkStyles.set(id, {
-        $id: `${domain}/WorkStyle/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/WorkStyle',
-        $context: domain,
+      uniqueWorkStyles.set(id, createEntity(domain, 'WorkStyle', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.WorkStyle.tsv'), Array.from(uniqueWorkStyles.values()))
@@ -365,16 +354,13 @@ function generateONETData(): void {
   const uniqueWorkValues = new Map<string, any>()
 
   workValuesSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueWorkValues.has(id)) {
-      uniqueWorkValues.set(id, {
-        $id: `${domain}/WorkValue/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/WorkValue',
-        $context: domain,
+      uniqueWorkValues.set(id, createEntity(domain, 'WorkValue', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.WorkValue.tsv'), Array.from(uniqueWorkValues.values()))
@@ -384,16 +370,13 @@ function generateONETData(): void {
   const uniqueInterests = new Map<string, any>()
 
   interestsSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueInterests.has(id)) {
-      uniqueInterests.set(id, {
-        $id: `${domain}/Interest/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/Interest',
-        $context: domain,
+      uniqueInterests.set(id, createEntity(domain, 'Interest', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.Interest.tsv'), Array.from(uniqueInterests.values()))
@@ -403,16 +386,13 @@ function generateONETData(): void {
   const uniqueWorkContext = new Map<string, any>()
 
   workContextSource.forEach(row => {
-    const id = row.elementID
+    const id = createId(row.elementName)
     if (!uniqueWorkContext.has(id)) {
-      uniqueWorkContext.set(id, {
-        $id: `${domain}/WorkContext/${createId(row.elementName)}`,
-        $type: 'https://onet.org.ai/WorkContext',
-        $context: domain,
+      uniqueWorkContext.set(id, createEntity(domain, 'WorkContext', id, {
         name: row.elementName,
         description: row.elementName,
         code: row.elementID,
-      })
+      }))
     }
   })
   writeTSV(path.join(DATA_DIR, 'ONET.WorkContext.tsv'), Array.from(uniqueWorkContext.values()))
@@ -427,7 +407,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'requiresSkill',
           reverse: 'skillFor',
           to: `${domain}/Skill/${createId(row.elementName)}`,
@@ -443,7 +423,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'requiresKnowledge',
           reverse: 'knowledgeFor',
           to: `${domain}/Knowledge/${createId(row.elementName)}`,
@@ -459,7 +439,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'requiresAbility',
           reverse: 'abilityFor',
           to: `${domain}/Ability/${createId(row.elementName)}`,
@@ -475,7 +455,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'involvesActivity',
           reverse: 'activityOf',
           to: `${domain}/WorkActivity/${createId(row.elementName)}`,
@@ -491,7 +471,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'hasTask',
           reverse: 'taskOf',
           to: `${domain}/Task/${row.taskID}`,
@@ -508,7 +488,7 @@ function generateONETData(): void {
         const urlId = createId(row.example)
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'usesTechnology',
           reverse: 'technologyFor',
           to: `${domain}/Technology/${urlId}`,
@@ -525,7 +505,7 @@ function generateONETData(): void {
         const urlId = createId(row.example)
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'usesTool',
           reverse: 'toolFor',
           to: `${domain}/Tool/${urlId}`,
@@ -541,7 +521,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'requiresWorkStyle',
           reverse: 'workStyleFor',
           to: `${domain}/WorkStyle/${createId(row.elementName)}`,
@@ -557,7 +537,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'alignsWithValue',
           reverse: 'valueOf',
           to: `${domain}/WorkValue/${createId(row.elementName)}`,
@@ -573,7 +553,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'matchesInterest',
           reverse: 'interestOf',
           to: `${domain}/Interest/${createId(row.elementName)}`,
@@ -589,7 +569,7 @@ function generateONETData(): void {
       if (occupation) {
         relationships.push({
           ns: 'onet.org.ai',
-          from: occupation.$id,
+          from: occupation.url,
           predicate: 'hasContext',
           reverse: 'contextOf',
           to: `${domain}/WorkContext/${createId(row.elementName)}`,
@@ -620,14 +600,14 @@ function generateNAICSData(): void {
 
   const data = source
     .filter(row => row['2022NAICSCode'] && row['2022NAICSTitle'])
-    .map(row => ({
-      $id: `${domain}/Industry/${row['2022NAICSCode']}`,
-      $type: 'https://naics.org.ai/Industry',
-      $context: domain,
-      name: row['2022NAICSTitle'].trim(),
-      description: row['2022NAICSTitle'].trim(),
-      code: row['2022NAICSCode'],
-    }))
+    .map(row => {
+      const id = row['2022NAICSCode']
+      return createEntity(domain, 'Industry', id, {
+        name: row['2022NAICSTitle'].trim(),
+        description: row['2022NAICSTitle'].trim(),
+        code: row['2022NAICSCode'],
+      })
+    })
 
   writeTSV(path.join(DATA_DIR, 'NAICS.Industry.tsv'), data)
 }
@@ -644,16 +624,16 @@ function generateNAPCSData(): void {
 
   const data = source
     .filter(row => row.code && row.hierarchicalStructure)
-    .map(row => ({
-      $id: `${domain}/Product/${row.code}`,
-      $type: 'https://napcs.org.ai/Product',
-      $context: domain,
-      name: row.hierarchicalStructure,
-      description: row.hierarchicalStructure,
-      code: row.code,
-      level: row.level || '',
-      parent: row.parent || '',
-    }))
+    .map(row => {
+      const id = row.code
+      return createEntity(domain, 'Product', id, {
+        name: row.hierarchicalStructure,
+        description: row.hierarchicalStructure,
+        code: row.code,
+        level: row.level || '',
+        parent: row.parent || '',
+      })
+    })
 
   writeTSV(path.join(DATA_DIR, 'NAPCS.Product.tsv'), data)
 }
@@ -678,15 +658,14 @@ function generateAPQCData(): void {
 
   const data = source
     .filter(row => row.pCFID && row.name)
-    .map(row => ({
-      $id: `${domain}/Process/${row.pCFID}`,
-      $type: 'https://apqc.org.ai/Process',
-      $context: domain,
-      name: row.name,
-      description: row.elementDescription || row.name,
-      code: row.pCFID,
-      hierarchyID: row.hierarchyID || '',
-    }))
+    .map(row => {
+      const id = createId(row.name)
+      return createEntity(domain, 'Process', id, {
+        name: row.name,
+        description: row.elementDescription || row.name,
+        code: row.hierarchyID || '',
+      })
+    })
 
   writeTSV(path.join(DATA_DIR, 'APQC.Process.tsv'), data)
 }
@@ -701,19 +680,21 @@ function generateUNSPSCData(): void {
 
   const source = parseTSV(path.join(SOURCE_DIR, 'UNSPSC/UNSPSC.Codes.tsv'))
 
+  const unspscDomain = `${domain}/UNSPSC`
+
   const data = source
     .filter(row => row.commodityCode && row.commodityTitle)
-    .map(row => ({
-      $id: `${domain}/UNSPSC/${row.commodityCode}`,
-      $type: 'https://standards.org.ai/UNSPSC/Product',
-      $context: `${domain}/UNSPSC`,
-      name: row.commodityTitle,
-      description: row.definition || row.commodityTitle,
-      code: row.commodityCode,
-      segment: row.segmentCode || '',
-      family: row.familyCode || '',
-      class: row.classCode || '',
-    }))
+    .map(row => {
+      const id = row.commodityCode
+      return createEntity(unspscDomain, 'Product', id, {
+        name: row.commodityTitle,
+        description: row.definition || row.commodityTitle,
+        code: row.commodityCode,
+        segment: row.segmentCode || '',
+        family: row.familyCode || '',
+        class: row.classCode || '',
+      })
+    })
 
   writeTSV(path.join(DATA_DIR, 'Standards.UNSPSC.Product.tsv'), data)
 }
@@ -735,21 +716,23 @@ function generateGS1Data(): void {
 
   const source = parseTSV(schemaFile)
 
+  const gs1Domain = `${domain}/GS1`
+
   // GS1 Schema has: segmentCode, segmentTitle, segmentDefinition, familyCode, familyTitle, etc.
   // We'll use the brick level (most specific)
   const data = source
     .filter(row => row.brickCode && row.brickTitle)
-    .map(row => ({
-      $id: `${domain}/GS1/${row.brickCode}`,
-      $type: 'https://standards.org.ai/GS1/Product',
-      $context: `${domain}/GS1`,
-      name: row.brickTitle,
-      description: row.brickDefinition || row.brickTitle || '',
-      code: row.brickCode,
-      segment: row.segmentCode || '',
-      family: row.familyCode || '',
-      class: row.classCode || '',
-    }))
+    .map(row => {
+      const id = row.brickCode
+      return createEntity(gs1Domain, 'Product', id, {
+        name: row.brickTitle,
+        description: row.brickDefinition || row.brickTitle || '',
+        code: row.brickCode,
+        segment: row.segmentCode || '',
+        family: row.familyCode || '',
+        class: row.classCode || '',
+      })
+    })
 
   writeTSV(path.join(DATA_DIR, 'Standards.GS1.Product.tsv'), data)
 }
@@ -764,109 +747,109 @@ function generateLanguageData(): void {
 
   // Verbs
   const verbsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Verbs.tsv'))
-  const verbsData = verbsSource.map(row => ({
-    $id: `${domain}/Verb/${row.canonicalForm}`,
-    $type: 'https://language.org.ai/Verb',
-    $context: domain,
-    name: row.canonicalForm,
-    description: row.description || row.canonicalForm,
-    code: getCode(row.canonicalForm, row.canonicalForm),
-    predicate: row.predicate || '',
-    event: row.event || '',
-    activity: row.activity || '',
-    actor: row.actor || '',
-    object: row.object || '',
-    inverse: row.inverse || '',
-    source: row.source || '',
-    vocabulary: row.vocabulary || '',
-  }))
+  const verbsData = verbsSource.map(row => {
+    const id = row.canonicalForm
+    return createEntity(domain, 'Verb', id, {
+      name: row.canonicalForm,
+      description: row.description || row.canonicalForm,
+      code: getCode(row.canonicalForm, row.canonicalForm),
+      predicate: row.predicate || '',
+      event: row.event || '',
+      activity: row.activity || '',
+      actor: row.actor || '',
+      object: row.object || '',
+      inverse: row.inverse || '',
+      source: row.source || '',
+      vocabulary: row.vocabulary || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Verb.tsv'), verbsData)
 
   // Concepts
   const conceptsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Concepts.tsv'))
-  const conceptsData = conceptsSource.map(row => ({
-    $id: `${domain}/Concept/${row.id}`,
-    $type: 'https://language.org.ai/Concept',
-    $context: domain,
-    name: row.id,
-    description: row.description || row.id,
-    code: getCode(row.id, row.id),
-    baseNoun: row.baseNoun || '',
-    modifiers: row.modifiers || '',
-    category: row.category || '',
-    source: row.source || '',
-    examples: row.examples || '',
-  }))
+  const conceptsData = conceptsSource.map(row => {
+    const id = row.id
+    return createEntity(domain, 'Concept', id, {
+      name: row.id,
+      description: row.description || row.id,
+      code: getCode(row.id, row.id),
+      baseNoun: row.baseNoun || '',
+      modifiers: row.modifiers || '',
+      category: row.category || '',
+      source: row.source || '',
+      examples: row.examples || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Concept.tsv'), conceptsData)
 
   // Prepositions
   const prepsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Prepositions.tsv'))
-  const prepsData = prepsSource.map(row => ({
-    $id: `${domain}/Preposition/${createId(row.id)}`,
-    $type: 'https://language.org.ai/Preposition',
-    $context: domain,
-    name: row.id,
-    description: row.description || row.id,
-    code: getCode(row.id, row.id),
-    category: row.category || '',
-    usage: row.usage || '',
-  }))
+  const prepsData = prepsSource.map(row => {
+    const id = createId(row.id)
+    return createEntity(domain, 'Preposition', id, {
+      name: row.id,
+      description: row.description || row.id,
+      code: getCode(row.id, row.id),
+      category: row.category || '',
+      usage: row.usage || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Preposition.tsv'), prepsData)
 
   // Adverbs
   const adverbsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Adverbs.tsv'))
-  const adverbsData = adverbsSource.map(row => ({
-    $id: `${domain}/Adverb/${createId(row.id)}`,
-    $type: 'https://language.org.ai/Adverb',
-    $context: domain,
-    name: row.id,
-    description: row.description || row.id,
-    code: getCode(row.id, row.id),
-    category: row.category || '',
-    usage: row.usage || '',
-  }))
+  const adverbsData = adverbsSource.map(row => {
+    const id = createId(row.id)
+    return createEntity(domain, 'Adverb', id, {
+      name: row.id,
+      description: row.description || row.id,
+      code: getCode(row.id, row.id),
+      category: row.category || '',
+      usage: row.usage || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Adverb.tsv'), adverbsData)
 
   // Pronouns
   const pronounsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Pronouns.tsv'))
-  const pronounsData = pronounsSource.map(row => ({
-    $id: `${domain}/Pronoun/${createId(row.id)}`,
-    $type: 'https://language.org.ai/Pronoun',
-    $context: domain,
-    name: row.id,
-    description: row.description || row.id,
-    code: getCode(row.id, row.id),
-    category: row.category || '',
-    usage: row.usage || '',
-  }))
+  const pronounsData = pronounsSource.map(row => {
+    const id = createId(row.id)
+    return createEntity(domain, 'Pronoun', id, {
+      name: row.id,
+      description: row.description || row.id,
+      code: getCode(row.id, row.id),
+      category: row.category || '',
+      usage: row.usage || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Pronoun.tsv'), pronounsData)
 
   // Conjunctions
   const conjsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Conjunctions.tsv'))
-  const conjsData = conjsSource.map(row => ({
-    $id: `${domain}/Conjunction/${createId(row.id)}`,
-    $type: 'https://language.org.ai/Conjunction',
-    $context: domain,
-    name: row.id,
-    description: row.description || row.id,
-    code: getCode(row.id, row.id),
-    category: row.category || '',
-    usage: row.usage || '',
-  }))
+  const conjsData = conjsSource.map(row => {
+    const id = createId(row.id)
+    return createEntity(domain, 'Conjunction', id, {
+      name: row.id,
+      description: row.description || row.id,
+      code: getCode(row.id, row.id),
+      category: row.category || '',
+      usage: row.usage || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Conjunction.tsv'), conjsData)
 
   // Determiners
   const detsSource = parseTSV(path.join(SOURCE_DIR, 'Language/Language.Determiners.tsv'))
-  const detsData = detsSource.map(row => ({
-    $id: `${domain}/Determiner/${createId(row.id)}`,
-    $type: 'https://language.org.ai/Determiner',
-    $context: domain,
-    name: row.id,
-    description: row.description || row.id,
-    code: getCode(row.id, row.id),
-    category: row.category || '',
-    usage: row.usage || '',
-  }))
+  const detsData = detsSource.map(row => {
+    const id = createId(row.id)
+    return createEntity(domain, 'Determiner', id, {
+      name: row.id,
+      description: row.description || row.id,
+      code: getCode(row.id, row.id),
+      category: row.category || '',
+      usage: row.usage || '',
+    })
+  })
   writeTSV(path.join(DATA_DIR, 'Language.Determiner.tsv'), detsData)
 }
 
@@ -882,17 +865,17 @@ function generatePlacesData(): void {
   const statesFile = path.join(SOURCE_DIR, 'GeoNames/GeoNames.US.States.tsv')
   if (fs.existsSync(statesFile)) {
     const statesSource = parseTSV(statesFile)
-    const statesData = statesSource.map(row => ({
-      $id: `${domain}/State/${row.code}`,
-      $type: 'https://places.org.ai/State',
-      $context: domain,
-      name: row.name,
-      description: row.nameAscii || row.name,
-      code: row.code,
-      country: row.country || '',
-      admin1Code: row.admin1Code || '',
-      geonameId: row.geonameId || '',
-    }))
+    const statesData = statesSource.map(row => {
+      const id = row.code
+      return createEntity(domain, 'State', id, {
+        name: row.name,
+        description: row.nameAscii || row.name,
+        code: row.code,
+        country: row.country || '',
+        admin1Code: row.admin1Code || '',
+        geonameId: row.geonameId || '',
+      })
+    })
     writeTSV(path.join(DATA_DIR, 'Places.State.tsv'), statesData)
   }
 
@@ -902,20 +885,20 @@ function generatePlacesData(): void {
     const countrySource = parseTSV(countryFile)
     const countryData = countrySource
       .filter(row => row.iSO && row.country)
-      .map(row => ({
-        $id: `${domain}/Country/${row.iSO}`,
-        $type: 'https://places.org.ai/Country',
-        $context: domain,
-        name: row.country,
-        description: row.country,
-        code: row.iSO,
-        iso3: row.iSO3 || '',
-        isoNumeric: row.iSONumeric || '',
-        fips: row.fIPS || '',
-        continent: row.continent || '',
-        capital: row.capital || '',
-        geonameId: row.geonameid || '',
-      }))
+      .map(row => {
+        const id = row.iSO
+        return createEntity(domain, 'Country', id, {
+          name: row.country,
+          description: row.country,
+          code: row.iSO,
+          iso3: row.iSO3 || '',
+          isoNumeric: row.iSONumeric || '',
+          fips: row.fIPS || '',
+          continent: row.continent || '',
+          capital: row.capital || '',
+          geonameId: row.geonameid || '',
+        })
+      })
     writeTSV(path.join(DATA_DIR, 'Places.Country.tsv'), countryData)
   }
 }

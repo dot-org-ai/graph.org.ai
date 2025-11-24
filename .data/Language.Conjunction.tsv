@@ -1,32 +1,32 @@
-$id	$type	$context	name	description	code	category	usage
-https://language.org.ai/Conjunction/and	https://language.org.ai/Conjunction	https://language.org.ai	and	connects words, phrases, or clauses		Coordinating	coffee and tea
-https://language.org.ai/Conjunction/but	https://language.org.ai/Conjunction	https://language.org.ai	but	introduces a contrast or exception		Coordinating	small but powerful
-https://language.org.ai/Conjunction/or	https://language.org.ai/Conjunction	https://language.org.ai	or	presents alternatives		Coordinating	yes or no
-https://language.org.ai/Conjunction/nor	https://language.org.ai/Conjunction	https://language.org.ai	nor	negative alternative		Coordinating	neither this nor that
-https://language.org.ai/Conjunction/for	https://language.org.ai/Conjunction	https://language.org.ai	for	indicates reason or purpose		Coordinating	worked hard, for success
-https://language.org.ai/Conjunction/so	https://language.org.ai/Conjunction	https://language.org.ai	so	indicates result or consequence		Coordinating	tired, so rested
-https://language.org.ai/Conjunction/yet	https://language.org.ai/Conjunction	https://language.org.ai	yet	introduces a contrasting idea		Coordinating	small yet mighty
-https://language.org.ai/Conjunction/after	https://language.org.ai/Conjunction	https://language.org.ai	after	follows in time		Subordinating	after completion
-https://language.org.ai/Conjunction/although	https://language.org.ai/Conjunction	https://language.org.ai	although	despite the fact that		Subordinating	although difficult
-https://language.org.ai/Conjunction/as	https://language.org.ai/Conjunction	https://language.org.ai	as	at the same time; because		Subordinating	as requested
-https://language.org.ai/Conjunction/because	https://language.org.ai/Conjunction	https://language.org.ai	because	for the reason that		Subordinating	because necessary
-https://language.org.ai/Conjunction/before	https://language.org.ai/Conjunction	https://language.org.ai	before	earlier than		Subordinating	before starting
-https://language.org.ai/Conjunction/if	https://language.org.ai/Conjunction	https://language.org.ai	if	on the condition that		Subordinating	if approved
-https://language.org.ai/Conjunction/once	https://language.org.ai/Conjunction	https://language.org.ai	once	as soon as		Subordinating	once finished
-https://language.org.ai/Conjunction/since	https://language.org.ai/Conjunction	https://language.org.ai	since	from a time in the past		Subordinating	since Monday
-https://language.org.ai/Conjunction/than	https://language.org.ai/Conjunction	https://language.org.ai	than	introduces comparison		Subordinating	better than before
-https://language.org.ai/Conjunction/that	https://language.org.ai/Conjunction	https://language.org.ai	that	introduces a clause		Subordinating	know that it works
-https://language.org.ai/Conjunction/though	https://language.org.ai/Conjunction	https://language.org.ai	though	despite the fact		Subordinating	though challenging
-https://language.org.ai/Conjunction/till	https://language.org.ai/Conjunction	https://language.org.ai	till	up to the time when		Subordinating	till completion
-https://language.org.ai/Conjunction/unless	https://language.org.ai/Conjunction	https://language.org.ai	unless	except on the condition that		Subordinating	unless canceled
-https://language.org.ai/Conjunction/until	https://language.org.ai/Conjunction	https://language.org.ai	until	up to the time that		Subordinating	until approved
-https://language.org.ai/Conjunction/when	https://language.org.ai/Conjunction	https://language.org.ai	when	at or during the time that		Subordinating	when ready
-https://language.org.ai/Conjunction/where	https://language.org.ai/Conjunction	https://language.org.ai	where	at or in which place		Subordinating	where needed
-https://language.org.ai/Conjunction/whereas	https://language.org.ai/Conjunction	https://language.org.ai	whereas	in contrast to the fact that		Subordinating	whereas others failed
-https://language.org.ai/Conjunction/wherever	https://language.org.ai/Conjunction	https://language.org.ai	wherever	in or to whatever place		Subordinating	wherever possible
-https://language.org.ai/Conjunction/whether	https://language.org.ai/Conjunction	https://language.org.ai	whether	if; either		Subordinating	whether approved
-https://language.org.ai/Conjunction/while	https://language.org.ai/Conjunction	https://language.org.ai	while	during the time that		Subordinating	while working
-https://language.org.ai/Conjunction/both	https://language.org.ai/Conjunction	https://language.org.ai	both	the two; one and the other		Correlative	both manager and employee
-https://language.org.ai/Conjunction/either	https://language.org.ai/Conjunction	https://language.org.ai	either	one or the other of two		Correlative	either option
-https://language.org.ai/Conjunction/neither	https://language.org.ai/Conjunction	https://language.org.ai	neither	not one nor the other		Correlative	neither option
-https://language.org.ai/Conjunction/not	https://language.org.ai/Conjunction	https://language.org.ai	not	negation		Correlative	not only...but also
+url	ns	type	id	name	description	code	category	usage
+https://language.org.ai/Conjunction/and	language.org.ai	Conjunction	and	and	connects words, phrases, or clauses		Coordinating	coffee and tea
+https://language.org.ai/Conjunction/but	language.org.ai	Conjunction	but	but	introduces a contrast or exception		Coordinating	small but powerful
+https://language.org.ai/Conjunction/or	language.org.ai	Conjunction	or	or	presents alternatives		Coordinating	yes or no
+https://language.org.ai/Conjunction/nor	language.org.ai	Conjunction	nor	nor	negative alternative		Coordinating	neither this nor that
+https://language.org.ai/Conjunction/for	language.org.ai	Conjunction	for	for	indicates reason or purpose		Coordinating	worked hard, for success
+https://language.org.ai/Conjunction/so	language.org.ai	Conjunction	so	so	indicates result or consequence		Coordinating	tired, so rested
+https://language.org.ai/Conjunction/yet	language.org.ai	Conjunction	yet	yet	introduces a contrasting idea		Coordinating	small yet mighty
+https://language.org.ai/Conjunction/after	language.org.ai	Conjunction	after	after	follows in time		Subordinating	after completion
+https://language.org.ai/Conjunction/although	language.org.ai	Conjunction	although	although	despite the fact that		Subordinating	although difficult
+https://language.org.ai/Conjunction/as	language.org.ai	Conjunction	as	as	at the same time; because		Subordinating	as requested
+https://language.org.ai/Conjunction/because	language.org.ai	Conjunction	because	because	for the reason that		Subordinating	because necessary
+https://language.org.ai/Conjunction/before	language.org.ai	Conjunction	before	before	earlier than		Subordinating	before starting
+https://language.org.ai/Conjunction/if	language.org.ai	Conjunction	if	if	on the condition that		Subordinating	if approved
+https://language.org.ai/Conjunction/once	language.org.ai	Conjunction	once	once	as soon as		Subordinating	once finished
+https://language.org.ai/Conjunction/since	language.org.ai	Conjunction	since	since	from a time in the past		Subordinating	since Monday
+https://language.org.ai/Conjunction/than	language.org.ai	Conjunction	than	than	introduces comparison		Subordinating	better than before
+https://language.org.ai/Conjunction/that	language.org.ai	Conjunction	that	that	introduces a clause		Subordinating	know that it works
+https://language.org.ai/Conjunction/though	language.org.ai	Conjunction	though	though	despite the fact		Subordinating	though challenging
+https://language.org.ai/Conjunction/till	language.org.ai	Conjunction	till	till	up to the time when		Subordinating	till completion
+https://language.org.ai/Conjunction/unless	language.org.ai	Conjunction	unless	unless	except on the condition that		Subordinating	unless canceled
+https://language.org.ai/Conjunction/until	language.org.ai	Conjunction	until	until	up to the time that		Subordinating	until approved
+https://language.org.ai/Conjunction/when	language.org.ai	Conjunction	when	when	at or during the time that		Subordinating	when ready
+https://language.org.ai/Conjunction/where	language.org.ai	Conjunction	where	where	at or in which place		Subordinating	where needed
+https://language.org.ai/Conjunction/whereas	language.org.ai	Conjunction	whereas	whereas	in contrast to the fact that		Subordinating	whereas others failed
+https://language.org.ai/Conjunction/wherever	language.org.ai	Conjunction	wherever	wherever	in or to whatever place		Subordinating	wherever possible
+https://language.org.ai/Conjunction/whether	language.org.ai	Conjunction	whether	whether	if; either		Subordinating	whether approved
+https://language.org.ai/Conjunction/while	language.org.ai	Conjunction	while	while	during the time that		Subordinating	while working
+https://language.org.ai/Conjunction/both	language.org.ai	Conjunction	both	both	the two; one and the other		Correlative	both manager and employee
+https://language.org.ai/Conjunction/either	language.org.ai	Conjunction	either	either	one or the other of two		Correlative	either option
+https://language.org.ai/Conjunction/neither	language.org.ai	Conjunction	neither	neither	not one nor the other		Correlative	neither option
+https://language.org.ai/Conjunction/not	language.org.ai	Conjunction	not	not	negation		Correlative	not only...but also
