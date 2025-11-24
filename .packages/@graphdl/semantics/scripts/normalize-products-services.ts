@@ -11,8 +11,25 @@ import path from 'path'
  */
 
 function toWikipediaStyle(text: string): string {
-  // Replace spaces with underscores, keep original capitalization
-  return text.replace(/\s+/g, '_')
+  // Clean up the text for Wikipedia-style naming
+  let cleaned = text.trim()
+
+  // Normalize European number formatting: 2,5G → 2.5G
+  cleaned = cleaned.replace(/(\d),(\d)/g, '$1.$2')
+
+  // Remove list commas and extra punctuation (but keep hyphens and periods in valid contexts)
+  cleaned = cleaned.replace(/,\s*/g, ' ')  // Replace commas with spaces
+
+  // Clean up multiple spaces
+  cleaned = cleaned.replace(/\s+/g, ' ').trim()
+
+  // Replace spaces with underscores
+  cleaned = cleaned.replace(/\s+/g, '_')
+
+  // Remove any remaining problematic characters but keep: letters, numbers, underscores, hyphens, periods, parentheses
+  cleaned = cleaned.replace(/[^\w\-.()\u00C0-\u024F\u1E00-\u1EFF]/g, '')
+
+  return cleaned
 }
 
 async function normalizeProducts() {
