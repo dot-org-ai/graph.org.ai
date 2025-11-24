@@ -133,14 +133,19 @@ async function normalizeProducts() {
 
   console.log(`  Total ${productMap.size} unique products after GS1`)
 
-  // Write normalized Products.tsv
+  // Write normalized Products.tsv in full MDX format
   const products = Array.from(productMap.values()).sort((a, b) => a.id.localeCompare(b.id))
 
   const productsPath = path.join(dataDir, 'Products.tsv')
-  const productsHeaders = ['id', 'name', 'description', 'standards']
-  const productsRows = products.map(p =>
-    `${p.id}\t${p.name}\t${p.description}\t${Array.from(p.standards).join(',')}`
-  )
+  const productsHeaders = ['url', 'ns', 'type', 'id', 'name', 'description', 'code', 'sourceUrl']
+  const productsRows = products.map(p => {
+    const url = `https://products.org.ai/${p.id}`
+    const ns = 'products.org.ai'
+    const type = 'Product'
+    const code = Array.from(p.codes).join(',')
+    const sourceUrl = ''
+    return `${url}\t${ns}\t${type}\t${p.id}\t${p.name}\t${p.description}\t${code}\t${sourceUrl}`
+  })
 
   fs.writeFileSync(productsPath, productsHeaders.join('\t') + '\n' + productsRows.join('\n'))
   console.log(`  ✓ Products.tsv (${products.length} normalized products)`)
@@ -229,14 +234,19 @@ async function normalizeServices() {
 
   console.log(`  Loaded ${serviceMap.size} services from NAPCS`)
 
-  // Write normalized Services.tsv
+  // Write normalized Services.tsv in full MDX format
   const services = Array.from(serviceMap.values()).sort((a, b) => a.id.localeCompare(b.id))
 
   const servicesPath = path.join(dataDir, 'Services.tsv')
-  const servicesHeaders = ['id', 'name', 'description', 'standards']
-  const servicesRows = services.map(s =>
-    `${s.id}\t${s.name}\t${s.description}\t${Array.from(s.standards).join(',')}`
-  )
+  const servicesHeaders = ['url', 'ns', 'type', 'id', 'name', 'description', 'code', 'sourceUrl']
+  const servicesRows = services.map(s => {
+    const url = `https://services.org.ai/${s.id}`
+    const ns = 'services.org.ai'
+    const type = 'Service'
+    const code = Array.from(s.codes).join(',')
+    const sourceUrl = ''
+    return `${url}\t${ns}\t${type}\t${s.id}\t${s.name}\t${s.description}\t${code}\t${sourceUrl}`
+  })
 
   fs.writeFileSync(servicesPath, servicesHeaders.join('\t') + '\n' + servicesRows.join('\n'))
   console.log(`  ✓ Services.tsv (${services.length} normalized services)`)
