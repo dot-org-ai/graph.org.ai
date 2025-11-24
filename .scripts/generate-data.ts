@@ -122,6 +122,12 @@ function createSchemaEntity(domain: string, typeName: string, id: string, data: 
   }
 }
 
+// Helper to clean schema: prefix from values
+function cleanSchemaPrefix(value: string): string {
+  if (!value) return ''
+  return value.replace(/schema:/g, '')
+}
+
 // ============================================================================
 // Data Generators
 // ============================================================================
@@ -141,9 +147,9 @@ function generateSchemaOrgData(): void {
     return createSchemaEntity(domain, 'Class', id, {
       name: row.label || row.name,
       description: row.comment || row.description || '',
-      code: row.id || '',
-      subClassOf: row.subClassOf || '',
-      sourceUrl: row.url || row.id || '',
+      code: cleanSchemaPrefix(row.id || ''),
+      subClassOf: cleanSchemaPrefix(row.subClassOf || ''),
+      sourceUrl: cleanSchemaPrefix(row.url || row.id || ''),
     })
   })
   writeTSV(path.join(DATA_DIR, 'Schema.Class.tsv'), typesData)
@@ -155,10 +161,10 @@ function generateSchemaOrgData(): void {
     return createSchemaEntity(domain, 'Property', id, {
       name: row.label || row.name,
       description: row.comment || row.description || '',
-      code: row.id || '',
-      domainIncludes: row.domainIncludes || '',
-      rangeIncludes: row.rangeIncludes || '',
-      sourceUrl: row.url || row.id || '',
+      code: cleanSchemaPrefix(row.id || ''),
+      domainIncludes: cleanSchemaPrefix(row.domainIncludes || ''),
+      rangeIncludes: cleanSchemaPrefix(row.rangeIncludes || ''),
+      sourceUrl: cleanSchemaPrefix(row.url || row.id || ''),
     })
   })
   writeTSV(path.join(DATA_DIR, 'Schema.Property.tsv'), propsData)
@@ -169,7 +175,7 @@ function generateSchemaOrgData(): void {
   // Class -> subClassOf relationships
   typesSource.forEach(row => {
     if (row.subClassOf) {
-      const fromClass = typesData.find(t => t.code === row.id)
+      const fromClass = typesData.find(t => t.code === cleanSchemaPrefix(row.id))
       if (fromClass) {
         // Extract the class name and remove schema: prefix if present
         const className = row.subClassOf.split('/').pop().replace('schema:', '')
@@ -187,7 +193,7 @@ function generateSchemaOrgData(): void {
   // Property -> domainIncludes relationships
   propsSource.forEach(row => {
     if (row.domainIncludes) {
-      const prop = propsData.find(p => p.code === row.id)
+      const prop = propsData.find(p => p.code === cleanSchemaPrefix(row.id))
       if (prop) {
         const domains = row.domainIncludes.split(',').map((d: string) => d.trim())
         domains.forEach((domainUrl: string) => {
@@ -204,6 +210,29 @@ function generateSchemaOrgData(): void {
       }
     }
   })
+
+  // Property -> rangeIncludes relationships
+  propsSource.forEach(row => {
+    if (row.rangeIncludes) {
+      const prop = propsData.find(p => p.code === cleanSchemaPrefix(row.id))
+      if (prop) {
+        const ranges = row.rangeIncludes.split(',').map((r: string) => r.trim())
+        ranges.forEach((rangeUrl: string) => {
+          // Extract the class name and remove schema: prefix if present
+          const className = rangeUrl.split('/').pop().replace('schema:', '')
+          relationships.push({
+            ns: 'schema.org.ai',
+            from: prop.url,
+            predicate: 'rangeIncludes',
+            reverse: 'rangeOf',
+            to: `${domain}/${className}`,
+          })
+        })
+      }
+    }
+  })
+
+  console.log(`  ✅ Schema.Class.Relationships.tsv (${relationships.length} rows)`)
 
   writeRelationshipsTSV(path.join(DATA_DIR, 'Schema.Class.Relationships.tsv'), relationships)
 }
