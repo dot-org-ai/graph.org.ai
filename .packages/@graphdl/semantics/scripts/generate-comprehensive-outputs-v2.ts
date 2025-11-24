@@ -120,40 +120,74 @@ function toCamelCase(text: string, conceptIndex: Map<string, any>, shortNames?: 
   // Split and capitalize each word, then join (but preserve concept placeholders and existing CamelCase)
   const tokens = normalized.split(/[\s\-\/,;:()]+/).filter(t => t.trim())
 
-  // Articles and prepositions to keep lowercase (but NOT conjunctions like "and"/"or" - those should be filtered out)
-  const lowercaseWords = new Set(['the', 'a', 'an', 'to', 'from', 'with', 'without', 'in', 'on', 'at', 'by', 'of'])
+  // Prepositions that should be kept as separators in GraphDL (lowercase with dots)
+  const prepositions = new Set(['to', 'from', 'with', 'without', 'in', 'on', 'at', 'by', 'of', 'for', 'about', 'into', 'onto', 'within'])
+
+  // Articles to filter out completely
+  const articles = new Set(['the', 'a', 'an'])
 
   // Conjunctions that should be completely removed from GraphDL notation
-  const conjunctions = new Set(['and', 'or', 'but', 'nor', 'for', 'so', 'yet'])
+  const conjunctions = new Set(['and', 'or', 'but', 'nor', 'so', 'yet'])
 
-  const processed = tokens.map(t => {
-    // If it's a concept placeholder, it will be replaced later
-    if (t.startsWith('__CONCEPT_')) {
-      return t
-    }
-    // If it's already CamelCase (has internal capitals), preserve it as a concept
-    if (/^[A-Z][a-z]+[A-Z]/.test(t)) {
-      return t
-    }
-    // Filter out conjunctions completely
-    if (conjunctions.has(t.toLowerCase())) {
-      return null
-    }
-    // Keep articles and prepositions lowercase
-    if (lowercaseWords.has(t.toLowerCase())) {
-      return t.toLowerCase()
-    }
-    // Otherwise capitalize first letter only
-    return t.charAt(0).toUpperCase() + t.slice(1).toLowerCase()
-  }).filter(t => t !== null)
+  // Process tokens and group into segments separated by prepositions
+  const segments: string[][] = [[]]
+  let currentSegment = 0
 
-  // Join with dots and replace concept placeholders with actual concept IDs
-  let result = processed.join('.')
-  for (const {placeholder, id} of conceptPlaceholders) {
-    result = result.replace(placeholder, id)
+  for (const token of tokens) {
+    const lower = token.toLowerCase()
+
+    // Skip articles and conjunctions
+    if (articles.has(lower) || conjunctions.has(lower)) {
+      continue
+    }
+
+    // If it's a preposition, start a new segment and add the preposition
+    if (prepositions.has(lower)) {
+      if (segments[currentSegment].length > 0) {
+        currentSegment++
+        segments[currentSegment] = [lower] // Preposition as separator
+        currentSegment++
+        segments[currentSegment] = []
+      }
+      continue
+    }
+
+    // If it's a concept placeholder, add it as-is
+    if (token.startsWith('__CONCEPT_')) {
+      segments[currentSegment].push(token)
+      continue
+    }
+
+    // If it's already CamelCase (has internal capitals), preserve it
+    if (/^[A-Z][a-z]+[A-Z]/.test(token)) {
+      segments[currentSegment].push(token)
+      continue
+    }
+
+    // Otherwise capitalize first letter
+    segments[currentSegment].push(token.charAt(0).toUpperCase() + token.slice(1).toLowerCase())
   }
 
-  return result
+  // Join segments: compound words within segments, dots between segments
+  const result = segments
+    .filter(seg => seg.length > 0)
+    .map(seg => {
+      // If segment is just a preposition, keep it lowercase
+      if (seg.length === 1 && prepositions.has(seg[0].toLowerCase())) {
+        return seg[0].toLowerCase()
+      }
+      // Otherwise join words into compound (no dots within segment)
+      return seg.join('')
+    })
+    .join('.')
+
+  // Replace concept placeholders with actual concept IDs
+  let finalResult = result
+  for (const {placeholder, id} of conceptPlaceholders) {
+    finalResult = finalResult.replace(placeholder, id)
+  }
+
+  return finalResult
 }
 
 /**
