@@ -53,23 +53,36 @@ function generateId(name: string, fallback?: string): string {
   return pascalName
 }
 
+function replaceZapierReferences(text: string): string {
+  if (!text) return ''
+
+  // Replace all mentions of "Zapier" (case-insensitive) with ".do"
+  return text.replace(/Zapier/gi, '.do')
+}
+
 function htmlToMarkdown(html: string | null | undefined): string {
   if (!html) return ''
 
   // Convert HTML to Markdown
   let markdown = turndownService.turndown(html)
 
-  // Replace Zapier URLs with our namespace URLs
+  // Replace zapier.com URLs with integrations.org.ai
   // Pattern: https://zapier.com/apps/{app-slug}/integrations/{other-app-slug}
   markdown = markdown.replace(/https:\/\/zapier\.com\/apps\/([^\/\s)]+)(\/[^\s)]*)?/g, (match, appSlug) => {
     const appId = generateId(appSlug.replace(/-/g, ' '))
-    return `https://zapier.com/App/${appId}`
+    return `https://integrations.org.ai/${appId}`
   })
 
   // Pattern: https://zapier.com/app/use-case/{slug}
   markdown = markdown.replace(/https:\/\/zapier\.com\/app\/use-case\/([^\s)]+)/g, (match, slug) => {
-    return `https://zapier.com/UseCase/${toPascalCase(slug.replace(/-/g, ' '))}`
+    return `https://integrations.org.ai/UseCase/${toPascalCase(slug.replace(/-/g, ' '))}`
   })
+
+  // Replace any other zapier.com URLs
+  markdown = markdown.replace(/https?:\/\/zapier\.com/g, 'https://integrations.org.ai')
+
+  // Replace all mentions of "Zapier" with ".do"
+  markdown = replaceZapierReferences(markdown)
 
   // Escape newlines for TSV format
   markdown = markdown.replace(/\n/g, '\\n')
@@ -79,8 +92,12 @@ function htmlToMarkdown(html: string | null | undefined): string {
 
 function escapeTsvField(value: string): string {
   if (!value) return ''
-  // Escape newlines, tabs, and backslashes for TSV format
-  return value
+
+  // First replace Zapier references
+  let cleaned = replaceZapierReferences(value)
+
+  // Then escape special characters for TSV format
+  return cleaned
     .replace(/\\/g, '\\\\')  // Escape backslashes first
     .replace(/\n/g, '\\n')   // Escape newlines
     .replace(/\t/g, '\\t')   // Escape tabs
@@ -120,12 +137,12 @@ const apps = zapierApps.map((app: any) => {
   const content = htmlToMarkdown(app.integration_overview_html)
 
   return {
-    url: `https://zapier.com/App/${id}`,
-    ns: 'zapier.com.ai',
+    url: `https://integrations.org.ai/${id}`,
+    ns: 'integrations.org.ai',
     type: 'App',
     id,
     code: app.slug,
-    name: app.name,
+    name: replaceZapierReferences(app.name),
     description: escapeTsvField(app.description || ''),
     content,
     category,
@@ -172,15 +189,16 @@ for (const app of zapierApps) {
 
 const appSearches = Array.from(searchMap.entries()).map(([key, data]) => {
   const id = generateId(data.name, key)
+  const firstDescription = Array.from(data.descriptions)[0] || `Search operation for ${data.name}`
 
   return {
-    url: `https://zapier.com/Search/${id}`,
-    ns: 'zapier.com.ai',
+    url: `https://integrations.org.ai/Search/${id}`,
+    ns: 'integrations.org.ai',
     type: 'Search',
     id,
     code: key.replace(/\s+/g, '_'),
-    name: data.name,
-    description: Array.from(data.descriptions)[0] || `Search operation for ${data.name}`,
+    name: replaceZapierReferences(data.name),
+    description: escapeTsvField(firstDescription),
     appCount: data.apps.size.toString(),
   }
 })
