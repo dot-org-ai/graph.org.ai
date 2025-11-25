@@ -89,12 +89,12 @@ const apps = zapierApps.map((app: any) => {
     category,
     categories,
     imageUrl: app.image || '',
-    hexColor: app.primary_color || '',
+    primaryColor: app.primary_color || '',
     appUrl: app.app_url || '',
   }
 })
 
-const appsHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description', 'category', 'categories', 'imageUrl', 'hexColor', 'appUrl']
+const appsHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description', 'category', 'categories', 'imageUrl', 'primaryColor', 'appUrl']
 const appsOutput = [
   appsHeaders.join('\t'),
   ...apps.map(app => appsHeaders.map(h => app[h as keyof typeof app] || '').join('\t'))
