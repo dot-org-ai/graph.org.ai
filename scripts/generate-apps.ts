@@ -17,6 +17,23 @@ const ZAPIER_DIR = '/Users/nathanclevenger/platform/packages/integrations/data/z
 
 function toPascalCase(str: string): string {
   if (!str) return ''
+
+  // Common acronyms that should remain uppercase
+  const acronyms = new Set([
+    'API', 'SMS', 'MMS', 'URL', 'URI', 'HTTP', 'HTTPS', 'FTP', 'SFTP',
+    'PDF', 'CSV', 'TSV', 'XML', 'JSON', 'HTML', 'CSS', 'SQL', 'NoSQL',
+    'REST', 'SOAP', 'GraphQL', 'OAuth', 'JWT', 'SSO', 'SAML',
+    'CRM', 'ERP', 'HRM', 'POS', 'CMS', 'LMS', 'ATS', 'HRIS',
+    'RSS', 'ATOM', 'AJAX', 'CDN', 'DNS', 'VPN', 'IP', 'TCP', 'UDP',
+    'UI', 'UX', 'CLI', 'GUI', 'IDE', 'SDK', 'APK', 'IPA',
+    'ID', 'UUID', 'GUID', 'MD5', 'SHA', 'AES', 'RSA', 'SSL', 'TLS',
+    'US', 'UK', 'EU', 'USA', 'ISO', 'ANSI', 'IEEE', 'IETF',
+    'ASCII', 'UTF', 'MIME', 'JPEG', 'JPG', 'PNG', 'GIF', 'SVG',
+    'AI', 'ML', 'NLP', 'OCR', 'QR', 'NFC', 'RFID', 'GPS', 'GIS',
+    'SLA', 'KPI', 'ROI', 'B2B', 'B2C', 'SaaS', 'PaaS', 'IaaS',
+    'AWS', 'GCP', 'IBM', 'VMware', 'VM', 'VPS', 'IoT', 'AR', 'VR'
+  ])
+
   const cleaned = str
     .replace(/[^\w\s-]/g, '')
     .replace(/\s+/g, ' ')
@@ -24,7 +41,13 @@ function toPascalCase(str: string): string {
 
   return cleaned
     .split(/[\s_-]+/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .map(word => {
+      const upper = word.toUpperCase()
+      if (acronyms.has(upper)) {
+        return upper
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    })
     .join('')
 }
 
@@ -58,8 +81,8 @@ const appNouns = cleanedNouns.map((noun: any) => {
   const id = generateId(noun.noun)
 
   return {
-    url: `https://zapier.com/Noun/${id}`,
-    ns: 'zapier.com.ai',
+    url: `https://integrations.org.ai/Noun/${id}`,
+    ns: 'integrations.org.ai',
     type: 'Noun',
     id,
     code: noun.noun.toLowerCase().replace(/\s+/g, '_'),
@@ -85,8 +108,8 @@ const appEvents = cleanedEvents.map((event: any) => {
   const id = generateId(event.event.replace('.', ''))
 
   return {
-    url: `https://zapier.com/Event/${id}`,
-    ns: 'zapier.com.ai',
+    url: `https://integrations.org.ai/Event/${id}`,
+    ns: 'integrations.org.ai',
     type: 'Event',
     id,
     code: event.event.toLowerCase().replace(/\./g, '_'),
@@ -114,8 +137,8 @@ const appActions = cleanedActions.map((action: any) => {
   const id = generateId(action.action.replace('.', ''))
 
   return {
-    url: `https://zapier.com/Action/${id}`,
-    ns: 'zapier.com.ai',
+    url: `https://integrations.org.ai/Action/${id}`,
+    ns: 'integrations.org.ai',
     type: 'Action',
     id,
     code: action.action.toLowerCase().replace(/\./g, '_'),
