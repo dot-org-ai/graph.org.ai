@@ -7,10 +7,17 @@
 import { writeFileSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import TurndownService from 'turndown'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const DATA_DIR = resolve(__dirname, '../.data')
+
+const turndownService = new TurndownService({
+  headingStyle: 'atx',
+  bulletListMarker: '-',
+  codeBlockStyle: 'fenced',
+})
 
 interface ZapierApp {
   key: string
@@ -46,6 +53,39 @@ function generateId(name: string, fallback?: string): string {
   return pascalName
 }
 
+function htmlToMarkdown(html: string | null | undefined): string {
+  if (!html) return ''
+
+  // Convert HTML to Markdown
+  let markdown = turndownService.turndown(html)
+
+  // Replace Zapier URLs with our namespace URLs
+  // Pattern: https://zapier.com/apps/{app-slug}/integrations/{other-app-slug}
+  markdown = markdown.replace(/https:\/\/zapier\.com\/apps\/([^\/\s)]+)(\/[^\s)]*)?/g, (match, appSlug) => {
+    const appId = generateId(appSlug.replace(/-/g, ' '))
+    return `https://zapier.com/App/${appId}`
+  })
+
+  // Pattern: https://zapier.com/app/use-case/{slug}
+  markdown = markdown.replace(/https:\/\/zapier\.com\/app\/use-case\/([^\s)]+)/g, (match, slug) => {
+    return `https://zapier.com/UseCase/${toPascalCase(slug.replace(/-/g, ' '))}`
+  })
+
+  // Escape newlines for TSV format
+  markdown = markdown.replace(/\n/g, '\\n')
+
+  return markdown.trim()
+}
+
+function escapeTsvField(value: string): string {
+  if (!value) return ''
+  // Escape newlines, tabs, and backslashes for TSV format
+  return value
+    .replace(/\\/g, '\\\\')  // Escape backslashes first
+    .replace(/\n/g, '\\n')   // Escape newlines
+    .replace(/\t/g, '\\t')   // Escape tabs
+}
+
 console.log('🚀 Generating Apps.tsv and App.Searches.tsv from Zapier API\n')
 
 // 1. Fetch all apps from Zapier API
@@ -77,6 +117,7 @@ const apps = zapierApps.map((app: any) => {
   const id = generateId(app.name, app.slug)
   const categories = app.categories?.map((c: any) => c.title).join(', ') || ''
   const category = app.categories?.[0]?.title || ''
+  const content = htmlToMarkdown(app.integration_overview_html)
 
   return {
     url: `https://zapier.com/App/${id}`,
@@ -85,7 +126,8 @@ const apps = zapierApps.map((app: any) => {
     id,
     code: app.slug,
     name: app.name,
-    description: app.description || '',
+    description: escapeTsvField(app.description || ''),
+    content,
     category,
     categories,
     imageUrl: app.image || '',
@@ -94,7 +136,7 @@ const apps = zapierApps.map((app: any) => {
   }
 })
 
-const appsHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description', 'category', 'categories', 'imageUrl', 'primaryColor', 'appUrl']
+const appsHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description', 'content', 'category', 'categories', 'imageUrl', 'primaryColor', 'appUrl']
 const appsOutput = [
   appsHeaders.join('\t'),
   ...apps.map(app => appsHeaders.map(h => app[h as keyof typeof app] || '').join('\t'))
