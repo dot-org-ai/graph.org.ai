@@ -48,7 +48,12 @@ function toPascalCase(str: string): string {
     'ASCII', 'UTF', 'MIME', 'JPEG', 'JPG', 'PNG', 'GIF', 'SVG',
     'AI', 'ML', 'NLP', 'OCR', 'QR', 'NFC', 'RFID', 'GPS', 'GIS',
     'SLA', 'KPI', 'ROI', 'B2B', 'B2C', 'SaaS', 'PaaS', 'IaaS',
-    'AWS', 'GCP', 'IBM', 'VMware', 'VM', 'VPS', 'IoT', 'AR', 'VR'
+    'AWS', 'GCP', 'IBM', 'VMware', 'VM', 'VPS', 'IoT', 'AR', 'VR',
+    // Product/service names with mixed case
+    'BigQuery', 'GitHub', 'LinkedIn', 'YouTube', 'WordPress', 'JavaScript',
+    'TypeScript', 'MongoDB', 'MySQL', 'PostgreSQL', 'SQLite', 'MariaDB',
+    'iOS', 'macOS', 'watchOS', 'tvOS', 'iPadOS', 'iPhone', 'iPad',
+    'PowerPoint', 'SharePoint', 'OneDrive', 'OneNote', 'ActiveDirectory'
   ])
 
   const cleaned = str

@@ -83,17 +83,17 @@ console.log('🚀 Generating complete Apps/Integrations data from Zapier\n')
 console.log('1️⃣  Fetching Zapier apps from API...')
 
 const zapierApps: ZapierApp[] = []
-let page = 1
+let offset = 0
 let hasMore = true
 
 while (hasMore) {
-  const response = await fetch(`https://zapier.com/api/v4/services/?limit=250&page=${page}`)
+  const response = await fetch(`https://zapier.com/api/v4/services/?limit=250&offset=${offset}`)
   const data = await response.json()
 
   if (data.objects && data.objects.length > 0) {
     zapierApps.push(...data.objects)
-    console.log(`   Fetched page ${page}: ${zapierApps.length.toLocaleString()} apps total`)
-    page++
+    console.log(`   Fetched offset ${offset}: ${zapierApps.length.toLocaleString()} apps total`)
+    offset += 250
     hasMore = data.objects.length === 250
   } else {
     hasMore = false
