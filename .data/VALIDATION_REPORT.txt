@@ -1,0 +1,150 @@
+Found 41 TSV files to validate
+
+================================================================================
+TSV VALIDATION REPORT
+================================================================================
+
+Total files validated: 41
+Files with issues: 41
+Total issues: 316084 (316052 errors, 32 warnings)
+
+HEADER VALIDATION
+--------------------------------------------------------------------------------
+
+41 files missing standard headers:
+
+  Abilities.tsv
+    Missing: url, ns, code, description
+    Current headers: id, type, name...
+  Apps.tsv
+    Missing: url, ns, code
+    Current headers: id, type, key, name, description...
+  BusinessTypes.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, baseNoun, modifiers...
+  CareerClusters.tsv
+    Missing: url, ns, type, code, description
+    Current headers: id, name, subclusters, naics_codes, soc_count...
+  Concepts.tsv
+    Missing: url, ns, type, code, name
+    Current headers: id, description, baseNoun, modifiers, category...
+  Countries.tsv
+    Missing: url, ns, code, name, description
+    Current headers: id, type, ISO, ISO3, ISO-Numeric...
+  Departments.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, baseNoun, modifiers...
+  EducationProgram_CareerCluster_Mappings.tsv
+    Missing: url, ns, type, id, code, name, description
+    Current headers: education_program_id, cip_code, career_cluster_id, subcluster_id...
+  EducationPrograms.tsv
+    Missing: url, ns, type, code, description
+    Current headers: id, cip_code, name, career_clusters, subclusters...
+  Employment.tsv
+    Missing: url, ns, type, description
+    Current headers: id, name, code, employment, matched_onet...
+  Industries.tsv
+    Missing: url, ns
+    Current headers: id, name, description, code, type...
+  IntegrationServices.tsv
+    Missing: url, ns, code
+    Current headers: id, type, key, name, description...
+  Knowledge.tsv
+    Missing: url, ns, code, description
+    Current headers: id, type, name...
+  Language.Adverbs.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, category, usage...
+  Language.Conjunctions.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, category, usage...
+  Language.Determiners.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, category, usage...
+  Language.Prepositions.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, usage, category...
+  Language.Pronouns.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, description, category, case...
+  Models.tsv
+    Missing: url, ns, code
+    Current headers: id, type, name, description, contextLength...
+  Nouns.tsv
+    Missing: url, ns, code
+    Current headers: id, type, name, description, source...
+  Occupations.tsv
+    Missing: url, ns
+    Current headers: id, name, description, code, type...
+  Processes.tsv
+    Missing: url, ns, type, code
+    Current headers: id, pcfId, hierarchyId, name, description...
+  Products.tsv
+    Missing: url, ns, description
+    Current headers: id, type, name, code, source...
+  Properties.tsv
+    Missing: url, ns, code, description
+    Current headers: id, name, type, label, comment...
+  SOC_CareerCluster_Mappings.tsv
+    Missing: url, ns, type, id, code, name, description
+    Current headers: soc_code, career_cluster_id, subcluster_id...
+  SOC_EducationProgram_Mappings.tsv
+    Missing: url, ns, type, id, code, name, description
+    Current headers: soc_code, education_program_id, cip_code, career_cluster_id...
+  STEMOccupations.tsv
+    Missing: url, ns, type, description
+    Current headers: id, name, code, employment, annual_mean_wage...
+  Services.NAPCS.tsv
+    Missing: url, ns
+    Current headers: id, type, code, parent, name...
+  Skills.tsv
+    Missing: url, ns, code, description
+    Current headers: id, type, name...
+  States.tsv
+    Missing: url, ns, description
+    Current headers: id, type, code, country, admin1Code...
+  SubClusters.tsv
+    Missing: url, ns, type, code, description
+    Current headers: id, name, career_cluster_id, career_cluster_name, soc_count...
+  Tasks.tsv
+    Missing: url, ns, type, code, name
+    Current headers: id, onetCode, occupationCode, taskId, task...
+  Technologies.tsv
+    Missing: url, ns, code, description
+    Current headers: id, type, name, commodityCode, commodityTitle...
+  Tools.tsv
+    Missing: url, ns, code, description
+    Current headers: id, type, name, commodityCode, commodityTitle...
+  Types.tsv
+    Missing: url, ns, code, description
+    Current headers: id, name, type, label, comment...
+  Verbs.tsv
+    Missing: url, ns, code, name
+    Current headers: id, type, canonicalForm, description, predicate...
+  Wages.tsv
+    Missing: url, ns, type, description
+    Current headers: id, name, code, annual_mean, annual_median...
+  WorkActivities.tsv
+    Missing: url, ns, code, name, description
+    Current headers: id, type, elementID, elementName...
+  WorkContext.tsv
+    Missing: url, ns, code, name, description
+    Current headers: id, type, elementID, elementName...
+  WorkStyles.tsv
+    Missing: url, ns, code, name, description
+    Current headers: id, type, elementID, elementName...
+  WorkValues.tsv
+    Missing: url, ns, code, name, description
+    Current headers: id, type, elementID, elementName...
+
+
+ID VALIDATION
+--------------------------------------------------------------------------------
+
+30 files with non-PascalCase IDs:
+
+  Abilities.tsv (52 issues)
+    Line 2: ID '1.A.1.a.1' is not PascalCase (suggested: OralComprehension)
+    Line 3: ID '1.A.1.a.2' is not PascalCase (suggested: WrittenComprehension)
+    Line 4: ID '1.A.1.a.3' is not PascalCase (suggested: OralExpression)
+    Line 5: ID '1.A.1.a.4' is not PascalCase (suggested: WrittenExpression)
