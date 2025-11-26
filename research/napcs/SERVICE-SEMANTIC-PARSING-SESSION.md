@@ -145,6 +145,73 @@ ChiefExecutives.direct.Organization'sFinancialBudgetActivities.to.FundOperations
 
 **Root Cause**: Parser doesn't understand that "services for" creates a semantic boundary, and "Maintenance and repair" both modify "services for X".
 
+### 7. Comprehensive Semantic Statement Parser ✅
+
+**Created**: `scripts/parse-service-statements.ts`
+
+**Architecture**:
+- Semantic role detection (activities vs. objects vs. modifiers)
+- Prepositional phrase boundary detection
+- Scope-aware compound expansion
+- Exclusion handling for "(except ...)" clauses
+- Cartesian product generation
+
+**Results**:
+- **83,117 input services** → **156,365 expanded services**
+- **73,248 new service expansions** (88% expansion rate)
+- **17% with activities** (14,133 services)
+- **83% with prepositions** (68,609 services)
+- **3% with modifiers** (2,821 services)
+- **0.5% with exclusions** (395 services)
+
+**Successful Patterns**:
+```
+✅ "Maintenance and repair services for automobiles and light trucks"
+   → [Maintenance services for automobiles,
+       Maintenance services for light trucks,
+       repair services for automobiles,
+       repair services for light trucks]
+   (4 expansions - CORRECT!)
+
+✅ "Heated or cooled air or water"
+   → [Heated air, Heated water, cooled air, cooled water]
+   (4 expansions - CORRECT!)
+
+✅ "Rental or leasing of automobiles and light trucks"
+   → [Rental of automobiles, Rental of light trucks,
+       leasing of automobiles, leasing of light trucks]
+   (4 expansions - CORRECT!)
+
+✅ "Freight transportation by road or rail"
+   → [Freight transportation by road, Freight transportation by rail]
+   (2 expansions - CORRECT!)
+
+✅ "Fresh or frozen fruit"
+   → [Fresh fruit, frozen fruit]
+   (2 expansions - CORRECT!)
+
+✅ "Installation and removal services for equipment"
+   → [Installation services for equipment, removal services for equipment]
+   (2 expansions - CORRECT!)
+```
+
+**Known Edge Cases**:
+```
+❌ "Steam and heated or cooled air or water"
+   Current: [Steam air, Steam water, heated air, heated water, cooled air, cooled water]
+   Desired: [Steam, heated air, heated water, cooled air, cooled water]
+   Issue: "Steam" should be standalone, not part of cartesian with modifiers
+```
+
+**Output Files**:
+- `/Users/nathanclevenger/projects/graph.org.ai/.data/Services-Parsed-Full.json`
+  - Full parsed data with semantic components
+- `/Users/nathanclevenger/projects/graph.org.ai/.data/Services-Expanded.tsv`
+  - 156,365 expanded services with columns:
+    - `url`, `ns`, `type`, `id`, `code`, `name`, `description`
+    - `originalUrl` (link back to compound service)
+    - `activity`, `preposition`, `object`, `exclusion` (semantic components)
+
 ## Challenges Identified
 
 ### 1. Natural Language Parsing vs Dot-Notation
@@ -315,12 +382,16 @@ expandService({
 - ✅ Semantic structure understood
 - ✅ Scope clearly defined (14,549 compound services need expansion)
 
+**Completed**:
+- ✅ Natural language parser implementation (`parse-service-statements.ts`)
+- ✅ Cartesian product generator with scope awareness
+- ✅ Semantic column addition to Services-Expanded.tsv
+- ✅ Generated 156,365 total services (73,248 new expansions)
+
 **Pending**:
-- ⏳ Natural language parser implementation
-- ⏳ Cartesian product generator
-- ⏳ Semantic column addition to Services.tsv
-- ⏳ Product/service separation
-- ⏳ Expansion validation
+- ⏳ Product/service separation (5,334 products in Services.tsv)
+- ⏳ Expansion validation and edge case refinement
+- ⏳ Integration with main Services.tsv workflow
 
 ## Session Statistics
 
