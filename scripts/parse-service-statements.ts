@@ -201,6 +201,29 @@ function parseServiceStatement(name: string): ServiceStatement {
       result.objects = objectParts.map(o => o.trim()).filter(Boolean)
 
       return result
+    } else {
+      // Pattern 2b: "Noun and Noun of Noun and Noun"
+      // Example: "Logs and bolts of Douglas fir and Western larch"
+      // Result: ["Logs of Douglas fir", "Logs of Western larch", "bolts of Douglas fir", "bolts of Western larch"]
+
+      // Check if both parts have compounds
+      const beforeParts = splitCompound(activityPhrase)
+      const afterParts = splitCompound(objectPhrase)
+
+      if (beforeParts.length > 1 || afterParts.length > 1) {
+        // Cartesian: each "before" item paired with each "after" item, connected by "of"
+        const expandedObjects: string[] = []
+
+        for (const before of beforeParts) {
+          for (const after of afterParts) {
+            expandedObjects.push(`${before.trim()} of ${after.trim()}`)
+          }
+        }
+
+        result.objects = expandedObjects
+        result.scope.objectPhrase = cleaned
+        return result
+      }
     }
   }
 
@@ -342,12 +365,19 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
   else if (statement.modifiers.length > 0 && statement.objects.length > 0) {
     for (const modifier of statement.modifiers) {
       for (const object of statement.objects) {
-        const fullName = `${modifier} ${object}`
+        let fullName = `${modifier} ${object}`
+
+        // Add exclusions if present
+        if (statement.exclusions.length > 0) {
+          fullName += ` (except ${statement.exclusions.join(' and ')})`
+        }
+
         const id = fullName
           .replace(/[^a-zA-Z0-9]+/g, '')
           .replace(/^(.)/, (m) => m.toUpperCase())
 
         expanded.push({
+          exclusion: statement.exclusions.join(' and ') || undefined,
           fullName,
           id
         })
@@ -376,13 +406,20 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
   // Case 4: Objects only (simple compound)
   else if (statement.objects.length > 1) {
     for (const object of statement.objects) {
-      const fullName = object
+      let fullName = object
+
+      // Add exclusions if present
+      if (statement.exclusions.length > 0) {
+        fullName += ` (except ${statement.exclusions.join(' and ')})`
+      }
+
       const id = fullName
         .replace(/[^a-zA-Z0-9]+/g, '')
         .replace(/^(.)/, (m) => m.toUpperCase())
 
       expanded.push({
         object,
+        exclusion: statement.exclusions.join(' and ') || undefined,
         fullName,
         id
       })
