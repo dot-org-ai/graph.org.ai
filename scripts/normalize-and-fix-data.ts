@@ -183,21 +183,17 @@ function toPascalCase(str: string): string {
 
 function fixPascalCaseId(id: string): string {
   // Preserve semantic IDs with dots (like "create.Contact" or "Contact.created")
-  // BUT only if they're already in valid format
+  // These have special casing rules and should NOT be converted to PascalCase
+  // Events: "Contact.created" (PascalCase.lowercase)
+  // Actions: "create.Contact" (lowercase.PascalCase)
   if (id.includes('.')) {
-    const parts = id.split('.')
-    // Check if all parts are valid PascalCase
-    const allValid = parts.every(part => /^[A-Z][a-zA-Z0-9]*$/.test(part))
-    if (allValid) {
-      return id
-    }
-    // Otherwise, fix each part
-    return parts.map(part => toPascalCase(part)).join('.')
+    // Just preserve semantic IDs exactly as they are
+    // Don't try to "fix" them - they have semantic meaning
+    return id
   }
 
   // DO NOT preserve IDs with colons - fix them
-  // "Schema:3dmodel" → "ThreeDModel"
-  // "Allenai:Olmo332bThink" → needs fixing
+  // "Schema:3dmodel" → "3DModel"
 
   // If already valid PascalCase, return as-is
   if (/^[A-Z][a-zA-Z0-9]*$/.test(id)) {
@@ -397,7 +393,8 @@ function processEntityFile(fileName: string, ontologyMap: Map<string, OntologyRo
 
 function isPascalCase(str: string): boolean {
   if (!str || str.length === 0) return false
-  // Allow dots for semantic IDs like "determine.Compliance"
+  // Allow dots for semantic IDs (Events: "Contact.created", Actions: "create.Contact")
+  // These have semantic meaning and special casing rules - don't "fix" them
   if (str.includes('.')) return true
   // DO NOT allow colons - IDs like "Schema:3dmodel" need to be fixed
   return /^[A-Z][a-zA-Z0-9]*$/.test(str)
