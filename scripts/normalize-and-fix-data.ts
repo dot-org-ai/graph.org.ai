@@ -129,32 +129,61 @@ function writeTSV(filePath: string, rows: Row[]): void {
 function toPascalCase(str: string): string {
   if (!str) return ''
 
-  // Handle special cases
+  // Remove "Schema:" or other namespace prefixes from the ID
+  str = str.replace(/^[A-Za-z]+:/g, '')
+
+  // Fix HTML entities
+  str = str.replace(/&apos;/g, "'")  // &apos; → '
+  str = str.replace(/andapos;/g, "'") // Common malformation
+  str = str.replace(/&amp;/g, 'And')  // &amp; → And
+  str = str.replace(/&quot;/g, '')    // &quot; → remove
+
+  // Fix "3d" to "3D" (schema.org uses "3DModel" not "ThreeDModel")
+  // Must be done before other transformations
+  str = str.replace(/^3d([A-Za-z])/gi, '3D$1')  // 3dmodel → 3DModel
+  str = str.replace(/([^A-Za-z0-9])3d([A-Za-z])/gi, '$13D$2')  // word-3d → word-3D
+
+  // Handle other special characters
   str = str
     .replace(/&/g, 'And')
-    .replace(/'/g, '')
+    .replace(/'/g, '')     // Remove apostrophes
+    .replace(/;/g, '')     // Remove semicolons (tl;dv → tldv)
+    .replace(/:/g, '')     // Remove any remaining colons
     .replace(/\(/g, '')
     .replace(/\)/g, '')
-    .replace(/:/g, '')
 
   // Split on common delimiters
   const words = str.split(/[\s,\-_\.]+/).filter(w => w)
 
   return words
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .map(word => {
+      // Handle all-caps words (keep them capitalized properly)
+      if (word === word.toUpperCase() && word.length > 1) {
+        return word.charAt(0) + word.slice(1).toLowerCase()
+      }
+      // Handle normal words
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    })
     .join('')
 }
 
 function fixPascalCaseId(id: string): string {
   // Preserve semantic IDs with dots (like "create.Contact" or "Contact.created")
+  // BUT only if they're already in valid format
   if (id.includes('.')) {
-    return id
+    const parts = id.split('.')
+    // Check if all parts are valid PascalCase
+    const allValid = parts.every(part => /^[A-Z][a-zA-Z0-9]*$/.test(part))
+    if (allValid) {
+      return id
+    }
+    // Otherwise, fix each part
+    return parts.map(part => toPascalCase(part)).join('.')
   }
 
-  // Preserve IDs with special characters (model names with colons, etc.)
-  if (id.includes(':')) {
-    return id
-  }
+  // DO NOT preserve IDs with colons - fix them
+  // "Schema:3dmodel" → "ThreeDModel"
+  // "Allenai:Olmo332bThink" → needs fixing
 
   // If already valid PascalCase, return as-is
   if (/^[A-Z][a-zA-Z0-9]*$/.test(id)) {
