@@ -1,98 +1,98 @@
 url	ns	type	id	code	name	description	employment	annual_mean_wage	matched_onet
-https://graph.org.ai/STEMOccupation/InformationSystemsManagers	graph.org.ai	STEMOccupation	InformationSystemsManagers	11-3021	Computer and Information Systems Managers		645970	187990	true
-https://graph.org.ai/STEMOccupation/ProductDevelopmentManagers	graph.org.ai	STEMOccupation	ProductDevelopmentManagers	11-9041	Biofuels/Biodiesel Technology and Product Development Managers		210340	175710	true
-https://graph.org.ai/STEMOccupation/WaterResourceSpecialists	graph.org.ai	STEMOccupation	WaterResourceSpecialists	11-9121	Water Resource Specialists		100870	173500	true
-https://graph.org.ai/STEMOccupation/HealthInformaticsSpecialists	graph.org.ai	STEMOccupation	HealthInformaticsSpecialists	15-1211	Health Informatics Specialists		497800	111960	true
-https://graph.org.ai/STEMOccupation/InformationSecurityAnalysts	graph.org.ai	STEMOccupation	InformationSecurityAnalysts	15-1212	Information Security Analysts		179430	127730	true
-https://graph.org.ai/STEMOccupation/InformationResearchScientists	graph.org.ai	STEMOccupation	InformationResearchScientists	15-1221	Computer and Information Research Scientists		38480	152310	true
-https://graph.org.ai/STEMOccupation/ComputerNetworkSupportSpecialists	graph.org.ai	STEMOccupation	ComputerNetworkSupportSpecialists	15-1231	Computer Network Support Specialists		146450	79610	true
-https://graph.org.ai/STEMOccupation/ComputerUserSupportSpecialists	graph.org.ai	STEMOccupation	ComputerUserSupportSpecialists	15-1232	Computer User Support Specialists		697210	64990	true
-https://graph.org.ai/STEMOccupation/TelecommunicationsEngineeringSpecialists	graph.org.ai	STEMOccupation	TelecommunicationsEngineeringSpecialists	15-1241	Telecommunications Engineering Specialists		177010	135890	true
-https://graph.org.ai/STEMOccupation/DatabaseAdministrators	graph.org.ai	STEMOccupation	DatabaseAdministrators	15-1242	Database Administrators		73180	107440	true
-https://graph.org.ai/STEMOccupation/DataWarehousingSpecialists	graph.org.ai	STEMOccupation	DataWarehousingSpecialists	15-1243	Data Warehousing Specialists		64770	142620	true
-https://graph.org.ai/STEMOccupation/ComputerSystemsAdministrators	graph.org.ai	STEMOccupation	ComputerSystemsAdministrators	15-1244	Network and Computer Systems Administrators		318570	101190	true
-https://graph.org.ai/STEMOccupation/ComputerProgrammers	graph.org.ai	STEMOccupation	ComputerProgrammers	15-1251	Computer Programmers		109870	103640	true
-https://graph.org.ai/STEMOccupation/SoftwareDevelopers	graph.org.ai	STEMOccupation	SoftwareDevelopers	15-1252	Software Developers		1654440	144570	true
-https://graph.org.ai/STEMOccupation/Testers	graph.org.ai	STEMOccupation	Testers	15-1253	Software Quality Assurance Analysts and Testers		199800	110260	true
-https://graph.org.ai/STEMOccupation/WebDevelopers	graph.org.ai	STEMOccupation	WebDevelopers	15-1254	Web Developers		78860	98790	true
-https://graph.org.ai/STEMOccupation/VideoGameDesigners	graph.org.ai	STEMOccupation	VideoGameDesigners	15-1255	Video Game Designers		111400	111450	true
-https://graph.org.ai/STEMOccupation/InformationTechnologyProjectManagers	graph.org.ai	STEMOccupation	InformationTechnologyProjectManagers	15-1299	Information Technology Project Managers		439380	116700	true
-https://graph.org.ai/STEMOccupation/Actuaries	graph.org.ai	STEMOccupation	Actuaries	15-2011	Actuaries		28340	134990	true
-https://graph.org.ai/STEMOccupation/Mathematicians	graph.org.ai	STEMOccupation	Mathematicians	15-2021	Mathematicians		2220	122520	true
-https://graph.org.ai/STEMOccupation/OperationsResearchAnalysts	graph.org.ai	STEMOccupation	OperationsResearchAnalysts	15-2031	Operations Research Analysts		107760	99120	true
-https://graph.org.ai/STEMOccupation/Biostatisticians	graph.org.ai	STEMOccupation	Biostatisticians	15-2041	Biostatisticians		29800	112330	true
-https://graph.org.ai/STEMOccupation/ClinicalDataManagers	graph.org.ai	STEMOccupation	ClinicalDataManagers	15-2051	Clinical Data Managers		233440	124590	true
-https://graph.org.ai/STEMOccupation/BioinformaticsTechnicians	graph.org.ai	STEMOccupation	BioinformaticsTechnicians	15-2099	Bioinformatics Technicians		4660	84700	true
-https://graph.org.ai/STEMOccupation/Naval	graph.org.ai	STEMOccupation	Naval	17-1011	Architects, Except Landscape and Naval		111140	103390	true
-https://graph.org.ai/STEMOccupation/LandscapeArchitects	graph.org.ai	STEMOccupation	LandscapeArchitects	17-1012	Landscape Architects		19580	88000	true
-https://graph.org.ai/STEMOccupation/Photogrammetrists	graph.org.ai	STEMOccupation	Photogrammetrists	17-1021	Cartographers and Photogrammetrists		12790	82860	true
-https://graph.org.ai/STEMOccupation/GeodeticSurveyors	graph.org.ai	STEMOccupation	GeodeticSurveyors	17-1022	Geodetic Surveyors		53080	76730	true
-https://graph.org.ai/STEMOccupation/AerospaceEngineers	graph.org.ai	STEMOccupation	AerospaceEngineers	17-2011	Aerospace Engineers		68440	141180	true
-https://graph.org.ai/STEMOccupation/AgriculturalEngineers	graph.org.ai	STEMOccupation	AgriculturalEngineers	17-2021	Agricultural Engineers		1680	84240	true
-https://graph.org.ai/STEMOccupation/BiomedicalEngineers	graph.org.ai	STEMOccupation	BiomedicalEngineers	17-2031	Bioengineers and Biomedical Engineers		21860	115020	true
-https://graph.org.ai/STEMOccupation/ChemicalEngineers	graph.org.ai	STEMOccupation	ChemicalEngineers	17-2041	Chemical Engineers		20330	128430	true
-https://graph.org.ai/STEMOccupation/WaterWastewaterEngineers	graph.org.ai	STEMOccupation	WaterWastewaterEngineers	17-2051	Water/Wastewater Engineers		355410	107050	true
-https://graph.org.ai/STEMOccupation/ComputerHardwareEngineers	graph.org.ai	STEMOccupation	ComputerHardwareEngineers	17-2061	Computer Hardware Engineers		75710	156770	true
-https://graph.org.ai/STEMOccupation/ElectricalEngineers	graph.org.ai	STEMOccupation	ElectricalEngineers	17-2071	Electrical Engineers		188790	120980	true
-https://graph.org.ai/STEMOccupation/RadioFrequencyIdentificationDeviceSpecialists	graph.org.ai	STEMOccupation	RadioFrequencyIdentificationDeviceSpecialists	17-2072	Radio Frequency Identification Device Specialists		93940	132500	true
-https://graph.org.ai/STEMOccupation/EnvironmentalEngineers	graph.org.ai	STEMOccupation	EnvironmentalEngineers	17-2081	Environmental Engineers		37950	110570	true
-https://graph.org.ai/STEMOccupation/ProtectionEngineers	graph.org.ai	STEMOccupation	ProtectionEngineers	17-2111	Fire-Prevention and Protection Engineers		23220	113770	true
-https://graph.org.ai/STEMOccupation/ManufacturingEngineers	graph.org.ai	STEMOccupation	ManufacturingEngineers	17-2112	Manufacturing Engineers		350230	107900	true
-https://graph.org.ai/STEMOccupation/NavalArchitects	graph.org.ai	STEMOccupation	NavalArchitects	17-2121	Marine Engineers and Naval Architects		8440	116680	true
-https://graph.org.ai/STEMOccupation/MaterialsEngineers	graph.org.ai	STEMOccupation	MaterialsEngineers	17-2131	Materials Engineers		22770	116380	true
-https://graph.org.ai/STEMOccupation/AutomotiveEngineers	graph.org.ai	STEMOccupation	AutomotiveEngineers	17-2141	Automotive Engineers		286760	110080	true
-https://graph.org.ai/STEMOccupation/MiningSafetyEngineers	graph.org.ai	STEMOccupation	MiningSafetyEngineers	17-2151	Mining and Geological Engineers, Including Mining Safety Engineers		6770	108940	true
-https://graph.org.ai/STEMOccupation/NuclearEngineers	graph.org.ai	STEMOccupation	NuclearEngineers	17-2161	Nuclear Engineers		14740	134980	true
-https://graph.org.ai/STEMOccupation/PetroleumEngineers	graph.org.ai	STEMOccupation	PetroleumEngineers	17-2171	Petroleum Engineers		18970	153560	true
-https://graph.org.ai/STEMOccupation/SolarEnergySystemsEngineers	graph.org.ai	STEMOccupation	SolarEnergySystemsEngineers	17-2199	Solar Energy Systems Engineers		150750	121720	true
-https://graph.org.ai/STEMOccupation/CivilDrafters	graph.org.ai	STEMOccupation	CivilDrafters	17-3011	Architectural and Civil Drafters		109550	68860	true
-https://graph.org.ai/STEMOccupation/ElectronicsDrafters	graph.org.ai	STEMOccupation	ElectronicsDrafters	17-3012	Electrical and Electronics Drafters		20020	77960	true
-https://graph.org.ai/STEMOccupation/MechanicalDrafters	graph.org.ai	STEMOccupation	MechanicalDrafters	17-3013	Mechanical Drafters		39900	74040	true
-https://graph.org.ai/STEMOccupation/DraftersAllOther	graph.org.ai	STEMOccupation	DraftersAllOther	17-3019	Drafters, All Other		16010	66530	true
-https://graph.org.ai/STEMOccupation/Technicians	graph.org.ai	STEMOccupation	Technicians	17-3021	Aerospace Engineering and Operations Technologists and Technicians		9060	69940	true
-https://graph.org.ai/STEMOccupation/RoboticsTechnicians	graph.org.ai	STEMOccupation	RoboticsTechnicians	17-3024	Robotics Technicians		14680	75710	true
-https://graph.org.ai/STEMOccupation/AutomotiveEngineeringTechnicians	graph.org.ai	STEMOccupation	AutomotiveEngineeringTechnicians	17-3027	Automotive Engineering Technicians		37450	72450	true
-https://graph.org.ai/STEMOccupation/PhotonicsTechnicians	graph.org.ai	STEMOccupation	PhotonicsTechnicians	17-3029	Photonics Technicians		64410	79740	true
-https://graph.org.ai/STEMOccupation/MappingTechnicians	graph.org.ai	STEMOccupation	MappingTechnicians	17-3031	Surveying and Mapping Technicians		56720	56890	true
-https://graph.org.ai/STEMOccupation/AnimalScientists	graph.org.ai	STEMOccupation	AnimalScientists	19-1011	Animal Scientists		2470	104970	true
-https://graph.org.ai/STEMOccupation/Technologists	graph.org.ai	STEMOccupation	Technologists	19-1012	Food Scientists and Technologists		14370	123070	true
-https://graph.org.ai/STEMOccupation/PlantScientists	graph.org.ai	STEMOccupation	PlantScientists	19-1013	Soil and Plant Scientists		16600	83040	true
-https://graph.org.ai/STEMOccupation/Biophysicists	graph.org.ai	STEMOccupation	Biophysicists	19-1021	Biochemists and Biophysicists		34520	115570	true
-https://graph.org.ai/STEMOccupation/Microbiologists	graph.org.ai	STEMOccupation	Microbiologists	19-1022	Microbiologists		19760	95200	true
-https://graph.org.ai/STEMOccupation/WildlifeBiologists	graph.org.ai	STEMOccupation	WildlifeBiologists	19-1023	Zoologists and Wildlife Biologists		16920	77920	true
-https://graph.org.ai/STEMOccupation/Biologists	graph.org.ai	STEMOccupation	Biologists	19-1029	Biologists		59710	100440	true
-https://graph.org.ai/STEMOccupation/ParkNaturalists	graph.org.ai	STEMOccupation	ParkNaturalists	19-1031	Park Naturalists		25590	74310	true
-https://graph.org.ai/STEMOccupation/Foresters	graph.org.ai	STEMOccupation	Foresters	19-1032	Foresters		9650	74670	true
-https://graph.org.ai/STEMOccupation/Epidemiologists	graph.org.ai	STEMOccupation	Epidemiologists	19-1041	Epidemiologists		11460	112690	true
-https://graph.org.ai/STEMOccupation/LifeScientistsAllOther	graph.org.ai	STEMOccupation	LifeScientistsAllOther	19-1099	Life Scientists, All Other		7320	101940	true
-https://graph.org.ai/STEMOccupation/Astronomers	graph.org.ai	STEMOccupation	Astronomers	19-2011	Astronomers		1560	134430	true
-https://graph.org.ai/STEMOccupation/Physicists	graph.org.ai	STEMOccupation	Physicists	19-2012	Physicists		21340	166000	true
-https://graph.org.ai/STEMOccupation/SpaceScientists	graph.org.ai	STEMOccupation	SpaceScientists	19-2021	Atmospheric and Space Scientists		8780	103980	true
-https://graph.org.ai/STEMOccupation/Chemists	graph.org.ai	STEMOccupation	Chemists	19-2031	Chemists		83250	95940	true
-https://graph.org.ai/STEMOccupation/MaterialsScientists	graph.org.ai	STEMOccupation	MaterialsScientists	19-2032	Materials Scientists		8330	111410	true
-https://graph.org.ai/STEMOccupation/IndustrialEcologists	graph.org.ai	STEMOccupation	IndustrialEcologists	19-2041	Industrial Ecologists		84930	88640	true
-https://graph.org.ai/STEMOccupation/Geographers	graph.org.ai	STEMOccupation	Geographers	19-2042	Geoscientists, Except Hydrologists and Geographers		22510	98160	true
-https://graph.org.ai/STEMOccupation/Hydrologists	graph.org.ai	STEMOccupation	Hydrologists	19-2043	Hydrologists		5720	98130	true
-https://graph.org.ai/STEMOccupation/PrecisionAgricultureTechnicians	graph.org.ai	STEMOccupation	PrecisionAgricultureTechnicians	19-4012	Precision Agriculture Technicians		14340	49680	true
-https://graph.org.ai/STEMOccupation/FoodScienceTechnicians	graph.org.ai	STEMOccupation	FoodScienceTechnicians	19-4013	Food Science Technicians		14200	54400	true
-https://graph.org.ai/STEMOccupation/BiologicalTechnicians	graph.org.ai	STEMOccupation	BiologicalTechnicians	19-4021	Biological Technicians		76190	58020	true
-https://graph.org.ai/STEMOccupation/ChemicalTechnicians	graph.org.ai	STEMOccupation	ChemicalTechnicians	19-4031	Chemical Technicians		55640	61300	true
-https://graph.org.ai/STEMOccupation/Health	graph.org.ai	STEMOccupation	Health	19-4042	Environmental Science and Protection Technicians, Including Health		39390	56770	true
-https://graph.org.ai/STEMOccupation/HydrologicTechnicians	graph.org.ai	STEMOccupation	HydrologicTechnicians	19-4043	Geological Technicians, Except Hydrologic Technicians		9710	64410	true
-https://graph.org.ai/STEMOccupation/NuclearMonitoringTechnicians	graph.org.ai	STEMOccupation	NuclearMonitoringTechnicians	19-4051	Nuclear Monitoring Technicians		5990	100730	true
-https://graph.org.ai/STEMOccupation/ConservationTechnicians	graph.org.ai	STEMOccupation	ConservationTechnicians	19-4071	Forest and Conservation Technicians		31080	56660	true
-https://graph.org.ai/STEMOccupation/ForensicScienceTechnicians	graph.org.ai	STEMOccupation	ForensicScienceTechnicians	19-4092	Forensic Science Technicians		19450	75260	true
-https://graph.org.ai/STEMOccupation/RemoteSensingTechnicians	graph.org.ai	STEMOccupation	RemoteSensingTechnicians	19-4099	Remote Sensing Technicians		71400	64640	true
-https://graph.org.ai/STEMOccupation/ComputerScienceTeachersPostsecondary	graph.org.ai	STEMOccupation	ComputerScienceTeachersPostsecondary	25-1021	Computer Science Teachers, Postsecondary		36240	105830	true
-https://graph.org.ai/STEMOccupation/MathematicalScienceTeachersPostsecondary	graph.org.ai	STEMOccupation	MathematicalScienceTeachersPostsecondary	25-1022	Mathematical Science Teachers, Postsecondary		48820	92880	true
-https://graph.org.ai/STEMOccupation/ArchitectureTeachersPostsecondary	graph.org.ai	STEMOccupation	ArchitectureTeachersPostsecondary	25-1031	Architecture Teachers, Postsecondary		9120	110360	true
-https://graph.org.ai/STEMOccupation/EngineeringTeachersPostsecondary	graph.org.ai	STEMOccupation	EngineeringTeachersPostsecondary	25-1032	Engineering Teachers, Postsecondary		39910	119340	true
-https://graph.org.ai/STEMOccupation/AgriculturalSciencesTeachersPostsecondary	graph.org.ai	STEMOccupation	AgriculturalSciencesTeachersPostsecondary	25-1041	Agricultural Sciences Teachers, Postsecondary		8700	97790	true
-https://graph.org.ai/STEMOccupation/BiologicalScienceTeachersPostsecondary	graph.org.ai	STEMOccupation	BiologicalScienceTeachersPostsecondary	25-1042	Biological Science Teachers, Postsecondary		53250	101340	true
-https://graph.org.ai/STEMOccupation/ConservationScienceTeachersPostsecondary	graph.org.ai	STEMOccupation	ConservationScienceTeachersPostsecondary	25-1043	Forestry and Conservation Science Teachers, Postsecondary		1310	103780	true
-https://graph.org.ai/STEMOccupation/SpaceSciencesTeachersPostsecondary	graph.org.ai	STEMOccupation	SpaceSciencesTeachersPostsecondary	25-1051	Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary		11480	112950	true
-https://graph.org.ai/STEMOccupation/ChemistryTeachersPostsecondary	graph.org.ai	STEMOccupation	ChemistryTeachersPostsecondary	25-1052	Chemistry Teachers, Postsecondary		20390	103030	true
-https://graph.org.ai/STEMOccupation/EnvironmentalScienceTeachersPostsecondary	graph.org.ai	STEMOccupation	EnvironmentalScienceTeachersPostsecondary	25-1053	Environmental Science Teachers, Postsecondary		7130	100360	true
-https://graph.org.ai/STEMOccupation/PhysicsTeachersPostsecondary	graph.org.ai	STEMOccupation	PhysicsTeachersPostsecondary	25-1054	Physics Teachers, Postsecondary		13590	105460	true
-https://graph.org.ai/STEMOccupation/Assessors	graph.org.ai	STEMOccupation	Assessors	41-4011	Solar Sales Representatives and Assessors		293930	114520	true
-https://graph.org.ai/STEMOccupation/SalesEngineers	graph.org.ai	STEMOccupation	SalesEngineers	41-9031	Sales Engineers		56690	130410	true
+https://onet.org.ai/STEMOccupation/InformationSystemsManagers	onet.org.ai	STEMOccupation	InformationSystemsManagers	11-3021	Computer and Information Systems Managers		645970	187990	true
+https://onet.org.ai/STEMOccupation/ProductDevelopmentManagers	onet.org.ai	STEMOccupation	ProductDevelopmentManagers	11-9041	Biofuels/Biodiesel Technology and Product Development Managers		210340	175710	true
+https://onet.org.ai/STEMOccupation/WaterResourceSpecialists	onet.org.ai	STEMOccupation	WaterResourceSpecialists	11-9121	Water Resource Specialists		100870	173500	true
+https://onet.org.ai/STEMOccupation/HealthInformaticsSpecialists	onet.org.ai	STEMOccupation	HealthInformaticsSpecialists	15-1211	Health Informatics Specialists		497800	111960	true
+https://onet.org.ai/STEMOccupation/InformationSecurityAnalysts	onet.org.ai	STEMOccupation	InformationSecurityAnalysts	15-1212	Information Security Analysts		179430	127730	true
+https://onet.org.ai/STEMOccupation/InformationResearchScientists	onet.org.ai	STEMOccupation	InformationResearchScientists	15-1221	Computer and Information Research Scientists		38480	152310	true
+https://onet.org.ai/STEMOccupation/ComputerNetworkSupportSpecialists	onet.org.ai	STEMOccupation	ComputerNetworkSupportSpecialists	15-1231	Computer Network Support Specialists		146450	79610	true
+https://onet.org.ai/STEMOccupation/ComputerUserSupportSpecialists	onet.org.ai	STEMOccupation	ComputerUserSupportSpecialists	15-1232	Computer User Support Specialists		697210	64990	true
+https://onet.org.ai/STEMOccupation/TelecommunicationsEngineeringSpecialists	onet.org.ai	STEMOccupation	TelecommunicationsEngineeringSpecialists	15-1241	Telecommunications Engineering Specialists		177010	135890	true
+https://onet.org.ai/STEMOccupation/DatabaseAdministrators	onet.org.ai	STEMOccupation	DatabaseAdministrators	15-1242	Database Administrators		73180	107440	true
+https://onet.org.ai/STEMOccupation/DataWarehousingSpecialists	onet.org.ai	STEMOccupation	DataWarehousingSpecialists	15-1243	Data Warehousing Specialists		64770	142620	true
+https://onet.org.ai/STEMOccupation/ComputerSystemsAdministrators	onet.org.ai	STEMOccupation	ComputerSystemsAdministrators	15-1244	Network and Computer Systems Administrators		318570	101190	true
+https://onet.org.ai/STEMOccupation/ComputerProgrammers	onet.org.ai	STEMOccupation	ComputerProgrammers	15-1251	Computer Programmers		109870	103640	true
+https://onet.org.ai/STEMOccupation/SoftwareDevelopers	onet.org.ai	STEMOccupation	SoftwareDevelopers	15-1252	Software Developers		1654440	144570	true
+https://onet.org.ai/STEMOccupation/Testers	onet.org.ai	STEMOccupation	Testers	15-1253	Software Quality Assurance Analysts and Testers		199800	110260	true
+https://onet.org.ai/STEMOccupation/WebDevelopers	onet.org.ai	STEMOccupation	WebDevelopers	15-1254	Web Developers		78860	98790	true
+https://onet.org.ai/STEMOccupation/VideoGameDesigners	onet.org.ai	STEMOccupation	VideoGameDesigners	15-1255	Video Game Designers		111400	111450	true
+https://onet.org.ai/STEMOccupation/InformationTechnologyProjectManagers	onet.org.ai	STEMOccupation	InformationTechnologyProjectManagers	15-1299	Information Technology Project Managers		439380	116700	true
+https://onet.org.ai/STEMOccupation/Actuaries	onet.org.ai	STEMOccupation	Actuaries	15-2011	Actuaries		28340	134990	true
+https://onet.org.ai/STEMOccupation/Mathematicians	onet.org.ai	STEMOccupation	Mathematicians	15-2021	Mathematicians		2220	122520	true
+https://onet.org.ai/STEMOccupation/OperationsResearchAnalysts	onet.org.ai	STEMOccupation	OperationsResearchAnalysts	15-2031	Operations Research Analysts		107760	99120	true
+https://onet.org.ai/STEMOccupation/Biostatisticians	onet.org.ai	STEMOccupation	Biostatisticians	15-2041	Biostatisticians		29800	112330	true
+https://onet.org.ai/STEMOccupation/ClinicalDataManagers	onet.org.ai	STEMOccupation	ClinicalDataManagers	15-2051	Clinical Data Managers		233440	124590	true
+https://onet.org.ai/STEMOccupation/BioinformaticsTechnicians	onet.org.ai	STEMOccupation	BioinformaticsTechnicians	15-2099	Bioinformatics Technicians		4660	84700	true
+https://onet.org.ai/STEMOccupation/Naval	onet.org.ai	STEMOccupation	Naval	17-1011	Architects, Except Landscape and Naval		111140	103390	true
+https://onet.org.ai/STEMOccupation/LandscapeArchitects	onet.org.ai	STEMOccupation	LandscapeArchitects	17-1012	Landscape Architects		19580	88000	true
+https://onet.org.ai/STEMOccupation/Photogrammetrists	onet.org.ai	STEMOccupation	Photogrammetrists	17-1021	Cartographers and Photogrammetrists		12790	82860	true
+https://onet.org.ai/STEMOccupation/GeodeticSurveyors	onet.org.ai	STEMOccupation	GeodeticSurveyors	17-1022	Geodetic Surveyors		53080	76730	true
+https://onet.org.ai/STEMOccupation/AerospaceEngineers	onet.org.ai	STEMOccupation	AerospaceEngineers	17-2011	Aerospace Engineers		68440	141180	true
+https://onet.org.ai/STEMOccupation/AgriculturalEngineers	onet.org.ai	STEMOccupation	AgriculturalEngineers	17-2021	Agricultural Engineers		1680	84240	true
+https://onet.org.ai/STEMOccupation/BiomedicalEngineers	onet.org.ai	STEMOccupation	BiomedicalEngineers	17-2031	Bioengineers and Biomedical Engineers		21860	115020	true
+https://onet.org.ai/STEMOccupation/ChemicalEngineers	onet.org.ai	STEMOccupation	ChemicalEngineers	17-2041	Chemical Engineers		20330	128430	true
+https://onet.org.ai/STEMOccupation/WaterWastewaterEngineers	onet.org.ai	STEMOccupation	WaterWastewaterEngineers	17-2051	Water/Wastewater Engineers		355410	107050	true
+https://onet.org.ai/STEMOccupation/ComputerHardwareEngineers	onet.org.ai	STEMOccupation	ComputerHardwareEngineers	17-2061	Computer Hardware Engineers		75710	156770	true
+https://onet.org.ai/STEMOccupation/ElectricalEngineers	onet.org.ai	STEMOccupation	ElectricalEngineers	17-2071	Electrical Engineers		188790	120980	true
+https://onet.org.ai/STEMOccupation/RadioFrequencyIdentificationDeviceSpecialists	onet.org.ai	STEMOccupation	RadioFrequencyIdentificationDeviceSpecialists	17-2072	Radio Frequency Identification Device Specialists		93940	132500	true
+https://onet.org.ai/STEMOccupation/EnvironmentalEngineers	onet.org.ai	STEMOccupation	EnvironmentalEngineers	17-2081	Environmental Engineers		37950	110570	true
+https://onet.org.ai/STEMOccupation/ProtectionEngineers	onet.org.ai	STEMOccupation	ProtectionEngineers	17-2111	Fire-Prevention and Protection Engineers		23220	113770	true
+https://onet.org.ai/STEMOccupation/ManufacturingEngineers	onet.org.ai	STEMOccupation	ManufacturingEngineers	17-2112	Manufacturing Engineers		350230	107900	true
+https://onet.org.ai/STEMOccupation/NavalArchitects	onet.org.ai	STEMOccupation	NavalArchitects	17-2121	Marine Engineers and Naval Architects		8440	116680	true
+https://onet.org.ai/STEMOccupation/MaterialsEngineers	onet.org.ai	STEMOccupation	MaterialsEngineers	17-2131	Materials Engineers		22770	116380	true
+https://onet.org.ai/STEMOccupation/AutomotiveEngineers	onet.org.ai	STEMOccupation	AutomotiveEngineers	17-2141	Automotive Engineers		286760	110080	true
+https://onet.org.ai/STEMOccupation/MiningSafetyEngineers	onet.org.ai	STEMOccupation	MiningSafetyEngineers	17-2151	Mining and Geological Engineers, Including Mining Safety Engineers		6770	108940	true
+https://onet.org.ai/STEMOccupation/NuclearEngineers	onet.org.ai	STEMOccupation	NuclearEngineers	17-2161	Nuclear Engineers		14740	134980	true
+https://onet.org.ai/STEMOccupation/PetroleumEngineers	onet.org.ai	STEMOccupation	PetroleumEngineers	17-2171	Petroleum Engineers		18970	153560	true
+https://onet.org.ai/STEMOccupation/SolarEnergySystemsEngineers	onet.org.ai	STEMOccupation	SolarEnergySystemsEngineers	17-2199	Solar Energy Systems Engineers		150750	121720	true
+https://onet.org.ai/STEMOccupation/CivilDrafters	onet.org.ai	STEMOccupation	CivilDrafters	17-3011	Architectural and Civil Drafters		109550	68860	true
+https://onet.org.ai/STEMOccupation/ElectronicsDrafters	onet.org.ai	STEMOccupation	ElectronicsDrafters	17-3012	Electrical and Electronics Drafters		20020	77960	true
+https://onet.org.ai/STEMOccupation/MechanicalDrafters	onet.org.ai	STEMOccupation	MechanicalDrafters	17-3013	Mechanical Drafters		39900	74040	true
+https://onet.org.ai/STEMOccupation/DraftersAllOther	onet.org.ai	STEMOccupation	DraftersAllOther	17-3019	Drafters, All Other		16010	66530	true
+https://onet.org.ai/STEMOccupation/Technicians	onet.org.ai	STEMOccupation	Technicians	17-3021	Aerospace Engineering and Operations Technologists and Technicians		9060	69940	true
+https://onet.org.ai/STEMOccupation/RoboticsTechnicians	onet.org.ai	STEMOccupation	RoboticsTechnicians	17-3024	Robotics Technicians		14680	75710	true
+https://onet.org.ai/STEMOccupation/AutomotiveEngineeringTechnicians	onet.org.ai	STEMOccupation	AutomotiveEngineeringTechnicians	17-3027	Automotive Engineering Technicians		37450	72450	true
+https://onet.org.ai/STEMOccupation/PhotonicsTechnicians	onet.org.ai	STEMOccupation	PhotonicsTechnicians	17-3029	Photonics Technicians		64410	79740	true
+https://onet.org.ai/STEMOccupation/MappingTechnicians	onet.org.ai	STEMOccupation	MappingTechnicians	17-3031	Surveying and Mapping Technicians		56720	56890	true
+https://onet.org.ai/STEMOccupation/AnimalScientists	onet.org.ai	STEMOccupation	AnimalScientists	19-1011	Animal Scientists		2470	104970	true
+https://onet.org.ai/STEMOccupation/Technologists	onet.org.ai	STEMOccupation	Technologists	19-1012	Food Scientists and Technologists		14370	123070	true
+https://onet.org.ai/STEMOccupation/PlantScientists	onet.org.ai	STEMOccupation	PlantScientists	19-1013	Soil and Plant Scientists		16600	83040	true
+https://onet.org.ai/STEMOccupation/Biophysicists	onet.org.ai	STEMOccupation	Biophysicists	19-1021	Biochemists and Biophysicists		34520	115570	true
+https://onet.org.ai/STEMOccupation/Microbiologists	onet.org.ai	STEMOccupation	Microbiologists	19-1022	Microbiologists		19760	95200	true
+https://onet.org.ai/STEMOccupation/WildlifeBiologists	onet.org.ai	STEMOccupation	WildlifeBiologists	19-1023	Zoologists and Wildlife Biologists		16920	77920	true
+https://onet.org.ai/STEMOccupation/Biologists	onet.org.ai	STEMOccupation	Biologists	19-1029	Biologists		59710	100440	true
+https://onet.org.ai/STEMOccupation/ParkNaturalists	onet.org.ai	STEMOccupation	ParkNaturalists	19-1031	Park Naturalists		25590	74310	true
+https://onet.org.ai/STEMOccupation/Foresters	onet.org.ai	STEMOccupation	Foresters	19-1032	Foresters		9650	74670	true
+https://onet.org.ai/STEMOccupation/Epidemiologists	onet.org.ai	STEMOccupation	Epidemiologists	19-1041	Epidemiologists		11460	112690	true
+https://onet.org.ai/STEMOccupation/LifeScientistsAllOther	onet.org.ai	STEMOccupation	LifeScientistsAllOther	19-1099	Life Scientists, All Other		7320	101940	true
+https://onet.org.ai/STEMOccupation/Astronomers	onet.org.ai	STEMOccupation	Astronomers	19-2011	Astronomers		1560	134430	true
+https://onet.org.ai/STEMOccupation/Physicists	onet.org.ai	STEMOccupation	Physicists	19-2012	Physicists		21340	166000	true
+https://onet.org.ai/STEMOccupation/SpaceScientists	onet.org.ai	STEMOccupation	SpaceScientists	19-2021	Atmospheric and Space Scientists		8780	103980	true
+https://onet.org.ai/STEMOccupation/Chemists	onet.org.ai	STEMOccupation	Chemists	19-2031	Chemists		83250	95940	true
+https://onet.org.ai/STEMOccupation/MaterialsScientists	onet.org.ai	STEMOccupation	MaterialsScientists	19-2032	Materials Scientists		8330	111410	true
+https://onet.org.ai/STEMOccupation/IndustrialEcologists	onet.org.ai	STEMOccupation	IndustrialEcologists	19-2041	Industrial Ecologists		84930	88640	true
+https://onet.org.ai/STEMOccupation/Geographers	onet.org.ai	STEMOccupation	Geographers	19-2042	Geoscientists, Except Hydrologists and Geographers		22510	98160	true
+https://onet.org.ai/STEMOccupation/Hydrologists	onet.org.ai	STEMOccupation	Hydrologists	19-2043	Hydrologists		5720	98130	true
+https://onet.org.ai/STEMOccupation/PrecisionAgricultureTechnicians	onet.org.ai	STEMOccupation	PrecisionAgricultureTechnicians	19-4012	Precision Agriculture Technicians		14340	49680	true
+https://onet.org.ai/STEMOccupation/FoodScienceTechnicians	onet.org.ai	STEMOccupation	FoodScienceTechnicians	19-4013	Food Science Technicians		14200	54400	true
+https://onet.org.ai/STEMOccupation/BiologicalTechnicians	onet.org.ai	STEMOccupation	BiologicalTechnicians	19-4021	Biological Technicians		76190	58020	true
+https://onet.org.ai/STEMOccupation/ChemicalTechnicians	onet.org.ai	STEMOccupation	ChemicalTechnicians	19-4031	Chemical Technicians		55640	61300	true
+https://onet.org.ai/STEMOccupation/Health	onet.org.ai	STEMOccupation	Health	19-4042	Environmental Science and Protection Technicians, Including Health		39390	56770	true
+https://onet.org.ai/STEMOccupation/HydrologicTechnicians	onet.org.ai	STEMOccupation	HydrologicTechnicians	19-4043	Geological Technicians, Except Hydrologic Technicians		9710	64410	true
+https://onet.org.ai/STEMOccupation/NuclearMonitoringTechnicians	onet.org.ai	STEMOccupation	NuclearMonitoringTechnicians	19-4051	Nuclear Monitoring Technicians		5990	100730	true
+https://onet.org.ai/STEMOccupation/ConservationTechnicians	onet.org.ai	STEMOccupation	ConservationTechnicians	19-4071	Forest and Conservation Technicians		31080	56660	true
+https://onet.org.ai/STEMOccupation/ForensicScienceTechnicians	onet.org.ai	STEMOccupation	ForensicScienceTechnicians	19-4092	Forensic Science Technicians		19450	75260	true
+https://onet.org.ai/STEMOccupation/RemoteSensingTechnicians	onet.org.ai	STEMOccupation	RemoteSensingTechnicians	19-4099	Remote Sensing Technicians		71400	64640	true
+https://onet.org.ai/STEMOccupation/ComputerScienceTeachersPostsecondary	onet.org.ai	STEMOccupation	ComputerScienceTeachersPostsecondary	25-1021	Computer Science Teachers, Postsecondary		36240	105830	true
+https://onet.org.ai/STEMOccupation/MathematicalScienceTeachersPostsecondary	onet.org.ai	STEMOccupation	MathematicalScienceTeachersPostsecondary	25-1022	Mathematical Science Teachers, Postsecondary		48820	92880	true
+https://onet.org.ai/STEMOccupation/ArchitectureTeachersPostsecondary	onet.org.ai	STEMOccupation	ArchitectureTeachersPostsecondary	25-1031	Architecture Teachers, Postsecondary		9120	110360	true
+https://onet.org.ai/STEMOccupation/EngineeringTeachersPostsecondary	onet.org.ai	STEMOccupation	EngineeringTeachersPostsecondary	25-1032	Engineering Teachers, Postsecondary		39910	119340	true
+https://onet.org.ai/STEMOccupation/AgriculturalSciencesTeachersPostsecondary	onet.org.ai	STEMOccupation	AgriculturalSciencesTeachersPostsecondary	25-1041	Agricultural Sciences Teachers, Postsecondary		8700	97790	true
+https://onet.org.ai/STEMOccupation/BiologicalScienceTeachersPostsecondary	onet.org.ai	STEMOccupation	BiologicalScienceTeachersPostsecondary	25-1042	Biological Science Teachers, Postsecondary		53250	101340	true
+https://onet.org.ai/STEMOccupation/ConservationScienceTeachersPostsecondary	onet.org.ai	STEMOccupation	ConservationScienceTeachersPostsecondary	25-1043	Forestry and Conservation Science Teachers, Postsecondary		1310	103780	true
+https://onet.org.ai/STEMOccupation/SpaceSciencesTeachersPostsecondary	onet.org.ai	STEMOccupation	SpaceSciencesTeachersPostsecondary	25-1051	Atmospheric, Earth, Marine, and Space Sciences Teachers, Postsecondary		11480	112950	true
+https://onet.org.ai/STEMOccupation/ChemistryTeachersPostsecondary	onet.org.ai	STEMOccupation	ChemistryTeachersPostsecondary	25-1052	Chemistry Teachers, Postsecondary		20390	103030	true
+https://onet.org.ai/STEMOccupation/EnvironmentalScienceTeachersPostsecondary	onet.org.ai	STEMOccupation	EnvironmentalScienceTeachersPostsecondary	25-1053	Environmental Science Teachers, Postsecondary		7130	100360	true
+https://onet.org.ai/STEMOccupation/PhysicsTeachersPostsecondary	onet.org.ai	STEMOccupation	PhysicsTeachersPostsecondary	25-1054	Physics Teachers, Postsecondary		13590	105460	true
+https://onet.org.ai/STEMOccupation/Assessors	onet.org.ai	STEMOccupation	Assessors	41-4011	Solar Sales Representatives and Assessors		293930	114520	true
+https://onet.org.ai/STEMOccupation/SalesEngineers	onet.org.ai	STEMOccupation	SalesEngineers	41-9031	Sales Engineers		56690	130410	true

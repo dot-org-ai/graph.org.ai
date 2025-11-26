@@ -1,54 +1,54 @@
 url	ns	type	id	code	name	description	usage	category
-https://graph.org.ai/Preposition/About	graph.org.ai	Preposition	About	about	About	concerning; on the subject of	about the meeting	Location/Topic
-https://graph.org.ai/Preposition/Above	graph.org.ai	Preposition	Above	above	Above	in or to a higher position than	above the desk	Location/Position
-https://graph.org.ai/Preposition/Across	graph.org.ai	Preposition	Across	across	Across	from one side to the other of	across the street	Location/Movement
-https://graph.org.ai/Preposition/After	graph.org.ai	Preposition	After	after	After	following in time or order	after the meeting	Time
-https://graph.org.ai/Preposition/Against	graph.org.ai	Preposition	Against	against	Against	in opposition to	against the wall	Position/Opposition
-https://graph.org.ai/Preposition/Along	graph.org.ai	Preposition	Along	along	Along	moving in a constant direction on	along the path	Location/Movement
-https://graph.org.ai/Preposition/Among	graph.org.ai	Preposition	Among	among	Among	surrounded by; in the company of	among friends	Location/Group
-https://graph.org.ai/Preposition/Around	graph.org.ai	Preposition	Around	around	Around	on every side of	around the building	Location/Position
-https://graph.org.ai/Preposition/At	graph.org.ai	Preposition	At	at	At	expressing location or arrival	at the office	Location/Time
-https://graph.org.ai/Preposition/Before	graph.org.ai	Preposition	Before	before	Before	earlier than; in front of	before noon	Time/Position
-https://graph.org.ai/Preposition/Behind	graph.org.ai	Preposition	Behind	behind	Behind	at or to the back of	behind the desk	Location/Position
-https://graph.org.ai/Preposition/Below	graph.org.ai	Preposition	Below	below	Below	at a lower level than	below the surface	Location/Position
-https://graph.org.ai/Preposition/Beneath	graph.org.ai	Preposition	Beneath	beneath	Beneath	in or to a position under	beneath the table	Location/Position
-https://graph.org.ai/Preposition/Beside	graph.org.ai	Preposition	Beside	beside	Beside	at the side of; next to	beside the window	Location/Position
-https://graph.org.ai/Preposition/Between	graph.org.ai	Preposition	Between	between	Between	in the space separating two things	between meetings	Location/Position
-https://graph.org.ai/Preposition/Beyond	graph.org.ai	Preposition	Beyond	beyond	Beyond	at or to the further side of	beyond expectations	Location/Abstract
-https://graph.org.ai/Preposition/By	graph.org.ai	Preposition	By	by	By	indicating the agent; near	by the manager	Agent/Location
-https://graph.org.ai/Preposition/Concerning	graph.org.ai	Preposition	Concerning	concerning	Concerning	about; regarding	concerning the issue	Topic
-https://graph.org.ai/Preposition/Despite	graph.org.ai	Preposition	Despite	despite	Despite	without being affected by	despite challenges	Concession
-https://graph.org.ai/Preposition/Down	graph.org.ai	Preposition	Down	down	Down	moving to a lower position	down the stairs	Movement/Direction
-https://graph.org.ai/Preposition/During	graph.org.ai	Preposition	During	during	During	throughout the course of	during the meeting	Time
-https://graph.org.ai/Preposition/Except	graph.org.ai	Preposition	Except	except	Except	not including; other than	except Monday	Exclusion
-https://graph.org.ai/Preposition/For	graph.org.ai	Preposition	For	for	For	indicating purpose or recipient	for the customer	Purpose/Recipient
-https://graph.org.ai/Preposition/From	graph.org.ai	Preposition	From	from	From	indicating origin or source	from headquarters	Origin/Source
-https://graph.org.ai/Preposition/In	graph.org.ai	Preposition	In	in	In	expressing location or position within	in the office	Location/Time
-https://graph.org.ai/Preposition/Inside	graph.org.ai	Preposition	Inside	inside	Inside	situated within	inside the building	Location/Position
-https://graph.org.ai/Preposition/Into	graph.org.ai	Preposition	Into	into	Into	expressing movement to a location	into the office	Movement/Direction
-https://graph.org.ai/Preposition/Near	graph.org.ai	Preposition	Near	near	Near	at or to a short distance from	near the entrance	Location/Position
-https://graph.org.ai/Preposition/Of	graph.org.ai	Preposition	Of	of	Of	expressing relationship or belonging	of the company	Relationship/Possession
-https://graph.org.ai/Preposition/Off	graph.org.ai	Preposition	Off	off	Off	moving away from	off the desk	Movement/Separation
-https://graph.org.ai/Preposition/On	graph.org.ai	Preposition	On	on	On	physically touching and supported by	on the desk	Location/Contact
-https://graph.org.ai/Preposition/Onto	graph.org.ai	Preposition	Onto	onto	Onto	moving to a location on a surface	onto the platform	Movement/Direction
-https://graph.org.ai/Preposition/Out	graph.org.ai	Preposition	Out	out	Out	moving away from the inside	out of the office	Movement/Direction
-https://graph.org.ai/Preposition/Outside	graph.org.ai	Preposition	Outside	outside	Outside	situated on the exterior of	outside the building	Location/Position
-https://graph.org.ai/Preposition/Over	graph.org.ai	Preposition	Over	over	Over	extending above	over the budget	Location/Position
-https://graph.org.ai/Preposition/Past	graph.org.ai	Preposition	Past	past	Past	moving beyond	past the deadline	Movement/Time
-https://graph.org.ai/Preposition/Regarding	graph.org.ai	Preposition	Regarding	regarding	Regarding	concerning; about	regarding the project	Topic
-https://graph.org.ai/Preposition/Round	graph.org.ai	Preposition	Round	round	Round	on all sides of; around	round the table	Location/Position
-https://graph.org.ai/Preposition/Through	graph.org.ai	Preposition	Through	through	Through	moving in one side and out the other	through the process	Movement/Method
-https://graph.org.ai/Preposition/Throughout	graph.org.ai	Preposition	Throughout	throughout	Throughout	all the way through	throughout the year	Location/Time
-https://graph.org.ai/Preposition/To	graph.org.ai	Preposition	To	to	To	expressing direction or recipient	to the customer	Direction/Recipient
-https://graph.org.ai/Preposition/Toward	graph.org.ai	Preposition	Toward	toward	Toward	in the direction of	toward the goal	Direction
-https://graph.org.ai/Preposition/Towards	graph.org.ai	Preposition	Towards	towards	Towards	in the direction of	towards the goal	Direction
-https://graph.org.ai/Preposition/Under	graph.org.ai	Preposition	Under	under	Under	extending below	under budget	Location/Position
-https://graph.org.ai/Preposition/Underneath	graph.org.ai	Preposition	Underneath	underneath	Underneath	situated directly below	underneath the table	Location/Position
-https://graph.org.ai/Preposition/Until	graph.org.ai	Preposition	Until	until	Until	up to the point in time	until Friday	Time
-https://graph.org.ai/Preposition/Unto	graph.org.ai	Preposition	Unto	unto	Unto	to; until	unto completion	Direction/Time
-https://graph.org.ai/Preposition/Up	graph.org.ai	Preposition	Up	up	Up	toward a higher position	up the stairs	Movement/Direction
-https://graph.org.ai/Preposition/Upon	graph.org.ai	Preposition	Upon	upon	Upon	on; on top of	upon approval	Location/Condition
-https://graph.org.ai/Preposition/Via	graph.org.ai	Preposition	Via	via	Via	by way of; through	via email	Method/Route
-https://graph.org.ai/Preposition/With	graph.org.ai	Preposition	With	with	With	accompanied by; using	with the team	Association/Instrument
-https://graph.org.ai/Preposition/Within	graph.org.ai	Preposition	Within	within	Within	inside; not beyond	within the budget	Location/Limits
-https://graph.org.ai/Preposition/Without	graph.org.ai	Preposition	Without	without	Without	in the absence of	without approval	Absence/Lack
+https://language.org.ai/Preposition/About	language.org.ai	Preposition	About	about	About	concerning; on the subject of	about the meeting	Location/Topic
+https://language.org.ai/Preposition/Above	language.org.ai	Preposition	Above	above	Above	in or to a higher position than	above the desk	Location/Position
+https://language.org.ai/Preposition/Across	language.org.ai	Preposition	Across	across	Across	from one side to the other of	across the street	Location/Movement
+https://language.org.ai/Preposition/After	language.org.ai	Preposition	After	after	After	following in time or order	after the meeting	Time
+https://language.org.ai/Preposition/Against	language.org.ai	Preposition	Against	against	Against	in opposition to	against the wall	Position/Opposition
+https://language.org.ai/Preposition/Along	language.org.ai	Preposition	Along	along	Along	moving in a constant direction on	along the path	Location/Movement
+https://language.org.ai/Preposition/Among	language.org.ai	Preposition	Among	among	Among	surrounded by; in the company of	among friends	Location/Group
+https://language.org.ai/Preposition/Around	language.org.ai	Preposition	Around	around	Around	on every side of	around the building	Location/Position
+https://language.org.ai/Preposition/At	language.org.ai	Preposition	At	at	At	expressing location or arrival	at the office	Location/Time
+https://language.org.ai/Preposition/Before	language.org.ai	Preposition	Before	before	Before	earlier than; in front of	before noon	Time/Position
+https://language.org.ai/Preposition/Behind	language.org.ai	Preposition	Behind	behind	Behind	at or to the back of	behind the desk	Location/Position
+https://language.org.ai/Preposition/Below	language.org.ai	Preposition	Below	below	Below	at a lower level than	below the surface	Location/Position
+https://language.org.ai/Preposition/Beneath	language.org.ai	Preposition	Beneath	beneath	Beneath	in or to a position under	beneath the table	Location/Position
+https://language.org.ai/Preposition/Beside	language.org.ai	Preposition	Beside	beside	Beside	at the side of; next to	beside the window	Location/Position
+https://language.org.ai/Preposition/Between	language.org.ai	Preposition	Between	between	Between	in the space separating two things	between meetings	Location/Position
+https://language.org.ai/Preposition/Beyond	language.org.ai	Preposition	Beyond	beyond	Beyond	at or to the further side of	beyond expectations	Location/Abstract
+https://language.org.ai/Preposition/By	language.org.ai	Preposition	By	by	By	indicating the agent; near	by the manager	Agent/Location
+https://language.org.ai/Preposition/Concerning	language.org.ai	Preposition	Concerning	concerning	Concerning	about; regarding	concerning the issue	Topic
+https://language.org.ai/Preposition/Despite	language.org.ai	Preposition	Despite	despite	Despite	without being affected by	despite challenges	Concession
+https://language.org.ai/Preposition/Down	language.org.ai	Preposition	Down	down	Down	moving to a lower position	down the stairs	Movement/Direction
+https://language.org.ai/Preposition/During	language.org.ai	Preposition	During	during	During	throughout the course of	during the meeting	Time
+https://language.org.ai/Preposition/Except	language.org.ai	Preposition	Except	except	Except	not including; other than	except Monday	Exclusion
+https://language.org.ai/Preposition/For	language.org.ai	Preposition	For	for	For	indicating purpose or recipient	for the customer	Purpose/Recipient
+https://language.org.ai/Preposition/From	language.org.ai	Preposition	From	from	From	indicating origin or source	from headquarters	Origin/Source
+https://language.org.ai/Preposition/In	language.org.ai	Preposition	In	in	In	expressing location or position within	in the office	Location/Time
+https://language.org.ai/Preposition/Inside	language.org.ai	Preposition	Inside	inside	Inside	situated within	inside the building	Location/Position
+https://language.org.ai/Preposition/Into	language.org.ai	Preposition	Into	into	Into	expressing movement to a location	into the office	Movement/Direction
+https://language.org.ai/Preposition/Near	language.org.ai	Preposition	Near	near	Near	at or to a short distance from	near the entrance	Location/Position
+https://language.org.ai/Preposition/Of	language.org.ai	Preposition	Of	of	Of	expressing relationship or belonging	of the company	Relationship/Possession
+https://language.org.ai/Preposition/Off	language.org.ai	Preposition	Off	off	Off	moving away from	off the desk	Movement/Separation
+https://language.org.ai/Preposition/On	language.org.ai	Preposition	On	on	On	physically touching and supported by	on the desk	Location/Contact
+https://language.org.ai/Preposition/Onto	language.org.ai	Preposition	Onto	onto	Onto	moving to a location on a surface	onto the platform	Movement/Direction
+https://language.org.ai/Preposition/Out	language.org.ai	Preposition	Out	out	Out	moving away from the inside	out of the office	Movement/Direction
+https://language.org.ai/Preposition/Outside	language.org.ai	Preposition	Outside	outside	Outside	situated on the exterior of	outside the building	Location/Position
+https://language.org.ai/Preposition/Over	language.org.ai	Preposition	Over	over	Over	extending above	over the budget	Location/Position
+https://language.org.ai/Preposition/Past	language.org.ai	Preposition	Past	past	Past	moving beyond	past the deadline	Movement/Time
+https://language.org.ai/Preposition/Regarding	language.org.ai	Preposition	Regarding	regarding	Regarding	concerning; about	regarding the project	Topic
+https://language.org.ai/Preposition/Round	language.org.ai	Preposition	Round	round	Round	on all sides of; around	round the table	Location/Position
+https://language.org.ai/Preposition/Through	language.org.ai	Preposition	Through	through	Through	moving in one side and out the other	through the process	Movement/Method
+https://language.org.ai/Preposition/Throughout	language.org.ai	Preposition	Throughout	throughout	Throughout	all the way through	throughout the year	Location/Time
+https://language.org.ai/Preposition/To	language.org.ai	Preposition	To	to	To	expressing direction or recipient	to the customer	Direction/Recipient
+https://language.org.ai/Preposition/Toward	language.org.ai	Preposition	Toward	toward	Toward	in the direction of	toward the goal	Direction
+https://language.org.ai/Preposition/Towards	language.org.ai	Preposition	Towards	towards	Towards	in the direction of	towards the goal	Direction
+https://language.org.ai/Preposition/Under	language.org.ai	Preposition	Under	under	Under	extending below	under budget	Location/Position
+https://language.org.ai/Preposition/Underneath	language.org.ai	Preposition	Underneath	underneath	Underneath	situated directly below	underneath the table	Location/Position
+https://language.org.ai/Preposition/Until	language.org.ai	Preposition	Until	until	Until	up to the point in time	until Friday	Time
+https://language.org.ai/Preposition/Unto	language.org.ai	Preposition	Unto	unto	Unto	to; until	unto completion	Direction/Time
+https://language.org.ai/Preposition/Up	language.org.ai	Preposition	Up	up	Up	toward a higher position	up the stairs	Movement/Direction
+https://language.org.ai/Preposition/Upon	language.org.ai	Preposition	Upon	upon	Upon	on; on top of	upon approval	Location/Condition
+https://language.org.ai/Preposition/Via	language.org.ai	Preposition	Via	via	Via	by way of; through	via email	Method/Route
+https://language.org.ai/Preposition/With	language.org.ai	Preposition	With	with	With	accompanied by; using	with the team	Association/Instrument
+https://language.org.ai/Preposition/Within	language.org.ai	Preposition	Within	within	Within	inside; not beyond	within the budget	Location/Limits
+https://language.org.ai/Preposition/Without	language.org.ai	Preposition	Without	without	Without	in the absence of	without approval	Absence/Lack

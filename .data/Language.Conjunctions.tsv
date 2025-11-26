@@ -1,32 +1,32 @@
 url	ns	type	id	code	name	description	category	usage
-https://graph.org.ai/Conjunction/And	graph.org.ai	Conjunction	And	and	And	connects words, phrases, or clauses	Coordinating	coffee and tea
-https://graph.org.ai/Conjunction/But	graph.org.ai	Conjunction	But	but	But	introduces a contrast or exception	Coordinating	small but powerful
-https://graph.org.ai/Conjunction/Or	graph.org.ai	Conjunction	Or	or	Or	presents alternatives	Coordinating	yes or no
-https://graph.org.ai/Conjunction/Nor	graph.org.ai	Conjunction	Nor	nor	Nor	negative alternative	Coordinating	neither this nor that
-https://graph.org.ai/Conjunction/For	graph.org.ai	Conjunction	For	for	For	indicates reason or purpose	Coordinating	worked hard, for success
-https://graph.org.ai/Conjunction/So	graph.org.ai	Conjunction	So	so	So	indicates result or consequence	Coordinating	tired, so rested
-https://graph.org.ai/Conjunction/Yet	graph.org.ai	Conjunction	Yet	yet	Yet	introduces a contrasting idea	Coordinating	small yet mighty
-https://graph.org.ai/Conjunction/After	graph.org.ai	Conjunction	After	after	After	follows in time	Subordinating	after completion
-https://graph.org.ai/Conjunction/Although	graph.org.ai	Conjunction	Although	although	Although	despite the fact that	Subordinating	although difficult
-https://graph.org.ai/Conjunction/As	graph.org.ai	Conjunction	As	as	As	at the same time; because	Subordinating	as requested
-https://graph.org.ai/Conjunction/Because	graph.org.ai	Conjunction	Because	because	Because	for the reason that	Subordinating	because necessary
-https://graph.org.ai/Conjunction/Before	graph.org.ai	Conjunction	Before	before	Before	earlier than	Subordinating	before starting
-https://graph.org.ai/Conjunction/If	graph.org.ai	Conjunction	If	if	If	on the condition that	Subordinating	if approved
-https://graph.org.ai/Conjunction/Once	graph.org.ai	Conjunction	Once	once	Once	as soon as	Subordinating	once finished
-https://graph.org.ai/Conjunction/Since	graph.org.ai	Conjunction	Since	since	Since	from a time in the past	Subordinating	since Monday
-https://graph.org.ai/Conjunction/Than	graph.org.ai	Conjunction	Than	than	Than	introduces comparison	Subordinating	better than before
-https://graph.org.ai/Conjunction/That	graph.org.ai	Conjunction	That	that	That	introduces a clause	Subordinating	know that it works
-https://graph.org.ai/Conjunction/Though	graph.org.ai	Conjunction	Though	though	Though	despite the fact	Subordinating	though challenging
-https://graph.org.ai/Conjunction/Till	graph.org.ai	Conjunction	Till	till	Till	up to the time when	Subordinating	till completion
-https://graph.org.ai/Conjunction/Unless	graph.org.ai	Conjunction	Unless	unless	Unless	except on the condition that	Subordinating	unless canceled
-https://graph.org.ai/Conjunction/Until	graph.org.ai	Conjunction	Until	until	Until	up to the time that	Subordinating	until approved
-https://graph.org.ai/Conjunction/When	graph.org.ai	Conjunction	When	when	When	at or during the time that	Subordinating	when ready
-https://graph.org.ai/Conjunction/Where	graph.org.ai	Conjunction	Where	where	Where	at or in which place	Subordinating	where needed
-https://graph.org.ai/Conjunction/Whereas	graph.org.ai	Conjunction	Whereas	whereas	Whereas	in contrast to the fact that	Subordinating	whereas others failed
-https://graph.org.ai/Conjunction/Wherever	graph.org.ai	Conjunction	Wherever	wherever	Wherever	in or to whatever place	Subordinating	wherever possible
-https://graph.org.ai/Conjunction/Whether	graph.org.ai	Conjunction	Whether	whether	Whether	if; either	Subordinating	whether approved
-https://graph.org.ai/Conjunction/While	graph.org.ai	Conjunction	While	while	While	during the time that	Subordinating	while working
-https://graph.org.ai/Conjunction/Both	graph.org.ai	Conjunction	Both	both	Both	the two; one and the other	Correlative	both manager and employee
-https://graph.org.ai/Conjunction/Either	graph.org.ai	Conjunction	Either	either	Either	one or the other of two	Correlative	either option
-https://graph.org.ai/Conjunction/Neither	graph.org.ai	Conjunction	Neither	neither	Neither	not one nor the other	Correlative	neither option
-https://graph.org.ai/Conjunction/Not	graph.org.ai	Conjunction	Not	not	Not	negation	Correlative	not only...but also
+https://language.org.ai/Conjunction/And	language.org.ai	Conjunction	And	and	And	connects words, phrases, or clauses	Coordinating	coffee and tea
+https://language.org.ai/Conjunction/But	language.org.ai	Conjunction	But	but	But	introduces a contrast or exception	Coordinating	small but powerful
+https://language.org.ai/Conjunction/Or	language.org.ai	Conjunction	Or	or	Or	presents alternatives	Coordinating	yes or no
+https://language.org.ai/Conjunction/Nor	language.org.ai	Conjunction	Nor	nor	Nor	negative alternative	Coordinating	neither this nor that
+https://language.org.ai/Conjunction/For	language.org.ai	Conjunction	For	for	For	indicates reason or purpose	Coordinating	worked hard, for success
+https://language.org.ai/Conjunction/So	language.org.ai	Conjunction	So	so	So	indicates result or consequence	Coordinating	tired, so rested
+https://language.org.ai/Conjunction/Yet	language.org.ai	Conjunction	Yet	yet	Yet	introduces a contrasting idea	Coordinating	small yet mighty
+https://language.org.ai/Conjunction/After	language.org.ai	Conjunction	After	after	After	follows in time	Subordinating	after completion
+https://language.org.ai/Conjunction/Although	language.org.ai	Conjunction	Although	although	Although	despite the fact that	Subordinating	although difficult
+https://language.org.ai/Conjunction/As	language.org.ai	Conjunction	As	as	As	at the same time; because	Subordinating	as requested
+https://language.org.ai/Conjunction/Because	language.org.ai	Conjunction	Because	because	Because	for the reason that	Subordinating	because necessary
+https://language.org.ai/Conjunction/Before	language.org.ai	Conjunction	Before	before	Before	earlier than	Subordinating	before starting
+https://language.org.ai/Conjunction/If	language.org.ai	Conjunction	If	if	If	on the condition that	Subordinating	if approved
+https://language.org.ai/Conjunction/Once	language.org.ai	Conjunction	Once	once	Once	as soon as	Subordinating	once finished
+https://language.org.ai/Conjunction/Since	language.org.ai	Conjunction	Since	since	Since	from a time in the past	Subordinating	since Monday
+https://language.org.ai/Conjunction/Than	language.org.ai	Conjunction	Than	than	Than	introduces comparison	Subordinating	better than before
+https://language.org.ai/Conjunction/That	language.org.ai	Conjunction	That	that	That	introduces a clause	Subordinating	know that it works
+https://language.org.ai/Conjunction/Though	language.org.ai	Conjunction	Though	though	Though	despite the fact	Subordinating	though challenging
+https://language.org.ai/Conjunction/Till	language.org.ai	Conjunction	Till	till	Till	up to the time when	Subordinating	till completion
+https://language.org.ai/Conjunction/Unless	language.org.ai	Conjunction	Unless	unless	Unless	except on the condition that	Subordinating	unless canceled
+https://language.org.ai/Conjunction/Until	language.org.ai	Conjunction	Until	until	Until	up to the time that	Subordinating	until approved
+https://language.org.ai/Conjunction/When	language.org.ai	Conjunction	When	when	When	at or during the time that	Subordinating	when ready
+https://language.org.ai/Conjunction/Where	language.org.ai	Conjunction	Where	where	Where	at or in which place	Subordinating	where needed
+https://language.org.ai/Conjunction/Whereas	language.org.ai	Conjunction	Whereas	whereas	Whereas	in contrast to the fact that	Subordinating	whereas others failed
+https://language.org.ai/Conjunction/Wherever	language.org.ai	Conjunction	Wherever	wherever	Wherever	in or to whatever place	Subordinating	wherever possible
+https://language.org.ai/Conjunction/Whether	language.org.ai	Conjunction	Whether	whether	Whether	if; either	Subordinating	whether approved
+https://language.org.ai/Conjunction/While	language.org.ai	Conjunction	While	while	While	during the time that	Subordinating	while working
+https://language.org.ai/Conjunction/Both	language.org.ai	Conjunction	Both	both	Both	the two; one and the other	Correlative	both manager and employee
+https://language.org.ai/Conjunction/Either	language.org.ai	Conjunction	Either	either	Either	one or the other of two	Correlative	either option
+https://language.org.ai/Conjunction/Neither	language.org.ai	Conjunction	Neither	neither	Neither	not one nor the other	Correlative	neither option
+https://language.org.ai/Conjunction/Not	language.org.ai	Conjunction	Not	not	Not	negation	Correlative	not only...but also

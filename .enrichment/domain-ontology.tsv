@@ -64,3 +64,71 @@ Facebook	apps.org.ai	integrations.org.ai;nouns.org.ai	Facebook platform and serv
 Google	apps.org.ai	integrations.org.ai;nouns.org.ai	Google ecosystem apps
 Premium	apps.org.ai	nouns.org.ai	Premium tier apps
 Zapier	integrations.org.ai	apps.org.ai;nouns.org.ai	Zapier integration services
+Activity	onet.org.ai	activities.org.ai;process.org.ai;nouns.org.ai	ONET work activities (IWA/DWA)
+Education	education.org.ai	careers.org.ai;nouns.org.ai	CIP education programs
+Business	business.org.ai	nouns.org.ai	General business entities
+Signatures	apps.org.ai	integrations.org.ai;nouns.org.ai	Digital signature services
+Video & Audio	apps.org.ai	tech.org.ai;nouns.org.ai	Video and audio tools
+Customer Support	apps.org.ai	business.org.ai;nouns.org.ai	Customer support platforms
+Drip Emails	apps.org.ai	business.org.ai;marketing.org.ai;nouns.org.ai	Drip email marketing tools
+Devices	tech.org.ai	products.org.ai;nouns.org.ai	Hardware devices and IoT
+Webinars	apps.org.ai	business.org.ai;nouns.org.ai	Webinar platforms
+Marketing	business.org.ai	apps.org.ai;marketing.org.ai;nouns.org.ai	Marketing tools and platforms
+Printing	apps.org.ai	business.org.ai;nouns.org.ai	Printing services
+Contact Management	apps.org.ai	business.org.ai;nouns.org.ai	Contact management systems
+Notifications	apps.org.ai	integrations.org.ai;nouns.org.ai	Notification services
+Time Tracking Software	apps.org.ai	business.org.ai;nouns.org.ai	Time tracking applications
+Productivity	apps.org.ai	business.org.ai;nouns.org.ai	Productivity tools
+Content & Files	apps.org.ai	business.org.ai;nouns.org.ai	Content and file management
+Internet of Things	tech.org.ai	products.org.ai;nouns.org.ai	IoT devices and platforms
+LegalStructure	business.org.ai	nouns.org.ai	Legal business structures (LLC, Corp, etc.)
+RevenueModel	business.org.ai	nouns.org.ai	Business revenue models
+BusinessLocation	business.org.ai	places.org.ai;nouns.org.ai	Business location types
+BusinessDepartment	business.org.ai	nouns.org.ai	Business departments and functions
+BusinessProcess	business.org.ai	process.org.ai;apqc.org.ai;nouns.org.ai	Business processes
+BusinessTask	business.org.ai	process.org.ai;nouns.org.ai	Business tasks and activities
+BusinessResource	business.org.ai	nouns.org.ai	Business resources and assets
+BusinessMetric	business.org.ai	nouns.org.ai	Business metrics and KPIs
+BusinessGoal	business.org.ai	nouns.org.ai	Business goals and objectives
+StakeholderRelationship	business.org.ai	nouns.org.ai	Stakeholder relationships
+ComplianceRequirement	business.org.ai	nouns.org.ai	Compliance requirements
+BusinessRisk	business.org.ai	nouns.org.ai	Business risks and threats
+BusinessCapability	business.org.ai	nouns.org.ai	Business capabilities
+LocalBusiness	business.org.ai	industries.org.ai;nouns.org.ai	Local business types
+Retail	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Retail businesses
+Restaurant	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Restaurants and food service
+ProfessionalServices	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Professional services
+Healthcare	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Healthcare businesses
+RealEstate	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Real estate businesses
+PersonalServices	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Personal services
+HomeServices	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Home services
+Automotive	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Automotive businesses
+Hospitality	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Hospitality and lodging
+LocalManufacturing	business.org.ai	industries.org.ai;naics.org.ai;nouns.org.ai	Local manufacturing
+EducationServices	business.org.ai	industries.org.ai;education.org.ai;nouns.org.ai	Education services
+OnlineBusiness	business.org.ai	industries.org.ai;nouns.org.ai	Online business types
+Ecommerce	business.org.ai	industries.org.ai;apps.org.ai;nouns.org.ai	Ecommerce businesses
+ContentPlatform	business.org.ai	industries.org.ai;tech.org.ai;nouns.org.ai	Content platforms
+DigitalMarketplace	business.org.ai	industries.org.ai;apps.org.ai;nouns.org.ai	Digital marketplaces
+SoftwareAsService	business.org.ai	industries.org.ai;tech.org.ai;apps.org.ai;nouns.org.ai	SaaS products
+OnlineEducation	business.org.ai	industries.org.ai;education.org.ai;nouns.org.ai	Online education platforms
+DigitalAgency	business.org.ai	industries.org.ai;nouns.org.ai	Digital agencies
+OnlineFinancial	business.org.ai	industries.org.ai;nouns.org.ai	Online financial services
+SubscriptionBox	business.org.ai	industries.org.ai;apps.org.ai;nouns.org.ai	Subscription box services
+OnlineConsulting	business.org.ai	industries.org.ai;nouns.org.ai	Online consulting services
+OnlineCommunity	business.org.ai	industries.org.ai;apps.org.ai;nouns.org.ai	Online communities
+DigitalTools	business.org.ai	industries.org.ai;tech.org.ai;apps.org.ai;nouns.org.ai	Digital tools and utilities
+ServiceClass	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service class level
+ServiceGroup	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service group level
+ServiceSubclass	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service subclass level
+AIModel	ai.org.ai	models.org.ai;tech.org.ai;nouns.org.ai	AI/ML models
+Adverb	language.org.ai	nouns.org.ai	Adverbs (language)
+Conjunction	language.org.ai	nouns.org.ai	Conjunctions (language)
+Determiner	language.org.ai	nouns.org.ai	Determiners (language)
+Preposition	language.org.ai	nouns.org.ai	Prepositions (language)
+Pronoun	language.org.ai	nouns.org.ai	Pronouns (language)
+Processe	apqc.org.ai	process.org.ai;business.org.ai;nouns.org.ai	APQC processes (typo variant)
+Employment	onet.org.ai	occupations.org.ai;nouns.org.ai	Employment data and statistics
+State	places.org.ai	nouns.org.ai	US States and territories
+STEMOccupation	onet.org.ai	occupations.org.ai;nouns.org.ai	STEM occupation classifications
+Wage	onet.org.ai	nouns.org.ai	Wage and compensation data
