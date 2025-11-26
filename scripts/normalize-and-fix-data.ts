@@ -138,12 +138,7 @@ function toPascalCase(str: string): string {
   str = str.replace(/&amp;/g, 'And')  // &amp; → And
   str = str.replace(/&quot;/g, '')    // &quot; → remove
 
-  // Fix "3d" to "3D" (schema.org uses "3DModel" not "ThreeDModel")
-  // Must be done before other transformations
-  str = str.replace(/^3d([A-Za-z])/gi, '3D$1')  // 3dmodel → 3DModel
-  str = str.replace(/([^A-Za-z0-9])3d([A-Za-z])/gi, '$13D$2')  // word-3d → word-3D
-
-  // Handle other special characters
+  // Handle other special characters FIRST
   str = str
     .replace(/&/g, 'And')
     .replace(/'/g, '')     // Remove apostrophes
@@ -152,19 +147,38 @@ function toPascalCase(str: string): string {
     .replace(/\(/g, '')
     .replace(/\)/g, '')
 
-  // Split on common delimiters
+  // Fix "3d" to "3D" BEFORE splitting (schema.org uses "3DModel" not "ThreeDModel")
+  // Use a unique placeholder that won't conflict with real text
+  str = str.replace(/3d/gi, '@@3D@@')
+
+  // Split on common delimiters and underscores (but not our placeholder marker)
   const words = str.split(/[\s,\-_\.]+/).filter(w => w)
 
-  return words
+  const result = words
     .map(word => {
-      // Handle all-caps words (keep them capitalized properly)
+      // First restore 3D placeholders back to "3D"
+      word = word.replace(/@@3D@@/g, '3D')
+
+      // If the word is now "3D" alone, return it
+      if (word === '3D') return '3D'
+
+      // If word starts with "3D", preserve it and capitalize the rest
+      if (word.startsWith('3D')) {
+        const rest = word.slice(2)
+        return '3D' + rest.charAt(0).toUpperCase() + rest.slice(1).toLowerCase()
+      }
+
+      // Handle all-caps words (keep first letter caps, rest lowercase)
       if (word === word.toUpperCase() && word.length > 1) {
         return word.charAt(0) + word.slice(1).toLowerCase()
       }
-      // Handle normal words
+
+      // Capitalize first letter, lowercase the rest
       return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
     })
     .join('')
+
+  return result
 }
 
 function fixPascalCaseId(id: string): string {
@@ -383,8 +397,7 @@ function isPascalCase(str: string): boolean {
   if (!str || str.length === 0) return false
   // Allow dots for semantic IDs like "determine.Compliance"
   if (str.includes('.')) return true
-  // Allow colons for special cases like model names
-  if (str.includes(':')) return true
+  // DO NOT allow colons - IDs like "Schema:3dmodel" need to be fixed
   return /^[A-Z][a-zA-Z0-9]*$/.test(str)
 }
 
