@@ -1,4 +1,4 @@
-url	ns	type	id	code	name	description	career_cluster_id	career_cluster_name	soc_count	cip_count
+url	ns	type	id	code	name	description	careerClusterId	careerClusterName	socCount	cipCount
 https://education.org.ai/Career/Engineering	education.org.ai	Career	Engineering	advanced-manufacturing/engineering	Engineering	Engineering sub-cluster within Advanced Manufacturing	advanced-manufacturing	Advanced Manufacturing	33	143
 https://education.org.ai/Career/IndustrialMachinery	education.org.ai	Career	IndustrialMachinery	advanced-manufacturing/industrial-machinery	Industrial Machinery	Industrial Machinery sub-cluster within Advanced Manufacturing	advanced-manufacturing	Advanced Manufacturing	28	36
 https://education.org.ai/Career/Productionandautomation	education.org.ai	Career	Productionandautomation	advanced-manufacturing/production-automation	Production & Automation	Production & Automation sub-cluster within Advanced Manufacturing	advanced-manufacturing	Advanced Manufacturing	88	78
