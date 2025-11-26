@@ -1,53 +1,53 @@
 url	ns	type	id	code	name	description	category	case	usage
-https://graph.org/Pronoun/I	graph.org.ai	Pronoun	I	i		first person singular	Personal	Subjective	I analyze
-https://graph.org/Pronoun/Me	graph.org.ai	Pronoun	Me	me		first person singular	Personal	Objective	help me
-https://graph.org/Pronoun/My	graph.org.ai	Pronoun	My	my		first person singular possessive	Personal	Possessive	my task
-https://graph.org/Pronoun/Mine	graph.org.ai	Pronoun	Mine	mine		first person singular possessive	Personal	Possessive	task is mine
-https://graph.org/Pronoun/Myself	graph.org.ai	Pronoun	Myself	myself		first person singular reflexive	Personal	Reflexive	I did it myself
-https://graph.org/Pronoun/We	graph.org.ai	Pronoun	We	we		first person plural	Personal	Subjective	we analyze
-https://graph.org/Pronoun/Us	graph.org.ai	Pronoun	Us	us		first person plural	Personal	Objective	help us
-https://graph.org/Pronoun/Our	graph.org.ai	Pronoun	Our	our		first person plural possessive	Personal	Possessive	our task
-https://graph.org/Pronoun/Ours	graph.org.ai	Pronoun	Ours	ours		first person plural possessive	Personal	Possessive	task is ours
-https://graph.org/Pronoun/Ourselves	graph.org.ai	Pronoun	Ourselves	ourselves		first person plural reflexive	Personal	Reflexive	we did it ourselves
-https://graph.org/Pronoun/You	graph.org.ai	Pronoun	You	you		second person	Personal	Subjective/Objective	you analyze
-https://graph.org/Pronoun/Your	graph.org.ai	Pronoun	Your	your		second person possessive	Personal	Possessive	your task
-https://graph.org/Pronoun/Yours	graph.org.ai	Pronoun	Yours	yours		second person possessive	Personal	Possessive	task is yours
-https://graph.org/Pronoun/Yourself	graph.org.ai	Pronoun	Yourself	yourself		second person singular reflexive	Personal	Reflexive	you did it yourself
-https://graph.org/Pronoun/Yourselves	graph.org.ai	Pronoun	Yourselves	yourselves		second person plural reflexive	Personal	Reflexive	you all did it yourselves
-https://graph.org/Pronoun/He	graph.org.ai	Pronoun	He	he		third person singular masculine	Personal	Subjective	he analyzes
-https://graph.org/Pronoun/Him	graph.org.ai	Pronoun	Him	him		third person singular masculine	Personal	Objective	help him
-https://graph.org/Pronoun/His	graph.org.ai	Pronoun	His	his		third person singular masculine possessive	Personal	Possessive	his task
-https://graph.org/Pronoun/Himself	graph.org.ai	Pronoun	Himself	himself		third person singular masculine reflexive	Personal	Reflexive	he did it himself
-https://graph.org/Pronoun/She	graph.org.ai	Pronoun	She	she		third person singular feminine	Personal	Subjective	she analyzes
-https://graph.org/Pronoun/Her	graph.org.ai	Pronoun	Her	her		third person singular feminine	Personal	Objective/Possessive	help her / her task
-https://graph.org/Pronoun/Hers	graph.org.ai	Pronoun	Hers	hers		third person singular feminine possessive	Personal	Possessive	task is hers
-https://graph.org/Pronoun/Herself	graph.org.ai	Pronoun	Herself	herself		third person singular feminine reflexive	Personal	Reflexive	she did it herself
-https://graph.org/Pronoun/It	graph.org.ai	Pronoun	It	it		third person singular neuter	Personal	Subjective/Objective	it works
-https://graph.org/Pronoun/Its	graph.org.ai	Pronoun	Its	its		third person singular neuter possessive	Personal	Possessive	its purpose
-https://graph.org/Pronoun/Itself	graph.org.ai	Pronoun	Itself	itself		third person singular neuter reflexive	Personal	Reflexive	it did it itself
-https://graph.org/Pronoun/They	graph.org.ai	Pronoun	They	they		third person plural	Personal	Subjective	they analyze
-https://graph.org/Pronoun/Them	graph.org.ai	Pronoun	Them	them		third person plural	Personal	Objective	help them
-https://graph.org/Pronoun/Their	graph.org.ai	Pronoun	Their	their		third person plural possessive	Personal	Possessive	their task
-https://graph.org/Pronoun/Theirs	graph.org.ai	Pronoun	Theirs	theirs		third person plural possessive	Personal	Possessive	task is theirs
-https://graph.org/Pronoun/Themselves	graph.org.ai	Pronoun	Themselves	themselves		third person plural reflexive	Personal	Reflexive	they did it themselves
-https://graph.org/Pronoun/This	graph.org.ai	Pronoun	This	this		refers to something nearby	Demonstrative	Singular	this is good
-https://graph.org/Pronoun/That	graph.org.ai	Pronoun	That	that		refers to something distant	Demonstrative	Singular	that is good
-https://graph.org/Pronoun/These	graph.org.ai	Pronoun	These	these		plural of this	Demonstrative	Plural	these are good
-https://graph.org/Pronoun/Those	graph.org.ai	Pronoun	Those	those		plural of that	Demonstrative	Plural	those are good
-https://graph.org/Pronoun/Who	graph.org.ai	Pronoun	Who	who		refers to people (subject)	Interrogative	Subjective	who analyzes
-https://graph.org/Pronoun/Whom	graph.org.ai	Pronoun	Whom	whom		refers to people (object)	Interrogative	Objective	whom to ask
-https://graph.org/Pronoun/Whose	graph.org.ai	Pronoun	Whose	whose		possession	Interrogative	Possessive	whose task
-https://graph.org/Pronoun/What	graph.org.ai	Pronoun	What	what		refers to things	Interrogative	Any	what happened
-https://graph.org/Pronoun/Which	graph.org.ai	Pronoun	Which	which		choice between alternatives	Interrogative	Any	which option
-https://graph.org/Pronoun/Anyone	graph.org.ai	Pronoun	Anyone	anyone		any person	Indefinite	Singular	anyone can help
-https://graph.org/Pronoun/Anybody	graph.org.ai	Pronoun	Anybody	anybody		any person	Indefinite	Singular	anybody can help
-https://graph.org/Pronoun/Anything	graph.org.ai	Pronoun	Anything	anything		any thing	Indefinite	Singular	anything works
-https://graph.org/Pronoun/Everyone	graph.org.ai	Pronoun	Everyone	everyone		all people	Indefinite	Singular	everyone knows
-https://graph.org/Pronoun/Everybody	graph.org.ai	Pronoun	Everybody	everybody		all people	Indefinite	Singular	everybody knows
-https://graph.org/Pronoun/Everything	graph.org.ai	Pronoun	Everything	everything		all things	Indefinite	Singular	everything works
-https://graph.org/Pronoun/NoOne	graph.org.ai	Pronoun	NoOne	no one		not anyone	Indefinite	Singular	no one knows
-https://graph.org/Pronoun/Nobody	graph.org.ai	Pronoun	Nobody	nobody		not anybody	Indefinite	Singular	nobody knows
-https://graph.org/Pronoun/Nothing	graph.org.ai	Pronoun	Nothing	nothing		not anything	Indefinite	Singular	nothing works
-https://graph.org/Pronoun/Someone	graph.org.ai	Pronoun	Someone	someone		some person	Indefinite	Singular	someone knows
-https://graph.org/Pronoun/Somebody	graph.org.ai	Pronoun	Somebody	somebody		some person	Indefinite	Singular	somebody knows
-https://graph.org/Pronoun/Something	graph.org.ai	Pronoun	Something	something		some thing	Indefinite	Singular	something works
+https://graph.org.ai/Pronoun/I	graph.org.ai	Pronoun	I	i	I	first person singular	Personal	Subjective	I analyze
+https://graph.org.ai/Pronoun/Me	graph.org.ai	Pronoun	Me	me	Me	first person singular	Personal	Objective	help me
+https://graph.org.ai/Pronoun/My	graph.org.ai	Pronoun	My	my	My	first person singular possessive	Personal	Possessive	my task
+https://graph.org.ai/Pronoun/Mine	graph.org.ai	Pronoun	Mine	mine	Mine	first person singular possessive	Personal	Possessive	task is mine
+https://graph.org.ai/Pronoun/Myself	graph.org.ai	Pronoun	Myself	myself	Myself	first person singular reflexive	Personal	Reflexive	I did it myself
+https://graph.org.ai/Pronoun/We	graph.org.ai	Pronoun	We	we	We	first person plural	Personal	Subjective	we analyze
+https://graph.org.ai/Pronoun/Us	graph.org.ai	Pronoun	Us	us	Us	first person plural	Personal	Objective	help us
+https://graph.org.ai/Pronoun/Our	graph.org.ai	Pronoun	Our	our	Our	first person plural possessive	Personal	Possessive	our task
+https://graph.org.ai/Pronoun/Ours	graph.org.ai	Pronoun	Ours	ours	Ours	first person plural possessive	Personal	Possessive	task is ours
+https://graph.org.ai/Pronoun/Ourselves	graph.org.ai	Pronoun	Ourselves	ourselves	Ourselves	first person plural reflexive	Personal	Reflexive	we did it ourselves
+https://graph.org.ai/Pronoun/You	graph.org.ai	Pronoun	You	you	You	second person	Personal	Subjective/Objective	you analyze
+https://graph.org.ai/Pronoun/Your	graph.org.ai	Pronoun	Your	your	Your	second person possessive	Personal	Possessive	your task
+https://graph.org.ai/Pronoun/Yours	graph.org.ai	Pronoun	Yours	yours	Yours	second person possessive	Personal	Possessive	task is yours
+https://graph.org.ai/Pronoun/Yourself	graph.org.ai	Pronoun	Yourself	yourself	Yourself	second person singular reflexive	Personal	Reflexive	you did it yourself
+https://graph.org.ai/Pronoun/Yourselves	graph.org.ai	Pronoun	Yourselves	yourselves	Yourselves	second person plural reflexive	Personal	Reflexive	you all did it yourselves
+https://graph.org.ai/Pronoun/He	graph.org.ai	Pronoun	He	he	He	third person singular masculine	Personal	Subjective	he analyzes
+https://graph.org.ai/Pronoun/Him	graph.org.ai	Pronoun	Him	him	Him	third person singular masculine	Personal	Objective	help him
+https://graph.org.ai/Pronoun/His	graph.org.ai	Pronoun	His	his	His	third person singular masculine possessive	Personal	Possessive	his task
+https://graph.org.ai/Pronoun/Himself	graph.org.ai	Pronoun	Himself	himself	Himself	third person singular masculine reflexive	Personal	Reflexive	he did it himself
+https://graph.org.ai/Pronoun/She	graph.org.ai	Pronoun	She	she	She	third person singular feminine	Personal	Subjective	she analyzes
+https://graph.org.ai/Pronoun/Her	graph.org.ai	Pronoun	Her	her	Her	third person singular feminine	Personal	Objective/Possessive	help her / her task
+https://graph.org.ai/Pronoun/Hers	graph.org.ai	Pronoun	Hers	hers	Hers	third person singular feminine possessive	Personal	Possessive	task is hers
+https://graph.org.ai/Pronoun/Herself	graph.org.ai	Pronoun	Herself	herself	Herself	third person singular feminine reflexive	Personal	Reflexive	she did it herself
+https://graph.org.ai/Pronoun/It	graph.org.ai	Pronoun	It	it	It	third person singular neuter	Personal	Subjective/Objective	it works
+https://graph.org.ai/Pronoun/Its	graph.org.ai	Pronoun	Its	its	Its	third person singular neuter possessive	Personal	Possessive	its purpose
+https://graph.org.ai/Pronoun/Itself	graph.org.ai	Pronoun	Itself	itself	Itself	third person singular neuter reflexive	Personal	Reflexive	it did it itself
+https://graph.org.ai/Pronoun/They	graph.org.ai	Pronoun	They	they	They	third person plural	Personal	Subjective	they analyze
+https://graph.org.ai/Pronoun/Them	graph.org.ai	Pronoun	Them	them	Them	third person plural	Personal	Objective	help them
+https://graph.org.ai/Pronoun/Their	graph.org.ai	Pronoun	Their	their	Their	third person plural possessive	Personal	Possessive	their task
+https://graph.org.ai/Pronoun/Theirs	graph.org.ai	Pronoun	Theirs	theirs	Theirs	third person plural possessive	Personal	Possessive	task is theirs
+https://graph.org.ai/Pronoun/Themselves	graph.org.ai	Pronoun	Themselves	themselves	Themselves	third person plural reflexive	Personal	Reflexive	they did it themselves
+https://graph.org.ai/Pronoun/This	graph.org.ai	Pronoun	This	this	This	refers to something nearby	Demonstrative	Singular	this is good
+https://graph.org.ai/Pronoun/That	graph.org.ai	Pronoun	That	that	That	refers to something distant	Demonstrative	Singular	that is good
+https://graph.org.ai/Pronoun/These	graph.org.ai	Pronoun	These	these	These	plural of this	Demonstrative	Plural	these are good
+https://graph.org.ai/Pronoun/Those	graph.org.ai	Pronoun	Those	those	Those	plural of that	Demonstrative	Plural	those are good
+https://graph.org.ai/Pronoun/Who	graph.org.ai	Pronoun	Who	who	Who	refers to people (subject)	Interrogative	Subjective	who analyzes
+https://graph.org.ai/Pronoun/Whom	graph.org.ai	Pronoun	Whom	whom	Whom	refers to people (object)	Interrogative	Objective	whom to ask
+https://graph.org.ai/Pronoun/Whose	graph.org.ai	Pronoun	Whose	whose	Whose	possession	Interrogative	Possessive	whose task
+https://graph.org.ai/Pronoun/What	graph.org.ai	Pronoun	What	what	What	refers to things	Interrogative	Any	what happened
+https://graph.org.ai/Pronoun/Which	graph.org.ai	Pronoun	Which	which	Which	choice between alternatives	Interrogative	Any	which option
+https://graph.org.ai/Pronoun/Anyone	graph.org.ai	Pronoun	Anyone	anyone	Anyone	any person	Indefinite	Singular	anyone can help
+https://graph.org.ai/Pronoun/Anybody	graph.org.ai	Pronoun	Anybody	anybody	Anybody	any person	Indefinite	Singular	anybody can help
+https://graph.org.ai/Pronoun/Anything	graph.org.ai	Pronoun	Anything	anything	Anything	any thing	Indefinite	Singular	anything works
+https://graph.org.ai/Pronoun/Everyone	graph.org.ai	Pronoun	Everyone	everyone	Everyone	all people	Indefinite	Singular	everyone knows
+https://graph.org.ai/Pronoun/Everybody	graph.org.ai	Pronoun	Everybody	everybody	Everybody	all people	Indefinite	Singular	everybody knows
+https://graph.org.ai/Pronoun/Everything	graph.org.ai	Pronoun	Everything	everything	Everything	all things	Indefinite	Singular	everything works
+https://graph.org.ai/Pronoun/NoOne	graph.org.ai	Pronoun	NoOne	no one	No One	not anyone	Indefinite	Singular	no one knows
+https://graph.org.ai/Pronoun/Nobody	graph.org.ai	Pronoun	Nobody	nobody	Nobody	not anybody	Indefinite	Singular	nobody knows
+https://graph.org.ai/Pronoun/Nothing	graph.org.ai	Pronoun	Nothing	nothing	Nothing	not anything	Indefinite	Singular	nothing works
+https://graph.org.ai/Pronoun/Someone	graph.org.ai	Pronoun	Someone	someone	Someone	some person	Indefinite	Singular	someone knows
+https://graph.org.ai/Pronoun/Somebody	graph.org.ai	Pronoun	Somebody	somebody	Somebody	some person	Indefinite	Singular	somebody knows
+https://graph.org.ai/Pronoun/Something	graph.org.ai	Pronoun	Something	something	Something	some thing	Indefinite	Singular	something works

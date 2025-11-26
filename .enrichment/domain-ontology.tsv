@@ -1,0 +1,33 @@
+type	canonicalDomain	aliasDomains	notes
+Action	actions.org.ai	verbs.org.ai;language.org.ai	Actions are present-tense verbs acting on nouns (verb.Noun format)
+Event	events.org.ai	verbs.org.ai;language.org.ai	Events are past-tense verbs (Noun.verbed format)
+Skill	onet.org.ai	nouns.org.ai	ONET skills taxonomy
+Ability	onet.org.ai	nouns.org.ai	ONET abilities taxonomy
+Knowledge	onet.org.ai	nouns.org.ai	ONET knowledge taxonomy
+Task	onet.org.ai	process.org.ai;nouns.org.ai	ONET tasks - also processes
+Process	apqc.org.ai	process.org.ai;nouns.org.ai	APQC process framework
+WorkActivity	onet.org.ai	activities.org.ai;nouns.org.ai	ONET work activities
+WorkContext	onet.org.ai	nouns.org.ai	ONET work context
+WorkStyle	onet.org.ai	nouns.org.ai	ONET work styles
+WorkValue	onet.org.ai	nouns.org.ai	ONET work values
+Occupation	onet.org.ai	occupations.org.ai;nouns.org.ai	ONET-SOC occupations
+Tool	onet.org.ai	tech.org.ai;products.org.ai;nouns.org.ai	ONET tools - physical and digital
+Technology	onet.org.ai	tech.org.ai;products.org.ai;nouns.org.ai	ONET technologies - software and systems
+Industry	naics.org.ai	industries.org.ai;business.org.ai;nouns.org.ai	NAICS industry classification
+Product	unspsc.org.ai	products.org.ai;nouns.org.ai	UNSPSC/GPC product taxonomy
+Service	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service classification
+BusinessType	business.org.ai	industries.org.ai;nouns.org.ai	Business types and structures
+Career	education.org.ai	careers.org.ai;occupations.org.ai;nouns.org.ai	Career clusters
+EducationProgram	education.org.ai	nouns.org.ai	CIP education programs
+Concept	graph.org.ai	concepts.org.ai;nouns.org.ai	Core ontology concepts
+Verb	verbs.org.ai	language.org.ai;nouns.org.ai	Verb taxonomy
+Noun	nouns.org.ai	language.org.ai	Core noun taxonomy (base for all)
+Type	schema.org.ai	nouns.org.ai	Schema.org types
+Property	schema.org.ai	nouns.org.ai	Schema.org properties
+App	integrations.org.ai	apps.org.ai;products.org.ai;nouns.org.ai	Integration apps (Zapier, etc)
+Integration	integrations.org.ai	apps.org.ai;nouns.org.ai	Integration services
+Model	models.org.ai	ai.org.ai;nouns.org.ai	AI models
+Search	searches.org.ai	nouns.org.ai	Search queries
+Country	places.org.ai	nouns.org.ai	Countries
+Department	business.org.ai	nouns.org.ai	Business departments
+Language	language.org.ai	nouns.org.ai	Natural languages

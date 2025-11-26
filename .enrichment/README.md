@@ -1,148 +1,101 @@
-# Enrichment Data
+# Domain Ontology
 
-This directory contains **derived and enriched data** created from the source data in `.source/`.
+This folder contains enrichment data that defines the canonical URL structure and domain relationships for the .org.ai ontology.
 
-## Directory Purpose
+## domain-ontology.tsv
 
-The `.enrichment/` folder is distinct from:
-- **`.source/`** - Raw data that can be re-ingested from external sources
-- **`.data/`** - Combined, normalized output ready for production use
+Defines the mapping between entity types and their canonical/alias domains.
 
-Enrichment data includes:
-1. **Human-curated additions** (short names, classifications)
-2. **Computed metrics** (digital scores, aggregations)
-3. **Derived crosswalks** (entity relationships not available in source data)
-4. **Custom taxonomies** (company types, employer types)
+### Schema
 
-## Structure
+- **type**: The entity type (PascalCase, matches `type` field in TSV files)
+- **canonicalDomain**: The primary, authoritative domain for this type
+- **aliasDomains**: Semicolon-separated list of alias domains where this type also appears
+- **notes**: Description of the type and its domain relationships
 
-### Language/
-Parts of speech for the GraphDL semantic parser:
-- `Language.Verbs.tsv` - 217 verbs with conjugations
-- `Language.Prepositions.tsv` - 54 prepositions
-- `Language.Conjunctions.tsv` - 32 conjunctions
-- `Language.Determiners.tsv` - 40 determiners
-- `Language.Pronouns.tsv` - 58 pronouns
-- `Language.Adverbs.tsv` - 128 adverbs
+### Canonical URLs
 
-**Note**: Moved from `.source/Language/` since these are custom-created, not ingested from external sources.
+Each entity has ONE canonical URL on its canonical domain, but can have multiple alias URLs on other domains.
 
-### Short Names (Planned)
-Concise 1-2 word names for entities with verbose source names:
-- `Industries.ShortNames.tsv`
-- `Occupations.ShortNames.tsv`
-- `Processes.ShortNames.tsv`
-- `Tasks.ShortNames.tsv`
-- `Skills.ShortNames.tsv`
-- `Knowledge.ShortNames.tsv`
+**Example: NAICS Industry "Manufacturing"**
+- Canonical URL: `https://naics.org.ai/Manufacturing`
+- Alias URLs:
+  - `https://industries.org.ai/Manufacturing`
+  - `https://business.org.ai/Manufacturing`
+  - `https://nouns.org.ai/Manufacturing`
 
-### Digital Scores (Planned)
-Scores indicating digital (1), physical (0), either (null), or hybrid (0-1):
-- `Industries.DigitalScore.tsv`
-- `Occupations.DigitalScore.tsv`
-- `Processes.DigitalScore.tsv`
-- `Tasks.DigitalScore.tsv`
-- `Skills.DigitalScore.tsv`
-- `Products.DigitalScore.tsv`
-- `Services.DigitalScore.tsv`
-- `DigitalScore.Methodology.md` - Scoring rubric and aggregation methodology
+### Domain Hierarchy
 
-### Salary & Job Market Data (Planned)
-Wage and employment statistics:
-- `Occupations.Wages.tsv` - BLS OES wage data (hourly, annual, percentiles) by SOC
-- `Occupations.Employment.tsv` - BLS OES employment counts by SOC
-- `Industries.Wages.tsv` - Average wages by NAICS industry
-- `Industries.Employment.tsv` - Employment counts by NAICS industry
-- `Occupations.JobOpenings.tsv` - JOLTS job openings data by occupation category
-- `Industries.JobOpenings.tsv` - JOLTS job openings data by industry
+The .org.ai domain hierarchy follows a subsumption model where more specific domains are subsets of more general ones:
 
-### Time & Cost Enrichment (Planned)
-Labor time and cost calculations:
-- `Tasks.TimeEstimates.tsv` - Estimated hours to complete each O*NET task by occupation
-- `Processes.TimeEstimates.tsv` - Estimated hours for APQC process steps by occupation/role
-- `Tasks.LaborCost.tsv` - Dollar cost per task (time × wage) by occupation
-- `Processes.LaborCost.tsv` - Dollar cost per process (aggregated task costs)
-- `Processes.RoleDistribution.tsv` - Percentage breakdown of which roles perform each process
-- `TimeEstimate.Methodology.md` - Documentation of time estimation approach and sources
+```
+nouns.org.ai (universal base - all types)
+├── language.org.ai
+│   ├── verbs.org.ai
+│   └── concepts.org.ai
+├── schema.org.ai (schema.org types)
+├── standards.org.ai
+│   ├── onet.org.ai (occupational taxonomy)
+│   │   ├── occupations.org.ai
+│   │   ├── skills.org.ai
+│   │   ├── abilities.org.ai
+│   │   └── activities.org.ai
+│   ├── naics.org.ai (industry classification)
+│   │   └── industries.org.ai
+│   ├── unspsc.org.ai (product taxonomy)
+│   │   └── products.org.ai
+│   └── napcs.org.ai (service classification)
+│       └── services.org.ai
+├── business.org.ai
+│   ├── industries.org.ai
+│   ├── careers.org.ai
+│   └── education.org.ai
+├── tech.org.ai
+│   ├── apps.org.ai
+│   ├── integrations.org.ai
+│   └── models.org.ai
+├── actions.org.ai (verbs acting on nouns)
+├── events.org.ai (past-tense actions)
+├── process.org.ai (APQC processes)
+└── places.org.ai
+```
 
-### Crosswalks (Planned)
-Entity relationship mappings:
-- `Industries.Processes.tsv` - NAICS to APQC
-- `Industries.Occupations.tsv` - NAICS to SOC/O*NET
-- `Occupations.Industries.tsv` - SOC/O*NET to NAICS
-- `Occupations.Processes.tsv` - SOC/O*NET to APQC
-- `Processes.Industries.tsv` - APQC to NAICS
-- `Processes.Occupations.tsv` - APQC to SOC/O*NET
-- `Processes.CompanySize.tsv` - Process applicability by company size
-- `Industries.Products.tsv` - Industries that produce products
-- `Industries.ProductsConsumed.tsv` - Industries that consume products
-- `Products.Industries.tsv` - Products to producer industries
-- `Products.ProductRelationships.tsv` - Product relationships (rawMaterial, component, asset, etc.)
-- `Services.Products.tsv` - Services supporting products
-- `Products.Services.tsv` - Products used in services
+### URL Format Rules
 
-### Company & Employer Attributes (Planned)
-- `CompanyType.Taxonomy.tsv` - Company classifications
-- `CompanyType.Industries.tsv` - Company types to industries (many-to-many)
-- `CompanySize.Levels.tsv` - Size by revenue/employees
-- `CompanySize.Processes.tsv` - Processes by company size
-- `EmployerType.Taxonomy.tsv` - Employer categories
-- `Occupations.EmployerTypes.tsv` - Occupations to employer types
+1. **When type IS in hostname (singular or plural):**
+   ```
+   https://[type].org.ai/{Id}
+   ```
+   Examples:
+   - `https://actions.org.ai/create.Contact` (NOT `/Action/create.Contact`)
+   - `https://events.org.ai/Contact.created` (NOT `/Event/Contact.created`)
+   - `https://occupations.org.ai/ChiefExecutive` (NOT `/Occupation/ChiefExecutive`)
 
-## Data Sources
+2. **When type is NOT in hostname:**
+   ```
+   https://{domain}/{Type}/{Id}
+   ```
+   Examples:
+   - `https://standards.org.ai/NAICS/Manufacturing`
+   - `https://onet.org.ai/Skill/ReadingComprehension`
+   - `https://unspsc.org.ai/Product/16bitmicrocontroller`
 
-Enrichment data is derived from:
-- `.source/` raw data (Schema.org, O*NET, APQC, NAICS, etc.)
-- BLS Industry-Occupation Matrix (NAICS × SOC employment)
-- Advance CTE Framework Crosswalk (CIP, SOC, NAICS, Career Clusters)
-- BLS OES (Occupational Employment and Wage Statistics) - May 2024
-- BLS JOLTS (Job Openings and Labor Turnover Survey)
-- APQC Industry-Specific PCFs (NAICS alignments)
-- Manual curation and expert input
+3. **Semantic IDs with dots are preserved:**
+   - `create.Contact` (NOT `CreateContact` or `ContactCreate`)
+   - `Contact.created` (NOT `ContactCreated`)
+   - `ChiefExecutives.direct.Organization'sFinancialBudgetActivities...`
 
-## Methodology
+### Usage
 
-### Digital Score Rubric
-The digital score methodology considers:
-- **Processes**: Weighted average of component tasks
-- **Tasks**: Based on O*NET work context (computer use, automation)
-- **Industries**: Weighted average of common processes and occupations
-- **Occupations**: Weighted average of tasks using O*NET importance/frequency
-- **Products/Services**: Inherent digital vs physical nature
+URL generation and validation scripts should:
 
-Weights are derived from O*NET importance and frequency ratings where available.
+1. Load the domain ontology from `domain-ontology.tsv`
+2. Determine the canonical domain for each type
+3. Generate the canonical URL using the format rules above
+4. Optionally generate alias URLs for search/discovery
 
-### Short Name Generation
-Short names prioritize:
-1. Common abbreviations and industry jargon
-2. Removing redundant context (e.g., "Financial Analyst" → "Analyst" when industry context is known)
-3. Maintaining uniqueness within each entity type
+### Future Work
 
-### Time & Cost Estimation
-Task and process time estimates are developed through:
-1. **O*NET Task Ratings**: Use importance and frequency ratings as proxies
-2. **Industry Benchmarks**: Reference APQC benchmarking data when available
-3. **Work Context**: Leverage O*NET work context data (hours worked, pace, etc.)
-4. **Expert Estimation**: Manual estimates for tasks without quantitative data
-5. **Validation**: Cross-check against real-world time-motion studies
-
-Cost calculations combine:
-- Time estimates (hours) × BLS OES wage data ($/hour)
-- Weighted by occupation and industry
-- Aggregated using role distribution percentages
-
-**Note**: O*NET does not collect actual time-spent data for tasks. Time estimates are derived metrics requiring manual enrichment and validation.
-
-### Crosswalk Development
-Crosswalks are created by:
-1. Using official mappings when available (BLS, Advance CTE, APQC)
-2. Analyzing co-occurrence in source data
-3. Manual expert mapping for gaps
-4. Validation against industry standards
-
-## Versioning
-
-Enrichment data should be versioned and tracked in git. Changes should be:
-- **Documented**: Note rationale for scoring/classification decisions
-- **Reproducible**: Scripts in `.scripts/` should regenerate derived data
-- **Validated**: Cross-check against source data updates
+- Add domain hierarchy relationships to enable subset/superset queries
+- Define which domains support multi-tenancy (e.g., `automotive.org.ai` ⊂ `manufacturing.org.ai`)
+- Map standard code systems (NAICS, SOC, CIP, UNSPSC, GPC, NAPCS) to their canonical domains

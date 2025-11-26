@@ -1,40 +1,40 @@
 url	ns	type	id	code	name	description	category	usage
-https://graph.org/Determiner/A	graph.org.ai	Determiner	A	a		indefinite article (singular)	Article	a document
-https://graph.org/Determiner/An	graph.org.ai	Determiner	An	an		indefinite article before vowel sound	Article	an email
-https://graph.org/Determiner/The	graph.org.ai	Determiner	The	the		definite article	Article	the report
-https://graph.org/Determiner/All	graph.org.ai	Determiner	All	all		the whole quantity of	Quantifier	all employees
-https://graph.org/Determiner/Another	graph.org.ai	Determiner	Another	another		one more; a different one	Quantifier	another approach
-https://graph.org/Determiner/Any	graph.org.ai	Determiner	Any	any		one or some of a thing	Quantifier	any questions
-https://graph.org/Determiner/Both	graph.org.ai	Determiner	Both	both		the two; one and the other	Quantifier	both options
-https://graph.org/Determiner/Each	graph.org.ai	Determiner	Each	each		every one of two or more	Quantifier	each employee
-https://graph.org/Determiner/Either	graph.org.ai	Determiner	Either	either		one or the other of two	Quantifier	either option
-https://graph.org/Determiner/Enough	graph.org.ai	Determiner	Enough	enough		as much as required	Quantifier	enough resources
-https://graph.org/Determiner/Every	graph.org.ai	Determiner	Every	every		all of a group	Quantifier	every day
-https://graph.org/Determiner/Few	graph.org.ai	Determiner	Few	few		a small number of	Quantifier	few issues
-https://graph.org/Determiner/Fewer	graph.org.ai	Determiner	Fewer	fewer		a smaller number of	Quantifier	fewer errors
-https://graph.org/Determiner/Little	graph.org.ai	Determiner	Little	little		a small amount of	Quantifier	little time
-https://graph.org/Determiner/Less	graph.org.ai	Determiner	Less	less		a smaller amount of	Quantifier	less effort
-https://graph.org/Determiner/Many	graph.org.ai	Determiner	Many	many		a large number of	Quantifier	many customers
-https://graph.org/Determiner/More	graph.org.ai	Determiner	More	more		a greater amount	Quantifier	more data
-https://graph.org/Determiner/Most	graph.org.ai	Determiner	Most	most		the greatest amount	Quantifier	most people
-https://graph.org/Determiner/Much	graph.org.ai	Determiner	Much	much		a great amount of	Quantifier	much work
-https://graph.org/Determiner/Neither	graph.org.ai	Determiner	Neither	neither		not one nor the other	Quantifier	neither option
-https://graph.org/Determiner/No	graph.org.ai	Determiner	No	no		not any	Quantifier	no problems
-https://graph.org/Determiner/Other	graph.org.ai	Determiner	Other	other		alternative; different	Quantifier	other methods
-https://graph.org/Determiner/Several	graph.org.ai	Determiner	Several	several		more than two but not many	Quantifier	several approaches
-https://graph.org/Determiner/Some	graph.org.ai	Determiner	Some	some		an unspecified amount	Quantifier	some data
-https://graph.org/Determiner/Sufficient	graph.org.ai	Determiner	Sufficient	sufficient		enough; adequate	Quantifier	sufficient evidence
-https://graph.org/Determiner/This	graph.org.ai	Determiner	This	this		referring to a specific thing nearby	Demonstrative	this document
-https://graph.org/Determiner/That	graph.org.ai	Determiner	That	that		referring to a specific thing	Demonstrative	that report
-https://graph.org/Determiner/These	graph.org.ai	Determiner	These	these		plural of this	Demonstrative	these files
-https://graph.org/Determiner/Those	graph.org.ai	Determiner	Those	those		plural of that	Demonstrative	those records
-https://graph.org/Determiner/My	graph.org.ai	Determiner	My	my		belonging to me	Possessive	my task
-https://graph.org/Determiner/Your	graph.org.ai	Determiner	Your	your		belonging to you	Possessive	your project
-https://graph.org/Determiner/His	graph.org.ai	Determiner	His	his		belonging to him	Possessive	his role
-https://graph.org/Determiner/Her	graph.org.ai	Determiner	Her	her		belonging to her	Possessive	her assignment
-https://graph.org/Determiner/Its	graph.org.ai	Determiner	Its	its		belonging to it	Possessive	its purpose
-https://graph.org/Determiner/Our	graph.org.ai	Determiner	Our	our		belonging to us	Possessive	our team
-https://graph.org/Determiner/Their	graph.org.ai	Determiner	Their	their		belonging to them	Possessive	their goals
-https://graph.org/Determiner/What	graph.org.ai	Determiner	What	what		asking for information	Interrogative	what data
-https://graph.org/Determiner/Which	graph.org.ai	Determiner	Which	which		asking for choice	Interrogative	which option
-https://graph.org/Determiner/Whose	graph.org.ai	Determiner	Whose	whose		asking about possession	Interrogative	whose responsibility
+https://graph.org.ai/Determiner/A	graph.org.ai	Determiner	A	a	A	indefinite article (singular)	Article	a document
+https://graph.org.ai/Determiner/An	graph.org.ai	Determiner	An	an	An	indefinite article before vowel sound	Article	an email
+https://graph.org.ai/Determiner/The	graph.org.ai	Determiner	The	the	The	definite article	Article	the report
+https://graph.org.ai/Determiner/All	graph.org.ai	Determiner	All	all	All	the whole quantity of	Quantifier	all employees
+https://graph.org.ai/Determiner/Another	graph.org.ai	Determiner	Another	another	Another	one more; a different one	Quantifier	another approach
+https://graph.org.ai/Determiner/Any	graph.org.ai	Determiner	Any	any	Any	one or some of a thing	Quantifier	any questions
+https://graph.org.ai/Determiner/Both	graph.org.ai	Determiner	Both	both	Both	the two; one and the other	Quantifier	both options
+https://graph.org.ai/Determiner/Each	graph.org.ai	Determiner	Each	each	Each	every one of two or more	Quantifier	each employee
+https://graph.org.ai/Determiner/Either	graph.org.ai	Determiner	Either	either	Either	one or the other of two	Quantifier	either option
+https://graph.org.ai/Determiner/Enough	graph.org.ai	Determiner	Enough	enough	Enough	as much as required	Quantifier	enough resources
+https://graph.org.ai/Determiner/Every	graph.org.ai	Determiner	Every	every	Every	all of a group	Quantifier	every day
+https://graph.org.ai/Determiner/Few	graph.org.ai	Determiner	Few	few	Few	a small number of	Quantifier	few issues
+https://graph.org.ai/Determiner/Fewer	graph.org.ai	Determiner	Fewer	fewer	Fewer	a smaller number of	Quantifier	fewer errors
+https://graph.org.ai/Determiner/Little	graph.org.ai	Determiner	Little	little	Little	a small amount of	Quantifier	little time
+https://graph.org.ai/Determiner/Less	graph.org.ai	Determiner	Less	less	Less	a smaller amount of	Quantifier	less effort
+https://graph.org.ai/Determiner/Many	graph.org.ai	Determiner	Many	many	Many	a large number of	Quantifier	many customers
+https://graph.org.ai/Determiner/More	graph.org.ai	Determiner	More	more	More	a greater amount	Quantifier	more data
+https://graph.org.ai/Determiner/Most	graph.org.ai	Determiner	Most	most	Most	the greatest amount	Quantifier	most people
+https://graph.org.ai/Determiner/Much	graph.org.ai	Determiner	Much	much	Much	a great amount of	Quantifier	much work
+https://graph.org.ai/Determiner/Neither	graph.org.ai	Determiner	Neither	neither	Neither	not one nor the other	Quantifier	neither option
+https://graph.org.ai/Determiner/No	graph.org.ai	Determiner	No	no	No	not any	Quantifier	no problems
+https://graph.org.ai/Determiner/Other	graph.org.ai	Determiner	Other	other	Other	alternative; different	Quantifier	other methods
+https://graph.org.ai/Determiner/Several	graph.org.ai	Determiner	Several	several	Several	more than two but not many	Quantifier	several approaches
+https://graph.org.ai/Determiner/Some	graph.org.ai	Determiner	Some	some	Some	an unspecified amount	Quantifier	some data
+https://graph.org.ai/Determiner/Sufficient	graph.org.ai	Determiner	Sufficient	sufficient	Sufficient	enough; adequate	Quantifier	sufficient evidence
+https://graph.org.ai/Determiner/This	graph.org.ai	Determiner	This	this	This	referring to a specific thing nearby	Demonstrative	this document
+https://graph.org.ai/Determiner/That	graph.org.ai	Determiner	That	that	That	referring to a specific thing	Demonstrative	that report
+https://graph.org.ai/Determiner/These	graph.org.ai	Determiner	These	these	These	plural of this	Demonstrative	these files
+https://graph.org.ai/Determiner/Those	graph.org.ai	Determiner	Those	those	Those	plural of that	Demonstrative	those records
+https://graph.org.ai/Determiner/My	graph.org.ai	Determiner	My	my	My	belonging to me	Possessive	my task
+https://graph.org.ai/Determiner/Your	graph.org.ai	Determiner	Your	your	Your	belonging to you	Possessive	your project
+https://graph.org.ai/Determiner/His	graph.org.ai	Determiner	His	his	His	belonging to him	Possessive	his role
+https://graph.org.ai/Determiner/Her	graph.org.ai	Determiner	Her	her	Her	belonging to her	Possessive	her assignment
+https://graph.org.ai/Determiner/Its	graph.org.ai	Determiner	Its	its	Its	belonging to it	Possessive	its purpose
+https://graph.org.ai/Determiner/Our	graph.org.ai	Determiner	Our	our	Our	belonging to us	Possessive	our team
+https://graph.org.ai/Determiner/Their	graph.org.ai	Determiner	Their	their	Their	belonging to them	Possessive	their goals
+https://graph.org.ai/Determiner/What	graph.org.ai	Determiner	What	what	What	asking for information	Interrogative	what data
+https://graph.org.ai/Determiner/Which	graph.org.ai	Determiner	Which	which	Which	asking for choice	Interrogative	which option
+https://graph.org.ai/Determiner/Whose	graph.org.ai	Determiner	Whose	whose	Whose	asking about possession	Interrogative	whose responsibility

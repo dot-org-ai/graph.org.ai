@@ -1,32 +1,32 @@
 url	ns	type	id	code	name	description	category	usage
-https://graph.org/Conjunction/And	graph.org.ai	Conjunction	And	and		connects words, phrases, or clauses	Coordinating	coffee and tea
-https://graph.org/Conjunction/But	graph.org.ai	Conjunction	But	but		introduces a contrast or exception	Coordinating	small but powerful
-https://graph.org/Conjunction/Or	graph.org.ai	Conjunction	Or	or		presents alternatives	Coordinating	yes or no
-https://graph.org/Conjunction/Nor	graph.org.ai	Conjunction	Nor	nor		negative alternative	Coordinating	neither this nor that
-https://graph.org/Conjunction/For	graph.org.ai	Conjunction	For	for		indicates reason or purpose	Coordinating	worked hard, for success
-https://graph.org/Conjunction/So	graph.org.ai	Conjunction	So	so		indicates result or consequence	Coordinating	tired, so rested
-https://graph.org/Conjunction/Yet	graph.org.ai	Conjunction	Yet	yet		introduces a contrasting idea	Coordinating	small yet mighty
-https://graph.org/Conjunction/After	graph.org.ai	Conjunction	After	after		follows in time	Subordinating	after completion
-https://graph.org/Conjunction/Although	graph.org.ai	Conjunction	Although	although		despite the fact that	Subordinating	although difficult
-https://graph.org/Conjunction/As	graph.org.ai	Conjunction	As	as		at the same time; because	Subordinating	as requested
-https://graph.org/Conjunction/Because	graph.org.ai	Conjunction	Because	because		for the reason that	Subordinating	because necessary
-https://graph.org/Conjunction/Before	graph.org.ai	Conjunction	Before	before		earlier than	Subordinating	before starting
-https://graph.org/Conjunction/If	graph.org.ai	Conjunction	If	if		on the condition that	Subordinating	if approved
-https://graph.org/Conjunction/Once	graph.org.ai	Conjunction	Once	once		as soon as	Subordinating	once finished
-https://graph.org/Conjunction/Since	graph.org.ai	Conjunction	Since	since		from a time in the past	Subordinating	since Monday
-https://graph.org/Conjunction/Than	graph.org.ai	Conjunction	Than	than		introduces comparison	Subordinating	better than before
-https://graph.org/Conjunction/That	graph.org.ai	Conjunction	That	that		introduces a clause	Subordinating	know that it works
-https://graph.org/Conjunction/Though	graph.org.ai	Conjunction	Though	though		despite the fact	Subordinating	though challenging
-https://graph.org/Conjunction/Till	graph.org.ai	Conjunction	Till	till		up to the time when	Subordinating	till completion
-https://graph.org/Conjunction/Unless	graph.org.ai	Conjunction	Unless	unless		except on the condition that	Subordinating	unless canceled
-https://graph.org/Conjunction/Until	graph.org.ai	Conjunction	Until	until		up to the time that	Subordinating	until approved
-https://graph.org/Conjunction/When	graph.org.ai	Conjunction	When	when		at or during the time that	Subordinating	when ready
-https://graph.org/Conjunction/Where	graph.org.ai	Conjunction	Where	where		at or in which place	Subordinating	where needed
-https://graph.org/Conjunction/Whereas	graph.org.ai	Conjunction	Whereas	whereas		in contrast to the fact that	Subordinating	whereas others failed
-https://graph.org/Conjunction/Wherever	graph.org.ai	Conjunction	Wherever	wherever		in or to whatever place	Subordinating	wherever possible
-https://graph.org/Conjunction/Whether	graph.org.ai	Conjunction	Whether	whether		if; either	Subordinating	whether approved
-https://graph.org/Conjunction/While	graph.org.ai	Conjunction	While	while		during the time that	Subordinating	while working
-https://graph.org/Conjunction/Both	graph.org.ai	Conjunction	Both	both		the two; one and the other	Correlative	both manager and employee
-https://graph.org/Conjunction/Either	graph.org.ai	Conjunction	Either	either		one or the other of two	Correlative	either option
-https://graph.org/Conjunction/Neither	graph.org.ai	Conjunction	Neither	neither		not one nor the other	Correlative	neither option
-https://graph.org/Conjunction/Not	graph.org.ai	Conjunction	Not	not		negation	Correlative	not only...but also
+https://graph.org.ai/Conjunction/And	graph.org.ai	Conjunction	And	and	And	connects words, phrases, or clauses	Coordinating	coffee and tea
+https://graph.org.ai/Conjunction/But	graph.org.ai	Conjunction	But	but	But	introduces a contrast or exception	Coordinating	small but powerful
+https://graph.org.ai/Conjunction/Or	graph.org.ai	Conjunction	Or	or	Or	presents alternatives	Coordinating	yes or no
+https://graph.org.ai/Conjunction/Nor	graph.org.ai	Conjunction	Nor	nor	Nor	negative alternative	Coordinating	neither this nor that
+https://graph.org.ai/Conjunction/For	graph.org.ai	Conjunction	For	for	For	indicates reason or purpose	Coordinating	worked hard, for success
+https://graph.org.ai/Conjunction/So	graph.org.ai	Conjunction	So	so	So	indicates result or consequence	Coordinating	tired, so rested
+https://graph.org.ai/Conjunction/Yet	graph.org.ai	Conjunction	Yet	yet	Yet	introduces a contrasting idea	Coordinating	small yet mighty
+https://graph.org.ai/Conjunction/After	graph.org.ai	Conjunction	After	after	After	follows in time	Subordinating	after completion
+https://graph.org.ai/Conjunction/Although	graph.org.ai	Conjunction	Although	although	Although	despite the fact that	Subordinating	although difficult
+https://graph.org.ai/Conjunction/As	graph.org.ai	Conjunction	As	as	As	at the same time; because	Subordinating	as requested
+https://graph.org.ai/Conjunction/Because	graph.org.ai	Conjunction	Because	because	Because	for the reason that	Subordinating	because necessary
+https://graph.org.ai/Conjunction/Before	graph.org.ai	Conjunction	Before	before	Before	earlier than	Subordinating	before starting
+https://graph.org.ai/Conjunction/If	graph.org.ai	Conjunction	If	if	If	on the condition that	Subordinating	if approved
+https://graph.org.ai/Conjunction/Once	graph.org.ai	Conjunction	Once	once	Once	as soon as	Subordinating	once finished
+https://graph.org.ai/Conjunction/Since	graph.org.ai	Conjunction	Since	since	Since	from a time in the past	Subordinating	since Monday
+https://graph.org.ai/Conjunction/Than	graph.org.ai	Conjunction	Than	than	Than	introduces comparison	Subordinating	better than before
+https://graph.org.ai/Conjunction/That	graph.org.ai	Conjunction	That	that	That	introduces a clause	Subordinating	know that it works
+https://graph.org.ai/Conjunction/Though	graph.org.ai	Conjunction	Though	though	Though	despite the fact	Subordinating	though challenging
+https://graph.org.ai/Conjunction/Till	graph.org.ai	Conjunction	Till	till	Till	up to the time when	Subordinating	till completion
+https://graph.org.ai/Conjunction/Unless	graph.org.ai	Conjunction	Unless	unless	Unless	except on the condition that	Subordinating	unless canceled
+https://graph.org.ai/Conjunction/Until	graph.org.ai	Conjunction	Until	until	Until	up to the time that	Subordinating	until approved
+https://graph.org.ai/Conjunction/When	graph.org.ai	Conjunction	When	when	When	at or during the time that	Subordinating	when ready
+https://graph.org.ai/Conjunction/Where	graph.org.ai	Conjunction	Where	where	Where	at or in which place	Subordinating	where needed
+https://graph.org.ai/Conjunction/Whereas	graph.org.ai	Conjunction	Whereas	whereas	Whereas	in contrast to the fact that	Subordinating	whereas others failed
+https://graph.org.ai/Conjunction/Wherever	graph.org.ai	Conjunction	Wherever	wherever	Wherever	in or to whatever place	Subordinating	wherever possible
+https://graph.org.ai/Conjunction/Whether	graph.org.ai	Conjunction	Whether	whether	Whether	if; either	Subordinating	whether approved
+https://graph.org.ai/Conjunction/While	graph.org.ai	Conjunction	While	while	While	during the time that	Subordinating	while working
+https://graph.org.ai/Conjunction/Both	graph.org.ai	Conjunction	Both	both	Both	the two; one and the other	Correlative	both manager and employee
+https://graph.org.ai/Conjunction/Either	graph.org.ai	Conjunction	Either	either	Either	one or the other of two	Correlative	either option
+https://graph.org.ai/Conjunction/Neither	graph.org.ai	Conjunction	Neither	neither	Neither	not one nor the other	Correlative	neither option
+https://graph.org.ai/Conjunction/Not	graph.org.ai	Conjunction	Not	not	Not	negation	Correlative	not only...but also

@@ -188,7 +188,7 @@ https://integrations.org.ai/Search/ActivityV2	integrations.org.ai	Search	Activit
 https://integrations.org.ai/Search/ActivityV3	integrations.org.ai	Search	ActivityV3	activity_v3	activity_v3	Finds activities by subject, owner, and other criteria. Returns multiple results.	1
 https://integrations.org.ai/Search/Deal	integrations.org.ai	Search	Deal	deal	deal	Finds a deal by any field.	1
 https://integrations.org.ai/Search/Deals	integrations.org.ai	Search	Deals	deals	deals	Enter a keyword or phrase as a static value or as a dynamic value ([mapped field](https://docs..do.com/platform/publish/integration-checks-reference#d008-invalid-markdown-link))	1
-https://integrations.org.ai/Search/DealsByPerson	integrations.org.ai	Search	DealsByPerson	deals_by_person	deals_by_person	Finds multiple Deals associated with a Person (with line item support). 	1
+https://integrations.org.ai/Search/DealsByPerson	integrations.org.ai	Search	DealsByPerson	deals_by_person	deals_by_person	Finds multiple Deals associated with a Person (with line item support).	1
 https://integrations.org.ai/Search/DealsByPersonV2	integrations.org.ai	Search	DealsByPersonV2	deals_by_person_v2	deals_by_person_v2	Finds multiple Deals associated with a Person with enhanced data (with line item support).	1
 https://integrations.org.ai/Search/DealsByPersonV3	integrations.org.ai	Search	DealsByPersonV3	deals_by_person_v3	deals_by_person_v3	Finds deals associated with a person with enhanced data.	1
 https://integrations.org.ai/Search/DealsV2	integrations.org.ai	Search	DealsV2	deals_v2	deals_v2	Enter a keyword or phrase as a static value or as a dynamic value ([mapped field](https://help..do.com/hc/en-us/articles/8496343026701-Send-data-between-steps-by-mapping-fields))	1
@@ -468,9 +468,9 @@ https://integrations.org.ai/Search/CreditBalance	integrations.org.ai	Search	Cred
 https://integrations.org.ai/Search/PurchasedBark	integrations.org.ai	Search	PurchasedBark	purchased_bark	purchased_bark	Retrieve latest details on a Bark that you have purchased, including customer contact details.	1
 https://integrations.org.ai/Search/SearchBarks	integrations.org.ai	Search	SearchBarks	search_barks	search_barks	Search for active Barks, optionally filtering by category, location and request age.	1
 https://integrations.org.ai/Search/FindEpisode	integrations.org.ai	Search	FindEpisode	find_episode	find_episode	Get Spotify catalog information for a single show episode.	1
-https://integrations.org.ai/Search/FindTopTracks	integrations.org.ai	Search	FindTopTracks	find_top_tracks	find_top_tracks	Get Spotify catalog information about an artist's top track, by market. 	1
+https://integrations.org.ai/Search/FindTopTracks	integrations.org.ai	Search	FindTopTracks	find_top_tracks	find_top_tracks	Get Spotify catalog information about an artist's top track, by market.	1
 https://integrations.org.ai/Search/FindTrack	integrations.org.ai	Search	FindTrack	find_track	find_track	Get Spotify catalog information for a single track.	1
-https://integrations.org.ai/Search/GetTracks	integrations.org.ai	Search	GetTracks	get_tracks	get_tracks	Get a list of the current user’s saved shows as array of line items. Maximum of 50 shows. 	1
+https://integrations.org.ai/Search/GetTracks	integrations.org.ai	Search	GetTracks	get_tracks	get_tracks	Get a list of the current user’s saved shows as array of line items. Maximum of 50 shows.	1
 https://integrations.org.ai/Search/SearchItem	integrations.org.ai	Search	SearchItem	search_item	search_item	Get Spotify catalog information about an album, artist, playlist, track, show or episode that match a keyword string.	1
 https://integrations.org.ai/Search/CompanySearch	integrations.org.ai	Search	CompanySearch	company_search	company_search	Finds an existing company.	1
 https://integrations.org.ai/Search/ContactSearch	integrations.org.ai	Search	ContactSearch	contact_search	contact_search	Finds an existing contact.	1
@@ -671,7 +671,7 @@ https://integrations.org.ai/Search/SearchPayout	integrations.org.ai	Search	Searc
 https://integrations.org.ai/Search/SearchPayoutItems	integrations.org.ai	Search	SearchPayoutItems	search_payout_items	search_payout_items	Search for payout items by payout ID.	1
 https://integrations.org.ai/Search/Prospect	integrations.org.ai	Search	Prospect	prospect	prospect	Find a Matter by ID.	1
 https://integrations.org.ai/Search/Finddocument	integrations.org.ai	Search	Finddocument	finddocument	findDocument	Find a document in PDFMonkey.	1
-https://integrations.org.ai/Search/GetCustomFields	integrations.org.ai	Search	GetCustomFields	get_custom_fields	get_custom_fields	Search Custom fields by name and description 	1
+https://integrations.org.ai/Search/GetCustomFields	integrations.org.ai	Search	GetCustomFields	get_custom_fields	get_custom_fields	Search Custom fields by name and description	1
 https://integrations.org.ai/Search/SearchEventCall	integrations.org.ai	Search	SearchEventCall	search_event_call	search_event_call	Search Call in iClosed by Contact ID, Date, Type or Closer Owner.	1
 https://integrations.org.ai/Search/SearchTransaction	integrations.org.ai	Search	SearchTransaction	search_transaction	search_transaction	Search transaction by email or Phone Number	1
 https://integrations.org.ai/Search/InfoCompany	integrations.org.ai	Search	InfoCompany	info_company	info_company	Finds a company by Id.	1
@@ -910,7 +910,7 @@ https://integrations.org.ai/Search/GetSingleCategory	integrations.org.ai	Search	
 https://integrations.org.ai/Search/GetSingleCustomer	integrations.org.ai	Search	GetSingleCustomer	get_single_customer	get_single_customer	Get Single Customer	1
 https://integrations.org.ai/Search/GetSingleDiscount	integrations.org.ai	Search	GetSingleDiscount	get_single_discount	get_single_discount	Gets a single discount.	1
 https://integrations.org.ai/Search/GetSingleEmployee	integrations.org.ai	Search	GetSingleEmployee	get_single_employee	get_single_employee	Gets a single employee.	1
-https://integrations.org.ai/Search/GetSingleItem	integrations.org.ai	Search	GetSingleItem	get_single_item	get_single_item	Get single item 	1
+https://integrations.org.ai/Search/GetSingleItem	integrations.org.ai	Search	GetSingleItem	get_single_item	get_single_item	Get single item	1
 https://integrations.org.ai/Search/GetSingleModifier	integrations.org.ai	Search	GetSingleModifier	get_single_modifier	get_single_modifier	Gets a single modifier.	1
 https://integrations.org.ai/Search/GetSinglePaymentType	integrations.org.ai	Search	GetSinglePaymentType	get_single_payment_type	get_single_payment_type	Gets a single payment type.	1
 https://integrations.org.ai/Search/GetSingleReceipt	integrations.org.ai	Search	GetSingleReceipt	get_single_receipt	get_single_receipt	Get a single Receipt.	1
@@ -1253,7 +1253,7 @@ https://integrations.org.ai/Search/GetPropertyClaimAssignments	integrations.org.
 https://integrations.org.ai/Search/GetPropertyClaimNote	integrations.org.ai	Search	GetPropertyClaimNote	get_property_claim_note	get_property_claim_note	Finds a General Note in Property Claim by ID.	1
 https://integrations.org.ai/Search/GetPropertyClaimRoomNote	integrations.org.ai	Search	GetPropertyClaimRoomNote	get_property_claim_room_note	get_property_claim_room_note	Finds a Room Note in a Property Claim by ID.	1
 https://integrations.org.ai/Search/GetCrawlStatus	integrations.org.ai	Search	GetCrawlStatus	get_crawl_status	get_crawl_status	Get the status and data from a crawl	1
-https://integrations.org.ai/Search/GetExtractData	integrations.org.ai	Search	GetExtractData	get_extract_data	Get_Extract_Data	Get the status and data from Extract 	1
+https://integrations.org.ai/Search/GetExtractData	integrations.org.ai	Search	GetExtractData	get_extract_data	Get_Extract_Data	Get the status and data from Extract	1
 https://integrations.org.ai/Search/ContactSearchV1	integrations.org.ai	Search	ContactSearchV1	contact_search_v1	Contact_search_v1	Search for a person based on various criteria.	1
 https://integrations.org.ai/Search/OpportunitySearchV1	integrations.org.ai	Search	OpportunitySearchV1	opportunity_search_v1	Opportunity_search_v1	Search for an opportunity based on various criteria.	1
 https://integrations.org.ai/Search/FindCustomerV3	integrations.org.ai	Search	FindCustomerV3	find_customer_v3	find_customer_v3	Finds a customer by email address or customer key.	1
@@ -1322,7 +1322,7 @@ https://integrations.org.ai/Search/FindUserByEndUserID	integrations.org.ai	Searc
 https://integrations.org.ai/Search/GetCalendarEventType	integrations.org.ai	Search	GetCalendarEventType	get_calendar_event_type	get_calendar_event_type	Gets the calendar event type object by ID so you can check details like its name.	1
 https://integrations.org.ai/Search/GetCallDisposition	integrations.org.ai	Search	GetCallDisposition	get_call_disposition	get_call_disposition	Gets a single call disposition object by ID so you can get details such as name.	1
 https://integrations.org.ai/Search/GetContactDisposition	integrations.org.ai	Search	GetContactDisposition	get_contact_disposition	get_contact_disposition	Gets a Contact Disposition object by ID to see details such as name.	1
-https://integrations.org.ai/Search/GetLastNoteByContactID	integrations.org.ai	Search	GetLastNoteByContactID	get_last_note_by_contact_id	get_last_note_by_contact_id	Get only the most recent note for a specific contact ID. This will only return 1 note. 	1
+https://integrations.org.ai/Search/GetLastNoteByContactID	integrations.org.ai	Search	GetLastNoteByContactID	get_last_note_by_contact_id	get_last_note_by_contact_id	Get only the most recent note for a specific contact ID. This will only return 1 note.	1
 https://integrations.org.ai/Search/GetNotesByContactID	integrations.org.ai	Search	GetNotesByContactID	get_notes_by_contact_id	get_notes_by_contact_id	Return all the notes for a specific contact ID.	1
 https://integrations.org.ai/Search/GetNotesSummarizedForContactID	integrations.org.ai	Search	GetNotesSummarizedForContactID	get_notes_summarized_for_contact_id	get_notes_summarized_for_contact_id	Get a single text value that summarizes all notes for a single contact ID. This string includes utc time stamps for each note	1
 https://integrations.org.ai/Search/GetPhoneNumber	integrations.org.ai	Search	GetPhoneNumber	get_phone_number	get_phone_number	Gets a phone number object by ID	1
@@ -1378,7 +1378,7 @@ https://integrations.org.ai/Search/Findmember	integrations.org.ai	Search	Findmem
 https://integrations.org.ai/Search/Findsingleprogram	integrations.org.ai	Search	Findsingleprogram	findsingleprogram	FindSingleProgram	Find a program.	1
 https://integrations.org.ai/Search/Findsinglereferral	integrations.org.ai	Search	Findsinglereferral	findsinglereferral	FindSingleReferral	Find a Referral by Referral ID, Email Address or External ID.	1
 https://integrations.org.ai/Search/FindLease	integrations.org.ai	Search	FindLease	find_lease	find_lease	Finds a DoorLoop Lease	1
-https://integrations.org.ai/Search/FindLeaseTenants	integrations.org.ai	Search	FindLeaseTenants	find_lease_tenants	find_lease_tenants	 The ability to find all Tenants associated with a Lease using a Lease ID. You can use the .do Loop function to loop through all the Tenants information. 	1
+https://integrations.org.ai/Search/FindLeaseTenants	integrations.org.ai	Search	FindLeaseTenants	find_lease_tenants	find_lease_tenants	 The ability to find all Tenants associated with a Lease using a Lease ID. You can use the .do Loop function to loop through all the Tenants information.	1
 https://integrations.org.ai/Search/FindNextRentIncrease	integrations.org.ai	Search	FindNextRentIncrease	find_next_rent_increase	find_next_rent_increase	Find when a Lease's next rent increase will happen and for how much.	1
 https://integrations.org.ai/Search/FindTenant	integrations.org.ai	Search	FindTenant	find_tenant	find_tenant	Finds a tenant or a prospect. Optionally, create a new Prospect if one does not exist.	1
 https://integrations.org.ai/Search/SearchAdvancedPayrollReport	integrations.org.ai	Search	SearchAdvancedPayrollReport	search_advanced_payroll_report	search_advanced_payroll_report	Search the Advanced Payroll Report in busybusy.	1
@@ -1508,7 +1508,7 @@ https://integrations.org.ai/Search/GetAdminDetails	integrations.org.ai	Search	Ge
 https://integrations.org.ai/Search/GetCoachingTypes	integrations.org.ai	Search	GetCoachingTypes	get_coaching_types	get_coaching_types	Retrieves all coaching types.	1
 https://integrations.org.ai/Search/GetLeaderboard	integrations.org.ai	Search	GetLeaderboard	get_leaderboard	get_leaderboard	Retrieves leaderboard ranking and filters by time range.	1
 https://integrations.org.ai/Search/GetMemberAccesses	integrations.org.ai	Search	GetMemberAccesses	get_member_accesses	get_member_accesses	Retrieves all member offer accesses.	1
-https://integrations.org.ai/Search/GetMemberProgress	integrations.org.ai	Search	GetMemberProgress	get_member_progress	get_member_progress	Retrieves all programs and progresses of a selected member. 	1
+https://integrations.org.ai/Search/GetMemberProgress	integrations.org.ai	Search	GetMemberProgress	get_member_progress	get_member_progress	Retrieves all programs and progresses of a selected member.	1
 https://integrations.org.ai/Search/GetOffer	integrations.org.ai	Search	GetOffer	get_offer	get_offer	Retrieves specific offer.	1
 https://integrations.org.ai/Search/GetOffers	integrations.org.ai	Search	GetOffers	get_offers	get_offers	Retrieves all offers of your school.	1
 https://integrations.org.ai/Search/GetProgram	integrations.org.ai	Search	GetProgram	get_program	get_program	Retrieves specific program details.	1
@@ -1584,7 +1584,7 @@ https://integrations.org.ai/Search/BlogCategorysearch	integrations.org.ai	Search
 https://integrations.org.ai/Search/CoreClubsearch	integrations.org.ai	Search	CoreClubsearch	core_clubsearch	core_clubSearch	Search for a Club by the id	1
 https://integrations.org.ai/Search/CoreMembersearch	integrations.org.ai	Search	CoreMembersearch	core_membersearch	core_memberSearch	Search for a member by name or email address	1
 https://integrations.org.ai/Search/ForumsTopicsearch	integrations.org.ai	Search	ForumsTopicsearch	forums_topicsearch	forums_topicSearch	Search for a topic by the topic id	1
-https://integrations.org.ai/Search/SearchDonation	integrations.org.ai	Search	SearchDonation	search_donation	search_donation	Finds donations by date within a contact's financial record in WildApricot. 	1
+https://integrations.org.ai/Search/SearchDonation	integrations.org.ai	Search	SearchDonation	search_donation	search_donation	Finds donations by date within a contact's financial record in WildApricot.	1
 https://integrations.org.ai/Search/SearchRegistrations	integrations.org.ai	Search	SearchRegistrations	search_registrations	search_registrations	Searches event registrations in WildApricot.	1
 https://integrations.org.ai/Search/LookupWebhookResource	integrations.org.ai	Search	LookupWebhookResource	lookup_webhook_resource	lookup_webhook_resource	Lookup a webhook's resource.	1
 https://integrations.org.ai/Search/GetLeadByEmail	integrations.org.ai	Search	GetLeadByEmail	get_lead_by_email	get_lead_by_email	Get a contact using email address	1
@@ -1626,7 +1626,7 @@ https://integrations.org.ai/Search/Invitationsearch	integrations.org.ai	Search	I
 https://integrations.org.ai/Search/GiftCard	integrations.org.ai	Search	GiftCard	gift_card	gift_card	Finds a gift card.	1
 https://integrations.org.ai/Search/FindAsset	integrations.org.ai	Search	FindAsset	find_asset	find_asset	Find an asset.	1
 https://integrations.org.ai/Search/FindPart	integrations.org.ai	Search	FindPart	find_part	find_part	Find a part.	1
-https://integrations.org.ai/Search/FindAssessment	integrations.org.ai	Search	FindAssessment	find_assessment	find_assessment	get all the assessments created by owner 	1
+https://integrations.org.ai/Search/FindAssessment	integrations.org.ai	Search	FindAssessment	find_assessment	find_assessment	get all the assessments created by owner	1
 https://integrations.org.ai/Search/Employee	integrations.org.ai	Search	Employee	employee	employee	Finds an employee by Email ID or Employee ID.	1
 https://integrations.org.ai/Search/Lookupemployee	integrations.org.ai	Search	Lookupemployee	lookupemployee	lookupemployee	Lookup an employee by Email ID or Employee ID.	1
 https://integrations.org.ai/Search/GetEvent	integrations.org.ai	Search	GetEvent	get_event	get_event	Fetch an Event from Swoogo	1
@@ -1666,12 +1666,12 @@ https://integrations.org.ai/Search/GetTranscripts	integrations.org.ai	Search	Get
 https://integrations.org.ai/Search/TeamMeetings	integrations.org.ai	Search	TeamMeetings	team_meetings	Team_Meetings	Lists past meetings of a team.	1
 https://integrations.org.ai/Search/Coursesearch	integrations.org.ai	Search	Coursesearch	coursesearch	courseSearch	Finds a course.	1
 https://integrations.org.ai/Search/CommissionGroups	integrations.org.ai	Search	CommissionGroups	commission_groups	commission_groups	Returns a list of Commission Groups for a given advertiser ID	1
-https://integrations.org.ai/Search/ListTransactions	integrations.org.ai	Search	ListTransactions	list_transactions	list_transactions	Returns a list of transactions for a given publisher or advertiser 	1
+https://integrations.org.ai/Search/ListTransactions	integrations.org.ai	Search	ListTransactions	list_transactions	list_transactions	Returns a list of transactions for a given publisher or advertiser	1
 https://integrations.org.ai/Search/PerformanceReport	integrations.org.ai	Search	PerformanceReport	performance_report	performance_report	Returns performance data for a given advertiser	1
 https://integrations.org.ai/Search/PerformanceReportPublishers	integrations.org.ai	Search	PerformanceReportPublishers	performance_report_publishers	performance_report_publishers	Returns performance data for a given publisher	1
 https://integrations.org.ai/Search/ProgramInformation	integrations.org.ai	Search	ProgramInformation	program_information	program_information	Returns advertiser information with whom you have an active partnership	1
 https://integrations.org.ai/Search/Promotions	integrations.org.ai	Search	Promotions	promotions	promotions	Returns a list of promotions and vouchercodes	1
-https://integrations.org.ai/Search/TransactionsByID	integrations.org.ai	Search	TransactionsByID	transactions_by_id	transactions_by_id	Returns a list of transactions for a given publisher or advertiser 	1
+https://integrations.org.ai/Search/TransactionsByID	integrations.org.ai	Search	TransactionsByID	transactions_by_id	transactions_by_id	Returns a list of transactions for a given publisher or advertiser	1
 https://integrations.org.ai/Search/BuyerLead	integrations.org.ai	Search	BuyerLead	buyer_lead	buyer_lead	Finds a buyer lead based on phone number, email, or full name, scoped by lead campaign.	1
 https://integrations.org.ai/Search/SellerLead	integrations.org.ai	Search	SellerLead	seller_lead	seller_lead	Finds a seller lead based on phone number, email, or full name, scoped by lead campaign.	1
 https://integrations.org.ai/Search/SearchDataItem	integrations.org.ai	Search	SearchDataItem	search_data_item	search_data_item	Search for an existing record by unique fields.	1
@@ -1775,7 +1775,7 @@ https://integrations.org.ai/Search/FindCompanyByID	integrations.org.ai	Search	Fi
 https://integrations.org.ai/Search/FindCompanyByIDV3	integrations.org.ai	Search	FindCompanyByIDV3	find_company_by_id_v3	find_company_by_id_v3	Find a company by their unique ID	1
 https://integrations.org.ai/Search/FindCompanyByNameV3	integrations.org.ai	Search	FindCompanyByNameV3	find_company_by_name_v3	find_company_by_name_v3	Finds a company by its name.	1
 https://integrations.org.ai/Search/FindCustomFields	integrations.org.ai	Search	FindCustomFields	find_custom_fields	find_custom_fields	Find custom field by type	1
-https://integrations.org.ai/Search/FindCustomFieldValues	integrations.org.ai	Search	FindCustomFieldValues	find_custom_field_values	find_custom_field_values	Find custom field values by type and id 	1
+https://integrations.org.ai/Search/FindCustomFieldValues	integrations.org.ai	Search	FindCustomFieldValues	find_custom_field_values	find_custom_field_values	Find custom field values by type and id	1
 https://integrations.org.ai/Search/FindInvoiceTemplateByName	integrations.org.ai	Search	FindInvoiceTemplateByName	find_invoice_template_by_name	find_invoice_template_by_name	Finds an invoice template by its name.	1
 https://integrations.org.ai/Search/FindOffLimits	integrations.org.ai	Search	FindOffLimits	find_off_limits	find_off_limits	Find off limits by a specific person or company	1
 https://integrations.org.ai/Search/FindOffLimitsV2	integrations.org.ai	Search	FindOffLimitsV2	find_off_limits_v2	find_off_limits_v2	Find off limits by a specific company	1
@@ -1791,7 +1791,7 @@ https://integrations.org.ai/Search/FindProjectBillingByID	integrations.org.ai	Se
 https://integrations.org.ai/Search/FindProjectByID	integrations.org.ai	Search	FindProjectByID	find_project_by_id	find_project_by_id	Find a project by their unique ID	1
 https://integrations.org.ai/Search/FindProjectByName	integrations.org.ai	Search	FindProjectByName	find_project_by_name	find_project_by_name	Finds an opportunity or assignment by its name.	1
 https://integrations.org.ai/Search/FindProjectByProjectID	integrations.org.ai	Search	FindProjectByProjectID	find_project_by_project_id	find_project_by_project_id	Finds an opportunity or assignment by its id.	1
-https://integrations.org.ai/Search/FindProjectCandidatesByID	integrations.org.ai	Search	FindProjectCandidatesByID	find_project_candidates_by_id	find_project_candidates_by_id	Returns project candidates and their latest pipeline status by the project's unique id 	1
+https://integrations.org.ai/Search/FindProjectCandidatesByID	integrations.org.ai	Search	FindProjectCandidatesByID	find_project_candidates_by_id	find_project_candidates_by_id	Returns project candidates and their latest pipeline status by the project's unique id	1
 https://integrations.org.ai/Search/FindSplitFeeRecipientByName	integrations.org.ai	Search	FindSplitFeeRecipientByName	find_split_fee_recipient_by_name	find_split_fee_recipient_by_name	Finds a fee split recipient by name.	1
 https://integrations.org.ai/Search/Analytics	integrations.org.ai	Search	Analytics	analytics	analytics	Get detailed statistics of your account directly through our API.	1
 https://integrations.org.ai/Search/Journal	integrations.org.ai	Search	Journal	journal	journal	You can use this endpoint to query the last entries of your logbooks. Each query returns a maximum of 100 entries.	1
@@ -1814,12 +1814,12 @@ https://integrations.org.ai/Search/FindCaseOrIntakeByNumber	integrations.org.ai	
 https://integrations.org.ai/Search/Getprojectdates	integrations.org.ai	Search	Getprojectdates	getprojectdates	GetProjectDates	Gets all the project dates.	1
 https://integrations.org.ai/Search/GetAllProjects	integrations.org.ai	Search	GetAllProjects	get_all_projects	get_all_projects	Retrieve all projects	1
 https://integrations.org.ai/Search/GetProjectExpense	integrations.org.ai	Search	GetProjectExpense	get_project_expense	get_project_expense	Finds an expense using both the Project ID and Expense ID.	1
-https://integrations.org.ai/Search/GetProjectExpenses	integrations.org.ai	Search	GetProjectExpenses	get_project_expenses	get_project_expenses	Finds all expenses linked to a project. 	1
+https://integrations.org.ai/Search/GetProjectExpenses	integrations.org.ai	Search	GetProjectExpenses	get_project_expenses	get_project_expenses	Finds all expenses linked to a project.	1
 https://integrations.org.ai/Search/GetProjectFinancialKPI	integrations.org.ai	Search	GetProjectFinancialKPI	get_project_financial_kpi	Get_Project_Financial_KPI	Get Project Financial KPI	1
 https://integrations.org.ai/Search/GetProjectInvoice	integrations.org.ai	Search	GetProjectInvoice	get_project_invoice	get_project_invoice	Finds an invoice using both the Project ID and Invoice ID.	1
-https://integrations.org.ai/Search/GetProjectInvoices	integrations.org.ai	Search	GetProjectInvoices	get_project_invoices	get_project_invoices	Finds all invoices linked to a project. 	1
+https://integrations.org.ai/Search/GetProjectInvoices	integrations.org.ai	Search	GetProjectInvoices	get_project_invoices	get_project_invoices	Finds all invoices linked to a project.	1
 https://integrations.org.ai/Search/GetProjectPayment	integrations.org.ai	Search	GetProjectPayment	get_project_payment	get_project_payment	Finds a payment using both the Project ID and Payment ID.	1
-https://integrations.org.ai/Search/GetProjectPayments	integrations.org.ai	Search	GetProjectPayments	get_project_payments	get_project_payments	Finds all payments linked to a project. 	1
+https://integrations.org.ai/Search/GetProjectPayments	integrations.org.ai	Search	GetProjectPayments	get_project_payments	get_project_payments	Finds all payments linked to a project.	1
 https://integrations.org.ai/Search/GetProjectStatus	integrations.org.ai	Search	GetProjectStatus	get_project_status	get_project_status	Get the current status of the project	1
 https://integrations.org.ai/Search/AbuseLookup	integrations.org.ai	Search	AbuseLookup	abuse_lookup	abuse_lookup	Find abuse information of an IP address.	1
 https://integrations.org.ai/Search/AsnLookup	integrations.org.ai	Search	AsnLookup	asn_lookup	asn_lookup	Get the ASN information of an IP address	1
@@ -2027,12 +2027,12 @@ https://integrations.org.ai/Search/FindMarketingCampaignMember	integrations.org.
 https://integrations.org.ai/Search/FindMarketingCampaignStatus	integrations.org.ai	Search	FindMarketingCampaignStatus	find_marketing_campaign_status	find_marketing_campaign_status	Find a marketing campaign member status.	1
 https://integrations.org.ai/Search/FindOrganisation	integrations.org.ai	Search	FindOrganisation	find_organisation	find_organisation	Find an organisation.	1
 https://integrations.org.ai/Search/FindSalesLead	integrations.org.ai	Search	FindSalesLead	find_sales_lead	find_sales_lead	Find a sales lead.	1
-https://integrations.org.ai/Search/FindProjectTask	integrations.org.ai	Search	FindProjectTask	find_project_task	find_project_task	Finds a Project Task 	1
+https://integrations.org.ai/Search/FindProjectTask	integrations.org.ai	Search	FindProjectTask	find_project_task	find_project_task	Finds a Project Task	1
 https://integrations.org.ai/Search/GetTimeLogs	integrations.org.ai	Search	GetTimeLogs	get_time_logs	get_time_logs	View all time logs in a selected date period.	1
 https://integrations.org.ai/Search/GetAssignment	integrations.org.ai	Search	GetAssignment	get_assignment	get_assignment	Returns a judging assignment for a given slug.	1
-https://integrations.org.ai/Search/GetUserByEmail	integrations.org.ai	Search	GetUserByEmail	get_user_by_email	get_user_by_email	This returns the user by their email address. The response includes all user fields including files. 	1
+https://integrations.org.ai/Search/GetUserByEmail	integrations.org.ai	Search	GetUserByEmail	get_user_by_email	get_user_by_email	This returns the user by their email address. The response includes all user fields including files.	1
 https://integrations.org.ai/Search/GetUserBySlug	integrations.org.ai	Search	GetUserBySlug	get_user_by_slug	get_user_by_slug	This returns user information for a unique slug.	1
-https://integrations.org.ai/Search/ListEntries	integrations.org.ai	Search	ListEntries	list_entries	list_entries	Returns a list of all entries. 	1
+https://integrations.org.ai/Search/ListEntries	integrations.org.ai	Search	ListEntries	list_entries	list_entries	Returns a list of all entries.	1
 https://integrations.org.ai/Search/RecuseAssignment	integrations.org.ai	Search	RecuseAssignment	recuse_assignment	recuse_assignment	Recuses a judge from judging an entry.	1
 https://integrations.org.ai/Search/SearchEntriesByTag	integrations.org.ai	Search	SearchEntriesByTag	search_entries_by_tag	search_entries_by_tag	This returns a list of entries with a specific tag.	1
 https://integrations.org.ai/Search/GetClient	integrations.org.ai	Search	GetClient	get_client	get_client	Returns a specific client.	1
@@ -2046,19 +2046,19 @@ https://integrations.org.ai/Search/VendorSearchHostname	integrations.org.ai	Sear
 https://integrations.org.ai/Search/Searchsubscriber	integrations.org.ai	Search	Searchsubscriber	searchsubscriber	searchSubscriber	Searches for the subscriber in your list and resturns his data. If not found you can choose to add him.	1
 https://integrations.org.ai/Search/Findquote	integrations.org.ai	Search	Findquote	findquote	findQuote	Finds a Quotation	1
 https://integrations.org.ai/Search/SearchCustomers	integrations.org.ai	Search	SearchCustomers	search_customers	search_customers	Searches for a particular Customer	1
-https://integrations.org.ai/Search/Searchbillpayment	integrations.org.ai	Search	Searchbillpayment	searchbillpayment	SearchBillPayment	Search for an existing Accounts Payable Payment. 	1
-https://integrations.org.ai/Search/Searchpayment	integrations.org.ai	Search	Searchpayment	searchpayment	SearchPayment	Search for an existing Accounts Receivable Payment. 	1
+https://integrations.org.ai/Search/Searchbillpayment	integrations.org.ai	Search	Searchbillpayment	searchbillpayment	SearchBillPayment	Search for an existing Accounts Payable Payment.	1
+https://integrations.org.ai/Search/Searchpayment	integrations.org.ai	Search	Searchpayment	searchpayment	SearchPayment	Search for an existing Accounts Receivable Payment.	1
 https://integrations.org.ai/Search/SearchCheck	integrations.org.ai	Search	SearchCheck	search_check	search_check	Search for an existing Check transaction.	1
 https://integrations.org.ai/Search/SearchCoa	integrations.org.ai	Search	SearchCoa	search_coa	search_coa	Search for an existing Chart of Account.	1
 https://integrations.org.ai/Search/SearchCreditcard	integrations.org.ai	Search	SearchCreditcard	search_creditcard	search_creditcard	Search for an existing Credit Card transaction.	1
 https://integrations.org.ai/Search/SearchDeposit	integrations.org.ai	Search	SearchDeposit	search_deposit	search_deposit	Search for an existing deposit.	1
-https://integrations.org.ai/Search/SearchExpense	integrations.org.ai	Search	SearchExpense	search_expense	search_expense	Search for an existing Expense Item. 	1
-https://integrations.org.ai/Search/SearchExpenseentry	integrations.org.ai	Search	SearchExpenseentry	search_expenseentry	search_expenseentry	Search for an existing Expense Entry. 	1
-https://integrations.org.ai/Search/SearchJournal	integrations.org.ai	Search	SearchJournal	search_journal	search_journal	Search for an existing General Journal entry. 	1
-https://integrations.org.ai/Search/SearchTimeentry	integrations.org.ai	Search	SearchTimeentry	search_timeentry	search_timeentry	Search for an existing Time Entry. 	1
+https://integrations.org.ai/Search/SearchExpense	integrations.org.ai	Search	SearchExpense	search_expense	search_expense	Search for an existing Expense Item.	1
+https://integrations.org.ai/Search/SearchExpenseentry	integrations.org.ai	Search	SearchExpenseentry	search_expenseentry	search_expenseentry	Search for an existing Expense Entry.	1
+https://integrations.org.ai/Search/SearchJournal	integrations.org.ai	Search	SearchJournal	search_journal	search_journal	Search for an existing General Journal entry.	1
+https://integrations.org.ai/Search/SearchTimeentry	integrations.org.ai	Search	SearchTimeentry	search_timeentry	search_timeentry	Search for an existing Time Entry.	1
 https://integrations.org.ai/Search/SearchTodo	integrations.org.ai	Search	SearchTodo	search_todo	search_todo	Search for an existing To-Do item.	1
-https://integrations.org.ai/Search/SearchVendor	integrations.org.ai	Search	SearchVendor	search_vendor	search_vendor	Search for an existing Vendor. 	1
-https://integrations.org.ai/Search/SearchVendorbill	integrations.org.ai	Search	SearchVendorbill	search_vendorbill	search_vendorbill	Search for an existing Accounts Payable Bill. 	1
+https://integrations.org.ai/Search/SearchVendor	integrations.org.ai	Search	SearchVendor	search_vendor	search_vendor	Search for an existing Vendor.	1
+https://integrations.org.ai/Search/SearchVendorbill	integrations.org.ai	Search	SearchVendorbill	search_vendorbill	search_vendorbill	Search for an existing Accounts Payable Bill.	1
 https://integrations.org.ai/Search/CardNumber	integrations.org.ai	Search	CardNumber	card_number	card_number	Retrieves card number, CVV, and expiration date of a card by ID.	1
 https://integrations.org.ai/Search/CardTransactions	integrations.org.ai	Search	CardTransactions	card_transactions	card_transactions	List Brex Card transactions	1
 https://integrations.org.ai/Search/CashTransactions	integrations.org.ai	Search	CashTransactions	cash_transactions	cash_transactions	List Brex Cash transactions	1
@@ -2163,7 +2163,7 @@ https://integrations.org.ai/Search/Retrievelink	integrations.org.ai	Search	Retri
 https://integrations.org.ai/Search/GetDeviceDetails	integrations.org.ai	Search	GetDeviceDetails	get_device_details	get_device_details	Get more details about your Tidbyt.	1
 https://integrations.org.ai/Search/GetInstallationPreview	integrations.org.ai	Search	GetInstallationPreview	get_installation_preview	get_installation_preview	Get a preview image of an app currently installed on your Tidbyt. Generally, this is the exact image that is displayed on your Tidbyt, though you may receive an old version that has been cached for several minutes.	1
 https://integrations.org.ai/Search/ListAvailableApps	integrations.org.ai	Search	ListAvailableApps	list_available_apps	list_available_apps	List all the apps that are available to install on your Tidbyt.	1
-https://integrations.org.ai/Search/ListDevices	integrations.org.ai	Search	ListDevices	list_devices	list_devices	List all Tidbyt devices that you have access to. 	1
+https://integrations.org.ai/Search/ListDevices	integrations.org.ai	Search	ListDevices	list_devices	list_devices	List all Tidbyt devices that you have access to.	1
 https://integrations.org.ai/Search/ListInstallations	integrations.org.ai	Search	ListInstallations	list_installations	list_installations	List all installed apps on your Tidbyt.	1
 https://integrations.org.ai/Search/SearchUserByUsername	integrations.org.ai	Search	SearchUserByUsername	search_user_by_username	search_user_by_username	Search for a WordPress user based on their username.	1
 https://integrations.org.ai/Search/Api20250101resourcesapipublicwebhooksubscriptionsget	integrations.org.ai	Search	Api20250101resourcesapipublicwebhooksubscriptionsget	api20250101resourcesapipublicwebhooksubscriptionsget	api20250101ResourcesApiPublicWebhookSubscriptionsGet	Reads all Webhook subscriptions	1
@@ -2450,7 +2450,7 @@ https://integrations.org.ai/Search/SearchCards	integrations.org.ai	Search	Search
 https://integrations.org.ai/Search/SearchMatters	integrations.org.ai	Search	SearchMatters	search_matters	search_matters	Search for a matter	1
 https://integrations.org.ai/Search/Policysearch	integrations.org.ai	Search	Policysearch	policysearch	policySearch	Finds a policy.	1
 https://integrations.org.ai/Search/Riskprofilesearch	integrations.org.ai	Search	Riskprofilesearch	riskprofilesearch	riskProfileSearch	Finds a risk profile.	1
-https://integrations.org.ai/Search/FindTile	integrations.org.ai	Search	FindTile	find_tile	find_tile	Look for a specific Tile. Tiles are items like projects, customers, clients, tasks or whatever you have configured in the timeBuzzer admin section. 	1
+https://integrations.org.ai/Search/FindTile	integrations.org.ai	Search	FindTile	find_tile	find_tile	Look for a specific Tile. Tiles are items like projects, customers, clients, tasks or whatever you have configured in the timeBuzzer admin section.	1
 https://integrations.org.ai/Search/FindFeedback	integrations.org.ai	Search	FindFeedback	find_feedback	find_feedback	Find a feedback based on external_id or url.	1
 https://integrations.org.ai/Search/FindIdea	integrations.org.ai	Search	FindIdea	find_idea	find_idea	Find an an existing idea.	1
 https://integrations.org.ai/Search/FindOrderByOrderNo	integrations.org.ai	Search	FindOrderByOrderNo	find_order_by_order_no	find_order_by_order_no	Finds an order by an order number.	1
@@ -2485,7 +2485,7 @@ https://integrations.org.ai/Search/FindLists	integrations.org.ai	Search	FindList
 https://integrations.org.ai/Search/FindSubscribeByEmail	integrations.org.ai	Search	FindSubscribeByEmail	find_subscribe_by_email	find_subscribe_by_email	Find a subscriber by email.	1
 https://integrations.org.ai/Search/DeleteKey	integrations.org.ai	Search	DeleteKey	delete_key	delete_key	Deletes multiple keys from the project. Requires Manage keys admin right.	1
 https://integrations.org.ai/Search/GetComment	integrations.org.ai	Search	GetComment	get_comment	get_comment	Retrieves a Comment object.	1
-https://integrations.org.ai/Search/GetKeys	integrations.org.ai	Search	GetKeys	get_keys	get_keys	Lists all keys in the project. 	1
+https://integrations.org.ai/Search/GetKeys	integrations.org.ai	Search	GetKeys	get_keys	get_keys	Lists all keys in the project.	1
 https://integrations.org.ai/Search/GetProject	integrations.org.ai	Search	GetProject	get_project	get_project	Retrieves a project object	1
 https://integrations.org.ai/Search/GetTask	integrations.org.ai	Search	GetTask	get_task	get_task	Retrieves a Task object.	1
 https://integrations.org.ai/Search/ListAllOrders	integrations.org.ai	Search	ListAllOrders	list_all_orders	list_all_orders	Lists all translation orders in the team.	1
@@ -2513,7 +2513,7 @@ https://integrations.org.ai/Search/Relaynodesearch	integrations.org.ai	Search	Re
 https://integrations.org.ai/Search/GetOrderDetails	integrations.org.ai	Search	GetOrderDetails	get_order_details	get_order_details	Gets details about an order given the order number	1
 https://integrations.org.ai/Search/GetQuoteDetails	integrations.org.ai	Search	GetQuoteDetails	get_quote_details	get_quote_details	Get details about a quote	1
 https://integrations.org.ai/Search/GetHTMLEmail	integrations.org.ai	Search	GetHTMLEmail	get_html_email	get_html_email	Get the the HTML content for an email campaign	1
-https://integrations.org.ai/Search/ListEmployees	integrations.org.ai	Search	ListEmployees	list_employees	list_employees	List all company employees 	1
+https://integrations.org.ai/Search/ListEmployees	integrations.org.ai	Search	ListEmployees	list_employees	list_employees	List all company employees	1
 https://integrations.org.ai/Search/ListEmploymentContracts	integrations.org.ai	Search	ListEmploymentContracts	list_employment_contracts	list_employment_contracts	Lists the contracts associated with a specific employment.	1
 https://integrations.org.ai/Search/FindDefaultField	integrations.org.ai	Search	FindDefaultField	find_default_field	find_default_field	Finds a Default Field in the enterprise	1
 https://integrations.org.ai/Search/ActivityGetFull	integrations.org.ai	Search	ActivityGetFull	activity_get_full	activity_get_full	Find an Activity by ID and get its details. Use it in conjunction with New Activity trigger.	1
@@ -2537,7 +2537,6 @@ https://integrations.org.ai/Search/Searchmembershiplevelbyid	integrations.org.ai
 https://integrations.org.ai/Search/SearchPersonSingleField	integrations.org.ai	Search	SearchPersonSingleField	search_person_single_field	search_person_single_field	Search a person by field. If there is many entity with the same value, an error will be returned.	1
 https://integrations.org.ai/Search/SearchSingleEmail	integrations.org.ai	Search	SearchSingleEmail	search_single_email	search_single_email	Search a person by email. If there is many person with the same email, an error will be returned.	1
 https://integrations.org.ai/Search/OrganizationSearch	integrations.org.ai	Search	OrganizationSearch	organization_search	organization_search	Search for a specific organization	1
-https://integrations.org.ai/Search/ProspectSearch	integrations.org.ai	Search	ProspectSearch	prospect_search	prospect_search	Search for a specific prospect	1
 https://integrations.org.ai/Search/Participantsearch	integrations.org.ai	Search	Participantsearch	participantsearch	participantSearch	Search for a Participant by name or fields attached to it	1
 https://integrations.org.ai/Search/Researchsessionsearch	integrations.org.ai	Search	Researchsessionsearch	researchsessionsearch	researchSessionSearch	Search for a Session by title or fields attached to it	1
 https://integrations.org.ai/Search/Attendeesstatus	integrations.org.ai	Search	Attendeesstatus	attendeesstatus	attendeesStatus	Finds all attendees statuses based on event.	1
@@ -2573,12 +2572,12 @@ https://integrations.org.ai/Search/BusinessListingSearch	integrations.org.ai	Sea
 https://integrations.org.ai/Search/DomainRankOverview	integrations.org.ai	Search	DomainRankOverview	domain_rank_overview	domain_rank_overview	Get ranking and traffic data from organic search for a domain.	1
 https://integrations.org.ai/Search/GetAIKeywordSearchVolume	integrations.org.ai	Search	GetAIKeywordSearchVolume	get_ai_keyword_search_volume	get_ai_keyword_search_volume	Get search volume data for target keywords based on their estimated usage in AI tools.	1
 https://integrations.org.ai/Search/GetBacklinks	integrations.org.ai	Search	GetBacklinks	get_backlinks	get_backlinks	Get a list of backlinks and relevant data for a domain, subdomain, or page.	1
-https://integrations.org.ai/Search/GetBacklinksPagesSummary	integrations.org.ai	Search	GetBacklinksPagesSummary	get_backlinks_pages_summary	get_backlinks_pages_summary	Get an overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains, or for a single page. 	1
+https://integrations.org.ai/Search/GetBacklinksPagesSummary	integrations.org.ai	Search	GetBacklinksPagesSummary	get_backlinks_pages_summary	get_backlinks_pages_summary	Get an overview of backlinks and related data for a bulk of up to 1000 pages, domains, or subdomains, or for a single page.	1
 https://integrations.org.ai/Search/GetGoogleSerpOrganic	integrations.org.ai	Search	GetGoogleSerpOrganic	get_google_serp_organic	get_google_serp_organic	Get Google Search results for the specified keyword.	1
 https://integrations.org.ai/Search/GoogleSearchVolume	integrations.org.ai	Search	GoogleSearchVolume	google_search_volume	google_search_volume	Get search volume, CPC, and competition for keywords.	1
-https://integrations.org.ai/Search/HistoricalTrafficStats	integrations.org.ai	Search	HistoricalTrafficStats	historical_traffic_stats	historical_traffic_stats	Get an esitmation of organic traffic a website or webpage has been getting from Google in the past 12 months or since 2020. 	1
+https://integrations.org.ai/Search/HistoricalTrafficStats	integrations.org.ai	Search	HistoricalTrafficStats	historical_traffic_stats	historical_traffic_stats	Get an esitmation of organic traffic a website or webpage has been getting from Google in the past 12 months or since 2020.	1
 https://integrations.org.ai/Search/KeywordSuggestion	integrations.org.ai	Search	KeywordSuggestion	keyword_suggestion	keyword_suggestion	Get search terms relevant to the product or service categories of the specified keywords.	1
-https://integrations.org.ai/Search/OrganicTrafficStats	integrations.org.ai	Search	OrganicTrafficStats	organic_traffic_stats	organic_traffic_stats	Get an esitmation of monthly organic traffic a website or webpage is getting from Google. 	1
+https://integrations.org.ai/Search/OrganicTrafficStats	integrations.org.ai	Search	OrganicTrafficStats	organic_traffic_stats	organic_traffic_stats	Get an esitmation of monthly organic traffic a website or webpage is getting from Google.	1
 https://integrations.org.ai/Search/PageAuditCheck	integrations.org.ai	Search	PageAuditCheck	page_audit_check	page_audit_check	Run an essential SEO Audit and find out how well-optimized your target page is.	1
 https://integrations.org.ai/Search/RankedKeywords	integrations.org.ai	Search	RankedKeywords	ranked_keywords	ranked_keywords	Get a list of keywords that any domain or webpage is ranking for.	1
 https://integrations.org.ai/Search/FormsGetItem	integrations.org.ai	Search	FormsGetItem	forms_get_item	forms_get_item	Get a specific Case from a Form	1
@@ -2614,7 +2613,7 @@ https://integrations.org.ai/Search/FindTicketInvoices	integrations.org.ai	Search
 https://integrations.org.ai/Search/FindTicketPresets	integrations.org.ai	Search	FindTicketPresets	find_ticket_presets	find_ticket_presets	Finds existing ticket presets.	1
 https://integrations.org.ai/Search/FindTicketTimer	integrations.org.ai	Search	FindTicketTimer	find_ticket_timer	find_ticket_timer	Finds existing Ticket Timers	1
 https://integrations.org.ai/Search/FindTimeClock	integrations.org.ai	Search	FindTimeClock	find_time_clock	find_time_clock	Finds a Time Clock	1
-https://integrations.org.ai/Search/GetAccount	integrations.org.ai	Search	GetAccount	get_account	Get_Account	Get  an account with its autoID 	1
+https://integrations.org.ai/Search/GetAccount	integrations.org.ai	Search	GetAccount	get_account	Get_Account	Get  an account with its autoID	1
 https://integrations.org.ai/Search/GetProperty	integrations.org.ai	Search	GetProperty	get_property	Get_Property	Get the property by its autoID, generated in Zabun. Useful for when you get changed properties from the regular polling trigger, and want to get more all the property data	1
 https://integrations.org.ai/Search/ContactGroupListsearch	integrations.org.ai	Search	ContactGroupListsearch	contact_group_listsearch	contact_group_listsearch	Find Contact Group by External Reference Id	1
 https://integrations.org.ai/Search/ContactGroupSearch	integrations.org.ai	Search	ContactGroupSearch	contact_group_search	contact_group_search	Find contact group by name	1
@@ -2649,7 +2648,7 @@ https://integrations.org.ai/Search/ActionForOrder	integrations.org.ai	Search	Act
 https://integrations.org.ai/Search/ActionForQuote	integrations.org.ai	Search	ActionForQuote	action_for_quote	action_for_quote	Finds a Quote in the Deep Lawn.	1
 https://integrations.org.ai/Search/GetCreateCustomer	integrations.org.ai	Search	GetCreateCustomer	get_create_customer	get_create_customer	Get or Create a Customer	1
 https://integrations.org.ai/Search/GetCreateEquipment	integrations.org.ai	Search	GetCreateEquipment	get_create_equipment	get_create_equipment	Get or Create an Equipment	1
-https://integrations.org.ai/Search/GetCreateJob	integrations.org.ai	Search	GetCreateJob	get_create_job	get_create_job	Get or Create a Job 	1
+https://integrations.org.ai/Search/GetCreateJob	integrations.org.ai	Search	GetCreateJob	get_create_job	get_create_job	Get or Create a Job	1
 https://integrations.org.ai/Search/GetCreateSite	integrations.org.ai	Search	GetCreateSite	get_create_site	get_create_site	Get or Create a Site	1
 https://integrations.org.ai/Search/FindVoucher	integrations.org.ai	Search	FindVoucher	find_voucher	find_voucher	Finds a voucher by code	1
 https://integrations.org.ai/Search/FindDealSearch	integrations.org.ai	Search	FindDealSearch	find_deal_search	find_deal_search	Finds a Deal in Channeltivity	1
@@ -2765,8 +2764,8 @@ https://integrations.org.ai/Search/FindChargeCode	integrations.org.ai	Search	Fin
 https://integrations.org.ai/Search/FindChargeItems	integrations.org.ai	Search	FindChargeItems	find_charge_items	find_charge_items	Finds all the charge items for a timesheet.	1
 https://integrations.org.ai/Search/FindCompetency	integrations.org.ai	Search	FindCompetency	find_competency	find_competency	Finds a Competency.	1
 https://integrations.org.ai/Search/FindDigitalDocket	integrations.org.ai	Search	FindDigitalDocket	find_digital_docket	find_digital_docket	Finds a Digital Docket.	1
-https://integrations.org.ai/Search/FindDigitalDocketTimeEntries	integrations.org.ai	Search	FindDigitalDocketTimeEntries	find_digital_docket_time_entries	find_digital_docket_time_entries	Finds Digital Docket Time Entries. 	1
-https://integrations.org.ai/Search/FindDigitalDocketWorkerQuestions	integrations.org.ai	Search	FindDigitalDocketWorkerQuestions	find_digital_docket_worker_questions	find_digital_docket_worker_questions	Finds Digital Docket Worker Questions. 	1
+https://integrations.org.ai/Search/FindDigitalDocketTimeEntries	integrations.org.ai	Search	FindDigitalDocketTimeEntries	find_digital_docket_time_entries	find_digital_docket_time_entries	Finds Digital Docket Time Entries.	1
+https://integrations.org.ai/Search/FindDigitalDocketWorkerQuestions	integrations.org.ai	Search	FindDigitalDocketWorkerQuestions	find_digital_docket_worker_questions	find_digital_docket_worker_questions	Finds Digital Docket Worker Questions.	1
 https://integrations.org.ai/Search/FindInduction	integrations.org.ai	Search	FindInduction	find_induction	find_induction	Finds an Induction.	1
 https://integrations.org.ai/Search/FindOrderByWo	integrations.org.ai	Search	FindOrderByWo	find_order_by_wo	find_order_by_wo	Finds the order id using WO	1
 https://integrations.org.ai/Search/FindOrderChargeItems	integrations.org.ai	Search	FindOrderChargeItems	find_order_charge_items	find_order_charge_items	Finds a Order Charge Item.	1
@@ -2812,7 +2811,7 @@ https://integrations.org.ai/Search/SearchResourcesJSON	integrations.org.ai	Searc
 https://integrations.org.ai/Search/SearchUsersJSON	integrations.org.ai	Search	SearchUsersJSON	search_users_json	search_users_json	Search for Users.	1
 https://integrations.org.ai/Search/SearchWorkflowRequestsJSON	integrations.org.ai	Search	SearchWorkflowRequestsJSON	search_workflow_requests_json	search_workflow_requests_json	Search for Workflow Requests.	1
 https://integrations.org.ai/Search/SearchUnitGuest	integrations.org.ai	Search	SearchUnitGuest	search_unit_guest	search_unit_guest	Finds a unit guest.	1
-https://integrations.org.ai/Search/GroupsFindAUser	integrations.org.ai	Search	GroupsFindAUser	groups_find_a_user	groups_find_a_user	Finds a User in a Group - returns a list of users that match a given email address pattern. You can provide a full email address or a partial email address and matched users will be returned.  	1
+https://integrations.org.ai/Search/GroupsFindAUser	integrations.org.ai	Search	GroupsFindAUser	groups_find_a_user	groups_find_a_user	Finds a User in a Group - returns a list of users that match a given email address pattern. You can provide a full email address or a partial email address and matched users will be returned.	1
 https://integrations.org.ai/Search/OrganisationSearch	integrations.org.ai	Search	OrganisationSearch	organisation_search	organisation_search	Finds an Organisation - returns an organisation that match a given search term. The search query will be matched against an organisations name, title or company.	1
 https://integrations.org.ai/Search/Ratesearch	integrations.org.ai	Search	Ratesearch	ratesearch	rateSearch	Finds a Rate by searching.	1
 https://integrations.org.ai/Search/GetProcessTemplateHeaderIDProcessInstanceHeaderListSearch	integrations.org.ai	Search	GetProcessTemplateHeaderIDProcessInstanceHeaderListSearch	get_process_template_header_id_process_instance_header_list_search	get_process_template_header_id_process_instance_header_list_search	Search for a process instance by field value.	1
@@ -2915,7 +2914,7 @@ https://integrations.org.ai/Search/FindJournal	integrations.org.ai	Search	FindJo
 https://integrations.org.ai/Search/GetDropdownValue	integrations.org.ai	Search	GetDropdownValue	get_dropdown_value	get_dropdown_value	Get a drop-down menu value.	1
 https://integrations.org.ai/Search/GetClientByID	integrations.org.ai	Search	GetClientByID	get_client_by_id	get_client_by_id	Get a Client by ID.	1
 https://integrations.org.ai/Search/GetProductByID	integrations.org.ai	Search	GetProductByID	get_product_by_id	get_product_by_id	Finds a product  based on id.	1
-https://integrations.org.ai/Search/GetTaskByID	integrations.org.ai	Search	GetTaskByID	get_task_by_id	get_task_by_id	get the Task By it's Id 	1
+https://integrations.org.ai/Search/GetTaskByID	integrations.org.ai	Search	GetTaskByID	get_task_by_id	get_task_by_id	get the Task By it's Id	1
 https://integrations.org.ai/Search/ListOfAsset	integrations.org.ai	Search	ListOfAsset	list_of_asset	list_of_asset	The list of assets you can use in the product	1
 https://integrations.org.ai/Search/SearchForTask	integrations.org.ai	Search	SearchForTask	search_for_task	search_for_task	Search For Task by params	1
 https://integrations.org.ai/Search/TheListOfClients	integrations.org.ai	Search	TheListOfClients	the_list_of_clients	the_list_of_clients	The list of clients you can use in the product	1
@@ -2979,8 +2978,8 @@ https://integrations.org.ai/Search/Sequencesbyid	integrations.org.ai	Search	Sequ
 https://integrations.org.ai/Search/SequenceContacts	integrations.org.ai	Search	SequenceContacts	sequence_contacts	sequence_contacts	List and filter contacts in a Sequence.	1
 https://integrations.org.ai/Search/Ingestjobstatus	integrations.org.ai	Search	Ingestjobstatus	ingestjobstatus	ingestJobStatus	Get the status of an ingest job.	1
 https://integrations.org.ai/Search/Workflowjobstatus	integrations.org.ai	Search	Workflowjobstatus	workflowjobstatus	workflowJobStatus	Get the status of a workflow job.	1
-https://integrations.org.ai/Search/FindRecipient	integrations.org.ai	Search	FindRecipient	find_recipient	find_recipient	Query Agillic to see if the recipient exists, and return the available Person Data for that recipient if they do. 	1
-https://integrations.org.ai/Search/GetOtmTable	integrations.org.ai	Search	GetOtmTable	get_otm_table	get_otm_table	Get the rows in a One to many table for a specific recipient. 	1
+https://integrations.org.ai/Search/FindRecipient	integrations.org.ai	Search	FindRecipient	find_recipient	find_recipient	Query Agillic to see if the recipient exists, and return the available Person Data for that recipient if they do.	1
+https://integrations.org.ai/Search/GetOtmTable	integrations.org.ai	Search	GetOtmTable	get_otm_table	get_otm_table	Get the rows in a One to many table for a specific recipient.	1
 https://integrations.org.ai/Search/Searchequipmentbycode	integrations.org.ai	Search	Searchequipmentbycode	searchequipmentbycode	SearchEquipmentByCode	Searches a piece of equipment by its QR- or barcode.	1
 https://integrations.org.ai/Search/Searchflag	integrations.org.ai	Search	Searchflag	searchflag	SearchFlag	Searches a flag by name.	1
 https://integrations.org.ai/Search/FindCustomField	integrations.org.ai	Search	FindCustomField	find_custom_field	find_custom_field	Search for Custom Fields in your workspace	1
@@ -2991,7 +2990,7 @@ https://integrations.org.ai/Search/GetBoardInfo	integrations.org.ai	Search	GetBo
 https://integrations.org.ai/Search/GetCustomField	integrations.org.ai	Search	GetCustomField	get_custom_field	get_custom_field	Get all info about a Custom Field	1
 https://integrations.org.ai/Search/Findinvoice	integrations.org.ai	Search	Findinvoice	findinvoice	FindInvoice	Finds an Invoice for a given order.	1
 https://integrations.org.ai/Search/Findstore	integrations.org.ai	Search	Findstore	findstore	FindStore	Finds a Store for a given ID and get the details.	1
-https://integrations.org.ai/Search/FindSalesPoints	integrations.org.ai	Search	FindSalesPoints	find_sales_points	find_sales_points	Finds account's sales points 	1
+https://integrations.org.ai/Search/FindSalesPoints	integrations.org.ai	Search	FindSalesPoints	find_sales_points	find_sales_points	Finds account's sales points	1
 https://integrations.org.ai/Search/GetSoldbycategory	integrations.org.ai	Search	GetSoldbycategory	get_soldbycategory	get_soldbyCategory	Retrieves what's been sold in a date range split by Category	1
 https://integrations.org.ai/Search/GetSoldbydepartment	integrations.org.ai	Search	GetSoldbydepartment	get_soldbydepartment	get_soldbyDepartment	Retrieves what's been sold in a date range split by Department.	1
 https://integrations.org.ai/Search/GetSoldbytax	integrations.org.ai	Search	GetSoldbytax	get_soldbytax	get_soldbyTax	Retrieves what's been sold in a date range split by Tax.	1
@@ -3006,7 +3005,7 @@ https://integrations.org.ai/Search/FindCreateTask	integrations.org.ai	Search	Fin
 https://integrations.org.ai/Search/Guestsearch	integrations.org.ai	Search	Guestsearch	guestsearch	guestSearch	Finds a guest by searching.	1
 https://integrations.org.ai/Search/GetAllTasksInProject	integrations.org.ai	Search	GetAllTasksInProject	get_all_tasks_in_project	get_all_tasks_in_project	Get all the tasks in one projects.	1
 https://integrations.org.ai/Search/GetOneTaskFromProject	integrations.org.ai	Search	GetOneTaskFromProject	get_one_task_from_project	get_one_task_from_project	Get one task from project	1
-https://integrations.org.ai/Search/ProjectByID	integrations.org.ai	Search	ProjectByID	project_by_id	project_by_id	Get Project information by ID 	1
+https://integrations.org.ai/Search/ProjectByID	integrations.org.ai	Search	ProjectByID	project_by_id	project_by_id	Get Project information by ID	1
 https://integrations.org.ai/Search/Media	integrations.org.ai	Search	Media	media	media	Finds a media.	1
 https://integrations.org.ai/Search/ShipmentSearch	integrations.org.ai	Search	ShipmentSearch	shipment_search	shipment_search	Get detailed information about a shipment via Shipment ID.	1
 https://integrations.org.ai/Search/GetMemberID	integrations.org.ai	Search	GetMemberID	get_member_id	get_member_id	Retrieve information of a Member using their UUID or ID	1
@@ -3128,7 +3127,7 @@ https://integrations.org.ai/Search/FindBillableItem	integrations.org.ai	Search	F
 https://integrations.org.ai/Search/FindBooking	integrations.org.ai	Search	FindBooking	find_booking	find_booking	Finds an existing Booking	1
 https://integrations.org.ai/Search/FindBookingStatus	integrations.org.ai	Search	FindBookingStatus	find_booking_status	find_booking_status	Finds a booking status	1
 https://integrations.org.ai/Search/FindClientContact	integrations.org.ai	Search	FindClientContact	find_client_contact	find_client_contact	Finds a contact that has been marked as a client.	1
-https://integrations.org.ai/Search/FindResource	integrations.org.ai	Search	FindResource	find_resource	find_resource	Finds a Resource.    	1
+https://integrations.org.ai/Search/FindResource	integrations.org.ai	Search	FindResource	find_resource	find_resource	Finds a Resource.	1
 https://integrations.org.ai/Search/GetParticipantsVerificationCompletedAt	integrations.org.ai	Search	GetParticipantsVerificationCompletedAt	get_participants_verification_completed_at	get_participants_verification_completed_at	Get participants verification completed at.	1
 https://integrations.org.ai/Search/GetParticipantFields	integrations.org.ai	Search	GetParticipantFields	get_participant_fields	get_participant_fields	Get participant fields set in the document.	1
 https://integrations.org.ai/Search/Slotfetch	integrations.org.ai	Search	Slotfetch	slotfetch	slotFetch	Fetches a slot by publication ID and slot ID	1
@@ -3377,7 +3376,7 @@ https://integrations.org.ai/Search/GetProducts	integrations.org.ai	Search	GetPro
 https://integrations.org.ai/Search/GetPurchaseDocument	integrations.org.ai	Search	GetPurchaseDocument	get_purchase_document	get_purchase_document	Find purchase document	1
 https://integrations.org.ai/Search/GetReceiptDocument	integrations.org.ai	Search	GetReceiptDocument	get_receipt_document	get_receipt_document	Find sales receipt document	1
 https://integrations.org.ai/Search/GetSaleDocument	integrations.org.ai	Search	GetSaleDocument	get_sale_document	get_sale_document	Find sale document in the system	1
-https://integrations.org.ai/Search/GetSaleDocumentPDF	integrations.org.ai	Search	GetSaleDocumentPDF	get_sale_document_pdf	get_sale_document_pdf	Find document (PDF) 	1
+https://integrations.org.ai/Search/GetSaleDocumentPDF	integrations.org.ai	Search	GetSaleDocumentPDF	get_sale_document_pdf	get_sale_document_pdf	Find document (PDF)	1
 https://integrations.org.ai/Search/GetServices	integrations.org.ai	Search	GetServices	get_services	get_services	Find services in the system	1
 https://integrations.org.ai/Search/GetSupliers	integrations.org.ai	Search	GetSupliers	get_supliers	get_supliers	Find suppliers in the system	1
 https://integrations.org.ai/Search/Supplierbycustomfieldsearch	integrations.org.ai	Search	Supplierbycustomfieldsearch	supplierbycustomfieldsearch	supplierByCustomFieldSearch	Retrieve a Supplier using a Custom Field	1
@@ -3388,7 +3387,7 @@ https://integrations.org.ai/Search/GetLibraryFileContent	integrations.org.ai	Sea
 https://integrations.org.ai/Search/GetAllInvoices	integrations.org.ai	Search	GetAllInvoices	get_all_invoices	get_all_invoices	Get all invoices in your Bokio company	1
 https://integrations.org.ai/Search/GetAllJournalentries	integrations.org.ai	Search	GetAllJournalentries	get_all_journalentries	get_all_journalentries	Get all journal entries in your Bokio company	1
 https://integrations.org.ai/Search/GetDraftinvoiceByCustomername	integrations.org.ai	Search	GetDraftinvoiceByCustomername	get_draftinvoice_by_customername	get_draftinvoice_by_customername	Gets a draft invoice by customer name or creates a draft if it does not exist	1
-https://integrations.org.ai/Search/GetDraftinvoiceByProjectid	integrations.org.ai	Search	GetDraftinvoiceByProjectid	get_draftinvoice_by_projectid	get_draftinvoice_by_projectId	Gets a draft invoice by project id 	1
+https://integrations.org.ai/Search/GetDraftinvoiceByProjectid	integrations.org.ai	Search	GetDraftinvoiceByProjectid	get_draftinvoice_by_projectid	get_draftinvoice_by_projectId	Gets a draft invoice by project id	1
 https://integrations.org.ai/Search/GetJournalentry	integrations.org.ai	Search	GetJournalentry	get_journalentry	get_journalentry	Gets a Journal Entry in Bokio	1
 https://integrations.org.ai/Search/DetectAJobChange	integrations.org.ai	Search	DetectAJobChange	detect_a_job_change	Detect_a_job_change	Detect a job change, and give you in response the new company and job title of your prospect	1
 https://integrations.org.ai/Search/FindPhone	integrations.org.ai	Search	FindPhone	find_phone	find_phone	Finds a mobile phone number	1
@@ -3462,7 +3461,7 @@ https://integrations.org.ai/Search/Findcontract	integrations.org.ai	Search	Findc
 https://integrations.org.ai/Search/FindBonus	integrations.org.ai	Search	FindBonus	find_bonus	find_bonus	Finds an existing bonus by id.	1
 https://integrations.org.ai/Search/FindBonuses	integrations.org.ai	Search	FindBonuses	find_bonuses	find_bonuses	Finds Bonuses by parameters.	1
 https://integrations.org.ai/Search/FindMembers	integrations.org.ai	Search	FindMembers	find_members	find_members	Finds Members by parameters.	1
-https://integrations.org.ai/Search/FindMemberShareLinks	integrations.org.ai	Search	FindMemberShareLinks	find_member_share_links	find_member_share_links	Finds the advocate's share links. 	1
+https://integrations.org.ai/Search/FindMemberShareLinks	integrations.org.ai	Search	FindMemberShareLinks	find_member_share_links	find_member_share_links	Finds the advocate's share links.	1
 https://integrations.org.ai/Search/FindPayoutRequest	integrations.org.ai	Search	FindPayoutRequest	find_payout_request	find_payout_request	Find a Payout Request by id.	1
 https://integrations.org.ai/Search/FindPayoutRequests	integrations.org.ai	Search	FindPayoutRequests	find_payout_requests	find_payout_requests	Finds Payout Requests by parameters.	1
 https://integrations.org.ai/Search/Bundledata	integrations.org.ai	Search	Bundledata	bundledata	bundleData	Retrieves field data entered into a completed bundle, including signatures, text fields, dates, and attachments.	1
@@ -3654,9 +3653,9 @@ https://integrations.org.ai/Search/SearchResourcebykey	integrations.org.ai	Searc
 https://integrations.org.ai/Search/SearchResourceorrole	integrations.org.ai	Search	SearchResourceorrole	search_resourceorrole	search_resourceOrRole	Finds a resource or role.	1
 https://integrations.org.ai/Search/SearchTeamorresourceorrole	integrations.org.ai	Search	SearchTeamorresourceorrole	search_teamorresourceorrole	search_teamOrResourceOrRole	Finds a team, resource or role.	1
 https://integrations.org.ai/Search/ResolveContactSearch	integrations.org.ai	Search	ResolveContactSearch	resolve_contact_search	resolve_contact_search	Action used to find a contact	1
-https://integrations.org.ai/Search/FilterJobs	integrations.org.ai	Search	FilterJobs	filter_jobs	filter_jobs	Filters the Jobs in a QUE Campaign (this is an advanced action). 	1
-https://integrations.org.ai/Search/GetCustomerInfo	integrations.org.ai	Search	GetCustomerInfo	get_customer_info	get_customer_info	Gets customer info for given job 	1
-https://integrations.org.ai/Search/GetJobHistory	integrations.org.ai	Search	GetJobHistory	get_job_history	get_job_history	Gets history for given job 	1
+https://integrations.org.ai/Search/FilterJobs	integrations.org.ai	Search	FilterJobs	filter_jobs	filter_jobs	Filters the Jobs in a QUE Campaign (this is an advanced action).	1
+https://integrations.org.ai/Search/GetCustomerInfo	integrations.org.ai	Search	GetCustomerInfo	get_customer_info	get_customer_info	Gets customer info for given job	1
+https://integrations.org.ai/Search/GetJobHistory	integrations.org.ai	Search	GetJobHistory	get_job_history	get_job_history	Gets history for given job	1
 https://integrations.org.ai/Search/Bankbillet	integrations.org.ai	Search	Bankbillet	bankbillet	BankBillet	Buscar boletos a partir de diversos campos.	1
 https://integrations.org.ai/Search/Bankbilletpayment	integrations.org.ai	Search	Bankbilletpayment	bankbilletpayment	BankBilletPayment	Buscar pagamentos de boletos a partir de diversos campos.	1
 https://integrations.org.ai/Search/Customersubscription	integrations.org.ai	Search	Customersubscription	customersubscription	CustomerSubscription	Buscar assinaturas a partir de diversos campos.	1
@@ -3840,7 +3839,7 @@ https://integrations.org.ai/Search/AppCatalogProductsList	integrations.org.ai	Se
 https://integrations.org.ai/Search/AppContactsOrganizationsList	integrations.org.ai	Search	AppContactsOrganizationsList	app_contacts_organizations_list	app_contacts_organizations_list	Find an organization with Sinao organization ID.	1
 https://integrations.org.ai/Search/AppContactsPersonsList	integrations.org.ai	Search	AppContactsPersonsList	app_contacts_persons_list	app_contacts_persons_list	Find a client with client ID on your software.	1
 https://integrations.org.ai/Search/AppDocumentsSalesInvoicesList	integrations.org.ai	Search	AppDocumentsSalesInvoicesList	app_documents_sales_invoices_list	app_documents_sales_invoices_list	Find an invoice with Sinao invoice ID.	1
-https://integrations.org.ai/Search/AppDocumentsSalesRecurringinvoicesList	integrations.org.ai	Search	AppDocumentsSalesRecurringinvoicesList	app_documents_sales_recurringinvoices_list	app_documents_sales_recurringinvoices_list	Return all recurring invoices 	1
+https://integrations.org.ai/Search/AppDocumentsSalesRecurringinvoicesList	integrations.org.ai	Search	AppDocumentsSalesRecurringinvoicesList	app_documents_sales_recurringinvoices_list	app_documents_sales_recurringinvoices_list	Return all recurring invoices	1
 https://integrations.org.ai/Search/FindPage	integrations.org.ai	Search	FindPage	find_page	find_page	Searches for a page in Tettra.	1
 https://integrations.org.ai/Search/GetPage	integrations.org.ai	Search	GetPage	get_page	get_page	Returns a specific page from your Tettra account.	1
 https://integrations.org.ai/Search/GetArticle	integrations.org.ai	Search	GetArticle	get_article	get_article	Find Article details by id. You can get the id from the Articles section, under the Knowledge base tab in the Property settings.	1
@@ -4016,7 +4015,7 @@ https://integrations.org.ai/Search/CompanyDatabase	integrations.org.ai	Search	Co
 https://integrations.org.ai/Search/LinkedinCompany	integrations.org.ai	Search	LinkedinCompany	linkedin_company	linkedin_company	Get company information from a LinkedIn URL.	1
 https://integrations.org.ai/Search/WebsiteCrawler	integrations.org.ai	Search	WebsiteCrawler	website_crawler	website_crawler	High performance API for web scraping to scrape any website and get the HTML.	1
 https://integrations.org.ai/Search/WebsiteTechnology	integrations.org.ai	Search	WebsiteTechnology	website_technology	website_technology	Get the website technology from a website : cms, framework, analytics, cdn, hosting, etc.	1
-https://integrations.org.ai/Search/Getverifiednumbers	integrations.org.ai	Search	Getverifiednumbers	getverifiednumbers	GetVerifiedNumbers	Get your verified number under your API key, you can also filter by country code and or mobile number. 	1
+https://integrations.org.ai/Search/Getverifiednumbers	integrations.org.ai	Search	Getverifiednumbers	getverifiednumbers	GetVerifiedNumbers	Get your verified number under your API key, you can also filter by country code and or mobile number.	1
 https://integrations.org.ai/Search/FindResponse	integrations.org.ai	Search	FindResponse	find_response	find_response	Lookup a response based on ID or a unique customer identifier.	1
 https://integrations.org.ai/Search/FindResponseByMeta	integrations.org.ai	Search	FindResponseByMeta	find_response_by_meta	find_response_by_meta	Lookup a response based a unique customer identifier.	1
 https://integrations.org.ai/Search/FindCustomerAccount	integrations.org.ai	Search	FindCustomerAccount	find_customer_account	find_customer_account	Find a customer account by searching	1
@@ -4143,7 +4142,7 @@ https://integrations.org.ai/Search/GetTaxonomyElementDocuments	integrations.org.
 https://integrations.org.ai/Search/ListTaxonomyElements	integrations.org.ai	Search	ListTaxonomyElements	list_taxonomy_elements	list_taxonomy_elements	Searches Taxonomy Elements for a given type	1
 https://integrations.org.ai/Search/Social	integrations.org.ai	Search	Social	social	social	Find leads from linkedin using FindThatLead algorithm.	1
 https://integrations.org.ai/Search/Verify	integrations.org.ai	Search	Verify	verify	verify	Verify an email using the FindThatLead algorithm.	1
-https://integrations.org.ai/Search/FetchArticles	integrations.org.ai	Search	FetchArticles	fetch_articles	fetch_articles	Search and fetch recent Articles. For more Articles use finlight API directly. 	1
+https://integrations.org.ai/Search/FetchArticles	integrations.org.ai	Search	FetchArticles	fetch_articles	fetch_articles	Search and fetch recent Articles. For more Articles use finlight API directly.	1
 https://integrations.org.ai/Search/ListCourses	integrations.org.ai	Search	ListCourses	list_courses	LIST_COURSES	List ISpring Learn courses	1
 https://integrations.org.ai/Search/ListEnrollments	integrations.org.ai	Search	ListEnrollments	list_enrollments	LIST_ENROLLMENTS	List iSpring Learn enrollments	1
 https://integrations.org.ai/Search/GetUserInfo	integrations.org.ai	Search	GetUserInfo	get_user_info	get_user_info	Finds a user by username or id.	1
@@ -4153,8 +4152,8 @@ https://integrations.org.ai/Search/FindActivityCompletionStatusOfUser	integratio
 https://integrations.org.ai/Search/SearchCohort	integrations.org.ai	Search	SearchCohort	search_cohort	search_cohort	Finds a user segment on your LMS	1
 https://integrations.org.ai/Search/SearchCourse	integrations.org.ai	Search	SearchCourse	search_course	search_course	Finds a course in your LMS	1
 https://integrations.org.ai/Search/SearchCourseCompletionOfUser	integrations.org.ai	Search	SearchCourseCompletionOfUser	search_course_completion_of_user	search_course_completion_of_user	Search for course completion status of a given user	1
-https://integrations.org.ai/Search/SearchCourseGradesForUser	integrations.org.ai	Search	SearchCourseGradesForUser	search_course_grades_for_user	search_course_grades_for_user	Searches for all site course grades for a user in the form of an overview report. 	1
-https://integrations.org.ai/Search/SearchCourseGradeItems	integrations.org.ai	Search	SearchCourseGradeItems	search_course_grade_items	search_course_grade_items	Searches for a user's course grade items. 	1
+https://integrations.org.ai/Search/SearchCourseGradesForUser	integrations.org.ai	Search	SearchCourseGradesForUser	search_course_grades_for_user	search_course_grades_for_user	Searches for all site course grades for a user in the form of an overview report.	1
+https://integrations.org.ai/Search/SearchCourseGradeItems	integrations.org.ai	Search	SearchCourseGradeItems	search_course_grade_items	search_course_grade_items	Searches for a user's course grade items.	1
 https://integrations.org.ai/Search/FindGolink	integrations.org.ai	Search	FindGolink	find_golink	find_golink	Finds a GoLink.	1
 https://integrations.org.ai/Search/ListIssues	integrations.org.ai	Search	ListIssues	list_issues	list_issues	List all open issue for your integration.	1
 https://integrations.org.ai/Search/ListCases	integrations.org.ai	Search	ListCases	list_cases	list_cases	Retrieves a paginated list of cases for the authenticated organization. Returns case metadata including creation and update timestamps, with configurable limit and offset for pagination.	1
@@ -4215,9 +4214,9 @@ https://integrations.org.ai/Search/SearchDistributedCourses	integrations.org.ai	
 https://integrations.org.ai/Search/GetAllmatters	integrations.org.ai	Search	GetAllmatters	get_allmatters	get_allMatters	Retrieves up to a specified number of Matters from the system.	1
 https://integrations.org.ai/Search/GetAllUsers	integrations.org.ai	Search	GetAllUsers	get_all_users	get_all_users	Retrieves a list of all users within the workspace	1
 https://integrations.org.ai/Search/GetCurrentWorkspace	integrations.org.ai	Search	GetCurrentWorkspace	get_current_workspace	get_current_workspace	Retrieve details of the workspace associated with the current authentication.	1
-https://integrations.org.ai/Search/GetMatterid	integrations.org.ai	Search	GetMatterid	get_matterid	get_matterId	Retrieve details of a specific Matter using its unique ID. 	1
+https://integrations.org.ai/Search/GetMatterid	integrations.org.ai	Search	GetMatterid	get_matterid	get_matterId	Retrieve details of a specific Matter using its unique ID.	1
 https://integrations.org.ai/Search/GetMattersByParticipants	integrations.org.ai	Search	GetMattersByParticipants	get_matters_by_participants	get_matters_by_participants	Retrieves all Matters that include the specified participant user IDs.	1
-https://integrations.org.ai/Search/GetWorkflowByID	integrations.org.ai	Search	GetWorkflowByID	get_workflow_by_id	get_workflow_by_id	Retrieve details of a specific workflow using its unique ID. 	1
+https://integrations.org.ai/Search/GetWorkflowByID	integrations.org.ai	Search	GetWorkflowByID	get_workflow_by_id	get_workflow_by_id	Retrieve details of a specific workflow using its unique ID.	1
 https://integrations.org.ai/Search/GetSMSDetails	integrations.org.ai	Search	GetSMSDetails	get_sms_details	get_sms_details	Get all details for an SMS	1
 https://integrations.org.ai/Search/Getthreads	integrations.org.ai	Search	Getthreads	getthreads	getThreads	Retrieve a thread associated with a specific ID.	1
 https://integrations.org.ai/Search/Getwhitelabeldomains	integrations.org.ai	Search	Getwhitelabeldomains	getwhitelabeldomains	getWhiteLabelDomains	Retrieve a list of domains listed under your account.	1
@@ -4313,9 +4312,9 @@ https://integrations.org.ai/Search/GetPlan	integrations.org.ai	Search	GetPlan	ge
 https://integrations.org.ai/Search/GetPlanTypeGUIDByName	integrations.org.ai	Search	GetPlanTypeGUIDByName	get_plan_type_guid_by_name	get_plan_type_guid_by_name	Retrieve an id for a plan type given the plan type name.	1
 https://integrations.org.ai/Search/GetResourceID	integrations.org.ai	Search	GetResourceID	get_resource_id	get_resource_id	Retrieves an Id for a resource by a given name or email.	1
 https://integrations.org.ai/Search/ContactFindcreateSearch	integrations.org.ai	Search	ContactFindcreateSearch	contact_findcreate_search	contact_FindCreate_Search	Finds or creates a contact in the 90-Day Sales platform.	1
-https://integrations.org.ai/Search/Findgroup	integrations.org.ai	Search	Findgroup	findgroup	findGroup	Find a group by name. 	1
+https://integrations.org.ai/Search/Findgroup	integrations.org.ai	Search	Findgroup	findgroup	findGroup	Find a group by name.	1
 https://integrations.org.ai/Search/Findlock	integrations.org.ai	Search	Findlock	findlock	findLock	Find a lock by its name or description.	1
-https://integrations.org.ai/Search/PerformAreaScanWithAddress	integrations.org.ai	Search	PerformAreaScanWithAddress	perform_area_scan_with_address	perform_area_scan_with_address	Retrieve rich set of data based on your setting for an address or coordinates. You can use the data for your CRM data base, make real estate decisions, build risk assessments or make density reports. It all depends on what data point you select on algoly.com 	1
+https://integrations.org.ai/Search/PerformAreaScanWithAddress	integrations.org.ai	Search	PerformAreaScanWithAddress	perform_area_scan_with_address	perform_area_scan_with_address	Retrieve rich set of data based on your setting for an address or coordinates. You can use the data for your CRM data base, make real estate decisions, build risk assessments or make density reports. It all depends on what data point you select on algoly.com	1
 https://integrations.org.ai/Search/AccountsGetAccounts	integrations.org.ai	Search	AccountsGetAccounts	accounts_get_accounts	accounts_get_accounts	Returns a paged list of accounts.	1
 https://integrations.org.ai/Search/SalesOrdersGetSalesOrders	integrations.org.ai	Search	SalesOrdersGetSalesOrders	sales_orders_get_sales_orders	sales_orders_get_sales_orders	Returns a paged list of the sales orders.	1
 https://integrations.org.ai/Search/MemoryFind	integrations.org.ai	Search	MemoryFind	memory_find	memory_find	Find a specific memory by ID.	1
@@ -4397,7 +4396,7 @@ https://integrations.org.ai/Search/C2bAppend	integrations.org.ai	Search	C2bAppen
 https://integrations.org.ai/Search/ConsumerOnlineAudienceAppend	integrations.org.ai	Search	ConsumerOnlineAudienceAppend	consumer_online_audience_append	consumer_online_audience_append	Appends additional contact points to a list of consumer (B2C) contacts for improved reach through B2C social and programmatic advertising	1
 https://integrations.org.ai/Search/ContactAppend	integrations.org.ai	Search	ContactAppend	contact_append	contact_append	Appends additional contact data to the contact list provided; including consumer emails that have been validated for deliverability (~90%), phone numbers that have been labeled as the best number to reach someone (including line type: Landlines, VOIP, and Mobile phones included as a default), and address information for mailing and geo segmentation purposes.	1
 https://integrations.org.ai/Search/DemographicAppend	integrations.org.ai	Search	DemographicAppend	demographic_append	demographic_append	Appends demographic information to a customer list, including; basic demographic data, lifestyle & interest data, and political & donor data	1
-https://integrations.org.ai/Search/FindDomain	integrations.org.ai	Search	FindDomain	find_domain	find_domain	Searches for domains corresponding to a list of IP addresses. Use a list of captured IPs from site traffic and transform that information into firmographic data that is usable for outreach purposes. 	1
+https://integrations.org.ai/Search/FindDomain	integrations.org.ai	Search	FindDomain	find_domain	find_domain	Searches for domains corresponding to a list of IP addresses. Use a list of captured IPs from site traffic and transform that information into firmographic data that is usable for outreach purposes.	1
 https://integrations.org.ai/Search/FirmographicAppend	integrations.org.ai	Search	FirmographicAppend	firmographic_append	firmographic_append	Appends firmographic data to a list of business contacts and domains. Use with a list of domains and enrich important business data that will allow you to define ICPs and segment audiences for digital or direct outreach.	1
 https://integrations.org.ai/Search/Hemtobusinessdomain	integrations.org.ai	Search	Hemtobusinessdomain	hemtobusinessdomain	hemtobusinessdomain	Accepts a single Hashed Email (either Business or Consumer) and returns the associated business domain found for that record	1
 https://integrations.org.ai/Search/Case	integrations.org.ai	Search	Case	case	case	Find a Case by a field and value you choose.	1
@@ -4441,7 +4440,6 @@ https://integrations.org.ai/Search/Getpaymentmethods	integrations.org.ai	Search	
 https://integrations.org.ai/Search/Getpayments	integrations.org.ai	Search	Getpayments	getpayments	getPayments	Método para obtener una lista de pagos de la empresa de acuerdo a parámetros definidos.	1
 https://integrations.org.ai/Search/Gettag	integrations.org.ai	Search	Gettag	gettag	getTag	Método para obtener un pago específico.	1
 https://integrations.org.ai/Search/Gettags	integrations.org.ai	Search	Gettags	gettags	getTags	Método para obtener una lista de tags de la empresa de acuerdo a parámetros definidos. El id único de un tag puede ser utilizado como parámetro en getDocuments.	1
-https://integrations.org.ai/Search/FindFeedback	integrations.org.ai	Search	FindFeedback	find-feedback	find-feedback	Searches for one or more feedback posts	1
 https://integrations.org.ai/Search/FindStream	integrations.org.ai	Search	FindStream	find_stream	find_stream	Find a Stream from a Clip	1
 https://integrations.org.ai/Search/GetAnswer	integrations.org.ai	Search	GetAnswer	get_answer	get_answer	Retrieve the clip's answer suggestion	1
 https://integrations.org.ai/Search/GetCustomSkills	integrations.org.ai	Search	GetCustomSkills	get_custom_skills	get_custom_skills	Retrieves the clip's Custom Skills results	1
@@ -4738,7 +4736,7 @@ https://integrations.org.ai/Search/FindBoxByName	integrations.org.ai	Search	Find
 https://integrations.org.ai/Search/FindFormByID	integrations.org.ai	Search	FindFormByID	find_form_by_id	find_form_by_id	Finds a Form by its Id	1
 https://integrations.org.ai/Search/FindTransactionByID	integrations.org.ai	Search	FindTransactionByID	find_transaction_by_id	find_transaction_by_id	Finds a transaction by its Id	1
 https://integrations.org.ai/Search/FindTracks	integrations.org.ai	Search	FindTracks	find_tracks	find_tracks	Finds Tracks by the filter	1
-https://integrations.org.ai/Search/GetCourseByname	integrations.org.ai	Search	GetCourseByname	get_course_byname	get_course_byname	Retrieves information for a specific course by its name. 	1
+https://integrations.org.ai/Search/GetCourseByname	integrations.org.ai	Search	GetCourseByname	get_course_byname	get_course_byname	Retrieves information for a specific course by its name.	1
 https://integrations.org.ai/Search/FindorcreateActivity	integrations.org.ai	Search	FindorcreateActivity	findorcreate_activity	findorcreate_activity	Creates the Activity if it does not already exist	1
 https://integrations.org.ai/Search/FindorcreateCompanylead	integrations.org.ai	Search	FindorcreateCompanylead	findorcreate_companylead	findorcreate_companylead	Creates the Company Lead if it does not already exist	1
 https://integrations.org.ai/Search/FindorcreateContact	integrations.org.ai	Search	FindorcreateContact	findorcreate_contact	findorcreate_contact	Creates the Contact if it does not already exist	1
@@ -4959,7 +4957,7 @@ https://integrations.org.ai/Search/SearchPartner	integrations.org.ai	Search	Sear
 https://integrations.org.ai/Search/FindAccountByExternalID	integrations.org.ai	Search	FindAccountByExternalID	find_account_by_external_id	find_account_by_external_id	Find Association by external identifier	1
 https://integrations.org.ai/Search/FindPropertyExternalID	integrations.org.ai	Search	FindPropertyExternalID	find_property_external_id	find_property_external_id	Find a Property by a known external identifier.	1
 https://integrations.org.ai/Search/GetCcrArticle	integrations.org.ai	Search	GetCcrArticle	get_ccr_article	get_ccr_article	Get CCR Article from a known HOALife CCR article identifier (id, article_id, or ccr_article_id).	1
-https://integrations.org.ai/Search/GetEscalation	integrations.org.ai	Search	GetEscalation	get_escalation	get_escalation	Get Violation Escalation from a known HOALife Violation Escalation identifier (id or escalation_id). 	1
+https://integrations.org.ai/Search/GetEscalation	integrations.org.ai	Search	GetEscalation	get_escalation	get_escalation	Get Violation Escalation from a known HOALife Violation Escalation identifier (id or escalation_id).	1
 https://integrations.org.ai/Search/GetViolation	integrations.org.ai	Search	GetViolation	get_violation	get_violation	Get Violation from a known HOALife Violation identifier (id or violation_id).	1
 https://integrations.org.ai/Search/GetViolationType	integrations.org.ai	Search	GetViolationType	get_violation_type	get_violation_type	Get Violation Type from a known HOALife violation type identifier (id, or violation_type_id).	1
 https://integrations.org.ai/Search/SupporterSearch	integrations.org.ai	Search	SupporterSearch	supporter_search	supporter_search	Finds a supporter based on name.	1
@@ -5055,7 +5053,7 @@ https://integrations.org.ai/Search/FindAssignee	integrations.org.ai	Search	FindA
 https://integrations.org.ai/Search/FindMetric	integrations.org.ai	Search	FindMetric	find_metric	find_metric	Searches for a Key result in Gtmhub	1
 https://integrations.org.ai/Search/GetGoals	integrations.org.ai	Search	GetGoals	get_goals	get_goals	Gets the objectives from the specified session	1
 https://integrations.org.ai/Search/GetKrs	integrations.org.ai	Search	GetKrs	get_krs	get_krs	Finds the Key results for the specified objective	1
-https://integrations.org.ai/Search/FindCalls	integrations.org.ai	Search	FindCalls	find_calls	find_calls	Finds a Call.  	1
+https://integrations.org.ai/Search/FindCalls	integrations.org.ai	Search	FindCalls	find_calls	find_calls	Finds a Call.	1
 https://integrations.org.ai/Search/FindDownloadKey	integrations.org.ai	Search	FindDownloadKey	find_download_key	find_download_key	Finds a download key by key.	1
 https://integrations.org.ai/Search/Bucketsearch	integrations.org.ai	Search	Bucketsearch	bucketsearch	bucketSearch	Finds an Upload	1
 https://integrations.org.ai/Search/SearchCustomerUser	integrations.org.ai	Search	SearchCustomerUser	search_customer_user	search_customer_user	Finds Customer user records in CloudBlue Commerce. Allows filtering the records with the Customer ID and User Type.	1
@@ -5216,7 +5214,7 @@ https://integrations.org.ai/Search/MatterProviderGroup	integrations.org.ai	Searc
 https://integrations.org.ai/Search/FindUserAccessibleBoards	integrations.org.ai	Search	FindUserAccessibleBoards	find_user_accessible_boards	find_user_accessible_boards	Provides a list of all User Accessible Boards	1
 https://integrations.org.ai/Search/GetDomainDetails	integrations.org.ai	Search	GetDomainDetails	get_domain_details	get_domain_details	Lookup a domain and return its tech spend, company details, social media links, and more	1
 https://integrations.org.ai/Search/GetDomainTechnologies	integrations.org.ai	Search	GetDomainTechnologies	get_domain_technologies	get_domain_technologies	Lookup the technologies used on a website, and their tech spend	1
-https://integrations.org.ai/Search/GetSearchResults	integrations.org.ai	Search	GetSearchResults	get_search_results	get_search_results	Search for code or technology and get a list of matching websites 	1
+https://integrations.org.ai/Search/GetSearchResults	integrations.org.ai	Search	GetSearchResults	get_search_results	get_search_results	Search for code or technology and get a list of matching websites	1
 https://integrations.org.ai/Search/GetUserCertificates	integrations.org.ai	Search	GetUserCertificates	get_user_certificates	get_user_certificates	Get all the certificates of a user, including their status	1
 https://integrations.org.ai/Search/FindRewrite	integrations.org.ai	Search	FindRewrite	find_rewrite	find_rewrite	Finds a Rewrite	1
 https://integrations.org.ai/Search/GetAirQuality	integrations.org.ai	Search	GetAirQuality	get_air_quality	get_air_quality	Looks up the current Air Quality (Geospatial, Postal code, Citywise, Countrywise)	1
@@ -5237,14 +5235,14 @@ https://integrations.org.ai/Search/AddValueToCustomFieldPicklist	integrations.or
 https://integrations.org.ai/Search/CreatePerson	integrations.org.ai	Search	CreatePerson	create_person	create_person	Creates a new person in Organimi	1
 https://integrations.org.ai/Search/GetAllPeople	integrations.org.ai	Search	GetAllPeople	get_all_people	get_all_people	Retrieves all People from Organization in Organimi	1
 https://integrations.org.ai/Search/GetAllPeopleForChart	integrations.org.ai	Search	GetAllPeopleForChart	get_all_people_for_chart	get_all_people_for_chart	Retrieves all People for Chart in Organimi	1
-https://integrations.org.ai/Search/GetAllPeopleInOrganizationSearch	integrations.org.ai	Search	GetAllPeopleInOrganizationSearch	get_all_people_in_organization_search	get_all_people_in_organization_search	Retrieves all People by Organization Search in Organimi 	1
-https://integrations.org.ai/Search/GetAllRolesInChart	integrations.org.ai	Search	GetAllRolesInChart	get_all_roles_in_chart	get_all_roles_in_chart	Retrieves all Roles from Chart in Organimi 	1
+https://integrations.org.ai/Search/GetAllPeopleInOrganizationSearch	integrations.org.ai	Search	GetAllPeopleInOrganizationSearch	get_all_people_in_organization_search	get_all_people_in_organization_search	Retrieves all People by Organization Search in Organimi	1
+https://integrations.org.ai/Search/GetAllRolesInChart	integrations.org.ai	Search	GetAllRolesInChart	get_all_roles_in_chart	get_all_roles_in_chart	Retrieves all Roles from Chart in Organimi	1
 https://integrations.org.ai/Search/GetChart	integrations.org.ai	Search	GetChart	get_chart	get_chart	Retrieves Charts in Organimi	1
 https://integrations.org.ai/Search/GetChartsForOrganization	integrations.org.ai	Search	GetChartsForOrganization	get_charts_for_organization	get_charts_for_organization	Retrieves Charts for Organization in Organimi	1
 https://integrations.org.ai/Search/GetConnectionsForRoles	integrations.org.ai	Search	GetConnectionsForRoles	get_connections_for_roles	get_connections_for_roles	Retrieves Connections for Roles in Organimi	1
 https://integrations.org.ai/Search/GetRolesForPerson	integrations.org.ai	Search	GetRolesForPerson	get_roles_for_person	get_roles_for_person	Retrieves Roles for Person by Person Id	1
 https://integrations.org.ai/Search/SearchRolesByChart	integrations.org.ai	Search	SearchRolesByChart	search_roles_by_chart	search_roles_by_chart	Searches a Role by Chart	1
-https://integrations.org.ai/Search/SearchRolesByOrganization	integrations.org.ai	Search	SearchRolesByOrganization	search_roles_by_organization	search_roles_by_organization	Searches a Role by Organization in Organimi 	1
+https://integrations.org.ai/Search/SearchRolesByOrganization	integrations.org.ai	Search	SearchRolesByOrganization	search_roles_by_organization	search_roles_by_organization	Searches a Role by Organization in Organimi	1
 https://integrations.org.ai/Search/UpdatePerson	integrations.org.ai	Search	UpdatePerson	update_person	update_person	Updates a Person in Organimi	1
 https://integrations.org.ai/Search/Getlistitem	integrations.org.ai	Search	Getlistitem	getlistitem	getListItem	Fetches an item from RAPID	1
 https://integrations.org.ai/Search/Getlistitems	integrations.org.ai	Search	Getlistitems	getlistitems	getListItems	Fetches a list of items from rapid	1
@@ -5318,11 +5316,11 @@ https://integrations.org.ai/Search/DomainViewAds	integrations.org.ai	Search	Doma
 https://integrations.org.ai/Search/DomainViewCustomerReviews	integrations.org.ai	Search	DomainViewCustomerReviews	domain_view_customer_reviews	domain_view_customer_reviews	Get customer reviews for a domain	1
 https://integrations.org.ai/Search/DomainViewOrganic	integrations.org.ai	Search	DomainViewOrganic	domain_view_organic	domain_view_organic	Get organic search data for a domain	1
 https://integrations.org.ai/Search/DomainViewTechStack	integrations.org.ai	Search	DomainViewTechStack	domain_view_tech_stack	domain_view_tech_stack	Get tech stack data for a domain	1
-https://integrations.org.ai/Search/DownloadDocument	integrations.org.ai	Search	DownloadDocument	download_document	download_document	Download a document in base64 or binary or get an URL based on a chosen trigger. 	1
-https://integrations.org.ai/Search/ExportDocumentVariables	integrations.org.ai	Search	ExportDocumentVariables	export_document_variables	export_document_variables	Export a list of variables from a document based on a chosen trigger. 	1
-https://integrations.org.ai/Search/RetrieveADocument	integrations.org.ai	Search	RetrieveADocument	retrieve_a_document	retrieve_a_document	Retrieves a Document based on a chosen trigger. 	1
-https://integrations.org.ai/Search/RetrieveATemplate	integrations.org.ai	Search	RetrieveATemplate	retrieve_a_template	retrieve_a_template	Retrieves a Template based on a chosen trigger. 	1
-https://integrations.org.ai/Search/RetrieveDocuments	integrations.org.ai	Search	RetrieveDocuments	retrieve_documents	retrieve_documents	Search documents in your workspace based on a chosen trigger. 	1
+https://integrations.org.ai/Search/DownloadDocument	integrations.org.ai	Search	DownloadDocument	download_document	download_document	Download a document in base64 or binary or get an URL based on a chosen trigger.	1
+https://integrations.org.ai/Search/ExportDocumentVariables	integrations.org.ai	Search	ExportDocumentVariables	export_document_variables	export_document_variables	Export a list of variables from a document based on a chosen trigger.	1
+https://integrations.org.ai/Search/RetrieveADocument	integrations.org.ai	Search	RetrieveADocument	retrieve_a_document	retrieve_a_document	Retrieves a Document based on a chosen trigger.	1
+https://integrations.org.ai/Search/RetrieveATemplate	integrations.org.ai	Search	RetrieveATemplate	retrieve_a_template	retrieve_a_template	Retrieves a Template based on a chosen trigger.	1
+https://integrations.org.ai/Search/RetrieveDocuments	integrations.org.ai	Search	RetrieveDocuments	retrieve_documents	retrieve_documents	Search documents in your workspace based on a chosen trigger.	1
 https://integrations.org.ai/Search/GetOrganisation	integrations.org.ai	Search	GetOrganisation	get_organisation	get_organisation	Retrieves an Organisation from SwiftFox by their ID	1
 https://integrations.org.ai/Search/SearchOrganisations	integrations.org.ai	Search	SearchOrganisations	search_organisations	search_organisations	Searches for Organisations in SwiftFox	1
 https://integrations.org.ai/Search/SearchPeople	integrations.org.ai	Search	SearchPeople	search_people	search_people	Searches for People in SwiftFox	1
@@ -5388,7 +5386,7 @@ https://integrations.org.ai/Search/GetObjectsAction	integrations.org.ai	Search	G
 https://integrations.org.ai/Search/GetObjectRecordsAction	integrations.org.ai	Search	GetObjectRecordsAction	get_object_records_action	get_object_records_action	Gets object records.	1
 https://integrations.org.ai/Search/GetUsersAction	integrations.org.ai	Search	GetUsersAction	get_users_action	get_users_action	Gets users via Legito API.	1
 https://integrations.org.ai/Search/Getinvoice	integrations.org.ai	Search	Getinvoice	getinvoice	getInvoice	Get more detailed information about an invoice	1
-https://integrations.org.ai/Search/Getofferings	integrations.org.ai	Search	Getofferings	getofferings	getOfferings	Find all of the offerings in your Paigo account. 	1
+https://integrations.org.ai/Search/Getofferings	integrations.org.ai	Search	Getofferings	getofferings	getOfferings	Find all of the offerings in your Paigo account.	1
 https://integrations.org.ai/Search/RecordsFilter	integrations.org.ai	Search	RecordsFilter	records_filter	records_filter	Query an InfoLobby Table by Field Conditions and get back matching Records.	1
 https://integrations.org.ai/Search/RecordsQuery	integrations.org.ai	Search	RecordsQuery	records_query	records_query	Search an InfoLobby Table and get back matching Records.	1
 https://integrations.org.ai/Search/GetApps	integrations.org.ai	Search	GetApps	get_apps	get_apps	Get all the apps you have made	1
@@ -5457,7 +5455,7 @@ https://integrations.org.ai/Search/FindFlow	integrations.org.ai	Search	FindFlow	
 https://integrations.org.ai/Search/FindIcons	integrations.org.ai	Search	FindIcons	find_icons	find_icons	Finds the Icons in your project	1
 https://integrations.org.ai/Search/FindLicense	integrations.org.ai	Search	FindLicense	find_license	find_license	Finds the Licenses in your account	1
 https://integrations.org.ai/Search/FindTemplates	integrations.org.ai	Search	FindTemplates	find_templates	find_templates	Finds the Datafields connected to your icons	1
-https://integrations.org.ai/Search/FindVersion	integrations.org.ai	Search	FindVersion	find_version	find_version	Finds the Versions in a project 	1
+https://integrations.org.ai/Search/FindVersion	integrations.org.ai	Search	FindVersion	find_version	find_version	Finds the Versions in a project	1
 https://integrations.org.ai/Search/Readnewusers	integrations.org.ai	Search	Readnewusers	readnewusers	ReadNewUsers	Get new users matching search criteria	1
 https://integrations.org.ai/Search/FindCarrier	integrations.org.ai	Search	FindCarrier	find_carrier	find_carrier	Finds a Carrier in AgencyComp.	1
 https://integrations.org.ai/Search/FindIndividual	integrations.org.ai	Search	FindIndividual	find_individual	find_individual	Finds an Individual Client in AgencyComp.	1
