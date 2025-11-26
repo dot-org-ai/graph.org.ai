@@ -133,3 +133,6 @@ Employment	onet.org.ai	occupations.org.ai;nouns.org.ai	Employment data and stati
 State	places.org.ai	nouns.org.ai	US States and territories
 STEMOccupation	onet.org.ai	occupations.org.ai;nouns.org.ai	STEM occupation classifications
 Wage	onet.org.ai	nouns.org.ai	Wage and compensation data
+LanguageNoun	language.org.ai	nouns.org.ai	Nouns extracted from language corpus
+LanguageVerb	language.org.ai	verbs.org.ai;nouns.org.ai	Verbs extracted from language corpus
+Standard	nouns.org.ai	business.org.ai	Standards and specifications
