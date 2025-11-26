@@ -280,8 +280,20 @@ function processEntityFile(fileName: string, ontologyMap: Map<string, OntologyRo
     if (rows[i].type === 'Action' && rows[i].id && rows[i].id.includes('.')) {
       const parts = rows[i].id.split('.')
       if (parts.length === 2) {
+        const [noun, verb] = parts
+        const [Noun, Verb] = [
+          noun.charAt(0).toUpperCase() + noun.slice(1),
+          verb.charAt(0).toUpperCase() + verb.slice(1)
+        ]
+
         // Swap: "Contact.create" → "create.Contact"
-        rows[i].id = `${parts[1]}.${parts[0]}`
+        rows[i].id = `${verb}.${Noun}`
+
+        // Also update name field to match
+        if (rows[i].name) {
+          rows[i].name = `${verb}.${Noun}`
+        }
+
         if (originalID !== rows[i].id) {
           fixed++
         }

@@ -1,0 +1,1225 @@
+{
+  "total": 83117,
+  "products": {
+    "count": 2856,
+    "percentage": 3,
+    "examples": [
+      {
+        "code": "111",
+        "name": "Live animals"
+      },
+      {
+        "code": "11111",
+        "name": "Cattle and calves"
+      },
+      {
+        "code": "111111",
+        "name": "Cattle and calves"
+      },
+      {
+        "code": "1111111",
+        "name": "Cattle"
+      },
+      {
+        "code": "1111112",
+        "name": "Calves"
+      },
+      {
+        "code": "11112",
+        "name": "Hogs"
+      },
+      {
+        "code": "111121",
+        "name": "Hogs"
+      },
+      {
+        "code": "1111211",
+        "name": "Hogs for breeding"
+      },
+      {
+        "code": "1111212",
+        "name": "Nursing and weaner hogs"
+      },
+      {
+        "code": "1111213",
+        "name": "Market hogs"
+      },
+      {
+        "code": "11113",
+        "name": "Poultry"
+      },
+      {
+        "code": "111131",
+        "name": "Chickens"
+      },
+      {
+        "code": "1111311",
+        "name": "Chickens for breeding"
+      },
+      {
+        "code": "1111312",
+        "name": "Hens and pullets for laying eggs"
+      },
+      {
+        "code": "1111313",
+        "name": "Chickens for meat"
+      },
+      {
+        "code": "111132",
+        "name": "Turkeys"
+      },
+      {
+        "code": "1111321",
+        "name": "Turkeys for breeding"
+      },
+      {
+        "code": "1111322",
+        "name": "Turkeys for meat"
+      },
+      {
+        "code": "111133",
+        "name": "Chicks and poults"
+      },
+      {
+        "code": "1111331",
+        "name": "Chicks"
+      },
+      {
+        "code": "1111332",
+        "name": "Poults"
+      },
+      {
+        "code": "111134",
+        "name": "Poultry (except chickens"
+      },
+      {
+        "code": "1111341",
+        "name": "Poultry (except chickens"
+      },
+      {
+        "code": "11114",
+        "name": "Other live animals"
+      },
+      {
+        "code": "111141",
+        "name": "Sheep"
+      },
+      {
+        "code": "1111411",
+        "name": "Sheep and lambs"
+      },
+      {
+        "code": "1111412",
+        "name": "Goats"
+      },
+      {
+        "code": "111142",
+        "name": "Fur-bearing animals"
+      },
+      {
+        "code": "1111421",
+        "name": "Fur-bearing animals"
+      },
+      {
+        "code": "111143",
+        "name": "Other miscellaneous live animals"
+      },
+      {
+        "code": "1111431",
+        "name": "Other live animals for meat and for hair"
+      },
+      {
+        "code": "1111432",
+        "name": "Pets and laboratory animals"
+      },
+      {
+        "code": "1111433",
+        "name": "Bees and pollinating insects"
+      },
+      {
+        "code": "1111434",
+        "name": "Other live animals"
+      },
+      {
+        "code": "1111435",
+        "name": "Semen"
+      },
+      {
+        "code": "1111436",
+        "name": "Animal embryos"
+      },
+      {
+        "code": "112",
+        "name": "Wheat"
+      },
+      {
+        "code": "11211",
+        "name": "Wheat"
+      },
+      {
+        "code": "112111",
+        "name": "Wheat"
+      },
+      {
+        "code": "1121111",
+        "name": "Wheat (except durum wheat)"
+      },
+      {
+        "code": "1121112",
+        "name": "Durum wheat"
+      },
+      {
+        "code": "113",
+        "name": "Canola (including rapeseed)"
+      },
+      {
+        "code": "11311",
+        "name": "Canola (including rapeseed)"
+      },
+      {
+        "code": "113111",
+        "name": "Canola (including rapeseed)"
+      },
+      {
+        "code": "1131111",
+        "name": "Canola"
+      },
+      {
+        "code": "1131112",
+        "name": "Rapeseed (except canola)"
+      },
+      {
+        "code": "114",
+        "name": "Fresh fruit"
+      },
+      {
+        "code": "11411",
+        "name": "Fresh fruit and nuts"
+      },
+      {
+        "code": "114111",
+        "name": "Fresh berries"
+      },
+      {
+        "code": "1141111",
+        "name": "Fresh strawberries"
+      },
+      {
+        "code": "1141112",
+        "name": "Fresh raspberries"
+      },
+      {
+        "code": "1141113",
+        "name": "Fresh cranberries"
+      },
+      {
+        "code": "1141114",
+        "name": "Fresh blueberries"
+      },
+      {
+        "code": "1141115",
+        "name": "Other fresh berries"
+      },
+      {
+        "code": "114112",
+        "name": "Fresh citrus fruit"
+      },
+      {
+        "code": "1141121",
+        "name": "Fresh oranges"
+      },
+      {
+        "code": "1141122",
+        "name": "Other fresh citrus fruit"
+      },
+      {
+        "code": "114113",
+        "name": "Fresh tropical and semitropical fruit (except citrus fruit)"
+      },
+      {
+        "code": "1141131",
+        "name": "Fresh bananas"
+      },
+      {
+        "code": "1141132",
+        "name": "Fresh pineapples"
+      },
+      {
+        "code": "1141133",
+        "name": "Fresh olives"
+      },
+      {
+        "code": "1141134",
+        "name": "Other fresh tropical and semitropical fruit"
+      },
+      {
+        "code": "114114",
+        "name": "Other fresh fruit"
+      },
+      {
+        "code": "1141141",
+        "name": "Fresh apples"
+      },
+      {
+        "code": "1141142",
+        "name": "Fresh pears"
+      },
+      {
+        "code": "1141143",
+        "name": "Fresh plums and prune plums"
+      },
+      {
+        "code": "1141144",
+        "name": "Fresh peaches"
+      },
+      {
+        "code": "1141145",
+        "name": "Fresh cherries"
+      },
+      {
+        "code": "1141146",
+        "name": "Other fresh pome and stone fruit"
+      },
+      {
+        "code": "1141147",
+        "name": "Fresh grapes"
+      },
+      {
+        "code": "1141148",
+        "name": "Other fresh fruit"
+      },
+      {
+        "code": "114115",
+        "name": "Nuts"
+      },
+      {
+        "code": "1141151",
+        "name": "Peanuts"
+      },
+      {
+        "code": "1141152",
+        "name": "Hazelnuts"
+      },
+      {
+        "code": "1141153",
+        "name": "Other nuts"
+      },
+      {
+        "code": "11421",
+        "name": "Fresh potatoes"
+      },
+      {
+        "code": "114211",
+        "name": "Fresh potatoes"
+      },
+      {
+        "code": "1142111",
+        "name": "Fresh potatoes for table consumption"
+      },
+      {
+        "code": "1142112",
+        "name": "Fresh potatoes for processing"
+      },
+      {
+        "code": "1142113",
+        "name": "Fresh potatoes for seed"
+      },
+      {
+        "code": "11422",
+        "name": "Fresh vegetables (except potatoes and pulse crops)"
+      },
+      {
+        "code": "114221",
+        "name": "Fresh vegetables (except potatoes and pulse crops)"
+      },
+      {
+        "code": "1142211",
+        "name": "Fresh root type vegetables"
+      },
+      {
+        "code": "1142212",
+        "name": "Fresh bulb type vegetables"
+      },
+      {
+        "code": "1142213",
+        "name": "Fresh leaf and stem type vegetables"
+      },
+      {
+        "code": "1142214",
+        "name": "Fresh melons"
+      },
+      {
+        "code": "1142215",
+        "name": "Fresh fruit type vegetables (except melons)"
+      },
+      {
+        "code": "1142216",
+        "name": "Green leguminous vegetables"
+      },
+      {
+        "code": "1142217",
+        "name": "Fresh mushrooms (including truffles)"
+      },
+      {
+        "code": "1142218",
+        "name": "Other fresh vegetables"
+      },
+      {
+        "code": "11431",
+        "name": "Pulse crops (except soybeans)"
+      },
+      {
+        "code": "114311",
+        "name": "Chickpeas"
+      },
+      {
+        "code": "1143111",
+        "name": "Chickpeas"
+      },
+      {
+        "code": "1143112",
+        "name": "Chickpeas"
+      },
+      {
+        "code": "1143113",
+        "name": "Other chickpeas"
+      },
+      {
+        "code": "114312",
+        "name": "Lentils"
+      },
+      {
+        "code": "1143121",
+        "name": "Large green lentils"
+      },
+      {
+        "code": "1143122",
+        "name": "Red lentils"
+      },
+      {
+        "code": "1143123",
+        "name": "Small green lentils"
+      },
+      {
+        "code": "1143124",
+        "name": "Other lentils"
+      }
+    ]
+  },
+  "services": {
+    "count": 79754,
+    "percentage": 96,
+    "examples": [
+      {
+        "code": "511",
+        "name": "Transportation of commodities by pipeline"
+      },
+      {
+        "code": "51111",
+        "name": "Transportation of natural gas by pipeline"
+      },
+      {
+        "code": "511111",
+        "name": "Transportation of natural gas by pipeline"
+      },
+      {
+        "code": "5111111",
+        "name": "Transportation of natural gas by pipeline"
+      },
+      {
+        "code": "51112",
+        "name": "Transportation of crude oil and other commodities by pipeline"
+      },
+      {
+        "code": "511121",
+        "name": "Transportation of crude oil by pipeline"
+      },
+      {
+        "code": "5111211",
+        "name": "Transportation of crude oil by pipeline"
+      },
+      {
+        "code": "5111221",
+        "name": "Transportation of refined petroleum products by pipeline (including liquid petroleum gases)"
+      },
+      {
+        "code": "511123",
+        "name": "Transportation of other commodities by pipeline"
+      },
+      {
+        "code": "5111231",
+        "name": "Transportation of other commodities by pipeline"
+      },
+      {
+        "code": "512",
+        "name": "Freight transportation by road"
+      },
+      {
+        "code": "51211",
+        "name": "Road transportation services for general freight"
+      },
+      {
+        "code": "512112",
+        "name": "Road transportation services for general freight"
+      },
+      {
+        "code": "5121121",
+        "name": "Road transportation services for general freight (except rental and operating leasing with operator)"
+      },
+      {
+        "code": "5121122",
+        "name": "Rental of road transportation vehicles with operator"
+      },
+      {
+        "code": "51212",
+        "name": "Road transportation services for specialized freight"
+      },
+      {
+        "code": "512121",
+        "name": "Transportation of bulk liquids and gases by road"
+      },
+      {
+        "code": "5121211",
+        "name": "Transportation of bulk liquids and gases by road"
+      },
+      {
+        "code": "512122",
+        "name": "Transportation of climate-controlled boxed"
+      },
+      {
+        "code": "5121221",
+        "name": "Transportation of climate-controlled boxed"
+      },
+      {
+        "code": "512123",
+        "name": "Transportation of automobiles and light-duty trucks by road"
+      },
+      {
+        "code": "5121231",
+        "name": "Transportation of automobiles and light-duty trucks by road"
+      },
+      {
+        "code": "512124",
+        "name": "Transportation of live animals by road"
+      },
+      {
+        "code": "5121241",
+        "name": "Transportation of live animals by road"
+      },
+      {
+        "code": "512125",
+        "name": "Transportation of waste"
+      },
+      {
+        "code": "5121251",
+        "name": "Transportation of waste"
+      },
+      {
+        "code": "512126",
+        "name": "Transportation of dry bulk by road"
+      },
+      {
+        "code": "5121261",
+        "name": "Transportation of dry bulk by road"
+      },
+      {
+        "code": "5121271",
+        "name": "Transportation of other goods by road"
+      },
+      {
+        "code": "512128",
+        "name": "Rental of road transportation vehicles with operator"
+      },
+      {
+        "code": "5121281",
+        "name": "Rental of road transportation vehicles with operator"
+      },
+      {
+        "code": "513",
+        "name": "Other freight transportation services and air specialty services"
+      },
+      {
+        "code": "51311",
+        "name": "Rail freight transportation services"
+      },
+      {
+        "code": "513111",
+        "name": "Rail freight transportation services"
+      },
+      {
+        "code": "5131111",
+        "name": "Rail freight transportation services (except rental and leasing with operator or crew)"
+      },
+      {
+        "code": "5131112",
+        "name": "Rental and leasing of locomotives and freight rail cars"
+      },
+      {
+        "code": "51321",
+        "name": "Water freight transportation services"
+      },
+      {
+        "code": "513211",
+        "name": "Water freight transportation services"
+      },
+      {
+        "code": "5132111",
+        "name": "Water freight transportation services (except rental and leasing with operator or crew)"
+      },
+      {
+        "code": "5132112",
+        "name": "Rental and leasing of freight vessels with operator or crew"
+      },
+      {
+        "code": "51331",
+        "name": "Air freight transportation services"
+      },
+      {
+        "code": "513311",
+        "name": "Air freight transportation services"
+      },
+      {
+        "code": "5133111",
+        "name": "Air freight transportation services (except rental and leasing with operator or crew)"
+      },
+      {
+        "code": "5133112",
+        "name": "Rental and leasing of freight aircraft"
+      },
+      {
+        "code": "51341",
+        "name": "Moving services"
+      },
+      {
+        "code": "513411",
+        "name": "Household moving services"
+      },
+      {
+        "code": "5134111",
+        "name": "Household moving services"
+      },
+      {
+        "code": "513412",
+        "name": "Commercial moving services"
+      },
+      {
+        "code": "5134121",
+        "name": "Commercial moving services"
+      },
+      {
+        "code": "513413",
+        "name": "Institutional and other moving services"
+      },
+      {
+        "code": "5134131",
+        "name": "Institutional and other moving services"
+      },
+      {
+        "code": "51351",
+        "name": "Air specialty services"
+      },
+      {
+        "code": "513511",
+        "name": "Air specialty services"
+      },
+      {
+        "code": "5135111",
+        "name": "Air specialty services"
+      },
+      {
+        "code": "514",
+        "name": "Postal and courier services"
+      },
+      {
+        "code": "51411",
+        "name": "Postal services"
+      },
+      {
+        "code": "514111",
+        "name": "Postal services"
+      },
+      {
+        "code": "5141111",
+        "name": "Postal services"
+      },
+      {
+        "code": "51412",
+        "name": "Courier"
+      },
+      {
+        "code": "514121",
+        "name": "Station-to-station transportation of small packages and documents without tracking"
+      },
+      {
+        "code": "5141211",
+        "name": "Station-to-station transportation of small packages and documents without tracking"
+      },
+      {
+        "code": "514122",
+        "name": "Courier and messenger services"
+      },
+      {
+        "code": "5141221",
+        "name": "Same-day courier and messenger services"
+      },
+      {
+        "code": "5141222",
+        "name": "Next-day courier and messenger services"
+      },
+      {
+        "code": "5141223",
+        "name": "Second-day or later courier and messenger services"
+      },
+      {
+        "code": "514123",
+        "name": "Neighbourhood delivery of small purchased items"
+      },
+      {
+        "code": "5141231",
+        "name": "Neighbourhood delivery of small purchased items"
+      },
+      {
+        "code": "521",
+        "name": "Passenger transportation services (including sightseeing)"
+      },
+      {
+        "code": "52111",
+        "name": "Urban transit services"
+      },
+      {
+        "code": "521111",
+        "name": "Urban transit services"
+      },
+      {
+        "code": "5211111",
+        "name": "Urban transit services"
+      },
+      {
+        "code": "52121",
+        "name": "Taxi and limousine services"
+      },
+      {
+        "code": "521211",
+        "name": "Local limousine services"
+      },
+      {
+        "code": "5212111",
+        "name": "Local limousine services"
+      },
+      {
+        "code": "521212",
+        "name": "Local taxi services and taxi dispatch services"
+      },
+      {
+        "code": "5212121",
+        "name": "Local taxi services"
+      },
+      {
+        "code": "5212122",
+        "name": "Dispatch services for taxi and ridesharing"
+      },
+      {
+        "code": "52122",
+        "name": "Interurban and rural bus passenger transportation services"
+      },
+      {
+        "code": "521221",
+        "name": "Interurban and rural bus passenger transportation services"
+      },
+      {
+        "code": "5212211",
+        "name": "Interurban and rural bus passenger transportation services"
+      },
+      {
+        "code": "52123",
+        "name": "School bus services"
+      },
+      {
+        "code": "521231",
+        "name": "School bus services"
+      },
+      {
+        "code": "5212311",
+        "name": "School bus services"
+      },
+      {
+        "code": "52124",
+        "name": "Other transit and passenger transportation services by road"
+      },
+      {
+        "code": "521241",
+        "name": "Long distance passenger transportation by chartered bus"
+      },
+      {
+        "code": "5212411",
+        "name": "Long distance passenger transportation by chartered bus"
+      },
+      {
+        "code": "521242",
+        "name": "Local passenger transportation by chartered bus"
+      },
+      {
+        "code": "5212421",
+        "name": "Local passenger transportation by chartered bus"
+      },
+      {
+        "code": "521243",
+        "name": "Other long distance passenger transportation services by road (except fixed route)"
+      },
+      {
+        "code": "5212431",
+        "name": "Other long distance passenger transportation services by road (except fixed route)"
+      },
+      {
+        "code": "521244",
+        "name": "Shuttle services"
+      },
+      {
+        "code": "5212441",
+        "name": "Shuttle services"
+      },
+      {
+        "code": "521245",
+        "name": "Other local fixed route passenger transportation services by road"
+      },
+      {
+        "code": "5212451",
+        "name": "Other local fixed route passenger transportation services by road"
+      },
+      {
+        "code": "521246",
+        "name": "Special needs urban transit services"
+      },
+      {
+        "code": "5212461",
+        "name": "Special needs urban transit services"
+      },
+      {
+        "code": "521247",
+        "name": "Local shared-ride passenger transportation services"
+      },
+      {
+        "code": "5212471",
+        "name": "Local shared-ride passenger transportation services"
+      },
+      {
+        "code": "521248",
+        "name": "Rental of road passenger transportation vehicles"
+      },
+      {
+        "code": "5212481",
+        "name": "Rental of passenger automobiles and light vans"
+      }
+    ]
+  },
+  "ambiguous": {
+    "count": 507,
+    "percentage": 1,
+    "examples": [
+      {
+        "code": "panelized",
+        "name": "and manufactured or fully assembled residential buildings built in a factory and delivered ready for move-in"
+      },
+      {
+        "code": "panelized",
+        "name": "and manufactured or fully assembled residential buildings built in a factory and delivered ready for move-in"
+      },
+      {
+        "code": "panelized",
+        "name": "and manufactured or fully assembled non-residential buildings built in a factory and delivered ready for move-in"
+      },
+      {
+        "code": "semi-detached or terraced houses)",
+        "name": "the interconnected building units are regarded as individual buildings if they have their own access (own entrance) as well as their own utility system and are separately usable."
+      },
+      {
+        "code": "semi-detached or terraced houses)",
+        "name": "the interconnected building units are regarded as individual buildings if they have their own access (own entrance) as well as their own utility system and are separately usable."
+      },
+      {
+        "code": "90101502",
+        "name": "Bars"
+      },
+      {
+        "code": "90101503",
+        "name": "Fast food establishments"
+      },
+      {
+        "code": "90101504",
+        "name": "On street food vendors"
+      },
+      {
+        "code": "90101601",
+        "name": "Banquet facilities"
+      },
+      {
+        "code": "90101801",
+        "name": "Professionally prepared carryout meals"
+      },
+      {
+        "code": "90111502",
+        "name": "Lodges or resorts"
+      },
+      {
+        "code": "90111503",
+        "name": "Bed and breakfast inns"
+      },
+      {
+        "code": "90111601",
+        "name": "Conference centers"
+      },
+      {
+        "code": "90111602",
+        "name": "Videoconferencing facilities"
+      },
+      {
+        "code": "90111603",
+        "name": "Meeting or banquet rooms"
+      },
+      {
+        "code": "90111604",
+        "name": "Marquees"
+      },
+      {
+        "code": "90111605",
+        "name": "Meals and personal expense"
+      },
+      {
+        "code": "90111701",
+        "name": "Campsites"
+      },
+      {
+        "code": "90111702",
+        "name": "Government owned parks"
+      },
+      {
+        "code": "90111703",
+        "name": "Recreational vehicle campsite facilities"
+      },
+      {
+        "code": "90111801",
+        "name": "Single room"
+      },
+      {
+        "code": "90111802",
+        "name": "Double room"
+      },
+      {
+        "code": "90111803",
+        "name": "Suite"
+      },
+      {
+        "code": "90121502",
+        "name": "Travel agencies"
+      },
+      {
+        "code": "90121701",
+        "name": "Area or tour guides"
+      },
+      {
+        "code": "90121702",
+        "name": "Interpreters"
+      },
+      {
+        "code": "90121801",
+        "name": "Emergency travel agent assistance"
+      },
+      {
+        "code": "90131501",
+        "name": "Theatrical performances or plays"
+      },
+      {
+        "code": "90131502",
+        "name": "Dance performances"
+      },
+      {
+        "code": "90131503",
+        "name": "Opera"
+      },
+      {
+        "code": "90131504",
+        "name": "Concerts"
+      },
+      {
+        "code": "90131601",
+        "name": "Motion pictures"
+      },
+      {
+        "code": "90131602",
+        "name": "Videotaped entertainment"
+      },
+      {
+        "code": "90141501",
+        "name": "League play"
+      },
+      {
+        "code": "90141502",
+        "name": "Competitive events"
+      },
+      {
+        "code": "90141503",
+        "name": "Exhibitions"
+      },
+      {
+        "code": "90141601",
+        "name": "Company sponsored professional sports events"
+      },
+      {
+        "code": "90141602",
+        "name": "Company sponsored amateur sports events"
+      },
+      {
+        "code": "90141701",
+        "name": "Youth competitive sports leagues"
+      },
+      {
+        "code": "90141702",
+        "name": "Adult sports leagues"
+      },
+      {
+        "code": "90141703",
+        "name": "Youth sports"
+      },
+      {
+        "code": "90151502",
+        "name": "Historical or cultural sites"
+      },
+      {
+        "code": "90151503",
+        "name": "Zoological garden or zoo"
+      },
+      {
+        "code": "90151601",
+        "name": "Circuses"
+      },
+      {
+        "code": "90151602",
+        "name": "Touring companies"
+      },
+      {
+        "code": "90151603",
+        "name": "Art exhibitions"
+      },
+      {
+        "code": "90151701",
+        "name": "Theme parks"
+      },
+      {
+        "code": "90151702",
+        "name": "Water parks"
+      },
+      {
+        "code": "90151703",
+        "name": "Miniature golf courses"
+      },
+      {
+        "code": "90151801",
+        "name": "Travelling carnivals"
+      },
+      {
+        "code": "90151803",
+        "name": "Fair stands creation or construction"
+      },
+      {
+        "code": "90151901",
+        "name": "Casinos"
+      },
+      {
+        "code": "90151902",
+        "name": "Card clubs"
+      },
+      {
+        "code": "90151903",
+        "name": "Racetracks"
+      },
+      {
+        "code": "90152001",
+        "name": "Nightclubs"
+      },
+      {
+        "code": "90152002",
+        "name": "Dance halls"
+      },
+      {
+        "code": "91101501",
+        "name": "Health or fitness clubs"
+      },
+      {
+        "code": "91101502",
+        "name": "Spas"
+      },
+      {
+        "code": "91101504",
+        "name": "Aerobics or exercise classes"
+      },
+      {
+        "code": "91101505",
+        "name": "Turkish or steam or ritual baths"
+      },
+      {
+        "code": "91101601",
+        "name": "Facial or body treatments"
+      },
+      {
+        "code": "91101602",
+        "name": "Make up consultation"
+      },
+      {
+        "code": "91101605",
+        "name": "Electrolysis"
+      },
+      {
+        "code": "91101901",
+        "name": "Color consultant"
+      },
+      {
+        "code": "91101902",
+        "name": "Fashion stylist"
+      },
+      {
+        "code": "91101903",
+        "name": "Wardrobe consultant"
+      },
+      {
+        "code": "91111702",
+        "name": "Barter clubs or consortiums"
+      },
+      {
+        "code": "91111802",
+        "name": "Check room concessions"
+      },
+      {
+        "code": "91111804",
+        "name": "Fur storage"
+      },
+      {
+        "code": "92101502",
+        "name": "Special weapons and tactics SWAT or riot teams"
+      },
+      {
+        "code": "92101503",
+        "name": "Community outreach programs"
+      },
+      {
+        "code": "92101504",
+        "name": "Crime deterrence programs"
+      },
+      {
+        "code": "92101704",
+        "name": "Mentally impaired criminal facilities"
+      },
+      {
+        "code": "92101802",
+        "name": "Plea bargain agreements"
+      },
+      {
+        "code": "92101803",
+        "name": "Civil case court expenses"
+      },
+      {
+        "code": "92101804",
+        "name": "Criminal case fees or fines"
+      },
+      {
+        "code": "92101805",
+        "name": "Appeals process or judicial review"
+      },
+      {
+        "code": "92101901",
+        "name": "Search and rescue teams"
+      },
+      {
+        "code": "92111501",
+        "name": "Dispute mediation or conciliation or negotiation or settlement"
+      },
+      {
+        "code": "92111502",
+        "name": "Peace keeping operations"
+      },
+      {
+        "code": "92111503",
+        "name": "Cease fire agreements or truce supervision"
+      },
+      {
+        "code": "92111504",
+        "name": "Fact finding missions"
+      },
+      {
+        "code": "92111505",
+        "name": "War prevention strategies"
+      },
+      {
+        "code": "92111506",
+        "name": "Counterterrorism"
+      },
+      {
+        "code": "92111507",
+        "name": "Embargoes"
+      },
+      {
+        "code": "92111601",
+        "name": "Arms limitations"
+      },
+      {
+        "code": "92111602",
+        "name": "Conventional arms disarmament"
+      },
+      {
+        "code": "92111603",
+        "name": "Nuclear freezes or disarmament"
+      },
+      {
+        "code": "92111604",
+        "name": "Weapons destruction"
+      },
+      {
+        "code": "92111605",
+        "name": "Disarmament negotiations or agreements"
+      },
+      {
+        "code": "92111606",
+        "name": "Mutual or balanced force reductions"
+      },
+      {
+        "code": "92111616",
+        "name": "Landmine prohibition action and explosive remnants of war advocacy"
+      },
+      {
+        "code": "92111701",
+        "name": "Military history"
+      },
+      {
+        "code": "92111702",
+        "name": "Conventional weapons usage"
+      },
+      {
+        "code": "92111703",
+        "name": "Chemical weapons usage"
+      },
+      {
+        "code": "92111704",
+        "name": "Guerilla warfare"
+      },
+      {
+        "code": "92111705",
+        "name": "Military strategy"
+      },
+      {
+        "code": "92111706",
+        "name": "Aerial maneuvers"
+      },
+      {
+        "code": "92111707",
+        "name": "Naval or submarine maneuvers"
+      },
+      {
+        "code": "92111708",
+        "name": "Land maneuvers"
+      }
+    ]
+  },
+  "validation": {
+    "potentialMisclassifiedProducts": 42,
+    "potentialMisclassifiedServices": 41
+  }
+}

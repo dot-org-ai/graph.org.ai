@@ -31,3 +31,36 @@ Search	searches.org.ai	nouns.org.ai	Search queries
 Country	places.org.ai	nouns.org.ai	Countries
 Department	business.org.ai	nouns.org.ai	Business departments
 Language	language.org.ai	nouns.org.ai	Natural languages
+Category	apps.org.ai	nouns.org.ai	App categories (generic catch-all)
+Email	apps.org.ai	integrations.org.ai;nouns.org.ai	Email apps and services
+Documents	apps.org.ai	integrations.org.ai;nouns.org.ai	Document management apps
+Microsoft	apps.org.ai	integrations.org.ai;nouns.org.ai	Microsoft ecosystem apps
+eCommerce	business.org.ai	apps.org.ai;nouns.org.ai	eCommerce platforms
+Ads & Conversion	business.org.ai	apps.org.ai;marketing.org.ai;nouns.org.ai	Advertising and conversion tracking
+Marketing Automation	business.org.ai	apps.org.ai;marketing.org.ai;nouns.org.ai	Marketing automation platforms
+Project Management	apps.org.ai	business.org.ai;nouns.org.ai	Project management tools
+Notes	apps.org.ai	nouns.org.ai	Note-taking apps
+Team Collaboration	apps.org.ai	business.org.ai;nouns.org.ai	Team collaboration platforms
+CRM (Customer Relationship Management)	business.org.ai	apps.org.ai;nouns.org.ai	Customer relationship management
+Phone & SMS	apps.org.ai	integrations.org.ai;nouns.org.ai	Phone and SMS services
+Social Media Marketing	business.org.ai	apps.org.ai;marketing.org.ai;nouns.org.ai	Social media marketing tools
+Social Media Accounts	apps.org.ai	integrations.org.ai;nouns.org.ai	Social media account integrations
+Developer Tools	tech.org.ai	apps.org.ai;nouns.org.ai	Developer tools and platforms
+Call Tracking	business.org.ai	apps.org.ai;nouns.org.ai	Call tracking services
+Forms & Surveys	apps.org.ai	business.org.ai;nouns.org.ai	Form and survey tools
+Accounting	business.org.ai	apps.org.ai;nouns.org.ai	Accounting software
+Sales & CRM	business.org.ai	apps.org.ai;nouns.org.ai	Sales and CRM platforms
+Analytics	business.org.ai	apps.org.ai;tech.org.ai;nouns.org.ai	Analytics platforms
+Proposal & Invoice Management	business.org.ai	apps.org.ai;nouns.org.ai	Proposal and invoicing tools
+Event Management	business.org.ai	apps.org.ai;nouns.org.ai	Event management platforms
+Task Management	apps.org.ai	business.org.ai;nouns.org.ai	Task management tools
+AI Models	ai.org.ai	models.org.ai;tech.org.ai;nouns.org.ai	AI and ML models
+Email Newsletters	business.org.ai	apps.org.ai;marketing.org.ai;nouns.org.ai	Email newsletter services
+Calendar	apps.org.ai	integrations.org.ai;nouns.org.ai	Calendar apps and services
+Payment Processing	business.org.ai	apps.org.ai;nouns.org.ai	Payment processing services
+Team Chat	apps.org.ai	business.org.ai;nouns.org.ai	Team chat and messaging
+WordPress	tech.org.ai	apps.org.ai;nouns.org.ai	WordPress ecosystem
+Facebook	apps.org.ai	integrations.org.ai;nouns.org.ai	Facebook platform and services
+Google	apps.org.ai	integrations.org.ai;nouns.org.ai	Google ecosystem apps
+Premium	apps.org.ai	nouns.org.ai	Premium tier apps
+Zapier	integrations.org.ai	apps.org.ai;nouns.org.ai	Zapier integration services

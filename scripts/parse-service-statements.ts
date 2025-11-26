@@ -398,7 +398,20 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
     })
   }
 
-  return expanded
+  // Deduplicate expansions (case-insensitive)
+  const seen = new Set<string>()
+  const deduplicated: ExpandedService[] = []
+
+  for (const item of expanded) {
+    const lowerName = item.fullName.toLowerCase()
+
+    if (!seen.has(lowerName)) {
+      seen.add(lowerName)
+      deduplicated.push(item)
+    }
+  }
+
+  return deduplicated
 }
 
 /**
