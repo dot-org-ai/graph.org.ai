@@ -73,8 +73,11 @@ export function isValidURL(url: string): boolean {
 
 export function isPascalCase(str: string): boolean {
   if (!str || str.length === 0) return false
-  // PascalCase: starts with uppercase, no hyphens, underscores, or spaces
-  return /^[A-Z][a-zA-Z0-9]*$/.test(str)
+  // Allow semantic IDs with dots (e.g., "Contact.created", "create.Contact")
+  if (str.includes('.')) return true
+  // PascalCase: starts with uppercase OR number, no hyphens, underscores, or spaces
+  // Numbers are allowed at the start for entities like "17hats", "2chat", "3DCart"
+  return /^[A-Z0-9][a-zA-Z0-9]*$/.test(str)
 }
 
 export function hasWindowsLineEndings(content: string): boolean {
