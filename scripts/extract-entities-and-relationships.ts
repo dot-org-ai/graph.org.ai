@@ -397,13 +397,23 @@ function singularize(word: string): string {
 }
 
 /**
- * Convert text to URL-safe ID
+ * Convert text to URL-safe ID in PascalCase
  */
 function toUrlId(text: string): string {
-  return text
-    .replace(/[^a-zA-Z0-9]+/g, '')
+  // Split on spaces, hyphens, underscores and capitalize each word
+  const words = text
+    .split(/[\s\-_]+/)
+    .filter(w => w.length > 0)
+    .map(word => {
+      // Capitalize first letter, keep rest as-is (preserving existing case)
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    })
+
+  // Join and remove any remaining non-alphanumeric characters
+  return words
+    .join('')
+    .replace(/[^a-zA-Z0-9]/g, '')
     .replace(/^[0-9]+/, '')
-    .replace(/([A-Z])/g, (match, p1, offset) => offset > 0 ? match : match.toLowerCase())
 }
 
 /**

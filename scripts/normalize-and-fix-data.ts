@@ -229,8 +229,10 @@ function fixURL(row: Row, ontologyMap: Map<string, OntologyRow>): string {
 
   const canonicalDomain = ontology.canonicalDomain
 
-  // Preserve semantic dots in ID (e.g., "create.Contact", "Contact.created")
-  const fixedId = fixPascalCaseId(id)
+  // Use the ID exactly as-is for URLs - don't transform it
+  // The ID field has already been fixed by fixPascalCaseId() earlier
+  // For semantic IDs like "Contact.created" or "create.Contact", preserve exact casing
+  const urlId = id
 
   // Check if type is in the hostname (singular or plural)
   const subdomain = canonicalDomain.split('.')[0].toLowerCase()
@@ -244,10 +246,10 @@ function fixURL(row: Row, ontologyMap: Map<string, OntologyRow>): string {
 
   if (typeInHostname) {
     // When type IS in hostname: https://[type].org.ai/{Id}
-    return `https://${canonicalDomain}/${fixedId}`
+    return `https://${canonicalDomain}/${urlId}`
   } else {
     // When type is NOT in hostname: https://{domain}/{Type}/{Id}
-    return `https://${canonicalDomain}/${normalizedType}/${fixedId}`
+    return `https://${canonicalDomain}/${normalizedType}/${urlId}`
   }
 }
 
