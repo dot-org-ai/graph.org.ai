@@ -1,8 +1,16 @@
 #!/usr/bin/env tsx
 /**
- * Normalize entity types to simple nouns and fix all data quality issues
+ * Normalize entity types and fix all data quality issues using domain ontology
  *
- * Normalizations:
+ * Features:
+ * - Loads domain ontology from .enrichment/domain-ontology.tsv
+ * - Updates all URLs to use canonical domains
+ * - Preserves semantic dots in IDs (e.g., "create.Contact", "Contact.created")
+ * - Fixes Action IDs from Noun.verb to verb.Noun format
+ * - Updates namespace fields to canonical domains
+ * - Implements proper URL format based on whether type is in hostname
+ *
+ * Type Normalizations:
  * - EducationPrograms → Education
  * - CareerClusters → Career
  * - SubClusters → Career (with hierarchy)
@@ -11,11 +19,10 @@
  * - IntegrationServices → Integration
  * - BusinessTypes → Business
  *
- * Fixes:
+ * Data Quality Fixes:
  * - Windows line endings → Unix
  * - Trailing whitespace removal
- * - URL format standardization
- * - PascalCase ID fixes
+ * - PascalCase ID fixes (preserving semantic dots)
  * - Missing field completion
  * - Duplicate URL resolution
  */
@@ -24,9 +31,17 @@ import { readFileSync, writeFileSync, readdirSync } from 'fs'
 import { resolve } from 'path'
 
 const DATA_DIR = '.data'
+const ONTOLOGY_FILE = '.enrichment/domain-ontology.tsv'
 
 interface Row {
   [key: string]: string
+}
+
+interface OntologyRow {
+  type: string
+  canonicalDomain: string
+  aliasDomains: string
+  notes: string
 }
 
 // Normalization mapping: old type → new type
@@ -74,6 +89,25 @@ function parseTSV(content: string): Row[] {
   return rows
 }
 
+function loadOntology(): Map<string, OntologyRow> {
+  const content = readFileSync(ONTOLOGY_FILE, 'utf-8')
+  const rows = parseTSV(content) as any[]
+
+  const ontologyMap = new Map<string, OntologyRow>()
+  rows.forEach(row => {
+    if (row.type) {
+      ontologyMap.set(row.type, {
+        type: row.type,
+        canonicalDomain: row.canonicalDomain,
+        aliasDomains: row.aliasDomains || '',
+        notes: row.notes || ''
+      })
+    }
+  })
+
+  return ontologyMap
+}
+
 function writeTSV(filePath: string, rows: Row[]): void {
   if (rows.length === 0) {
     console.warn(`⚠️  No data to write to ${filePath}`)
@@ -112,6 +146,16 @@ function toPascalCase(str: string): string {
 }
 
 function fixPascalCaseId(id: string): string {
+  // Preserve semantic IDs with dots (like "create.Contact" or "Contact.created")
+  if (id.includes('.')) {
+    return id
+  }
+
+  // Preserve IDs with special characters (model names with colons, etc.)
+  if (id.includes(':')) {
+    return id
+  }
+
   // If already valid PascalCase, return as-is
   if (/^[A-Z][a-zA-Z0-9]*$/.test(id)) {
     return id
@@ -121,30 +165,47 @@ function fixPascalCaseId(id: string): string {
   return toPascalCase(id)
 }
 
-function fixURL(row: Row): string {
-  const { ns, type, id } = row
+function fixURL(row: Row, ontologyMap: Map<string, OntologyRow>): string {
+  const { type, id } = row
 
-  if (!ns || !type || !id) {
-    console.warn(`⚠️  Cannot fix URL: missing ns, type, or id`)
+  if (!type || !id) {
+    console.warn(`⚠️  Cannot fix URL: missing type or id`)
     return row.url || ''
-  }
-
-  // Normalize domain
-  let domain = ns
-  if (!domain.startsWith('http')) {
-    domain = `https://${domain}`
-  }
-  if (!domain.endsWith('.ai')) {
-    domain = domain.replace(/\.org$/, '.org.ai')
   }
 
   // Normalize type
   const normalizedType = TYPE_NORMALIZATION[type] || type
 
-  // Fix ID to PascalCase
+  // Get ontology info for this type
+  const ontology = ontologyMap.get(normalizedType)
+  if (!ontology) {
+    console.warn(`⚠️  No ontology mapping for type: ${normalizedType}`)
+    // Fallback to old behavior
+    return row.url || ''
+  }
+
+  const canonicalDomain = ontology.canonicalDomain
+
+  // Preserve semantic dots in ID (e.g., "create.Contact", "Contact.created")
   const fixedId = fixPascalCaseId(id)
 
-  return `${domain}/${normalizedType}/${fixedId}`
+  // Check if type is in the hostname (singular or plural)
+  const subdomain = canonicalDomain.split('.')[0].toLowerCase()
+  const typeLower = normalizedType.toLowerCase()
+  const typePlural = typeLower + 's'
+  const typeSingular = typeLower.replace(/s$/, '')
+
+  const typeInHostname = subdomain === typeLower ||
+                         subdomain === typePlural ||
+                         subdomain === typeSingular
+
+  if (typeInHostname) {
+    // When type IS in hostname: https://[type].org.ai/{Id}
+    return `https://${canonicalDomain}/${fixedId}`
+  } else {
+    // When type is NOT in hostname: https://{domain}/{Type}/{Id}
+    return `https://${canonicalDomain}/${normalizedType}/${fixedId}`
+  }
 }
 
 function deduplicateRows(rows: Row[]): Row[] {
@@ -196,7 +257,7 @@ function fillMissingFields(row: Row): Row {
   return row
 }
 
-function processEntityFile(fileName: string): void {
+function processEntityFile(fileName: string, ontologyMap: Map<string, OntologyRow>): void {
   console.log(`\n📝 Processing ${fileName}...`)
 
   const filePath = resolve(DATA_DIR, fileName)
@@ -209,11 +270,25 @@ function processEntityFile(fileName: string): void {
   let fixed = 0
   for (let i = 0; i < rows.length; i++) {
     const originalURL = rows[i].url
+    const originalNS = rows[i].ns
+    const originalID = rows[i].id
 
     // Fill missing fields
     rows[i] = fillMissingFields(rows[i])
 
-    // Fix PascalCase ID
+    // Special handling for Actions: swap from Noun.verb to verb.Noun
+    if (rows[i].type === 'Action' && rows[i].id && rows[i].id.includes('.')) {
+      const parts = rows[i].id.split('.')
+      if (parts.length === 2) {
+        // Swap: "Contact.create" → "create.Contact"
+        rows[i].id = `${parts[1]}.${parts[0]}`
+        if (originalID !== rows[i].id) {
+          fixed++
+        }
+      }
+    }
+
+    // Fix PascalCase ID (preserves semantic dots)
     if (rows[i].id && !isPascalCase(rows[i].id)) {
       rows[i].id = fixPascalCaseId(rows[i].id)
       fixed++
@@ -225,9 +300,19 @@ function processEntityFile(fileName: string): void {
       fixed++
     }
 
-    // Fix URL
-    const newURL = fixURL(rows[i])
-    if (newURL !== originalURL) {
+    // Update namespace to canonical domain
+    const normalizedType = TYPE_NORMALIZATION[rows[i].type] || rows[i].type
+    const ontology = ontologyMap.get(normalizedType)
+    if (ontology && ontology.canonicalDomain) {
+      rows[i].ns = ontology.canonicalDomain
+      if (originalNS !== ontology.canonicalDomain) {
+        fixed++
+      }
+    }
+
+    // Fix URL using ontology
+    const newURL = fixURL(rows[i], ontologyMap)
+    if (newURL && newURL !== originalURL) {
       rows[i].url = newURL
       fixed++
     }
@@ -265,6 +350,11 @@ function isPascalCase(str: string): boolean {
 function main() {
   console.log('🔧 Normalizing entity types and fixing data quality issues...\n')
 
+  // Load domain ontology
+  console.log('📚 Loading domain ontology...')
+  const ontologyMap = loadOntology()
+  console.log(`   ✅ Loaded ${ontologyMap.size} type mappings\n`)
+
   const files = readdirSync(DATA_DIR)
   const entityFiles = files.filter(f => f.endsWith('.tsv') && !f.includes('.Relationships.'))
 
@@ -272,7 +362,7 @@ function main() {
 
   for (const file of entityFiles) {
     try {
-      processEntityFile(file)
+      processEntityFile(file, ontologyMap)
     } catch (error) {
       console.error(`❌ Error processing ${file}:`, error)
     }
