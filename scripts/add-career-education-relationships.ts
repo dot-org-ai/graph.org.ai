@@ -28,7 +28,9 @@ interface Relationship {
 }
 
 function parseTSV(content: string): any[] {
-  const lines = content.split('\n').filter(l => l.trim())
+  // Normalize line endings: replace \r\n with \n, then \r with \n
+  const normalized = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n')
+  const lines = normalized.split('\n').filter(l => l.trim())
   if (lines.length === 0) return []
 
   const headers = lines[0].split('\t')
@@ -92,13 +94,6 @@ function educationProgramIdToUrl(programId: string): string {
   return `https://education.org/EducationProgram/${id}`
 }
 
-// Convert SOC code to Occupation URL
-function socCodeToUrl(socCode: string): string {
-  // SOC codes are like "11-1011" - convert to OccupationCode format
-  const code = socCode.replace('-', '')
-  return `https://onet.org.ai/Occupation/${code}`
-}
-
 function main() {
   console.log('🔗 Adding Career/Education relationships...\n')
 
@@ -115,7 +110,29 @@ function main() {
       subClusterCodeToUrl.set(subCluster.code, subCluster.url)
     }
   }
-  console.log(`  ✅ Loaded ${subClusterCodeToUrl.size} SubCluster mappings\n`)
+  console.log(`  ✅ Loaded ${subClusterCodeToUrl.size} SubCluster mappings`)
+
+  // Load Occupations to build a mapping from SOC code to URL
+  console.log('📖 Loading Occupations for SOC code mapping...')
+  const occupationsPath = resolve(DATA_DIR, 'Occupations.tsv')
+  const occupationsContent = readFileSync(occupationsPath, 'utf-8')
+  const occupations = parseTSV(occupationsContent)
+
+  // Create mapping from SOC code (e.g., "11-1011.00") to URL
+  // Also create a mapping without the minor group (e.g., "11-1011" -> first matching URL)
+  const socCodeToUrl = new Map<string, string>()
+  const socCodePrefixToUrl = new Map<string, string>()
+  for (const occupation of occupations) {
+    if (occupation.code && occupation.url) {
+      socCodeToUrl.set(occupation.code, occupation.url)
+      // Also map the prefix (without ".XX" suffix)
+      const prefix = occupation.code.split('.')[0]
+      if (!socCodePrefixToUrl.has(prefix)) {
+        socCodePrefixToUrl.set(prefix, occupation.url)
+      }
+    }
+  }
+  console.log(`  ✅ Loaded ${socCodeToUrl.size} Occupation mappings (${socCodePrefixToUrl.size} unique prefixes)\n`)
 
   // Track all relationships by entity type
   const careerClusterRels: Relationship[] = []
@@ -227,7 +244,11 @@ function main() {
 
     if (!socCode || !clusterId) continue
 
-    const occupationUrl = socCodeToUrl(socCode)
+    // Try exact match first, then try prefix match
+    let occupationUrl = socCodeToUrl.get(socCode)
+    if (!occupationUrl) {
+      occupationUrl = socCodePrefixToUrl.get(socCode)
+    }
     const clusterUrl = clusterIdToUrl(clusterId)
 
     if (!occupationUrl || !clusterUrl) continue
@@ -293,7 +314,11 @@ function main() {
 
     if (!socCode || !programId) continue
 
-    const occupationUrl = socCodeToUrl(socCode)
+    // Try exact match first, then try prefix match
+    let occupationUrl = socCodeToUrl.get(socCode)
+    if (!occupationUrl) {
+      occupationUrl = socCodePrefixToUrl.get(socCode)
+    }
     const programUrl = educationProgramIdToUrl(programId)
 
     if (!occupationUrl || !programUrl) continue
