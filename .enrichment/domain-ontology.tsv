@@ -1,16 +1,17 @@
 type	canonicalDomain	aliasDomains	notes
 Action	actions.org.ai	verbs.org.ai;language.org.ai	Actions are present-tense verbs acting on nouns (verb.Noun format)
 Event	events.org.ai	verbs.org.ai;language.org.ai	Events are past-tense verbs (Noun.verbed format)
-Skill	onet.org.ai	nouns.org.ai	ONET skills taxonomy
-Ability	onet.org.ai	nouns.org.ai	ONET abilities taxonomy
-Knowledge	onet.org.ai	nouns.org.ai	ONET knowledge taxonomy
-Task	onet.org.ai	process.org.ai;nouns.org.ai	ONET tasks - also processes
+Skill	skills.org.ai	onet.org.ai;nouns.org.ai	Semantic skills derived from ONET
+Ability	abilities.org.ai	onet.org.ai;nouns.org.ai	Semantic abilities derived from ONET
+Knowledge	knowledge.org.ai	onet.org.ai;nouns.org.ai	Semantic knowledge derived from ONET
+Task	tasks.org.ai	onet.org.ai;process.org.ai;nouns.org.ai	Semantic tasks derived from ONET
 Process	apqc.org.ai	process.org.ai;nouns.org.ai	APQC process framework
 WorkActivity	onet.org.ai	activities.org.ai;nouns.org.ai	ONET work activities
 WorkContext	onet.org.ai	nouns.org.ai	ONET work context
 WorkStyle	onet.org.ai	nouns.org.ai	ONET work styles
 WorkValue	onet.org.ai	nouns.org.ai	ONET work values
 Occupation	onet.org.ai	occupations.org.ai;nouns.org.ai	ONET-SOC occupations
+Job	jobs.org.ai	onet.org.ai;occupations.org.ai;nouns.org.ai	Job titles derived from ONET AlternateTitles
 Tool	onet.org.ai	tech.org.ai;products.org.ai;nouns.org.ai	ONET tools - physical and digital
 Technology	onet.org.ai	tech.org.ai;products.org.ai;nouns.org.ai	ONET technologies - software and systems
 Industry	naics.org.ai	industries.org.ai;business.org.ai;nouns.org.ai	NAICS industry classification
