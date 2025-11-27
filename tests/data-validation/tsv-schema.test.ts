@@ -221,6 +221,52 @@ describe('TSV Schema Validation', () => {
         it('should not be empty (must have data rows)', () => {
           expect(rows.length, 'File should have at least one data row beyond the header').toBeGreaterThan(0)
         })
+
+        // Semantic validation for Event entities
+        if (rows.length > 0 && rows[0].type === 'Event') {
+          it('should have Event IDs matching Noun.verb pattern', () => {
+            rows.forEach((row, index) => {
+              // Event IDs should be in the format "Noun.verb"
+              if (!row.id.includes('.')) {
+                expect.fail(`Row ${index + 2}: Event ID should contain a dot: ${row.id}`)
+              }
+
+              const parts = row.id.split('.')
+              if (parts.length !== 2) {
+                expect.fail(`Row ${index + 2}: Event ID should have exactly one dot (Noun.verb format): ${row.id}`)
+              }
+
+              // If nounId and verbId fields exist, validate they match the ID
+              if (row.nounId && row.verbId) {
+                const expectedId = `${row.nounId}.${row.verbId}`
+                expect(row.id, `Row ${index + 2}: Event ID should match nounId.verbId`).toBe(expectedId)
+              }
+            })
+          })
+        }
+
+        // Semantic validation for Action entities
+        if (rows.length > 0 && rows[0].type === 'Action') {
+          it('should have Action IDs matching verb.Noun pattern', () => {
+            rows.forEach((row, index) => {
+              // Action IDs should be in the format "verb.Noun"
+              if (!row.id.includes('.')) {
+                expect.fail(`Row ${index + 2}: Action ID should contain a dot: ${row.id}`)
+              }
+
+              const parts = row.id.split('.')
+              if (parts.length !== 2) {
+                expect.fail(`Row ${index + 2}: Action ID should have exactly one dot (verb.Noun format): ${row.id}`)
+              }
+
+              // If verbId and nounId fields exist, validate they match the ID
+              if (row.verbId && row.nounId) {
+                const expectedId = `${row.verbId}.${row.nounId}`
+                expect(row.id, `Row ${index + 2}: Action ID should match verbId.nounId`).toBe(expectedId)
+              }
+            })
+          })
+        }
       })
     })
   })
@@ -285,6 +331,38 @@ describe('TSV Schema Validation', () => {
 
         it('should have no trailing whitespace', () => {
           expect(hasTrailingWhitespace(content), 'File should not have trailing whitespace').toBe(false)
+        })
+
+        it('should reference existing entity URLs', () => {
+          // Build a set of all valid entity URLs
+          const entityUrls = new Set<string>()
+          const entityFiles = getAllEntityFiles()
+
+          entityFiles.forEach(fileName => {
+            const entityRows = loadTSVFile(fileName) as EntityRow[]
+            entityRows.forEach(row => {
+              entityUrls.add(row.url)
+            })
+          })
+
+          // Check that all relationship from/to URLs exist
+          const missingUrls: string[] = []
+          rows.forEach((row, index) => {
+            if (!entityUrls.has(row.from)) {
+              missingUrls.push(`Row ${index + 2}: 'from' URL not found: ${row.from}`)
+            }
+            if (!entityUrls.has(row.to)) {
+              missingUrls.push(`Row ${index + 2}: 'to' URL not found: ${row.to}`)
+            }
+          })
+
+          if (missingUrls.length > 0) {
+            expect.fail(
+              `Found ${missingUrls.length} relationship URLs that don't exist in entity files:\n` +
+              missingUrls.slice(0, 10).join('\n') +
+              (missingUrls.length > 10 ? `\n... and ${missingUrls.length - 10} more` : '')
+            )
+          }
         })
       })
     })
