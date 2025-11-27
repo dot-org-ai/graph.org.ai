@@ -12,7 +12,8 @@ import {
   isPascalCase,
   isCamelCase,
   hasWindowsLineEndings,
-  hasTrailingWhitespace
+  hasTrailingWhitespace,
+  hasSpecialCharacters
 } from './setup'
 
 describe('TSV Schema Validation', () => {
@@ -203,6 +204,23 @@ describe('TSV Schema Validation', () => {
         it('should have no trailing whitespace', () => {
           expect(hasTrailingWhitespace(content), 'File should not have trailing whitespace').toBe(false)
         })
+
+        it('should have no special characters in fields', () => {
+          expect(hasSpecialCharacters(content), 'File should not have embedded newlines, carriage returns, or null bytes in fields').toBe(false)
+        })
+
+        it('should have no duplicate IDs', () => {
+          const ids = rows.map(r => r.id)
+          const uniqueIds = new Set(ids)
+          if (uniqueIds.size !== ids.length) {
+            const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index)
+            expect.fail(`File has duplicate IDs: ${[...new Set(duplicates)].join(', ')}`)
+          }
+        })
+
+        it('should not be empty (must have data rows)', () => {
+          expect(rows.length, 'File should have at least one data row beyond the header').toBeGreaterThan(0)
+        })
       })
     })
   })
@@ -269,6 +287,40 @@ describe('TSV Schema Validation', () => {
           expect(hasTrailingWhitespace(content), 'File should not have trailing whitespace').toBe(false)
         })
       })
+    })
+  })
+
+  describe('Cross-File Validation', () => {
+    it('should have globally unique IDs across all files', () => {
+      const idToFiles = new Map<string, string[]>()
+
+      // Collect all IDs from all entity files
+      entityFiles.forEach(fileName => {
+        const rows = loadTSVFile(fileName) as EntityRow[]
+        rows.forEach(row => {
+          const id = row.id
+          if (!idToFiles.has(id)) {
+            idToFiles.set(id, [])
+          }
+          idToFiles.get(id)!.push(fileName)
+        })
+      })
+
+      // Find IDs that appear in multiple files
+      const duplicates: string[] = []
+      idToFiles.forEach((files, id) => {
+        if (files.length > 1) {
+          duplicates.push(`ID "${id}" appears in: ${files.join(', ')}`)
+        }
+      })
+
+      if (duplicates.length > 0) {
+        expect.fail(
+          `Found ${duplicates.length} IDs duplicated across multiple files:\n` +
+          duplicates.slice(0, 10).join('\n') +
+          (duplicates.length > 10 ? `\n... and ${duplicates.length - 10} more` : '')
+        )
+      }
     })
   })
 })

@@ -95,3 +95,24 @@ export function isCamelCase(str: string): boolean {
   // Can contain numbers after the first character
   return /^[a-z][a-zA-Z0-9]*$/.test(str)
 }
+
+export function hasSpecialCharacters(content: string): boolean {
+  // Check for problematic characters that break TSV parsing
+  // Tabs should only be in delimiters, not in content
+  // Newlines should only separate rows
+  const lines = content.split('\n')
+
+  for (let i = 1; i < lines.length; i++) { // Skip header
+    const line = lines[i]
+    if (!line.trim()) continue
+
+    const fields = line.split('\t')
+    for (const field of fields) {
+      // Check for embedded newlines, carriage returns, or null bytes
+      if (field.includes('\r') || field.includes('\n') || field.includes('\0')) {
+        return true
+      }
+    }
+  }
+  return false
+}
