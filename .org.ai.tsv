@@ -104,52 +104,7 @@ apis.org.ai	tech.org.ai	Application Programming Interfaces.	WebAPI
 nouns.org.ai	schema.org.ai	Defines the Noun class, representing the "Who" and "What" - a subclass of Type/Class.	Noun		
 verbs.org.ai	schema.org.ai	Defines the Verb class, connecting actions to their semantic components (act, actor, action, etc.).	Verb		act, actor, action, activity, result, event, inverse
 occupations.org.ai	work.org.ai	Normalized occupation definitions, extending O*NET.	Occupation		
-readme.md.markdown.org.ai	markdown.org.ai	Standard specification for README.md files, describing projects and domains.	Readme		
-todo.md.markdown.org.ai	markdown.org.ai	Standard specification for TODO.md files, tracking tasks and status.	Todo, Task		
-agents.md.markdown.org.ai	markdown.org.ai	Standard specification for AGENTS.md files, defining agent profiles and capabilities.	AgentProfile		
-claude.agents.md.markdown.org.ai	agents.md.markdown.org.ai	Claude-specific agent configuration and prompt standards.	ClaudeProfile		
-gemini.agents.md.markdown.org.ai	agents.md.markdown.org.ai	Gemini-specific agent configuration and prompt standards.	GeminiProfile		
+readme.md.org.ai	markdown.org.ai	Standard specification for README.md files, describing projects and domains.	Readme		
+todo.md.org.ai	markdown.org.ai	Standard specification for TODO.md files, tracking tasks and status.	Todo, Task		
+agents.md.org.ai	markdown.org.ai	Standard specification for AGENTS.md files, defining agent profiles and capabilities.	AgentProfile		
 graph.org.ai		The meta-graph definition and core ontology for the .org.ai ecosystem.	Graph, Ontology, Schema		
-physical.verbs.org.ai	verbs.org.ai	Verbs primarily involving physical actions and changes.	PhysicalAction		
-digital.verbs.org.ai	verbs.org.ai	Verbs primarily involving digital data and information processing.	DigitalAction		
-commissions.physical.verbs.org.ai	physical.verbs.org.ai	Verb: commissions. Action: commission. Activity: commissioning.	Commissions, Commission, Commissioning		
-decommissions.physical.verbs.org.ai	physical.verbs.org.ai	Verb: decommissions. Action: decommission. Activity: decommissioning.	Decommissions, Decommission, Decommissioning		
-destroys.physical.verbs.org.ai	physical.verbs.org.ai	Verb: destroys. Action: destroy. Activity: destroying.	Destroys, Destroy, Destroying		
-encodes.physical.verbs.org.ai	physical.verbs.org.ai	Verb: encodes. Action: encode. Activity: encoding.	Encodes, Encode, Encoding		
-exports.physical.verbs.org.ai	physical.verbs.org.ai	Verb: exports. Action: export. Activity: exporting.	Exports, Export, Exporting		
-holds.physical.verbs.org.ai	physical.verbs.org.ai	Verb: holds. Action: hold. Activity: holding.	Holds, Hold, Holding		
-inspects.physical.verbs.org.ai	physical.verbs.org.ai	Verb: inspects. Action: inspect. Activity: inspecting.	Inspects, Inspect, Inspecting		
-installs.physical.verbs.org.ai	physical.verbs.org.ai	Verb: installs. Action: install. Activity: installing.	Installs, Install, Installing		
-kills.physical.verbs.org.ai	physical.verbs.org.ai	Verb: kills. Action: kill. Activity: killing.	Kills, Kill, Killing		
-loads.physical.verbs.org.ai	physical.verbs.org.ai	Verb: loads. Action: load. Activity: loading.	Loads, Load, Loading		
-packs.physical.verbs.org.ai	physical.verbs.org.ai	Verb: packs. Action: pack. Activity: packing.	Packs, Pack, Packing		
-picks.physical.verbs.org.ai	physical.verbs.org.ai	Verb: picks. Action: pick. Activity: picking.	Picks, Pick, Picking		
-receives.physical.verbs.org.ai	physical.verbs.org.ai	Verb: receives. Action: receive. Activity: receiving.	Receives, Receive, Receiving		
-removes.physical.verbs.org.ai	physical.verbs.org.ai	Verb: removes. Action: remove. Activity: removing.	Removes, Remove, Removing		
-repairs.physical.verbs.org.ai	physical.verbs.org.ai	Verb: repairs. Action: repair. Activity: repairing.	Repairs, Repair, Repairing		
-sells.physical.verbs.org.ai	physical.verbs.org.ai	Verb: sells. Action: sell. Activity: selling.	Sells, Sell, Selling		
-ships.physical.verbs.org.ai	physical.verbs.org.ai	Verb: ships. Action: ship. Activity: shipping.	Ships, Ship, Shipping		
-stocks.physical.verbs.org.ai	physical.verbs.org.ai	Verb: stocks. Action: stock. Activity: stocking.	Stocks, Stock, Stocking		
-stores.physical.verbs.org.ai	physical.verbs.org.ai	Verb: stores. Action: store. Activity: storing.	Stores, Store, Storing		
-transforms.physical.verbs.org.ai	physical.verbs.org.ai	Verb: transforms. Action: transform. Activity: transforming.	Transforms, Transform, Transforming		
-transports.physical.verbs.org.ai	physical.verbs.org.ai	Verb: transports. Action: transport. Activity: transporting.	Transports, Transport, Transporting		
-unloads.physical.verbs.org.ai	physical.verbs.org.ai	Verb: unloads. Action: unload. Activity: unloading.	Unloads, Unload, Unloading		
-unpacks.physical.verbs.org.ai	physical.verbs.org.ai	Verb: unpacks. Action: unpack. Activity: unpacking.	Unpacks, Unpack, Unpacking		
-voids.physical.verbs.org.ai	physical.verbs.org.ai	Verb: voids. Action: void. Activity: voiding.	Voids, Void, Voiding		
-achieves.digital.verbs.org.ai	digital.verbs.org.ai	Verb: achieves. Action: achieve. Activity: achieving.	Achieves, Achieve, Achieving		
-assesses.digital.verbs.org.ai	digital.verbs.org.ai	Verb: assesses. Action: assess. Activity: assessing.	Assesses, Assess, Assessing		
-communicates.digital.verbs.org.ai	digital.verbs.org.ai	Verb: communicates. Action: communicate. Activity: communicating.	Communicates, Communicate, Communicating		
-creates.digital.verbs.org.ai	digital.verbs.org.ai	Verb: creates. Action: create. Activity: creating.	Creates, Create, Creating		
-discovers.digital.verbs.org.ai	digital.verbs.org.ai	Verb: discovers. Action: discover. Activity: discovering.	Discovers, Discover, Discovering		
-interacts.digital.verbs.org.ai	digital.verbs.org.ai	Verb: interacts. Action: interact. Activity: interacting.	Interacts, Interact, Interacting		
-organizes.digital.verbs.org.ai	digital.verbs.org.ai	Verb: organizes. Action: organize. Activity: organizing.	Organizes, Organize, Organizing		
-plans.digital.verbs.org.ai	digital.verbs.org.ai	Verb: plans. Action: plan. Activity: planning.	Plans, Plan, Planning		
-plays.digital.verbs.org.ai	digital.verbs.org.ai	Verb: plays. Action: play. Activity: playing.	Plays, Play, Playing		
-searches.digital.verbs.org.ai	digital.verbs.org.ai	Verb: searches. Action: search. Activity: searching.	Searches, Search, Searching		
-trades.digital.verbs.org.ai	digital.verbs.org.ai	Verb: trades. Action: trade. Activity: trading.	Trades, Trade, Trading		
-transfers.digital.verbs.org.ai	digital.verbs.org.ai	Verb: transfers. Action: transfer. Activity: transferring.	Transfers, Transfer, Transferring		
-updates.digital.verbs.org.ai	digital.verbs.org.ai	Verb: updates. Action: update. Activity: updating.	Updates, Update, Updating		
-views.digital.verbs.org.ai	digital.verbs.org.ai	Verb: views. Action: view. Activity: viewing.	Views, View, Viewing		
-listens.digital.verbs.org.ai	digital.verbs.org.ai	Verb: listens. Action: listen. Activity: listening.	Listens, Listen, Listening		
-reads.digital.verbs.org.ai	digital.verbs.org.ai	Verb: reads. Action: read. Activity: reading.	Reads, Read, Reading		
-watches.digital.verbs.org.ai	digital.verbs.org.ai	Verb: watches. Action: watch. Activity: watching.	Watches, Watch, Watching		
