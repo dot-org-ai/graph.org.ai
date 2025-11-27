@@ -1,0 +1,48 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/{{slug}}
+$type: https://tools.org.ai/Tool
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Tool
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ToolOverview tool={tool} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Tool` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<ToolDetails tool={tool} />
+
+## Properties
+
+<ToolProperties tool={tool} />
+
+## Relationships
+
+<ToolRelationships tool={tool} />
+
+## Related
+
+<RelatedTools tool={tool} />
+
+## Sources
+
+- <DatabaseLink namespace="tools.org.ai" type="{{slug}}" />

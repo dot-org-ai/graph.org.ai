@@ -1,0 +1,187 @@
+---
+$context: https://onet.org.ai
+$id: https://onet.org.ai/Occupations/{socCode}
+$type: https://onet.org.ai/Occupation
+socCode: "{socCode}"
+name: "{name}"
+description: "{description}"
+jobZone: {jobZone}
+brightOutlook: {brightOutlook}
+greenOccupation: {greenOccupation}
+---
+
+export const items = async () => {
+  const res = await fetch('https://onet.org.ai/occupations.json')
+  return res.json()
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<OccupationOverview occupation={occupation} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| SOC Code | `{socCode}` |
+| Job Zone | <JobZoneBadge zone={jobZone} /> |
+| Bright Outlook | {brightOutlook ? '✅' : '—'} |
+| Green Occupation | {greenOccupation ? '🌱' : '—'} |
+
+## What They Do
+
+<OccupationDescription occupation={occupation} />
+
+### Sample Tasks
+
+<TaskList
+  occupation={occupation}
+  source="onet"
+  limit={10}
+/>
+
+### Detailed Work Activities
+
+<DWAList
+  occupation={occupation}
+  showIWA={true}
+/>
+
+## Worker Requirements
+
+### Skills
+
+<SkillsTable
+  occupation={occupation}
+  source="onet"
+  showLevel={true}
+  showImportance={true}
+/>
+
+### Abilities
+
+<AbilitiesTable
+  occupation={occupation}
+  source="onet"
+  showLevel={true}
+/>
+
+### Knowledge
+
+<KnowledgeTable
+  occupation={occupation}
+  source="onet"
+  showLevel={true}
+/>
+
+## Work Context
+
+<WorkContextChart
+  occupation={occupation}
+  categories={['physical', 'interpersonal', 'structural']}
+/>
+
+### Physical Demands
+
+<PhysicalDemands occupation={occupation} />
+
+### Work Environment
+
+<WorkEnvironment occupation={occupation} />
+
+## Tools & Technology
+
+### Tools Used
+
+<ToolsList
+  occupation={occupation}
+  source="onet"
+  showHotTechnology={true}
+/>
+
+### Technology Skills
+
+<TechnologyList
+  occupation={occupation}
+  source="onet"
+  showHotTechnology={true}
+/>
+
+## Education & Training
+
+<EducationRequirements occupation={occupation} />
+
+### Typical Education
+
+<EducationLevels occupation={occupation} />
+
+### Experience Required
+
+<ExperienceRequirements occupation={occupation} />
+
+### On-the-Job Training
+
+<TrainingRequirements occupation={occupation} />
+
+## Interests & Work Styles
+
+### RIASEC Interests
+
+<RIASECChart occupation={occupation} />
+
+### Work Styles
+
+<WorkStylesChart occupation={occupation} />
+
+### Work Values
+
+<WorkValuesChart occupation={occupation} />
+
+## Career Pathways
+
+### Related Occupations
+
+<RelatedOccupations
+  occupation={occupation}
+  source="onet"
+  limit={10}
+/>
+
+### Career Changers From
+
+<CareerChangersFrom occupation={occupation} />
+
+### Career Changers To
+
+<CareerChangersTo occupation={occupation} />
+
+## Industry Employment
+
+<IndustryEmployment
+  occupation={occupation}
+  source="bls"
+/>
+
+## Wage Data
+
+<WageData
+  occupation={occupation}
+  source="bls"
+  showPercentiles={true}
+/>
+
+## Employment Outlook
+
+<EmploymentOutlook
+  occupation={occupation}
+  source="bls"
+/>
+
+## Sources
+
+- [O*NET OnLine - {name}](https://www.onetonline.org/link/summary/{socCode})
+- [BLS Occupational Outlook](https://www.bls.gov/ooh/)

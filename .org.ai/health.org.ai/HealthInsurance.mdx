@@ -1,0 +1,497 @@
+---
+$context: https://health.org.ai
+$id: https://health.org.ai/HealthInsurance
+$type: https://health.org.ai/MedicalEntity
+name: "Health Insurance"
+naicsCode: "524114"
+description: "Health insurance carriers, managed care organizations, and third-party administrators providing coverage for medical expenses, coordinating care delivery, and managing healthcare costs through insurance products, provider networks, and care management programs."
+parent: https://health.org.ai
+---
+
+export const items = async () => {
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://health.org.ai/HealthInsurance',
+    naicsCode: { $regex: '^524114' }
+  })
+}
+
+# Health Insurance
+
+Health insurance payers, also known as health insurers or health plans, provide financial protection against healthcare costs through insurance coverage, manage healthcare delivery through provider networks and care management programs, and serve as intermediaries between patients, healthcare providers, and employers or government programs. The health insurance industry covers over 300 million Americans through employer-sponsored insurance, individual market plans, Medicare Advantage, Medicaid managed care, and other products, representing over $1.2 trillion in premium revenue annually.
+
+Health insurance has evolved from simple indemnity coverage to sophisticated managed care organizations that actively shape healthcare delivery through provider contracting, utilization management, quality improvement, care coordination, and payment innovation. The industry faces ongoing challenges including rising healthcare costs, regulatory complexity, consumerism and transparency demands, care quality and outcomes accountability, and the shift toward value-based payment models.
+
+## Overview
+
+### Key Functions
+
+**Financial Protection**:
+- **Risk Pooling** - Spreading risk across large populations
+- **Premium Collection** - Monthly payments from enrollees or sponsors
+- **Claims Payment** - Reimbursing providers for covered services
+- **Cost Sharing** - Deductibles, copayments, coinsurance shared with members
+- **Stop-Loss Protection** - Out-of-pocket maximums protecting members
+
+**Network Management**:
+- **Provider Contracting** - Negotiating payment rates and terms with hospitals, physicians, pharmacies
+- **Network Adequacy** - Ensuring sufficient provider access across specialties and geographies
+- **Credentialing** - Verifying provider qualifications and monitoring quality
+- **Performance Management** - Tiering networks by quality and cost, narrow networks
+- **Provider Relations** - Supporting providers with contracting, claims, clinical resources
+
+**Care Management**:
+- **Utilization Management** - Prior authorization, concurrent review, retrospective review
+- **Case Management** - Coordinating care for high-cost, complex members
+- **Disease Management** - Programs for chronic conditions (diabetes, asthma, heart failure)
+- **Population Health** - Risk stratification, care gap closure, preventive services
+- **Behavioral Health Integration** - Addressing mental health and substance use needs
+
+**Administrative Functions**:
+- **Enrollment and Eligibility** - Member enrollment, eligibility verification
+- **Claims Processing** - Adjudicating and paying claims (billions annually)
+- **Customer Service** - Member and provider inquiries, issue resolution
+- **Reporting and Analytics** - Financial reporting, quality measurement, risk adjustment
+- **Regulatory Compliance** - State insurance departments, CMS, DOL, IRS compliance
+
+### Market Segments
+
+**Commercial Insurance**:
+- **Employer-Sponsored (Group)** - 157 million covered (largest segment)
+- **Individual Market** - 21 million covered (ACA exchanges and off-exchange)
+- **Fully-Insured** - Insurer assumes risk
+- **Self-Insured** - Employer assumes risk, insurer provides administrative services only (ASO)
+
+**Government Programs**:
+- **Medicare Advantage** - 31 million enrolled (51% of Medicare beneficiaries)
+- **Medicaid Managed Care** - 72 million enrolled (83% of Medicaid beneficiaries)
+- **CHIP** - Children's Health Insurance Program
+- **Tricare** - Military health coverage
+- **Federal Employees Health Benefits (FEHB)**
+
+**Major National Insurers**:
+- **UnitedHealth Group** - 53 million commercial and Medicare, Optum health services
+- **Elevance Health (Anthem)** - 47 million members, Blue Cross Blue Shield licensee
+- **CVS Health / Aetna** - 34 million medical, integrated with pharmacy
+- **Cigna** - 19 million commercial and Medicare, Evernorth services
+- **Humana** - 17 million members, primarily Medicare Advantage focus
+- **Centene** - 26 million, primarily Medicaid and marketplace
+- **HCSC (Blue Cross Blue Shield)** - Illinois, Texas, Oklahoma, New Mexico, Montana
+- **Kaiser Permanente** - 12.6 million, integrated delivery and insurance
+
+### Regulatory Environment
+
+**State Insurance Regulation**:
+- **Licensure** - State insurance department approval to operate
+- **Rate Review** - State approval of premium rates (varies by state)
+- **Solvency** - Minimum capital and surplus requirements, risk-based capital (RBC)
+- **Market Conduct** - Consumer protection, claims handling, network adequacy
+- **Mandated Benefits** - State-specific required coverage (varies significantly)
+
+**Federal Regulation**:
+- **Affordable Care Act (ACA)** - Essential health benefits, medical loss ratio, rating rules, individual mandate (now $0)
+- **ERISA** - Employee Retirement Income Security Act governs employer plans
+- **HIPAA** - Privacy, security, portability
+- **Medicare Advantage** - CMS regulations, star ratings, bid process
+- **Medicaid** - State plan requirements, managed care contracts
+
+**Accreditation**:
+- **NCQA** - National Committee for Quality Assurance accreditation
+- **URAC** - Health plan accreditation
+- **Accreditation Requirements** - Network, utilization management, credentialing, quality improvement, member rights
+
+## Types of Health Insurance Products
+
+### Health Maintenance Organizations (HMOs)
+
+**Model**:
+- **Primary Care Gatekeeper** - Require PCP selection, referrals for specialists
+- **Narrow Network** - Contracted providers only (no out-of-network coverage except emergencies)
+- **Care Coordination** - Emphasis on coordination through PCP
+- **Lower Premiums** - Typically lowest-cost option
+- **Examples** - Kaiser Permanente, many Medicaid managed care plans
+
+**Variations**:
+- **Staff Model** - Physicians employed by HMO (Kaiser)
+- **Group Model** - Contract with multi-specialty medical groups
+- **Network Model** - Multiple physician groups and IPAs
+- **IPA Model** - Independent Practice Association of individual physicians
+
+### Preferred Provider Organizations (PPOs)
+
+**Model**:
+- **Flexibility** - No PCP requirement, direct specialist access
+- **Tiered Network** - In-network (preferred rates) vs. out-of-network (higher cost-sharing)
+- **Higher Premiums** - More expensive than HMO due to flexibility
+- **Large Networks** - Broad provider access
+- **Most Popular** - Dominant in employer-sponsored insurance
+
+**Features**:
+- **Negotiated Rates** - Discounted rates with in-network providers
+- **Out-of-Network Coverage** - Members can see any provider (subject to higher cost-sharing)
+- **No Referrals** - Direct access to specialists
+- **Claims Filing** - May require member to file claims for out-of-network
+
+### Exclusive Provider Organizations (EPOs)
+
+**Model**:
+- **Hybrid** - Combines HMO narrow network with PPO flexibility (no referrals)
+- **No Out-of-Network** - Like HMO, no coverage outside network (except emergencies)
+- **No PCP Requirement** - Like PPO, direct specialist access
+- **Moderate Premiums** - Between HMO and PPO pricing
+
+### Point of Service (POS) Plans
+
+**Model**:
+- **Hybrid** - HMO with out-of-network option
+- **PCP Gatekeeper** - Require PCP, referrals for in-network care
+- **Out-of-Network Option** - Can go out-of-network with higher cost-sharing
+- **Flexibility** - More than HMO, less than PPO
+
+### High-Deductible Health Plans (HDHPs) with Health Savings Accounts (HSAs)
+
+**Model**:
+- **High Deductible** - $1,600+ individual, $3,200+ family (2024)
+- **Lower Premiums** - Significantly lower than traditional plans
+- **Preventive Coverage** - Preventive services covered pre-deductible (ACA requirement)
+- **HSA-Eligible** - Can contribute to tax-advantaged Health Savings Account
+- **Consumer-Directed** - Enrollees more price-sensitive due to high cost-sharing
+
+**Health Savings Accounts (HSAs)**:
+- **Contributions** - Tax-deductible, $4,150 individual / $8,300 family (2024)
+- **Growth** - Tax-free investment growth
+- **Withdrawals** - Tax-free for qualified medical expenses
+- **Rollover** - Unused funds roll over annually (unlike FSA)
+- **Portable** - Owned by individual, stays with them if they change jobs
+
+**Growth**:
+- Rapid growth in employer market (now ~30% of covered workers)
+- Lower premiums attractive to employers and employees
+- Concerns about underutilization of necessary care, financial burden
+
+## Medicare Advantage (Medicare Part C)
+
+### Overview
+
+**Market Size**:
+- 31+ million enrollees (51% of Medicare beneficiaries)
+- Steady growth from 19% (2007) to 51% (2024)
+- Expected to exceed 60% by 2030
+
+**Model**:
+- **Private Plans** - Private insurers contracted with CMS to provide Medicare benefits
+- **Capitated Payment** - CMS pays plans monthly per-member amount (risk-adjusted)
+- **Comprehensive Coverage** - Medicare Parts A, B, and usually D (prescription drugs)
+- **Additional Benefits** - Dental, vision, hearing, fitness, transportation, OTC benefits
+
+### Plan Types
+
+**HMO** - Most common MA plan type, PCP and referral requirements
+**PPO** - Provider flexibility, in- and out-of-network coverage
+**PFFS (Private Fee-for-Service)** - Less common, any Medicare provider
+**SNP (Special Needs Plans)** - Chronic condition, dual eligible, institutional SNPs
+
+### Payment and Risk Adjustment
+
+**Benchmark and Bidding**:
+- **County Benchmarks** - CMS sets maximum payment per county based on FFS costs
+- **Plan Bids** - Plans bid on expected cost to cover Medicare benefits
+- **Rebates** - Plans bidding below benchmark receive rebate (used for extra benefits)
+- **Basic vs. Supplemental** - Medicare-covered services vs. additional benefits
+
+**Risk Adjustment**:
+- **HCC (Hierarchical Condition Categories)** - Payment adjusted for member health status
+- **RAF (Risk Adjustment Factor)** - Multiplier based on diagnoses, demographics
+- **Documentation** - Plans and providers code diagnoses comprehensively (controversial)
+- **V28 Model** - CMS implementing new risk adjustment model to address coding intensity
+
+**Quality and Stars**:
+- **5-Star Rating System** - Overall rating based on quality and performance measures
+- **Bonus Payments** - Plans with 4+ stars receive 5% bonus payment
+- **Quality Measures** - Clinical outcomes, member experience, access to care, process measures
+- **Impact** - Stars drive enrollment (members prefer high-rated plans) and revenue
+
+### MA Challenges and Controversies
+
+**Overpayments**:
+- **Coding Intensity** - MA plans code more diagnoses than traditional Medicare
+- **Upcoding Concerns** - Allegations of inflating member risk scores
+- **MedPAC Recommendations** - Medicare Payment Advisory Commission recommends payment reductions
+
+**Prior Authorization**:
+- **Utilization Management** - MA plans use prior auth extensively (unlike FFS Medicare)
+- **Access Concerns** - Delays and denials affecting timely care
+- **OIG Reports** - Office of Inspector General identified inappropriate denials
+
+**Network Adequacy**:
+- **Narrow Networks** - Some MA plans have limited provider networks
+- **Provider Departures** - Conflicts over payment rates leading to network exits
+- **Access Issues** - Members losing access to established providers
+
+## Medicaid Managed Care
+
+### Growth and Penetration
+
+**Enrollment**:
+- 72 million in managed care (83% of Medicaid beneficiaries)
+- All states except Alaska and Wyoming have managed care
+- Rapid growth from 15% in 1995 to 83% today
+
+**State Variation**:
+- **Comprehensive MCOs** - Most common, cover full Medicaid benefits
+- **Limited Benefit Plans** - Behavioral health, dental, LTSS only
+- **PCCM (Primary Care Case Management)** - Fee-for-service with care coordination
+- **Integrated Care** - Dual eligibles (Medicare-Medicaid plans)
+
+### Plan Types
+
+**Risk-Based MCOs**:
+- **Full Risk** - Plans receive capitation, assume full financial risk
+- **Profit Incentive** - For-profit and non-profit plans
+- **Network Management** - Build provider networks, negotiate rates
+- **Care Management** - Utilization management, care coordination, quality programs
+
+**Prepaid Inpatient Health Plans (PIHPs)**:
+- **Limited Services** - Behavioral health, substance use, LTSS
+- **Capitated** - Receive capitated payments for covered services
+- **Specialized** - Focus on specific populations or services
+
+**PCCM (Primary Care Case Management)**:
+- **Enhanced FFS** - Fee-for-service with PCP care coordination
+- **PCP Payments** - Small care management fee in addition to FFS
+- **Less Common** - Most states moved to full-risk MCOs
+
+### Medicaid Managed Care Contracts
+
+**Rate Setting**:
+- **Actuarially Sound** - Rates must be actuarially sound per federal requirements
+- **Rate Cells** - Varied rates by age, eligibility category, region, risk
+- **Cost Drivers** - Medical expenses, pharmacy, behavioral health, LTSS
+- **Medical Loss Ratio** - Many states require minimum MLR (e.g., 85%)
+
+**Performance Requirements**:
+- **Quality Measures** - HEDIS, state-specific measures
+- **Network Adequacy** - Time and distance standards for provider access
+- **Member Satisfaction** - CAHPS surveys
+- **Enrollee Protections** - Grievance and appeals processes
+
+### Challenging Populations
+
+**Dual Eligibles (Medicare-Medicaid)**:
+- 12 million beneficiaries eligible for both programs
+- **Fragmentation** - Separate Medicare and Medicaid coverage creates coordination challenges
+- **Integrated Plans** - D-SNPs, FIDE SNPs, HIDE SNPs coordinate both programs
+- **Long-Term Services and Supports (LTSS)** - Medicaid covers nursing home, home care
+
+**Behavioral Health**:
+- High prevalence in Medicaid population
+- Substance use disorder epidemic (opioids)
+- Serious mental illness and complex needs
+- Integrated care models, collaborative care
+
+**High-Cost, High-Need**:
+- Small percentage of members account for majority of costs
+- Complex medical conditions, social determinants of health needs
+- Intensive care management, community-based services
+- Addressing social needs (housing, food insecurity, transportation)
+
+## Commercial Insurance Operations
+
+### Underwriting and Rating
+
+**Group Underwriting**:
+- **Experience Rating** - Large groups rated on their own claims experience
+- **Community Rating** - Small groups rated on broader risk pool (ACA requirement)
+- **Participation Requirements** - Minimum participation and contribution requirements
+- **Plan Design** - Customized benefit plans for large employers
+
+**Individual Market (ACA)**:
+- **Community Rating** - Cannot vary premiums based on health status
+- **Age Rating** - 3:1 maximum ratio (oldest to youngest)
+- **Geographic Rating** - Different rates by rating area
+- **Tobacco Rating** - Up to 1.5:1 premium surcharge
+- **Essential Health Benefits** - Ten required categories of coverage
+- **Actuarial Value** - Bronze (60%), Silver (70%), Gold (80%), Platinum (90%)
+
+### Network Management
+
+**Provider Contracting**:
+- **Hospital Contracts** - Inpatient DRG rates, outpatient fee schedules, case rates
+- **Physician Contracts** - Fee schedules (% of Medicare, RBRVS-based), capitation, bundled payments
+- **Ancillary Services** - Labs, imaging, DME, home health, therapy
+- **Quality and Efficiency** - Increasingly incorporating performance metrics into contracts
+
+**Network Design**:
+- **Broad Networks** - PPO networks with thousands of providers
+- **Narrow Networks** - Limited provider panels (20-70% narrower), lower premiums
+- **Tiered Networks** - Preferred (low cost-share), standard, out-of-network tiers
+- **Center of Excellence** - Designated high-quality providers for specific services (bariatrics, transplant, oncology)
+
+**Network Adequacy**:
+- **Standards** - Time and distance requirements, provider-to-member ratios
+- **Specialties** - Access to primary care, specialists, hospitals, ancillary services
+- **State Requirements** - Vary by state and product
+- **ACA** - Essential community providers, directory accuracy
+
+### Utilization Management
+
+**Prior Authorization**:
+- **High-Cost Services** - Advanced imaging, surgery, specialty drugs, DME
+- **Medical Necessity Review** - Clinical review by nurses and physicians
+- **Turnaround Time** - Urgent (72 hours), standard (14 days)
+- **Controversy** - Administrative burden on providers, delays in care
+
+**Concurrent Review**:
+- **Inpatient Stays** - Daily or periodic review of continued stay appropriateness
+- **Discharge Planning** - Coordinating post-acute care (SNF, home health, rehab)
+- **Length of Stay** - Comparing actual to expected LOS, medical necessity
+
+**Retrospective Review**:
+- **Claims Review** - Reviewing claims post-service for medical necessity, coding, billing errors
+- **Denials** - Denying payment for non-covered services, lack of medical necessity
+- **Appeals** - Members and providers can appeal denials (multiple levels)
+
+**Step Therapy and Formularies**:
+- **Pharmacy Benefit Management** - Preferred drug lists, prior auth, step therapy
+- **Step Therapy** - Require trial of lower-cost drugs before approving expensive alternatives
+- **Specialty Pharmacy** - High-cost specialty drugs require utilization management
+
+### Care Management and Population Health
+
+**Case Management**:
+- **High-Risk Members** - Chronic conditions, recent hospitalization, high utilization
+- **Nurse Case Managers** - Telephonic or in-person care coordination
+- **Care Plans** - Individualized plans addressing medical and social needs
+- **Transitions of Care** - Post-discharge follow-up to prevent readmissions
+
+**Disease Management**:
+- **Chronic Conditions** - Diabetes, asthma, COPD, heart failure, CAD
+- **Education and Support** - Coaching on self-management, medication adherence
+- **Remote Monitoring** - Home monitoring devices, telehealth
+- **Evidence-Based Protocols** - Clinical guidelines and best practices
+
+**Predictive Analytics and Risk Stratification**:
+- **Claims Data** - Analyzing utilization, costs, diagnoses, pharmacy
+- **Risk Scores** - Identifying high-risk members likely to be high-cost
+- **Targeting Interventions** - Proactive outreach to prevent adverse events
+- **Population Segmentation** - Tailoring interventions to different risk levels
+
+### Value-Based Payment
+
+**Alternative Payment Models**:
+- **Pay-for-Performance** - Quality bonuses for achieving metrics
+- **Shared Savings** - Share savings from cost reductions (ACOs)
+- **Bundled Payments** - Single payment for episode (joint replacement, maternity)
+- **Capitation** - Per-member-per-month global payments
+
+**Provider Incentives**:
+- **Quality Metrics** - Clinical outcomes, patient experience, efficiency
+- **Total Cost of Care** - Managing costs across full continuum
+- **Risk Adjustment** - Adjusting for patient complexity
+- **Upside vs. Downside Risk** - Shared savings only vs. shared savings and losses
+
+## Financial Performance and Metrics
+
+### Medical Loss Ratio (MLR)
+
+**Definition**:
+- **MLR = Medical Claims + Quality Improvement / Premium Revenue**
+- **ACA Requirement** - Minimum 80% (individual/small group), 85% (large group)
+- **Rebates** - If MLR below minimum, must rebate difference to enrollees
+
+**Components**:
+- **Medical Claims** - Payments to providers for covered services
+- **Quality Improvement** - Activities improving care quality (care management, HIT, accreditation)
+- **Excluded** - Administrative costs, marketing, profit excluded from numerator
+
+### Operating Metrics
+
+**Membership**:
+- **Lives Covered** - Total enrolled members
+- **PMPM (Per Member Per Month)** - Premium, costs, utilization expressed per member monthly
+- **Member Months** - Total months of coverage (captures enrollment fluctuations)
+
+**Utilization**:
+- **Admits per 1,000** - Hospital admissions per 1,000 members annually
+- **Days per 1,000** - Inpatient days per 1,000 members
+- **ED Visits per 1,000** - Emergency department utilization
+- **Office Visits PMPY** - Outpatient visits per member per year
+
+**Cost**:
+- **Medical Cost PMPM** - Medical claims per member per month
+- **Trend** - Year-over-year percentage increase in medical costs
+- **Pharmacy Cost PMPM** - Prescription drug costs per member per month
+
+### Financial Strength
+
+**Surplus and Reserves**:
+- **Risk-Based Capital (RBC)** - Regulatory capital requirements based on risk
+- **Solvency** - Ability to pay claims and meet obligations
+- **Claims Reserves** - Liabilities for incurred but not reported (IBNR) claims
+
+**Profitability**:
+- **Underwriting Margin** - Profit from insurance operations (premium minus claims and admin)
+- **Operating Margin** - Profit from core business
+- **Net Margin** - Overall profitability including investment income
+
+## Challenges and Opportunities
+
+### Current Challenges
+
+**Rising Healthcare Costs**:
+- Medical cost trend 5-7% annually
+- Specialty drug costs growing 10-15% per year
+- Hospital prices rising faster than inflation
+- Physician shortages driving costs
+
+**Regulatory Complexity**:
+- Federal and state regulations
+- ACA compliance and uncertainty
+- Medicare Advantage and Medicaid managed care rules
+- Price transparency requirements
+
+**Consumerism and Transparency**:
+- Price transparency tools (estimates, cost comparisons)
+- Quality transparency (star ratings, provider ratings)
+- Member experience expectations
+- Digital and mobile engagement
+
+**Provider Relations**:
+- Narrow network pushback
+- Prior authorization friction
+- Claims payment disputes
+- Value-based contracting challenges
+
+### Opportunities
+
+**Value-Based Care**:
+- Shift from volume to value
+- Risk-based contracting with providers
+- ACO and bundled payment models
+- Provider-payer alignment on quality and cost
+
+**Technology and Innovation**:
+- Telehealth expansion
+- Digital health tools and apps
+- Artificial intelligence for care management, fraud detection
+- Interoperability and data exchange (FHIR APIs)
+
+**Social Determinants of Health**:
+- Addressing food insecurity, housing, transportation
+- Community partnerships and investments
+- Integrated medical and social services
+- Improving health equity
+
+**Integrated Delivery**:
+- Payer-provider integration (Kaiser model, UnitedHealth/Optum)
+- Primary care investment (value-based primary care)
+- Vertical integration across care continuum
+
+## Related Resources
+
+- [naics.org.ai/524114](https://naics.org.ai/524114) - NAICS classification for health insurance
+- [health.org.ai/Hospitals](https://health.org.ai/Hospitals) - Hospital providers
+- [health.org.ai/AmbulatoryCare](https://health.org.ai/AmbulatoryCare) - Ambulatory care providers
+- [health.org.ai/Pharmaceuticals](https://health.org.ai/Pharmaceuticals) - Pharmacy benefits
+- [cms.gov](https://www.cms.gov) - Medicare and Medicaid regulations
+- [naic.org](https://naic.org) - National Association of Insurance Commissioners

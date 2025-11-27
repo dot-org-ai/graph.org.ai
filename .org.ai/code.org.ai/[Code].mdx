@@ -1,0 +1,48 @@
+---
+$context: https://code.org.ai
+$id: https://code.org.ai/{{slug}}
+$type: https://code.org.ai/Code
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Code
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<CodeOverview code={code} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Code` |
+| Domain | [code.org.ai](https://code.org.ai) |
+| Parent | [tech.org.ai](https://tech.org.ai) |
+
+## Details
+
+<CodeDetails code={code} />
+
+## Properties
+
+<CodeProperties code={code} />
+
+## Relationships
+
+<CodeRelationships code={code} />
+
+## Related
+
+<RelatedCodes code={code} />
+
+## Sources
+
+- <DatabaseLink namespace="code.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://law.org.ai
+$id: https://law.org.ai/{{slug}}
+$type: https://law.org.ai/Legislation
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Legislation
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<LegislationOverview legislation={legislation} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Legislation` |
+| Domain | [law.org.ai](https://law.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<LegislationDetails legislation={legislation} />
+
+## Properties
+
+<LegislationProperties legislation={legislation} />
+
+## Relationships
+
+<LegislationRelationships legislation={legislation} />
+
+## Related
+
+<RelatedLegislations legislation={legislation} />
+
+## Sources
+
+- <DatabaseLink namespace="law.org.ai" type="{{slug}}" />

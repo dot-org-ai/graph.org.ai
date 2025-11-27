@@ -1,0 +1,597 @@
+---
+$context: https://energy.org.ai
+$id: https://energy.org.ai/NaturalGas
+$type: https://energy.org.ai/Energy
+name: Natural Gas Transmission and Distribution
+description: Natural gas pipeline networks, distribution systems, LNG facilities, and gas storage operations
+naics: "2212"
+apqc: ["13.0"]
+keywords: [natural gas, pipelines, distribution, LNG, gas storage, midstream, FERC]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Natural Gas Transmission and Distribution
+
+Natural gas transmission and distribution (NAICS 2212) encompasses the transportation of natural gas from production areas and processing plants through interstate and intrastate pipeline systems to local distribution companies (LDCs) and ultimately to residential, commercial, and industrial end users. This sector also includes liquefied natural gas (LNG) facilities, underground storage, and gas processing operations.
+
+## Overview
+
+The natural gas value chain bridges upstream production with downstream consumption:
+
+- **Gathering**: Low-pressure pipelines collecting gas from wellheads to processing plants
+- **Processing**: Removing impurities, separating NGLs (natural gas liquids)
+- **Transmission**: High-pressure interstate/intrastate pipelines (200-1,500 psi)
+- **Storage**: Underground facilities for seasonal and operational balancing
+- **Distribution**: Local utility networks delivering to end users (0.25-60 psi)
+- **LNG**: Liquefaction for export, regasification for import
+
+### Industry Scale (U.S.)
+
+- **Pipeline Network**: 3 million miles total (305,000 transmission, 2+ million distribution)
+- **Transmission Capacity**: ~150 Bcf/day (billion cubic feet per day)
+- **Annual Consumption**: ~33 Tcf (trillion cubic feet)
+- **Storage Capacity**: 4.5 Tcf working gas capacity
+- **LDCs**: ~1,200 distribution utilities
+- **Customers**: 77 million residential, commercial, industrial connections
+
+## Natural Gas Processing
+
+### Raw Gas Composition
+
+**Components**
+- Methane (CH4): 70-90% (primary component)
+- Ethane (C2H6): 0-20%
+- Propane (C3H8), Butane (C4H10): 0-10%
+- Heavier hydrocarbons (C5+): 0-5%
+- Nitrogen (N2): 0-15%
+- Carbon dioxide (CO2): 0-10%
+- Hydrogen sulfide (H2S): 0-10% (sour gas if >4 ppm)
+- Water vapor: Variable
+
+### Gas Processing Plants
+
+**Acid Gas Removal**
+- Amine treating: MEA, DEA, MDEA solvents
+- Removes H2S and CO2
+- Sulfur recovery (Claus process) from H2S
+- Pipeline specification: <4 ppm H2S, <2-3% CO2
+
+**Dehydration**
+- Glycol dehydration (triethylene glycol - TEG)
+- Molecular sieves
+- Target: <7 lbs water per MMcf
+- Prevents hydrate formation, corrosion
+
+**NGL Recovery**
+- Cryogenic processing: Cool to -150°F
+- Separates ethane, propane, butane, natural gasoline
+- Residue gas to pipeline (mostly methane)
+- NGLs to fractionation plants or petrochemical facilities
+
+**Nitrogen Rejection**
+- Cryogenic distillation
+- Required if N2 >4% (heating value specification)
+- Common in Rockies, Hugoton basin
+
+### Gas Quality Specifications
+
+**Pipeline Quality Gas**
+- Heating value: 950-1,050 Btu/scf (standard cubic foot)
+- Pressure: Varies by pipeline (200-1,500 psi)
+- Temperature: Typically 40-120°F
+- Hydrocarbon dewpoint: Prevent liquid condensation
+- Wobbe Index: Interchangeability for combustion equipment
+
+## Transmission Pipelines (APQC 13.1)
+
+### Interstate Transmission
+
+**Regulatory Framework (FERC)**
+- Federal Energy Regulatory Commission (FERC) jurisdiction
+- Certificate of public convenience and necessity for new pipelines
+- Natural Gas Act (NGA) of 1938
+- Open access (Order 636): Unbundled services
+- Rate regulation: Cost-of-service or market-based rates
+
+**Pipeline Systems**
+- Diameter: 20-48 inches (typical mainline)
+- Pressure: 500-1,500 psi (MAOP - Maximum Allowable Operating Pressure)
+- Compression: 40-150 miles between compressor stations
+- Materials: API 5L steel pipe, high-strength grades (X52, X60, X70)
+
+**Major Interstate Pipelines**
+- Williams/Transco: Northeast supply
+- Kinder Morgan: Multiple systems across U.S.
+- TC Energy: Northern Border, Columbia, ANR
+- Energy Transfer: Multiple systems
+- Enbridge: Multiple systems
+
+### Intrastate Transmission
+
+**Characteristics**
+- Within single state (not FERC-regulated)
+- State public utility commission oversight
+- Texas: Extensive intrastate network
+- Flexible market-based services
+
+### Pipeline Operations
+
+**SCADA (Supervisory Control and Data Acquisition)**
+- Real-time monitoring: Flow, pressure, temperature
+- Remote valve control
+- Leak detection systems
+- Compressor station control
+
+**Compressor Stations**
+- Reciprocating engines or gas turbines
+- Power: 1,000-40,000 HP per unit
+- Multiple units per station
+- Emissions controls: Catalytic converters, SCR, NSCR
+- Noise attenuation
+
+**Capacity and Flow**
+- Hydraulic calculations (Weymouth, Panhandle equations)
+- Compression optimization
+- Capacity release and secondary market
+- Linepack management: Using pipeline as storage
+
+**Balancing**
+- Matching receipts and deliveries
+- Imbalance charges for shippers
+- Operational Flow Orders (OFO) during constraints
+
+### Pipeline Integrity Management (PHMSA)
+
+**Pipeline Safety Regulations**
+- Pipeline and Hazardous Materials Safety Administration (PHMSA)
+- Code of Federal Regulations: 49 CFR Part 192
+- Integrity Management Program (IMP)
+- High Consequence Areas (HCA): Populated areas, sensitive environments
+
+**Threats to Pipeline Integrity**
+- External corrosion: Coating breakdown, cathodic protection
+- Internal corrosion: H2S, CO2, water
+- Stress corrosion cracking (SCC)
+- Third-party damage: Excavation, construction
+- Manufacturing defects
+- Incorrect operation
+
+**Assessment Methods**
+- In-line inspection (ILI): Smart pigs (magnetic flux leakage, ultrasonic)
+- Direct assessment: Excavation and inspection
+- Hydrostatic testing: Pressure test to 1.5x MAOP
+- Frequency: 5-7 years for HCAs
+
+**Corrosion Control**
+- External: Coating systems (FBE, 3-layer polyethylene)
+- Cathodic protection: Sacrificial anodes, impressed current
+- Internal: Corrosion inhibitors, dehydration
+- Monitoring: Coupons, probes, inline inspection
+
+### Pipeline Construction
+
+**Permitting and Routing**
+- Environmental Impact Statement (EIS) for FERC certificates
+- Cultural resources surveys
+- Wetlands and waterbody crossings (Army Corps 404 permits)
+- Endangered species consultation (USFWS)
+- Landowner negotiations and eminent domain
+
+**Construction Methods**
+- Open trench: Standard method, 5-6 ft depth
+- Horizontal directional drilling (HDD): River, road, sensitive area crossings
+- Bore and jack: Road crossings
+- Right-of-way (ROW): 75-125 ft during construction, 50 ft permanent
+
+**Welding and Testing**
+- ASME B31.8 welding standards
+- Radiographic or ultrasonic weld inspection
+- Hydrostatic testing before operation
+- Coating and wrapping
+
+## Gas Storage (APQC 13.2)
+
+### Storage Types
+
+**Depleted Reservoirs**
+- Former oil and gas fields
+- 80% of U.S. working gas capacity
+- Fast cycling capability
+- Examples: Gulf Coast, Appalachia, Midwest
+
+**Salt Caverns**
+- Solution-mined in salt formations
+- High deliverability (fast injection/withdrawal)
+- Smaller working gas volume per facility
+- Northeast, Gulf Coast
+- Used for peaking and balancing
+
+**Aquifers**
+- Porous rock formations with water
+- Requires more base (cushion) gas
+- Slower cycling than depleted fields
+- Midwest
+
+**LNG Storage**
+- Above-ground cryogenic tanks (-260°F)
+- Peak shaving for LDCs
+- Smaller volumes, high cost
+- Typically 1-14 days of sendout
+
+### Storage Operations
+
+**Injection Season**
+- April-October (summer)
+- Replenish inventories for winter heating
+- Lower gas prices (contango market)
+
+**Withdrawal Season**
+- November-March (winter)
+- Meet heating demand
+- Higher gas prices (backwardation during cold)
+
+**Working Gas vs. Cushion Gas**
+- Working gas: Cyclical injection/withdrawal
+- Cushion (base) gas: Maintains pressure, not withdrawn
+- Working gas capacity: ~4.5 Tcf (U.S.)
+
+**Storage Services**
+- Firm storage: Reserved capacity
+- Interruptible storage: Subject to curtailment
+- Park and loan: Short-term balancing
+- Seasonal spreads and arbitrage
+
+### Storage Economics
+
+**Market Dynamics**
+- Summer-winter price spreads
+- Supply/demand balancing
+- Price volatility during cold snaps
+- Storage inventory reports (EIA weekly)
+
+**Valuation**
+- Intrinsic value: Seasonal spreads minus costs
+- Extrinsic value: Optionality, swing capability
+- Ratable (seasonal) vs. cycling strategies
+
+## Distribution (NAICS 221210)
+
+### Local Distribution Companies (LDCs)
+
+**Service Territories**
+- Franchised monopolies within service area
+- State public utility commission regulation
+- Cost-of-service rate setting
+- Purchased gas adjustment (PGA) clauses
+
+**Customer Classes**
+- Residential: ~43 Tcf/year (heating, cooking, water heating)
+- Commercial: ~10 Tcf/year (heating, cooking)
+- Industrial: ~23 Tcf/year (feedstock, process heat, boilers)
+- Electric power: ~12 Tcf/year (power generation)
+
+### Distribution Infrastructure
+
+**Distribution Mains**
+- Materials: Plastic (PE, PVC), steel, cast iron (legacy)
+- Pressure: 60 psi (intermediate), 0.25-10 psi (low pressure)
+- Sizes: 2-24 inch diameter
+- Replacement programs: Aging cast iron and bare steel
+
+**Service Lines**
+- Connection from main to customer meter
+- Plastic (PE) or steel
+- Excess flow valves (EFV) for safety
+- Customer-owned vs. utility-owned (varies by state)
+
+**Metering and Regulation**
+- District regulators: Step down from transmission pressure
+- Service regulators: Deliver to customer at appliance pressure
+- Meters: Diaphragm (residential), turbine/rotary (commercial/industrial)
+- Advanced Metering Infrastructure (AMI): Emerging
+
+### Distribution Operations
+
+**Gas Procurement**
+- Long-term pipeline capacity contracts
+- Gas supply contracts (baseload, swing)
+- Storage for peak demand
+- Spot market purchases
+
+**Load Forecasting**
+- Degree-day models: Heating demand
+- Weather forecasting: Temperature, wind
+- Peak day planning: Design day standards (e.g., 1-in-30 year cold)
+
+**System Operations**
+- SCADA monitoring: Pressures, flows
+- Load balancing throughout day
+- Peak shaving: Storage, propane-air injection
+- Emergency response: Leak calls, outages
+
+**Damage Prevention**
+- One-call systems (811 "Call Before You Dig")
+- Operator qualification (OQ) for excavation
+- Public awareness campaigns
+- Facility locating (electromagnetic, acoustic)
+
+### Distribution Safety (PHMSA)
+
+**Leak Detection and Repair**
+- Grade 1: Immediate hazard (repair within 24-48 hours)
+- Grade 2: Non-immediate but mandatory repair
+- Grade 3: Non-hazardous, monitor
+- Leak surveys: Annual walking/driving surveys, methane detection
+
+**Odorization**
+- Mercaptan (typically tetrahydrothiophene) odorant
+- 1% gas-in-air detectable by smell
+- Odorant fade in plastic pipe or high-pressure systems
+
+**Emergency Response**
+- Gas leaks: Evacuate, ventilate, eliminate ignition sources
+- Line strikes: Control gas release, public safety
+- Pressure surges: Over-pressure protection devices
+
+**Pipeline Replacement Programs**
+- Bare steel and cast iron main replacement
+- Accelerated programs in states (e.g., Massachusetts, New York)
+- Cost recovery: Infrastructure replacement surcharges
+
+## Liquefied Natural Gas (LNG)
+
+### LNG Fundamentals
+
+**Liquefaction Process**
+- Cooling natural gas to -260°F at atmospheric pressure
+- Volume reduction: 600:1 (gas to liquid)
+- Pre-treatment: Remove CO2, H2S, water, mercury
+- Liquefaction cycles: Propane pre-cooled, mixed refrigerant, nitrogen expander
+
+**LNG Composition and Properties**
+- Primarily methane (>90%)
+- Density: ~26 lb/ft³ (vs. 0.044 lb/ft³ for gas at STP)
+- Heating value: ~21,500 Btu/lb
+- Safety: Cryogenic burns, rapid phase transitions (RPT)
+
+### LNG Export (U.S.)
+
+**Export Terminals**
+- Sabine Pass (Cheniere): First U.S. LNG export (2016), 30+ mtpa
+- Corpus Christi (Cheniere): 15+ mtpa
+- Cameron LNG: 12+ mtpa
+- Freeport LNG: 15 mtpa
+- Calcasieu Pass, others under construction
+- Total U.S. export capacity: 12+ Bcf/day (2024)
+
+**Liquefaction Trains**
+- Capacity: 3-5 mtpa per train (million tonnes per annum)
+- Air Products, Chart, Black & Veatch technologies
+- Power consumption: ~10-12% of gas input
+
+**LNG Carriers**
+- Q-Flex (210,000-217,000 m³), Q-Max (up to 266,000 m³)
+- Moss sphere or membrane containment
+- Boil-off gas (BOG): Used as ship fuel
+- Shipping costs: $0.50-3.00/MMBtu depending on distance
+
+**Markets**
+- Asia: Japan, South Korea, China (largest importers)
+- Europe: Growing U.S. LNG imports (displacing Russian pipeline gas)
+- Long-term contracts vs. spot sales
+- Price indexing: Henry Hub, oil-linked (JKM - Japan/Korea Marker)
+
+### LNG Import and Regasification
+
+**Import Terminals**
+- Cove Point (Maryland), Elba Island (Georgia), Everett (Massachusetts)
+- Many converted to export or bidirectional
+- Declining import need due to U.S. shale production
+
+**Regasification**
+- Vaporizers: Open rack (seawater), submerged combustion, ambient air
+- Sendout capacity: 1-4 Bcf/day per terminal
+- Interconnection to interstate pipelines
+
+**LNG Storage Tanks**
+- Double-wall or full containment
+- Inner tank: 9% nickel steel or aluminum (cryogenic)
+- Outer tank: Concrete or steel
+- Capacity: 160,000-200,000 m³ per tank
+
+### Small-Scale LNG
+
+**Applications**
+- Virtual pipeline: Trucking LNG to areas without pipelines
+- Peak shaving: LDCs with on-site liquefaction/storage
+- Transportation fuel: Heavy-duty trucks, marine vessels
+- Industrial: Remote power, mining operations
+
+**Technology**
+- Small liquefaction plants: 10,000-500,000 gallons/day
+- ISO containers for transport and storage
+- Regasification at end-use site
+
+### LNG Safety
+
+**Hazards**
+- Cryogenic burns: Extreme cold
+- Asphyxiation: Displacement of oxygen
+- Flammability: 5-15% in air (narrower than gasoline)
+- Rapid phase transition (RPT): LNG on water
+
+**Safety Systems**
+- Vapor barriers, containment walls
+- Fire protection: Water deluge, foam systems
+- Gas detection: Methane, oxygen sensors
+- Exclusion zones: No development within setback distances
+- Emergency shutdown systems (ESD)
+
+**Regulation**
+- FERC: Siting approval for onshore terminals
+- PHMSA: Pipeline safety
+- USCG: Marine safety for waterside
+- NFPA 59A: Standards for LNG facilities
+
+## Market Dynamics and Trading
+
+### Natural Gas Pricing
+
+**Henry Hub**
+- Benchmark for U.S. natural gas (Louisiana)
+- NYMEX futures contracts
+- Physical hub: 13 pipelines interconnect
+- Price discovery for North American gas
+
+**Regional Hubs**
+- Waha (Permian Basin, West Texas): Often negative prices (takeaway constraints)
+- Chicago Citygate, Algonquin Citygate, SoCal Citygate
+- Basis differentials: Transport costs and constraints
+
+**Pricing Mechanisms**
+- Spot market: Day-ahead, same-day
+- Term contracts: Monthly, seasonal, annual
+- Financial instruments: Futures, swaps, options
+
+### Supply and Demand Fundamentals
+
+**Supply Drivers**
+- Shale gas production growth (Marcellus, Haynesville, Permian)
+- Associated gas from oil production
+- Rig counts and drilling activity
+- Well productivity and decline rates
+
+**Demand Drivers**
+- Weather: Heating degree days (HDD) in winter, cooling degree days (CDD) in summer
+- Power generation: Gas vs. coal switching, renewable output
+- Industrial activity: Chemical, manufacturing demand
+- LNG exports: Growing share of demand
+
+**Storage Inventory**
+- EIA weekly storage reports (Thursdays)
+- Injection/withdrawal vs. 5-year average
+- Price impact: Surplus → lower prices, deficit → higher prices
+
+### Interstate Capacity Markets
+
+**Firm Transportation**
+- Reserved pipeline capacity
+- Fixed monthly charge (demand charge)
+- Use-or-pay obligation
+- Primary capacity release market
+
+**Interruptible Transportation**
+- Non-firm, subject to curtailment
+- Lower rates
+- Bid-week trading
+
+**Capacity Release**
+- Shippers releasing unneeded firm capacity
+- Secondary market
+- FERC regulations: Non-discriminatory, transparent
+
+## Environmental and Sustainability
+
+### Methane Emissions
+
+**Sources**
+- Compressor stations: Engine/turbine emissions, blowdown venting
+- Pneumatic devices: Natural gas-driven controllers, pumps
+- Fugitive emissions: Leaks from valves, flanges, connectors
+- Venting during maintenance
+
+**Mitigation**
+- EPA regulations: NSPS OOOOa, OOOOb, OOOOc (2024)
+- Leak Detection and Repair (LDAR) programs
+- Replace high-bleed pneumatics with low-bleed or electric
+- Vapor recovery units (VRUs)
+- Green completions (reduced emissions completions)
+
+**Methane Monitoring**
+- Optical gas imaging (OGI) cameras
+- Airplane/drone/satellite surveys
+- Continuous monitoring systems
+
+### Environmental Impacts
+
+**Pipeline Construction**
+- Habitat fragmentation
+- Stream and wetland crossings
+- Erosion and sedimentation
+- Forest clearing
+
+**Mitigation**
+- Horizontal directional drilling (HDD) for sensitive crossings
+- Erosion controls: Silt fences, straw bales
+- Restoration and revegetation
+- Seasonal timing restrictions (nesting, spawning)
+
+**Compressor Station Emissions**
+- NOx, CO, VOCs from engines/turbines
+- Permit limits and monitoring
+- Electric-drive compressors (where grid available)
+
+### Renewable Natural Gas (RNG)
+
+**Sources**
+- Landfill gas capture
+- Anaerobic digesters: Dairy, swine farms, wastewater treatment
+- Food waste, agricultural residues
+- Gasification of biomass
+
+**Upgrading to Pipeline Quality**
+- Remove CO2: Membrane separation, pressure swing adsorption (PSA)
+- H2S removal: Amine, iron sponge
+- Dehydration
+- Achieve pipeline heating value and quality specs
+
+**Markets and Incentives**
+- Renewable Fuel Standard (RFS): D3 cellulosic, D5 advanced biofuel
+- California Low Carbon Fuel Standard (LCFS): High credits for RNG
+- Voluntary REC-style markets
+- Transportation fuel (CNG/LNG for trucks)
+
+### Hydrogen Blending
+
+**Hydrogen in Gas Pipelines**
+- Blending green or blue hydrogen into natural gas
+- Limits: 5-20% by volume (material compatibility, end-use equipment)
+- Pilot programs in Europe and U.S.
+
+**Challenges**
+- Embrittlement of pipeline steel
+- Changes in heating value, combustion properties
+- Metering and custody transfer
+- Separation at end-use (if pure H2 needed)
+
+**Long-Term Vision**
+- 100% hydrogen pipelines (repurposed or new)
+- Hydrogen hubs and infrastructure development
+- Decarbonizing heat and industry
+
+## Cross-References
+
+### Related NAICS Codes
+- [211130 - Natural Gas Extraction](https://naics.org.ai/211130) - Upstream gas production
+- [221112 - Fossil Fuel Electric Power Generation](https://naics.org.ai/221112) - Gas-fired power plants
+- [486210 - Pipeline Transportation of Natural Gas](https://naics.org.ai/486210) - Midstream pipelines
+
+### APQC Process Framework
+- [13.0 Transport and Store](https://apqc.org.ai/petroleum/13.0) - Midstream operations
+
+### Related Topics
+- [OilGasExploration.mdx](./OilGasExploration.mdx) - Upstream natural gas production
+- [ElectricUtilities.mdx](./ElectricUtilities.mdx) - Gas-fired power generation
+- [Refining.mdx](./Refining.mdx) - Natural gas as refinery fuel and feedstock
+
+## Sources
+
+- U.S. Energy Information Administration (EIA) - Natural gas data and analysis
+- Federal Energy Regulatory Commission (FERC) - Pipeline regulation
+- Pipeline and Hazardous Materials Safety Administration (PHMSA) - Safety standards
+- American Gas Association (AGA) - Industry statistics
+- Interstate Natural Gas Association of America (INGAA) - Transmission data
+- Environmental Protection Agency (EPA) - Emissions regulations

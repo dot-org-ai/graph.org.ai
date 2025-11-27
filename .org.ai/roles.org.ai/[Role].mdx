@@ -1,0 +1,48 @@
+---
+$context: https://roles.org.ai
+$id: https://roles.org.ai/{{slug}}
+$type: https://roles.org.ai/Role
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Role
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<RoleOverview role={role} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Role` |
+| Domain | [roles.org.ai](https://roles.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+
+## Details
+
+<RoleDetails role={role} />
+
+## Properties
+
+<RoleProperties role={role} />
+
+## Relationships
+
+<RoleRelationships role={role} />
+
+## Related
+
+<RelatedRoles role={role} />
+
+## Sources
+
+- <DatabaseLink namespace="roles.org.ai" type="{{slug}}" />

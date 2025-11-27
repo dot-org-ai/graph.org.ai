@@ -1,0 +1,48 @@
+---
+$context: https://creative.org.ai
+$id: https://creative.org.ai/{{slug}}
+$type: https://creative.org.ai/CreativeWork
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for CreativeWork
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<CreativeWorkOverview creativework={creativework} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `CreativeWork` |
+| Domain | [creative.org.ai](https://creative.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<CreativeWorkDetails creativework={creativework} />
+
+## Properties
+
+<CreativeWorkProperties creativework={creativework} />
+
+## Relationships
+
+<CreativeWorkRelationships creativework={creativework} />
+
+## Related
+
+<RelatedCreativeWorks creativework={creativework} />
+
+## Sources
+
+- <DatabaseLink namespace="creative.org.ai" type="{{slug}}" />

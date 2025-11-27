@@ -1,0 +1,48 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/{{slug}}
+$type: https://robotics.org.ai/Robotics
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Robotics
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<RoboticsOverview robotics={robotics} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Robotics` |
+| Domain | [robotics.org.ai](https://robotics.org.ai) |
+| Parent | [tech.org.ai](https://tech.org.ai) |
+
+## Details
+
+<RoboticsDetails robotics={robotics} />
+
+## Properties
+
+<RoboticsProperties robotics={robotics} />
+
+## Relationships
+
+<RoboticsRelationships robotics={robotics} />
+
+## Related
+
+<RelatedRoboticss robotics={robotics} />
+
+## Sources
+
+- <DatabaseLink namespace="robotics.org.ai" type="{{slug}}" />

@@ -1,0 +1,47 @@
+---
+$id: https://apqc.org.ai/Categories/{code}
+$context: https://apqc.org.ai
+$type: https://apqc.org.ai/Category
+code: "{code}"
+name: "{Category Name}"
+type: "operating" | "support"
+description: "{description}"
+processGroups:
+  - code: "{code}.1"
+    name: "{ProcessGroup Name}"
+  - code: "{code}.2"
+    name: "{ProcessGroup Name}"
+---
+
+# {Category Name}
+
+<CategoryOverview code="{code}" />
+
+## Process Groups
+
+<ProcessGroupList categoryCode="{code}" />
+
+## Metrics
+
+<CategoryMetrics code="{code}" />
+
+| Metric | Benchmark |
+|--------|-----------|
+| Process count | {count} |
+| Activity count | {activityCount} |
+| Common KPIs | {kpis} |
+
+## Industry Variations
+
+<IndustryVariations categoryCode="{code}" />
+
+## Related Categories
+
+<RelatedCategories code="{code}" />
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [onet.org.ai](https://onet.org.ai) | Related work activities |
+| [activities.org.ai](https://activities.org.ai) | Activity mappings |

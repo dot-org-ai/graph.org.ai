@@ -1,0 +1,48 @@
+---
+$context: https://companies.org.ai
+$id: https://companies.org.ai/{{slug}}
+$type: https://companies.org.ai/Corporation
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Corporation
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<CorporationOverview corporation={corporation} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Corporation` |
+| Domain | [companies.org.ai](https://companies.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<CorporationDetails corporation={corporation} />
+
+## Properties
+
+<CorporationProperties corporation={corporation} />
+
+## Relationships
+
+<CorporationRelationships corporation={corporation} />
+
+## Related
+
+<RelatedCorporations corporation={corporation} />
+
+## Sources
+
+- <DatabaseLink namespace="companies.org.ai" type="{{slug}}" />

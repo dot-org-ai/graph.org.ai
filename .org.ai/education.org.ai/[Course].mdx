@@ -1,0 +1,48 @@
+---
+$context: https://education.org.ai
+$id: https://education.org.ai/{{slug}}
+$type: https://education.org.ai/Course
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Course
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<CourseOverview course={course} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Course` |
+| Domain | [education.org.ai](https://education.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<CourseDetails course={course} />
+
+## Properties
+
+<CourseProperties course={course} />
+
+## Relationships
+
+<CourseRelationships course={course} />
+
+## Related
+
+<RelatedCourses course={course} />
+
+## Sources
+
+- <DatabaseLink namespace="education.org.ai" type="{{slug}}" />

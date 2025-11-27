@@ -1,0 +1,48 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/{{slug}}
+$type: https://functions.org.ai/CodeFunction
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for CodeFunction
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<CodeFunctionOverview codefunction={codefunction} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `CodeFunction` |
+| Domain | [functions.org.ai](https://functions.org.ai) |
+| Parent | [nouns.org.ai](https://nouns.org.ai) |
+
+## Details
+
+<CodeFunctionDetails codefunction={codefunction} />
+
+## Properties
+
+<CodeFunctionProperties codefunction={codefunction} />
+
+## Relationships
+
+<CodeFunctionRelationships codefunction={codefunction} />
+
+## Related
+
+<RelatedCodeFunctions codefunction={codefunction} />
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="{{slug}}" />

@@ -1,0 +1,469 @@
+---
+$context: https://security.org.ai
+$id: https://security.org.ai/Cybersecurity
+$type: https://security.org.ai/Security
+name: Cybersecurity
+description: Comprehensive cybersecurity operations including SOC, penetration testing, threat intelligence, and security monitoring
+related:
+  - https://security.org.ai/SecurityOperations
+  - https://security.org.ai/IdentityManagement
+  - https://security.org.ai/RiskAssessment
+  - https://tech.org.ai
+---
+
+export const items = async () => {
+  // Fetch cybersecurity services, tools, and providers
+  return []
+}
+
+# Cybersecurity
+
+Cybersecurity encompasses the practices, technologies, and processes designed to protect networks, devices, programs, and data from attack, damage, or unauthorized access. It involves defending digital assets against threats ranging from nation-state attacks to ransomware, phishing, and insider threats.
+
+## Overview
+
+Modern cybersecurity is a multi-layered discipline that combines preventive controls, detection capabilities, incident response procedures, and continuous improvement through threat intelligence and security analytics. Organizations must defend against increasingly sophisticated attackers while enabling business operations and digital transformation.
+
+## Core Service Areas
+
+### Security Operations Center (SOC)
+
+A SOC is a centralized unit that deals with security issues on an organizational and technical level:
+
+**SOC Functions**:
+- **24/7/365 Monitoring**: Continuous surveillance of security events and alerts
+- **Threat Detection**: Identifying potential security incidents through SIEM, EDR, and other tools
+- **Incident Triage**: Prioritizing alerts based on severity and business impact
+- **Incident Response**: Containing and remediating security incidents
+- **Threat Hunting**: Proactive search for indicators of compromise
+- **Security Analytics**: Analysis of security data to identify patterns and trends
+- **Forensic Investigation**: Deep-dive analysis of security incidents
+
+**SOC Tiers**:
+- **Tier 1 - Alert Analysts**: First-line triage and initial investigation
+- **Tier 2 - Incident Responders**: Detailed analysis and containment
+- **Tier 3 - Threat Hunters**: Proactive threat hunting and advanced analysis
+- **SOC Manager**: Oversight, metrics, and continuous improvement
+
+**SOC Technologies**:
+- Security Information and Event Management (SIEM)
+- Endpoint Detection and Response (EDR)
+- Network Detection and Response (NDR)
+- Security Orchestration, Automation, and Response (SOAR)
+- Threat intelligence platforms
+- Log management and analytics
+- Network traffic analysis
+- User and Entity Behavior Analytics (UEBA)
+
+### Penetration Testing
+
+Authorized simulated cyber attacks to evaluate security posture:
+
+**Testing Methodologies**:
+
+**External Penetration Testing**:
+- Internet-facing assets and applications
+- Network perimeter security
+- Web application vulnerabilities
+- Email security and phishing susceptibility
+- DNS and domain security
+
+**Internal Penetration Testing**:
+- Internal network segmentation
+- Privilege escalation paths
+- Lateral movement opportunities
+- Internal application security
+- Active Directory security
+
+**Web Application Penetration Testing**:
+- OWASP Top 10 vulnerabilities
+- Authentication and authorization flaws
+- SQL injection and XSS
+- API security testing
+- Business logic vulnerabilities
+
+**Mobile Application Testing**:
+- iOS and Android application security
+- API endpoint security
+- Data storage and transmission
+- Authentication mechanisms
+- Code obfuscation and reverse engineering
+
+**Cloud Penetration Testing**:
+- Cloud configuration assessment
+- IAM policy evaluation
+- Container and Kubernetes security
+- Serverless function security
+- Cloud storage security
+
+**Red Team Operations**:
+- Full-scope adversary simulation
+- Physical and social engineering
+- Advanced persistent threat (APT) simulation
+- Purple team exercises (red + blue collaboration)
+- Assumed breach scenarios
+
+**Testing Standards**:
+- PTES (Penetration Testing Execution Standard)
+- OWASP Testing Guide
+- NIST SP 800-115
+- OSSTMM (Open Source Security Testing Methodology Manual)
+
+### Threat Intelligence
+
+Collection, analysis, and dissemination of information about current and emerging threats:
+
+**Intelligence Types**:
+
+**Strategic Intelligence**:
+- High-level threat landscape analysis
+- Industry-specific threat trends
+- Geopolitical cyber threats
+- Long-term risk assessment
+- Board-level reporting
+
+**Operational Intelligence**:
+- Threat actor profiles and tactics
+- Campaign analysis
+- Attack patterns and methodologies
+- Attribution and motivation
+- Threat group tracking
+
+**Tactical Intelligence**:
+- Indicators of Compromise (IOCs)
+- Malware signatures
+- IP addresses and domains
+- File hashes
+- YARA rules
+- Attack techniques and procedures
+
+**Technical Intelligence**:
+- Malware analysis
+- Exploit research
+- Vulnerability intelligence
+- Security tool effectiveness
+- Defensive recommendations
+
+**Intelligence Sources**:
+- Open Source Intelligence (OSINT)
+- Commercial threat intelligence feeds
+- Information Sharing and Analysis Centers (ISACs)
+- Government and law enforcement sources
+- Dark web monitoring
+- Closed threat intelligence communities
+- Internal telemetry and incident data
+
+**Intelligence Frameworks**:
+- MITRE ATT&CK Framework
+- Diamond Model of Intrusion Analysis
+- Cyber Kill Chain
+- STIX/TAXII standards
+- MISP (Malware Information Sharing Platform)
+
+### Vulnerability Management
+
+Continuous identification, evaluation, treatment, and reporting of security vulnerabilities:
+
+**Vulnerability Assessment Process**:
+
+1. **Asset Discovery**: Identify all IT assets and applications
+2. **Vulnerability Scanning**: Automated scanning for known vulnerabilities
+3. **Risk Assessment**: Evaluate vulnerability severity and business impact
+4. **Prioritization**: Rank vulnerabilities based on risk scores
+5. **Remediation**: Patching, configuration changes, or compensating controls
+6. **Verification**: Confirm vulnerabilities have been addressed
+7. **Reporting**: Metrics and progress tracking
+
+**Scanning Technologies**:
+- Network vulnerability scanners (Nessus, Qualys, Rapid7)
+- Web application scanners (Burp Suite, Acunetix)
+- Container vulnerability scanners
+- Cloud security posture management (CSPM)
+- Software composition analysis (SCA)
+- Static and dynamic application security testing (SAST/DAST)
+
+**Vulnerability Prioritization**:
+- CVSS (Common Vulnerability Scoring System)
+- EPSS (Exploit Prediction Scoring System)
+- Asset criticality
+- Threat intelligence context
+- Compensating controls
+- Business impact analysis
+
+### Security Monitoring and Detection
+
+Continuous monitoring of systems, networks, and applications for security events:
+
+**Monitoring Technologies**:
+
+**Network Monitoring**:
+- Network traffic analysis (NTA)
+- Intrusion Detection Systems (IDS)
+- Intrusion Prevention Systems (IPS)
+- Network behavior analysis
+- DNS monitoring and analysis
+- SSL/TLS inspection
+- Flow-based monitoring (NetFlow, sFlow)
+
+**Endpoint Monitoring**:
+- Endpoint Detection and Response (EDR)
+- Anti-malware and antivirus
+- Application whitelisting
+- File integrity monitoring
+- USB device control
+- PowerShell and script monitoring
+
+**Application Monitoring**:
+- Application performance monitoring (APM)
+- Runtime Application Self-Protection (RASP)
+- Database activity monitoring
+- API security monitoring
+- Web application firewalls (WAF)
+
+**Cloud Monitoring**:
+- Cloud Security Posture Management (CSPM)
+- Cloud Workload Protection Platforms (CWPP)
+- Cloud Access Security Brokers (CASB)
+- Container security monitoring
+- Serverless security monitoring
+
+**User Activity Monitoring**:
+- User and Entity Behavior Analytics (UEBA)
+- Privileged access monitoring
+- Data Loss Prevention (DLP)
+- Insider threat detection
+- Authentication monitoring
+
+### Managed Security Services
+
+Outsourced security operations and monitoring:
+
+**Managed Security Service Provider (MSSP) Offerings**:
+- Managed SIEM
+- Managed EDR/MDR (Managed Detection and Response)
+- Managed firewall
+- Managed vulnerability scanning
+- Security monitoring as a service
+- Incident response retainer services
+- Virtual CISO (vCISO) services
+- Compliance management
+
+**Service Models**:
+- Co-managed security (hybrid model)
+- Fully managed security
+- Consulting and advisory
+- Security tool management
+
+## Cybersecurity Domains
+
+### Network Security
+
+Protecting network infrastructure and traffic:
+
+- **Firewalls**: Next-generation firewalls (NGFW) with application awareness
+- **VPN**: Virtual Private Networks for secure remote access
+- **Network Segmentation**: Micro-segmentation and zero trust networks
+- **DDoS Protection**: Distributed denial of service mitigation
+- **DNS Security**: DNS filtering and threat protection
+- **Email Security**: Anti-spam, anti-phishing, malware scanning
+- **Web Filtering**: URL filtering and content inspection
+
+### Application Security
+
+Securing applications throughout the development lifecycle:
+
+- **Secure Software Development Lifecycle (SSDLC)**
+- **DevSecOps**: Integration of security into DevOps practices
+- **Security Testing**: SAST, DAST, IAST, RASP
+- **API Security**: OAuth, API gateways, rate limiting
+- **Container Security**: Image scanning, runtime protection
+- **Secrets Management**: Secure storage of credentials and keys
+- **Software Bill of Materials (SBOM)**
+
+### Cloud Security
+
+Securing cloud environments and workloads:
+
+- **Identity and Access Management**: Cloud IAM policies
+- **Cloud Posture Management**: Configuration compliance
+- **Cloud Workload Protection**: VM, container, and serverless security
+- **Data Encryption**: At-rest and in-transit encryption
+- **Cloud Access Security Broker (CASB)**: SaaS security
+- **Multi-cloud Security**: Unified security across providers
+- **Infrastructure as Code (IaC) Security**: Terraform, CloudFormation scanning
+
+### Data Security
+
+Protecting sensitive data throughout its lifecycle:
+
+- **Data Classification**: Identifying and labeling sensitive data
+- **Encryption**: At-rest, in-transit, and in-use encryption
+- **Data Loss Prevention (DLP)**: Preventing unauthorized data exfiltration
+- **Database Security**: Access controls, encryption, monitoring
+- **Backup and Recovery**: Secure backup and disaster recovery
+- **Data Masking and Tokenization**: Protecting sensitive data in non-production
+- **Key Management**: Cryptographic key lifecycle management
+
+### Endpoint Security
+
+Protecting end-user devices:
+
+- **Endpoint Detection and Response (EDR)**: Advanced threat detection
+- **Antivirus/Anti-malware**: Signature and behavior-based protection
+- **Mobile Device Management (MDM)**: Securing mobile devices
+- **Patch Management**: Automated update deployment
+- **Application Control**: Whitelisting and blacklisting
+- **Disk Encryption**: Full-disk encryption (BitLocker, FileVault)
+- **USB Control**: Removable media protection
+
+## Attack Types and Defenses
+
+### Common Attack Vectors
+
+**Phishing and Social Engineering**:
+- Email phishing attacks
+- Spear phishing (targeted attacks)
+- Business Email Compromise (BEC)
+- Vishing (voice phishing)
+- Smishing (SMS phishing)
+- Watering hole attacks
+
+**Malware**:
+- Ransomware
+- Trojans and backdoors
+- Spyware and keyloggers
+- Rootkits
+- Botnets
+- Cryptominers
+- Worms and viruses
+
+**Web-Based Attacks**:
+- SQL injection
+- Cross-Site Scripting (XSS)
+- Cross-Site Request Forgery (CSRF)
+- Server-Side Request Forgery (SSRF)
+- XML External Entity (XXE)
+- Insecure deserialization
+- Path traversal
+
+**Network Attacks**:
+- Man-in-the-Middle (MitM)
+- DNS spoofing and cache poisoning
+- ARP spoofing
+- Port scanning and enumeration
+- Denial of Service (DoS/DDoS)
+- Session hijacking
+
+**Credential Attacks**:
+- Password spraying
+- Brute force attacks
+- Credential stuffing
+- Pass-the-hash
+- Pass-the-ticket
+- Token theft
+
+**Advanced Persistent Threats (APT)**:
+- Multi-stage attacks
+- Command and control (C2)
+- Lateral movement
+- Data exfiltration
+- Living-off-the-land techniques
+- Zero-day exploits
+
+## Frameworks and Standards
+
+### NIST Cybersecurity Framework
+
+Five core functions: Identify, Protect, Detect, Respond, Recover (detailed in README.md)
+
+### CIS Controls
+
+20 prioritized cybersecurity best practices:
+- **Basic Controls (1-6)**: Inventory, configuration, vulnerability management
+- **Foundational Controls (7-16)**: Email security, malware defense, data recovery
+- **Organizational Controls (17-20)**: Incident response, penetration testing, security awareness
+
+### ISO/IEC 27001
+
+International standard for Information Security Management Systems (ISMS)
+
+### MITRE ATT&CK Framework
+
+Knowledge base of adversary tactics and techniques based on real-world observations:
+- 14 tactics (Initial Access, Execution, Persistence, etc.)
+- 100+ techniques and sub-techniques
+- Platform-specific matrices (Windows, Linux, macOS, cloud)
+- Used for threat intelligence, detection, and red teaming
+
+## Security Operations Best Practices
+
+### Security Metrics and KPIs
+
+**Detection Metrics**:
+- Mean Time to Detect (MTTD)
+- Mean Time to Respond (MTTR)
+- Mean Time to Contain (MTTC)
+- False positive rate
+- Alert volume and escalation rate
+
+**Vulnerability Metrics**:
+- Number of critical vulnerabilities
+- Patch compliance rate
+- Mean Time to Patch (MTTP)
+- Vulnerability aging
+- Remediation SLA compliance
+
+**Operational Metrics**:
+- Security event volume
+- Incident count and severity
+- Security tool coverage
+- Team utilization and burnout indicators
+- Training and certification completion
+
+### Continuous Improvement
+
+- Post-incident reviews and lessons learned
+- Threat modeling and attack path analysis
+- Security control validation and testing
+- Playbook optimization and automation
+- Tool evaluation and consolidation
+- Threat intelligence integration
+- Collaboration with IT and business units
+
+## Related Resources
+
+- [SecurityOperations](https://security.org.ai/SecurityOperations) - SIEM, incident response, and forensics
+- [IdentityManagement](https://security.org.ai/IdentityManagement) - IAM, SSO, MFA, and zero trust
+- [RiskAssessment](https://security.org.ai/RiskAssessment) - Vulnerability assessment and compliance
+- [PhysicalSecurity](https://security.org.ai/PhysicalSecurity) - Physical security and convergence
+
+## Industry Certifications
+
+**Technical Certifications**:
+- OSCP (Offensive Security Certified Professional)
+- CEH (Certified Ethical Hacker)
+- GPEN (GIAC Penetration Tester)
+- GCIH (GIAC Certified Incident Handler)
+- GCIA (GIAC Certified Intrusion Analyst)
+- GCFA (GIAC Certified Forensic Analyst)
+
+**Management Certifications**:
+- CISSP (Certified Information Systems Security Professional)
+- CISM (Certified Information Security Manager)
+- CISA (Certified Information Systems Auditor)
+- CRISC (Certified in Risk and Information Systems Control)
+
+**Cloud Security**:
+- CCSP (Certified Cloud Security Professional)
+- AWS Security Specialty
+- Azure Security Engineer
+- Google Cloud Security Engineer
+
+## References
+
+- NIST Cybersecurity Framework
+- MITRE ATT&CK Framework
+- OWASP Top 10
+- CIS Controls v8
+- ISO/IEC 27001:2022
+- SANS Institute training and certifications

@@ -1,0 +1,33 @@
+{
+  "name": "functions.org.ai",
+  "version": "0.0.1",
+  "description": "Functional units of execution or logic.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "functions"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://functions.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/functions.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

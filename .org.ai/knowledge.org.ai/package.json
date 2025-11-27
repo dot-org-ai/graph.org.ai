@@ -1,0 +1,33 @@
+{
+  "name": "knowledge.org.ai",
+  "version": "0.0.1",
+  "description": "Abstract information and concepts.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "knowledge"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://knowledge.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/knowledge.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

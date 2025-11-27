@@ -1,0 +1,48 @@
+---
+$context: https://todo.md.org.ai
+$id: https://todo.md.org.ai/{{slug}}
+$type: https://todo.md.org.ai/Todo
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Todo
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<TodoOverview todo={todo} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Todo` |
+| Domain | [todo.md.org.ai](https://todo.md.org.ai) |
+| Parent | [markdown.org.ai](https://markdown.org.ai) |
+
+## Details
+
+<TodoDetails todo={todo} />
+
+## Properties
+
+<TodoProperties todo={todo} />
+
+## Relationships
+
+<TodoRelationships todo={todo} />
+
+## Related
+
+<RelatedTodos todo={todo} />
+
+## Sources
+
+- <DatabaseLink namespace="todo.md.org.ai" type="{{slug}}" />

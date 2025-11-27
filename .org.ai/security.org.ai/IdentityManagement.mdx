@@ -1,0 +1,553 @@
+---
+$context: https://security.org.ai
+$id: https://security.org.ai/IdentityManagement
+$type: https://security.org.ai/Security
+name: Identity and Access Management
+description: Comprehensive IAM solutions including authentication, authorization, SSO, MFA, and zero trust architecture
+related:
+  - https://security.org.ai/Cybersecurity
+  - https://security.org.ai/SecurityOperations
+  - https://security.org.ai/PhysicalSecurity
+  - https://tech.org.ai
+---
+
+export const items = async () => {
+  // Fetch IAM solutions, providers, and services
+  return []
+}
+
+# Identity and Access Management (IAM)
+
+Identity and Access Management (IAM) is a framework of business processes, policies, and technologies that facilitates the management of digital identities and controls user access to critical information within an organization. IAM ensures the right individuals access the right resources at the right times for the right reasons.
+
+## Overview
+
+Modern IAM systems provide centralized authentication, authorization, and access control across on-premises and cloud environments. They enable organizations to implement security best practices, maintain compliance, improve user experience, and reduce operational overhead through automation and self-service capabilities.
+
+## Core IAM Components
+
+### Identity Lifecycle Management
+
+Managing user identities from creation through deletion:
+
+**Identity Provisioning**:
+- **Automated User Provisioning**: Creating accounts based on HR system triggers
+- **Just-in-Time (JIT) Provisioning**: Creating accounts upon first authentication
+- **Bulk Provisioning**: Mass account creation for onboarding
+- **Role-based Provisioning**: Assigning access based on job roles
+- **Workflow Automation**: Approval processes for access requests
+
+**Identity Deprovisioning**:
+- Automated account suspension on termination
+- Grace periods for contractor/vendor offboarding
+- Data retention and transfer procedures
+- Access rights revocation across all systems
+- Device and credential recovery
+
+**Lifecycle Events**:
+- New hire onboarding
+- Role changes and transfers
+- Leave of absence
+- Return from leave
+- Termination or resignation
+- Contractor expiration
+
+### Authentication
+
+Verifying the identity of users and devices:
+
+**Authentication Methods**:
+
+**Password-Based Authentication**:
+- Username and password
+- Password policies (complexity, expiration, history)
+- Password managers and vaults
+- Self-service password reset (SSPR)
+
+**Multi-Factor Authentication (MFA)**:
+- **Knowledge Factors**: Something you know (password, PIN)
+- **Possession Factors**: Something you have (phone, token, smart card)
+- **Inherence Factors**: Something you are (biometrics)
+- **Location Factors**: Somewhere you are (geolocation, network)
+- **Time Factors**: Sometime you are (time-based access)
+
+**Passwordless Authentication**:
+- **Biometric Authentication**: Fingerprint, facial recognition, voice
+- **Hardware Tokens**: FIDO2/WebAuthn security keys (YubiKey)
+- **Push Notifications**: Mobile app approval (Microsoft Authenticator, Duo)
+- **Magic Links**: Email or SMS one-time links
+- **Passkeys**: Cryptographic credentials synced across devices
+
+**Risk-Based Authentication**:
+- Contextual analysis (location, device, behavior)
+- Adaptive authentication strength
+- Anomaly detection
+- Step-up authentication for sensitive operations
+- Continuous authentication
+
+**Single Sign-On (SSO)**:
+- **SAML 2.0**: XML-based federation protocol
+- **OAuth 2.0**: Authorization framework for API access
+- **OpenID Connect (OIDC)**: Authentication layer on OAuth 2.0
+- **Kerberos**: Network authentication protocol
+- **Web SSO**: Browser-based single sign-on
+- **Mobile SSO**: Native app authentication
+- **Desktop SSO**: Integrated Windows Authentication
+
+**Certificate-Based Authentication**:
+- Public Key Infrastructure (PKI)
+- Smart cards and CAC cards
+- Client SSL/TLS certificates
+- Code signing certificates
+- Device certificates
+
+### Authorization
+
+Determining what authenticated users are allowed to do:
+
+**Authorization Models**:
+
+**Role-Based Access Control (RBAC)**:
+- Assign permissions to roles, users to roles
+- Reduces complexity through role hierarchy
+- Supports separation of duties (SoD)
+- Role mining and optimization
+- Least privilege principle
+
+**Attribute-Based Access Control (ABAC)**:
+- Policy-based access using attributes
+- User attributes (department, clearance, location)
+- Resource attributes (classification, owner)
+- Environmental attributes (time, location, threat level)
+- Dynamic and context-aware access decisions
+
+**Policy-Based Access Control (PBAC)**:
+- Centralized policy management
+- Fine-grained access policies
+- Policy decision points (PDP)
+- Policy enforcement points (PEP)
+- Policy administration points (PAP)
+
+**Relationship-Based Access Control (ReBAC)**:
+- Access based on relationships between entities
+- Graph-based authorization
+- Social network and collaboration permissions
+- Resource ownership and sharing
+
+**Access Control Lists (ACLs)**:
+- Direct assignment of permissions to users
+- File system and network ACLs
+- Legacy systems support
+
+### Privileged Access Management (PAM)
+
+Securing and monitoring privileged accounts with elevated permissions:
+
+**PAM Capabilities**:
+
+**Privileged Account Discovery**:
+- Automated discovery of privileged accounts
+- Local admin accounts
+- Service accounts
+- Shared accounts
+- Embedded credentials
+
+**Password Vaulting**:
+- Secure storage of privileged credentials
+- Automated password rotation
+- Check-out/check-in workflow
+- Password randomization
+- Emergency access procedures
+
+**Session Management**:
+- Privileged session recording
+- Session monitoring and alerting
+- Session isolation (jump servers)
+- Just-in-Time (JIT) access provisioning
+- Just-Enough-Access (JEA) principles
+- Time-limited access grants
+
+**Privilege Elevation**:
+- Temporary elevation requests
+- Approval workflows
+- Sudo and RunAs management
+- Application-to-application password management
+
+**Secrets Management**:
+- API keys and tokens
+- Database credentials
+- SSH keys
+- Certificates
+- Encryption keys
+- Configuration secrets
+
+### Identity Federation
+
+Enabling SSO across organizational boundaries:
+
+**Federation Protocols**:
+- SAML 2.0 federation
+- OAuth 2.0 and OpenID Connect
+- WS-Federation
+- Shibboleth
+
+**Federation Architectures**:
+- **Identity Provider (IdP)**: Authentication source
+- **Service Provider (SP)**: Relying party application
+- **Federation Broker**: Intermediary connecting multiple IdPs and SPs
+- **Identity Bridging**: Protocol translation
+
+**Use Cases**:
+- B2B partner access
+- Customer identity (CIAM)
+- Cloud application SSO
+- Mergers and acquisitions
+- Multi-tenant SaaS platforms
+
+### Directory Services
+
+Centralized repositories of user and resource information:
+
+**Directory Technologies**:
+
+**Active Directory (AD)**:
+- Microsoft's on-premises directory service
+- Domain controllers and forests
+- Group Policy management
+- LDAP protocol support
+- Kerberos authentication
+
+**Azure Active Directory (Azure AD / Entra ID)**:
+- Microsoft's cloud identity platform
+- Cloud-native directory
+- Conditional Access policies
+- Identity Protection
+- B2B and B2C capabilities
+
+**LDAP Directories**:
+- OpenLDAP
+- Oracle Directory Server
+- Apache Directory Server
+- Lightweight protocol for directory access
+
+**Cloud Directory Services**:
+- AWS Directory Service
+- Google Cloud Identity
+- JumpCloud Directory Platform
+- Okta Universal Directory
+
+## Zero Trust Architecture
+
+Security model based on "never trust, always verify":
+
+### Zero Trust Principles
+
+1. **Verify Explicitly**: Always authenticate and authorize based on all available data points
+2. **Use Least Privilege Access**: Limit user access with Just-In-Time and Just-Enough-Access
+3. **Assume Breach**: Minimize blast radius and segment access; verify end-to-end encryption
+
+### Zero Trust Components
+
+**Identity Verification**:
+- Strong authentication (MFA, passwordless)
+- Continuous authentication and authorization
+- Risk-based access policies
+- User and entity behavior analytics (UEBA)
+
+**Device Trust**:
+- Device registration and compliance
+- Endpoint security posture assessment
+- Managed vs. unmanaged device policies
+- Device health attestation
+- Mobile Device Management (MDM)
+- Endpoint Detection and Response (EDR)
+
+**Network Segmentation**:
+- Micro-segmentation
+- Software-Defined Perimeter (SDP)
+- Network Access Control (NAC)
+- Zero Trust Network Access (ZTNA)
+- VPN replacement with identity-based access
+
+**Application Access**:
+- Application-level authentication
+- API security and gateway
+- Per-application access policies
+- Cloud Access Security Broker (CASB)
+
+**Data Protection**:
+- Data classification and labeling
+- Encryption at rest and in transit
+- Rights management and DRM
+- Data Loss Prevention (DLP)
+
+### Zero Trust Network Access (ZTNA)
+
+Modern alternative to VPNs:
+
+**ZTNA Architecture**:
+- Identity-centric access
+- Software-Defined Perimeter
+- Invisible to attackers (no open ports)
+- Application-level access granularity
+- Continuous trust verification
+
+**ZTNA Deployment Models**:
+- **Client-based ZTNA**: Agent on endpoint devices
+- **Clientless ZTNA**: Browser-based access
+- **Service-based ZTNA**: Cloud-delivered service
+
+**ZTNA Benefits**:
+- Reduced attack surface
+- Improved user experience
+- Better visibility and control
+- Simplified remote access
+- Cloud and hybrid support
+
+## Customer Identity and Access Management (CIAM)
+
+IAM for customer-facing applications:
+
+**CIAM Capabilities**:
+- Self-service registration and profile management
+- Social login integration (Google, Facebook, Apple)
+- Progressive profiling
+- Consent and preference management
+- User experience optimization
+- Scalability for millions of users
+- Privacy and GDPR compliance
+
+**CIAM Providers**:
+- Auth0 (Okta)
+- Azure AD B2C
+- AWS Cognito
+- Ping Identity
+- ForgeRock
+- Akamai (Janrain)
+
+## IAM Governance
+
+Ensuring appropriate access through policies and processes:
+
+### Access Governance
+
+**Access Certification**:
+- Periodic access reviews
+- Manager attestations
+- Role recertification
+- Compliance reporting
+- Orphaned account detection
+- Dormant account management
+
+**Access Analytics**:
+- Access intelligence and insights
+- Role mining and optimization
+- Peer group analysis
+- Anomaly detection
+- Compliance dashboards
+- Risk scoring
+
+**Segregation of Duties (SoD)**:
+- Toxic combination detection
+- Policy-based constraints
+- Preventive and detective controls
+- SoD conflict resolution
+- Workflow-based mitigation
+
+### Identity Analytics
+
+Using analytics to improve security and compliance:
+
+**Analytics Capabilities**:
+- User behavior analytics (UBA)
+- Peer group comparisons
+- Anomaly detection
+- Access path analysis
+- Risk scoring and modeling
+- Machine learning for predictions
+
+**Use Cases**:
+- Detecting insider threats
+- Identifying excessive access
+- Optimizing role definitions
+- Predicting access needs
+- Compliance reporting
+
+## IAM Implementation
+
+### IAM Architecture Patterns
+
+**Centralized IAM**:
+- Single identity source
+- Centralized authentication
+- Unified policy management
+- Simplified administration
+
+**Federated IAM**:
+- Multiple identity sources
+- Distributed authentication
+- Trust relationships
+- Inter-organizational access
+
+**Hybrid IAM**:
+- On-premises and cloud integration
+- Active Directory + Cloud IAM
+- Gradual cloud migration
+- Coexistence patterns
+
+### IAM Integration
+
+**HR System Integration**:
+- Employee data synchronization
+- Automated provisioning triggers
+- Organizational structure sync
+- Job role mapping
+
+**Application Integration**:
+- SAML/OIDC integration
+- API integration
+- SCIM provisioning
+- Legacy application connectors
+
+**Security Tool Integration**:
+- SIEM integration
+- SOAR integration
+- Vulnerability management
+- Endpoint security
+
+## IAM Security Best Practices
+
+### Password Security
+
+- Enforce strong password policies (NIST SP 800-63B)
+- Implement password managers
+- Eliminate password expiration (unless compromised)
+- Screen against breached password databases
+- Support passwordless authentication
+
+### MFA Best Practices
+
+- Require MFA for all users
+- Use push notifications or hardware tokens
+- Avoid SMS-based OTP (sim swapping risk)
+- Implement phishing-resistant MFA
+- Provide fallback authentication methods
+
+### Access Control
+
+- Implement least privilege access
+- Use time-limited access grants
+- Require approval for privileged access
+- Regular access reviews and certifications
+- Automated deprovisioning
+
+### Monitoring and Auditing
+
+- Log all authentication and authorization events
+- Monitor for anomalous access patterns
+- Alert on privilege escalation
+- Track privileged session activity
+- Retain logs for compliance
+
+## IAM Compliance
+
+### Regulatory Requirements
+
+**SOC 2**:
+- Access control policies
+- Authentication mechanisms
+- Access reviews and audits
+- Logging and monitoring
+
+**ISO 27001**:
+- Identity management controls
+- Access control policy
+- User access management
+- Privileged access management
+
+**PCI DSS**:
+- Unique user IDs
+- Strong authentication
+- Access control implementation
+- Regular access reviews
+
+**HIPAA**:
+- User authentication
+- Access controls
+- Audit logging
+- Automatic logoff
+
+**GDPR**:
+- Consent management
+- Right to access
+- Right to deletion
+- Privacy by design
+
+## Leading IAM Solutions
+
+### Enterprise IAM Platforms
+
+- **Microsoft Entra ID (Azure AD)**: Cloud-native identity platform
+- **Okta**: Cloud-based IAM and CIAM
+- **Ping Identity**: Enterprise federation and SSO
+- **ForgeRock**: Platform IAM with AI capabilities
+- **SailPoint**: Identity governance and administration
+- **CyberArk**: Privileged access management leader
+
+### Open Source IAM
+
+- **Keycloak**: Open-source identity and access management
+- **Gluu**: Open-source customer IAM
+- **OpenIAM**: Open-source IAM platform
+- **WSO2 Identity Server**: API-driven identity server
+- **FreeIPA**: Integrated security information management
+
+## Emerging Trends
+
+### Decentralized Identity
+
+- Self-sovereign identity (SSI)
+- Verifiable credentials
+- Decentralized identifiers (DIDs)
+- Blockchain-based identity
+- User-controlled identity
+
+### AI and Machine Learning
+
+- Intelligent access recommendations
+- Automated policy generation
+- Behavioral biometrics
+- Anomaly detection
+- Risk-based authentication
+
+### Identity Fabric
+
+- Distributed identity architecture
+- API-first approach
+- Orchestration layer
+- Legacy modernization
+- Hybrid cloud support
+
+## Related Resources
+
+- [Cybersecurity](https://security.org.ai/Cybersecurity) - Overall cybersecurity operations and practices
+- [SecurityOperations](https://security.org.ai/SecurityOperations) - SIEM and incident response integration
+- [PhysicalSecurity](https://security.org.ai/PhysicalSecurity) - Physical access control convergence
+- [RiskAssessment](https://security.org.ai/RiskAssessment) - Access risk assessment and compliance
+
+## Industry Certifications
+
+- **CISSP**: Domain 5 - Identity and Access Management
+- **CISM**: Identity management governance
+- **CISA**: Access control auditing
+- **CCSP**: Cloud IAM controls
+- **Certified Identity Management Professional**: IDPro certification
+
+## References
+
+- NIST SP 800-63: Digital Identity Guidelines
+- NIST SP 800-162: Attribute-Based Access Control
+- NIST Zero Trust Architecture (SP 800-207)
+- IDPro Body of Knowledge
+- Cloud Security Alliance: IAM guidance
+- OWASP Authentication Cheat Sheet

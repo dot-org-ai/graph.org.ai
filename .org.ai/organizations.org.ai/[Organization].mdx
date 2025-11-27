@@ -1,0 +1,48 @@
+---
+$context: https://organizations.org.ai
+$id: https://organizations.org.ai/{{slug}}
+$type: https://organizations.org.ai/Organization
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Organization
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<OrganizationOverview organization={organization} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Organization` |
+| Domain | [organizations.org.ai](https://organizations.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+
+## Details
+
+<OrganizationDetails organization={organization} />
+
+## Properties
+
+<OrganizationProperties organization={organization} />
+
+## Relationships
+
+<OrganizationRelationships organization={organization} />
+
+## Related
+
+<RelatedOrganizations organization={organization} />
+
+## Sources
+
+- <DatabaseLink namespace="organizations.org.ai" type="{{slug}}" />

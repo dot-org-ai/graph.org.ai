@@ -1,0 +1,48 @@
+---
+$context: https://media.org.ai
+$id: https://media.org.ai/{{slug}}
+$type: https://media.org.ai/Media
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Media
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MediaOverview media={media} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Media` |
+| Domain | [media.org.ai](https://media.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<MediaDetails media={media} />
+
+## Properties
+
+<MediaProperties media={media} />
+
+## Relationships
+
+<MediaRelationships media={media} />
+
+## Related
+
+<RelatedMedias media={media} />
+
+## Sources
+
+- <DatabaseLink namespace="media.org.ai" type="{{slug}}" />

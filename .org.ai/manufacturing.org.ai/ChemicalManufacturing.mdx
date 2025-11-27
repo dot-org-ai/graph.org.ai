@@ -1,0 +1,367 @@
+---
+$context: https://manufacturing.org.ai
+$id: https://manufacturing.org.ai/ChemicalManufacturing
+$type: https://manufacturing.org.ai/Manufacturing
+name: "Chemical Manufacturing"
+naicsCode: "325"
+description: "Transforms organic and inorganic raw materials through chemical processes and formulation to create basic chemicals, resins, synthetic materials, pharmaceuticals, paints, fertilizers, and countless other chemical products."
+parent: https://manufacturing.org.ai
+---
+
+export const items = async () => {
+  // Fetch chemical manufacturing establishments from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://manufacturing.org.ai/ChemicalManufacturing',
+    naicsCode: { $regex: '^325' }
+  })
+}
+
+# Chemical Manufacturing
+
+Chemical manufacturing (NAICS 325) transforms organic and inorganic raw materials into intermediate or final chemical products through chemical processes. This subsector is characterized by the complexity of chemical reactions, the need for specialized equipment and facilities, significant capital investment, and strict environmental and safety regulations.
+
+Chemical manufacturing is foundational to modern civilization, providing essential materials for nearly every other industry - from agriculture and healthcare to electronics and transportation. The sector produces everything from basic commodity chemicals to highly specialized pharmaceutical compounds.
+
+## Overview
+
+Chemical manufacturing encompasses the broadest range of products of any manufacturing subsector. Establishments in this industry combine raw materials (oil, natural gas, minerals, water, metals, air) through chemical reactions to produce thousands of different products. The industry is characterized by:
+
+- **Capital Intensity**: Requires significant investment in specialized facilities and equipment
+- **Research & Development**: Heavy investment in innovation and new product development
+- **Regulatory Complexity**: Subject to extensive environmental, safety, and product regulations
+- **Global Competition**: Highly integrated global supply chains and markets
+- **Process Focus**: Continuous processing operations running 24/7 in many facilities
+- **Safety Critical**: Handling of hazardous materials requires sophisticated safety systems
+
+## Industry Groups
+
+Chemical manufacturing comprises nine major industry groups:
+
+### 3251 - Basic Chemical Manufacturing
+Production of basic inorganic and organic chemicals that serve as inputs to other chemical processes.
+
+**Key Products:**
+- **Inorganic Chemicals**: Chlorine, sodium hydroxide, sulfuric acid, ammonia, industrial gases
+- **Organic Chemicals**: Petrochemicals (ethylene, propylene, benzene), solvents, alcohols
+- **Synthetic Dyes and Pigments**: Colorants for textiles, plastics, paints
+- **Other Basic Chemicals**: Carbon black, ethyl alcohol, gum and wood chemicals
+
+**Applications**: Raw materials for plastics, pharmaceuticals, fertilizers, and countless other products
+
+### 3252 - Resin, Synthetic Rubber, and Artificial Fibers Manufacturing
+Manufacturing polymers and synthetic materials that replace or supplement natural materials.
+
+**Key Products:**
+- **Resins and Plastics**: Polyethylene, polypropylene, PVC, polystyrene, engineering plastics
+- **Synthetic Rubber**: SBR, polybutadiene, neoprene for tires and industrial products
+- **Synthetic Fibers**: Polyester, nylon, acrylic fibers for textiles
+- **Cellulosic Fibers**: Rayon and acetate from wood pulp
+
+**Applications**: Packaging, construction, automotive, textiles, consumer goods
+
+### 3253 - Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing
+Producing chemicals for crop production, pest control, and soil enhancement.
+
+**Key Products:**
+- **Fertilizers**: Nitrogen, phosphate, and potash fertilizers and blends
+- **Pesticides**: Herbicides, insecticides, fungicides, rodenticides
+- **Agricultural Chemicals**: Soil conditioners, plant growth regulators, adjuvants
+
+**Applications**: Agriculture, turf and ornamental care, forestry, public health
+
+### 3254 - Pharmaceutical and Medicine Manufacturing
+Manufacturing medications, biologics, and diagnostic substances.
+
+**Key Products:**
+- **Pharmaceutical Preparations**: Tablets, capsules, injectables, topical medications
+- **Biological Products**: Vaccines, blood products, therapeutic proteins
+- **Medicinal and Botanical Products**: Active pharmaceutical ingredients (APIs)
+- **In-Vivo Diagnostics**: Contrast media, radiopharmaceuticals
+
+**Applications**: Human and veterinary medicine, disease treatment and prevention
+
+**Special Characteristics**:
+- Extremely high regulatory requirements (FDA approval process)
+- Long development cycles (10+ years for new drugs)
+- Stringent quality control and documentation
+- Patent protection and generic competition dynamics
+
+### 3255 - Paint, Coating, and Adhesive Manufacturing
+Producing paints, coatings, adhesives, and sealants for protective and decorative applications.
+
+**Key Products:**
+- **Paints and Coatings**: Architectural, industrial, automotive, specialty coatings
+- **Adhesives**: Construction, industrial, consumer, pressure-sensitive adhesives
+- **Sealants and Caulks**: Building sealants, glazing compounds
+
+**Applications**: Construction, automotive, aerospace, consumer products, industrial maintenance
+
+### 3256 - Soap, Cleaning Compound, and Toilet Preparation Manufacturing
+Manufacturing personal care products, soaps, detergents, and cleaning compounds.
+
+**Key Products:**
+- **Soap and Detergents**: Laundry detergents, dish soap, industrial cleaners
+- **Cleaning Products**: Household cleaners, disinfectants, polishes
+- **Toilet Preparations**: Cosmetics, perfumes, shampoo, toothpaste, deodorants
+- **Surface Active Agents**: Surfactants for cleaning and industrial applications
+
+**Applications**: Personal care, household cleaning, industrial sanitation, hospitality
+
+### 3259 - Other Chemical Product and Preparation Manufacturing
+Producing specialized chemical products not classified elsewhere.
+
+**Key Products:**
+- **Printing Inks**: Commercial printing, packaging, specialty inks
+- **Explosives**: Industrial, mining, and military explosives
+- **Custom Compounding**: Blending and mixing purchased materials to customer specifications
+- **Photographic Chemicals**: Sensitizing materials, developers, fixers
+- **Specialty Chemicals**: Catalysts, water treatment chemicals, industrial additives
+
+## Manufacturing Processes
+
+Chemical manufacturing employs sophisticated unit operations and chemical engineering principles:
+
+### Chemical Reactions
+- **Synthesis**: Building complex molecules from simpler precursors
+- **Cracking**: Breaking down large molecules (petroleum refining)
+- **Polymerization**: Linking monomers into long-chain polymers
+- **Fermentation**: Using biological organisms to produce chemicals
+- **Catalysis**: Using catalysts to enable or accelerate reactions
+
+### Separation and Purification
+- **Distillation**: Separating components by boiling point differences
+- **Crystallization**: Purifying solids from solutions
+- **Filtration**: Removing solids from liquids or gases
+- **Extraction**: Separating components using solvents
+- **Chromatography**: High-precision separation for pharmaceuticals and fine chemicals
+- **Membranes**: Selective separation using membrane technologies
+
+### Physical Processing
+- **Mixing and Blending**: Combining ingredients to specifications
+- **Heating and Cooling**: Temperature control for reactions and processing
+- **Evaporation**: Concentrating solutions by removing solvents
+- **Drying**: Removing moisture from products
+- **Milling and Sizing**: Particle size reduction and classification
+- **Compaction**: Forming powders into tablets or pellets
+
+### Formulation
+- **Blending**: Combining active ingredients with carriers and additives
+- **Compounding**: Creating custom mixtures for specific applications
+- **Emulsification**: Creating stable mixtures of immiscible liquids
+- **Coating and Encapsulation**: Protecting active ingredients
+
+## Process Control and Automation
+
+Modern chemical plants are highly automated with sophisticated control systems:
+
+### Distributed Control Systems (DCS)
+- Real-time monitoring and control of process parameters
+- Automated startup, shutdown, and emergency procedures
+- Integrated alarm and safety systems
+- Historical data collection and trending
+
+### Advanced Process Control (APC)
+- Model predictive control for optimization
+- Multivariable control strategies
+- Real-time optimization algorithms
+- Adaptive control systems
+
+### Safety Instrumented Systems (SIS)
+- Independent safety systems separate from process control
+- Automated emergency shutdown systems
+- Interlock and permissive logic
+- Safety integrity level (SIL) rated components
+
+### Analytical Instrumentation
+- Online analyzers for real-time composition monitoring
+- Spectroscopic techniques (IR, UV, NMR)
+- Chromatography for complex mixture analysis
+- Process mass spectrometry
+
+## Safety and Environmental Management
+
+Chemical manufacturing faces unique safety and environmental challenges:
+
+### Process Safety Management
+- **OSHA PSM**: Comprehensive safety management for hazardous processes
+- **Risk Assessment**: HAZOP (Hazard and Operability Studies), LOPA (Layer of Protection Analysis)
+- **Management of Change**: Formal procedures for process modifications
+- **Incident Investigation**: Root cause analysis and corrective actions
+- **Mechanical Integrity**: Inspection and testing of critical equipment
+- **Emergency Response**: Planning and drills for potential incidents
+
+### Environmental Regulations
+- **Clean Air Act**: Emissions control and air permits
+- **Clean Water Act**: Wastewater treatment and discharge permits
+- **RCRA**: Hazardous waste management and disposal
+- **TSCA**: Toxic Substances Control Act for chemical safety
+- **Superfund (CERCLA)**: Liability for contamination cleanup
+
+### Responsible Care®
+Chemical industry's voluntary initiative for:
+- Process safety excellence
+- Pollution prevention
+- Product stewardship
+- Community engagement
+- Security and emergency response
+- Employee health and safety
+
+### Green Chemistry
+Principles for designing safer chemicals and processes:
+- Prevention of waste at the source
+- Atom economy (minimizing waste atoms)
+- Safer chemical synthesis routes
+- Designing safer chemicals with reduced toxicity
+- Safer solvents and reaction conditions
+- Energy efficiency
+- Renewable feedstocks
+- Catalytic rather than stoichiometric reactions
+- Degradable products
+- Real-time pollution prevention monitoring
+
+## Research and Development
+
+Chemical manufacturing is R&D intensive with continuous innovation:
+
+### Product Development
+- New molecule discovery and design
+- Formulation optimization
+- Application development
+- Customer collaboration on custom products
+- Regulatory testing and approval
+
+### Process Development
+- Route selection and optimization
+- Pilot plant scale-up
+- Manufacturing process design
+- Yield and efficiency improvements
+- Debottlenecking and capacity expansion
+
+### Technology Areas
+- **Catalysis**: Developing new catalysts for improved selectivity and efficiency
+- **Biotechnology**: Using enzymes and organisms for chemical production
+- **Nanotechnology**: Creating advanced materials with nanoscale features
+- **Computational Chemistry**: Molecular modeling and simulation
+- **Process Intensification**: Smaller, more efficient equipment and processes
+
+## Supply Chain and Logistics
+
+Chemical manufacturing requires sophisticated supply chain management:
+
+### Raw Material Sourcing
+- Petroleum and natural gas (feedstocks for organics)
+- Minerals and ores (inorganics)
+- Agricultural products (bio-based chemicals)
+- Recycled materials (circular economy)
+
+### Transportation and Storage
+- Pipeline networks for major commodities
+- Rail car and tank truck fleet management
+- Marine shipping for international trade
+- Bulk storage terminals and tank farms
+- Hazardous materials regulations (DOT, IMO)
+
+### Inventory Management
+- Managing raw materials, intermediates, and finished products
+- Just-in-time delivery for some applications
+- Buffer stocks for supply chain resilience
+- Shelf life and stability considerations
+
+## Quality Management
+
+Chemical products require rigorous quality control:
+
+### Quality Systems
+- **ISO 9001**: Quality management system standard
+- **GMP (Good Manufacturing Practices)**: For pharmaceuticals and personal care
+- **ISO 14001**: Environmental management
+- **RC14001**: Responsible Care management system
+
+### Analytical Testing
+- Raw material qualification
+- In-process monitoring and control
+- Finished product release testing
+- Stability and shelf-life studies
+- Customer complaint investigation
+
+### Specifications and Standards
+- Internal product specifications
+- Customer-specific requirements
+- Industry standards (ASTM, USP, BP)
+- Regulatory requirements (FDA, EPA)
+
+## Workforce
+
+Chemical manufacturing employs highly skilled technical workers:
+
+### Operations
+- Chemical plant operators (DCS operators)
+- Process technicians
+- Laboratory technicians and chemists
+- Maintenance craftspeople (mechanics, electricians, instrumentation)
+- Warehouse and logistics workers
+
+### Technical and Engineering
+- Chemical engineers (process, project, design)
+- Chemists (research, analytical, process)
+- Environmental health and safety professionals
+- Quality assurance/quality control specialists
+- Regulatory affairs specialists
+
+### Management and Business
+- Plant managers and operations managers
+- Supply chain and procurement managers
+- Technical service and customer support
+- Business development and sales
+- Finance and administration
+
+## Economic Impact
+
+Chemical manufacturing is a vital economic sector:
+
+- **Employment**: Approximately 850,000 workers
+- **Establishments**: About 13,000 facilities
+- **Shipments**: Over $500 billion annually
+- **Exports**: $130+ billion, positive trade balance
+- **Investment**: Billions in annual capital expenditures
+- **Wages**: Among the highest in manufacturing
+
+## Industry Trends
+
+### Sustainability and Circular Economy
+- Bio-based and renewable feedstocks
+- Chemical recycling of plastics
+- Carbon capture and utilization
+- Waste minimization and valorization
+- Energy efficiency improvements
+
+### Digital Transformation
+- AI and machine learning for process optimization
+- Digital twins for virtual plant operations
+- Predictive maintenance using IoT sensors
+- Advanced analytics for quality and yield
+- Blockchain for supply chain transparency
+
+### Innovation Drivers
+- Lightweight materials for automotive and aerospace
+- Advanced battery materials for energy storage
+- Specialty chemicals for electronics
+- Sustainable agriculture solutions
+- Pharmaceutical innovation for unmet medical needs
+
+### Market Dynamics
+- Globalization and international competition
+- Consolidation through mergers and acquisitions
+- Specialty vs. commodity chemical strategies
+- Nearshoring and supply chain resilience
+- Regulatory compliance costs
+
+## Related Resources
+
+- [naics.org.ai/325](https://naics.org.ai/325) - Official NAICS classification
+- [chemicals.org.ai](https://chemicals.org.ai) - Chemical products and substances database
+- [products.org.ai](https://products.org.ai) - Chemical products
+- [onet.org.ai](https://onet.org.ai) - Chemical manufacturing occupations
+- [businesses.org.ai](https://businesses.org.ai) - Chemical companies
+- [standards.org.ai](https://standards.org.ai) - Industry standards and specifications

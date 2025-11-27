@@ -1,0 +1,48 @@
+---
+$context: https://work.org.ai
+$id: https://work.org.ai/{{slug}}
+$type: https://work.org.ai/Work
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Work
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<WorkOverview work={work} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Work` |
+| Domain | [work.org.ai](https://work.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<WorkDetails work={work} />
+
+## Properties
+
+<WorkProperties work={work} />
+
+## Relationships
+
+<WorkRelationships work={work} />
+
+## Related
+
+<RelatedWorks work={work} />
+
+## Sources
+
+- <DatabaseLink namespace="work.org.ai" type="{{slug}}" />

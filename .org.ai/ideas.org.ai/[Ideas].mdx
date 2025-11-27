@@ -1,0 +1,48 @@
+---
+$context: https://ideas.org.ai
+$id: https://ideas.org.ai/{{slug}}
+$type: https://ideas.org.ai/Ideas
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Ideas
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<IdeasOverview ideas={ideas} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Ideas` |
+| Domain | [ideas.org.ai](https://ideas.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<IdeasDetails ideas={ideas} />
+
+## Properties
+
+<IdeasProperties ideas={ideas} />
+
+## Relationships
+
+<IdeasRelationships ideas={ideas} />
+
+## Related
+
+<RelatedIdeass ideas={ideas} />
+
+## Sources
+
+- <DatabaseLink namespace="ideas.org.ai" type="{{slug}}" />

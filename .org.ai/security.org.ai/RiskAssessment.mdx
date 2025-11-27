@@ -1,0 +1,637 @@
+---
+$context: https://security.org.ai
+$id: https://security.org.ai/RiskAssessment
+$type: https://security.org.ai/Security
+name: Risk Assessment and Compliance
+description: Comprehensive security risk assessment, vulnerability management, compliance auditing, and risk management services
+related:
+  - https://security.org.ai/Cybersecurity
+  - https://security.org.ai/SecurityOperations
+  - https://security.org.ai/PhysicalSecurity
+  - https://naics.org.ai
+---
+
+export const items = async () => {
+  // Fetch risk assessment services, tools, and frameworks
+  return []
+}
+
+# Risk Assessment and Compliance
+
+Security risk assessment and compliance management encompass the systematic processes of identifying, analyzing, evaluating, and treating information security risks while ensuring adherence to regulatory requirements, industry standards, and organizational policies.
+
+## Overview
+
+Risk assessment provides the foundation for effective security programs by enabling organizations to understand their threat landscape, prioritize investments, and implement appropriate controls. Compliance management ensures organizations meet legal, regulatory, and contractual obligations while maintaining customer trust and avoiding penalties.
+
+## Risk Management Framework
+
+### Risk Assessment Process
+
+**1. Asset Identification**:
+- **Information Assets**:
+  - Customer data and PII
+  - Intellectual property
+  - Financial information
+  - Strategic business data
+  - Employee information
+
+- **Technology Assets**:
+  - Servers and workstations
+  - Network infrastructure
+  - Applications and databases
+  - Cloud resources
+  - Mobile devices
+  - IoT devices
+
+- **Business Processes**:
+  - Critical business operations
+  - Revenue-generating processes
+  - Support functions
+  - Third-party dependencies
+
+**2. Threat Identification**:
+- **Threat Actors**:
+  - Nation-state attackers
+  - Cybercriminals and organized crime
+  - Hacktivists
+  - Insider threats (malicious and negligent)
+  - Competitors
+  - Script kiddies
+
+- **Threat Types**:
+  - Malware (ransomware, trojans, spyware)
+  - Phishing and social engineering
+  - Denial of service attacks
+  - Data breaches and exfiltration
+  - Supply chain attacks
+  - Physical security breaches
+  - Natural disasters
+  - Human error
+
+**3. Vulnerability Assessment**:
+- Technical vulnerabilities (software flaws, misconfigurations)
+- Procedural vulnerabilities (inadequate policies, lack of training)
+- Physical vulnerabilities (inadequate access controls)
+- Organizational vulnerabilities (insufficient resources, lack of oversight)
+
+**4. Risk Analysis**:
+- **Qualitative Risk Analysis**:
+  - Risk matrices (likelihood vs. impact)
+  - Risk ratings (high, medium, low)
+  - Expert judgment
+  - Scenario analysis
+  - Bow-tie analysis
+
+- **Quantitative Risk Analysis**:
+  - Annualized Loss Expectancy (ALE)
+  - Single Loss Expectancy (SLE)
+  - Annual Rate of Occurrence (ARO)
+  - Return on Security Investment (ROSI)
+  - Monte Carlo simulation
+  - Factor Analysis of Information Risk (FAIR)
+
+**5. Risk Evaluation**:
+- Compare risks against risk appetite
+- Prioritize risks based on severity
+- Identify unacceptable risks
+- Determine risk treatment strategies
+- Document risk register
+
+**6. Risk Treatment**:
+- **Risk Avoidance**: Eliminate the risk by discontinuing the activity
+- **Risk Reduction**: Implement controls to mitigate the risk
+- **Risk Transfer**: Share the risk with third parties (insurance, outsourcing)
+- **Risk Acceptance**: Accept the risk when cost of mitigation exceeds impact
+
+**7. Monitoring and Review**:
+- Continuous risk monitoring
+- Periodic risk reassessment
+- Key Risk Indicators (KRIs)
+- Risk reporting and dashboards
+- Emerging threat tracking
+
+### Risk Management Frameworks
+
+**NIST Risk Management Framework (RMF)**:
+1. **Prepare**: Organizational context and resources
+2. **Categorize**: Information systems and information
+3. **Select**: Baseline security controls
+4. **Implement**: Security and privacy controls
+5. **Assess**: Control effectiveness
+6. **Authorize**: Accept risk and authorize operation
+7. **Monitor**: Continuous monitoring and updates
+
+**ISO 31000 Risk Management**:
+- International standard for risk management
+- Principles, framework, and process
+- Applicable to all types of organizations
+- Integration with organizational governance
+
+**OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation)**:
+- Self-directed risk assessment
+- Organizational risk view
+- Three phases: build asset-based threat profiles, identify vulnerabilities, develop security strategy
+
+**FAIR (Factor Analysis of Information Risk)**:
+- Quantitative risk analysis framework
+- Standard taxonomy for risk factors
+- Statistical modeling approach
+- Monetary loss measurement
+
+## Vulnerability Management
+
+Continuous process of identifying, evaluating, treating, and reporting on security vulnerabilities:
+
+### Vulnerability Assessment Methodologies
+
+**Network Vulnerability Scanning**:
+- **Authenticated Scans**: Using credentials to assess internal vulnerabilities
+- **Unauthenticated Scans**: External perspective without credentials
+- **Configuration Assessments**: Checking against security baselines
+- **Compliance Scans**: Verifying regulatory compliance
+- **Continuous Monitoring**: Ongoing vulnerability detection
+
+**Scanning Tools**:
+- Tenable Nessus Professional
+- Qualys VMDR
+- Rapid7 InsightVM
+- Greenbone OpenVAS (open-source)
+- Nexpose
+- Acunetix (web applications)
+- Burp Suite (web applications)
+
+**Web Application Security Assessment**:
+- OWASP Top 10 vulnerability testing
+- SQL injection testing
+- Cross-Site Scripting (XSS) detection
+- Authentication and authorization testing
+- Business logic vulnerability assessment
+- API security testing
+
+**Cloud Security Assessment**:
+- **Cloud Security Posture Management (CSPM)**:
+  - Configuration compliance
+  - Misconfiguration detection
+  - Security benchmark assessment (CIS Benchmarks)
+  - Identity and access review
+  - Network exposure analysis
+
+**CSPM Tools**:
+- Wiz
+- Prisma Cloud (Palo Alto)
+- Microsoft Defender for Cloud
+- AWS Security Hub
+- Google Cloud Security Command Center
+- Orca Security
+- Lacework
+
+**Container and Kubernetes Security**:
+- Image vulnerability scanning
+- Dockerfile best practices
+- Registry security
+- Runtime security
+- Kubernetes configuration assessment
+
+**Tools**:
+- Aqua Security
+- Sysdig Secure
+- Snyk Container
+- Trivy (open-source)
+- Anchore
+
+### Vulnerability Prioritization
+
+**Common Vulnerability Scoring System (CVSS)**:
+- Base Score: Intrinsic vulnerability characteristics
+- Temporal Score: Time-sensitive factors
+- Environmental Score: Organization-specific context
+- CVSS v3.1 scale: 0.0-10.0
+- Severity ratings: None, Low, Medium, High, Critical
+
+**Exploit Prediction Scoring System (EPSS)**:
+- Probability that a vulnerability will be exploited
+- Daily updated scores
+- Complement to CVSS
+- Data-driven approach
+
+**Vulnerability Prioritization Frameworks**:
+- **SSVC (Stakeholder-Specific Vulnerability Categorization)**: Decision tree for prioritization
+- **VPR (Vulnerability Priority Rating)**: Tenable's risk-based scoring
+- **KEV (Known Exploited Vulnerabilities)**: CISA's catalog of actively exploited vulnerabilities
+
+**Risk-Based Prioritization Factors**:
+- Vulnerability severity (CVSS score)
+- Exploit availability
+- Threat intelligence context
+- Asset criticality
+- Exposure (internal vs. internet-facing)
+- Compensating controls
+- Business impact
+
+### Patch Management
+
+**Patch Management Process**:
+1. **Inventory**: Maintain current asset inventory
+2. **Assess**: Evaluate patch criticality and compatibility
+3. **Test**: Validate patches in test environment
+4. **Deploy**: Roll out patches systematically
+5. **Verify**: Confirm successful deployment
+6. **Document**: Maintain patch records
+
+**Patch Prioritization**:
+- Critical security patches (within 72 hours)
+- Important security patches (within 30 days)
+- Moderate security patches (within 60 days)
+- Optional patches (as scheduled)
+- Emergency out-of-band patches (immediate)
+
+**Patch Management Tools**:
+- Microsoft WSUS/SCCM/Intune
+- Red Hat Satellite
+- ManageEngine Patch Manager Plus
+- Ivanti Patch Management
+- SolarWinds Patch Manager
+- Automox
+
+**Virtual Patching**:
+- IPS/WAF rules to block exploit attempts
+- Temporary mitigation until patch deployment
+- Protection for legacy/unsupported systems
+
+## Compliance Management
+
+Ensuring adherence to regulatory, legal, and contractual requirements:
+
+### Major Compliance Frameworks
+
+**SOC 2 (Service Organization Control)**:
+- **Type I**: Point-in-time assessment of control design
+- **Type II**: 6-12 month assessment of control effectiveness
+- **Trust Service Criteria**:
+  - Security: Protection against unauthorized access
+  - Availability: System availability for operation and use
+  - Processing Integrity: Complete, valid, accurate, timely processing
+  - Confidentiality: Protection of confidential information
+  - Privacy: Personal information collection, use, retention, disclosure
+
+**SOC 2 Control Categories**:
+- CC1: Control Environment
+- CC2: Communication and Information
+- CC3: Risk Assessment
+- CC4: Monitoring Activities
+- CC5: Control Activities
+- CC6: Logical and Physical Access Controls
+- CC7: System Operations
+- CC8: Change Management
+- CC9: Risk Mitigation
+
+**ISO/IEC 27001 Information Security Management**:
+- **Certification Process**:
+  - Gap analysis and risk assessment
+  - ISMS implementation
+  - Internal audit
+  - Management review
+  - Certification audit (Stage 1 and Stage 2)
+  - Surveillance audits (annual)
+  - Recertification (every 3 years)
+
+**Annex A Controls** (93 controls across 4 themes):
+- Organizational controls (37)
+- People controls (8)
+- Physical controls (14)
+- Technological controls (34)
+
+**PCI DSS (Payment Card Industry Data Security Standard)**:
+- **12 Requirements**:
+  1. Install and maintain firewall configuration
+  2. Do not use vendor-supplied defaults
+  3. Protect stored cardholder data
+  4. Encrypt transmission of cardholder data
+  5. Protect systems against malware
+  6. Develop and maintain secure systems
+  7. Restrict access to cardholder data
+  8. Identify and authenticate access
+  9. Restrict physical access to cardholder data
+  10. Track and monitor network access
+  11. Test security systems and processes
+  12. Maintain information security policy
+
+**Validation Levels**:
+- Level 1: >6M transactions/year (annual on-site audit)
+- Level 2: 1-6M transactions/year (annual SAQ)
+- Level 3: 20K-1M e-commerce transactions/year (annual SAQ)
+- Level 4: <20K e-commerce or <1M transactions/year (annual SAQ)
+
+**HIPAA (Health Insurance Portability and Accountability Act)**:
+- **Security Rule Requirements**:
+  - Administrative Safeguards (9 standards)
+  - Physical Safeguards (4 standards)
+  - Technical Safeguards (5 standards)
+  - Organizational Requirements
+  - Policies and Procedures
+  - Documentation Requirements
+
+**Covered Entities**:
+- Healthcare providers
+- Health plans
+- Healthcare clearinghouses
+- Business associates
+
+**GDPR (General Data Protection Regulation)**:
+- **Principles**:
+  - Lawfulness, fairness, transparency
+  - Purpose limitation
+  - Data minimization
+  - Accuracy
+  - Storage limitation
+  - Integrity and confidentiality
+  - Accountability
+
+**Individual Rights**:
+- Right to be informed
+- Right of access
+- Right to rectification
+- Right to erasure
+- Right to restrict processing
+- Right to data portability
+- Right to object
+- Rights related to automated decision-making
+
+**Data Protection Requirements**:
+- Privacy by design and default
+- Data protection impact assessments (DPIA)
+- Data breach notification (72 hours)
+- Data Protection Officer (DPO) appointment
+- Records of processing activities
+
+**CCPA/CPRA (California Consumer Privacy Act/Privacy Rights Act)**:
+- Consumer rights to know, delete, opt-out
+- Non-discrimination for exercising rights
+- Sale of personal information restrictions
+- Privacy notices and disclosures
+
+**Federal/Industry-Specific**:
+- **FISMA**: Federal Information Security Management Act
+- **FedRAMP**: Federal Risk and Authorization Management Program
+- **CMMC**: Cybersecurity Maturity Model Certification (defense contractors)
+- **GLBA**: Gramm-Leach-Bliley Act (financial institutions)
+- **FERPA**: Family Educational Rights and Privacy Act
+- **SOX**: Sarbanes-Oxley Act (financial reporting)
+- **NERC CIP**: North American Electric Reliability Corporation Critical Infrastructure Protection
+
+### Compliance Assessment Process
+
+**1. Scope Definition**:
+- Identify applicable regulations and standards
+- Define system boundaries
+- Identify in-scope assets and processes
+- Document data flows
+
+**2. Gap Analysis**:
+- Compare current state to requirements
+- Identify control deficiencies
+- Assess implementation gaps
+- Prioritize remediation efforts
+
+**3. Control Implementation**:
+- Design and implement required controls
+- Document policies and procedures
+- Configure technical controls
+- Train personnel
+
+**4. Evidence Collection**:
+- Gather control evidence
+- Document control execution
+- Maintain audit trails
+- Prepare compliance artifacts
+
+**5. Assessment and Audit**:
+- Internal audit and testing
+- Third-party assessment
+- Penetration testing
+- Vulnerability scanning
+- Control validation
+
+**6. Remediation**:
+- Address audit findings
+- Implement corrective actions
+- Validate remediation
+- Document improvements
+
+**7. Continuous Compliance**:
+- Ongoing monitoring
+- Periodic reassessment
+- Change management
+- Compliance reporting
+
+### Governance, Risk, and Compliance (GRC) Platforms
+
+**Integrated GRC Solutions**:
+- **ServiceNow GRC**: IT, risk, and compliance management
+- **Archer (RSA)**: Enterprise risk management
+- **LogicGate**: Risk Cloud platform
+- **MetricStream**: Integrated GRC software
+- **SAI360**: Compliance and risk management
+- **OneTrust**: Privacy and GRC platform
+- **Resolver**: Risk and incident management
+
+**GRC Capabilities**:
+- Policy and procedure management
+- Risk register and assessment
+- Compliance management and reporting
+- Audit management
+- Vendor risk management
+- Business continuity planning
+- Incident management integration
+
+## Security Auditing
+
+Independent examination of security controls and compliance:
+
+### Types of Security Audits
+
+**Internal Audits**:
+- Self-assessment of controls
+- Preparation for external audits
+- Continuous improvement
+- Control validation
+
+**External Audits**:
+- Third-party independent assessment
+- Certification audits (ISO 27001, SOC 2)
+- Regulatory examinations
+- Customer-requested audits
+
+**Penetration Testing Audits**:
+- Ethical hacking assessment
+- OWASP testing methodology
+- Network and application testing
+- Red team exercises
+
+**Compliance Audits**:
+- PCI DSS validation
+- HIPAA compliance review
+- GDPR data protection audit
+- Industry-specific requirements
+
+### Audit Process
+
+**1. Planning**:
+- Define audit scope and objectives
+- Identify audit criteria and standards
+- Assemble audit team
+- Develop audit plan and schedule
+
+**2. Fieldwork**:
+- Control testing and validation
+- Evidence collection
+- Interviews and observations
+- Technical assessments
+- Documentation review
+
+**3. Reporting**:
+- Audit findings documentation
+- Risk ratings and recommendations
+- Management responses
+- Remediation timelines
+
+**4. Follow-up**:
+- Verify remediation
+- Validate control improvements
+- Track corrective actions
+- Close audit findings
+
+## Security Metrics and KPIs
+
+### Risk Metrics
+
+- **Risk Score**: Aggregate organizational risk level
+- **Risk Velocity**: Rate of risk change
+- **Mean Time to Remediate (MTTR)**: Average remediation time
+- **Risk Coverage**: Percentage of risks with controls
+- **Control Effectiveness**: Percentage of effective controls
+
+### Vulnerability Metrics
+
+- **Critical Vulnerabilities**: Count of critical severity findings
+- **Vulnerability Age**: Average time vulnerabilities remain open
+- **Patch Compliance Rate**: Percentage of systems patched
+- **Mean Time to Patch (MTTP)**: Average patching timeline
+- **Vulnerability Density**: Vulnerabilities per asset
+
+### Compliance Metrics
+
+- **Compliance Score**: Overall compliance percentage
+- **Control Compliance**: Percentage of controls implemented
+- **Audit Findings**: Number and severity of findings
+- **Remediation Status**: Percentage of findings closed
+- **Policy Acknowledgment**: Employee policy acceptance rate
+
+### Security Posture Metrics
+
+- **Security Score**: Composite security rating
+- **Attack Surface**: Exposed assets and services
+- **Third-Party Risk Score**: Vendor security ratings
+- **Incident Rate**: Security incidents per period
+- **Breach Likelihood**: Probability of breach occurrence
+
+## Third-Party Risk Management
+
+Assessing and managing security risks from vendors and partners:
+
+### Vendor Risk Assessment
+
+**Initial Assessment**:
+- Security questionnaires (SIG, CAIQ)
+- Financial stability review
+- Reputation and references
+- Regulatory compliance verification
+- Insurance coverage validation
+
+**Due Diligence**:
+- SOC 2 report review
+- ISO 27001 certification validation
+- Penetration test results
+- Incident response capabilities
+- Business continuity plans
+- Data handling practices
+
+**Ongoing Monitoring**:
+- Continuous risk scoring
+- Security rating services (BitSight, SecurityScorecard)
+- News and threat intelligence monitoring
+- Periodic reassessment
+- Contract compliance verification
+
+**Vendor Management Platforms**:
+- Prevalent
+- Whistic
+- OneTrust Vendorpedia
+- ProcessUnity
+- Venminder
+- CyberGRX
+
+## Business Continuity and Disaster Recovery
+
+Ensuring organizational resilience:
+
+### Business Impact Analysis (BIA)
+
+- Identify critical business functions
+- Determine maximum tolerable downtime (MTD)
+- Calculate Recovery Time Objectives (RTO)
+- Define Recovery Point Objectives (RPO)
+- Assess financial and operational impacts
+
+### Disaster Recovery Planning
+
+- Backup strategies and testing
+- Alternate site selection
+- Failover procedures
+- Communication plans
+- Recovery team roles
+
+### Business Continuity Management
+
+- Continuity strategies
+- Crisis management
+- Emergency response
+- Pandemic planning
+- Supply chain resilience
+
+## Related Resources
+
+- [Cybersecurity](https://security.org.ai/Cybersecurity) - Cybersecurity operations and defenses
+- [SecurityOperations](https://security.org.ai/SecurityOperations) - Security monitoring and incident response
+- [IdentityManagement](https://security.org.ai/IdentityManagement) - Access control and compliance
+- [PhysicalSecurity](https://security.org.ai/PhysicalSecurity) - Physical risk assessment
+
+## Industry Certifications
+
+**Risk Management**:
+- CRISC (Certified in Risk and Information Systems Control)
+- CGRC (Certified GRC Professional)
+- FAIR Certification
+
+**Compliance**:
+- CISA (Certified Information Systems Auditor)
+- CISM (Certified Information Security Manager)
+- CISSP (Certified Information Systems Security Professional)
+
+**Specialized**:
+- PCI QSA (Qualified Security Assessor)
+- PCI ISA (Internal Security Assessor)
+- ISO 27001 Lead Auditor
+- HITRUST CSF Practitioner
+
+## References
+
+- NIST SP 800-30: Guide for Conducting Risk Assessments
+- NIST SP 800-37: Risk Management Framework
+- ISO 31000: Risk Management Guidelines
+- ISO/IEC 27001: Information Security Management
+- FAIR (Factor Analysis of Information Risk) Institute
+- NIST Cybersecurity Framework
+- CIS Controls v8
+- COBIT 2019 Framework

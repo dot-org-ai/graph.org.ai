@@ -1,0 +1,48 @@
+---
+$context: https://wiki.org.ai
+$id: https://wiki.org.ai/{{slug}}
+$type: https://wiki.org.ai/Wiki
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Wiki
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<WikiOverview wiki={wiki} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Wiki` |
+| Domain | [wiki.org.ai](https://wiki.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<WikiDetails wiki={wiki} />
+
+## Properties
+
+<WikiProperties wiki={wiki} />
+
+## Relationships
+
+<WikiRelationships wiki={wiki} />
+
+## Related
+
+<RelatedWikis wiki={wiki} />
+
+## Sources
+
+- <DatabaseLink namespace="wiki.org.ai" type="{{slug}}" />

@@ -1,0 +1,793 @@
+---
+$context: https://health.org.ai
+$id: https://health.org.ai/AmbulatoryCare
+$type: https://health.org.ai/MedicalEntity
+name: "Ambulatory Care"
+naicsCode: "621"
+description: "Outpatient healthcare services delivered in settings where patients receive care without overnight stays, including physician offices, outpatient clinics, diagnostic laboratories, imaging centers, urgent care, and ambulatory surgery centers."
+parent: https://health.org.ai
+---
+
+export const items = async () => {
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://health.org.ai/AmbulatoryCare',
+    naicsCode: { $regex: '^621' }
+  })
+}
+
+# Ambulatory Care
+
+Ambulatory care encompasses all healthcare services provided to patients who are not admitted to a hospital or other inpatient facility. As the largest segment of healthcare delivery by volume, ambulatory care includes over 1 billion patient visits annually in the U.S., spanning primary care, specialty care, diagnostic services, same-day surgery, urgent care, and numerous other outpatient services. Ambulatory care settings range from solo physician practices to large multi-specialty group practices, hospital-owned outpatient clinics, freestanding diagnostic centers, ambulatory surgery centers, and retail health clinics.
+
+The shift from inpatient to outpatient care has been one of the most significant healthcare trends of the past three decades, driven by medical advances that enable less invasive procedures, cost pressures favoring lower-cost settings, patient preference for convenience, and payment incentives. Ambulatory care now represents the primary point of contact between patients and the healthcare system, providing preventive services, chronic disease management, acute episodic care, and increasingly complex procedures that previously required hospitalization.
+
+## Overview
+
+Ambulatory care is characterized by several defining features:
+
+### Key Characteristics
+
+**Outpatient Nature**
+- **No Overnight Stay** - Patients return home the same day
+- **Lower Acuity** - Generally less complex than inpatient care (though advancing rapidly)
+- **Scheduled Care** - Appointments rather than emergency presentations (except urgent care)
+- **Continuity** - Ongoing relationships between patients and providers
+- **Preventive Focus** - Emphasis on health maintenance and disease prevention
+
+**Care Settings**
+- **Physician Offices** - Primary care and specialty practices
+- **Hospital Outpatient Departments (HOPDs)** - Hospital-based outpatient clinics
+- **Freestanding Centers** - Independent ambulatory surgery, imaging, dialysis, infusion
+- **Retail and Convenient Care** - Walk-in clinics, urgent care, telehealth
+- **Home-Based** - Home health agencies providing care in patient homes
+
+**Financial Model**
+- **Fee-for-Service** - Traditional payment per visit or procedure
+- **Capitation** - Per-member-per-month payments (managed care)
+- **Value-Based** - Quality incentives, shared savings (ACOs, PCMH)
+- **Lower Overhead** - Less infrastructure than inpatient facilities
+- **Higher Volumes** - Many visits per day vs. inpatient admissions
+
+**Regulatory Environment**
+- **State Licensure** - Physician and facility licenses
+- **Medicare Certification** - For services to Medicare beneficiaries
+- **Accreditation** - AAAHC, AAASF, Joint Commission for certain facilities
+- **Quality Reporting** - MIPS, APM quality measures
+- **Less Intensive** - Generally less regulated than inpatient care
+
+## NAICS 621 - Ambulatory Health Care Services
+
+### 6211 - Offices of Physicians
+
+Medical practices where licensed physicians provide diagnostic and treatment services.
+
+#### Primary Care Practices (621111 - Offices of Physicians)
+
+**Family Medicine**:
+- **Scope** - Comprehensive care across lifespan (newborn to elderly)
+- **Services** - Preventive care, chronic disease management, acute care, minor procedures
+- **Training** - 3-year family medicine residency
+- **Practice Settings** - Solo, small group, large multi-specialty groups, community health centers
+- **Patient Panel** - Typically 1,500-2,500 patients per physician
+- **Visits** - 20-30 patients per day average
+
+**Internal Medicine**:
+- **Scope** - Adult medicine (18+ years)
+- **Focus** - Complex medical conditions, multiple chronic diseases
+- **Training** - 3-year internal medicine residency
+- **Subspecialties** - Cardiology, endocrinology, gastroenterology, infectious disease, many others
+- **Hospital Rounding** - Often provide inpatient care as hospitalists
+- **Geriatrics** - Growing focus on elderly patients
+
+**Pediatrics**:
+- **Age Range** - Birth through adolescence (typically to age 18-21)
+- **Services** - Well-child visits, immunizations, development monitoring, sick visits
+- **Training** - 3-year pediatrics residency
+- **Subspecialties** - Neonatology, pediatric cardiology, pediatric endocrinology, etc.
+- **Practice Patterns** - Higher visit frequency (well-child schedule)
+
+**Obstetrics and Gynecology (Women's Health)**:
+- **Obstetrics** - Prenatal care, delivery, postpartum care
+- **Gynecology** - Annual exams, contraception, menopause management, gynecologic surgery
+- **Training** - 4-year OB-GYN residency
+- **Hospital-Based** - Most have hospital privileges for deliveries and surgery
+- **Ambulatory Procedures** - Colposcopy, endometrial biopsy, IUD placement
+
+**Primary Care Business Model**:
+- **Revenue** - Evaluation and management (E&M) visits, preventive visits, procedures
+- **Payment Mix** - Commercial insurance, Medicare, Medicaid, patient pay
+- **Ancillary Revenue** - Lab, immunizations, procedures (joint injections, skin procedures)
+- **Panel Size** - Determines practice capacity and revenue
+- **Care Models** - Patient-Centered Medical Home (PCMH), Direct Primary Care (DPC)
+- **Team-Based** - Medical assistants, nurses, care coordinators supporting physicians
+
+#### Specialty Care Practices
+
+**Cardiology**:
+- **Services** - Diagnostic (echo, stress tests, Holter monitors), interventional (angiography, stenting)
+- **Conditions** - Coronary artery disease, heart failure, arrhythmias, valvular disease
+- **Procedures** - Cardiac catheterization, pacemaker/ICD implantation, electrophysiology studies
+- **Settings** - Office-based, hospital-based labs, ambulatory surgery centers
+
+**Orthopedics**:
+- **Subspecialties** - Sports medicine, spine, joint replacement, hand, foot/ankle
+- **Services** - Evaluation, injections, minor procedures, surgery (hospital or ASC)
+- **Imaging** - In-office X-ray common, MRI interpretation
+- **Physical Therapy** - Often integrated or affiliated
+- **High Volume** - Sports injuries, arthritis, fractures
+
+**Gastroenterology**:
+- **Procedures** - Colonoscopy, upper endoscopy, ERCP, capsule endoscopy
+- **Conditions** - IBD, GERD, liver disease, colon cancer screening
+- **Settings** - Office consultations, hospital or freestanding endoscopy centers
+- **Anesthesia** - Conscious sedation or anesthesia services for procedures
+
+**Dermatology**:
+- **Medical Dermatology** - Skin diseases, acne, eczema, psoriasis
+- **Surgical Dermatology** - Skin cancer removal, Mohs surgery
+- **Cosmetic Dermatology** - Botox, fillers, laser treatments (often cash-pay)
+- **High Throughput** - Short visits, many patients per day
+
+**Ophthalmology**:
+- **Services** - Eye exams, cataract surgery, LASIK, retinal procedures
+- **Conditions** - Cataracts, glaucoma, macular degeneration, diabetic retinopathy
+- **Procedures** - Cataract surgery (most common surgery in U.S.), laser treatments
+- **Optometry Integration** - Often employ optometrists for routine eye care
+
+**Other Major Specialties**:
+- **Oncology** - Cancer treatment (medical, radiation, surgical)
+- **Pulmonology** - Lung diseases, sleep medicine, bronchoscopy
+- **Nephrology** - Kidney disease, dialysis management
+- **Endocrinology** - Diabetes, thyroid disorders, hormone imbalances
+- **Neurology** - Headaches, epilepsy, stroke, multiple sclerosis, Parkinson's
+- **Urology** - Kidney stones, prostate disease, incontinence, urologic surgery
+- **ENT (Otolaryngology)** - Ear, nose, throat conditions, head/neck surgery
+- **Rheumatology** - Arthritis, autoimmune diseases
+
+**Specialty Practice Characteristics**:
+- **Referral-Based** - Most patients referred by primary care
+- **Higher Reimbursement** - Procedures and complex visits pay more than primary care
+- **Technology** - Significant investment in specialized equipment
+- **Ancillary Services** - Imaging, lab, infusion often integrated
+
+#### Multi-Specialty Groups
+
+**Integrated Delivery**:
+- **Mayo Clinic Model** - Comprehensive care, all specialties, salaried physicians
+- **Kaiser Permanente** - Integrated insurance and delivery, prepaid model
+- **Cleveland Clinic** - Institute model organizing around disease/organ systems
+- **Large Medical Groups** - 50-500+ physicians across multiple specialties
+
+**Advantages**:
+- **Referral Network** - Internal referrals keep patients in system
+- **Shared Infrastructure** - Common facilities, IT, billing, HR
+- **Care Coordination** - Easier collaboration across specialties
+- **Negotiating Power** - Stronger position with payers
+- **Brand Recognition** - Marketing advantage
+
+**Challenges**:
+- **Management Complexity** - Diverse specialties, compensation models
+- **Physician Alignment** - Different cultures and incentives
+- **Capital Requirements** - Significant investment in infrastructure
+
+### 6212 - Offices of Dentists
+
+Dental practices providing oral health services (not detailed here as focus is on medical care).
+
+### 6213 - Offices of Other Health Practitioners
+
+Licensed practitioners other than physicians and dentists:
+
+**Chiropractors (621310)**:
+- **Services** - Spinal manipulation, adjustments, physical therapy modalities
+- **Conditions** - Back pain, neck pain, headaches, musculoskeletal complaints
+- **Payment** - Mix of insurance (often limited coverage) and cash-pay
+- **Integrated Care** - Increasing collaboration with medical providers
+
+**Optometrists (621320)**:
+- **Services** - Eye examinations, vision correction (glasses, contacts), ocular disease detection
+- **Scope** - Varies by state; some can prescribe medications, perform laser procedures
+- **Retail Integration** - Often located in retail stores (LensCrafters, Target, Walmart)
+- **Referrals** - Refer to ophthalmologists for surgery and complex disease
+
+**Mental Health Practitioners (621330)**:
+- **Psychologists** - PhD or PsyD, provide psychotherapy and testing
+- **Clinical Social Workers (LCSWs)** - Master's level, psychotherapy
+- **Licensed Professional Counselors (LPCs)** - Master's level counseling
+- **Marriage and Family Therapists (MFTs)**
+- **Telehealth** - Increasingly delivered via video visits
+- **Crisis** - High demand, workforce shortages
+
+**Physical Therapists (621340)**:
+- **Services** - Rehabilitation for injuries, surgery, chronic conditions
+- **Settings** - Outpatient clinics, hospital-based, home health
+- **Referral-Based** - Physician referral (though direct access expanding)
+- **Specialties** - Orthopedic, neurologic, sports, geriatric PT
+
+**Occupational Therapists (621340)**:
+- **Focus** - Activities of daily living, fine motor skills, adaptive equipment
+- **Settings** - Outpatient, schools, home health, hand therapy clinics
+
+**Speech-Language Pathologists (621340)**:
+- **Services** - Speech, language, swallowing disorders
+- **Pediatric** - Developmental speech delays, autism
+- **Adult** - Stroke, neurologic conditions, voice disorders
+
+**Other Practitioners**:
+- Podiatrists (foot and ankle specialists)
+- Audiologists (hearing testing and hearing aids)
+- Dietitians and nutritionists
+- Acupuncturists
+- Nurse practitioners (independent practice in some states)
+- Physician assistants (limited independent practice in some states)
+
+### 6214 - Outpatient Care Centers
+
+Freestanding facilities providing outpatient services, often specialized.
+
+#### 621491 - HMO Medical Centers
+
+**Model**:
+- **Staff-Model HMO** - Physicians employed by health plan
+- **Integrated Delivery** - Insurance and care delivery combined
+- **Capitation** - Prepaid model incentivizing prevention and efficiency
+- **Example** - Kaiser Permanente medical centers
+
+**Services**:
+- Primary and specialty care
+- Lab and imaging
+- Pharmacy
+- Urgent care
+- Preventive services
+
+#### 621492 - Kidney Dialysis Centers
+
+**End-Stage Renal Disease (ESRD) Treatment**:
+- **Hemodialysis** - Blood filtered through machine, 3x/week, 3-4 hours per session
+- **Peritoneal Dialysis** - Fluid-based filtration, home-based, daily
+- **Medicare Coverage** - ESRD qualifies for Medicare regardless of age
+- **Major Chains** - DaVita, Fresenius, US Renal Care
+
+**Operations**:
+- **Shifts** - Morning, afternoon, evening shifts to serve patients
+- **Nursing** - RNs and dialysis technicians provide treatments
+- **Nephrologist** - Medical director oversees care
+- **Social Services** - Social workers assist with complex needs
+
+**Quality Metrics**:
+- **Adequacy** - Kt/V measure of dialysis effectiveness
+- **Vascular Access** - Fistulas preferred over catheters
+- **Anemia Management** - EPO and iron administration
+- **Mineral Metabolism** - Phosphorus, calcium control
+
+#### 621493 - Freestanding Ambulatory Surgical Centers (ASCs)
+
+**Growth Driver**:
+- **Cost** - 50-60% lower cost than hospital outpatient surgery
+- **Efficiency** - Focused on surgical procedures, streamlined operations
+- **Quality** - Lower infection rates than hospitals
+- **Convenience** - Patient-friendly, parking, scheduling
+
+**Governance**:
+- **Physician-Owned** - Many ASCs physician-owned (whole or part)
+- **Hospital Joint Ventures** - Hospitals partnering with physicians
+- **Corporate Chains** - SCA Health, Surgery Partners, Tenet (United Surgical Partners)
+
+**Common Procedures**:
+- **Ophthalmology** - Cataract surgery (most common ASC procedure), LASIK
+- **Gastroenterology** - Colonoscopy, upper endoscopy
+- **Orthopedics** - Arthroscopy, hand surgery, foot/ankle, total joints (increasingly)
+- **Pain Management** - Epidural steroid injections, nerve blocks
+- **General Surgery** - Hernia repair, gallbladder removal
+- **ENT** - Tonsillectomy, sinus surgery
+- **Urology** - Cystoscopy, vasectomy, lithotripsy
+- **Dermatology** - Mohs surgery, excisions
+- **Podiatry** - Foot and ankle procedures
+
+**Operations**:
+- **Case Mix** - Medicare requires <50% of revenue from certain high-risk procedures
+- **Staffing** - Surgeons, anesthesia, OR nurses, pre-op/PACU nurses
+- **Efficiency** - High throughput, 6-12 ORs, 10-40 cases/day per OR
+- **Anesthesia** - Anesthesiologists or CRNAs, general or MAC anesthesia
+- **Discharge Criteria** - Must meet discharge criteria, responsible adult to drive
+
+**Reimbursement**:
+- **Medicare** - ASC fee schedule (lower than hospital outpatient)
+- **Commercial** - Varies, often higher than Medicare
+- **Bundled** - Facility fee covers room, nursing, supplies (not surgeon/anesthesia)
+
+#### 621494 - Freestanding Emergency Rooms (FSERs)
+
+**Model**:
+- **Hospital-Affiliated** - Extension of hospital ED, follows EMTALA
+- **Independent** - Not hospital-affiliated, not subject to EMTALA
+- **Controversy** - Surprise bills, patient confusion, regulatory debates
+
+**Services**:
+- Full emergency capabilities (imaging, lab, minor procedures)
+- Cannot admit patients (must transfer to hospital)
+- Board-certified emergency physicians
+
+#### 621498 - Other Outpatient Care Centers
+
+**Urgent Care Centers**:
+- **Services** - Minor injuries and illnesses, X-ray, lab, occupational health
+- **Hours** - Extended hours, weekends, walk-in (no appointment)
+- **Acuity** - Between primary care and emergency department
+- **Payment** - Lower cost than ED, often cash-pay option
+- **Growth** - Rapid expansion, over 10,000 centers in U.S.
+- **Operators** - Independents, health systems, urgent care chains (CityMD, MedExpress, FastMed)
+
+**Infusion Centers**:
+- **Services** - IV medication administration (chemotherapy, biologics, antibiotics, iron)
+- **Settings** - Hospital-based, freestanding, physician office-based
+- **Staffing** - Infusion nurses, pharmacists
+- **Conditions** - Cancer, rheumatoid arthritis, Crohn's disease, infections
+
+**Comprehensive Outpatient Rehabilitation Facilities (CORFs)**:
+- **Services** - Physical therapy, occupational therapy, speech therapy, respiratory therapy
+- **Post-Acute** - Following hospitalization or injury
+- **Medicare-Certified** - Specific certification requirements
+
+**Ambulatory Surgery Centers** (see 621493 above)
+
+**Federally Qualified Health Centers (FQHCs)**:
+- **Mission** - Serve underserved populations regardless of ability to pay
+- **Services** - Primary care, dental, mental health, pharmacy
+- **Funding** - Federal grants (HRSA), enhanced Medicaid/Medicare rates
+- **Governance** - Patient-majority board
+- **Locations** - Medically underserved areas, rural, urban
+
+**Community Health Centers**:
+- **Safety Net** - Care for uninsured, Medicaid, vulnerable populations
+- **Sliding Fee Scale** - Income-based payment
+- **Integrated Services** - Medical, dental, behavioral health, enabling services (transportation, outreach)
+
+**Retail Clinics**:
+- **Locations** - Inside pharmacies (CVS MinuteClinic, Walgreens Healthcare Clinic), retailers (Walmart Care Clinic)
+- **Services** - Minor illnesses, vaccinations, health screenings
+- **Providers** - Nurse practitioners, physician assistants
+- **Convenience** - Walk-in, extended hours, transparent pricing
+- **Technology** - Integrated with retail pharmacy, EHR connectivity
+
+### 6215 - Medical and Diagnostic Laboratories
+
+Independent clinical laboratories and diagnostic imaging centers.
+
+#### 621511 - Medical Laboratories
+
+**National Reference Labs**:
+- **Quest Diagnostics** - Largest U.S. lab, 2,200+ patient service centers
+- **LabCorp** - Second largest, 2,000+ service centers
+- **Services** - Routine and esoteric testing, genetics, pathology, drug testing
+
+**Services Offered**:
+- **Clinical Chemistry** - Comprehensive metabolic panel, lipids, thyroid, etc.
+- **Hematology** - CBC, coagulation studies
+- **Microbiology** - Cultures, sensitivities, molecular diagnostics
+- **Immunology** - Autoimmune testing, allergy testing
+- **Molecular Diagnostics** - Genetics, pharmacogenomics, oncology
+- **Anatomic Pathology** - Surgical pathology, cytology
+- **Toxicology** - Drug testing, therapeutic drug monitoring
+
+**Operations**:
+- **Patient Service Centers (PSCs)** - Convenient locations for blood draws
+- **Central Labs** - High-volume automated processing
+- **Rapid Testing** - Results in hours for critical tests
+- **Connectivity** - Electronic result delivery to provider EHRs
+
+**Business Model**:
+- **High Volume** - Billions of tests annually
+- **Automation** - Highly automated processing, track systems
+- **Contracts** - Health plans, employers, government programs
+- **Reimbursement** - Clinical lab fee schedule (Medicare), negotiated rates
+
+**Emerging Areas**:
+- **Genetics** - Hereditary cancer, carrier screening, pharmacogenomics
+- **Liquid Biopsy** - Blood-based cancer detection
+- **Precision Medicine** - Genomic testing for targeted therapies
+- **COVID-19 Testing** - Massive expansion during pandemic
+
+#### 621512 - Diagnostic Imaging Centers
+
+**Modalities**:
+- **X-ray** - Radiography, fluoroscopy
+- **CT (Computed Tomography)** - Cross-sectional imaging, angiography
+- **MRI (Magnetic Resonance Imaging)** - Soft tissue imaging, no radiation
+- **Ultrasound** - Real-time imaging, obstetric, vascular, musculoskeletal
+- **Nuclear Medicine** - PET, bone scans, cardiac stress tests
+- **Mammography** - Breast cancer screening and diagnostic
+
+**Business Model**:
+- **Physician-Owned** - Radiologists or referring physicians
+- **Independent** - Non-physician owned centers
+- **Health System-Affiliated** - Hospital outpatient imaging
+- **Radiology Groups** - Large groups managing multiple centers
+
+**Operations**:
+- **Scheduling** - Appointments for most exams, walk-in for some X-rays
+- **Technologists** - Radiologic technologists perform imaging
+- **Radiologists** - Interpret images, provide reports
+- **Turnaround** - Same-day or next-day reports typical
+
+**Regulatory**:
+- **ACR Accreditation** - American College of Radiology standards
+- **Mammography** - MQSA (Mammography Quality Standards Act) certification
+- **State Licensure** - Facility and technologist licenses
+
+**Market Dynamics**:
+- **Volume Growth** - Increasing imaging utilization (though slowing)
+- **Technology** - Ongoing investment in equipment upgrades
+- **Price Competition** - Lower prices than hospital imaging
+- **Utilization Management** - Payer prior authorization requirements
+
+### 6216 - Home Health Care Services
+
+Healthcare services provided in patient homes.
+
+**Services**:
+- **Skilled Nursing** - Wound care, IV therapy, injections, teaching
+- **Physical Therapy** - Mobility, strength, balance, safety
+- **Occupational Therapy** - ADLs, home modifications, adaptive equipment
+- **Speech-Language Pathology** - Swallowing, communication, cognition
+- **Medical Social Work** - Psychosocial assessment, community resources
+- **Home Health Aides** - Personal care, bathing, dressing (non-skilled)
+
+**Medicare Home Health**:
+- **Eligibility** - Homebound, need for skilled services, physician order
+- **Payment** - 30-day periods of care, case-mix adjusted
+- **Quality Measures** - Improvement in mobility, self-care, no hospitalizations
+- **Documentation** - OASIS (Outcome and Assessment Information Set)
+
+**Major Home Health Agencies**:
+- **National Chains** - Amedisys, LHC Group, Encompass Home Health
+- **Hospital-Based** - Health systems' home health divisions
+- **VNA (Visiting Nurse Association)** - Non-profit community agencies
+- **Private Duty** - Longer-term private-pay care
+
+**Trends**:
+- **Hospital at Home** - Acute care delivered at home
+- **Remote Monitoring** - Telehealth, vital sign monitoring
+- **Bundled Payments** - Inclusion in post-acute care bundles
+- **Labor Challenges** - Recruiting and retaining clinicians and aides
+
+### 6219 - Other Ambulatory Health Care Services
+
+#### 621910 - Ambulance Services
+
+**Types**:
+- **Emergency (911)** - Life-threatening, lights and sirens, paramedics
+- **Non-Emergency (IFT)** - Inter-facility transfers, scheduled transports
+- **Air Ambulance** - Helicopters, fixed-wing for critical patients
+
+**Staffing**:
+- **EMT-Basic** - Basic life support
+- **EMT-Intermediate** - IV, some medications
+- **Paramedic** - Advanced life support, intubation, advanced medications
+- **Critical Care Transport** - Nurse or paramedic teams for ICU-level patients
+
+**Payment**:
+- **Medicare/Medicaid** - Fee schedules by level of service
+- **Commercial Insurance** - Negotiated rates
+- **Out-of-Network** - Often out-of-network, balance billing common
+- **Air Ambulance** - Very expensive, often leads to surprise bills
+
+#### 621991 - Blood and Organ Banks
+
+**Blood Centers**:
+- **American Red Cross** - Largest U.S. blood supplier (~40%)
+- **Independent Blood Centers** - Regional non-profits
+- **Services** - Blood collection, testing, processing, distribution
+- **Products** - Whole blood, RBCs, platelets, plasma, cryoprecipitate
+
+**Organ Procurement Organizations (OPOs)**:
+- **Mission** - Coordinate organ donation from deceased donors
+- **58 OPOs** - Cover entire U.S., each with defined service area
+- **Functions** - Donor evaluation, family consent, organ recovery, allocation
+- **UNOS** - United Network for Organ Sharing coordinates national system
+
+#### 621999 - All Other Ambulatory Health Care Services
+
+**Mobile Health Services**:
+- Mobile mammography vans
+- Mobile dental units
+- Mobile primary care
+- Homeless outreach programs
+
+**Employee Health Services**:
+- Occupational medicine
+- Workplace injury care
+- Drug testing
+- Employee wellness programs
+
+## Ambulatory Care Delivery Models
+
+### Patient-Centered Medical Home (PCMH)
+
+**Model**:
+- **Personal Physician** - Ongoing relationship with primary care provider
+- **Whole-Person Care** - Comprehensive, coordinated care
+- **Care Coordination** - Communication across providers and settings
+- **Enhanced Access** - Same-day appointments, after-hours, e-visits
+- **Quality and Safety** - Evidence-based care, quality improvement, patient safety
+- **Team-Based** - Physicians, nurses, care coordinators, pharmacists, social workers
+
+**Recognition**:
+- **NCQA PCMH** - National Committee for Quality Assurance certification
+- **Levels** - Level 1, 2, or 3 based on capabilities
+- **Requirements** - Care coordination, quality measurement, patient engagement, population management
+
+**Payment**:
+- **Care Management Fees** - PMPM (per member per month) payments
+- **Quality Incentives** - Bonuses for achieving quality metrics
+- **Shared Savings** - Share in savings from reduced hospitalizations
+
+### Accountable Care Organizations (ACOs)
+
+**Structure**:
+- **Primary Care-Centered** - PCPs coordinate care across continuum
+- **Specialist Integration** - Specialists aligned with ACO goals
+- **Hospital Partnership** - Collaboration with hospitals
+- **Shared Savings** - Financial rewards for reducing costs while maintaining quality
+
+**Medicare ACO Programs**:
+- **Medicare Shared Savings Program (MSSP)** - One-sided (shared savings only) or two-sided (shared savings and losses) risk
+- **ACO REACH** - Direct contracting with higher levels of risk
+- **Benchmarking** - ACO performance compared to historical costs
+
+**Infrastructure**:
+- **Data Analytics** - Population health management platforms
+- **Care Coordinators** - High-risk patient management
+- **Quality Reporting** - 33 quality measures across domains
+
+### Direct Primary Care (DPC)
+
+**Model**:
+- **Monthly Membership Fee** - Patients pay practice directly ($50-150/month)
+- **No Insurance Billing** - Practice does not bill insurance for primary care
+- **Enhanced Access** - Same-day appointments, longer visits, direct communication
+- **Lower Panel Size** - 600-800 patients per physician vs. 2,000+ traditional
+
+**Services Included**:
+- Office visits (unlimited)
+- Care coordination
+- Email/text/phone access
+- Some include labs, procedures, medications at cost
+
+**Payment Outside DPC**:
+- **Insurance** - Patients maintain insurance for specialists, hospital, catastrophic
+- **Cash-Pay** - Specialists and services outside DPC paid separately
+
+**Growth**:
+- Over 1,000 DPC practices in U.S.
+- Appeal to physicians (less administrative burden) and patients (access, transparency)
+
+### Concierge Medicine
+
+**Model**:
+- **Annual Retainer** - $1,500-$10,000+ per year
+- **Insurance Billing** - Practice still bills insurance (unlike DPC)
+- **Enhanced Service** - Same-day appointments, longer visits, 24/7 access, house calls
+- **Small Panel** - 300-600 patients per physician
+
+**Market**:
+- Affluent patients seeking enhanced access and service
+- Primarily in urban, high-income areas
+
+### Retail Clinics and Convenient Care
+
+**Retail Clinics**:
+- **Locations** - Inside pharmacies, retail stores (CVS, Walgreens, Walmart, Target)
+- **Services** - Minor illnesses, vaccinations, screenings
+- **Providers** - Nurse practitioners, physician assistants
+- **No Appointments** - Walk-in, short wait times
+- **Transparent Pricing** - Posted prices for services
+
+**Urgent Care**:
+- **Services** - Minor injuries, illnesses, X-ray, lab
+- **Extended Hours** - Evenings, weekends
+- **No Appointment** - Walk-in
+- **Lower Cost** - Cheaper than ED
+- **Occupational Health** - Work injuries, physicals, drug tests
+
+**Telehealth**:
+- **Synchronous** - Live video visits with providers
+- **Asynchronous** - Secure messaging, e-consultations
+- **Remote Monitoring** - Connected devices for chronic disease management
+- **24/7 Access** - On-demand virtual urgent care
+- **Parity Laws** - Many states require insurance coverage equivalent to in-person
+
+## Ambulatory Care Technology
+
+### Electronic Health Records (EHR)
+
+**Ambulatory EHR Vendors**:
+- **Epic** - Ambulatory module (also large hospitals)
+- **Cerner** - Ambulatory EHR
+- **Athenahealth** - Cloud-based, integrated revenue cycle
+- **eClinicalWorks** - Large ambulatory market share
+- **Allscripts** - Professional EHR
+- **NextGen** - Ambulatory-focused
+- **Greenway** - Community-based practices
+- **DrChrono** - Cloud, mobile-first
+
+**Core Functions**:
+- Scheduling and registration
+- Clinical documentation (SOAP notes, templates)
+- E-prescribing (Surescripts)
+- Order entry (labs, imaging, referrals)
+- Results management
+- Problem lists, medication lists, allergy lists
+- Preventive care tracking (immunizations, screenings)
+
+**Meaningful Use / Promoting Interoperability**:
+- EHR certification
+- Quality measure reporting
+- E-prescribing (EPCS for controlled substances)
+- Health information exchange
+- Patient portal (view, download, transmit)
+- Clinical decision support
+
+### Practice Management Systems (PMS)
+
+**Functions**:
+- Scheduling
+- Registration and demographics
+- Insurance verification and eligibility
+- Charge capture
+- Claims submission
+- Payment posting and reconciliation
+- Patient billing and statements
+- Reporting and analytics
+
+**Integration**:
+- Often integrated with EHR
+- Interface with clearinghouses for claims
+- Integration with patient portals
+
+### Patient Engagement Tools
+
+**Patient Portals**:
+- View lab results, imaging reports
+- Request appointments and refills
+- Secure messaging with care team
+- Pay bills online
+- Access visit summaries and clinical notes (OpenNotes)
+
+**Mobile Apps**:
+- Appointment reminders
+- Pre-visit questionnaires
+- Symptom checkers
+- Educational content
+- Medication reminders
+
+**Remote Patient Monitoring**:
+- Blood pressure, glucose, weight monitoring
+- Transmission to EHR
+- Alerts for out-of-range values
+- Chronic disease management (diabetes, hypertension, CHF)
+
+## Quality Measurement and Improvement
+
+### MIPS (Merit-based Incentive Payment System)
+
+**Four Categories**:
+1. **Quality** (45%) - Six quality measures reported
+2. **Improvement Activities** (15%) - Activities that improve clinical practice
+3. **Promoting Interoperability** (25%) - EHR meaningful use measures
+4. **Cost** (15%) - Medicare spending per beneficiary
+
+**Payment Adjustment**:
+- Positive, neutral, or negative adjustment to Medicare payments
+- Based on composite performance score
+- Up to ±9% payment adjustment
+
+### Alternative Payment Models (APMs)
+
+**Advanced APMs**:
+- Qualify for 5% bonus payment (instead of MIPS)
+- Require taking on financial risk
+- Examples: ACO REACH, track 3 MSSP, bundled payment models
+
+**Quality Measures**:
+- Patient experience (CAHPS)
+- Clinical process and outcomes
+- Care coordination
+- Population health management
+
+### Clinical Quality Measures
+
+**HEDIS (Healthcare Effectiveness Data and Information Set)**:
+- Health plan quality measures (NCQA)
+- Diabetes care (HbA1c testing, eye exams, nephropathy screening)
+- Cardiovascular care (BP control, cholesterol management)
+- Cancer screening (breast, cervical, colorectal)
+- Childhood immunizations
+- Comprehensive diabetes care
+
+**UDS (Uniform Data System)**:
+- FQHC quality measures (HRSA)
+- Clinical outcomes (diabetes, hypertension control)
+- Preventive services
+- Behavioral health integration
+
+## Challenges and Opportunities
+
+### Current Challenges
+
+**Reimbursement Pressures**:
+- Medicare physician fee schedule cuts
+- Commercial rate pressure
+- Prior authorization burden
+- Claim denials and appeals
+- Patient cost-sharing (high deductibles)
+
+**Workforce Shortages**:
+- Primary care physician shortage (especially rural)
+- Nursing shortage
+- Medical assistant shortage
+- Burnout and turnover
+
+**Practice Economics**:
+- Rising overhead (staff, supplies, technology, insurance)
+- Declining reimbursement
+- Small practice viability
+- Employment by hospitals and private equity
+
+**Administrative Burden**:
+- EHR documentation time
+- Prior authorization
+- Quality measure reporting
+- Insurance credentialing and contracting
+- Regulatory compliance (HIPAA, OSHA, CLIA)
+
+**Access Issues**:
+- Appointment wait times (weeks to months for some specialties)
+- Geographic maldistribution (urban vs. rural)
+- Insurance networks narrowing
+- Specialist shortages in certain fields
+
+### Emerging Opportunities
+
+**Value-Based Care**:
+- Upside from quality and cost performance
+- Care management fees
+- Shared savings
+- Better outcomes and lower costs
+
+**Technology Enablers**:
+- Telehealth expansion (post-COVID)
+- Remote patient monitoring
+- AI-assisted diagnosis and documentation
+- Patient engagement tools
+- Automation of administrative tasks
+
+**Care Delivery Innovation**:
+- Team-based care models
+- Nurse practitioners and PAs in expanded roles
+- Integrated behavioral health
+- Community health workers
+- Group visits for chronic disease management
+
+**Advanced Specialization**:
+- Office-based procedures (avoiding hospital)
+- Complex care in outpatient settings
+- Ambulatory total joint replacement
+- Office-based lab and imaging
+
+**Consumer-Centric Models**:
+- Price transparency
+- Direct contracting with employers
+- Retail partnerships
+- Consumer-directed care
+
+## Related Resources
+
+- [naics.org.ai/621](https://naics.org.ai/621) - NAICS classification for ambulatory care
+- [health.org.ai/Hospitals](https://health.org.ai/Hospitals) - Inpatient hospital care
+- [health.org.ai/NursingFacilities](https://health.org.ai/NursingFacilities) - Post-acute care
+- [onet.org.ai](https://onet.org.ai) - Healthcare occupations and workforce
+- [apqc.org.ai](https://apqc.org.ai) - Healthcare process framework
+- [cms.gov/Medicare/Quality-Initiatives](https://www.cms.gov/Medicare/Quality-Initiatives) - Medicare quality programs
+- [ncqa.org](https://www.ncqa.org) - NCQA accreditation and HEDIS measures

@@ -1,0 +1,48 @@
+---
+$context: https://things.org.ai
+$id: https://things.org.ai/{{slug}}
+$type: https://things.org.ai/Thing
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Thing
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ThingOverview thing={thing} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Thing` |
+| Domain | [things.org.ai](https://things.org.ai) |
+| Parent | [schema.org.ai](https://schema.org.ai) |
+
+## Details
+
+<ThingDetails thing={thing} />
+
+## Properties
+
+<ThingProperties thing={thing} />
+
+## Relationships
+
+<ThingRelationships thing={thing} />
+
+## Related
+
+<RelatedThings thing={thing} />
+
+## Sources
+
+- <DatabaseLink namespace="things.org.ai" type="{{slug}}" />

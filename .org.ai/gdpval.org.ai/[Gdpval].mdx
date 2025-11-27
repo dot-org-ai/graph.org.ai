@@ -1,0 +1,48 @@
+---
+$context: https://gdpval.org.ai
+$id: https://gdpval.org.ai/{{slug}}
+$type: https://gdpval.org.ai/Gdpval
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Gdpval
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<GdpvalOverview gdpval={gdpval} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Gdpval` |
+| Domain | [gdpval.org.ai](https://gdpval.org.ai) |
+| Parent | [agi.org.ai](https://agi.org.ai) |
+
+## Details
+
+<GdpvalDetails gdpval={gdpval} />
+
+## Properties
+
+<GdpvalProperties gdpval={gdpval} />
+
+## Relationships
+
+<GdpvalRelationships gdpval={gdpval} />
+
+## Related
+
+<RelatedGdpvals gdpval={gdpval} />
+
+## Sources
+
+- <DatabaseLink namespace="gdpval.org.ai" type="{{slug}}" />

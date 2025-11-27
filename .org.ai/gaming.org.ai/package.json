@@ -1,0 +1,12 @@
+{
+  "name": "gaming.org.ai",
+  "version": "0.0.1",
+  "description": "Gaming industry domain ontology",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "tsx index.ts"
+  },
+  "keywords": ["gaming", "video-games", "esports", "casino", "ontology"],
+  "license": "MIT"
+}

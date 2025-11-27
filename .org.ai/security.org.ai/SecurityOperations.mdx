@@ -1,0 +1,660 @@
+---
+$context: https://security.org.ai
+$id: https://security.org.ai/SecurityOperations
+$type: https://security.org.ai/Security
+name: Security Operations
+description: Security operations including SIEM, incident response, digital forensics, and security orchestration
+related:
+  - https://security.org.ai/Cybersecurity
+  - https://security.org.ai/IdentityManagement
+  - https://security.org.ai/RiskAssessment
+  - https://tech.org.ai
+---
+
+export const items = async () => {
+  // Fetch security operations tools, platforms, and services
+  return []
+}
+
+# Security Operations
+
+Security Operations (SecOps) encompasses the ongoing activities performed to detect, analyze, respond to, and recover from security incidents. It combines people, processes, and technology to maintain an organization's security posture and protect against cyber threats.
+
+## Overview
+
+Modern security operations integrate threat intelligence, security monitoring, incident response, and continuous improvement to defend against evolving cyber threats. Security Operations Centers (SOCs) serve as the nerve center, providing 24/7/365 monitoring, detection, and response capabilities.
+
+## Security Information and Event Management (SIEM)
+
+SIEM platforms collect, aggregate, analyze, and correlate security event data from across the enterprise:
+
+### SIEM Core Functions
+
+**Log Collection and Aggregation**:
+- **Log Sources**:
+  - Network devices (firewalls, routers, switches, IDS/IPS)
+  - Endpoints (workstations, servers, mobile devices)
+  - Applications (web servers, databases, business applications)
+  - Cloud platforms (AWS, Azure, GCP)
+  - Identity systems (Active Directory, IAM platforms)
+  - Security tools (antivirus, DLP, email security)
+
+**Collection Methods**:
+- Syslog and CEF (Common Event Format)
+- API integration
+- Agent-based collection
+- File-based ingestion
+- Database queries
+- Cloud native connectors
+
+**Data Normalization**:
+- Converting diverse log formats to common schema
+- Field mapping and extraction
+- Timestamp standardization
+- Data enrichment with threat intelligence
+- Asset and identity correlation
+
+### SIEM Analytics
+
+**Correlation Rules**:
+- Event pattern matching
+- Time-based correlation
+- Statistical correlation
+- Behavioral analytics
+- Threat intelligence correlation
+- Chain of events detection
+
+**Use Cases**:
+- Failed login attempts and account lockouts
+- Privilege escalation detection
+- Lateral movement identification
+- Data exfiltration alerts
+- Malware infection detection
+- Insider threat indicators
+- Policy violation monitoring
+- Compliance reporting
+
+**Search and Investigation**:
+- Ad-hoc query capabilities
+- Historical data analysis
+- Complex search syntax
+- Saved searches and reports
+- Visualization and dashboards
+- Timeline reconstruction
+- Pivot and drill-down analysis
+
+### Leading SIEM Platforms
+
+**Enterprise SIEM Solutions**:
+- **Splunk Enterprise Security**: Market-leading analytics platform
+- **IBM QRadar**: AI-powered threat detection
+- **Microsoft Sentinel**: Cloud-native SIEM (Azure)
+- **Elastic Security**: Open-source SIEM with XDR
+- **LogRhythm NextGen SIEM**: Integrated SIEM and SOAR
+- **Exabeam Fusion**: SIEM with UEBA and automation
+- **Rapid7 InsightIDR**: Cloud SIEM with integrated EDR
+- **Securonix**: Big data SIEM with UEBA
+
+**Next-Generation SIEM Features**:
+- Machine learning and AI
+- User and Entity Behavior Analytics (UEBA)
+- Automated threat hunting
+- Cloud-native architecture
+- Integrated SOAR capabilities
+- Threat intelligence integration
+- Unified data lakes
+- Real-time streaming analytics
+
+## Extended Detection and Response (XDR)
+
+Unified security incident detection and response platform:
+
+### XDR Architecture
+
+**Data Sources Integration**:
+- **Endpoint Detection and Response (EDR)**: Endpoint telemetry
+- **Network Detection and Response (NDR)**: Network traffic analysis
+- **Cloud Workload Protection (CWPP)**: Cloud security data
+- **Identity and Access Management (IAM)**: Authentication data
+- **Email Security**: Email threat data
+- **Application Security**: API and application logs
+
+**XDR Capabilities**:
+- Unified data collection and correlation
+- Cross-layer threat detection
+- Automated investigation workflows
+- Coordinated response actions
+- Centralized analyst console
+- Threat intelligence integration
+- Attack chain reconstruction
+
+**XDR Benefits**:
+- Reduced alert fatigue through correlation
+- Faster investigation with unified data
+- Better detection across attack vectors
+- Automated response orchestration
+- Reduced tool complexity
+- Improved analyst productivity
+
+### Leading XDR Platforms
+
+- **Palo Alto Cortex XDR**: Network, endpoint, cloud integration
+- **Microsoft Defender XDR**: Microsoft ecosystem integration
+- **CrowdStrike Falcon XDR**: Cloud-native XDR platform
+- **SentinelOne Singularity**: Autonomous XDR with AI
+- **Trend Micro Vision One**: Cross-layer detection and response
+- **Cisco SecureX**: Integrated security platform
+
+## Incident Response
+
+Structured approach to handling and managing security incidents:
+
+### Incident Response Lifecycle
+
+**1. Preparation**:
+- Incident response plan development
+- Team roles and responsibilities
+- Communication protocols
+- Tools and technology preparation
+- Training and tabletop exercises
+- Incident classification criteria
+- Escalation procedures
+
+**2. Detection and Analysis**:
+- Event monitoring and correlation
+- Alert triage and prioritization
+- Initial impact assessment
+- Scope determination
+- Evidence collection
+- Attack vector identification
+- Threat actor profiling
+
+**3. Containment**:
+- **Short-term Containment**: Immediate threat isolation
+  - Network segmentation
+  - User account disabling
+  - System quarantine
+  - Firewall rule updates
+
+- **Long-term Containment**: Sustained isolation
+  - Patching systems
+  - Rebuilding compromised systems
+  - Implementing additional controls
+  - Monitoring for persistence
+
+**4. Eradication**:
+- Malware removal
+- Backdoor elimination
+- Account credential reset
+- System hardening
+- Vulnerability remediation
+- Threat actor expulsion
+
+**5. Recovery**:
+- System restoration from clean backups
+- Service restoration prioritization
+- Validation and testing
+- Enhanced monitoring
+- Gradual return to normal operations
+- Business continuity coordination
+
+**6. Post-Incident Activity**:
+- Lessons learned documentation
+- Root cause analysis
+- Remediation tracking
+- Process improvements
+- Detection rule updates
+- Training and awareness updates
+
+### Incident Response Team Structure
+
+**Core Roles**:
+- **Incident Commander**: Overall incident leadership
+- **Security Analyst**: Technical investigation and analysis
+- **Forensic Investigator**: Evidence collection and analysis
+- **Threat Intelligence Analyst**: Adversary research and context
+- **Communications Lead**: Internal and external communications
+- **Legal Counsel**: Legal and regulatory guidance
+- **Business Representative**: Business impact and priorities
+
+**Extended Team**:
+- IT operations
+- Network engineering
+- Application teams
+- Human resources
+- Public relations
+- External consultants
+- Law enforcement liaison
+
+### Incident Classification
+
+**Severity Levels**:
+
+**Critical (P1)**:
+- Active ransomware encryption
+- Data breach in progress
+- System compromise affecting critical operations
+- Nation-state threat actor
+- Response time: Immediate (within 15 minutes)
+
+**High (P2)**:
+- Confirmed malware infection
+- Account compromise with data access
+- Failed attack against critical systems
+- Significant policy violation
+- Response time: 1 hour
+
+**Medium (P3)**:
+- Suspicious activity requiring investigation
+- Attempted unauthorized access
+- Malware detected and contained
+- Response time: 4 hours
+
+**Low (P4)**:
+- Policy violations
+- False positive verification
+- Security hygiene issues
+- Response time: 24 hours
+
+### Incident Response Playbooks
+
+Documented procedures for common incident types:
+
+**Ransomware Response**:
+- Immediate isolation procedures
+- Backup verification and restoration
+- Negotiation considerations
+- Law enforcement notification
+- Decryption key management
+- Recovery prioritization
+
+**Data Breach Response**:
+- Data exposure assessment
+- Regulatory notification requirements
+- Customer communication procedures
+- Credit monitoring offerings
+- Legal and PR coordination
+- Forensic investigation
+
+**Phishing Campaign**:
+- Email containment and removal
+- Credential reset procedures
+- User education
+- Additional monitoring
+- Email security rule updates
+
+**Insider Threat**:
+- Discrete investigation procedures
+- HR coordination
+- Legal considerations
+- Evidence preservation
+- Access revocation timing
+
+**DDoS Attack**:
+- Traffic analysis and filtering
+- ISP and CDN coordination
+- Mitigation service activation
+- Business continuity procedures
+- Communication protocols
+
+## Security Orchestration, Automation, and Response (SOAR)
+
+Platform for automating security operations workflows:
+
+### SOAR Capabilities
+
+**Security Orchestration**:
+- Integration with 100+ security tools
+- Unified workflow across tools
+- Standardized tool interactions
+- Cross-platform automation
+- Tool sprawl management
+
+**Automation**:
+- Automated alert enrichment
+- Threat intelligence lookups
+- Indicator of Compromise (IOC) checking
+- User and asset context gathering
+- Automated containment actions
+- Evidence collection automation
+- Report generation
+
+**Response**:
+- Incident investigation workflows
+- Playbook automation
+- Decision trees and branching logic
+- Human approval gates
+- Documented action history
+- Audit trail maintenance
+
+**Case Management**:
+- Centralized incident tracking
+- Collaboration and handoffs
+- Evidence repository
+- Notes and documentation
+- Metrics and SLA tracking
+- Integration with ticketing systems
+
+### Leading SOAR Platforms
+
+- **Palo Alto Cortex XSOAR**: Enterprise SOAR leader
+- **Splunk SOAR (Phantom)**: Integrated with Splunk ecosystem
+- **IBM Security SOAR (Resilient)**: Incident response platform
+- **Google Chronicle SOAR (Siemplify)**: Cloud-native SOAR
+- **Swimlane**: Low-code security automation
+- **Rapid7 InsightConnect**: Integration and automation platform
+- **ServiceNow Security Operations**: IT-integrated SOAR
+
+### SOAR Use Cases
+
+**Phishing Response**:
+- Email analysis and detonation
+- URL and attachment reputation checking
+- User notification and education
+- Email deletion across mailboxes
+- Credential reset if compromised
+- Ticket closure with documentation
+
+**Malware Incident**:
+- Hash and IOC checking
+- Endpoint isolation
+- Memory and disk analysis
+- Network connection analysis
+- Similar infection checking
+- Remediation and restoration
+
+**Vulnerability Response**:
+- Vulnerability scanning and validation
+- Asset inventory cross-reference
+- Risk scoring with threat intelligence
+- Patching workflow initiation
+- Compensating control verification
+- Compliance tracking
+
+## Digital Forensics
+
+Scientific collection, preservation, analysis, and presentation of digital evidence:
+
+### Forensic Investigation Process
+
+**1. Identification**:
+- Determine what evidence exists
+- Identify storage media and systems
+- Document chain of custody
+- Legal hold implementation
+- Scope and authorization
+
+**2. Preservation**:
+- Forensic imaging (bit-by-bit copy)
+- Write blockers to prevent alteration
+- Hash calculation (MD5, SHA-256)
+- Evidence storage and handling
+- Chain of custody documentation
+
+**3. Collection**:
+- Live system data capture (volatile data)
+- Memory dumps
+- Running processes and network connections
+- Registry hives
+- File system metadata
+- Cloud data acquisition
+- Mobile device extraction
+
+**4. Analysis**:
+- Timeline reconstruction
+- File system analysis
+- Registry analysis
+- Log file examination
+- Network traffic analysis
+- Memory forensics
+- Malware analysis
+- Deleted file recovery
+- Encrypted data handling
+
+**5. Presentation**:
+- Findings documentation
+- Expert witness testimony
+- Technical reports
+- Executive summaries
+- Evidence exhibits
+- Court admissibility preparation
+
+### Forensic Tool Categories
+
+**Disk and File System Forensics**:
+- EnCase Forensic
+- FTK (Forensic Toolkit)
+- Autopsy (open-source)
+- X-Ways Forensics
+- Sleuth Kit
+
+**Memory Forensics**:
+- Volatility Framework
+- Rekall
+- Magnet RAM Capture
+- Memoryze
+
+**Network Forensics**:
+- Wireshark
+- NetworkMiner
+- Zeek (formerly Bro)
+- Moloch
+
+**Mobile Forensics**:
+- Cellebrite UFED
+- Oxygen Forensic Detective
+- Magnet AXIOM
+- XRY
+
+**Cloud Forensics**:
+- AWS forensics tools
+- Azure forensics
+- Google Workspace investigation
+- Cloud log analysis
+
+### Forensic Evidence Types
+
+**Volatile Data** (lost when system powers off):
+- System memory (RAM)
+- Running processes
+- Network connections
+- Cached data
+- Clipboard contents
+
+**Non-Volatile Data** (persistent):
+- Hard drives and SSDs
+- File systems
+- Registry (Windows)
+- Log files
+- Backups
+- Cloud storage
+
+**Network Evidence**:
+- Packet captures
+- Flow data (NetFlow)
+- Firewall logs
+- Proxy logs
+- DNS queries
+- IDS/IPS alerts
+
+### Legal and Compliance Considerations
+
+- Chain of custody maintenance
+- Evidence admissibility standards
+- Privacy and legal privilege
+- Regulatory compliance (GDPR, etc.)
+- E-discovery procedures
+- Expert witness qualifications
+- Documentation standards
+
+## Threat Hunting
+
+Proactive search for threats that evade automated detection:
+
+### Threat Hunting Process
+
+**1. Hypothesis Development**:
+- Intelligence-driven hypotheses
+- Analytics-driven hypotheses
+- Situational awareness hypotheses
+- Crown jewel protection focus
+
+**2. Data Collection**:
+- Identify relevant data sources
+- Query SIEM and data lakes
+- Collect endpoint telemetry
+- Network traffic analysis
+- Threat intelligence integration
+
+**3. Investigation**:
+- Pattern analysis
+- Anomaly identification
+- Indicator validation
+- Scope determination
+- Attack technique mapping (MITRE ATT&CK)
+
+**4. Response**:
+- Incident escalation if threat found
+- New detection rule creation
+- Threat intelligence update
+- Documentation and reporting
+
+### Hunting Techniques
+
+**Known Bad Hunting**:
+- IOC sweeping
+- Threat intelligence matching
+- Signature-based searches
+- Hash matching
+
+**Known Good Hunting**:
+- Baseline deviation detection
+- Whitelist violations
+- Unexpected changes
+
+**Unknown-Unknown Hunting**:
+- Behavioral analysis
+- Statistical anomalies
+- Pattern recognition
+- Machine learning models
+
+### Hunting Tools
+
+- **Endpoint Query Tools**: OSQuery, Velociraptor
+- **Network Analysis**: Zeek, Moloch, Arkime
+- **SIEM Platforms**: Splunk, Elastic, Sentinel
+- **EDR Platforms**: CrowdStrike, SentinelOne, Carbon Black
+- **Custom Scripts**: Python, PowerShell, Jupyter notebooks
+
+## Security Metrics and KPIs
+
+Measuring security operations effectiveness:
+
+### Detection Metrics
+
+- **Mean Time to Detect (MTTD)**: Average time to identify an incident
+- **False Positive Rate**: Percentage of alerts that are false positives
+- **True Positive Rate**: Percentage of real threats detected
+- **Alert Volume**: Number of alerts per day/week/month
+- **Detection Coverage**: Percentage of MITRE ATT&CK techniques covered
+
+### Response Metrics
+
+- **Mean Time to Respond (MTTR)**: Average time from detection to initial response
+- **Mean Time to Contain (MTTC)**: Average time to contain an incident
+- **Mean Time to Recover (MTTR)**: Average time to full recovery
+- **Incident Resolution Rate**: Percentage of incidents resolved within SLA
+- **Escalation Rate**: Percentage of alerts escalated to Tier 2/3
+
+### Operational Metrics
+
+- **Analyst Productivity**: Cases handled per analyst
+- **Tool Utilization**: Percentage of tools actively used
+- **Automation Rate**: Percentage of tasks automated
+- **Team Burnout Indicators**: Overtime, turnover, time to hire
+- **Training Completion**: Certifications and training hours
+
+### Business Metrics
+
+- **Business Impact**: Downtime, revenue loss, data exposure
+- **Breach Prevention**: Number of attacks stopped
+- **Compliance Posture**: Audit findings, regulatory status
+- **Risk Reduction**: Quantified risk decrease
+- **ROI**: Security investment return
+
+## SOC Maturity Model
+
+### Level 1 - Initial
+
+- Reactive operations
+- Manual processes
+- Limited tools
+- Inconsistent practices
+- Ad-hoc response
+
+### Level 2 - Developing
+
+- Basic SIEM implementation
+- Documented procedures
+- Defined roles
+- Initial automation
+- Regular reporting
+
+### Level 3 - Defined
+
+- Comprehensive monitoring
+- Threat intelligence integration
+- Automated workflows
+- Proactive threat hunting
+- Continuous improvement
+
+### Level 4 - Managed
+
+- Advanced analytics
+- Integrated security stack
+- Predictive capabilities
+- Cross-functional collaboration
+- Quantified risk management
+
+### Level 5 - Optimized
+
+- Fully automated operations
+- AI/ML-driven detection
+- Self-healing capabilities
+- Continuous innovation
+- Industry leadership
+
+## Related Resources
+
+- [Cybersecurity](https://security.org.ai/Cybersecurity) - Overall cybersecurity operations and frameworks
+- [IdentityManagement](https://security.org.ai/IdentityManagement) - IAM integration with security operations
+- [RiskAssessment](https://security.org.ai/RiskAssessment) - Risk-based security operations
+- [PhysicalSecurity](https://security.org.ai/PhysicalSecurity) - Physical security convergence
+
+## Industry Certifications
+
+**SOC Analyst Certifications**:
+- GCIH (GIAC Certified Incident Handler)
+- GCIA (GIAC Certified Intrusion Analyst)
+- GCFA (GIAC Certified Forensic Analyst)
+- GCFE (GIAC Certified Forensic Examiner)
+- GREM (GIAC Reverse Engineering Malware)
+
+**Incident Response**:
+- GCIH (GIAC Certified Incident Handler)
+- CISM (Certified Information Security Manager)
+- ECIH (EC-Council Certified Incident Handler)
+
+**Forensics**:
+- EnCE (EnCase Certified Examiner)
+- CCE (Certified Computer Examiner)
+- CHFI (Computer Hacking Forensic Investigator)
+
+## References
+
+- NIST SP 800-61: Computer Security Incident Handling Guide
+- NIST SP 800-86: Guide to Integrating Forensic Techniques
+- SANS Incident Response Process
+- MITRE ATT&CK Framework
+- ISO/IEC 27035: Incident Management
+- Digital Forensics and Incident Response (DFIR) best practices

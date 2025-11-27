@@ -1,0 +1,48 @@
+---
+$context: https://events.org.ai
+$id: https://events.org.ai/{{slug}}
+$type: https://events.org.ai/Event
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Event
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<EventOverview event={event} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Event` |
+| Domain | [events.org.ai](https://events.org.ai) |
+| Parent | [verbs.org.ai](https://verbs.org.ai) |
+
+## Details
+
+<EventDetails event={event} />
+
+## Properties
+
+<EventProperties event={event} />
+
+## Relationships
+
+<EventRelationships event={event} />
+
+## Related
+
+<RelatedEvents event={event} />
+
+## Sources
+
+- <DatabaseLink namespace="events.org.ai" type="{{slug}}" />

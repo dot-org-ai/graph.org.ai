@@ -1,0 +1,412 @@
+---
+$context: https://insurance.org.ai
+$id: https://insurance.org.ai/LifeInsurance
+$type: https://insurance.org.ai/LifeInsurance
+name: Life Insurance
+naicsCode: "52411"
+description: "Life insurance products provide financial protection through death benefits, living benefits, and accumulation of cash value for policyholders and beneficiaries"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Life Insurance products
+  return []
+}
+
+# Life Insurance
+
+Life insurance (NAICS 52411) provides financial protection and wealth accumulation through contracts that pay benefits upon death or specified life events. The industry encompasses individual and group policies, annuities, and various permanent and term life products.
+
+## Overview
+
+Life insurance serves multiple purposes in financial planning:
+- **Death Benefit Protection**: Provides income replacement and financial security for beneficiaries
+- **Estate Planning**: Funds estate taxes, creates liquidity, and ensures wealth transfer
+- **Business Continuity**: Funds buy-sell agreements, key person coverage, and succession planning
+- **Tax-Advantaged Savings**: Cash value accumulation with tax-deferred growth
+- **Retirement Income**: Annuities provide guaranteed lifetime income streams
+
+### Market Statistics
+- U.S. life insurance in force: $21 trillion (2024)
+- Annual premiums: $750 billion
+- Number of policies: 285 million
+- Average policy size: $175,000
+- Life insurance ownership: 52% of U.S. households
+- Industry assets under management: $9.2 trillion
+
+## Types of Life Insurance
+
+### Term Life Insurance
+
+**Temporary protection for specific time periods**
+
+#### Level Term
+- Fixed death benefit and premium for policy term (10, 20, 30 years)
+- Most affordable pure protection
+- Popular for mortgage protection, income replacement
+- No cash value accumulation
+- Convertible to permanent insurance (conversion privilege)
+
+#### Annual Renewable Term (ART)
+- Premiums increase annually based on attained age
+- Guaranteed renewable without medical underwriting
+- Often used for temporary needs or group coverage
+
+#### Return of Premium (ROP) Term
+- Refunds all premiums paid if insured survives term
+- Higher premiums than standard term
+- Tax-free return of premium at term end
+
+**Typical Premium**: $30-50/month for $500K, 30-year term (healthy 35-year-old)
+
+### Whole Life Insurance
+
+**Permanent coverage with guaranteed cash value accumulation**
+
+#### Traditional Whole Life
+- Guaranteed level premiums for life
+- Guaranteed death benefit and cash value
+- Dividends for participating policies (mutual companies)
+- Predictable, conservative growth (3-5% illustrated)
+- Policy loans available against cash value
+
+#### Limited Pay Whole Life
+- Premiums paid for limited period (10, 20 years, or to age 65)
+- Coverage continues for life after premium paying period
+- Higher premiums but faster cash value accumulation
+- Popular for estate planning and wealth transfer
+
+#### Single Premium Whole Life
+- One-time lump sum payment
+- Immediate cash value and death benefit
+- Subject to Modified Endowment Contract (MEC) rules
+- Often used for estate liquidity
+
+**Typical Premium**: $400-600/month for $500K whole life (35-year-old)
+
+### Universal Life Insurance
+
+**Flexible permanent coverage with adjustable premiums and death benefits**
+
+#### Traditional Universal Life
+- Flexible premium payments (within limits)
+- Adjustable death benefit (Option A: level, Option B: increasing)
+- Cash value earns current interest rates (2-4%)
+- Transparency: separated cost of insurance and cash value
+- Risk: Low interest rates can require premium increases
+
+#### Guaranteed Universal Life (GUL)
+- Guaranteed death benefit to specified age (often 90-121)
+- Minimal cash value accumulation
+- Lower premiums than whole life for similar death benefit
+- Popular for estate planning and business insurance
+
+#### Indexed Universal Life (IUL)
+- Cash value linked to equity index performance (S&P 500)
+- Participation rate and caps limit upside (typically 8-12% cap)
+- Floor protection prevents negative returns (0% floor)
+- Higher growth potential than traditional UL
+- Complex products requiring sophisticated illustration
+
+#### Variable Universal Life (VUL)
+- Cash value invested in separate accounts (mutual fund-like)
+- Full market participation and risk
+- Requires securities license to sell
+- Can lose value in market downturns
+- Popular with high-net-worth clients seeking growth
+
+**Typical Premium**: $300-500/month for $500K indexed UL (35-year-old)
+
+### Annuities
+
+**Tax-deferred accumulation and guaranteed lifetime income**
+
+#### Fixed Annuities
+- Guaranteed interest rate for specified period
+- Principal protection with insurance company guarantee
+- Currently paying 3-5% (varies with interest rates)
+- No market risk but inflation risk
+
+#### Variable Annuities
+- Invested in separate accounts with market exposure
+- Optional guaranteed living benefits (GLWBs) and death benefits
+- Higher fees for guarantees (1-3% annually)
+- Tax-deferred growth with ordinary income tax on withdrawals
+
+#### Fixed Indexed Annuities (FIA)
+- Returns linked to index performance with caps and participation rates
+- Principal protection with 0% floor
+- Typical caps: 5-10% annually
+- No market downside risk
+- Complex crediting methods (annual point-to-point, monthly average, etc.)
+
+#### Immediate Annuities (SPIAs)
+- Single premium, immediate income for life or period certain
+- Payout rates based on age, gender, interest rates
+- Irrevocable: cannot access principal
+- Provides longevity insurance
+
+#### Deferred Income Annuities (DIAs) / QLACs
+- Purchase now, income starts in future (often retirement)
+- Qualified Longevity Annuity Contracts (QLACs) exempt from RMDs
+- Lower cost than immediate annuities for same future income
+
+**Typical Payout**: $500-700/month per $100K invested (65-year-old male, SPIA)
+
+## Life Insurance Underwriting
+
+### Medical Underwriting
+
+**Risk Classification Process**
+1. **Application & Medical History**: Detailed health questionnaire
+2. **Paramedical Exam**: Height, weight, blood pressure, pulse, urine sample
+3. **Blood Tests**: Cholesterol, glucose, liver/kidney function, HIV, drugs
+4. **Medical Records**: Attending Physician Statements (APS) for pre-existing conditions
+5. **Specialized Exams**: EKG, stress test, cognitive assessment (large cases)
+
+**Risk Classes**
+- **Preferred Plus**: Best health, non-smoker, excellent build and labs
+- **Preferred**: Good health, non-smoker, normal build and labs
+- **Standard Plus**: Average health, minor conditions well-controlled
+- **Standard**: Average risk, some health issues
+- **Substandard (Table Ratings)**: Higher risk, chronic conditions (Table 2-16, 25-400% of standard)
+- **Declined**: Uninsurable risk
+
+### Simplified & Guaranteed Issue
+
+**Accelerated Underwriting**
+- Algorithm-based approval using data analytics
+- No medical exam for qualifying applicants
+- Prescription drug data, motor vehicle records, credit-based scores
+- Instant decisions for low face amounts ($100K-1M)
+
+**Simplified Issue**
+- Limited health questions, no medical exam
+- Faster approval, slightly higher premiums
+- Face amounts typically $25K-500K
+
+**Guaranteed Issue**
+- No health questions, guaranteed acceptance
+- Graded death benefit (2-3 years for full benefit)
+- Much higher premiums
+- Typically final expense coverage ($5K-25K)
+
+### Mortality Tables & Pricing
+
+**2017 CSO (Commissioners Standard Ordinary) Mortality Table**
+- Regulatory minimum reserve basis
+- Gender-distinct and smoker-distinct
+- Reflects improving longevity trends
+
+**Experience Mortality**
+- Actual company experience used for pricing
+- Accounts for antiselection and underwriting effectiveness
+- Typically 50-70% of CSO mortality for preferred risks
+
+## Life Insurance Products by Market Segment
+
+### Individual Life Insurance
+- Sold to individuals and families
+- Fully underwritten or simplified issue
+- Distribution: career agents, independent agents, direct, online
+- Average face amount: $175,000
+
+### Group Life Insurance
+- Employer-sponsored benefit
+- Guaranteed issue up to certain limits ($50K typical)
+- Lower premiums due to group underwriting
+- Portable and convertible features common
+- Often includes AD&D (Accidental Death & Dismemberment)
+
+### Credit Life Insurance
+- Pays outstanding loan balance upon death
+- Mortgage protection, auto loans, credit cards
+- Simple underwriting, often guaranteed issue
+- Higher loss ratios, regulatory scrutiny on pricing
+
+### Final Expense / Burial Insurance
+- Small face amounts ($5K-25K)
+- Simplified or guaranteed issue underwriting
+- Covers funeral and end-of-life expenses
+- Target market: seniors and low-income households
+
+### Preneed Insurance
+- Sold through funeral homes
+- Funds prepaid funeral arrangements
+- Irrevocable trust or assignment to funeral home
+- State regulations on preneed sales and trusts
+
+## Actuarial & Financial Management
+
+### Statutory Reserves
+
+**Principles-Based Reserving (PBR)**
+- VM-20 for term and universal life reserves
+- Company-specific assumptions and modeling
+- Stochastic modeling for variable products
+- More accurate than formulaic methods
+- Requires significant actuarial resources
+
+**Asset Adequacy Analysis**
+- Cash flow testing under multiple scenarios
+- Interest rate, mortality, lapse, and expense assumptions
+- Required annual certification by qualified actuary
+
+### Investment Portfolio
+
+**Asset-Liability Management (ALM)**
+- Duration matching for long-term liabilities
+- Investment grade bonds (80-90% of portfolio)
+- Commercial mortgages, real estate, private equity
+- Regulatory restrictions on risky investments (NAIC RBC)
+
+**Investment Yield**
+- Target: 4-6% long-term portfolio yield
+- Spreads over credited rates fund expenses and profit
+- Low interest rate environment challenges profitability
+
+### Profitability Metrics
+
+**Embedded Value (EV)**
+- Present value of future profits from in-force business
+- Key metric for life insurance valuation
+- Components: net worth + present value of future profits (PVFP)
+
+**Internal Rate of Return (IRR)**
+- Profit margin on new business
+- Target: 12-15% IRR on statutory capital
+- Strain from new business acquisition costs
+
+## Regulatory Framework
+
+### State Regulation
+
+**NAIC Model Laws**
+- **Standard Nonforfeiture Law**: Guaranteed cash values
+- **Unfair Trade Practices Act**: Prohibits twisting, rebating, misrepresentation
+- **Illustration Regulation**: Standardized policy illustrations
+- **Accelerated Benefits Model Regulation**: Living benefits for terminal illness
+
+**Reserve Requirements**
+- Valuation Actuary opinion and memorandum
+- Asset adequacy analysis
+- Principles-Based Reserving (VM-20)
+
+### Federal Regulation
+
+**Internal Revenue Code**
+- Section 7702: Definition of life insurance (corridor test, guideline premium test)
+- Modified Endowment Contract (MEC): 7-pay test limits premium funding
+- Tax treatment of death benefits (IRC 101), cash value (IRC 72), policy loans
+
+**Securities Regulation (Variable Products)**
+- SEC registration for variable life and annuities
+- Prospectus delivery requirements
+- FINRA oversight of variable product sales
+- Series 6 or 7 license required to sell
+
+## Distribution Channels
+
+### Career Agency System
+- **Captive agents** representing single company
+- Training, financing, and support from insurer
+- Examples: Northwestern Mutual, New York Life, MassMutual
+- High-touch, relationship-based selling
+
+### Independent Distribution
+- **Independent agents** representing multiple carriers
+- Broker-dealer platforms for variable products
+- IMOs (Independent Marketing Organizations) provide support
+- Commission-based compensation
+
+### Direct & Online Distribution
+- No agent, consumer-initiated
+- Lower acquisition costs, competitive pricing
+- Examples: Term4Sale, SelectQuote, Fabric (online)
+- Limited advice and suitability review
+
+### Worksite / Employer Distribution
+- Voluntary group benefits sold at workplace
+- Guaranteed issue or simplified underwriting
+- Payroll deduction for convenience
+- Lower face amounts, supplemental coverage
+
+### Banks & Financial Institutions
+- Cross-sell to banking customers
+- Annuities and permanent life products
+- Requires insurance license and securities license (variable)
+
+## Taxation of Life Insurance
+
+### Death Benefits
+- Generally income tax-free to beneficiaries (IRC 101(a))
+- Estate taxes apply if insured owns policy
+- Irrevocable Life Insurance Trust (ILIT) removes from estate
+
+### Cash Value Growth
+- Tax-deferred accumulation inside policy
+- No annual taxation on increases in cash value
+- Earnings taxed upon surrender (FIFO: premiums first, then gains)
+
+### Policy Loans
+- Tax-free access to cash value
+- Interest charged on loan (variable or fixed)
+- Loan repayment optional but reduces death benefit
+- MEC loans and withdrawals taxed as ordinary income
+
+### Modified Endowment Contract (MEC)
+- Policy fails 7-pay test (excessive premium funding)
+- Loans and withdrawals taxed as earnings-first (LIFO)
+- 10% penalty on distributions before age 59½
+- Death benefit still income tax-free
+
+### Corporate-Owned Life Insurance (COLI)
+- Business owns policy on employees
+- Notice and consent requirements
+- Death benefit taxable except for key persons and certain arrangements
+
+## Life Insurance Trends & Innovation
+
+### Accelerated Underwriting & Instant Issue
+- Predictive models replace paramedical exams
+- Data sources: prescription history, MVR, credit, wearables
+- Approval in minutes for qualified applicants
+- Expanding to larger face amounts ($1M+)
+
+### Living Benefits
+- Accelerated death benefit for chronic, critical, terminal illness
+- Pays portion of death benefit while living
+- Becoming standard feature on new policies
+- Riders for long-term care and critical illness
+
+### Wellness Programs & Wearables
+- Premium discounts for healthy behaviors
+- Fitness tracking (Fitbit, Apple Watch integration)
+- Examples: John Hancock Vitality program
+- Ongoing engagement and loyalty
+
+### Longevity Risk Management
+- Increasing life expectancy impacts pricing
+- Reinsurance for longevity risk (annuities)
+- Securitization of longevity risk
+
+### ESG & Impact Investing
+- Sustainable investing of life insurance assets
+- Green bonds, social impact investments
+- Transparency and reporting on ESG commitments
+
+## Related Topics
+
+- [HealthInsurance](./HealthInsurance.mdx) - Group life often bundled with health
+- [Reinsurance](./Reinsurance.mdx) - Life reinsurance for mortality risk transfer
+- [InsurTech](./InsurTech.mdx) - Digital distribution and automated underwriting
+- [finance.org.ai](https://finance.org.ai) - Financial services and wealth management
+- [estate-planning.org.ai](https://estate-planning.org.ai) - Estate planning and wealth transfer
+
+## Sources
+
+- Society of Actuaries (SOA) - [https://www.soa.org](https://www.soa.org)
+- LIMRA (Life Insurance Marketing and Research Association) - [https://www.limra.com](https://www.limra.com)
+- American Council of Life Insurers (ACLI) - [https://www.acli.com](https://www.acli.com)
+- NAIC Life and Health Actuarial Task Force - [https://www.naic.org](https://www.naic.org)
+- IRS Publication 525 (Taxable and Nontaxable Income)
+- IRS Publication 571 (Tax-Sheltered Annuity Plans)

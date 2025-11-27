@@ -1,0 +1,564 @@
+---
+$context: https://transport.org.ai
+$id: https://transport.org.ai/RideHailing
+$type: https://transport.org.ai/Transport
+name: "Ride Hailing"
+description: "On-demand transportation platforms including rideshare, taxi, and mobility networks"
+naics: "4853"
+naicsDescription: "Taxi and Limousine Service"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for RideHailing platforms
+  return []
+}
+
+# Ride Hailing
+
+Ride hailing represents the digital transformation of personal transportation, combining smartphone technology, GPS, and marketplace dynamics to connect passengers with drivers on-demand. This sector has fundamentally reshaped urban mobility since Uber's launch in 2009.
+
+## Overview
+
+Ride hailing services, classified under **NAICS 4853 (Taxi and Limousine Service)**, use mobile applications to match riders with drivers using their personal vehicles. The sector encompasses both Transportation Network Companies (TNCs) and traditional taxi/limousine services that have adopted digital platforms.
+
+### Service Categories
+
+**Transportation Network Companies (TNCs):**
+- **Rideshare**: UberX, Lyft, shared rides with private drivers
+- **Premium**: Uber Black, Lyft Lux, professional drivers and luxury vehicles
+- **Shared/Pool**: UberPool, Lyft Line, multiple passengers sharing routes
+- **Wheelchair Accessible**: WAV (Wheelchair Accessible Vehicle) services
+
+**Traditional Services:**
+- **Taxi**: Regulated taxi services with digital dispatch
+- **Limousine/Black Car**: Professional chauffeur services
+- **Airport Shuttle**: Shared ride services to/from airports
+
+**Specialized Services:**
+- **Medical Transport**: Non-emergency medical rides
+- **Courier/Delivery**: Same-day delivery services
+- **Corporate Transportation**: Business travel programs
+
+## Major Platforms
+
+### United States Market
+
+**Uber Technologies:**
+- Founded: 2009 (as UberCab)
+- Market Position: Global leader with 74% U.S. market share
+- Services: UberX, Uber Comfort, Uber Black, UberXL, Uber Pool
+- Coverage: 10,000+ cities in 70+ countries
+- Annual Trips: 7+ billion globally
+- Platform Model: Two-sided marketplace connecting drivers and riders
+
+**Key Features:**
+- Dynamic pricing (surge pricing during high demand)
+- Upfront pricing with route optimization
+- Rating system (5-star for both riders and drivers)
+- Cashless payment integration
+- In-app safety features (share trip, emergency button)
+- Trip insurance coverage
+- Driver background checks
+
+**Lyft:**
+- Founded: 2012 (as Zimride pivot)
+- Market Position: #2 in U.S. with ~26% market share
+- Services: Lyft, Lyft XL, Lyft Lux, Lyft Black, Lyft Line
+- Coverage: 600+ cities in U.S. and Canada
+- Annual Trips: 600+ million
+- Brand Focus: "Friendly" community-oriented service
+
+**Differentiators:**
+- Pink mustache branding (original)
+- U.S./Canada focus (vs. Uber's global expansion)
+- In-app tipping (launched before Uber)
+- Round Up & Donate program
+- Carbon neutral rides commitment
+
+### International Markets
+
+**Didi Chuxing (China):**
+- Market Position: Dominant in China (90%+ market share)
+- Services: DiDi Express, Premier, Luxe, Hitch (carpooling)
+- Daily Trips: 25+ million
+- International: Operations in Latin America, Australia, Japan
+- History: Merged with Uber China in 2016
+
+**Grab (Southeast Asia):**
+- Founded: 2012 (as MyTeksi)
+- Coverage: 8 countries in Southeast Asia
+- Acquisition: Acquired Uber's Southeast Asia operations (2018)
+- Super App: Expanded to food delivery (GrabFood), payments (GrabPay)
+- Services: GrabCar, GrabBike (motorcycles), GrabShare
+
+**Bolt (formerly Taxify):**
+- Founded: 2013 (Estonia)
+- Coverage: 45+ countries in Europe, Africa, Latin America
+- Positioning: Lower commission rates (15% vs. 25%+ for Uber/Lyft)
+- Services: Bolt, Bolt XL, Bolt Business
+- Expansion: Food delivery, scooters, car sharing
+
+**Ola (India):**
+- Founded: 2010
+- Market Position: Leading in India
+- Services: Auto-rickshaws, bikes, economy to premium cars
+- Daily Trips: 1+ million
+- International: UK, Australia, New Zealand
+
+**Regional Players:**
+- **Curb**: U.S. taxi dispatch network
+- **Via**: Shared rides and transit partnerships (U.S., Europe)
+- **Yandex Taxi**: Russia and CIS countries
+- **Careem**: Middle East (acquired by Uber 2019)
+- **Gojek**: Indonesia super app
+
+## Business Model
+
+### Platform Economics
+
+**Marketplace Dynamics:**
+- Two-sided network effects
+- Dynamic matching algorithm
+- Supply-demand balancing through pricing
+- Driver incentives and promotions
+- Rider acquisition and retention
+
+**Revenue Model:**
+- Commission on each ride (15-30% typical)
+- Service fees and booking fees
+- Subscription programs (Uber One, Lyft Pink)
+- Advertising and partnerships
+- Data and insights products
+
+**Unit Economics:**
+- Gross bookings (total fare value)
+- Take rate (platform's percentage)
+- Contribution margin per ride
+- Customer acquisition cost (CAC)
+- Lifetime value (LTV)
+- EBITDA margins
+
+### Pricing Strategy
+
+**Dynamic Pricing (Surge):**
+- Real-time supply-demand adjustment
+- Multipliers during high-demand periods
+- Heat maps showing surge zones
+- Predictive modeling for demand forecasting
+- Rider notifications and alternatives
+
+**Upfront Pricing:**
+- Fixed price quoted before ride
+- Based on historical trip data and current conditions
+- No surprises from route changes
+- Platform absorbs variance risk
+- Driver paid based on time and distance
+
+**Pricing Factors:**
+- Base fare + per-mile + per-minute rates
+- Local market rates
+- Vehicle type (economy, premium, XL)
+- Time of day and day of week
+- Traffic conditions
+- Airport fees and tolls
+- Service fees and booking fees
+
+### Driver Partnership Model
+
+**Independent Contractor Status:**
+- Flexibility to choose when/where to drive
+- Minimal requirements to start (vehicle, license, insurance)
+- No guaranteed hours or income
+- Responsible for vehicle expenses
+- Tax implications (1099 vs. W-2 employees)
+
+**Ongoing Legal Debate:**
+- California AB5 and Prop 22
+- European regulatory challenges
+- UK Supreme Court ruling (workers vs. contractors)
+- State and local legislation
+- Portable benefits proposals
+
+**Driver Economics:**
+- Average earnings: $15-25/hour before expenses
+- Vehicle costs (gas, maintenance, depreciation): $5-10/hour
+- Peak hour bonuses and incentives
+- Quest challenges (complete X rides, earn $Y)
+- Consecutive ride bonuses
+- Referral bonuses
+
+## Technology Platform
+
+### Mobile Applications
+
+**Rider App Features:**
+- GPS-based pickup location
+- Destination entry with address autocomplete
+- Real-time driver tracking
+- ETA predictions
+- Multiple payment methods
+- Split fare capability
+- Ride scheduling (advanced booking)
+- Safety features (share trip, emergency)
+- Ratings and feedback
+
+**Driver App Features:**
+- Trip requests and acceptance
+- Navigation and routing
+- Earnings tracking
+- Heat maps (demand indicators)
+- Destination filters
+- Trip preferences
+- In-app messaging with riders
+- Performance metrics
+
+### Backend Systems
+
+**Matching Algorithm:**
+- Real-time location tracking (GPS)
+- Proximity-based matching
+- ETA calculations
+- Route optimization
+- Batch matching for pooled rides
+- Machine learning for demand prediction
+
+**Mapping and Routing:**
+- Integration with mapping providers (Google Maps, Mapbox)
+- Proprietary map data
+- Traffic-aware routing
+- Historical trip data
+- Real-time conditions
+- Alternative route suggestions
+
+**Payments Processing:**
+- Secure payment tokenization
+- Multiple payment methods (credit/debit, digital wallets, cash)
+- Automatic fare calculation
+- Instant driver payouts
+- Fraud detection
+- Refund processing
+
+### Safety Technology
+
+**Pre-Trip Safety:**
+- Driver background checks (criminal, driving record)
+- Vehicle inspection requirements
+- Insurance verification
+- Driver photo verification
+- Real-time identity verification
+
+**In-Trip Safety:**
+- Two-way ratings system
+- Share trip status with contacts
+- Emergency button (911 integration)
+- GPS trip tracking
+- Trip verification (PIN codes)
+- Audio recording (opt-in in some markets)
+- RideCheck (detects unusual stops)
+
+**Post-Trip Safety:**
+- 24/7 incident response teams
+- In-app reporting
+- Insurance coverage
+- Safety education
+- Community guidelines enforcement
+- Deactivation of problematic users
+
+## Regulatory Landscape
+
+### Transportation Network Company (TNC) Regulations
+
+**State and Local Requirements:**
+- **Insurance**: $1M+ liability coverage during active trips
+- **Background Checks**: Criminal and driving record checks
+- **Vehicle Standards**: Age limits, inspections
+- **Driver Requirements**: Age, license, clean driving record
+- **Airport Access**: Special permits and fees
+- **Accessibility**: Wheelchair accessible vehicle (WAV) requirements
+
+**Major Regulatory Issues:**
+- Driver classification (employee vs. contractor)
+- Local taxi medallion systems disruption
+- Airport and venue access fees
+- Congestion pricing and fees
+- Data sharing with cities
+- Safety and insurance requirements
+
+### Market-Specific Regulations
+
+**London:**
+- Transport for London (TfL) licensing
+- Fit and proper test for operators
+- English language requirements
+- Driver knowledge tests
+- Insurance requirements
+
+**New York City:**
+- TLC (Taxi and Limousine Commission) oversight
+- Driver cruising cap
+- Minimum wage for drivers
+- Wheelchair accessible vehicle mandates
+- Congestion surcharges
+
+**California Prop 22 (2020):**
+- App-based drivers remain independent contractors
+- Earnings guarantee (120% minimum wage for engaged time)
+- Healthcare subsidies
+- Occupational accident insurance
+- Ongoing legal challenges
+
+## Market Dynamics
+
+### Competitive Landscape
+
+**Competition Factors:**
+- Driver supply and availability
+- Wait times and reliability
+- Pricing and promotions
+- Service quality and vehicle condition
+- App experience and features
+- Brand perception and trust
+- Geographic coverage
+
+**Competitive Strategies:**
+- Aggressive driver incentives
+- Rider promotions and discounts
+- Exclusive partnerships (airports, events)
+- Premium service offerings
+- Adjacent services (food delivery, freight)
+- Corporate and business travel programs
+
+### Multi-Homing
+
+**Driver Multi-Apping:**
+- Drivers use multiple platforms simultaneously
+- Switch between apps based on demand
+- Optimize earnings across platforms
+- Low switching costs
+
+**Rider Platform Switching:**
+- Price comparison between apps
+- Availability and wait times
+- Loyalty programs and credits
+- Service quality preferences
+
+### Market Consolidation
+
+**Major Acquisitions:**
+- Uber acquires Careem ($3.1B, 2019)
+- Grab acquires Uber Southeast Asia (2018)
+- Didi acquires Uber China (2016)
+- Lyft acquires Motivate bike share (2018)
+
+**Failed Expansions:**
+- Uber exits China, Russia, Southeast Asia
+- Focus on profitable markets
+- Regional specialists succeed over global players
+
+## Industry Metrics
+
+### Key Performance Indicators
+
+**Platform Metrics:**
+- Gross Bookings: Total transaction value
+- Active Riders: Monthly or quarterly active users
+- Trips: Number of completed rides
+- Take Rate: Revenue as % of gross bookings
+- Contribution Margin: Profit per ride after variable costs
+
+**Operational Metrics:**
+- Wait Time: Time from request to pickup
+- Acceptance Rate: % of trip requests accepted
+- Cancellation Rate: % of trips cancelled
+- Driver Utilization: % of time with passenger
+- Service Level: % of requests matched within target time
+
+**Growth Metrics:**
+- Rider retention and cohort analysis
+- Driver retention
+- Market share by city
+- Geographic expansion
+- Revenue growth rate
+
+## Safety and Trust
+
+### Incidents and Response
+
+**Safety Challenges:**
+- Driver-rider conflicts
+- Sexual assault and harassment
+- Fraudulent drivers
+- Account hijacking
+- Passenger safety concerns
+
+**Platform Responses:**
+- Enhanced background checks
+- Continuous driving record monitoring
+- Deactivation policies
+- Safety education and training
+- Emergency response teams
+- Partnerships with law enforcement
+
+**Transparency Reports:**
+- Annual safety reports (Uber, Lyft)
+- Incident statistics
+- Enforcement actions
+- Safety feature usage
+- Industry benchmarking
+
+### Insurance Coverage
+
+**Coverage Phases:**
+- **Phase 0**: Driver offline, personal insurance applies
+- **Phase 1**: Driver online, awaiting request ($50K-$100K liability)
+- **Phase 2**: Driver en route to pickup ($1M+ liability)
+- **Phase 3**: Passenger in vehicle ($1M+ liability)
+
+**Additional Coverage:**
+- Uninsured/underinsured motorist
+- Collision and comprehensive (when passenger in vehicle)
+- Occupational accident insurance for drivers
+- Third-party liability
+
+## Future Trends
+
+### Autonomous Vehicles
+
+**Current Pilots:**
+- Waymo One (Phoenix, San Francisco)
+- Cruise (San Francisco, limited)
+- Zoox (testing in California)
+- Uber ATG (sold to Aurora, partnerships)
+
+**Implications:**
+- Dramatic cost reduction (no driver)
+- 24/7 availability
+- Improved safety potential
+- Regulatory challenges
+- Labor displacement concerns
+- Timeline: Limited deployment by 2025-2030
+
+### Electric Vehicles
+
+**EV Adoption Initiatives:**
+- Driver incentives for EV purchases
+- Charging infrastructure partnerships
+- Green/eco ride options with price premium
+- Fleet partnerships with automakers
+- Emissions reduction commitments
+
+**Benefits:**
+- Lower operating costs (fuel, maintenance)
+- Reduced emissions
+- Quieter rides
+- Enhanced brand image
+- Regulatory compliance
+
+### Multimodal Integration
+
+**Mobility as a Service (MaaS):**
+- Integration with public transit
+- Bike and scooter sharing
+- Car rental options
+- Flight and hotel booking
+- Single app for all transportation
+
+**Transit Partnerships:**
+- First/last mile solutions
+- Paratransit services
+- Late-night transit replacements
+- Suburban connectivity
+- Integrated fare payment
+
+### Subscription Models
+
+**Ride Pass Programs:**
+- Uber Ride Pass: Discounted rides for monthly fee
+- Lyft Pink: Benefits including discounts and priority pickup
+- Business subscriptions for commuters
+- Corporate transportation benefits
+
+**Benefits:**
+- Predictable revenue
+- Increased rider loyalty
+- Higher trip frequency
+- Cross-selling opportunities
+
+## Social and Economic Impact
+
+### Labor Market Effects
+
+**Employment Opportunities:**
+- Flexible earning opportunities
+- Supplemental income
+- Entry point for gig economy
+- Bridge employment during job transitions
+
+**Labor Concerns:**
+- Income volatility and unpredictability
+- Lack of traditional employment benefits
+- Vehicle wear and maintenance costs
+- Occupational health and safety
+- Organizing and collective bargaining challenges
+
+### Urban Transportation Impact
+
+**Positive Effects:**
+- Reduced drunk driving incidents
+- Improved mobility for underserved areas
+- Reduced parking demand
+- Complementary to public transit
+- Economic development in neighborhoods
+
+**Negative Effects:**
+- Increased vehicle miles traveled (VMT)
+- Traffic congestion in urban cores
+- Competition with public transit
+- Double parking and drop-off zones
+- Environmental impact (emissions)
+
+### Equity and Accessibility
+
+**Service Availability:**
+- Coverage disparities by neighborhood
+- Surge pricing in emergencies
+- Cash payment limitations
+- Language and literacy barriers
+- Smartphone and app requirements
+
+**Accessibility Challenges:**
+- Limited wheelchair accessible vehicles
+- Service animal accommodation
+- Driver training on disability needs
+- Pricing for WAV services
+- Regulatory mandates vs. market provision
+
+## Related Resources
+
+### Cross-References
+
+- [naics.org.ai/4853](https://naics.org.ai/4853): NAICS classification details
+- [vehicles.org.ai](https://vehicles.org.ai): Vehicle types and specifications
+- [technology.org.ai/Platforms](https://technology.org.ai/Platforms): Marketplace platform technology
+- [business.org.ai/GigEconomy](https://business.org.ai/GigEconomy): Gig economy business models
+
+### Industry Organizations
+
+- **Shared-Use Mobility Center**: Nonprofit research and policy organization
+- **State TNC Associations**: Various state-level advocacy groups
+- **National Association of City Transportation Officials (NACTO)**: Urban transportation policy
+
+### Data Sources
+
+- Company financial reports and investor relations (Uber, Lyft public filings)
+- Bureau of Transportation Statistics
+- Municipal transportation data (via data sharing agreements)
+- Academic research (transportation, urban planning, economics)
+
+## Sources
+
+- Uber and Lyft financial reports and 10-K filings
+- NAICS Code 4853 - Taxi and Limousine Service
+- State and local TNC regulations
+- Transportation Research Board studies
+- Academic research on ride-hailing impacts

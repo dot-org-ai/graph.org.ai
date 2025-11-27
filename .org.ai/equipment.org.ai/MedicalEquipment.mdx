@@ -1,0 +1,603 @@
+---
+$context: https://equipment.org.ai
+$id: https://equipment.org.ai/MedicalEquipment
+$type: https://equipment.org.ai/Equipment
+name: "Medical Equipment"
+description: "Medical devices and equipment for diagnostic, therapeutic, and surgical applications classified under NAICS 33911"
+naicsCode: "33911"
+naicsTitle: "Medical Equipment and Supplies Manufacturing"
+industry: "Healthcare"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Medical Equipment
+  return []
+}
+
+# Medical Equipment
+
+Medical equipment encompasses the devices, instruments, and systems used in healthcare for diagnosis, monitoring, treatment, and surgical procedures. This category is classified under NAICS 33911 (Medical Equipment and Supplies Manufacturing) and represents one of the most highly regulated and technologically advanced equipment sectors.
+
+## Overview
+
+Medical equipment ranges from simple diagnostic tools to complex imaging systems and surgical robots. These devices must meet stringent safety and efficacy standards established by regulatory bodies including the FDA (U.S.), CE (Europe), and similar agencies worldwide. The sector is characterized by rapid innovation, strict quality control, and critical impact on patient outcomes.
+
+### Major Equipment Categories
+
+#### Diagnostic Imaging Equipment
+
+Advanced visualization systems for medical diagnosis:
+
+- **X-Ray Systems**
+  - Conventional radiography: General purpose imaging
+  - Digital radiography (DR): Direct digital capture
+  - Computed radiography (CR): Phosphor plate technology
+  - Fluoroscopy: Real-time x-ray imaging
+  - C-arms: Mobile surgical imaging
+  - Power: 20-150 kVp typical
+  - Detector sizes: 14"x17", 17"x17" standard
+  - Manufacturers: GE Healthcare, Siemens Healthineers, Philips
+
+- **Computed Tomography (CT)**
+  - Multi-slice CT: 16, 64, 128, 256+ slices
+  - Cone-beam CT: Dental and orthopedic
+  - Dual-energy CT: Material differentiation
+  - Cardiac CT: ECG-gated imaging
+  - Rotation times: 0.25-0.5 seconds
+  - Gantry aperture: 70-90 cm
+  - Brands: GE, Siemens, Canon, Philips
+
+- **Magnetic Resonance Imaging (MRI)**
+  - Field strengths: 0.2T (open), 1.5T, 3T, 7T (research)
+  - Superconducting magnets (liquid helium cooled)
+  - Gradient systems: 30-80 mT/m amplitude
+  - Bore sizes: 60-70 cm standard, 70 cm wide-bore
+  - Applications: Neurological, musculoskeletal, cardiac
+  - Advanced techniques: fMRI, diffusion, spectroscopy
+  - Manufacturers: Siemens, GE, Philips, Canon
+
+- **Ultrasound Systems**
+  - Cart-based systems: Hospital and clinic use
+  - Portable systems: Point-of-care, emergency
+  - Handheld devices: Pocket ultrasound
+  - Frequency ranges: 2-18 MHz typical
+  - 2D, 3D/4D imaging capabilities
+  - Doppler: Color, power, spectral
+  - Applications: OB/GYN, cardiology, vascular, general
+  - Brands: GE, Philips, Siemens, Fujifilm, Samsung
+
+- **Nuclear Medicine**
+  - PET (Positron Emission Tomography)
+  - SPECT (Single Photon Emission CT)
+  - PET/CT and SPECT/CT fusion systems
+  - Gamma cameras for planar imaging
+  - Radiopharmaceutical tracers (FDG, etc.)
+  - Applications: Oncology, cardiology, neurology
+
+- **Mammography**
+  - Full-field digital mammography (FFDM)
+  - Digital breast tomosynthesis (3D mammography)
+  - Breast MRI and ultrasound
+  - Breast biopsy systems
+  - CAD (Computer-Aided Detection)
+
+#### Patient Monitoring Equipment
+
+Continuous and intermittent physiological monitoring:
+
+- **Vital Signs Monitors**
+  - Multi-parameter monitors: ICU/operating room
+  - Bedside monitors: General floor, step-down units
+  - Transport monitors: Portable, battery-powered
+  - Telemetry monitors: Wireless patient monitoring
+  - Parameters: ECG, SpO2, NIBP, temperature, respiration
+  - Brands: Philips, GE, Nihon Kohden, Mindray, Welch Allyn
+
+- **Cardiac Monitoring**
+  - 12/15/18-lead ECG machines
+  - Holter monitors: 24-48 hour ambulatory
+  - Event recorders: Patient-activated
+  - Implantable loop recorders
+  - Defibrillators/AEDs: Manual and automated
+  - Cardiac output monitors: Invasive and non-invasive
+
+- **Respiratory Monitoring**
+  - Pulse oximeters: Tabletop and handheld
+  - Capnography: End-tidal CO2 monitoring
+  - Spirometers: Pulmonary function testing
+  - Sleep apnea monitors: Polysomnography
+  - Transcutaneous monitors: O2 and CO2
+
+- **Hemodynamic Monitoring**
+  - Arterial line monitoring systems
+  - Central venous pressure (CVP)
+  - Pulmonary artery catheters
+  - Cardiac output measurement
+  - Intracranial pressure (ICP) monitors
+
+#### Therapeutic Equipment
+
+Treatment and intervention devices:
+
+- **Ventilators and Respiratory Support**
+  - ICU ventilators: Volume and pressure modes
+  - Transport ventilators: Portable, battery-powered
+  - Non-invasive ventilation: BiPAP, CPAP
+  - High-flow nasal cannula (HFNC)
+  - Anesthesia machines: Integrated ventilation
+  - Tidal volumes: 50 mL to 2000+ mL
+  - Pressure range: 0-100 cmH2O
+  - Brands: Medtronic, Dräger, GE, Philips, Vyaire
+
+- **Infusion Pumps**
+  - Large volume pumps: IV fluids, 0.1-1200 mL/hr
+  - Syringe pumps: Precise medication delivery
+  - PCA (Patient-Controlled Analgesia) pumps
+  - Ambulatory pumps: Portable chemotherapy
+  - Smart pumps: Drug libraries, dose error reduction
+  - Manufacturers: BD, Baxter, B. Braun, ICU Medical
+
+- **Dialysis Equipment**
+  - Hemodialysis machines: Acute and chronic treatment
+  - Peritoneal dialysis cyclers: Home treatment
+  - Continuous renal replacement therapy (CRRT)
+  - Water treatment systems: RO, deionization
+  - Blood flow rates: 200-450 mL/min
+  - Dialysate flow: 300-800 mL/min
+  - Brands: Fresenius, Baxter, B. Braun, NxStage
+
+- **Radiation Therapy**
+  - Linear accelerators (LINAC): External beam radiation
+  - Brachytherapy: Internal radiation sources
+  - Gamma Knife: Stereotactic radiosurgery
+  - CyberKnife: Robotic radiosurgery
+  - Proton therapy: Particle beam treatment
+  - Image-guided radiation therapy (IGRT)
+  - Manufacturers: Varian, Elekta, Accuray
+
+- **Electrosurgical Units**
+  - Monopolar and bipolar modes
+  - Cutting and coagulation waveforms
+  - Power output: 0-400 watts
+  - Argon beam coagulation
+  - Ultrasonic and advanced bipolar devices
+  - Smoke evacuation systems
+
+#### Surgical Equipment
+
+Operating room instrumentation and systems:
+
+- **Surgical Tables and Lights**
+  - Operating tables: Electric, hydraulic, manual
+  - Table capacity: 500-1000 lbs
+  - Positioning: Trendelenburg, reverse Trendelenburg, lateral tilt
+  - Surgical lights: LED, intensity 60,000-160,000+ lux
+  - Shadowless design, sterilizable handles
+  - Brands: Stryker, Steris, Getinge, Skytron
+
+- **Surgical Lasers**
+  - CO2 lasers: Soft tissue surgery
+  - Nd:YAG lasers: Deep tissue penetration
+  - Excimer lasers: Ophthalmic (LASIK)
+  - Diode lasers: Vascular and cosmetic
+  - Holmium lasers: Urology (kidney stones)
+  - Power range: 1-100+ watts
+  - Applications: ENT, ophthalmology, dermatology, urology
+
+- **Endoscopy Equipment**
+  - Flexible endoscopes: GI, bronchoscopy
+  - Rigid endoscopes: Laparoscopy, arthroscopy
+  - Video processors and light sources
+  - Insufflators: CO2 delivery for laparoscopy
+  - Documentation and recording systems
+  - Reprocessing and sterilization
+  - Manufacturers: Olympus, Stryker, Karl Storz, Pentax
+
+- **Surgical Robots**
+  - Da Vinci Surgical System: Multi-arm teleoperation
+  - Robotic-assisted joint replacement (Mako, ROSA)
+  - Spine surgery robots (Mazor X, ExcelsiusGPS)
+  - Neurosurgical navigation
+  - Console, patient cart, vision systems
+  - Wristed instruments with 7 degrees of freedom
+  - Applications: Urology, gynecology, general surgery, cardiac
+
+- **Surgical Microscopes**
+  - Operating microscopes: Neurosurgery, ENT, ophthalmology
+  - Magnification: 4x to 40x
+  - Motorized focus and zoom
+  - Digital imaging and recording
+  - Fluorescence modes (5-ALA, ICG)
+  - Brands: Zeiss, Leica, Haag-Streit
+
+#### Laboratory Equipment
+
+Diagnostic and analytical instrumentation:
+
+- **Clinical Chemistry Analyzers**
+  - Automated chemistry analyzers
+  - Throughput: 100-10,000+ tests per hour
+  - Chemistry panels: Metabolic, lipid, liver, renal
+  - Immunoassay analyzers: Hormones, tumor markers
+  - Integration with laboratory information systems (LIS)
+  - Brands: Roche, Abbott, Siemens, Beckman Coulter
+
+- **Hematology Analyzers**
+  - Complete blood count (CBC) instruments
+  - 3-part, 5-part, and 6-part differential
+  - Throughput: 60-120 samples per hour
+  - Reticulocyte and platelet counting
+  - Coagulation analyzers: PT, PTT, INR
+  - Manufacturers: Sysmex, Beckman Coulter, Abbott
+
+- **Microbiology Equipment**
+  - Automated culture systems
+  - Blood culture instruments
+  - Susceptibility testing (AST)
+  - MALDI-TOF mass spectrometry (organism ID)
+  - PCR and molecular diagnostic systems
+
+- **Blood Bank Equipment**
+  - Blood typing and crossmatching
+  - Centrifuges: Benchtop and large capacity
+  - Plasma thawers and freezers
+  - Blood warmers and infusion systems
+  - Irradiators: Prevent transfusion GVHD
+
+- **Point-of-Care Testing**
+  - Blood glucose meters
+  - Portable blood gas analyzers
+  - Rapid antigen and antibody tests
+  - Coagulation monitors (INR)
+  - Cardiac biomarkers (troponin, BNP)
+
+#### Rehabilitation Equipment
+
+Therapeutic and assistive devices:
+
+- **Physical Therapy Equipment**
+  - Treadmills with body weight support
+  - Continuous passive motion (CPM) machines
+  - Therapeutic exercise equipment
+  - Electrotherapy: TENS, NMES, ultrasound
+  - Hot and cold therapy units
+  - Hydrotherapy pools and tanks
+
+- **Mobility Aids**
+  - Wheelchairs: Manual and powered
+  - Walkers and rollators
+  - Crutches and canes
+  - Patient lifts and transfer systems
+  - Stairlifts and platform lifts
+
+- **Prosthetics and Orthotics**
+  - Prosthetic limbs: Myoelectric and body-powered
+  - Custom orthotic devices
+  - Braces and supports
+  - 3D-printed custom devices
+  - Computerized gait analysis
+
+## Technical Specifications and Standards
+
+### Regulatory Compliance
+
+Medical equipment must meet strict regulatory requirements:
+
+- **FDA Classification (United States)**
+  - Class I: Low risk, general controls (tongue depressors)
+  - Class II: Moderate risk, special controls (infusion pumps, surgical drapes)
+  - Class III: High risk, premarket approval required (pacemakers, heart valves)
+  - 510(k) clearance for substantial equivalence
+  - PMA (Premarket Approval) for new devices
+
+- **CE Marking (European Union)**
+  - Medical Device Regulation (MDR 2017/745)
+  - Classes I, IIa, IIb, III based on risk
+  - Notified body certification
+  - Technical documentation and clinical evaluation
+
+- **ISO Standards**
+  - ISO 13485: Quality management for medical devices
+  - ISO 14971: Risk management
+  - IEC 60601: Electrical safety and performance
+  - ISO 10993: Biocompatibility testing
+
+### Quality and Safety Systems
+
+Rigorous quality control and safety measures:
+
+- **Design Controls**: Requirements, verification, validation
+- **Process Validation**: IQ, OQ, PQ protocols
+- **Sterilization**: Steam, EtO, radiation, hydrogen peroxide
+- **Biocompatibility**: Cytotoxicity, sensitization, irritation testing
+- **Electrical Safety**: Leakage current, grounding, isolation
+- **Electromagnetic Compatibility (EMC)**: Immunity and emissions testing
+
+### Cybersecurity
+
+Connected medical device security:
+
+- FDA premarket and postmarket cybersecurity guidance
+- Software bill of materials (SBOM)
+- Vulnerability management and patching
+- Network segmentation and access control
+- Encryption of data in transit and at rest
+- Device authentication and authorization
+
+## Clinical Applications
+
+### Critical Care
+
+- ICU patient monitoring and life support
+- Hemodynamic monitoring and management
+- Mechanical ventilation
+- Continuous renal replacement therapy
+- Sedation and analgesia delivery
+- Invasive and non-invasive monitoring
+
+### Operating Room
+
+- Anesthesia delivery and monitoring
+- Surgical instruments and devices
+- Minimally invasive surgery
+- Robotic-assisted procedures
+- Intraoperative imaging
+- Surgical navigation
+
+### Emergency and Trauma
+
+- Rapid diagnostic imaging (CT, X-ray, ultrasound)
+- Point-of-care testing (blood gas, chemistry)
+- Emergency ventilation and airway management
+- Defibrillation and cardiac monitoring
+- Hemorrhage control and resuscitation
+- Portable and mobile equipment
+
+### Outpatient and Clinic
+
+- Primary care diagnostics
+- Minor procedure equipment
+- Chronic disease management
+- Preventive screening
+- Telemedicine and remote monitoring
+- Point-of-care testing
+
+## Maintenance and Service
+
+### Preventive Maintenance
+
+Scheduled maintenance programs:
+
+- **Imaging Equipment**: Calibration, quality control, tube replacement
+- **Ventilators**: Filter changes, sensor calibration, leak testing
+- **Infusion Pumps**: Flow accuracy, occlusion alarm testing, battery replacement
+- **Patient Monitors**: Calibration verification, cable inspection, software updates
+- **Surgical Equipment**: Sterilization validation, functional testing, sharpening
+
+### Biomedical Engineering
+
+In-house technical support:
+
+- Equipment inventory and asset management
+- Scheduled preventive maintenance
+- Repair and troubleshooting
+- Incoming inspection and acceptance testing
+- Equipment replacement planning
+- Safety and electrical testing programs
+
+### Service Contracts
+
+Vendor support options:
+
+- Full-service contracts: All parts and labor
+- Parts-only contracts: Customer labor
+- Time and materials: Pay-per-service
+- Planned maintenance agreements
+- Software support and updates
+- Remote monitoring and diagnostics
+
+## Economic Considerations
+
+### Capital Equipment Acquisition
+
+Large equipment purchasing:
+
+- **Outright Purchase**: Ownership, depreciation over 5-10 years
+- **Leasing**: Operating or capital leases, off-balance sheet
+- **Equipment as a Service**: Pay-per-use models
+- **Refurbished Equipment**: Cost savings, shorter warranties
+- **Group Purchasing Organizations**: Volume discounts
+
+### Total Cost of Ownership
+
+Comprehensive cost analysis:
+
+- Purchase price and installation
+- Service contracts and maintenance
+- Supplies and consumables (contrast, reagents)
+- Staff training and education
+- Upgrades and technology refresh
+- Deinstallation and disposal
+
+### Reimbursement Impact
+
+Financial considerations:
+
+- CPT and ICD coding for procedures
+- Medicare and Medicaid reimbursement rates
+- Insurance coverage and prior authorization
+- Value-based care and outcomes measurement
+- Return on investment (ROI) analysis
+
+## Market Trends
+
+### Digital Health and Connected Devices
+
+Internet of Medical Things (IoMT):
+
+- Remote patient monitoring (RPM)
+- Wearable medical devices
+- Cloud-based data analytics
+- AI-powered diagnostic support
+- Interoperability and data exchange (FHIR, HL7)
+- Mobile health (mHealth) applications
+
+### Artificial Intelligence and Machine Learning
+
+AI integration in medical devices:
+
+- Computer-aided detection and diagnosis (CAD)
+- Automated image analysis (radiology, pathology)
+- Predictive analytics for patient deterioration
+- Clinical decision support systems
+- Personalized treatment recommendations
+- Natural language processing for documentation
+
+### Minimally Invasive Technologies
+
+Advancement in surgical techniques:
+
+- Single-port and natural orifice surgery
+- Smaller incisions and faster recovery
+- Advanced imaging and visualization
+- Robotic assistance and navigation
+- Energy-based devices (ultrasonic, RF)
+- Biodegradable and absorbable implants
+
+### Point-of-Care and Decentralization
+
+Shift to distributed testing and care:
+
+- Portable and handheld devices
+- Rapid diagnostic tests
+- Home health monitoring
+- Telemedicine integration
+- Molecular diagnostics at point-of-care
+- Pharmacy and retail clinic expansion
+
+### Sustainability and Green Healthcare
+
+Environmental considerations:
+
+- Energy-efficient equipment design
+- Reduction of single-use devices
+- Reprocessing and reuse programs
+- Recycling and proper disposal
+- Reduction of packaging waste
+- Carbon footprint reduction initiatives
+
+## Leading Manufacturers
+
+### Imaging Equipment
+
+- GE Healthcare (GE HealthCare Technologies)
+- Siemens Healthineers
+- Philips Healthcare
+- Canon Medical Systems
+- Fujifilm Healthcare
+- Hologic (mammography)
+- Carestream Health
+
+### Patient Monitoring and Life Support
+
+- Philips Healthcare
+- GE Healthcare
+- Medtronic
+- Dräger
+- Nihon Kohden
+- Mindray
+- Welch Allyn (Hillrom)
+- Masimo (pulse oximetry)
+
+### Surgical and Interventional
+
+- Medtronic
+- Johnson & Johnson (Ethicon, DePuy Synthes)
+- Stryker
+- Intuitive Surgical (Da Vinci)
+- Zimmer Biomet
+- Boston Scientific
+- Abbott (formerly St. Jude Medical)
+- Becton Dickinson (BD)
+
+### Laboratory and Diagnostics
+
+- Roche Diagnostics
+- Abbott Diagnostics
+- Siemens Healthineers
+- Danaher (Beckman Coulter, Radiometer)
+- Sysmex
+- Ortho Clinical Diagnostics
+- bioMérieux (microbiology)
+
+### Infusion and Drug Delivery
+
+- BD (Becton Dickinson)
+- Baxter International
+- B. Braun Medical
+- ICU Medical
+- Smiths Medical
+- Fresenius Kabi
+
+## Related Equipment and Domains
+
+- [Laboratory Equipment](https://laboratory.org.ai) - Research and diagnostic instruments
+- [Pharmaceutical Equipment](https://pharmaceutical.org.ai) - Drug manufacturing
+- [Biotechnology](https://biotech.org.ai) - Biological research and production
+- [Healthcare IT](https://healthit.org.ai) - Electronic health records, PACS
+
+## Industry Resources
+
+### Professional Organizations
+
+- American College of Clinical Engineering (ACCE)
+- Association for the Advancement of Medical Instrumentation (AAMI)
+- Healthcare Technology Management (HTM) organizations
+- ECRI Institute (evidence-based healthcare guidance)
+- Radiological Society of North America (RSNA)
+- American Society of Anesthesiologists (ASA)
+
+### Regulatory Agencies
+
+- U.S. Food and Drug Administration (FDA/CDRH)
+- European Medicines Agency (EMA)
+- Health Canada (Medical Devices Directorate)
+- Pharmaceuticals and Medical Devices Agency (PMDA, Japan)
+- Therapeutic Goods Administration (TGA, Australia)
+
+### Trade Publications
+
+- Medical Device and Diagnostic Industry (MD+DI)
+- Medical Design & Outsourcing
+- Medical Product Outsourcing
+- Diagnostic and Interventional Cardiology (DAIC)
+- Radiology Business Journal
+- 24×7 Magazine (clinical engineering)
+
+### Conferences and Trade Shows
+
+- RSNA Annual Meeting (Radiology)
+- HIMSS (Healthcare IT)
+- AAMI Conference & Expo
+- MD&M (Medical Design & Manufacturing)
+- Arab Health (Dubai)
+- MEDICA (Düsseldorf, Germany - largest medical trade fair)
+
+## Cross-References
+
+- [naics.org.ai/33911](https://naics.org.ai/33911) - Medical Equipment Manufacturing
+- [healthcare.org.ai](https://healthcare.org.ai) - Healthcare systems and delivery
+- [diagnostics.org.ai](https://diagnostics.org.ai) - Diagnostic testing and methods
+- [surgery.org.ai](https://surgery.org.ai) - Surgical procedures and techniques
+- [radiology.org.ai](https://radiology.org.ai) - Medical imaging and interpretation
+
+## Sources
+
+- U.S. Food and Drug Administration - Medical Device Regulations and Guidance
+- ISO and IEC International Standards for Medical Devices
+- Equipment manufacturer specifications and regulatory submissions
+- ECRI Institute - Healthcare Technology Reports
+- Medical Device Innovation Consortium (MDIC)
+- AdvaMed (Advanced Medical Technology Association)
+- Clinical engineering and biomedical literature
+- Healthcare technology assessment reports

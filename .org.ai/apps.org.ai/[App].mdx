@@ -1,0 +1,51 @@
+---
+$id: https://apps.org.ai/App/{id}
+$context: https://apps.org.ai
+$type: https://apps.org.ai/App
+id: "{id}"
+name: "{name}"
+description: "{description}"
+category: "{category}"
+categories: ["{category1}", "{category2}"]
+imageUrl: "{imageUrl}"
+appUrl: "{appUrl}"
+actions:
+  - "{action1}"
+  - "{action2}"
+---
+
+# {name}
+
+<AppLogo src="{imageUrl}" alt="{name}" />
+
+## Description
+
+{description}
+
+## Categories
+
+<CategoryTags categories="{categories}" />
+
+## Actions
+
+<ActionList appId="{id}" />
+
+| Action | Type |
+|--------|------|
+| {action1} | {type1} |
+| {action2} | {type2} |
+
+## Integrations
+
+<IntegrationList appId="{id}" />
+
+## Use Cases
+
+<UseCases appId="{id}" />
+
+## Cross-References
+
+| System | Reference |
+|--------|-----------|
+| [integrations.org.ai](https://integrations.org.ai/{id}) | Integration details |
+| [actions.org.ai](https://actions.org.ai) | Available actions |

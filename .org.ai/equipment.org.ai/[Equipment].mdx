@@ -1,0 +1,48 @@
+---
+$context: https://equipment.org.ai
+$id: https://equipment.org.ai/{{slug}}
+$type: https://equipment.org.ai/Equipment
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Equipment
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<EquipmentOverview equipment={equipment} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Equipment` |
+| Domain | [equipment.org.ai](https://equipment.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<EquipmentDetails equipment={equipment} />
+
+## Properties
+
+<EquipmentProperties equipment={equipment} />
+
+## Relationships
+
+<EquipmentRelationships equipment={equipment} />
+
+## Related
+
+<RelatedEquipments equipment={equipment} />
+
+## Sources
+
+- <DatabaseLink namespace="equipment.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/{{slug}}
+$type: https://apis.org.ai/WebAPI
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for WebAPI
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<WebAPIOverview webapi={webapi} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `WebAPI` |
+| Domain | [apis.org.ai](https://apis.org.ai) |
+| Parent | [tech.org.ai](https://tech.org.ai) |
+
+## Details
+
+<WebAPIDetails webapi={webapi} />
+
+## Properties
+
+<WebAPIProperties webapi={webapi} />
+
+## Relationships
+
+<WebAPIRelationships webapi={webapi} />
+
+## Related
+
+<RelatedWebAPIs webapi={webapi} />
+
+## Sources
+
+- <DatabaseLink namespace="apis.org.ai" type="{{slug}}" />

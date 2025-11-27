@@ -1,0 +1,48 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/{{slug}}
+$type: https://functions.org.ai/HumanFunction
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for HumanFunction
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<HumanFunctionOverview humanfunction={humanfunction} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `HumanFunction` |
+| Domain | [functions.org.ai](https://functions.org.ai) |
+| Parent | [nouns.org.ai](https://nouns.org.ai) |
+
+## Details
+
+<HumanFunctionDetails humanfunction={humanfunction} />
+
+## Properties
+
+<HumanFunctionProperties humanfunction={humanfunction} />
+
+## Relationships
+
+<HumanFunctionRelationships humanfunction={humanfunction} />
+
+## Related
+
+<RelatedHumanFunctions humanfunction={humanfunction} />
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="{{slug}}" />

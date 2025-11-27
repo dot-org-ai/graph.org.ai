@@ -1,0 +1,48 @@
+---
+$context: https://finance.org.ai
+$id: https://finance.org.ai/{{slug}}
+$type: https://finance.org.ai/MonetaryAmount
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for MonetaryAmount
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MonetaryAmountOverview monetaryamount={monetaryamount} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `MonetaryAmount` |
+| Domain | [finance.org.ai](https://finance.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<MonetaryAmountDetails monetaryamount={monetaryamount} />
+
+## Properties
+
+<MonetaryAmountProperties monetaryamount={monetaryamount} />
+
+## Relationships
+
+<MonetaryAmountRelationships monetaryamount={monetaryamount} />
+
+## Related
+
+<RelatedMonetaryAmounts monetaryamount={monetaryamount} />
+
+## Sources
+
+- <DatabaseLink namespace="finance.org.ai" type="{{slug}}" />

@@ -1,0 +1,447 @@
+---
+$context: https://manufacturing.org.ai
+$id: https://manufacturing.org.ai/ComputerElectronicsManufacturing
+$type: https://manufacturing.org.ai/Manufacturing
+name: "Computer and Electronic Product Manufacturing"
+naicsCode: "334"
+description: "Manufactures computers, computer peripherals, communications equipment, semiconductors, and other electronic components and products through complex fabrication, assembly, and testing processes."
+parent: https://manufacturing.org.ai
+---
+
+export const items = async () => {
+  // Fetch computer and electronics manufacturing establishments from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://manufacturing.org.ai/ComputerElectronicsManufacturing',
+    naicsCode: { $regex: '^334' }
+  })
+}
+
+# Computer and Electronic Product Manufacturing
+
+Computer and electronic product manufacturing (NAICS 334) encompasses the production of computers, communications equipment, semiconductors, and other electronic components and products. This subsector represents the cutting edge of manufacturing technology, characterized by rapid innovation, short product lifecycles, global supply chains, and the integration of hardware and software.
+
+This sector forms the technological foundation of the modern digital economy, producing the chips, devices, and equipment that power everything from smartphones and data centers to telecommunications networks and advanced manufacturing equipment.
+
+## Overview
+
+Computer and electronics manufacturing is distinguished by several unique characteristics:
+
+- **Technology Leadership**: Constant innovation driven by Moore's Law and market competition
+- **Capital Intensity**: Billion-dollar semiconductor fabs and advanced manufacturing facilities
+- **Global Supply Chains**: Highly distributed design, manufacturing, and assembly operations
+- **Rapid Obsolescence**: Product lifecycles measured in months rather than years
+- **IP Intensive**: Heavy investment in R&D, patents, and intellectual property
+- **Precision Manufacturing**: Nanometer-scale tolerances in semiconductor fabrication
+- **Clean Room Requirements**: Stringent contamination control in production environments
+- **Design-Manufacturing Integration**: Close coupling of product design and manufacturing processes
+
+## Industry Groups
+
+Computer and electronics manufacturing comprises six major industry groups:
+
+### 3341 - Computer and Peripheral Equipment Manufacturing
+Manufacturing computers and computer peripheral equipment.
+
+**Key Products:**
+- **Computers**: Desktop computers, laptops, tablets, servers, workstations
+- **Storage Devices**: Hard drives, solid-state drives, storage arrays
+- **Input Devices**: Keyboards, mice, trackpads, touchscreens, scanners
+- **Output Devices**: Printers, plotters, monitors, displays, projectors
+- **Networking Equipment**: Routers, switches (some classifications)
+
+**Market Segments**:
+- Consumer computing devices
+- Enterprise servers and data center equipment
+- Industrial and embedded computing
+- Point-of-sale and specialized systems
+
+### 3342 - Communications Equipment Manufacturing
+Manufacturing telephone, radio, television, and other communications equipment.
+
+**Key Products:**
+- **Telephone Equipment**: Smartphones, business phone systems, VoIP equipment
+- **Radio and TV Broadcasting**: Transmitters, studio equipment, broadcast infrastructure
+- **Wireless Communications**: Base stations, antennas, cellular infrastructure
+- **Satellite Communications**: Ground stations, satellite equipment
+- **Fiber Optic Equipment**: Optical networking equipment, transceivers
+- **Networking Infrastructure**: Ethernet switches, routers, gateways
+
+**Technology Areas**:
+- 5G and advanced wireless technologies
+- Software-defined networking (SDN)
+- Network function virtualization (NFV)
+- Internet of Things (IoT) connectivity
+
+### 3343 - Audio and Video Equipment Manufacturing
+Manufacturing audio and video equipment for consumer, professional, and industrial applications.
+
+**Key Products:**
+- **Consumer Electronics**: Televisions, home audio systems, soundbars, headphones
+- **Professional Audio**: Mixing consoles, amplifiers, microphones, studio equipment
+- **Video Production**: Cameras, video editing equipment, production switchers
+- **Public Address Systems**: Speakers, amplifiers, intercoms
+- **Automotive Audio**: Car stereos and entertainment systems
+
+**Market Trends**:
+- Smart TVs and streaming device integration
+- Wireless and Bluetooth audio products
+- High-resolution audio and 4K/8K video
+- Immersive audio (Dolby Atmos, spatial audio)
+
+### 3344 - Semiconductor and Other Electronic Component Manufacturing
+Manufacturing semiconductors and other electronic components that are the building blocks of electronic products.
+
+**Key Products:**
+
+#### 33441 - Semiconductor and Related Device Manufacturing
+- **Integrated Circuits**: Microprocessors, memory chips, ASICs, SoCs
+- **Discrete Semiconductors**: Transistors, diodes, rectifiers, thyristors
+- **Optoelectronics**: LEDs, laser diodes, photodetectors, solar cells
+- **Sensors**: CMOS sensors, MEMS devices, pressure sensors, accelerometers
+
+**Manufacturing Processes**:
+- Wafer fabrication (front-end)
+- Wafer testing and dicing
+- Packaging and assembly (back-end)
+- Final testing and qualification
+
+**Technology Nodes**: From mature (>100nm) to cutting-edge (3nm and below)
+
+#### 33441 - Other Electronic Components
+- **Capacitors**: Ceramic, electrolytic, film, tantalum capacitors
+- **Resistors**: Fixed and variable resistors, potentiometers
+- **Printed Circuit Boards (PCBs)**: Rigid, flexible, and rigid-flex boards
+- **Connectors**: Electrical connectors, terminals, sockets
+- **Coils and Transformers**: Inductors, power transformers, magnetic components
+- **Switches and Relays**: Electromechanical switches, solid-state relays
+
+### 3345 - Navigational, Measuring, Electromedical, and Control Instruments Manufacturing
+Manufacturing precision instruments for navigation, measurement, medical applications, and industrial control.
+
+**Key Products:**
+
+#### 33451 - Navigational, Measuring, and Control Instruments
+- **Navigation Equipment**: GPS receivers, inertial navigation, avionics
+- **Test and Measurement**: Oscilloscopes, spectrum analyzers, multimeters
+- **Laboratory Instruments**: Analytical equipment, chromatography, spectroscopy
+- **Industrial Process Control**: PLCs, SCADA systems, industrial sensors
+- **Surveying and Mapping**: Total stations, laser scanners, GIS equipment
+- **Meteorological Instruments**: Weather stations, atmospheric sensors
+
+#### 33451 - Electromedical and Electrotherapeutic Apparatus
+- **Diagnostic Imaging**: MRI machines, CT scanners, ultrasound equipment, X-ray
+- **Patient Monitoring**: Vital signs monitors, ECG, EEG equipment
+- **Therapeutic Equipment**: Radiation therapy, surgical lasers, defibrillators
+- **Implantable Devices**: Pacemakers, neurostimulators, cochlear implants
+- **Diagnostic Equipment**: Blood analyzers, genetic sequencers, laboratory automation
+
+### 3346 - Manufacturing and Reproducing Magnetic and Optical Media
+Manufacturing blank and prerecorded magnetic and optical media (declining industry).
+
+**Key Products:**
+- Optical discs (CD, DVD, Blu-ray) - declining
+- Magnetic media - largely obsolete
+- Transitioning to solid-state storage and cloud services
+
+## Manufacturing Processes
+
+Electronics manufacturing employs some of the most advanced manufacturing technologies:
+
+### Semiconductor Fabrication
+
+**Front-End Processing** (Wafer Fab):
+1. **Wafer Preparation**: Silicon ingot growth, slicing, polishing
+2. **Oxidation**: Growing silicon dioxide layers
+3. **Photolithography**: Patterning using UV or EUV light and photoresist
+4. **Etching**: Removing material (wet chemical or dry plasma etching)
+5. **Deposition**: Adding thin films (CVD, PVD, ALD, epitaxy)
+6. **Ion Implantation**: Doping silicon with impurities
+7. **Chemical Mechanical Polishing (CMP)**: Planarizing surfaces
+8. **Repeat**: 20-50+ cycles to build complete integrated circuits
+
+**Back-End Processing**:
+1. **Wafer Testing**: Electrical testing of individual die
+2. **Wafer Dicing**: Separating individual chips
+3. **Die Attach**: Mounting chips to package substrate
+4. **Wire Bonding or Flip-Chip**: Electrical connections
+5. **Encapsulation**: Protecting chip with molding compound
+6. **Final Testing**: Comprehensive functional and parametric testing
+7. **Marking and Packaging**: Laser marking and shipping packaging
+
+### Printed Circuit Board (PCB) Manufacturing
+
+**PCB Fabrication**:
+1. **Design**: CAD layout and Gerber file generation
+2. **Inner Layer Processing**: Imaging, etching copper patterns
+3. **Lamination**: Bonding layers together with prepreg
+4. **Drilling**: Creating holes for vias and component leads
+5. **Plating**: Copper plating of holes and traces
+6. **Outer Layer Imaging**: Patterning outer copper layers
+7. **Solder Mask**: Applying protective coating
+8. **Surface Finish**: ENIG, HASL, or other finishes
+9. **Testing**: Electrical testing, AOI (Automated Optical Inspection)
+
+**PCB Assembly (PCBA)**:
+1. **Solder Paste Application**: Screen printing or dispensing
+2. **Component Placement**: Pick-and-place machines for SMT components
+3. **Reflow Soldering**: Heating to melt solder paste
+4. **Through-Hole Assembly**: Inserting and wave soldering leaded components
+5. **Inspection**: AOI, X-ray for hidden joints
+6. **Testing**: In-circuit testing (ICT), functional testing
+7. **Conformal Coating**: Protective coating (if required)
+
+### Electronics Assembly and Test
+
+**Product Assembly**:
+- Subassembly integration
+- Cable and harness installation
+- Mechanical assembly (enclosures, cooling)
+- Final assembly and configuration
+
+**Testing and Quality**:
+- Burn-in testing (accelerated life testing)
+- Environmental testing (temperature, humidity, vibration)
+- Functional testing and calibration
+- Safety and regulatory testing
+- Reliability testing and validation
+
+## Clean Room Technology
+
+Electronics manufacturing, especially semiconductors, requires extremely clean environments:
+
+### ISO Classifications
+- **ISO Class 1**: <10 particles/m³ (advanced lithography)
+- **ISO Class 3-4**: 100-1,000 particles/m³ (most semiconductor fab areas)
+- **ISO Class 5-6**: 10,000-100,000 particles/m³ (assembly and packaging)
+
+### Contamination Control
+- HEPA and ULPA filtration systems
+- Positive pressure and laminar airflow
+- Cleanroom garments and protocols
+- Chemical and molecular contamination control
+- Electrostatic discharge (ESD) protection
+- Temperature and humidity control
+
+## Advanced Manufacturing Technologies
+
+### Extreme Ultraviolet Lithography (EUV)
+- 13.5nm wavelength light for sub-7nm chip manufacturing
+- Enables advanced process nodes (5nm, 3nm, 2nm)
+- Extremely expensive tools ($150+ million each)
+- Complex light source and optics
+
+### 3D Integration
+- **Through-Silicon Vias (TSVs)**: Vertical connections through chips
+- **Chip Stacking**: Multiple die in single package
+- **Chiplets**: Modular chip design with multiple smaller chips
+- **Advanced Packaging**: 2.5D and 3D packaging technologies
+
+### Artificial Intelligence and Machine Learning
+- Yield prediction and optimization
+- Defect detection and classification
+- Process control and recipe optimization
+- Design for manufacturability (DFM)
+- Predictive maintenance
+
+### Industry 4.0 Technologies
+- IoT sensors for real-time monitoring
+- Digital twins of manufacturing processes
+- Big data analytics for process improvement
+- Automated material handling systems
+- Smart factory integration
+
+## Supply Chain Management
+
+Electronics manufacturing has perhaps the most complex global supply chains:
+
+### Global Production Networks
+- **Design**: Often in US, Europe, Israel, Taiwan
+- **Wafer Fab**: Taiwan, South Korea, US, China, Japan
+- **Assembly and Test**: Southeast Asia, China, Eastern Europe
+- **Components**: Distributed globally by type
+- **Final Assembly**: Near major markets or low-cost regions
+
+### Supply Chain Challenges
+- Long lead times for advanced components
+- Single-source dependencies for critical parts
+- Geopolitical risks and trade restrictions
+- Capacity constraints during demand surges
+- Counterfeit component risks
+- Just-in-time vs. buffer inventory balance
+
+### Logistics
+- Temperature and humidity-controlled shipping
+- ESD protection throughout transport
+- Traceability and lot control
+- Customs and export controls
+- Rapid shipment for time-sensitive products
+
+## Quality and Reliability
+
+Electronics products require exceptional quality and reliability:
+
+### Quality Standards
+- **ISO 9001**: General quality management
+- **IATF 16949**: Automotive electronics quality
+- **ISO 13485**: Medical device quality
+- **AS9100**: Aerospace quality requirements
+- **IPC Standards**: PCB design, manufacturing, and assembly
+
+### Reliability Engineering
+- **Failure Mode Effects Analysis (FMEA)**: Identifying potential failures
+- **Design for Reliability (DfR)**: Building in reliability from design stage
+- **Accelerated Life Testing**: Temperature cycling, vibration, HALT/HASS
+- **Statistical Process Control (SPC)**: Monitoring and controlling variation
+- **Six Sigma**: Methodologies for defect reduction
+
+### Product Testing
+- **Functional Testing**: Verifying all features work correctly
+- **Parametric Testing**: Measuring electrical characteristics
+- **Burn-In**: Operating at elevated temperature/voltage to catch early failures
+- **Environmental Testing**: Temperature, humidity, shock, vibration
+- **EMI/EMC Testing**: Electromagnetic compatibility
+- **Safety Testing**: UL, CSA, CE, other safety certifications
+
+## Research and Development
+
+R&D is critical in this fast-paced industry:
+
+### Technology Roadmapping
+- International Technology Roadmap for Semiconductors (ITRS)
+- IEEE and industry standards development
+- Moore's Law continuation strategies
+- Beyond-CMOS technologies
+
+### Innovation Areas
+- **Advanced Process Technologies**: EUV, high-NA EUV, gate-all-around transistors
+- **New Materials**: 2D materials, topological insulators, diamond semiconductors
+- **Quantum Computing**: Superconducting qubits, photonic quantum, topological qubits
+- **Neuromorphic Computing**: Brain-inspired architectures
+- **Photonics**: Silicon photonics, optical interconnects
+- **Flexible and Printed Electronics**: Organic semiconductors, printed sensors
+
+### IP Protection
+- Patent portfolios (thousands of patents per major company)
+- Trade secrets in manufacturing processes
+- Copyright for firmware and software
+- Design rights and trademarks
+- Cross-licensing agreements
+
+## Workforce
+
+Electronics manufacturing requires highly skilled technical workforce:
+
+### Engineering and Technical
+- Electrical and computer engineers
+- Process engineers (semiconductor, PCB, assembly)
+- Test engineers and technicians
+- Quality engineers
+- Reliability engineers
+- Software and firmware engineers
+- Manufacturing engineers
+
+### Operations
+- Clean room operators and technicians
+- Equipment technicians and maintenance
+- Process technicians
+- Quality inspectors and testers
+- Materials handlers
+- Automation specialists
+
+### Specialized Roles
+- Semiconductor device physicists
+- Photolithography engineers
+- Metrology specialists
+- Failure analysis engineers
+- Yield enhancement engineers
+- Package design engineers
+
+## Economic Impact
+
+This sector drives technological progress across the economy:
+
+- **Employment**: Approximately 350,000 direct jobs in the U.S.
+- **High Wages**: Among the highest average wages in manufacturing
+- **Multiplier Effect**: Each job supports multiple jobs in other sectors
+- **Trade**: Significant exports but also substantial imports
+- **Capital Investment**: Tens of billions annually in new capacity
+- **R&D Spending**: 10-20% of revenue typical for semiconductor companies
+
+## Strategic Importance
+
+Computer and electronics manufacturing is strategically critical:
+
+### National Security
+- Defense electronics and communications
+- Cybersecurity hardware (secure processors)
+- Space and satellite systems
+- Critical infrastructure components
+
+### Economic Competitiveness
+- Foundation for AI and advanced computing
+- Enabler for Industry 4.0 and automation
+- Support for automotive electrification
+- 5G and telecommunications infrastructure
+
+### Government Initiatives
+- **CHIPS Act**: U.S. semiconductor manufacturing incentives
+- **Regional Manufacturing**: European Chips Act, China Made in China 2025
+- **Research Funding**: DARPA, NSF, DOE programs
+- **Trade Policy**: Export controls, import restrictions on strategic technologies
+
+## Industry Trends
+
+### Technology Trends
+- Continuation of Moore's Law through new approaches
+- Heterogeneous integration (combining different chip types)
+- AI-specific hardware (GPUs, TPUs, NPUs)
+- Edge computing and IoT devices
+- Quantum computing commercialization
+- 6G wireless technology development
+
+### Business Trends
+- Fabless-foundry model expansion
+- Consolidation through M&A
+- Vertical integration for critical components
+- Regionalization of supply chains
+- Sustainability and carbon neutrality commitments
+- Circular economy and e-waste reduction
+
+### Market Trends
+- AI and machine learning driving compute demand
+- Electric vehicles increasing semiconductor content
+- 5G and edge computing infrastructure buildout
+- Work-from-home sustained PC and peripheral demand
+- Industrial automation and robotics growth
+- Healthcare technology and remote monitoring
+
+## Sustainability Challenges
+
+Electronics manufacturing faces significant environmental considerations:
+
+### Energy and Water
+- Semiconductor fabs consume massive amounts of electricity
+- Ultra-pure water required in large quantities
+- Opportunities for renewable energy and water recycling
+
+### Chemicals and Materials
+- Hazardous chemicals in manufacturing processes
+- Rare earth and conflict minerals sourcing
+- Material recovery and recycling programs
+
+### Product Lifecycle
+- Electronic waste (e-waste) management
+- Design for disassembly and recycling
+- Extended producer responsibility programs
+- Right to repair considerations
+
+## Related Resources
+
+- [naics.org.ai/334](https://naics.org.ai/334) - Official NAICS classification
+- [semiconductors.org.ai](https://semiconductors.org.ai) - Semiconductor technology and products
+- [electronics.org.ai](https://electronics.org.ai) - Electronic components and systems
+- [products.org.ai](https://products.org.ai) - Electronic products database
+- [onet.org.ai](https://onet.org.ai) - Electronics manufacturing occupations
+- [businesses.org.ai](https://businesses.org.ai) - Electronics companies
+- [standards.org.ai](https://standards.org.ai) - Industry standards (IPC, JEDEC, IEEE)

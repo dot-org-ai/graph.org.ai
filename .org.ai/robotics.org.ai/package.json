@@ -1,0 +1,33 @@
+{
+  "name": "robotics.org.ai",
+  "version": "0.0.1",
+  "description": "Ontology domain for robotics.org.ai",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "robotics"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://robotics.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/robotics.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

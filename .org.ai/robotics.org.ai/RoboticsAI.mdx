@@ -1,0 +1,711 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/RoboticsAI
+$type: https://robotics.org.ai/Robotics
+name: Robotics AI
+description: Artificial intelligence technologies enabling robot perception, planning, learning, and manipulation
+---
+
+export const items = async () => {
+  return [
+    { name: 'Robot Perception', type: 'RoboticsAI' },
+    { name: 'Motion Planning', type: 'RoboticsAI' },
+    { name: 'Robot Learning', type: 'RoboticsAI' },
+    { name: 'Manipulation Intelligence', type: 'RoboticsAI' },
+    { name: 'Human-Robot Interaction', type: 'RoboticsAI' }
+  ]
+}
+
+# Robotics AI
+
+Artificial intelligence is the cognitive layer that transforms mechanical systems into intelligent robots capable of perceiving their environment, making decisions, learning from experience, and adapting to novel situations. Modern robotics AI combines computer vision, machine learning, deep learning, and classical AI planning to enable increasingly autonomous and capable systems.
+
+## Overview
+
+The integration of AI with robotics represents one of the most active areas of research and development in technology. While robots have existed for decades, AI enables them to move beyond pre-programmed sequences to handle variability, uncertainty, and unstructured environments. The convergence of deep learning, improved sensors, edge computing, and cloud robotics is driving a new generation of intelligent robots.
+
+## Robot Perception
+
+Perception is the ability to sense and understand the environment through various sensor modalities.
+
+### Computer Vision
+
+**Object Detection and Recognition**
+- Deep learning models (YOLO, Faster R-CNN, EfficientDet)
+- Real-time processing on edge devices (NVIDIA Jetson, Google Coral)
+- Detection of objects, people, vehicles, obstacles
+- Classification of object types and states
+
+**Semantic Segmentation**
+- Pixel-level scene understanding
+- DeepLab, U-Net, Mask R-CNN architectures
+- Identifying traversable surfaces, obstacles, points of interest
+- Applications: Autonomous navigation, manipulation planning
+
+**Instance Segmentation**
+- Individual object boundary detection
+- Critical for manipulation and grasping
+- Distinguishing multiple instances of same object class
+- Dense scene understanding for picking
+
+**Pose Estimation**
+- 6D pose of objects (position + orientation)
+- Human pose and skeleton tracking
+- Tool and part orientation for assembly
+- Methods: PoseCNN, DenseFusion, category-level pose
+
+**3D Vision and Depth Perception**
+- Stereo vision from multiple cameras
+- Structured light (Kinect, RealSense)
+- Time-of-flight (ToF) sensors
+- RGB-D fusion for complete scene representation
+
+**Visual SLAM (Simultaneous Localization and Mapping)**
+- Camera-based navigation and mapping
+- ORB-SLAM, LSD-SLAM algorithms
+- Visual-inertial odometry (VIO)
+- GPS-denied navigation
+
+### LiDAR Perception
+
+**Point Cloud Processing**
+- PointNet, PointNet++ for direct point cloud learning
+- Ground plane detection
+- Object clustering and classification
+- 360° environmental awareness
+
+**3D Object Detection**
+- VoxelNet, PointPillars architectures
+- Autonomous vehicle perception
+- Warehouse robot navigation
+- Outdoor mobile robot operation
+
+**LiDAR SLAM**
+- Laser-based mapping and localization
+- LOAM (Lidar Odometry and Mapping)
+- Cartographer (Google)
+- High accuracy in structured environments
+
+### Sensor Fusion
+
+Combining multiple sensor types for robust perception:
+
+- **Vision + LiDAR** - Complementary strengths (color + precise depth)
+- **Radar + Vision** - All-weather perception
+- **IMU + GPS + Vision** - Robust localization
+- **Kalman Filters** - Optimal sensor fusion
+- **Bayesian Networks** - Probabilistic fusion
+
+### Tactile and Force Sensing
+
+- Pressure and force sensors for manipulation
+- Slip detection during grasping
+- Compliant control based on contact forces
+- Learning from touch for object identification
+
+## Motion Planning and Control
+
+AI-powered planning enables robots to find optimal paths and execute smooth motions.
+
+### Path Planning Algorithms
+
+**Classical Methods**
+- A* and D* for grid-based planning
+- RRT (Rapidly-exploring Random Tree)
+- PRM (Probabilistic Roadmap)
+- Dijkstra's algorithm
+
+**Sampling-Based Planning**
+- RRT* (optimal variant)
+- Informed RRT*
+- Fast Marching Method
+- Suitable for high-dimensional configuration spaces
+
+**Optimization-Based Planning**
+- Trajectory optimization
+- CHOMP (Covariant Hamiltonian Optimization)
+- TrajOpt
+- Smooth, dynamically feasible trajectories
+
+**Learning-Based Planning**
+- Neural motion planning
+- Deep reinforcement learning for planning
+- Learning from expert demonstrations
+- Generalization to new environments
+
+### Collision Avoidance
+
+**Dynamic Obstacle Avoidance**
+- Dynamic Window Approach (DWA)
+- Velocity obstacles
+- Model Predictive Control (MPC)
+- Real-time trajectory replanning
+
+**Social Navigation**
+- Human-aware path planning
+- Predicting pedestrian motion
+- Comfortable and safe navigation in crowds
+- Learning social norms
+
+### Multi-Robot Coordination
+
+- Centralized vs. decentralized control
+- Formation control
+- Task allocation
+- Conflict resolution
+- Swarm intelligence
+
+## Robot Learning
+
+Machine learning enables robots to improve performance through experience.
+
+### Reinforcement Learning (RL)
+
+**Model-Free RL**
+- Q-Learning and Deep Q-Networks (DQN)
+- Policy gradient methods (PPO, SAC, TD3)
+- Actor-critic architectures
+- Direct learning of optimal policies
+
+**Applications**
+- Manipulation skill acquisition
+- Locomotion on diverse terrains
+- Task sequencing and scheduling
+- Optimal control policies
+
+**Challenges**
+- Sample efficiency (millions of interactions)
+- Sim-to-real transfer
+- Safety during exploration
+- Reward engineering
+
+**Simulation Training**
+- Isaac Sim (NVIDIA) for RL training
+- PyBullet and MuJoCo physics engines
+- Gazebo for ROS integration
+- Domain randomization for robustness
+
+### Imitation Learning
+
+**Learning from Demonstration (LfD)**
+- Record expert human demonstrations
+- Extract motion primitives
+- Reproduce behaviors in new situations
+- Reduces need for reward engineering
+
+**Behavioral Cloning**
+- Supervised learning from expert trajectories
+- Direct policy learning
+- Fast training but can suffer from distribution shift
+
+**Inverse Reinforcement Learning (IRL)**
+- Infer reward function from demonstrations
+- More robust generalization
+- Understand intent behind demonstrations
+
+**DAgger (Dataset Aggregation)**
+- Interactive imitation learning
+- Correct mistakes during training
+- Improved policy robustness
+
+### Transfer Learning
+
+- Pre-trained vision models (ImageNet, COCO)
+- Fine-tuning for robotics tasks
+- Cross-domain knowledge transfer
+- Reducing data requirements
+
+### Few-Shot and Meta-Learning
+
+- Learning to learn new tasks quickly
+- MAML (Model-Agnostic Meta-Learning)
+- Prototypical networks
+- Adaptation to new objects and environments
+
+### Self-Supervised Learning
+
+- Learning from unlabeled robot interaction data
+- Predictive models of dynamics
+- Contrastive learning for representations
+- Reducing manual labeling burden
+
+## Manipulation Intelligence
+
+AI for dexterous object interaction.
+
+### Grasping
+
+**Analytical Grasping**
+- Force closure and grasp quality metrics
+- Geometric reasoning
+- Deterministic but requires CAD models
+
+**Learning-Based Grasping**
+- GraspNet, DexNet databases
+- Deep learning grasp prediction from vision
+- Generalization to novel objects
+- Antipodal and multi-finger grasps
+
+**Dexterous Manipulation**
+- Multi-fingered hand control
+- In-hand manipulation
+- OpenAI's Dactyl solving Rubik's cube
+- Tactile sensing integration
+
+### Bin Picking
+
+- Cluttered scene perception
+- Grasp pose estimation in clutter
+- Singulation strategies
+- Iterative perception-action cycles
+
+### Assembly
+
+- Part mating and insertion
+- Peg-in-hole with compliant control
+- Vision-guided alignment
+- Force/torque feedback
+
+### Tool Use
+
+- Learning tool affordances
+- Robotic surgery with instruments
+- Assembly tools (screwdrivers, wrenches)
+- Generalizing to new tools
+
+## Natural Language and Human-Robot Interaction
+
+Enabling robots to understand and communicate with humans.
+
+### Natural Language Understanding
+
+**Command Interpretation**
+- Mapping language to robot actions
+- "Pick up the red box" → perception + manipulation
+- Handling ambiguity and context
+
+**Language Models for Robotics**
+- Large Language Models (LLMs) for task planning
+- GPT-4, Claude for high-level reasoning
+- Natural instruction following
+- Common sense reasoning
+
+**Embodied AI**
+- Grounding language in physical interaction
+- Visual question answering about environment
+- Interactive task learning
+
+### Dialogue and Social Interaction
+
+- Intent recognition from speech
+- Clarification and confirmation dialogues
+- Emotion recognition from voice and expression
+- Natural turn-taking in conversation
+
+### Gesture and Non-Verbal Communication
+
+- Recognizing human gestures for commands
+- Robot gestures for communication
+- Eye gaze and attention
+- Proxemics and personal space
+
+## Cloud Robotics and Edge AI
+
+Distributed intelligence across robots and infrastructure.
+
+### Cloud Robotics
+
+**Benefits**
+- Shared knowledge base across robot fleet
+- Computationally intensive processing offload
+- Centralized learning and updates
+- Big data analytics
+
+**Applications**
+- Grasp database sharing
+- Map storage and distribution
+- Model training and deployment
+- Fleet coordination
+
+**Platforms**
+- RoboEarth (EU project)
+- Google Cloud Robotics
+- AWS RoboMaker
+- Azure Kinect and IoT
+
+### Edge AI
+
+**On-Robot Intelligence**
+- NVIDIA Jetson (Xavier, Orin)
+- Google Coral TPU
+- Intel Movidius/RealSense
+- Low-latency decision making
+
+**Edge vs. Cloud Tradeoffs**
+- Latency: Edge wins
+- Compute power: Cloud wins
+- Privacy: Edge wins
+- Scalability: Cloud wins
+- Hybrid approaches optimal
+
+### 5G and Robotics
+
+- Ultra-low latency (1ms)
+- High bandwidth for HD video streaming
+- Massive device connectivity
+- Network slicing for guaranteed QoS
+
+## AI Frameworks and Software
+
+### Deep Learning Frameworks
+
+**TensorFlow**
+- TensorFlow Lite for edge deployment
+- TensorFlow.js for web-based interfaces
+- TF-Agents for reinforcement learning
+
+**PyTorch**
+- Research-friendly dynamic graphs
+- TorchServe for model deployment
+- Strong ecosystem for robotics
+
+**ONNX**
+- Cross-framework model exchange
+- ONNX Runtime for optimized inference
+
+### Robotics-Specific AI Tools
+
+**OpenAI Gym / Gymnasium**
+- Reinforcement learning environments
+- Robotics environments (Fetch, Shadow Hand)
+- Standardized API
+
+**PyBullet**
+- Physics simulation with RL support
+- Fast parallel simulation
+- Robot model library
+
+**Isaac Sim (NVIDIA)**
+- Photorealistic simulation
+- Synthetic data generation
+- Domain randomization
+- GPU-accelerated physics
+
+**ROS 2 AI Integration**
+- Nav2 for intelligent navigation
+- MoveIt for motion planning
+- ros2_control for real-time control
+- TensorFlow/PyTorch ROS bridges
+
+## Foundation Models for Robotics
+
+Emerging trend: large pre-trained models adapted to robotics.
+
+### Vision-Language Models
+
+**CLIP (OpenAI)**
+- Joint vision-language embeddings
+- Zero-shot object recognition
+- Open-vocabulary detection
+
+**BLIP, BLIP-2**
+- Vision-language pretraining
+- Image captioning and VQA
+- Bootstrapped learning
+
+### Robotics Foundation Models
+
+**RT-1, RT-2 (Google)**
+- Robotics Transformer models
+- Large-scale multi-task learning
+- Generalization to new tasks and environments
+- Vision-language-action models
+
+**PaLM-E (Google)**
+- 562B parameter multimodal model
+- Embodied reasoning
+- Planning from visual and language input
+
+**VIMA (Stanford)**
+- Multimodal prompting for robotics
+- Visual and language instructions
+- Generalist robot policies
+
+**RoboFlamingo**
+- Few-shot imitation learning
+- Vision-language conditioning
+- Open-source research
+
+### Generative AI for Robotics
+
+**Motion Generation**
+- Diffusion models for trajectory generation
+- Text-to-motion synthesis
+- Motion inbetweening and completion
+
+**Simulation and Synthetic Data**
+- Neural Radiance Fields (NeRF) for scene capture
+- 3D Gaussian Splatting for rendering
+- Synthetic training data generation
+
+## Industry Applications
+
+### Manufacturing
+
+**Adaptive Assembly**
+- Vision-guided part mating
+- Handling part variations
+- Learning from failures
+- Collaborative human-robot assembly
+
+**Quality Inspection**
+- Automated visual inspection
+- Defect detection and classification
+- Dimensional measurement
+- X-ray and thermal imaging analysis
+
+**Flexible Automation**
+- Rapid retooling with learning
+- Small batch production
+- Mass customization
+- Skill transfer between tasks
+
+### Logistics and Warehousing
+
+**Object Recognition for Picking**
+- Novel object generalization
+- Cluttered scene understanding
+- Transparent and reflective objects
+- Deformable items (bags, clothing)
+
+**Route Optimization**
+- Multi-robot task allocation
+- Dynamic replanning
+- Traffic management
+- Charging schedule optimization
+
+### Agriculture
+
+**Crop Monitoring**
+- Disease detection from imagery
+- Weed identification
+- Ripeness assessment
+- Yield prediction
+
+**Selective Harvesting**
+- Fruit and vegetable detection
+- Ripeness-based picking
+- Delicate handling
+- Adapting to plant variations
+
+### Healthcare
+
+**Surgical Assistance**
+- Autonomous suturing (research stage)
+- Instrument tracking and guidance
+- Surgical planning from medical images
+- Motion compensation (beating heart)
+
+**Rehabilitation**
+- Patient motion analysis
+- Personalized therapy adaptation
+- Progress tracking
+- Engagement optimization
+
+## Research Frontiers
+
+### Sim-to-Real Transfer
+
+**Domain Randomization**
+- Varying simulation parameters
+- Training on diverse conditions
+- Robust to real-world variations
+
+**Domain Adaptation**
+- Style transfer (sim → real appearance)
+- Physics parameter identification
+- Progressive transfer strategies
+
+**Reality Gap Challenges**
+- Contact dynamics
+- Deformable objects
+- Sensor noise and calibration
+- Actuator dynamics
+
+### Continual and Lifelong Learning
+
+- Learning without catastrophic forgetting
+- Accumulating skills over robot lifetime
+- Online adaptation
+- Knowledge consolidation
+
+### Common Sense Reasoning
+
+- Understanding physical causality
+- Predicting outcomes of actions
+- Tool improvisation
+- Compositional generalization
+
+### Safety and Interpretability
+
+**Safe RL**
+- Constrained policy optimization
+- Safety shields and monitors
+- Formal verification methods
+- Risk-aware planning
+
+**Explainable AI for Robotics**
+- Visualizing attention and decisions
+- Natural language explanations
+- User trust and transparency
+- Debugging and validation
+
+### Multi-Modal Learning
+
+- Combining vision, language, touch, audio
+- Cross-modal transfer
+- Richer world representations
+- Human-like sensing
+
+## Challenges and Limitations
+
+### Data Requirements
+
+- Deep learning needs large datasets
+- Difficulty and cost of robot data collection
+- Simulation limitations
+- Domain shift between training and deployment
+
+### Sample Efficiency
+
+- RL requires millions of samples
+- Real robot interaction is slow
+- Expensive failures during learning
+- Need for better algorithms
+
+### Generalization
+
+- Overfitting to training environments
+- Novel object and scenario handling
+- Sim-to-real gap
+- Out-of-distribution detection
+
+### Safety and Reliability
+
+- Unpredictable AI behavior
+- Verification of learned policies
+- Fail-safe mechanisms
+- Liability and regulation
+
+### Computation and Energy
+
+- Edge devices have limited compute
+- Battery constraints on mobile robots
+- Trade-offs between accuracy and latency
+- Model compression and quantization
+
+## Future Directions
+
+### Embodied AI Assistants
+
+- General-purpose home robots
+- Natural language task specification
+- Learning from observation and interaction
+- Personalization to users and environments
+
+### Generalist Robot Policies
+
+- Single model for many tasks
+- Massive multi-task pre-training
+- Fine-tuning to specific applications
+- Democratizing robotics AI
+
+### Human-Robot Teaming
+
+- Collaborative intelligence
+- Intent prediction and anticipation
+- Adaptive autonomy levels
+- Shared mental models
+
+### Autonomous Discovery
+
+- Robots exploring and learning independently
+- Curiosity-driven exploration
+- Scientific discovery automation
+- Long-horizon autonomy
+
+### Neuromorphic and Bio-Inspired AI
+
+- Spiking neural networks
+- Event-based vision
+- Energy-efficient computing
+- Real-time processing
+
+## Educational Resources
+
+### Online Courses
+
+- **Coursera**: Robotics Specialization (UPenn)
+- **edX**: Autonomous Mobile Robots (ETH Zurich)
+- **Udacity**: Robotics Nanodegree
+- **deeplearning.ai**: AI for Robotics
+
+### Research Conferences
+
+- ICRA (International Conference on Robotics and Automation)
+- IROS (Intelligent Robots and Systems)
+- RSS (Robotics: Science and Systems)
+- CoRL (Conference on Robot Learning)
+- NeurIPS, CVPR, ICCV (AI conferences with robotics)
+
+### Publications and Journals
+
+- IEEE Transactions on Robotics
+- International Journal of Robotics Research
+- Robotics and Autonomous Systems
+- arXiv.org robotics and AI sections
+
+### Open-Source Projects
+
+- OpenAI Gym/Gymnasium
+- PyRobot (Facebook AI)
+- RLlib (Ray)
+- Stable Baselines3
+- MuJoCo (now open-source)
+
+## Leading Research Groups
+
+### Academic
+
+- **MIT CSAIL** - Manipulation, learning, planning
+- **Stanford AI Lab** - Foundation models, imitation learning
+- **UC Berkeley** - Robot learning, manipulation
+- **CMU Robotics Institute** - Complete robotics programs
+- **ETH Zurich** - Legged robots, perception
+- **University of Toronto** - Deep learning for robotics
+- **TU Munich** - Computer vision, autonomous systems
+
+### Industry
+
+- **Boston Dynamics AI Institute** - Athletic intelligence
+- **Google DeepMind** - Foundation models, RL
+- **Tesla AI** - Autonomous driving, humanoids
+- **NVIDIA Research** - Simulation, perception
+- **Meta AI (FAIR)** - Embodied AI
+- **OpenAI** - Robotics (discontinued but influential)
+
+## Related Topics
+
+- [IndustrialRobots.mdx](https://robotics.org.ai/IndustrialRobots) - Manufacturing automation
+- [MobileRobots.mdx](https://robotics.org.ai/MobileRobots) - Autonomous navigation
+- [CollaborativeRobots.mdx](https://robotics.org.ai/CollaborativeRobots) - Human-robot collaboration
+- [AI.org.ai](https://ai.org.ai) - Artificial intelligence foundations
+- [ComputerVision.org.ai](https://computervision.org.ai) - Visual perception
+
+## References
+
+- **Books**: "Probabilistic Robotics" (Thrun et al.), "Deep Learning for Robot Perception and Cognition" (Martinez-Martin)
+- **Surveys**: "Deep Learning in Robotics: A Review of Recent Research" (Tai et al.)
+- **arXiv**: cs.RO (Robotics), cs.LG (Machine Learning), cs.CV (Computer Vision)
+- IEEE Robotics & Automation Magazine
+- Robot Learning literature reviews

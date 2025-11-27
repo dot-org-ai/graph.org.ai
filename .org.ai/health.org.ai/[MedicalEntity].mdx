@@ -1,0 +1,48 @@
+---
+$context: https://health.org.ai
+$id: https://health.org.ai/{{slug}}
+$type: https://health.org.ai/MedicalEntity
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for MedicalEntity
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MedicalEntityOverview medicalentity={medicalentity} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `MedicalEntity` |
+| Domain | [health.org.ai](https://health.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<MedicalEntityDetails medicalentity={medicalentity} />
+
+## Properties
+
+<MedicalEntityProperties medicalentity={medicalentity} />
+
+## Relationships
+
+<MedicalEntityRelationships medicalentity={medicalentity} />
+
+## Related
+
+<RelatedMedicalEntitys medicalentity={medicalentity} />
+
+## Sources
+
+- <DatabaseLink namespace="health.org.ai" type="{{slug}}" />

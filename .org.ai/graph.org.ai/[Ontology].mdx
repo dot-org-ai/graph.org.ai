@@ -1,0 +1,48 @@
+---
+$context: https://graph.org.ai
+$id: https://graph.org.ai/{{slug}}
+$type: https://graph.org.ai/Ontology
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Ontology
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<OntologyOverview ontology={ontology} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Ontology` |
+| Domain | [graph.org.ai](https://graph.org.ai) |
+| Parent | [graph.org.ai](https://graph.org.ai) |
+
+## Details
+
+<OntologyDetails ontology={ontology} />
+
+## Properties
+
+<OntologyProperties ontology={ontology} />
+
+## Relationships
+
+<OntologyRelationships ontology={ontology} />
+
+## Related
+
+<RelatedOntologys ontology={ontology} />
+
+## Sources
+
+- <DatabaseLink namespace="graph.org.ai" type="{{slug}}" />

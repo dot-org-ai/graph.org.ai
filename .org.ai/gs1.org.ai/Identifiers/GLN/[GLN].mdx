@@ -1,0 +1,60 @@
+---
+$id: https://gs1.org.ai/Identifiers/GLN/{gln}
+$context: https://gs1.org.ai
+$type: https://gs1.org.ai/GLN
+gln: "{gln}"
+companyPrefix: "{companyPrefix}"
+locationReference: "{locationReference}"
+checkDigit: "{checkDigit}"
+type: "physical" | "legal" | "functional" | "digital"
+name: "{name}"
+address:
+  streetAddress: "{street}"
+  city: "{city}"
+  region: "{region}"
+  postalCode: "{postalCode}"
+  country: "{country}"
+---
+
+# {name}
+
+<LocationMap gln="{gln}" />
+
+## Identification
+
+| Field | Value |
+|-------|-------|
+| GLN | {gln} |
+| Company Prefix | {companyPrefix} |
+| Location Reference | {locationReference} |
+| Type | {type} |
+
+## Digital Link
+
+```
+https://id.gs1.org/414/{gln}
+```
+
+## Address
+
+<Address gln="{gln}" />
+
+## Extensions
+
+<GLNExtensions gln="{gln}" />
+
+| Extension | Description |
+|-----------|-------------|
+| {ext1} | {description1} |
+| {ext2} | {description2} |
+
+## Supply Chain Events
+
+<EPCISEvents gln="{gln}" />
+
+## Cross-References
+
+| System | Reference |
+|--------|-----------|
+| [places.org.ai](https://places.org.ai) | Simplified location |
+| [organizations.org.ai](https://organizations.org.ai) | Organization info |

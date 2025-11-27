@@ -1,0 +1,439 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/MobileRobots
+$type: https://robotics.org.ai/Robotics
+name: Mobile Robots
+description: Autonomous vehicles capable of navigation in warehouses, factories, and logistics facilities
+---
+
+export const items = async () => {
+  return [
+    { name: 'Automated Guided Vehicles (AGVs)', type: 'MobileRobots' },
+    { name: 'Autonomous Mobile Robots (AMRs)', type: 'MobileRobots' },
+    { name: 'Warehouse Automation', type: 'MobileRobots' },
+    { name: 'Last-Mile Delivery', type: 'MobileRobots' }
+  ]
+}
+
+# Mobile Robots
+
+Mobile robots are autonomous or semi-autonomous vehicles capable of navigation through warehouses, factories, hospitals, and outdoor environments. They represent a critical technology for modern logistics, manufacturing, and service delivery, with the market expected to exceed $50 billion by 2030.
+
+## Overview
+
+Mobile robotics has evolved from simple guided vehicles following magnetic strips to sophisticated autonomous systems using computer vision, LiDAR, and AI for dynamic navigation. These systems are transforming material handling, reducing labor costs, and enabling 24/7 operations in logistics and manufacturing.
+
+## Automated Guided Vehicles (AGVs)
+
+AGVs follow predetermined paths using various guidance technologies. They represent the mature, established segment of mobile robotics with over 50 years of deployment history.
+
+### Guidance Technologies
+
+**Magnetic Tape/Wire Guidance**
+- Magnetic tape applied to floor surface
+- Sensors detect magnetic field to follow path
+- Low cost, reliable, easy to install
+- Path changes require physical tape relocation
+- Common in assembly lines, warehouse transport
+
+**Laser Navigation**
+- Reflective targets positioned around facility
+- Laser scanner triangulates position
+- Accurate to ±10mm
+- Flexible path programming
+- Higher initial cost but no floor modifications
+
+**Inertial Navigation**
+- Gyroscopes and wheel encoders track position
+- Requires periodic correction via transponders or reflectors
+- Works well in structured environments
+- Less affected by floor conditions
+
+**Vision Guidance**
+- Cameras detect natural features or markers
+- AI-based feature recognition
+- No infrastructure modifications required
+- Sensitive to lighting conditions
+
+### AGV Types
+
+**Tow Vehicles**
+- Pull carts with payloads up to 60,000kg
+- Common in automotive manufacturing
+- Multiple cart train configurations
+- Automatic hitch engagement
+
+**Unit Load Carriers**
+- Transport pallets, carts, or racks
+- Payloads 500kg-3,000kg
+- Fork-style or conveyor loading
+- Integration with automated storage
+
+**Pallet Trucks**
+- Automated pallet jacks
+- Payloads up to 2,500kg
+- Self-loading capability
+- Narrow aisle navigation
+
+**Assembly Line Vehicles**
+- Synchronize with production line speed
+- Precise positioning for work operations
+- Worker-following modes
+- Tool and part delivery
+
+### Leading AGV Manufacturers
+
+- **Dematic** - Comprehensive warehouse automation
+- **Daifuku** - Material handling systems integration
+- **JBT Corporation** - Heavy-duty industrial AGVs
+- **Bastian Solutions** (Toyota Advanced Logistics) - Custom AGV solutions
+- **Swisslog** - Healthcare and distribution AGVs
+
+## Autonomous Mobile Robots (AMRs)
+
+AMRs represent the next generation of mobile robotics, featuring dynamic navigation without fixed paths. They use onboard sensors and AI to perceive their environment and plan optimal routes in real-time.
+
+### Navigation Technology
+
+**Simultaneous Localization and Mapping (SLAM)**
+- Robot builds map while tracking its location
+- LiDAR, cameras, or fusion of multiple sensors
+- Handles dynamic obstacles and environment changes
+- No infrastructure installation required
+
+**Sensor Suite**
+- 2D/3D LiDAR for obstacle detection (360° scanning)
+- Depth cameras for 3D perception
+- Ultrasonic sensors for close-range detection
+- Wheel encoders and IMU for odometry
+- Safety laser scanners meeting ISO 3691-4
+
+**Path Planning Algorithms**
+- A* and D* Lite for optimal path calculation
+- Dynamic Window Approach for real-time obstacle avoidance
+- Velocity obstacles for multi-robot coordination
+- Learning-based approaches using reinforcement learning
+
+### AMR Capabilities
+
+**Dynamic Navigation**
+- Real-time route optimization
+- Automatic rerouting around obstacles
+- Elevator and door integration
+- Multi-floor navigation
+
+**Fleet Management**
+- Centralized traffic control
+- Task allocation and prioritization
+- Automatic charging coordination
+- Load balancing across robots
+
+**Safety Features**
+- Emergency stop systems
+- Redundant safety sensors
+- Collision avoidance algorithms
+- Compliance with safety standards (ANSI/ITSDF B56.5)
+
+### Leading AMR Manufacturers
+
+**Mobile Industrial Robots (MiR)**
+- MiR100: 100kg payload, 1.0m/s speed
+- MiR250: 250kg payload, hooks and conveyors
+- MiR600: 600kg payload, pallet handling
+- MiR1350: 1,350kg payload, heavy transport
+
+**Locus Robotics**
+- Collaborative picking robots
+- Deployed in 250+ warehouses
+- 15+ million picks per day
+- Purpose-built for e-commerce fulfillment
+
+**Fetch Robotics (now Zebra Robotics)**
+- Freight500: 500kg shelf moving
+- Freight1500: 1,500kg pallet transport
+- RollerTop: Conveyor-equipped AMR
+- Cloud-based fleet management
+
+**Amazon Robotics (formerly Kiva Systems)**
+- Proprietary system for Amazon warehouses
+- 750,000+ robots deployed globally
+- Pod-moving robots with AI coordination
+- Integration with robotic arms for picking
+
+**OTTO Motors (Clearpath Robotics)**
+- OTTO 100: 100kg, compact form factor
+- OTTO 600: 600kg, industrial applications
+- OTTO 1500: 1,500kg, heavy material handling
+
+**GreyOrange**
+- Butler robots with AI-driven optimization
+- Dense storage pod systems
+- Multi-country deployments
+- Ranger picking robots
+
+## Warehouse Automation Applications
+
+### Goods-to-Person Systems
+
+Robots bring inventory to stationary workers:
+
+**Benefits**
+- Picker productivity increased 2-4x
+- Walking time eliminated
+- Reduced order fulfillment time by 50-70%
+- Optimized storage density
+
+**Implementation**
+- Mobile robots retrieve storage pods or shelves
+- Deliver to ergonomic picking stations
+- Put-walls for batch picking efficiency
+- Real-time inventory management
+
+**Case Study: Amazon**
+- 750,000+ mobile robots across fulfillment network
+- 40% reduction in operational costs
+- Same-day delivery capability enabled
+- Seasonal scalability with robot fleet
+
+### Piece Picking and Sortation
+
+AMRs assist with individual item handling:
+
+- Follow pickers through aisles
+- Present totes for item placement
+- Automatic sortation to shipping lanes
+- Integration with automated bagging/packing
+
+**Performance Metrics**
+- Picks per hour: 100-150 (vs. 60-80 without robots)
+- Accuracy: 99.9%+ with barcode scanning
+- ROI: 18-36 months typical payback
+
+### Pallet Movement and Staging
+
+Heavy-duty AMRs for warehouse logistics:
+
+- Receive dock to storage transport
+- Production to shipping staging
+- Cross-docking operations
+- Just-in-time manufacturing supply
+
+### Inventory Management
+
+Mobile robots perform autonomous inventory audits:
+
+- Overnight scanning of shelf labels/RFID
+- Computer vision for stockout detection
+- Cycle counting automation
+- Real-time inventory accuracy
+
+**Example: Walmart**
+- Bossanova robots (now retired, replaced by drones)
+- Scanning 3x daily vs. biannual manual counts
+- 95%+ inventory accuracy achieved
+
+## Manufacturing Applications
+
+### Material Transport
+
+- Raw material delivery to production lines
+- Work-in-process movement between stations
+- Finished goods transport to warehouse
+- Tool and fixture delivery
+
+**Benefits in Manufacturing**
+- Reduced forklift traffic and safety incidents
+- Just-in-time material availability
+- Production line flexibility
+- Real-time material tracking
+
+### Assembly Line Support
+
+- Kitting robots delivering parts
+- Synchronization with production rate
+- Automated reordering from warehouse
+- Quality inspection transport
+
+## Healthcare and Hospital Logistics
+
+Mobile robots in healthcare facilities:
+
+**Applications**
+- Medication delivery from pharmacy
+- Clean linen distribution
+- Meal tray delivery
+- Medical waste removal
+- Laboratory specimen transport
+
+**Leading Healthcare Robots**
+- **Aethon TUG**: 600+ hospitals, elevator integration
+- **Swisslog TransCar**: Underground tunnel systems
+- **Omnicell XT**: Pharmacy automation
+- **Savioke Relay**: Hotel and hospital delivery
+
+**Benefits**
+- Staff time freed for patient care
+- Reduced infection risk vs. human transport
+- 24/7 operation capability
+- Precise delivery tracking
+
+## Last-Mile Delivery Robots
+
+Autonomous robots for local package delivery:
+
+### Sidewalk Delivery Robots
+
+**Starship Technologies**
+- 6+ million deliveries completed
+- Operating in 80+ cities globally
+- 99%+ delivery success rate
+- University campus deployments
+
+**Nuro**
+- Custom-built delivery vehicles
+- Partnerships with Walmart, Domino's
+- Regulatory approval in multiple states
+- Temperature-controlled compartments
+
+**Amazon Scout**
+- Electric delivery robots
+- Testing in suburban environments
+- Integration with Amazon logistics
+
+### Technical Specifications
+
+- Payload: 10-20kg typical
+- Range: 5-10km per charge
+- Speed: 6-10 km/h
+- Navigation: GPS + vision + LiDAR
+- Security: Locked compartments with access codes
+
+## Fleet Management and Software
+
+Centralized systems coordinate multiple robots:
+
+### Key Features
+
+**Task Management**
+- Order queuing and prioritization
+- Robot capability matching
+- Load balancing algorithms
+- Exception handling
+
+**Traffic Control**
+- Intersection management
+- Deadlock prevention
+- Congestion avoidance
+- Elevator scheduling
+
+**Analytics and Optimization**
+- Utilization metrics
+- Performance dashboards
+- Process bottleneck identification
+- Continuous improvement insights
+
+**Integration Capabilities**
+- WMS/ERP system connectivity
+- REST APIs for external systems
+- Real-time status updates
+- Custom workflow configuration
+
+### Leading Fleet Management Platforms
+
+- **OTTO FMS** (Clearpath) - Multi-vendor robot support
+- **FetchCore** (Zebra) - Cloud-based coordination
+- **MiR Fleet** - Centralized task allocation
+- **GreyMatter** (GreyOrange) - AI-driven optimization
+- **inVia Logic** - Warehouse execution system
+
+## Implementation Considerations
+
+### Site Assessment
+
+- Facility layout and workflow analysis
+- Traffic patterns and congestion points
+- Floor condition evaluation
+- WiFi coverage mapping
+- Integration requirements
+
+### ROI Calculation
+
+**Cost Factors**
+- Robot hardware: $25,000-$150,000 per unit
+- Fleet management software
+- Installation and integration
+- Training and change management
+- Ongoing maintenance
+
+**Savings and Benefits**
+- Labor cost reduction
+- Productivity improvement
+- Reduced errors and damage
+- Scalability vs. hiring
+- Space optimization
+
+**Typical ROI: 18-36 months**
+
+### Safety and Compliance
+
+- ANSI/ITSDF B56.5 standard for AGVs/AMRs
+- Risk assessment and safety validation
+- Emergency stop compliance
+- Pedestrian safety measures
+- Insurance and liability considerations
+
+## Future Trends
+
+### Technology Advancement
+
+**Enhanced AI and Learning**
+- Reinforcement learning for optimization
+- Computer vision improvements
+- Predictive maintenance
+- Anomaly detection
+
+**5G Connectivity**
+- Real-time fleet coordination
+- Cloud-based computation offload
+- Massive data upload for analytics
+- Reduced latency for safety
+
+**Collaborative Operation**
+- AMRs working with cobots
+- Human-robot collaboration
+- Multi-robot task coordination
+- Swarm robotics approaches
+
+### Market Evolution
+
+**Industry Expansion**
+- Retail store operations
+- Food service and restaurants
+- Construction sites
+- Airports and transportation hubs
+
+**Outdoor Deployment**
+- All-weather operation
+- Campus and industrial yard navigation
+- Agricultural applications
+- Security and inspection patrol
+
+**Robotics-as-a-Service (RaaS)**
+- Subscription-based models
+- Pay-per-pick pricing
+- Reduced capital expenditure
+- Scalable capacity
+
+## Related Topics
+
+- [IndustrialRobots.mdx](https://robotics.org.ai/IndustrialRobots) - Fixed automation systems
+- [ServiceRobots.mdx](https://robotics.org.ai/ServiceRobots) - Non-industrial applications
+- [DroneRobotics.mdx](https://robotics.org.ai/DroneRobotics) - Aerial mobility
+- [RoboticsAI.mdx](https://robotics.org.ai/RoboticsAI) - Navigation and perception AI
+
+## References
+
+- International Federation of Robotics - Mobile Robots Report
+- MHI (Material Handling Institute) - AGV/AMR Standards
+- ANSI/ITSDF B56.5 - Safety Standard for Driverless Industrial Vehicles
+- Interact Analysis - Mobile Robot Market Research

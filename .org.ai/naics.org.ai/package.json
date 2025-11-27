@@ -1,0 +1,33 @@
+{
+  "name": "naics.org.ai",
+  "version": "0.0.1",
+  "description": "North American Industry Classification System.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "naics"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://naics.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/naics.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

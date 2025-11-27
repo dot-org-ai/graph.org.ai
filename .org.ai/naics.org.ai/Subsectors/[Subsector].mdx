@@ -1,0 +1,36 @@
+---
+$id: https://naics.org.ai/Subsectors/{code}
+$context: https://naics.org.ai
+$type: https://naics.org.ai/Subsector
+code: "{code}"
+name: "{Subsector Name}"
+sector: "{sectorCode}"
+sectorName: "{Sector Name}"
+industryGroups:
+  - code: "{code}1"
+    name: "{Industry Group Name}"
+---
+
+# {code} - {Subsector Name}
+
+<SubsectorOverview code="{code}" />
+
+## Parent Sector
+
+[{sectorCode} - {Sector Name}](../Sectors/{sectorCode}/)
+
+## Industry Groups
+
+<IndustryGroupList subsectorCode="{code}" />
+
+| Code | Industry Group | Industries |
+|------|----------------|------------|
+| {code}1 | {Industry Group Name} | {count} |
+| {code}2 | {Industry Group Name} | {count} |
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [industries.org.ai](https://industries.org.ai) | Simplified industry |
+| [onet.org.ai](https://onet.org.ai) | Related occupations |

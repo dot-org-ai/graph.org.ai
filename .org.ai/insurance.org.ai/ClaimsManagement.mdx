@@ -1,0 +1,587 @@
+---
+$context: https://insurance.org.ai
+$id: https://insurance.org.ai/ClaimsManagement
+$type: https://insurance.org.ai/ClaimsManagement
+name: Claims Management
+naicsCode: "524291"
+description: "Insurance claims processing from First Notice of Loss through investigation, adjustment, settlement, and fraud detection"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Claims Management processes
+  return []
+}
+
+# Claims Management
+
+Claims management is the process of receiving, investigating, evaluating, and settling insurance claims. It is the critical "moment of truth" in insurance when policyholders experience the value of their coverage and insurers fulfill their promise to pay valid claims.
+
+## Overview
+
+Effective claims management balances multiple objectives:
+- **Customer service**: Fast, fair, empathetic claims handling
+- **Cost control**: Minimize claims leakage and overpayment
+- **Fraud detection**: Identify and deny fraudulent claims
+- **Regulatory compliance**: Adhere to state unfair claims practices laws
+- **Litigation management**: Defend against bad-faith lawsuits
+- **Data analytics**: Learn from claims to improve underwriting and risk selection
+
+### Claims Statistics
+- U.S. insurance claims paid annually: $600 billion
+- Auto claims: $250 billion (40+ million claims)
+- Property claims: $100 billion (10+ million claims)
+- Workers compensation: $60 billion
+- Health insurance: $900 billion (medical claims)
+- Average claim severity (auto): $6,000 (physical damage), $25,000 (bodily injury)
+- Claims expenses as % of premium: 60-75% (P&C), 80-85% (health)
+
+## Claims Process Overview
+
+### 1. First Notice of Loss (FNOL)
+
+**Initial claim reporting and intake**
+
+#### Reporting Channels
+- **Phone**: Traditional call center (still 60% of claims)
+- **Mobile app**: Photo/video upload, GPS location
+- **Online portal**: Web-based claim submission
+- **Agent**: Report through insurance agent or broker
+- **Third-party**: Police report, hospital, repair shop
+
+#### Information Captured
+- Policy details: Policy number, coverage verification
+- Loss details: Date, time, location, cause of loss
+- Parties involved: Claimant, witnesses, other parties
+- Damages: Description, photos, estimated cost
+- Injuries: Medical treatment, injuries sustained
+
+#### FNOL Metrics
+- **Time to FNOL**: Hours/days from loss to report
+- **Channel mix**: Phone, mobile, online, agent
+- **Abandoned call rate**: Callers hanging up before reaching adjuster
+- **Average handle time**: Minutes per FNOL call (target: 10-15 min)
+
+### 2. Claims Assignment & Triage
+
+**Routing claims to appropriate adjusters**
+
+#### Assignment Logic
+- **Coverage type**: Auto, property, liability, workers comp
+- **Complexity**: Simple vs. complex, injury vs. no injury
+- **Severity**: Small ($0-5K), medium ($5-50K), large ($50K+), catastrophe
+- **Jurisdiction**: State-specific handling requirements
+- **Special handling**: Fraud suspected, litigation potential, high-value customer
+
+#### Adjuster Types
+- **Inside adjuster**: Handle claims from office via phone/virtual
+- **Field adjuster**: Inspect damage in-person, write estimates
+- **Independent adjuster (IA)**: Contracted for catastrophe surge or specialty
+- **Public adjuster**: Hired by policyholder (not insurer)
+- **Desk adjuster**: Review estimates, approve payments, no inspections
+
+### 3. Investigation
+
+**Gather facts and verify coverage**
+
+#### Coverage Determination
+- **Policy in force**: Verify effective dates, premium paid
+- **Covered peril**: Loss caused by covered event (not excluded)
+- **Insured property/person**: Claim involves insured asset or person
+- **Limits and deductibles**: Determine applicable coverage limits
+- **Exclusions**: Review policy exclusions (wear/tear, intentional acts, etc.)
+
+#### Fact Gathering
+- **Scene investigation**: Inspect damage, photograph, measure
+- **Interviews**: Policyholder, witnesses, experts
+- **Records review**: Police reports, medical records, repair estimates
+- **Third-party data**: Weather data, traffic cameras, satellite imagery
+- **Expert opinions**: Engineers, doctors, investigators
+
+#### Investigation Metrics
+- **Time to first contact**: Hours to reach policyholder after FNOL
+- **Inspection scheduling**: Days to schedule/complete inspection
+- **Documentation completeness**: % claims with all required docs
+
+### 4. Evaluation & Reserving
+
+**Estimate claim value and set reserves**
+
+#### Reserve Types
+- **Case reserve**: Specific estimate for known claim
+- **IBNR (Incurred But Not Reported)**: Statistical estimate of unreported claims
+- **ALAE (Allocated Loss Adjustment Expense)**: Claim-specific expenses (legal, expert)
+- **ULAE (Unallocated Loss Adjustment Expense)**: General claims department overhead
+
+#### Valuation Methods
+
+**Property Damage**
+- **Actual Cash Value (ACV)**: Replacement cost - depreciation
+- **Replacement Cost Value (RCV)**: Cost to replace with new, similar property
+- **Agreed Value**: Pre-agreed amount (classic cars, jewelry)
+- **Functional Replacement Cost**: Similar utility, not identical
+
+**Bodily Injury / Liability**
+- **Economic damages**: Medical bills, lost wages, future care
+- **Non-economic damages**: Pain and suffering, emotional distress
+- **Special damages**: Specific calculable losses
+- **General damages**: Non-specific losses (pain, suffering)
+
+**Total Loss Threshold**
+- Vehicle: Typically 70-80% of ACV
+- Property: Depends on extent of structural damage
+
+#### Reserve Adequacy
+- **Initial reserve**: Set within 24-48 hours of FNOL
+- **Reserve adjustments**: Updated as new information emerges
+- **Reserve development**: Tracking changes over time (favorable vs. unfavorable)
+- **Reserve-to-paid ratio**: Reserve / ultimate paid (target: 1.0-1.2)
+
+### 5. Settlement Negotiation
+
+**Reach agreement on claim payment**
+
+#### Settlement Types
+
+**Agreed Settlement**
+- Policyholder and insurer agree on value
+- Release signed, claim closed
+- Most common outcome (90%+ of claims)
+
+**Structured Settlement**
+- Periodic payments instead of lump sum
+- Common in large bodily injury cases
+- Annuity provides future income stream
+
+**Cash Out / Buyout**
+- Policyholder accepts reduced lump sum
+- Releases insurer from future obligations
+- Often used in workers comp
+
+#### Settlement Strategies
+- **Demand and offer**: Claimant demands amount, insurer counters
+- **Comparative negligence**: Adjust payment for claimant's fault percentage
+- **Subrogation potential**: Recover from third parties after paying insured
+- **Policy limits**: Maximum coverage available
+
+### 6. Payment & Recovery
+
+**Issue payment and pursue recoveries**
+
+#### Payment Methods
+- **Check**: Mailed to policyholder/vendor (traditional, slower)
+- **ACH / Direct deposit**: Electronic transfer (faster, lower cost)
+- **Debit card**: Prepaid card loaded with claim amount
+- **Digital wallet**: Venmo, PayPal, Zelle
+- **Instant payment**: Real-time payout via mobile app (InsurTech)
+
+#### Recovery Mechanisms
+
+**Subrogation**
+- Recover from at-fault third parties
+- Example: Insurer pays collision claim, then sues at-fault driver
+- Subrogation recovery rate: 10-20% of paid claims
+
+**Salvage**
+- Sell damaged property for scrap/parts value
+- Example: Total loss vehicle sold to salvage yard
+- Salvage recovery: 10-30% of vehicle value
+
+**Deductible Collection**
+- Collect deductible from policyholder
+- Deductible waiver if third party at fault (and pays)
+
+### 7. Claims Closure
+
+**Finalize and document claim**
+
+#### Closure Requirements
+- **Release signed**: Policyholder releases insurer from further liability
+- **Final payment issued**: All payments made, no outstanding reserves
+- **Documentation complete**: File contains all required records
+- **Recoveries pursued**: Subrogation/salvage actions initiated or completed
+- **Quality review**: Claims audit confirms proper handling
+
+#### Closure Metrics
+- **Cycle time**: Days from FNOL to closure (target: 7-30 days for simple claims)
+- **Closure rate**: % claims closed per month
+- **Reopen rate**: % claims reopened after initial closure (target: <5%)
+
+## Claims by Line of Business
+
+### Auto Insurance Claims
+
+#### Physical Damage (Collision & Comprehensive)
+
+**Collision Claims**
+- Average severity: $4,500-6,000
+- Cycle time: 7-14 days (simple), 30-60 days (total loss)
+- **Process**: Inspect damage → Estimate repair cost → Select repair shop → Monitor repair → Issue payment
+
+**Total Loss**
+- Declared when repair cost > 70-80% of ACV
+- **Settlement**: Pay ACV - deductible, take ownership of vehicle
+- **Salvage**: Sell vehicle to salvage yard
+- Average total loss payout: $15,000-20,000
+
+**Comprehensive Claims**
+- **Theft**: Average payout $8,000-10,000, recovery rate 50%
+- **Hail**: Average payout $4,000-5,000, catastrophic events can affect 10,000+ vehicles
+- **Glass**: Windshield replacement $300-500, often $0 deductible
+- **Animal strikes**: Deer collisions average $4,000-5,000
+
+#### Bodily Injury (BI) Liability
+
+**First Party (Med Pay / PIP)**
+- Covers insured's medical expenses regardless of fault
+- No-fault states: PIP mandatory, limits $10K-50K
+- Quick payment, minimal investigation
+
+**Third Party (BI Liability)**
+- Covers injuries to others when insured at fault
+- **Minor injuries**: Soft tissue, sprains ($5,000-15,000)
+- **Moderate injuries**: Fractures, surgery ($25,000-100,000)
+- **Severe injuries**: Permanent disability, brain injury ($500,000-$1M+)
+- **Fatality**: Wrongful death ($500,000-$5M+)
+
+**Attorney Representation**
+- 30-40% of BI claims involve plaintiff attorney
+- Attorney cases: 3x higher settlement on average
+- Litigation rate: 5-10% of BI claims go to trial
+
+### Property Insurance Claims
+
+#### Homeowners Claims
+
+**Water Damage**
+- Most common claim type (30% of claims)
+- **Sudden & accidental**: Burst pipes, appliance leaks (covered)
+- **Gradual**: Slow leaks, seepage (excluded)
+- Average payout: $10,000-15,000
+- Mitigation critical (mold can develop in 24-48 hours)
+
+**Fire**
+- Severe but less frequent (5% of claims)
+- **Total loss**: Average payout $250,000-350,000
+- **Partial loss**: Average payout $50,000-75,000
+- Additional living expenses: $10,000-30,000 (3-6 months)
+
+**Wind & Hail**
+- Roof damage most common
+- Average payout: $10,000-15,000 (roof repair/replacement)
+- Hailstorms can affect entire neighborhoods (CAT events)
+
+**Theft & Vandalism**
+- Average payout: $5,000-8,000
+- Police report required
+- High-value items require scheduled coverage (jewelry, art)
+
+**Liability**
+- **Slip and fall**: Average settlement $20,000-50,000
+- **Dog bite**: Average settlement $50,000-70,000
+- **Tree falling on neighbor**: Property damage coverage
+
+#### Commercial Property Claims
+
+**Business Interruption**
+- Covers lost income during repair period
+- Requires physical damage to trigger coverage
+- **Calculation**: (Revenue - Variable costs) × Days closed
+- Requires detailed financial records
+
+**Equipment Breakdown**
+- HVAC, boilers, electrical, mechanical failures
+- Average claim: $25,000-50,000
+- Requires inspection and cause determination
+
+### Workers Compensation Claims
+
+#### Medical Only Claims
+- Medical treatment, no lost time from work
+- Average cost: $1,500-3,000
+- 70% of WC claims are medical-only
+- Fast closure (30-60 days)
+
+#### Lost Time Claims
+- Employee misses work due to injury
+- **Temporary Total Disability (TTD)**: Cannot work at all (2/3 wage replacement)
+- **Temporary Partial Disability (TPD)**: Can work light duty (wage differential)
+- **Permanent Partial Disability (PPD)**: Permanent impairment, lump sum or weekly benefits
+- **Permanent Total Disability (PTD)**: Cannot work again (lifetime benefits)
+
+#### Return to Work Programs
+- Modified duty, light duty, work hardening
+- Reduce lost time and claim costs
+- Vocational rehabilitation for severe injuries
+
+**High-Cost Claims**
+- Spinal injuries: $100,000-500,000
+- Amputations: $200,000-750,000
+- Traumatic brain injury: $500,000-$2M+
+- Fatalities: $500,000-$1M+ (death benefits + funeral)
+
+### Health Insurance Claims
+
+#### Medical Claims Processing
+
+**Claims Adjudication**
+- **Electronic claims**: 90%+ of claims via EDI 837 format
+- **Auto-adjudication**: 85-95% of claims processed without human review
+- **Clean claim rate**: % claims paid on first submission (target: 95%+)
+- **Processing time**: 5-10 days (electronic), 15-30 days (paper)
+
+**Claim Edits & Denials**
+- **Coding errors**: Wrong CPT/ICD codes, unbundling
+- **Eligibility**: Not covered on date of service
+- **Prior authorization**: Required but not obtained
+- **Medical necessity**: Treatment not medically necessary
+- **Out-of-network**: Non-contracted provider (higher member cost)
+
+**Explanation of Benefits (EOB)**
+- Statement showing claim processing
+- Billed amount, allowed amount, plan payment, member responsibility
+- Mailed or available online
+
+#### Pharmacy Claims
+
+**Real-Time Adjudication**
+- Claim processed in 1-3 seconds at pharmacy POS
+- **Check**: Eligibility, formulary, prior auth, quantity limits, refill-too-soon
+- **Calculate**: Plan pays amount, member copay/coinsurance
+- **Approve or reject**: Instant decision
+
+**Specialty Pharmacy**
+- High-cost biologics and specialty drugs ($5,000-100,000+ per month)
+- Prior authorization required (98% of cases)
+- Step therapy (try lower-cost alternatives first)
+- Adherence monitoring and patient support
+
+## Fraud Detection & Special Investigations
+
+### Claims Fraud Statistics
+- Estimated fraud: 10% of all claims ($80 billion annually)
+- Hard fraud: Intentional deception (staged accidents, arson)
+- Soft fraud: Exaggeration of legitimate claims (inflated damage, phantom injuries)
+- Detection rate: 1-2% of claims flagged for investigation
+
+### Fraud Red Flags
+
+**Auto Insurance Fraud**
+- Staged accidents (rear-end, swoop-and-squat)
+- Phantom passengers (claim injuries but weren't in vehicle)
+- Exaggerated injuries (soft tissue, whiplash)
+- VIN cloning (stolen vehicle with legitimate VIN)
+- Total loss padding (claim pre-existing damage)
+
+**Property Insurance Fraud**
+- Arson for profit (failing business, underwater mortgage)
+- Inflated replacement cost claims
+- Claim pre-existing damage (roof, foundation)
+- Phantom theft (items never owned)
+- Public adjuster inflation (exaggerate damages for higher fee)
+
+**Workers Compensation Fraud**
+- Fake injuries (claim non-work injury as work-related)
+- Malingering (exaggerate injury to avoid returning to work)
+- Working while collecting disability benefits
+- Premium fraud (misclassify employees to lower rates)
+
+### Fraud Detection Methods
+
+#### Predictive Analytics
+- Machine learning models flag suspicious claims
+- Anomaly detection (unusual patterns vs. historical norms)
+- Network analysis (identify fraud rings)
+- Social media mining (photos contradicting injury claims)
+
+**Fraud Detection Vendors**
+- **Shift Technology**: AI-powered fraud detection
+- **ISO ClaimSearch**: Database of prior claims across carriers
+- **Verisk**: Fraud analytics and databases
+- **SAS Fraud Framework**: Predictive modeling platform
+
+#### Special Investigations Unit (SIU)
+
+**Investigative Techniques**
+- **Surveillance**: Video/photo of claimant activities
+- **Social media**: Public posts contradicting claim
+- **Database checks**: Prior claims, criminal history, employment
+- **Scene investigation**: Accident reconstruction, fire origin analysis
+- **Interviews**: Recorded statements under oath (examination under oath - EUO)
+- **Forensics**: Digital forensics, medical record review
+
+**Outcomes**
+- **Denial**: Claim denied due to fraud, no payment
+- **Referral**: Report to law enforcement, insurance fraud bureau
+- **Prosecution**: Criminal charges filed (felony insurance fraud)
+- **Civil action**: Sue claimant for fraud, restitution
+
+## Technology & Innovation in Claims
+
+### AI & Automation
+
+#### Automated Damage Assessment
+- Photo/video analysis to estimate repair costs
+- Computer vision identifies damage severity
+- Instant estimates (seconds vs. days)
+
+**Vendors**
+- **Tractable**: AI damage appraisal for auto and property
+- **Snapsheet**: Virtual claims handling
+- **Mitchell**: Cloud estimating and workflow
+
+**Accuracy**
+- 90-95% accuracy for simple claims
+- Human review for complex/disputed claims
+- Cost reduction: 40-60% vs. field adjusting
+
+#### Claims Chatbots
+- FNOL intake via conversational AI
+- Claims status inquiries
+- Document upload and review
+- 24/7 availability
+
+**Examples**
+- **Lemonade Jim**: AI claims bot (record: 3-second payout)
+- **Allstate ABIe**: Virtual assistant for claims
+- **USAA**: Chatbot for claims and service
+
+### Virtual Inspections
+
+**Video Calls & Live Streaming**
+- Adjuster guides policyholder through damage video
+- Eliminates travel time, faster inspections
+- Lower cost than field adjusting
+
+**Drone Inspections**
+- Roof inspections without ladder
+- Catastrophe damage assessment (hurricanes, wildfires)
+- Safer for adjusters
+
+**360° Photos / 3D Scanning**
+- Matterport, Zillow 3D Home
+- Capture entire property in 3D
+- Remote damage assessment
+
+### Telematics & First Notice of Crash
+
+**Automatic Crash Detection**
+- Smartphone accelerometer detects impact
+- Automatic FNOL initiated
+- GPS location shared with insurer
+- Emergency services notified if needed
+
+**Programs**
+- **Progressive Snapshot**: Automatic crash detection
+- **Allstate Drivewise**: Crash detection and assistance
+- **Root**: Built-in crash detection
+
+**Benefits**
+- Faster FNOL (minutes vs. hours/days)
+- Improved customer experience
+- Better claim outcomes (early intervention)
+
+### Parametric Claims
+
+**Instant Payouts via Smart Contracts**
+- Trigger-based payments (no investigation required)
+- Example: Hurricane wind speed > 100 mph at location → Automatic $10,000 payout
+- Blockchain-enabled smart contracts
+- Fast liquidity for policyholders
+
+**Applications**
+- Flight delay insurance (>2 hours = automatic payout)
+- Crop insurance (rainfall totals trigger payment)
+- Hurricane/earthquake (parametric triggers)
+
+## Claims Performance Metrics
+
+### Efficiency Metrics
+- **Cycle time**: Days from FNOL to closure
+- **Average claim cost**: Total incurred / claim count
+- **Claims per adjuster**: Caseload (target: 100-150 active claims)
+- **Touchpoints per claim**: Contacts with policyholder, vendors
+
+### Quality Metrics
+- **Customer satisfaction (CSAT)**: Survey ratings (target: 4.5+ / 5)
+- **Net Promoter Score (NPS)**: Likelihood to recommend insurer
+- **Claims accuracy**: % claims paid correctly (no errors)
+- **Reopened claims rate**: % claims reopened (target: <5%)
+
+### Financial Metrics
+- **Loss ratio**: Incurred claims / earned premium (target: 60-70%)
+- **Claims severity**: Average cost per claim
+- **Claims frequency**: Claims per 100 policies
+- **ALAE ratio**: Allocated loss expenses / incurred claims
+- **Paid-to-incurred ratio**: Paid claims / total incurred (reserve adequacy)
+
+### Regulatory Metrics
+- **Prompt payment compliance**: % claims paid within state timeframes
+- **Denial rate**: % claims denied
+- **Coverage dispute rate**: % claims disputed by policyholder
+- **Bad faith lawsuits**: Claims alleging insurer bad faith
+
+## Regulatory Environment
+
+### State Unfair Claims Practices Laws
+
+**Prohibited Practices**
+- Misrepresenting policy provisions
+- Failing to acknowledge and act promptly on claims
+- Not attempting good-faith settlements
+- Compelling policyholders to litigate to recover
+- Delaying payment without reasonable justification
+
+**Penalties**
+- Fines: $1,000-50,000 per violation
+- License suspension or revocation
+- Treble damages (3× actual damages)
+- Attorney fees and costs
+
+### Prompt Payment Laws
+
+**State-Specific Timeframes**
+- Acknowledge claim: 15-30 days
+- Make coverage decision: 30-60 days (from receipt of proof of loss)
+- Issue payment: 30-60 days (from settlement agreement)
+- Interest on late payments: 8-18% annually (varies by state)
+
+**Examples**
+- **California**: 40 days to pay after proof of loss
+- **Texas**: 15 days to acknowledge, 15 days to request info, 5 days to pay
+- **Florida**: 90 days to pay or deny, 20 days for supplemental claims
+
+### Bad Faith Litigation
+
+**Elements of Bad Faith**
+- Unreasonable delay or denial of claim
+- Failure to investigate thoroughly
+- Low-ball settlement offers
+- Ignoring evidence favorable to policyholder
+- Failure to defend insured in liability claim
+
+**Damages**
+- **Compensatory**: Actual damages, policy limits
+- **Consequential**: Economic harm from denial (foreclosure, bankruptcy)
+- **Punitive**: Punishment for egregious conduct (can be 10-100× compensatory)
+
+**High-Profile Cases**
+- State Farm v. Campbell (2003): $145M punitive damages (reduced by SCOTUS)
+- Nationwide bad faith settlements: $50-100M annually
+
+## Related Topics
+
+- [PropertyCasualty](./PropertyCasualty.mdx) - P&C insurance claims
+- [HealthInsurance](./HealthInsurance.mdx) - Health insurance claims adjudication
+- [LifeInsurance](./LifeInsurance.mdx) - Life insurance claims and beneficiary payouts
+- [InsurTech](./InsurTech.mdx) - AI claims automation and virtual adjusting
+- [litigation.org.ai](https://litigation.org.ai) - Insurance litigation and bad faith
+- [fraud.org.ai](https://fraud.org.ai) - Insurance fraud detection and prevention
+
+## Sources
+
+- National Association of Insurance Commissioners (NAIC) - [https://www.naic.org](https://www.naic.org)
+- Insurance Information Institute (III) - [https://www.iii.org](https://www.iii.org)
+- Coalition Against Insurance Fraud (CAIF) - [https://www.insurancefraud.org](https://www.insurancefraud.org)
+- American Insurance Association (AIA) - [https://www.aia.org](https://www.aia.org)
+- Claims Pages (CP) - [https://www.claimspages.com](https://www.claimspages.com)
+- Insurance Services Office (ISO) - [https://www.verisk.com/insurance/](https://www.verisk.com/insurance/)

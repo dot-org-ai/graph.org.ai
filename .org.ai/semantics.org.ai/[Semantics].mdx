@@ -1,0 +1,48 @@
+---
+$context: https://semantics.org.ai
+$id: https://semantics.org.ai/{{slug}}
+$type: https://semantics.org.ai/Semantics
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Semantics
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SemanticsOverview semantics={semantics} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Semantics` |
+| Domain | [semantics.org.ai](https://semantics.org.ai) |
+| Parent | [language.org.ai](https://language.org.ai) |
+
+## Details
+
+<SemanticsDetails semantics={semantics} />
+
+## Properties
+
+<SemanticsProperties semantics={semantics} />
+
+## Relationships
+
+<SemanticsRelationships semantics={semantics} />
+
+## Related
+
+<RelatedSemanticss semantics={semantics} />
+
+## Sources
+
+- <DatabaseLink namespace="semantics.org.ai" type="{{slug}}" />

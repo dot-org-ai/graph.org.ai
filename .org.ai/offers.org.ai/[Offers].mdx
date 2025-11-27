@@ -1,0 +1,48 @@
+---
+$context: https://offers.org.ai
+$id: https://offers.org.ai/{{slug}}
+$type: https://offers.org.ai/Offers
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Offers
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<OffersOverview offers={offers} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Offers` |
+| Domain | [offers.org.ai](https://offers.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<OffersDetails offers={offers} />
+
+## Properties
+
+<OffersProperties offers={offers} />
+
+## Relationships
+
+<OffersRelationships offers={offers} />
+
+## Related
+
+<RelatedOfferss offers={offers} />
+
+## Sources
+
+- <DatabaseLink namespace="offers.org.ai" type="{{slug}}" />

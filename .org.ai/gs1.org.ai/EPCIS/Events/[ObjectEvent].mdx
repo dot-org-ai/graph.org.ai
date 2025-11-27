@@ -1,0 +1,72 @@
+---
+$id: https://gs1.org.ai/EPCIS/Events/{eventId}
+$context: https://gs1.org.ai
+$type: https://gs1.org.ai/EPCIS/ObjectEvent
+eventId: "{eventId}"
+eventType: "ObjectEvent"
+action: "ADD" | "OBSERVE" | "DELETE"
+eventTime: "{eventTime}"
+eventTimeZoneOffset: "{offset}"
+recordTime: "{recordTime}"
+bizStep: "{bizStep}"
+disposition: "{disposition}"
+readPoint: "{readPoint}"
+bizLocation: "{bizLocation}"
+epcList:
+  - "{epc1}"
+  - "{epc2}"
+quantityList:
+  - epcClass: "{epcClass}"
+    quantity: {quantity}
+    uom: "{uom}"
+---
+
+# ObjectEvent: {eventId}
+
+<EventTimeline eventId="{eventId}" />
+
+## Event Details
+
+| Dimension | Value |
+|-----------|-------|
+| **What** | {epcList} |
+| **When** | {eventTime} |
+| **Where** | {readPoint} / {bizLocation} |
+| **Why** | {bizStep} - {disposition} |
+
+## Action: {action}
+
+- `ADD` - Objects entered the supply chain
+- `OBSERVE` - Objects were observed
+- `DELETE` - Objects left the supply chain
+
+## Business Context
+
+### Business Step
+`{bizStep}` - {bizStepDescription}
+
+### Disposition
+`{disposition}` - {dispositionDescription}
+
+## Objects
+
+<EPCList epcList="{epcList}" />
+
+## Location
+
+<LocationDetails
+  readPoint="{readPoint}"
+  bizLocation="{bizLocation}"
+/>
+
+## Source/Destination
+
+<SourceDestination eventId="{eventId}" />
+
+## Sensor Data
+
+<SensorData eventId="{eventId}" />
+
+## Related Events
+
+<RelatedEvents eventId="{eventId}" />

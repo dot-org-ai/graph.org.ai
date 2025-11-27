@@ -1,0 +1,48 @@
+---
+$context: https://engineering.org.ai
+$id: https://engineering.org.ai/{{slug}}
+$type: https://engineering.org.ai/Engineering
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Engineering
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<EngineeringOverview engineering={engineering} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Engineering` |
+| Domain | [engineering.org.ai](https://engineering.org.ai) |
+| Parent | [work.org.ai](https://work.org.ai) |
+
+## Details
+
+<EngineeringDetails engineering={engineering} />
+
+## Properties
+
+<EngineeringProperties engineering={engineering} />
+
+## Relationships
+
+<EngineeringRelationships engineering={engineering} />
+
+## Related
+
+<RelatedEngineerings engineering={engineering} />
+
+## Sources
+
+- <DatabaseLink namespace="engineering.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://vehicles.org.ai
+$id: https://vehicles.org.ai/{{slug}}
+$type: https://vehicles.org.ai/Vehicles
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Vehicles
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<VehiclesOverview vehicles={vehicles} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Vehicles` |
+| Domain | [vehicles.org.ai](https://vehicles.org.ai) |
+| Parent | [tools.org.ai](https://tools.org.ai) |
+
+## Details
+
+<VehiclesDetails vehicles={vehicles} />
+
+## Properties
+
+<VehiclesProperties vehicles={vehicles} />
+
+## Relationships
+
+<VehiclesRelationships vehicles={vehicles} />
+
+## Related
+
+<RelatedVehicless vehicles={vehicles} />
+
+## Sources
+
+- <DatabaseLink namespace="vehicles.org.ai" type="{{slug}}" />

@@ -1,0 +1,33 @@
+{
+  "name": "tools.org.ai",
+  "version": "0.0.1",
+  "description": "Instruments used to perform actions.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "tools"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://tools.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/tools.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

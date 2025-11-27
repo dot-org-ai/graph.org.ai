@@ -1,0 +1,48 @@
+---
+$context: https://images.org.ai
+$id: https://images.org.ai/{{slug}}
+$type: https://images.org.ai/Images
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Images
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ImagesOverview images={images} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Images` |
+| Domain | [images.org.ai](https://images.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<ImagesDetails images={images} />
+
+## Properties
+
+<ImagesProperties images={images} />
+
+## Relationships
+
+<ImagesRelationships images={images} />
+
+## Related
+
+<RelatedImagess images={images} />
+
+## Sources
+
+- <DatabaseLink namespace="images.org.ai" type="{{slug}}" />

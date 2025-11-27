@@ -1,0 +1,48 @@
+---
+$context: https://news.org.ai
+$id: https://news.org.ai/{{slug}}
+$type: https://news.org.ai/News
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for News
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<NewsOverview news={news} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `News` |
+| Domain | [news.org.ai](https://news.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<NewsDetails news={news} />
+
+## Properties
+
+<NewsProperties news={news} />
+
+## Relationships
+
+<NewsRelationships news={news} />
+
+## Related
+
+<RelatedNewss news={news} />
+
+## Sources
+
+- <DatabaseLink namespace="news.org.ai" type="{{slug}}" />

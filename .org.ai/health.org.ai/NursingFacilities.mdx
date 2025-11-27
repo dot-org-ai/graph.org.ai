@@ -1,0 +1,524 @@
+---
+$context: https://health.org.ai
+$id: https://health.org.ai/NursingFacilities
+$type: https://health.org.ai/MedicalEntity
+name: "Nursing and Residential Care Facilities"
+naicsCode: "623"
+description: "Facilities providing residential care combined with nursing, supervisory, or other types of care as required by residents, including skilled nursing facilities, assisted living, continuing care retirement communities, and residential care for individuals with intellectual and developmental disabilities."
+parent: https://health.org.ai
+---
+
+export const items = async () => {
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://health.org.ai/NursingFacilities',
+    naicsCode: { $regex: '^623' }
+  })
+}
+
+# Nursing and Residential Care Facilities
+
+Nursing and residential care facilities provide a continuum of long-term care services for individuals who require assistance with activities of daily living, ongoing medical care, or specialized support due to age, disability, or chronic illness. This sector encompasses over 67,000 facilities serving more than 4 million residents with a workforce exceeding 3 million employees in the United States. These facilities range from skilled nursing facilities providing 24-hour nursing care to assisted living communities offering supportive services, continuing care retirement communities serving active seniors, and specialized facilities for individuals with intellectual and developmental disabilities.
+
+The nursing and residential care sector serves as a critical component of the healthcare system, bridging the gap between hospital care and independent living. Facilities provide essential services including skilled nursing, rehabilitation therapy, medication management, personal care assistance, and social activities. The industry faces significant challenges including workforce shortages, regulatory complexity, reimbursement pressures, and the need to adapt to consumer preferences for aging in place and home-based care alternatives.
+
+## Overview
+
+### Key Characteristics
+
+**Residential Nature**
+- **24/7 Care** - Round-the-clock staffing and supervision
+- **Room and Board** - Living accommodations, meals, housekeeping
+- **Personal Care** - Assistance with activities of daily living (bathing, dressing, toileting, eating, transferring)
+- **Social Activities** - Recreational programs, social engagement, quality of life
+- **Long-Term** - Extended stays ranging from months to years
+
+**Care Levels**
+- **Skilled Nursing** - 24-hour nursing care, rehabilitation, medical management
+- **Assisted Living** - Personal care assistance, medication management, minimal nursing
+- **Independent Living** - Minimal assistance, primarily housing and amenities
+- **Memory Care** - Specialized care for dementia and Alzheimer's disease
+- **Hospice Care** - End-of-life comfort care
+
+**Regulatory Environment**
+- **Federal** - Medicare/Medicaid certification, CMS regulations
+- **State** - Licensure, inspection, enforcement (varies significantly by state)
+- **Survey Process** - Annual inspections, complaint investigations
+- **Quality Measures** - Public reporting via CMS Nursing Home Compare, Care Compare
+- **Resident Rights** - Federal and state protections for resident rights and quality of life
+
+**Financial Model**
+- **Private Pay** - Out-of-pocket payment by residents or families
+- **Medicaid** - Primary payer for long-term care (62% of nursing home residents)
+- **Medicare** - Short-term skilled nursing (post-acute care, up to 100 days)
+- **Long-Term Care Insurance** - Supplemental coverage for qualifying care
+- **Veterans Benefits** - Aid and Attendance benefit for eligible veterans
+
+## NAICS 623 - Nursing and Residential Care Facilities
+
+### 6231 - Nursing Care Facilities (Skilled Nursing Facilities)
+
+Licensed facilities providing 24-hour nursing care, rehabilitation, and medical services.
+
+#### Structure and Services
+
+**Facility Characteristics**:
+- **Size** - Typically 50-200 beds (average ~100 beds)
+- **Ownership** - For-profit (70%), non-profit (24%), government (6%)
+- **Chains** - Many operated by large chains (Genesis, Skilled Healthcare Group, Life Care Centers)
+- **Hospital-Based** - Some affiliated with hospitals (swing beds in rural hospitals)
+
+**Core Services**:
+- **Skilled Nursing Care** - RNs, LPNs providing 24/7 nursing care
+- **Rehabilitation Therapy** - PT, OT, speech therapy (often contracted)
+- **Medical Direction** - Medical director oversight, attending physician services
+- **Medication Management** - Pharmacy services, medication administration
+- **Nutritional Services** - Therapeutic diets, nutritional assessment and intervention
+- **Social Services** - Care planning, discharge planning, psychosocial support
+- **Activities** - Recreation, social activities, spiritual services
+
+**Resident Populations**:
+- **Post-Acute** - Short-term rehabilitation following hospitalization (Medicare Part A)
+- **Long-Term Care** - Chronic illness, functional decline, complex medical needs
+- **Dementia Care** - Specialized units or integrated care for cognitive impairment
+- **End-of-Life** - Hospice care for terminal patients
+- **Ventilator-Dependent** - Respiratory care units for ventilator patients
+
+#### Medicare Skilled Nursing Facility (SNF) Services
+
+**Medicare Part A Coverage**:
+- **Eligibility** - 3-day qualifying hospital stay, admission within 30 days
+- **Duration** - Up to 100 days per benefit period
+- **Cost-Sharing** - Days 1-20 no copay, days 21-100 copay ($200/day in 2024)
+- **Services** - Skilled nursing, therapy, medical supplies, medications
+
+**Patient-Driven Payment Model (PDPM)**:
+- **Case-Mix** - Payment based on resident characteristics and resource utilization
+- **Components** - PT, OT, SLP, nursing, non-therapy ancillary (NTA)
+- **Comorbidity** - Additional payment for complex medical conditions
+- **Quality** - Value-Based Purchasing program (SNF VBP)
+
+**Utilization**:
+- **Length of Stay** - Average 25-30 days for Medicare patients
+- **Outcomes** - Discharge to community (goal), readmission to hospital (adverse)
+- **Therapy Minutes** - No longer drives payment under PDPM (eliminated RUGs model)
+
+#### Medicaid Long-Term Care
+
+**Medicaid as Primary Payer**:
+- **Coverage** - 62% of nursing home residents covered by Medicaid
+- **Eligibility** - Income and asset limits (spend-down required)
+- **State Variation** - Rates and policies vary dramatically by state
+- **Reimbursement** - Often below cost of care (avg $200-250/day)
+
+**Medicaid Services**:
+- **Room and Board** - Housing, meals, housekeeping
+- **Nursing Care** - 24-hour nursing supervision and care
+- **Personal Care** - Assistance with ADLs
+- **Activities** - Social and recreational programs
+- **Supplies** - Medical supplies, incontinence products
+
+**Financial Challenges**:
+- **Low Rates** - Medicaid pays significantly less than Medicare or private pay
+- **Cross-Subsidization** - Private pay and Medicare rates subsidize Medicaid
+- **State Budget Pressures** - States reducing rates during fiscal challenges
+- **Access Issues** - Some facilities limit Medicaid admissions
+
+#### Staffing and Workforce
+
+**Nursing Staff**:
+- **Director of Nursing (DON)** - RN overseeing all nursing services
+- **Registered Nurses (RNs)** - Supervisory roles, assessments, care planning
+- **Licensed Practical Nurses (LPNs)** - Medication administration, treatments, wound care
+- **Certified Nursing Assistants (CNAs)** - Direct care, assistance with ADLs
+- **Staffing Ratios** - Varies by state; typically 1 CNA per 7-10 residents on day shift
+
+**Ancillary Staff**:
+- **Physical Therapists** - Mobility, strength, balance
+- **Occupational Therapists** - ADLs, adaptive equipment
+- **Speech-Language Pathologists** - Swallowing, communication, cognition
+- **Social Workers** - Care planning, discharge planning, counseling
+- **Dietary** - Nutritionists, dietary aides, food service
+- **Activities** - Activity directors, recreation therapists
+
+**Workforce Challenges**:
+- **CNA Shortage** - High turnover (50-100% annually), low wages, difficult work
+- **Nursing Shortage** - Competition with hospitals for RNs and LPNs
+- **Training** - CNA certification (75-150 hours), ongoing training requirements
+- **Retention** - Improving wages, benefits, workplace culture to reduce turnover
+
+#### Quality Measurement and Five-Star Rating
+
+**CMS Five-Star Quality Rating System**:
+1. **Health Inspections** (State survey deficiencies)
+2. **Staffing** (RN hours, total nurse staffing hours per resident day)
+3. **Quality Measures** (Clinical outcomes and resident experience)
+
+**Quality Measures**:
+- **Antipsychotic Medication Use** - Reduction in inappropriate use
+- **Pressure Ulcers** - Prevention and treatment
+- **Physical Restraints** - Minimization of restraint use
+- **Falls with Major Injury** - Prevention of falls and injuries
+- **UTIs** - Urinary tract infection rates
+- **Pain Management** - Assessment and treatment of pain
+- **Functional Decline** - Maintenance or improvement in ADLs
+- **Influenza and Pneumococcal Vaccinations** - Immunization rates
+
+**Public Reporting**:
+- **Nursing Home Compare** (now Care Compare) - CMS website with star ratings, inspection results
+- **Transparency** - Deficiency citations, complaint investigations publicly available
+- **Consumer Tool** - Helps families compare facilities
+
+**COVID-19 Impact**:
+- **Deaths** - Nursing homes represented ~40% of U.S. COVID-19 deaths
+- **Infection Control** - Heightened focus on prevention and control
+- **Staffing** - Exacerbated shortages, burnout
+- **Visitation** - Restrictions on family visits, reopening challenges
+
+#### Regulatory Compliance
+
+**Federal Requirements**:
+- **Conditions of Participation** - Medicare/Medicaid certification standards
+- **Resident Rights** - Right to dignity, privacy, self-determination
+- **Care Planning** - Individualized care plans with resident participation
+- **Minimum Data Set (MDS)** - Comprehensive assessment, quarterly and annual
+- **OBRA '87** - Nursing Home Reform Act establishing current regulatory framework
+
+**State Licensure**:
+- **Annual Surveys** - State inspectors conduct comprehensive inspections
+- **Complaint Investigations** - Response to complaints from residents, families, staff
+- **Enforcement** - Deficiency citations, civil monetary penalties, denial of payment
+- **Life Safety** - Fire safety, building codes, environmental safety
+
+**Quality Assurance and Performance Improvement (QAPI)**:
+- **Systematic Approach** - Data-driven quality improvement
+- **Performance Indicator Projects** - Focus on specific quality measures
+- **Root Cause Analysis** - Investigating adverse events and near misses
+- **Infection Prevention and Control** - Antibiotic stewardship, surveillance, outbreak management
+
+### 6232 - Residential Intellectual and Developmental Disability Facilities
+
+Facilities providing residential care for individuals with intellectual disabilities, developmental disabilities, and related conditions.
+
+**Services Provided**:
+- **Residential Care** - Group homes, intermediate care facilities (ICF/IID)
+- **Habilitation** - Skill development, community integration
+- **Personal Care** - Assistance with ADLs
+- **Medical Care** - Nursing services, medication management
+- **Behavioral Support** - Positive behavior support plans
+- **Day Programs** - Vocational training, socialization, activities
+
+**Settings**:
+- **Intermediate Care Facilities for Individuals with Intellectual Disabilities (ICF/IID)** - Medicaid-certified, regulated facilities
+- **Group Homes** - Small community-based homes (4-8 residents)
+- **Large Facilities** - State-operated developmental centers (declining due to deinstitutionalization)
+
+**Funding**:
+- **Medicaid** - Primary funding source (ICF/IID benefit, HCBS waivers)
+- **State Funding** - Varies by state
+- **Family Resources** - Private pay in some cases
+
+**Transition to Community**:
+- **Deinstitutionalization** - Shift from large institutions to community-based settings
+- **Home and Community-Based Services (HCBS)** - Waivers supporting community living
+- **Supported Living** - Independent apartments with staff support
+
+### 6233 - Continuing Care Retirement Communities (CCRCs)
+
+Planned communities offering a continuum of care from independent living through skilled nursing.
+
+#### CCRC Model
+
+**Continuum of Care**:
+- **Independent Living** - Apartments or cottages, minimal services
+- **Assisted Living** - Personal care assistance, some nursing services
+- **Skilled Nursing** - Full nursing care for chronic illness or rehabilitation
+- **Memory Care** - Specialized dementia care
+- **Transitions** - Residents move along continuum as needs change
+
+**Contract Types**:
+- **Type A (Life Care)** - Comprehensive care included, higher upfront fee, minimal monthly increase
+- **Type B (Modified)** - Some services included, additional fees for higher care levels
+- **Type C (Fee-for-Service)** - Pay market rates for services as used
+- **Entrance Fees** - $100,000 to $1 million+ depending on unit and contract
+- **Monthly Fees** - $2,000-$6,000+ for independent living
+
+**Amenities**:
+- Dining venues (multiple restaurants, cafes)
+- Fitness centers and wellness programs
+- Swimming pools, golf courses
+- Arts and crafts studios
+- Libraries, computer centers
+- Social and cultural activities
+- Transportation services
+- Housekeeping and maintenance
+
+**Financial Considerations**:
+- **Refundable vs. Non-Refundable** - Entrance fee structure
+- **Occupancy Risk** - Financial viability depends on high occupancy
+- **Actuarial Balance** - Managing risk across resident population
+- **Reserve Requirements** - State regulations on financial reserves
+
+**Accreditation**:
+- **CARF-CCAC** - Commission on Accreditation of Rehabilitation Facilities - Continuing Care Accreditation Commission
+- **Standards** - Financial strength, resident services, quality of life
+
+### 6239 - Other Residential Care Facilities
+
+#### Assisted Living Facilities
+
+**Definition**:
+- Residential facilities providing personal care services, 24-hour supervision, some nursing services
+- Bridge between independent living and skilled nursing
+- State-licensed (not federally regulated like nursing homes)
+
+**Services**:
+- **Personal Care** - Assistance with bathing, dressing, grooming, toileting
+- **Medication Management** - Medication reminders or administration
+- **Meals** - Three meals daily, snacks
+- **Housekeeping** - Laundry, cleaning, linen service
+- **Activities** - Social, recreational, and wellness programs
+- **Transportation** - Scheduled transportation for appointments, shopping
+- **Emergency Response** - 24-hour staff availability
+
+**Resident Profile**:
+- Older adults who need some assistance but don't require 24/7 nursing care
+- Average age 80+
+- Mix of physical and cognitive impairments
+
+**Payment**:
+- **Private Pay** - Primary payment source ($4,000-$8,000/month average)
+- **Long-Term Care Insurance** - Some policies cover assisted living
+- **Medicaid HCBS Waivers** - Available in some states for eligible residents
+- **Veterans Aid & Attendance** - VA benefit for eligible veterans
+
+**Memory Care Units**:
+- **Secured Units** - Controlled access to prevent wandering
+- **Specialized Staff** - Training in dementia care
+- **Programming** - Activities designed for cognitive impairment
+- **Environment** - Design adapted for safety and orientation
+- **Higher Staffing** - Lower staff-to-resident ratios
+
+**Regulatory Variation**:
+- **State-Specific** - Wide variation in licensing, staffing, training requirements
+- **Medication Administration** - Rules vary by state (who can administer)
+- **Nursing Services** - Scope of nursing services allowed differs by state
+- **Inspection** - Annual or biennial state inspections
+
+**Major Operators**:
+- Brookdale Senior Living (largest U.S. operator)
+- Sunrise Senior Living
+- Atria Senior Living
+- Five Star Senior Living
+- Benchmark Senior Living
+
+#### Board and Care Homes
+
+**Small Residential Facilities**:
+- Typically 2-10 residents
+- Home-like environment
+- Personal care and supervision
+- Often family-operated
+- State-licensed
+
+**Services**:
+- Room and meals
+- Personal care assistance
+- Medication reminders
+- Social activities
+- Homelike setting
+
+**Payment**:
+- Lower cost than larger assisted living facilities
+- Supplemental Security Income (SSI)
+- State supplementation programs
+- Private pay
+
+#### Adult Day Services (Non-Residential)
+
+While not residential, adult day services are related:
+- **Day Programs** - Daytime care and activities, return home at night
+- **Respite** - Relief for family caregivers
+- **Services** - Social activities, meals, some health services
+- **Payment** - Private pay, Medicaid HCBS waivers, VA benefits
+
+## Long-Term Care Industry Trends
+
+### Shift to Home and Community-Based Services
+
+**Drivers**:
+- **Consumer Preference** - Most prefer to age in place at home
+- **Medicaid Rebalancing** - States shifting from institutional to HCBS
+- **Cost** - HCBS often less expensive than institutional care
+- **Technology** - Telehealth, remote monitoring enabling home care
+
+**Home and Community-Based Services (HCBS)**:
+- **Medicaid Waivers** - Section 1915(c) waivers for HCBS
+- **Services** - Personal care, homemaker, adult day, respite, case management
+- **Growth** - HCBS now accounts for ~60% of Medicaid LTSS spending (vs. 20% in 1995)
+
+**Impact on Facilities**:
+- **Declining Census** - Fewer people entering nursing homes
+- **Higher Acuity** - Those entering facilities are sicker, more complex
+- **Shorter Stays** - More short-term rehab, less long-term care
+
+### Aging Demographics
+
+**Baby Boomer Wave**:
+- **65+** - Growing from 56 million (2020) to 95 million (2060)
+- **85+** - Highest long-term care utilization, growing rapidly
+- **Demand** - Increasing need for all levels of long-term care
+- **Workforce** - Need for 7+ million additional caregivers by 2030
+
+**Alzheimer's Disease and Related Dementias (ADRD)**:
+- **Prevalence** - 6+ million Americans with Alzheimer's, projected to reach 13 million by 2050
+- **Care Needs** - Specialized memory care, behavioral management
+- **Family Burden** - Caregiver stress, economic impact
+
+### Workforce Crisis
+
+**Challenges**:
+- **Direct Care Worker Shortage** - CNAs, home health aides, personal care aides
+- **Low Wages** - Median wage ~$14-15/hour, often below living wage
+- **High Turnover** - 50-100% annual turnover in many facilities
+- **Physically Demanding** - Lifting, transferring, assisting with mobility
+- **Emotional Stress** - Caring for declining, dying residents
+
+**Solutions**:
+- **Higher Wages** - Increasing pay and benefits
+- **Career Ladders** - CNA to LPN to RN advancement pathways
+- **Training and Support** - Better onboarding, mentoring, continuing education
+- **Technology** - Lifting equipment, electronic documentation, efficiency tools
+- **Immigration** - Many direct care workers are immigrants
+
+### Technology and Innovation
+
+**Clinical Technology**:
+- **Electronic Health Records** - MatrixCare, PointClickCare, American HealthTech
+- **Electronic Medication Administration Records (eMAR)** - Reducing medication errors
+- **Telehealth** - Remote physician consultations, telepsychiatry
+- **Remote Monitoring** - Fall detection, vital sign monitoring, wander management
+
+**Operational Technology**:
+- **Workforce Management** - Scheduling, time and attendance, labor analytics
+- **Revenue Cycle** - Billing, claims, collections
+- **Quality Analytics** - MDS analytics, quality measure tracking
+
+**Assistive Technology**:
+- **Mobility Aids** - Power wheelchairs, walkers, transfer devices
+- **Communication** - Speech-generating devices, hearing aids
+- **Medication Management** - Automated dispensing, medication reminders
+- **Safety** - Bed/chair alarms, video monitoring, GPS tracking
+
+**Emerging Technology**:
+- **Robotics** - Lifting assist robots, social robots for engagement
+- **AI** - Fall prediction, deterioration alerts, care planning
+- **Virtual Reality** - Therapeutic VR for pain, anxiety, engagement
+
+### Value-Based Payment and Quality
+
+**SNF Value-Based Purchasing (VBP)**:
+- **Readmission Measure** - 30-day potentially preventable readmissions
+- **Incentive** - Up to 2% payment adjustment (positive or negative)
+- **Focus** - Reducing avoidable hospitalizations
+
+**SNF Quality Reporting Program (QRP)**:
+- **Quality Measures** - Publicly reported on Care Compare
+- **Payment Penalty** - 2% payment reduction for failure to report
+
+**Managed Care**:
+- **Medicare Advantage SNF** - Managed care plans managing SNF care
+- **Medicaid Managed LTSS** - States moving long-term care into managed care
+- **Narrow Networks** - Plans contracting with select high-quality facilities
+- **Bundled Payments** - Episode-based payment including SNF
+
+### Infection Prevention and Control
+
+**COVID-19 Lessons**:
+- **Vulnerability** - Congregate settings, frail population
+- **Infection Control** - Enhanced cleaning, PPE, cohorting, testing
+- **Staffing** - Staff shortage exacerbated by illness, quarantine
+- **Visitation** - Balancing infection control with resident quality of life
+
+**Ongoing Focus**:
+- **Antibiotic Stewardship** - Appropriate antibiotic use, reducing resistance
+- **Infection Preventionist** - Dedicated infection control staff
+- **Surveillance** - Tracking infections (UTI, respiratory, skin/soft tissue, C. diff)
+- **Vaccination** - Influenza, pneumococcal, COVID-19, shingles
+
+## Challenges and Opportunities
+
+### Current Challenges
+
+**Financial Viability**:
+- Medicaid underpayment
+- Rising labor costs
+- Declining census
+- Increasing acuity without commensurate payment increase
+- Facility closures (particularly rural)
+
+**Workforce**:
+- Direct care worker shortage and turnover
+- Nursing shortage
+- Competition with hospitals, home health for staff
+- Burnout and moral distress
+
+**Quality and Safety**:
+- Preventing infections, falls, pressure ulcers
+- Reducing antipsychotic medication use
+- Improving resident quality of life
+- Meeting regulatory requirements
+
+**Regulatory Compliance**:
+- Complex federal and state regulations
+- Survey deficiencies and enforcement
+- Responding to complaints and investigations
+- Compliance costs
+
+**Public Perception**:
+- Negative media coverage
+- COVID-19 impact on reputation
+- Families seeking alternatives (home care, assisted living)
+
+### Opportunities
+
+**Specialized Services**:
+- Post-acute rehabilitation (Medicare)
+- Ventilator/tracheostomy care
+- Bariatric care
+- Complex wound care
+- Palliative and hospice care
+
+**Partnerships**:
+- Hospital partnerships for post-acute care
+- ACO participation for care coordination
+- Managed care contracts
+- Physician practice integration
+
+**Technology Adoption**:
+- Operational efficiency through automation
+- Telehealth expanding access to specialists
+- Predictive analytics for clinical deterioration
+- Resident and family engagement tools
+
+**Alternative Care Models**:
+- Small house/household model (6-12 residents per household)
+- Green House Project (small, homelike environments)
+- Social model of care (vs. medical model)
+- Person-centered care approaches
+
+**Value-Based Care**:
+- Quality incentives in SNF VBP
+- Preferred provider networks for high performers
+- Population health partnerships
+- Bundled payment participation
+
+## Related Resources
+
+- [naics.org.ai/623](https://naics.org.ai/623) - NAICS classification for nursing facilities
+- [health.org.ai/Hospitals](https://health.org.ai/Hospitals) - Acute care hospitals
+- [health.org.ai/AmbulatoryCare](https://health.org.ai/AmbulatoryCare) - Outpatient services
+- [onet.org.ai](https://onet.org.ai) - Long-term care occupations
+- [apqc.org.ai](https://apqc.org.ai) - Process framework
+- [cms.gov/Medicare/Provider-Enrollment-and-Certification/CertificationandComplianc](https://www.cms.gov/Medicare/Provider-Enrollment-and-Certification) - CMS certification and compliance
+- [care.gov](https://www.medicare.gov/care-compare) - Care Compare quality information

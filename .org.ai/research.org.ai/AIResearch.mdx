@@ -1,0 +1,706 @@
+---
+$context: https://research.org.ai
+$id: https://research.org.ai/AIResearch
+$type: https://research.org.ai/Research
+name: "AI Research"
+description: "Research in artificial intelligence, machine learning, deep learning, and related computational methods for intelligent systems"
+naics: "541712"
+category: "AI Research"
+---
+
+export const items = async () => {
+  return []
+}
+
+# AI Research
+
+Scientific investigation and development of algorithms, models, and systems that enable machines to perform tasks requiring human-like intelligence, including learning, reasoning, perception, and decision-making.
+
+## Overview
+
+AI research encompasses the theoretical foundations, algorithmic innovations, and practical applications of artificial intelligence. This rapidly evolving field spans from fundamental computer science and mathematics to applied domains including computer vision, natural language processing, robotics, and autonomous systems.
+
+### Key Characteristics
+
+- **Rapid Innovation**: State-of-the-art advances measured in months
+- **Compute-Intensive**: Requiring massive computational resources
+- **Data-Driven**: Large-scale datasets essential for training
+- **Interdisciplinary**: Computer science, mathematics, neuroscience, linguistics, philosophy
+- **Open Research Culture**: Preprints, open-source code, public benchmarks
+- **Commercial Integration**: Fast translation from research to products
+
+## AI Research Domains
+
+### Machine Learning Foundations
+
+**Supervised Learning**
+- Classification and regression
+- Neural networks and deep learning
+- Support vector machines
+- Decision trees and random forests
+- Ensemble methods
+
+**Unsupervised Learning**
+- Clustering algorithms
+- Dimensionality reduction (PCA, t-SNE, UMAP)
+- Autoencoders
+- Generative models
+
+**Reinforcement Learning**
+- Q-learning and deep Q-networks (DQN)
+- Policy gradient methods
+- Actor-critic algorithms
+- Multi-agent reinforcement learning
+- Inverse reinforcement learning
+
+**Meta-Learning & Few-Shot Learning**
+- Learning to learn
+- Few-shot and zero-shot learning
+- Transfer learning
+- Domain adaptation
+
+### Deep Learning Architectures
+
+**Convolutional Neural Networks (CNNs)**
+- Image classification: ResNet, EfficientNet, Vision Transformers
+- Object detection: YOLO, Faster R-CNN, DETR
+- Semantic segmentation
+- Video understanding
+
+**Recurrent Neural Networks (RNNs)**
+- Long Short-Term Memory (LSTM)
+- Gated Recurrent Units (GRU)
+- Sequence-to-sequence models
+- Time series prediction
+
+**Transformer Models**
+- Attention mechanisms
+- Self-attention and multi-head attention
+- BERT, GPT, T5 architectures
+- Scaling laws and emergent properties
+- Mixture of Experts (MoE)
+
+**Graph Neural Networks (GNNs)**
+- Message passing networks
+- Graph convolutional networks
+- Applications: Drug discovery, social networks, recommendation
+
+**Generative Models**
+- Generative Adversarial Networks (GANs)
+- Variational Autoencoders (VAEs)
+- Diffusion models: Stable Diffusion, DALL-E
+- Flow-based models
+- Energy-based models
+
+### Natural Language Processing (NLP)
+
+**Large Language Models (LLMs)**
+- GPT series (GPT-3, GPT-4): 175B+ parameters
+- Claude (Anthropic): Constitutional AI
+- Gemini (Google DeepMind)
+- LLaMA (Meta): Open research models
+- Mistral, Falcon: Open source alternatives
+
+**NLP Tasks**
+- Machine translation
+- Question answering
+- Text summarization
+- Named entity recognition
+- Sentiment analysis
+- Information extraction
+
+**Multimodal Models**
+- Vision-language models: CLIP, ALIGN, Flamingo
+- Text-to-image: DALL-E, Midjourney, Stable Diffusion
+- Video understanding
+- Audio-visual learning
+
+**Reasoning & Knowledge**
+- Commonsense reasoning
+- Mathematical reasoning
+- Logical reasoning
+- Knowledge graphs and retrieval
+- Chain-of-thought prompting
+
+### Computer Vision
+
+**Image Understanding**
+- Object recognition and detection
+- Instance segmentation
+- Pose estimation
+- Scene understanding
+- Visual question answering
+
+**3D Vision**
+- Depth estimation
+- 3D object detection
+- Neural radiance fields (NeRF)
+- 3D reconstruction
+- SLAM (Simultaneous Localization and Mapping)
+
+**Video Analysis**
+- Action recognition
+- Video captioning
+- Temporal modeling
+- Event detection
+
+**Medical Imaging**
+- Disease detection and diagnosis
+- Segmentation: Tumors, organs
+- Image reconstruction
+- Pathology analysis
+
+### Robotics & Autonomous Systems
+
+**Robot Learning**
+- Imitation learning
+- Sim-to-real transfer
+- Dexterous manipulation
+- Locomotion
+- Tool use
+
+**Autonomous Vehicles**
+- Perception: LiDAR, camera fusion
+- Planning and control
+- Prediction of other agents
+- End-to-end learning vs. modular systems
+- Safety and verification
+
+**Embodied AI**
+- Robotics simulation environments
+- Physical AI systems
+- Navigation and exploration
+- Human-robot interaction
+
+### AI Safety & Alignment
+
+**Safety Research**
+- Robustness and adversarial examples
+- Out-of-distribution detection
+- Uncertainty quantification
+- Interpretability and explainability
+- Red teaming and evaluation
+
+**Alignment Research**
+- Value alignment: Ensuring AI goals match human values
+- Constitutional AI: Harmless and helpful AI
+- Reinforcement learning from human feedback (RLHF)
+- Scalable oversight
+- Corrigibility and shutdown problems
+
+**Fairness & Ethics**
+- Bias detection and mitigation
+- Fairness metrics
+- Privacy-preserving ML
+- Federated learning
+- Differential privacy
+
+### Theoretical Foundations
+
+**Learning Theory**
+- PAC learning
+- VC dimension
+- Generalization bounds
+- Sample complexity
+- Optimization theory
+
+**Computational Complexity**
+- Complexity of learning problems
+- Approximation algorithms
+- Quantum machine learning
+
+**Information Theory**
+- Rate-distortion theory
+- Information bottleneck
+- Mutual information in neural networks
+
+## Research Methodologies
+
+### Empirical Research
+
+**Dataset Creation**
+- ImageNet: 14M images, 1000 classes
+- Common Crawl: Web-scale text data
+- OpenImages, COCO: Object detection
+- WikiText, The Pile: Language modeling
+- Benchmark datasets for each subfield
+
+**Model Development**
+- Architecture search: Neural architecture search (NAS)
+- Hyperparameter optimization
+- Ablation studies
+- Scaling experiments
+
+**Evaluation**
+- Benchmark performance
+- Human evaluation
+- A/B testing
+- Red team testing
+
+### Computational Infrastructure
+
+**Training Large Models**
+- GPU clusters: NVIDIA A100, H100
+- TPU pods: Google's tensor processing units
+- Distributed training: Data parallelism, model parallelism
+- Mixed precision training
+- Gradient accumulation
+
+**Compute Requirements**
+- GPT-3: 3.14×10²³ FLOPS (355 GPU-years)
+- Training cost: $1M-$100M+ for frontier models
+- Inference optimization: Quantization, distillation
+
+**MLOps & Infrastructure**
+- Experiment tracking: Weights & Biases, MLflow
+- Model serving: TensorFlow Serving, TorchServe
+- Continuous training pipelines
+- Model monitoring and retraining
+
+### Open Research Practices
+
+**Preprint Culture**
+- arXiv.org: cs.AI, cs.LG, cs.CV, cs.CL
+- Papers released before peer review
+- Rapid dissemination (days vs. months)
+
+**Code Release**
+- GitHub: Model implementations
+- Hugging Face: Model zoo and datasets
+- Papers With Code: Benchmarks and leaderboards
+- Reproducibility initiatives
+
+**Open Source Models**
+- LLaMA 2: Meta's open research models
+- Stable Diffusion: Open image generation
+- BLOOM: Open multilingual LLM
+- Falcon: Open commercial-use models
+
+## Leading AI Research Labs
+
+### Big Tech Research Labs
+
+**Google DeepMind**
+- AlphaGo, AlphaFold, AlphaTensor
+- Gemini LLM
+- ~2,500 researchers
+- London headquarters, global presence
+
+**OpenAI**
+- GPT series, DALL-E, ChatGPT
+- ~1,500 employees
+- San Francisco-based
+- $90 billion valuation (2024)
+
+**Meta AI Research (FAIR)**
+- LLaMA models
+- PyTorch framework
+- Computer vision research
+- ~1,000 researchers
+
+**Microsoft Research**
+- Distributed AI Research (MSRA Asia)
+- Azure AI services
+- ~1,000 AI researchers
+
+**Anthropic**
+- Claude models
+- Constitutional AI
+- AI safety focus
+- $5 billion+ funding
+
+**Google Brain** (merged into DeepMind)
+- Transformer architecture invention
+- TensorFlow framework
+- Auto ML
+
+### Academic Research Groups
+
+**Stanford**
+- Stanford AI Lab (SAIL)
+- Human-Centered AI Institute (HAI)
+- NLP Group (Christopher Manning)
+- Vision Lab (Fei-Fei Li, emeritus)
+
+**MIT**
+- CSAIL: Computer Science and AI Lab
+- Quest for Intelligence
+- MIT-IBM Watson AI Lab
+- Embodied Intelligence
+
+**UC Berkeley**
+- Berkeley AI Research (BAIR)
+- Center for Human-Compatible AI (CHAI)
+- RISELab
+- Sky Computing Lab
+
+**CMU**
+- Machine Learning Department (only standalone ML dept)
+- Robotics Institute
+- Language Technologies Institute
+- Human-Computer Interaction Institute
+
+**University of Toronto**
+- Vector Institute
+- Geoffrey Hinton (emeritus)
+- Deep learning pioneers
+
+### International Research
+
+**European Labs**
+- ETH Zurich: AI Center
+- University of Oxford: AI department
+- University of Cambridge: Machine Learning Group
+- Max Planck Institute for Intelligent Systems (Germany)
+- INRIA (France)
+
+**Asian Research**
+- Tsinghua University: Institute for AI
+- Peking University: AI research
+- KAIST (South Korea)
+- University of Tokyo
+- Chinese Academy of Sciences
+
+## Funding Landscape
+
+### Federal Funding
+
+**NSF**: $500+ million annually in AI research
+- National AI Research Institutes (25 institutes, $20M each)
+- Core programs in IIS, CISE
+- Convergence accelerators
+
+**DARPA**: $2+ billion AI portfolio
+- AI Next campaign ($2B over 5 years)
+- Explainable AI (XAI)
+- Assured autonomy
+- AI for cybersecurity
+
+**NIH**: $300+ million AI/ML research
+- Medical imaging AI
+- Drug discovery
+- Precision medicine
+- Bridge2AI program
+
+**DOE**: $500+ million
+- Exascale computing and AI
+- Scientific ML for climate, fusion, materials
+- AI for Science initiatives
+
+**Department of Defense**: $1+ billion
+- Joint Artificial Intelligence Center (JAIC)
+- Service-specific AI programs
+- National Security Commission on AI
+
+### Industry Investment
+
+**Big Tech R&D**: $50+ billion combined annual AI spend
+- Google/Alphabet: $10+ billion
+- Meta: $8+ billion
+- Microsoft: $8+ billion
+- Amazon: $8+ billion
+- Apple: $5+ billion (estimated)
+
+**AI Startups**
+- Total venture funding: $50+ billion annually
+- OpenAI: $13 billion+ raised
+- Anthropic: $7 billion+ raised
+- Inflection AI: $1.5 billion
+- Cohere: $445 million
+- Adept: $415 million
+
+**Chip Manufacturers**
+- NVIDIA AI research: $2+ billion
+- Google TPU development
+- Apple Silicon ML capabilities
+- AMD AI accelerators
+
+### International Initiatives
+
+**European Union**
+- Horizon Europe: €1 billion+ AI funding
+- AI Act: Regulatory framework
+- European AI ecosystem
+
+**China**
+- National AI Development Plan
+- Estimated $70+ billion government investment
+- Leading in AI patents (60%+ of global filings)
+
+**UK**
+- £2.5 billion AI strategy
+- Alan Turing Institute
+- DeepMind (Google subsidiary in London)
+
+**Canada**
+- CIFAR AI Chairs program
+- Vector Institute: $250+ million
+- Mila (Montreal): Yoshua Bengio
+
+## Benchmarks & Evaluation
+
+### Language Model Benchmarks
+
+**General Capabilities**
+- MMLU: Massive Multitask Language Understanding (57 subjects)
+- Big-Bench: 200+ diverse tasks
+- HELM: Holistic Evaluation of Language Models
+- HellaSwag: Commonsense reasoning
+
+**Specialized Tasks**
+- SQuAD: Question answering
+- GLUE/SuperGLUE: Language understanding
+- WMT: Machine translation
+- HumanEval: Code generation
+
+### Computer Vision Benchmarks
+
+- ImageNet: Image classification (top-5 accuracy >99%)
+- COCO: Object detection and segmentation
+- ADE20K: Scene parsing
+- Kinetics: Action recognition
+- ActivityNet: Video understanding
+
+### Robotics & Embodied AI
+
+- RoboSuite: Manipulation tasks
+- Habitat: 3D navigation
+- AI2-THOR: Embodied question answering
+- Meta-World: Multi-task benchmarking
+
+### Safety & Alignment
+
+- TruthfulQA: Factual accuracy
+- BOLD: Bias evaluation
+- RealToxicityPrompts: Toxicity detection
+- Adversarial robustness benchmarks
+
+## Breakthrough Moments
+
+### Historical Milestones
+
+- **1997**: Deep Blue defeats Garry Kasparov (chess)
+- **2012**: AlexNet wins ImageNet (deep learning revolution)
+- **2016**: AlphaGo defeats Lee Sedol (Go)
+- **2017**: Transformer architecture introduced ("Attention is All You Need")
+- **2018**: BERT revolutionizes NLP
+- **2020**: GPT-3 demonstrates few-shot learning at scale
+- **2021**: AlphaFold solves protein folding
+- **2022**: ChatGPT reaches 100M users in 2 months
+- **2022**: Stable Diffusion democratizes image generation
+- **2023**: GPT-4 passes bar exam, medical licensing exams
+- **2024**: Frontier models approach AGI capabilities in narrow domains
+
+### Scaling Laws
+
+**Observations**
+- Performance scales predictably with compute, data, parameters
+- Emergent capabilities at certain scales
+- Chinchilla scaling: Optimal ratio of parameters to training tokens
+
+**Implications**
+- Predictable improvement with investment
+- Race to larger models
+- Diminishing returns questions
+- Alternative approaches (efficiency, architecture innovation)
+
+## Commercialization & Applications
+
+### AI Products & Services
+
+**Conversational AI**
+- ChatGPT (OpenAI): 100+ million weekly users
+- Claude (Anthropic): Enterprise and consumer
+- Bard/Gemini (Google)
+- Copilot (Microsoft)
+
+**Code Assistance**
+- GitHub Copilot: $10-20/month, millions of users
+- Amazon CodeWhisperer
+- Replit Ghostwriter
+- Tabnine
+
+**Image Generation**
+- Midjourney: $10-60/month, millions of users
+- DALL-E (OpenAI)
+- Stable Diffusion (open source)
+- Adobe Firefly
+
+**Enterprise AI**
+- Salesforce Einstein
+- Microsoft 365 Copilot
+- Google Workspace AI
+- ServiceNow AI
+
+### AI Infrastructure
+
+**ML Platforms**
+- AWS SageMaker
+- Google Vertex AI
+- Azure Machine Learning
+- Databricks
+
+**Model Hosting**
+- Hugging Face: Model hub, inference API
+- Replicate: Run models via API
+- Together AI: Open source model hosting
+- OpenAI API
+
+**Vector Databases**
+- Pinecone: $10M+ ARR
+- Weaviate
+- Milvus
+- Qdrant
+
+## Ethical & Societal Issues
+
+### AI Safety Concerns
+
+**Near-Term Risks**
+- Misinformation and deepfakes
+- Job displacement
+- Privacy violations
+- Algorithmic bias and discrimination
+- Autonomous weapons
+
+**Long-Term Risks**
+- AGI alignment problem
+- Loss of human control
+- Existential risk debates
+- Power concentration
+
+### Governance & Regulation
+
+**U.S. Approach**
+- Executive Order on AI (October 2023)
+- NIST AI Risk Management Framework
+- Voluntary commitments from AI companies
+- Sector-specific regulations
+
+**EU AI Act**
+- Risk-based regulatory framework
+- Prohibited applications (social scoring, emotion recognition in certain contexts)
+- High-risk system requirements
+- Transparency obligations
+
+**International Coordination**
+- G7 AI principles
+- OECD AI principles
+- UN discussions on AI governance
+- Bletchley Declaration (AI Safety Summit 2023)
+
+### Labor Market Impact
+
+**Automation Potential**
+- 25-40% of tasks could be automated with current AI
+- Knowledge work increasingly affected
+- Creative industries disrupted
+
+**New Roles**
+- ML engineers: $150K-$400K
+- Data scientists: $120K-$250K
+- Prompt engineers: $175K-$335K
+- AI safety researchers: $200K-$500K+
+
+## Career Paths
+
+### Research Careers
+
+**Academic Track**
+- **PhD Student**: $30K-$50K stipend, 5-6 years
+- **Postdoc**: $60K-$80K, 2-3 years (less common in AI)
+- **Assistant Professor**: $120K-$180K
+- **Associate/Full Professor**: $150K-$300K+
+
+**Industry Research**
+- **Research Scientist**: $150K-$300K + stock
+- **Senior Research Scientist**: $200K-$400K + stock
+- **Principal Scientist**: $300K-$500K+ + stock
+- **Research Director**: $400K-$700K+ + stock
+
+### Engineering Roles
+
+- **ML Engineer**: $130K-$250K
+- **Senior ML Engineer**: $180K-$350K
+- **Staff ML Engineer**: $250K-$450K
+- **Principal Engineer**: $350K-$600K+
+
+### Specialized Roles
+
+- **AI Safety Researcher**: $200K-$500K+
+- **Applied Scientist**: $150K-$300K
+- **Research Engineer**: $120K-$250K
+- **MLOps Engineer**: $130K-$230K
+
+## Challenges & Opportunities
+
+### Current Challenges
+
+**Technical**
+- Hallucinations and factual errors in LLMs
+- Robustness and adversarial vulnerabilities
+- Interpretability and explainability
+- Data efficiency (learning from less data)
+- Energy consumption (training frontier models)
+
+**Societal**
+- Bias and fairness
+- Privacy preservation
+- Misinformation and deepfakes
+- Job displacement
+- Access and democratization
+
+**Research**
+- AGI alignment
+- Generalizable intelligence
+- Common sense reasoning
+- Causal reasoning
+- Continual learning
+
+### Emerging Opportunities
+
+**Scientific Discovery**
+- Drug discovery: AlphaFold-style breakthroughs
+- Materials science: Inverse design
+- Climate modeling: Weather prediction
+- Fusion energy: Plasma control
+
+**Efficiency & Sustainability**
+- Model compression: Quantization, pruning
+- Efficient architectures: Sparse models, MoE
+- Edge AI: On-device intelligence
+- Green AI: Sustainable computing
+
+**Multimodal AI**
+- Unified vision-language-audio models
+- Robotics foundation models
+- Any-to-any generation
+
+**AI for Good**
+- Healthcare accessibility
+- Education personalization
+- Climate change mitigation
+- Accessibility tools
+
+## Cross-References
+
+### Related Domains
+
+- [naics.org.ai/541712](https://naics.org.ai/541712) - Physical, Engineering, and Life Sciences R&D
+- [science.org.ai](https://science.org.ai) - Computer science and mathematics
+- [education.org.ai](https://education.org.ai) - AI education and training
+
+### Related Research Types
+
+- [Basic Research](./BasicResearch.mdx) - Theoretical foundations of AI
+- [Applied Research](./AppliedResearch.mdx) - AI applications and products
+- [Contract Research](./ContractResearch.mdx) - AI consulting and services
+
+## Sources
+
+- arXiv preprint server (cs.AI, cs.LG, cs.CV, cs.CL)
+- NeurIPS, ICML, ICLR, CVPR, ACL conference proceedings
+- Papers With Code: ML benchmarks and leaderboards
+- Stanford AI Index Report
+- OpenAI, DeepMind, Meta AI research blogs
+- OECD AI Policy Observatory

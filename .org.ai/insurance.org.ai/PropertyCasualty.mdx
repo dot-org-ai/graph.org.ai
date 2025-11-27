@@ -1,0 +1,542 @@
+---
+$context: https://insurance.org.ai
+$id: https://insurance.org.ai/PropertyCasualty
+$type: https://insurance.org.ai/PropertyCasualty
+name: Property & Casualty Insurance
+naicsCode: "524126"
+description: "Property and casualty insurance provides coverage for physical assets, liability risks, and financial losses from accidents, disasters, and legal claims"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Property & Casualty Insurance products
+  return []
+}
+
+# Property & Casualty Insurance
+
+Property & Casualty (P&C) insurance (NAICS 524126) protects individuals and businesses from financial losses due to property damage, liability claims, and other risks. The industry encompasses personal lines (auto, home) and commercial lines (property, liability, workers compensation).
+
+## Overview
+
+P&C insurance is characterized by:
+- **Short-tail coverage**: Claims typically reported and settled within 1-2 years
+- **Long-tail coverage**: Liability claims that may take years to develop and settle
+- **Catastrophe exposure**: Natural disasters can cause massive losses in single events
+- **Underwriting cycles**: Hard and soft markets driven by capacity and pricing
+- **Reinsurance dependency**: Significant use of reinsurance to manage catastrophe risk
+
+### Market Statistics
+- U.S. P&C direct written premium: $850 billion (2024)
+- Personal lines: $500 billion (59%)
+- Commercial lines: $350 billion (41%)
+- Combined ratio: 97-100% (industry target < 100%)
+- Return on equity: 8-12%
+- Number of P&C insurers: ~2,500 companies
+
+## Personal Lines Insurance
+
+### Personal Auto Insurance
+
+**Largest P&C line by premium volume**
+
+#### Coverage Components
+
+**Liability Coverage (Required by States)**
+- **Bodily Injury Liability (BI)**: Pays for injuries to others in at-fault accidents
+- **Property Damage Liability (PD)**: Pays for damage to others' property
+- **Minimum limits**: Vary by state (e.g., 25/50/25: $25K per person, $50K per accident, $25K property)
+- **Recommended limits**: 100/300/100 or higher, umbrella for excess liability
+
+**Physical Damage Coverage (Optional)**
+- **Collision**: Pays for damage to insured vehicle from collision (subject to deductible)
+- **Comprehensive**: Pays for non-collision damage (theft, vandalism, weather, animal strikes)
+- **Actual Cash Value (ACV)**: Pays depreciated value of vehicle
+- **Agreed Value**: Pays agreed-upon amount (classic cars)
+
+**Additional Coverages**
+- **Medical Payments (Med Pay)**: Pays medical expenses regardless of fault
+- **Personal Injury Protection (PIP)**: No-fault coverage for medical, lost wages (required in 12 states)
+- **Uninsured/Underinsured Motorist (UM/UIM)**: Protects against uninsured drivers
+- **Rental Reimbursement**: Pays for rental car while vehicle is being repaired
+- **Roadside Assistance**: Towing, battery jump, flat tire, lockout service
+
+#### Pricing & Rating Factors
+
+**Primary Rating Variables**
+- **Driver characteristics**: Age, gender, marital status, driving record, claims history
+- **Vehicle**: Make, model, year, safety features, theft rates, repair costs
+- **Usage**: Annual mileage, commute distance, business use
+- **Location**: ZIP code, garaging address, urban vs. rural
+- **Coverage selections**: Limits, deductibles, optional coverages
+
+**Credit-Based Insurance Scores**
+- Strong correlation with loss propensity
+- Banned or restricted in CA, HI, MA, MD, MI (state-specific)
+- Separate from credit scores, insurance-specific models
+
+**Telematics & Usage-Based Insurance (UBI)**
+- Monitor driving behavior via smartphone app or device
+- Rate based on mileage, speed, braking, acceleration, time of day
+- Discounts for safe driving (5-30%)
+- Examples: Progressive Snapshot, Allstate Drivewise, State Farm Drive Safe & Save
+
+**Market Statistics**
+- Average annual premium: $1,550 (varies widely by state)
+- Most expensive states: MI, LA, FL, CA, NY
+- Least expensive states: ME, VT, NH, IA, SD
+- Market share leaders: State Farm (16%), GEICO (14%), Progressive (14%), Allstate (10%)
+
+### Homeowners Insurance
+
+**Comprehensive protection for dwelling and personal property**
+
+#### HO-3 Special Form (Most Common)
+
+**Coverage A - Dwelling**
+- Pays to repair or rebuild home from covered perils
+- **Open perils** (all-risk) coverage except exclusions
+- Replacement cost or actual cash value
+- Extended replacement cost (120-125% of limit)
+
+**Coverage B - Other Structures**
+- Detached garage, shed, fence (typically 10% of Coverage A)
+
+**Coverage C - Personal Property**
+- Contents, furniture, clothing, electronics
+- Typically 50-75% of Coverage A limit
+- **Named perils** coverage (fire, theft, windstorm, etc.)
+- Special limits for jewelry, art, collectibles (require scheduled items endorsement)
+
+**Coverage D - Loss of Use**
+- Additional living expenses if home is uninhabitable
+- Hotel, meals, storage (typically 20% of Coverage A)
+
+**Coverage E - Personal Liability**
+- Protects against lawsuits for bodily injury or property damage
+- Standard limits: $100K-500K (recommend $300K minimum)
+
+**Coverage F - Medical Payments**
+- Medical bills for guests injured on property (no-fault)
+- Typical limits: $1K-5K per person
+
+#### Common Exclusions
+- **Flood**: Requires separate flood insurance (NFIP or private)
+- **Earthquake**: Requires separate earthquake insurance or endorsement
+- **Sewer backup**: Often excluded, available by endorsement
+- **Maintenance and wear**: Gradual damage, neglect
+- **Business activities**: Requires business insurance
+- **Intentional acts**: Criminal or intentional damage
+
+#### Special Policy Forms
+
+**HO-5 Comprehensive Form**
+- Open perils coverage on both dwelling and personal property
+- Broader coverage than HO-3, higher premium
+
+**HO-4 Renters Insurance**
+- Personal property and liability only (no dwelling coverage)
+- Affordable ($15-30/month), often required by landlords
+
+**HO-6 Condo Insurance**
+- Covers unit improvements, personal property, liability
+- Master policy covers building structure
+
+**HO-8 Older Home Form**
+- Modified coverage for older homes
+- Actual cash value, functional replacement cost
+
+#### High-Value Homes
+- Homes with replacement cost > $750K-1M
+- Specialized carriers: Chubb, AIG Private Client, PURE
+- Guaranteed replacement cost coverage
+- Broader perils, higher sub-limits
+- Concierge claims service, disaster preparedness
+
+**Market Statistics**
+- Average annual premium: $1,400
+- Most expensive states: FL, TX, LA, OK (catastrophe exposure)
+- Market share leaders: State Farm (18%), Allstate (9%), USAA (7%), Liberty Mutual (6%)
+
+### Umbrella / Excess Liability
+
+**Catastrophic liability protection beyond auto and home**
+
+#### Coverage Features
+- Provides excess liability limits above underlying policies
+- Typical limits: $1M-10M (increments of $1M)
+- Drops down for claims not covered by underlying (e.g., libel, slander)
+- Requires minimum underlying limits (e.g., 250/500/100 auto, $300K home)
+- Very affordable: $150-300/year for $1M coverage
+
+#### Who Needs Umbrella Coverage
+- High net worth individuals with assets to protect
+- Higher risk exposures (teen drivers, pools, trampolines, rental properties)
+- Professionals with reputation risk (social media, defamation)
+
+### Other Personal Lines
+
+**Flood Insurance**
+- National Flood Insurance Program (NFIP) or private market
+- Required for federally-backed mortgages in flood zones
+- Maximum coverage: $250K dwelling, $100K contents (NFIP)
+- Waiting period: 30 days for NFIP
+- Risk Rating 2.0: New FEMA rating methodology (October 2021)
+
+**Earthquake Insurance**
+- High deductibles (10-25% of dwelling limit)
+- Expensive in high-risk zones (CA, WA, OR)
+- California Earthquake Authority (CEA) for CA market
+
+**Motorcycle, RV, Boat Insurance**
+- Similar to auto insurance with specialized coverage
+- Agreed value options for classic vehicles
+- Navigation limits for boats (coastal vs. offshore)
+
+## Commercial Lines Insurance
+
+### Commercial Property Insurance
+
+**Protection for business real estate and contents**
+
+#### Coverage Forms
+
+**Building and Personal Property Coverage Form (BPP)**
+- **Building**: Structure, fixtures, permanently installed equipment
+- **Business Personal Property (BPP)**: Inventory, equipment, furniture, machinery
+- **Personal Property of Others**: Customer property in care, custody, control
+
+**Business Income Coverage (BI)**
+- Covers lost income and continuing expenses during property damage repairs
+- **Extra Expense**: Costs to minimize business interruption
+- **Extended Period of Indemnity**: Coverage beyond physical restoration (30-180 days)
+- **Contingent Business Income**: Coverage for losses due to supplier/customer property damage
+
+#### Valuation Methods
+- **Replacement Cost**: Pays to replace with new, similar property
+- **Actual Cash Value (ACV)**: Replacement cost less depreciation
+- **Agreed Value**: Pre-agreed amount, no coinsurance penalty
+
+#### Coinsurance
+- Penalty for underinsuring property
+- Common coinsurance percentages: 80%, 90%, 100%
+- Formula: (Limit Carried / Limit Required) × Loss = Payment (max limit carried)
+- Example: $800K limit on $1M building (80% coinsurance) → only 80% of losses paid
+
+#### Special Perils & Endorsements
+- **Equipment Breakdown**: Boiler, machinery, HVAC, electrical systems
+- **Flood**: Commercial flood insurance (NFIP or private)
+- **Earthquake**: High-risk zone coverage
+- **Ordinance or Law**: Covers cost to comply with updated building codes
+- **Spoilage**: Refrigerated goods loss from power outage
+- **Accounts Receivable**: Loss of records preventing collection
+
+**Market Statistics**
+- Average premium: Varies widely by industry, property value, location
+- CAT-exposed properties (hurricane, earthquake zones) pay 2-5× more
+- Market leaders: Travelers, Hartford, Chubb, Liberty Mutual, Zurich
+
+### Commercial General Liability (CGL)
+
+**Foundation of business liability protection**
+
+#### Coverage Structure
+
+**Bodily Injury and Property Damage Liability**
+- Third-party claims for injuries or property damage
+- Products liability, premises liability, completed operations
+- **Per occurrence limit**: Max per single event (e.g., $1M)
+- **General aggregate**: Max for all claims in policy period (e.g., $2M)
+
+**Personal and Advertising Injury Liability**
+- Libel, slander, defamation, copyright infringement
+- Invasion of privacy, wrongful eviction
+
+**Medical Payments**
+- Small medical bills without admission of liability (e.g., $5K)
+
+#### Common Exclusions
+- **Professional liability**: Requires E&O insurance
+- **Employee injuries**: Covered by workers compensation
+- **Auto liability**: Requires commercial auto policy
+- **Pollution**: Requires environmental liability policy
+- **Cyber liability**: Requires cyber insurance
+- **Employment practices**: Requires EPLI
+
+#### ISO Forms
+- **CG 00 01**: Occurrence-based coverage (most common)
+- **CG 00 02**: Claims-made coverage (professional exposures)
+
+**Typical Pricing**
+- Low-risk businesses (office): $500-1,500/year for $1M/$2M
+- Medium-risk (retail, restaurants): $2,000-5,000/year
+- High-risk (construction, manufacturing): $5,000-20,000+/year
+
+### Business Owners Policy (BOP)
+
+**Package policy for small to mid-sized businesses**
+
+#### Bundled Coverage
+- Commercial property (building, BPP, business income)
+- Commercial general liability
+- Optional coverages (crime, equipment breakdown, cyber)
+
+#### Advantages
+- Simplified underwriting and issuance
+- Lower cost than separate policies
+- Standardized forms with endorsements
+
+**Eligible Risks**
+- Small to mid-sized businesses (revenue < $10M-50M)
+- Office buildings, retail, restaurants, service businesses
+- Not available for high-risk industries (construction, manufacturing)
+
+### Workers Compensation Insurance
+
+**Required coverage for employee work-related injuries**
+
+#### Coverage Components
+
+**Part A - Workers Compensation**
+- Medical expenses for work-related injuries/illnesses
+- Lost wages (typically 2/3 of average weekly wage)
+- Permanent disability benefits
+- Death benefits to dependents
+- Rehabilitation and vocational training
+- **Statutory coverage**: Benefits defined by state law (no policy limits)
+
+**Part B - Employers Liability**
+- Lawsuits by employees for employer negligence
+- Typical limits: $100K/$500K/$100K (bodily injury by accident/disease/each employee)
+
+#### Pricing & Experience Rating
+- **Manual rate** per $100 of payroll by classification code (NCCI codes)
+- **Experience modification factor (mod)**: Adjusts rate based on loss history
+  - Mod = 1.00: Average experience
+  - Mod < 1.00: Better than average (discount)
+  - Mod > 1.00: Worse than average (surcharge)
+- **Classification codes**: 700+ codes by occupation and risk (e.g., 8810 clerical, 5403 carpentry)
+
+#### State Variations
+- **Monopolistic states**: ND, OH, WA, WY (state fund only)
+- **Competitive states**: Private insurers compete
+- **California**: Separate state fund competes with private market
+
+**Market Statistics**
+- Total WC premium: $50 billion
+- Average cost: $1.00-20.00 per $100 of payroll (varies by industry)
+- Low-risk: Office, clerical ($0.20-1.00 per $100)
+- High-risk: Construction, logging, roofing ($10-40 per $100)
+
+### Commercial Auto Insurance
+
+**Coverage for business vehicles and fleets**
+
+#### Covered Auto Designations
+- **Symbol 1**: Any auto (comprehensive coverage)
+- **Symbol 2**: Owned autos only
+- **Symbol 7**: Scheduled autos
+- **Symbol 8**: Hired autos (rental cars)
+- **Symbol 9**: Non-owned autos (employee personal vehicles on business)
+
+#### Coverage Types
+- **Liability**: Bodily injury and property damage to third parties
+- **Physical Damage**: Collision and comprehensive on business vehicles
+- **Medical Payments**: Medical expenses for occupants
+- **Uninsured/Underinsured Motorist**: Protection from uninsured drivers
+
+#### Special Considerations
+- **Fleet rating**: Discounts for larger fleets (25+ vehicles)
+- **Motor carrier coverage**: Trucking operations (MCS-90 endorsement, $750K minimum)
+- **Garage coverage**: Auto dealers, repair shops (garage liability, garage keepers)
+
+### Professional Liability / Errors & Omissions (E&O)
+
+**Coverage for professional negligence and mistakes**
+
+#### Covered Professions
+- **Technology**: Software developers, IT consultants, MSPs
+- **Healthcare**: Physicians, nurses, dentists (medical malpractice)
+- **Legal**: Attorneys (legal malpractice)
+- **Financial**: Accountants, financial advisors, insurance agents
+- **Design**: Architects, engineers
+- **Real estate**: Brokers, appraisers
+
+#### Coverage Features
+- **Claims-made basis**: Claim must be made during policy period
+- **Prior acts coverage**: Retroactive date for past work
+- **Extended reporting period (tail)**: Coverage after policy cancellation
+- **Defense costs**: Inside or outside policy limits
+
+**Typical Limits & Pricing**
+- Limits: $1M per claim, $1M aggregate
+- Technology E&O: $2,000-10,000/year for $1M limit
+- Medical malpractice: $10,000-50,000+/year (varies by specialty, state)
+
+### Directors & Officers (D&O) Liability
+
+**Protection for corporate executives and board members**
+
+#### Coverage Components
+
+**Side A**: Personal coverage for directors/officers when company cannot indemnify
+**Side B**: Reimbursement to company for indemnification of D&Os
+**Side C**: Entity coverage for securities claims against the company
+
+#### Claims Triggers
+- Breach of fiduciary duty
+- Mismanagement, waste of corporate assets
+- Securities fraud, misrepresentation to shareholders
+- Employment practices violations
+- Regulatory investigations
+
+**Typical Pricing**
+- Private companies: $5,000-20,000/year for $1M-5M limit
+- Public companies: $50,000-500,000+/year for $10M-50M limit
+
+### Cyber Liability Insurance
+
+**Coverage for data breaches and cyber attacks**
+
+#### First-Party Coverage
+- **Data breach response**: Forensics, notification, credit monitoring
+- **Business interruption**: Lost income from network outage
+- **Cyber extortion**: Ransomware payments
+- **Data restoration**: Cost to restore corrupted data
+
+#### Third-Party Coverage
+- **Privacy liability**: Lawsuits from data breach victims
+- **Network security liability**: Claims from system failure or attack
+- **Regulatory defense**: Fines and penalties (if insurable)
+- **Media liability**: Defamation, copyright infringement online
+
+**Market Statistics**
+- Rapidly growing market: $10 billion in premiums (2024)
+- Average data breach cost: $4.5M (IBM)
+- Ransomware attacks increasing 50% annually
+- Pricing: $1,000-20,000/year for small businesses, $50,000-500,000+ for large enterprises
+
+## Catastrophe Risk & Modeling
+
+### Natural Catastrophes
+
+**Major Perils**
+- **Hurricane**: Windstorm and storm surge damage (FL, TX, LA, NC, SC)
+- **Tornado**: Midwest and Southeast tornado alley
+- **Wildfire**: CA, CO, OR, WA, TX
+- **Earthquake**: CA, Pacific Northwest, New Madrid Seismic Zone
+- **Flood**: Coastal and riverine flooding (separate from standard policies)
+- **Hail**: Property damage from severe thunderstorms
+
+### Catastrophe Modeling
+
+**AIR, RMS, CoreLogic Models**
+- Probabilistic models estimating losses from natural disasters
+- **Probable Maximum Loss (PML)**: Estimated loss at various return periods (100-year, 250-year)
+- **Aggregate Exceedance Probability (AEP)**: Probability of total annual loss exceeding threshold
+- Used for pricing, reserving, reinsurance purchasing, capital planning
+
+### Risk Mitigation
+- **Reinsurance**: Transfer catastrophe risk to reinsurers
+- **Catastrophe bonds (CAT bonds)**: Securitize catastrophe risk
+- **Geographic diversification**: Spread exposure across regions
+- **Underwriting restrictions**: Non-renew or limit exposure in high-risk zones
+- **Building codes**: Enforce wind-resistant, earthquake-resistant construction
+
+## P&C Insurance Operations
+
+### Underwriting
+
+**Risk Selection & Pricing**
+1. **Application review**: Gather risk information
+2. **Inspection**: Property inspection, loss control survey
+3. **Loss history**: CLUE reports, prior carrier loss runs
+4. **Credit check**: Insurance scores (personal lines)
+5. **Risk assessment**: Evaluate hazards, exposures, controls
+6. **Pricing**: Apply manual rates, credits, debits, experience mods
+7. **Decision**: Accept, modify, decline coverage
+
+**Underwriting Authority**
+- **Auto underwriting**: Rules-based decisioning for personal lines
+- **Human underwriting**: Complex commercial risks
+- **Exceptions**: Underwriting management approval for out-of-appetite risks
+
+### Claims Management
+
+**Covered in detail in** [ClaimsManagement.mdx](./ClaimsManagement.mdx)
+
+### Actuarial & Pricing
+
+**Loss Reserving**
+- **Case reserves**: Specific estimate for reported claims
+- **IBNR (Incurred But Not Reported)**: Estimated unreported claims
+- **Development triangles**: Statistical estimate of reserve adequacy
+
+**Ratemaking**
+- **Pure premium method**: Expected losses + expenses + profit margin
+- **Loss ratio method**: Adjust rates to achieve target loss ratio
+- **Catastrophe loads**: Additional premium for CAT exposure
+- **Trend factors**: Adjust historical losses for inflation, frequency changes
+
+### Loss Control & Risk Management
+
+**Services for Commercial Insureds**
+- Safety inspections and recommendations
+- Training programs (workplace safety, driver training)
+- OSHA compliance assistance
+- Ergonomics assessments
+- Fleet safety management
+- Emergency preparedness planning
+
+## Regulatory & Market Dynamics
+
+### Rate Regulation
+
+**Prior Approval States**
+- Rates must be filed and approved before use
+- Strict regulatory review of actuarial justification
+- Examples: CA, FL, NJ, NY, TX
+
+**File and Use States**
+- Rates filed with regulators, effective immediately
+- Regulator can disapprove after filing
+
+**Use and File States**
+- Rates effective immediately, filed within specified period
+
+**Flex Rating**
+- Rate changes within band (e.g., ±7%) allowed without filing
+
+### Guaranty Funds
+
+**State guaranty associations** provide safety net for insolvent insurers
+- Cover claims up to limits (typically $300K per claim)
+- Funded by assessments on solvent insurers
+- Not advance-funded (post-insolvency assessment)
+
+### Market Cycles
+
+**Hard Market**
+- Reduced capacity, tightening underwriting
+- Premium rate increases (10-20%+ annually)
+- Caused by catastrophic losses, poor results
+
+**Soft Market**
+- Excess capacity, loosening underwriting
+- Premium rate decreases or flat pricing
+- Competition for market share
+
+## Related Topics
+
+- [ClaimsManagement](./ClaimsManagement.mdx) - P&C claims processing
+- [Reinsurance](./Reinsurance.mdx) - Catastrophe reinsurance for P&C risks
+- [InsurTech](./InsurTech.mdx) - Digital distribution and AI underwriting
+- [realestate.org.ai](https://realestate.org.ai) - Property insurance
+- [automotive.org.ai](https://automotive.org.ai) - Auto insurance and telematics
+
+## Sources
+
+- Insurance Information Institute (III) - [https://www.iii.org](https://www.iii.org)
+- Casualty Actuarial Society (CAS) - [https://www.casact.org](https://www.casact.org)
+- NAIC Property & Casualty Insurance Committee - [https://www.naic.org](https://www.naic.org)
+- ISO (Insurance Services Office) - [https://www.verisk.com/insurance/](https://www.verisk.com/insurance/)
+- NCCI (National Council on Compensation Insurance) - [https://www.ncci.com](https://www.ncci.com)

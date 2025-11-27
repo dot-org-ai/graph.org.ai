@@ -1,0 +1,38 @@
+---
+$id: https://naics.org.ai/IndustryGroups/{code}
+$context: https://naics.org.ai
+$type: https://naics.org.ai/IndustryGroup
+code: "{code}"
+name: "{Industry Group Name}"
+subsector: "{subsectorCode}"
+sector: "{sectorCode}"
+industries:
+  - code: "{code}1"
+    name: "{NAICS Industry Name}"
+---
+
+# {code} - {Industry Group Name}
+
+<IndustryGroupOverview code="{code}" />
+
+## Hierarchy
+
+- [{sectorCode} - {Sector Name}](../Sectors/{sectorCode}/)
+  - [{subsectorCode} - {Subsector Name}](../Subsectors/{subsectorCode}.mdx)
+    - **{code} - {Industry Group Name}**
+
+## NAICS Industries
+
+<IndustryList industryGroupCode="{code}" />
+
+| Code | NAICS Industry | National Industries |
+|------|----------------|---------------------|
+| {code}1 | {NAICS Industry Name} | {count} |
+| {code}2 | {NAICS Industry Name} | {count} |
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [industries.org.ai](https://industries.org.ai) | Simplified industry |
+| [onet.org.ai](https://onet.org.ai) | Related occupations |

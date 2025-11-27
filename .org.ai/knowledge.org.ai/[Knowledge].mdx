@@ -1,0 +1,48 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/{{slug}}
+$type: https://knowledge.org.ai/Knowledge
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Knowledge
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<KnowledgeOverview knowledge={knowledge} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Knowledge` |
+| Domain | [knowledge.org.ai](https://knowledge.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<KnowledgeDetails knowledge={knowledge} />
+
+## Properties
+
+<KnowledgeProperties knowledge={knowledge} />
+
+## Relationships
+
+<KnowledgeRelationships knowledge={knowledge} />
+
+## Related
+
+<RelatedKnowledges knowledge={knowledge} />
+
+## Sources
+
+- <DatabaseLink namespace="knowledge.org.ai" type="{{slug}}" />

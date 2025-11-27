@@ -1,0 +1,358 @@
+---
+$context: https://logistics.org.ai
+$id: https://logistics.org.ai/Trucking
+$type: https://logistics.org.ai/Logistics
+name: "Trucking and Motor Freight"
+description: "Road-based freight transportation including truckload (TL), less-than-truckload (LTL), and specialized hauling services"
+naics: "484"
+apqc: "4.4.3"
+---
+
+export const items = async () => {
+  return []
+}
+
+# Trucking and Motor Freight
+
+Road-based freight transportation services including full truckload (TL), less-than-truckload (LTL), and specialized hauling operations under NAICS 484.
+
+## Overview
+
+The trucking industry is the backbone of freight transportation in North America, moving approximately 72% of all freight tonnage. With over 3.5 million truck drivers and 500,000+ motor carriers, trucking represents a $875 billion industry that connects manufacturers, distributors, retailers, and consumers.
+
+### Industry Segments
+
+The trucking industry divides into several key segments:
+
+- **Truckload (TL)**: Full-trailer capacity shipments, typically 15+ pallets or 20,000+ lbs
+- **Less-Than-Truckload (LTL)**: Consolidated shipments from multiple shippers sharing trailer space
+- **Specialized Freight**: Dedicated equipment for refrigerated, flatbed, tanker, and oversized loads
+- **Parcel and Package**: Small shipments under 150 lbs delivered via ground transportation
+- **Drayage**: Short-haul container movements between ports, rail terminals, and warehouses
+
+## NAICS Classification
+
+### 484 - Truck Transportation
+
+The trucking sector includes establishments primarily engaged in providing over-the-road transportation of cargo using motor vehicles:
+
+#### 4841 - General Freight Trucking
+
+**484110 - General Freight Trucking, Local**
+- Local pickup and delivery services
+- Metro area distribution
+- City delivery operations
+- Short-haul freight (typically under 100 miles)
+
+**484121 - General Freight Trucking, Long-Distance, Truckload**
+- Full trailer capacity shipments
+- Point-to-point dedicated moves
+- Cross-country freight transportation
+- Private fleet operations
+- Dedicated contract carriage
+
+**484122 - General Freight Trucking, Long-Distance, Less Than Truckload**
+- Consolidated freight from multiple shippers
+- Hub-and-spoke terminal networks
+- Regional and national LTL networks
+- Freight consolidation and deconsolidation
+
+#### 4842 - Specialized Freight Trucking
+
+**484210 - Used Household and Office Goods Moving**
+- Residential moving services
+- Commercial relocation
+- Storage in transit
+- International household goods shipping
+
+**484220 - Specialized Freight (except Used Goods) Trucking, Local**
+- Dump truck services
+- Local tank truck hauling
+- Local towing services
+- Local utility trailer hauling
+
+**484230 - Specialized Freight (except Used Goods) Trucking, Long-Distance**
+- Refrigerated trucking (reefer)
+- Flatbed and heavy-haul transportation
+- Bulk liquid tankers (food grade and chemical)
+- Dry bulk hauling
+- Automobile transport
+- Livestock transportation
+- Forest products hauling
+
+## Trucking Operations
+
+### Truckload (TL) Operations
+
+Truckload carriers provide dedicated trailer capacity for single-shipper freight:
+
+**Operational Characteristics:**
+- Point-to-point service without intermediate stops
+- Typical load size: 24-26 pallets or 40,000+ lbs
+- Average length of haul: 500-800 miles
+- Driver per-mile compensation model
+- Asset-based carriers own/lease tractors and trailers
+- Owner-operators lease to carriers
+
+**Business Models:**
+- **Dry Van**: General merchandise in 53' enclosed trailers
+- **Refrigerated (Reefer)**: Temperature-controlled transportation for food and pharmaceuticals
+- **Flatbed**: Open trailers for construction materials, steel, and machinery
+- **Specialized**: Oversized, heavy-haul, and unique equipment requirements
+
+**Key Metrics:**
+- Revenue per loaded mile
+- Empty mile percentage (deadhead)
+- Tractor utilization (%)
+- On-time delivery rate
+- Freight damage claims ratio
+
+### Less-Than-Truckload (LTL) Operations
+
+LTL carriers consolidate freight from multiple shippers into full trailer loads:
+
+**Network Structure:**
+- **Pickup and Delivery (P&D)**: Local terminals serve metro areas
+- **Linehaul**: Long-haul between terminals, typically at night
+- **Break Bulk Terminals**: Regional hubs for freight sorting and consolidation
+- **Cross-Dock Operations**: Direct transfer between inbound and outbound trailers
+
+**Service Levels:**
+- Standard LTL: 2-5 day transit for regional shipments
+- Expedited LTL: Guaranteed delivery within 1-3 days
+- Volume LTL: Partial truckload (6-12 pallets)
+- LTL with liftgate, inside delivery, or appointment scheduling
+
+**Freight Classification:**
+- NMFC (National Motor Freight Classification) codes
+- Density-based pricing (lbs per cubic foot)
+- Freight class ranges from 50 (densest) to 500 (least dense)
+- Accessorial charges for special handling
+
+**Key Metrics:**
+- Shipments per day
+- Tonnage per terminal
+- Dock productivity (shipments per dock hour)
+- Linehaul load factor (% of trailer capacity)
+- On-time delivery percentage
+- OS&D (overage, shortage, and damage) rates
+
+### Specialized Freight Operations
+
+**Refrigerated Transportation:**
+- Temperature ranges: frozen (-20°F to 0°F), chilled (32°F-40°F), fresh (50°F-65°F)
+- Multi-temp trailers with compartments
+- Continuous temperature monitoring and recording
+- FSMA (Food Safety Modernization Act) compliance
+- Sanitary transportation requirements
+
+**Heavy-Haul and Oversized Loads:**
+- Oversize/overweight permits by state
+- Pilot car requirements
+- Route surveys for clearance verification
+- Specialized trailers: lowboys, RGN (removable gooseneck), multi-axle configurations
+- Modular and project cargo transportation
+
+**Bulk Transportation:**
+- Liquid bulk: food grade (milk, juice, oils), chemicals, petroleum products
+- Dry bulk: cement, aggregates, grain, plastic pellets
+- Pneumatic offloading systems
+- Tank cleaning and compartmentalization
+- Hazmat endorsements and DOT compliance
+
+## Transportation Management
+
+### Transportation Management Systems (TMS)
+
+Modern TMS platforms provide end-to-end visibility and optimization:
+
+**Core Capabilities:**
+- **Load Planning**: Optimal trailer utilization and route selection
+- **Carrier Selection**: Multi-modal rate shopping and carrier scoring
+- **Order Management**: Consolidation opportunities and shipment planning
+- **Execution**: EDI integration, dispatch, and tracking
+- **Settlement**: Freight audit, payment, and accrual management
+- **Analytics**: Performance reporting, cost analysis, and optimization
+
+**Leading TMS Providers:**
+- Oracle Transportation Management (OTM)
+- SAP Transportation Management
+- Manhattan Associates TMS
+- Blue Yonder (JDA) Transportation
+- MercuryGate TMS
+- Descartes MacroPoint
+- project44
+- FourKites
+
+### Fleet Management
+
+Asset-based carriers manage tractor and trailer fleets:
+
+**Fleet Optimization:**
+- Right-sizing fleet capacity to demand
+- Tractor-to-trailer ratios
+- Age and replacement cycles
+- Lease vs. purchase decisions
+- Fuel efficiency and aerodynamics
+- Electric vehicle (EV) adoption planning
+
+**Telematics and ELD:**
+- Electronic Logging Devices (ELD mandate 2017)
+- Hours of Service (HOS) compliance
+- GPS tracking and geofencing
+- Driver behavior monitoring
+- Predictive maintenance alerts
+- Fuel consumption analytics
+
+**Maintenance Management:**
+- Preventive maintenance schedules
+- DOT inspections (annual, 90-day, pre-trip)
+- VMRS (Vehicle Maintenance Reporting Standards) codes
+- Fleet Management Information Systems (FMIS)
+- Total cost of ownership (TCO) tracking
+
+## Regulations and Compliance
+
+### Hours of Service (HOS)
+
+Federal Motor Carrier Safety Administration (FMCSA) regulates driver working hours:
+
+**Current HOS Rules:**
+- **11-Hour Driving Limit**: After 10 consecutive hours off duty
+- **14-Hour On-Duty Limit**: Cannot drive after 14th hour after coming on duty
+- **30-Minute Break**: Required after 8 cumulative hours of driving
+- **60/70 Hour Limit**: Cannot drive after 60/70 hours on duty in 7/8 consecutive days
+- **34-Hour Restart**: Reset 60/70 hour clock with 34 consecutive hours off duty
+
+**Electronic Logging Devices (ELD):**
+- Automatic recording of driving time
+- Synchronization with vehicle engine
+- Required for most commercial vehicles over 10,000 lbs GVWR
+- Reduces logbook violations and improves compliance
+
+### Safety and Compliance
+
+**DOT Number and Operating Authority:**
+- USDOT Number for interstate commerce
+- MC (Motor Carrier) Number for for-hire authority
+- Unified Registration System (URS)
+- BOC-3 process agent designation
+
+**Safety Ratings:**
+- FMCSA's Safety Measurement System (SMS)
+- BASIC categories: Unsafe Driving, Hours of Service, Driver Fitness, Controlled Substances/Alcohol, Vehicle Maintenance, Hazardous Materials, Crash Indicator
+- Compliance, Safety, Accountability (CSA) scores
+- Safety rating: Satisfactory, Conditional, Unsatisfactory
+
+**Insurance Requirements:**
+- $750,000 minimum for general freight
+- $1 million for hazmat
+- $5 million for certain hazmat commodities
+- Cargo insurance for shipper protection
+- Workers' compensation and liability coverage
+
+### Environmental Regulations
+
+**Emissions Standards:**
+- EPA SmartWay Program for fuel efficiency
+- California CARB (California Air Resources Board) compliance
+- Clean Truck Programs at major ports
+- Transition to EPA 2027 engine standards
+
+**Sustainability Initiatives:**
+- Alternative fuels: natural gas (CNG/LNG), renewable diesel
+- Electric trucks: battery-electric and hydrogen fuel cell
+- Aerodynamic improvements: trailer skirts, gap reducers, tail fairings
+- Idle reduction technologies and APUs (auxiliary power units)
+
+## Industry Trends
+
+### Driver Shortage
+
+The trucking industry faces an ongoing driver shortage:
+
+- Estimated shortage of 80,000+ drivers in 2023
+- Aging workforce: average driver age 46-55
+- High turnover rates (85-95% at large truckload carriers)
+- Competition from other industries
+- Lifestyle challenges: extended time away from home
+
+**Retention Strategies:**
+- Increased driver pay and benefits
+- Sign-on and referral bonuses
+- Improved equipment and amenities
+- Regional and local routes
+- Predictable home time schedules
+- Enhanced training programs
+
+### Autonomous Trucks
+
+Self-driving technology is advancing in trucking:
+
+**Current Development:**
+- SAE Level 4 autonomous trucks in testing
+- Long-haul highway applications with remote monitoring
+- Hub-to-hub models with human drivers for first/last mile
+- TuSimple, Waymo Via, Aurora, Plus.ai, Kodiak Robotics
+- Platooning: connected trucks in convoy formation
+
+**Implementation Timeline:**
+- 2024-2026: Limited autonomous operations in ideal conditions
+- 2026-2030: Expanded deployment on major freight corridors
+- 2030+: Broader commercial availability
+
+### E-Commerce Impact
+
+Online retail growth drives trucking demand:
+
+- Faster delivery expectations (2-day, next-day, same-day)
+- Smaller, more frequent shipments
+- Final-mile congestion and parking challenges
+- Urban delivery optimization
+- Micro-fulfillment and dark stores
+
+### Technology Adoption
+
+Digital transformation across trucking:
+
+**Freight Matching Platforms:**
+- Digital freight matching (Uber Freight, Convoy, Transfix)
+- Load boards (DAT, Truckstop.com)
+- Dynamic pricing and spot market visibility
+
+**Visibility and Tracking:**
+- Real-time GPS tracking
+- Predictive ETAs with machine learning
+- Automated check-calls and exception management
+- Shipper and carrier portals
+
+**Automation:**
+- Robotic process automation (RPA) for back-office
+- Automated invoicing and payment processing
+- AI-powered load optimization and route planning
+
+## Related Topics
+
+### Cross-References
+
+- [Warehousing](/Warehousing): Storage and distribution operations
+- [LastMile](/LastMile): Final delivery to consumers
+- [SupplyChainManagement](/SupplyChainManagement): End-to-end supply chain coordination
+- [AirFreight](/AirFreight): Expedited freight via air cargo
+- [Maritime](/Maritime): Ocean container shipping
+
+### External Resources
+
+- **American Trucking Associations (ATA)**: Industry advocacy and research
+- **Owner-Operator Independent Drivers Association (OOIDA)**: Driver representation
+- **Federal Motor Carrier Safety Administration (FMCSA)**: Safety regulations and compliance
+- **National Motor Freight Traffic Association (NMFTA)**: Freight classification standards
+- **Transportation Intermediaries Association (TIA)**: 3PL and freight broker association
+
+## Sources
+
+- FMCSA Safety and Compliance Regulations
+- American Trucking Associations Industry Reports
+- Bureau of Transportation Statistics
+- NAICS 484 Industry Classification
+- APQC Process Classification Framework 4.4.3

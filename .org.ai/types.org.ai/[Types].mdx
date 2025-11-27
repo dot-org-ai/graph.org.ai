@@ -1,0 +1,48 @@
+---
+$context: https://types.org.ai
+$id: https://types.org.ai/{{slug}}
+$type: https://types.org.ai/Types
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Types
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<TypesOverview types={types} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Types` |
+| Domain | [types.org.ai](https://types.org.ai) |
+| Parent | [schema.org.ai](https://schema.org.ai) |
+
+## Details
+
+<TypesDetails types={types} />
+
+## Properties
+
+<TypesProperties types={types} />
+
+## Relationships
+
+<TypesRelationships types={types} />
+
+## Related
+
+<RelatedTypess types={types} />
+
+## Sources
+
+- <DatabaseLink namespace="types.org.ai" type="{{slug}}" />

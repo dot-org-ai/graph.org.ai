@@ -1,0 +1,48 @@
+---
+$context: https://design.org.ai
+$id: https://design.org.ai/{{slug}}
+$type: https://design.org.ai/Design
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Design
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<DesignOverview design={design} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Design` |
+| Domain | [design.org.ai](https://design.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<DesignDetails design={design} />
+
+## Properties
+
+<DesignProperties design={design} />
+
+## Relationships
+
+<DesignRelationships design={design} />
+
+## Related
+
+<RelatedDesigns design={design} />
+
+## Sources
+
+- <DatabaseLink namespace="design.org.ai" type="{{slug}}" />

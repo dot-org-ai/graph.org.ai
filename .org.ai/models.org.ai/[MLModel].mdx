@@ -1,0 +1,48 @@
+---
+$context: https://models.org.ai
+$id: https://models.org.ai/{{slug}}
+$type: https://models.org.ai/MLModel
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for MLModel
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MLModelOverview mlmodel={mlmodel} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `MLModel` |
+| Domain | [models.org.ai](https://models.org.ai) |
+| Parent | [tech.org.ai](https://tech.org.ai) |
+
+## Details
+
+<MLModelDetails mlmodel={mlmodel} />
+
+## Properties
+
+<MLModelProperties mlmodel={mlmodel} />
+
+## Relationships
+
+<MLModelRelationships mlmodel={mlmodel} />
+
+## Related
+
+<RelatedMLModels mlmodel={mlmodel} />
+
+## Sources
+
+- <DatabaseLink namespace="models.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://contracts.org.ai
+$id: https://contracts.org.ai/{{slug}}
+$type: https://contracts.org.ai/Contracts
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Contracts
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ContractsOverview contracts={contracts} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Contracts` |
+| Domain | [contracts.org.ai](https://contracts.org.ai) |
+| Parent | [law.org.ai](https://law.org.ai) |
+
+## Details
+
+<ContractsDetails contracts={contracts} />
+
+## Properties
+
+<ContractsProperties contracts={contracts} />
+
+## Relationships
+
+<ContractsRelationships contracts={contracts} />
+
+## Related
+
+<RelatedContractss contracts={contracts} />
+
+## Sources
+
+- <DatabaseLink namespace="contracts.org.ai" type="{{slug}}" />

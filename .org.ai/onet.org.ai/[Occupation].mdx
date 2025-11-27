@@ -1,0 +1,48 @@
+---
+$context: https://onet.org.ai
+$id: https://onet.org.ai/{{slug}}
+$type: https://onet.org.ai/Occupation
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Occupation
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<OccupationOverview occupation={occupation} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Occupation` |
+| Domain | [onet.org.ai](https://onet.org.ai) |
+| Parent | [standards.org.ai](https://standards.org.ai) |
+
+## Details
+
+<OccupationDetails occupation={occupation} />
+
+## Properties
+
+<OccupationProperties occupation={occupation} />
+
+## Relationships
+
+<OccupationRelationships occupation={occupation} />
+
+## Related
+
+<RelatedOccupations occupation={occupation} />
+
+## Sources
+
+- <DatabaseLink namespace="onet.org.ai" type="{{slug}}" />

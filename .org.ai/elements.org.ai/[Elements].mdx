@@ -1,0 +1,48 @@
+---
+$context: https://elements.org.ai
+$id: https://elements.org.ai/{{slug}}
+$type: https://elements.org.ai/Elements
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Elements
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ElementsOverview elements={elements} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Elements` |
+| Domain | [elements.org.ai](https://elements.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<ElementsDetails elements={elements} />
+
+## Properties
+
+<ElementsProperties elements={elements} />
+
+## Relationships
+
+<ElementsRelationships elements={elements} />
+
+## Related
+
+<RelatedElementss elements={elements} />
+
+## Sources
+
+- <DatabaseLink namespace="elements.org.ai" type="{{slug}}" />

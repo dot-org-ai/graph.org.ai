@@ -1,0 +1,500 @@
+---
+$context: https://health.org.ai
+$id: https://health.org.ai/Pharmaceuticals
+$type: https://health.org.ai/MedicalEntity
+name: "Pharmaceuticals"
+naicsCode: "3254"
+description: "Pharmaceutical and medicine manufacturing industry encompassing drug discovery, development, manufacturing, and distribution of prescription drugs, over-the-counter medications, biologics, vaccines, and specialty pharmaceuticals used to prevent, treat, and cure diseases."
+parent: https://health.org.ai
+---
+
+export const items = async () => {
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://health.org.ai/Pharmaceuticals',
+    naicsCode: { $regex: '^3254' }
+  })
+}
+
+# Pharmaceuticals
+
+The pharmaceutical industry discovers, develops, manufactures, and markets medications that prevent, treat, and cure human diseases and conditions. Representing over $550 billion in U.S. sales and $1.5 trillion globally, the pharmaceutical sector is one of the most research-intensive industries, investing 15-20% of revenue in R&D to bring new therapies to market. From small molecule drugs to complex biologics, vaccines to gene therapies, pharmaceuticals have transformed medicine and extended human life expectancy, while navigating intense regulatory oversight, patent exclusivity, generic competition, and ongoing debates about pricing and access.
+
+The industry encompasses the full drug lifecycle from early discovery through patent expiry and generic competition, involving research organizations, large pharmaceutical companies (Big Pharma), biotech firms, generic manufacturers, contract research and manufacturing organizations, wholesalers, and pharmacy benefit managers. Pharmaceuticals face unique challenges including high R&D costs and failure rates, lengthy regulatory approval processes, pricing pressures from payers, increasing generic and biosimilar competition, and the shift toward personalized medicine and specialty drugs.
+
+## Overview
+
+### Pharmaceutical Industry Segments
+
+**Branded Prescription Drugs**:
+- **Innovator Drugs** - Novel molecules with patent protection
+- **R&D Intensive** - Billions invested in drug development
+- **Premium Pricing** - Higher prices during patent exclusivity period
+- **Sales Force** - Direct marketing to physicians
+
+**Generic Drugs**:
+- **Bioequivalent** - Same active ingredient, strength, dosage form as branded
+- **Lower Cost** - 80-85% less expensive than branded equivalents
+- **Market Dominance** - 90% of prescriptions, 20% of spending
+- **Competition** - Price erosion as multiple generics enter market
+
+**Biologics and Biosimilars**:
+- **Biologics** - Large molecule drugs derived from living cells (proteins, antibodies)
+- **Complex Manufacturing** - Cell culture, purification, formulation challenges
+- **Specialty Use** - Cancer, autoimmune, rare diseases
+- **Biosimilars** - Lower-cost alternatives to branded biologics (not identical)
+
+**Specialty Pharmaceuticals**:
+- **High Cost** - Often >$100,000 per year per patient
+- **Complex** - Biologics, orphan drugs, gene/cell therapies
+- **Limited Distribution** - Specialty pharmacies, buy-and-bill
+- **Management Intensive** - Prior authorization, step therapy, care coordination
+
+**Over-the-Counter (OTC)**:
+- **Self-Care** - No prescription required
+- **Consumer Marketing** - Retail distribution, direct-to-consumer advertising
+- **Rx-to-OTC Switch** - Some prescription drugs transition to OTC (Claritin, Prilosec, Plan B)
+
+### Major Pharmaceutical Companies
+
+**Big Pharma (R&D-Driven Innovators)**:
+- **Pfizer** - $100B revenue, COVID vaccine, oncology, rare disease
+- **Johnson & Johnson** - $94B total ($52B pharma), immunology, oncology
+- **AbbVie** - $54B, Humira (immunology), Skyrizi, Rinvoq
+- **Merck** - $59B, Keytruda (cancer), vaccines (Gardasil), diabetes
+- **Bristol Myers Squibb** - $46B, oncology, cardiovascular, immunology
+- **Eli Lilly** - $34B, diabetes (Mounjaro), oncology, immunology
+- **Novartis** - $51B, oncology, cardiovascular, ophthalmology
+- **Roche** - $71B, oncology, diagnostics
+- **Sanofi** - $48B, diabetes, vaccines, rare disease
+- **GSK** - $43B, vaccines, HIV, respiratory, oncology
+
+**Biotech Companies**:
+- **Amgen** - $27B, biologics leader (Enbrel, Neulasta, Prolia)
+- **Gilead Sciences** - $27B, HIV, hepatitis, oncology
+- **Regeneron** - $13B, Eylea (ophthalmology), Dupixent (immunology)
+- **Vertex** - $9.9B, cystic fibrosis (near-cure)
+- **Biogen** - $9.8B, multiple sclerosis, Alzheimer's (Aduhelm)
+- **Moderna** - mRNA technology, COVID vaccine, oncology pipeline
+- **BioNTech** - mRNA COVID vaccine, cancer immunotherapy
+
+**Generic Manufacturers**:
+- **Teva** - Largest generic manufacturer globally
+- **Sandoz (Novartis)** - Major generic and biosimilar player
+- **Mylan (Viatris)** - Generic and branded generics
+- **Hikma** - Injectable and oral generics
+- **Amneal** - Generics and specialty
+
+## Drug Discovery and Development
+
+### Discovery Phase (2-5 Years)
+
+**Target Identification and Validation**:
+- **Disease Biology** - Understanding molecular basis of disease
+- **Drug Targets** - Proteins, enzymes, receptors involved in disease
+- **Genomics and Proteomics** - Identifying genetic and protein markers
+- **Validation** - Confirming target is relevant to disease
+
+**Lead Discovery and Optimization**:
+- **High-Throughput Screening** - Testing millions of compounds against target
+- **Rational Design** - Designing molecules based on target structure
+- **Medicinal Chemistry** - Optimizing lead compounds for potency, selectivity, safety
+- **Hit-to-Lead** - Refining promising compounds
+- **Lead Optimization** - Improving drug-like properties (ADME - absorption, distribution, metabolism, excretion)
+
+**Preclinical Development**:
+- **In Vitro Studies** - Cell-based assays testing efficacy and toxicity
+- **In Vivo Studies** - Animal models testing pharmacology and safety
+- **Pharmacokinetics** - How drug is absorbed, distributed, metabolized, eliminated
+- **Toxicology** - Short-term and long-term toxicity studies in animals
+- **IND (Investigational New Drug)** - Application to FDA to begin human trials
+
+### Clinical Development (6-7 Years)
+
+**Phase I - Safety and Dosing (20-100 Healthy Volunteers, 1-2 Years)**:
+- **First-in-Human** - Initial testing in humans
+- **Safety** - Monitoring adverse effects, tolerability
+- **Pharmacokinetics** - How drug behaves in human body
+- **Dose Escalation** - Finding maximum tolerated dose
+- **Success Rate** - ~70% advance to Phase II
+
+**Phase II - Efficacy and Side Effects (100-500 Patients, 2-3 Years)**:
+- **Proof-of-Concept** - Does drug work in target patient population?
+- **Dose-Ranging** - Identifying optimal dose for efficacy and safety
+- **Safety Monitoring** - Continued adverse event tracking
+- **Biomarkers** - Measuring drug effects
+- **Success Rate** - ~33% advance to Phase III
+
+**Phase III - Confirmatory Efficacy (1,000-5,000 Patients, 3-4 Years)**:
+- **Pivotal Trials** - Large-scale studies to confirm efficacy and safety
+- **Randomized Controlled Trials** - Placebo-controlled or active comparator
+- **Multiple Sites** - Enrolling patients across many clinical sites
+- **Statistical Power** - Sufficient patients to detect treatment effects
+- **Long-Term Safety** - Monitoring for rare or delayed adverse events
+- **Success Rate** - ~50-60% of Phase III programs succeed
+- **Cost** - Most expensive phase, hundreds of millions per trial
+
+### Regulatory Approval (1-2 Years)
+
+**New Drug Application (NDA) / Biologics License Application (BLA)**:
+- **Comprehensive Dossier** - All preclinical and clinical data
+- **Manufacturing** - Chemistry, manufacturing, controls (CMC)
+- **Labeling** - Proposed prescribing information
+- **FDA Review** - 10-12 months standard, 6 months priority review
+- **Advisory Committee** - Expert panel reviews evidence (for some drugs)
+- **Approval Decision** - FDA approves, requires additional studies, or rejects
+
+**Accelerated Pathways**:
+- **Fast Track** - Expedited review for serious conditions, unmet needs
+- **Breakthrough Therapy** - For drugs showing substantial improvement over existing therapies
+- **Accelerated Approval** - Approval based on surrogate endpoints, confirmatory trials post-approval
+- **Priority Review** - 6-month review for significant advances
+
+**Orphan Drug Designation**:
+- **Rare Diseases** - Affecting <200,000 U.S. patients
+- **Incentives** - 7-year exclusivity, tax credits, development grants
+- **Growth** - Increasing focus on rare diseases, high prices
+
+### Phase IV - Post-Market Surveillance
+
+**Post-Approval Requirements**:
+- **Safety Monitoring** - Adverse event reporting (FAERS database)
+- **Risk Evaluation and Mitigation Strategies (REMS)** - For drugs with serious risks
+- **Post-Marketing Studies** - Required or voluntary studies in real-world populations
+- **Label Updates** - New safety information, expanded indications
+
+## Manufacturing and Supply Chain
+
+### Drug Manufacturing
+
+**Small Molecule Manufacturing**:
+- **Chemical Synthesis** - Multi-step chemical reactions
+- **Active Pharmaceutical Ingredient (API)** - Drug substance production
+- **Formulation** - Combining API with excipients
+- **Dosage Forms** - Tablets, capsules, liquids, injectables, patches
+- **Good Manufacturing Practices (GMP)** - Quality standards, FDA inspections
+
+**Biologics Manufacturing**:
+- **Cell Culture** - Growing cells that produce protein drug
+- **Fermentation** - Large-scale bioreactors (1,000-20,000 liter tanks)
+- **Purification** - Separating protein from cells and contaminants (chromatography, filtration)
+- **Fill-Finish** - Aseptic filling into vials or syringes
+- **Complexity** - More complex and expensive than small molecules
+- **Biosimilars** - Cannot be exactly replicated due to manufacturing variability
+
+**Gene and Cell Therapies**:
+- **Viral Vectors** - Engineered viruses delivering genetic material
+- **CAR-T Cells** - Patient's own T cells engineered to fight cancer
+- **Manufacturing** - Highly personalized, expensive, specialized facilities
+- **Autologous** - Using patient's own cells (CAR-T)
+- **Allogeneic** - Off-the-shelf products from donors
+
+**Contract Manufacturing (CMOs/CDMOs)**:
+- **Outsourcing** - Pharma companies outsource manufacturing
+- **Capacity** - Access to specialized facilities and expertise
+- **Examples** - Catalent, Lonza, Patheon, Samsung Biologics
+
+### Supply Chain and Distribution
+
+**Pharmaceutical Wholesalers (Big Three)**:
+- **McKesson** - $276B revenue, largest U.S. drug distributor
+- **Cinergen** - $238B, distributor and specialty pharmacy
+- **AmerisourceBergen** - $214B, distribution and specialty services
+- **Functions** - Purchasing from manufacturers, warehousing, distribution to pharmacies/providers
+
+**Specialty Distributors**:
+- **Limited Distribution Networks (LDNs)** - Manufacturer controls distribution
+- **Specialty Pharmacies** - High-touch services for complex therapies
+- **Buy-and-Bill** - Physician offices purchase and administer drugs
+
+**Cold Chain**:
+- **Temperature-Sensitive** - Many biologics require refrigeration (2-8°C)
+- **Monitoring** - Continuous temperature monitoring, validation
+- **Backup Systems** - Redundant refrigeration, alarms
+- **Global Transport** - Specialized shipping for international distribution
+
+### Pharmacy Benefit Managers (PBMs)
+
+**Top PBMs**:
+- **CVS Caremark** - 100+ million lives
+- **Express Scripts (Cigna)** - 100+ million lives
+- **OptumRx (UnitedHealth)** - 65+ million lives
+- **Humana Pharmacy Solutions**
+- **Prime Therapeutics**
+
+**PBM Functions**:
+- **Formulary Management** - Preferred drug lists, tiered coverage
+- **Rebate Negotiation** - Negotiate rebates from manufacturers (15-50% of list price)
+- **Claims Adjudication** - Real-time claims processing at pharmacy point-of-sale
+- **Mail Order and Specialty Pharmacy** - Direct dispensing to patients
+- **Utilization Management** - Prior authorization, step therapy, quantity limits
+
+**Controversies**:
+- **Rebate Retention** - PBMs retain portion of rebates (spread pricing)
+- **Transparency** - Lack of transparency in rebate amounts, formulary decisions
+- **Conflicts of Interest** - Vertical integration with insurers and pharmacies
+- **Generic Pricing** - Spread between reimbursement to pharmacy and amount paid by plan
+
+## Pharmaceutical Economics and Pricing
+
+### Drug Pricing
+
+**List Price (WAC - Wholesale Acquisition Cost)**:
+- **Manufacturer-Set** - Price charged to wholesalers
+- **High and Rising** - Average new drug launch price >$100,000/year
+- **Not What's Paid** - Gross price before rebates and discounts
+
+**Net Price (After Rebates)**:
+- **Rebates to PBMs** - 15-50% of list price for formulary placement
+- **Rebates to Government** - Medicaid (23% minimum), 340B hospitals, VA/DOD
+- **Net Revenue** - What manufacturer actually receives after all discounts
+
+**Patient Out-of-Pocket**:
+- **Coinsurance** - Percentage of list price (often 20-40% for specialty)
+- **High Costs** - Patients on coinsurance can owe $10,000-$30,000+ per year
+- **Manufacturer Copay Assistance** - Coupons to reduce patient cost (controversial)
+- **Deductibles** - High-deductible plans require full cost until deductible met
+
+**International Price Differences**:
+- **U.S. Highest** - U.S. drug prices 2-4x higher than other developed countries
+- **Reference Pricing** - Other countries use external reference pricing or price controls
+- **Importation** - Proposals to allow importation from Canada (limited implementation)
+
+### Value and Cost-Effectiveness
+
+**Cost-Effectiveness Analysis**:
+- **QALY (Quality-Adjusted Life Year)** - Standard measure of health benefit
+- **Incremental Cost-Effectiveness Ratio (ICER)** - Cost per QALY gained vs. comparator
+- **Threshold** - $50,000-$150,000 per QALY considered cost-effective
+- **Limitations** - Not used for payment decisions in U.S. (unlike UK NICE)
+
+**Value-Based Pricing**:
+- **Outcomes-Based** - Pay based on real-world effectiveness
+- **Indication-Based Pricing** - Different prices for different uses
+- **Contracts** - Performance guarantees, money-back if drug doesn't work
+- **Examples** - Novartis Entresto (heart failure), Amgen PCSK9 (cholesterol)
+
+### Government Programs
+
+**Medicare Part D**:
+- **Coverage** - Outpatient prescription drugs for 50+ million Medicare beneficiaries
+- **Part D Plans** - Private plans with CMS oversight
+- **Donut Hole** - Coverage gap (now closed under IRA)
+- **Catastrophic** - Medicare reinsures costs above catastrophic threshold
+- **No Negotiation** - Historically no Medicare price negotiation (changing under IRA 2022)
+
+**Medicaid**:
+- **Rebates** - 23% minimum rebate (AMP-based) plus inflation penalty
+- **Managed Care** - Most Medicaid through managed care plans with PBM contracts
+- **Supplemental Rebates** - States negotiate additional rebates
+
+**340B Drug Pricing Program**:
+- **Safety Net** - Discounted drugs for qualifying hospitals and clinics
+- **Eligibility** - DSH hospitals, FQHCs, Ryan White clinics
+- **Discounts** - 20-50% below average price
+- **Controversy** - Hospitals generate revenue from spread, manufacturer restrictions
+
+**Veterans Affairs / Department of Defense**:
+- **Federal Ceiling Price** - 24% off non-federal average manufacturer price (NFAMP)
+- **National Formulary** - VA formulary, clinical guidelines
+- **Purchasing Power** - Negotiated prices below statutory ceiling
+
+### Inflation Reduction Act (2022)
+
+**Medicare Drug Price Negotiation**:
+- **CMS Negotiation** - Medicare can negotiate prices for high-spend drugs
+- **Timeline** - 10 drugs in 2026, 15 drugs in 2027, 20 drugs by 2029
+- **Eligible Drugs** - No generic competition, on market 7-11 years (small molecule) or 11-15 years (biologics)
+
+**Inflation Rebates**:
+- **Price Increases** - Manufacturers pay rebate if price increases faster than inflation
+- **Applies** - Medicare Part B and Part D drugs
+
+**Part D Redesign**:
+- **$2,000 Cap** - Out-of-pocket maximum for Part D beneficiaries (2025)
+- **Manufacturer Discount** - Manufacturers pay 10% in coverage gap, 20% in catastrophic
+- **Plan Risk** - Plans assume more risk in catastrophic phase
+
+## Therapeutic Areas
+
+### Cardiovascular
+
+**Drug Classes**:
+- **Statins** - Cholesterol lowering (Lipitor, Crestor, generics)
+- **ACE Inhibitors / ARBs** - Blood pressure, heart failure (mostly generic)
+- **Beta Blockers** - Heart failure, arrhythmias (generic)
+- **PCSK9 Inhibitors** - Cholesterol (Repatha, Praluent) - expensive, limited use
+- **SGLT2 Inhibitors** - Diabetes, now also heart failure (Jardiance, Farxiga)
+
+**Market**:
+- Highly generic (statins, ACE inhibitors)
+- New drugs focus on unmet needs (high cholesterol despite statins, advanced heart failure)
+
+### Oncology
+
+**Treatment Modalities**:
+- **Chemotherapy** - Cytotoxic drugs (older, generic)
+- **Targeted Therapy** - Small molecules targeting specific pathways (EGFR, BRAF, ALK inhibitors)
+- **Immunotherapy** - Checkpoint inhibitors unleashing immune system (Keytruda, Opdivo)
+- **Antibody-Drug Conjugates (ADCs)** - Targeted delivery of chemotherapy
+- **CAR-T Cell Therapy** - Engineered T cells (Kymriah, Yescarta) - $400,000+
+
+**Major Drugs**:
+- **Keytruda (pembrolizumab)** - $21B, multiple cancer types
+- **Opdivo (nivolumab)** - $8B, melanoma, lung, kidney, others
+- **Imbruvica (ibrutinib)** - $9B, blood cancers
+- **Revlimid (lenalidomide)** - $12B, multiple myeloma (now losing exclusivity)
+
+**Trends**:
+- Personalized medicine (biomarker-driven treatment)
+- Combination therapies (checkpoint inhibitors + other agents)
+- High prices ($100,000-$300,000 per year)
+
+### Immunology (Autoimmune)
+
+**Conditions**:
+- Rheumatoid arthritis, psoriasis, psoriatic arthritis, Crohn's disease, ulcerative colitis
+
+**Biologics**:
+- **TNF Inhibitors** - Humira, Enbrel, Remicade (now biosimilars)
+- **IL-17 Inhibitors** - Cosentyx, Taltz
+- **IL-23 Inhibitors** - Skyrizi, Tremfya
+- **JAK Inhibitors** - Oral small molecules (Xeljanz, Rinvoq)
+
+**Humira's Dominance**:
+- **$21B Peak Sales** - Best-selling drug of all time
+- **Biosimilar Erosion** - Biosimilars launched 2023 in U.S., rapid uptake
+- **AbbVie Transition** - Skyrizi, Rinvoq as next-generation products
+
+### Diabetes
+
+**Drug Classes**:
+- **Insulin** - Rapid-acting, long-acting, mixed (Humalog, Lantus, Tresiba)
+- **Metformin** - First-line oral, generic
+- **GLP-1 Agonists** - Injectable weight loss and glucose control (Ozempic, Mounjaro, Wegovy)
+- **SGLT2 Inhibitors** - Oral, also used for heart failure (Jardiance, Farxiga)
+- **DPP-4 Inhibitors** - Oral (Januvia)
+
+**GLP-1 Blockbusters**:
+- **Ozempic / Wegovy (semaglutide)** - $14B combined, weight loss phenomenon
+- **Mounjaro (tirzepatide)** - $5B, superior efficacy, expected to surpass Ozempic
+- **Supply Constraints** - Shortages due to overwhelming demand
+
+**Insulin Pricing Controversy**:
+- Insulin prices tripled 2002-2013, causing access issues
+- $35 cap for Medicare, some manufacturers capping price for all
+
+### Central Nervous System
+
+**Depression / Anxiety**:
+- SSRIs (Prozac, Zoloft, Lexapro) - mostly generic
+- SNRIs (Cymbalta, Effexor) - mostly generic
+- Ketamine (Spravato) - nasal spray for treatment-resistant depression
+
+**Schizophrenia / Bipolar**:
+- Atypical antipsychotics (Abilify, Zyprexa, Seroquel) - mostly generic
+- Long-acting injectables for adherence
+
+**Alzheimer's Disease**:
+- **Aduhelm (aducanumab)** - Controversial approval 2021, limited use
+- **Leqembi (lecanemab)** - Full approval 2023, removes amyloid, slows decline
+- **Donanemab** - Awaiting approval, similar to Leqembi
+
+**Multiple Sclerosis**:
+- Disease-modifying therapies (interferons, Copaxone - older, generic)
+- Oral therapies (Gilenya, Tecfidera, Mayzent)
+- High-efficacy infusions (Tysabri, Ocrevus, Kesimpta)
+
+### Infectious Disease
+
+**HIV**:
+- Single-tablet regimens (Biktarvy, Descovy, Genvoya)
+- Near-normal life expectancy with treatment
+- PrEP (pre-exposure prophylaxis) prevents infection
+- Gilead dominance, patent expirations starting
+
+**Hepatitis C**:
+- Curative in 8-12 weeks (Harvoni, Mavyret, Epclusa)
+- Revolutionized HCV treatment, very high prices ($80,000-$100,000)
+- Cure achieved, market declining as patients treated
+
+**Antibiotics**:
+- Generic market, low profitability
+- Resistance crisis, few new drugs in pipeline
+- GAIN Act incentives for antibiotic development
+
+### Rare Diseases (Orphan Drugs)
+
+**Business Model**:
+- Small patient populations (<200,000)
+- High prices ($100,000-$1 million+ per year)
+- 7-year exclusivity, limited competition
+- Humanitarian appeal but pricing concerns
+
+**Examples**:
+- **Soliris** - $500,000/year, paroxysmal nocturnal hemoglobinuria
+- **Spinraza** - $750,000 first year, spinal muscular atrophy
+- **Zolgensma** - $2.1 million one-time, gene therapy for SMA (cheapest over lifetime)
+- **Luxturna** - $850,000, gene therapy for inherited retinal disease
+
+## Challenges and Opportunities
+
+### Current Challenges
+
+**Pricing and Access**:
+- Drug price inflation, patient affordability
+- Insurance coverage restrictions (prior auth, step therapy)
+- Political pressure, legislative action (IRA)
+- Uninsured and underinsured patient access
+
+**Patent Cliff and Generic Competition**:
+- Loss of exclusivity for major drugs
+- Generic and biosimilar erosion of revenues
+- "Patent dance" extending exclusivity (incremental changes)
+- Authorized generics and biosimilars
+
+**R&D Productivity**:
+- High failure rates (90%+ of drugs fail)
+- Rising development costs ($1-2 billion per approved drug)
+- Longer development timelines
+- Difficulty in finding new targets and mechanisms
+
+**Regulatory**:
+- FDA scrutiny and approval challenges
+- Post-market safety issues and label changes
+- International harmonization and approvals
+
+### Opportunities
+
+**Precision Medicine**:
+- Genomics-guided therapy selection
+- Biomarker-driven development
+- Companion diagnostics
+- Smaller, targeted trials
+
+**Novel Modalities**:
+- Gene therapy (one-time cures)
+- Cell therapy (CAR-T, allogeneic)
+- mRNA vaccines and therapeutics (Moderna, BioNTech)
+- RNA interference (RNAi - silencing disease genes)
+- Antibody-drug conjugates (ADCs)
+- Bispecific antibodies
+
+**Artificial Intelligence**:
+- AI for drug discovery and design
+- Predicting drug interactions and toxicity
+- Clinical trial optimization
+- Real-world evidence analysis
+
+**Emerging Markets**:
+- Growing middle class in China, India, Latin America
+- Increasing healthcare access and spending
+- Local manufacturing and partnerships
+
+## Related Resources
+
+- [naics.org.ai/3254](https://naics.org.ai/3254) - NAICS pharmaceutical manufacturing
+- [health.org.ai/Hospitals](https://health.org.ai/Hospitals) - Hospital drug utilization
+- [health.org.ai/HealthInsurance](https://health.org.ai/HealthInsurance) - Pharmacy benefits
+- [fda.gov/drugs](https://www.fda.gov/drugs) - FDA drug information and approvals
+- [clinicaltrials.gov](https://clinicaltrials.gov) - Clinical trial registry

@@ -1,0 +1,48 @@
+---
+$context: https://agents.org.ai
+$id: https://agents.org.ai/{{slug}}
+$type: https://agents.org.ai/Agent
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Agent
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<AgentOverview agent={agent} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Agent` |
+| Domain | [agents.org.ai](https://agents.org.ai) |
+| Parent | [nouns.org.ai](https://nouns.org.ai) |
+
+## Details
+
+<AgentDetails agent={agent} />
+
+## Properties
+
+<AgentProperties agent={agent} />
+
+## Relationships
+
+<AgentRelationships agent={agent} />
+
+## Related
+
+<RelatedAgents agent={agent} />
+
+## Sources
+
+- <DatabaseLink namespace="agents.org.ai" type="{{slug}}" />

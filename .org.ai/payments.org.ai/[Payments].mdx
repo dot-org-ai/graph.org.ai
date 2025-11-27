@@ -1,0 +1,48 @@
+---
+$context: https://payments.org.ai
+$id: https://payments.org.ai/{{slug}}
+$type: https://payments.org.ai/Payments
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Payments
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<PaymentsOverview payments={payments} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Payments` |
+| Domain | [payments.org.ai](https://payments.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<PaymentsDetails payments={payments} />
+
+## Properties
+
+<PaymentsProperties payments={payments} />
+
+## Relationships
+
+<PaymentsRelationships payments={payments} />
+
+## Related
+
+<RelatedPaymentss payments={payments} />
+
+## Sources
+
+- <DatabaseLink namespace="payments.org.ai" type="{{slug}}" />

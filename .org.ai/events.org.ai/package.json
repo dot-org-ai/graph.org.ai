@@ -1,0 +1,33 @@
+{
+  "name": "events.org.ai",
+  "version": "0.0.1",
+  "description": "Unified event model connecting verbs to 5W+H (Who, What, Where, When, Why, How), extending EPCIS.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "events"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://events.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/events.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

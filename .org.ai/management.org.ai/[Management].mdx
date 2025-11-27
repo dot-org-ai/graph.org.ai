@@ -1,0 +1,48 @@
+---
+$context: https://management.org.ai
+$id: https://management.org.ai/{{slug}}
+$type: https://management.org.ai/Management
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Management
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ManagementOverview management={management} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Management` |
+| Domain | [management.org.ai](https://management.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<ManagementDetails management={management} />
+
+## Properties
+
+<ManagementProperties management={management} />
+
+## Relationships
+
+<ManagementRelationships management={management} />
+
+## Related
+
+<RelatedManagements management={management} />
+
+## Sources
+
+- <DatabaseLink namespace="management.org.ai" type="{{slug}}" />

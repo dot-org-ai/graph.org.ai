@@ -1,0 +1,48 @@
+---
+$context: https://molecules.org.ai
+$id: https://molecules.org.ai/{{slug}}
+$type: https://molecules.org.ai/Molecules
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Molecules
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MoleculesOverview molecules={molecules} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Molecules` |
+| Domain | [molecules.org.ai](https://molecules.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<MoleculesDetails molecules={molecules} />
+
+## Properties
+
+<MoleculesProperties molecules={molecules} />
+
+## Relationships
+
+<MoleculesRelationships molecules={molecules} />
+
+## Related
+
+<RelatedMoleculess molecules={molecules} />
+
+## Sources
+
+- <DatabaseLink namespace="molecules.org.ai" type="{{slug}}" />

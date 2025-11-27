@@ -1,0 +1,254 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/CollaborativeRobots
+$type: https://robotics.org.ai/Robotics
+name: Collaborative Robots
+description: Safe robots designed to work alongside humans without safety cages
+---
+
+export const items = async () => {
+  return [
+    { name: 'Universal Robots UR Series', type: 'CollaborativeRobots' },
+    { name: 'FANUC CR Series', type: 'CollaborativeRobots' },
+    { name: 'ABB YuMi', type: 'CollaborativeRobots' },
+    { name: 'KUKA LBR iiwa', type: 'CollaborativeRobots' }
+  ]
+}
+
+# Collaborative Robots (Cobots)
+
+Collaborative robots, or cobots, represent a paradigm shift in industrial automation - designed to work safely alongside human workers without traditional safety cages or barriers. This technology is democratizing automation for small and medium-sized enterprises while enhancing productivity in large-scale manufacturing.
+
+## Overview
+
+The collaborative robot market has experienced explosive growth, expanding from $710 million in 2018 to over $1.5 billion in 2024, with projections exceeding $7 billion by 2030. This growth is driven by decreasing costs, easier programming, and expanding applications beyond traditional manufacturing.
+
+## Key Characteristics
+
+### Safety Features
+
+Unlike traditional industrial robots that require safety caging, cobots incorporate multiple safety mechanisms:
+
+- **Power and Force Limiting** - Built-in torque sensors on each joint detect contact and immediately reduce force or stop motion
+- **Speed and Separation Monitoring** - Sensors detect human proximity and adjust robot speed accordingly
+- **Safety-Rated Monitored Stop** - Robot halts when a human enters the collaborative workspace
+- **Hand Guiding** - Operators can physically guide the robot to teach new tasks
+
+ISO/TS 15066 defines four types of collaborative operations:
+1. Safety-rated monitored stop
+2. Hand guiding
+3. Speed and separation monitoring
+4. Power and force limiting
+
+### Ease of Programming
+
+Cobots prioritize user-friendly programming:
+
+- **Lead-Through Programming** - Physically move the robot arm to teach positions
+- **Graphical Interfaces** - Drag-and-drop programming without coding
+- **Simulation Software** - Test programs virtually before deployment
+- **Pre-Built Applications** - Libraries of common tasks (pick-and-place, palletizing)
+
+Average programming time: 1-4 hours vs. days for traditional robots
+
+### Flexibility and Deployment
+
+- **Lightweight Design** - Most cobots weigh 20-40kg and can be moved by one person
+- **Small Footprint** - Operate in confined spaces alongside workers
+- **Quick Changeover** - Redeploy to different tasks in under an hour
+- **Modular End Effectors** - Tool changers enable multiple applications
+
+## Major Manufacturers and Models
+
+### Universal Robots (UR)
+
+Market leader with 50,000+ cobots deployed worldwide
+
+**UR3e** - Payload 3kg, reach 500mm - Ideal for electronics assembly, quality inspection
+**UR5e** - Payload 5kg, reach 850mm - Most popular for machine tending, packaging
+**UR10e** - Payload 10kg, reach 1300mm - Heavy material handling, palletizing
+**UR16e** - Payload 16kg, reach 900mm - Automotive assembly, welding
+**UR20** - Payload 20kg, reach 1750mm - Large part handling
+
+Features: PolyScope interface, 17 safety functions, Force Mode for sensitive assembly
+
+### FANUC CR Series
+
+**CR-4iA** - 4kg payload, cleanroom certified for electronics
+**CR-7iA** - 7kg payload, collaborative version of popular industrial robot
+**CR-15iA** - 15kg payload, versatile mid-range cobot
+**CR-35iA** - 35kg payload, highest capacity collaborative robot
+
+Features: Green safety skin, iRVision integration, FANUC's proven reliability
+
+### ABB YuMi
+
+**YuMi Single Arm** - 500g payload, designed for small parts assembly
+**YuMi Dual Arm** - Two 500g arms working in coordination
+**GoFa** - 5kg payload, general-purpose collaborative robot
+**SWIFTI** - Higher speed variant for increased productivity
+
+Features: Lead-through programming, vision guidance, soft padded arms
+
+### KUKA LBR iiwa
+
+**LBR iiwa 7 R800** - 7kg payload, 800mm reach
+**LBR iiwa 14 R820** - 14kg payload, 820mm reach
+
+Features: Torque sensors in all 7 axes, exceptional sensitivity (±0.1mm repeatability), medical device certification
+
+### Other Notable Players
+
+- **Techman Robot** - Built-in vision system, competitive pricing
+- **Doosan Robotics** - High payload cobots up to 25kg
+- **Franka Emika** - Research-grade sensitivity, 7-axis design
+- **Hanwha** - Korean manufacturer with growing market share
+- **Kassow Robots** - Danish startup with 7-axis cobots
+
+## Applications
+
+### Assembly Operations
+
+- Electronic component insertion
+- Small parts assembly
+- Screw driving and fastening
+- Quality inspection with vision systems
+- Product testing
+
+Case study: Electronics manufacturer reduced assembly time by 40% with UR5e handling repetitive insertions
+
+### Machine Tending
+
+- CNC machine loading/unloading
+- Injection molding part removal
+- Press brake operation
+- Heat treatment handling
+
+Benefits: 24/7 operation, consistent cycle times, worker safety improvement
+
+### Packaging and Palletizing
+
+- Box erecting and packing
+- Product sorting and orientation
+- Pallet stacking
+- Shrink wrapping
+- Label application
+
+ROI: Typical payback in 12-18 months for packaging applications
+
+### Quality Inspection
+
+- Dimensional measurement with calipers
+- Vision-based defect detection
+- Coordinate measuring machine (CMM) operation
+- Functional testing
+
+### Welding and Material Removal
+
+- Arc welding for small fabrication
+- Spot welding assembly
+- Grinding and deburring
+- Sanding and polishing
+
+### Laboratory Automation
+
+- Sample handling and preparation
+- Liquid dispensing
+- Plate handling
+- Equipment tending
+
+## Benefits and ROI
+
+### Productivity Improvements
+
+- **24/7 Operation** - Three-shift productivity from single robot
+- **Consistency** - Eliminates variation in repetitive tasks
+- **Speed** - Typical cycle time reduction of 20-35%
+- **Quality** - Defect rates reduced by 30-50%
+
+### Workforce Optimization
+
+- **Ergonomic Relief** - Eliminates repetitive strain injuries
+- **Skill Development** - Workers transition to higher-value tasks
+- **Job Satisfaction** - Reduction in monotonous work
+- **Labor Shortage Mitigation** - Maintain production despite workforce constraints
+
+### Financial Metrics
+
+- **Initial Investment** - $25,000-$50,000 fully deployed
+- **ROI Timeline** - 6-24 months typical payback
+- **Operating Costs** - Minimal maintenance, low energy consumption
+- **Flexibility Value** - Redeployable to new tasks extends useful life
+
+## Implementation Considerations
+
+### Risk Assessment
+
+Required by ISO/TS 15066 before deployment:
+
+1. Identify all potential contact points
+2. Measure static and dynamic force/pressure
+3. Compare to biomechanical pain thresholds
+4. Implement control measures (speed reduction, padding, sensors)
+5. Validate safety through testing
+
+### Integration Planning
+
+- **Workspace Design** - Optimize layout for human-robot collaboration
+- **End Effector Selection** - Grippers, vacuum systems, specialized tools
+- **Fixture Design** - Part presentation and location
+- **Process Flow** - Define human vs. robot tasks
+- **Training** - Operator and maintenance personnel education
+
+### Common Challenges
+
+- **Payload Limitations** - Most cobots max out at 10-20kg
+- **Speed Constraints** - Safety requirements limit maximum speed
+- **Precision Requirements** - Some applications need traditional robots
+- **ROI Expectations** - Must carefully calculate true costs and benefits
+
+## Industry 4.0 and Digital Integration
+
+Modern cobots integrate with smart manufacturing ecosystems:
+
+- **Cloud Connectivity** - Remote monitoring and fleet management
+- **OPC UA Communication** - Integration with MES/ERP systems
+- **Digital Twin Simulation** - Virtual commissioning and optimization
+- **AI-Powered Vision** - Deep learning for defect detection
+- **Predictive Maintenance** - Analyze joint wear and performance degradation
+
+## Future Trends
+
+### Technology Evolution
+
+- **Increased Payloads** - Next-generation cobots up to 50kg
+- **Higher Speeds** - Advanced sensors enabling faster safe operation
+- **Mobile Cobots** - Integration with AMRs for ultimate flexibility
+- **AI Integration** - Machine learning for adaptive control and decision making
+
+### Market Expansion
+
+- **Small Manufacturing** - Cobots accessible to job shops and SMEs
+- **New Industries** - Agriculture, construction, healthcare expanding adoption
+- **Developing Markets** - Growing deployment in Asia, Latin America
+- **Service Sector** - Food service, retail, hospitality applications
+
+### Skill Requirements
+
+- Growing demand for cobot programmers and integrators
+- Certification programs from robot manufacturers
+- Community colleges adding robotics programs
+- Online training platforms (Universal Robots Academy, FANUC eLearning)
+
+## Related Topics
+
+- [IndustrialRobots.mdx](https://robotics.org.ai/IndustrialRobots) - Traditional industrial automation
+- [RoboticsAI.mdx](https://robotics.org.ai/RoboticsAI) - AI and machine learning in robotics
+- [Manufacturing.org.ai](https://manufacturing.org.ai) - Production systems integration
+
+## References
+
+- ISO/TS 15066:2016 - Robots and robotic devices - Collaborative robots
+- International Federation of Robotics - World Robotics Report
+- Robotic Industries Association - Collaborative Robots Guide
+- Universal Robots Academy - Cobot Training Resources

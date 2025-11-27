@@ -1,0 +1,545 @@
+---
+$context: https://insurance.org.ai
+$id: https://insurance.org.ai/Reinsurance
+$type: https://insurance.org.ai/Reinsurance
+name: Reinsurance
+naicsCode: "524130"
+description: "Reinsurance is insurance for insurance companies, providing risk transfer, capital relief, and catastrophe protection for primary insurers"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Reinsurance
+  return []
+}
+
+# Reinsurance
+
+Reinsurance (NAICS 524130) is the practice of insurers transferring portions of risk portfolios to other parties (reinsurers) to reduce the likelihood of paying large obligations from claims. Reinsurance provides capital relief, smooths earnings volatility, and protects against catastrophic losses.
+
+## Overview
+
+Reinsurance serves critical functions in the global insurance market:
+- **Risk Transfer**: Spread catastrophic risk across multiple reinsurers globally
+- **Capital Management**: Free up regulatory capital for primary insurers to write more business
+- **Earnings Stabilization**: Smooth volatility from large losses
+- **Catastrophe Protection**: Protect against hurricanes, earthquakes, pandemics
+- **Expertise**: Access reinsurer underwriting, actuarial, and claims expertise
+- **Surplus Relief**: Provide capacity for rapid growth without capital strain
+
+### Market Statistics
+- Global reinsurance premiums: $350 billion (2024)
+- Life reinsurance: $80 billion
+- Non-life (P&C) reinsurance: $270 billion
+- Catastrophe bond market: $45 billion
+- Top reinsurers control 70% of global market
+- Reinsurance cession rate (P&C): 5-10% of gross premiums
+- Bermuda reinsurance market: $100 billion (largest reinsurance domicile)
+
+## Types of Reinsurance
+
+### Treaty Reinsurance
+
+**Automatic coverage for classes of business**
+
+#### Characteristics
+- Covers all policies meeting treaty terms
+- Automatic acceptance by reinsurer (no individual underwriting)
+- Long-term relationships (multi-year treaties)
+- Predictable capacity for primary insurer
+- Efficient administration (bulk cessions)
+
+#### Treaty Types
+
+**Quota Share Treaty**
+- Reinsurer accepts fixed percentage of all policies
+- Example: 30% quota share → reinsurer takes 30% premium, pays 30% losses
+- **Advantages**: Simple, proportional risk sharing, commission for ceding insurer
+- **Uses**: New lines of business, geographic expansion, capital relief
+
+**Surplus Share Treaty**
+- Reinsurer covers amounts exceeding insurer's retention
+- Multiple "lines" of coverage based on retained amount
+- Example: $500K retention, 10-line treaty → max $5.5M total coverage
+- **Advantages**: Retain more premium on smaller risks, cede large risks
+- **Uses**: Property insurance with varying policy sizes
+
+**Excess of Loss Treaty (XOL)**
+- Reinsurer pays losses exceeding retention, up to limit
+- **Per Risk XOL**: Covers individual large losses
+  - Example: $1M xs $1M (reinsurer pays $1M-2M per occurrence)
+- **Per Occurrence XOL**: Covers catastrophic events affecting multiple policies
+  - Example: $50M xs $10M (reinsurer pays $10M-60M per event)
+- **Aggregate XOL**: Covers annual losses exceeding threshold
+  - Example: Loss ratio > 75% triggers coverage
+
+**Stop Loss Treaty**
+- Protects against aggregate annual losses
+- Example: Covers losses above 80% loss ratio
+- Rare in modern market (replaced by aggregate XOL)
+
+**Catastrophe Excess of Loss (Cat XOL)**
+- Specific coverage for natural catastrophes
+- Multiple layers (towers) with different reinsurers per layer
+- Example:
+  - $50M xs $50M (1st layer)
+  - $100M xs $100M (2nd layer)
+  - $200M xs $200M (3rd layer)
+- **Key for**: Hurricane, earthquake, wildfire, flood exposure
+
+### Facultative Reinsurance
+
+**Individual policy-by-policy coverage**
+
+#### Characteristics
+- Each risk underwritten separately by reinsurer
+- Reinsurer can decline individual risks
+- Negotiated terms for each placement
+- Higher administrative costs than treaty
+- **Uses**: Unusual risks, limits exceeding treaty capacity, specialty coverages
+
+#### Facultative Types
+
+**Facultative Proportional**
+- Reinsurer shares premium and losses on percentage basis
+- Similar to quota share but for individual risks
+
+**Facultative Excess of Loss**
+- Reinsurer covers losses above retention on specific policy
+- Example: $5M xs $5M on $10M office building
+- Common for large commercial property, liability
+
+**Facultative Certificates**
+- Document outlining specific risk details
+- Premium, limits, deductible, terms and conditions
+- Bound before primary policy issued (often required)
+
+## Reinsurance Structures
+
+### Proportional (Pro Rata) Reinsurance
+
+**Premium and losses shared proportionally**
+
+#### Quota Share
+- Fixed percentage of all business
+- Ceding commission compensates for acquisition costs
+- Example: 40% quota share with 30% ceding commission
+  - Premium ceded: 40%
+  - Commission received: 30% of ceded premium
+  - Net cost: 10% of ceded premium
+
+#### Surplus Share
+- Variable percentage based on policy size
+- Retention limit determines ceded amount
+- More premium retained on smaller risks
+
+**Advantages**
+- Capital relief (ceding commission)
+- Predictable cost
+- Align reinsurer incentives
+
+**Disadvantages**
+- Cede premium on smaller, profitable risks
+- Higher cost than non-proportional
+
+### Non-Proportional (Excess of Loss) Reinsurance
+
+**Reinsurer pays losses exceeding retention**
+
+#### Per Risk Excess
+- Applies to individual large losses
+- Example: $2M xs $1M per risk
+  - $500K loss: Insurer pays $500K, reinsurer $0
+  - $2M loss: Insurer pays $1M, reinsurer $1M
+  - $4M loss: Insurer pays $1M, reinsurer $2M (limit reached)
+
+#### Per Occurrence Excess (Cat XOL)
+- Applies to catastrophic events
+- Example: $100M xs $25M per occurrence
+  - Hurricane causes $80M in losses: Insurer pays $25M, reinsurer $55M
+
+#### Aggregate Excess
+- Applies to total annual losses
+- Example: Aggregate XOL at 80% loss ratio
+  - Normal year (70% LR): No reinsurance recovery
+  - Bad year (90% LR): Reinsurer pays excess above 80%
+
+**Advantages**
+- Protect against large, unpredictable losses
+- Retain premium on smaller claims
+- Lower cost than proportional
+
+**Disadvantages**
+- Less capital relief
+- Complex pricing and administration
+- Exposure to reinsurer credit risk
+
+## Specialized Reinsurance Products
+
+### Retrocession
+
+**Reinsurance for reinsurers**
+
+- Reinsurers cede portions of assumed risk to retrocessionaires
+- Spread risk globally
+- Manage peak exposures and capital
+- Similar structures (treaty, facultative, proportional, non-proportional)
+
+### Finite Reinsurance
+
+**Limited risk transfer, structured finance component**
+
+- Aggregate limits on reinsurer liability
+- Multi-year contracts
+- Experience refunds or profit sharing
+- Regulatory scrutiny for accounting treatment
+- **Uses**: Smoothing earnings, regulatory capital management
+
+### Catastrophe Bonds (Cat Bonds)
+
+**Insurance-linked securities (ILS) transferring catastrophe risk to capital markets**
+
+#### Structure
+- **Trigger event**: Specific catastrophe (e.g., hurricane > Category 4 in FL)
+- **Trigger types**:
+  - **Indemnity**: Actual insurer losses
+  - **Industry loss**: Total industry losses from event
+  - **Parametric**: Physical parameters (wind speed, magnitude, rainfall)
+  - **Modeled loss**: Catastrophe model estimates
+- **Investors**: Pension funds, hedge funds, institutional investors
+- **Yield**: 5-15% depending on risk
+- **Principal at risk**: Investors lose principal if trigger event occurs
+
+**Market Growth**
+- Outstanding cat bonds: $45 billion (2024)
+- Annual issuance: $10-15 billion
+- Diversification for investors (uncorrelated with financial markets)
+- Alternative to traditional reinsurance
+
+### Sidecar
+
+**Special purpose vehicle (SPV) for temporary reinsurance capacity**
+
+- Reinsurer creates SPV to attract third-party capital
+- Investors fund sidecar, share in specific book of business
+- Typically 1-3 year term
+- Popular post-catastrophe (hard market opportunities)
+
+### Industry Loss Warranties (ILW)
+
+**Derivative contract based on industry-wide losses**
+
+- Payout triggered by total industry loss exceeding threshold
+- Example: $50M payout if industry hurricane losses > $30B
+- Used for additional catastrophe protection
+- Faster payout than traditional reinsurance (no claims adjustment)
+
+## Life Reinsurance
+
+### Mortality Risk Transfer
+
+**Reinsurance of life insurance death claims**
+
+#### Yearly Renewable Term (YRT)
+- Reinsurer covers mortality risk only (no cash value)
+- Annual premium based on amount at risk
+- Adjusts annually based on age and mortality experience
+
+#### Coinsurance
+- Reinsurer shares premiums, reserves, and claims proportionally
+- Capital relief for ceding company
+- Reinsurer assumes investment risk on reserves
+
+#### Modified Coinsurance (Mod Co)
+- Similar to coinsurance but cedent retains assets
+- Reinsurer pays interest adjustment to cedent
+- Used when reinsurer cannot invest in cedent's domicile
+
+### Longevity Risk (Annuities)
+
+**Reinsurance for pension and annuity longevity exposure**
+
+- Protect against beneficiaries living longer than expected
+- **Uses**: Pension risk transfer, annuity block reinsurance
+- Growing market as life expectancy increases
+- Reinsurers with diversified global portfolios better positioned
+
+### Critical Illness & Disability
+
+**Reinsurance for living benefits**
+
+- Critical illness (cancer, heart attack, stroke)
+- Disability income (short-term, long-term)
+- Long-term care
+- Volatile claims experience requires reinsurance
+
+## Reinsurance Pricing & Modeling
+
+### Actuarial Pricing
+
+**Non-Proportional Reinsurance**
+
+#### Burning Cost Method
+- Historical losses applied to current exposure
+- Adjust for trend, development, exposure growth
+- Calculate expected losses in layer
+- Add profit margin and expenses
+
+#### Exposure Rating
+- Use catastrophe models (AIR, RMS, CoreLogic)
+- Estimate probable maximum loss (PML) at various return periods
+- Price based on expected annual loss (EAL) + margin
+
+**Proportional Reinsurance**
+- Ceding commission covers acquisition costs
+- Experience rating based on historical loss ratios
+- Profit commission for favorable experience
+
+### Catastrophe Modeling
+
+**Probabilistic assessment of natural disaster losses**
+
+#### Model Components
+1. **Hazard module**: Frequency and severity of events
+2. **Exposure module**: Insured properties and values
+3. **Vulnerability module**: Damage functions (% loss at various intensities)
+4. **Financial module**: Insurance and reinsurance terms
+
+#### Key Metrics
+- **Average Annual Loss (AAL)**: Expected loss in average year
+- **Probable Maximum Loss (PML)**: Loss at specified return period
+  - 1-in-100 year PML (1% annual exceedance probability)
+  - 1-in-250 year PML (0.4% AEP)
+- **Occurrence Exceedance Probability (OEP)**: Loss from single event
+- **Aggregate Exceedance Probability (AEP)**: Total annual loss from all events
+
+### Return Period Pricing
+
+**Matching price to return period of coverage layer**
+
+- 1st layer (low attachment): 1-in-10 to 1-in-25 year events
+- 2nd layer (mid): 1-in-50 to 1-in-100 year events
+- 3rd+ layers (high): 1-in-250+ year events
+- Higher layers = lower frequency = higher cost per dollar of limit
+
+## Reinsurance Operations
+
+### Underwriting
+
+**Evaluating risk quality and pricing**
+
+1. **Submission review**: Portfolio characteristics, loss history, retention strategy
+2. **Data quality**: Verify exposure data, geocoding accuracy
+3. **Modeling**: Run catastrophe models, estimate expected losses
+4. **Pricing**: Determine rate on line (ROL), minimum premiums
+5. **Terms negotiation**: Exclusions, reinstatements, loss corridors
+6. **Authorization**: Underwriting authority limits, management approval
+
+### Claims
+
+#### Treaty Claims
+- Ceding company reports losses exceeding retention
+- Bordereau reporting: Periodic claim listings
+- Cash call: Reinsurer pays ceded losses
+- Claims audits: Verify accuracy of cessions
+
+#### Facultative Claims
+- Individual claim notifications
+- Reinsurer participates in claim investigation
+- Proportional payment based on percentage share
+
+#### Commutation
+- Agreement to settle all claims and close contract
+- Lump sum payment instead of ongoing claim payments
+- Used to exit unprofitable treaties or clean up legacy business
+
+### Reinstatement Provisions
+
+**Restoring reinsurance limits after loss event**
+
+- **Free reinstatement**: No additional premium
+- **Paid reinstatement**: Pro-rata premium for restored coverage
+  - Example: $100M limit, $10M loss, 100% reinstatement
+  - Additional premium: ($10M / $100M) × original premium
+- **Number of reinstatements**: Typically 1-3 per year
+- **Aggregate limit**: Maximum total payout including reinstatements
+
+## Reinsurance Market Dynamics
+
+### Market Cycles
+
+**Hard Market**
+- Follows major catastrophes (9/11, Katrina, COVID-19)
+- Reduced capacity, rate increases (20-50%+)
+- Stricter terms and conditions
+- Higher retentions required
+- New capital enters market (cat bonds, sidecars)
+
+**Soft Market**
+- Excess capacity, competitive pricing
+- Rate decreases or flat renewals
+- Looser terms, lower retentions
+- Expansion into new lines and territories
+
+### Key Renewal Dates
+
+**January 1**
+- Largest global reinsurance renewal (60% of market)
+- Property catastrophe treaties worldwide
+- Monte Carlo Rendez-Vous (Sept) kicks off negotiations
+
+**April 1**
+- Japan renewals (earthquake exposure)
+
+**June 1**
+- U.S. wind season renewals (hurricane)
+- Florida-focused treaties
+
+**July 1**
+- U.S. and international renewals
+
+### Reinsurance Brokers
+
+**Intermediaries facilitating placements**
+
+#### Top Reinsurance Brokers
+1. **Aon Reinsurance Solutions** - 30% market share
+2. **Guy Carpenter (Marsh McLennan)** - 28%
+3. **Willis Re (WTW)** - 20%
+4. **Howden Re** - 8%
+5. **BMS Group** - 5%
+
+#### Broker Services
+- Market access and relationships
+- Program structuring and optimization
+- Data analytics and modeling
+- Pricing negotiation
+- Claims advocacy
+
+## Regulatory & Accounting
+
+### Collateral & Security
+
+**Credit Risk Mitigation**
+
+#### Reinsurer Credit Quality
+- **A.M. Best ratings**: A++ to D (financial strength)
+- **S&P, Moody's, Fitch**: AAA to D (credit ratings)
+- **Authorized vs. unauthorized reinsurers**: U.S. state regulation
+
+#### Collateral Requirements (U.S.)
+- **Unauthorized reinsurers**: Must post collateral (LOC, trust account) for U.S. cedents to take reserve credit
+- **Certified reinsurers**: Reduced collateral (0-100%) based on rating
+- **Alien surplus lines**: Extra-territorial U.S. risks, no collateral required
+
+### Statutory Accounting
+
+**Reserve Credit**
+- Ceding insurers reduce reserves for reinsurance recoverables
+- Requires reinsurer to be authorized or post collateral
+- Unauthorized reinsurance: No statutory credit, negative impact on surplus
+
+**Funds Withheld**
+- Ceding company retains assets, pays interest to reinsurer
+- Avoids collateral requirements
+- Common in mod-co, experience-rated treaties
+
+### Solvency Regulation
+
+**Solvency II (Europe)**
+- Risk-based capital requirements
+- Own risk and solvency assessment (ORSA)
+- Three pillars: capital, governance, disclosure
+
+**U.S. Risk-Based Capital (RBC)**
+- NAIC formula for minimum capital
+- Reinsurance recoverable concentration charges
+- Unauthorized reinsurance penalties
+
+## Major Reinsurers
+
+### Top Global Reinsurers (by premium)
+
+1. **Munich Re (Germany)** - $75B premium, 170-year history
+2. **Swiss Re (Switzerland)** - $50B premium, life & P&C leader
+3. **Hannover Re (Germany)** - $30B premium
+4. **SCOR (France)** - $20B premium
+5. **Berkshire Hathaway Re (U.S.)** - $18B premium, part of Berkshire conglomerate
+6. **Lloyd's of London (U.K.)** - $15B reinsurance premium, marketplace structure
+7. **RenaissanceRe (Bermuda)** - $8B, cat-focused
+8. **PartnerRe (Bermuda/France)** - $7B, acquired by Covéa
+9. **Everest Re (Bermuda)** - $10B
+10. **TransRe (U.S.)** - $6B, part of Alleghany (Berkshire)
+
+### Bermuda Reinsurance Market
+- Tax-efficient domicile, strong regulatory framework
+- Home to 15+ major reinsurers
+- Focus on property catastrophe and specialty lines
+- Capital markets integration (cat bonds, ILS)
+
+## Emerging Trends in Reinsurance
+
+### Alternative Capital & ILS
+
+**Insurance-linked securities displacing traditional reinsurance**
+
+- Cat bonds, sidecars, collateralized reinsurance
+- $100+ billion alternative capital market
+- Investors seeking uncorrelated returns
+- Pressure on traditional reinsurer margins
+
+### Parametric Reinsurance
+
+**Payouts based on physical triggers, not indemnity losses**
+
+- Earthquake magnitude, wind speed, rainfall
+- Faster payouts, no loss adjustment
+- Basis risk: Payout may not match actual losses
+- Growing use for sovereigns, corporates, NGOs
+
+### Climate Change
+
+**Impact on reinsurance pricing and capacity**
+
+- Increasing frequency and severity of natural catastrophes
+- Wildfire: CA, Australia, Mediterranean
+- Flood: Coastal and inland flooding
+- Secondary perils: Hail, severe convective storms
+- Model updates reflecting climate trends
+- Reduced capacity in high-risk zones (CA wildfire, FL hurricane)
+
+### Cyber Reinsurance
+
+**Rapidly growing but challenging line**
+
+- Systemic risk: Single event can affect thousands of policyholders
+- Aggregation modeling: Difficult to estimate maximum event size
+- Silent cyber: Non-affirmative coverage in traditional policies
+- Retrocessional capacity limited
+- Pandemic-like exclusions emerging
+
+### Pandemic Risk
+
+**COVID-19 highlighted gaps in pandemic coverage**
+
+- Business interruption disputes
+- Event cancellation losses
+- Life and health reinsurance strain (mortality, morbidity)
+- Pandemic bonds (World Bank): Mixed success
+- Explicit pandemic exclusions now standard in P&C
+
+## Related Topics
+
+- [PropertyCasualty](./PropertyCasualty.mdx) - Primary P&C insurance requiring reinsurance
+- [LifeInsurance](./LifeInsurance.mdx) - Life reinsurance for mortality/longevity risk
+- [ClaimsManagement](./ClaimsManagement.mdx) - Reinsurance claims processing
+- [risk.org.ai](https://risk.org.ai) - Enterprise risk management
+- [catastrophe-modeling.org.ai](https://catastrophe-modeling.org.ai) - CAT modeling for reinsurance
+
+## Sources
+
+- Reinsurance Association of America (RAA) - [https://reinsurance.org](https://reinsurance.org)
+- International Association of Insurance Supervisors (IAIS) - [https://www.iaisweb.org](https://www.iaisweb.org)
+- Guy Carpenter (Marsh McLennan) - [https://www.guycarp.com](https://www.guycarp.com)
+- Aon Reinsurance Solutions - [https://www.aon.com/reinsurance](https://www.aon.com/reinsurance)
+- Artemis (ILS and reinsurance news) - [https://www.artemis.bm](https://www.artemis.bm)
+- A.M. Best Reinsurance Reports - [https://www.ambest.com](https://www.ambest.com)

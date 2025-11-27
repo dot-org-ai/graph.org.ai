@@ -1,0 +1,48 @@
+---
+$context: https://mdx.org.ai
+$id: https://mdx.org.ai/{{slug}}
+$type: https://mdx.org.ai/MDXLD
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for MDXLD
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MDXLDOverview mdxld={mdxld} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `MDXLD` |
+| Domain | [mdx.org.ai](https://mdx.org.ai) |
+| Parent | [markdown.org.ai](https://markdown.org.ai) |
+
+## Details
+
+<MDXLDDetails mdxld={mdxld} />
+
+## Properties
+
+<MDXLDProperties mdxld={mdxld} />
+
+## Relationships
+
+<MDXLDRelationships mdxld={mdxld} />
+
+## Related
+
+<RelatedMDXLDs mdxld={mdxld} />
+
+## Sources
+
+- <DatabaseLink namespace="mdx.org.ai" type="{{slug}}" />

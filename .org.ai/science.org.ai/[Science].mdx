@@ -1,0 +1,48 @@
+---
+$context: https://science.org.ai
+$id: https://science.org.ai/{{slug}}
+$type: https://science.org.ai/Science
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Science
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ScienceOverview science={science} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Science` |
+| Domain | [science.org.ai](https://science.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<ScienceDetails science={science} />
+
+## Properties
+
+<ScienceProperties science={science} />
+
+## Relationships
+
+<ScienceRelationships science={science} />
+
+## Related
+
+<RelatedSciences science={science} />
+
+## Sources
+
+- <DatabaseLink namespace="science.org.ai" type="{{slug}}" />

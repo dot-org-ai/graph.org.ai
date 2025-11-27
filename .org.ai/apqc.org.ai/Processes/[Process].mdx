@@ -1,0 +1,55 @@
+---
+$id: https://apqc.org.ai/Processes/{code}
+$context: https://apqc.org.ai
+$type: https://apqc.org.ai/Process
+code: "{code}"
+name: "{Process Name}"
+processGroup: "{processGroupCode}"
+category: "{categoryCode}"
+activities:
+  - code: "{code}.1"
+    name: "{Activity Name}"
+  - code: "{code}.2"
+    name: "{Activity Name}"
+---
+
+# {code} {Process Name}
+
+<ProcessOverview code="{code}" />
+
+## Activities
+
+<ActivityList processCode="{code}" />
+
+| Code | Activity | Tasks |
+|------|----------|-------|
+| {code}.1 | {Activity Name} | {count} |
+| {code}.2 | {Activity Name} | {count} |
+
+## Inputs and Outputs
+
+### Inputs
+- {input1}
+- {input2}
+
+### Outputs
+- {output1}
+- {output2}
+
+## Key Performance Indicators
+
+| KPI | Description | Target |
+|-----|-------------|--------|
+| {kpi1} | {description} | {target} |
+| {kpi2} | {description} | {target} |
+
+## Related Processes
+
+<RelatedProcesses code="{code}" />
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [onet.org.ai](https://onet.org.ai) | Related work activities |
+| [tasks.org.ai](https://tasks.org.ai) | Task mappings |

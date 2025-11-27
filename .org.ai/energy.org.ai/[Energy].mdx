@@ -1,0 +1,48 @@
+---
+$context: https://energy.org.ai
+$id: https://energy.org.ai/{{slug}}
+$type: https://energy.org.ai/Energy
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Energy
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<EnergyOverview energy={energy} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Energy` |
+| Domain | [energy.org.ai](https://energy.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<EnergyDetails energy={energy} />
+
+## Properties
+
+<EnergyProperties energy={energy} />
+
+## Relationships
+
+<EnergyRelationships energy={energy} />
+
+## Related
+
+<RelatedEnergys energy={energy} />
+
+## Sources
+
+- <DatabaseLink namespace="energy.org.ai" type="{{slug}}" />

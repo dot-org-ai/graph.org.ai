@@ -1,0 +1,48 @@
+---
+$context: https://reports.org.ai
+$id: https://reports.org.ai/{{slug}}
+$type: https://reports.org.ai/Reports
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Reports
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ReportsOverview reports={reports} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Reports` |
+| Domain | [reports.org.ai](https://reports.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<ReportsDetails reports={reports} />
+
+## Properties
+
+<ReportsProperties reports={reports} />
+
+## Relationships
+
+<ReportsRelationships reports={reports} />
+
+## Related
+
+<RelatedReportss reports={reports} />
+
+## Sources
+
+- <DatabaseLink namespace="reports.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://graph.org.ai
+$id: https://graph.org.ai/{{slug}}
+$type: https://graph.org.ai/Graph
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Graph
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<GraphOverview graph={graph} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Graph` |
+| Domain | [graph.org.ai](https://graph.org.ai) |
+| Parent | [graph.org.ai](https://graph.org.ai) |
+
+## Details
+
+<GraphDetails graph={graph} />
+
+## Properties
+
+<GraphProperties graph={graph} />
+
+## Relationships
+
+<GraphRelationships graph={graph} />
+
+## Related
+
+<RelatedGraphs graph={graph} />
+
+## Sources
+
+- <DatabaseLink namespace="graph.org.ai" type="{{slug}}" />

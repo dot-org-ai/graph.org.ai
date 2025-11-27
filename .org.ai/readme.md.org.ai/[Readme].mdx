@@ -1,0 +1,48 @@
+---
+$context: https://readme.md.org.ai
+$id: https://readme.md.org.ai/{{slug}}
+$type: https://readme.md.org.ai/Readme
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Readme
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ReadmeOverview readme={readme} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Readme` |
+| Domain | [readme.md.org.ai](https://readme.md.org.ai) |
+| Parent | [markdown.org.ai](https://markdown.org.ai) |
+
+## Details
+
+<ReadmeDetails readme={readme} />
+
+## Properties
+
+<ReadmeProperties readme={readme} />
+
+## Relationships
+
+<ReadmeRelationships readme={readme} />
+
+## Related
+
+<RelatedReadmes readme={readme} />
+
+## Sources
+
+- <DatabaseLink namespace="readme.md.org.ai" type="{{slug}}" />

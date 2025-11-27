@@ -1,0 +1,48 @@
+---
+$context: https://consulting.org.ai
+$id: https://consulting.org.ai/{{slug}}
+$type: https://consulting.org.ai/Consulting
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Consulting
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ConsultingOverview consulting={consulting} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Consulting` |
+| Domain | [consulting.org.ai](https://consulting.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<ConsultingDetails consulting={consulting} />
+
+## Properties
+
+<ConsultingProperties consulting={consulting} />
+
+## Relationships
+
+<ConsultingRelationships consulting={consulting} />
+
+## Related
+
+<RelatedConsultings consulting={consulting} />
+
+## Sources
+
+- <DatabaseLink namespace="consulting.org.ai" type="{{slug}}" />

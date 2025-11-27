@@ -1,0 +1,33 @@
+{
+  "name": "work.org.ai",
+  "version": "0.0.1",
+  "description": "Ontology domain for work.org.ai",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "work"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://work.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/work.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

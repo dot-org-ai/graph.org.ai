@@ -1,0 +1,839 @@
+---
+$context: https://pharma.org.ai
+$id: https://pharma.org.ai/DrugManufacturing
+$type: https://pharma.org.ai/Pharmaceutical
+name: "Drug Manufacturing"
+description: "Pharmaceutical manufacturing including API production, formulation development, finished dosage forms, GMP compliance, and quality control"
+naicsCode: "3254"
+parent: https://naics.org.ai/3254
+keywords:
+  - drug manufacturing
+  - API production
+  - formulation
+  - GMP
+  - pharmaceutical manufacturing
+  - tablets
+  - capsules
+  - injectables
+  - quality control
+  - batch release
+  - process validation
+---
+
+export const items = async () => {
+  // Fetch drug manufacturing facilities from the database
+  return []
+}
+
+# Drug Manufacturing
+
+Pharmaceutical manufacturing encompasses the production of active pharmaceutical ingredients (APIs) and their formulation into finished dosage forms under stringent Good Manufacturing Practice (GMP) regulations. It represents the transformation of chemical or biological compounds into safe, effective, and consistent medicines for patient use.
+
+## Overview
+
+Pharmaceutical manufacturing is characterized by:
+- **Regulatory Intensity**: FDA/EMA oversight, routine inspections, strict compliance requirements
+- **Quality-Driven**: GMP compliance, extensive testing, zero-defect mentality
+- **Capital Intensive**: Cleanrooms, specialized equipment, quality systems
+- **Global Supply Chains**: APIs from Asia, formulation worldwide, global distribution
+- **Technology Diversity**: Small molecule chemistry, biologics, cell/gene therapies
+
+**Manufacturing Scale**
+- **Global Pharmaceutical Manufacturing**: $500+ billion annually
+- **API Production**: 2+ million tons of APIs produced globally per year
+- **Finished Dosage Forms**: 400+ billion tablets/capsules, 10+ billion injections annually
+- **Quality Control**: 10-30% of manufacturing costs devoted to QC testing
+
+**Employment**
+- U.S. pharmaceutical manufacturing: 300,000+ employees
+- Global pharmaceutical manufacturing workforce: 2+ million
+
+## Good Manufacturing Practice (GMP)
+
+GMP is the foundation of pharmaceutical quality, ensuring products are consistently produced and controlled to quality standards.
+
+### GMP Regulatory Framework
+
+**United States (FDA)**
+- **21 CFR Part 210**: Current Good Manufacturing Practice in Manufacturing, Processing, Packing, or Holding of Drugs; General
+- **21 CFR Part 211**: Current Good Manufacturing Practice for Finished Pharmaceuticals
+- **21 CFR Part 11**: Electronic Records; Electronic Signatures
+
+**International Standards**
+- **ICH Q7**: Good Manufacturing Practice Guide for Active Pharmaceutical Ingredients
+- **ICH Q10**: Pharmaceutical Quality System
+- **EU GMP**: EudraLex Volume 4 (including Annex 1 for sterile products)
+- **WHO GMP**: Guidelines for developing countries
+
+### GMP Principles
+
+**Personnel**
+- Qualified and trained employees
+- Ongoing GMP training programs
+- Personal hygiene and gowning requirements
+- Health monitoring (for sterile manufacturing)
+- Clear roles and responsibilities
+
+**Premises and Equipment**
+- Suitable facilities designed for pharmaceutical use
+- Cleanroom classification (ISO 5-8 for sterile products)
+- HVAC systems with appropriate air changes and filtration
+- Equipment qualification (IQ, OQ, PQ)
+- Preventive maintenance programs
+- Cleaning and sanitization procedures
+
+**Documentation (Paper and Data Integrity)**
+- Master Production Records (MPRs)
+- Batch Production Records (BPRs)
+- Standard Operating Procedures (SOPs)
+- Specifications and test methods
+- Change control procedures
+- **ALCOA+ Principles**: Attributable, Legible, Contemporaneous, Original, Accurate + Complete, Consistent, Enduring, Available
+
+**Production and Process Controls**
+- Validated manufacturing processes
+- In-process controls and testing
+- Raw material testing and qualification
+- Batch record review and release
+- Process capability and control (Cpk ≥ 1.33)
+
+**Quality Control and Testing**
+- Laboratory controls and testing
+- Validated analytical methods
+- Reference standards and stability programs
+- Out-of-specification (OOS) investigations
+- Certificate of Analysis (CoA) for release
+
+**Audits and Inspections**
+- Internal self-inspections and audits
+- Third-party audits (customers, consultants)
+- Regulatory inspections (FDA, EMA, WHO, local authorities)
+- Corrective and preventive actions (CAPA)
+
+## Active Pharmaceutical Ingredient (API) Manufacturing
+
+API production involves chemical synthesis or biological production to create the pharmacologically active compound.
+
+### Chemical API Synthesis
+
+**Synthetic Routes**
+- Multi-step organic synthesis (5-15 steps common)
+- Starting materials and intermediates
+- Protecting group strategies
+- Functional group transformations
+- Stereochemistry control (chiral synthesis, resolution)
+
+**Reaction Types**
+- Condensation reactions
+- Oxidation and reduction
+- Coupling reactions (Suzuki, Heck, Grignard, etc.)
+- Halogenation, nitration, sulfonation
+- Hydrogenation and catalytic reactions
+- Diazotization and coupling (for azo compounds)
+
+**Manufacturing Scale**
+- **Lab Scale**: Grams to 100g (discovery, early development)
+- **Pilot Scale**: 1-100 kg (process development, clinical trials)
+- **Commercial Scale**: 100 kg to 100+ tons per batch
+
+**Equipment**
+- Glass-lined reactors (100L to 20,000L)
+- Stainless steel reactors for non-corrosive processes
+- Agitators and mixing systems
+- Heat exchangers (heating/cooling jackets)
+- Reflux condensers and distillation columns
+- Filtration and centrifugation equipment
+
+### API Purification and Isolation
+
+**Crystallization**
+- Solvent selection and optimization
+- Cooling crystallization or antisolvent addition
+- Seeding to control crystal form and size
+- Polymorph control (desired crystalline form)
+- Filtration and washing
+- Drying (tray dryers, fluid bed dryers, vacuum dryers)
+
+**Chromatography** (for high-value APIs)
+- Preparative liquid chromatography
+- Simulated moving bed (SMB) chromatography
+- Chiral separation for enantiomers
+
+**Other Purification Methods**
+- Recrystallization (multiple cycles)
+- Solvent extraction (liquid-liquid)
+- Distillation (for volatile compounds)
+- Adsorption (activated carbon, resins)
+
+**Drying and Milling**
+- Vacuum drying (heat-sensitive compounds)
+- Spray drying (for amorphous forms)
+- Milling to target particle size distribution (D10, D50, D90)
+- Micronization (jet milling for <10 μm particles)
+
+### Biological API Production
+
+See [Biologics.mdx](./Biologics.mdx) for comprehensive coverage of biologic manufacturing.
+
+**Cell Culture (Mammalian, Microbial)**
+- Recombinant protein expression
+- Antibody production in CHO cells
+- Bacterial fermentation (E. coli for insulin, proteins)
+
+**Downstream Processing**
+- Cell harvest and clarification
+- Chromatography purification (affinity, ion exchange, hydrophobic interaction, size exclusion)
+- Viral inactivation and removal
+- Ultrafiltration/diafiltration (UF/DF) for concentration and buffer exchange
+- Formulation and fill-finish
+
+### API Quality Control
+
+**Identity Testing**
+- Infrared (IR) spectroscopy
+- Nuclear magnetic resonance (NMR) spectroscopy
+- Mass spectrometry (MS)
+- Melting point
+- Chromatographic retention time (HPLC, GC)
+
+**Purity and Impurity Testing**
+- HPLC assay (active content, typically 98-102% of label claim)
+- Related substances (process impurities, degradation products)
+- Residual solvents (GC headspace, ICH Q3C limits)
+- Heavy metals (ICP-MS, USP <232>/<233>)
+- Elemental impurities (Pd, Pt catalysts)
+
+**Physical and Chemical Properties**
+- Polymorphism (X-ray powder diffraction - XRPD)
+- Particle size distribution (laser diffraction, sieving)
+- Water content (Karl Fischer titration)
+- pH (for ionizable compounds)
+- Residue on ignition (inorganic content)
+
+**Microbial Quality**
+- Total aerobic microbial count (TAMC)
+- Total yeast and mold count (TYMC)
+- Absence of objectionable organisms
+- Endotoxin testing (for injectables)
+
+## Formulation Development
+
+Transforming APIs into safe, effective, and patient-friendly dosage forms.
+
+### Preformulation Studies
+
+**API Characterization**
+- Solubility and pH-solubility profile
+- Ionization constants (pKa)
+- Partition coefficient (LogP, LogD)
+- Hygroscopicity and moisture sorption
+- Thermal properties (DSC, TGA)
+- Stability (solid state, solution, pH, light, oxidation)
+
+**Excipient Compatibility**
+- Binary mixtures (API + excipient)
+- Stressed stability studies (40°C/75% RH, 4-8 weeks)
+- Analytical monitoring for degradation
+
+**Biopharmaceutics**
+- Dissolution behavior
+- Biopharmaceutics Classification System (BCS)
+  - Class I: High solubility, high permeability (biowaiver eligible)
+  - Class II: Low solubility, high permeability (solubility-limited)
+  - Class III: High solubility, low permeability (permeability-limited)
+  - Class IV: Low solubility, low permeability (poor oral bioavailability)
+
+### Dosage Form Design
+
+**Oral Solid Dosage Forms** (70% of all dosage forms)
+
+**Tablets**
+- **Immediate Release (IR)**: Rapid drug release (<30 min)
+  - Direct compression (blend API + excipients, compress)
+  - Wet granulation (granulate for better flow/compaction)
+  - Dry granulation/roller compaction (moisture-sensitive APIs)
+- **Modified Release**:
+  - Delayed release (enteric coating, release in intestine, not stomach)
+  - Extended release (sustained/controlled release over 12-24 hours)
+  - Multi-particulate systems (beads, pellets)
+
+**Capsules**
+- Hard gelatin capsules (powder or pellet fill)
+- HPMC capsules (vegetarian alternative)
+- Soft gelatin capsules (liquid/semi-solid fill)
+
+**Excipients**
+- **Fillers/Diluents**: Lactose, microcrystalline cellulose (MCC), dicalcium phosphate
+- **Binders**: PVP, HPMC, starch
+- **Disintegrants**: Croscarmellose sodium, sodium starch glycolate, crospovidone
+- **Lubricants**: Magnesium stearate, stearic acid (reduce friction)
+- **Glidants**: Colloidal silicon dioxide (improve powder flow)
+
+**Liquid Dosage Forms**
+
+**Solutions**
+- Drug fully dissolved in solvent (water, alcohol, glycerin)
+- Preservatives (for multi-dose products)
+- Buffering agents (pH control)
+- Flavoring and sweeteners
+
+**Suspensions**
+- Drug particles dispersed in liquid
+- Suspending agents (xanthan gum, carbomers)
+- Flocculating or deflocculating agents
+- Redispersibility upon shaking
+
+**Emulsions**
+- Oil-in-water (O/W) or water-in-oil (W/O)
+- Emulsifying agents (Tweens, Spans, lecithin)
+
+**Injectable Dosage Forms**
+
+**Solutions for Injection**
+- Sterile, pyrogen-free
+- Isotonicity agents (for IV, IM)
+- pH adjustment (physiological pH 6-8)
+- Preservatives (multi-dose vials only)
+
+**Lyophilized (Freeze-Dried) Products**
+- For unstable APIs in solution
+- Reconstituted before use
+- Lyoprotectants (sucrose, trehalose)
+- Cake appearance and reconstitution time
+
+**Suspensions for Injection**
+- Depot formulations (long-acting release)
+- Controlled particle size
+
+**Specialized Delivery Systems**
+
+**Transdermal Patches**
+- Matrix or reservoir systems
+- Permeation enhancers
+- Adhesive systems
+- Release rate control (24-hour, 7-day delivery)
+
+**Inhalation Products**
+- Metered-dose inhalers (MDI): Propellant-driven
+- Dry powder inhalers (DPI): Breath-actuated
+- Nebulizers: Aqueous aerosols
+- Particle size critical (1-5 μm for deep lung deposition)
+
+**Ophthalmic and Otic Products**
+- Sterile, isotonic, pH-controlled
+- Preservatives (benzalkonium chloride, if multi-dose)
+- Viscosity enhancers (for residence time)
+
+**Topical and Dermatological Products**
+- Creams (O/W emulsions, water-washable)
+- Ointments (W/O, greasy, occlusive)
+- Gels (polymer matrices)
+- Lotions (low-viscosity emulsions)
+
+## Pharmaceutical Manufacturing Processes
+
+### Tablet Manufacturing
+
+**Wet Granulation**
+1. **Blending**: Mix API and excipients
+2. **Wet Massing**: Add binder solution, mix to form wet mass
+3. **Granulation**: Pass through screen to form granules
+4. **Drying**: Fluid bed dryer or tray dryer (until target moisture content, e.g., <3%)
+5. **Milling**: Size reduction to target granule size
+6. **Final Blending**: Add extra-granular excipients (disintegrant, lubricant)
+7. **Compression**: Tablet press (rotary tablet press, 100,000-500,000 tablets/hour)
+8. **Coating** (optional): Film coating (HPMC, colors, logo printing)
+
+**Direct Compression**
+1. **Blending**: Mix all ingredients (API, fillers, disintegrant, lubricant)
+2. **Compression**: Direct tableting (no granulation)
+3. **Coating** (optional)
+
+**Dry Granulation (Roller Compaction)**
+1. **Blending**: Mix API and excipients
+2. **Roller Compaction**: Compress powder between rollers to form ribbon/flakes
+3. **Milling**: Break up compacted material
+4. **Final Blending**: Add lubricant
+5. **Compression**: Tablet press
+
+**In-Process Controls**
+- Granule moisture content
+- Granule bulk density and flowability
+- Tablet weight (uniformity of dosage units)
+- Tablet thickness and hardness
+- Friability (resistance to abrasion, <1% weight loss)
+- Disintegration time (<15 min for IR tablets)
+- Dissolution testing (drug release profile)
+
+### Capsule Manufacturing
+
+**Hard Capsule Filling**
+- Capsule size selection (000 to 5, based on fill volume)
+- Powder blending (same as direct compression)
+- Encapsulation machines (dosator or tamping pin filling)
+- Fill weight control (100% inspection or sampling)
+- Capsule polishing (remove dust)
+
+### Sterile Manufacturing
+
+**Aseptic Processing**
+- Cleanroom environment (ISO 5 for critical operations)
+- Pre-sterilization:
+  - Terminal sterilization of components (autoclaving, dry heat)
+  - Sterile filtration of drug solution (0.22 or 0.45 μm filters)
+- Aseptic filling into sterile vials, ampules, or syringes
+- Gowning and hygiene (gown qualification, media fills)
+- Environmental monitoring (viable and non-viable particulates)
+
+**Terminal Sterilization** (Preferred when possible)
+- Fill product into containers
+- Seal containers
+- Autoclave (steam sterilization, 121°C, 15 min)
+- Validation: Biological indicators (Geobacillus stearothermophilus spores)
+- Sterility Assurance Level (SAL) of 10⁻⁶
+
+**Lyophilization (Freeze-Drying)**
+1. **Formulation**: Dissolve API, add lyoprotectants and buffers
+2. **Sterile Filtration**: 0.22 μm filtration
+3. **Aseptic Fill**: Fill into vials (partially stoppered)
+4. **Freezing**: -40 to -50°C (ice crystal formation)
+5. **Primary Drying**: Vacuum sublimation (ice to vapor, -20°C, 24-48 hours)
+6. **Secondary Drying**: Remove bound water (20-30°C, 12-24 hours)
+7. **Stoppering**: Fully seal vials under vacuum/nitrogen
+8. **Visual Inspection**: 100% inspection for defects (particulates, cracks, seal integrity)
+
+### Packaging Operations
+
+**Primary Packaging**
+- Blister packs (PVC/PVDC or Alu/Alu blisters)
+- Bottles (HDPE, glass)
+- Unit-dose packaging (foil pouches)
+- Serialization (unique product identifiers for track-and-trace)
+
+**Secondary Packaging**
+- Cartons with patient information leaflet (PIL)
+- Tamper-evident features
+- Labeling (NDC, lot number, expiry date)
+
+**Packaging Controls**
+- Line clearance (prevent mix-ups)
+- Vision systems for label verification
+- Metal detection or X-ray inspection
+- Package integrity testing (leak testing for blisters)
+
+## Process Validation
+
+Establishing documented evidence that a process consistently produces a product meeting predetermined specifications.
+
+### Validation Lifecycle (ICH Q8, Q9, Q10, Q11)
+
+**Stage 1: Process Design**
+- Design space definition (Quality by Design - QbD)
+- Risk assessment (FMEA, HACCP)
+- Design of Experiments (DOE)
+- Critical Process Parameters (CPPs) and Critical Quality Attributes (CQAs)
+
+**Stage 2: Process Qualification**
+
+**Installation Qualification (IQ)**
+- Equipment installed per specifications
+- Utilities (power, water, compressed air) available
+- Calibration of instruments
+
+**Operational Qualification (OQ)**
+- Equipment operates within specified ranges
+- Challenge tests (worst-case conditions)
+- Alarms and interlocks functional
+
+**Performance Qualification (PQ)**
+- Three consecutive conforming batches (traditional "validation batches")
+- Manufactured under routine conditions
+- Product meets all specifications
+- Statistical analysis of process capability (Cpk)
+
+**Stage 3: Continued Process Verification**
+- Ongoing process monitoring
+- Trending of process and quality data
+- Periodic product quality reviews (PQR)
+- Revalidation triggers (equipment change, formulation change, site transfer)
+
+### Analytical Method Validation
+
+Per ICH Q2(R1), analytical methods must be validated for:
+
+**Specificity/Selectivity**
+- Ability to distinguish analyte from impurities, degradants, excipients
+
+**Linearity**
+- Response proportional to concentration (50-150% of target, R² > 0.99)
+
+**Accuracy**
+- Closeness to true value (recovery 98-102%)
+
+**Precision**
+- Repeatability (same day, same analyst)
+- Intermediate precision (different days, analysts)
+- Reproducibility (different labs)
+- RSD < 2% for assay
+
+**Range**
+- Interval with acceptable linearity, accuracy, precision
+
+**Detection Limit (LOD) and Quantitation Limit (LOQ)**
+- For impurity testing
+
+**Robustness**
+- Resistance to small variations (pH, temperature, flow rate)
+
+## Quality Control and Testing
+
+### Raw Material Testing
+
+**Identity**
+- Confirm correct material received
+- IR spectroscopy, HPLC retention time, or other orthogonal method
+
+**Assay**
+- Quantitative determination of active content
+
+**Impurities**
+- Process impurities, related substances
+- Vendor CoA review + skip-lot testing for qualified suppliers
+
+**Physical Testing**
+- Appearance, particle size (for APIs), moisture content
+
+**Microbial Limits**
+- For non-sterile materials
+
+### In-Process Testing
+
+**Critical Checkpoints**
+- Blend uniformity (content uniformity of API in powder blend)
+- Granulation moisture and density
+- Tablet weight, hardness, thickness
+- Dissolution (at-line or QC lab)
+
+### Finished Product Testing
+
+**Identity**
+- Confirm API present (HPLC, IR, UV)
+
+**Assay**
+- Drug content (90-110% of label claim typically)
+- Uniformity of dosage units (weight variation or content uniformity, per USP <905>)
+
+**Dissolution**
+- Drug release profile (USP apparatus, specified medium and time points)
+- Acceptance criteria (Q value, typically >80% released at final time point)
+- For modified-release products: multi-point dissolution profile
+
+**Impurities and Degradation Products**
+- Related substances (HPLC)
+- Specification limits per ICH Q3B (reporting, identification, qualification thresholds)
+
+**Physical Testing**
+- Appearance (color, markings)
+- Disintegration (for IR tablets/capsules)
+- Tablet hardness and friability
+- pH (for liquid dosage forms)
+
+**Microbial Testing**
+- Sterility testing (for sterile products, per USP <71>)
+- Microbial limits (for non-sterile products, per USP <61>/<62>)
+- Bacterial endotoxin (LAL test, for injectables, per USP <85>)
+
+**Packaging Tests**
+- Moisture permeation (for blisters)
+- Child-resistant/senior-friendly closures
+- Tamper-evidence
+
+### Stability Testing
+
+Per ICH Q1A(R2), establish shelf life and storage conditions.
+
+**Stability Study Designs**
+
+**Long-Term Stability** (Primary Data)
+- 25°C ± 2°C / 60% RH ± 5% RH (Zone II, temperate climates)
+- 30°C ± 2°C / 65% RH ± 5% RH (Zone IVa, hot/humid climates like India)
+- Testing at 0, 3, 6, 9, 12, 18, 24, 36 months (minimum 12 months for submission)
+
+**Accelerated Stability**
+- 40°C ± 2°C / 75% RH ± 5% RH
+- 0, 1, 2, 3, 6 months
+- Predict degradation, support long-term data
+
+**Intermediate Stability** (if accelerated shows significant change)
+- 30°C ± 2°C / 65% RH ± 5% RH
+
+**Photostability**
+- ICH Q1B exposure to light
+- Confirm if light protection necessary
+
+**Stability Testing**
+- Appearance, assay, impurities, dissolution
+- Additional tests: pH, physical attributes
+- Specification limits with stability margin
+
+**Shelf Life Determination**
+- Statistical analysis (regression)
+- 95% confidence interval for degradation
+- Typical shelf lives: 2-3 years (some products 5+ years)
+
+## Manufacturing Facilities and Technology
+
+### Facility Design
+
+**Cleanrooms**
+- ISO classifications (ISO 5-8 for sterile, controlled-not-classified for non-sterile)
+- HVAC: HEPA filtration, air changes (20-60/hour), pressure cascades (higher pressure in cleaner areas)
+- Smooth, cleanable surfaces (epoxy flooring, stainless steel)
+- Airlocks and gowning areas
+
+**Segregation and Containment**
+- Separate facilities/areas for penicillins, cephalosporins (cross-contamination risk)
+- Cytotoxic containment (isolators, negative pressure)
+- Potent compound handling (Occupational Exposure Limits - OELs, <10 μg/m³ requires containment)
+
+**Utilities**
+- Purified water (USP) and Water for Injection (WFI)
+- HVAC and environmental control systems
+- Compressed air and gases (nitrogen, CO₂)
+- Steam and chilled water
+
+### Automation and Industry 4.0
+
+**Manufacturing Execution Systems (MES)**
+- Paperless batch records (electronic batch records - EBR)
+- Real-time data capture
+- Production scheduling and material management
+- Integration with ERP systems
+
+**Process Analytical Technology (PAT)**
+- Real-time or near-real-time measurements
+- NIR spectroscopy (blend uniformity, moisture content)
+- Raman spectroscopy (polymorph identification)
+- Particle size analyzers (laser diffraction in-line)
+- Process control and feedback loops
+
+**Continuous Manufacturing**
+- Continuous blending, granulation, drying, tableting
+- Integrated production line (raw materials to finished tablets)
+- Real-time release testing (RTRT)
+- Advantages: Smaller footprint, faster production, better control
+- Regulatory acceptance: FDA supports via emerging technology programs
+
+**Serialization and Track-and-Trace**
+- Drug Supply Chain Security Act (DSCSA) in U.S.
+- EU Falsified Medicines Directive (FMD)
+- Unique product identifiers (serial numbers, 2D barcodes)
+- Aggregation (unit to case to pallet)
+
+## Contract Manufacturing Organizations (CMOs/CDMOs)
+
+Outsourcing manufacturing to specialized contract manufacturers.
+
+### CMO/CDMO Services
+
+**API Manufacturing**
+- Custom synthesis for small molecules
+- Fermentation and biologics (CDMO for biologics)
+- Scale-up and process development
+
+**Formulation and Finished Dosage**
+- Solid oral (tablets, capsules)
+- Injectables (vials, syringes, cartridges)
+- Specialized forms (transdermal, ophthalmic, inhalation)
+
+**Development Services (CDMO - Contract Development and Manufacturing Organization)**
+- Formulation development
+- Analytical method development
+- Stability studies
+- Clinical trial materials (Phase I-III)
+- Tech transfer to commercial manufacturing
+
+### Top CMOs/CDMOs
+
+**Large Full-Service CDMOs**
+- Catalent (global leader, 50+ sites)
+- Lonza (biologics and small molecules)
+- Patheon (part of Thermo Fisher)
+- Samsung Biologics (biologics CDMO, South Korea)
+- WuXi AppTec (China, full development and manufacturing)
+
+**Specialized CDMOs**
+- Recipharm (Europe, oral solids and injectables)
+- Piramal Pharma Solutions (India, APIs and formulation)
+- Siegfried (Switzerland, APIs)
+- Cambrex (APIs and advanced intermediates)
+
+### Outsourcing Considerations
+
+**Advantages**
+- Avoid capital investment in facilities
+- Leverage CMO expertise and capacity
+- Flexibility (scale up/down)
+- Speed to market (use existing facilities)
+
+**Challenges**
+- Intellectual property protection (confidentiality agreements)
+- Quality oversight (audits, batch record review)
+- Supply chain risk (single-source dependency)
+- Tech transfer complexity
+- Regulatory inspections (sponsor responsibility)
+
+## Regulatory Inspections and Compliance
+
+### FDA Inspections
+
+**Types of Inspections**
+- **Pre-Approval Inspection (PAI)**: Before NDA/BLA approval, confirm manufacturing capability
+- **Surveillance Inspection**: Routine GMP compliance (every 2-3 years, risk-based)
+- **For-Cause Inspection**: Triggered by complaints, recalls, adverse events
+- **Foreign Inspections**: FDA inspects manufacturing sites globally
+
+**Inspection Process**
+- Opening meeting (scope, team introductions)
+- Document review (batch records, SOPs, validation, deviations, CAPAs)
+- Facility tour (cleanrooms, production areas, warehouses, laboratories)
+- Interviews with personnel
+- Observations and findings documented
+- Closing meeting (preliminary findings, FDA-483 issued if deficiencies)
+
+**FDA-483 and Warning Letters**
+- **FDA-483**: Inspectional observations (deficiencies noted)
+  - Company response required (within 15 business days)
+  - Corrective actions and timelines
+- **Warning Letter**: Serious GMP violations, formal enforcement action
+  - Import alerts (block product shipments)
+  - Consent decree (court-ordered remediation)
+  - Product recalls
+
+**Inspection Preparedness**
+- Mock inspections and readiness assessments
+- Document review (gap analysis)
+- Personnel training (interview skills, GMP knowledge)
+- Designated inspection team (subject matter experts on-call)
+
+### Data Integrity
+
+**ALCOA+ Principles**
+- **Attributable**: Clearly identify who performed action
+- **Legible**: Readable records (handwriting, printouts)
+- **Contemporaneous**: Recorded at time of activity
+- **Original**: First capture of data (or certified true copy)
+- **Accurate**: Correct and complete
+- **Complete**: All data, including repeat tests
+- **Consistent**: Chronological sequence, no gaps
+- **Enduring**: Durable throughout retention period
+- **Available**: Accessible for review and inspection
+
+**Common Data Integrity Issues**
+- Uncontrolled access to electronic systems (shared logins)
+- Deletion or modification of raw data
+- Data not recorded contemporaneously (backdating)
+- Uncontrolled spreadsheets and calculations
+- Inadequate audit trails (electronic records)
+
+**Mitigation Strategies**
+- 21 CFR Part 11 compliant systems (audit trails, electronic signatures)
+- Access controls (unique logins, role-based permissions)
+- Training on data integrity principles
+- Regular audits (QA oversight, IT system audits)
+
+## Pharmaceutical Supply Chain and Logistics
+
+### Global Supply Chains
+
+**API Sourcing**
+- China and India: 70-80% of global API production
+- Cost advantages but regulatory risk (quality issues, import alerts)
+- Dual sourcing strategies (mitigate risk)
+
+**Drug Product Manufacturing**
+- Regional manufacturing (U.S., Europe, Asia)
+- Local content requirements (some countries mandate local manufacturing)
+- Export/import regulations (GDP - Good Distribution Practice)
+
+### Cold Chain Logistics
+
+For temperature-sensitive products (biologics, vaccines, some small molecules).
+
+**Temperature Ranges**
+- Refrigerated: 2-8°C (most biologics, vaccines)
+- Frozen: -20°C (some vaccines, cell therapies)
+- Ultra-cold: -70 to -80°C (mRNA vaccines like Pfizer COVID-19 vaccine)
+
+**Cold Chain Components**
+- Refrigerated warehouses (validated cold storage)
+- Temperature-controlled vehicles and containers
+- Active (powered) or passive (insulated, gel packs) shippers
+- Data loggers (continuous temperature monitoring)
+- Shipping validation (temperature mapping, worst-case scenarios)
+
+**Challenges**
+- Last-mile delivery (rural areas, inadequate infrastructure)
+- Temperature excursions (out-of-range exposure)
+- Cost (2-10x higher than ambient shipping)
+
+## Quality Metrics and Continuous Improvement
+
+### Key Performance Indicators (KPIs)
+
+**Manufacturing Efficiency**
+- Overall Equipment Effectiveness (OEE): Availability × Performance × Quality
+- Cycle time (batch to batch)
+- Changeover time (product to product)
+- Yield (actual output / theoretical output)
+
+**Quality Metrics**
+- Right First Time (RFT) rate: Batches passing without deviations
+- Deviation rate (per 1,000 batches)
+- CAPA closure rate and timeliness
+- OOS/OOT (out-of-specification, out-of-trend) investigations
+- Customer complaints (per million units)
+- Regulatory inspection findings (483 observations per inspection)
+
+**Supply and Delivery**
+- On-time delivery (OTD) to customers
+- Inventory turnover
+- Backorder rate
+- Lead time (order to delivery)
+
+### Continuous Improvement Programs
+
+**Lean Manufacturing**
+- Waste elimination (muda, mura, muri)
+- Value stream mapping
+- 5S (Sort, Set in order, Shine, Standardize, Sustain)
+- Kaizen events (rapid improvement workshops)
+
+**Six Sigma**
+- DMAIC methodology (Define, Measure, Analyze, Improve, Control)
+- Statistical process control (SPC)
+- Process capability analysis (Cpk targets)
+- Defect reduction (target: 3.4 defects per million opportunities)
+
+**Total Productive Maintenance (TPM)**
+- Preventive maintenance
+- Autonomous maintenance (operator-led)
+- Planned maintenance scheduling
+- Root cause analysis (RCA) for breakdowns
+
+## Related Topics
+
+- [DrugDiscovery](./DrugDiscovery.mdx) - Preclinical development and candidate selection
+- [ClinicalTrials](./ClinicalTrials.mdx) - Clinical development and GMP clinical supplies
+- [Biologics](./Biologics.mdx) - Biologic drug manufacturing (cell culture, purification)
+- [GenericDrugs](./GenericDrugs.mdx) - Generic drug manufacturing and bioequivalence
+- [PharmaDistribution](./PharmaDistribution.mdx) - Distribution and supply chain post-manufacturing
+
+## External Resources
+
+- **FDA**: [Current Good Manufacturing Practice (CGMP) Regulations](https://www.fda.gov/drugs/pharmaceutical-quality-resources/current-good-manufacturing-practice-cgmp-regulations)
+- **ICH**: [Quality Guidelines (Q1-Q14)](https://www.ich.org/page/quality-guidelines)
+- **ISPE**: [International Society for Pharmaceutical Engineering](https://ispe.org/)
+- **PDA**: [Parenteral Drug Association](https://www.pda.org/)
+- **USP**: [United States Pharmacopeia - Standards](https://www.usp.org/)
+- **EudraLex**: [EU Good Manufacturing Practice Guidelines](https://ec.europa.eu/health/documents/eudralex/vol-4_en)

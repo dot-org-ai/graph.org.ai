@@ -1,0 +1,48 @@
+---
+$context: https://properties.org.ai
+$id: https://properties.org.ai/{{slug}}
+$type: https://properties.org.ai/Properties
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Properties
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<PropertiesOverview properties={properties} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Properties` |
+| Domain | [properties.org.ai](https://properties.org.ai) |
+| Parent | [schema.org.ai](https://schema.org.ai) |
+
+## Details
+
+<PropertiesDetails properties={properties} />
+
+## Properties
+
+<PropertiesProperties properties={properties} />
+
+## Relationships
+
+<PropertiesRelationships properties={properties} />
+
+## Related
+
+<RelatedPropertiess properties={properties} />
+
+## Sources
+
+- <DatabaseLink namespace="properties.org.ai" type="{{slug}}" />

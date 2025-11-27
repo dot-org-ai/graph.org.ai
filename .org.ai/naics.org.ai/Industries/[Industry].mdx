@@ -1,0 +1,44 @@
+---
+$id: https://naics.org.ai/Industries/{code}
+$context: https://naics.org.ai
+$type: https://naics.org.ai/NAICSIndustry
+code: "{code}"
+name: "{NAICS Industry Name}"
+industryGroup: "{industryGroupCode}"
+subsector: "{subsectorCode}"
+sector: "{sectorCode}"
+nationalIndustries:
+  - code: "{code}0"
+    name: "{National Industry Name}"
+---
+
+# {code} - {NAICS Industry Name}
+
+<IndustryOverview code="{code}" />
+
+## Description
+
+{Detailed description of what this industry covers, including typical activities and establishments}
+
+## Hierarchy
+
+- [{sectorCode} - {Sector Name}](../Sectors/{sectorCode}/)
+  - [{subsectorCode} - {Subsector Name}](../Subsectors/{subsectorCode}.mdx)
+    - [{industryGroupCode} - {Industry Group Name}](../IndustryGroups/{industryGroupCode}.mdx)
+      - **{code} - {NAICS Industry Name}**
+
+## National Industries (6-digit)
+
+<NationalIndustryList naicsIndustryCode="{code}" />
+
+| Code | National Industry |
+|------|-------------------|
+| {code}0 | {National Industry Name} |
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [industries.org.ai](https://industries.org.ai) | Simplified: {simplifiedName} |
+| [onet.org.ai](https://onet.org.ai) | Related occupations |
+| [sic.org.ai](https://sic.org.ai) | SIC: {sicCode} |

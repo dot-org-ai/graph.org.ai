@@ -1,0 +1,48 @@
+---
+$context: https://standards.org.ai
+$id: https://standards.org.ai/{{slug}}
+$type: https://standards.org.ai/Standards
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Standards
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<StandardsOverview standards={standards} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Standards` |
+| Domain | [standards.org.ai](https://standards.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<StandardsDetails standards={standards} />
+
+## Properties
+
+<StandardsProperties standards={standards} />
+
+## Relationships
+
+<StandardsRelationships standards={standards} />
+
+## Related
+
+<RelatedStandardss standards={standards} />
+
+## Sources
+
+- <DatabaseLink namespace="standards.org.ai" type="{{slug}}" />

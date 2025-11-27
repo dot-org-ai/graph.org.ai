@@ -1,0 +1,48 @@
+---
+$context: https://blog.org.ai
+$id: https://blog.org.ai/{{slug}}
+$type: https://blog.org.ai/Blog
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Blog
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<BlogOverview blog={blog} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Blog` |
+| Domain | [blog.org.ai](https://blog.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<BlogDetails blog={blog} />
+
+## Properties
+
+<BlogProperties blog={blog} />
+
+## Relationships
+
+<BlogRelationships blog={blog} />
+
+## Related
+
+<RelatedBlogs blog={blog} />
+
+## Sources
+
+- <DatabaseLink namespace="blog.org.ai" type="{{slug}}" />

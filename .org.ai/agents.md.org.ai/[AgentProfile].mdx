@@ -1,0 +1,48 @@
+---
+$context: https://agents.md.org.ai
+$id: https://agents.md.org.ai/{{slug}}
+$type: https://agents.md.org.ai/AgentProfile
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for AgentProfile
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<AgentProfileOverview agentprofile={agentprofile} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `AgentProfile` |
+| Domain | [agents.md.org.ai](https://agents.md.org.ai) |
+| Parent | [markdown.org.ai](https://markdown.org.ai) |
+
+## Details
+
+<AgentProfileDetails agentprofile={agentprofile} />
+
+## Properties
+
+<AgentProfileProperties agentprofile={agentprofile} />
+
+## Relationships
+
+<AgentProfileRelationships agentprofile={agentprofile} />
+
+## Related
+
+<RelatedAgentProfiles agentprofile={agentprofile} />
+
+## Sources
+
+- <DatabaseLink namespace="agents.md.org.ai" type="{{slug}}" />

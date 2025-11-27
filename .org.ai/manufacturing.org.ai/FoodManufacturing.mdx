@@ -1,0 +1,287 @@
+---
+$context: https://manufacturing.org.ai
+$id: https://manufacturing.org.ai/FoodManufacturing
+$type: https://manufacturing.org.ai/Manufacturing
+name: "Food Manufacturing"
+naicsCode: "311"
+description: "Transforms livestock and agricultural products into products for intermediate or final consumption through processes such as slaughtering, preserving, preparing, and packaging."
+parent: https://manufacturing.org.ai
+---
+
+export const items = async () => {
+  // Fetch food manufacturing establishments from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://manufacturing.org.ai/FoodManufacturing',
+    naicsCode: { $regex: '^311' }
+  })
+}
+
+# Food Manufacturing
+
+Food manufacturing (NAICS 311) encompasses the transformation of livestock and agricultural products into products for human or animal consumption. This subsector includes establishments performing one or more of the following: slaughtering animals, processing meat products, rendering and/or refining animal fats, processing dairy products, preparing seafood, bakery operations, manufacturing sugar and confectionery products, fruit and vegetable preserving and specialty food processing, and animal food production.
+
+## Overview
+
+Food manufacturing is one of the largest and most essential manufacturing subsectors, directly tied to agricultural production and consumer demand. The industry must balance efficiency and scale with stringent food safety regulations, quality control, and changing consumer preferences for natural, organic, and specialty products.
+
+The subsector bridges agriculture and retail, adding value through processing, preservation, packaging, and distribution. It employs hundreds of thousands of workers and operates thousands of facilities ranging from small artisanal producers to massive industrial complexes.
+
+## Industry Groups
+
+Food manufacturing comprises nine industry groups:
+
+### 3111 - Animal Food Manufacturing
+Production of food for animals from ingredients such as grains, oilseed mill products, and meat products. Includes pet food, feed for livestock, poultry, and aquaculture.
+
+**Key Products:**
+- Dog and cat food
+- Livestock feed and concentrates
+- Poultry feed and supplements
+- Aquaculture feed
+
+### 3112 - Grain and Oilseed Milling
+Milling grains, vegetables, and oilseeds into flour, meal, and oil products.
+
+**Key Products:**
+- Wheat flour and rice milling
+- Corn and vegetable oils
+- Soybean processing
+- Breakfast cereals
+
+### 3113 - Sugar and Confectionery Product Manufacturing
+Manufacturing sugar, chocolate, and confectionery products from cacao beans, sugar, and other ingredients.
+
+**Key Products:**
+- Raw and refined sugar
+- Chocolate and cocoa products
+- Candy and chewing gum
+- Confectionery ingredients
+
+### 3114 - Fruit and Vegetable Preserving and Specialty Food Manufacturing
+Preserving fruits and vegetables through canning, pickling, drying, freezing, and specialty processing.
+
+**Key Products:**
+- Frozen fruits and vegetables
+- Canned foods and soups
+- Dried and dehydrated foods
+- Pickles, sauces, and dressings
+- Perishable prepared foods
+
+### 3115 - Dairy Product Manufacturing
+Processing raw milk into dairy products and manufacturing dairy substitutes.
+
+**Key Products:**
+- Fluid milk and cream
+- Butter, cheese, and yogurt
+- Ice cream and frozen desserts
+- Dry, condensed, and evaporated dairy products
+
+### 3116 - Animal Slaughtering and Processing
+Slaughtering animals and preparing meat products for distribution to wholesalers, retailers, and consumers.
+
+**Key Products:**
+- Fresh and frozen meat
+- Processed meat products (sausages, bacon, deli meats)
+- Rendered animal fats and by-products
+- Meat from poultry and other small animals
+
+### 3117 - Seafood Product Preparation and Packaging
+Preparing fresh, frozen, and canned seafood products from fish, shellfish, and other marine life.
+
+**Key Products:**
+- Fresh and frozen fish
+- Canned seafood
+- Cured and smoked fish
+- Prepared seafood products
+
+### 3118 - Bakeries and Tortilla Manufacturing
+Manufacturing fresh and frozen bakery products, either for immediate consumption or distribution to retail outlets.
+
+**Key Products:**
+- Bread and rolls
+- Cookies and crackers
+- Frozen baked goods
+- Tortillas and tortilla chips
+
+### 3119 - Other Food Manufacturing
+Manufacturing food products not classified elsewhere, including snacks, coffee, tea, flavorings, and seasonings.
+
+**Key Products:**
+- Snack foods (chips, pretzels, popcorn)
+- Coffee and tea processing
+- Flavorings, extracts, and seasonings
+- Peanut butter and other nut products
+- Ready-to-eat meals
+
+## Manufacturing Processes
+
+Food manufacturing employs various processing techniques to transform raw agricultural inputs into safe, shelf-stable, and appealing products:
+
+### Thermal Processing
+- **Pasteurization**: Heat treatment to kill pathogens (milk, juice, eggs)
+- **Sterilization**: High-temperature processing for long shelf life (canned goods)
+- **Cooking**: Preparation of ready-to-eat products
+- **Baking**: Controlled heating for bread, pastries, and baked goods
+- **Roasting**: High-temperature treatment for coffee, nuts, and cocoa
+
+### Preservation Techniques
+- **Freezing**: Ultra-low temperatures to preserve foods
+- **Drying/Dehydration**: Moisture removal for extended shelf life
+- **Canning**: Heat processing and hermetic sealing
+- **Fermentation**: Controlled microbial processes (cheese, yogurt, pickles)
+- **Curing and Smoking**: Traditional preservation for meats and fish
+
+### Physical Processing
+- **Milling and Grinding**: Reducing particle size of grains and ingredients
+- **Mixing and Blending**: Combining ingredients to specifications
+- **Extrusion**: Forcing materials through dies to create shapes (pasta, cereals, snacks)
+- **Forming and Shaping**: Creating consistent product forms
+- **Separation**: Extracting components (oil pressing, protein isolation)
+
+### Chemical Processing
+- **pH Adjustment**: Controlling acidity for safety and flavor
+- **Enzymatic Treatment**: Using enzymes for texture and functionality
+- **Emulsification**: Creating stable mixtures of oil and water
+- **Fortification**: Adding vitamins and minerals
+
+## Quality and Safety
+
+Food manufacturing operates under the most stringent regulatory oversight of any manufacturing sector:
+
+### Regulatory Framework
+- **FDA (Food and Drug Administration)**: Oversees most food products
+- **USDA (Department of Agriculture)**: Regulates meat, poultry, and eggs
+- **FSMA (Food Safety Modernization Act)**: Preventive controls and supply chain verification
+- **HACCP (Hazard Analysis Critical Control Points)**: Systematic preventive approach to food safety
+
+### Quality Standards
+- **Good Manufacturing Practices (GMPs)**: Basic hygiene and operational requirements
+- **SQF (Safe Quality Food)**: Comprehensive food safety and quality certification
+- **BRC (Brand Reputation Compliance)**: Global food safety standard
+- **ISO 22000**: International food safety management standard
+- **Organic Certification**: USDA organic standards and verification
+
+### Testing and Inspection
+- Microbiological testing for pathogens
+- Chemical analysis for contaminants and adulterants
+- Nutritional analysis and labeling verification
+- Allergen testing and controls
+- Foreign material detection (metal detectors, X-ray)
+
+## Technology and Innovation
+
+The food manufacturing industry continues to evolve with new technologies:
+
+### Automation and Robotics
+- High-speed packaging lines
+- Robotic palletizing and case packing
+- Automated guided vehicles (AGVs) for material handling
+- Vision systems for quality inspection
+
+### Advanced Processing
+- High-pressure processing (HPP) for cold pasteurization
+- Pulsed electric field (PEF) technology
+- Ultrasonic processing
+- Membrane filtration and separation
+- Microwave and radio frequency heating
+
+### Digital Technologies
+- Real-time quality monitoring with IoT sensors
+- Blockchain for supply chain traceability
+- AI-powered predictive maintenance
+- Digital twins for process optimization
+- Advanced analytics for yield optimization
+
+### Sustainability Initiatives
+- Water recycling and conservation systems
+- Energy-efficient processing equipment
+- Waste valorization (converting by-products to value)
+- Renewable energy integration
+- Sustainable packaging materials
+
+## Workforce
+
+Food manufacturing employs a diverse workforce across multiple skill levels:
+
+### Production Roles
+- Production line workers and operators
+- Food preparation workers
+- Butchers and meat cutters
+- Bakers and pastry workers
+- Machine operators and tenders
+
+### Technical and Professional
+- Food scientists and technologists
+- Quality assurance specialists
+- Process engineers
+- Maintenance technicians
+- Sanitation specialists
+
+### Management and Support
+- Plant managers and supervisors
+- Supply chain and logistics managers
+- Food safety managers
+- Regulatory affairs specialists
+- Product development managers
+
+See [onet.org.ai](https://onet.org.ai) for detailed occupational information.
+
+## Economic Impact
+
+Food manufacturing is a cornerstone of the U.S. economy:
+
+- **Employment**: Over 1.5 million workers
+- **Establishments**: Approximately 37,000 facilities
+- **Value Added**: Over $300 billion annually
+- **Exports**: Major contributor to U.S. agricultural exports
+- **Consumer Spending**: Americans spend about 10% of disposable income on food
+
+## Supply Chain Integration
+
+Food manufacturing sits at the center of complex supply chains:
+
+### Upstream
+- Agricultural producers (crops, livestock, dairy, seafood)
+- Commodity traders and cooperatives
+- Ingredient suppliers and distributors
+- Packaging materials manufacturers
+
+### Downstream
+- Grocery retailers and supermarkets
+- Foodservice distributors
+- Restaurants and food service
+- Export markets
+- Direct-to-consumer channels
+
+## Trends and Challenges
+
+### Consumer Trends
+- Growing demand for natural and organic products
+- Plant-based and alternative proteins
+- Clean label and transparent ingredients
+- Ethnic and international flavors
+- Convenience and ready-to-eat meals
+
+### Industry Challenges
+- Labor shortages and retention
+- Rising input costs (ingredients, energy, packaging)
+- Complex regulatory compliance
+- Supply chain disruptions
+- Food waste reduction
+- Sustainability pressures
+
+### Future Directions
+- Cellular agriculture and cultured proteins
+- Precision fermentation for ingredients
+- AI-driven product development
+- Personalized nutrition
+- Circular economy models
+
+## Related Resources
+
+- [naics.org.ai/311](https://naics.org.ai/311) - Official NAICS classification
+- [products.org.ai](https://products.org.ai) - Food products database
+- [onet.org.ai](https://onet.org.ai) - Food manufacturing occupations
+- [businesses.org.ai](https://businesses.org.ai) - Food manufacturing companies
+- [supply-chain.org.ai](https://supply-chain.org.ai) - Food supply chains

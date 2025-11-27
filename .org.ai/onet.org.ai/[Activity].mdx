@@ -1,0 +1,48 @@
+---
+$context: https://onet.org.ai
+$id: https://onet.org.ai/{{slug}}
+$type: https://onet.org.ai/Activity
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Activity
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ActivityOverview activity={activity} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Activity` |
+| Domain | [onet.org.ai](https://onet.org.ai) |
+| Parent | [standards.org.ai](https://standards.org.ai) |
+
+## Details
+
+<ActivityDetails activity={activity} />
+
+## Properties
+
+<ActivityProperties activity={activity} />
+
+## Relationships
+
+<ActivityRelationships activity={activity} />
+
+## Related
+
+<RelatedActivitys activity={activity} />
+
+## Sources
+
+- <DatabaseLink namespace="onet.org.ai" type="{{slug}}" />

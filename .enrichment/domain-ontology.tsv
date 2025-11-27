@@ -6,8 +6,8 @@ Ability	abilities.org.ai	onet.org.ai;nouns.org.ai	Semantic abilities derived fro
 Knowledge	knowledge.org.ai	onet.org.ai;nouns.org.ai	Semantic knowledge derived from ONET
 Task	tasks.org.ai	onet.org.ai;process.org.ai;nouns.org.ai	Semantic tasks derived from ONET
 Process	apqc.org.ai	process.org.ai;nouns.org.ai	APQC process framework
-WorkActivity	onet.org.ai	activities.org.ai;nouns.org.ai	ONET work activities
-WorkContext	onet.org.ai	nouns.org.ai	ONET work context
+WorkActivity	activities.org.ai	onet.org.ai;nouns.org.ai	ONET work activities (sameAs onet.org.ai/WorkActivities)
+WorkContext	context.org.ai	onet.org.ai;nouns.org.ai	ONET work context (sameAs onet.org.ai/WorkContexts)
 WorkStyle	onet.org.ai	nouns.org.ai	ONET work styles
 WorkValue	onet.org.ai	nouns.org.ai	ONET work values
 Occupation	onet.org.ai	occupations.org.ai;nouns.org.ai	ONET-SOC occupations
@@ -15,8 +15,8 @@ Job	jobs.org.ai	onet.org.ai;occupations.org.ai;nouns.org.ai	Job titles derived f
 Tool	onet.org.ai	tech.org.ai;products.org.ai;nouns.org.ai	ONET tools - physical and digital
 Technology	onet.org.ai	tech.org.ai;products.org.ai;nouns.org.ai	ONET technologies - software and systems
 Industry	naics.org.ai	industries.org.ai;business.org.ai;nouns.org.ai	NAICS industry classification
-Product	unspsc.org.ai	products.org.ai;nouns.org.ai	UNSPSC/GPC product taxonomy
-Service	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service classification
+Product	products.org.ai	standards.org.ai;nouns.org.ai	UNSPSC/GPC product taxonomy
+Service	services.org.ai	standards.org.ai;nouns.org.ai	NAPCS service classification
 BusinessType	business.org.ai	industries.org.ai;nouns.org.ai	Business types and structures
 Career	education.org.ai	careers.org.ai;occupations.org.ai;nouns.org.ai	Career clusters
 EducationProgram	education.org.ai	nouns.org.ai	CIP education programs
@@ -27,7 +27,7 @@ Type	schema.org.ai	nouns.org.ai	Schema.org types
 Property	schema.org.ai	nouns.org.ai	Schema.org properties
 App	integrations.org.ai	apps.org.ai;products.org.ai;nouns.org.ai	Integration apps (Zapier, etc)
 Integration	integrations.org.ai	apps.org.ai;nouns.org.ai	Integration services
-Model	models.org.ai	ai.org.ai;nouns.org.ai	AI models
+Model	models.org.ai	tech.org.ai;nouns.org.ai	AI models
 Search	searches.org.ai	nouns.org.ai	Search queries
 Country	places.org.ai	nouns.org.ai	Countries
 Department	business.org.ai	nouns.org.ai	Business departments
@@ -55,7 +55,7 @@ Analytics	business.org.ai	apps.org.ai;tech.org.ai;nouns.org.ai	Analytics platfor
 Proposal & Invoice Management	business.org.ai	apps.org.ai;nouns.org.ai	Proposal and invoicing tools
 Event Management	business.org.ai	apps.org.ai;nouns.org.ai	Event management platforms
 Task Management	apps.org.ai	business.org.ai;nouns.org.ai	Task management tools
-AI Models	ai.org.ai	models.org.ai;tech.org.ai;nouns.org.ai	AI and ML models
+AI Models	models.org.ai	tech.org.ai;nouns.org.ai	AI and ML models
 Email Newsletters	business.org.ai	apps.org.ai;marketing.org.ai;nouns.org.ai	Email newsletter services
 Calendar	apps.org.ai	integrations.org.ai;nouns.org.ai	Calendar apps and services
 Payment Processing	business.org.ai	apps.org.ai;nouns.org.ai	Payment processing services
@@ -119,10 +119,10 @@ SubscriptionBox	business.org.ai	industries.org.ai;apps.org.ai;nouns.org.ai	Subsc
 OnlineConsulting	business.org.ai	industries.org.ai;nouns.org.ai	Online consulting services
 OnlineCommunity	business.org.ai	industries.org.ai;apps.org.ai;nouns.org.ai	Online communities
 DigitalTools	business.org.ai	industries.org.ai;tech.org.ai;apps.org.ai;nouns.org.ai	Digital tools and utilities
-ServiceClass	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service class level
-ServiceGroup	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service group level
-ServiceSubclass	napcs.org.ai	services.org.ai;nouns.org.ai	NAPCS service subclass level
-AIModel	ai.org.ai	models.org.ai;tech.org.ai;nouns.org.ai	AI/ML models
+ServiceClass	services.org.ai	standards.org.ai;nouns.org.ai	NAPCS service class level
+ServiceGroup	services.org.ai	standards.org.ai;nouns.org.ai	NAPCS service group level
+ServiceSubclass	services.org.ai	standards.org.ai;nouns.org.ai	NAPCS service subclass level
+AIModel	models.org.ai	tech.org.ai;nouns.org.ai	AI/ML models
 Adverb	language.org.ai	nouns.org.ai	Adverbs (language)
 Conjunction	language.org.ai	nouns.org.ai	Conjunctions (language)
 Determiner	language.org.ai	nouns.org.ai	Determiners (language)

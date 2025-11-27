@@ -1,0 +1,48 @@
+---
+$context: https://research.org.ai
+$id: https://research.org.ai/{{slug}}
+$type: https://research.org.ai/Research
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Research
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ResearchOverview research={research} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Research` |
+| Domain | [research.org.ai](https://research.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<ResearchDetails research={research} />
+
+## Properties
+
+<ResearchProperties research={research} />
+
+## Relationships
+
+<ResearchRelationships research={research} />
+
+## Related
+
+<RelatedResearchs research={research} />
+
+## Sources
+
+- <DatabaseLink namespace="research.org.ai" type="{{slug}}" />

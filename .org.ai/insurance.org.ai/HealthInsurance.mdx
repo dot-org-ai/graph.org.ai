@@ -1,0 +1,505 @@
+---
+$context: https://insurance.org.ai
+$id: https://insurance.org.ai/HealthInsurance
+$type: https://insurance.org.ai/HealthInsurance
+name: Health Insurance
+naicsCode: "52412"
+description: "Health insurance provides coverage for medical expenses, prescription drugs, preventive care, and healthcare services through various delivery and payment models"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Health Insurance products
+  return []
+}
+
+# Health Insurance
+
+Health insurance (NAICS 52412) finances healthcare services through risk pooling and managed care delivery systems. The industry encompasses commercial insurance, government programs (Medicare, Medicaid), and managed care organizations (HMOs, PPOs).
+
+## Overview
+
+The U.S. health insurance system is complex, multi-payer, and highly regulated:
+- **Commercial insurance**: Employer-sponsored and individual coverage
+- **Government programs**: Medicare (seniors/disabled), Medicaid (low-income), CHIP (children)
+- **Managed care**: Networks, utilization management, care coordination
+- **Fee-for-service vs. value-based**: Payment model evolution
+- **Regulatory environment**: ACA, HIPAA, ERISA, state insurance departments
+
+### Market Statistics
+- Total U.S. healthcare spending: $4.5 trillion (17% of GDP)
+- Health insurance premiums: $1.2 trillion
+- People with health insurance: 300 million (92% of population)
+- Employer-sponsored: 160 million (54%)
+- Medicare: 65 million (18%)
+- Medicaid/CHIP: 85 million (23%)
+- Individual market (ACA exchanges): 21 million (7%)
+- Uninsured: 28 million (8%)
+
+## Types of Health Insurance Coverage
+
+### Employer-Sponsored Insurance (ESI)
+
+**Group health insurance provided as employee benefit**
+
+#### Fully Insured Plans
+- Insurance company assumes risk and administers benefits
+- Employer pays premium to carrier
+- State insurance regulation applies
+- Guaranteed issue, no medical underwriting for groups
+- Community rating or experience rating based on group size
+
+#### Self-Insured Plans
+- Employer assumes financial risk for claims
+- Third-party administrator (TPA) handles claims processing
+- **ERISA preemption**: Federal regulation, exempt from state mandates
+- Stop-loss insurance protects against catastrophic claims
+- Common for large employers (500+ employees)
+
+#### Plan Design Elements
+- **Premiums**: Monthly cost shared between employer and employee
+- **Deductible**: Annual out-of-pocket before coverage begins ($1,500-5,000 individual)
+- **Coinsurance**: Percentage of costs after deductible (typically 80/20 or 70/30)
+- **Out-of-pocket maximum**: Annual cap on member cost-sharing ($8,000-18,000)
+- **Copayments**: Fixed fees for specific services (e.g., $20 office visit, $10 generic drug)
+
+**Market Statistics**
+- Average annual premium: $8,400 individual, $23,900 family (2024)
+- Employer contribution: 83% (individual), 73% (family)
+- Employee contribution: $1,400 (individual), $6,400 (family)
+
+### Individual & Family Plans
+
+**Coverage purchased directly by consumers**
+
+#### ACA Health Insurance Marketplace (Exchanges)
+- **Guaranteed issue**: No medical underwriting, pre-existing conditions covered
+- **Essential health benefits (EHB)**: Minimum coverage requirements
+- **Metallic tiers**: Bronze (60% actuarial value), Silver (70%), Gold (80%), Platinum (90%)
+- **Premium subsidies**: Advance Premium Tax Credits (APTC) for incomes 100-400% FPL
+- **Cost-sharing reductions (CSR)**: Lower deductibles/copays for Silver plans (incomes 100-250% FPL)
+- **Open enrollment**: Annual enrollment period (Nov 1 - Jan 15)
+- **Special enrollment periods (SEP)**: Qualifying life events trigger mid-year enrollment
+
+#### Off-Exchange Individual Plans
+- Purchased directly from carriers or brokers
+- Same ACA regulations (guaranteed issue, EHB, no lifetime limits)
+- No subsidies available
+- Often higher premiums than exchange plans
+
+**Market Statistics**
+- Average ACA exchange premium: $600/month (before subsidies)
+- Average subsidy: $400/month
+- Average net premium: $200/month
+- Enrollment: 21 million (2024 open enrollment)
+
+### Medicare
+
+**Federal health insurance for seniors and disabled**
+
+#### Eligibility
+- **Age 65+**: Automatic enrollment if receiving Social Security
+- **Disabled**: After 24 months of Social Security disability benefits
+- **ESRD**: End-stage renal disease (kidney failure requiring dialysis)
+- **ALS**: Amyotrophic lateral sclerosis (Lou Gehrig's disease)
+
+#### Medicare Parts
+
+**Part A - Hospital Insurance**
+- **Inpatient hospital care**: Deductible $1,632 per benefit period (2024)
+- **Skilled nursing facility**: After 3-day hospital stay, days 21-100 require copay
+- **Hospice care**: End-of-life care
+- **Home health**: Part-time skilled nursing, therapy
+- **Premium**: $0 for most (if 40+ quarters of Medicare taxes), $505/month if not
+
+**Part B - Medical Insurance**
+- **Physician services**: Office visits, outpatient care, preventive services
+- **Outpatient hospital**: ER, observation, surgery
+- **Durable medical equipment (DME)**: Wheelchairs, walkers, oxygen
+- **Preventive care**: Annual wellness visit, screenings (no cost-sharing)
+- **Premium**: $174.70/month (2024 standard, income-based surcharges apply)
+- **Deductible**: $240/year
+- **Coinsurance**: 20% of Medicare-approved amount (no out-of-pocket max)
+
+**Part C - Medicare Advantage**
+- **Private insurance alternative** to Original Medicare (Parts A & B)
+- **Bundled coverage**: Medical, hospital, often includes Part D (drugs)
+- **Managed care**: HMO, PPO, SNP (Special Needs Plans)
+- **Additional benefits**: Vision, dental, hearing, fitness memberships, OTC allowances
+- **Out-of-pocket maximum**: Annual cap on cost-sharing (required by CMS)
+- **Premium**: Varies, many $0 premium plans available
+- **Enrollment**: 32 million (50% of Medicare beneficiaries)
+
+**Part D - Prescription Drug Coverage**
+- **Stand-alone PDPs**: For Original Medicare beneficiaries
+- **MA-PD**: Bundled with Medicare Advantage plans
+- **Coverage stages** (2024):
+  - **Deductible**: Up to $545
+  - **Initial coverage**: 25% coinsurance until $5,030 total drug costs
+  - **Coverage gap**: 25% coinsurance until $8,000 out-of-pocket
+  - **Catastrophic coverage**: $0-$4 copays or 5% coinsurance
+- **Formulary**: Tiered drug list, prior authorization, step therapy
+- **Premium**: Average $55/month, varies by plan
+
+#### Medigap (Medicare Supplement)
+
+**Private insurance to fill Original Medicare gaps**
+- Covers Part A and Part B deductibles, coinsurance, copays
+- Standardized plans (A, B, C, D, F, G, K, L, M, N)
+- **Plan G** most popular (covers everything except Part B deductible)
+- **Plan F** no longer available to new enrollees (as of 2020)
+- Guaranteed issue during 6-month enrollment window at age 65
+- Medical underwriting required if enrolling later
+
+**Market Statistics**
+- Medicare enrollment: 65 million
+- Medicare Advantage enrollment: 32 million (50% penetration)
+- Part D enrollment: 51 million
+- Medigap enrollment: 14 million
+- Total Medicare spending: $900 billion (2024)
+
+### Medicaid & CHIP
+
+**Federal-state health coverage for low-income populations**
+
+#### Medicaid Eligibility
+- **Income**: Varies by state, expansion states cover up to 138% FPL
+- **Categorical**: Pregnant women, children, parents, elderly, disabled
+- **ACA expansion**: 40 states + DC expanded Medicaid to 138% FPL (as of 2024)
+- **Non-expansion states**: Income limits as low as 17-50% FPL for parents
+
+#### Covered Benefits
+- **Mandatory benefits**: Inpatient/outpatient hospital, physician, lab/X-ray, EPSDT (children), nursing facility, home health
+- **Optional benefits**: Prescription drugs, dental, vision, physical therapy
+- **Managed care**: 72% of enrollees in Medicaid MCOs (HMOs, PPOs)
+
+#### Children's Health Insurance Program (CHIP)
+- Children in families with incomes too high for Medicaid but cannot afford private insurance
+- Income limits: 200-400% FPL (varies by state)
+- Low or no premiums, minimal cost-sharing
+
+**Market Statistics**
+- Medicaid enrollment: 85 million (as of 2024)
+- CHIP enrollment: 7 million
+- Federal spending: $450 billion
+- State spending: $200 billion
+- Per-enrollee cost: $7,500 (varies widely by eligibility category)
+
+## Managed Care Models
+
+### Health Maintenance Organization (HMO)
+
+**Coordinated care through primary care physician (PCP) gatekeeper**
+
+#### Characteristics
+- **PCP required**: All care coordinated through primary care physician
+- **Referrals**: Specialist visits require PCP referral
+- **Network restrictions**: No out-of-network coverage (except emergencies)
+- **Lower premiums**: Tighter controls reduce costs
+- **Preventive focus**: Emphasis on wellness and early intervention
+
+#### HMO Models
+- **Staff model**: HMO employs physicians directly (e.g., Kaiser Permanente)
+- **Group model**: HMO contracts with physician groups
+- **IPA model**: Independent Practice Association of contracted physicians
+- **Network model**: Multiple physician groups contracted
+
+### Preferred Provider Organization (PPO)
+
+**Flexible network with in-network and out-of-network benefits**
+
+#### Characteristics
+- **No PCP required**: Direct access to specialists
+- **No referrals**: Self-refer to any provider
+- **In-network incentives**: Lower cost-sharing for network providers
+- **Out-of-network coverage**: Higher deductibles and coinsurance, but available
+- **Higher premiums**: Flexibility comes at higher cost
+
+### Point of Service (POS)
+
+**Hybrid model combining HMO and PPO features**
+- PCP gatekeeper like HMO
+- Out-of-network benefits like PPO (with referral)
+- Lower cost than PPO, more flexibility than HMO
+
+### Exclusive Provider Organization (EPO)
+
+**Network-only coverage without PCP gatekeeper**
+- No out-of-network benefits (except emergencies)
+- No PCP or referrals required
+- Lower premiums than PPO
+- Common in ACA marketplace
+
+### High Deductible Health Plan (HDHP)
+
+**High deductible paired with Health Savings Account (HSA)**
+
+#### HDHP Requirements (2024)
+- Minimum deductible: $1,600 individual, $3,200 family
+- Maximum out-of-pocket: $8,050 individual, $16,100 family
+- No coverage before deductible except preventive care
+
+#### Health Savings Account (HSA)
+- **Tax-advantaged savings**: Pre-tax contributions, tax-free growth, tax-free withdrawals for qualified medical expenses
+- **Contribution limits** (2024): $4,150 individual, $8,300 family
+- **Catch-up**: Additional $1,000 for age 55+
+- **Portability**: Account follows individual, employer or employee can fund
+- **Triple tax advantage**: Deductible contributions, tax-free earnings, tax-free withdrawals
+
+**Market Adoption**
+- 30% of employer-sponsored plans are HDHPs
+- Average deductible: $2,500 individual, $5,000 family
+
+## Health Insurance Operations
+
+### Underwriting
+
+#### Group Underwriting
+- **Small group** (2-50 employees): Community rating or adjusted community rating
+- **Large group** (51+ employees): Experience rating based on claims history
+- **Guaranteed issue**: ACA prohibits medical underwriting for groups
+- **Rating factors**: Age, geography, tobacco use, family composition (individual market)
+
+#### Risk Adjustment
+- **ACA risk adjustment**: Transfers funds from low-risk to high-risk plans
+- **Medicare Advantage**: Risk scores based on diagnoses (HCCs)
+- **Medicaid managed care**: Acuity-based payments
+
+### Medical Management
+
+#### Utilization Management
+- **Prior authorization**: Pre-approval required for certain services (imaging, surgeries, specialty drugs)
+- **Concurrent review**: Hospital stay monitoring, discharge planning
+- **Retrospective review**: Post-service claims review for medical necessity
+- **Step therapy**: Require lower-cost treatments before approving expensive alternatives
+
+#### Case Management
+- **High-risk members**: Chronic conditions, complex care needs
+- **Care coordination**: Integrate medical, behavioral, social services
+- **Disease management**: Diabetes, asthma, CHF, COPD programs
+- **Transitional care**: Post-hospitalization follow-up to prevent readmissions
+
+#### Pharmacy Benefit Management (PBM)
+- **Formulary management**: Tiered drug lists (generic, preferred brand, non-preferred, specialty)
+- **Rebate negotiation**: Manufacturer rebates for formulary placement
+- **Claims adjudication**: Real-time claims processing at pharmacy
+- **Mail order**: 90-day supplies at lower cost
+- **Specialty pharmacy**: High-cost biologics and specialty drugs
+
+**Top PBMs**: CVS Caremark, Express Scripts (Cigna), OptumRx (UnitedHealth)
+
+### Provider Networks
+
+#### Network Development
+- **Contracting**: Negotiate reimbursement rates with hospitals, physicians, ancillary providers
+- **Credentialing**: Verify licenses, board certifications, malpractice coverage
+- **Network adequacy**: Ensure sufficient access by specialty and geography
+- **Centers of Excellence (COE)**: High-quality, cost-effective providers for complex procedures
+
+#### Reimbursement Models
+- **Fee-for-service (FFS)**: Pay per service rendered
+- **Discounted FFS**: Percentage of charges or fee schedule
+- **Per diem**: Daily rate for inpatient stays
+- **DRG (Diagnosis-Related Group)**: Fixed payment per hospital admission
+- **Capitation**: Fixed per-member-per-month (PMPM) payment
+- **Bundled payments**: Single payment for episode of care (e.g., joint replacement)
+- **Value-based contracts**: Pay-for-performance, shared savings, risk-sharing
+
+### Claims Processing
+
+**Covered in detail in** [ClaimsManagement.mdx](./ClaimsManagement.mdx)
+
+#### Claims Adjudication
+- **Auto-adjudication**: 90%+ of claims processed automatically
+- **Electronic claims**: EDI 837 (institutional), 837P (professional)
+- **Real-time adjudication**: Pharmacy claims, some medical claims
+- **Coordination of benefits (COB)**: Primary, secondary payer determination
+
+## Regulatory Environment
+
+### Affordable Care Act (ACA)
+
+**Comprehensive health reform law (2010)**
+
+#### Market Reforms
+- **Guaranteed issue**: No denial based on pre-existing conditions
+- **Community rating**: Limited rating factors (age, geography, tobacco)
+- **Essential health benefits**: 10 categories of minimum coverage
+- **Preventive care**: No cost-sharing for preventive services
+- **Lifetime/annual limits**: Prohibited
+- **Dependent coverage**: Children covered to age 26
+
+#### Individual Mandate (Repealed)
+- Originally required coverage or pay penalty
+- Penalty reduced to $0 (effective 2019)
+- Some states enacted state-level mandates (CA, MA, NJ, VT, DC)
+
+#### Medical Loss Ratio (MLR)
+- **Large group**: 85% of premiums on medical care
+- **Small group & individual**: 80% of premiums on medical care
+- Rebates required if MLR not met
+
+### HIPAA (Health Insurance Portability and Accountability Act)
+
+**Privacy, security, and portability regulations (1996)**
+
+#### Privacy Rule
+- Protected Health Information (PHI) safeguards
+- Notice of Privacy Practices (NPP)
+- Authorization for uses/disclosures
+- Individual rights (access, amendment, accounting)
+
+#### Security Rule
+- Administrative, physical, technical safeguards
+- Risk assessments and management
+- Encryption, access controls, audit logs
+
+#### Breach Notification
+- Notify individuals, HHS, media (if 500+ affected)
+- Within 60 days of breach discovery
+
+**Penalties**: $100-50,000 per violation, max $1.5M per year
+
+### ERISA (Employee Retirement Income Security Act)
+
+**Federal regulation of employer-sponsored benefits (1974)**
+
+#### Fiduciary Requirements
+- Act in best interest of participants
+- Plan documents, summary plan description (SPD)
+- Claims and appeals procedures
+
+#### Preemption
+- Self-insured plans exempt from state insurance laws
+- Uniform federal regulation for large employers
+
+### State Insurance Regulation
+
+**State Departments of Insurance**
+- Rate review and approval
+- Market conduct examinations
+- Solvency oversight
+- Consumer protection
+- Network adequacy standards
+- Provider prompt payment laws
+
+## Health Insurance Trends & Innovation
+
+### Value-Based Care
+
+**Shift from fee-for-service to value-based payments**
+
+#### Accountable Care Organizations (ACOs)
+- Provider groups share risk/savings for quality and cost
+- Medicare Shared Savings Program (MSSP)
+- Commercial ACO contracts
+
+#### Bundled Payments
+- Single payment for episode of care (90 days pre/post-procedure)
+- Joint replacements, cardiac surgery, maternity care
+
+#### Capitation & Risk-Sharing
+- Global capitation: Full-risk contracts for all medical services
+- Partial capitation: Primary care, specialists
+
+### Telehealth & Virtual Care
+
+**Remote healthcare delivery via technology**
+
+#### Telemedicine
+- Video visits with physicians, specialists
+- Mental health counseling
+- Chronic disease monitoring
+
+#### Remote Patient Monitoring (RPM)
+- Wearables, home monitoring devices
+- Real-time data transmission to providers
+- Chronic condition management (diabetes, hypertension, CHF)
+
+**Market Growth**
+- Pre-pandemic: 1-2% of visits via telehealth
+- Pandemic peak: 40% of visits
+- Post-pandemic: 15-20% of visits (stabilized)
+- Reimbursement parity: Many states require equal payment to in-person
+
+### Consumerism & Transparency
+
+#### Price Transparency
+- **Hospital price transparency**: Machine-readable files, consumer-friendly display (2021)
+- **Insurer price transparency**: In-network rates, out-of-network allowed amounts (2022)
+- **No Surprises Act**: Protection from surprise medical bills (2022)
+
+#### Consumer Tools
+- Cost estimators and provider directories
+- Quality ratings (HEDIS, star ratings, patient satisfaction)
+- Decision support tools for treatment options
+
+### Health Equity & Social Determinants
+
+**Addressing disparities and non-medical drivers of health**
+
+#### Social Determinants of Health (SDOH)
+- Housing, food security, transportation
+- Education, employment, income
+- Neighborhood safety, environmental quality
+
+#### Health Equity Initiatives
+- Culturally competent care
+- Language services, health literacy programs
+- Community health workers, navigators
+- Medicaid coverage for SDOH services
+
+## Key Health Plan Metrics
+
+### Financial Metrics
+- **Medical Loss Ratio (MLR)**: Medical costs / premium revenue
+- **Administrative expense ratio**: Admin costs / premium revenue
+- **Underwriting gain/loss**: Premium - medical costs - admin
+- **Days claims payable (DCP)**: Medical payables / (medical costs / 365)
+
+### Clinical Metrics (HEDIS)
+- **Diabetes care**: HbA1c testing, eye exams, nephropathy screening
+- **Hypertension control**: Blood pressure <140/90
+- **Breast cancer screening**: Mammography rates
+- **Colorectal cancer screening**: Colonoscopy, FIT, Cologuard
+- **Childhood immunizations**: Combo 10 (vaccines by age 2)
+
+### Star Ratings
+- **Medicare Advantage**: 1-5 star quality ratings (bonus payments for 4+ stars)
+- **ACA marketplace**: Quality rating system (QRS)
+- **Medicaid**: State-specific quality metrics
+
+### Member Experience
+- **CAHPS (Consumer Assessment of Healthcare Providers and Systems)**: Standardized surveys
+- **Net Promoter Score (NPS)**: Likelihood to recommend plan
+- **Complaint ratios**: Grievances and appeals per 1,000 members
+
+## Major Health Insurers
+
+### Top U.S. Health Plans (by enrollment)
+1. **UnitedHealth Group** - 50 million (UnitedHealthcare, OptumHealth)
+2. **Elevance Health (Anthem)** - 47 million (Blue Cross Blue Shield plans)
+3. **CVS Health (Aetna)** - 35 million
+4. **Centene** - 28 million (Medicaid, ACA marketplace)
+5. **Kaiser Permanente** - 12 million (integrated delivery system)
+6. **Humana** - 17 million (Medicare Advantage leader)
+7. **Cigna** - 18 million (employer, Medicare Advantage)
+8. **Blue Cross Blue Shield** - 115 million (independent plans)
+9. **Molina Healthcare** - 5 million (Medicaid focus)
+10. **Oscar Health** - 1.6 million (technology-driven, ACA marketplace)
+
+## Related Topics
+
+- [LifeInsurance](./LifeInsurance.mdx) - Group life often bundled with health benefits
+- [ClaimsManagement](./ClaimsManagement.mdx) - Health insurance claims processing
+- [InsurTech](./InsurTech.mdx) - Digital health insurance and telehealth
+- [healthcare.org.ai](https://healthcare.org.ai) - Healthcare delivery and providers
+- [pharmacy.org.ai](https://pharmacy.org.ai) - Pharmacy benefit management
+
+## Sources
+
+- Centers for Medicare & Medicaid Services (CMS) - [https://www.cms.gov](https://www.cms.gov)
+- Kaiser Family Foundation (KFF) - [https://www.kff.org](https://www.kff.org)
+- National Association of Insurance Commissioners (NAIC) - [https://www.naic.org](https://www.naic.org)
+- America's Health Insurance Plans (AHIP) - [https://www.ahip.org](https://www.ahip.org)
+- Healthcare.gov - [https://www.healthcare.gov](https://www.healthcare.gov)
+- National Committee for Quality Assurance (NCQA) - [https://www.ncqa.org](https://www.ncqa.org)

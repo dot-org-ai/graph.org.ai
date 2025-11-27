@@ -1,0 +1,48 @@
+---
+$context: https://markdown.org.ai
+$id: https://markdown.org.ai/{{slug}}
+$type: https://markdown.org.ai/Markdown
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Markdown
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MarkdownOverview markdown={markdown} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Markdown` |
+| Domain | [markdown.org.ai](https://markdown.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<MarkdownDetails markdown={markdown} />
+
+## Properties
+
+<MarkdownProperties markdown={markdown} />
+
+## Relationships
+
+<MarkdownRelationships markdown={markdown} />
+
+## Related
+
+<RelatedMarkdowns markdown={markdown} />
+
+## Sources
+
+- <DatabaseLink namespace="markdown.org.ai" type="{{slug}}" />

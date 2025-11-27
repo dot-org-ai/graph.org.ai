@@ -1,0 +1,33 @@
+{
+  "name": "todo.md.org.ai",
+  "version": "0.0.1",
+  "description": "Standard specification for TODO.md files, tracking tasks and status.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "todo.md"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://todo.md.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/todo.md.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

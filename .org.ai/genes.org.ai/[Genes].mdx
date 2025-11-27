@@ -1,0 +1,48 @@
+---
+$context: https://genes.org.ai
+$id: https://genes.org.ai/{{slug}}
+$type: https://genes.org.ai/Genes
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Genes
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<GenesOverview genes={genes} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Genes` |
+| Domain | [genes.org.ai](https://genes.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<GenesDetails genes={genes} />
+
+## Properties
+
+<GenesProperties genes={genes} />
+
+## Relationships
+
+<GenesRelationships genes={genes} />
+
+## Related
+
+<RelatedGeness genes={genes} />
+
+## Sources
+
+- <DatabaseLink namespace="genes.org.ai" type="{{slug}}" />

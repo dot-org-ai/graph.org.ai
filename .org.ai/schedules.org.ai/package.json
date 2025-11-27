@@ -1,0 +1,33 @@
+{
+  "name": "schedules.org.ai",
+  "version": "0.0.1",
+  "description": "Ontology domain for schedules.org.ai",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "schedules"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://schedules.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/schedules.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

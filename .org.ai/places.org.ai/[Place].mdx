@@ -1,0 +1,48 @@
+---
+$context: https://places.org.ai
+$id: https://places.org.ai/{{slug}}
+$type: https://places.org.ai/Place
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Place
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<PlaceOverview place={place} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Place` |
+| Domain | [places.org.ai](https://places.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<PlaceDetails place={place} />
+
+## Properties
+
+<PlaceProperties place={place} />
+
+## Relationships
+
+<PlaceRelationships place={place} />
+
+## Related
+
+<RelatedPlaces place={place} />
+
+## Sources
+
+- <DatabaseLink namespace="places.org.ai" type="{{slug}}" />

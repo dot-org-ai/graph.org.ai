@@ -1,0 +1,519 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/ServiceRobots
+$type: https://robotics.org.ai/Robotics
+name: Service Robots
+description: Robots designed to assist humans in non-industrial settings including cleaning, delivery, hospitality, and healthcare
+---
+
+export const items = async () => {
+  return [
+    { name: 'Cleaning Robots', type: 'ServiceRobots' },
+    { name: 'Delivery Robots', type: 'ServiceRobots' },
+    { name: 'Hospitality Robots', type: 'ServiceRobots' },
+    { name: 'Healthcare Robots', type: 'ServiceRobots' },
+    { name: 'Social Robots', type: 'ServiceRobots' }
+  ]
+}
+
+# Service Robots
+
+Service robots operate in human environments to assist with tasks outside manufacturing. This rapidly growing sector encompasses cleaning, delivery, hospitality, healthcare, education, and entertainment applications. The professional service robot market exceeded $15 billion in 2023 and continues to expand at 20%+ annually.
+
+## Overview
+
+Unlike industrial robots confined to factories, service robots must navigate dynamic human environments, interact naturally with people, and handle unpredictable situations. They represent the consumer-facing side of robotics, with applications ranging from vacuum cleaners in homes to surgical assistants in operating rooms.
+
+## Cleaning Robots
+
+### Commercial Floor Cleaning
+
+Autonomous floor scrubbers and sweepers for large facilities:
+
+**Brain Corp**
+- BrainOS platform powering 15,000+ commercial robots
+- Partnerships with Tennant, Nilfisk, ICE Robotics
+- Retail stores, airports, warehouses
+- Cloud-based fleet management
+
+**Neo (Avidbots)**
+- Neo scrubbing robot for commercial spaces
+- 4+ hours autonomous operation
+- 4,000+ robots deployed globally
+- Reports and analytics via dashboard
+
+**Whiz (SoftBank Robotics)**
+- Compact vacuum sweeper for offices
+- LIDAR navigation and mapping
+- Integration with building management systems
+- Subscription-based pricing model
+
+**Gaussian Robotics**
+- Scrubbing, sweeping, and vacuuming models
+- Operating in 50+ countries
+- Healthcare and hospitality focus
+- UV disinfection variants
+
+### Applications and Benefits
+
+**Commercial Facilities**
+- Airports: 24/7 terminal cleaning
+- Retail: After-hours floor maintenance
+- Warehouses: Dust and debris removal
+- Office buildings: Nightly cleaning operations
+
+**Performance Metrics**
+- Coverage: 5,000-10,000 sq ft per hour
+- Consistency: Uniform cleaning quality
+- Cost savings: 30-50% vs. manual cleaning
+- Labor reallocation: Workers focus on detail work
+
+### Residential Cleaning Robots
+
+**iRobot Roomba**
+- 40+ million units sold globally
+- Market leader in home robotics
+- AI-based navigation (vSLAM)
+- Integration with smart home ecosystems
+
+**Roborock**
+- Vacuum and mopping combinations
+- LiDAR navigation systems
+- Obstacle avoidance with cameras
+- Self-emptying base stations
+
+**Ecovacs Deebot**
+- Multi-floor mapping
+- Voice assistant integration
+- Security camera features
+- Large Chinese market share
+
+**Technical Evolution**
+- Random navigation → Systematic mapping
+- Basic sensors → LiDAR + vision
+- Manual control → Autonomous scheduling
+- Single function → Vacuum/mop combos
+
+## Delivery Robots
+
+### Indoor Delivery
+
+Robots delivering items within buildings:
+
+**Savioke Relay**
+- Hotel room delivery (amenities, towels, snacks)
+- 2+ million deliveries completed
+- Elevator integration and door navigation
+- Touchscreen customer interface
+
+**Bear Robotics Servi**
+- Restaurant food running
+- Multiple tray configurations
+- 3D navigation and obstacle avoidance
+- 2,000+ restaurants deployed
+
+**Keenon Robotics**
+- Food delivery and bussing robots
+- 20,000+ units in Asian restaurants
+- Autonomous charging
+- Advertising display integration
+
+**Pudu Robotics**
+- BellaBot for food delivery
+- HolaBot for retail and exhibitions
+- UV disinfection models for healthcare
+- 60,000+ robots deployed globally
+
+### Benefits in Hospitality
+
+- **Labor Shortage Relief** - Supplement staff during peak times
+- **Consistency** - Reliable delivery speed and routing
+- **Cost Savings** - ROI typically under 2 years
+- **Guest Experience** - Novelty factor and touchless delivery
+- **Staff Efficiency** - Free workers for customer interaction
+
+## Hospitality and Customer Service
+
+### Reception and Greeting Robots
+
+**Pepper (SoftBank Robotics)**
+- Humanoid social robot (1.2m tall)
+- Touchscreen chest interface
+- Emotion recognition via cameras
+- Multilingual conversation capability
+- Applications: Retail, hotels, healthcare reception
+
+**Cruzr (UBTECH)**
+- Service and business robot
+- Autonomous navigation
+- Facial recognition
+- Information kiosk functionality
+
+### Concierge and Information
+
+**Amy (OhmniLabs)**
+- Remote telepresence robot
+- Human operator provides personalized service
+- Used in luxury hotels and retail
+- Video call on mobile platform
+
+**Applications**
+- Hotel check-in assistance
+- Wayfinding in airports and malls
+- Product information in retail
+- Event registration and guidance
+
+### Challenges
+
+- Natural language understanding limitations
+- Cultural expectations and acceptance
+- Maintenance and technical support requirements
+- Integration with property management systems
+
+## Healthcare Robots
+
+### Surgical Robotics
+
+**da Vinci Surgical System (Intuitive Surgical)**
+- 7,500+ systems installed worldwide
+- Minimally invasive surgery platform
+- Surgeon console controls robotic arms
+- 3D HD visualization
+- $2 million+ per system
+
+**Applications**
+- Urology (prostatectomy)
+- Gynecology (hysterectomy)
+- General surgery (hernia repair)
+- Cardiothoracic surgery
+
+**Benefits**
+- Smaller incisions and reduced scarring
+- Less blood loss and pain
+- Faster patient recovery
+- Enhanced surgical precision
+- Reduced surgeon fatigue
+
+**Emerging Competitors**
+- Medtronic Hugo
+- CMR Surgical Versius
+- Johnson & Johnson Ottava
+- Stryker Mako (orthopedic)
+
+### Rehabilitation Robotics
+
+**Ekso Bionics**
+- Exoskeleton for physical therapy
+- Spinal cord injury rehabilitation
+- Stroke recovery assistance
+- Clinical validation studies
+
+**AlterG Anti-Gravity Treadmill**
+- Body weight support for recovery
+- Reduces load on injured limbs
+- Used by professional athletes
+- Neurological rehabilitation
+
+**ReWalk Robotics**
+- Personal exoskeleton for daily use
+- FDA-approved for home use
+- Paraplegia mobility solution
+
+### Hospital Logistics
+
+Robots handling materials in healthcare facilities:
+
+**TUG (Aethon)**
+- 600+ hospitals deploying TUG robots
+- Medication, linen, meal, and waste transport
+- Elevator and door integration
+- Secured compartments for medications
+
+**MiR Healthcare Robots**
+- Laboratory specimen transport
+- Pharmacy to nursing station delivery
+- Medical supply distribution
+
+**Benefits**
+- Reduced staff walking time
+- Decreased contamination risk
+- 24/7 availability
+- Accurate tracking and documentation
+
+### Disinfection Robots
+
+Autonomous UV-C disinfection:
+
+**Xenex LightStrike**
+- Pulsed xenon UV light
+- 20-minute room disinfection cycles
+- 500+ hospitals
+- Reduced hospital-acquired infections
+
+**UVD Robots**
+- Autonomous navigation
+- Multiple UV-C lamps
+- Room mapping and coverage optimization
+- Used during COVID-19 pandemic
+
+**Tru-D SmartUVC**
+- Sensor verification of disinfection
+- Integration with EVS workflow
+- Proven C. difficile reduction
+
+## Social and Companion Robots
+
+### Educational Robots
+
+**NAO (SoftBank Robotics)**
+- Humanoid robot for education and research
+- Programming platforms for STEM learning
+- 13,000+ NAOs in use globally
+- Universities and K-12 schools
+
+**LEGO Mindstorms / SPIKE**
+- Build and program custom robots
+- Competition robotics (FIRST LEGO League)
+- Millions of students engaged
+- Transition to coding skills
+
+### Elderly Care and Companionship
+
+**PARO Therapeutic Robot**
+- Seal-shaped companion robot
+- Responds to touch and voice
+- Proven to reduce anxiety and depression
+- Used in nursing homes and dementia care
+
+**ElliQ (Intuition Robotics)**
+- AI-driven companion for seniors
+- Proactive engagement and reminders
+- Health monitoring integration
+- Reduces social isolation
+
+**Jibo**
+- Social robot for home use
+- Personality and emotion display
+- Limited commercial success but pioneered category
+
+### Autism Therapy
+
+Robots assist in autism spectrum disorder treatment:
+
+- Structured, predictable interactions
+- Emotional recognition practice
+- Social skills development
+- Reduced anxiety vs. human interaction
+
+**Research Examples**
+- Kaspar (University of Hertfordshire)
+- NAO in autism therapy programs
+- Promising results in pilot studies
+
+## Entertainment and Consumer Robots
+
+### Toy and Hobby Robots
+
+**Anki (defunct, acquired by Digital Dream Labs)**
+- Cozmo and Vector personal robots
+- Personality-driven AI
+- Computer vision-based games
+- Pioneered consumer robot AI
+
+**Sony Aibo**
+- Robot dog companion
+- Deep learning for behavior development
+- Cloud-based AI updates
+- Premium pricing ($3,000+)
+
+**DJI RoboMaster**
+- Educational battle robot
+- FPV camera and projectile launcher
+- Programming and competition platform
+- Engineering education tool
+
+### Pet Care Robots
+
+- Automatic feeders with scheduling
+- Self-cleaning litter boxes
+- Interactive play toys with cameras
+- Treat-dispensing robots with video
+
+## Agriculture Service Robots
+
+Robots assisting in farming and greenhouse operations:
+
+**Harvesting Robots**
+- Strawberry and apple picking robots
+- Vision systems for ripeness detection
+- Gentle handling mechanisms
+- Labor shortage solution
+
+**Weeding Robots**
+- Computer vision weed identification
+- Targeted herbicide application or mechanical removal
+- Reduces chemical usage by 80-95%
+- Examples: FarmWise, Naio Technologies
+
+**Greenhouse Automation**
+- Plant monitoring and data collection
+- Pollination assistance
+- Harvest prediction
+- Priva, Octinion systems
+
+## Security and Inspection Robots
+
+### Mobile Security Patrol
+
+**Knightscope**
+- Autonomous security robots
+- 360° camera monitoring
+- Thermal imaging for intrusion detection
+- License plate recognition
+- Alert system integration
+
+**Cobalt Robotics**
+- Indoor security patrol
+- Human-in-the-loop oversight
+- Anomaly detection and reporting
+- Enterprise office buildings
+
+**Applications**
+- Corporate campus patrol
+- Parking lot monitoring
+- Warehouse perimeter security
+- Night watchman supplementation
+
+### Inspection Robots
+
+**Boston Dynamics Spot**
+- Quadruped robot for difficult terrain
+- Thermal and visual inspection
+- Oil & gas facility inspection
+- Construction site monitoring
+- Radiation environment exploration
+
+**Taurob**
+- Modular inspection platform
+- Explosive ordnance disposal (EOD)
+- Industrial inspection
+- Emergency response
+
+## Implementation and Business Models
+
+### Pricing Models
+
+**Purchase**
+- Capital expenditure ($15,000-$150,000)
+- Maintenance contracts
+- Software licensing
+
+**Robotics-as-a-Service (RaaS)**
+- Monthly subscription ($500-$2,000/month)
+- Includes maintenance and support
+- Lower barrier to entry
+- Scalable capacity
+
+**Pay-per-Use**
+- Usage-based pricing
+- Common in cleaning (per sq ft)
+- Delivery (per trip)
+
+### ROI Considerations
+
+**Labor Cost Comparison**
+- Service robot: $3-8/hour effective cost
+- Human worker: $15-30/hour plus benefits
+- Payback typically 12-36 months
+
+**Non-Financial Benefits**
+- Consistent service quality
+- 24/7 availability
+- Data collection and analytics
+- Brand differentiation
+
+## Challenges and Limitations
+
+### Technical Challenges
+
+- **Navigation in Dynamic Environments** - Crowded spaces, moving obstacles
+- **Natural Language Understanding** - Accent, context, ambiguity
+- **Manipulation Dexterity** - Limited compared to human hands
+- **Battery Life** - 2-8 hours typical, limits shift coverage
+
+### Social and Acceptance Issues
+
+- **Uncanny Valley** - Humanoid robots can trigger discomfort
+- **Job Displacement Concerns** - Workforce resistance
+- **Privacy Issues** - Cameras and data collection
+- **Cultural Differences** - Varying acceptance levels globally
+
+### Economic Barriers
+
+- High initial cost
+- Uncertain ROI for small businesses
+- Maintenance and support requirements
+- Technology obsolescence risk
+
+## Future Trends
+
+### Technology Advancement
+
+**Enhanced AI Capabilities**
+- Large language models for natural conversation
+- Emotional intelligence and empathy
+- Context awareness and personalization
+- Multimodal interaction (voice, gesture, touch)
+
+**Improved Manipulation**
+- Dexterous hands and soft grippers
+- Tactile sensing and force control
+- Learning from demonstration
+- Deformable object handling
+
+**Longer Battery Life**
+- Solid-state batteries
+- Wireless charging integration
+- Energy-efficient motors and electronics
+- Solar power supplements
+
+### Market Expansion
+
+**Aging Population**
+- Growing elderly care market
+- Home assistance robots
+- Health monitoring integration
+- Independence maintenance
+
+**Labor Shortage Solutions**
+- Hospitality and service industries
+- Healthcare worker supplement
+- Retail and customer service
+- Food service automation
+
+**New Applications**
+- Personal assistant robots
+- Outdoor maintenance (lawn care)
+- Elder companion and monitoring
+- Disability assistance
+
+**Geographic Expansion**
+- Asia-Pacific leading adoption
+- Middle East hospitality robots
+- Latin America emerging markets
+- Africa healthcare applications
+
+## Related Topics
+
+- [MobileRobots.mdx](https://robotics.org.ai/MobileRobots) - Autonomous navigation systems
+- [RoboticsAI.mdx](https://robotics.org.ai/RoboticsAI) - AI enabling service capabilities
+- [CollaborativeRobots.mdx](https://robotics.org.ai/CollaborativeRobots) - Human-robot interaction
+- [Healthcare.org.ai](https://healthcare.org.ai) - Medical applications
+
+## References
+
+- International Federation of Robotics - Service Robots Report
+- IEEE Robotics and Automation Society
+- Association for Advancing Automation (A3)
+- Journal of Field Robotics
+- Service Robot Market Research Reports

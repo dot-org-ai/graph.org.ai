@@ -1,0 +1,33 @@
+{
+  "name": "soc.org.ai",
+  "version": "0.0.1",
+  "description": "Standard Occupational Classification.",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "soc"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://soc.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/soc.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

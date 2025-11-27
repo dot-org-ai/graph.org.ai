@@ -1,0 +1,594 @@
+---
+$context: https://equipment.org.ai
+$id: https://equipment.org.ai/ProcessEquipment
+$type: https://equipment.org.ai/Equipment
+name: "Process Equipment"
+description: "Industrial process equipment including pumps, valves, heat exchangers, pressure vessels, and fluid handling systems for manufacturing and processing industries"
+industry: "Process Manufacturing"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Process Equipment
+  return []
+}
+
+# Process Equipment
+
+Process equipment encompasses the machinery and systems used in industrial processing operations to transform raw materials into finished products through chemical, physical, or biological processes. This equipment is fundamental to industries including chemical processing, oil and gas, food and beverage, pharmaceuticals, pulp and paper, and water treatment.
+
+## Overview
+
+Process equipment handles fluids (liquids and gases), regulates temperature and pressure, facilitates chemical reactions, and enables separation and purification operations. These systems must operate reliably under demanding conditions while maintaining product quality, safety, and regulatory compliance.
+
+### Major Equipment Categories
+
+#### Pumps
+
+Devices for moving fluids through piping systems:
+
+- **Centrifugal Pumps**
+  - Single-stage: Simple design, moderate pressures
+  - Multi-stage: High pressure applications
+  - Horizontal and vertical orientations
+  - End-suction, split-case, and inline designs
+  - Flow rates: 1 to 100,000+ GPM
+  - Head: 10 to 1000+ feet
+  - Applications: Water transfer, process fluids, cooling
+  - Brands: Flowserve, Grundfos, ITT Goulds, Sulzer
+
+- **Positive Displacement Pumps**
+  - Gear pumps: Viscous fluids, constant flow
+  - Lobe pumps: Gentle handling, sanitary applications
+  - Piston/plunger pumps: High pressure, metering
+  - Diaphragm pumps: Corrosive fluids, slurries
+  - Peristaltic pumps: Shear-sensitive materials
+  - Progressive cavity pumps: High viscosity, solids handling
+  - Flow rates: 0.001 to 5000+ GPM
+  - Pressure: 50 to 50,000+ PSI
+
+- **Specialty Pumps**
+  - Canned motor pumps: Zero leakage, hermetically sealed
+  - Magnetic drive pumps: Leak-free, hazardous fluids
+  - Sump pumps: Drainage and dewatering
+  - Submersible pumps: Underwater operation
+  - Vacuum pumps: Gas removal, distillation
+  - Cryogenic pumps: LNG, liquid nitrogen/oxygen
+
+#### Valves
+
+Control devices for fluid flow regulation:
+
+- **Control Valves**
+  - Globe valves: Throttling service, linear flow
+  - Ball valves: Quarter-turn, tight shutoff
+  - Butterfly valves: Large diameter, low pressure drop
+  - Plug valves: Quick operation, slurry service
+  - Sizes: 0.5" to 48" diameter
+  - Pressure ratings: 150 to 4500 ANSI class
+  - Actuation: Manual, pneumatic, electric, hydraulic
+  - Brands: Fisher, Emerson, Flowserve, Velan
+
+- **Safety and Relief Valves**
+  - Pressure relief: Overpressure protection
+  - Rupture discs: Single-use burst protection
+  - Vacuum breakers: Prevent tank collapse
+  - Set pressures: 15 to 5000+ PSI
+  - Certification: ASME Section VIII required
+
+- **Check Valves**
+  - Swing check: Large diameter, low pressure drop
+  - Lift check: Vertical flow, high pressure
+  - Ball check: Small diameter, simple design
+  - Dual-plate: Compact, low headloss
+  - Prevent backflow and water hammer
+
+- **Specialty Valves**
+  - Knife gate valves: Slurry service, pulp/paper
+  - Pinch valves: Slurries, abrasive materials
+  - Diaphragm valves: Sterile, corrosive service
+  - Cryogenic valves: Extended bonnets for cold service
+  - Severe service valves: High pressure drop, cavitation
+
+#### Heat Exchangers
+
+Equipment for thermal energy transfer:
+
+- **Shell and Tube Heat Exchangers**
+  - Fixed tubesheet: Simple, economical
+  - Floating head: Thermal expansion accommodation
+  - U-tube: Removable bundle, easy maintenance
+  - Heat transfer area: 10 to 100,000+ sq ft
+  - Pressures: 150 to 3000+ PSI
+  - Temperatures: -50°F to 1000°F
+  - Materials: Carbon steel, stainless, titanium, exotic alloys
+
+- **Plate Heat Exchangers**
+  - Gasketed plate: Easy cleaning, compact
+  - Brazed plate: High pressure, compact
+  - Welded plate: Aggressive fluids
+  - Heat transfer coefficients: 2-4x shell and tube
+  - Applications: HVAC, refrigeration, food processing
+  - Brands: Alfa Laval, GEA, Tranter, APV
+
+- **Air-Cooled Heat Exchangers**
+  - Forced draft: Fans below bundle
+  - Induced draft: Fans above bundle
+  - Finned tube designs for enhanced heat transfer
+  - No water consumption
+  - Applications: Refineries, gas processing, power plants
+
+- **Specialty Heat Exchangers**
+  - Spiral heat exchangers: Fouling resistance
+  - Plate-fin: Compact, cryogenic service
+  - Printed circuit: Microchannel, high pressure
+  - Double-pipe: Simple, small duties
+  - Falling film evaporators: Heat-sensitive products
+
+#### Pressure Vessels
+
+Containers for processing under pressure:
+
+- **Storage Tanks and Vessels**
+  - Vertical and horizontal orientations
+  - Atmospheric and pressurized designs
+  - Sizes: 10 gallons to 100,000+ gallons
+  - Pressure ratings: Atmospheric to 10,000+ PSI
+  - ASME Section VIII Division 1 and 2 codes
+  - Materials: Carbon steel, stainless, clad vessels
+
+- **Reactors**
+  - Batch reactors: Recipe processing
+  - Continuous stirred tank reactors (CSTR)
+  - Plug flow reactors (PFR)
+  - Packed bed reactors: Catalytic processes
+  - Agitation systems: Impellers, baffles, mixers
+  - Jacketed and internal coil heating/cooling
+
+- **Columns and Towers**
+  - Distillation columns: Separation by boiling point
+  - Absorption columns: Gas-liquid contact
+  - Stripping columns: Volatile removal
+  - Extraction columns: Liquid-liquid separation
+  - Heights: 10 to 200+ feet
+  - Diameters: 1 to 30+ feet
+  - Internals: Trays, packing, distributors
+
+- **Separators**
+  - Gas-liquid separators: Knockout drums
+  - Oil-water separators: API separators
+  - Three-phase separators: Gas-oil-water
+  - Cyclone separators: Centrifugal separation
+  - Flash drums: Pressure reduction separation
+
+#### Filtration Equipment
+
+Systems for solid-liquid and gas-solid separation:
+
+- **Liquid Filtration**
+  - Cartridge filters: 1-100 micron, disposable
+  - Bag filters: 1-500 micron, economical
+  - Sand filters: Water treatment, large volumes
+  - Membrane filters: Microfiltration, ultrafiltration
+  - Plate and frame filters: High solids, batch operation
+  - Rotary drum filters: Continuous operation
+  - Centrifuges: High G-force separation
+
+- **Gas Filtration**
+  - Baghouse filters: Dust collection, 99.9% efficiency
+  - Cyclone separators: Particulate removal, low cost
+  - Electrostatic precipitators: Fine particles, power plants
+  - HEPA filters: Clean rooms, pharmaceutical
+  - Scrubbers: Wet and dry, gas absorption
+
+- **Specialty Filtration**
+  - Nutsche filters: Pressure/vacuum, pharmaceuticals
+  - Belt filters: Continuous dewatering
+  - Disc filters: Mining, minerals processing
+  - Cross-flow filtration: Membrane systems
+  - Coalescers: Liquid-liquid separation
+
+#### Mixing and Agitation Equipment
+
+Devices for blending and homogenizing:
+
+- **Industrial Mixers**
+  - Top-entry mixers: Tanks and vessels
+  - Side-entry mixers: Large storage tanks
+  - Bottom-entry mixers: Sanitary applications
+  - Portable mixers: Flexible, temporary use
+  - Shaft lengths: 3 to 40+ feet
+  - Power: 0.5 to 200+ HP
+  - Speeds: 50 to 1750 RPM
+
+- **Impeller Types**
+  - Propeller: Axial flow, low viscosity
+  - Turbine: Radial flow, gas dispersion
+  - Pitched blade: General purpose, turbulence
+  - Anchor: High viscosity, heat transfer
+  - Helical ribbon: Very high viscosity
+  - Hydrofoil: Energy efficient, blending
+
+- **Static Mixers**
+  - In-line mixing elements
+  - No moving parts or power required
+  - Applications: Blending, heat transfer, reactions
+  - Sizes: 0.5" to 48" diameter
+  - Materials: Plastic, stainless steel, exotic alloys
+
+- **High Shear Mixers**
+  - Rotor-stator design
+  - Emulsification and particle size reduction
+  - Inline and batch configurations
+  - Food, pharmaceutical, chemical applications
+  - Tip speeds: 3000 to 10,000+ ft/min
+
+#### Dryers and Evaporators
+
+Equipment for moisture removal:
+
+- **Industrial Dryers**
+  - Rotary dryers: Tumbling action, bulk solids
+  - Spray dryers: Liquid to powder, instant coffee
+  - Fluid bed dryers: Fluidization, pharmaceuticals
+  - Tray dryers: Batch operation, small scale
+  - Belt dryers: Continuous, food products
+  - Freeze dryers: Vacuum sublimation, biologics
+
+- **Evaporators**
+  - Falling film: Heat-sensitive products
+  - Rising film: Fouling fluids
+  - Forced circulation: High viscosity
+  - Multiple effect: Energy efficiency
+  - Mechanical vapor recompression (MVR)
+  - Applications: Concentration, crystallization
+
+#### Compressors and Blowers
+
+Gas compression and transport equipment:
+
+- **Centrifugal Compressors**
+  - Single and multi-stage designs
+  - Flow rates: 500 to 200,000+ CFM
+  - Discharge pressures: 15 to 1000+ PSI
+  - Applications: Petrochemical, gas pipelines
+  - Brands: Siemens, GE, Elliott, MAN
+
+- **Positive Displacement Compressors**
+  - Reciprocating: High pressure, flexible
+  - Screw: Oil-flooded and oil-free designs
+  - Rotary vane: Moderate pressure, quiet
+  - Scroll: Small capacity, reliable
+  - Pressures: 15 to 50,000+ PSI
+
+- **Blowers**
+  - Rotary lobe blowers: 0.5 to 15 PSI
+  - Centrifugal blowers: Process air, combustion
+  - Regenerative blowers: Vacuum and pressure
+  - Applications: Aeration, pneumatic conveying
+
+## Technical Specifications
+
+### Design Standards and Codes
+
+Process equipment must comply with industry standards:
+
+- **ASME Boiler and Pressure Vessel Code**
+  - Section VIII: Pressure vessels
+  - Section IX: Welding qualifications
+  - U-stamp certification required
+
+- **API Standards**
+  - API 610: Centrifugal pumps for petroleum
+  - API 650/653: Storage tank design/inspection
+  - API 661: Air-cooled heat exchangers
+
+- **Piping and Instrumentation**
+  - ASME B31.3: Process piping
+  - ISA Standards: Instrumentation and control
+  - TEMA: Tubular Exchanger Manufacturers Association
+
+### Materials of Construction
+
+Selection based on service conditions:
+
+- **Metals**
+  - Carbon steel: General service, economical
+  - Stainless steel: 304, 316, duplex grades
+  - Exotic alloys: Hastelloy, Inconel, Monel, titanium
+  - Clad materials: Carbon steel with corrosion-resistant overlay
+
+- **Non-Metals**
+  - PTFE/Teflon: Chemical resistance
+  - Rubber linings: Abrasion and corrosion
+  - Glass-lined steel: Pharmaceutical, chemical
+  - FRP (Fiberglass): Corrosive environments
+  - Ceramics: Extreme abrasion, high temperature
+
+### Process Instrumentation
+
+Measurement and control systems:
+
+- **Flow Measurement**
+  - Orifice plates, venturi, flow nozzles
+  - Magnetic flowmeters: Conductive liquids
+  - Vortex meters: Steam, gas, liquids
+  - Coriolis meters: Mass flow, density
+  - Ultrasonic meters: Non-invasive, large pipe
+
+- **Pressure and Level**
+  - Pressure transmitters: 0-10,000+ PSI
+  - Differential pressure: Flow, level, density
+  - Level measurement: Radar, ultrasonic, guided wave
+  - Pressure gauges: Local indication
+
+- **Temperature**
+  - Thermocouples: -200 to 2300°F
+  - RTDs (Resistance Temperature Detectors): High accuracy
+  - Thermowells: Sensor protection
+  - Infrared: Non-contact measurement
+
+- **Analytical**
+  - pH and conductivity: Water treatment
+  - Dissolved oxygen: Biological processes
+  - Gas analyzers: Oxygen, CO2, combustibles
+  - Moisture analyzers: Drying processes
+
+## Applications by Industry
+
+### Oil and Gas
+
+- Crude oil processing and refining
+- Natural gas processing and treatment
+- Pipeline pumping and compression
+- Offshore production platforms
+- LNG liquefaction and regasification
+
+### Chemical Processing
+
+- Batch and continuous reactors
+- Distillation and separation
+- Crystallization and drying
+- Polymerization processes
+- Catalyst handling
+
+### Food and Beverage
+
+- Pasteurization and sterilization
+- Evaporation and concentration
+- Fermentation and brewing
+- Sanitary pumps and valves
+- CIP (Clean-in-Place) systems
+
+### Pharmaceuticals
+
+- API (Active Pharmaceutical Ingredient) production
+- Sterile processing and aseptic filling
+- Crystallization and filtration
+- Tablet coating and drying
+- Clean room HVAC systems
+
+### Pulp and Paper
+
+- Pulping and digestion
+- Bleaching and washing
+- Stock preparation
+- Paper machine systems
+- Chemical recovery
+
+### Water and Wastewater
+
+- Filtration and clarification
+- Disinfection (chlorine, UV, ozone)
+- Biological treatment (aeration)
+- Membrane processes (RO, UF)
+- Sludge dewatering
+
+### Power Generation
+
+- Boiler feed water systems
+- Condenser cooling water
+- Flue gas desulfurization
+- Steam turbine auxiliaries
+- Cooling tower systems
+
+## Safety and Compliance
+
+### Process Safety Management
+
+OSHA PSM (Process Safety Management) requirements:
+
+- Process hazard analysis (PHA)
+- Operating procedures documentation
+- Mechanical integrity programs
+- Management of change (MOC)
+- Incident investigation
+- Emergency planning and response
+
+### Pressure Equipment Directives
+
+Regulatory compliance:
+
+- ASME code stamp (U, U2, UM)
+- National Board registration
+- State and local inspections
+- Insurance carrier requirements
+- API 510/570/653 inspections
+
+### Hazardous Area Classifications
+
+Electrical area classification:
+
+- Class I, Division 1/2 (NEC)
+- Zone 0/1/2 (IEC)
+- Explosion-proof and intrinsically safe equipment
+- Proper grounding and bonding
+- Static electricity control
+
+## Maintenance and Reliability
+
+### Preventive Maintenance
+
+Scheduled maintenance programs:
+
+- **Pumps**: Bearing lubrication, seal inspection, alignment
+- **Valves**: Packing adjustment, actuator service, leak testing
+- **Heat Exchangers**: Tube cleaning, gasket replacement, bundle inspection
+- **Vessels**: Visual inspection, thickness testing, internal examination
+
+### Predictive Maintenance
+
+Condition monitoring techniques:
+
+- **Vibration Analysis**: Pump and compressor monitoring
+- **Thermography**: Electrical and mechanical hotspots
+- **Ultrasonic Testing**: Leak detection, wall thickness
+- **Oil Analysis**: Lubrication and hydraulic systems
+- **Acoustic Emission**: Pressure vessel monitoring
+
+### Turnaround Planning
+
+Major maintenance shutdowns:
+
+- Inspection schedules (3-5 year intervals typical)
+- Scope development and work planning
+- Critical path scheduling
+- Contractor coordination
+- Startup and commissioning
+
+## Market Trends
+
+### Digitalization and IIoT
+
+Industry 4.0 transformation:
+
+- Smart sensors and wireless instrumentation
+- Cloud-based data analytics
+- Digital twins for equipment simulation
+- Predictive maintenance algorithms
+- Remote monitoring and diagnostics
+
+### Energy Efficiency
+
+Sustainability initiatives:
+
+- Variable frequency drives (VFDs) on pumps and fans
+- High-efficiency motors (IE3, IE4)
+- Heat recovery systems
+- Process optimization and control
+- Energy audits and benchmarking
+
+### Modular and Skid-Mounted Systems
+
+Pre-fabricated process systems:
+
+- Factory assembly and testing
+- Reduced field installation time
+- Easier transportation and installation
+- Turnkey solutions
+- Small-scale and mobile processing
+
+### Advanced Materials
+
+Improved performance and longevity:
+
+- Corrosion-resistant alloys
+- Composite materials and coatings
+- Ceramic-lined equipment
+- Carbon fiber reinforced polymers
+- Additive manufacturing (3D printing)
+
+## Leading Manufacturers
+
+### Pumps
+
+- Flowserve Corporation
+- ITT Goulds Pumps
+- Sulzer Ltd.
+- Grundfos
+- KSB Group
+- Xylem Inc.
+- Ebara Corporation
+- Ruhrpumpen
+
+### Valves
+
+- Emerson (Fisher, Crosby, Anderson Greenwood)
+- Flowserve (Valtek, Limitorque)
+- Crane Co. (Crane, Jenkins, Chapman)
+- Cameron (Schlumberger)
+- Velan Inc.
+- Pentair
+- IMI Critical Engineering
+
+### Heat Exchangers
+
+- Alfa Laval
+- GEA Group
+- Kelvion (formerly GEA)
+- Chart Industries
+- API Heat Transfer
+- SPX Flow
+- Tranter Inc.
+- Xylem (Bell & Gossett)
+
+### Pressure Vessels and Fabrication
+
+- CB&I (McDermott)
+- Bechtel
+- CECO Environmental
+- Boardman LLC
+- Halvorsen Company
+- HEAT Inc.
+- Process Systems & Design
+
+## Related Equipment
+
+- [Industrial Machinery](/IndustrialMachinery) - Manufacturing equipment
+- [HVAC Equipment](https://hvac.org.ai) - Heating, ventilation, air conditioning
+- [Power Generation](https://power.org.ai) - Boilers, turbines, generators
+- [Refining](https://refining.org.ai) - Petroleum refining processes
+
+## Industry Resources
+
+### Professional Organizations
+
+- American Society of Mechanical Engineers (ASME)
+- American Petroleum Institute (API)
+- International Society of Automation (ISA)
+- Hydraulic Institute (HI)
+- Tubular Exchanger Manufacturers Association (TEMA)
+- Fluid Sealing Association (FSA)
+
+### Trade Publications
+
+- Chemical Engineering Magazine
+- Hydrocarbon Processing
+- Chemical Processing
+- Process Engineering
+- Pumps & Systems Magazine
+- Valve Magazine
+
+### Conferences and Trade Shows
+
+- AIChE Annual Meeting (American Institute of Chemical Engineers)
+- ACHEMA (Frankfurt, Germany - world's largest process industry show)
+- WEFTEC (Water Environment Federation)
+- POWER-GEN International
+- Valve World Expo
+
+## Cross-References
+
+- [chemical.org.ai](https://chemical.org.ai) - Chemical industry and processes
+- [oil-gas.org.ai](https://oil-gas.org.ai) - Petroleum and natural gas
+- [manufacturing.org.ai](https://manufacturing.org.ai) - Manufacturing processes
+- [energy.org.ai](https://energy.org.ai) - Energy production and distribution
+
+## Sources
+
+- ASME Standards and Code Sections
+- API Technical Standards and Recommended Practices
+- Equipment manufacturer technical documentation and specifications
+- Chemical Engineering textbooks and references
+- Perry's Chemical Engineers' Handbook
+- Crane Technical Paper No. 410 (Flow of Fluids)
+- Industry trade associations and market research reports

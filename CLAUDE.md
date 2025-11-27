@@ -1,8 +1,94 @@
-# .org.ai
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Commands
+
+```bash
+# Install dependencies
+pnpm install
+
+# Data pipeline (run from root)
+pnpm ingest          # Download raw data from external sources to .source/
+pnpm generate        # Generate normalized TSV files in .data/
+pnpm ingest-db       # Load data into database (SQLite or ClickHouse)
+pnpm export          # Export data from ClickHouse to TSV
+pnpm enrich          # Add digital scores to entity files
+
+# Run scripts directly (from .scripts/)
+tsx ingest.ts
+tsx generate-data.ts
+tsx ingest-db.ts sqlite      # Build to SQLite
+tsx ingest-db.ts clickhouse  # Build to ClickHouse
+tsx build-all.ts             # Full pipeline
+
+# Turbo commands
+pnpm dev             # Start development
+pnpm build           # Build all packages
+pnpm lint            # Lint all packages
+pnpm type-check      # Type check all packages
+
+# Testing
+pnpm test            # Run vitest
+pnpm test:watch      # Watch mode
+```
+
+## Architecture
+
+### Data Pipeline
+
+```
+External APIs → .source/ (raw TSV) → .data/ (normalized TSV) → Database (SQLite/ClickHouse)
+```
+
+1. **Ingest** (`.scripts/ingest.ts`): Downloads from O*NET, NAICS, UNSPSC, Schema.org into `.source/`
+2. **Generate** (`.scripts/generate-data.ts`): Transforms to normalized TSV in `.data/`
+3. **Database** (`.scripts/ingest-db.ts`): Loads into SQLite (dev) or ClickHouse (prod)
+
+### Entity URL Pattern
+
+```
+https://{domain}/{Type}/{Identifier}
+```
+Examples: `https://onet.org.ai/Occupation/Software_Developer`, `https://models.org.ai/AIModel/Claude35Sonnet`
+
+### Key Directories
+
+- `.org.ai/` - 109 domain ontologies with README.md and [Type].mdx templates
+- `.source/` - Raw TSV from external sources
+- `.data/` - Normalized TSV with columns: `url`, `ns`, `type`, `id`, `name`, `description`, `code`
+- `.enrichment/` - Mapping files (domain-ontology.tsv maps types to canonical domains)
+- `.scripts/` - Data processing scripts (tsx)
+- `.mdxdb/` - Database engine with Drizzle schema for SQLite/ClickHouse
+
+### Storage Backends
+
+- **SQLite** (`.mdxdb/source.db`): Local development
+- **ClickHouse** (`mdxdb` database): Production with vector search
+
+Schema in `.mdxdb/schema.ts`: `things`, `relationships`, `searches` tables
+
+### Namespace Ownership
+
+Only use domains we own. For external standards, use primary domain with `sameAs` link:
+- Products: `products.org.ai` with `sameAs: standards.org.ai/unspsc/{code}`
+- Services: `services.org.ai` with `sameAs: standards.org.ai/napcs/{code}`
+- AI Models: `models.org.ai` (not `ai.org.ai`)
+- Work Activities: `activities.org.ai` with `sameAs: onet.org.ai/WorkActivities/{code}`
+- Work Context: `context.org.ai` with `sameAs: onet.org.ai/WorkContexts/{code}`
+
+**Domain naming rules:**
+- We don't own compound domains like `WorkActivities.org.ai` - use simple names like `activities.org.ai`
+- If subdomains are needed, use dot notation: `Work.Activities.org.ai`
+- Standard-specific codes go in subdirectories: `onet.org.ai/WorkActivities/`, `standards.org.ai/napcs/`
+
+---
+
+## Domain Ontology
 
 .org.ai is an ontology of Language: Nouns, Verbs, People, Places, Things, Ideas, and Semantics.
 
-## Graph.org.ai
+### Graph.org.ai
 
 - Language.org.ai
   - Nouns.org.ai subclass of `rdfs:Class` and `schema.org/Class` that adds `digital` to base `Properties`, and adds `actions` and `events`
@@ -40,17 +126,13 @@
 - APIs.org.ai
 - Apps.org.ai
 
-## Language.org.ai
+### Schema.org.ai
 
+Schema.org.ai is an AI-optimized extension of Schema.org with a new `digital` property on the base `Thing` (`1.0` is purely digital, `0.0` is purely physical, something in between is hybrid, and null means it could be either digital or physical), and a variety of new classes, including Noun, Verb, Agent, Tool, LandingPage, etc.
 
-## Schema.org.ai
+### MDX.org.ai
 
-Schema.org.ai is an AI-optimized extension of Schema.org with a new `digital` property on the base `Thing` ( `1.0` is purely digital, `0.0` is purely physical, something in between is hybrid, and null means it could be either digital or physical), and a variety of new classes, including Noun, Verb, Agent, Tool, LandingPage, etc.
-
-
-## MDX.org.ai
-
-MDX.org.ai is all about creating a new URL-based file format optimized for both AI Agents & Humans: 
+MDX.org.ai is a URL-based file format optimized for both AI Agents & Humans:
 - Structured Data (YAML-LD)
 - Unstructured Content (Markdown)
 - Executable Code (JS/TS ES Modules)
@@ -63,47 +145,30 @@ $type: https://mdx.org.ai/Site
 title: Example Domain
 description: This domain is for use in illustrative examples in documents
 ---
- 
+
 # {title}
- 
-{description}. You may use this
-domain in literature without prior coordination or asking for permission.
- 
+
+{description}. You may use this domain in literature without prior coordination or asking for permission.
+
 [More information...](https://www.iana.org/domains/example)
 ```
 
-### Properties
+#### MDXLD Properties
 
-- `$id` is the unique identifier for the MDXLD document. If it is not a URL then `$context` is required.
-- `$type` is the reference to the Noun (i.e. `rfds:Class`) that this Thing (i.e. `rdfs:Resource`) is an instance of. If it is not a URL then `$context` is required.
-- `$context` provides the base URL for `$id` and `$type` if those are not URLs, and can also provide additional context to both Humans and Agents about the document.
-- `code` contains the `import` and `export` statements that in addition to the default export (i.e. the `component`) make up the ES Module for this document.
-- `component` is the JSX function of the MDX file itself, that evaluates code like `{name}` or `{1+2}` or `<Hero headline='Simplify your development process'>`
-- `data` is the rest of the YAML frontmatter
-- `content` is the Markdown content
+- `$id` - unique identifier for the MDXLD document (URL or requires `$context`)
+- `$type` - reference to the Noun (`rdfs:Class`) that this Thing is an instance of
+- `$context` - base URL for `$id` and `$type` if not URLs
+- `code` - `import` and `export` statements for ES Module
+- `component` - JSX function of the MDX file
+- `data` - rest of YAML frontmatter
+- `content` - Markdown content
 
-### Components
+#### MDX Packages
 
-In MDXLD, every `$type` can be a JSX component, like:
+- `mdxld` - `parse`, `stringify`, `validate` with flat/expanded shapes, `relationships` extraction
+- `mdxai` - CLI for `forEach`, `generate`, `enrich`, `edit`
+- `mdxdb` - Graph of MDX documents (`Things` + `Relationships`) with `list`, `search`, `get`, `set`, `delete`
+  - `@mdxdb/fs`, `@mdxdb/api`, `@mdxdb/sqlite`, `@mdxdb/postgres`, `@mdxdb/mongodb`, `@mdxdb/clickhouse`
+- `mdxui` - `@mdxui/markdown`, `@mdxui/json`, `@mdxui/slack`
 
-- `<Business/>`
-- `<App/>`
-- `<API/>`
-
-### MDX Packages:
-- `mdxld` provides `parse`, `stringify`, `validate` with flat and expanded shapes, `relationships` extraction, and optional `ast` support
-- `mdxai` provides exports and a CLI for `forEach`, `generate`, `enrich`, `edit`, 
-- `mdxdb` is a Graph of MDX documents (`Things` + `Relationships`) with functions, CLI, and MCP to `list` (glob), `search` (grep), `get`, `set`, `delete` based on URLs not files
-  - `@mdxdb/fs` requires Node and manages the mismatch between file systems and URLs by unifying the `/PathName` path with both the `/PathName/` folder and `/PathName.mdx` file
-  - `@mdxdb/api` exposes a REST & RPC (Websockets with HTTP fallback) API for an backing store (database or fs) that runs on Node or Edge Workers
-  - `@mdxdb/sqlite` 
-  - `@mdxdb/postgres` 
-  - `@mdxdb/mongodb` 
-  - `@mdxdb/clickhouse` 
-- `mdxe`
-- `mdxui`   
-  - `@mdxui/markdown` 
-  - `@mdxui/json` 
-  - `@mdxui/slack` 
-
-- anytime you come across a bug in the one of the mdx* packages, you should create a unit test to repro the bug and then fix it
+When encountering bugs in mdx* packages, create a unit test to reproduce the bug, then fix it.

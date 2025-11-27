@@ -1,0 +1,48 @@
+---
+$context: https://business.org.ai
+$id: https://business.org.ai/{{slug}}
+$type: https://business.org.ai/Business
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Business
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<BusinessOverview business={business} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Business` |
+| Domain | [business.org.ai](https://business.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<BusinessDetails business={business} />
+
+## Properties
+
+<BusinessProperties business={business} />
+
+## Relationships
+
+<BusinessRelationships business={business} />
+
+## Related
+
+<RelatedBusinesss business={business} />
+
+## Sources
+
+- <DatabaseLink namespace="business.org.ai" type="{{slug}}" />

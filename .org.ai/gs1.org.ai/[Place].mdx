@@ -1,0 +1,48 @@
+---
+$context: https://gs1.org.ai
+$id: https://gs1.org.ai/{{slug}}
+$type: https://gs1.org.ai/Place
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Place
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<PlaceOverview place={place} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Place` |
+| Domain | [gs1.org.ai](https://gs1.org.ai) |
+| Parent | [standards.org.ai](https://standards.org.ai) |
+
+## Details
+
+<PlaceDetails place={place} />
+
+## Properties
+
+<PlaceProperties place={place} />
+
+## Relationships
+
+<PlaceRelationships place={place} />
+
+## Related
+
+<RelatedPlaces place={place} />
+
+## Sources
+
+- <DatabaseLink namespace="gs1.org.ai" type="{{slug}}" />

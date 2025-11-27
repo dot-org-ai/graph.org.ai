@@ -1,0 +1,48 @@
+---
+$context: https://video.org.ai
+$id: https://video.org.ai/{{slug}}
+$type: https://video.org.ai/Video
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Video
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<VideoOverview video={video} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Video` |
+| Domain | [video.org.ai](https://video.org.ai) |
+| Parent | [media.org.ai](https://media.org.ai) |
+
+## Details
+
+<VideoDetails video={video} />
+
+## Properties
+
+<VideoProperties video={video} />
+
+## Relationships
+
+<VideoRelationships video={video} />
+
+## Related
+
+<RelatedVideos video={video} />
+
+## Sources
+
+- <DatabaseLink namespace="video.org.ai" type="{{slug}}" />

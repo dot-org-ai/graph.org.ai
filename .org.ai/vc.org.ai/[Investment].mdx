@@ -1,0 +1,48 @@
+---
+$context: https://vc.org.ai
+$id: https://vc.org.ai/{{slug}}
+$type: https://vc.org.ai/Investment
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Investment
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<InvestmentOverview investment={investment} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Investment` |
+| Domain | [vc.org.ai](https://vc.org.ai) |
+| Parent | [finance.org.ai](https://finance.org.ai) |
+
+## Details
+
+<InvestmentDetails investment={investment} />
+
+## Properties
+
+<InvestmentProperties investment={investment} />
+
+## Relationships
+
+<InvestmentRelationships investment={investment} />
+
+## Related
+
+<RelatedInvestments investment={investment} />
+
+## Sources
+
+- <DatabaseLink namespace="vc.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://species.org.ai
+$id: https://species.org.ai/{{slug}}
+$type: https://species.org.ai/Species
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Species
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SpeciesOverview species={species} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Species` |
+| Domain | [species.org.ai](https://species.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<SpeciesDetails species={species} />
+
+## Properties
+
+<SpeciesProperties species={species} />
+
+## Relationships
+
+<SpeciesRelationships species={species} />
+
+## Related
+
+<RelatedSpeciess species={species} />
+
+## Sources
+
+- <DatabaseLink namespace="species.org.ai" type="{{slug}}" />

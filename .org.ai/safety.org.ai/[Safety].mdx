@@ -1,0 +1,48 @@
+---
+$context: https://safety.org.ai
+$id: https://safety.org.ai/{{slug}}
+$type: https://safety.org.ai/Safety
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Safety
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SafetyOverview safety={safety} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Safety` |
+| Domain | [safety.org.ai](https://safety.org.ai) |
+| Parent | [agi.org.ai](https://agi.org.ai) |
+
+## Details
+
+<SafetyDetails safety={safety} />
+
+## Properties
+
+<SafetyProperties safety={safety} />
+
+## Relationships
+
+<SafetyRelationships safety={safety} />
+
+## Related
+
+<RelatedSafetys safety={safety} />
+
+## Sources
+
+- <DatabaseLink namespace="safety.org.ai" type="{{slug}}" />

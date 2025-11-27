@@ -1,0 +1,49 @@
+---
+$context: https://agriculture.org.ai
+$id: https://agriculture.org.ai/{{slug}}
+$type: https://agriculture.org.ai/Agriculture
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Agriculture
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<AgricultureOverview agriculture={agriculture} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Agriculture` |
+| Domain | [agriculture.org.ai](https://agriculture.org.ai) |
+| Parent | [industries.org.ai](https://industries.org.ai) |
+| NAICS | 11 - Agriculture, Forestry, Fishing and Hunting |
+
+## Details
+
+<AgricultureDetails agriculture={agriculture} />
+
+## Properties
+
+<AgricultureProperties agriculture={agriculture} />
+
+## Relationships
+
+<AgricultureRelationships agriculture={agriculture} />
+
+## Related
+
+<RelatedAgriculture agriculture={agriculture} />
+
+## Sources
+
+- <DatabaseLink namespace="agriculture.org.ai" type="{{slug}}" />

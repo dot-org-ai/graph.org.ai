@@ -1,0 +1,48 @@
+---
+$context: https://units.org.ai
+$id: https://units.org.ai/{{slug}}
+$type: https://units.org.ai/Units
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Units
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<UnitsOverview units={units} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Units` |
+| Domain | [units.org.ai](https://units.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<UnitsDetails units={units} />
+
+## Properties
+
+<UnitsProperties units={units} />
+
+## Relationships
+
+<UnitsRelationships units={units} />
+
+## Related
+
+<RelatedUnitss units={units} />
+
+## Sources
+
+- <DatabaseLink namespace="units.org.ai" type="{{slug}}" />

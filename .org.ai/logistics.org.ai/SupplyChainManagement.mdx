@@ -1,0 +1,594 @@
+---
+$context: https://logistics.org.ai
+$id: https://logistics.org.ai/SupplyChainManagement
+$type: https://logistics.org.ai/Logistics
+name: "Supply Chain Management"
+description: "End-to-end coordination of materials, information, and finances from supplier to customer, including planning, procurement, inventory optimization, and supply chain visibility"
+naics: "488"
+apqc: "4.0"
+---
+
+export const items = async () => {
+  return []
+}
+
+# Supply Chain Management
+
+Comprehensive planning, execution, and optimization of the flow of goods, services, information, and finances from raw material suppliers through manufacturing, distribution, and final delivery to customers.
+
+## Overview
+
+Supply chain management (SCM) orchestrates all activities involved in sourcing, procurement, conversion, and logistics management. It encompasses the coordination and collaboration of suppliers, intermediaries, third-party service providers, and customers to deliver products and services efficiently while minimizing costs and maximizing customer value.
+
+The global supply chain management market exceeds $20 billion in software and services, with end-to-end supply chain costs representing 8-12% of revenue for most organizations. Effective SCM drives competitive advantage through cost reduction, service improvement, and operational resilience.
+
+## APQC Process Classification Framework
+
+### Category 4.0: Deliver Physical Products
+
+Supply chain management spans multiple process areas:
+
+**4.1 Plan for and Align Supply Chain Resources**
+- 4.1.1 Develop supply chain strategy
+- 4.1.2 Design and maintain supply chain network
+- 4.1.3 Plan and align supply chain capacity and demand
+- 4.1.4 Establish supply chain quality requirements and procedures
+- 4.1.5 Manage supply chain information flow
+
+**4.2 Procure Materials and Services**
+- 4.2.1 Develop sourcing strategies
+- 4.2.2 Select suppliers and develop/maintain contracts
+- 4.2.3 Order materials and services
+- 4.2.4 Appraise and develop suppliers
+- 4.2.5 Manage supplier risk and performance
+
+**4.3 Produce/Manufacture/Deliver Product**
+- 4.3.1 Schedule production
+- 4.3.2 Produce product
+- 4.3.3 Schedule and perform quality testing
+- 4.3.4 Manage materials
+- 4.3.5 Package product
+
+**4.4 Deliver Products**
+- 4.4.1 Plan and manage inbound material
+- 4.4.2 Operate warehousing
+- 4.4.3 Operate outbound transportation
+- 4.4.4 Manage returns, recalls, and reverse logistics
+
+**4.5 Manage Logistics and Warehousing**
+- 4.5.1 Define logistics strategy
+- 4.5.2 Plan and manage inbound material
+- 4.5.3 Operate warehousing
+- 4.5.4 Operate outbound transportation
+- 4.5.5 Manage returns and reverse logistics
+
+## Supply Chain Planning
+
+### Demand Planning and Forecasting
+
+**Forecasting Methods:**
+- **Time Series Analysis**: Historical data patterns (trend, seasonality, cyclicality)
+- **Causal Models**: Regression analysis with independent variables
+- **Machine Learning**: AI-driven predictions incorporating multiple signals
+- **Collaborative Forecasting**: CPFR (Collaborative Planning, Forecasting, and Replenishment)
+
+**Planning Horizons:**
+- **Strategic Planning**: 2-5 years (network design, capacity investments)
+- **Tactical Planning**: 3-18 months (production scheduling, inventory positioning)
+- **Operational Planning**: Daily to weekly (order fulfillment, transportation)
+
+**Demand Sensing:**
+- Real-time demand signals from POS, e-commerce, social media
+- Short-term forecast accuracy improvement (1-4 weeks)
+- Integration of internal and external data sources
+- Rapid response to demand volatility
+
+**Statistical Measures:**
+- **Forecast Accuracy**: MAPE (Mean Absolute Percentage Error), target <20%
+- **Bias**: Consistent over/under forecasting tendency
+- **Safety Stock**: Buffer inventory to cover demand variability
+
+### Sales and Operations Planning (S&OP)
+
+**S&OP Process:**
+1. **Data Gathering**: Demand forecast, inventory, production capacity, supply constraints
+2. **Demand Planning**: Unconstrained demand forecast by product family
+3. **Supply Planning**: Capacity assessment and constraint identification
+4. **Pre-S&OP Meeting**: Cross-functional alignment on gaps and trade-offs
+5. **Executive S&OP**: Decision-making on resource allocation and priorities
+
+**Participants:**
+- Sales and Marketing: Demand forecast and promotional plans
+- Operations: Production capacity and constraints
+- Supply Chain: Inventory strategy and supplier capability
+- Finance: Financial impact and investment requirements
+- Executive Leadership: Strategic direction and prioritization
+
+**S&OP Cycle:**
+- Monthly cadence with rolling 18-24 month horizon
+- Weekly operational reviews for short-term execution
+- Quarterly business reviews for strategic alignment
+
+### Inventory Optimization
+
+**Inventory Types:**
+- **Cycle Stock**: Normal working inventory to meet expected demand
+- **Safety Stock**: Buffer for demand and supply variability
+- **Anticipation Inventory**: Build-ahead for seasonal peaks or promotions
+- **Pipeline Inventory**: In-transit between locations
+- **Decoupling Inventory**: Between production stages to enable independent operation
+
+**Inventory Policies:**
+- **Economic Order Quantity (EOQ)**: Optimal order size balancing ordering and holding costs
+- **Reorder Point (ROP)**: Inventory level triggering replenishment order
+- **Min-Max**: Minimum threshold for reorder, maximum for order-up-to level
+- **Just-in-Time (JIT)**: Minimal inventory with frequent small replenishments
+
+**Multi-Echelon Inventory Optimization (MEIO):**
+- Optimize inventory across entire network (suppliers, plants, DCs, stores)
+- Consider lead times, costs, service levels at each echelon
+- Right inventory at right location to minimize total cost
+- Software: ToolsGroup, Logility, o9 Solutions, Kinaxis
+
+**Inventory Metrics:**
+- **Inventory Turnover**: COGS / Average Inventory (target: 5-12x annually)
+- **Days Inventory Outstanding (DIO)**: (Average Inventory / COGS) × 365
+- **Fill Rate**: Orders fulfilled from stock (target: 95-98%)
+- **Stockout Rate**: Percentage of time SKU is unavailable
+- **Inventory Carrying Cost**: 20-30% of inventory value annually (capital, storage, obsolescence, shrinkage)
+
+### Network Design and Optimization
+
+**Supply Chain Network:**
+- Supplier locations and sourcing strategies
+- Manufacturing plants and production allocation
+- Distribution centers and fulfillment operations
+- Transportation modes and lanes
+- Customer locations and service requirements
+
+**Network Optimization Objectives:**
+- Minimize total landed cost (production + transportation + inventory + facilities)
+- Meet customer service level targets
+- Balance risk and resilience
+- Optimize for sustainability (carbon footprint)
+
+**Modeling Approaches:**
+- **Greenfield Analysis**: Design optimal network without existing constraints
+- **Brownfield Analysis**: Optimize existing network with closure/expansion scenarios
+- **Scenario Planning**: Evaluate demand shifts, cost changes, disruption impacts
+- **Dynamic Modeling**: Multi-period optimization with changing conditions
+
+**Software Solutions:**
+- LLamasoft (Coupa Supply Chain Design)
+- Llamasoft Supply Chain Guru
+- Blue Yonder (JDA) Network Optimization
+- AIMMS Supply Chain Network Design
+- Optilogic
+
+## Procurement and Sourcing
+
+### Strategic Sourcing
+
+**Sourcing Process:**
+1. **Category Analysis**: Spend analysis and market intelligence
+2. **Sourcing Strategy**: Single vs. multi-source, domestic vs. global, make vs. buy
+3. **RFx Process**: RFI (Information), RFP (Proposal), RFQ (Quotation)
+4. **Supplier Evaluation**: Total cost of ownership (TCO), capabilities, risk assessment
+5. **Negotiation**: Pricing, terms, service levels, contract duration
+6. **Contract Management**: Agreement execution and governance
+7. **Supplier Performance**: Scorecards, reviews, continuous improvement
+
+**Sourcing Strategies:**
+- **Single Sourcing**: One supplier for simplicity and volume leverage
+- **Dual Sourcing**: Two suppliers for risk mitigation
+- **Multi-Sourcing**: Multiple suppliers for competition and capacity
+- **Low-Cost Country Sourcing (LCCS)**: Global sourcing for cost reduction
+- **Nearshoring**: Regional sourcing for reduced lead time and risk
+- **Reshoring**: Domestic sourcing for supply chain resilience
+
+**Total Cost of Ownership (TCO):**
+- Purchase price
+- Transportation and logistics costs
+- Inventory carrying costs (longer lead times = higher inventory)
+- Quality costs (defects, rework, returns)
+- Risk costs (disruption, supply uncertainty)
+- Administrative and transaction costs
+
+### Supplier Relationship Management (SRM)
+
+**Supplier Segmentation:**
+- **Strategic**: Critical, high-value, collaborative partnerships
+- **Preferred**: Qualified, reliable, competitive suppliers
+- **Approved**: Meet minimum requirements, transactional
+- **Emerging**: Development suppliers, innovation potential
+
+**Supplier Performance Metrics:**
+- **On-Time Delivery (OTD)**: Percentage delivered within window (target: 95-99%)
+- **Quality**: Defect rate, PPM (parts per million), first-pass yield
+- **Cost**: Price competitiveness, cost reduction initiatives
+- **Responsiveness**: Lead time, flexibility, communication
+- **Innovation**: New product introduction (NPI), technology advancement
+
+**Supplier Development:**
+- Joint improvement initiatives and capability building
+- Lean manufacturing and Six Sigma training
+- Technology transfer and knowledge sharing
+- Financial support for capacity expansion
+- Supplier audits and assessments
+
+### Procurement Technology
+
+**Procure-to-Pay (P2P) Systems:**
+- **SAP Ariba**: Cloud procurement and supplier network
+- **Coupa**: Spend management and procurement
+- **Jaggaer**: Source-to-pay platform
+- **Oracle Procurement Cloud**: ERP-integrated procurement
+- **Ivalua**: Strategic sourcing and supplier management
+
+**E-Procurement Capabilities:**
+- Electronic catalogs and punch-out
+- Purchase requisition and approval workflows
+- Purchase order creation and transmission
+- Receipt confirmation and 3-way matching (PO, receipt, invoice)
+- Invoice processing and payment automation
+- Spend analytics and reporting
+
+**Supplier Collaboration:**
+- Supplier portals for orders, forecasts, and performance
+- EDI (Electronic Data Interchange) for transaction automation
+- VMI (Vendor-Managed Inventory) for supplier-led replenishment
+- Collaborative planning and demand sharing
+
+## Supply Chain Execution
+
+### Order Management
+
+**Order-to-Cash Process:**
+1. **Order Entry**: Customer order capture (EDI, portal, sales rep)
+2. **Order Validation**: Credit check, inventory availability, pricing
+3. **Order Allocation**: Available-to-Promise (ATP), Capable-to-Promise (CTP)
+4. **Order Fulfillment**: Pick, pack, ship from warehouse or plant
+5. **Shipment and Delivery**: Transportation execution and tracking
+6. **Invoice and Payment**: Billing, payment processing, cash application
+
+**Order Fulfillment Strategies:**
+- **Ship from Stock**: Immediate fulfillment from inventory
+- **Make-to-Order (MTO)**: Production triggered by order
+- **Configure-to-Order (CTO)**: Assembly and configuration per order
+- **Engineer-to-Order (ETO)**: Design and build custom products
+
+**Order Promising:**
+- **Available-to-Promise (ATP)**: Committed date based on current inventory and planned receipts
+- **Capable-to-Promise (CTP)**: Considers production capacity and material availability
+- **Real-Time ATP**: Dynamic availability checking across network
+
+### Transportation Management
+
+**TMS (Transportation Management System) Functions:**
+- **Load Planning**: Optimal consolidation and routing
+- **Carrier Selection**: Rate shopping and mode optimization
+- **Execution**: Tendering, dispatch, tracking
+- **Freight Audit and Payment**: Invoice validation and settlement
+- **Analytics**: Performance reporting, cost analysis, optimization opportunities
+
+**Transportation Modes:**
+- **Truckload (TL)**: Full trailer capacity, point-to-point
+- **Less-Than-Truckload (LTL)**: Consolidated freight, hub-and-spoke
+- **Parcel**: Small package via UPS, FedEx, USPS
+- **Intermodal**: Truck-rail combination for long-haul
+- **Air Freight**: Expedited delivery, high-value goods
+- **Ocean Freight**: International container shipping
+
+**Freight Optimization:**
+- Continuous moves to eliminate empty miles
+- Load consolidation for better utilization
+- Mode shifting (air to ocean, TL to LTL) based on urgency
+- Freight pooling and collaborative shipping
+- Backhaul optimization
+
+### Warehouse and Distribution Management
+
+**WMS (Warehouse Management System) Capabilities:**
+- Receiving and put-away optimization
+- Inventory tracking and cycle counting
+- Order picking and packing
+- Shipping and load building
+- Labor management and productivity
+- Slotting and space optimization
+
+**Fulfillment Strategies:**
+- **Cross-Docking**: Direct transfer from inbound to outbound
+- **Wave Picking**: Batching orders for efficiency
+- **Zone Picking**: Dedicated areas for picker specialization
+- **Goods-to-Person**: Automated delivery to stationary picker
+- **Pack-and-Hold**: Pre-pack for rapid shipping
+
+**DC Network Strategies:**
+- **Centralized**: Single national DC for inventory efficiency
+- **Decentralized**: Regional DCs for faster delivery
+- **Hybrid**: Mix of national and regional facilities
+- **Direct-to-Consumer**: E-commerce fulfillment centers
+
+## Supply Chain Visibility and Control
+
+### Control Towers
+
+**Supply Chain Control Tower:**
+- Real-time visibility across end-to-end supply chain
+- Exception management and proactive alerts
+- Collaborative decision-making and resolution
+- Analytics and insights for continuous improvement
+
+**Control Tower Capabilities:**
+- **Data Integration**: Aggregation from ERP, WMS, TMS, suppliers, carriers
+- **Visibility**: Dashboards, KPIs, alerts for exceptions
+- **Collaboration**: Communication with stakeholders, issue resolution
+- **Analytics**: Root cause analysis, predictive insights, optimization recommendations
+
+**Use Cases:**
+- Order and shipment tracking
+- Inventory visibility across network
+- Supplier performance monitoring
+- Transportation optimization
+- Risk and disruption management
+
+### Supply Chain Analytics
+
+**Descriptive Analytics:**
+- Historical performance reporting
+- KPI dashboards and scorecards
+- Spend analysis and cost breakdowns
+- Service level and fill rate tracking
+
+**Predictive Analytics:**
+- Demand forecasting with machine learning
+- Inventory optimization and safety stock calculation
+- Predictive maintenance for equipment
+- Supplier risk prediction
+
+**Prescriptive Analytics:**
+- Optimization algorithms for network design, routing, scheduling
+- What-if scenario modeling
+- Recommendation engines for decision support
+- Automated decision-making for routine operations
+
+**AI and Machine Learning Applications:**
+- Demand sensing and short-term forecasting
+- Dynamic pricing and promotion optimization
+- Warehouse robotics and picking optimization
+- Predictive quality and defect detection
+- Natural language processing for unstructured data
+
+### Digital Supply Chain Platforms
+
+**Integrated Planning and Execution:**
+- **SAP Integrated Business Planning (IBP)**: Demand, supply, inventory, S&OP
+- **Oracle Supply Chain Management Cloud**: Planning, logistics, manufacturing
+- **Blue Yonder (JDA) Luminate Platform**: AI-powered planning and fulfillment
+- **Kinaxis RapidResponse**: Concurrent planning and what-if analysis
+- **o9 Solutions**: Enterprise planning platform with AI/ML
+
+**Supply Chain Visibility:**
+- **project44**: Multi-modal real-time tracking
+- **FourKites**: Predictive tracking and visibility
+- **Shippeo**: Real-time transportation visibility
+- **Transporeon**: Logistics network and visibility platform
+
+**Supply Chain Networks:**
+- **SAP Ariba Network**: Supplier collaboration and procurement
+- **GT Nexus (Infor)**: Multi-enterprise supply chain visibility
+- **E2open**: Network-based planning and execution
+- **TradeShift**: Supplier collaboration and payments
+
+## Supply Chain Risk Management
+
+### Risk Categories
+
+**Supply Risks:**
+- Supplier financial instability or bankruptcy
+- Single-source dependency and concentration
+- Geopolitical instability and trade restrictions
+- Natural disasters and climate events
+- Quality issues and recalls
+
+**Demand Risks:**
+- Demand volatility and forecast inaccuracy
+- Product obsolescence and lifecycle changes
+- Market disruptions and competitive threats
+- Customer concentration and credit risk
+
+**Operational Risks:**
+- Manufacturing disruptions and quality issues
+- Transportation delays and capacity constraints
+- IT system failures and cyber attacks
+- Labor shortages and strikes
+- Regulatory compliance and changes
+
+**Financial Risks:**
+- Currency fluctuations and exchange rates
+- Commodity price volatility
+- Payment terms and working capital
+- Inflation and cost increases
+
+### Risk Mitigation Strategies
+
+**Diversification:**
+- Multi-source suppliers by geography and supplier
+- Multiple transportation modes and routes
+- Distributed manufacturing and distribution network
+- Product and customer portfolio diversification
+
+**Inventory Buffers:**
+- Strategic safety stock for critical items
+- Inventory pre-positioning near demand centers
+- Consignment and vendor-managed inventory
+- Dual sourcing with split allocations
+
+**Flexibility and Agility:**
+- Postponement and late-stage customization
+- Flexible manufacturing capacity and equipment
+- Cross-training and multi-skilled workforce
+- Modular product design for commonality
+
+**Collaboration and Visibility:**
+- Information sharing with suppliers and customers
+- Joint risk assessment and planning
+- Early warning systems and alerts
+- Business continuity planning and testing
+
+### Resilience and Sustainability
+
+**Supply Chain Resilience:**
+- Ability to anticipate, prepare for, respond to, and recover from disruptions
+- Redundancy vs. efficiency trade-offs
+- Network design for robustness
+- Scenario planning and stress testing
+- Rapid response and recovery capabilities
+
+**Sustainable Supply Chain:**
+- **Environmental**: Carbon footprint reduction, renewable energy, circular economy
+- **Social**: Fair labor practices, diversity and inclusion, community engagement
+- **Governance**: Ethics, transparency, compliance, anti-corruption
+
+**Circular Supply Chain:**
+- Product take-back and recycling programs
+- Remanufacturing and refurbishment
+- Sustainable packaging and materials
+- Waste reduction and zero-landfill initiatives
+- Extended producer responsibility (EPR)
+
+## Performance Management
+
+### Supply Chain KPIs
+
+**Financial Metrics:**
+- **Supply Chain Cost**: Total cost as % of revenue (target: 8-12%)
+- **Cash-to-Cash Cycle Time**: DIO + DSO - DPO (target: minimize)
+- **Return on Supply Chain Fixed Assets (ROFA)**: Profitability of SC investments
+- **Total Cost to Serve**: End-to-end cost by customer/product/channel
+
+**Service Metrics:**
+- **Perfect Order Rate**: Orders delivered on-time, in-full, error-free (target: 95%+)
+- **Order Fulfillment Cycle Time**: Order-to-delivery elapsed time
+- **On-Time In-Full (OTIF)**: Retail metric for delivery compliance
+- **Customer Satisfaction (CSAT/NPS)**: Service quality perception
+
+**Efficiency Metrics:**
+- **Inventory Turnover**: COGS / Average Inventory
+- **Asset Utilization**: Equipment, facility, vehicle utilization rates
+- **Warehouse Productivity**: Orders/lines per labor hour
+- **Transportation Cost per Unit**: Freight cost / units shipped
+
+**Quality Metrics:**
+- **Supplier Quality**: Defect rate, PPM, first-pass yield
+- **Forecast Accuracy**: MAPE, bias, forecast value-added (FVA)
+- **Shrinkage and Damage**: Inventory loss and product damage rates
+
+### SCOR Model
+
+**Supply Chain Operations Reference (SCOR) Model:**
+- Framework by APICS (now part of ASCM)
+- Five management processes: Plan, Source, Make, Deliver, Return
+- Six performance attributes: Reliability, Responsiveness, Agility, Cost, Asset Management, Sustainability
+- Metrics, best practices, and process definitions
+
+**SCOR Levels:**
+- **Level 1**: Process types (Plan, Source, Make, Deliver, Return, Enable)
+- **Level 2**: Process categories (e.g., Make-to-Stock, Make-to-Order)
+- **Level 3**: Process elements (detailed activities and workflows)
+- **Level 4**: Implementation (company-specific practices and systems)
+
+**SCOR Performance Attributes:**
+- **Reliability**: Perfect order fulfillment
+- **Responsiveness**: Order fulfillment cycle time
+- **Agility**: Upside/downside supply chain adaptability
+- **Cost**: Supply chain management cost, cost of goods sold
+- **Asset Management**: Cash-to-cash cycle time, asset turns
+
+## Industry Trends
+
+### Digital Transformation
+
+**Industry 4.0 and Smart Manufacturing:**
+- IoT sensors and connected devices
+- Digital twins for simulation and optimization
+- AI and machine learning for planning and execution
+- Blockchain for transparency and traceability
+- 5G connectivity for real-time data
+
+**Autonomous Operations:**
+- Self-driving trucks and delivery vehicles
+- Warehouse robotics and automation
+- Drones for inventory scanning and delivery
+- Robotic process automation (RPA) for back-office
+
+### Sustainability and Circular Economy
+
+**Carbon Neutrality Goals:**
+- Scope 1, 2, 3 emissions measurement and reduction
+- Renewable energy and electrification
+- Sustainable packaging and materials
+- Carbon offsets and renewable credits
+
+**Circular Economy Initiatives:**
+- Product lifecycle extension and repair services
+- Take-back and recycling programs
+- Remanufacturing and refurbishment
+- Sharing economy and product-as-a-service
+
+### Supply Chain Localization
+
+**Nearshoring and Reshoring:**
+- Shift from global to regional supply chains
+- Reduced lead times and transportation costs
+- Geopolitical risk mitigation
+- "China+1" sourcing diversification
+- Mexico, Vietnam, Eastern Europe manufacturing growth
+
+**Regionalization Drivers:**
+- COVID-19 pandemic supply disruptions
+- Trade tensions and tariffs
+- Consumer demand for faster delivery
+- Sustainability and carbon footprint concerns
+
+### E-Commerce and Omnichannel
+
+**Direct-to-Consumer (DTC):**
+- Brands selling direct vs. wholesale channels
+- Fulfillment and logistics challenges
+- Customer data and personalization
+- Reverse logistics and returns management
+
+**Omnichannel Fulfillment:**
+- Unified inventory across channels
+- BOPIS (Buy Online Pick Up In Store)
+- Ship from store and endless aisle
+- Same-day and next-day delivery expectations
+
+## Related Topics
+
+### Cross-References
+
+- [Trucking](/Trucking): Transportation execution and freight management
+- [Warehousing](/Warehousing): Distribution center and fulfillment operations
+- [AirFreight](/AirFreight): Expedited supply chain and global sourcing
+- [Maritime](/Maritime): International logistics and container shipping
+- [LastMile](/LastMile): Final delivery and customer fulfillment
+
+### External Resources
+
+- **APICS (now ASCM - Association for Supply Chain Management)**: CPIM, CSCP certifications
+- **Council of Supply Chain Management Professionals (CSCMP)**: Education, research, networking
+- **Institute for Supply Management (ISM)**: Procurement and sourcing professional association
+- **Supply Chain Management Review**: Industry publication
+- **Gartner Supply Chain Research**: Analyst reports and Magic Quadrants
+- **MIT Center for Transportation & Logistics**: Research and education
+
+## Sources
+
+- APQC Process Classification Framework Category 4.0
+- SCOR Model (Supply Chain Operations Reference)
+- Gartner Supply Chain Top 25
+- McKinsey Supply Chain Research
+- Deloitte Supply Chain Insights
+- NAICS 488 Support Activities for Transportation

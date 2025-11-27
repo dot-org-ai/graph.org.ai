@@ -1,0 +1,55 @@
+---
+$id: https://gs1.org.ai/Identifiers/GTIN/{gtin}
+$context: https://gs1.org.ai
+$type: https://gs1.org.ai/GTIN
+gtin: "{gtin}"
+format: "GTIN-14" | "GTIN-13" | "GTIN-12" | "GTIN-8"
+companyPrefix: "{companyPrefix}"
+itemReference: "{itemReference}"
+checkDigit: "{checkDigit}"
+indicatorDigit: "{indicatorDigit}"
+brand: "{brand}"
+productName: "{productName}"
+---
+
+# {productName}
+
+<ProductImage gtin="{gtin}" />
+
+## Identification
+
+| Field | Value |
+|-------|-------|
+| GTIN | {gtin} |
+| Format | {format} |
+| Company Prefix | {companyPrefix} |
+| Item Reference | {itemReference} |
+| Check Digit | {checkDigit} |
+
+## Digital Link
+
+```
+https://id.gs1.org/01/{gtin}
+```
+
+<QRCode uri="https://id.gs1.org/01/{gtin}" />
+
+## Product Information
+
+<ProductDetails gtin="{gtin}" />
+
+## GPC Classification
+
+<GPCClassification gtin="{gtin}" />
+
+## Supply Chain Events
+
+<EPCISEvents gtin="{gtin}" />
+
+## Cross-References
+
+| System | Reference |
+|--------|-----------|
+| [products.org.ai](https://products.org.ai) | Simplified product |
+| [brands.org.ai](https://brands.org.ai) | Brand information |
+| [gs1.org.ai/GPC](../../GPC/) | Product classification |

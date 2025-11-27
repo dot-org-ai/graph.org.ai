@@ -1,0 +1,148 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/IndustrialRobots
+$type: https://robotics.org.ai/Robotics
+name: Industrial Robots
+description: Fixed-position automated systems designed for manufacturing and production environments
+---
+
+export const items = async () => {
+  return [
+    { name: 'Articulated Robots', type: 'IndustrialRobots' },
+    { name: 'SCARA Robots', type: 'IndustrialRobots' },
+    { name: 'Delta Robots', type: 'IndustrialRobots' },
+    { name: 'Cartesian Robots', type: 'IndustrialRobots' }
+  ]
+}
+
+# Industrial Robots
+
+Industrial robots are programmable, automated machines designed for manufacturing and production environments. They perform repetitive tasks with high precision, speed, and consistency, forming the backbone of modern automated manufacturing.
+
+## Overview
+
+The industrial robot market represents the largest segment of the robotics industry, with over 500,000 units installed annually worldwide. These systems have revolutionized manufacturing by enabling mass production with unprecedented quality and efficiency.
+
+## Robot Types
+
+### Articulated Robots
+
+Articulated robots feature rotary joints ranging from 2 to 10+ axes, with 6-axis configurations being most common. These versatile robots mimic human arm movements and are used for:
+
+- **Welding** - Arc welding, spot welding, laser welding in automotive manufacturing
+- **Material Handling** - Loading/unloading machines, palletizing, packaging
+- **Assembly** - Component insertion, fastening, quality inspection
+- **Painting** - Automotive spray painting, coating applications
+- **Machine Tending** - CNC machine loading, injection molding
+
+Key manufacturers: FANUC, ABB, KUKA, Yaskawa, Kawasaki
+
+Technical specifications:
+- Payload capacity: 3kg to 2,300kg
+- Reach: 0.5m to 4.7m
+- Repeatability: ±0.02mm to ±0.5mm
+- Speed: Up to 2m/s
+
+### SCARA Robots
+
+Selective Compliance Articulated Robot Arm (SCARA) robots offer rigid vertical motion and compliant horizontal motion, ideal for:
+
+- **Assembly Operations** - Electronics assembly, component insertion
+- **Pick and Place** - High-speed material transfer
+- **Dispensing** - Adhesive application, sealant dispensing
+- **Testing** - Quality control, measurement
+
+Advantages:
+- High-speed operation (cycle times under 0.5 seconds)
+- Excellent repeatability (±0.01mm)
+- Compact footprint
+- Lower cost than 6-axis articulated robots
+
+Applications: Electronics manufacturing, pharmaceutical packaging, food processing
+
+### Delta Robots
+
+Delta robots (parallel robots) feature three arms connected to universal joints at the base, providing:
+
+- **Ultra-High Speed** - Pick rates exceeding 300 picks per minute
+- **Precision** - Repeatability of ±0.1mm
+- **Clean Operation** - Suitable for food and pharmaceutical applications
+
+Primary applications:
+- Food sorting and packaging
+- Pharmaceutical packaging
+- Electronics assembly
+- 3D printing (specialized configurations)
+
+Leading suppliers: ABB FlexPicker, Fanuc M-3iA, Omron Quattro
+
+### Cartesian/Gantry Robots
+
+Cartesian coordinate robots move along linear axes (X, Y, Z) providing:
+
+- **Extreme Precision** - Repeatability to ±0.005mm
+- **Large Work Envelope** - Scalable from desktop to warehouse size
+- **High Payload** - Support for multi-ton loads
+- **Simple Programming** - Intuitive linear motion control
+
+Applications:
+- CNC machine tending
+- 3D printing and additive manufacturing
+- Warehouse storage and retrieval
+- Assembly line automation
+- Material handling in cleanrooms
+
+## Industry 4.0 Integration
+
+Modern industrial robots incorporate:
+
+- **IoT Connectivity** - Real-time monitoring via cloud platforms
+- **Digital Twins** - Virtual simulation before physical deployment
+- **Machine Vision** - Camera systems for quality inspection and adaptive control
+- **Force/Torque Sensing** - Adaptive assembly and delicate part handling
+- **Predictive Maintenance** - AI analysis of vibration, temperature, and performance data
+
+## Safety Standards
+
+Industrial robots operate under strict safety standards:
+
+- ISO 10218 (Robots and robotic devices - Safety requirements)
+- ISO/TS 15066 (Collaborative robots)
+- Risk assessment and safety zone design
+- Emergency stop systems and safety interlocks
+- Light curtains and area scanners
+
+## Economic Impact
+
+- **ROI Timeline** - Typical payback period of 1-3 years
+- **Productivity Gains** - 25-50% increase in throughput
+- **Quality Improvement** - 30-60% reduction in defect rates
+- **Labor Optimization** - Redeployment of workers to higher-value tasks
+
+## Leading Manufacturers
+
+1. **FANUC** (Japan) - Market leader with 750,000+ robots installed
+2. **ABB** (Switzerland) - Pioneer in industrial automation
+3. **KUKA** (Germany) - Automotive industry specialist
+4. **Yaskawa Motoman** (Japan) - Arc welding expertise
+5. **Kawasaki** (Japan) - Heavy payload systems
+
+## Future Trends
+
+- AI-driven adaptive control systems
+- Modular and reconfigurable robot cells
+- Energy-efficient servo systems
+- Edge computing for real-time decision making
+- Integration with autonomous mobile robots (AMRs)
+
+## Related Topics
+
+- [Manufacturing.org.ai](https://manufacturing.org.ai) - Production systems and factory automation
+- [CollaborativeRobots.mdx](https://robotics.org.ai/CollaborativeRobots) - Human-robot collaboration
+- [RoboticsAI.mdx](https://robotics.org.ai/RoboticsAI) - AI and machine learning in robotics
+
+## References
+
+- International Federation of Robotics (IFR) - World Robotics Report
+- Robotic Industries Association (RIA)
+- ISO Standards for Industrial Robots

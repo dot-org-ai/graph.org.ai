@@ -1,0 +1,48 @@
+---
+$context: https://startups.org.ai
+$id: https://startups.org.ai/{{slug}}
+$type: https://startups.org.ai/Startup
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Startup
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<StartupOverview startup={startup} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Startup` |
+| Domain | [startups.org.ai](https://startups.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<StartupDetails startup={startup} />
+
+## Properties
+
+<StartupProperties startup={startup} />
+
+## Relationships
+
+<StartupRelationships startup={startup} />
+
+## Related
+
+<RelatedStartups startup={startup} />
+
+## Sources
+
+- <DatabaseLink namespace="startups.org.ai" type="{{slug}}" />

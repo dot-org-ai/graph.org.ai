@@ -1,0 +1,48 @@
+---
+$context: https://md.org.ai
+$id: https://md.org.ai/{{slug}}
+$type: https://md.org.ai/MarkdownFile
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for MarkdownFile
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MarkdownFileOverview markdownfile={markdownfile} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `MarkdownFile` |
+| Domain | [md.org.ai](https://md.org.ai) |
+| Parent | [markdown.org.ai](https://markdown.org.ai) |
+
+## Details
+
+<MarkdownFileDetails markdownfile={markdownfile} />
+
+## Properties
+
+<MarkdownFileProperties markdownfile={markdownfile} />
+
+## Relationships
+
+<MarkdownFileRelationships markdownfile={markdownfile} />
+
+## Related
+
+<RelatedMarkdownFiles markdownfile={markdownfile} />
+
+## Sources
+
+- <DatabaseLink namespace="md.org.ai" type="{{slug}}" />

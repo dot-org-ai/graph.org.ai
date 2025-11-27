@@ -1,0 +1,48 @@
+---
+$context: https://wikipedia.org.ai
+$id: https://wikipedia.org.ai/{{slug}}
+$type: https://wikipedia.org.ai/Wikipedia
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Wikipedia
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<WikipediaOverview wikipedia={wikipedia} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Wikipedia` |
+| Domain | [wikipedia.org.ai](https://wikipedia.org.ai) |
+| Parent | [wiki.org.ai](https://wiki.org.ai) |
+
+## Details
+
+<WikipediaDetails wikipedia={wikipedia} />
+
+## Properties
+
+<WikipediaProperties wikipedia={wikipedia} />
+
+## Relationships
+
+<WikipediaRelationships wikipedia={wikipedia} />
+
+## Related
+
+<RelatedWikipedias wikipedia={wikipedia} />
+
+## Sources
+
+- <DatabaseLink namespace="wikipedia.org.ai" type="{{slug}}" />

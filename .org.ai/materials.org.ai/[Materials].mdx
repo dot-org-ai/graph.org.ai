@@ -1,0 +1,48 @@
+---
+$context: https://materials.org.ai
+$id: https://materials.org.ai/{{slug}}
+$type: https://materials.org.ai/Materials
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Materials
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<MaterialsOverview materials={materials} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Materials` |
+| Domain | [materials.org.ai](https://materials.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<MaterialsDetails materials={materials} />
+
+## Properties
+
+<MaterialsProperties materials={materials} />
+
+## Relationships
+
+<MaterialsRelationships materials={materials} />
+
+## Related
+
+<RelatedMaterialss materials={materials} />
+
+## Sources
+
+- <DatabaseLink namespace="materials.org.ai" type="{{slug}}" />

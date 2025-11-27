@@ -1,0 +1,48 @@
+---
+$context: https://transport.org.ai
+$id: https://transport.org.ai/{{slug}}
+$type: https://transport.org.ai/Transport
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Transport
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<TransportOverview transport={transport} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Transport` |
+| Domain | [transport.org.ai](https://transport.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<TransportDetails transport={transport} />
+
+## Properties
+
+<TransportProperties transport={transport} />
+
+## Relationships
+
+<TransportRelationships transport={transport} />
+
+## Related
+
+<RelatedTransports transport={transport} />
+
+## Sources
+
+- <DatabaseLink namespace="transport.org.ai" type="{{slug}}" />

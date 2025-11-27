@@ -1,0 +1,48 @@
+---
+$context: https://ops.org.ai
+$id: https://ops.org.ai/{{slug}}
+$type: https://ops.org.ai/Ops
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Ops
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<OpsOverview ops={ops} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Ops` |
+| Domain | [ops.org.ai](https://ops.org.ai) |
+| Parent | [work.org.ai](https://work.org.ai) |
+
+## Details
+
+<OpsDetails ops={ops} />
+
+## Properties
+
+<OpsProperties ops={ops} />
+
+## Relationships
+
+<OpsRelationships ops={ops} />
+
+## Related
+
+<RelatedOpss ops={ops} />
+
+## Sources
+
+- <DatabaseLink namespace="ops.org.ai" type="{{slug}}" />

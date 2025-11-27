@@ -1,0 +1,507 @@
+---
+$context: https://logistics.org.ai
+$id: https://logistics.org.ai/Maritime
+$type: https://logistics.org.ai/Logistics
+name: "Maritime Shipping and Ports"
+description: "Ocean freight transportation including container shipping, bulk carriers, tankers, and port terminal operations"
+naics: "483"
+apqc: "4.4.3"
+---
+
+export const items = async () => {
+  return []
+}
+
+# Maritime Shipping and Ports
+
+Ocean freight transportation services including containerized cargo, bulk carriers, tankers, and port terminal operations under NAICS 483, serving as the foundation of international trade and global supply chains.
+
+## Overview
+
+Maritime shipping moves over 90% of global trade by volume and 80% by value, transporting approximately 11 billion tons of cargo annually. The shipping industry connects producers and consumers across continents, enabling global commerce at scale and efficiency unmatched by any other transportation mode.
+
+The maritime sector encompasses diverse vessel types, from ultra-large container ships carrying 24,000 TEUs to specialized chemical tankers, along with the port infrastructure and intermodal systems that facilitate cargo transfer between ocean and land transportation.
+
+## NAICS Classification
+
+### 483 - Water Transportation
+
+#### 483111 - Deep Sea Freight Transportation
+
+**Ocean-Going Vessels:**
+- International cargo shipping
+- Trans-oceanic routes
+- Container ships, bulk carriers, tankers
+- Voyage charter and time charter operations
+- Conference lines and alliances
+
+**Trade Routes:**
+- Trans-Pacific: Asia to North America
+- Trans-Atlantic: Europe to North America
+- Asia-Europe: via Suez Canal or around Cape of Good Hope
+- Intra-Asia: regional container feedering
+- North-South: Europe/US to Latin America, Africa
+
+#### 483112 - Deep Sea Passenger Transportation
+
+**Cruise Lines:**
+- Leisure cruises and vacation packages
+- Expedition cruising
+- River and ocean cruise operations
+
+#### 483113 - Coastal and Great Lakes Freight Transportation
+
+**Domestic Water Transportation:**
+- Coastwise shipping (Jones Act in US)
+- Great Lakes shipping (bulk commodities)
+- Intra-coastal waterways
+- Short-sea shipping and marine highways
+
+#### 483114 - Coastal and Great Lakes Passenger Transportation
+
+**Ferries and Water Taxis:**
+- Vehicle and passenger ferries
+- Commuter ferry services
+- Sightseeing and tour boats
+
+#### 4832 - Inland Water Transportation
+
+**River and Canal Transportation:**
+- Barge transportation on rivers and canals
+- Towboat and tugboat operations
+- Bulk grain, coal, petroleum on Mississippi River system
+- Rhine River, Danube, Yangtze container barge services
+
+## Container Shipping
+
+### Container Vessel Types
+
+**Ultra Large Container Vessels (ULCV):**
+- 18,000-24,000 TEU capacity
+- 400m length, 60m beam (width)
+- Economies of scale on major trade lanes
+- Limited to deep-water ports with post-Panamax infrastructure
+- Examples: MSC Irina (24,346 TEU), Ever Alot (24,004 TEU)
+
+**New Panamax:**
+- 13,000-14,500 TEU capacity
+- Maximum size for expanded Panama Canal
+- 366m length, 49m beam, 15.2m draft
+- Flexibility across trade lanes
+
+**Panamax:**
+- 4,500-5,000 TEU capacity
+- Original Panama Canal size limits
+- 294m length, 32.3m beam
+- Regional and feeder services
+
+**Feeder Vessels:**
+- 1,000-3,000 TEU capacity
+- Hub-and-spoke distribution
+- Port-to-port regional services
+- Access to smaller ports with draft restrictions
+
+### Container Types and Specifications
+
+**Standard Containers:**
+- **20-foot (TEU - Twenty-foot Equivalent Unit)**: 20' × 8' × 8'6", 33 cubic meters
+- **40-foot (FEU - Forty-foot Equivalent Unit)**: 40' × 8' × 8'6", 67 cubic meters
+- **40-foot High Cube**: 40' × 8' × 9'6", 76 cubic meters
+- **45-foot High Cube**: 45' × 8' × 9'6", 86 cubic meters
+
+**Specialized Containers:**
+- **Refrigerated (Reefer)**: Temperature-controlled for perishables and pharma
+- **Open Top**: For oversized cargo loaded from above
+- **Flat Rack**: Collapsible sides for wide or heavy cargo
+- **Tank Containers**: For liquid bulk (chemicals, food-grade liquids)
+- **Garmentainers**: Hanging rails for clothing on hangers
+
+**Container Ownership:**
+- Carrier-Owned Containers (COC)
+- Shipper-Owned Containers (SOC)
+- Container leasing companies (Triton, Textainer, CAI)
+
+### Container Shipping Lines
+
+**Major Carriers by Capacity (TEU):**
+1. **Mediterranean Shipping Company (MSC)**: 4.4 million TEU
+2. **Maersk Line**: 4.3 million TEU
+3. **COSCO Shipping**: 3.0 million TEU
+4. **CMA CGM Group**: 3.2 million TEU
+5. **Hapag-Lloyd**: 1.8 million TEU
+6. **Ocean Network Express (ONE)**: 1.6 million TEU
+7. **Evergreen Line**: 1.5 million TEU
+8. **HMM**: 850,000 TEU
+9. **Yang Ming**: 650,000 TEU
+10. **ZIM Integrated Shipping**: 450,000 TEU
+
+**Shipping Alliances:**
+- **2M Alliance**: Maersk, MSC
+- **Ocean Alliance**: CMA CGM, COSCO, Evergreen, OOCL
+- **THE Alliance**: Hapag-Lloyd, ONE, Yang Ming, HMM
+- Vessel sharing agreements for capacity optimization
+- Coordinated sailing schedules on major trade lanes
+
+### Container Shipping Operations
+
+**Liner Services:**
+- Fixed schedules and published timetables
+- Regular port calls on defined rotations
+- Service strings: weekly departures on major lanes
+- Port rotation example: Shanghai → Ningbo → Hong Kong → Singapore → Suez → Rotterdam → Hamburg → Felixstowe → return
+
+**Voyage Planning:**
+- Route optimization for fuel efficiency
+- Weather routing to avoid storms
+- Slow steaming (16-18 knots vs. 22-24 knots) for fuel savings
+- Port call optimization and omissions during slack demand
+
+**Vessel Utilization:**
+- Load factor (% of capacity utilized)
+- Head-haul vs. backhaul imbalances
+- Equipment repositioning for empty containers
+- Slots sales to cargo owners and freight forwarders
+
+### Container Freight Pricing
+
+**Freight Rate Components:**
+- **Base Ocean Freight**: Per container (20' or 40')
+- **Bunker Adjustment Factor (BAF)**: Fuel surcharge
+- **Currency Adjustment Factor (CAF)**: Exchange rate fluctuation
+- **Peak Season Surcharge (PSS)**: Capacity premium during high demand
+- **General Rate Increase (GRI)**: Carrier-initiated rate hikes
+- **Port Congestion Surcharge**: Delays and extended port stays
+- **War Risk Surcharge**: Insurance for conflict zones
+
+**Contract vs. Spot Rates:**
+- Annual service contracts negotiated with BCOs (beneficial cargo owners)
+- Spot rates for immediate bookings, market-driven
+- 2021-2022: spot rates exceeded $20,000 per FEU (Shanghai to LA)
+- 2023-2024: normalization to $1,500-$3,000 per FEU
+- Trans-Pacific, Trans-Atlantic, Asia-Europe rate variations
+
+**Incoterms:**
+- **FOB (Free on Board)**: Buyer pays ocean freight
+- **CIF (Cost, Insurance, Freight)**: Seller pays ocean freight and insurance
+- **EXW (Ex Works)**: Buyer pays all transportation
+- **DDP (Delivered Duty Paid)**: Seller pays all costs to final destination
+
+## Bulk and Breakbulk Shipping
+
+### Dry Bulk Carriers
+
+**Vessel Categories:**
+- **Capesize**: 150,000-400,000 DWT, too large for Panama/Suez Canals
+- **Panamax**: 60,000-80,000 DWT, maximum for Panama Canal
+- **Handymax**: 40,000-60,000 DWT, flexible size for various ports
+- **Handysize**: 15,000-40,000 DWT, access to smaller ports
+
+**Dry Bulk Commodities:**
+- **Major Bulk (80% of volume)**:
+  - Iron ore: Australia, Brazil to China, Japan, Korea
+  - Coal: thermal and metallurgical, Australia, Indonesia, Russia
+  - Grain: wheat, corn, soybeans from US, Brazil, Argentina
+- **Minor Bulk**:
+  - Fertilizers, cement, sugar, salt, bauxite, alumina
+
+**Baltic Dry Index (BDI):**
+- Freight rate index for dry bulk shipping
+- Weighted average of Capesize, Panamax, Supramax routes
+- Leading economic indicator for global trade
+- Highly volatile based on supply-demand dynamics
+
+### Tankers
+
+**Oil Tankers:**
+- **VLCC (Very Large Crude Carrier)**: 200,000-320,000 DWT, 2 million barrels
+- **Suezmax**: 120,000-200,000 DWT, Suez Canal maximum
+- **Aframax**: 80,000-120,000 DWT, regional crude distribution
+- **Panamax**: 50,000-80,000 DWT
+- **Product Tankers**: Refined petroleum products (gasoline, diesel, jet fuel)
+
+**Chemical Tankers:**
+- Specialized coatings and tank configurations
+- Segregated tanks for multiple chemical cargoes
+- IMO Type 1 (high hazard), Type 2 (medium), Type 3 (low)
+- Stainless steel tanks for corrosive chemicals
+
+**LNG (Liquefied Natural Gas) Carriers:**
+- Cryogenic tanks at -162°C
+- Q-Flex (210,000-217,000 m³) and Q-Max (266,000 m³) vessels
+- Membrane and moss tank designs
+- Growing fleet for US LNG exports
+
+**LPG (Liquefied Petroleum Gas) Carriers:**
+- Propane and butane transportation
+- VLGC (Very Large Gas Carrier): 80,000 m³
+- Pressurized and refrigerated storage
+
+### Breakbulk and Project Cargo
+
+**Non-Containerized General Cargo:**
+- Machinery, steel products, forest products
+- Oversized and heavy-lift cargo
+- Roll-on/Roll-off (Ro-Ro) vessels for vehicles
+- Heavy-lift vessels with cranes up to 3,000 tons capacity
+
+**Project Cargo:**
+- Power plant components (turbines, generators, transformers)
+- Oil and gas modules and FPSOs
+- Wind turbine components
+- Mining and construction equipment
+- Specialized vessels: semi-submersible ships, dock ships
+
+## Port and Terminal Operations
+
+### Container Terminals
+
+**Terminal Infrastructure:**
+- Berth length: 300-400m per berth for ULCV vessels
+- Water depth: 16-18m for deep-draft vessels
+- Quay cranes (STS - Ship-to-Shore): 22-25 container rows wide
+- Container yard: straddle carriers, rubber-tired gantry (RTG), rail-mounted gantry (RMG)
+- Gate operations: truck and rail interchange
+
+**Terminal Operators:**
+- **Global Terminal Operators**:
+  - APM Terminals (Maersk)
+  - PSA International (Singapore)
+  - DP World (Dubai)
+  - China COSCO Shipping Ports
+  - Hutchison Ports
+  - Terminal Investment Limited (TiL - MSC)
+- **Port Authorities**: Public ownership and operation (e.g., Port of Los Angeles, Rotterdam)
+
+**Terminal Performance Metrics:**
+- **Berth Productivity**: Container moves per hour (CMPH), target 120-150 for modern terminals
+- **Crane Productivity**: Gross moves per hour (GMPH), 25-35 moves/hour
+- **Vessel Turnaround Time**: Hours from arrival to departure, target 24-48 hours
+- **Dwell Time**: Days containers remain in terminal, target <5 days
+- **Truck Turn Time**: Gate in to gate out, target <60 minutes
+
+**Automation:**
+- Automated Stacking Cranes (ASC)
+- Automated Guided Vehicles (AGV) for container transport
+- Automated Gate Systems with OCR and RFID
+- Remote-controlled STS cranes
+- Examples: Rotterdam Maasvlakte II, Los Angeles TraPac, Singapore Tuas Port
+
+### Major Container Ports
+
+**Top Container Ports by Volume (million TEU):**
+1. **Shanghai**: 47.3 million TEU
+2. **Singapore**: 37.5 million TEU
+3. **Ningbo-Zhoushan**: 33.4 million TEU
+4. **Shenzhen**: 30.0 million TEU
+5. **Guangzhou**: 24.2 million TEU
+6. **Qingdao**: 24.0 million TEU
+7. **Busan (South Korea)**: 22.0 million TEU
+8. **Tianjin**: 20.3 million TEU
+9. **Hong Kong**: 18.0 million TEU
+10. **Rotterdam**: 14.5 million TEU
+11. **Port Klang (Malaysia)**: 13.6 million TEU
+12. **Antwerp**: 13.0 million TEU
+13. **Los Angeles**: 10.7 million TEU
+14. **Long Beach**: 9.4 million TEU
+
+**Gateway vs. Transshipment Ports:**
+- **Gateway Ports**: Cargo destination or origin (e.g., Los Angeles, New York)
+- **Transshipment Hubs**: Cargo transfer between vessels (e.g., Singapore, Dubai, Colombo)
+- Transshipment percentage: Singapore 85%, Dubai 70% vs. LA/LB <10%
+
+### Inland Ports and Intermodal
+
+**Intermodal Transportation:**
+- On-dock rail for direct vessel-to-train transfer
+- Near-dock rail within 5-10 miles of port
+- Inland container depots (ICD) and dry ports
+- Truck drayage between port and rail/warehouse
+
+**US Intermodal Corridors:**
+- **Alameda Corridor**: LA/Long Beach to downtown LA rail yards
+- **Southern California to Midwest**: Chicago, Memphis, Dallas rail hubs
+- **East Coast**: Savannah, Norfolk, Charleston to Southeast and Midwest
+- **Panama Canal All-Water Route**: Asia to East Coast via expanded canal
+
+**Rail Intermodal:**
+- Double-stack container trains (2 containers high)
+- Unit trains with 100+ containers
+- Dedicated intermodal terminals and lift equipment
+- Rail ramp operations: lift-on/lift-off (LOLO)
+
+## Maritime Regulations and Compliance
+
+### International Maritime Organization (IMO)
+
+**SOLAS (Safety of Life at Sea):**
+- Construction standards for vessels
+- Life-saving equipment requirements
+- Fire protection and detection systems
+- Navigation safety and communication
+- Container weight verification (VGM - Verified Gross Mass)
+
+**MARPOL (Marine Pollution Prevention):**
+- Annex I: Oil pollution prevention
+- Annex II: Noxious liquid substances in bulk
+- Annex III: Harmful substances in packaged form
+- Annex IV: Sewage pollution prevention
+- Annex V: Garbage pollution prevention
+- Annex VI: Air pollution and emissions
+
+**IMO 2020 Sulfur Cap:**
+- Reduction of sulfur in marine fuel from 3.5% to 0.5%
+- Low-sulfur fuel oil (LSFO) or marine gas oil (MGO)
+- Scrubber technology to clean exhaust emissions
+- Significant fuel cost increase (30-50%)
+
+### Port State Control and Flag State
+
+**Flag State Responsibilities:**
+- Ship registration and certification
+- Safety and environmental compliance oversight
+- Crewing standards and manning requirements
+- Open registries (flags of convenience): Panama, Liberia, Marshall Islands
+
+**Port State Control (PSC):**
+- Inspection of foreign vessels in port
+- Detention for serious deficiencies
+- Regional agreements: Paris MOU (Europe), Tokyo MOU (Asia-Pacific), USCG (US)
+
+### Customs and Border Protection
+
+**Import/Export Documentation:**
+- **Bill of Lading (B/L)**: Contract of carriage and title document
+- **Sea Waybill**: Non-negotiable transport document
+- **Commercial Invoice**: Value and description of goods
+- **Packing List**: Detailed cargo manifest
+- **Certificate of Origin**: Country of manufacture
+- **Importer Security Filing (ISF/10+2)**: Advance cargo data (US)
+- **Automated Manifest System (AMS)**: Pre-arrival cargo declaration
+
+**Customs Clearance:**
+- Entry summary and duty payment
+- Cargo release and delivery orders
+- Inspection and examination procedures
+- Continuous bond for regular importers
+
+### Maritime Security
+
+**ISPS Code (International Ship and Port Facility Security):**
+- Post-9/11 maritime security framework
+- Ship Security Plans and Port Facility Security Plans
+- Security levels 1-3 based on threat assessment
+- Continuous Synopsis Record (CSR) for vessel history
+
+**Container Security:**
+- **CSI (Container Security Initiative)**: Pre-screening at foreign ports
+- **C-TPAT (Customs-Trade Partnership Against Terrorism)**: Supply chain security
+- **ACI (Advance Commercial Information)**: 24-hour rule for cargo manifest
+- **SAFE Framework**: WCO (World Customs Organization) standards
+- High-security seals and tamper-evident devices
+
+## Industry Trends
+
+### Decarbonization and Sustainability
+
+**IMO 2030 and 2050 Targets:**
+- 40% reduction in carbon intensity by 2030 (vs. 2008 baseline)
+- 70% reduction in carbon intensity by 2050
+- 50% reduction in total GHG emissions by 2050
+- Net-zero by 2050 under discussion
+
+**Alternative Fuels:**
+- **LNG (Liquefied Natural Gas)**: 20% CO2 reduction, methane slip concerns
+- **Methanol**: Carbon-neutral with green methanol, Maersk ordering 12+ methanol vessels
+- **Ammonia**: Zero-carbon fuel, toxic handling challenges, 2025+ adoption
+- **Hydrogen**: Long-term potential, storage and production infrastructure needed
+- **Biofuels**: Drop-in replacement, limited scalability and cost
+
+**Operational Efficiency:**
+- Slow steaming for fuel reduction (12-15 knots vs. 18-22 knots)
+- Hull coatings and propeller optimization
+- Air lubrication systems reducing friction
+- Wind-assisted propulsion: rotor sails, kites
+
+### Supply Chain Disruptions
+
+**COVID-19 Pandemic Impacts:**
+- Port congestion: 100+ container ships anchored off LA/Long Beach (2021-2022)
+- Equipment shortages: container scarcity in Asia
+- Blank sailings and schedule unreliability
+- Freight rate spikes: $20,000+ per FEU Trans-Pacific
+- Labor shortages at ports and warehouses
+
+**Suez Canal Blockage (Ever Given, March 2021):**
+- 6-day closure disrupted $9 billion/day in trade
+- 400+ vessels delayed
+- Highlighted single-point-of-failure risk
+- Alternative routing around Cape of Good Hope adds 10-14 days
+
+**Resiliency Strategies:**
+- Diversification of suppliers and routes
+- Safety stock and inventory buffers
+- Nearshoring and reshoring manufacturing
+- Digitalization for visibility and predictability
+
+### Digitalization and Technology
+
+**Smart Shipping:**
+- IoT sensors for cargo monitoring (temperature, humidity, shock)
+- Predictive maintenance for vessel systems
+- Autonomous vessels: Yara Birkeland, Mayflower Autonomous Ship
+- AI-powered route optimization and fuel efficiency
+
+**Blockchain and Digital Platforms:**
+- TradeLens (Maersk/IBM): blockchain for supply chain transparency
+- GSBN (Global Shipping Business Network): digital shipping ecosystem
+- E-Bill of Lading: paperless documentation (Bolero, essDOCS, CargoX)
+- Digital freight platforms: Freightos, Flexport, Shippo
+
+**Port Digitalization:**
+- Port Community Systems for data sharing
+- Automated gate systems and truck appointment scheduling
+- Real-time berth and crane allocation
+- AI-powered predictive analytics for throughput optimization
+
+### Consolidation and Mega-Vessels
+
+**Shipping Line Consolidation:**
+- MSC acquisition of Bollore Africa Logistics
+- CMA CGM acquisition of Ceva Logistics and Gefco
+- Vertical integration: shipping lines acquiring logistics and terminals
+- Market concentration: Top 10 carriers control 85% of global capacity
+
+**Vessel Upsizing:**
+- ULCV deployment on Asia-Europe and Trans-Pacific
+- Port infrastructure investments for deeper berths
+- Economies of scale vs. port rotation flexibility
+- Slot cost reduction but higher capital investment
+
+## Related Topics
+
+### Cross-References
+
+- [AirFreight](/AirFreight): Alternative mode for time-sensitive cargo
+- [Trucking](/Trucking): Drayage and inland transportation from ports
+- [Warehousing](/Warehousing): Port warehousing and distribution centers
+- [LastMile](/LastMile): Final delivery from port to consumer
+- [SupplyChainManagement](/SupplyChainManagement): Multi-modal logistics coordination
+
+### External Resources
+
+- **International Maritime Organization (IMO)**: Global maritime regulations
+- **World Shipping Council**: Container shipping industry association
+- **International Chamber of Shipping (ICS)**: Shipowner representation
+- **United Nations Conference on Trade and Development (UNCTAD)**: Maritime transport statistics
+- **American Association of Port Authorities (AAPA)**: Port industry advocacy
+- **Journal of Commerce (JOC)**: Industry news and analysis
+- **Lloyd's List**: Maritime intelligence and shipping news
+
+## Sources
+
+- UNCTAD Review of Maritime Transport
+- NAICS 483 Industry Classification
+- APQC Process Classification Framework 4.4.3
+- World Shipping Council Container Statistics
+- IMO Regulations and Guidelines
+- Alphaliner Shipping Database

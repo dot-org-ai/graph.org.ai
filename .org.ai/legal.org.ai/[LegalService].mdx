@@ -1,0 +1,48 @@
+---
+$context: https://legal.org.ai
+$id: https://legal.org.ai/{{slug}}
+$type: https://legal.org.ai/LegalService
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for LegalService
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<LegalServiceOverview legalservice={legalservice} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `LegalService` |
+| Domain | [legal.org.ai](https://legal.org.ai) |
+| Parent | [law.org.ai](https://law.org.ai) |
+
+## Details
+
+<LegalServiceDetails legalservice={legalservice} />
+
+## Properties
+
+<LegalServiceProperties legalservice={legalservice} />
+
+## Relationships
+
+<LegalServiceRelationships legalservice={legalservice} />
+
+## Related
+
+<RelatedLegalServices legalservice={legalservice} />
+
+## Sources
+
+- <DatabaseLink namespace="legal.org.ai" type="{{slug}}" />

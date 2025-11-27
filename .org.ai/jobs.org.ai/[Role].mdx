@@ -1,0 +1,48 @@
+---
+$context: https://jobs.org.ai
+$id: https://jobs.org.ai/{{slug}}
+$type: https://jobs.org.ai/Role
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Role
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<RoleOverview role={role} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Role` |
+| Domain | [jobs.org.ai](https://jobs.org.ai) |
+| Parent | [work.org.ai](https://work.org.ai) |
+
+## Details
+
+<RoleDetails role={role} />
+
+## Properties
+
+<RoleProperties role={role} />
+
+## Relationships
+
+<RoleRelationships role={role} />
+
+## Related
+
+<RelatedRoles role={role} />
+
+## Sources
+
+- <DatabaseLink namespace="jobs.org.ai" type="{{slug}}" />

@@ -1,0 +1,489 @@
+---
+$context: https://energy.org.ai
+$id: https://energy.org.ai/Refining
+$type: https://energy.org.ai/Energy
+name: Petroleum Refining and Petrochemicals
+description: Downstream operations converting crude oil into fuels, lubricants, and petrochemical feedstocks
+naics: "324"
+apqc: ["14.0"]
+keywords: [refining, downstream, petrochemicals, gasoline, diesel, crude oil, distillation, cracking]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Petroleum Refining and Petrochemicals
+
+Petroleum refining is the industrial process of converting crude oil into useful products such as transportation fuels (gasoline, diesel, jet fuel), heating oil, lubricants, asphalt, and petrochemical feedstocks. Refineries are complex chemical plants that separate, convert, and treat hydrocarbon molecules through physical and chemical processes.
+
+## Overview
+
+The petroleum refining industry (NAICS 324) transforms crude oil through:
+
+- **Separation**: Physical processes separating crude into fractions by boiling point
+- **Conversion**: Chemical processes breaking large molecules into smaller, more valuable ones
+- **Treatment**: Removing impurities (sulfur, nitrogen, metals) to meet product specifications
+- **Blending**: Combining streams and additives to create finished products
+- **Logistics**: Receiving crude, storing intermediates, shipping products
+
+### Industry Scale
+
+- Global refining capacity: ~100 million barrels per day (2024)
+- Number of refineries worldwide: ~700 facilities
+- Largest refineries: 500,000-1,000,000 barrels per day capacity
+- U.S. refineries: ~130 facilities, ~18 million bpd capacity
+- Product yields: ~45% gasoline, 30% diesel, 10% jet fuel, 15% other products
+
+## Refinery Processes (APQC 14.0)
+
+### Primary Separation Processes
+
+**Crude Distillation (Atmospheric Distillation)**
+- Heating crude oil to 600-750°F
+- Separating into fractions by boiling point in distillation column
+- Products: Light gases, naphtha, kerosene, diesel, atmospheric gas oil, residuum
+- Largest single unit in refinery, 100% of crude processed
+
+**Vacuum Distillation**
+- Further distilling atmospheric residuum under vacuum
+- Lower pressure allows distillation without thermal cracking
+- Products: Vacuum gas oil (VGO), vacuum residue
+- Feedstock for conversion units
+
+### Conversion Processes
+
+**Fluid Catalytic Cracking (FCC)**
+- Breaking heavy gas oils into lighter products
+- Hot catalyst (zeolite) at 900-1000°F
+- Primary source of gasoline in refinery (35-50% of crude)
+- Byproducts: Light olefins for petrochemicals, coke
+
+**Hydrocracking**
+- Catalytic cracking in hydrogen atmosphere
+- Converts heavy oils to diesel, jet fuel, naphtha
+- Higher quality products than FCC (less sulfur, better cetane)
+- Capital intensive but flexible operations
+
+**Coking (Delayed Coking, Fluid Coking)**
+- Thermal cracking of residuum to produce lighter products
+- Solid petroleum coke byproduct (fuel or anode grade)
+- Handles heavy, contaminated feedstocks
+- Enables refinery to process heavy crude oils
+
+**Catalytic Reforming**
+- Converting low-octane naphtha to high-octane gasoline blendstock
+- Produces aromatics (benzene, toluene, xylene) for petrochemicals
+- Byproduct hydrogen used elsewhere in refinery
+- Platinum/rhenium catalyst
+
+**Alkylation**
+- Combining light olefins (from FCC) with isobutane
+- Produces high-octane, clean-burning gasoline component
+- Hydrofluoric acid or sulfuric acid catalyst
+- Safety concerns with HF acid inventory
+
+**Isomerization**
+- Converting normal paraffins to branched isomers
+- Increases octane of light naphtha
+- Lower sulfur alternative to alkylate
+- Zeolite catalyst
+
+### Treatment Processes
+
+**Hydrotreating (Hydrodesulfurization)**
+- Removing sulfur, nitrogen, metals from petroleum streams
+- Hydrogen reacts with impurities at elevated temperature/pressure
+- Required for meeting ultra-low sulfur fuel standards
+- Most widespread treating process in refinery
+
+**Sulfur Recovery (Claus Process)**
+- Converting hydrogen sulfide (H2S) from treating units to elemental sulfur
+- Two-stage process: thermal and catalytic conversion
+- Tail gas treatment for >99.9% sulfur recovery
+- Sulfur sold as industrial feedstock
+
+**Merox (Mercaptan Extraction)**
+- Removing mercaptans (odorous sulfur compounds) from LPG, jet fuel
+- Caustic extraction and oxidation
+- Sweet products meeting pipeline specifications
+
+**Amine Treating**
+- Removing acid gases (H2S, CO2) from refinery fuel gas
+- MEA, DEA, or MDEA solvent systems
+- Regenerative process
+
+### Blending and Finishing (APQC 14.3)
+
+**Gasoline Blending**
+- Combining 6-12 blend stocks: reformate, FCC gasoline, alkylate, isomerate, butane
+- Octane rating: 87 (regular), 89 (mid-grade), 91-93 (premium)
+- Reid Vapor Pressure (RVP) control for evaporative emissions
+- Oxygenates: Ethanol (E10, E15) for renewable fuel standards
+
+**Diesel Blending**
+- Straight-run diesel, cracked stocks, additives
+- Cetane number: minimum 40, typically 42-48
+- Ultra-low sulfur: <15 ppm sulfur (ULSD)
+- Cold flow properties: cloud point, pour point, CFPP
+
+**Jet Fuel Blending**
+- Kerosene-range material with strict specifications
+- Freeze point: -40°C (Jet A), -47°C (Jet A-1)
+- Flash point, aromatics, sulfur limits
+- Critical safety and performance requirements
+
+**Specialty Products**
+- Lubricating oils: solvent extraction, dewaxing, hydrofinishing
+- Greases: thickened lubricants
+- Waxes: paraffin, microcrystalline
+- Asphalt: oxidized or blended residuum for paving, roofing
+
+## Refinery Configuration
+
+### Complexity Levels
+
+**Topping Refineries**
+- Atmospheric distillation only
+- Limited conversion capability
+- Produce mostly fuel oil, some diesel
+- Low complexity, low investment
+
+**Hydroskimming Refineries**
+- Distillation + reforming + hydrotreating
+- Produce gasoline and diesel
+- Medium complexity
+- Common configuration
+
+**Conversion Refineries**
+- Include FCC or hydrocracker
+- Maximize gasoline and diesel, minimize fuel oil
+- High complexity
+- Most common in developed markets
+
+**Deep Conversion (Coking) Refineries**
+- Add coking to process residuum
+- Can handle heavy, sour crude oils
+- Highest complexity and flexibility
+- Highest margins but highest capital cost
+
+### Nelson Complexity Index
+- Measures refinery sophistication
+- Scale from 1 (topping) to 15+ (deep conversion)
+- U.S. average: ~10
+- Higher complexity = higher margins but higher operating costs
+
+## Crude Oil Types and Quality
+
+### Crude Oil Properties
+
+**API Gravity**
+- Measure of density: Light (>31.1°), Medium (22.3-31.1°), Heavy (<22.3°)
+- Lighter crudes yield more valuable light products
+- Heavier crudes require more conversion capacity
+
+**Sulfur Content**
+- Sweet crude: <0.5% sulfur
+- Sour crude: >0.5% sulfur
+- Higher sulfur requires more hydrotreating
+
+**Acidity (TAN - Total Acid Number)**
+- Naphthenic acids cause corrosion
+- High TAN crudes require special metallurgy
+
+### Benchmark Crudes
+- **WTI (West Texas Intermediate)**: Light (39.6° API), sweet (0.24% S)
+- **Brent Blend**: Light (38.3° API), sweet (0.37% S)
+- **Dubai/Oman**: Medium (31° API), sour (2% S)
+- **Maya (Mexican)**: Heavy (22° API), sour (3.3% S)
+- **WCS (Western Canadian Select)**: Heavy (20° API), sour (3.5% S)
+
+### Crude Slate Optimization
+- Balancing crude cost vs. product yield and quality
+- Linear programming (LP) models for optimization
+- Seasonal adjustments for gasoline vs. heating oil demand
+- Spread trading between crude grades
+
+## Refinery Operations (APQC 14.1, 14.2)
+
+### Planning and Scheduling (APQC 14.1)
+
+**Long-Range Planning**
+- Turnaround scheduling (4-5 year cycles)
+- Capital project planning
+- Crude supply contracts
+
+**Medium-Term Scheduling**
+- Monthly crude acquisition
+- Product demand forecasting
+- Inventory management
+- Optimization runs
+
+**Short-Term Operations**
+- Daily crude selection and processing
+- Unit rate adjustments
+- Product blending
+- Real-time optimization
+
+### Process Control and Optimization (APQC 14.4)
+
+**Distributed Control Systems (DCS)**
+- Honeywell, Emerson, Yokogawa systems
+- Continuous monitoring and control
+- Alarm management
+- Historical data trending
+
+**Advanced Process Control (APC)**
+- Model Predictive Control (MPC)
+- Multivariable optimization
+- Constraint management
+- Typical benefits: 2-5% margin improvement
+
+**Real-Time Optimization (RTO)**
+- Rigorous process models
+- Economic optimization
+- Updated every 1-4 hours
+- Setpoint adjustments to APC
+
+**Refinery-Wide Optimization**
+- Linear programming (LP) models
+- Crude slate selection
+- Product slate optimization
+- Maximizing gross margin
+
+### Maintenance and Reliability
+
+**Turnarounds (Shutdowns)**
+- Complete unit shutdown for inspection and maintenance
+- Every 4-5 years for major units
+- Duration: 30-60 days
+- Cost: $50-200 million for large refinery
+
+**Reliability-Centered Maintenance (RCM)**
+- Risk-based inspection (RBI)
+- Predictive maintenance (vibration, thermography, oil analysis)
+- Preventive maintenance schedules
+- Spare parts management
+
+**Asset Integrity Management**
+- Pressure vessel inspections
+- Pipeline integrity programs
+- Corrosion monitoring
+- Mechanical integrity (OSHA PSM)
+
+## Environmental and Safety
+
+### Air Emissions
+
+**Criteria Pollutants**
+- SOx (sulfur oxides): Flue gas scrubbers, low-sulfur fuel
+- NOx (nitrogen oxides): Low-NOx burners, SCR catalysts
+- Particulate matter: Electrostatic precipitators
+- VOCs (volatile organic compounds): Vapor recovery, flares
+- CO (carbon monoxide): Combustion optimization
+
+**Greenhouse Gases**
+- CO2 from combustion: 100-200 kg CO2/barrel crude processed
+- Methane leaks: LDAR programs
+- Energy efficiency improvements: Heat integration, cogeneration
+- Carbon capture and storage (CCS): Emerging technology
+
+**Flaring**
+- Emergency relief and startup/shutdown operations
+- Minimize through gas recovery systems
+- Enclosed ground flares reduce visible emissions
+- Flare gas recovery units
+
+### Water Management
+
+**Wastewater Treatment**
+- API separators: oil/water separation
+- Dissolved air flotation (DAF)
+- Biological treatment (activated sludge)
+- Effluent limits: <10 ppm oil, BOD, COD standards
+
+**Water Sources**
+- Freshwater: makeup for cooling, steam, process
+- Recycling: Treated wastewater reuse
+- Seawater: Coastal refineries for cooling
+
+**Produced Water**
+- Sour water from crude distillation, hydrotreaters
+- Sour water stripping to remove H2S, ammonia
+- Reuse in desalters, treating units
+
+### Waste Management
+
+**Hazardous Wastes**
+- Spent catalysts: Recycling for metal recovery
+- Sludges: Oil-contaminated solids from tanks, separators
+- Filter clay: Hydrotreating catalyst fines
+
+**Solid Wastes**
+- Petroleum coke: Fuel or calcined for anodes
+- Sulfur: Sold as industrial feedstock
+- Ordinary refuse: Landfill or recycling
+
+### Process Safety
+
+**Major Hazards**
+- Fires and explosions: Hydrocarbon releases, ignition
+- Toxic releases: H2S, HF acid (alkylation), benzene
+- Overpressure: Relief system failures, runaway reactions
+
+**Safety Management Systems (SMS)**
+- OSHA Process Safety Management (PSM): 1910.119
+- Risk assessment: HAZOP, LOPA, QRA
+- Management of change (MOC)
+- Pre-startup safety reviews (PSSR)
+- Incident investigation
+- Emergency response planning
+
+**Historical Incidents**
+- **Texas City Refinery (2005)**: Blowdown drum explosion, 15 fatalities
+- **Chevron Richmond (2012)**: Pipe failure, toxic release
+- **Philadelphia Energy Solutions (2019)**: Alkylation unit explosion, refinery closure
+
+## Economics and Market Dynamics
+
+### Refinery Margins
+
+**Crack Spreads**
+- Difference between crude cost and product revenue
+- 3-2-1 crack: 3 barrels crude → 2 barrels gasoline + 1 barrel diesel
+- 2-1-1 crack: 2 barrels crude → 1 gasoline + 1 diesel
+- Margins vary by location, configuration, crude type
+
+**Margin Components**
+- Product premiums: Gasoline, diesel, jet fuel vs. fuel oil
+- Quality premiums: Low sulfur, high octane
+- Location differentials: Transport costs, market tightness
+- Seasonal patterns: Gasoline peaks in summer, heating oil in winter
+
+### Cost Structure
+
+**Operating Costs**
+- Energy: Natural gas, electricity (30-40% of opex)
+- Catalysts and chemicals (15-20%)
+- Labor and maintenance (25-30%)
+- Utilities and overhead (15-20%)
+- Total: $3-7 per barrel processed
+
+**Capital Costs**
+- Greenfield refinery: $10,000-20,000 per daily barrel capacity
+- Expansion projects: $5,000-15,000 per daily barrel
+- Environmental upgrades: Low-sulfur gasoline, diesel
+
+### Market Trends
+
+**Demand Shifts**
+- Gasoline demand declining in developed markets (vehicle efficiency, EVs)
+- Diesel and jet fuel demand growing in emerging markets
+- Petrochemical feedstock demand increasing
+- Fuel oil demand declining (IMO 2020 sulfur regulations)
+
+**Supply Dynamics**
+- Refining capacity additions in Asia and Middle East
+- Closures in Europe and North America (older, less complex refineries)
+- Utilization rates: 80-90% globally, regional variations
+
+**Energy Transition Impact**
+- Peak oil demand projected 2030s
+- Refineries pivoting to petrochemicals (refinery-to-chemicals integration)
+- Renewable diesel, sustainable aviation fuel (SAF) production
+- Hydrogen production (blue hydrogen with CCS)
+
+## Petrochemicals Integration
+
+### Refinery-to-Chemicals
+
+**Olefins Production**
+- Steam cracking of naphtha, ethane, LPG
+- Products: Ethylene, propylene, butadiene
+- Feedstock for plastics, synthetic fibers, chemicals
+
+**Aromatics Extraction**
+- BTX (Benzene, Toluene, Xylene) from reformate
+- Paraxylene for polyester (PET)
+- Benzene for styrene, nylon intermediates
+
+**Integrated Facilities**
+- Shared infrastructure: utilities, storage, logistics
+- Feedstock flexibility: Naphtha, gas oils, condensates
+- Higher margins from chemicals vs. fuels
+- Examples: Saudi Aramco SATORP, Hengli (China), Reliance (India)
+
+### Renewable Feedstocks
+
+**Renewable Diesel**
+- Hydrotreating vegetable oils, animal fats, waste oils
+- Drop-in replacement for petroleum diesel
+- California LCFS, federal RFS incentives
+
+**Sustainable Aviation Fuel (SAF)**
+- Hydroprocessed esters and fatty acids (HEFA)
+- Fischer-Tropsch synthesis from biomass
+- Alcohol-to-jet pathways
+- Blending up to 50% with conventional jet fuel
+
+**Bio-Based Petrochemicals**
+- Bio-ethylene from ethanol dehydration
+- Bio-propylene from bio-oils
+- Green hydrogen for refinery operations
+
+## Technology and Innovation
+
+### Digitalization
+
+**Advanced Analytics**
+- Predictive maintenance using machine learning
+- Process optimization with AI
+- Supply chain optimization
+- Demand forecasting
+
+**Digital Twin**
+- Virtual refinery models
+- Scenario testing and optimization
+- Operator training simulations
+
+**Cybersecurity**
+- Protection of industrial control systems
+- Network segmentation
+- Intrusion detection
+- Incident response planning
+
+### Process Innovations
+
+**Residue Upgrading**
+- Slurry hydrocracking
+- Ebullated bed hydrocracking (LC-Fining, H-Oil)
+- Solvent deasphalting
+
+**Lower Carbon Technologies**
+- Electrification of furnaces and heaters
+- Green hydrogen for hydrotreating
+- Carbon capture on heaters and FCC regenerators
+- Renewable power for refinery operations
+
+## Cross-References
+
+### Related NAICS Codes
+- [211 - Oil and Gas Extraction](https://naics.org.ai/211) - Upstream crude production
+- [325 - Chemical Manufacturing](https://naics.org.ai/325) - Petrochemicals
+- [486 - Pipeline Transportation](https://naics.org.ai/486) - Product distribution
+
+### APQC Process Framework
+- [14.0 Refine and Process](https://apqc.org.ai/petroleum/14.0) - Refining operations
+
+### Related Topics
+- [OilGasExploration.mdx](./OilGasExploration.mdx) - Upstream crude production
+- [NaturalGas.mdx](./NaturalGas.mdx) - Natural gas processing
+- [ElectricUtilities.mdx](./ElectricUtilities.mdx) - Power generation from refined products
+
+## Sources
+
+- U.S. Energy Information Administration (EIA) - Refining statistics
+- American Fuel & Petrochemical Manufacturers (AFPM) - Industry data
+- International Energy Agency (IEA) - Global refining outlook
+- Environmental Protection Agency (EPA) - Environmental regulations
+- Occupational Safety and Health Administration (OSHA) - Safety requirements

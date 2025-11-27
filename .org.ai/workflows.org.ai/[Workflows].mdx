@@ -1,0 +1,48 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/{{slug}}
+$type: https://workflows.org.ai/Workflows
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Workflows
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<WorkflowsOverview workflows={workflows} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Workflows` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+
+## Details
+
+<WorkflowsDetails workflows={workflows} />
+
+## Properties
+
+<WorkflowsProperties workflows={workflows} />
+
+## Relationships
+
+<WorkflowsRelationships workflows={workflows} />
+
+## Related
+
+<RelatedWorkflowss workflows={workflows} />
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="{{slug}}" />

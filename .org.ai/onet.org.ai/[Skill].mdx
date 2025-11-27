@@ -1,0 +1,48 @@
+---
+$context: https://onet.org.ai
+$id: https://onet.org.ai/{{slug}}
+$type: https://onet.org.ai/Skill
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Skill
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SkillOverview skill={skill} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Skill` |
+| Domain | [onet.org.ai](https://onet.org.ai) |
+| Parent | [standards.org.ai](https://standards.org.ai) |
+
+## Details
+
+<SkillDetails skill={skill} />
+
+## Properties
+
+<SkillProperties skill={skill} />
+
+## Relationships
+
+<SkillRelationships skill={skill} />
+
+## Related
+
+<RelatedSkills skill={skill} />
+
+## Sources
+
+- <DatabaseLink namespace="onet.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/{{slug}}
+$type: https://datasets.org.ai/Dataset
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Dataset
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<DatasetOverview dataset={dataset} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Dataset` |
+| Domain | [datasets.org.ai](https://datasets.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<DatasetDetails dataset={dataset} />
+
+## Properties
+
+<DatasetProperties dataset={dataset} />
+
+## Relationships
+
+<DatasetRelationships dataset={dataset} />
+
+## Related
+
+<RelatedDatasets dataset={dataset} />
+
+## Sources
+
+- <DatabaseLink namespace="datasets.org.ai" type="{{slug}}" />

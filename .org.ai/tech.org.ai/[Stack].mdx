@@ -1,0 +1,48 @@
+---
+$context: https://tech.org.ai
+$id: https://tech.org.ai/{{slug}}
+$type: https://tech.org.ai/Stack
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Stack
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<StackOverview stack={stack} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Stack` |
+| Domain | [tech.org.ai](https://tech.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<StackDetails stack={stack} />
+
+## Properties
+
+<StackProperties stack={stack} />
+
+## Relationships
+
+<StackRelationships stack={stack} />
+
+## Related
+
+<RelatedStacks stack={stack} />
+
+## Sources
+
+- <DatabaseLink namespace="tech.org.ai" type="{{slug}}" />

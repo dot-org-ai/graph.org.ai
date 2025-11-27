@@ -1,0 +1,48 @@
+---
+$context: https://enterprises.org.ai
+$id: https://enterprises.org.ai/{{slug}}
+$type: https://enterprises.org.ai/Enterprises
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Enterprises
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<EnterprisesOverview enterprises={enterprises} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Enterprises` |
+| Domain | [enterprises.org.ai](https://enterprises.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<EnterprisesDetails enterprises={enterprises} />
+
+## Properties
+
+<EnterprisesProperties enterprises={enterprises} />
+
+## Relationships
+
+<EnterprisesRelationships enterprises={enterprises} />
+
+## Related
+
+<RelatedEnterprisess enterprises={enterprises} />
+
+## Sources
+
+- <DatabaseLink namespace="enterprises.org.ai" type="{{slug}}" />

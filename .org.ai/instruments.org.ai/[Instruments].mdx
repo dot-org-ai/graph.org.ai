@@ -1,0 +1,48 @@
+---
+$context: https://instruments.org.ai
+$id: https://instruments.org.ai/{{slug}}
+$type: https://instruments.org.ai/Instruments
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Instruments
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<InstrumentsOverview instruments={instruments} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Instruments` |
+| Domain | [instruments.org.ai](https://instruments.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<InstrumentsDetails instruments={instruments} />
+
+## Properties
+
+<InstrumentsProperties instruments={instruments} />
+
+## Relationships
+
+<InstrumentsRelationships instruments={instruments} />
+
+## Related
+
+<RelatedInstrumentss instruments={instruments} />
+
+## Sources
+
+- <DatabaseLink namespace="instruments.org.ai" type="{{slug}}" />

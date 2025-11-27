@@ -1,0 +1,48 @@
+---
+$context: https://naics.org.ai
+$id: https://naics.org.ai/{{slug}}
+$type: https://naics.org.ai/Naics
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Naics
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<NaicsOverview naics={naics} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Naics` |
+| Domain | [naics.org.ai](https://naics.org.ai) |
+| Parent | [standards.org.ai](https://standards.org.ai) |
+
+## Details
+
+<NaicsDetails naics={naics} />
+
+## Properties
+
+<NaicsProperties naics={naics} />
+
+## Relationships
+
+<NaicsRelationships naics={naics} />
+
+## Related
+
+<RelatedNaicss naics={naics} />
+
+## Sources
+
+- <DatabaseLink namespace="naics.org.ai" type="{{slug}}" />

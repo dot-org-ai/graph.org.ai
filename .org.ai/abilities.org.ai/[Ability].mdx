@@ -1,0 +1,47 @@
+---
+$id: https://abilities.org.ai/{id}
+$context: https://abilities.org.ai
+$type: https://abilities.org.ai/Ability
+id: "{id}"
+code: "{code}"
+name: "{name}"
+description: "{description}"
+category: "cognitive" | "psychomotor" | "physical" | "sensory"
+sameAs: https://onet.org.ai/Ability/{code}
+---
+
+# {name}
+
+<AbilityOverview id="{id}" />
+
+## Description
+
+{description}
+
+## Category
+
+**{category}** - {categoryDescription}
+
+## Level Scale
+
+| Level | Anchor Example |
+|-------|----------------|
+| 1 | {level1Example} |
+| 3 | {level3Example} |
+| 5 | {level5Example} |
+| 7 | {level7Example} |
+
+## Related Occupations
+
+<OccupationsWithAbility abilityId="{id}" />
+
+## Related Skills
+
+<RelatedSkills abilityId="{id}" />
+
+## Cross-References
+
+| System | Reference |
+|--------|-----------|
+| [onet.org.ai](https://onet.org.ai/Ability/{code}) | Full O*NET detail |
+| [skills.org.ai](https://skills.org.ai) | Related skills |

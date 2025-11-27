@@ -1,0 +1,574 @@
+---
+$context: https://energy.org.ai
+$id: https://energy.org.ai/ElectricUtilities
+$type: https://energy.org.ai/Energy
+name: Electric Power Generation, Transmission and Distribution
+description: Electric utility operations including power generation, high-voltage transmission, and local distribution networks
+naics: "2211"
+apqc: ["10.0", "11.0", "12.0"]
+keywords: [electricity, utilities, power generation, transmission, distribution, grid, renewable energy]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Electric Power Generation, Transmission and Distribution
+
+The electric power industry (NAICS 2211) comprises the generation of electrical energy from various sources, transmission over high-voltage networks, and distribution to end-use customers. This critical infrastructure sector operates as a highly regulated, capital-intensive industry requiring continuous real-time balancing of supply and demand.
+
+## Overview
+
+The electric utility value chain consists of three main segments:
+
+- **Generation (APQC 10.0)**: Producing electricity from fossil fuels, nuclear, renewable, and other sources
+- **Transmission (APQC 11.0)**: Moving power over long distances via high-voltage networks (69 kV to 765 kV)
+- **Distribution (APQC 11.0)**: Delivering power to customers via local networks (typically <69 kV)
+
+### Industry Scale
+
+- **U.S. Generation Capacity**: ~1,200 GW (2024)
+- **Annual Generation**: ~4,200 TWh
+- **Transmission Lines**: 700,000+ circuit miles
+- **Distribution Lines**: 5.5 million+ miles
+- **Customers**: 150+ million residential, commercial, industrial
+- **Grid Reliability**: 99.9%+ uptime (SAIDI/SAIFI metrics)
+
+## Power Generation (APQC 10.0)
+
+### Generation Technologies
+
+#### Fossil Fuel Generation
+
+**Natural Gas Combined Cycle (NGCC) - NAICS 221112**
+- Gas turbine + steam turbine (combined cycle)
+- Efficiency: 50-60% (vs. 33-38% for simple cycle)
+- Fast ramping capability (30-60 minutes to full power)
+- Lower emissions than coal (50% less CO2 per kWh)
+- Capacity factor: 50-60%
+- Capital cost: $1,000-1,200/kW
+
+**Coal-Fired Steam Plants - NAICS 221112**
+- Pulverized coal boilers, steam turbines
+- Efficiency: 33-40% (subcritical), 40-45% (supercritical)
+- Baseload operation, slow ramping
+- Emissions controls: SCR (NOx), FGD (SO2), ESP (particulates)
+- Capacity factor: 40-50% (declining due to retirements)
+- Coal ash handling and disposal
+
+**Peaking/Simple Cycle Gas Turbines**
+- Rapid start capability (10-20 minutes)
+- Lower efficiency (25-35%) but low capital cost
+- Operate during peak demand periods
+- Capacity factor: 5-15%
+- Capital cost: $700-900/kW
+
+#### Nuclear Power - NAICS 221113
+
+**Light Water Reactors (LWRs)**
+- Pressurized Water Reactors (PWR): 2-loop, 3-loop, 4-loop designs
+- Boiling Water Reactors (BWR)
+- Typical capacity: 1,000-1,400 MW per unit
+- Capacity factor: 90%+ (high reliability)
+- Fuel: Enriched uranium (3-5% U-235)
+- Operating license: 40 years, many extended to 60-80 years
+
+**Nuclear Operations**
+- 18-24 month refueling cycles
+- Strict Nuclear Regulatory Commission (NRC) oversight
+- Emergency core cooling systems (ECCS)
+- Spent fuel storage: on-site pools and dry casks
+- Security: armed guards, protected area, vital areas
+
+**Small Modular Reactors (SMRs)**
+- Capacity: 50-300 MW per module
+- Factory fabrication, modular construction
+- Passive safety systems
+- NuScale (first U.S. design certification 2020)
+
+#### Renewable Energy
+
+**Hydroelectric Power - NAICS 221111**
+- Conventional dams: Impoundment reservoirs
+- Run-of-river: Minimal storage
+- Pumped storage: Energy storage (charge/discharge)
+- Capacity factor: 30-50% (varies by hydrology)
+- Licensing: FERC, environmental (fish passage, flows)
+- U.S. capacity: ~80 GW conventional, ~23 GW pumped storage
+
+**Wind Power - NAICS 221115**
+- Onshore turbines: 2-5 MW, 80-120 m hub height
+- Offshore turbines: 8-15 MW, larger rotor diameters
+- Capacity factor: 25-35% onshore, 40-50% offshore
+- Curtailment during low demand or transmission constraints
+- Production Tax Credit (PTC) support
+- U.S. capacity: ~140 GW
+
+**Solar Photovoltaic (PV) - NAICS 221114**
+- Utility-scale: >5 MW, fixed tilt or single-axis tracking
+- Distributed: Rooftop, community solar
+- Technology: Crystalline silicon (mono, poly), thin film
+- Capacity factor: 15-25% (varies by location, tracking)
+- Inverters: String, central, microinverters
+- U.S. capacity: ~100 GW utility-scale, ~40 GW distributed
+
+**Concentrated Solar Power (CSP) - NAICS 221114**
+- Parabolic troughs, power towers, linear Fresnel
+- Thermal storage (molten salt) enables dispatchability
+- Capacity factor: 25-35% (higher with storage)
+- Primarily in southwestern U.S.
+
+**Geothermal - NAICS 221116**
+- Flash steam, binary cycle plants
+- Baseload operation (90%+ capacity factor)
+- Resources in western U.S. (California, Nevada)
+- U.S. capacity: ~3.7 GW
+
+**Biomass - NAICS 221117**
+- Wood waste, agricultural residues, dedicated energy crops
+- Combustion, gasification, anaerobic digestion
+- Carbon considerations: Renewable but emits CO2
+- U.S. capacity: ~14 GW
+
+### Generation Dispatch and Optimization (APQC 10.2)
+
+**Merit Order Dispatch**
+- Economic dispatch based on marginal cost
+- Lowest variable cost units dispatched first
+- Typical order: Nuclear → hydro → coal → NGCC → peakers
+- Renewable energy: Zero marginal cost, priority dispatch
+
+**Unit Commitment**
+- Day-ahead scheduling of generation units
+- Start-up costs, minimum run times, ramp rates
+- Reserve requirements (spinning, non-spinning, regulation)
+- Security-constrained unit commitment (SCUC)
+
+**Automatic Generation Control (AGC)**
+- Real-time frequency regulation (maintain 60.00 Hz)
+- Area Control Error (ACE) monitoring
+- Economic dispatch signal every 4-10 seconds
+- Ancillary services: regulation up/down
+
+**Renewable Integration Challenges**
+- Variability: Wind and solar output changes with weather
+- Forecasting: Day-ahead and hour-ahead predictions
+- Flexibility: Fast-ramping resources needed (gas, hydro, batteries)
+- Curtailment: Reducing renewable output during oversupply
+
+### Operations and Maintenance (APQC 10.3)
+
+**Preventive Maintenance**
+- Scheduled outages for inspections, overhauls
+- Turbine/generator maintenance
+- Boiler/heat exchanger cleaning
+- Transformer oil analysis
+
+**Predictive Maintenance**
+- Vibration monitoring (rotating equipment)
+- Thermography (electrical connections)
+- Oil/coolant analysis
+- Acoustic monitoring (steam leaks)
+
+**Reliability and Availability**
+- Equivalent Availability Factor (EAF)
+- Forced Outage Rate (FOR)
+- Heat rate monitoring (efficiency)
+- Emissions monitoring (CEMS - Continuous Emissions Monitoring)
+
+## Transmission (APQC 11.1)
+
+### Transmission Infrastructure
+
+**High-Voltage Networks**
+- Extra-High Voltage (EHV): 230 kV, 345 kV, 500 kV, 765 kV
+- Long-distance bulk power transfer
+- Interconnection between utilities
+- U.S.: Three interconnections (Eastern, Western, Texas)
+
+**Substations**
+- Step-up substations: Generation to transmission voltage
+- Switching substations: Network reconfiguration
+- Step-down substations: Transmission to distribution voltage
+- Equipment: Transformers, circuit breakers, disconnect switches, bus
+
+**HVDC (High-Voltage Direct Current)**
+- Long-distance transmission with lower losses
+- Asynchronous interconnection (different frequencies)
+- Submarine cables
+- Converter stations (AC/DC, DC/AC)
+
+### Grid Operations (APQC 11.4)
+
+**Balancing Authorities**
+- Maintain load-resource balance in real-time
+- North American Electric Reliability Corporation (NERC) regions
+- Energy Imbalance Markets (EIM): Western EIM, SPP Markets+
+
+**Transmission System Operators (TSO/ISO)**
+- Independent System Operators (ISO): CAISO, ERCOT, ISO-NE, NYISO, PJM, SPP, MISO
+- Day-ahead and real-time energy markets
+- Locational Marginal Pricing (LMP)
+- Congestion management and transmission rights
+
+**Supervisory Control and Data Analysis (SCADA)**
+- Real-time monitoring and control
+- Remote terminal units (RTUs) at substations
+- Energy Management System (EMS)
+- State estimation and contingency analysis
+
+**Reliability Coordination**
+- Transmission Reliability Margin (TRM)
+- Capacity Benefit Margin (CBM)
+- Transfer capability calculations (ATC, TTC)
+- Outage coordination
+
+### Grid Reliability and Planning
+
+**NERC Reliability Standards**
+- Critical Infrastructure Protection (CIP): Cybersecurity
+- Transmission Planning (TPL): N-1, N-1-1 contingency criteria
+- Operations and Planning (TOP, IRO): Real-time operations
+- Compliance monitoring and enforcement
+
+**Transmission Planning**
+- Load forecasting (peak demand, energy)
+- Generation interconnection studies
+- Transmission expansion planning
+- Cost allocation (beneficiary pays, socialized)
+
+**Interconnection Queue**
+- Generator interconnection requests
+- System impact studies, facilities studies
+- Network upgrades required
+- Queue reform (addressing backlogs)
+
+## Distribution (APQC 11.2)
+
+### Distribution Infrastructure
+
+**Distribution Networks**
+- Primary distribution: 4 kV to 35 kV (typical 12.47 kV or 13.8 kV)
+- Secondary distribution: 120/240 V single-phase, 208/120 V or 480/277 V three-phase
+- Overhead lines: Wood poles, crossarms, insulators
+- Underground cables: Direct buried, conduit, pad-mount transformers
+
+**Distribution Substations**
+- Transmission to distribution voltage transformation
+- Circuit breakers and reclosers
+- Capacitor banks (voltage support, power factor correction)
+- SCADA monitoring and control
+
+**Sectionalizing and Protection**
+- Reclosers: Automatic circuit interruption and restoration
+- Sectionalizers: Isolate faulted sections
+- Fuses: Overcurrent protection for laterals
+- Coordination: Selective fault clearing
+
+### Distribution Operations (APQC 11.2)
+
+**Voltage Regulation**
+- Load Tap Changers (LTCs) on substation transformers
+- Line voltage regulators
+- Capacitor banks (fixed, switched)
+- Distributed generation impacts on voltage
+
+**Outage Management**
+- Outage Management System (OMS)
+- Trouble call analysis
+- Crew dispatch and routing
+- Customer notifications
+
+**Reliability Metrics**
+- SAIDI (System Average Interruption Duration Index): Minutes/year
+- SAIFI (System Average Interruption Frequency Index): Interruptions/year
+- CAIDI (Customer Average Interruption Duration Index): Minutes/interruption
+- MAIFI (Momentary Average Interruption Frequency Index)
+
+**Vegetation Management**
+- Tree trimming programs (critical for reliability)
+- Cycle: 3-7 years depending on growth rates
+- Line clearance standards
+- Cost: 10-15% of distribution O&M
+
+### Advanced Distribution Management
+
+**Distribution Management System (DMS)**
+- Real-time monitoring and control
+- Fault location, isolation, and service restoration (FLISR)
+- Volt/VAR optimization (VVO)
+- Topology processing
+
+**Advanced Metering Infrastructure (AMI)**
+- Smart meters: Interval data (15-min, hourly)
+- Two-way communication
+- Remote connect/disconnect
+- Meter Data Management System (MDMS)
+
+**Distributed Energy Resources (DER)**
+- Rooftop solar, battery storage, electric vehicles
+- IEEE 1547 interconnection standard
+- Hosting capacity analysis
+- DER management systems (DERMS)
+
+## Customer Service (APQC 12.0)
+
+### Metering and Billing (APQC 12.1)
+
+**Rate Structures**
+- Residential: Flat rate, tiered, time-of-use (TOU)
+- Commercial: Demand charges ($/kW), energy charges ($/kWh)
+- Industrial: Large power rates, interruptible service
+- Rate cases and public utility commission (PUC) approval
+
+**Net Metering**
+- Crediting customers for excess DER generation
+- One-for-one credit vs. avoided cost
+- Caps on program size or participation
+- Successor tariffs (NEM 3.0 in California)
+
+**Customer Information System (CIS)**
+- Billing and payment processing
+- Customer accounts and service history
+- Integration with AMI, OMS, GIS
+
+### Demand Response and Efficiency (APQC 12.4)
+
+**Demand Response Programs**
+- Direct load control: Cycling of air conditioners, water heaters
+- Interruptible/curtailable service: Industrial customers
+- Time-based rates: Peak pricing, critical peak pricing
+- Aggregator platforms: Residential and C&I participation
+
+**Energy Efficiency Programs**
+- Lighting (LEDs), HVAC upgrades, building insulation
+- Utility incentives and rebates
+- Energy audits
+- Regulatory mandates: Energy Efficiency Resource Standards (EERS)
+
+### Customer Connections (APQC 12.3)
+
+**New Service Connections**
+- Service application and engineering review
+- Trenching, transformer installation, meter set
+- Temporary service (construction)
+
+**Disconnections and Collections**
+- Non-payment disconnection policies
+- Reconnection fees
+- Payment plans and assistance programs
+
+## Electricity Markets (APQC 13.0)
+
+### Wholesale Markets
+
+**Day-Ahead Market**
+- Generator offers, load bids
+- Security-constrained economic dispatch (SCED)
+- Locational Marginal Pricing (LMP): Energy, congestion, losses
+- Financial transmission rights (FTRs), congestion revenue rights (CRRs)
+
+**Real-Time Market**
+- 5-minute dispatch
+- Imbalance settlement
+- Real-time LMPs
+
+**Ancillary Services Markets**
+- Regulation: Frequency control (AGC)
+- Spinning reserves: Immediate response to contingencies
+- Non-spinning reserves: 10-30 minute response
+- Replacement reserves
+
+**Capacity Markets**
+- Ensuring resource adequacy (sufficient generation for peak demand)
+- Forward capacity auctions (e.g., PJM: 3 years ahead)
+- ICAP (Installed Capacity), UCAP (Unforced Capacity)
+- Demand curve pricing
+
+### Bilateral Contracts
+
+**Power Purchase Agreements (PPAs)**
+- Long-term contracts (10-25 years) for renewable energy
+- Fixed price or indexed pricing
+- Physical or financial settlement
+- Corporate PPAs (large customers)
+
+**Tolling Agreements**
+- Generator operates for buyer's account
+- Buyer provides fuel, receives output
+- Common for merchant gas plants
+
+## Environmental and Sustainability
+
+### Air Quality Regulations
+
+**Clean Air Act**
+- National Ambient Air Quality Standards (NAAQS)
+- New Source Performance Standards (NSPS)
+- Maximum Achievable Control Technology (MACT)
+- Regional Haze Rule
+
+**Emissions Controls**
+- Selective Catalytic Reduction (SCR): NOx removal
+- Flue Gas Desulfurization (FGD): SO2 scrubbing (wet, dry)
+- Electrostatic Precipitators (ESP), Baghouses: Particulate removal
+- Activated carbon injection: Mercury control
+
+### Carbon and Climate
+
+**Greenhouse Gas Emissions**
+- Coal: ~1,000 kg CO2/MWh
+- Natural gas: ~400-500 kg CO2/MWh (NGCC)
+- Nuclear, renewables: Near-zero direct emissions
+
+**Carbon Regulations and Pricing**
+- EPA Clean Power Plan (vacated), Affordable Clean Energy (ACE) rule
+- State programs: RGGI (Regional Greenhouse Gas Initiative), California cap-and-trade
+- Carbon taxes (not in U.S., but in other countries)
+
+**Decarbonization Pathways**
+- Renewable energy expansion (wind, solar)
+- Energy storage deployment
+- Coal plant retirements
+- Electrification of transportation, heating
+- Carbon capture and storage (CCS) on gas plants
+- Nuclear new builds and SMRs
+- Green hydrogen for industrial processes
+
+### Water Use
+
+**Cooling Systems**
+- Once-through cooling: Large water withdrawals, thermal discharge
+- Recirculating cooling towers: Lower withdrawals, evaporation
+- Dry cooling: No water use, efficiency penalty
+- Hybrid (wet-dry) cooling
+
+**Clean Water Act**
+- Effluent Limitation Guidelines (ELG)
+- Thermal discharge limits (NPDES permits)
+- 316(b): Cooling water intake structures (fish protection)
+
+## Grid Modernization and Future Trends
+
+### Smart Grid Technologies
+
+**Grid-Edge Intelligence**
+- Smart inverters (IEEE 1547-2018): Voltage/frequency support
+- Battery energy storage systems (BESS): Grid services, peak shaving
+- Electric vehicle charging management: Load flexibility
+- Building energy management systems (BEMS)
+
+**Grid Analytics**
+- High-resolution load forecasting
+- Predictive asset maintenance
+- Outage prediction (weather-driven)
+- Synthetic PMU data for state estimation
+
+### Microgrids
+
+**Characteristics**
+- Ability to island from main grid
+- Local generation and storage
+- Resiliency during grid outages
+- Campus microgrids (universities, military bases, hospitals)
+
+**Control Systems**
+- Microgrid controller
+- Energy management system (EMS)
+- Grid synchronization and islanding logic
+
+### Electrification
+
+**Transportation**
+- Electric vehicles (EVs): Light-duty, medium/heavy-duty trucks, buses
+- Charging infrastructure: Level 1 (120V), Level 2 (240V), DC fast charging
+- Grid impacts: Peak demand, distribution upgrades
+- Managed charging: Time-of-use rates, demand response
+
+**Building Heating**
+- Heat pumps replacing gas furnaces, boilers
+- Induction cooktops replacing gas stoves
+- Building electrification policies (Berkeley, California)
+
+**Industrial Processes**
+- Electric arc furnaces (steel)
+- Heat pumps for industrial heat
+- Green hydrogen for ammonia, chemicals
+
+### Transmission Expansion
+
+**Challenges**
+- Siting and permitting (10+ years)
+- Cost allocation disputes
+- NIMBY (Not In My Backyard) opposition
+
+**Solutions**
+- Regional transmission planning
+- Federal siting authority (limited)
+- Advanced conductors (higher capacity on existing rights-of-way)
+- Dynamic line rating (DLR)
+
+## Safety and Reliability
+
+### Worker Safety
+
+**Electrical Hazards**
+- Arc flash: Protective equipment, arc-rated clothing
+- Electrocution: Lockout/tagout, grounding procedures
+- Working at heights: Fall protection, pole climbing
+
+**OSHA Regulations**
+- 1910.269: Electric power generation, transmission, and distribution
+- 1910.147: Lockout/tagout (LOTO)
+- 1926 Subpart V: Power transmission and distribution (construction)
+
+### Public Safety
+
+**Vegetation Management**
+- Preventing tree contact with lines
+- Wildfire risk (California: PSPS - Public Safety Power Shutoffs)
+
+**Underground Damage Prevention**
+- Call before you dig (811)
+- One-call notification systems
+
+**Stray Voltage**
+- Neutral-to-earth voltage
+- Livestock and human safety concerns
+
+### Cybersecurity
+
+**NERC CIP Standards**
+- CIP-002: Critical asset identification
+- CIP-003 to CIP-009: Security management controls
+- CIP-010 to CIP-014: Configuration, vulnerability, physical security
+
+**Threats**
+- Nation-state actors (Russia, China)
+- Ransomware attacks
+- Insider threats
+
+## Cross-References
+
+### Related NAICS Codes
+- [221210 - Natural Gas Distribution](https://naics.org.ai/221210) - Gas utilities
+- [221113 - Nuclear Power](https://naics.org.ai/221113) - Nuclear generation
+- [221115 - Wind Power](https://naics.org.ai/221115) - Wind generation
+
+### APQC Process Framework
+- [10.0 Generate Power](https://apqc.org.ai/utilities/10.0) - Power generation
+- [11.0 Transmit and Distribute](https://apqc.org.ai/utilities/11.0) - T&D operations
+- [12.0 Serve Customers](https://apqc.org.ai/utilities/12.0) - Customer service
+
+### Related Topics
+- [Renewables.mdx](./Renewables.mdx) - Renewable energy technologies
+- [NaturalGas.mdx](./NaturalGas.mdx) - Gas-fired generation fuel supply
+- [Mining.mdx](./Mining.mdx) - Coal supply for generation
+
+## Sources
+
+- U.S. Energy Information Administration (EIA) - Electric Power Annual
+- Federal Energy Regulatory Commission (FERC) - Wholesale market oversight
+- North American Electric Reliability Corporation (NERC) - Reliability standards
+- Environmental Protection Agency (EPA) - Environmental regulations
+- National Renewable Energy Laboratory (NREL) - Renewable energy research

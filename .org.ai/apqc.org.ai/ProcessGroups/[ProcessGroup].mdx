@@ -1,0 +1,42 @@
+---
+$id: https://apqc.org.ai/ProcessGroups/{code}
+$context: https://apqc.org.ai
+$type: https://apqc.org.ai/ProcessGroup
+code: "{code}"
+name: "{ProcessGroup Name}"
+category: "{categoryCode}"
+categoryName: "{Category Name}"
+processes:
+  - code: "{code}.1"
+    name: "{Process Name}"
+  - code: "{code}.2"
+    name: "{Process Name}"
+---
+
+# {code} {ProcessGroup Name}
+
+<ProcessGroupOverview code="{code}" />
+
+## Processes
+
+<ProcessList processGroupCode="{code}" />
+
+| Code | Process | Activities |
+|------|---------|------------|
+| {code}.1 | {Process Name} | {count} |
+| {code}.2 | {Process Name} | {count} |
+
+## Key Metrics
+
+<ProcessGroupMetrics code="{code}" />
+
+## Best Practices
+
+<BestPractices processGroupCode="{code}" />
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [onet.org.ai](https://onet.org.ai) | Related occupations |
+| [activities.org.ai](https://activities.org.ai) | Activity mappings |

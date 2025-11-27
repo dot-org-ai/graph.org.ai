@@ -1,0 +1,861 @@
+---
+$context: https://legal.org.ai
+$id: https://legal.org.ai/EmploymentLaw
+$type: https://legal.org.ai/LegalService
+name: "Employment Law"
+naicsCode: "541110"
+description: "Legal services for workplace matters including employment discrimination, wage and hour compliance, wrongful termination, labor relations, restrictive covenants, and HR compliance. Represents both employers and employees."
+parent: https://legal.org.ai
+---
+
+export const items = async () => {
+  // Fetch employment law practices from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://legal.org.ai/EmploymentLaw',
+    practiceArea: { $in: ['Employment', 'Labor', 'Workplace', 'HR Compliance'] }
+  })
+}
+
+# Employment Law
+
+Employment law governs the relationship between employers and employees, including hiring, workplace conditions, compensation, benefits, discrimination, harassment, termination, and post-employment obligations. Employment legal practice encompasses both counseling employers on compliance and best practices, and representing employees in disputes over workplace rights.
+
+Employment law derives from federal statutes (Title VII, ADA, FLSA, NLRA), state fair employment and wage laws, common law (contracts, torts), and administrative regulations from agencies like the EEOC, DOL, and NLRB. The practice spans preventive counseling, policy development, investigations, administrative proceedings, litigation, and collective bargaining.
+
+## Overview
+
+Employment law practice covers multiple areas:
+
+**Discrimination and Harassment**:
+- Title VII (race, color, religion, sex, national origin)
+- Age Discrimination in Employment Act (ADEA)
+- Americans with Disabilities Act (ADA)
+- Genetic Information Nondiscrimination Act (GINA)
+- State and local protected classes
+- Sexual harassment and hostile work environment
+- Retaliation for protected activity
+
+**Wage and Hour**:
+- Fair Labor Standards Act (FLSA)
+- State minimum wage and overtime laws
+- Exempt vs. non-exempt classification
+- Independent contractor misclassification
+- Meal and rest breaks (state law)
+- Compensable time and off-the-clock work
+- Collective and class action litigation
+
+**Wrongful Termination**:
+- At-will employment and exceptions
+- Breach of employment contract
+- Public policy violations
+- Whistleblower protections
+- Constructive discharge
+- Retaliatory discharge
+
+**Labor Relations**:
+- National Labor Relations Act (NLRA)
+- Union organizing and elections
+- Collective bargaining agreements
+- Unfair labor practices
+- Strikes, picketing, and work stoppages
+- Grievances and arbitration
+
+**Employee Benefits**:
+- ERISA compliance and fiduciary duties
+- Retirement plans (401(k), pensions)
+- Health and welfare benefits
+- COBRA and HIPAA
+- Family and Medical Leave Act (FMLA)
+- Workers' compensation
+
+**Restrictive Covenants**:
+- Non-compete agreements
+- Non-solicitation of customers and employees
+- Confidentiality and trade secret protection
+- Non-disparagement and non-disclosure
+- Enforcement and litigation
+
+**Immigration and Visa**:
+- Form I-9 and E-Verify compliance
+- H-1B, L-1, O-1, and other work visas
+- PERM labor certification and green cards
+- Immigration enforcement and audits
+- Global mobility and expatriate employment
+
+## Employment Discrimination
+
+### Federal Anti-Discrimination Laws
+
+**Title VII of the Civil Rights Act of 1964**:
+- Prohibits discrimination based on race, color, religion, sex, national origin
+- Applies to employers with 15+ employees
+- Disparate treatment and disparate impact claims
+- Sexual harassment (quid pro quo and hostile environment)
+- Religious accommodation requirements
+- Pregnancy Discrimination Act amendments
+- EEOC administrative process before lawsuit
+
+**Age Discrimination in Employment Act (ADEA)**:
+- Protects employees 40 and older
+- Applies to employers with 20+ employees
+- Disparate impact claims more difficult than Title VII (Gross v. FBL)
+- Older Workers Benefit Protection Act (OWBPA) for releases
+- No compensatory or punitive damages (only liquidated for willful violations)
+
+**Americans with Disabilities Act (ADA)**:
+- Prohibits discrimination against qualified individuals with disabilities
+- Requires reasonable accommodation (unless undue hardship)
+- Interactive process for accommodation
+- Direct threat defense
+- Medical examinations and inquiries restrictions
+- ADA Amendments Act (ADAAA) broadened disability definition
+- Mental health conditions and reasonable accommodations
+
+**Genetic Information Nondiscrimination Act (GINA)**:
+- Prohibits discrimination based on genetic information
+- Restricts employer requests for genetic information
+- Exceptions for wellness programs (with limitations)
+- Confidentiality requirements for genetic information
+
+**Equal Pay Act (EPA)**:
+- Requires equal pay for equal work regardless of sex
+- Same establishment requirement
+- Equal skill, effort, responsibility, and working conditions
+- Affirmative defenses (seniority, merit, production, factor other than sex)
+- No EEOC administrative exhaustion required
+
+### State and Local Anti-Discrimination Laws
+
+**State Fair Employment Laws**:
+- Broader coverage than federal (smaller employers)
+- Additional protected classes (sexual orientation, gender identity, marital status, etc.)
+- Stronger remedies and damages (some states)
+- Administrative agencies (state human rights commissions)
+
+**State-Specific Protections**:
+- Salary history inquiry bans (many states and localities)
+- Ban-the-box (criminal history inquiry restrictions)
+- Pregnancy accommodation requirements
+- Domestic violence victim protections
+- Caregiver discrimination prohibitions
+- Political affiliation and activity protections
+
+**Local Ordinances**:
+- City and county human rights laws
+- Additional protected classes
+- Independent administrative processes
+- Cumulative remedies with state and federal law
+
+### Discrimination Claims Process
+
+**EEOC Charge Filing**:
+- 180-day deadline (300 days in deferral states with state agency)
+- Charge of discrimination filed with EEOC
+- EEOC investigation and employer position statement
+- Mediation opportunities
+- EEOC determination (cause or no cause)
+- Right-to-sue letter (prerequisite to lawsuit)
+
+**Litigation Process**:
+- File lawsuit within 90 days of right-to-sue letter
+- Prima facie case (McDonnell Douglas framework)
+- Employer's legitimate non-discriminatory reason
+- Plaintiff's showing of pretext
+- Mixed-motive cases (Price Waterhouse/Desert Palace)
+- Pattern and practice claims (systemic discrimination)
+
+**Remedies**:
+- Back pay and front pay
+- Reinstatement or front pay in lieu
+- Compensatory damages (emotional distress, inconvenience)
+- Punitive damages (for intentional discrimination with malice or reckless indifference)
+- Statutory caps on compensatory and punitive damages (based on employer size)
+- Attorneys' fees to prevailing plaintiff
+- Injunctive relief and policy changes
+
+## Sexual Harassment
+
+### Types of Sexual Harassment
+
+**Quid Pro Quo Harassment**:
+- Submission to sexual conduct made term or condition of employment
+- Tangible employment action (hiring, firing, promotion) based on submission or rejection
+- Supervisor or person with authority
+- Strict liability for employer
+
+**Hostile Work Environment**:
+- Severe or pervasive unwelcome sexual conduct
+- Offensive to reasonable person and subjectively offensive to plaintiff
+- Affects terms and conditions of employment
+- Can be by supervisor, co-worker, or third party (customer, vendor)
+- Employer liability depends on harasser's status and employer response
+
+### Employer Liability and Defenses
+
+**Supervisor Harassment**:
+- Tangible employment action: Strict employer liability
+- No tangible action: Faragher/Ellerth affirmative defense
+  - Employer exercised reasonable care (policy, training, investigation)
+  - Employee unreasonably failed to use complaint procedure
+- Supervisor defined as person with authority over plaintiff
+
+**Co-Worker and Third-Party Harassment**:
+- Employer liable if knew or should have known and failed to take prompt remedial action
+- Negligence standard
+- Reasonable investigation and appropriate corrective action
+
+**Preventive Measures**:
+- Written anti-harassment policy and complaint procedure
+- Multiple reporting channels (avoid reporting to harasser)
+- Regular training for employees and managers
+- Prompt, thorough, impartial investigations
+- Appropriate discipline up to and including termination
+- Non-retaliation protections
+
+### #MeToo Era Developments
+
+**Changing Legal Landscape**:
+- Increased scrutiny of mandatory arbitration and class action waivers
+- Restrictions on non-disclosure agreements (NDAs) in some states
+- Prohibitions on non-disparagement clauses related to harassment
+- Longer statutes of limitations for harassment claims (some states)
+- Enhanced protections for reporting harassment
+
+**Cultural Shifts**:
+- Lower tolerance for harassment and "boys will be boys" culture
+- Credibility of complainants and #BelieveWomen movement
+- Accountability for high-level executives and celebrities
+- Board and investor focus on workplace culture
+- Reputational and business risks of harassment scandals
+
+## Wage and Hour Compliance
+
+### Fair Labor Standards Act (FLSA)
+
+**Minimum Wage**:
+- Federal minimum wage ($7.25/hour as of 2025)
+- State and local minimum wages (higher prevails)
+- Tipped employees and tip credit
+- Subminimum wage for certain workers (trainees, students, disabled)
+- Regular rate of pay for overtime calculation
+
+**Overtime Requirements**:
+- Time and one-half for hours over 40 in workweek
+- Workweek defined as fixed, recurring 168-hour period
+- No daily overtime under FLSA (but required in some states)
+- Fluctuating workweek method for salaried non-exempt
+- Compensatory time off (for public sector only)
+
+**Exempt vs. Non-Exempt Classification**:
+- **Executive Exemption**: Primary duty managing enterprise or department, supervises 2+ employees, authority to hire/fire
+- **Administrative Exemption**: Primary duty office/non-manual work related to management or business operations, discretion and independent judgment
+- **Professional Exemption**: Primary duty requiring advanced knowledge (learned profession) or creative/artistic work
+- **Computer Professional Exemption**: Systems analyst, programmer, software engineer duties
+- **Outside Sales Exemption**: Primary duty making sales away from employer's place of business
+- **Highly Compensated Employee**: $107,432+ annual compensation, performs office/non-manual work, and one exempt duty
+
+**Salary Basis and Salary Level**:
+- Minimum salary of $684/week ($35,568/year) for most exemptions
+- Salary paid regardless of quality or quantity of work (limited deductions allowed)
+- Safe harbor for improper deductions if policy and good faith reimbursement
+- Highly compensated employee threshold $107,432/year
+
+### Independent Contractor Misclassification
+
+**Classification Tests**:
+- **Economic Reality Test (DOL)**: Economic dependence on employer
+- **ABC Test**: (A) Free from control, (B) outside usual course of business, (C) customarily engaged in independent trade
+- **Common Law Test**: Behavioral control, financial control, relationship of parties
+- **State-specific tests**: California AB5, Massachusetts independent contractor law
+
+**Factors for Classification**:
+- Control over work performance and methods
+- Opportunity for profit or loss based on managerial skill
+- Investment in equipment and materials
+- Permanency of relationship
+- Integral part of business
+- Skill and initiative required
+- Exclusivity and non-compete restrictions
+
+**Consequences of Misclassification**:
+- Back wages (minimum wage and overtime)
+- Liquidated damages equal to back wages
+- Tax withholding and employment tax liability
+- Workers' compensation and unemployment insurance
+- Employee benefit plan contributions
+- Penalties from DOL, IRS, and state agencies
+
+### State Wage and Hour Laws
+
+**State Overtime Laws**:
+- Daily overtime (California, Alaska, Nevada)
+- Different overtime thresholds
+- No exemptions for certain employees (California computer professionals, white collar)
+- Higher salary thresholds for exemptions
+
+**Meal and Rest Breaks**:
+- California: 30-minute meal break for 5+ hours, 10-minute rest for 4 hours
+- Other states with meal/rest break requirements
+- Premium pay for missed breaks
+- Class action exposure for break violations
+
+**Pay Frequency and Final Pay**:
+- Pay frequency requirements (weekly, bi-weekly, semi-monthly)
+- Final paycheck timing (immediately, within days, or next regular payday)
+- Accrued vacation payout requirements (varies by state)
+- Unreimbursed business expense payment
+
+**Paystub and Recordkeeping Requirements**:
+- Detailed wage statements with hours, rates, deductions
+- Recordkeeping for 3+ years (FLSA) or longer (state law)
+- Access to payroll records
+- Penalties for violations (California PAGA)
+
+### Wage and Hour Litigation
+
+**FLSA Collective Actions**:
+- Opt-in collective actions under FLSA Section 216(b)
+- Conditional certification and notice to potential plaintiffs
+- Decertification if plaintiffs not similarly situated
+- 2-year statute of limitations (3 years for willful violations)
+- Individual settlements require DOL or court approval
+
+**State Law Class Actions**:
+- Opt-out class actions under Rule 23
+- Class certification requirements (numerosity, commonality, typicality, adequacy)
+- Predominance and superiority for damages class
+- State-specific statutes of limitations
+- Longer statutes in some states (4 years in California)
+
+**Private Attorneys General Act (PAGA)** (California):
+- Representative action on behalf of state labor agency
+- Civil penalties for Labor Code violations
+- Minimal standing requirements (one violation)
+- Not subject to arbitration (except for individual PAGA claim)
+- Settlement requires Labor and Workforce Development Agency approval
+
+## Wrongful Termination and Retaliation
+
+### At-Will Employment and Exceptions
+
+**At-Will Doctrine**:
+- Either party can terminate employment at any time, for any reason (or no reason)
+- Majority rule in all states (except Montana)
+- No notice or severance required (unless contractual)
+- Terminated employees generally not entitled to continued employment
+
+**Public Policy Exception**:
+- Termination violates public policy (statute, regulation, constitutional provision)
+- Refusing to violate law
+- Reporting illegal activity (whistleblowing)
+- Exercising statutory right (jury duty, voting, workers' comp claim)
+- Performing statutory duty
+
+**Implied Contract Exception**:
+- Employment manuals and policies creating contractual rights
+- Oral promises of continued employment or termination only for cause
+- Course of dealing and employment practices
+- Progressive discipline procedures
+- Disclaimers to preserve at-will status
+
+**Implied Covenant of Good Faith and Fair Dealing**:
+- Minority of states recognize
+- Cannot terminate in bad faith or for malicious reasons
+- Avoid payment of earned commissions or benefits
+- Limited application in employment context
+
+### Whistleblower Protections
+
+**Federal Whistleblower Statutes**:
+- Sarbanes-Oxley Act (SOX): Public company financial fraud
+- Dodd-Frank Act: Securities law violations, SEC reporting
+- False Claims Act (FCA): Government contract fraud (qui tam actions)
+- Occupational Safety and Health Act (OSHA): Workplace safety
+- Numerous industry-specific statutes (aviation, trucking, nuclear, etc.)
+
+**State Whistleblower Laws**:
+- Protection for reporting violations of law or public policy
+- Internal vs. external reporting requirements (varies by state)
+- Broader coverage than federal laws
+- Retaliation remedies and damages
+
+**Retaliation Claims**:
+- Protected activity (reporting, participating in investigation, opposing unlawful practice)
+- Adverse employment action (termination, demotion, discipline, unfavorable assignment)
+- Causal connection between protected activity and adverse action
+- Temporal proximity and direct evidence
+- Burden shifting framework (same as discrimination)
+
+### Severance Agreements and Releases
+
+**Consideration for Release**:
+- Something of value beyond what employee already entitled to
+- Severance pay, continuation of benefits, neutral reference
+- Not required to pay for accrued vacation or final wages owed
+
+**Release of Claims**:
+- Waiver of claims arising from employment and termination
+- Statutory claims (discrimination, wage and hour) can be waived (with exceptions)
+- ADEA claims require compliance with Older Workers Benefit Protection Act (OWBPA)
+- NLRA Section 7 rights cannot be waived (concerted activity)
+- Some state law claims may not be waivable (California Labor Code, PAGA)
+
+**OWBPA Requirements for ADEA Waivers**:
+- Knowing and voluntary waiver
+- Written in plain English
+- Specifically references Age Discrimination in Employment Act
+- 21-day consideration period (45 days for group termination)
+- 7-day revocation period after signing
+- Advice to consult attorney
+- Additional information for group terminations (ages, job titles of group)
+
+**Post-Employment Restrictions**:
+- Non-compete and non-solicitation provisions
+- Confidentiality and non-disclosure
+- Return of property and information
+- Cooperation with investigations and litigation
+- Non-disparagement (mutual)
+
+## Labor Relations
+
+### National Labor Relations Act (NLRA)
+
+**Protected Concerted Activity (Section 7)**:
+- Employees' right to self-organization
+- Form, join, or assist labor organizations
+- Bargain collectively through representatives
+- Engage in concerted activities for mutual aid or protection
+- Refrain from such activities
+- Applies to union and non-union employees
+
+**Unfair Labor Practices**:
+- **Section 8(a) - Employer ULPs**: Interference with Section 7 rights, domination of labor organization, discrimination for union activity, refusal to bargain
+- **Section 8(b) - Union ULPs**: Restraint and coercion, discrimination, refusal to bargain, secondary boycotts, jurisdictional disputes, excessive fees
+- National Labor Relations Board (NLRB) enforcement
+
+**NLRB Process**:
+- Charge filed with NLRB regional office
+- Investigation and complaint (if merit found)
+- Hearing before administrative law judge (ALJ)
+- ALJ decision and exceptions to NLRB
+- NLRB decision and order
+- Enforcement in federal court of appeals
+
+### Union Organizing and Elections
+
+**Union Organizing Campaign**:
+- Authorization cards signed by employees
+- Showing of interest (30% of bargaining unit)
+- Voluntary recognition or petition for election
+- Appropriate bargaining unit determination
+- Critical period and campaign rules (no promises, threats, interrogation, surveillance)
+
+**Representation Election**:
+- Secret ballot election conducted by NLRB
+- Campaign period and access to employees
+- Employer captive audience meetings and union home visits
+- Objections and challenged ballots
+- Certification of representative if union wins
+- Decertification elections (employee-initiated)
+
+**Bargaining Unit Determination**:
+- Community of interest (wages, hours, working conditions, skills, supervision)
+- Craft, production, technical, professional units
+- Guards and supervisors excluded from NLRA coverage
+- Temporary, part-time, and seasonal employees (case-by-case)
+
+### Collective Bargaining
+
+**Duty to Bargain in Good Faith**:
+- Mandatory subjects (wages, hours, terms and conditions of employment)
+- Permissive subjects (non-mandatory topics, no impasse)
+- Illegal subjects (closed shop, hot cargo agreements)
+- Surface bargaining and bad faith refusal to bargain prohibited
+- Information requests and relevant information
+
+**Collective Bargaining Agreement (CBA)**:
+- Wages, hours, and working conditions
+- Seniority and layoff procedures
+- Grievance and arbitration procedures
+- Management rights clause
+- Union security (union shop, agency shop where allowed)
+- No-strike clause and interest arbitration
+
+**Contract Administration**:
+- Grievance procedures and arbitration
+- Just cause standard for discipline and termination
+- Past practice and contract interpretation
+- Duty of fair representation by union
+- Arbitrator's authority and scope of review
+
+### Strikes and Work Stoppages
+
+**Protected Strike Activity**:
+- Economic strikes (for better wages and conditions)
+- Unfair labor practice strikes (protesting employer ULP)
+- Permanent replacement of economic strikers (but not ULP strikers)
+- Reinstatement rights when positions available
+- Intermittent and partial strikes (may not be protected)
+
+**Picketing**:
+- Primary picketing at employer's premises (protected)
+- Secondary picketing and boycotts (generally prohibited)
+- Common situs picketing at construction sites
+- Consumer handbilling (protected First Amendment activity)
+- Recognitional picketing limitations
+
+**Lockouts**:
+- Employer-initiated work stoppage
+- Defensive lockout (in response to strike threat or whipsaw tactics)
+- Offensive lockout to gain bargaining leverage
+- Replacement workers during lockout
+
+## Employee Benefits and Leave
+
+### ERISA and Retirement Plans
+
+**Employee Retirement Income Security Act (ERISA)**:
+- Governs private sector employee benefit plans
+- Reporting and disclosure requirements
+- Fiduciary duties and prohibited transactions
+- Vesting and benefit accrual standards
+- Preemption of state law claims
+
+**Defined Benefit Plans**:
+- Traditional pension plans
+- Employer funding obligation
+- Pension Benefit Guaranty Corporation (PBGC) insurance
+- Actuarial assumptions and funding requirements
+- Cash balance plans (hybrid)
+
+**Defined Contribution Plans**:
+- 401(k), 403(b), 457 plans
+- Employee deferrals and employer match
+- Safe harbor plans (automatic pass of nondiscrimination testing)
+- Automatic enrollment and qualified default investment alternatives (QDIAs)
+- Fiduciary duties for plan investments
+
+**ERISA Litigation**:
+- Breach of fiduciary duty claims
+- Excessive fee litigation
+- Benefit claim denials and appeals
+- Arbitrary and capricious standard of review (if discretionary authority)
+- Prohibited transactions and self-dealing
+
+### Health and Welfare Benefits
+
+**Affordable Care Act (ACA)**:
+- Employer shared responsibility (large employers 50+ FTEs)
+- Employer mandate to offer affordable, minimum value coverage
+- Reporting requirements (Forms 1094-C, 1095-C)
+- Penalties for non-compliance
+- Essential health benefits and coverage mandates
+
+**COBRA Continuation Coverage**:
+- Temporary continuation of group health coverage after qualifying event
+- Termination, reduction in hours, divorce, death, Medicare entitlement
+- 18 or 36 months coverage depending on event
+- Employee pays full premium (102% of cost)
+- Notice requirements and elections
+
+**HIPAA Privacy and Security**:
+- Health Insurance Portability and Accountability Act
+- Protected health information (PHI) privacy
+- Security standards for electronic PHI
+- Business associate agreements
+- Breach notification requirements
+
+### Family and Medical Leave
+
+**Family and Medical Leave Act (FMLA)**:
+- Up to 12 weeks unpaid leave in 12-month period
+- Serious health condition of employee or family member
+- Birth or adoption of child
+- Qualifying exigency (military family leave)
+- 26 weeks for military caregiver leave
+- Applies to employers with 50+ employees, employees with 1,250 hours in 12 months
+- Job restoration and maintenance of health benefits during leave
+
+**State Paid Family and Medical Leave**:
+- California, New York, New Jersey, and other states
+- Paid leave funded by employee payroll tax
+- Job protection similar to FMLA
+- Coordination with FMLA
+- State-specific eligibility and benefits
+
+**Pregnancy Disability and Accommodation**:
+- Pregnancy Discrimination Act (part of Title VII)
+- ADA amendments covering pregnancy-related impairments
+- State pregnancy accommodation laws (more protective)
+- Lactation accommodation (FLSA and state laws)
+- Reasonable accommodations for pregnancy and childbirth
+
+### Workers' Compensation
+
+**Workers' Compensation System**:
+- Exclusive remedy for workplace injuries
+- No-fault system (strict liability for employer)
+- Medical benefits and wage replacement
+- Permanent disability and vocational rehabilitation
+- Employer immunity from tort suits (with exceptions)
+
+**Compensable Injuries**:
+- Arising out of and in course of employment
+- Specific injury events and cumulative trauma
+- Occupational diseases
+- Mental-mental and physical-mental claims (varies by state)
+- Going and coming rule (commuting generally not covered)
+
+**Workers' Compensation Process**:
+- Injury reporting and claim filing
+- Medical treatment and provider networks
+- Temporary disability benefits
+- Permanent disability rating
+- Settlement (compromise and release, stipulated award)
+- Liens for medical providers and attorneys
+
+## Workplace Policies and Compliance
+
+### Employer Policies and Handbooks
+
+**Essential Policies**:
+- Equal employment opportunity and anti-discrimination
+- Anti-harassment and complaint procedures
+- Attendance and leave policies
+- Compensation and timekeeping
+- Code of conduct and workplace rules
+- Disciplinary procedures
+- Technology and social media use
+- Confidentiality and data security
+
+**At-Will Disclaimer**:
+- Preserve at-will employment status
+- Handbook not a contract
+- Employer reserves right to modify policies
+- Acknowledgment of receipt and understanding
+
+**Compliance Policies**:
+- Drug and alcohol testing
+- Background checks and consumer reports (FCRA)
+- Whistleblower and reporting procedures
+- Workplace safety and OSHA
+- Leaves of absence (FMLA, ADA, state laws)
+- Expense reimbursement
+- Bring your own device (BYOD)
+
+### Workplace Investigations
+
+**Investigation Triggers**:
+- Harassment and discrimination complaints
+- Workplace violence threats
+- Theft and misconduct
+- Whistleblower allegations
+- Anonymous hotline reports
+
+**Investigation Best Practices**:
+- Prompt initiation upon notice
+- Impartial investigator (internal or external)
+- Interviews of complainant, accused, and witnesses
+- Document review and preservation
+- Interim measures to protect complainant
+- Confidentiality to extent possible
+- Written investigation report with findings
+- Remedial action if substantiated
+- Follow-up and non-retaliation
+
+**Investigator Privilege**:
+- Attorney-client privilege for attorney-conducted investigations
+- Work product protection
+- Self-critical analysis privilege (limited recognition)
+- Waiver issues if report disclosed
+
+### Restrictive Covenants and Trade Secrets
+
+**Non-Compete Agreements**:
+- Reasonable in scope, geography, and duration
+- Legitimate business interest (trade secrets, customer relationships, specialized training)
+- Enforceable in most states (California generally prohibits)
+- Consideration at hiring or continued employment
+- Blue pencil rule and reformation (varies by state)
+- Garden leave and pay during restriction period
+
+**Non-Solicitation Agreements**:
+- Customer non-solicitation
+- Employee non-solicitation
+- More likely enforced than non-competes
+- Reasonable duration (typically 1-2 years)
+- Definition of customers and employees
+
+**Confidentiality and Trade Secret Protection**:
+- Non-disclosure agreements (NDAs)
+- Definition of confidential information
+- Exclusions (public information, independently developed)
+- Duration of confidentiality obligations
+- Trade secret protection (Defend Trade Secrets Act, state UTSA)
+- Inevitable disclosure doctrine (minority of states)
+
+### Global Employment Issues
+
+**International Employment Law**:
+- Choice of law and forum selection
+- Expatriate employment and secondment
+- Termination protections (notice, severance, consultation)
+- Works councils and employee representation (Europe)
+- Data privacy (GDPR) and cross-border transfers
+- Immigration and work authorization
+
+**Wage and Hour Globally**:
+- Working time directives (EU)
+- Vacation and holiday entitlements
+- Pay equity and transparency requirements
+- Payroll and tax withholding
+
+## Emerging Employment Law Issues
+
+### Remote Work and Gig Economy
+
+**Remote and Hybrid Work**:
+- Telecommuting policies and agreements
+- Wage and hour compliance (timekeeping, overtime)
+- Workers' compensation for home injuries
+- Equipment and expense reimbursement
+- Multi-state tax and employment law compliance
+- Ergonomics and workplace safety at home
+
+**Gig Economy and Platform Workers**:
+- Employee vs. independent contractor classification
+- ABC test and economic reality test application
+- Portable benefits and third-way proposals
+- Collective bargaining for gig workers
+- Algorithmic management and transparency
+- Deactivation and termination procedures
+
+### Artificial Intelligence and Hiring
+
+**AI in Hiring and Employment Decisions**:
+- Automated resume screening and applicant tracking systems
+- Video interviewing and facial recognition
+- Assessment tools and personality tests
+- Potential for algorithmic bias and discrimination
+- EEOC guidance on AI and discrimination
+- Transparency and explainability requirements (some jurisdictions)
+- Validation and adverse impact analysis
+
+**Workplace Surveillance and Monitoring**:
+- Electronic monitoring of communications and computer use
+- GPS tracking and location monitoring
+- Video surveillance and security cameras
+- Keystroke logging and productivity tracking
+- Biometric data collection (time clocks, building access)
+- State privacy laws and notice requirements
+- NLRA Section 7 implications of surveillance
+
+### Pay Equity and Transparency
+
+**Pay Equity Laws**:
+- Equal Pay Act and Title VII
+- State equal pay laws (broader than federal)
+- Salary history bans (prevent perpetuating inequity)
+- Affirmative defense for bona fide factors other than sex
+- Pay data reporting requirements (California, Illinois)
+
+**Pay Transparency**:
+- Salary range disclosure in job postings (some states and localities)
+- Pay data collection and analysis
+- Discussions of pay among employees (NLRA protection)
+- Pay equity audits and privilege
+- Voluntary self-disclosure and compliance
+
+### Diversity, Equity, and Inclusion (DEI)
+
+**DEI Initiatives**:
+- Diversity recruiting and hiring goals
+- Unconscious bias training
+- Employee resource groups (ERGs)
+- Diverse interview panels and hiring committees
+- Supplier diversity programs
+- DEI metrics and reporting
+
+**Legal Considerations**:
+- Avoiding unlawful quotas and preferences
+- Permissible diversity efforts under Title VII
+- Affirmative action and government contractors (OFCCP)
+- Reverse discrimination claims
+- Documentation and legitimate business reasons
+
+## Career in Employment Law
+
+### Practice Settings
+
+**Law Firms**:
+- Plaintiff-side firms (representing employees)
+- Management-side firms (representing employers)
+- Boutique employment firms
+- Labor and employment departments at full-service firms
+
+**In-House**:
+- Corporate employment counsel
+- Human resources legal support
+- Union relations and labor negotiations
+- Employment litigation management
+- Compliance and policy development
+
+**Government Agencies**:
+- Equal Employment Opportunity Commission (EEOC)
+- Department of Labor (DOL)
+- National Labor Relations Board (NLRB)
+- State labor and civil rights agencies
+- U.S. Attorney's Office (criminal enforcement)
+
+**Alternative Careers**:
+- HR consulting and compliance
+- Workplace investigations
+- Mediation and arbitration
+- Union representation and organizing
+- Legal technology for employment
+
+### Skills and Expertise
+
+**Counseling and Compliance**:
+- Policy drafting and review
+- Training programs for management and employees
+- Wage and hour audits
+- Accommodation and leave administration
+- Discipline and termination guidance
+- Risk assessment and prevention
+
+**Litigation Skills**:
+- Complaint drafting and motion practice
+- Discovery (interrogatories, depositions, document review)
+- Administrative proceedings (EEOC, DOL, NLRB)
+- Settlement negotiations
+- Trial advocacy
+- Class action and collective action defense
+
+**Labor Relations**:
+- Collective bargaining negotiations
+- Grievance and arbitration
+- Union avoidance and counter-campaigns
+- NLRB practice and representation elections
+- Strike preparation and labor disputes
+
+**Subject Matter Expertise**:
+- Discrimination and harassment investigations
+- Wage and hour classification audits
+- ERISA and employee benefits
+- Immigration and global employment
+- Whistleblower and retaliation matters
+- Executive employment and severance
+
+## Related Resources
+
+- [labor.org.ai](https://labor.org.ai) - Labor relations and unions
+- [hr.org.ai](https://hr.org.ai) - Human resources and people management
+- [workplace.org.ai](https://workplace.org.ai) - Workplace policies and culture
+- [discrimination.org.ai](https://discrimination.org.ai) - Employment discrimination law
+- [eeoc.org.ai](https://eeoc.org.ai) - Equal Employment Opportunity Commission
+- [dol.org.ai](https://dol.org.ai) - Department of Labor
+- [nlrb.org.ai](https://nlrb.org.ai) - National Labor Relations Board
+- [benefits.org.ai](https://benefits.org.ai) - Employee benefits and ERISA
+- [compensation.org.ai](https://compensation.org.ai) - Wage and hour compliance

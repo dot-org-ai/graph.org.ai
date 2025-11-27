@@ -1,0 +1,48 @@
+---
+$context: https://actions.org.ai
+$id: https://actions.org.ai/{{slug}}
+$type: https://actions.org.ai/Action
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Action
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ActionOverview action={action} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Action` |
+| Domain | [actions.org.ai](https://actions.org.ai) |
+| Parent | [verbs.org.ai](https://verbs.org.ai) |
+
+## Details
+
+<ActionDetails action={action} />
+
+## Properties
+
+<ActionProperties action={action} />
+
+## Relationships
+
+<ActionRelationships action={action} />
+
+## Related
+
+<RelatedActions action={action} />
+
+## Sources
+
+- <DatabaseLink namespace="actions.org.ai" type="{{slug}}" />

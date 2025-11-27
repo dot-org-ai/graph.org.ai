@@ -1,0 +1,48 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/{{slug}}
+$type: https://functions.org.ai/AgenticFunction
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for AgenticFunction
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<AgenticFunctionOverview agenticfunction={agenticfunction} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `AgenticFunction` |
+| Domain | [functions.org.ai](https://functions.org.ai) |
+| Parent | [nouns.org.ai](https://nouns.org.ai) |
+
+## Details
+
+<AgenticFunctionDetails agenticfunction={agenticfunction} />
+
+## Properties
+
+<AgenticFunctionProperties agenticfunction={agenticfunction} />
+
+## Relationships
+
+<AgenticFunctionRelationships agenticfunction={agenticfunction} />
+
+## Related
+
+<RelatedAgenticFunctions agenticfunction={agenticfunction} />
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="{{slug}}" />

@@ -1,0 +1,48 @@
+---
+$context: https://logistics.org.ai
+$id: https://logistics.org.ai/{{slug}}
+$type: https://logistics.org.ai/Logistics
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Logistics
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<LogisticsOverview logistics={logistics} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Logistics` |
+| Domain | [logistics.org.ai](https://logistics.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<LogisticsDetails logistics={logistics} />
+
+## Properties
+
+<LogisticsProperties logistics={logistics} />
+
+## Relationships
+
+<LogisticsRelationships logistics={logistics} />
+
+## Related
+
+<RelatedLogisticss logistics={logistics} />
+
+## Sources
+
+- <DatabaseLink namespace="logistics.org.ai" type="{{slug}}" />

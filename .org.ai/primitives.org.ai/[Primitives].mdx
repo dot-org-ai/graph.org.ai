@@ -1,0 +1,48 @@
+---
+$context: https://primitives.org.ai
+$id: https://primitives.org.ai/{{slug}}
+$type: https://primitives.org.ai/Primitives
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Primitives
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<PrimitivesOverview primitives={primitives} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Primitives` |
+| Domain | [primitives.org.ai](https://primitives.org.ai) |
+| Parent | [graph.org.ai](https://graph.org.ai) |
+
+## Details
+
+<PrimitivesDetails primitives={primitives} />
+
+## Properties
+
+<PrimitivesProperties primitives={primitives} />
+
+## Relationships
+
+<PrimitivesRelationships primitives={primitives} />
+
+## Related
+
+<RelatedPrimitivess primitives={primitives} />
+
+## Sources
+
+- <DatabaseLink namespace="primitives.org.ai" type="{{slug}}" />

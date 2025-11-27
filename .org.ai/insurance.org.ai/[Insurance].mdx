@@ -1,0 +1,48 @@
+---
+$context: https://insurance.org.ai
+$id: https://insurance.org.ai/{{slug}}
+$type: https://insurance.org.ai/Insurance
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Insurance
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<InsuranceOverview insurance={insurance} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Insurance` |
+| Domain | [insurance.org.ai](https://insurance.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<InsuranceDetails insurance={insurance} />
+
+## Properties
+
+<InsuranceProperties insurance={insurance} />
+
+## Relationships
+
+<InsuranceRelationships insurance={insurance} />
+
+## Related
+
+<RelatedInsurances insurance={insurance} />
+
+## Sources
+
+- <DatabaseLink namespace="insurance.org.ai" type="{{slug}}" />

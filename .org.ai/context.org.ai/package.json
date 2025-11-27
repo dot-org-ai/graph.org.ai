@@ -1,0 +1,33 @@
+{
+  "name": "context.org.ai",
+  "version": "0.0.1",
+  "description": "Ontology domain for context.org.ai",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "context"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://context.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/context.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

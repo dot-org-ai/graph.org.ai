@@ -1,0 +1,878 @@
+---
+$context: https://legal.org.ai
+$id: https://legal.org.ai/RealEstateLaw
+$type: https://legal.org.ai/LegalService
+name: "Real Estate Law"
+naicsCode: "541110"
+description: "Legal services for real property transactions, development, financing, leasing, land use, and title matters. Encompasses residential and commercial real estate, construction law, zoning, and property disputes."
+parent: https://legal.org.ai
+---
+
+export const items = async () => {
+  // Fetch real estate law practices from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://legal.org.ai/RealEstateLaw',
+    practiceArea: { $in: ['Real Estate', 'Real Property', 'Land Use', 'Construction', 'Title'] }
+  })
+}
+
+# Real Estate Law
+
+Real estate law encompasses legal services related to real property (land and improvements) including acquisition, disposition, financing, development, leasing, title, land use, and property disputes. Real estate is one of the most significant asset classes in the economy, and real estate legal services touch residential homeownership, commercial property investment, infrastructure development, and government land use regulation.
+
+Real estate practice spans transactional work (purchases, sales, financing, leases), regulatory compliance (zoning, environmental, historic preservation), litigation (boundary disputes, landlord-tenant, foreclosures), and specialized areas like title insurance, construction law, and tax-advantaged structures (1031 exchanges, opportunity zones).
+
+## Overview
+
+Real estate legal practice covers multiple facets:
+
+**Transactions**:
+- Purchase and sale agreements
+- Due diligence and title examination
+- Financing and mortgage documentation
+- Closings and escrow
+- 1031 like-kind exchanges
+- Ground leases and air rights
+
+**Leasing**:
+- Commercial lease negotiations
+- Office, retail, industrial, and flex space
+- Ground leases and build-to-suit
+- Lease administration and enforcement
+- Subleases and assignments
+- Landlord-tenant disputes
+
+**Finance**:
+- Acquisition and construction financing
+- Permanent financing and refinancing
+- Mezzanine debt and preferred equity
+- Loan workouts and modifications
+- Foreclosures and deed in lieu
+- Intercreditor and subordination agreements
+
+**Development**:
+- Land acquisition and assemblage
+- Entitlements and permitting
+- Public-private partnerships
+- Condominium and subdivision creation
+- Construction contracts and mechanics' liens
+- Development agreements with municipalities
+
+**Land Use and Zoning**:
+- Zoning compliance and variances
+- Special permits and conditional use
+- Rezonings and comprehensive plan amendments
+- Environmental review and permitting
+- Historic preservation and landmark designation
+- Affordable housing and inclusionary zoning
+
+**Title and Survey**:
+- Title examination and insurance
+- Survey review and boundary disputes
+- Easements and rights of way
+- Covenants, conditions, and restrictions (CC&Rs)
+- Adverse possession and prescriptive easements
+- Title curative work and quiet title actions
+
+## Real Estate Transactions
+
+### Purchase and Sale Process
+
+**Letter of Intent (LOI)**:
+- Non-binding expression of interest
+- Key economic terms (price, deposit, contingencies)
+- Due diligence period and timeline
+- Exclusivity and confidentiality
+- Binding provisions (confidentiality, exclusivity, broker fees)
+
+**Purchase and Sale Agreement**:
+- Identification of property (legal description)
+- Purchase price and deposit (earnest money)
+- Representations and warranties
+- Conditions precedent to closing
+- Due diligence period and title review
+- Risk of loss and casualty
+- Closing date and location
+- Prorations and adjustments
+- Default remedies and liquidated damages
+
+**Due Diligence**:
+- **Title Review**: Title commitment, exceptions, curative requirements
+- **Survey**: ALTA/NSPS land title survey, encroachments, easements
+- **Environmental**: Phase I and Phase II assessments, environmental liens
+- **Physical**: Property inspections, engineering reports, deferred maintenance
+- **Financial**: Rent roll, operating statements, tax bills, utility costs
+- **Legal**: Zoning compliance, certificates of occupancy, permits, violations
+- **Contracts**: Service contracts, tenant leases, warranties
+- **Governmental**: Taxes, assessments, condemnation proceedings
+
+**Title and Title Insurance**:
+- Title search and examination of public records
+- Title commitment with exceptions and requirements
+- Title curative work (releases, affidavits, corrective deeds)
+- Owner's title policy (protects buyer)
+- Lender's title policy (protects mortgage lender)
+- Extended coverage endorsements
+- ALTA policy forms and coverage
+
+**Closing Process**:
+- Pre-closing deliveries and walk-through
+- Closing agenda and document list
+- Escrow and settlement statement (ALTA Settlement Statement)
+- Recording of deed and mortgage
+- Disbursement of funds
+- Title policy issuance
+- Post-closing curative matters
+
+### Types of Real Estate Transactions
+
+**Residential Transactions**:
+- Single-family homes and condominiums
+- Purchase and sale agreements (typically state-specific forms)
+- Mortgage financing and title insurance
+- Homeowners association (HOA) documents
+- Disclosure requirements (seller disclosures, lead paint)
+- Real Estate Settlement Procedures Act (RESPA)
+
+**Commercial Acquisitions**:
+- Office buildings, retail centers, industrial warehouses
+- Multi-family residential (apartments)
+- Hotels and hospitality properties
+- Special purpose properties (data centers, self-storage)
+- Portfolio and bulk sales
+- Entity acquisitions vs. asset acquisitions
+
+**Development and Land Transactions**:
+- Raw land acquisition
+- Subdivision and lot sales
+- Assemblage of multiple parcels
+- Build-to-suit and ground lease transactions
+- Air rights transfers and development rights
+- Conservation easements and land preservation
+
+**Sale-Leaseback Transactions**:
+- Owner sells property and leases it back
+- Unlocks capital while maintaining occupancy
+- Long-term triple-net lease typical
+- Corporate real estate strategy
+- Tax and accounting considerations
+
+**1031 Like-Kind Exchanges**:
+- Tax-deferral on sale of investment property
+- Qualified intermediary required
+- 45-day identification period
+- 180-day exchange period
+- Reverse exchanges and construction/improvement exchanges
+- Delaware statutory trusts (DSTs) as replacement property
+
+## Real Estate Finance
+
+### Acquisition and Permanent Financing
+
+**Loan Documentation**:
+- **Loan Agreement**: Principal amount, interest rate, term, payments
+- **Promissory Note**: Borrower's promise to repay
+- **Mortgage or Deed of Trust**: Security interest in real property
+- **Guaranty**: Personal or corporate guaranty of loan
+- **Environmental Indemnity**: Indemnification for environmental liabilities
+- **Assignment of Leases and Rents**: Collateral assignment to lender
+
+**Loan Terms and Provisions**:
+- Loan-to-value (LTV) and debt service coverage ratio (DSCR)
+- Interest rate (fixed vs. variable)
+- Amortization period and balloon payment
+- Prepayment penalties and yield maintenance
+- Cash management and lockbox accounts
+- Debt service reserve funds
+
+**Covenants and Restrictions**:
+- Financial covenants (debt service coverage, net worth)
+- Affirmative covenants (insurance, taxes, maintenance)
+- Negative covenants (additional debt, transfers, liens)
+- Operating covenants (property management, capital expenditures)
+
+**Default and Remedies**:
+- Events of default (payment, covenant breach, bankruptcy)
+- Notice and cure periods
+- Acceleration of loan
+- Foreclosure (judicial vs. non-judicial)
+- Appointment of receiver
+- Deficiency judgments
+
+### Construction Financing
+
+**Construction Loan Agreement**:
+- Loan amount and draw schedule
+- Interest reserve and contingency
+- Budget and approved plans
+- Completion guaranty
+- Title and survey requirements
+- Disbursement conditions
+
+**Draw Procedures**:
+- AIA draw requests and payment applications
+- Architect certification of work completed
+- Lien waivers from contractors and subcontractors
+- Inspection and approval by lender's consultant
+- Retainage and final completion
+
+**Conversion to Permanent Financing**:
+- Mini-perm or term loan after construction completion
+- Certificate of occupancy requirement
+- Lease-up and stabilization requirements
+- As-built survey and title continuation
+- Transfer from construction to permanent lender
+
+### Mezzanine and Preferred Equity
+
+**Mezzanine Financing**:
+- Loan secured by equity interests in property owner
+- Subordinate to senior mortgage
+- Higher interest rate than senior debt
+- Foreclosure on equity (quicker than mortgage foreclosure)
+- Intercreditor agreement with senior lender
+
+**Preferred Equity**:
+- Investment in equity with preferred return
+- Priority over common equity, subordinate to debt
+- Control rights and approval provisions
+- Waterfall distribution structure
+- Conversion or redemption rights
+
+**Intercreditor Agreements**:
+- Rights and priorities among lenders
+- Standstill and non-disturbance provisions
+- Purchase options and cure rights
+- Control of enforcement actions
+- Information sharing and cooperation
+
+### Loan Workouts and Foreclosures
+
+**Loan Modifications and Forbearance**:
+- Interest rate reduction or deferral
+- Payment restructuring and term extension
+- Principal forbearance or forgiveness
+- Additional collateral or guarantees
+- Conditions and milestones for modification
+
+**Deed in Lieu of Foreclosure**:
+- Voluntary transfer of property to lender
+- Avoids foreclosure proceedings and costs
+- Release of borrower and guarantors
+- Environmental representations and indemnities
+- Potential fraudulent transfer issues
+
+**Foreclosure Proceedings**:
+- **Judicial Foreclosure**: Court action, redemption period, sheriff's sale
+- **Non-Judicial Foreclosure**: Power of sale in deed of trust, trustee's sale
+- Notice requirements and timelines
+- Appointment of receiver (if needed)
+- Deficiency judgment or anti-deficiency statutes
+- Bankruptcy stays and protections
+
+**REO (Real Estate Owned)**:
+- Lender ownership of foreclosed property
+- Property management and disposition
+- Tax and environmental liabilities
+- Marketing and sale strategies
+- Loss mitigation and recovery
+
+## Commercial Leasing
+
+### Office Leases
+
+**Lease Types**:
+- **Gross Lease**: Landlord pays operating expenses
+- **Modified Gross Lease**: Tenant pays portion of expenses or increases
+- **Triple-Net (NNN) Lease**: Tenant pays taxes, insurance, and common area maintenance (CAM)
+- **Full-Service Lease**: Base rent includes services, tenant pays increases
+
+**Key Lease Terms**:
+- Premises description and rentable square footage
+- Base rent and rent escalations (CPI, fixed %, market-based)
+- Additional rent (CAM, taxes, insurance, utilities)
+- Lease term and renewal options
+- Tenant improvement allowance and construction
+- Free rent and rent abatement
+- Security deposit and letter of credit
+
+**Operating Expense Provisions**:
+- Base year or expense stop
+- Controllable vs. non-controllable expenses
+- Gross-up for partial occupancy
+- Capital expenditures and amortization
+- Management fees and administrative costs
+- Audit rights and reconciliation
+
+**Use and Operations**:
+- Permitted use restrictions
+- Exclusive use provisions (if any)
+- Hours of operation
+- Signage and branding
+- Access and parking
+- Services (HVAC, janitorial, security)
+
+### Retail Leases
+
+**Retail-Specific Provisions**:
+- Percentage rent based on sales
+- Continuous operation covenant
+- Co-tenancy and go-dark provisions
+- Radius restrictions (non-compete)
+- Exclusive use rights
+- Common area maintenance (CAM) charges
+
+**Percentage Rent**:
+- Natural breakpoint (base rent divided by percentage)
+- Artificial breakpoint (negotiated)
+- Gross sales definition and exclusions
+- Sales reporting and audit rights
+- Percentage rent in lieu of or in addition to base rent
+
+**Co-Tenancy Provisions**:
+- Minimum occupancy requirements (e.g., 75% of GLA leased)
+- Anchor tenant operation requirements
+- Remedies (rent reduction, termination right)
+- Opening co-tenancy vs. ongoing co-tenancy
+
+**Tenant Mix and Exclusives**:
+- Landlord control of tenant mix
+- Exclusive use rights (e.g., only coffee shop)
+- Prohibited uses to prevent competition
+- Radius restrictions on tenant's other locations
+
+### Industrial and Warehouse Leases
+
+**Industrial Lease Characteristics**:
+- Large floor area and high ceilings
+- Loading docks and truck access
+- Power and utility capacity
+- Outdoor storage and parking
+- 24/7 access and operations
+- Flexibility for specific tenant uses (manufacturing, distribution)
+
+**Build-to-Suit Leases**:
+- Landlord constructs facility to tenant specifications
+- Long-term lease with tenant creditworthiness
+- Construction period and rent commencement
+- Tenant approval of plans and budgets
+- Substantial completion and punch list
+
+**Ground Leases**:
+- Lease of land only, tenant owns improvements
+- Long term (50-99 years)
+- Tenant responsible for construction and financing
+- Ground rent (fixed or escalating)
+- Subordination to leasehold mortgage
+- Reversion of improvements to landlord at end of term
+
+### Lease Defaults and Remedies
+
+**Tenant Defaults**:
+- Non-payment of rent
+- Breach of covenants and obligations
+- Bankruptcy and insolvency
+- Abandonment of premises
+- Illegal use or nuisance
+
+**Landlord Remedies**:
+- Notice and cure period (typically required)
+- Late fees and interest
+- Eviction and unlawful detainer proceedings
+- Re-entry and reletting of premises
+- Damages (past due rent, future rent, reletting costs)
+- Security deposit application
+
+**Landlord Defaults**:
+- Failure to provide services
+- Interference with quiet enjoyment
+- Failure to make repairs or deliver premises
+- Constructive eviction
+
+**Tenant Remedies**:
+- Rent offset and self-help
+- Abatement of rent
+- Termination of lease
+- Damages (relocation costs, lost profits)
+- Specific performance (rare)
+
+## Land Use and Zoning
+
+### Zoning Regulations
+
+**Zoning Classifications**:
+- Residential (R): Single-family, multi-family, density restrictions
+- Commercial (C): Retail, office, services
+- Industrial (I): Manufacturing, warehousing, heavy industry
+- Mixed-use and planned development districts
+- Overlay zones (historic, design review, environmental)
+
+**Zoning Requirements**:
+- Permitted uses and conditional uses
+- Building height and bulk restrictions
+- Setbacks and yards (front, side, rear)
+- Floor area ratio (FAR) and lot coverage
+- Parking and loading requirements
+- Signage regulations
+- Landscaping and open space
+
+**Zoning Relief**:
+- **Variance**: Relief from dimensional or use restrictions (hardship required)
+- **Special Permit/Conditional Use**: Allowed use subject to conditions
+- **Rezoning**: Change in zoning classification
+- **Non-Conforming Use**: Existing use predating zoning (grandfathered)
+
+### Development Approvals
+
+**Subdivision Approval**:
+- Preliminary subdivision plan
+- Final subdivision plan and plat
+- Infrastructure requirements (roads, utilities, drainage)
+- Exactions and impact fees
+- Performance bonds and completion guarantees
+
+**Site Plan Review**:
+- Architectural review and design standards
+- Traffic impact analysis
+- Environmental review
+- Stormwater management
+- Lighting and landscaping plans
+- Accessibility (ADA) compliance
+
+**Environmental Permits**:
+- Wetlands permits and mitigation
+- Stormwater management permits
+- Air quality permits (if applicable)
+- Endangered species consultation
+- National Environmental Policy Act (NEPA) review (federal actions)
+- State environmental policy acts (SEPA, CEQA, etc.)
+
+**Building Permits**:
+- Building code compliance
+- Structural, electrical, plumbing, mechanical permits
+- Certificate of occupancy (CO) upon completion
+- Temporary certificates and conditional approvals
+
+### Special Land Use Issues
+
+**Historic Preservation**:
+- Landmark designation and historic districts
+- Certificate of appropriateness for alterations
+- Tax credits for rehabilitation (federal and state)
+- Demolition restrictions and review
+- Economic hardship exceptions
+
+**Affordable Housing**:
+- Inclusionary zoning requirements
+- Density bonuses for affordable units
+- Low-Income Housing Tax Credits (LIHTC)
+- Housing trust funds and subsidies
+- Workforce housing and moderate-income set-asides
+
+**Environmental Compliance**:
+- Phase I and Phase II environmental assessments
+- Contamination and brownfield redevelopment
+- Voluntary cleanup programs
+- Environmental liens and restrictions
+- Asbestos and lead paint abatement
+- CERCLA and state superfund liability
+
+**Telecommunications and Infrastructure**:
+- Cell tower and antenna siting
+- Telecommunications Act Section 332(c)(7)
+- Radio frequency (RF) emissions compliance
+- Aesthetic and concealment requirements
+- Collocation and small cell deployment
+
+## Construction Law
+
+### Construction Contracts
+
+**Contract Types**:
+- **Stipulated Sum (Lump Sum)**: Fixed price for defined scope
+- **Cost-Plus**: Reimbursement of costs plus fee (fixed or percentage)
+- **Guaranteed Maximum Price (GMP)**: Cost-plus with cap, savings shared
+- **Unit Price**: Price per unit of work (square foot, cubic yard)
+- **Design-Build**: Single contract for design and construction
+- **Construction Management**: CM acts as owner's agent or at-risk
+
+**Standard Form Contracts**:
+- AIA contracts (A101, A201, B101, etc.)
+- ConsensusDocs (multi-party consensus documents)
+- EJCDC (Engineers Joint Contract Documents Committee)
+- AGC (Associated General Contractors)
+- Custom contracts for major projects
+
+**Key Contract Provisions**:
+- Scope of work and plans/specifications
+- Contract price and payment terms
+- Time for performance and liquidated damages
+- Change order procedures
+- Warranties and guarantees
+- Insurance and bonding requirements
+- Dispute resolution (mediation, arbitration, litigation)
+
+### Project Delivery and Relationships
+
+**Design-Bid-Build (Traditional)**:
+- Owner contracts separately with architect and contractor
+- Architect prepares design, contractor bids on completed design
+- Sequential process (design, then construction)
+- Clear division of responsibility
+- Longer timeline but price certainty
+
+**Design-Build**:
+- Single contract with design-build entity
+- Design and construction overlap
+- Faster project delivery
+- Owner gives up some control over design
+- Single point of responsibility
+
+**Construction Management**:
+- CM advises owner during design and construction
+- CM-Agent (advisor only) vs. CM-at-Risk (holds contracts and guarantees price)
+- Preconstruction services and value engineering
+- Fast-track scheduling with phased construction
+- Owner maintains more control
+
+**Integrated Project Delivery (IPD)**:
+- Multi-party agreement (owner, architect, contractor)
+- Shared risk and reward
+- Collaborative decision-making
+- Building Information Modeling (BIM) integration
+- Used on complex institutional projects
+
+### Construction Disputes
+
+**Claims and Change Orders**:
+- Changes in scope of work
+- Differing site conditions
+- Design errors and omissions
+- Delays (owner-caused, contractor-caused, concurrent)
+- Acceleration and constructive acceleration
+- Impact costs and inefficiency
+
+**Mechanics' Liens**:
+- Security interest in property for unpaid work or materials
+- Statutory requirements for filing (timing, content, service)
+- Preliminary notice requirements (in many states)
+- Lien priority (often relates back to commencement of work)
+- Foreclosure of lien
+- Bond to release lien
+
+**Payment and Performance Bonds**:
+- Surety bond guaranteeing contractor performance
+- Payment bond for subcontractors and suppliers
+- Public projects typically require bonds (Miller Act, Little Miller Acts)
+- Bond claims and surety takeover
+- Defenses and deficiencies
+
+**Construction Defects**:
+- Defective work and nonconformance with plans
+- Breach of warranty (express and implied)
+- Negligence and professional liability (design professionals)
+- Economic loss rule and privity
+- Statute of repose for construction claims
+- Insurance coverage (CGL, professional liability, builders risk)
+
+**Delay and Disruption**:
+- Critical path method (CPM) scheduling
+- Delay damages and liquidated damages
+- Excusable delays (force majeure, weather, owner-caused)
+- Concurrent delays and apportionment
+- Acceleration and inefficiency claims
+
+## Title Insurance and Title Issues
+
+### Title Insurance
+
+**Title Commitment**:
+- Issued by title company based on title search
+- Schedule A: Property description, owner, buyer, loan amount
+- Schedule B-I: Requirements for issuance (payoffs, releases, curative)
+- Schedule B-II: Exceptions to coverage (easements, restrictions, liens)
+- Effective date and continuation requirements
+
+**Title Policies**:
+- **Owner's Policy**: Protects buyer's ownership interest
+- **Lender's Policy**: Protects mortgage lender's lien priority
+- ALTA policy forms (2006, 2021 editions)
+- Policy amount (purchase price for owner, loan amount for lender)
+- Extended coverage and endorsements
+
+**Title Endorsements**:
+- Zoning endorsements (3.1, 3.2)
+- Survey coverage (removing survey exception)
+- Access endorsement
+- Contiguity and boundary line endorsements
+- Subdivision and planned unit development (PUD)
+- Environmental protection lien endorsement
+- Assignment and modification endorsements
+
+**Title Claims and Defects**:
+- Forged deeds and signatures
+- Undisclosed heirs and claims
+- Fraudulent transfers
+- Missing or defective releases
+- Incorrect legal descriptions
+- Recording errors
+- Hidden liens and encumbrances
+
+### Common Title Issues
+
+**Easements**:
+- Express easements (granted in deed or separate instrument)
+- Implied easements (necessity, prior use)
+- Prescriptive easements (adverse use)
+- Easements appurtenant vs. easements in gross
+- Utility easements and rights of way
+- Termination of easements
+
+**Covenants, Conditions, and Restrictions (CC&Rs)**:
+- Affirmative and negative covenants
+- Architectural control and design review
+- Use restrictions and nuisance prohibitions
+- Homeowners association (HOA) enforcement
+- Equitable servitudes and running with the land
+- Termination and amendment of restrictions
+
+**Encroachments**:
+- Building or improvement crossing property line
+- Discovered in survey or title search
+- Indemnification or removal
+- Adverse possession claims
+- Boundary line agreements
+- Title insurance coverage and exceptions
+
+**Liens and Judgments**:
+- Mortgage and deed of trust liens
+- Mechanics' lien and materialmen's liens
+- Tax liens (federal, state, local)
+- Judgment liens and attachments
+- HOA liens and assessments
+- Environmental liens (superfund, state cleanup)
+
+## Specialized Real Estate Practice Areas
+
+### Opportunity Zones and Tax Incentives
+
+**Qualified Opportunity Zones**:
+- Low-income census tracts designated for investment
+- Capital gains deferral by investing in Qualified Opportunity Funds (QOFs)
+- Step-up in basis after 5 and 7 years (pre-2026)
+- Permanent exclusion of appreciation after 10 years
+- Real estate development in opportunity zones
+- Compliance requirements and reporting
+
+**Historic Tax Credits**:
+- 20% federal tax credit for rehabilitation of historic buildings
+- State historic tax credits (varies by state)
+- National Register of Historic Places listing
+- Substantial rehabilitation requirement
+- Secretary of Interior's Standards for Rehabilitation
+- Part 1, 2, 3 applications and National Park Service review
+
+**Low-Income Housing Tax Credits (LIHTC)**:
+- 4% and 9% tax credits for affordable housing
+- Administered by state housing finance agencies
+- Qualified allocation plan (QAP) and competitive application
+- Compliance period and extended use agreement
+- Monitoring and reporting requirements
+- Syndication to tax credit investors
+
+**Renewable Energy and Solar**:
+- Power purchase agreements (PPAs)
+- Solar lease and easement agreements
+- Interconnection agreements with utilities
+- Investment tax credits (ITC) and production tax credits (PTC)
+- Renewable energy certificates (RECs)
+- Community solar and virtual net metering
+
+### Real Estate Investment Trusts (REITs)
+
+**REIT Structure and Requirements**:
+- At least 100 shareholders and no 50% concentration
+- 75% of gross income from real estate
+- 75% of assets in real estate
+- 90% distribution of taxable income to shareholders
+- Pass-through taxation (no entity-level tax)
+- Publicly traded or private REITs
+
+**REIT Types**:
+- Equity REITs (own and operate properties)
+- Mortgage REITs (originate or purchase mortgages)
+- Hybrid REITs (both equity and mortgage)
+- Sector-focused (office, retail, residential, healthcare, industrial)
+
+**UPREIT and DownREIT Structures**:
+- Tax-deferred contribution of property
+- Operating partnership units (OP units)
+- Conversion to REIT shares over time
+- Estate planning and diversification benefits
+
+### Eminent Domain and Condemnation
+
+**Takings and Compensation**:
+- Fifth Amendment requirement for just compensation
+- Public use requirement and economic development takings (Kelo)
+- Partial takings and severance damages
+- Temporary takings during construction
+- Inverse condemnation (regulatory takings)
+
+**Condemnation Proceedings**:
+- Notice and hearing requirements
+- Valuation and appraisal
+- Quick-take vs. ordinary condemnation
+- Compensation for fair market value
+- Attorney fees and costs
+- Relocation assistance and benefits
+
+**Regulatory Takings**:
+- Excessive regulations reducing property value
+- Lucas per se taking (denial of all economic use)
+- Penn Central multi-factor test
+- Exactions and rough proportionality (Nollan/Dolan)
+- Temporary takings during permit moratoria
+
+## Real Estate Litigation
+
+**Breach of Contract**:
+- Purchase agreement and lease disputes
+- Specific performance or damages
+- Earnest money and liquidated damages
+- Seller's and buyer's remedies
+
+**Quiet Title Actions**:
+- Establish clear title and remove clouds
+- Adverse possession claims
+- Boundary disputes and lot line adjustments
+- Reformation of deeds and descriptions
+
+**Partition Actions**:
+- Co-ownership disputes
+- Partition by sale vs. partition in kind
+- Accounting for contributions and expenses
+- Distribution of proceeds
+
+**Landlord-Tenant Litigation**:
+- Eviction and unlawful detainer
+- Lease enforcement and defaults
+- Security deposit disputes
+- Constructive eviction and breach of quiet enjoyment
+- Rent control and tenant protections
+
+**Foreclosure and Creditor's Rights**:
+- Mortgage foreclosure (judicial and non-judicial)
+- Deficiency judgments
+- Fraudulent transfer and bankruptcy preference
+- Receiverships and marshaling of assets
+
+**Real Estate Fraud and Misrepresentation**:
+- Fraudulent inducement and concealment
+- Disclosure violations (seller disclosures)
+- Title fraud and forged documents
+- Real estate agent and broker malpractice
+- Rescission and damages
+
+## Career in Real Estate Law
+
+### Practice Settings
+
+**Law Firms**:
+- Real estate boutiques and specialized firms
+- Large firms with real estate departments
+- Regional and national practices
+- Solo practitioners and small firms (residential closings)
+
+**In-House and Corporate**:
+- Corporate real estate departments
+- Real estate investment trusts (REITs)
+- Developers and property management companies
+- Banks and financial institutions (lending groups)
+- Retail and corporate occupiers
+
+**Title and Escrow Companies**:
+- Title underwriters and agencies
+- Title examiners and attorneys
+- Escrow officers and settlement agents
+- Claims and curative departments
+
+**Government and Public Sector**:
+- Municipal attorneys (zoning, planning, redevelopment)
+- Housing authorities and public finance
+- Condemnation and eminent domain
+- Environmental and natural resources agencies
+
+### Skills and Expertise
+
+**Transactional Skills**:
+- Contract drafting and negotiation
+- Due diligence and title review
+- Closing coordination and documentation
+- Financing structures and loan documents
+- Understanding real estate economics and cash flows
+
+**Regulatory and Land Use**:
+- Zoning and land use regulations
+- Permitting and entitlements
+- Environmental compliance
+- Public hearings and administrative advocacy
+- Municipal government relations
+
+**Litigation and Dispute Resolution**:
+- Real estate disputes and contract breaches
+- Foreclosure and creditor's rights
+- Landlord-tenant matters
+- Title and boundary disputes
+- Construction litigation
+
+**Business and Client Counseling**:
+- Real estate investment analysis
+- Tax planning and structures (1031, OZ, LIHTC, REIT)
+- Risk assessment and mitigation
+- Portfolio management and strategy
+- Market knowledge and industry trends
+
+### Specialization Areas
+
+**Commercial Real Estate**:
+- Office, retail, industrial, multifamily
+- Large transactions and complex structures
+- Institutional clients and REITs
+- National and international practice
+
+**Residential Real Estate**:
+- Single-family home closings
+- Condominium and homeowners associations
+- Residential development and subdivisions
+- High-volume practice and technology platforms
+
+**Real Estate Finance**:
+- Acquisition and construction lending
+- CMBS and securitization
+- Workouts and restructuring
+- Lender representation and loan documentation
+
+**Development and Land Use**:
+- Entitlements and zoning
+- Public-private partnerships
+- Mixed-use and master-planned communities
+- Affordable housing and tax credits
+
+**Leasing**:
+- Landlord and tenant representation
+- Office, retail, industrial leasing
+- Lease administration and portfolio management
+- National tenant representation
+
+## Related Resources
+
+- [property.org.ai](https://property.org.ai) - Property rights and ownership
+- [realestate.org.ai](https://realestate.org.ai) - Real estate industry and markets
+- [construction.org.ai](https://construction.org.ai) - Construction industry and law
+- [zoning.org.ai](https://zoning.org.ai) - Zoning and land use regulations
+- [title.org.ai](https://title.org.ai) - Title insurance and examination
+- [mortgage.org.ai](https://mortgage.org.ai) - Mortgage lending and finance
+- [leasing.org.ai](https://leasing.org.ai) - Commercial and residential leasing
+- [development.org.ai](https://development.org.ai) - Real estate development

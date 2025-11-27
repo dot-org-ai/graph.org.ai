@@ -1,0 +1,48 @@
+---
+$context: https://hospitality.org.ai
+$id: https://hospitality.org.ai/{{slug}}
+$type: https://hospitality.org.ai/Hospitality
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Hospitality
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<HospitalityOverview hospitality={hospitality} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Hospitality` |
+| Domain | [hospitality.org.ai](https://hospitality.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<HospitalityDetails hospitality={hospitality} />
+
+## Properties
+
+<HospitalityProperties hospitality={hospitality} />
+
+## Relationships
+
+<HospitalityRelationships hospitality={hospitality} />
+
+## Related
+
+<RelatedHospitalitys hospitality={hospitality} />
+
+## Sources
+
+- <DatabaseLink namespace="hospitality.org.ai" type="{{slug}}" />

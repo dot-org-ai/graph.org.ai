@@ -1,0 +1,45 @@
+---
+$id: https://apqc.org.ai/Activities/{code}
+$context: https://apqc.org.ai
+$type: https://apqc.org.ai/Activity
+code: "{code}"
+name: "{Activity Name}"
+process: "{processCode}"
+processGroup: "{processGroupCode}"
+category: "{categoryCode}"
+tasks:
+  - code: "{code}.1"
+    name: "{Task Name}"
+  - code: "{code}.2"
+    name: "{Task Name}"
+---
+
+# {code} {Activity Name}
+
+<ActivityOverview code="{code}" />
+
+## Tasks
+
+<TaskList activityCode="{code}" />
+
+| Code | Task |
+|------|------|
+| {code}.1 | {Task Name} |
+| {code}.2 | {Task Name} |
+
+## Roles Typically Involved
+
+- {role1}
+- {role2}
+
+## Systems Commonly Used
+
+- {system1}
+- {system2}
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [onet.org.ai](https://onet.org.ai) | Related DWAs |
+| [activities.org.ai](https://activities.org.ai) | Simplified activity |

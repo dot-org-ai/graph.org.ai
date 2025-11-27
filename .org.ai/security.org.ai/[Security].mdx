@@ -1,0 +1,48 @@
+---
+$context: https://security.org.ai
+$id: https://security.org.ai/{{slug}}
+$type: https://security.org.ai/Security
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Security
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SecurityOverview security={security} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Security` |
+| Domain | [security.org.ai](https://security.org.ai) |
+| Parent | [tech.org.ai](https://tech.org.ai) |
+
+## Details
+
+<SecurityDetails security={security} />
+
+## Properties
+
+<SecurityProperties security={security} />
+
+## Relationships
+
+<SecurityRelationships security={security} />
+
+## Related
+
+<RelatedSecuritys security={security} />
+
+## Sources
+
+- <DatabaseLink namespace="security.org.ai" type="{{slug}}" />

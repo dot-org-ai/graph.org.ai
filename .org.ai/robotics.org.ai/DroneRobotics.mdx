@@ -1,0 +1,677 @@
+---
+$context: https://robotics.org.ai
+$id: https://robotics.org.ai/DroneRobotics
+$type: https://robotics.org.ai/Robotics
+name: Drone Robotics
+description: Unmanned aerial vehicles (UAVs) for inspection, delivery, surveying, and autonomous flight operations
+---
+
+export const items = async () => {
+  return [
+    { name: 'Inspection Drones', type: 'DroneRobotics' },
+    { name: 'Delivery Drones', type: 'DroneRobotics' },
+    { name: 'Agricultural Drones', type: 'DroneRobotics' },
+    { name: 'Mapping and Surveying', type: 'DroneRobotics' },
+    { name: 'Industrial UAVs', type: 'DroneRobotics' }
+  ]
+}
+
+# Drone Robotics
+
+Drone robotics encompasses unmanned aerial vehicles (UAVs) equipped with autonomous or semi-autonomous capabilities for commercial, industrial, and professional applications. The commercial drone market exceeded $30 billion in 2023, with compound annual growth exceeding 25% driven by expanding use cases across industries.
+
+## Overview
+
+Modern drones combine aerial mobility with sensors, AI, and autonomous navigation to perform tasks ranging from infrastructure inspection to emergency response. Unlike consumer photography drones, professional drone robotics systems feature advanced autonomy, specialized sensors, and integration with enterprise workflows.
+
+## Drone Types and Configurations
+
+### Multi-Rotor Drones
+
+**Quadcopters (4 rotors)**
+- Most common configuration
+- Vertical takeoff and landing (VTOL)
+- Hovering and stable flight
+- 20-45 minute flight time typical
+- Payload capacity: 0.5-5kg
+
+**Hexacopters (6 rotors) and Octocopters (8 rotors)**
+- Increased redundancy and safety
+- Higher payload capacity (5-15kg)
+- Better stability in wind
+- Professional inspection and surveying
+- Examples: DJI Matrice 600, FreeFly Alta X
+
+**Advantages**
+- Easy to operate and control
+- Stable hovering for inspection
+- Compact and portable
+- Lower cost than fixed-wing
+
+**Limitations**
+- Limited flight time (battery dependent)
+- Reduced range vs. fixed-wing
+- Weather sensitivity
+- High energy consumption
+
+### Fixed-Wing Drones
+
+**Traditional Fixed-Wing**
+- Airplane-like design
+- 1-5+ hour flight endurance
+- 50-500km range
+- Requires runway or launch catapult
+- Applications: Large-area mapping, agriculture
+
+**Vertical Takeoff and Landing (VTOL)**
+- Combines multi-rotor and fixed-wing
+- Vertical takeoff, transition to forward flight
+- Extended range with VTOL convenience
+- Premium pricing
+- Examples: Quantum Trinity, senseFly eBee X
+
+**Advantages**
+- Long endurance and range
+- Energy efficient cruise flight
+- Large area coverage
+- Wind tolerance
+
+**Limitations**
+- Requires takeoff/landing space (non-VTOL)
+- Cannot hover
+- More complex operation
+- Higher cost
+
+### Hybrid and Specialized
+
+**Tethered Drones**
+- Power via ground cable
+- Unlimited flight time
+- Heavy payload capacity
+- Applications: Surveillance, communications relay
+- Limited mobility (tether length)
+
+**BVLOS (Beyond Visual Line of Sight)**
+- Advanced autonomy and detect-and-avoid
+- Long-range operations
+- Regulatory compliance systems
+- Examples: Zipline medical delivery
+
+## Key Technologies
+
+### Flight Control Systems
+
+**Autopilot Platforms**
+- **Pixhawk** - Open-source (ArduPilot, PX4)
+- **DJI Flight Controller** - Proprietary, high reliability
+- **Auterion** - Enterprise-grade PX4 distribution
+- **CUAV** - Competition and professional systems
+
+**Capabilities**
+- GPS waypoint navigation
+- Return-to-home failsafe
+- Obstacle avoidance
+- Precision landing
+- Automated flight planning
+
+### Sensors and Payloads
+
+**Visual and Thermal Cameras**
+- 4K/8K video recording
+- Thermal imaging (FLIR, radiometric)
+- Gimbal stabilization (3-axis)
+- Zoom lenses for standoff inspection
+
+**LiDAR**
+- 3D terrain mapping
+- Forestry and vegetation analysis
+- Power line modeling
+- Infrastructure measurement
+- Examples: YellowScan, Riegl miniVUX
+
+**Multispectral and Hyperspectral**
+- Agriculture crop health monitoring
+- NDVI (Normalized Difference Vegetation Index)
+- Disease and pest detection
+- Irrigation optimization
+- MicaSense, Sentera sensors
+
+**Gas Detection**
+- Methane leak detection (oil & gas)
+- Air quality monitoring
+- Hazmat incident assessment
+- Industrial emissions tracking
+
+**Radar and Other Sensors**
+- Ground penetrating radar
+- Radiation detection
+- Weather sensors
+- Acoustic sensors
+
+### Autonomy and AI
+
+**Computer Vision**
+- Object detection and tracking
+- Infrastructure defect identification
+- Automated inspection workflows
+- Deep learning models on edge devices
+
+**Collision Avoidance**
+- Stereo vision obstacle detection
+- Acoustic sensors
+- Radar-based detection
+- AI path planning
+
+**Autonomous Navigation**
+- SLAM (Simultaneous Localization and Mapping)
+- Visual-inertial odometry
+- GPS-denied navigation (indoor, underground)
+- Semantic scene understanding
+
+## Commercial Applications
+
+### Infrastructure Inspection
+
+**Power Lines and Transmission Towers**
+- High-resolution imagery of insulators and hardware
+- Thermal detection of hotspots and failures
+- LiDAR for vegetation encroachment
+- Reduced crew exposure to high-voltage risk
+
+**Benefits**
+- 10x faster than manual inspection
+- Safer than climbers or helicopters
+- More frequent inspections possible
+- AI defect detection from imagery
+
+**Major Providers**
+- Skydio (autonomous navigation)
+- DJI Enterprise (Mavic, Matrice series)
+- Percepto (autonomous drone-in-a-box)
+
+**Wind Turbine Inspection**
+- Blade surface defect detection
+- Thermal anomaly identification
+- Automated flight patterns
+- AI classification of damage types
+
+**Typical Economics**
+- Manual inspection: $500-1,000 per turbine
+- Drone inspection: $100-300 per turbine
+- 3+ turbines per flight hour
+
+**Oil and Gas Facilities**
+- Pipeline corridor monitoring
+- Flare stack inspection
+- Tank farm surveys
+- Methane leak detection
+- Offshore platform inspection
+
+**Bridges and Structures**
+- Concrete crack detection
+- Corrosion mapping
+- Post-disaster assessment
+- Ongoing monitoring programs
+
+### Mapping and Surveying
+
+**Photogrammetry**
+- Orthomosaic map generation
+- Digital elevation models (DEM)
+- Volumetric calculations (stockpiles)
+- Progress monitoring (construction)
+
+**Software Platforms**
+- Pix4D - Industry standard processing
+- DroneDeploy - Cloud-based mapping
+- Agisoft Metashape - High-accuracy photogrammetry
+- DJI Terra - Integrated with DJI hardware
+
+**Applications**
+- Construction site monitoring
+- Mining operations and volumetrics
+- Topographic surveying
+- Urban planning
+- Archaeological documentation
+
+**Accuracy**
+- Horizontal: 2-5cm with GCPs (ground control points)
+- Vertical: 5-10cm
+- RTK/PPK GPS: Sub-centimeter accuracy
+
+**LiDAR Surveying**
+- Penetrates vegetation canopy
+- Accurate terrain models
+- Power line modeling
+- Forestry inventory
+- Flood modeling
+
+### Agriculture
+
+**Crop Health Monitoring**
+- Multispectral imaging for NDVI maps
+- Variable rate application mapping
+- Disease and pest detection
+- Irrigation assessment
+
+**Benefits**
+- Identify issues before visible symptoms
+- Precision agriculture inputs
+- Yield prediction
+- Field scouting efficiency
+
+**Precision Spraying**
+- Autonomous spray application
+- 90%+ reduction in chemical use vs. broadcast
+- Reduced operator exposure
+- Terrain-following flight
+
+**Leading Systems**
+- DJI Agras (dominant in Asia)
+- XAG (China market leader)
+- Yamaha RMAX (veteran platform)
+- PrecisionHawk agriculture platform
+
+**Livestock Management**
+- Herd counting and monitoring
+- Thermal imaging for sick animals
+- Pasture condition assessment
+- Remote location access
+
+### Delivery and Logistics
+
+**Medical Delivery**
+
+**Zipline**
+- Blood and medical supply delivery
+- 600+ delivery flights per day
+- Operating in Rwanda, Ghana, US, Japan
+- Fixed-wing catapult-launched drones
+- 80km range, 1.8kg payload
+
+**Impact**
+- Life-saving time reduction
+- Access to remote areas
+- On-demand inventory model
+- Reduced wastage of perishables
+
+**Matternet**
+- Urban medical logistics
+- Hospital campus delivery
+- Integration with healthcare systems
+- Switzerland deployments
+
+**Package Delivery**
+
+**Amazon Prime Air**
+- Developing autonomous delivery drones
+- 30-minute delivery goal
+- 5-pound package limit
+- Regulatory approval progress
+
+**Wing (Alphabet)**
+- Operating in Australia, Finland, US
+- Coffee, medicine, food delivery
+- 300,000+ deliveries completed
+- BVLOS certified operations
+
+**UPS Flight Forward**
+- First FAA Part 135 certification
+- Hospital campus delivery
+- Partnership with Matternet
+- Expanding operations
+
+**Challenges**
+- Regulatory restrictions (FAA Part 107, EASA)
+- Noise concerns in residential areas
+- Weather limitations
+- Safety and reliability requirements
+- Air traffic management
+
+### Emergency Response and Public Safety
+
+**Search and Rescue**
+- Missing person location via thermal
+- Disaster area assessment
+- Communication relay in emergencies
+- Supply delivery to stranded individuals
+
+**Fire Fighting Support**
+- Wildfire mapping and monitoring
+- Hotspot identification
+- Personnel safety (situational awareness)
+- Prescribed burn monitoring
+
+**Law Enforcement**
+- Crime scene documentation
+- Traffic accident reconstruction
+- Crowd monitoring
+- Search warrant execution support
+
+**Disaster Response**
+- Damage assessment (hurricanes, earthquakes)
+- Infrastructure evaluation
+- Survivor location
+- Route planning for responders
+
+## Industrial and Specialized
+
+### Indoor Inspection
+
+**Warehouse Inventory**
+- Autonomous shelf scanning
+- Barcode and RFID reading
+- Inventory cycle counting
+- Reduced operational disruption
+
+**Example: Verity**
+- Fully autonomous warehouse drones
+- Overnight inventory scanning
+- Integration with WMS
+- 50+ warehouses deployed
+
+**Confined Space Inspection**
+- Tanks, vessels, boilers
+- GPS-denied navigation
+- Collision avoidance
+- Reduces confined space entry risk
+
+**Elios (Flyability)**
+- Collision-tolerant cage design
+- Powerful lighting
+- Thermal and visual cameras
+- Deployed in 3,000+ companies
+
+### Mining
+
+- Stockpile volumetric measurement
+- Pit mapping and planning
+- Blast monitoring
+- Equipment tracking
+- Highwall stability analysis
+
+**Benefits**
+- Surveyor safety (no pit entry required)
+- Daily measurement vs. monthly
+- Accurate inventory
+- Operational optimization
+
+### Maritime and Offshore
+
+- Ship hull inspection
+- Offshore wind farm monitoring
+- Rig and platform inspection
+- Oil spill assessment
+- Search and rescue
+
+**Waterproof/Water-Landing Drones**
+- Swellpro series
+- PowerVision PowerEgg X
+- Emergency flotation systems
+
+## Regulatory Landscape
+
+### United States (FAA)
+
+**Part 107 (Small UAS Rule)**
+- Drones under 55 pounds
+- Visual line of sight operation
+- Maximum altitude 400 feet AGL
+- Daylight operations (waiver for night)
+- Remote pilot certificate required
+
+**Part 135 (Air Carrier Certification)**
+- Commercial operations
+- BVLOS approval
+- Required for drone delivery
+- Rigorous safety standards
+
+**Waiver Process**
+- BVLOS operations
+- Night flying
+- Over people
+- Multiple drones
+- From moving vehicles
+
+### European Union (EASA)
+
+**Open Category**
+- Low-risk operations
+- Visual line of sight
+- Below 120m altitude
+- CE class marking on drones
+
+**Specific Category**
+- Risk assessment required
+- Operational authorization
+- SAIL (Specific Assurance and Integrity Level)
+
+**Certified Category**
+- High-risk operations
+- Drone certification required
+- Similar to manned aviation
+
+### Emerging Regulations
+
+- Remote ID requirement (broadcast identification)
+- UTM (UAS Traffic Management) systems
+- Drone highways and corridors
+- Urban air mobility frameworks
+
+## Drone-in-a-Box Systems
+
+Fully autonomous remote operations:
+
+**Percepto**
+- Weather-resistant housing
+- Automatic battery swap
+- Scheduled and on-demand flights
+- Remote piloting capability
+- Enterprise security applications
+
+**Airobotics (defunct, acquired)**
+- Industrial facility monitoring
+- Fully automated operations
+- Multiple battery and payload bays
+
+**Easy Aerial**
+- Tethered and free-flight options
+- Persistent surveillance
+- Military and security applications
+
+**Benefits**
+- 24/7 availability
+- Rapid response to incidents
+- Reduced personnel requirements
+- Consistent data collection
+
+## Software and Data Management
+
+### Flight Planning
+
+- **Litchi** - Waypoint and automated missions
+- **DJI Pilot / Pilot 2** - Enterprise flight planning
+- **DroneDeploy** - Mapping mission planning
+- **Pix4Dcapture** - Survey pattern automation
+
+### Data Processing
+
+**Photogrammetry**
+- Pix4D
+- Agisoft Metashape
+- DroneDeploy
+- OpenDroneMap (open-source)
+
+**AI-Powered Inspection**
+- Neurala VIA - Visual inspection automation
+- Scopito - Collaborative inspection platform
+- Zeitview - Energy infrastructure analysis
+- Raptor Maps - Solar farm inspection
+
+### Fleet Management
+
+- AirMap - Airspace intelligence
+- DroneSense - Public safety platform
+- Skyward (Verizon) - Operations management
+- FlightHub 2 (DJI) - Enterprise fleet control
+
+## Economic Considerations
+
+### Cost Structure
+
+**Hardware**
+- Consumer prosumer: $1,000-$5,000
+- Professional multi-rotor: $5,000-$30,000
+- Enterprise systems: $30,000-$100,000+
+- Custom industrial: $100,000-$500,000+
+
+**Operational Costs**
+- Pilot/operator: $50-$150/hour
+- Insurance: $1,000-$5,000/year
+- Maintenance and repairs: 10-15% of acquisition cost
+- Software subscriptions: $100-$500/month
+
+### ROI Examples
+
+**Infrastructure Inspection**
+- Traditional method: $5,000-$20,000 per inspection
+- Drone method: $1,000-$5,000
+- Time savings: 75-90%
+- Safety improvement: Eliminates high-risk climbs
+
+**Agricultural Mapping**
+- Traditional surveying: $500-$1,000 per acre
+- Drone mapping: $5-$20 per acre
+- More frequent data collection possible
+- Better decision-making from timely data
+
+## Leading Manufacturers
+
+### DJI (China)
+
+Dominant market leader (70%+ market share)
+
+**Consumer/Prosumer**
+- Mavic series - Compact folding drones
+- Air series - Entry-level
+- Mini series - Under 250g registration-free
+
+**Enterprise**
+- Matrice 30/300 - Industrial inspection
+- Matrice 350 RTK - Survey-grade accuracy
+- Mavic 3 Enterprise - Versatile professional
+- Agras - Agricultural spraying
+
+### Autel Robotics (US/China)
+
+- EVO series - Consumer/professional
+- Alpha - Enterprise inspection
+- Dragonfish - VTOL long-endurance
+- US market focus amid DJI concerns
+
+### Skydio (USA)
+
+- Autonomous navigation leader
+- Skydio 2+ - Consumer/enterprise
+- X10 - Professional inspection
+- 3D Scan - Autonomous mapping
+- Strong in GPS-denied environments
+
+### Parrot (France)
+
+- Anafi series - Commercial inspection
+- Bluegrass - Agriculture multispectral
+- European market focus
+- Military/defense contracts
+
+### Specialized Manufacturers
+
+- **Flyability** - Confined space inspection
+- **senseFly** (AgEagle) - Fixed-wing mapping
+- **Quantum Systems** - VTOL survey drones
+- **FreeFly Systems** - Heavy-lift cinematography
+- **Acecore Technologies** - Modular enterprise platforms
+
+## Future Trends
+
+### Advanced Autonomy
+
+- Fully autonomous waypoint navigation
+- AI-based decision making
+- Swarm coordination (multiple drones)
+- Self-optimization and learning
+
+### Urban Air Mobility (UAM)
+
+- Passenger-carrying eVTOL aircraft
+- Autonomous air taxi services
+- Integration with ground transportation
+- Companies: Joby, Archer, Lilium, Volocopter
+
+### Regulatory Evolution
+
+- Remote ID implementation
+- Expanded BVLOS operations
+- Drone traffic management systems
+- International harmonization
+
+### Technology Improvements
+
+- Extended battery life (hydrogen fuel cells, hybrid power)
+- Improved weather tolerance
+- Enhanced sensor capabilities
+- 5G connectivity for real-time HD video
+- Edge AI processing
+
+### New Applications
+
+- Infrastructure construction (assembly, welding)
+- Aerial firefighting (hose deployment)
+- Reforestation (seed dropping)
+- Wildlife monitoring and conservation
+- Entertainment and light shows
+
+## Safety and Best Practices
+
+### Pre-Flight Checklist
+
+- Weather assessment (wind, precipitation)
+- Airspace authorization
+- Equipment inspection
+- Battery charge and health
+- Compass calibration
+- Communication check
+
+### Risk Mitigation
+
+- Redundant systems (dual GPS, IMU)
+- Geofencing for restricted areas
+- Automatic return-to-home
+- Propeller guards
+- Insurance coverage
+- Emergency procedures
+
+### Maintenance
+
+- Regular motor and bearing inspection
+- Propeller replacement schedule
+- Battery health monitoring
+- Firmware updates
+- Sensor calibration
+- Gimbal maintenance
+
+## Related Topics
+
+- [MobileRobots.mdx](https://robotics.org.ai/MobileRobots) - Ground-based autonomous systems
+- [RoboticsAI.mdx](https://robotics.org.ai/RoboticsAI) - AI for autonomous navigation
+- [ServiceRobots.mdx](https://robotics.org.ai/ServiceRobots) - Delivery and inspection applications
+- [Manufacturing.org.ai](https://manufacturing.org.ai) - Industrial inspection use cases
+
+## References
+
+- Federal Aviation Administration (FAA) - Drone Regulations
+- European Union Aviation Safety Agency (EASA)
+- Association for Unmanned Vehicle Systems International (AUVSI)
+- Commercial Drone Alliance
+- Drone Industry Insights - Market Reports
+- International Journal of Micro Air Vehicles

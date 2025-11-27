@@ -1,0 +1,586 @@
+---
+$context: https://manufacturing.org.ai
+$id: https://manufacturing.org.ai/TransportationEquipmentManufacturing
+$type: https://manufacturing.org.ai/Manufacturing
+name: "Transportation Equipment Manufacturing"
+naicsCode: "336"
+description: "Manufactures equipment for transporting people and goods including motor vehicles, aerospace products, railroad rolling stock, ships, boats, and other transportation equipment."
+parent: https://manufacturing.org.ai
+---
+
+export const items = async () => {
+  // Fetch transportation equipment manufacturing establishments from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://manufacturing.org.ai/TransportationEquipmentManufacturing',
+    naicsCode: { $regex: '^336' }
+  })
+}
+
+# Transportation Equipment Manufacturing
+
+Transportation equipment manufacturing (NAICS 336) produces equipment for moving people and goods, including motor vehicles, aerospace products, railroad equipment, ships, boats, and other transportation equipment. This subsector represents some of the most complex discrete manufacturing operations, requiring extensive supply chains, advanced engineering, and rigorous safety and quality standards.
+
+Transportation manufacturing is critical to economic mobility, global trade, national defense, and technological advancement. The sector is undergoing transformative change with electrification, autonomous systems, and sustainable transportation solutions.
+
+## Overview
+
+Transportation equipment manufacturing is characterized by several distinctive features:
+
+- **Product Complexity**: Thousands of components integrated into complete vehicles and systems
+- **Supply Chain Scale**: Multi-tier supplier networks with hundreds or thousands of suppliers
+- **Capital Intensity**: Massive investments in tooling, assembly lines, and testing facilities
+- **Engineering Intensive**: Heavy R&D spending on performance, safety, and efficiency
+- **Regulatory Oversight**: Extensive government regulations for safety, emissions, and quality
+- **Long Product Lifecycles**: Platforms designed to last decades with continuous improvements
+- **Global Competition**: International markets with both established and emerging competitors
+- **High Stakes**: Safety-critical products where failure can be catastrophic
+
+## Industry Groups
+
+Transportation equipment manufacturing comprises eight industry groups:
+
+### 3361 - Motor Vehicle Manufacturing
+Manufacturing complete motor vehicles for highway use.
+
+**Key Products:**
+- **Automobiles**: Passenger cars, sedans, coupes, convertibles
+- **Light Trucks**: Pickup trucks, SUVs, crossovers, minivans
+- **Heavy Trucks**: Class 7-8 trucks for commercial freight
+- **Buses**: Transit buses, school buses, motor coaches
+- **Specialty Vehicles**: Emergency vehicles, military vehicles
+
+**Manufacturing Process**:
+1. **Stamping**: Large presses form body panels from steel or aluminum sheet
+2. **Body Shop**: Robotic welding assembles body-in-white structure
+3. **Paint Shop**: Multi-stage washing, e-coating, primer, basecoat, clearcoat
+4. **Assembly**: Sequential installation of powertrain, interior, glass, wheels, fluids
+5. **Quality and Testing**: Inspection, road testing, final adjustments
+
+**Industry Trends**:
+- **Electrification**: Battery electric vehicles (BEVs) and plug-in hybrids (PHEVs)
+- **Autonomous Driving**: Advanced driver assistance systems (ADAS) to full autonomy
+- **Connected Vehicles**: V2V, V2I communication and over-the-air updates
+- **Lightweighting**: Aluminum, carbon fiber, and advanced high-strength steels
+- **Shared Mobility**: Impact on ownership models and vehicle design
+
+### 3362 - Motor Vehicle Body and Trailer Manufacturing
+Manufacturing motor vehicle bodies, truck trailers, and related components.
+
+**Key Products:**
+
+#### 33621 - Motor Vehicle Body Manufacturing
+- Truck cabs and bodies (dump bodies, van bodies, stake bodies)
+- Bus bodies on purchased chassis
+- Ambulance and fire truck bodies
+- Recreational vehicle (RV) bodies
+- Specialty vehicle bodies
+
+#### 33622 - Truck Trailer Manufacturing
+- Dry freight trailers and vans
+- Refrigerated trailers (reefers)
+- Flatbed and platform trailers
+- Tank trailers for liquids and gases
+- Specialized trailers (auto transport, lowboy, dump)
+
+#### 33621 - Travel Trailer and Camper Manufacturing
+- Travel trailers and fifth wheels
+- Truck campers
+- Folding camping trailers
+- Park model RVs
+
+**Manufacturing Characteristics**:
+- More labor-intensive than vehicle assembly
+- Often smaller, specialized manufacturers
+- Customization and build-to-order common
+- Lighter regulatory requirements than complete vehicles
+
+### 3363 - Motor Vehicle Parts Manufacturing
+Manufacturing parts and accessories for motor vehicles.
+
+**Key Products:**
+
+#### 33631 - Motor Vehicle Gasoline Engine and Engine Parts
+- Complete gasoline engines
+- Engine blocks and heads
+- Pistons, rings, valves, camshafts
+- Carburetors and fuel injection systems
+
+#### 33632 - Motor Vehicle Electrical and Electronic Equipment
+- Batteries and alternators
+- Starters and ignition systems
+- Wiring harnesses
+- Lighting equipment
+- Electronic control units (ECUs)
+- Sensors and actuators
+- Infotainment systems
+
+#### 33633 - Motor Vehicle Steering and Suspension Components
+- Steering gears and columns
+- Power steering systems
+- Shock absorbers and struts
+- Suspension springs and linkages
+- Axles and driveshafts
+
+#### 33634 - Motor Vehicle Brake Systems
+- Hydraulic brake assemblies
+- Disc and drum brakes
+- Anti-lock braking systems (ABS)
+- Electronic stability control (ESC)
+
+#### 33635 - Motor Vehicle Transmission and Powertrain
+- Manual and automatic transmissions
+- Continuously variable transmissions (CVTs)
+- Transfer cases and clutches
+- Hybrid and electric drivetrains
+
+#### 33636 - Motor Vehicle Seating and Interior Trim
+- Seats and seat frames
+- Interior trim (door panels, headliners)
+- Carpet and floor mats
+- Instrument panels and consoles
+
+#### 33637 - Motor Vehicle Metal Stamping
+- Stamped body panels
+- Structural stampings
+- Brackets and small stampings
+
+#### 33639 - Other Motor Vehicle Parts
+- Air conditioning systems
+- Filters (air, oil, fuel)
+- Exhaust systems and catalytic converters
+- Wheels and tire-wheel assemblies
+- Mirrors, glass, and wipers
+- Fuel tanks and systems
+
+**Tier Structure**:
+- **Tier 1**: Direct suppliers to OEMs (complete systems and modules)
+- **Tier 2**: Component suppliers to Tier 1s
+- **Tier 3**: Raw materials and basic components to Tier 2s
+
+### 3364 - Aerospace Product and Parts Manufacturing
+Manufacturing aircraft, missiles, space vehicles, and related parts.
+
+**Key Products:**
+
+#### 33641 - Aerospace Products and Parts
+**Aircraft Manufacturing**:
+- Commercial aircraft (narrowbody, widebody, regional)
+- Business jets and general aviation aircraft
+- Military aircraft (fighters, bombers, transport, helicopters)
+- Unmanned aerial vehicles (UAVs/drones)
+
+**Spacecraft and Missiles**:
+- Space launch vehicles and boosters
+- Satellites and space probes
+- Crewed spacecraft and space stations
+- Guided missiles and munitions
+
+**Aircraft Parts and Components**:
+- Airframes and major assemblies (wings, fuselage sections)
+- Propulsion systems (jet engines, turboprops)
+- Landing gear and hydraulic systems
+- Avionics and flight control systems
+- Auxiliary power units (APUs)
+- Aircraft interiors and furnishings
+
+**Manufacturing Characteristics**:
+- Extremely high precision and quality requirements
+- Advanced materials (composites, titanium alloys, superalloys)
+- Extensive testing and certification
+- Long development and production cycles
+- Dual-use technologies (commercial and military)
+- AS9100 quality management standard
+
+**Technology Areas**:
+- Composite structures and advanced materials
+- Additive manufacturing for complex parts
+- Electric and hybrid propulsion
+- Urban air mobility (eVTOL aircraft)
+- Hypersonic flight
+- Space commercialization
+
+### 3365 - Railroad Rolling Stock Manufacturing
+Manufacturing railroad locomotives, passenger cars, and freight cars.
+
+**Key Products:**
+- **Locomotives**: Diesel-electric, electric, hybrid locomotives
+- **Passenger Cars**: Commuter rail, intercity, subway, light rail vehicles
+- **Freight Cars**: Boxcars, tank cars, flatcars, gondolas, hoppers, autorack
+- **Maintenance of Way Equipment**: Track maintenance vehicles
+
+**Manufacturing Process**:
+- Heavy steel fabrication and welding
+- Bogie (truck) assembly with wheels, axles, suspension
+- Electrical and control system integration
+- Interior outfitting (for passenger cars)
+- Testing and commissioning
+
+**Market Characteristics**:
+- Large, lumpy orders from railroads and transit agencies
+- Long product life (30-40 years typical)
+- Aftermarket maintenance and refurbishment significant
+- Highly concentrated industry with few manufacturers
+
+### 3366 - Ship and Boat Building
+Building ships, boats, and other floating vessels.
+
+**Key Products:**
+
+#### 33661 - Ship Building and Repairing
+- **Commercial Ships**: Container ships, tankers, bulk carriers, cargo vessels
+- **Military Vessels**: Aircraft carriers, destroyers, submarines, patrol boats
+- **Offshore Vessels**: Offshore supply vessels, drilling platforms, FPSOs
+- **Specialty Ships**: Icebreakers, research vessels, ferries, cruise ships
+- **Ship Repair**: Dry-docking, overhaul, refurbishment
+
+**Shipbuilding Process**:
+1. **Design and Engineering**: Naval architecture, detailed design
+2. **Steel Fabrication**: Cutting, forming, welding large steel plates
+3. **Module Assembly**: Building major hull sections and superstructure
+4. **Hull Assembly**: Joining modules to form complete hull
+5. **Outfitting**: Installing machinery, piping, electrical, accommodations
+6. **Launching**: Moving ship to water
+7. **Fitting Out**: Completing systems and interiors
+8. **Sea Trials**: Testing and commissioning
+
+#### 33661 - Boat Building
+- **Pleasure Boats**: Powerboats, sailboats, yachts
+- **Fishing Vessels**: Commercial fishing boats and trawlers
+- **Work Boats**: Tugboats, pilot boats, work barges
+
+**Construction Methods**:
+- Fiberglass (FRP) layup for small boats
+- Aluminum fabrication
+- Steel construction for larger vessels
+- Wood construction for traditional boats
+
+### 3369 - Other Transportation Equipment Manufacturing
+Manufacturing transportation equipment not classified elsewhere.
+
+**Key Products:**
+
+#### 33699 - All Other Transportation Equipment
+- **Military Vehicles**: Tanks, armored personnel carriers, military trucks
+- **Motorcycles**: Street bikes, cruisers, sport bikes, off-road
+- **Bicycles**: Road bikes, mountain bikes, e-bikes
+- **ATVs and UTVs**: All-terrain and utility vehicles
+- **Snowmobiles**: Recreational snowmobiles
+- **Golf Carts and Low-Speed Vehicles**: Utility and recreational use
+- **Personal Watercraft**: Jet skis and similar products
+
+## Manufacturing Technologies
+
+Transportation equipment manufacturing employs advanced technologies:
+
+### Materials and Processes
+
+**Advanced Materials**:
+- **Lightweight Metals**: Aluminum alloys, magnesium, titanium
+- **Advanced High-Strength Steels (AHSS)**: Press-hardened steels, dual-phase steels
+- **Composites**: Carbon fiber, fiberglass, sandwich structures
+- **Polymers**: Engineering plastics for interiors and exterior panels
+
+**Fabrication Technologies**:
+- **Stamping**: Progressive dies, transfer presses, hydroforming
+- **Casting**: Aluminum and iron castings for engine blocks, transmission cases
+- **Forging**: Crankshafts, connecting rods, gears
+- **Machining**: CNC machining centers for precision components
+- **Additive Manufacturing**: 3D printing for prototypes, tooling, and end-use parts
+
+### Assembly and Integration
+
+**Robotic Automation**:
+- Welding robots (spot welding, arc welding)
+- Material handling and part transfer
+- Painting and coating robots
+- Assembly robots for repetitive tasks
+- Collaborative robots (cobots) for complex assembly
+
+**Assembly Systems**:
+- Moving assembly lines (conveyor-based)
+- Modular assembly with feeder lines
+- Just-in-sequence (JIS) part delivery
+- Automated guided vehicles (AGVs) for material flow
+- Mixed-model assembly for product variety
+
+### Quality and Testing
+
+**Inspection Technologies**:
+- Coordinate measuring machines (CMMs)
+- Laser scanning and photogrammetry
+- Machine vision systems
+- Non-destructive testing (ultrasonic, X-ray, magnetic particle)
+
+**Testing and Validation**:
+- Dynamometer testing for powertrains
+- Environmental testing (temperature, humidity, salt spray)
+- Vibration and durability testing
+- Crash testing and safety validation
+- Wind tunnel testing for aerodynamics
+- Flight testing for aircraft
+
+## Product Development
+
+Transportation products require extensive development:
+
+### Design and Engineering
+
+**CAD/CAE/CAM**:
+- 3D solid modeling (CATIA, NX, SolidWorks)
+- Finite element analysis (FEA) for structural simulation
+- Computational fluid dynamics (CFD) for aerodynamics
+- Multi-body dynamics (MBD) for mechanism simulation
+- Digital mock-up (DMU) for virtual assembly
+
+**Systems Engineering**:
+- Requirements management
+- Model-based systems engineering (MBSE)
+- Hardware-software integration
+- Electrical/electronic architecture design
+
+### Prototyping and Validation
+
+**Prototyping Methods**:
+- Concept vehicles and design studies
+- Alpha prototypes for engineering validation
+- Beta prototypes for manufacturing validation
+- Pre-production builds
+- Pilot production runs
+
+**Testing Regimen**:
+- Component testing and validation
+- Subsystem integration testing
+- Complete vehicle testing
+- Durability and reliability testing (RVTT - Road Vehicle Test Track)
+- Regulatory compliance testing
+
+### Time-to-Market
+- Automotive: 3-5 years for new vehicle programs
+- Aerospace: 5-10+ years for new aircraft
+- Heavy trucks: 2-4 years for new models
+- Marine vessels: 2-5 years depending on size and complexity
+
+## Supply Chain Management
+
+Transportation manufacturing has the most complex supply chains:
+
+### Supplier Network
+
+**Multi-Tier Structure**:
+- Tier 1: System integrators and module suppliers
+- Tier 2: Component and subsystem suppliers
+- Tier 3: Parts and material suppliers
+- Tier 4: Raw materials and commodities
+
+**Global Sourcing**:
+- Best-cost sourcing across regions
+- Low-cost country sourcing for labor-intensive parts
+- Regional supply for high-volume, just-in-time components
+- Strategic sourcing for critical or specialized components
+
+### Logistics and Materials Management
+
+**Just-in-Time (JIT) Delivery**:
+- Synchronized delivery to assembly line
+- Minimizing inventory and working capital
+- Requires excellent supply chain visibility
+- Vulnerable to disruptions
+
+**Just-in-Sequence (JIS)**:
+- Parts delivered in exact sequence for assembly
+- Common for seats, instrument panels, other customized parts
+- Requires tight coordination with suppliers
+
+**Supply Chain Technologies**:
+- Electronic data interchange (EDI)
+- Supplier portals and collaboration platforms
+- RFID and barcode tracking
+- Blockchain for traceability (emerging)
+
+## Quality and Regulatory Compliance
+
+Transportation products face rigorous quality and safety requirements:
+
+### Quality Management Systems
+
+**Automotive Standards**:
+- **IATF 16949**: Automotive quality management system
+- **APQP**: Advanced Product Quality Planning
+- **PPAP**: Production Part Approval Process
+- **FMEA**: Failure Mode and Effects Analysis
+- **MSA**: Measurement Systems Analysis
+- **SPC**: Statistical Process Control
+
+**Aerospace Standards**:
+- **AS9100**: Aerospace quality management
+- **AS9102**: First Article Inspection
+- **NADCAP**: Accreditation for special processes
+- **FAA/EASA Certification**: Airworthiness certification
+
+### Safety Regulations
+
+**Automotive Safety**:
+- **FMVSS**: Federal Motor Vehicle Safety Standards (U.S.)
+- **NCAP**: New Car Assessment Programs (crash testing)
+- **ECE Regulations**: European vehicle standards
+- **Recalls**: Manufacturer obligation to fix safety defects
+
+**Aerospace Safety**:
+- **FAA Regulations**: 14 CFR Parts (aircraft certification)
+- **EASA CS**: Certification Specifications (Europe)
+- **Type Certification**: Demonstrating compliance with airworthiness standards
+- **Continued Airworthiness**: Ongoing monitoring and maintenance
+
+**Maritime Safety**:
+- **IMO Regulations**: International Maritime Organization standards
+- **Classification Societies**: Third-party verification (Lloyd's, ABS, DNV)
+- **Flag State Requirements**: National maritime regulations
+
+### Environmental Regulations
+
+**Emissions Standards**:
+- **Automotive**: EPA Tier 3, CARB LEV, Euro 6/7 standards
+- **Aircraft**: ICAO CAEP standards for NOx and CO2
+- **Marine**: IMO sulfur limits, ballast water treatment
+
+**Fuel Economy and CO2**:
+- **CAFE Standards**: Corporate Average Fuel Economy (U.S.)
+- **CO2 Fleet Targets**: European and other regional targets
+- **Zero-Emission Vehicle Mandates**: California, other jurisdictions
+
+## Economic Impact
+
+Transportation equipment manufacturing is economically vital:
+
+### Automotive Sector (U.S.)
+- **Employment**: ~950,000 direct manufacturing jobs
+- **Multiplier**: Each auto job supports 7+ jobs in other sectors
+- **Vehicle Production**: 10-13 million vehicles annually (varies by cycle)
+- **Supplier Network**: Thousands of companies across all 50 states
+- **Economic Output**: $500+ billion in direct manufacturing value
+
+### Aerospace Sector (U.S.)
+- **Employment**: ~500,000 manufacturing jobs
+- **Exports**: Over $140 billion annually (largest manufacturing export)
+- **R&D Investment**: 10-15% of revenue typical
+- **Trade Balance**: Significant positive contributor
+- **Defense**: Major contributor to national security
+
+### Overall Impact
+- Combined direct employment: 1.5+ million workers
+- High-wage jobs with benefits
+- Major contributor to GDP
+- Critical for innovation and technology development
+- Infrastructure and ecosystem support
+
+## Workforce Development
+
+Transportation manufacturing requires skilled workforce:
+
+### Production Workforce
+- **Assembly Workers**: Line workers, team leaders
+- **Skilled Trades**: Electricians, millwrights, tool and die makers
+- **Machine Operators**: CNC operators, press operators
+- **Quality Inspectors**: CMM operators, auditors
+- **Maintenance Technicians**: Preventive and corrective maintenance
+
+### Engineering and Technical
+- **Mechanical Engineers**: Design, analysis, testing
+- **Electrical Engineers**: Electronics, controls, software
+- **Manufacturing Engineers**: Process design, equipment selection
+- **Quality Engineers**: APQP, problem-solving, continuous improvement
+- **Materials Engineers**: Metallurgy, composites, polymers
+- **Test Engineers**: Validation, certification
+
+### Specialized Roles
+- **Aeronautical Engineers**: Aircraft design and certification
+- **Naval Architects**: Ship design and marine engineering
+- **Powertrain Engineers**: Engine and transmission development
+- **Autonomous Vehicle Engineers**: Sensor fusion, path planning, AI
+- **Certification Engineers**: Regulatory compliance specialists
+
+## Industry Trends and Future Directions
+
+### Electrification
+- Battery electric vehicles (BEVs) becoming mainstream
+- Hybrid powertrains as transition technology
+- Electric aircraft for urban air mobility
+- Hybrid and electric marine propulsion
+- Hydrogen fuel cells for heavy-duty applications
+
+### Autonomous Systems
+- Advanced driver assistance systems (ADAS)
+- Highway autopilot and traffic jam assist
+- Fully autonomous vehicles (SAE Levels 4-5)
+- Autonomous ships and maritime vessels
+- Drone delivery and urban air mobility
+
+### Connectivity and Software
+- Over-the-air (OTA) software updates
+- Vehicle-to-everything (V2X) communication
+- Subscription services and features
+- Data analytics and predictive maintenance
+- Cybersecurity challenges
+
+### Sustainable Manufacturing
+- Carbon-neutral manufacturing commitments
+- Renewable energy in facilities
+- Water recycling and waste reduction
+- Circular economy and material recycling
+- Sustainable supply chain initiatives
+
+### Advanced Manufacturing
+- Additive manufacturing scaling up
+- Digital twins for virtual commissioning
+- AI and machine learning for quality
+- Augmented reality for assembly and service
+- Flexible manufacturing systems
+
+### Business Model Evolution
+- Mobility-as-a-Service (MaaS)
+- Direct-to-consumer sales models
+- Subscription and leasing alternatives
+- Aftermarket and connected services revenue
+- Platform sharing across brands
+
+## Challenges
+
+### Supply Chain Resilience
+- Semiconductor shortages impacting production
+- Geopolitical risks and trade tensions
+- Raw material availability (lithium, cobalt, rare earths)
+- Single-source dependencies
+- Regionalization vs. globalization
+
+### Technology Transition
+- Legacy investments in ICE technology
+- Massive capital requirements for EV transition
+- Skills gap for new technologies
+- Stranded assets risk
+- Battery supply chain development
+
+### Competitive Landscape
+- New entrants (Tesla, Rivian, Lucid, etc.)
+- Chinese manufacturers expanding globally
+- Tech companies entering mobility
+- Traditional OEMs defending position
+- Consolidation pressures
+
+### Regulatory Complexity
+- Diverging global standards
+- Accelerating emissions requirements
+- Safety regulations for autonomous systems
+- Data privacy and cybersecurity rules
+- Trade and tariff policies
+
+## Related Resources
+
+- [naics.org.ai/336](https://naics.org.ai/336) - Official NAICS classification
+- [automotive.org.ai](https://automotive.org.ai) - Automotive industry and vehicles
+- [aerospace.org.ai](https://aerospace.org.ai) - Aerospace industry and technology
+- [products.org.ai](https://products.org.ai) - Transportation products
+- [onet.org.ai](https://onet.org.ai) - Transportation manufacturing occupations
+- [businesses.org.ai](https://businesses.org.ai) - Transportation equipment companies
+- [supply-chain.org.ai](https://supply-chain.org.ai) - Automotive and aerospace supply chains
+- [standards.org.ai](https://standards.org.ai) - Industry standards (SAE, ASTM, ISO)

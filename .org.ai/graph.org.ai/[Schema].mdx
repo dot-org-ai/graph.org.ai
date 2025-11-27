@@ -1,0 +1,48 @@
+---
+$context: https://graph.org.ai
+$id: https://graph.org.ai/{{slug}}
+$type: https://graph.org.ai/Schema
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Schema
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SchemaOverview schema={schema} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Schema` |
+| Domain | [graph.org.ai](https://graph.org.ai) |
+| Parent | [graph.org.ai](https://graph.org.ai) |
+
+## Details
+
+<SchemaDetails schema={schema} />
+
+## Properties
+
+<SchemaProperties schema={schema} />
+
+## Relationships
+
+<SchemaRelationships schema={schema} />
+
+## Related
+
+<RelatedSchemas schema={schema} />
+
+## Sources
+
+- <DatabaseLink namespace="graph.org.ai" type="{{slug}}" />

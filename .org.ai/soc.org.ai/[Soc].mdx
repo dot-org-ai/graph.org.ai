@@ -1,0 +1,48 @@
+---
+$context: https://soc.org.ai
+$id: https://soc.org.ai/{{slug}}
+$type: https://soc.org.ai/Soc
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Soc
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SocOverview soc={soc} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Soc` |
+| Domain | [soc.org.ai](https://soc.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<SocDetails soc={soc} />
+
+## Properties
+
+<SocProperties soc={soc} />
+
+## Relationships
+
+<SocRelationships soc={soc} />
+
+## Related
+
+<RelatedSocs soc={soc} />
+
+## Sources
+
+- <DatabaseLink namespace="soc.org.ai" type="{{slug}}" />

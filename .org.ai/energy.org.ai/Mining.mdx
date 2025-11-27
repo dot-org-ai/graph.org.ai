@@ -1,0 +1,708 @@
+---
+$context: https://energy.org.ai
+$id: https://energy.org.ai/Mining
+$type: https://energy.org.ai/Energy
+name: Mining and Mineral Extraction
+description: Coal, metal ore, and nonmetallic mineral mining operations including surface and underground extraction
+naics: "212"
+apqc: ["12.0"]
+keywords: [mining, coal, metals, minerals, extraction, surface mining, underground mining, ore processing]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Mining and Mineral Extraction
+
+Mining (NAICS 212) encompasses the extraction of naturally occurring solid minerals from the earth, including coal, metal ores (iron, copper, gold, uranium), and nonmetallic minerals (sand, gravel, limestone, phosphate). Mining operations range from small quarries to massive open-pit and underground complexes, employing diverse technologies for exploration, extraction, processing, and land reclamation.
+
+## Overview
+
+The mining sector supplies essential raw materials for energy, manufacturing, construction, and agriculture:
+
+- **Coal Mining (2121)**: Energy generation fuel, metallurgical coal for steel
+- **Metal Ore Mining (2122)**: Iron, copper, gold, silver, uranium, rare earth elements
+- **Nonmetallic Mineral Mining (2123)**: Industrial minerals, construction aggregates
+- **Support Activities (213)**: Contract drilling, exploration services
+
+### Industry Scale (U.S.)
+
+- **Employment**: ~250,000 direct mining jobs
+- **Coal Production**: ~600 million short tons/year (declining)
+- **Metal Mines**: ~150 operating mines (gold, copper, iron, etc.)
+- **Industrial Minerals**: 1,000+ operations
+- **Economic Value**: $100+ billion annual production
+- **Exports**: Coal, industrial minerals, metals
+
+## Coal Mining (NAICS 2121)
+
+### Coal Types and Geology
+
+**Coal Ranks (by carbon content)**
+- Lignite: 25-35% carbon, lowest energy content (9,000-11,000 Btu/lb)
+- Sub-bituminous: 35-45% carbon (8,300-11,500 Btu/lb)
+- Bituminous: 45-86% carbon (10,500-15,500 Btu/lb)
+- Anthracite: >86% carbon, highest energy (13,000-15,000 Btu/lb)
+
+**Coal Basins**
+- Powder River Basin (Wyoming/Montana): Low-sulfur sub-bituminous, 40% of U.S. production
+- Appalachia (WV, KY, VA, PA): High-quality bituminous, metallurgical coal
+- Illinois Basin: High-sulfur bituminous
+- Western (Utah, Colorado, New Mexico): Bituminous and sub-bituminous
+
+**Coal Uses**
+- Electric power generation: ~90% of U.S. coal consumption
+- Metallurgical coal (coking coal): Steel production
+- Industrial: Cement kilns, industrial boilers
+- Exports: 10-15% of production (met coal to Asia, steam coal to Europe)
+
+### Surface Mining (NAICS 212114)
+
+**Surface Mining Methods**
+
+**Area Mining**
+- Stripping overburden in parallel cuts
+- Flat or gently rolling terrain
+- Draglines, shovels, haul trucks
+- Common in Powder River Basin
+
+**Contour Mining**
+- Following coal seam along hillside
+- Appalachian mountains
+- Highwall remains after extraction
+- Highwall mining: Remote-controlled continuous miners
+
+**Mountaintop Removal (MTR)**
+- Removing mountain peak to access multiple coal seams
+- Large-scale blasting and overburden removal
+- Valley fills with excess spoil
+- Controversial due to environmental impacts
+- Appalachia
+
+**Equipment**
+- Draglines: 8,000-13,000 ton capacity, bucket 85-220 cubic yards
+- Electric rope shovels: 100+ ton capacity
+- Haul trucks: 240-400 ton payload (CAT 797, Komatsu 980E)
+- Dozers: Spreading overburden, reclamation
+- Blasting: Ammonium nitrate/fuel oil (ANFO)
+
+### Underground Mining (NAICS 212115)
+
+**Underground Mining Methods**
+
+**Room-and-Pillar**
+- Excavating rooms with pillars left for roof support
+- 50-60% coal recovery
+- Continuous miners, roof bolters, shuttle cars
+- Common in Appalachia, Illinois Basin
+
+**Longwall Mining**
+- Shearer cuts coal from long face (800-1,500 ft)
+- Hydraulic shields advance with cutting
+- Controlled roof collapse behind shields
+- 75-90% coal recovery
+- High capital cost, high productivity
+
+**Retreat Mining**
+- Room-and-pillar followed by pillar extraction on retreat
+- Higher recovery but subsidence risk
+- Careful planning and monitoring required
+
+**Equipment**
+- Continuous miners: Rotating drum with cutting bits, 5-12 tons/min
+- Longwall shearers: Double-drum cutters on face
+- Hydraulic roof supports: 800-1,500 ton capacity
+- Shuttle cars, battery-powered haulage
+- Conveyor systems: Belt conveyors to surface
+
+### Coal Processing
+
+**Preparation (Coal Washing)**
+- Crushing: Reducing size for handling, processing
+- Sizing: Screening into size fractions
+- Density separation: Jigs, heavy media separators (remove rock, sulfur)
+- Dewatering: Thickeners, centrifuges, thermal dryers
+- Final product: 10,000-14,000 Btu/lb, <1% ash (met coal), <3% sulfur (steam coal)
+
+**Transportation**
+- Unit trains: 100-120 cars, 10,000-15,000 tons
+- Barge transport: Rivers (Illinois, Ohio, Mississippi)
+- Slurry pipelines: Limited use
+- Export terminals: Baltimore, Norfolk, New Orleans
+
+### Coal Mining Safety and Health
+
+**Major Hazards**
+- Roof falls: Ground control, roof bolting
+- Methane explosions: Ventilation, gas monitoring
+- Coal dust explosions: Rock dusting, water sprays
+- Respirable coal dust: Black lung disease (pneumoconiosis)
+- Electrical hazards: High-voltage equipment
+
+**Mine Safety and Health Administration (MSHA)**
+- Comprehensive safety regulations (30 CFR)
+- Inspections: Quarterly for underground, semiannual for surface
+- Miner training: 40 hours new miner, 8 hours annual refresher
+- Accident investigation and enforcement
+- Pattern of Violations (POV) program
+
+**Ventilation (Underground)**
+- Diluting and removing methane, dust
+- Main fans: 100,000-1,000,000 cfm
+- Auxiliary fans: Working sections
+- Methane monitoring: Methanometers, tube bundle systems
+- Explosion-proof equipment
+
+**Ground Control**
+- Roof bolting: Mechanical or resin-anchored bolts
+- Pillar design: Preventing crushing, bumps
+- Monitoring: Roof-to-floor convergence, stress meters
+
+### Environmental Impacts and Reclamation
+
+**Surface Mining Control and Reclamation Act (SMCRA)**
+- Approximate original contour (AOC) restoration
+- Topsoil segregation and replacement
+- Revegetation: Native species, bond release criteria
+- Hydrologic balance: Stream protection, groundwater
+- Bonding: Financial assurance for reclamation
+
+**Environmental Challenges**
+- Acid mine drainage (AMD): Sulfide oxidation, low pH runoff
+- Stream burial: Valley fills
+- Habitat loss and fragmentation
+- Selenium, heavy metals in discharge
+- Subsidence: Surface collapse over underground mines
+
+**Mitigation**
+- Water treatment: Lime neutralization, passive systems (wetlands)
+- Backfilling and grading
+- Contemporaneous reclamation
+- Stream restoration and mitigation
+
+**Post-Mining Land Uses**
+- Forestry, pasture, wildlife habitat
+- Commercial/industrial development
+- Recreational lakes
+
+## Metal Ore Mining (NAICS 2122)
+
+### Iron Ore Mining (NAICS 212210)
+
+**Taconite Mining (Minnesota)**
+- Low-grade iron ore (~25% Fe)
+- Open-pit mining
+- Crushing, grinding, magnetic separation
+- Pelletizing: Iron ore concentrate + binder → pellets
+- Pellets to steel mills (Great Lakes shipping)
+
+**Direct Shipping Ore (DSO)**
+- High-grade ore (>60% Fe), shipped without beneficiation
+- Increasingly rare in U.S.
+
+### Copper Mining (NAICS 212230)
+
+**Porphyry Copper Deposits**
+- Large, low-grade (0.3-1% Cu) deposits
+- Open-pit mining at massive scale
+- Examples: Bingham Canyon (UT), Morenci (AZ), Ray (AZ)
+
+**Mining Methods**
+- Open-pit: Benches, haul trucks, shovels
+- Stripping ratio: 2:1 to 5:1 (waste to ore)
+- Blasting: Fragmentation for loading
+- Ore haulage to crusher
+
+**Copper Processing**
+- Crushing and grinding: SAG mills, ball mills
+- Flotation: Surfactants concentrate copper sulfides (~25-30% Cu concentrate)
+- Smelting: Flash furnace, matte (45-75% Cu)
+- Converting: Blister copper (98.5% Cu)
+- Electrorefining: Cathode copper (99.99% Cu)
+
+**Heap Leaching (Oxide Ores)**
+- Stacking ore on lined pads
+- Sulfuric acid leach solution
+- Solvent extraction and electrowinning (SX-EW)
+- Lower cost for low-grade ores
+
+**By-Products**
+- Molybdenum, gold, silver from porphyry deposits
+- Economic significance in project economics
+
+### Gold and Silver Mining (NAICS 212220)
+
+**Deposit Types**
+- Carlin-type (Nevada): Sediment-hosted, microscopic gold
+- Epithermal: High-grade veins
+- Placer: Alluvial gold (historic but limited today)
+
+**Open-Pit Mining**
+- Large-scale operations (Nevada gold mines)
+- Heap leaching with cyanide solution
+- Carbon absorption, electrowinning
+- Closure: Detoxification, reclamation
+
+**Underground Mining**
+- High-grade veins
+- Cut-and-fill, longhole stoping
+- Ore grades: 0.3-10+ oz/ton (varies widely)
+
+**Processing**
+- Cyanide leaching: Gold dissolution
+- Carbon-in-pulp (CIP) or carbon-in-leach (CIL)
+- Electrowinning and smelting to doré bars
+- Refining to 99.99% pure gold
+
+**Environmental Concerns**
+- Cyanide management: Lined pads, ponds
+- Detoxification before discharge
+- Mercury (in some deposits)
+- Acid rock drainage from sulfide ores
+
+### Uranium Mining (NAICS 212291)
+
+**In-Situ Recovery (ISR)**
+- Injecting oxidizing solution (oxygen, CO2) into aquifer
+- Dissolving uranium from sandstone
+- Extracting pregnant solution via wells
+- 95% of U.S. uranium production
+- Wyoming, Texas, Nebraska
+
+**Processing**
+- Ion exchange resin columns
+- Yellow cake (U3O8) production
+- Drying and packaging for enrichment facilities
+
+**Conventional Mining**
+- Open-pit or underground (minimal current U.S. activity)
+- Milling: Crushing, leaching, precipitation
+- Tailings management (radioactive materials)
+
+**Regulation**
+- Nuclear Regulatory Commission (NRC) licensing
+- Environmental Protection Agency (EPA) standards
+- State agencies (Wyoming DEQ, etc.)
+- Groundwater restoration post-mining
+
+### Rare Earth Element (REE) Mining
+
+**Deposits**
+- Mountain Pass (California): Bastnaesite deposit
+- Heavy rare earths (Dy, Tb, Er): Critical for magnets, limited U.S. production
+
+**Processing Challenges**
+- Complex separation of individual REEs
+- Radioactive thorium often present
+- Extensive chemical processing
+- U.S. dependent on imports (China 70%+ of global supply)
+
+**Strategic Importance**
+- Permanent magnets (Nd, Dy) for wind turbines, EVs
+- Defense applications
+- Domestic supply chain development efforts
+
+## Nonmetallic Mineral Mining (NAICS 2123)
+
+### Construction Aggregates
+
+**Sand and Gravel (NAICS 212320)**
+- Unconsolidated deposits in rivers, glacial deposits
+- Dredging, hydraulic mining, dry pit excavation
+- Washing, screening, sizing
+- Uses: Concrete, asphalt, road base, fill
+- Production: ~1 billion tons/year (U.S.)
+
+**Crushed Stone (NAICS 212310)**
+- Limestone, granite, traprock quarrying
+- Drilling, blasting, crushing, screening
+- Uses: Construction aggregate, cement raw material, lime production
+- Production: ~1.5 billion tons/year (U.S.)
+
+**Quarry Operations**
+- Benches and highwalls
+- Primary crushers (jaw, gyratory)
+- Secondary/tertiary crushing (cone, impact)
+- Screening plants: Sized products
+- Stockpiles and loadout
+
+**Transportation**
+- Short haul by truck (typically <50 miles)
+- Barge for water access
+- Rail for long-distance specialty products
+
+### Industrial Minerals
+
+**Phosphate Rock**
+- Sedimentary deposits (Florida, North Carolina)
+- Open-pit mining with draglines
+- Washing and flotation
+- Phosphoric acid production for fertilizers
+
+**Potash**
+- Underground mining (New Mexico, Utah)
+- Evaporation of brines
+- Fertilizer production (K2O)
+
+**Limestone (Chemical/Industrial)**
+- High-purity limestone for cement, lime, chemicals
+- Quarrying and processing
+
+**Gypsum**
+- Open-pit and underground mining
+- Wallboard (drywall) production
+- Cement additive
+
+**Clay and Kaolin**
+- Surface mining
+- Processing for ceramics, paper coating, fillers
+
+**Salt (Halite)**
+- Underground room-and-pillar mining
+- Solution mining (inject water, extract brine)
+- Uses: De-icing, chemical feedstock, food
+
+**Silica Sand**
+- High-purity quartz sand
+- Glass manufacturing, foundries, hydraulic fracturing (frac sand)
+- Washing, drying, sizing
+
+## Support Activities for Mining (NAICS 213)
+
+### Drilling Services (NAICS 213111, 213113-213115)
+
+**Exploration Drilling**
+- Diamond core drilling for coal, metals, minerals
+- Reverse circulation (RC) drilling
+- Sample collection and logging
+- Geologists, assay laboratories
+
+**Blast Hole Drilling**
+- Rotary drill rigs for production blasting
+- 9-15 inch diameter holes, 40-60 ft depth
+- Truck-mounted or track-mounted rigs
+
+### Engineering and Technical Services
+
+**Mine Planning and Design**
+- Ore body modeling and resource estimation
+- Mine design: Pit slopes, haul roads, ventilation
+- Production scheduling
+- Economic analysis and feasibility studies
+
+**Geology and Exploration**
+- Geophysical surveys (magnetics, gravity, induced polarization)
+- Geochemical sampling
+- Resource definition drilling
+- Reserve estimation (Measured, Indicated, Inferred)
+
+**Environmental Services**
+- Permitting and regulatory compliance
+- Environmental impact assessments
+- Water quality monitoring
+- Reclamation planning and implementation
+
+## Mineral Processing and Beneficiation
+
+### Crushing and Grinding
+
+**Comminution**
+- Jaw crushers, gyratory crushers (primary)
+- Cone crushers (secondary, tertiary)
+- SAG (Semi-Autogenous Grinding) mills
+- Ball mills: Fine grinding to liberate minerals
+
+**Energy Intensity**
+- 30-50% of mining operating costs
+- Harder ores, finer grinding → higher energy
+
+### Concentration Methods
+
+**Density Separation**
+- Jigs, shaking tables, spirals
+- Dense Medium Separation (DMS): Heavy media cyclones
+- Coal, iron ore, tin, tungsten
+
+**Flotation**
+- Surfactants (collectors, frothers) selectively attach to minerals
+- Air bubbles carry minerals to froth
+- Copper, lead, zinc, nickel, molybdenum, phosphate
+
+**Magnetic Separation**
+- Iron ore (magnetite)
+- Rare earths, ilmenite
+
+**Gravity Concentration**
+- Gold, tin, tantalum recovery
+- Shaking tables, jigs, centrifugal concentrators
+
+**Leaching**
+- Chemical dissolution of metals
+- Heap leaching (gold, copper)
+- In-situ leaching (uranium, copper)
+- Vat leaching, pressure leaching
+
+### Tailings Management
+
+**Tailings Storage Facilities (TSFs)**
+- Impoundments for slurry waste from processing
+- Dams: Upstream, downstream, centerline construction
+- Potential failure risks (slope stability, seepage, overtopping)
+- High-profile failures: Mount Polley (Canada, 2014), Brumadinho (Brazil, 2019)
+
+**Tailings Management Best Practices**
+- Filtered/dry stack tailings (eliminate water)
+- Paste tailings: Thickened slurry, higher density
+- Co-disposal with waste rock
+- Rigorous design, monitoring, and governance
+- Dam safety inspections and instrumentation
+
+**Closure and Reclamation**
+- Dewatering and stabilization
+- Cover systems to prevent oxidation
+- Revegetation
+- Long-term monitoring and maintenance
+
+## Mining Technology and Innovation
+
+### Automation and Remote Operations
+
+**Autonomous Haul Trucks**
+- GPS-guided unmanned trucks
+- Rio Tinto, BHP, Fortescue (Australia iron ore)
+- Productivity improvements, safety benefits
+
+**Automated Drilling**
+- Drill pattern optimization
+- Consistent hole quality
+- Remote monitoring and control
+
+**Remote Operations Centers**
+- Controlling equipment from centralized location
+- Real-time data integration
+- Examples: Rio Tinto Perth center controlling Pilbara mines
+
+### Sensors and Monitoring
+
+**Slope Stability Monitoring**
+- Radar systems detecting wall movement
+- Prisms and total stations
+- Early warning systems for potential failures
+
+**Ore Grade Sensing**
+- On-belt analyzers (neutron activation, X-ray fluorescence)
+- Real-time grade control
+- Optimize mill feed quality
+
+**Fleet Management Systems**
+- GPS tracking of trucks, shovels
+- Dispatch optimization
+- Maintenance scheduling
+- Fuel monitoring
+
+### Data Analytics and AI
+
+**Mine Planning Optimization**
+- Ore body modeling (kriging, machine learning)
+- Production scheduling algorithms
+- Pit optimization (Lerchs-Grossman)
+
+**Predictive Maintenance**
+- Vibration analysis, oil analysis
+- Failure prediction models
+- Reducing unplanned downtime
+
+## Regulation and Permitting
+
+### Federal Regulations
+
+**Mine Safety and Health Administration (MSHA)**
+- 30 CFR Part 56 (surface metal/nonmetal)
+- 30 CFR Part 57 (underground metal/nonmetal)
+- 30 CFR Part 77 (surface coal)
+- 30 CFR Part 48 (training)
+
+**Surface Mining Control and Reclamation Act (SMCRA)**
+- Coal mining reclamation (Office of Surface Mining Reclamation and Enforcement)
+
+**Clean Water Act**
+- NPDES permits for mine discharges
+- Section 404 permits (wetlands/waters)
+- Effluent Limitation Guidelines (ELG)
+
+**Clean Air Act**
+- Particulate emissions (dust)
+- Fugitive dust control plans
+
+**Endangered Species Act**
+- Consultation for species/habitat impacts
+- Critical habitat designations
+
+**National Environmental Policy Act (NEPA)**
+- Environmental Impact Statements (EIS) for major projects
+
+### State and Local Permitting
+
+**State Mining Permits**
+- Mine plan approval
+- Bonding for reclamation
+- Water quality permits
+- Air quality permits
+
+**Tribal Consultation**
+- Mining on or near tribal lands
+- Cultural resources, sacred sites
+
+**Local Approvals**
+- Zoning, land use
+- Special use permits
+- Road use agreements
+
+### Permitting Timelines
+
+**Exploration**
+- Minimal permitting (often <1 year)
+- Drill permits, land access
+
+**New Mine Development**
+- 5-10+ years for major projects
+- EIS, all federal and state permits
+- Public comment periods
+- Litigation risk
+
+## Economics and Markets
+
+### Commodity Markets
+
+**Pricing Mechanisms**
+- Iron ore: Platts index, spot market
+- Copper: London Metal Exchange (LME), COMEX
+- Gold, silver: COMEX, London Bullion Market
+- Coal: Multiple regional indexes (API2, API4, etc.)
+
+**Market Dynamics**
+- Supply-demand balance
+- Economic growth and industrial demand
+- Currency fluctuations (USD-denominated)
+- Substitution and recycling
+
+**Price Volatility**
+- Boom-bust cycles
+- Long lead times for new supply
+- Speculative trading
+
+### Mine Economics
+
+**Capital Costs**
+- Greenfield mine: $500 million to $5+ billion
+- Equipment, infrastructure, processing plant
+- Pre-production development
+
+**Operating Costs**
+- Mining: Drilling, blasting, loading, hauling
+- Processing: Crushing, grinding, concentration
+- G&A, royalties, taxes
+- Energy costs (electricity, diesel)
+
+**All-In Sustaining Costs (AISC)**
+- Total costs to maintain production
+- Benchmark for gold mining
+
+**Economic Metrics**
+- Net Present Value (NPV), Internal Rate of Return (IRR)
+- Payback period
+- Sensitivity analysis (metal prices, operating costs, capital)
+
+### Mine Life and Closure
+
+**Typical Mine Life**
+- Aggregates quarry: 20-50 years
+- Coal mine: 10-30 years
+- Metal mine: 10-40 years
+- Extensions through exploration and resource expansion
+
+**Closure Planning**
+- Financial assurance (bonds)
+- Reclamation and revegetation
+- Water treatment (potentially perpetual)
+- Post-closure monitoring
+- Site relinquishment
+
+## Sustainability and Social Responsibility
+
+### Environmental Stewardship
+
+**Water Management**
+- Minimizing freshwater use, recycling process water
+- Water treatment (neutralization, metals removal)
+- Groundwater dewatering and discharge
+
+**Biodiversity**
+- Habitat restoration
+- Species translocation
+- Offsets and conservation areas
+- Rare and endemic species protection
+
+**Energy and Climate**
+- Energy efficiency (electrification, renewable power)
+- GHG emissions: Diesel, electricity, process emissions
+- Scope 1, 2, 3 emissions reporting
+- Climate risk disclosure
+
+### Social License to Operate
+
+**Community Relations**
+- Local employment and procurement
+- Community investment (education, health, infrastructure)
+- Grievance mechanisms
+- Free, Prior, and Informed Consent (FPIC) for indigenous communities
+
+**Labor Practices**
+- Safety culture (Zero Harm goals)
+- Training and development
+- Fair wages and benefits
+- Unionization and collective bargaining
+
+**Responsible Mining Certifications**
+- Initiative for Responsible Mining Assurance (IRMA)
+- Towards Sustainable Mining (TSM)
+- ISO 14001 (environmental), ISO 45001 (safety)
+
+### Artisanal and Small-Scale Mining (ASM)
+
+**Global Context**
+- 40+ million artisanal miners worldwide
+- Gold, diamonds, tin, tantalum, cobalt
+- Poverty, lack of alternatives
+- Child labor, safety, environmental concerns
+
+**Responsible Sourcing**
+- Conflict-free minerals (Dodd-Frank 1502)
+- OECD Due Diligence Guidance
+- Fairtrade gold, Fairmined certification
+
+## Cross-References
+
+### Related NAICS Codes
+- [2121 - Coal Mining](https://naics.org.ai/2121)
+- [2122 - Metal Ore Mining](https://naics.org.ai/2122)
+- [2123 - Nonmetallic Mineral Mining](https://naics.org.ai/2123)
+- [213 - Support Activities for Mining](https://naics.org.ai/213)
+
+### APQC Process Framework
+- [12.0 Produce](https://apqc.org.ai/petroleum/12.0) - Mining production operations (analogous to oil & gas)
+
+### Related Topics
+- [OilGasExploration.mdx](./OilGasExploration.mdx) - Extraction industry comparison
+- [ElectricUtilities.mdx](./ElectricUtilities.mdx) - Coal consumption for power
+- [Refining.mdx](./Refining.mdx) - Petroleum coke from mining perspective
+
+## Sources
+
+- U.S. Geological Survey (USGS) - Mineral Commodity Summaries
+- Mine Safety and Health Administration (MSHA) - Safety regulations and statistics
+- Office of Surface Mining Reclamation and Enforcement (OSMRE) - Coal mining regulation
+- National Mining Association (NMA) - Industry statistics
+- Society for Mining, Metallurgy & Exploration (SME) - Technical standards
+- Environmental Protection Agency (EPA) - Environmental regulations

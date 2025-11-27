@@ -1,0 +1,36 @@
+{
+  "name": "agriculture.org.ai",
+  "version": "0.0.1",
+  "description": "Ontology domain for agriculture.org.ai",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "agriculture",
+    "farming",
+    "crops",
+    "livestock"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://agriculture.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/agriculture.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

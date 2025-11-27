@@ -1,0 +1,48 @@
+---
+$context: https://tech.org.ai
+$id: https://tech.org.ai/{{slug}}
+$type: https://tech.org.ai/Technology
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Technology
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<TechnologyOverview technology={technology} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Technology` |
+| Domain | [tech.org.ai](https://tech.org.ai) |
+| Parent | [things.org.ai](https://things.org.ai) |
+
+## Details
+
+<TechnologyDetails technology={technology} />
+
+## Properties
+
+<TechnologyProperties technology={technology} />
+
+## Relationships
+
+<TechnologyRelationships technology={technology} />
+
+## Related
+
+<RelatedTechnologys technology={technology} />
+
+## Sources
+
+- <DatabaseLink namespace="tech.org.ai" type="{{slug}}" />

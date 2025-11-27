@@ -1,0 +1,48 @@
+---
+$context: https://finance.org.ai
+$id: https://finance.org.ai/{{slug}}
+$type: https://finance.org.ai/FinancialProduct
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for FinancialProduct
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<FinancialProductOverview financialproduct={financialproduct} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `FinancialProduct` |
+| Domain | [finance.org.ai](https://finance.org.ai) |
+| Parent | [business.org.ai](https://business.org.ai) |
+
+## Details
+
+<FinancialProductDetails financialproduct={financialproduct} />
+
+## Properties
+
+<FinancialProductProperties financialproduct={financialproduct} />
+
+## Relationships
+
+<FinancialProductRelationships financialproduct={financialproduct} />
+
+## Related
+
+<RelatedFinancialProducts financialproduct={financialproduct} />
+
+## Sources
+
+- <DatabaseLink namespace="finance.org.ai" type="{{slug}}" />

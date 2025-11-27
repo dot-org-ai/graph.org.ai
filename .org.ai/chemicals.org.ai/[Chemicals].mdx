@@ -1,0 +1,48 @@
+---
+$context: https://chemicals.org.ai
+$id: https://chemicals.org.ai/{{slug}}
+$type: https://chemicals.org.ai/Chemicals
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Chemicals
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ChemicalsOverview chemicals={chemicals} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Chemicals` |
+| Domain | [chemicals.org.ai](https://chemicals.org.ai) |
+| Parent | [science.org.ai](https://science.org.ai) |
+
+## Details
+
+<ChemicalsDetails chemicals={chemicals} />
+
+## Properties
+
+<ChemicalsProperties chemicals={chemicals} />
+
+## Relationships
+
+<ChemicalsRelationships chemicals={chemicals} />
+
+## Related
+
+<RelatedChemicalss chemicals={chemicals} />
+
+## Sources
+
+- <DatabaseLink namespace="chemicals.org.ai" type="{{slug}}" />

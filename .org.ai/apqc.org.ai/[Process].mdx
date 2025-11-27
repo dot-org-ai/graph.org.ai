@@ -1,0 +1,48 @@
+---
+$context: https://apqc.org.ai
+$id: https://apqc.org.ai/{{slug}}
+$type: https://apqc.org.ai/Process
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Process
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<ProcessOverview process={process} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Process` |
+| Domain | [apqc.org.ai](https://apqc.org.ai) |
+| Parent | [standards.org.ai](https://standards.org.ai) |
+
+## Details
+
+<ProcessDetails process={process} />
+
+## Properties
+
+<ProcessProperties process={process} />
+
+## Relationships
+
+<ProcessRelationships process={process} />
+
+## Related
+
+<RelatedProcesss process={process} />
+
+## Sources
+
+- <DatabaseLink namespace="apqc.org.ai" type="{{slug}}" />

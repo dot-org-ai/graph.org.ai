@@ -1,0 +1,60 @@
+---
+$id: https://integrations.org.ai/{id}
+$context: https://integrations.org.ai
+$type: https://integrations.org.ai/Integration
+id: "{id}"
+name: "{name}"
+description: "{description}"
+category: "{category}"
+imageUrl: "{imageUrl}"
+authType: "oauth" | "api_key" | "basic" | "none"
+triggers:
+  - "{trigger1}"
+  - "{trigger2}"
+actions:
+  - "{action1}"
+  - "{action2}"
+---
+
+# {name}
+
+<IntegrationLogo src="{imageUrl}" alt="{name}" />
+
+## Description
+
+{description}
+
+## Authentication
+
+**Type**: {authType}
+
+<AuthenticationGuide integrationType="{authType}" />
+
+## Triggers
+
+<TriggerList integrationId="{id}" />
+
+| Trigger | Description |
+|---------|-------------|
+| {trigger1} | {triggerDesc1} |
+| {trigger2} | {triggerDesc2} |
+
+## Actions
+
+<ActionList integrationId="{id}" />
+
+| Action | Description |
+|--------|-------------|
+| {action1} | {actionDesc1} |
+| {action2} | {actionDesc2} |
+
+## Use Cases
+
+<UseCases integrationId="{id}" />
+
+## Cross-References
+
+| System | Reference |
+|--------|-----------|
+| [apps.org.ai](https://apps.org.ai/{id}) | App details |
+| [actions.org.ai](https://actions.org.ai) | Action definitions |

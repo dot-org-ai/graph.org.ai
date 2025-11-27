@@ -1,0 +1,619 @@
+---
+$context: https://energy.org.ai
+$id: https://energy.org.ai/Renewables
+$type: https://energy.org.ai/Energy
+name: Renewable Energy and Energy Storage
+description: Solar, wind, hydro, geothermal, biomass energy generation and battery/hydrogen storage systems
+naics: ["221114", "221115", "221111", "221116", "221117"]
+apqc: ["10.0"]
+keywords: [renewable energy, solar, wind, hydro, geothermal, biomass, storage, batteries, hydrogen, clean energy]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Renewable Energy and Energy Storage
+
+Renewable energy encompasses electricity generation from naturally replenishing sources including solar, wind, hydroelectric, geothermal, and biomass. Combined with energy storage technologies, renewables are rapidly transforming the global energy system, providing low-carbon alternatives to fossil fuels while presenting unique technical and economic challenges for grid integration.
+
+## Overview
+
+The renewable energy sector represents the fastest-growing segment of the power industry:
+
+- **Global Renewable Capacity**: ~3,400 GW (2024)
+- **Annual Growth**: 300-400 GW/year new installations
+- **Share of Global Electricity**: ~30% (2024), projected 60%+ by 2050
+- **Investment**: $500+ billion/year globally
+- **Cost Trajectory**: Solar and wind now cheapest sources of new generation in most markets
+
+### Key Characteristics
+
+**Variable Renewable Energy (VRE)**
+- Solar and wind output varies with weather conditions
+- Requires forecasting and flexible grid resources
+- Curtailment during oversupply periods
+- Integration challenges at high penetration levels
+
+**Dispatchable Renewables**
+- Hydro, geothermal, biomass can be controlled
+- Provide firm capacity and ancillary services
+- Limited by resource availability and location
+
+**Energy Storage**
+- Batteries, pumped hydro, hydrogen enable time-shifting
+- Provide grid services (frequency regulation, capacity)
+- Costs declining rapidly (batteries: 90% reduction since 2010)
+
+## Solar Energy (NAICS 221114)
+
+### Photovoltaic (PV) Technology
+
+**Crystalline Silicon**
+- Monocrystalline: Higher efficiency (20-23%), premium cost
+- Polycrystalline: Lower efficiency (15-18%), lower cost
+- Bifacial modules: Capture reflected light, 10-20% gain
+- Module degradation: 0.5-0.8% per year
+
+**Thin Film**
+- Cadmium Telluride (CdTe): 16-18% efficiency, low cost
+- CIGS (Copper Indium Gallium Selenide): 15-20% efficiency
+- Amorphous silicon: Lower efficiency but flexible
+- Better low-light and temperature performance
+
+**Advanced Technologies**
+- Perovskite cells: 25%+ efficiency in lab, stability challenges
+- Tandem cells: Multi-junction, 30%+ efficiency potential
+- Concentrated PV (CPV): Lenses/mirrors focus sunlight, high efficiency
+
+### PV System Components
+
+**Inverters**
+- String inverters: Groups of modules to single inverter
+- Central inverters: Large-scale utility systems (1-5 MW)
+- Microinverters: Individual module optimization
+- Power optimizers: DC-DC conversion before string inverter
+- Efficiency: 96-99%
+
+**Racking and Tracking**
+- Fixed-tilt: Optimal angle for location, lowest cost
+- Single-axis tracking: East-west rotation, 15-25% energy gain
+- Dual-axis tracking: Follows sun path, 30-40% gain, higher cost
+- Tracker motors and controls
+
+**Balance of System (BOS)**
+- DC combiner boxes, disconnects, fuses
+- AC collection system, transformers
+- Monitoring and SCADA systems
+- Fencing, roads, trenching
+
+### Utility-Scale Solar
+
+**Project Development**
+- Site selection: Solar resource (DNI, GHI), land availability, transmission access
+- Environmental studies: Wildlife, wetlands, cultural resources
+- Interconnection: Utility interconnection agreement, system impact study
+- Permitting: Local, state, federal approvals
+- Financing: Tax equity, debt, offtake agreements (PPAs)
+
+**Construction and O&M**
+- 6-12 months construction for 100-300 MW projects
+- Cleaning: Robotic or manual washing to maintain performance
+- Inverter replacement: 10-15 year lifespan
+- Vegetation control
+- Module replacement for defects or damage
+
+**Performance and Economics**
+- Capacity factor: 15-30% (varies by location and tracking)
+- Levelized Cost of Energy (LCOE): $20-40/MWh (utility-scale)
+- Investment Tax Credit (ITC): 30% (Inflation Reduction Act)
+- Land use: 5-10 acres per MW
+
+### Distributed Solar
+
+**Rooftop Systems**
+- Residential: 3-10 kW, ~$2.50-3.50/W installed
+- Commercial: 10-500 kW, $1.50-2.50/W
+- Net metering policies vary by state
+- Virtual net metering, community solar
+
+**Agrivoltaics**
+- Combining solar with agriculture
+- Elevated panels allow farming underneath
+- Beneficial microclimate for some crops
+- Sheep grazing for vegetation management
+
+### Concentrated Solar Power (CSP)
+
+**Technologies**
+- Parabolic troughs: Curved mirrors focus sunlight on receiver tubes
+- Power towers: Heliostats reflect to central receiver
+- Linear Fresnel: Flat mirrors, lower cost
+- Dish Stirling: Small-scale distributed generation
+
+**Thermal Storage**
+- Molten salt (60% NaNO3, 40% KNO3): 565°C
+- Enables 4-16 hours of storage
+- Dispatchable renewable energy
+- Higher LCOE than PV ($80-120/MWh)
+
+## Wind Energy (NAICS 221115)
+
+### Wind Turbine Technology
+
+**Onshore Turbines**
+- Capacity: 2-5 MW (typical new installations)
+- Rotor diameter: 100-150 meters
+- Hub height: 80-120 meters
+- Tip speeds: 60-80 m/s
+- Direct drive or gearbox drivetrains
+
+**Offshore Turbines**
+- Capacity: 8-15 MW (new designs to 20+ MW)
+- Rotor diameter: 150-240 meters
+- Hub height: 100-150 meters above sea level
+- Fixed-bottom: Monopile, jacket, gravity-based (to 60m depth)
+- Floating: Spar, semi-submersible, tension-leg (60m+ depth)
+
+**Turbine Components**
+- Blades: Fiberglass/carbon fiber composite, 50-100m length
+- Nacelle: Generator, gearbox (if used), power electronics, cooling
+- Tower: Steel tubular or lattice construction
+- Foundation: Concrete pad (onshore), offshore structures
+
+### Wind Resource and Siting
+
+**Wind Assessment**
+- Meteorological towers: 1-3 years of data collection
+- LiDAR (Light Detection and Ranging): Remote sensing
+- Mesoscale modeling: Regional wind patterns
+- Micrositing: Turbine layout optimization
+
+**Wind Classes**
+- Class 1: <5.6 m/s @ 50m - Poor
+- Class 2: 5.6-6.4 m/s - Marginal
+- Class 3: 6.4-7.0 m/s - Fair
+- Class 4: 7.0-7.5 m/s - Good
+- Class 5+: >7.5 m/s - Excellent
+
+**Siting Considerations**
+- Setbacks: 1,000+ feet from residences
+- Noise: <40 dBA at property line
+- Shadow flicker: Rotating blade shadows
+- Wildlife: Birds, bats (radar detection, curtailment)
+- FAA clearance: Aviation obstruction analysis
+
+### Wind Farm Development and Operations
+
+**Project Development**
+- Land leases: $3,000-8,000/MW/year
+- Environmental studies: Avian, bat, habitat surveys
+- Interconnection: Collector system, substation, transmission
+- Financing: Tax equity, debt, PPAs
+- Construction: 6-18 months for 50-300 MW
+
+**Operations and Maintenance**
+- Availability: 95-98% target
+- Scheduled maintenance: Semi-annual inspections
+- Blade inspections: Drones, rope access
+- Gearbox failures: Major repair or replacement
+- Lightning damage: Blades, electronics
+
+**Performance and Economics**
+- Capacity factor: 25-40% onshore, 40-55% offshore
+- LCOE: $25-40/MWh onshore, $60-100/MWh offshore
+- Production Tax Credit (PTC): $27.50/MWh (IRA)
+- Land use: 30-50 acres per MW (mostly open space)
+
+### Offshore Wind
+
+**U.S. Market Development**
+- Federal waters leasing: BOEM lease auctions
+- State mandates: NY (9 GW), MA (5.6 GW), NJ (7.5 GW)
+- Jones Act: Vessel requirements for construction
+- Supply chain development: Ports, vessels, factories
+
+**European Leadership**
+- UK: 14 GW installed
+- Germany: 8 GW
+- Netherlands, Denmark, Belgium: Significant capacity
+- 20+ years of operational experience
+
+## Hydroelectric Power (NAICS 221111)
+
+### Conventional Hydropower
+
+**Dam Types**
+- Embankment dams: Earthfill, rockfill
+- Concrete dams: Gravity, arch, buttress
+- Heights: 10-300+ meters
+- Reservoir storage: Hours to years
+
+**Powerhouse Components**
+- Turbines: Francis, Kaplan, Pelton (impulse)
+- Generators: Synchronous, 10-800 MW typical
+- Penstocks: High-pressure water conduits
+- Spillways: Flood management
+
+**Operations**
+- Baseload or peaking operation
+- Capacity factor: 30-60% (varies by hydrology)
+- Dry/wet year variability
+- Multi-purpose: Flood control, irrigation, navigation, recreation
+
+### Run-of-River Hydro
+
+**Characteristics**
+- Minimal storage (hours to days)
+- Lower environmental impact than large dams
+- Output varies with river flow
+- Capacity: 1-50 MW typical
+- Fish-friendly turbines
+
+### Pumped Storage Hydro
+
+**Technology**
+- Two reservoirs at different elevations
+- Pump water uphill during low-demand periods (charge)
+- Release through turbines during peak demand (discharge)
+- Round-trip efficiency: 70-85%
+
+**Grid Services**
+- Energy arbitrage: Buy low, sell high
+- Regulation and frequency response
+- Black start capability
+- Capacity: 50-3,000 MW per facility
+
+**U.S. Capacity**
+- ~23 GW of pumped storage
+- Limited new development (environmental, economic challenges)
+- Closed-loop systems avoid stream impacts
+
+### Licensing and Environmental
+
+**FERC Licensing**
+- Original license: 30-50 years
+- Relicensing: Extensive environmental review (5+ years)
+- Integrated Licensing Process (ILP), Traditional process
+
+**Environmental Concerns**
+- Fish passage: Upstream (fish ladders), downstream (bypass systems)
+- Minimum flows: In-stream flow requirements
+- Water quality: Temperature, dissolved oxygen
+- Sediment: Reservoir siltation, downstream impacts
+- Recreation: Whitewater releases, access
+
+## Geothermal Energy (NAICS 221116)
+
+### Geothermal Resource Types
+
+**Hydrothermal Systems**
+- Vapor-dominated: Dry steam (e.g., The Geysers, CA)
+- Liquid-dominated: Hot water, flashed to steam
+- Temperatures: 150-350°C
+- Depth: 1,000-3,000 meters
+
+**Enhanced Geothermal Systems (EGS)**
+- Creating artificial reservoirs in hot dry rock
+- Hydraulic stimulation (fracturing)
+- Demonstration projects, not yet commercial
+- Potential for much wider geographic application
+
+### Geothermal Power Plants
+
+**Flash Steam Plants**
+- High-pressure hot water flashed to steam
+- Single-flash or double-flash configurations
+- Typical for 180-260°C resources
+
+**Binary Cycle Plants**
+- Lower temperature resources (90-180°C)
+- Heat exchanger transfers heat to working fluid (isobutane, pentane)
+- Working fluid drives turbine
+- Closed loop, minimal emissions
+
+**Dry Steam Plants**
+- Direct use of geothermal steam
+- Oldest technology (Larderello, Italy - 1904)
+- The Geysers (CA): 1.5 GW capacity
+
+### Operations and Economics
+
+**Performance**
+- Capacity factor: 70-95% (baseload operation)
+- Plant life: 20-30 years
+- Resource decline: Reservoir management, injection
+
+**Economics**
+- LCOE: $40-80/MWh
+- Drilling costs: $3-10 million per well
+- Resource risk: Not all exploration successful
+- Direct-use applications: Heating, greenhouses, aquaculture
+
+**Geographic Concentration**
+- U.S. capacity: ~3.7 GW (mostly California, Nevada)
+- Global leaders: U.S., Indonesia, Philippines, Turkey, Kenya
+- Ring of Fire: Volcanic regions
+
+## Biomass and Bioenergy (NAICS 221117)
+
+### Biomass Feedstocks
+
+**Woody Biomass**
+- Forest residues, mill waste
+- Dedicated energy crops (hybrid poplar, willow)
+- Urban wood waste
+
+**Agricultural Residues**
+- Crop residues (corn stover, wheat straw)
+- Orchard prunings
+- Nut shells
+
+**Energy Crops**
+- Switchgrass, miscanthus (herbaceous)
+- Short-rotation woody crops
+
+**Waste Biomass**
+- Municipal solid waste (MSW)
+- Landfill gas (methane from decomposition)
+- Wastewater treatment biogas
+
+### Biomass Conversion Technologies
+
+**Direct Combustion**
+- Stoker boilers, fluidized bed boilers
+- Co-firing with coal (5-15% biomass)
+- Steam turbine generation
+- Efficiency: 20-30% (electric)
+
+**Gasification**
+- Partial oxidation to produce syngas (CO, H2)
+- Gas cleanup (tar removal)
+- Combustion in gas turbine or engine
+- Efficiency: 25-40%
+
+**Anaerobic Digestion**
+- Bacteria decompose organic matter without oxygen
+- Produces biogas (55-70% methane)
+- Applications: Wastewater treatment, dairy farms, food waste
+- Gas engine or turbine generation
+
+**Pyrolysis**
+- Thermal decomposition in absence of oxygen
+- Produces bio-oil, syngas, biochar
+- Bio-oil can be upgraded to transportation fuels
+
+### Biomass Sustainability
+
+**Carbon Balance**
+- Biomass combustion releases CO2
+- Carbon neutrality depends on regrowth rates
+- Forest biomass: Debate over time scales for carbon payback
+- Agricultural residues, waste: Generally low carbon impact
+
+**Environmental Impacts**
+- Air emissions: PM, NOx, CO (requires controls)
+- Water use: Irrigation for energy crops
+- Land use: Competition with food production
+- Biodiversity: Monoculture concerns for energy crops
+
+**Economics**
+- LCOE: $60-120/MWh
+- Fuel costs: $30-60/ton delivered
+- Renewable Fuel Standard (RFS): Biogas, cellulosic ethanol
+- Renewable Natural Gas (RNG): Upgrading biogas to pipeline quality
+
+## Energy Storage
+
+### Battery Energy Storage Systems (BESS)
+
+**Lithium-Ion Batteries**
+- Dominant technology for grid storage
+- Chemistries: NMC, NCA, LFP (lithium iron phosphate)
+- Modules and racks assembled into containers
+- Power: 1-500+ MW, Energy: 1-4 hour duration typical
+
+**Applications**
+- Frequency regulation: Fast response (sub-second)
+- Peak shaving: Discharge during high prices/demand
+- Renewable integration: Smoothing, time-shifting
+- Transmission deferral: Avoiding/delaying upgrades
+- Black start: Restoring grid after outage
+
+**Performance and Economics**
+- Round-trip efficiency: 85-95%
+- Cycle life: 3,000-10,000 cycles (degradation)
+- Costs: $200-400/kWh (system installed, declining)
+- ITC eligibility: 30% if charged from renewables
+
+**Safety**
+- Thermal runaway risk (fire/explosion)
+- Fire suppression systems (water mist, aerosol)
+- Battery management systems (BMS): Monitoring voltage, temperature
+- Building codes: NFPA 855
+
+### Long-Duration Energy Storage
+
+**Flow Batteries**
+- Vanadium redox, zinc-bromine
+- Energy and power independently scalable
+- Duration: 4-12+ hours
+- Long cycle life (20+ years)
+- Higher costs than lithium-ion
+
+**Compressed Air Energy Storage (CAES)**
+- Compress air into underground caverns during off-peak
+- Release through turbine during peak
+- Two U.S. facilities (Alabama, Texas)
+- Round-trip efficiency: 40-70%
+
+**Gravity Storage**
+- Lifting weights (concrete blocks) to store energy
+- Release by lowering weights through generators
+- Energy Vault: Tower-based system
+- Underground mines: Lowering/raising heavy masses
+
+**Thermal Storage**
+- Molten salt (with CSP)
+- Ice/chilled water (air conditioning load shifting)
+- Hot water tanks
+
+### Hydrogen Energy Storage
+
+**Electrolysis**
+- Splitting water into hydrogen and oxygen using electricity
+- Alkaline, PEM (proton exchange membrane), solid oxide
+- Efficiency: 60-80% (electricity to hydrogen)
+
+**Storage**
+- Compressed gas: High-pressure tanks (350-700 bar)
+- Liquid hydrogen: Cryogenic (-253°C), energy-intensive
+- Underground storage: Salt caverns, depleted fields
+- Metal hydrides, ammonia (chemical storage)
+
+**End Uses**
+- Fuel cells: Hydrogen to electricity (40-60% efficiency)
+- Blending in natural gas pipelines (5-20%)
+- Industrial uses: Steel, ammonia, chemicals
+- Transportation: Fuel cell vehicles
+
+**Color Coding**
+- Green hydrogen: From renewable electricity + electrolysis
+- Blue hydrogen: From natural gas + CCS
+- Gray hydrogen: From natural gas (SMR, no CCS)
+
+**Economics**
+- Green hydrogen cost: $3-8/kg (declining with scale)
+- Round-trip efficiency: 30-50% (electricity → H2 → electricity)
+- Infrastructure development needed
+
+### Pumped Hydro Storage
+- See Hydroelectric section above
+- 95% of global energy storage capacity
+- Long life (50+ years), proven technology
+
+## Grid Integration Challenges
+
+### Variability and Forecasting
+
+**Solar Forecasting**
+- Day-ahead: Numerical weather prediction (NWP)
+- Hour-ahead: Satellite imagery
+- Intra-hour: Sky cameras at solar plants
+- Ramp events: Cloud cover changes
+
+**Wind Forecasting**
+- Mesoscale models: WRF, NAM
+- Turbine-level power curves
+- Ensemble forecasting: Multiple models
+- Forecast error: 10-15% day-ahead RMSE
+
+**Forecast Integration**
+- Unit commitment with uncertainty
+- Reserve allocation
+- Real-time economic dispatch adjustments
+
+### Flexibility Requirements
+
+**Fast-Ramping Resources**
+- Gas turbines: 10-20 MW/minute
+- Hydro: Very fast response
+- Batteries: Instantaneous (limited by inverter)
+- Demand response: Seconds to minutes
+
+**Minimum Generation Constraints**
+- Thermal units have minimum stable operation levels
+- Excess renewable energy → negative prices or curtailment
+- Flexibility retrofits: Improved turndown ratios
+
+**Transmission Constraints**
+- Renewable resources often remote from load centers
+- Queue interconnection delays
+- Congestion and curtailment
+
+### Frequency and Voltage Regulation
+
+**Inertia Challenges**
+- Synchronous generators provide rotational inertia
+- Inverter-based renewables (solar, wind, batteries) do not
+- Low-inertia grids: Faster frequency deviations
+- Solutions: Synthetic inertia from inverters, synchronous condensers
+
+**Voltage Support**
+- Reactive power from generators, capacitors, STATCOMs
+- Smart inverters (IEEE 1547-2018): Volt/VAR support, ride-through
+
+### Curtailment
+
+**Causes**
+- Transmission congestion
+- Minimum generation constraints
+- Excess generation vs. demand
+- Ramp rate limitations
+
+**Mitigation**
+- Energy storage deployment
+- Transmission expansion
+- Demand response and flexible loads
+- Enhanced forecasting and coordination
+
+## Policy and Market Support
+
+### Federal Incentives (U.S.)
+
+**Investment Tax Credit (ITC)**
+- 30% for solar, offshore wind, geothermal, storage (Inflation Reduction Act)
+- Direct pay option for tax-exempt entities
+- Bonus credits: Domestic content, energy communities
+
+**Production Tax Credit (PTC)**
+- $27.50/MWh for wind, closed-loop biomass
+- 10-year payment period
+- Technology-neutral clean electricity PTC
+
+### State Policies
+
+**Renewable Portfolio Standards (RPS)**
+- Mandates for % renewable energy
+- State-specific targets (e.g., CA 60% by 2030, 100% clean by 2045)
+- Renewable Energy Certificates (RECs) trading
+
+**Clean Energy Standards (CES)**
+- Broader than RPS, includes nuclear, CCS
+- Faster pathway to deep decarbonization
+
+### International Markets
+
+**Feed-in Tariffs (FiTs)**
+- Guaranteed payment per kWh (used in Europe, Asia)
+- Technology-specific rates
+- Declining tariffs as costs fall
+
+**Auctions**
+- Competitive bidding for capacity
+- Record low prices: <$20/MWh solar/wind in Middle East, India
+
+## Cross-References
+
+### Related NAICS Codes
+- [221111 - Hydroelectric Power](https://naics.org.ai/221111)
+- [221114 - Solar Power](https://naics.org.ai/221114)
+- [221115 - Wind Power](https://naics.org.ai/221115)
+- [221116 - Geothermal Power](https://naics.org.ai/221116)
+
+### APQC Process Framework
+- [10.0 Generate Power](https://apqc.org.ai/utilities/10.0) - Renewable generation operations
+
+### Related Topics
+- [ElectricUtilities.mdx](./ElectricUtilities.mdx) - Grid integration and markets
+- [OilGasExploration.mdx](./OilGasExploration.mdx) - Fossil fuel comparison
+- [NaturalGas.mdx](./NaturalGas.mdx) - Gas backup for renewables
+
+## Sources
+
+- National Renewable Energy Laboratory (NREL) - Technology research and data
+- International Renewable Energy Agency (IRENA) - Global renewable statistics
+- U.S. Energy Information Administration (EIA) - Electricity data
+- U.S. Department of Energy (DOE) - Policy and R&D programs
+- American Wind Energy Association (AWEA) / American Clean Power (ACP)
+- Solar Energy Industries Association (SEIA)

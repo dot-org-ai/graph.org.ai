@@ -1,0 +1,48 @@
+---
+$id: https://naics.org.ai/Sectors/{code}
+$context: https://naics.org.ai
+$type: https://naics.org.ai/Sector
+code: "{code}"
+name: "{Sector Name}"
+description: "{description}"
+subsectors:
+  - code: "{code}1"
+    name: "{Subsector Name}"
+  - code: "{code}2"
+    name: "{Subsector Name}"
+---
+
+# {code} - {Sector Name}
+
+<SectorOverview code="{code}" />
+
+## Description
+
+{Detailed description of what this sector covers}
+
+## Subsectors
+
+<SubsectorList sectorCode="{code}" />
+
+| Code | Subsector | Industry Groups |
+|------|-----------|-----------------|
+| {code}1 | {Subsector Name} | {count} |
+| {code}2 | {Subsector Name} | {count} |
+
+## Key Statistics
+
+<SectorStatistics code="{code}" />
+
+| Metric | Value |
+|--------|-------|
+| Establishments | {establishments} |
+| Employment | {employment} |
+| Annual Payroll | ${payroll} |
+
+## Cross-References
+
+| System | Mapping |
+|--------|---------|
+| [industries.org.ai](https://industries.org.ai) | Simplified industry |
+| [onet.org.ai](https://onet.org.ai) | Related occupations |
+| [sic.org.ai](https://sic.org.ai) | SIC crosswalk |

@@ -1,0 +1,48 @@
+---
+$context: https://skills.org.ai
+$id: https://skills.org.ai/{{slug}}
+$type: https://skills.org.ai/Skill
+name: "{{name}}"
+description: "{{description}}"
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Skill
+  return []
+}
+
+# {name}
+
+{description}
+
+## Overview
+
+<SkillOverview skill={skill} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `Skill` |
+| Domain | [skills.org.ai](https://skills.org.ai) |
+| Parent | [knowledge.org.ai](https://knowledge.org.ai) |
+
+## Details
+
+<SkillDetails skill={skill} />
+
+## Properties
+
+<SkillProperties skill={skill} />
+
+## Relationships
+
+<SkillRelationships skill={skill} />
+
+## Related
+
+<RelatedSkills skill={skill} />
+
+## Sources
+
+- <DatabaseLink namespace="skills.org.ai" type="{{slug}}" />
