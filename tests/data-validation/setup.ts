@@ -88,3 +88,10 @@ export function hasTrailingWhitespace(content: string): boolean {
   const lines = content.split('\n')
   return lines.some(line => line !== line.trimEnd())
 }
+
+export function isCamelCase(str: string): boolean {
+  if (!str || str.length === 0) return false
+  // camelCase: starts with lowercase, no underscores, hyphens, or spaces
+  // Can contain numbers after the first character
+  return /^[a-z][a-zA-Z0-9]*$/.test(str)
+}

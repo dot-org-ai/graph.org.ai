@@ -1,4 +1,4 @@
-url	ns	type	id	code	name	description	annual_mean	annual_median	annual_10th	annual_25th	annual_75th	annual_90th	hourly_mean	hourly_median	matched_onet
+url	ns	type	id	code	name	description	annualMean	annualMedian	annual10th	annual25th	annual75th	annual90th	hourlyMean	hourlyMedian	matchedOnet
 https://onet.org.ai/Wage/ManagementOccupations	onet.org.ai	Wage	ManagementOccupations	110000	Management Occupations		141760	122090	57010	79900	171610		68.15	58.7	false
 https://onet.org.ai/Wage/TopExecutives	onet.org.ai	Wage	TopExecutives	111000	Top Executives		139860	104990	47510	68800	168490		67.24	50.48	false
 https://onet.org.ai/Wage/ChiefSustainabilityOfficers	onet.org.ai	Wage	ChiefSustainabilityOfficers	111011	Chief Sustainability Officers		262930	206420	73710	126080			126.41	99.24	true
