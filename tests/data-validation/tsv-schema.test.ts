@@ -10,6 +10,7 @@ import {
   RELATIONSHIP_HEADERS,
   isValidURL,
   isPascalCase,
+  isCamelCase,
   hasWindowsLineEndings,
   hasTrailingWhitespace
 } from './setup'
@@ -69,6 +70,34 @@ describe('TSV Schema Validation', () => {
           ENTITY_HEADERS.forEach(header => {
             expect(headers).toContain(header)
           })
+        })
+
+        it('should have camelCase headers (except standard headers)', () => {
+          const lines = content.split('\n').filter(l => l.trim())
+          expect(lines.length).toBeGreaterThan(0)
+
+          const headers = lines[0].split('\t')
+          const invalidHeaders: string[] = []
+
+          headers.forEach(header => {
+            // Skip standard headers (these are allowed as-is)
+            if (ENTITY_HEADERS.includes(header)) {
+              return
+            }
+
+            // All custom headers must be camelCase
+            if (!isCamelCase(header)) {
+              invalidHeaders.push(header)
+            }
+          })
+
+          if (invalidHeaders.length > 0) {
+            expect.fail(
+              `Found ${invalidHeaders.length} headers not in camelCase:\n` +
+              invalidHeaders.map(h => `  - "${h}" (should be camelCase)`).join('\n') + '\n\n' +
+              'Custom headers beyond the standard 7 must use camelCase (e.g., annualMean, socCount)'
+            )
+          }
         })
 
         it('should have no missing required fields', () => {
