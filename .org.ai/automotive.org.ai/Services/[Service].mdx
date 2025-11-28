@@ -1,0 +1,257 @@
+---
+$context: https://automotive.org.ai/Services
+$id: https://automotive.org.ai/Services/{id}
+$type: https://schema.org.ai/Service
+category: AutomotiveService
+serviceType: {serviceType}
+---
+
+# {name}
+
+{description}
+
+## Service Overview
+
+<ServiceOverview service={service} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <ServiceTypeBadge type={serviceType} /> |
+| Category | <ServiceCategory category={category} /> |
+| Typical Duration | {typicalDuration} |
+| Skill Level | <SkillLevelBadge level={skillLevel} /> |
+| Frequency | {recommendedFrequency} |
+
+## Service Description
+
+<ServiceDescription service={service} />
+
+### When Required
+
+<WhenRequired
+  service={service}
+  showIndicators={true}
+/>
+
+### Benefits
+
+<ServiceBenefits
+  service={service}
+  showImportance={true}
+/>
+
+## Procedure
+
+<ServiceProcedure
+  service={service}
+  numbered={true}
+  showDuration={true}
+/>
+
+### Pre-Service Inspection
+
+<PreServiceInspection
+  service={service}
+  showChecklist={true}
+/>
+
+### Service Steps
+
+<ServiceSteps
+  service={service}
+  showTools={true}
+  showParts={true}
+/>
+
+### Post-Service Verification
+
+<PostServiceVerification
+  service={service}
+  showTests={true}
+/>
+
+## Parts Required
+
+<PartsRequired
+  service={service}
+  showQuantity={true}
+  showAlternatives={true}
+/>
+
+### OEM Parts
+
+<OEMParts
+  service={service}
+  showPartNumbers={true}
+/>
+
+### Aftermarket Options
+
+<AftermarketOptions
+  service={service}
+  showQuality={true}
+/>
+
+## Tools & Equipment
+
+<ToolsEquipment
+  service={service}
+  showSpecialTools={true}
+/>
+
+### Standard Tools
+
+<StandardTools service={service} />
+
+### Special Tools
+
+<SpecialTools
+  service={service}
+  showPurpose={true}
+/>
+
+### Diagnostic Equipment
+
+<DiagnosticEquipment
+  service={service}
+  showCapabilities={true}
+/>
+
+## Vehicle Applications
+
+<VehicleApplications
+  service={service}
+  showVariations={true}
+/>
+
+### Make/Model Specifics
+
+<MakeModelSpecifics
+  service={service}
+  showDifferences={true}
+/>
+
+## Skills Required
+
+<SkillsRequired
+  service={service}
+  source="onet"
+  showLevel={true}
+/>
+
+## Occupations Performing
+
+<OccupationsPerforming
+  service={service}
+  source="onet"
+  showCertifications={true}
+/>
+
+## Safety Precautions
+
+<SafetyPrecautions
+  service={service}
+  showPPE={true}
+/>
+
+### Hazards
+
+<ServiceHazards
+  service={service}
+  showMitigation={true}
+/>
+
+## Quality Standards
+
+<QualityStandards
+  service={service}
+  showSpecifications={true}
+/>
+
+## Pricing
+
+<PricingInfo service={service} />
+
+### Labor Cost
+
+<LaborCost
+  service={service}
+  showByRegion={true}
+/>
+
+### Parts Cost
+
+<PartsCost
+  service={service}
+  showRange={true}
+/>
+
+### Total Estimate
+
+<TotalEstimate
+  service={service}
+  showFactors={true}
+/>
+
+## DIY vs Professional
+
+<DIYvsProfessional
+  service={service}
+  showComparison={true}
+/>
+
+{diyFriendly && (
+  <DIYGuide
+    service={service}
+    showVideo={true}
+  />
+)}
+
+## Common Issues
+
+<CommonIssues
+  service={service}
+  showSolutions={true}
+/>
+
+### Troubleshooting
+
+<Troubleshooting
+  service={service}
+  interactive={true}
+/>
+
+## Related Services
+
+<RelatedServices
+  service={service}
+  relationships={['prerequisite', 'related', 'bundle']}
+/>
+
+### Service Bundles
+
+<ServiceBundles
+  service={service}
+  showSavings={true}
+/>
+
+## Service Providers
+
+<ServiceProviders
+  service={service}
+  types={['dealer', 'independent', 'chain']}
+/>
+
+## Warranty Impact
+
+<WarrantyImpact
+  service={service}
+  showRequirements={true}
+/>
+
+## Sources
+
+- [ASE](https://www.ase.com)
+- <DatabaseLink namespace="automotive.org.ai/Services" type={id} />

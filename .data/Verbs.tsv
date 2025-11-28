@@ -1,38 +1,38 @@
-url	ns	type	id	name	baseForm	variants	usageCount
-https://verbs.org.ai/Administer	verbs.org.ai	Verb	Administer	Administer	administer	administration	90
-https://verbs.org.ai/Advise	verbs.org.ai	Verb	Advise	Advise	advise	advisory	52
-https://verbs.org.ai/Clean	verbs.org.ai	Verb	Clean	Clean	clean	cleaning	123
-https://verbs.org.ai/Consult	verbs.org.ai	Verb	Consult	Consult	consult	consulting	120
-https://verbs.org.ai/Deliver	verbs.org.ai	Verb	Deliver	Deliver	deliver	delivery	60
-https://verbs.org.ai/Design	verbs.org.ai	Verb	Design	Design	design	designs	198
-https://verbs.org.ai/Develop	verbs.org.ai	Verb	Develop	Develop	develop	development	171
-https://verbs.org.ai/Educate	verbs.org.ai	Verb	Educate	Educate	educate	education	28
-https://verbs.org.ai/Engineer	verbs.org.ai	Verb	Engineer	Engineer	engineer	engineering	211
-https://verbs.org.ai/Fabricate	verbs.org.ai	Verb	Fabricate	Fabricate	fabricate	fabrication	18
-https://verbs.org.ai/Handle	verbs.org.ai	Verb	Handle	Handle	handle	handling	34
-https://verbs.org.ai/Inspect	verbs.org.ai	Verb	Inspect	Inspect	inspect	inspection	1695
-https://verbs.org.ai/Install	verbs.org.ai	Verb	Install	Install	install	installation	322
-https://verbs.org.ai/Lease	verbs.org.ai	Verb	Lease	Lease	lease		104
-https://verbs.org.ai/Maintain	verbs.org.ai	Verb	Maintain	Maintain	maintain	maintenance	510
-https://verbs.org.ai/Manage	verbs.org.ai	Verb	Manage	Manage	manage	management	576
-https://verbs.org.ai/Manufacture	verbs.org.ai	Verb	Manufacture	Manufacture	manufacture	manufacturing	149
-https://verbs.org.ai/Market	verbs.org.ai	Verb	Market	Market	market		68
-https://verbs.org.ai/Operate	verbs.org.ai	Verb	Operate	Operate	operate	operating	152
-https://verbs.org.ai/Process	verbs.org.ai	Verb	Process	Process	process	processing	339
-https://verbs.org.ai/Produce	verbs.org.ai	Verb	Produce	Produce	produce	production	242
-https://verbs.org.ai/Provide	verbs.org.ai	Verb	Provide	Provide	provide	provision	205
-https://verbs.org.ai/Rent	verbs.org.ai	Verb	Rent	Rent	rent	rental	223
-https://verbs.org.ai/Repair	verbs.org.ai	Verb	Repair	Repair	repair		5880
-https://verbs.org.ai/Sanitize	verbs.org.ai	Verb	Sanitize	Sanitize	sanitize	sanitation	3
-https://verbs.org.ai/Sell	verbs.org.ai	Verb	Sell	Sell	sell	selling	36
-https://verbs.org.ai/Service	verbs.org.ai	Verb	Service	Service	service		5638
-https://verbs.org.ai/Set	verbs.org.ai	Verb	Set	Set	set	setting	8
-https://verbs.org.ai/Setup	verbs.org.ai	Verb	Setup	Setup	setup		3
-https://verbs.org.ai/Ship	verbs.org.ai	Verb	Ship	Ship	ship	shipping	44
-https://verbs.org.ai/Store	verbs.org.ai	Verb	Store	Store	store	storage	168
-https://verbs.org.ai/Supply	verbs.org.ai	Verb	Supply	Supply	supply	supplies	115
-https://verbs.org.ai/Teach	verbs.org.ai	Verb	Teach	Teach	teach	teaching	5
-https://verbs.org.ai/Test	verbs.org.ai	Verb	Test	Test	test	testing	196
-https://verbs.org.ai/Train	verbs.org.ai	Verb	Train	Train	train		294
-https://verbs.org.ai/Transport	verbs.org.ai	Verb	Transport	Transport	transport	transportation	325
-https://verbs.org.ai/Warehouse	verbs.org.ai	Verb	Warehouse	Warehouse	warehouse	warehousing	27
+url	ns	type	id	name	baseForm	variants	usageCount	digital
+https://verbs.org.ai/Administer	verbs.org.ai	Verb	Administer	Administer	administer	administration	90	
+https://verbs.org.ai/Advise	verbs.org.ai	Verb	Advise	Advise	advise	advisory	52	
+https://verbs.org.ai/Clean	verbs.org.ai	Verb	Clean	Clean	clean	cleaning	123	
+https://verbs.org.ai/Consult	verbs.org.ai	Verb	Consult	Consult	consult	consulting	120	
+https://verbs.org.ai/Deliver	verbs.org.ai	Verb	Deliver	Deliver	deliver	delivery	60	
+https://verbs.org.ai/Design	verbs.org.ai	Verb	Design	Design	design	designs	198	
+https://verbs.org.ai/Develop	verbs.org.ai	Verb	Develop	Develop	develop	development	171	
+https://verbs.org.ai/Educate	verbs.org.ai	Verb	Educate	Educate	educate	education	28	
+https://verbs.org.ai/Engineer	verbs.org.ai	Verb	Engineer	Engineer	engineer	engineering	211	
+https://verbs.org.ai/Fabricate	verbs.org.ai	Verb	Fabricate	Fabricate	fabricate	fabrication	18	
+https://verbs.org.ai/Handle	verbs.org.ai	Verb	Handle	Handle	handle	handling	34	
+https://verbs.org.ai/Inspect	verbs.org.ai	Verb	Inspect	Inspect	inspect	inspection	1695	
+https://verbs.org.ai/Install	verbs.org.ai	Verb	Install	Install	install	installation	322	
+https://verbs.org.ai/Lease	verbs.org.ai	Verb	Lease	Lease	lease		104	
+https://verbs.org.ai/Maintain	verbs.org.ai	Verb	Maintain	Maintain	maintain	maintenance	510	
+https://verbs.org.ai/Manage	verbs.org.ai	Verb	Manage	Manage	manage	management	576	
+https://verbs.org.ai/Manufacture	verbs.org.ai	Verb	Manufacture	Manufacture	manufacture	manufacturing	149	
+https://verbs.org.ai/Market	verbs.org.ai	Verb	Market	Market	market		68	
+https://verbs.org.ai/Operate	verbs.org.ai	Verb	Operate	Operate	operate	operating	152	
+https://verbs.org.ai/Process	verbs.org.ai	Verb	Process	Process	process	processing	339	
+https://verbs.org.ai/Produce	verbs.org.ai	Verb	Produce	Produce	produce	production	242	
+https://verbs.org.ai/Provide	verbs.org.ai	Verb	Provide	Provide	provide	provision	205	
+https://verbs.org.ai/Rent	verbs.org.ai	Verb	Rent	Rent	rent	rental	223	
+https://verbs.org.ai/Repair	verbs.org.ai	Verb	Repair	Repair	repair		5880	
+https://verbs.org.ai/Sanitize	verbs.org.ai	Verb	Sanitize	Sanitize	sanitize	sanitation	3	
+https://verbs.org.ai/Sell	verbs.org.ai	Verb	Sell	Sell	sell	selling	36	
+https://verbs.org.ai/Service	verbs.org.ai	Verb	Service	Service	service		5638	
+https://verbs.org.ai/Set	verbs.org.ai	Verb	Set	Set	set	setting	8	
+https://verbs.org.ai/Setup	verbs.org.ai	Verb	Setup	Setup	setup		3	
+https://verbs.org.ai/Ship	verbs.org.ai	Verb	Ship	Ship	ship	shipping	44	
+https://verbs.org.ai/Store	verbs.org.ai	Verb	Store	Store	store	storage	168	
+https://verbs.org.ai/Supply	verbs.org.ai	Verb	Supply	Supply	supply	supplies	115	
+https://verbs.org.ai/Teach	verbs.org.ai	Verb	Teach	Teach	teach	teaching	5	
+https://verbs.org.ai/Test	verbs.org.ai	Verb	Test	Test	test	testing	196	
+https://verbs.org.ai/Train	verbs.org.ai	Verb	Train	Train	train		294	
+https://verbs.org.ai/Transport	verbs.org.ai	Verb	Transport	Transport	transport	transportation	325	
+https://verbs.org.ai/Warehouse	verbs.org.ai	Verb	Warehouse	Warehouse	warehouse	warehousing	27	

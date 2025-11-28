@@ -1,0 +1,199 @@
+---
+$context: https://automotive.org.ai/Components
+$id: https://automotive.org.ai/Components/{id}
+$type: https://schema.org.ai/Product
+category: AutomotiveComponent
+componentType: {componentType}
+system: {system}
+---
+
+# {name}
+
+{description}
+
+## Component Overview
+
+<ComponentOverview component={component} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <ComponentTypeBadge type={componentType} /> |
+| System | <SystemLink system={system} /> |
+| Criticality | <CriticalityBadge level={criticality} /> |
+| Serviceable | <ServiceableBadge serviceable={serviceable} /> |
+
+## Technical Description
+
+<TechnicalDescription component={component} />
+
+### Function
+
+<ComponentFunction
+  component={component}
+  showDiagram={true}
+/>
+
+### Operating Principles
+
+<OperatingPrinciples
+  component={component}
+  showAnimation={true}
+/>
+
+### Key Specifications
+
+<KeySpecifications
+  component={component}
+  showTolerance={true}
+/>
+
+## Construction
+
+<ConstructionDetails component={component} />
+
+### Materials
+
+<MaterialsList
+  component={component}
+  showProperties={true}
+/>
+
+### Manufacturing Process
+
+<ManufacturingProcess
+  component={component}
+  showSteps={true}
+/>
+
+## Failure Modes
+
+<FailureModes
+  component={component}
+  showFMEA={true}
+/>
+
+### Common Failures
+
+<CommonFailures
+  component={component}
+  showSymptoms={true}
+/>
+
+### Diagnostic Procedures
+
+<DiagnosticProcedures
+  component={component}
+  showTools={true}
+/>
+
+### Related DTCs
+
+<RelatedDTCs
+  component={component}
+  showDescriptions={true}
+/>
+
+## Service Information
+
+<ServiceInformation component={component} />
+
+### Replacement Procedure
+
+<ReplacementProcedure
+  component={component}
+  showSteps={true}
+  showTools={true}
+/>
+
+### Service Intervals
+
+<ServiceIntervals
+  component={component}
+  showConditions={true}
+/>
+
+### Labor Times
+
+<LaborTimes
+  component={component}
+  source="mitchell"
+/>
+
+## Parts Information
+
+<PartsInformation component={component} />
+
+### OEM Parts
+
+<OEMParts
+  component={component}
+  showPartNumbers={true}
+  showInterchange={true}
+/>
+
+### Aftermarket Options
+
+<AftermarketOptions
+  component={component}
+  showQuality={true}
+  showPrice={true}
+/>
+
+### Remanufactured
+
+<RemanufacturedParts
+  component={component}
+  showWarranty={true}
+/>
+
+## Vehicle Applications
+
+<VehicleApplications
+  component={component}
+  showYears={true}
+/>
+
+## Suppliers
+
+<ComponentSuppliers
+  component={component}
+  showTier={true}
+  showMarketShare={true}
+/>
+
+## Standards & Specifications
+
+<ApplicableStandards
+  component={component}
+  showCompliance={true}
+/>
+
+## Related Components
+
+<RelatedComponents
+  component={component}
+  relationships={['parent', 'child', 'substitute', 'complementary']}
+/>
+
+## Skills Required
+
+<SkillsRequired
+  component={component}
+  source="onet"
+  showLevel={true}
+/>
+
+## Occupations
+
+<OccupationsPerforming
+  component={component}
+  source="onet"
+  showCertifications={true}
+/>
+
+## Sources
+
+- [SAE Standards](https://www.sae.org)
+- <DatabaseLink namespace="automotive.org.ai/Components" type={id} />

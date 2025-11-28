@@ -5,10 +5,10 @@ workflows.org.ai	agents.org.ai
 agents.org.ai	nouns.org.ai	Autonomous or semi-autonomous actors.	Agent		
 functions.org.ai	nouns.org.ai	Functional units of execution or logic.	CodeFunction, GenerativeFunction, AgenticFunction, HumanFunction		
 actions.org.ai	verbs.org.ai	Something done by an agent.	Action		
-gs1.org.ai	knowledge.org.ai	Standardized types for commercial products, places, and supply chain events.	Product, Place, Location, Event, Organization		
+gs1.org.ai	standards.org.ai	Standardized types for commercial products, places, and supply chain events.	Product, Place, Location, Event, Organization		
 wikipedia.org.ai	wiki.org.ai				
 schema.org.ai		Core simplified ontology extending Schema.org with AI-native types, Nouns, and Verbs.	Thing, Agent, Tool, AIModel, LandingPage, WPHero, WPBenefits, WPFeatures		digital
-naics.org.ai	knowledge.org.ai	North American Industry Classification System.		NAICSCode	
+naics.org.ai	standards.org.ai	North American Industry Classification System.		NAICSCode	
 soc.org.ai	knowledge.org.ai	Standard Occupational Classification.		SOCCode	
 triggers.org.ai	agents.org.ai				
 searches.org.ai	agents.org.ai				
@@ -16,7 +16,7 @@ md.org.ai	markdown.org.ai	Standard Markdown file format conventions and specific
 startups.org.ai	business.org.ai	New business ventures.	Startup		
 services.org.ai	products.org.ai	Intangible products.	Service		
 markdown.org.ai	things.org.ai				
-onet.org.ai	knowledge.org.ai	Standardized occupational skills, tools, and technology classifications.	Occupation, Task, Activity, Tool, Technology, Skill		
+onet.org.ai	standards.org.ai	Standardized occupational skills, tools, and technology classifications.	Occupation, Task, Activity, Tool, Technology, Skill		
 gdpval.org.ai	agi.org.ai				
 jobs.org.ai	work.org.ai	Employment roles and listings.	JobPosting, Role		
 tasks.org.ai	activities.org.ai	Normalized task definitions and hierarchies.	Task		
@@ -25,9 +25,9 @@ tech.org.ai	things.org.ai	Technology stacks and software.	Technology, Stack
 business.org.ai	things.org.ai	Commercial entities and concepts.	Business		
 events.org.ai	verbs.org.ai	Unified event model connecting verbs to 5W+H (Who, What, Where, When, Why, How), extending EPCIS.	Event		who, what, where, when, why, how
 process.org.ai	activities.org.ai	Structured series of actions/tasks.	Process		
-apqc.org.ai	knowledge.org.ai	Standardized business process and activity classifications.	Process, Activity, Task
+apqc.org.ai	standards.org.ai	Standardized business process and activity classifications.	Process, Activity, Task
 standards.org.ai	knowledge.org.ai	International standards and classification systems not owned by platform.
-industries.org.ai	business.org.ai	Classifications of economic activity.	Industry	IndustryClassification	
+industries.org.ai	business.org.ai	Classifications of economic activity based on NAICS hierarchy.	Industry, Sector, Subsector, IndustryGroup, NAICSIndustry, NationalIndustry, CompanyType	IndustryClassification	naicsCode, sicCode, isicCode	
 vc.org.ai	finance.org.ai	Venture Capital.	Investment		
 enterprises.org.ai	business.org.ai				
 semantics.org.ai	language.org.ai				

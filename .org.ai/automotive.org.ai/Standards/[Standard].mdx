@@ -1,0 +1,114 @@
+---
+$context: https://automotive.org.ai/Standards
+$id: https://automotive.org.ai/Standards/{id}
+$type: https://schema.org.ai/Standard
+category: AutomotiveStandard
+standardType: {standardType}
+organization: {organization}
+---
+
+# {name}
+
+{description}
+
+## Standard Overview
+
+<StandardOverview standard={standard} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Code | {code} |
+| Type | <StandardTypeBadge type={standardType} /> |
+| Organization | <OrganizationLink org={organization} /> |
+| Status | <StatusBadge status={status} /> |
+| Version | {version} |
+| Effective Date | {effectiveDate} |
+
+## Scope
+
+<StandardScope standard={standard} />
+
+### Applicability
+
+<Applicability
+  standard={standard}
+  showVehicleTypes={true}
+  showRegions={true}
+/>
+
+## Requirements
+
+<RequirementsList
+  standard={standard}
+  groupBySection={true}
+  showMandatory={true}
+/>
+
+### Technical Requirements
+
+<TechnicalRequirements
+  standard={standard}
+  showSpecifications={true}
+/>
+
+### Testing Requirements
+
+<TestingRequirements
+  standard={standard}
+  showProcedures={true}
+/>
+
+## Compliance
+
+<ComplianceOverview standard={standard} />
+
+### Certification Process
+
+<CertificationProcess
+  standard={standard}
+  showSteps={true}
+/>
+
+### Testing Facilities
+
+<TestingFacilities
+  standard={standard}
+  showAccredited={true}
+/>
+
+## Vehicle Applications
+
+<VehicleApplications
+  standard={standard}
+  showCategories={true}
+/>
+
+## Related Standards
+
+<RelatedStandards
+  standard={standard}
+  relationships={['supersedes', 'harmonized', 'related']}
+/>
+
+## Regional Variations
+
+<RegionalVariations
+  standard={standard}
+  regions={['US', 'EU', 'China', 'Japan']}
+/>
+
+## Occupations Involved
+
+<OccupationsInvolved
+  standard={standard}
+  source="onet"
+  roles={['compliance', 'testing', 'engineering']}
+/>
+
+## Sources
+
+- [{organization}]({organizationUrl})
+- <StandardsOrgLink standard={standard} />
+- <DatabaseLink namespace="automotive.org.ai/Standards" type={id} />

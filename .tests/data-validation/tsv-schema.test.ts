@@ -222,6 +222,43 @@ describe('TSV Schema Validation', () => {
           expect(rows.length, 'File should have at least one data row beyond the header').toBeGreaterThan(0)
         })
 
+        it('should have a digital column with valid values', () => {
+          const lines = content.split('\n').filter(l => l.trim())
+          expect(lines.length).toBeGreaterThan(0)
+
+          const headers = lines[0].split('\t')
+
+          // Check that digital column exists
+          expect(headers, 'Entity file should have a "digital" column for digital score').toContain('digital')
+
+          // Get the index of the digital column
+          const digitalIndex = headers.indexOf('digital')
+
+          // Validate digital values in each row (checking raw lines to handle trailing columns)
+          for (let i = 1; i < lines.length; i++) {
+            const parts = lines[i].split('\t')
+
+            // Skip if row doesn't have enough columns to contain digital (trailing columns may be omitted)
+            if (parts.length <= digitalIndex) {
+              // This is acceptable - trailing empty columns can be omitted in TSV format
+              continue
+            }
+
+            const digitalValue = parts[digitalIndex]
+
+            // Digital value can be empty (no score assigned yet)
+            if (!digitalValue || digitalValue === '') {
+              continue
+            }
+
+            // If not empty, must be a valid number string between 0.0 and 1.0
+            const num = parseFloat(digitalValue)
+            expect(isNaN(num), `Row ${i + 1}: digital value must be a number or empty, got: "${digitalValue}"`).toBe(false)
+            expect(num, `Row ${i + 1}: digital value must be between 0.0 and 1.0, got: ${num}`).toBeGreaterThanOrEqual(0.0)
+            expect(num, `Row ${i + 1}: digital value must be between 0.0 and 1.0, got: ${num}`).toBeLessThanOrEqual(1.0)
+          }
+        })
+
         // Semantic validation for Event entities
         if (rows.length > 0 && rows[0].type === 'Event') {
           it('should have Event IDs matching Noun.verb pattern', () => {

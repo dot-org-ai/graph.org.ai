@@ -1,0 +1,247 @@
+---
+$context: https://automotive.org.ai/Manufacturers
+$id: https://automotive.org.ai/Manufacturers/{id}
+$type: https://schema.org.ai/Organization
+category: AutomotiveManufacturer
+manufacturerType: {manufacturerType}
+---
+
+# {name}
+
+{description}
+
+## Manufacturer Overview
+
+<ManufacturerOverview manufacturer={manufacturer} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <ManufacturerTypeBadge type={manufacturerType} /> |
+| Headquarters | {headquarters} |
+| Founded | {foundedYear} |
+| Employees | {employeeCount} |
+| Revenue | {revenue} |
+| Stock | <StockTicker symbol={stockSymbol} /> |
+
+## Company Hierarchy
+
+<CompanyHierarchy
+  manufacturer={manufacturer}
+  showSubsidiaries={true}
+  showParent={true}
+/>
+
+## Brands
+
+<BrandsList
+  manufacturer={manufacturer}
+  showModels={true}
+/>
+
+### Active Brands
+
+<ActiveBrands
+  manufacturer={manufacturer}
+  showMarketShare={true}
+/>
+
+### Discontinued Brands
+
+<DiscontinuedBrands
+  manufacturer={manufacturer}
+  showHistory={true}
+/>
+
+## Product Lineup
+
+<ProductLineup manufacturer={manufacturer} />
+
+### Current Models
+
+<CurrentModels
+  manufacturer={manufacturer}
+  groupByBrand={true}
+  showSegment={true}
+/>
+
+### Upcoming Models
+
+<UpcomingModels
+  manufacturer={manufacturer}
+  showLaunchDate={true}
+/>
+
+## Manufacturing
+
+<ManufacturingOverview manufacturer={manufacturer} />
+
+### Production Facilities
+
+<ProductionFacilities
+  manufacturer={manufacturer}
+  showCapacity={true}
+  showProducts={true}
+/>
+
+### Global Production
+
+<GlobalProduction
+  manufacturer={manufacturer}
+  showByRegion={true}
+/>
+
+### Supply Chain
+
+<SupplyChain
+  manufacturer={manufacturer}
+  showTiers={true}
+/>
+
+## Technology
+
+<TechnologyOverview manufacturer={manufacturer} />
+
+### Platforms
+
+<VehiclePlatforms
+  manufacturer={manufacturer}
+  showSharedModels={true}
+/>
+
+### Powertrain Technology
+
+<PowertrainTechnology
+  manufacturer={manufacturer}
+  showRoadmap={true}
+/>
+
+### ADAS & Autonomy
+
+<ADASAutonomy
+  manufacturer={manufacturer}
+  showCapabilities={true}
+/>
+
+### Electrification
+
+<ElectrificationStrategy
+  manufacturer={manufacturer}
+  showTimeline={true}
+/>
+
+## Sales & Market
+
+<SalesMarket manufacturer={manufacturer} />
+
+### Global Sales
+
+<GlobalSales
+  manufacturer={manufacturer}
+  showByRegion={true}
+  showTrend={true}
+/>
+
+### Market Share
+
+<MarketShare
+  manufacturer={manufacturer}
+  showBySegment={true}
+/>
+
+## Financial Performance
+
+<FinancialPerformance manufacturer={manufacturer} />
+
+### Revenue & Profit
+
+<RevenueProfit
+  manufacturer={manufacturer}
+  years={5}
+/>
+
+## Partnerships & Alliances
+
+<PartnershipsAlliances manufacturer={manufacturer} />
+
+### Strategic Alliances
+
+<StrategicAlliances
+  manufacturer={manufacturer}
+  showScope={true}
+/>
+
+### Joint Ventures
+
+<JointVentures
+  manufacturer={manufacturer}
+  showPartners={true}
+/>
+
+## Quality & Reliability
+
+<QualityReliability manufacturer={manufacturer} />
+
+### Quality Rankings
+
+<QualityRankings
+  manufacturer={manufacturer}
+  sources={['JDPower', 'ConsumerReports']}
+/>
+
+### Recall History
+
+<RecallHistory
+  manufacturer={manufacturer}
+  showByYear={true}
+/>
+
+## Sustainability
+
+<Sustainability manufacturer={manufacturer} />
+
+### Environmental Initiatives
+
+<EnvironmentalInitiatives
+  manufacturer={manufacturer}
+  showTargets={true}
+/>
+
+## Employment
+
+<Employment manufacturer={manufacturer} />
+
+### Workforce
+
+<Workforce
+  manufacturer={manufacturer}
+  showByRegion={true}
+/>
+
+### Occupations
+
+<OccupationsEmployed
+  manufacturer={manufacturer}
+  source="onet"
+  limit={20}
+/>
+
+## History
+
+<CompanyHistory
+  manufacturer={manufacturer}
+  showTimeline={true}
+/>
+
+## Competitors
+
+<Competitors
+  manufacturer={manufacturer}
+  showComparison={true}
+/>
+
+## Sources
+
+- [{name} Official]({websiteUrl})
+- <DatabaseLink namespace="automotive.org.ai/Manufacturers" type={id} />

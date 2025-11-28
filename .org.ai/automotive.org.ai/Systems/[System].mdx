@@ -1,0 +1,285 @@
+---
+$context: https://automotive.org.ai/Systems
+$id: https://automotive.org.ai/Systems/{id}
+$type: https://schema.org.ai/Thing
+category: AutomotiveSystem
+systemType: {systemType}
+---
+
+# {name}
+
+{description}
+
+## System Overview
+
+<SystemOverview system={system} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <SystemTypeBadge type={systemType} /> |
+| Category | <SystemCategory category={category} /> |
+| Complexity | <ComplexityBadge level={complexity} /> |
+| Safety Critical | <SafetyCriticalBadge critical={safetyCritical} /> |
+
+## System Architecture
+
+<SystemArchitecture
+  system={system}
+  format="diagram"
+  interactive={true}
+/>
+
+### Block Diagram
+
+<BlockDiagram
+  system={system}
+  showSignals={true}
+/>
+
+### Signal Flow
+
+<SignalFlowDiagram
+  system={system}
+  showData={true}
+/>
+
+## Components
+
+<SystemComponents
+  system={system}
+  showHierarchy={true}
+  expandable={true}
+/>
+
+### Major Components
+
+<MajorComponents
+  system={system}
+  showFunction={true}
+/>
+
+### Sensors
+
+<SystemSensors
+  system={system}
+  showSignals={true}
+/>
+
+### Actuators
+
+<SystemActuators
+  system={system}
+  showControl={true}
+/>
+
+### ECUs
+
+<SystemECUs
+  system={system}
+  showCommunication={true}
+/>
+
+## Functionality
+
+<FunctionalityDescription system={system} />
+
+### Operating Modes
+
+<OperatingModes
+  system={system}
+  showConditions={true}
+/>
+
+### Control Logic
+
+<ControlLogic
+  system={system}
+  showStateMachine={true}
+/>
+
+### Input/Output
+
+<InputOutput
+  system={system}
+  showSignals={true}
+/>
+
+## Interfaces
+
+<SystemInterfaces system={system} />
+
+### Communication Protocols
+
+<CommunicationProtocols
+  system={system}
+  protocols={['CAN', 'LIN', 'FlexRay', 'Ethernet']}
+/>
+
+### Connected Systems
+
+<ConnectedSystems
+  system={system}
+  showDataFlow={true}
+/>
+
+## Performance
+
+<PerformanceMetrics system={system} />
+
+### Key Metrics
+
+<KeyMetrics
+  system={system}
+  showTargets={true}
+/>
+
+### Response Times
+
+<ResponseTimes
+  system={system}
+  showRequirements={true}
+/>
+
+## Diagnostics
+
+<DiagnosticsOverview system={system} />
+
+### OBD-II Monitors
+
+<OBDMonitors
+  system={system}
+  showReadiness={true}
+/>
+
+### Diagnostic Trouble Codes
+
+<DTCList
+  system={system}
+  showDescriptions={true}
+/>
+
+### Diagnostic Procedures
+
+<DiagnosticProcedures
+  system={system}
+  showTools={true}
+/>
+
+## Safety
+
+<SafetyOverview system={system} />
+
+### Functional Safety
+
+<FunctionalSafety
+  system={system}
+  showASIL={true}
+/>
+
+### Failure Modes
+
+<FailureModesEffects
+  system={system}
+  showFMEA={true}
+/>
+
+### Redundancy
+
+<RedundancyFeatures system={system} />
+
+## Calibration
+
+<CalibrationOverview system={system} />
+
+### Calibration Parameters
+
+<CalibrationParameters
+  system={system}
+  showRanges={true}
+/>
+
+### Calibration Procedures
+
+<CalibrationProcedures
+  system={system}
+  showTools={true}
+/>
+
+## Service & Maintenance
+
+<ServiceMaintenance system={system} />
+
+### Service Intervals
+
+<ServiceIntervals
+  system={system}
+  showOperations={true}
+/>
+
+### Common Issues
+
+<CommonIssues
+  system={system}
+  showSolutions={true}
+/>
+
+## Evolution
+
+<SystemEvolution system={system} />
+
+### Technology Generations
+
+<TechnologyGenerations
+  system={system}
+  showTimeline={true}
+/>
+
+### Future Trends
+
+<FutureTrends
+  system={system}
+  showRoadmap={true}
+/>
+
+## Standards & Regulations
+
+<StandardsRegulations
+  system={system}
+  showCompliance={true}
+/>
+
+## Vehicle Applications
+
+<VehicleApplications
+  system={system}
+  showVariants={true}
+/>
+
+## Suppliers
+
+<SystemSuppliers
+  system={system}
+  showMarketShare={true}
+/>
+
+## Occupations
+
+<OccupationsInvolved
+  system={system}
+  source="onet"
+  roles={['engineering', 'manufacturing', 'service', 'calibration']}
+/>
+
+## Related Systems
+
+<RelatedSystems
+  system={system}
+  relationships={['integrated', 'dependent', 'alternative']}
+/>
+
+## Sources
+
+- [SAE Standards](https://www.sae.org)
+- <DatabaseLink namespace="automotive.org.ai/Systems" type={id} />

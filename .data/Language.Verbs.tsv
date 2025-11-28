@@ -1,38 +1,38 @@
-url	ns	type	id	name	baseForm	variants	usageCount
-https://language.org.ai/Verb/Administer	language.org.ai	LanguageVerb	Administer	Administer	administer	administration	90
-https://language.org.ai/Verb/Advise	language.org.ai	LanguageVerb	Advise	Advise	advise	advisory	52
-https://language.org.ai/Verb/Clean	language.org.ai	LanguageVerb	Clean	Clean	clean	cleaning	123
-https://language.org.ai/Verb/Consult	language.org.ai	LanguageVerb	Consult	Consult	consult	consulting	120
-https://language.org.ai/Verb/Deliver	language.org.ai	LanguageVerb	Deliver	Deliver	deliver	delivery	60
-https://language.org.ai/Verb/Design	language.org.ai	LanguageVerb	Design	Design	design	designs	198
-https://language.org.ai/Verb/Develop	language.org.ai	LanguageVerb	Develop	Develop	develop	development	171
-https://language.org.ai/Verb/Educate	language.org.ai	LanguageVerb	Educate	Educate	educate	education	28
-https://language.org.ai/Verb/Engineer	language.org.ai	LanguageVerb	Engineer	Engineer	engineer	engineering	211
-https://language.org.ai/Verb/Fabricate	language.org.ai	LanguageVerb	Fabricate	Fabricate	fabricate	fabrication	18
-https://language.org.ai/Verb/Handle	language.org.ai	LanguageVerb	Handle	Handle	handle	handling	34
-https://language.org.ai/Verb/Inspect	language.org.ai	LanguageVerb	Inspect	Inspect	inspect	inspection	1695
-https://language.org.ai/Verb/Install	language.org.ai	LanguageVerb	Install	Install	install	installation	322
-https://language.org.ai/Verb/Lease	language.org.ai	LanguageVerb	Lease	Lease	lease		104
-https://language.org.ai/Verb/Maintain	language.org.ai	LanguageVerb	Maintain	Maintain	maintain	maintenance	510
-https://language.org.ai/Verb/Manage	language.org.ai	LanguageVerb	Manage	Manage	manage	management	576
-https://language.org.ai/Verb/Manufacture	language.org.ai	LanguageVerb	Manufacture	Manufacture	manufacture	manufacturing	149
-https://language.org.ai/Verb/Market	language.org.ai	LanguageVerb	Market	Market	market		68
-https://language.org.ai/Verb/Operate	language.org.ai	LanguageVerb	Operate	Operate	operate	operating	152
-https://language.org.ai/Verb/Process	language.org.ai	LanguageVerb	Process	Process	process	processing	339
-https://language.org.ai/Verb/Produce	language.org.ai	LanguageVerb	Produce	Produce	produce	production	242
-https://language.org.ai/Verb/Provide	language.org.ai	LanguageVerb	Provide	Provide	provide	provision	205
-https://language.org.ai/Verb/Rent	language.org.ai	LanguageVerb	Rent	Rent	rent	rental	223
-https://language.org.ai/Verb/Repair	language.org.ai	LanguageVerb	Repair	Repair	repair		5880
-https://language.org.ai/Verb/Sanitize	language.org.ai	LanguageVerb	Sanitize	Sanitize	sanitize	sanitation	3
-https://language.org.ai/Verb/Sell	language.org.ai	LanguageVerb	Sell	Sell	sell	selling	36
-https://language.org.ai/Verb/Service	language.org.ai	LanguageVerb	Service	Service	service		5638
-https://language.org.ai/Verb/Set	language.org.ai	LanguageVerb	Set	Set	set	setting	8
-https://language.org.ai/Verb/Setup	language.org.ai	LanguageVerb	Setup	Setup	setup		3
-https://language.org.ai/Verb/Ship	language.org.ai	LanguageVerb	Ship	Ship	ship	shipping	44
-https://language.org.ai/Verb/Store	language.org.ai	LanguageVerb	Store	Store	store	storage	168
-https://language.org.ai/Verb/Supply	language.org.ai	LanguageVerb	Supply	Supply	supply	supplies	115
-https://language.org.ai/Verb/Teach	language.org.ai	LanguageVerb	Teach	Teach	teach	teaching	5
-https://language.org.ai/Verb/Test	language.org.ai	LanguageVerb	Test	Test	test	testing	196
-https://language.org.ai/Verb/Train	language.org.ai	LanguageVerb	Train	Train	train		294
-https://language.org.ai/Verb/Transport	language.org.ai	LanguageVerb	Transport	Transport	transport	transportation	325
-https://language.org.ai/Verb/Warehouse	language.org.ai	LanguageVerb	Warehouse	Warehouse	warehouse	warehousing	27
+url	ns	type	id	name	baseForm	variants	usageCount	digital
+https://language.org.ai/Verb/Administer	language.org.ai	LanguageVerb	Administer	Administer	administer	administration	90	
+https://language.org.ai/Verb/Advise	language.org.ai	LanguageVerb	Advise	Advise	advise	advisory	52	
+https://language.org.ai/Verb/Clean	language.org.ai	LanguageVerb	Clean	Clean	clean	cleaning	123	
+https://language.org.ai/Verb/Consult	language.org.ai	LanguageVerb	Consult	Consult	consult	consulting	120	
+https://language.org.ai/Verb/Deliver	language.org.ai	LanguageVerb	Deliver	Deliver	deliver	delivery	60	
+https://language.org.ai/Verb/Design	language.org.ai	LanguageVerb	Design	Design	design	designs	198	
+https://language.org.ai/Verb/Develop	language.org.ai	LanguageVerb	Develop	Develop	develop	development	171	
+https://language.org.ai/Verb/Educate	language.org.ai	LanguageVerb	Educate	Educate	educate	education	28	
+https://language.org.ai/Verb/Engineer	language.org.ai	LanguageVerb	Engineer	Engineer	engineer	engineering	211	
+https://language.org.ai/Verb/Fabricate	language.org.ai	LanguageVerb	Fabricate	Fabricate	fabricate	fabrication	18	
+https://language.org.ai/Verb/Handle	language.org.ai	LanguageVerb	Handle	Handle	handle	handling	34	
+https://language.org.ai/Verb/Inspect	language.org.ai	LanguageVerb	Inspect	Inspect	inspect	inspection	1695	
+https://language.org.ai/Verb/Install	language.org.ai	LanguageVerb	Install	Install	install	installation	322	
+https://language.org.ai/Verb/Lease	language.org.ai	LanguageVerb	Lease	Lease	lease		104	
+https://language.org.ai/Verb/Maintain	language.org.ai	LanguageVerb	Maintain	Maintain	maintain	maintenance	510	
+https://language.org.ai/Verb/Manage	language.org.ai	LanguageVerb	Manage	Manage	manage	management	576	
+https://language.org.ai/Verb/Manufacture	language.org.ai	LanguageVerb	Manufacture	Manufacture	manufacture	manufacturing	149	
+https://language.org.ai/Verb/Market	language.org.ai	LanguageVerb	Market	Market	market		68	
+https://language.org.ai/Verb/Operate	language.org.ai	LanguageVerb	Operate	Operate	operate	operating	152	
+https://language.org.ai/Verb/Process	language.org.ai	LanguageVerb	Process	Process	process	processing	339	
+https://language.org.ai/Verb/Produce	language.org.ai	LanguageVerb	Produce	Produce	produce	production	242	
+https://language.org.ai/Verb/Provide	language.org.ai	LanguageVerb	Provide	Provide	provide	provision	205	
+https://language.org.ai/Verb/Rent	language.org.ai	LanguageVerb	Rent	Rent	rent	rental	223	
+https://language.org.ai/Verb/Repair	language.org.ai	LanguageVerb	Repair	Repair	repair		5880	
+https://language.org.ai/Verb/Sanitize	language.org.ai	LanguageVerb	Sanitize	Sanitize	sanitize	sanitation	3	
+https://language.org.ai/Verb/Sell	language.org.ai	LanguageVerb	Sell	Sell	sell	selling	36	
+https://language.org.ai/Verb/Service	language.org.ai	LanguageVerb	Service	Service	service		5638	
+https://language.org.ai/Verb/Set	language.org.ai	LanguageVerb	Set	Set	set	setting	8	
+https://language.org.ai/Verb/Setup	language.org.ai	LanguageVerb	Setup	Setup	setup		3	
+https://language.org.ai/Verb/Ship	language.org.ai	LanguageVerb	Ship	Ship	ship	shipping	44	
+https://language.org.ai/Verb/Store	language.org.ai	LanguageVerb	Store	Store	store	storage	168	
+https://language.org.ai/Verb/Supply	language.org.ai	LanguageVerb	Supply	Supply	supply	supplies	115	
+https://language.org.ai/Verb/Teach	language.org.ai	LanguageVerb	Teach	Teach	teach	teaching	5	
+https://language.org.ai/Verb/Test	language.org.ai	LanguageVerb	Test	Test	test	testing	196	
+https://language.org.ai/Verb/Train	language.org.ai	LanguageVerb	Train	Train	train		294	
+https://language.org.ai/Verb/Transport	language.org.ai	LanguageVerb	Transport	Transport	transport	transportation	325	
+https://language.org.ai/Verb/Warehouse	language.org.ai	LanguageVerb	Warehouse	Warehouse	warehouse	warehousing	27	

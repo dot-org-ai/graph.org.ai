@@ -667,12 +667,12 @@ function generateNAICSData(): void {
 }
 
 /**
- * Generate NAPCS.org.ai data
+ * Generate NAPCS services.org.ai data
  */
 function generateNAPCSData(): void {
-  console.log('\n📊 Generating NAPCS.org.ai data...')
+  console.log('\n📊 Generating services.org.ai NAPCS data...')
 
-  const domain = 'https://napcs.org.ai'
+  const domain = 'https://services.org.ai'
 
   const source = parseTSV(path.join(SOURCE_DIR, 'NAPCS/NAPCS.NAPCS2022Structure.tsv'))
 
@@ -680,16 +680,17 @@ function generateNAPCSData(): void {
     .filter(row => row.code && row.hierarchicalStructure)
     .map(row => {
       const id = row.code
-      return createEntity(domain, 'Product', id, {
+      return createEntity(domain, 'Service', id, {
         name: row.hierarchicalStructure,
         description: row.hierarchicalStructure,
         code: row.code,
         level: row.level || '',
         parent: row.parent || '',
+        sameAs: `https://standards.org.ai/napcs/${row.code}`,
       })
     })
 
-  writeTSV(path.join(DATA_DIR, 'NAPCS.Product.tsv'), data)
+  writeTSV(path.join(DATA_DIR, 'Services.tsv'), data)
 }
 
 /**

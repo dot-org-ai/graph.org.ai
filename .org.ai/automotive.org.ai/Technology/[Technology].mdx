@@ -1,0 +1,104 @@
+---
+$context: https://automotive.org.ai/Technology
+$id: https://automotive.org.ai/Technology/{id}
+$type: https://schema.org.ai/Thing
+category: AutomotiveTechnology
+technologyType: {technologyType}
+---
+
+# {name}
+
+{description}
+
+## Technology Overview
+
+<TechnologyOverview technology={technology} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <TechnologyTypeBadge type={technologyType} /> |
+| Category | <TechnologyCategory category={category} /> |
+| Maturity | <MaturityBadge level={maturityLevel} /> |
+| Adoption | <AdoptionBadge level={adoptionLevel} /> |
+
+## Technical Description
+
+<TechnicalDescription technology={technology} />
+
+### How It Works
+
+<HowItWorks
+  technology={technology}
+  showDiagrams={true}
+/>
+
+### Key Components
+
+<KeyComponents
+  technology={technology}
+  showFunction={true}
+/>
+
+## Applications
+
+<Applications
+  technology={technology}
+  showVehicleTypes={true}
+/>
+
+### Current Applications
+
+<CurrentApplications
+  technology={technology}
+  showExamples={true}
+/>
+
+### Future Applications
+
+<FutureApplications
+  technology={technology}
+  showRoadmap={true}
+/>
+
+## Suppliers
+
+<TechnologySuppliers
+  technology={technology}
+  showMarketShare={true}
+/>
+
+## Standards
+
+<ApplicableStandards
+  technology={technology}
+  showCompliance={true}
+/>
+
+## Skills Required
+
+<SkillsRequired
+  technology={technology}
+  source="onet"
+  showLevel={true}
+/>
+
+## Occupations
+
+<OccupationsInvolved
+  technology={technology}
+  source="onet"
+  roles={['development', 'manufacturing', 'service']}
+/>
+
+## Related Technologies
+
+<RelatedTechnologies
+  technology={technology}
+  relationships={['enables', 'enabledBy', 'competes', 'complements']}
+/>
+
+## Sources
+
+- <DatabaseLink namespace="automotive.org.ai/Technology" type={id} />

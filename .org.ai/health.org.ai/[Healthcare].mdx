@@ -1,0 +1,58 @@
+---
+$context: https://healthcare.org.ai
+$id: https://healthcare.org.ai/{slug}
+$type: https://schema.org.ai/MedicalEntity
+source: Various
+entityType: {entityType}
+category: {category}
+---
+
+# {name}
+
+{description}
+
+## Healthcare Overview
+
+<HealthcareOverview entity={entity} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <HealthcareTypeBadge type={entityType} /> |
+| Category | <CategoryBadge category={category} /> |
+| ICD-10 Code | {icd10Code} |
+| CPT Code | {cptCode} |
+| SNOMED CT | {snomedCode} |
+
+## Detailed Description
+
+<DetailedDescription entity={entity} />
+
+## Clinical Information
+
+<ClinicalInformation
+  entity={entity}
+  showEvidence={true}
+/>
+
+## Related Healthcare Entities
+
+<RelatedEntities
+  entity={entity}
+  relationships={['treats', 'diagnoses', 'prevents', 'causes']}
+/>
+
+## Occupations Involved
+
+<OccupationsInvolved
+  entity={entity}
+  source="onet"
+  showRoles={true}
+/>
+
+## Sources
+
+- [NIH](https://www.nih.gov)
+- [CDC](https://www.cdc.gov)
+- <DatabaseLink namespace="healthcare.org.ai" type={slug} />

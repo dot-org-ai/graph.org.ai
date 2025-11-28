@@ -4,7 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ingest": "tsx ingest.ts"
+    "ingest": "tsx ingest.ts",
+    "generate": "tsx generate-data.ts",
+    "ingest-db": "tsx ingest-db.ts",
+    "export": "tsx export-from-clickhouse.ts",
+    "enrich": "tsx enrich-all-digital-scores.ts"
   },
   "dependencies": {
     "@graph.org.ai/mdxdb": "workspace:*",

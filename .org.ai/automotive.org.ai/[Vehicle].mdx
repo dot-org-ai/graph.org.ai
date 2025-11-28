@@ -1,0 +1,216 @@
+---
+$context: https://automotive.org.ai/Vehicles
+$id: https://automotive.org.ai/Vehicles/{id}
+$type: https://schema.org.ai/Vehicle
+category: Vehicle
+vehicleType: {vehicleType}
+fuelType: {fuelType}
+---
+
+# {name}
+
+{description}
+
+## Vehicle Overview
+
+<VehicleOverview vehicle={vehicle} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | <VehicleTypeBadge type={vehicleType} /> |
+| Make | <ManufacturerLink manufacturer={make} /> |
+| Model | {model} |
+| Year | {year} |
+| Fuel Type | <FuelTypeBadge type={fuelType} /> |
+| Body Style | <BodyStyleBadge style={bodyStyle} /> |
+
+## Specifications
+
+<VehicleSpecifications vehicle={vehicle} />
+
+### Performance
+
+<PerformanceSpecs
+  vehicle={vehicle}
+  metrics={['horsepower', 'torque', 'acceleration', 'topSpeed']}
+/>
+
+### Dimensions
+
+<DimensionSpecs
+  vehicle={vehicle}
+  showComparison={true}
+/>
+
+### Fuel Economy
+
+<FuelEconomy
+  vehicle={vehicle}
+  showEPAratings={true}
+/>
+
+## Systems
+
+<VehicleSystems
+  vehicle={vehicle}
+  showDiagrams={true}
+/>
+
+### Powertrain
+
+<PowertrainSystem
+  vehicle={vehicle}
+  showComponents={true}
+/>
+
+### Chassis
+
+<ChassisSystem
+  vehicle={vehicle}
+  showSuspension={true}
+/>
+
+### Electrical
+
+<ElectricalSystem
+  vehicle={vehicle}
+  showWiringDiagrams={true}
+/>
+
+### ADAS Features
+
+<ADASFeatures
+  vehicle={vehicle}
+  showCapabilities={true}
+/>
+
+## Safety
+
+<SafetyOverview vehicle={vehicle} />
+
+### Crash Test Ratings
+
+<CrashTestRatings
+  vehicle={vehicle}
+  sources={['NHTSA', 'IIHS', 'EuroNCAP']}
+/>
+
+### Safety Features
+
+<SafetyFeatures
+  vehicle={vehicle}
+  showStandard={true}
+  showOptional={true}
+/>
+
+## Service & Maintenance
+
+<MaintenanceSchedule
+  vehicle={vehicle}
+  showIntervals={true}
+/>
+
+### Common Services
+
+<CommonServices
+  vehicle={vehicle}
+  showPricing={true}
+/>
+
+### Recalls
+
+<RecallHistory
+  vehicle={vehicle}
+  showStatus={true}
+/>
+
+### TSBs
+
+<TechnicalServiceBulletins
+  vehicle={vehicle}
+  showSeverity={true}
+/>
+
+## Parts
+
+<PartsCatalog
+  vehicle={vehicle}
+  showCategories={true}
+/>
+
+### OEM Parts
+
+<OEMParts
+  vehicle={vehicle}
+  showPartNumbers={true}
+/>
+
+### Aftermarket Options
+
+<AftermarketParts
+  vehicle={vehicle}
+  showQuality={true}
+/>
+
+## Diagnostic Codes
+
+<DiagnosticCodes
+  vehicle={vehicle}
+  groupBySystem={true}
+/>
+
+### Common DTCs
+
+<CommonDTCs
+  vehicle={vehicle}
+  showSolutions={true}
+/>
+
+## Market Information
+
+<MarketInfo vehicle={vehicle} />
+
+### Pricing
+
+<VehiclePricing
+  vehicle={vehicle}
+  showTrends={true}
+/>
+
+### Depreciation
+
+<DepreciationCurve
+  vehicle={vehicle}
+  years={10}
+/>
+
+### Ownership Costs
+
+<OwnershipCosts
+  vehicle={vehicle}
+  period="5year"
+/>
+
+## Related Vehicles
+
+<RelatedVehicles
+  vehicle={vehicle}
+  relationships={['competitors', 'alternatives', 'successor', 'predecessor']}
+/>
+
+## Occupations
+
+<OccupationsInvolved
+  vehicle={vehicle}
+  source="onet"
+  roles={['design', 'manufacturing', 'sales', 'service']}
+/>
+
+## Sources
+
+- <ManufacturerLink manufacturer={make} type="official" />
+- [NHTSA](https://www.nhtsa.gov)
+- [EPA Fuel Economy](https://www.fueleconomy.gov)
+- <DatabaseLink namespace="automotive.org.ai/Vehicles" type={id} />

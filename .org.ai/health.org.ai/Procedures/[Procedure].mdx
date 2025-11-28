@@ -1,0 +1,266 @@
+---
+$context: https://healthcare.org.ai/Procedures
+$id: https://healthcare.org.ai/Procedures/{slug}
+$type: https://schema.org.ai/MedicalProcedure
+source: CPT
+cptCode: "{cptCode}"
+hcpcsCode: "{hcpcsCode}"
+name: "{name}"
+procedureType: "{procedureType}"
+category: "{category}"
+---
+
+# {name}
+
+{description}
+
+## Procedure Overview
+
+<ProcedureOverview procedure={procedure} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| CPT Code | <CPTCode code={cptCode} /> |
+| HCPCS Code | <HCPCSCode code={hcpcsCode} /> |
+| Type | <ProcedureTypeBadge type={procedureType} /> |
+| Category | <CategoryBadge category={category} /> |
+| Duration | {typicalDuration} |
+| Setting | <SettingBadge setting={setting} /> |
+
+## Procedure Description
+
+<ProcedureDescription procedure={procedure} />
+
+### Purpose
+
+<ProcedurePurpose
+  procedure={procedure}
+  showIndications={true}
+/>
+
+### Method
+
+<ProcedureMethod
+  procedure={procedure}
+  showSteps={true}
+/>
+
+## Indications
+
+<Indications
+  procedure={procedure}
+  showConditions={true}
+  showEvidence={true}
+/>
+
+### Conditions Treated
+
+<ConditionsTreated
+  procedure={procedure}
+  showEffectiveness={true}
+/>
+
+## Contraindications
+
+<Contraindications
+  procedure={procedure}
+  showRelative={true}
+  showAbsolute={true}
+/>
+
+## Preparation
+
+<Preparation procedure={procedure} />
+
+### Pre-Procedure Instructions
+
+<PreProcedureInstructions
+  procedure={procedure}
+  showTimeline={true}
+/>
+
+### Required Tests
+
+<RequiredTests
+  procedure={procedure}
+  showPurpose={true}
+/>
+
+## Procedure Steps
+
+<ProcedureSteps
+  procedure={procedure}
+  showDuration={true}
+  showImages={true}
+/>
+
+### Anesthesia
+
+<Anesthesia
+  procedure={procedure}
+  showOptions={true}
+/>
+
+### Technique
+
+<Technique
+  procedure={procedure}
+  showVariations={true}
+/>
+
+## Recovery
+
+<Recovery procedure={procedure} />
+
+### Post-Procedure Care
+
+<PostProcedureCare
+  procedure={procedure}
+  showInstructions={true}
+/>
+
+### Recovery Timeline
+
+<RecoveryTimeline
+  procedure={procedure}
+  showMilestones={true}
+/>
+
+## Risks & Complications
+
+<RisksComplications procedure={procedure} />
+
+### Common Risks
+
+<CommonRisks
+  procedure={procedure}
+  showFrequency={true}
+/>
+
+### Serious Complications
+
+<SeriousComplications
+  procedure={procedure}
+  showManagement={true}
+/>
+
+## Outcomes
+
+<Outcomes procedure={procedure} />
+
+### Success Rates
+
+<SuccessRates
+  procedure={procedure}
+  showFactors={true}
+/>
+
+### Quality Metrics
+
+<QualityMetrics
+  procedure={procedure}
+  showBenchmarks={true}
+/>
+
+## Healthcare Providers
+
+<HealthcareProviders procedure={procedure} />
+
+### Specialties Performing
+
+<SpecialtiesPerforming
+  procedure={procedure}
+  source="onet"
+  showCertifications={true}
+/>
+
+### Skills Required
+
+<SkillsRequired
+  procedure={procedure}
+  source="onet"
+  showLevel={true}
+/>
+
+## Equipment & Supplies
+
+<EquipmentSupplies procedure={procedure} />
+
+### Required Equipment
+
+<RequiredEquipment
+  procedure={procedure}
+  showSpecifications={true}
+/>
+
+### Supplies
+
+<Supplies
+  procedure={procedure}
+  showProducts={true}
+/>
+
+## Cost & Coverage
+
+<CostCoverage procedure={procedure} />
+
+### Estimated Cost
+
+<EstimatedCost
+  procedure={procedure}
+  showRange={true}
+/>
+
+### Insurance Coverage
+
+<InsuranceCoverage
+  procedure={procedure}
+  showCriteria={true}
+/>
+
+### Medicare Reimbursement
+
+<MedicareReimbursement
+  procedure={procedure}
+  showRates={true}
+/>
+
+## Alternatives
+
+<Alternatives
+  procedure={procedure}
+  showComparison={true}
+/>
+
+## Evidence & Guidelines
+
+<EvidenceGuidelines procedure={procedure} />
+
+### Clinical Evidence
+
+<ClinicalEvidence
+  procedure={procedure}
+  showTrials={true}
+/>
+
+### Practice Guidelines
+
+<PracticeGuidelines
+  procedure={procedure}
+  showSource={true}
+/>
+
+## Related Procedures
+
+<RelatedProcedures
+  procedure={procedure}
+  relationships={['alternative', 'complementary', 'prerequisite', 'followup']}
+/>
+
+## Sources
+
+- [AMA CPT](https://www.ama-assn.org/amaone/cpt-current-procedural-terminology)
+- [CMS HCPCS](https://www.cms.gov/Medicare/Coding/MedHCPCSGenInfo)
+- <DatabaseLink namespace="healthcare.org.ai/Procedures" type={slug} />

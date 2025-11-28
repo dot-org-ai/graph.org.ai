@@ -1,0 +1,287 @@
+---
+$context: https://healthcare.org.ai/Conditions
+$id: https://healthcare.org.ai/Conditions/{slug}
+$type: https://schema.org.ai/MedicalCondition
+source: ICD-10
+icd10Code: "{icd10Code}"
+snomedCode: "{snomedCode}"
+name: "{name}"
+category: "{category}"
+---
+
+# {name}
+
+{description}
+
+## Condition Overview
+
+<ConditionOverview condition={condition} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| ICD-10 Code | <ICD10Code code={icd10Code} /> |
+| SNOMED CT | <SNOMEDCode code={snomedCode} /> |
+| Category | <ConditionCategoryBadge category={category} /> |
+| Prevalence | <PrevalenceBadge condition={condition} /> |
+| Severity | <SeverityBadge severity={severity} /> |
+
+## Medical Description
+
+<MedicalDescription condition={condition} />
+
+### Definition
+
+<ConditionDefinition
+  condition={condition}
+  source="medical"
+/>
+
+### Pathophysiology
+
+<Pathophysiology
+  condition={condition}
+  showMechanisms={true}
+/>
+
+## Symptoms
+
+<SymptomsOverview condition={condition} />
+
+### Signs & Symptoms
+
+<SignsSymptoms
+  condition={condition}
+  showFrequency={true}
+/>
+
+### Symptom Timeline
+
+<SymptomTimeline
+  condition={condition}
+  showProgression={true}
+/>
+
+## Causes & Risk Factors
+
+<CausesRiskFactors condition={condition} />
+
+### Causes
+
+<Causes
+  condition={condition}
+  showEvidence={true}
+/>
+
+### Risk Factors
+
+<RiskFactors
+  condition={condition}
+  showRelativeRisk={true}
+/>
+
+### Prevention
+
+<Prevention
+  condition={condition}
+  showEvidence={true}
+/>
+
+## Diagnosis
+
+<DiagnosisOverview condition={condition} />
+
+### Diagnostic Criteria
+
+<DiagnosticCriteria
+  condition={condition}
+  showSource={true}
+/>
+
+### Diagnostic Tests
+
+<DiagnosticTests
+  condition={condition}
+  showSensitivity={true}
+  showSpecificity={true}
+/>
+
+### Differential Diagnosis
+
+<DifferentialDiagnosis
+  condition={condition}
+  showDistinguishingFeatures={true}
+/>
+
+## Treatment
+
+<TreatmentOverview condition={condition} />
+
+### Treatment Options
+
+<TreatmentOptions
+  condition={condition}
+  showEvidence={true}
+  showCostEffectiveness={true}
+/>
+
+### Medications
+
+<Medications
+  condition={condition}
+  showDosing={true}
+  showSideEffects={true}
+/>
+
+### Procedures
+
+<Procedures
+  condition={condition}
+  showOutcomes={true}
+/>
+
+### Lifestyle Modifications
+
+<LifestyleModifications
+  condition={condition}
+  showEvidence={true}
+/>
+
+## Prognosis
+
+<PrognosisOverview condition={condition} />
+
+### Outcomes
+
+<Outcomes
+  condition={condition}
+  showStatistics={true}
+/>
+
+### Complications
+
+<Complications
+  condition={condition}
+  showRisk={true}
+/>
+
+## Epidemiology
+
+<Epidemiology condition={condition} />
+
+### Prevalence
+
+<Prevalence
+  condition={condition}
+  showDemographics={true}
+/>
+
+### Incidence
+
+<Incidence
+  condition={condition}
+  showTrends={true}
+/>
+
+### Geographic Distribution
+
+<GeographicDistribution
+  condition={condition}
+  showMap={true}
+/>
+
+## Healthcare Providers
+
+<HealthcareProviders condition={condition} />
+
+### Specialties Treating
+
+<SpecialtiesTreating
+  condition={condition}
+  source="onet"
+  showOccupations={true}
+/>
+
+### Care Team
+
+<CareTeam
+  condition={condition}
+  showRoles={true}
+/>
+
+## Patient Resources
+
+<PatientResources condition={condition} />
+
+### Support Groups
+
+<SupportGroups
+  condition={condition}
+  showContacts={true}
+/>
+
+### Educational Materials
+
+<EducationalMaterials
+  condition={condition}
+  showFormats={true}
+/>
+
+## Clinical Guidelines
+
+<ClinicalGuidelines
+  condition={condition}
+  showSource={true}
+/>
+
+## Research & Clinical Trials
+
+<ResearchClinicalTrials condition={condition} />
+
+### Ongoing Research
+
+<OngoingResearch
+  condition={condition}
+  showStatus={true}
+/>
+
+### Clinical Trials
+
+<ClinicalTrials
+  condition={condition}
+  source="clinicaltrials.gov"
+/>
+
+## Coding & Billing
+
+<CodingBilling condition={condition} />
+
+### ICD-10 Codes
+
+<ICD10Codes
+  condition={condition}
+  showHierarchy={true}
+/>
+
+### CPT Codes
+
+<CPTCodes
+  condition={condition}
+  showProcedures={true}
+/>
+
+## Related Conditions
+
+<RelatedConditions
+  condition={condition}
+  relationships={['comorbid', 'complication', 'differential', 'related']}
+/>
+
+## Sources
+
+- [NIH - NCBI](https://www.ncbi.nlm.nih.gov)
+- [CDC](https://www.cdc.gov)
+- [Mayo Clinic](https://www.mayoclinic.org)
+- [UpToDate](https://www.uptodate.com)
+- <DatabaseLink namespace="healthcare.org.ai/Conditions" type={slug} />
