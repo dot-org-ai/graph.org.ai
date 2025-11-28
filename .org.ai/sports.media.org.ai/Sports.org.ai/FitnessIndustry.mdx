@@ -1,0 +1,535 @@
+---
+$context: https://sports.media.org.ai/FitnessIndustry
+$id: https://sports.media.org.ai/FitnessIndustry/{id}
+$type: https://schema.org.ai/HealthAndFitnessService
+category: Fitness Industry
+facilityType: {facilityType}
+serviceType: {serviceType}
+naicsCode: 7139
+---
+
+# {name}
+
+{description}
+
+## Fitness Industry Overview
+
+<FitnessIndustryOverview entity={entity} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Facility Type | <FacilityTypeBadge type={facilityType} /> |
+| Service Type | <ServiceTypeBadge type={serviceType} /> |
+| NAICS Code | 7139 - Other Amusement and Recreation Industries |
+| Founded | {established} |
+| Location | {location} |
+| Membership | {membershipCount} |
+| Services | {primaryServices} |
+
+## Fitness Industry Profile
+
+### Overview
+
+The fitness industry encompasses health clubs, fitness centers, personal training, group fitness classes, yoga studios, and sports training facilities. This includes:
+
+- **Health & Fitness Clubs**: Commercial gyms with equipment and classes
+- **Specialized Studios**: Yoga, pilates, dance, cycling, functional fitness
+- **Personal Training Services**: One-on-one coaching and programming
+- **Group Fitness Classes**: Structured fitness programs for multiple participants
+- **Sports Performance Training**: Athletic training and conditioning
+- **Wellness Centers**: Holistic health and fitness services
+- **Corporate Fitness**: Employer-sponsored fitness programs
+- **Digital Fitness**: Virtual classes, apps, and online coaching
+
+### Market Segments
+
+#### Commercial Health Clubs
+- Full-service gyms with diverse equipment
+- Group fitness class offerings
+- Personal training services
+- Aquatic facilities
+- Childcare and amenities
+
+#### Specialized Fitness Studios
+- Yoga and pilates studios
+- CrossFit boxes and functional fitness
+- Cycling and spin studios
+- Martial arts and boxing
+- Dance and movement studios
+
+#### Training Services
+- Personal training sessions
+- Small group training
+- Sport-specific coaching
+- Athletic conditioning
+- Nutrition and wellness counseling
+
+#### Corporate & Workplace Fitness
+- On-site fitness facilities
+- Wellness programs
+- Fitness classes and coaching
+- Health incentives and tracking
+
+## Facility Overview
+
+<FacilityOverview entity={entity} />
+
+### Equipment & Amenities
+
+<EquipmentAmenities
+  entity={entity}
+  categories={['cardio', 'strength', 'functional', 'group_fitness', 'recovery', 'amenities']}
+  showInventory={true}
+/>
+
+### Fitness Classes
+
+<FitnessClasses
+  entity={entity}
+  categories={['cardio', 'strength', 'flexibility', 'dance', 'martial_arts', 'specialized']}
+  showSchedule={true}
+  showParticipation={true}
+/>
+
+### Specialized Services
+
+<SpecializedServices
+  entity={entity}
+  services={['personal_training', 'nutrition', 'physical_therapy', 'massage', 'sports_performance']}
+  showAvailability={true}
+/>
+
+## Membership & Pricing
+
+<MembershipOverview entity={entity} />
+
+### Membership Tiers
+
+<MembershipTiers
+  entity={entity}
+  showTiers={true}
+  showPricing={true}
+  showBenefits={true}
+/>
+
+### Membership Growth
+
+<MembershipMetrics
+  entity={entity}
+  metrics={['total_members', 'active_members', 'member_growth', 'retention_rate', 'churn_rate']}
+  showTrends={true}
+/>
+
+### Member Segments
+
+<MemberSegmentation
+  entity={entity}
+  segments={['age', 'fitness_level', 'goals', 'membership_type']}
+  showDistribution={true}
+/>
+
+## Training Programs & Services
+
+<ProgramOverview entity={entity} />
+
+### Personal Training
+
+<PersonalTraining
+  entity={entity}
+  showTrainers={true}
+  showCertifications={true}
+  showSpecialties={true}
+  showAvailability={true}
+/>
+
+### Group Fitness Programs
+
+<GroupFitness
+  entity={entity}
+  classes={['yoga', 'pilates', 'spinning', 'bootcamp', 'dance', 'aquatic']}
+  showSchedule={true}
+  showInstructors={true}
+/>
+
+### Nutrition & Coaching
+
+<NutritionServices
+  entity={entity}
+  showNutritionists={true}
+  showPrograms={true}
+  showDietaryOptions={true}
+/>
+
+### Athletic Training & Performance
+
+<AthleticTraining
+  entity={entity}
+  showPrograms={true}
+  showCoaches={true}
+  showSpecialties={true}
+/>
+
+## Facility Operations
+
+<OperationsOverview entity={entity} />
+
+### Facility Management
+
+<FacilityManagement
+  entity={entity}
+  showMaintenance={true}
+  showCapacity={true}
+  showOperatingHours={true}
+/>
+
+### Staffing & Personnel
+
+<StaffingStructure
+  entity={entity}
+  roles={['Managers', 'Personal Trainers', 'Group Fitness Instructors', 'Front Desk', 'Maintenance']}
+  showCount={true}
+/>
+
+### Member Support
+
+<MemberSupport
+  entity={entity}
+  services={['Onboarding', 'Goal Setting', 'Progress Tracking', 'Technical Support']}
+  showQuality={true}
+/>
+
+## Financial Performance
+
+<FinancialOverview entity={entity} />
+
+### Revenue Streams
+
+<RevenueBreakdown
+  entity={entity}
+  sources={['membership_fees', 'personal_training', 'classes', 'retail', 'services', 'corporate']}
+  showPercentage={true}
+/>
+
+### Operating Expenses
+
+<OperatingExpenses
+  entity={entity}
+  categories={['payroll', 'rent', 'utilities', 'equipment', 'maintenance', 'marketing']}
+  showBreakdown={true}
+/>
+
+### Key Financial Metrics
+
+<FinancialMetrics
+  entity={entity}
+  metrics={['revenue_per_member', 'average_membership_duration', 'member_lifetime_value', 'operating_margin']}
+  showComparison={true}
+/>
+
+## Workforce & Occupations
+
+<WorkforceOverview entity={entity} />
+
+### Employment
+
+<Employment
+  entity={entity}
+  roles={['Fitness Instructors', 'Personal Trainers', 'Managers', 'Support Staff']}
+  showCount={true}
+  showFTE={true}
+/>
+
+### Trainer Certifications
+
+<TrainerCertifications
+  entity={entity}
+  certifications={['NASM', 'ACE', 'ISSA', 'NFPT', 'Specialty Certifications']}
+  showDistribution={true}
+/>
+
+### Occupations Employed
+
+<OccupationsEmployed
+  entity={entity}
+  source="onet"
+  roles={['Fitness Trainers and Aerobics Instructors', 'Personal Care Aides', 'Massage Therapists', 'Health Coaches']}
+  showDistribution={true}
+/>
+
+### Skill Development
+
+<SkillDevelopment
+  entity={entity}
+  showTraining={true}
+  showCertificationPrograms={true}
+  showCareerPath={true}
+/>
+
+## Technology & Innovation
+
+<TechnologyStack entity={entity} />
+
+### Membership Management
+
+<MembershipTech
+  entity={entity}
+  systems={['CRM', 'Access Control', 'Billing', 'Class Scheduling']}
+  showFeatures={true}
+/>
+
+### Fitness Tracking & Apps
+
+<FitnessTechnology
+  entity={entity}
+  platforms={['mobile_app', 'wearables_integration', 'fitness_tracking', 'progress_monitoring']}
+  showCapabilities={true}
+/>
+
+### Digital Fitness Services
+
+<DigitalFitness
+  entity={entity}
+  services={['live_classes', 'on_demand_videos', 'virtual_training', 'online_coaching']}
+  showReach={true}
+/>
+
+### Facility Technology
+
+<FacilityTech
+  entity={entity}
+  systems={['equipment_connectivity', 'biometric_tracking', 'environmental_control', 'safety_systems']}
+  showIntegration={true}
+/>
+
+## Health & Wellness Services
+
+<HealthServices entity={entity} />
+
+### Preventive Health
+
+<PreventiveServices
+  entity={entity}
+  services={['fitness_assessment', 'health_screening', 'posture_analysis', 'movement_screening']}
+  showAvailability={true}
+/>
+
+### Recovery Services
+
+<RecoveryServices
+  entity={entity}
+  services={['massage', 'stretching', 'sauna', 'ice_bath', 'compression_therapy']}
+  showOffer={true}
+/>
+
+### Mental Wellness
+
+<MentalWellness
+  entity={entity}
+  programs={['stress_management', 'mindfulness', 'yoga', 'meditation']}
+  showFocus={true}
+/>
+
+## Community & Engagement
+
+<CommunityOverview entity={entity} />
+
+### Member Community
+
+<MemberCommunity
+  entity={entity}
+  showEvents={true}
+  showSocialPrograms={true}
+  showGroupActivities={true}
+/>
+
+### Marketing & Promotions
+
+<Marketing
+  entity={entity}
+  channels={['digital', 'social_media', 'referral', 'partnerships', 'local']}
+  showStrategy={true}
+/>
+
+### Corporate Partnerships
+
+<CorporatePartnerships
+  entity={entity}
+  partners={['corporate_wellness', 'sports_brands', 'health_services']}
+  showScope={true}
+/>
+
+## Environmental & Sustainability
+
+<SustainabilityOverview entity={entity} />
+
+### Green Initiatives
+
+<GreenInitiatives
+  entity={entity}
+  showEnergyEfficiency={true}
+  showWaterManagement={true}
+  showRecycling={true}
+/>
+
+### Health & Safety Standards
+
+<SafetyStandards
+  entity={entity}
+  certifications={['ANSI Standards', 'CDC Guidelines', 'ADA Compliance']}
+  showCompliance={true}
+/>
+
+## Customer Reviews & Satisfaction
+
+<SatisfactionMetrics entity={entity} />
+
+### Member Satisfaction
+
+<MemberFeedback
+  entity={entity}
+  metrics={['satisfaction_score', 'nps', 'retention_rate', 'referral_rate']}
+  showRatings={true}
+/>
+
+### Reviews & Ratings
+
+<OnlineReviews
+  entity={entity}
+  platforms={['Google', 'Yelp', 'Apple', 'Android']}
+  showRatings={true}
+  showComments={true}
+/>
+
+## Certifications & Accreditations
+
+### Quality Standards
+
+<Certifications
+  entity={entity}
+  certifications={['ACE Certified', 'ISSA Certified', 'NASM Certified', 'Quality Standards']}
+  showStatus={true}
+/>
+
+## Market Position & Competition
+
+### Competitive Landscape
+
+<CompetitiveAnalysis
+  entity={entity}
+  competitors={['nearby_gyms', 'specialty_studios', 'virtual_fitness']}
+  showStrengths={true}
+  showWeaknesses={true}
+/>
+
+### Market Share
+
+<MarketShare
+  entity={entity}
+  metrics={['membership_count', 'market_penetration', 'member_engagement']}
+  showPosition={true}
+/>
+
+## Connections to Related Domains
+
+### Sports & Athletics
+- [`sports.org.ai/ProfessionalSports`](./ProfessionalSports.mdx) - Athletic training partnerships
+- Performance enhancement programs
+- Sports-specific coaching
+
+### Health & Wellness
+- [`health.org.ai`](https://health.org.ai) - Health services and medical professionals
+- Nutrition and dietary guidance
+- Physical therapy and rehabilitation
+
+### Sports Technology
+- [`sports.org.ai/SportsTech`](./SportsTech.mdx) - Wearable fitness tracking
+- Fitness apps and digital platforms
+- Performance analytics
+
+### Occupations
+- [`occupations.org.ai`](https://occupations.org.ai) - Fitness professionals
+- Personal trainers and instructors
+- Health coaches and educators
+
+### Retail & Products
+- [`retail.org.ai`](https://retail.org.ai) - Fitness equipment and apparel
+- Nutrition products and supplements
+- Fitness gear and accessories
+
+## Industry Trends
+
+### Growth Trends
+- **Digital/Hybrid Models**: Combining in-person and virtual fitness
+- **Boutique Studios**: Specialized fitness experiences
+- **Wellness Integration**: Holistic health focus
+- **Wearable Technology**: Integration with fitness apps and trackers
+- **Corporate Wellness**: Growing employer programs
+
+### Market Dynamics
+- **Consolidation**: Large chains acquiring smaller studios
+- **Budget Options**: Low-cost fitness alternatives
+- **Premium Services**: High-end fitness and wellness
+- **Niche Communities**: Specialized fitness communities
+- **Recovery Focus**: Increased emphasis on recovery and injury prevention
+
+## Key Performance Indicators
+
+### Membership Metrics
+- **Member Count**: Total active members
+- **Member Growth Rate**: Rate of new member acquisition
+- **Retention Rate**: Percentage of members renewing
+- **Churn Rate**: Percentage of members canceling
+- **Member Lifetime Value**: Total revenue per member
+
+### Financial Metrics
+- **Revenue Per Available Seat (RAPM)**: Revenue efficiency
+- **Average Revenue Per Member (ARPM)**: Member revenue
+- **Operating Margin**: Profitability percentage
+- **Cost Per Acquisition (CPA)**: Cost to gain new member
+- **Break-even Capacity**: Utilization needed for profitability
+
+### Operational Metrics
+- **Class Utilization**: Percentage of seats filled
+- **Peak Hour Utilization**: Maximum capacity usage
+- **Facility Utilization**: Overall facility usage
+- **Staff Productivity**: Revenue per staff member
+- **Member Engagement**: Class attendance frequency
+
+## Future Outlook
+
+### Expansion Plans
+
+<ExpansionStrategy
+  entity={entity}
+  showNewLocations={true}
+  showNewServices={true}
+  showTimeline={true}
+/>
+
+### Digital Strategy
+
+<DigitalStrategy
+  entity={entity}
+  showMobileApp={true}
+  showVirtualClasses={true}
+  showDataLeveraging={true}
+/>
+
+## Related Fitness Organizations
+
+<RelatedOrganizations
+  entity={entity}
+  relationships={['competitors', 'complementary_services', 'partnerships']}
+/>
+
+## Sources
+
+- <FacilityWebsite entity={entity} type="official" />
+- [Fitness Center Information]({websiteUrl})
+- <DatabaseLink namespace="sports.org.ai/FitnessIndustry" type={id} />
+- IHRSA (International Health, Racquet & Sportsclub Association) - Industry Data
+- Bureau of Labor Statistics - Fitness Occupations
+- American Council on Exercise (ACE)
+- National Academy of Sports Medicine (NASM)

@@ -1,0 +1,499 @@
+---
+$context: https://biotech.science.org.ai
+$id: https://biotech.science.org.ai/Genomics
+$type: https://biotech.science.org.ai/Biotechnology
+name: "Genomics"
+description: "DNA sequencing technologies, CRISPR gene editing, genome assembly, variant analysis, and genomic medicine applications"
+naicsCode: "541711"
+parent: https://naics.org.ai/541711
+keywords:
+  - genomics
+  - DNA sequencing
+  - whole genome sequencing
+  - whole exome sequencing
+  - next-generation sequencing
+  - NGS
+  - CRISPR
+  - gene editing
+  - CRISPR-Cas9
+  - genome assembly
+  - variant calling
+  - bioinformatics
+  - precision medicine
+  - personalized medicine
+  - genetic testing
+---
+
+export const items = async () => {
+  // Fetch genomics programs from the database
+  return []
+}
+
+# Genomics
+
+Genomics is the comprehensive study of complete genomes, encompassing DNA sequencing, variant analysis, genome assembly, and gene editing technologies. This field has revolutionized our understanding of genetics, enabled precision medicine, and created entirely new therapeutic modalities. The genomics market is expanding rapidly with declining sequencing costs, advancing computational capabilities, and increasing clinical applications.
+
+## Overview
+
+Genomics has transformed from an academic discipline to a foundational healthcare technology:
+
+**Market Dynamics**
+- **Global sequencing market**: $10+ billion annually, growing 15-20% CAGR
+- **Cost trajectory**: Sequencing a human genome has dropped from $3B (2003) to ~$300-1,000 (2024)
+- **Clinical adoption**: Thousands of hospitals and clinics now offer genetic testing
+- **Data explosion**: Over 1 billion human genomes sequenced globally
+- **Personalized medicine**: Moving from genomic research to clinical implementation
+
+**Key Enabling Technologies**
+- **Next-generation sequencing (NGS)**: 10,000-1,000,000x faster than Sanger sequencing
+- **Long-read sequencing**: Better for structural variants and repetitive regions
+- **Single-cell genomics**: Understanding cell-to-cell heterogeneity
+- **Spatial genomics**: Maintaining tissue context during analysis
+- **Bioinformatics pipelines**: Converting raw sequence data to clinical insights
+
+**Clinical Applications**
+- Cancer genomics and oncology
+- Rare disease diagnosis
+- Pharmacogenomics and drug response prediction
+- Prenatal and carrier screening
+- Infectious disease surveillance
+- Population genetics and evolutionary studies
+
+## DNA Sequencing Technologies
+
+### Sequencing Methods
+
+**Sanger Sequencing (First Generation)**
+- **Mechanism**: Dideoxynucleotide chain termination
+- **Throughput**: 1-1,000 bases per reaction
+- **Read length**: 500-1,500 bp typical
+- **Accuracy**: >99.9%
+- **Applications**: PCR product verification, small-scale projects, gold standard validation
+- **Cost**: $5-25 per reaction
+- **Timeline**: Hours to days
+
+**Next-Generation Sequencing (NGS)**
+
+**Illumina Sequencing (Short-read, Most Common)**
+- **Technology**: Cluster generation and sequencing by synthesis (SBS)
+- **Platform Examples**: HiSeq, MiSeq, NovaSeq, iSeq
+- **Read length**: 50-300 bp (paired-end reads possible)
+- **Throughput**: Millions to billions of reads per run
+- **Cost**: $0.01-0.1 per million bases
+- **Accuracy**: >99% per base
+- **Timeline**: Hours to days
+- **Strengths**: High accuracy, cost-effective, massive throughput, deep coverage
+- **Weaknesses**: Short reads challenge assembly, difficulty with repetitive regions
+- **Applications**: Whole genome/exome sequencing, RNA-seq, targeted panels, variant discovery
+
+**PacBio Long-Read Sequencing**
+- **Technology**: Single-molecule real-time (SMRT) sequencing
+- **Read length**: 10,000-30,000+ bp, some exceeding 100 kb
+- **Throughput**: 100,000-1,000,000 reads per run
+- **Accuracy**: ~99% (with improvements in newer versions)
+- **Cost**: $0.05-0.2 per base
+- **Timeline**: Hours
+- **Strengths**: Extremely long reads, better for repetitive regions, structural variants, phasing
+- **Weaknesses**: Moderate throughput, higher cost per base
+- **Applications**: De novo genome assembly, structural variant detection, complex rearrangements, epigenetic modifications
+
+**Oxford Nanopore Sequencing**
+- **Technology**: Nanopore-based single-molecule sequencing
+- **Read length**: 10,000-100,000+ bp (some exceeding 2 Mb)
+- **Throughput**: 50,000-500,000 reads depending on device
+- **Accuracy**: ~95-99% (improving with newer basecallers)
+- **Cost**: Low per read, portable devices
+- **Timeline**: Real-time (minutes to hours for decisions)
+- **Strengths**: Ultra-long reads, portability, real-time sequencing, low startup costs
+- **Weaknesses**: Lower accuracy than Illumina, variable read quality
+- **Applications**: Nanopore sequencing, mobile genomics, rapid diagnostics, SARS-CoV-2 surveillance
+
+**Ion Torrent Sequencing**
+- **Technology**: Semiconductor-based ion detection
+- **Read length**: 100-600 bp typical
+- **Throughput**: 1 million to 100+ million reads
+- **Accuracy**: >99%
+- **Cost**: Moderate
+- **Applications**: Targeted sequencing, smaller genomes, exome sequencing
+
+### Sequencing Workflows
+
+**Sample Preparation and Library Construction**
+1. **DNA extraction**: Genomic DNA isolation from biological samples
+2. **DNA quality assessment**: Quantification, purity, and integrity checks
+3. **DNA fragmentation**: Mechanical shearing or enzymatic digestion to desired size
+4. **Adapter ligation**: Attachment of sequencing adapters for clustering/binding
+5. **PCR amplification**: Enrichment of adapter-ligated fragments (if needed)
+6. **Library quality control**: Size verification and concentration measurement
+
+**Sequencing Run**
+1. **Cluster generation**: Amplification of DNA clusters on flowcell (Illumina)
+2. **Sequencing chemistry**: Addition of dNTPs and imaging cycles
+3. **Data generation**: Real-time imaging and base calling
+4. **Quality control**: Monitoring of cluster density, phasing, prephasing
+
+**Data Processing**
+1. **Base calling**: Converting raw signal to nucleotide sequences
+2. **Quality filtering**: Removal of low-quality reads
+3. **Demultiplexing**: Sorting reads by sample barcode
+4. **Adapter trimming**: Removal of sequencing adapters
+
+### Emerging Sequencing Technologies
+
+**Third-Generation and Beyond**
+- **Loop Sequencing**: Circular templates for increased accuracy
+- **In Situ Sequencing**: Sequencing DNA within intact tissues
+- **Optical Mapping**: Physical maps of genomes without sequencing
+- **DNA PAINT**: Single-molecule super-resolution imaging
+- **Quantum Sequencing**: Theoretical ultra-high-speed approaches
+
+## Genome Assembly and Analysis
+
+### De Novo Genome Assembly
+
+**Assembly Principles**
+- **Overlap-layout-consensus (OLC)**: Traditional approach for long reads
+- **De Bruijn graphs**: Graph-based assembly for short reads
+- **Overlap graphs**: Recent approach combining long and short reads
+- **Assembly quality metrics**: Contig N50, NG50, number of gaps, completeness
+
+**Assembly Challenges**
+- **Repetitive sequences**: Difficult to distinguish identical regions
+- **Polyploidy**: Multiple genome copies complicate assembly
+- **Structural variations**: Large insertions, deletions, inversions
+- **Heterozygosity**: Genetic variation within single organism
+
+**Assembly Tools and Pipelines**
+- **For long reads**: FALCON, SMRT Link, canu, flye
+- **For short reads**: velvet, SPAdes, DISCOVAR de novo
+- **For hybrid assembly**: MaSuRCA, DBG2OLC, PLATANUS
+- **Reference-guided**: Bowtie2, BWA, minimap2
+
+### Genome Annotation
+
+**Structural Annotation**
+- **Gene prediction**: Identification of protein-coding genes, ORFs
+- **Repeat masking**: Identification of repetitive elements (SINEs, LINEs, transposons)
+- **Regulatory element identification**: Promoters, enhancers, silencers
+- **Tool examples**: RepeatMasker, Augustus, MAKER, NCBI's RefSeq annotation
+
+**Functional Annotation**
+- **Homology searches**: BLAST against protein databases
+- **Protein domain identification**: Pfam, InterPro
+- **Pathway assignment**: GO annotations, KEGG, Reactome
+- **Tissue/cell-type expression**: RNA-seq integration
+
+## Variant Analysis and Interpretation
+
+### Variant Types
+
+**Single Nucleotide Variants (SNVs)**
+- **Frequency**: ~1 per 300 bp in human genomes (~3-4 million per individual)
+- **Detection methods**: SNP genotyping arrays, whole genome/exome sequencing
+- **Impact**: Synonymous, missense, nonsense, splice site
+- **Clinical significance**: Disease-associated SNPs, pharmacogenomic variants
+
+**Indels (Insertions and Deletions)**
+- **Size**: Small (<50 bp) to large (>1 kb)
+- **Frequency**: ~0.5 million small indels per genome
+- **Detection challenges**: Difficult in repetitive regions
+- **Impact**: Frameshift mutations, copy number effects
+
+**Structural Variants (SVs)**
+- **Types**: Deletions, duplications, inversions, translocations
+- **Size**: >1 kb (10 kb-several Mb typical)
+- **Frequency**: ~2,500-5,000 per genome
+- **Detection tools**: LUMPY, DELLY, Manta, long-read alignment
+- **Clinical significance**: Copy number variations (CNVs), disease-associated SVs
+
+**Copy Number Variations (CNVs)**
+- **Frequency**: >40% of human genome varies in copy number
+- **Size range**: 1 kb to megabase scale
+- **Methods**: Microarrays, read-depth analysis, long-read sequencing
+- **Applications**: Disease association, population stratification
+
+### Variant Calling
+
+**Best Practices Pipeline**
+1. **Alignment**: Map reads to reference genome (BWA, Bowtie2, minimap2)
+2. **Duplicate marking**: Remove PCR duplicates
+3. **Indel realignment**: Adjust alignments around indels
+4. **Base quality score recalibration**: Correct systematic biases
+5. **Variant calling**: GATK HaplotypeCaller, SAMtools, Platypus
+6. **Variant filtration**: Filter by quality, depth, and allele balance
+7. **Variant annotation**: VEP, snpEff, AnnotSV
+
+**Quality Control Metrics**
+- **Coverage depth**: Average bases covering each position
+- **Variant call quality**: Phred-scaled confidence score
+- **Allele balance**: Ratio of reference to alternate alleles
+- **Population allele frequency**: dbSNP, gnomAD, 1000 Genomes
+
+### Variant Interpretation
+
+**Clinical Classification**
+- **Pathogenic**: Causes disease
+- **Likely pathogenic**: Strong evidence for pathogenicity
+- **Uncertain significance**: Insufficient evidence
+- **Likely benign**: Strong evidence against pathogenicity
+- **Benign**: Does not cause disease
+
+**Assessment Frameworks**
+- **ACMG/AMP criteria**: American College of Medical Genetics guidelines
+- **Variant effect predictors**: SIFT, PolyPhen-2, CADD, REVEL
+- **Population frequency analysis**: Variants rare in healthy populations more likely pathogenic
+- **Functional studies**: Experimental validation
+
+**Bioinformatics Tools**
+- **VEP (Variant Effect Predictor)**: Consequence annotation
+- **snpEff**: Genomic variant annotation
+- **InterVar**: Automated variant classification
+- **GeneMatcher**: Connecting researchers with same variants
+
+## CRISPR and Gene Editing
+
+### CRISPR-Cas9 System
+
+**Mechanism of Action**
+- **gRNA (guide RNA)**: 20 bp synthetic RNA guiding Cas9 to target
+- **PAM (Protospacer Adjacent Motif)**: NGG sequence adjacent to target (Streptococcus pyogenes)
+- **DNA binding**: Cas9-gRNA complex scans genome for PAM sites
+- **Double-strand break (DSB)**: Cas9 endonuclease cuts DNA at target
+- **Repair**: Cells repair break via non-homologous end joining (NHEJ) or homology-directed repair (HDR)
+
+**Advantages**
+- **Simplicity**: Easy to design and program
+- **Efficiency**: ~70-90% editing efficiency in some cell types
+- **Cost**: Relatively inexpensive compared to other gene editing
+- **Versatility**: Can edit virtually any genomic location
+- **Speed**: Quick development compared to traditional genetics
+
+**Limitations**
+- **Off-target effects**: Unintended cuts at similar sequences
+- **Delivery challenges**: Difficult to deliver large Cas9 protein efficiently
+- **Cell type specificity**: Efficiency varies dramatically across cell types
+- **In vivo delivery**: Systemic delivery remains challenging
+- **HDR efficiency**: Low rates of precise insertion in many cells
+
+### Alternative Gene Editing Systems
+
+**Base Editing**
+- **Mechanism**: Direct conversion of one base to another without double-strand breaks
+- **Types**: Cytosine base editors (C→T), adenine base editors (A→G)
+- **Advantages**: Higher precision, fewer off-targets, less mutagenic
+- **Limitations**: Limited editing scope (single base changes)
+- **Examples**: BE1, BE3, ABE8e
+
+**Prime Editing**
+- **Mechanism**: Combines reverse transcriptase with CRISPR for insertion/deletion/conversion
+- **Advantages**: Highly flexible, insertions up to several kb possible
+- **Limitations**: Complex design, variable efficiency
+- **Flexibility**: Can make virtually any edit without DSBs
+
+**Zinc Finger Nucleases (ZFNs)**
+- **Mechanism**: Engineered zinc fingers direct FokI endonuclease to target
+- **Advantages**: Longer targeting sequences, reduced off-targets
+- **Disadvantages**: Complex design, lower efficiency, expensive development
+- **Applications**: Hemophilia B gene therapy (in vivo), ex vivo cell therapies
+
+**TALENs (Transcription Activator-Like Effector Nucleases)**
+- **Mechanism**: Programmable protein domains direct FokI nuclease
+- **Advantages**: Longer targeting, modular design
+- **Disadvantages**: Larger proteins, delivery challenges
+- **Applications**: Research and ex vivo therapies
+
+### Clinical Applications of Gene Editing
+
+**CAR-T Cell Engineering**
+- **Application**: Disrupting checkpoint molecules (PD-1, TIM-3) for enhanced T-cell function
+- **Status**: Multiple clinical trials underway
+- **Efficacy**: Improved response rates in some cancers
+
+**Sickle Cell Disease and Beta-Thalassemia**
+- **Target**: BCL11A gene (reduces fetal hemoglobin production)
+- **Approach**: Disrupting BCL11A to reactivate fetal hemoglobin production
+- **Status**: Phase 1/2 clinical trials showing promising results
+- **Advantage**: Single treatment potentially curative
+
+**LEBER Congenital Amaurosis**
+- **Target**: CEP290 gene mutations causing blindness
+- **Approach**: Using intron-targeting sequences for exon skipping
+- **Status**: First CRISPR therapy in clinical trials
+
+**Duchenne Muscular Dystrophy**
+- **Target**: DMD gene (exon skipping approaches)
+- **Approaches**: Antisense oligonucleotides, exon-skipping CRISPR
+- **Status**: Multiple clinical trials and programs
+
+## Genomic Medicine Applications
+
+### Precision Medicine and Pharmacogenomics
+
+**Pharmacogenomic Testing**
+- **TPMT**: Mercaptopurine and azathioprine dosing (leukemia, autoimmune)
+- **DPYD**: 5-fluorouracil toxicity (cancer)
+- **CYP450 variants**: Drug metabolism (codeine, warfarin, clopidogrel)
+- **CFTR**: Ivacaftor efficacy in cystic fibrosis
+- **EGFR mutations**: Erlotinib and gefitinib efficacy in lung cancer
+
+**Tumor Genomics and Cancer Precision Medicine**
+- **Somatic mutation profiling**: Identifying driver mutations
+- **Tumor mutational burden (TMB)**: Predicting immunotherapy response
+- **Microsatellite instability (MSI)**: Indicates mismatch repair deficiency
+- **PD-L1 expression**: Predicts checkpoint inhibitor response
+- **Fusion detection**: Identifying actionable translocations (ALK, ROS1, NTRK)
+
+**Clinical Implementation**
+- **Liquid biopsies**: Detecting circulating tumor DNA (ctDNA)
+- **Companion diagnostics**: Tests predicting drug response
+- **Biomarker-driven trials**: Clinical trials using genomic biomarkers for patient selection
+- **Real-world evidence**: Outcomes tracking with genomic stratification
+
+### Rare Disease Diagnosis
+
+**Exome/Genome Sequencing for Diagnosis**
+- **Success rates**: 25-40% in undiagnosed rare disease cohorts
+- **Timeline**: Months from testing to diagnosis (significantly shorter than traditional approach)
+- **Applications**: Undiagnosed developmental delay, rare neurological conditions
+- **Variant database importance**: ClinVar, OMIM integration critical
+
+**Gene Panel Testing**
+- **Indications**: Specific disease categories (cardiomyopathy, deafness, retinal dystrophy)
+- **Advantages**: Targeted approach reduces variants of uncertain significance
+- **Cost**: Generally lower than whole exome sequencing
+- **Turnaround time**: Faster results due to lower data volume
+
+### Reproductive Genetics
+
+**Prenatal Screening**
+- **Non-invasive prenatal testing (NIPT)**: ctDNA from maternal blood
+- **Applications**: Trisomy 21 (Down syndrome), trisomy 18, trisomy 13 screening
+- **Accuracy**: >99% detection rate for trisomy 21
+- **Early detection**: Performed as early as 10 weeks gestation
+
+**Preimplantation Genetic Testing (PGT)**
+- **PGT-A**: Chromosomal abnormality screening (aneuploidy)
+- **PGT-M**: Mendelian disorder screening
+- **PGT-SR**: Structural rearrangement screening
+- **Application**: In vitro fertilization (IVF) with genetic screening
+
+**Carrier Screening**
+- **Panel options**: Expanded panels testing for 100-500 conditions
+- **Clinical utility**: Identifying carriers of recessive conditions
+- **Populations**: Ashkenazi Jewish, Mediterranean, Southeast Asian specific panels
+- **Cost**: Declining, enabling population-wide screening
+
+### Infectious Disease Genomics
+
+**Pathogen Sequencing for Epidemiology**
+- **SARS-CoV-2**: Real-time variant surveillance and phylodynamics
+- **Influenza**: Seasonal tracking and pandemic preparedness
+- **Outbreak investigation**: Determining transmission routes and sources
+- **Antimicrobial resistance**: Detecting resistance determinants
+
+**Rapid Diagnostics**
+- **Nanopore sequencing**: Portable device diagnostics in field settings
+- **Turnaround time**: Hours to results (compared to days for traditional culture)
+- **Applications**: TB diagnostics, ARV resistance in HIV
+
+## Genomic Data Management
+
+### Data Storage and Computation
+
+**Data Volume**
+- **Whole genome (30x coverage)**: ~100 GB raw FASTQ files
+- **Storage requirements**: Exponential growth with increasing sequencing adoption
+- **Archival**: Long-term storage for re-analysis, ~$0.01-0.1 per GB/month
+
+**Computational Infrastructure**
+- **Cloud platforms**: AWS, Google Cloud, Azure offer specialized genomics services
+- **High-performance computing**: Local HPC clusters for analysis
+- **Streaming pipelines**: Real-time processing during sequencing run
+- **Containerization**: Docker and Singularity for reproducibility
+
+### Privacy and Data Security
+
+**Genomic Privacy Concerns**
+- **Reidentification risk**: Genomic data uniquely identifies individuals
+- **Family member implications**: Sharing genetic information affects relatives
+- **Incidental findings**: Unexpected disease-causing variants
+- **Discrimination risk**: Genetic discrimination by employers, insurers
+
+**Regulatory Framework**
+- **HIPAA**: U.S. health privacy regulation
+- **GDPR**: European data protection regulation
+- **GINA**: Genetic Information Nondiscrimination Act (U.S.)
+- **State legislation**: California, New York, other state-specific privacy laws
+
+**Security Best Practices**
+- **Encryption**: In transit and at rest
+- **Access controls**: Role-based authentication and authorization
+- **Audit logs**: Tracking data access
+- **De-identification**: Removing personally identifiable information
+
+## Genomics Infrastructure and Resources
+
+### Public Databases and Resources
+
+**Reference Genomes and Sequences**
+- **GRCh38/hg38**: Current human reference genome
+- **Ensembl**: Comprehensive genome annotation
+- **NCBI RefSeq**: Reference sequences for genes and proteins
+
+**Variant Databases**
+- **dbSNP**: 1000 Genomes Project common variants
+- **ClinVar**: Clinical significance of genetic variants
+- **COSMIC**: Cancer mutations
+- **gnomAD**: Population allele frequencies (270,000+ individuals)
+
+**Gene and Protein Databases**
+- **OMIM**: Online Mendelian Inheritance in Man
+- **UniProt**: Protein sequences and annotations
+- **Pfam**: Protein family database
+- **InterPro**: Protein family and domain classification
+
+### Bioinformatics Tools and Pipelines
+
+**Sequence Alignment and Assembly**
+- **BWA, Bowtie2, minimap2**: Read alignment to reference
+- **SPAdes, Canu, Flye**: De novo assembly
+- **BLAST**: Sequence homology searching
+
+**Variant Calling and Annotation**
+- **GATK**: Industry standard variant calling
+- **Samtools/bcftools**: Sequence alignment and variant manipulation
+- **VEP, snpEff**: Variant effect prediction and annotation
+
+**Analysis and Interpretation**
+- **R/Bioconductor**: Statistical genomics packages
+- **Python/Pandas**: Data manipulation and analysis
+- **Galaxy**: Web-based bioinformatics platform
+- **Nextflow, Snakemake**: Workflow management systems
+
+## Related Domains
+
+- [Proteomics](./Proteomics.mdx) - Protein analysis and characterization
+- [CellTherapy](./CellTherapy.mdx) - CAR-T and stem cell therapies
+- [SyntheticBiology](./SyntheticBiology.mdx) - Engineered organisms and synthetic systems
+- [pharma.org.ai/DrugDiscovery](https://pharma.org.ai/DrugDiscovery) - Target identification from genomics
+- [health.org.ai](https://health.org.ai) - Clinical applications of genomics
+- [research.org.ai](https://research.org.ai) - Genomics research methodologies
+
+## External Resources
+
+- **National Human Genome Research Institute (NHGRI)**: Genomics research funding and resources
+- **European Bioinformatics Institute (EBI)**: Genomic databases and tools
+- **Broad Institute**: GATK development and genomics tools
+- **SAM/BAM Format Specification**: Sequence Alignment/Map format standard
+- **VCF Format Specification**: Variant Call Format for variant representation
+- **Nature Genetics**: Leading genomics research journal
+- **Genome Biology**: Open-access genomics research
+
+## Diagnostic and Testing Companies
+
+- **Illumina**: Sequencing instruments and analysis
+- **Pacific Biosciences (PacBio)**: Long-read sequencing
+- **Oxford Nanopore**: Portable long-read sequencing
+- **Invitae**: Genetic testing services
+- **Myriad Genetics**: Hereditary cancer testing
+- **Color Genomics**: Genetic risk assessment

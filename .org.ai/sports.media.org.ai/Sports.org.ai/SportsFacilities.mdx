@@ -1,0 +1,417 @@
+---
+$context: https://sports.media.org.ai/SportsFacilities
+$id: https://sports.media.org.ai/SportsFacilities/{id}
+$type: https://schema.org.ai/SportsVenue
+category: Sports Facilities
+facilityType: {facilityType}
+sportCategory: {sportCategory}
+naicsCode: 7112
+---
+
+# {name}
+
+{description}
+
+## Sports Facilities Overview
+
+<SportsFacilitiesOverview entity={entity} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Facility Type | <FacilityTypeBadge type={facilityType} /> |
+| Sport | <SportCategoryBadge category={sportCategory} /> |
+| NAICS Code | 7112 - Spectator Sports / 7139 - Other Recreation |
+| Founded | {opened} |
+| Location | {location} |
+| Owner/Operator | {operator} |
+| Capacity | {capacity} |
+
+## Facility Profile
+
+### Overview
+
+Sports facilities represent the physical infrastructure essential to the sports industry. These include:
+
+- **Stadiums & Arenas**: Large-capacity venues for professional teams and major events
+- **Training Centers**: Specialized facilities for athlete development and coaching
+- **Specialty Facilities**: Sport-specific venues (ice rinks, golf courses, tennis courts, swimming pools)
+- **Multi-Use Complexes**: Facilities hosting multiple sports and events
+- **Youth & Development Facilities**: Training grounds for amateur and youth sports
+- **Fitness & Recreation Centers**: Facilities supporting fitness and recreational sports
+
+### Facility Categories
+
+#### Major League Stadiums & Arenas
+- Capacity: 10,000+
+- Multi-sport and event hosting
+- Premium amenities and hospitality
+- Advanced technology and security systems
+- LEED certifications and sustainability features
+
+#### Training Centers & Academies
+- Focused on player development
+- Sport-specific equipment and courts
+- Strength and conditioning facilities
+- Sports science and medical facilities
+- Video analysis and technology integration
+
+#### Specialty Sports Facilities
+- Ice rinks for hockey and skating
+- Golf courses and driving ranges
+- Tennis courts and racquet clubs
+- Swimming pools and diving facilities
+- Climbing walls and extreme sports facilities
+
+## Physical Infrastructure
+
+<FacilityInfrastructure entity={entity} />
+
+### Building Specifications
+
+<BuildingSpecs
+  entity={entity}
+  showCapacity={true}
+  showLayout={true}
+  showDimensions={true}
+/>
+
+### Seating & Capacity
+
+<SeatingConfiguration
+  entity={entity}
+  showSectionBreakdown={true}
+  showPremiumSeating={true}
+  showAccessibility={true}
+/>
+
+### Playing Surface
+
+<PlayingSurface
+  entity={entity}
+  showSpecifications={true}
+  showMaintenance={true}
+  showGradingStandards={true}
+/>
+
+## Venue Amenities
+
+<VenueAmenities entity={entity} />
+
+### Fan Experience
+
+<FanAmenities
+  entity={entity}
+  categories={['concessions', 'restrooms', 'merchandise', 'technology', 'accessibility']}
+  showModernization={true}
+/>
+
+### Luxury Suites & Premium Seating
+
+<LuxurySuites
+  entity={entity}
+  showTypes={true}
+  showCapacity={true}
+  showAmenities={true}
+/>
+
+### Technology Integration
+
+<TechnologySystems
+  entity={entity}
+  systems={['scoreboard', 'audio_visual', 'wifi', 'mobile_app', 'analytics']}
+  showCapabilities={true}
+/>
+
+## Events & Programming
+
+<EventsOverview entity={entity} />
+
+### Primary Tenant
+
+<PrimaryTenant
+  entity={entity}
+  showSchedule={true}
+  showPerformance={true}
+/>
+
+### Event Calendar
+
+<EventCalendar
+  entity={entity}
+  showAnnualEvents={true}
+  showOccupancyRate={true}
+/>
+
+### Hosted Events
+
+<HostedEvents
+  entity={entity}
+  categories={['professional', 'collegiate', 'concerts', 'other_events']}
+  showAnnualCount={true}
+/>
+
+## Operations & Management
+
+<OperationsOverview entity={entity} />
+
+### Facility Management
+
+<FacilityManagement
+  entity={entity}
+  showStaffing={true}
+  showMaintenancePrograms={true}
+/>
+
+### Revenue Management
+
+<RevenueOperations
+  entity={entity}
+  streams={['ticket_sales', 'suites', 'concessions', 'parking', 'events', 'naming_rights']}
+  showBreakdown={true}
+/>
+
+### Concessions & Hospitality
+
+<ConcessionsOperations
+  entity={entity}
+  showVendors={true}
+  showRevenue={true}
+  showCapacity={true}
+/>
+
+## Financial Performance
+
+<FinancialOverview entity={entity} />
+
+### Operating Budget
+
+<OperatingBudget
+  entity={entity}
+  showExpenses={true}
+  showRevenue={true}
+  showMargin={true}
+/>
+
+### Capital Expenditures
+
+<CapitalInvestments
+  entity={entity}
+  showModernization={true}
+  showUpgrades={true}
+  showROI={true}
+/>
+
+### Naming Rights & Sponsorship
+
+<SponsorshipRevenue
+  entity={entity}
+  showNamingRights={true}
+  showPartnerships={true}
+/>
+
+## Workforce
+
+<WorkforceOverview entity={entity} />
+
+### Employment
+
+<Employment
+  entity={entity}
+  categories={['Management', 'Operations', 'Security', 'Maintenance', 'Hospitality']}
+  showFTE={true}
+  showSeasons={true}
+/>
+
+### Occupations Employed
+
+<OccupationsEmployed
+  entity={entity}
+  source="onet"
+  roles={['Facility Manager', 'Security Officer', 'Maintenance Worker', 'Event Coordinator', 'Concession Worker']}
+  showDistribution={true}
+/>
+
+## Sustainability & Environmental Impact
+
+<SustainabilityOverview entity={entity} />
+
+### Green Initiatives
+
+<GreenInitiatives
+  entity={entity}
+  showCertifications={true}
+  showEnergyMeasures={true}
+  showWaterManagement={true}
+/>
+
+### LEED & Environmental Standards
+
+<EnvironmentalCertifications
+  entity={entity}
+  showLevel={true}
+  showMetrics={true}
+/>
+
+## Accessibility & Safety
+
+### ADA Compliance
+
+<AccessibilityCompliance
+  entity={entity}
+  showFeatures={true}
+  showRating={true}
+/>
+
+### Safety & Security
+
+<SecurityMeasures
+  entity={entity}
+  showStaffing={true}
+  showTechnology={true}
+  showProtocols={true}
+/>
+
+### Capacity & Crowd Management
+
+<CrowdManagement
+  entity={entity}
+  showEvacuationProcedures={true}
+  showCapacityManagement={true}
+/>
+
+## Technology & Innovation
+
+<TechnologyStack entity={entity} />
+
+### Fan Engagement Technology
+
+<FanTechnology
+  entity={entity}
+  systems={['mobile_app', 'wifi_network', 'wayfinding', 'digital_signage']}
+  showFeatures={true}
+/>
+
+### Operations Technology
+
+<OperationsTechnology
+  entity={entity}
+  systems={['facilities_management', 'event_management', 'pos_systems', 'analytics']}
+  showIntegration={true}
+/>
+
+## Public-Private Partnership
+
+### Financing Structure
+
+<FinancingStructure
+  entity={entity}
+  showPublicContribution={true}
+  showPrivateContribution={true}
+  showTaxLiability={true}
+/>
+
+### Community Impact
+
+<CommunityImpact
+  entity={entity}
+  showEconomicImpact={true}
+  showJobCreation={true}
+  showTaxRevenue={true}
+/>
+
+## Future Development
+
+### Planned Renovations
+
+<RenovationPlans
+  entity={entity}
+  showTimeline={true}
+  showBudget={true}
+  showExpectedOutcomes={true}
+/>
+
+### Technology Upgrades
+
+<UpgradePlan
+  entity={entity}
+  areas={['audiovisual', 'wifi', 'seating', 'amenities', 'sustainability']}
+  showTimeline={true}
+/>
+
+## Related Facilities
+
+<RelatedFacilities
+  entity={entity}
+  relationships={['nearby_venues', 'competing_facilities', 'associated_training_centers']}
+/>
+
+## Connections to Related Domains
+
+### Professional Sports Teams
+- [`sports.org.ai/ProfessionalSports`](./ProfessionalSports.mdx) - Primary tenants and sports organizations
+- League operations and scheduling
+- Team home games and events
+
+### Sports Events & Entertainment
+- [`events.org.ai`](https://events.org.ai) - Events hosted and managed
+- Concert and entertainment events
+- Special events and activations
+
+### Media & Broadcasting
+- [`media.org.ai`](https://media.org.ai) - Broadcasting infrastructure
+- Media centers and press facilities
+- Content production capabilities
+
+### Sports Medicine & Training
+- [`health.org.ai`](https://health.org.ai) - Sports medicine services
+- Athletic training facilities
+- Performance optimization centers
+
+### Technology & Analytics
+- [`tech.org.ai`](https://tech.org.ai) - Facility management systems
+- Fan engagement platforms
+- Operations analytics
+
+### Retail & Hospitality
+- Merchandise and retail operations
+- Food and beverage services
+- Hospitality and premium experiences
+
+## Industry Standards
+
+### Facility Certifications
+- **LEED Certification** - Environmental sustainability
+- **ADA Compliance** - Accessibility standards
+- **Sports Venue Standards** - League-specific requirements
+- **Safety Certifications** - Building and life safety codes
+
+### Capacity Classifications
+- **Mega Venues**: 70,000+ capacity (major stadiums)
+- **Large Arenas**: 15,000-70,000 capacity
+- **Medium Facilities**: 5,000-15,000 capacity
+- **Specialty Venues**: Varied capacity for specific sports
+
+## Key Performance Indicators
+
+### Utilization Metrics
+- **Event Days Per Year**: Number of hosted events
+- **Occupancy Rate**: Average capacity utilization
+- **Revenue Per Event**: Average event revenue
+- **Operating Margin**: Profit margin on operations
+
+### Financial Metrics
+- **Cost Per Square Foot**: Operating costs relative to size
+- **Revenue Per Available Seat**: Ticket and seat-based revenue
+- **Sponsorship Revenue**: Corporate partnership income
+- **Facility Debt Service**: Financing obligations
+
+## Sources
+
+- <FacilityWebsite entity={entity} type="official" />
+- [Facility Operator Information]({operatorWebsite})
+- <DatabaseLink namespace="sports.org.ai/SportsFacilities" type={id} />
+- International Association of Venue Managers (IAVM)
+- Stadium & Venue Management databases
+- Bureau of Labor Statistics - Recreation Facilities Management

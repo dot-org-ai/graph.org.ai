@@ -1,0 +1,586 @@
+---
+$context: https://pharma.manufacturing.org.ai
+$id: https://pharma.manufacturing.org.ai/DrugDiscovery
+$type: https://pharma.manufacturing.org.ai/Pharmaceutical
+name: "Drug Discovery"
+description: "Pharmaceutical drug discovery including target identification, lead compound discovery, medicinal chemistry optimization, and preclinical development"
+naicsCode: "3254"
+parent: https://naics.org.ai/3254
+keywords:
+  - drug discovery
+  - target identification
+  - lead optimization
+  - medicinal chemistry
+  - high-throughput screening
+  - structure-based drug design
+  - ADME
+  - preclinical development
+  - hit-to-lead
+  - lead-to-candidate
+---
+
+export const items = async () => {
+  // Fetch drug discovery programs from the database
+  return []
+}
+
+# Drug Discovery
+
+Drug discovery is the process of identifying and optimizing novel therapeutic compounds that can safely and effectively treat disease. It represents the earliest and most innovative phase of pharmaceutical R&D, transforming biological insights into potential medicines through iterative cycles of design, synthesis, and testing.
+
+## Overview
+
+Modern drug discovery is a highly sophisticated, multidisciplinary endeavor combining:
+- **Biological Sciences**: Disease mechanism understanding, target biology
+- **Chemistry**: Compound design, synthesis, and optimization
+- **Computational Sciences**: Molecular modeling, AI/ML, bioinformatics
+- **Pharmacology**: ADME properties, safety assessment, efficacy testing
+- **Translational Medicine**: Bridging basic research to clinical applications
+
+**Discovery Timeline**: 3-6 years from target identification to clinical candidate
+**Investment**: $100-500 million per successful drug candidate
+**Success Rate**: 1 in 5,000-10,000 compounds screened becomes an approved drug
+**Attrition**: 90% of candidates fail in clinical development
+
+## Target Identification and Validation
+
+The first critical step is identifying biological targets (proteins, genes, pathways) whose modulation can treat disease.
+
+### Target Identification Approaches
+
+**Genetics and Genomics**
+- **Genome-Wide Association Studies (GWAS)**: Identify disease-associated genetic variants
+- **Exome/Whole Genome Sequencing**: Discover causal mutations in rare diseases
+- **Cancer Genomics**: Identify oncogenes and tumor suppressors (TCGA, COSMIC databases)
+- **Human Genetic Validation**: Targets with human genetic evidence have 2x higher success rates
+  - Examples: PCSK9 for hypercholesterolemia, SGLT2 for diabetes
+
+**Proteomics and Functional Genomics**
+- **Differential Expression Analysis**: Identify dysregulated proteins/genes in disease
+- **Phosphoproteomics**: Map signaling pathway alterations
+- **CRISPR Screens**: Systematically knock out genes to identify essential targets
+- **RNAi Screens**: Gene silencing to validate target function
+- **Single-Cell Sequencing**: Cell-type-specific target identification
+
+**Pathway Analysis**
+- Signaling pathway mapping (KEGG, Reactome)
+- Network biology and systems pharmacology
+- Pathway enrichment analysis
+- Disease mechanism reconstruction
+
+**Phenotypic Screening**
+- Cell-based disease models
+- Identification of targets after compound discovery
+- Unbiased approach without prior target hypothesis
+
+### Target Validation
+
+Confirming that modulating a target will produce desired therapeutic effects without unacceptable toxicity.
+
+**Genetic Validation**
+- Knockout/knockdown models (CRISPR, siRNA)
+- Transgenic animal models
+- Patient genetic evidence (mutations, polymorphisms)
+
+**Pharmacological Validation**
+- Tool compounds and chemical probes
+- Target engagement assays
+- Proof-of-concept in disease models
+- On-target vs. off-target effect differentiation
+
+**Target Assessment Criteria**
+- **Druggability**: Can small molecules or biologics modulate the target?
+- **Disease Relevance**: Clear link between target and disease pathology
+- **Safety**: Acceptable toxicity profile based on target biology
+- **Efficacy Potential**: Magnitude of expected therapeutic benefit
+- **Novelty**: First-in-class vs. best-in-class opportunities
+- **Intellectual Property**: Patent landscape and freedom to operate
+
+**Target Classes**
+- **Enzymes** (30% of drugs): Kinases, proteases, oxidoreductases
+- **G-Protein Coupled Receptors** (35%): Largest drug target family
+- **Ion Channels** (5%): Voltage-gated, ligand-gated channels
+- **Nuclear Receptors** (5%): Steroid hormone receptors
+- **Transporters** (5%): ABC transporters, SLC family
+- **Protein-Protein Interactions** (emerging): Challenging but high-value targets
+- **Nucleic Acids** (emerging): RNA targets, gene therapy, antisense
+
+## Hit Identification
+
+Discovering initial compounds (hits) that interact with the validated target.
+
+### High-Throughput Screening (HTS)
+
+**Compound Libraries**
+- **Size**: 1-5 million compounds screened
+- **Diversity Libraries**: Structurally diverse compound collections
+- **Focused Libraries**: Target-class enriched (kinase, GPCR, protease libraries)
+- **Natural Product Libraries**: Plant extracts, microbial metabolites, marine organisms
+- **Fragment Libraries**: Small molecular fragments (MW < 300 Da), 1,000-10,000 compounds
+- **DNA-Encoded Libraries (DEL)**: Billions of compounds with DNA barcodes
+
+**HTS Technologies**
+- **Biochemical Assays**: Target protein activity measurement
+  - Enzyme activity assays (fluorescence, luminescence)
+  - Binding assays (FRET, HTRF, FP, TR-FRET)
+  - Reporter gene assays
+- **Cell-Based Assays**: Phenotypic or target-based in cells
+  - High-content imaging
+  - Reporter cell lines
+  - Primary cell screening
+- **Automation and Robotics**:
+  - Liquid handling systems
+  - Plate readers and detection systems
+  - 384-well and 1536-well plate formats
+  - Acoustic dispensing for miniaturization
+
+**Hit Criteria**
+- **Activity**: IC₅₀, EC₅₀, or Ki < 10 μM (threshold varies by assay)
+- **Reproducibility**: Confirmed in replicate tests
+- **Dose-Response**: Clear concentration-dependent activity
+- **Counter-Screen Negative**: No activity against related targets or assay artifacts
+- **Chemical Tractability**: Suitable for medicinal chemistry optimization
+
+### Fragment-Based Drug Discovery (FBDD)
+
+Screening small molecular fragments that bind weakly to targets, then growing/linking to create high-affinity leads.
+
+**Fragment Characteristics**
+- Molecular weight: 150-300 Da
+- Heavy atom count: 10-20 atoms
+- High ligand efficiency (LE > 0.3)
+- "Rule of 3" compliance (MW < 300, LogP < 3, H-bond donors/acceptors ≤ 3)
+
+**Fragment Screening Methods**
+- **X-ray Crystallography**: Direct visualization of fragment binding
+- **Nuclear Magnetic Resonance (NMR)**:
+  - STD-NMR (Saturation Transfer Difference)
+  - WaterLOGSY
+  - ¹H-¹⁵N HSQC for protein chemical shift perturbation
+- **Surface Plasmon Resonance (SPR)**: Label-free binding detection
+- **Thermal Shift Assays (DSF)**: Protein stabilization by fragments
+- **Mass Spectrometry**: Native MS, H/D exchange
+
+**Fragment Evolution**
+- **Fragment Growing**: Add substituents to increase affinity
+- **Fragment Linking**: Connect two fragments that bind adjacent sites
+- **Fragment Merging**: Combine pharmacophores from different fragments
+
+**FBDD Success Stories**
+- Vemurafenib (Zelboraf) - BRAF kinase inhibitor for melanoma
+- Venetoclax (Venclexta) - BCL-2 inhibitor for leukemia
+- Erdafitinib (Balversa) - FGFR inhibitor for bladder cancer
+
+### Structure-Based Drug Design (SBDD)
+
+Using 3D target structure to design optimized compounds computationally.
+
+**Structural Biology Techniques**
+- **X-ray Crystallography**:
+  - Atomic resolution target structures
+  - Co-crystal structures with ligands
+  - Iterative structure-guided optimization
+- **Cryo-Electron Microscopy (Cryo-EM)**:
+  - Large complexes and membrane proteins
+  - Near-atomic resolution achievable
+  - Multiple conformational states
+- **Nuclear Magnetic Resonance (NMR)**:
+  - Solution structure determination
+  - Protein dynamics and flexibility
+  - Fragment screening
+
+**Computational Methods**
+- **Molecular Docking**:
+  - Virtual screening of compound libraries
+  - Binding pose prediction
+  - Programs: AutoDock, GOLD, Glide, DOCK
+- **Pharmacophore Modeling**:
+  - 3D arrangement of chemical features
+  - Virtual screening filter
+  - De novo design guide
+- **Molecular Dynamics (MD) Simulations**:
+  - Protein-ligand binding dynamics
+  - Induced fit and conformational changes
+  - Binding free energy calculations (FEP, TI)
+- **De Novo Design**:
+  - Computational generation of novel structures
+  - Growing molecules in binding site
+  - Programs: LigBuilder, SPROUT, AutoGrow
+
+### Artificial Intelligence and Machine Learning
+
+AI/ML is transforming drug discovery with unprecedented speed and efficiency.
+
+**Machine Learning Applications**
+- **Predictive QSAR Models**: Structure-activity relationship prediction
+- **ADME Property Prediction**: Solubility, permeability, metabolism
+- **Toxicity Prediction**: hERG liability, hepatotoxicity, mutagenicity
+- **De Novo Molecular Design**: Generative models (VAE, GAN, transformers)
+- **Retrosynthetic Planning**: Synthesis route prediction
+
+**Deep Learning Platforms**
+- **AlphaFold**: Protein structure prediction (DeepMind/Google)
+- **Atomwise**: Deep learning for virtual screening
+- **Exscientia**: AI-driven compound design (first AI-designed drug in trials)
+- **Insilico Medicine**: Generative chemistry and target discovery
+- **Recursion Pharmaceuticals**: Phenomics and cellular image analysis
+
+**Data Sources for ML**
+- ChEMBL: 2M+ compounds, 15M+ bioactivities
+- PubChem: 100M+ chemical structures
+- PDB (Protein Data Bank): 200,000+ protein structures
+- BindingDB: 2.5M+ binding affinities
+- Proprietary corporate data
+
+## Hit-to-Lead Optimization
+
+Refining initial hits into drug-like lead compounds suitable for further development.
+
+### Medicinal Chemistry Strategies
+
+**Structure-Activity Relationship (SAR) Exploration**
+- Systematic modification of chemical scaffolds
+- Identify key pharmacophore elements
+- Explore substituent effects on potency
+- Assess bioisosteres and scaffold hops
+
+**Multi-Parameter Optimization (MPO)**
+Balancing multiple objectives simultaneously:
+- **Potency**: Target binding affinity (IC₅₀, Ki < 100 nM)
+- **Selectivity**: Against related targets (>100-fold)
+- **ADME Properties**: Absorption, distribution, metabolism, excretion
+- **Physicochemical Properties**: Solubility, lipophilicity, permeability
+- **Safety**: Cytotoxicity, hERG inhibition, reactive metabolites
+- **Synthesizability**: Practical synthetic routes
+
+**Drug-Like Property Guidelines**
+
+**Lipinski's Rule of 5** (Oral Bioavailability)
+- Molecular weight ≤ 500 Da
+- LogP ≤ 5
+- Hydrogen bond donors ≤ 5
+- Hydrogen bond acceptors ≤ 10
+- Violations allowed for natural products and biologics
+
+**Beyond Rule of 5 (bRo5)**
+- Molecular weight: 500-1,000 Da
+- Applicable to antibiotics, natural products, targeted protein degraders (PROTACs)
+
+**Additional Property Metrics**
+- **Ligand Efficiency (LE)**: Binding energy per heavy atom
+- **Lipophilic Efficiency (LipE)**: Potency relative to lipophilicity
+- **Polar Surface Area (PSA)**: < 140 Ų for BBB penetration, < 200 Ų for oral absorption
+- **Rotatable Bonds**: < 10 for oral drugs
+
+### ADME Profiling
+
+Early assessment of pharmacokinetic properties to guide optimization.
+
+**Absorption**
+- **Solubility**: Thermodynamic and kinetic solubility (>10 μg/mL target)
+- **Permeability**:
+  - PAMPA (Parallel Artificial Membrane Permeability Assay)
+  - Caco-2 cell monolayer permeability
+  - MDCK cell permeability
+- **Efflux**: P-glycoprotein (P-gp) substrate assessment
+
+**Distribution**
+- **Plasma Protein Binding**: Free fraction available for target engagement
+- **Blood-Brain Barrier (BBB)**: For CNS drugs or BBB exclusion
+- **Volume of Distribution (Vd)**: Tissue distribution prediction
+
+**Metabolism**
+- **Metabolic Stability**:
+  - Liver microsome assays (human, mouse, rat)
+  - Hepatocyte stability
+  - Half-life (t₁/₂) > 30 min target
+- **CYP450 Enzyme Interactions**:
+  - CYP inhibition (drug-drug interaction potential)
+  - CYP induction (enzyme upregulation)
+  - Metabolite identification
+- **Reactive Metabolite Formation**: Glutathione trapping assays
+
+**Excretion**
+- Renal clearance mechanisms
+- Biliary excretion pathways
+
+### In Vitro Safety Profiling
+
+**Cardiac Safety**
+- **hERG Channel Inhibition**: Measure IC₅₀ (>30 μM preferred, >10 μM acceptable)
+- **Cardiac Ion Panel**: Nav1.5, Cav1.2, KCNQ1/KCNE1
+- **Electrophysiology**: Patch-clamp assays
+
+**General Cytotoxicity**
+- Cell viability assays (MTT, ATP, LDH release)
+- Multiple cell lines (HepG2, HEK293, primary hepatocytes)
+
+**Genotoxicity**
+- Ames test (bacterial mutagenicity)
+- Micronucleus assay
+- Chromosomal aberration test
+
+**Off-Target Screening**
+- Safety pharmacology panels (ion channels, GPCRs, enzymes)
+- Kinome selectivity profiling (>400 kinases)
+- Lead Profiling Screen (Eurofins Cerep, >100 targets)
+
+## Lead Optimization
+
+Advancing lead compounds toward clinical candidate selection through rigorous optimization.
+
+### In Vivo Pharmacokinetics
+
+Testing in animal models to predict human PK and optimize dosing.
+
+**PK Studies in Rodents (Mice, Rats)**
+- Intravenous (IV) dosing: Clearance, volume of distribution, half-life
+- Oral (PO) dosing: Bioavailability, Cmax, Tmax, AUC
+- Multiple time points (0-24 hours)
+- Dose linearity assessment
+
+**PK Parameters**
+- **Clearance (CL)**: Rate of drug elimination (mL/min/kg)
+- **Volume of Distribution (Vd)**: Extent of tissue distribution (L/kg)
+- **Half-Life (t₁/₂)**: Time for plasma concentration to decrease by 50%
+- **Bioavailability (F)**: Fraction of dose reaching systemic circulation (%)
+- **AUC (Area Under Curve)**: Total drug exposure
+- **Cmax**: Maximum plasma concentration
+- **Tmax**: Time to reach Cmax
+
+**Species Comparison**
+- Mouse, rat, dog, non-human primate studies
+- Allometric scaling to predict human PK
+- Species differences in metabolism and clearance
+
+### Pharmacodynamics and Efficacy Models
+
+Demonstrating target engagement and therapeutic efficacy in disease models.
+
+**Target Engagement**
+- Ex vivo target occupancy in tissues
+- Biomarker modulation (pharmacodynamic markers)
+- PK/PD relationship establishment
+
+**Disease Models**
+- **Cell-Based Disease Models**: Patient-derived cells, iPSC-derived cells
+- **Animal Models of Disease**:
+  - Genetic models (transgenic, knockout mice)
+  - Xenograft models (tumor implants)
+  - Chemically-induced disease models
+  - Spontaneous disease models
+- **Efficacy Endpoints**: Disease-relevant readouts (tumor growth inhibition, disease scores, biomarkers)
+
+**Proof-of-Concept (PoC)**
+- Dose-response efficacy
+- Comparison to standard of care
+- Therapeutic window assessment (efficacious dose vs. toxic dose)
+
+### Toxicology Studies
+
+Assessing safety in animal models to support clinical development.
+
+**Acute Toxicity**
+- Single-dose toxicity in rodents
+- Maximum tolerated dose (MTD)
+- Dose-limiting toxicities
+
+**Repeat-Dose Toxicity**
+- 14-day and 28-day studies in rodents
+- 90-day studies in rodents and non-rodents (dog, monkey)
+- Histopathology and clinical chemistry
+- Reversibility assessment
+
+**Specialized Toxicology**
+- **Reproductive Toxicology**: Fertility, embryo-fetal development, pre/postnatal development
+- **Genotoxicity**: Ames, micronucleus, chromosomal aberration
+- **Carcinogenicity**: 2-year rodent studies (for chronic use drugs)
+- **Phototoxicity**: For drugs with UV absorption
+- **Immunotoxicity**: Immune system effects
+
+**GLP Toxicology Studies**
+- Good Laboratory Practice (GLP) compliance
+- IND-enabling toxicology packages
+- Regulatory submission quality
+
+## Clinical Candidate Selection
+
+Choosing the optimal compound to advance into clinical development.
+
+### Candidate Selection Criteria
+
+**Efficacy**
+- Robust in vivo proof-of-concept
+- Clear PK/PD relationship
+- Differentiation from existing therapies
+
+**Safety and Tolerability**
+- Adequate therapeutic index (TI > 10 preferred)
+- Clean toxicology profile
+- Manageable side effects
+- Low DDI (drug-drug interaction) potential
+
+**Pharmaceutical Properties**
+- Chemical stability
+- Formulation feasibility
+- Scale-up synthesis viability
+- Intellectual property position
+
+**Developability**
+- Manufacturing process defined
+- Analytical methods established
+- Regulatory pathway clear
+- Commercial viability
+
+### IND-Enabling Activities
+
+Preparing for Investigational New Drug (IND) application to FDA.
+
+**CMC (Chemistry, Manufacturing, and Controls)**
+- GMP synthesis of API
+- Formulation development
+- Stability studies (ICH guidelines)
+- Analytical method validation
+- Release specifications
+
+**Nonclinical Safety Package**
+- GLP toxicology studies (2-week and 1-month in two species)
+- Safety pharmacology (cardiovascular, CNS, respiratory)
+- Genotoxicity battery
+- Toxicokinetics
+
+**IND Application Components**
+- Investigator's Brochure
+- Clinical protocol (Phase I design)
+- CMC information
+- Pharmacology and toxicology data
+- Previous human experience (if applicable)
+
+**Regulatory Interactions**
+- Pre-IND meetings with FDA
+- Orphan drug designation (if applicable)
+- Fast track designation request
+- Regulatory strategy alignment
+
+## Emerging Technologies in Drug Discovery
+
+### Targeted Protein Degradation (PROTACs)
+
+**Mechanism**: Bifunctional molecules that recruit E3 ubiquitin ligases to target proteins, inducing ubiquitination and proteasomal degradation.
+
+**Advantages**:
+- Targets "undruggable" proteins without enzymatic activity
+- Sub-stoichiometric catalytic mechanism
+- Overcomes resistance from target overexpression
+
+**Challenges**:
+- Large molecular size (MW 700-1,500 Da)
+- Oral bioavailability limitations
+- Complex SAR (ternary complex formation)
+
+**Clinical Examples**:
+- Arvinas: ARV-110 (androgen receptor PROTAC), ARV-471 (estrogen receptor PROTAC)
+- Kymera: KT-474 (IRAK4 degrader)
+
+### Molecular Glues
+
+Small molecules that induce novel protein-protein interactions, often leading to target degradation.
+
+**Examples**:
+- Thalidomide and IMiDs (lenalidomide, pomalidomide): CRBN-CK1α interaction
+- Indisulam: CRBN-RBM39 degradation
+
+### Nucleic Acid Therapeutics
+
+**Antisense Oligonucleotides (ASOs)**
+- Single-stranded DNA/RNA that bind target mRNA
+- Mechanism: RNase H-mediated degradation or splice modulation
+- Approved drugs: Nusinersen (Spinraza), Eteplirsen (Exondys 51)
+
+**Small Interfering RNA (siRNA)**
+- Double-stranded RNA inducing mRNA degradation via RNAi
+- Delivery challenges (GalNAc conjugates for liver targeting)
+- Approved drugs: Patisiran (Onpattro), Givosiran (Givlaari)
+
+**Aptamers**
+- RNA/DNA oligonucleotides binding proteins with antibody-like specificity
+- Approved: Pegaptanib (Macugen) for macular degeneration
+
+### Antibody-Drug Conjugates (ADCs)
+
+Targeted delivery of cytotoxic payloads using antibody specificity.
+
+**Components**:
+- Monoclonal antibody (tumor antigen targeting)
+- Cytotoxic payload (auristatin, maytansinoid, topoisomerase inhibitor)
+- Linker (cleavable or non-cleavable)
+
+**Approved ADCs**:
+- Trastuzumab emtansine (Kadcyla) - HER2+ breast cancer
+- Enfortumab vedotin (Padcev) - bladder cancer
+- Sacituzumab govitecan (Trodelvy) - triple-negative breast cancer
+
+## Drug Discovery Metrics and Economics
+
+### Timeline and Costs
+
+**Typical Discovery Timeline**:
+- Target identification and validation: 1-2 years
+- Hit identification: 0.5-1 year
+- Hit-to-lead: 1-2 years
+- Lead optimization: 1-2 years
+- Candidate selection and IND-enabling: 0.5-1 year
+- **Total**: 3-6 years
+
+**Investment**:
+- Discovery research: $50-200 million per program
+- Multiple programs required for portfolio (high attrition)
+- Outsourcing vs. internal capabilities trade-offs
+
+### Productivity Metrics
+
+**Output Metrics**:
+- Targets validated per year
+- Screening campaigns completed
+- Leads advanced to optimization
+- Clinical candidates nominated
+- INDs filed
+
+**Quality Metrics**:
+- Hit rate in HTS campaigns (0.1-1% typical)
+- Lead compound properties (potency, selectivity, ADME)
+- Clinical candidate success rate in development (10% overall)
+
+### Outsourcing and Partnerships
+
+**Contract Research Organizations (CROs)**:
+- **Chemistry CROs**: WuXi AppTec, Pharmaron, ChemPartner
+- **Biology CROs**: Charles River, Eurofins, Covance
+- **ADME/Tox CROs**: Absorption Systems, Cyprotex, XenoTech
+
+**Academic Collaborations**:
+- Target discovery partnerships
+- Structural biology collaborations
+- Chemical probe development (SGC, Chemical Probes Portal)
+
+**Technology Licensing**:
+- Screening library access
+- Computational platforms
+- Assay technologies
+
+## Related Topics
+
+- [ClinicalTrials](./ClinicalTrials.mdx) - Phase I-IV clinical development
+- [DrugManufacturing](./DrugManufacturing.mdx) - CMC and pharmaceutical production
+- [Biologics](./Biologics.mdx) - Antibody and protein drug discovery
+- [GenericDrugs](./GenericDrugs.mdx) - Generic drug development strategies
+
+## External Resources
+
+- **FDA**: [Drug Development and Approval Process](https://www.fda.gov/drugs/development-approval-process-drugs)
+- **DrugBank**: Comprehensive drug and target database
+- **ClinicalTrials.gov**: Clinical trial registry and results
+- **PubChem, ChEMBL, BindingDB**: Chemical and bioactivity databases
+- **Protein Data Bank (PDB)**: 3D protein structures
+- **Drug Discovery Today**: Scientific journal
+- **Nature Reviews Drug Discovery**: Leading research journal

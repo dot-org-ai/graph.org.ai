@@ -1,0 +1,548 @@
+---
+$context: https://agriculture.industries.org.ai
+$id: https://agriculture.industries.org.ai/AgriTech
+$type: https://agriculture.industries.org.ai/Agriculture
+name: "Agricultural Technology"
+description: "AgriTech and precision agriculture technologies including drones, IoT sensors, data analytics, autonomous equipment, controlled environment agriculture, and farm management systems"
+naics: "111-112"
+parent: https://naics.org.ai/11
+keywords:
+  - agricultural technology
+  - precision agriculture
+  - drones
+  - UAV
+  - IoT sensors
+  - farm technology
+  - controlled environment agriculture
+  - vertical farming
+  - autonomous equipment
+  - data analytics
+  - farm management software
+---
+
+export const items = async () => {
+  // Fetch agritech data from the database
+  return []
+}
+
+# Agricultural Technology (AgriTech)
+
+Agricultural technology encompasses precision farming tools, digital platforms, sensors, drones, and autonomous systems designed to increase productivity, reduce input costs, minimize environmental impact, and optimize decision-making in farming operations.
+
+## Overview
+
+The global agricultural technology market:
+- **Market size**: $20+ billion and growing at 10%+ annually
+- **Investment activity**: $10+ billion in venture capital annually
+- **Key drivers**: Labor shortage, climate uncertainty, input costs, sustainability requirements
+- **Adoption barriers**: Capital cost, data privacy, digital literacy, farm size variability
+- **Job creation**: New roles in farm data management, technology support, digital agriculture
+- **Integration**: Convergence of hardware (sensors, equipment), software (analytics, AI), and services
+
+Key technology categories:
+- Precision agriculture and variable rate technology
+- Sensors and remote sensing (satellite, drone, ground-based)
+- Autonomous and robotic systems
+- Controlled environment agriculture (CEA)
+- Artificial intelligence and machine learning
+- Farm management information systems (FMIS)
+- Blockchain for traceability
+- Alternative protein and cellular agriculture
+
+## Precision Agriculture Technologies
+
+### Remote Sensing and Imagery
+
+#### Satellite Imagery
+
+**Multispectral and Hyperspectral Imaging**:
+- Resolution: 3m to 0.5m ground sampling distance
+- Providers: Sentinel (free), Landsat (free), Planet Labs, Maxar Technologies
+- Applications:
+  - Normalized Difference Vegetation Index (NDVI) for crop health monitoring
+  - Biomass estimation for yield prediction
+  - Early disease detection
+  - Moisture stress identification
+  - Weed pressure mapping
+
+**Key Metrics**:
+- NDVI (Normalized Difference Vegetation Index): 0 to 1 scale
+  - Values 0.5-0.7 indicate healthy vegetation
+  - Changes track crop development and stress
+- SAVI (Soil-Adjusted Vegetation Index): Removes soil background effects
+- RVI (Relative Vegetation Index): Biomass and development tracking
+
+**Use Cases**:
+- Field management zones for variable rate application
+- Crop insurance and risk assessment
+- Yield prediction models
+- Crop rotation and field history analysis
+
+#### Drone/UAV Imagery
+
+**Unmanned Aerial Vehicles (UAVs)**:
+- Flight duration: 20-60 minutes per battery
+- Payload capacity: 1-10 kg (sensors, cameras)
+- Operating altitude: 0-500 feet above ground
+- Cost: $1,000-$50,000+ depending on platform and sensors
+- Training requirement: FAA Part 107 certification
+
+**Sensor Types**:
+- RGB cameras: High-resolution visible light imagery (1cm resolution possible)
+- Multispectral cameras: 4-13 channels (visible, near-infrared, red edge)
+- Thermal infrared: Crop water stress identification
+- LiDAR: 3D structure and height measurements
+- Hyperspectral: Laboratory-grade spectral analysis
+
+**Applications**:
+- Early pest and disease detection
+- Crop canopy analysis and LAI (Leaf Area Index) measurement
+- Variable rate application mapping
+- Irrigation management
+- Yield prediction
+- Crop counting and stand establishment
+- Pollinator and beneficial insect monitoring
+
+**Commercial Platforms**:
+- DJI Agras: Agricultural spray drones (10-30 liter capacity)
+- senseFly ebee: Fixed-wing mapping platforms
+- Yamaha FAZER: Larger agricultural spray drone
+- Parrot Agro: Multispectral and thermal imaging
+
+### Sensor Networks and IoT
+
+#### Soil Sensors
+
+**Soil Moisture Sensors**:
+- Technology: Capacitive, resistive, tensiometer-based
+- Measurement depth: Surface to 36+ inches
+- Accuracy: ±2-5% volumetric water content
+- Installation: Permanent or removable
+- Cost: $100-$500 per sensor
+- Uses: Irrigation scheduling, deficit irrigation strategies
+
+**Soil Nutrient Sensors**:
+- Real-time N, P, K measurement (emerging technology)
+- Electrochemical sensors
+- Integration with irrigation systems for fertigation
+- Reduction in excess nutrient application
+
+**Soil Health Sensors**:
+- Electrical conductivity (EC) for salinity and soil properties
+- Temperature monitoring
+- pH sensors
+- Organic matter estimation
+
+#### Plant Canopy Sensors
+
+**Normalized Difference Vegetation Index (NDVI) Sensors**:
+- Ground-based radiometers
+- Real-time crop health monitoring
+- Crop stage assessment
+- Nitrogen status assessment
+- Mounted on tractors for variable rate application
+
+**Leaf Area Index (LAI) Sensors**:
+- Measure plant leaf coverage
+- Predict yield potential
+- Optimize herbicide and fungicide timing
+
+#### Weather Stations
+
+**Integrated Weather Monitoring**:
+- Temperature, humidity, rainfall, wind speed/direction
+- Solar radiation, atmospheric pressure
+- Integration with disease modeling and pest forecasting
+- Cost: $500-$2,000 per station
+- Network deployment across regions
+
+### Equipment and Machinery
+
+#### Variable Rate Technology (VRT) Equipment
+
+**Variable Rate Seeding**:
+- Individual seed tube control
+- GPS and auto-guidance integration
+- Row-by-row seed density optimization
+- Real-time population adjustment
+- Air-seeder systems with individual outlet control
+
+**Variable Rate Application (VRA)**:
+- Herbicide applicators with section control
+- Fertilizer spreaders with variable gate opening
+- Sprayers with individual nozzle shutoff
+- PWM (Pulse Width Modulation) control systems
+- Automatic section shutdown to reduce overlap
+
+**Precision Application Benefits**:
+- 10-30% input cost reduction
+- Reduced environmental impact
+- Improved field uniformity
+- Better pest and disease management
+
+#### Autonomous and Robotic Systems
+
+**Autonomous Tractors**:
+- Self-driving capability with RTK-GPS guidance (±2cm accuracy)
+- Reduced operator fatigue
+- Optimize field passes for efficiency
+- Nighttime operation capability
+- Retrofit solutions for existing equipment
+
+**Robotic Systems**:
+- **Robotic weeders**: Precision mechanical or thermal weeding (reduces herbicide use)
+- **Harvesting robots**: Tomato, apple, strawberry harvesting
+- **Spraying drones**: Targeted application (10x more efficient than broadcast)
+- **Pruning robots**: Vineyard and orchard management
+
+**Automated Guidance Systems**:
+- GPS-based auto-steer (±2-5cm accuracy with RTK)
+- Visual guidance using field imagery
+- Steering angle actuators for retrofit
+- Cost: $10,000-$50,000 per tractor
+
+### Data Collection and Analytics
+
+#### Combine Yield Monitors
+
+**Real-Time Data Collection**:
+- Installed on combine harvesters
+- Measure grain flow rate, grain moisture, header height
+- Generate yield maps at 10-50 meter resolution
+- Integration with GPS for spatial data
+- Cost: $3,000-$8,000
+
+**Data Analysis**:
+- Yield variability assessment
+- Correlation with field maps (soil EC, elevation, previous inputs)
+- Delineation of management zones
+- Identification of yield-limiting factors
+- Benchmarking against neighboring fields
+
+#### Farm Management Information Systems (FMIS)
+
+**Major Platforms**:
+1. **John Deere Operations Center**
+   - Integrates equipment, field records, weather
+   - Mobile access
+   - Integration with other data sources
+2. **Climate FieldView (Bayer)**
+   - Comprehensive data platform
+   - AI-driven recommendations
+   - Integration with equipment and inputs
+3. **AgLeader SMS**
+   - Task documentation
+   - Variable rate file generation
+   - Benchmark analysis
+4. **Trimble Ag Software**
+   - Guidance and steering
+   - Field documentation
+   - Custom prescription generation
+
+**Data Integration**:
+- Equipment data (yield, application rates, efficiency)
+- Weather data (rainfall, temperature, frost risk)
+- Satellite/drone imagery
+- Soil test results and field history
+- Market prices and input costs
+- Weather forecasts and growing degree days
+
+#### Artificial Intelligence and Machine Learning
+
+**AI Applications in Agriculture**:
+
+1. **Crop Health and Disease Detection**:
+   - Image recognition for pest identification (aphids, whiteflies, spider mites)
+   - Disease detection (leaf spots, blights, mildew)
+   - Weed identification and mapping
+   - Crop stage classification
+   - Trained on millions of field images
+
+2. **Predictive Analytics**:
+   - Yield prediction models (in-season)
+   - Weather impact forecasting
+   - Pest pressure predictions
+   - Disease outbreak risk assessment
+   - Optimal harvest timing
+   - Nitrogen demand modeling
+
+3. **Recommendations Engines**:
+   - Variable rate application prescriptions
+   - Irrigation scheduling
+   - Planting date optimization
+   - Variety/hybrid selection
+   - Input timing recommendations
+
+4. **Autonomous Decision Systems**:
+   - Real-time treatment decisions
+   - Spray/no-spray optimization
+   - Population density adjustment
+   - Nutrient timing and rates
+
+### Controlled Environment Agriculture (CEA)
+
+#### Greenhouse Systems
+
+**Environmental Control**:
+- Temperature: ±2°C control
+- Humidity: 60-80% optimal
+- Light: LED optimization for photosynthesis
+- CO₂ enrichment: Increased yield by 10-20%
+- Irrigation: Drip or NFT (Nutrient Film Technique)
+
+**Hydroponics and Soilless Growing**:
+- Nutrient solution delivery systems
+- Root zone control
+- High water use efficiency (95%+)
+- Faster crop cycles
+- Reduced disease pressure
+
+**Benefits Over Field Production**:
+- Yield increase: 20-50 lbs/sq ft/year vs 10 lbs/sq ft/year field tomatoes
+- Water efficiency: 90%+ reduction
+- Chemical reduction: Minimal pesticides needed
+- Year-round production
+- Reduced transportation costs
+- Premium product quality
+
+#### Vertical Farming
+
+**Technology and Systems**:
+- Multi-level stacked production (10-20+ levels)
+- LED grow lights optimized for wavelengths
+- Controlled environment (no pesticides, minimal water)
+- Small footprint (urban locations possible)
+- High capital cost: $5,000-$20,000 per sq meter
+
+**Business Models**:
+- High-value crops: Leafy greens, microgreens, herbs, berries
+- Local production and distribution
+- Premium market positioning
+- Community engagement and education
+
+**Challenges**:
+- High energy costs (lighting)
+- High capital investment
+- Profitability dependent on premium pricing
+- Labor requirements (harvesting, seeding)
+
+## Connected Hardware Ecosystem
+
+### IoT Connectivity
+
+**Communication Standards**:
+- Cellular (4G/5G): Broad coverage, continuous connectivity
+- LoRaWAN: Long range, low power, less bandwidth
+- WiFi: High bandwidth, limited range
+- Bluetooth: Short range sensor networks
+
+**Data Transmission**:
+- Real-time streaming for critical metrics
+- Batch upload during optimal connectivity
+- Edge computing for local decision-making
+- Cloud synchronization
+
+### Interoperability Standards
+
+**OADA (Open Agricultural Data Alliance)**:
+- Standards for sharing farm data
+- Data exchange between equipment and software
+- Farmer data ownership and privacy
+
+**ISO Standards**:
+- ISO 11783: Tractor-Electronic Control Units (CAN bus protocol)
+- ISO 11784/11785: RFID animal identification
+- ISO 11787: Data exchange for agricultural machinery
+
+## Alternative and Emerging Technologies
+
+### Blockchain for Agricultural Traceability
+
+**Applications**:
+- Farm-to-table tracking
+- Organic certification verification
+- Recall management and food safety
+- Premium product verification
+- Carbon credit tracking
+- Supply chain transparency
+
+**Benefits**:
+- Immutable record of transactions
+- Transparent verification
+- Enhanced consumer trust
+- Premium product differentiation
+
+**Challenges**:
+- Data entry and validation requirements
+- Computational energy use
+- Farmer adoption and digital literacy
+
+### Cellular Agriculture and Alternative Proteins
+
+**Cultivated Meat Production**:
+- Animal cells grown in bioreactors
+- Scaffolds and growth media
+- Scale and cost reduction focus
+- Regulatory pathway development
+
+**Plant-Based Alternatives**:
+- Improved texture and taste mimicking
+- Nutritional optimization
+- Sustainable ingredient sourcing
+- Market expansion and acceptance
+
+**Impact on Traditional Agriculture**:
+- Potential reduction in conventional livestock production
+- Shift toward specialty and high-value products
+- New agricultural support services
+- Input reduction (water, land, emissions)
+
+### Gene Editing Technologies
+
+**CRISPR and Related Technologies**:
+- Precision crop improvement
+- Disease and pest resistance
+- Climate stress tolerance
+- Nutritional improvement
+- Faster breeding cycles
+
+**Regulatory Landscape**:
+- USDA regulatory approach
+- FDA oversight
+- Public acceptance variability
+- Patent and IP considerations
+
+## Investment and Business Models
+
+### Venture Capital and Startups
+
+**Funding Trends**:
+- Peak of $10B+ annually (2021-2022)
+- Geographic clusters: California, Midwest, Israel, Europe
+- Key investor areas: Data analytics, robotics, alternative proteins
+
+**Successful Models**:
+- Software and SaaS platforms
+- Specialized sensors and equipment
+- Data aggregation and analysis
+- Advisory services (digital agronomist)
+- Precision application equipment
+
+### Equipment Manufacturer Strategies
+
+**OEM Integration**:
+- John Deere, CNH Industrial, AGCO investing heavily in AgTech
+- Integration of autonomous systems, sensors, data platforms
+- Acquisition of startups and technology companies
+- Dealer network expansion for support
+
+**Service-Based Models**:
+- Data analytics and recommendations as a service
+- Subscription-based software and connectivity
+- Agronomic consultation integration
+- Financing options for adoption
+
+## Adoption and Implementation Challenges
+
+### Technical Barriers
+
+**Data Quality and Integration**:
+- Inconsistent data formats
+- Missing or incomplete records
+- Sensor calibration and drift
+- Data standardization needs
+
+**Connectivity and Infrastructure**:
+- Rural broadband limitations
+- Latency issues for real-time decisions
+- Equipment compatibility challenges
+- Cost of infrastructure
+
+### Operational Barriers
+
+**Digital Literacy**:
+- Farmer training requirements
+- Technology adoption curve
+- Knowledge gaps in data interpretation
+- Management system learning
+
+**Economic Factors**:
+- High capital investment
+- Uncertain ROI timelines
+- Hidden opportunity costs (labor, time)
+- Financing and availability
+- Scale-dependent economics
+
+**Data and Privacy Concerns**:
+- Data ownership and control
+- Algorithm transparency
+- Competitive information protection
+- Data security and breach risk
+
+## Best Practices for Adoption
+
+### Implementation Strategy
+
+1. **Start Small and Scale**:
+   - Pilot on representative fields
+   - Build expertise and confidence
+   - Integrate with existing systems
+   - Expand based on success
+
+2. **Data-Driven Decision Making**:
+   - Establish baseline metrics
+   - Track historical performance
+   - Compare against benchmarks
+   - Quantify ROI and adjust
+
+3. **Integration with Agronomy**:
+   - Work with agronomic advisors
+   - Combine traditional and digital insights
+   - Validate recommendations with field outcomes
+   - Adjust models based on results
+
+4. **Infrastructure Development**:
+   - Ensure connectivity (cellular or WiFi)
+   - Establish data backup and security
+   - Develop equipment/software integration plan
+   - Plan for technology upgrades
+
+## Related Technologies
+
+- [CropProduction](./CropProduction.mdx) - Applications of precision technology in field crops
+- [AnimalProduction](./AnimalProduction.mdx) - Precision livestock farming systems
+- [Aquaculture](./Aquaculture.mdx) - Technology in aquaculture management
+- [OrganicFarming](./OrganicFarming.mdx) - Technology supporting organic practices
+- [AgriculturalServices](./AgriculturalServices.mdx) - Technology-enabled consulting services
+- [tech.org.ai/IoT](https://tech.org.ai/IoT) - Internet of Things technology
+- [tech.org.ai/Robotics](https://tech.org.ai/Robotics) - Autonomous systems and robotics
+- [tech.org.ai/AI](https://tech.org.ai/AI) - Artificial intelligence and machine learning
+- [equipment.org.ai](https://equipment.org.ai) - Agricultural equipment and machinery
+
+## Occupations and Skills
+
+**Related O*NET Occupations**:
+- Agricultural and Food Scientists (17-1021)
+- Agricultural Equipment Operators (45-2091)
+- Farmers and Ranchers (45-2093)
+- Horticultural Specialists (45-2092)
+- Agricultural Technicians (17-3021)
+
+**Emerging Skills**:
+- Data interpretation and visualization
+- Farm management software operation
+- Drone piloting and imagery analysis
+- Sensor network setup and troubleshooting
+- GIS and mapping analysis
+- IoT device management
+
+## Sources
+
+- [USDA Economic Research Service - Farm Income](https://www.ers.usda.gov/)
+- [AgTechTomorrow](https://www.agtechtomorrow.com/)
+- [AgFunderNews](https://agfundernews.com/)
+- [DroneDeploy](https://www.dronedeploy.com/)
+- [Climate FieldView](https://www.climate.com/)
+- [John Deere Operations Center](https://www.deere.com/)
+- [American Society of Agricultural and Biological Engineers](https://www.asabe.org/)
+- <DatabaseLink namespace="agriculture.org.ai" type="AgriTech" />

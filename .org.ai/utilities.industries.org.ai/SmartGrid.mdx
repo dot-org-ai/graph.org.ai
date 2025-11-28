@@ -1,0 +1,414 @@
+---
+$context: https://utilities.industries.org.ai
+$id: https://utilities.industries.org.ai/SmartGrid
+$type: https://utilities.industries.org.ai/Utilities
+name: Smart Grid and Grid Modernization
+description: Grid modernization initiatives including advanced metering infrastructure, demand response, distribution automation, microgrids, and cybersecurity to improve efficiency, resilience, and renewable energy integration
+naicsCode: ["221121", "221122", "2211", "2212", "2213"]
+apqc: ["11.2", "11.3", "11.4", "11.5", "12.4", "12.5", "13.3", "14.2", "14.3", "14.4"]
+keywords: [smart grid, AMI, demand response, distribution automation, microgrid, SCADA, grid modernization, cybersecurity, resilience]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Smart Grid and Grid Modernization
+
+Smart grid initiatives represent a fundamental transformation of electricity distribution systems from passive, one-way networks to active, intelligent networks capable of real-time optimization, renewable energy integration, demand flexibility, and self-healing capabilities. This cross-cutting domain encompasses advanced metering, automation, demand response, microgrids, and cybersecurity.
+
+## Overview
+
+Smart grid modernization involves deploying digital technologies, automation, and advanced controls across the electricity distribution system:
+
+- **Advanced Metering Infrastructure (AMI)**: Smart meters, data collection, real-time monitoring
+- **Demand Response (DR)**: Dynamic pricing, load control, customer flexibility
+- **Distribution Automation (DA)**: Sensors, communications, automated controls for network optimization
+- **Microgrids**: Local, resilient energy systems with generation and storage
+- **Cybersecurity**: Protection against digital threats to critical infrastructure
+
+### Strategic Drivers
+
+**Renewable Integration**
+- Variable generation (solar, wind) requires flexible demand and storage
+- Forecasting and real-time balancing complexity increases
+- Distribution automation manages local renewable variability
+
+**Grid Efficiency**
+- Reduce peak demand through demand response
+- Optimize voltage (volt/VAR optimization)
+- Minimize losses through dynamic reconfiguration
+- Potential energy savings: 5-15% of retail consumption
+
+**Resilience and Reliability**
+- Self-healing networks: Isolate faults, restore service automatically
+- Distributed generation: Reduce dependency on transmission
+- Microgrids: Island and operate independently during outages
+- Increased reliability: Reduce customer outage duration/frequency
+
+**Customer Engagement**
+- Real-time usage data: Help customers understand consumption
+- Dynamic pricing: Incentivize peak-shifting and efficiency
+- Control capability: Allow customers to manage loads
+- Electrification: EV charging, heat pump control
+
+**Decarbonization**
+- Enable renewable energy integration
+- Support electrification of transportation and heating
+- Demand response reduces peaking plant need
+- Grid decarbonization pathway
+
+### Market Scale (U.S., 2024)
+
+**Advanced Metering Infrastructure**
+- Smart meters deployed: 130+ million (50%+ of U.S. meters)
+- Deployment rate: 10-15 million per year
+- Total U.S. meters: 150+ million
+- Remaining mechanical meters: 50+ million (declining)
+- Capital investment: $50+ billion (cumulative since 2000)
+- Annual spending: $3-5 billion (AMI, grid modernization)
+
+**Demand Response Capacity**
+- Total enrolled: 50+ GW (10%+ of peak demand)
+- Commercial/industrial: 30+ GW
+- Residential: 10+ GW (growing)
+- Potential: 150+ GW with widespread deployment
+- Revenue potential: $5-10 billion/year for large programs
+
+**Distribution Automation**
+- Advanced sensors: 100,000+ deployed
+- Deployment rate: Accelerating with grid modernization
+- Investment: $10+ billion (cumulative), $2+ billion annually
+
+## Advanced Metering Infrastructure (AMI) (APQC 12.1)
+
+### Smart Meter Technology
+
+**Smart Meter Functions**
+- Remote meter reading: Eliminates manual reading (weekly to monthly vs. quarterly to annual)
+- 15-minute interval data: Detailed consumption profiles
+- Outage notification: Automatic alert when power lost
+- Tamper detection: Alert if meter bypassed
+- Power quality monitoring: Voltage, harmonics, sag/swell detection
+- Bidirectional communication: Two-way signal to/from utility
+- Open standards: Supports third-party applications and interoperability
+
+**Wireless Communication**
+- RF mesh networks: Wireless between meters and concentrators
+- Fixed wireless: Direct radio link to utility concentrators
+- Power line carrier (PLC): Data over distribution lines
+- Cellular: 4G/5G communication
+- Fiber backhaul: High-bandwidth backbone to utility data center
+- Latency: <1 second for real-time applications, seconds for billing
+
+**Cybersecurity Considerations (APQC 14.2)**
+- Authentication: Meter identity and communication security
+- Encryption: Protect data in transit and at rest
+- Firmware updates: Patch vulnerabilities
+- Privacy: Customer data protection (consumption data sensitive)
+- Standards: NIST, IEC 62351 (power systems security)
+
+### Advanced Metering Operations (APQC 12.1-12.2)
+
+**Meter Data Management (MDM)**
+- Collection: Aggregate meter readings from millions of meters
+- Validation: Check for errors, missing data, anomalies
+- Reconciliation: Match with billing systems
+- Analytics: Identify consumption patterns, theft, anomalies
+- Integration: Connect with CIS (Customer Information System), billing
+
+**Customer Data Portal**
+- Online access: Customers view real-time consumption (1-hour delay typical)
+- Breakdown: By appliance/circuit (if sub-metering available)
+- Comparison: Baseline vs. peers, historical trend
+- Alerts: Unusual consumption patterns, thresholds
+- Device control: Smart home integration (thermostat, EV charger)
+
+**Data Analytics and Insights**
+- Load research: Understand consumption patterns by customer type
+- Theft detection: Identify non-technical losses
+- Efficiency assessment: Identify high-consumption customers
+- Anomaly detection: Meter malfunction, bypass, or fraud
+- Demand forecast: Input data for demand forecasting models
+
+## Demand Response Programs (APQC 12.4-12.5)
+
+### Demand Response Types
+
+**Direct Load Control (DLC)**
+- Utility control: Utility controls specific loads remotely
+- Residential: Air conditioning, water heaters, EV chargers
+- Commercial: HVAC, lighting, refrigeration
+- Response: Immediate, unnoticed (thermostat setpoint change)
+- Duration: Few minutes to hours
+- Frequency: Peak demand periods, system emergencies
+- Availability: 1-5 GW in U.S. (growing)
+
+**Interruptible Service**
+- Contractual: Large customers agree to reduce load when called
+- Commercial/industrial: Manufacturing, process loads
+- Response time: 30 minutes to few hours (contractual)
+- Notice: Advance notification required
+- Capacity: 5-10 GW typical program size
+- Compensation: Standby rate plus event participation incentive
+
+**Time-of-Use (TOU) Rates (APQC 12.1)**
+- On-peak: Higher price during demand peaks (1-9 PM typical)
+- Mid-peak: Medium price during moderate demand
+- Off-peak: Lower price during low demand (10 PM-6 AM typical)
+- Response: Customer voluntary shift (no automatic control)
+- Adoption: Growing (50%+ of smart meter areas eligible)
+- Impact: 5-15% peak reduction (varies by customer segment)
+
+**Real-Time Pricing (RTP) (APQC 12.1)**
+- Hourly prices: Reflect wholesale market prices
+- Feed: Prices updated hourly or 15-minute intervals
+- Customer response: Automate via smart devices or manual
+- Participation: Limited (commercial/large industrial primarily)
+- Volatility: May deter residential adoption
+- Impact: 10-25% load shifting for engaged customers
+
+**Critical Peak Pricing (CPP)**
+- Peak events: 10-15 days/year (system stress periods)
+- Peak prices: 2-3x normal (incentive to reduce)
+- Notice: Day-ahead or day-of notification
+- Duration: 1-4 hours typical
+- Adoption: Growing in California and other high-solar regions
+- Impact: 10-30% reduction during events (varies)
+
+**Demand Response Aggregation**
+- Aggregator model: Third party coordinates multiple customers
+- Smart devices: Thermostats, water heaters, EV chargers, batteries
+- Control signals: Response to price or grid conditions
+- Wholesale participation: Sell aggregate load reduction to RTO/ISO
+- Compensation: Capacity and energy payments to aggregator
+- Emerging: Distributed energy resource management (DERMS)
+
+### Advanced Demand Response Technologies
+
+**Smart Thermostats**
+- Learning capability: Adapt to occupancy patterns
+- Remote control: Adjust via mobile app or voice command
+- Schedule: Program different temperatures by time/day
+- Integration: Respond to utility demand response signals
+- Energy savings: 10-15% potential reduction
+- Adoption: 15%+ of U.S. households (growing)
+
+**EV Charging Optimization (APQC 12.5)**
+- Smart chargers: Respond to price signals, grid conditions
+- Charging timing: Delay charging to off-peak hours
+- Rate selection: Optimize charging to lowest rate period
+- Vehicle-to-grid (V2G): Bidirectional capability (emerging)
+- Controlled penetration: Avoid overload on distribution circuits
+- Flexibility: EV battery provides storage asset value
+
+**Energy Management Systems (EMS)**
+- Commercial buildings: HVAC, lighting, plug loads optimization
+- Industrial facilities: Process load shifting, flexibility
+- Smart controls: Response to price, grid signals, or manual
+- Potential: 15-30% demand flexibility for engaged customers
+
+## Distribution Automation (APQC 11.2-11.4)
+
+### Distribution Automation Components
+
+**Sensors and Monitoring (APQC 11.4)**
+- Power quality sensors: Voltage, frequency, harmonics, transients
+- Temperature sensors: Transformer, conductor temperature
+- Acoustic sensors: Corona (electrical discharge), hotspots
+- Fault indicators: Identify fault location on lines
+- Phasor measurement units (PMUs): Synchronized time measurements
+- Communications: Wireless, fiber, or power line carrier back to control center
+
+**Automated Controls**
+- Smart switches: Reclosers (automated breakers), sectionalization switches
+- Voltage regulators: Automatic tap-changing transformers
+- Capacitor banks: Automatic switching for reactive power
+- Distributed generation: Inverter controls for renewable integration
+- Energy management systems: Optimize across controls
+
+**Communication Networks (APQC 11.2)**
+- SCADA: Supervisory control and data acquisition
+- Advanced SCADA: Faster response (15-60 seconds vs. minutes)
+- Last-mile: Meters, sensors to field devices
+- Backhaul: Field devices to utility data centers
+- Standards: IEC 61850 (power systems communication)
+
+### Distribution Automation Applications
+
+**Volt/VAR Optimization (VVO) (APQC 11.4)**
+- Voltage reduction: Lower voltage to reduce consumption
+- Target: 118-122V (optimal range)
+- Control: Automatic tap-changers, voltage regulators
+- Demand reduction: 1-2% (voltage sensitive loads)
+- Energy savings: 2-3% (loss reduction + demand reduction)
+- Benefits: Peak shaving, loss reduction, renewable integration
+
+**Feeder Reconfiguration (APQC 11.2)**
+- Load balancing: Transfer load between feeders
+- Switch operation: Open/close switches to optimize flow
+- Loss reduction: Shorter paths reduce resistance losses
+- Renewable accommodation: Manage local generation variability
+- Frequency: Hourly to daily optimization
+
+**Fault Detection and Isolation (APQC 11.2)**
+- Rapid fault location: Automated detection of fault location
+- Automatic isolation: Open switches to isolate faulted section
+- Service restoration: Reroute power from alternate feeder
+- Self-healing: System responds without operator intervention
+- Benefit: Reduce customer interruption duration (SAIDI)
+
+**Outage Management System (OMS) (APQC 11.2, 12.2)**
+- Outage detection: Automated notification of outages
+- Outage information: Location, number of affected customers, duration estimate
+- Crew dispatch: Direct repair crews to fault location
+- Restoration: Track restoration progress, customer notification
+- Impact reduction: Faster response, reduced duration
+
+## Microgrids (APQC 11.2, 11.4)
+
+### Microgrid Architecture
+
+**Components**
+- Distributed energy resources (DERs): Local generation (solar, wind, CHP)
+- Energy storage: Batteries, thermal storage
+- Loads: Customer facilities (residential, commercial, industrial)
+- Controls: Microgrid controller, local SCADA
+- Interconnection: Point of common coupling (PCC) to main grid
+- Protection: Islanding detection, fault coordination
+
+**Operation Modes**
+
+**Grid-Connected Mode**
+- Operates in synchrony with utility grid
+- Export surplus generation to grid
+- Import energy when needed
+- Normal operation mode
+
+**Islanded Mode**
+- Disconnects from main grid (planned or during outage)
+- Maintains voltage and frequency locally
+- Balances supply and demand within microgrid
+- Limited to available local resources and storage
+
+**Transition Control**
+- Seamless transfer: Minimize disruption during transition
+- Synchronization: Match voltage/frequency when reconnecting
+- Load shedding: Shed non-critical loads if capacity insufficient
+
+### Microgrid Applications
+
+**Community Resilience**
+- Disaster recovery: Operation during grid outages
+- Critical facilities: Hospitals, fire stations, water treatment
+- Anchor institutions: Universities, large medical centers
+- Neighborhood systems: Multiple buildings sharing resources
+
+**Industrial Applications**
+- Process continuity: Prevent production disruption
+- Energy optimization: Shift loads based on local generation
+- Waste heat recovery: Thermal energy utilization
+
+**Island and Remote Applications**
+- Reducing diesel dependence: Renewable generation + storage
+- Cost reduction: Eliminate transmission/distribution charges
+- Reliability: Self-sufficient operation
+
+### Microgrid Economics
+
+**Capital Costs**
+- Distributed generation: $1,000-2,000/kW (solar, wind)
+- Energy storage: $200-400/kWh (batteries)
+- Controls and infrastructure: $500-1,000/kW
+- Total: $2,000-5,000/kW typical (varies by configuration)
+
+**Financial Viability**
+- Revenue streams: Bill savings, resilience value, service fees
+- Incentives: Federal (IRA), state, utility rebates
+- Business model: ESCO (Energy Service Company) or municipal
+- Payback: 7-15 years typical (varies by application, incentives)
+
+## Cybersecurity (APQC 14.2)
+
+### Threats and Vulnerabilities
+
+**Types of Threats**
+- Ransomware: Encrypt systems, demand payment for recovery
+- Denial of service (DDoS): Flood systems with traffic, cause outage
+- Data breach: Unauthorized access to customer data
+- Insider threats: Malicious employees or contractors
+- Third-party risk: Vulnerable suppliers with grid access
+- Emerging: Artificial intelligence-enabled attacks
+
+**Critical Infrastructure Protection**
+- NERC CIP (Critical Infrastructure Protection): Federal standards
+- NIST Framework: Identify, protect, detect, respond, recover
+- IEC 62351: Power systems security standards
+- Layered defense: Multiple controls, no single point of failure
+- Resilience: Ability to continue operations despite attacks
+
+### Cybersecurity Controls (APQC 14.2)
+
+**Prevention Controls**
+- Access control: Multi-factor authentication, least privilege
+- Encryption: Data in transit and at rest
+- Intrusion prevention: Firewalls, IDS/IPS systems
+- Patch management: Regular updates, vulnerability management
+- Segmentation: Air-gapped networks for critical systems
+- Network architecture: Zero trust architecture (verify all access)
+
+**Detection and Response**
+- Monitoring: 24/7 security operations center (SOC)
+- Incident response plan: Documented procedures
+- Threat intelligence: Information sharing with peers, government
+- Recovery procedures: Backup systems, business continuity
+- Disclosure: Reporting protocols for breaches
+
+## Standards and Regulations (APQC 14.2-14.4)
+
+**Grid Modernization Standards**
+- NIST Framework: Cybersecurity Framework for critical infrastructure
+- NERC CIP: Mandatory reliability standards for grid operators
+- IEEE 2030: Smart grid interoperability
+- IEC 61850: Power systems communication and data standards
+- ZIGBEE, WiFi HaLow: Wireless standards for AMI/sensors
+
+**Smart Grid Incentives and Policies**
+- Smart Grid Investment Grant Program: $3.4 billion federal funding (2009-2012)
+- State efficiency programs: Decoupling rates from sales volumes
+- IRA funding: Billions allocated to grid modernization (2022+)
+- RPS mandates: Drive renewable integration requirements
+
+## Integration with Other Utility Systems (APQC 11.5, 13.3)
+
+**Gas System Integration**
+- Peak demand coordination: Gas for peaking generation reduction
+- Demand response: Shift loads, reduce simultaneous peaks
+- Hydrogen blending: Long-term integrated energy
+- CHP: Combined heat and power for efficiency
+
+**Water System Integration**
+- Demand response: Shift water pumping to off-peak hours
+- EV charging coordination: Manage load between EV, water, gas
+- Renewable integration: Coordinated dispatch across utilities
+
+**Transportation Integration**
+- EV charging: Responsive to grid conditions and prices
+- Vehicle-to-grid: Use EVs as distributed energy resources
+- Transit systems: Coordination with electric transit fleets
+
+## Cross-References
+
+**Related Domains:**
+- [ElectricUtilities](./ElectricUtilities.mdx) - Grid operation, demand response integration
+- [NaturalGasUtilities](./NaturalGasUtilities.mdx) - Integrated energy systems
+- [WaterUtilities](./WaterUtilities.mdx) - Water pumping demand response
+- [RenewableEnergy](./RenewableEnergy.mdx) - Variable resource integration
+- [technology.org.ai](https://technology.org.ai) - SCADA, IoT, cybersecurity systems
+- [infrastructure.org.ai](https://infrastructure.org.ai) - Distribution networks, microgrids
+- [finance.org.ai](https://finance.org.ai) - Smart grid financing, rate recovery
+- [UtilityRegulation](./UtilityRegulation.mdx) - Grid modernization regulations, cybersecurity standards
+
+---
+
+Last Updated: 2025-11-28

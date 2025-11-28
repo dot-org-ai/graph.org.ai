@@ -1,0 +1,289 @@
+---
+$context: https://textiles.manufacturing.org.ai
+$id: https://textiles.manufacturing.org.ai/TextileProducts
+$type: https://textiles.manufacturing.org.ai/Textiles
+name: "Textile Products"
+naicsCode: "314"
+description: "Manufacturing of finished textile products including home furnishings, industrial textiles, carpets, linens, curtains, and other textile-based consumer and industrial goods from purchased fabrics and materials."
+parent: https://textiles.manufacturing.org.ai
+---
+
+export const items = async () => {
+  // Fetch textile product establishments from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://textiles.manufacturing.org.ai/TextileProducts',
+    naicsCode: { $regex: '^314' }
+  })
+}
+
+# Textile Products
+
+Textile products (NAICS 314) encompasses establishments primarily engaged in manufacturing finished textile products from purchased materials. Rather than producing raw fibers or fabrics, these mills convert purchased fabrics and other textiles into finished consumer and industrial products including carpets, rugs, home furnishings, linens, curtains, and specialized industrial textile articles.
+
+## Overview
+
+The textile products sector bridges fabric mills and end consumers, transforming raw textiles into ready-to-use products. This subsector includes carpet and rug manufacturers, home furnishings producers, and manufacturers of specialized textile articles. These operations typically involve cutting, sewing, assembly, and finishing processes that add significant value to purchased materials.
+
+Unlike textile mills that produce fabrics, textile product manufacturers focus on design, engineering, assembly, and finishing. The sector requires significant investment in cutting and sewing equipment, quality control, and logistics, along with strong design capabilities and understanding of consumer preferences.
+
+## Industry Groups
+
+### 3141 - Carpet and Rug Mills
+
+Establishments primarily engaged in manufacturing carpets and rugs from purchased fibers and yarns.
+
+**Key Products:**
+- Tufted carpets and rugs
+- Woven carpets and rugs
+- Needle-punched and nonwoven carpets
+- Specialty rugs (Persian, Oriental styles)
+- Modular and tile carpets
+- Stair runners and hall runners
+- Custom and area rugs
+
+**Manufacturing Processes:**
+- **Tufting**: Most common method, inserting pile yarn into backing
+- **Weaving**: Traditional method for high-end carpets
+- **Needle-Punching**: Creating dense nonwoven structures
+- **Binding and Seaming**: Edging and joining pieces
+- **Backing Application**: Latex or PVC latex backing
+- **Finishing**: Shearing, brushing, and quality inspection
+
+**Market Segments:**
+- Residential home use
+- Commercial and office spaces
+- Hospitality and gaming
+- Healthcare and institutional
+- Transportation (vehicles, aircraft)
+- Industrial and specialty
+
+### 3142 - Textile Bag and Canvas Mills
+
+Establishments primarily engaged in manufacturing canvas, burlap, and other textile bags.
+
+**Key Products:**
+- Burlap bags and sacks
+- Textile shopping bags
+- Duffel bags and travel bags
+- Industrial canvas products
+- Tote bags and promotional bags
+- Bulk material containers
+- Specialty industrial bags
+
+**Applications:**
+- Agricultural product packaging
+- Bulk material storage
+- Retail and shopping use
+- Promotional merchandise
+- Industrial and construction
+- Food and beverage packaging
+
+### 3149 - Other Textile Product Mills
+
+Establishments engaged in manufacturing textile products not classified elsewhere.
+
+**Product Categories:**
+
+#### Home Furnishings
+- **Bedding and Linens**: Sheets, pillowcases, comforters, bedspreads
+- **Towels and Bath**: Bath towels, hand towels, washcloths, bath mats
+- **Curtains and Drapery**: Window treatments, specialty draperies
+- **Upholstery Panels**: Sofa and chair coverings
+- **Throw Pillows**: Decorative pillows and cushions
+- **Table Linens**: Tablecloths, napkins, placemats, runners
+
+#### Industrial and Institutional
+- **Medical Textiles**: Bandages, gauze, surgical drapes
+- **Geotextiles**: Erosion control, road construction materials
+- **Filtration Products**: Filter media and bags
+- **Reinforcement Materials**: Fiber-reinforced composites
+- **Protective Wear**: Aprons, lab coats, specialized garments
+
+#### Specialty Articles
+- **Flags and Banners**: Promotional and national flags
+- **Hats and Accessories**: Textile-based headwear
+- **Embroidered Products**: Custom embroidery and patches
+- **Netting and Mesh**: Sports nets, screening, specialty mesh
+- **Webbing and Tape**: Ribbons, binding, straps
+
+## Manufacturing Operations
+
+### Cutting and Sewing
+- **Pattern Making**: Design and specification of pieces
+- **Cutting Equipment**: Automated and manual cutting systems
+- **Nesting Optimization**: Maximizing fabric utilization
+- **Sewing and Assembly**: Industrial sewing for assembly
+- **Finishing Seams**: Binding, hemming, overcasting
+
+### Assembly and Construction
+- **Line Assembly**: Production line organization
+- **Component Integration**: Combining multiple pieces
+- **Embellishment**: Adding trim, buttons, hardware
+- **Quality Checkpoints**: In-process quality control
+
+### Finishing and Packing
+- **Pressing and Shaping**: Final product shaping
+- **Labeling and Tagging**: Product identification
+- **Packaging and Wrapping**: Protective packaging
+- **Shipping Preparation**: Bulk organization
+
+### Specialized Processes
+- **Quilting**: Stitching layers together for dimension
+- **Embroidery**: Decorative stitching and personalization
+- **Digital Printing**: Custom color and pattern application
+- **Coating and Lamination**: Applied surface treatments
+- **Heat Setting**: Stabilizing shape and properties
+
+## Product Categories and Applications
+
+### Home Textiles Market
+- **Bedding**: High-volume, price-sensitive, fashion-driven
+- **Towels**: Commodity product with brand differentiation
+- **Window Treatments**: Fashion-forward, seasonal variations
+- **Decorative**: Pillows, throws, accent pieces
+- **Table Linens**: Occasion-driven (holidays, entertaining)
+
+### Commercial and Institutional
+- **Hospitality**: Hotels, resorts, restaurants
+- **Healthcare**: Hospitals, clinics, care facilities
+- **Education**: Schools, universities, training centers
+- **Government**: Military, public facilities
+- **Workplace**: Office furnishings and breakrooms
+
+### Industrial Applications
+- **Automotive**: Seat covers, interior components
+- **Aerospace**: Aircraft interiors and components
+- **Marine**: Boat covers, cushions, safety equipment
+- **Agriculture**: Shade cloth, equipment covers
+- **Protective**: Geotextiles, erosion control materials
+
+## Industry Challenges
+
+### Production Challenges
+- **Labor Intensive**: Cutting and sewing remain labor-based
+- **Seam Quality**: Consistency in stitching and assembly
+- **Customization**: Managing product variety and SKUs
+- **Waste Management**: Fabric scraps and waste reduction
+- **Speed to Market**: Quick response to trends and demand
+
+### Market Pressures
+- **Import Competition**: Low-cost imports, especially apparel
+- **Commodity Pricing**: Price pressure on standard products
+- **Consolidation**: Trend toward larger companies
+- **Retail Concentration**: Power of large retailers
+- **Design Trends**: Need for continuous product innovation
+
+### Supply Chain
+- **Fabric Sourcing**: Reliable quality from mills
+- **Cost Volatility**: Raw material price fluctuations
+- **Inventory Management**: Balancing stock and waste
+- **Logistics**: Efficient distribution to retailers
+- **Seasonality**: Demand fluctuations throughout year
+
+### Sustainability
+- **Waste Reduction**: Minimizing fabric scraps
+- **Sustainable Materials**: Organic and recycled options
+- **Chemical Use**: Finishing and dyeing chemicals
+- **Labor Standards**: Ethical manufacturing practices
+- **Circular Economy**: Product lifecycle considerations
+
+## Industry Structure
+
+### Company Types
+- **Large Integrated Companies**: Owning mills and product manufacturing
+- **Branded Manufacturers**: Design-focused with contract manufacturing
+- **Private Label Producers**: Manufacturing for retail brands
+- **Specialty Producers**: Focused on specific products or markets
+- **Contract Manufacturers**: Service-based production for others
+
+### Geographic Patterns
+- Traditional concentration in Southeast (Carolinas, Georgia)
+- Historical centers in Northeast and Midwest
+- Increasing offshore production in Asia
+- Some consolidation into larger facilities
+- Regional specialization by product type
+
+## Workforce Profile
+
+- **Machine Operators**: Operating industrial cutting and sewing equipment
+- **Assembly Workers**: Manual assembly and construction
+- **Quality Inspectors**: Product quality assurance
+- **Design and Engineering**: Product development and specification
+- **Supervision**: Line and production supervision
+- **Warehousing and Logistics**: Material handling and shipping
+- **Pattern Makers**: Creating and adjusting patterns
+
+## Emerging Trends
+
+### Automation and Technology
+- **Automated Cutting**: CNC cutting systems for efficiency
+- **Robotic Sewing**: Emerging in some applications
+- **Computer-Aided Design (CAD)**: Pattern optimization
+- **Digital Printing**: Custom colors without screen setup
+- **IoT Monitoring**: Production tracking and optimization
+
+### Customization and Personalization
+- **On-Demand Production**: Made-to-order capabilities
+- **Monogramming and Embroidery**: Personalization services
+- **Short Runs**: Small batch and limited edition products
+- **Direct-to-Consumer**: Reduced retail intermediaries
+- **Mass Customization**: Scalable personalization
+
+### Sustainability Focus
+- **Organic and Natural Fibers**: Sustainable raw materials
+- **Recycled Content**: Using recovered fibers
+- **Zero Waste Manufacturing**: Minimizing waste products
+- **Eco-Friendly Finishes**: Non-toxic treatments
+- **Circular Design**: Products designed for recycling
+
+### Product Innovation
+- **Performance Textiles**: Moisture-wicking, antimicrobial
+- **Smart Textiles**: Embedded sensors and technology
+- **Eco-Luxury**: Premium sustainable products
+- **Heritage and Artisan**: Hand-crafted and specialty items
+- **Multi-Function**: Products with multiple uses
+
+## Market Segments and Customer Types
+
+### Retail Customers
+- Department stores and specialty retailers
+- Home furnishings retailers
+- Online marketplaces and direct-to-consumer
+- Big-box retailers
+- Discount and value retailers
+
+### Institutional Customers
+- Hotels and hospitality chains
+- Healthcare systems and hospitals
+- Educational institutions
+- Government and military procurement
+- Corporate and office outfitters
+
+### Commercial Customers
+- Textile converters and wholesalers
+- OEM manufacturers
+- Contract manufacturers
+- Distribution and logistics companies
+- Specialty retailers
+
+## Cross-References
+
+| Domain | Relationship |
+|--------|--------------|
+| [manufacturing.org.ai](https://manufacturing.org.ai) | Parent manufacturing industry |
+| [naics.org.ai](https://naics.org.ai) | NAICS 314 classification |
+| [textiles.org.ai](https://textiles.manufacturing.org.ai) | Parent textiles domain |
+| [retail.org.ai](https://retail.org.ai) | Primary distribution channel |
+| [furniture.org.ai](https://furniture.org.ai) | Related home furnishings |
+| [hospitality.org.ai](https://hospitality.org.ai) | Major customer segment |
+| [design.org.ai](https://design.org.ai) | Product design and trends |
+| [sustainability.org.ai](https://sustainability.org.ai) | Environmental practices |
+
+## See Also
+
+- [Textile Mills](./TextileMills.mdx)
+- [Apparel Manufacturing](./Apparel.mdx)
+- [Technical Textiles](./TechnicalTextiles.mdx)
+- [Sustainable Textiles](./SustainableTextiles.mdx)
+- [Textile Technology](./TextileTech.mdx)

@@ -1,0 +1,374 @@
+---
+$context: https://sports.media.org.ai/ProfessionalSports
+$id: https://sports.media.org.ai/ProfessionalSports/{id}
+$type: https://schema.org.ai/SportsOrganization
+category: Professional Sports
+sportType: {sportType}
+organizationType: {organizationType}
+naicsCode: 7112
+---
+
+# {name}
+
+{description}
+
+## Professional Sports Overview
+
+<ProfessionalSportsOverview entity={entity} />
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Organization Type | <OrgTypeBadge type={organizationType} /> |
+| Sport | <SportTypeBadge sport={sportType} /> |
+| NAICS Code | 7112 - Spectator Sports |
+| League | {league} |
+| Founded | {founded} |
+| Location | {location} |
+| Owner | {owner} |
+
+## Sports Organization Profile
+
+### Overview
+
+Professional sports organizations operate at the highest levels of competitive athletics. This includes:
+
+- **Major League Teams**: Professional franchises in established leagues (NFL, NBA, MLB, NHL, MLS, etc.)
+- **League Operations**: Governing bodies that oversee teams, competition, player contracts, and revenues
+- **Professional Athletes**: Elite competitors who earn primary income through sports
+- **Sports Management**: Agent representation, player development, contract negotiation
+- **Revenue Streams**: Ticket sales, broadcasting rights, sponsorships, merchandise, stadium operations
+
+### Business Model
+
+Professional sports organizations generate revenue through:
+
+- **Media Rights**: Broadcasting contracts (local, national, international)
+- **Ticket Sales**: Individual game tickets, season passes, premium seating
+- **Sponsorships**: Corporate partnerships and brand endorsements
+- **Merchandise**: Team apparel, equipment, collectibles
+- **Facility Revenue**: Stadium concessions, parking, premium experiences
+- **Digital Revenue**: Fantasy sports, apps, streaming, online communities
+
+## Organizational Structure
+
+<ProfessionalSportsStructure entity={entity} />
+
+### Leadership & Management
+
+<Leadership
+  entity={entity}
+  roles={['Owner', 'President', 'General Manager', 'Head Coach', 'Athletic Director']}
+  showExecutives={true}
+/>
+
+### Key Departments
+
+<Departments
+  entity={entity}
+  departments={['Operations', 'Player Personnel', 'Marketing', 'Facilities', 'Medical Staff']}
+  showFunctions={true}
+/>
+
+### Coaching Staff
+
+<CoachingStaff
+  entity={entity}
+  includePositionCoaches={true}
+  showSpecialties={true}
+/>
+
+## Team Roster & Athletes
+
+<TeamRoster entity={entity} />
+
+### Player Management
+
+<PlayerManagement
+  entity={entity}
+  showContracts={true}
+  showPerformance={true}
+/>
+
+### Performance Metrics
+
+<PerformanceMetrics
+  entity={entity}
+  metrics={['wins', 'losses', 'pointsPerGame', 'playerEff', 'playoff appearance']}
+  showTrends={true}
+/>
+
+## Competition & Records
+
+### League Performance
+
+<LeaguePerformance
+  entity={entity}
+  showStandings={true}
+  showHistoricalRecords={true}
+/>
+
+### Playoff History
+
+<PlayoffHistory
+  entity={entity}
+  showChampionships={true}
+  showAppearances={true}
+/>
+
+### Championships
+
+<ChampionshipHistory
+  entity={entity}
+  showTitles={true}
+  showSeasons={true}
+/>
+
+## Financial Information
+
+<FinancialOverview entity={entity} />
+
+### Revenue Analysis
+
+<RevenueBreakdown
+  entity={entity}
+  sources={['tickets', 'mediaRights', 'sponsorships', 'merchandise', 'facility']}
+  showTrends={true}
+/>
+
+### Franchise Valuation
+
+<FranchiseValuation
+  entity={entity}
+  showComparison={true}
+  showHistoricalTrends={true}
+/>
+
+### Salary Cap & Payroll
+
+<SalaryCap
+  entity={entity}
+  showPayrollBreakdown={true}
+  showComparison={true}
+/>
+
+## Facilities & Venues
+
+<VenueOverview entity={entity} />
+
+### Home Stadium/Arena
+
+<VenueDetails
+  entity={entity}
+  venue={homeVenue}
+  showCapacity={true}
+  showAmenities={true}
+  showOperatingCosts={true}
+/>
+
+### Training Facilities
+
+<TrainingFacilities
+  entity={entity}
+  showModernization={true}
+  showCapabilities={true}
+/>
+
+## Media & Broadcasting
+
+<MediaPresence entity={entity} />
+
+### Broadcasting Contracts
+
+<BroadcastingContracts
+  entity={entity}
+  showNetworks={true}
+  showValueTrends={true}
+/>
+
+### Digital & Streaming
+
+<DigitalMediaStrategy
+  entity={entity}
+  platforms={['official_app', 'league_streaming', 'social_media', 'fantasy']}
+  showEngagement={true}
+/>
+
+### Fan Engagement
+
+<FanEngagement
+  entity={entity}
+  showCommunity={true}
+  showSocial={true}
+/>
+
+## Sponsorships & Partnerships
+
+<SponsorshipOverview entity={entity} />
+
+### Corporate Sponsors
+
+<CorporateSponsors
+  entity={entity}
+  showValueTiers={true}
+  showDuration={true}
+/>
+
+### Strategic Partnerships
+
+<StrategicPartnerships
+  entity={entity}
+  categories={['marketing', 'merchandising', 'technology', 'sports_science']}
+/>
+
+## Workforce & Employment
+
+<WorkforceOverview entity={entity} />
+
+### Staff Breakdown
+
+<StaffBreakdown
+  entity={entity}
+  categories={['Players', 'Coaches', 'Trainers', 'Management', 'Operations']}
+  showCount={true}
+/>
+
+### Occupations Employed
+
+<OccupationsEmployed
+  entity={entity}
+  source="onet"
+  roles={['Professional Athletes', 'Coaches', 'Sports Managers', 'Medical Professionals', 'Operations Staff']}
+  showDistribution={true}
+/>
+
+### Skills in Demand
+
+<SkillsInDemand
+  entity={entity}
+  categories={['athletic_performance', 'team_management', 'coaching', 'sports_medicine', 'sports_analytics']}
+  showImportance={true}
+/>
+
+## Market Position & Competition
+
+### Competitive Landscape
+
+<CompetitiveAnalysis
+  entity={entity}
+  showDivisionRivals={true}
+  showLeagueComparison={true}
+/>
+
+### Market Share
+
+<MarketShare
+  entity={entity}
+  metric="fan_engagement"
+  showTrends={true}
+/>
+
+## Regulatory & Compliance
+
+### League Rules & Governance
+
+<LeagueGovernance
+  entity={entity}
+  showRules={true}
+  showComplianceRequirements={true}
+/>
+
+### Labor Relations
+
+<LaborRelations
+  entity={entity}
+  showCollectiveBarAgreements={true}
+  showPlayerRights={true}
+/>
+
+### Anti-Doping & Integrity
+
+<IntegrityPrograms
+  entity={entity}
+  showDoping={true}
+  showGambling={true}
+/>
+
+## Community & Social Impact
+
+<CommunityImpact entity={entity} />
+
+### Community Programs
+
+<CommunityPrograms
+  entity={entity}
+  showCharitable={true}
+  showYouth={true}
+  showEducation={true}
+/>
+
+### ESG Initiatives
+
+<ESGInitiatives
+  entity={entity}
+  showDiversity={true}
+  showSustainability={true}
+/>
+
+## Related Sports Organizations
+
+<RelatedOrganizations
+  entity={entity}
+  relationships={['division_rivals', 'conference_members', 'league_members', 'historical_rivals']}
+/>
+
+## Connections to Related Domains
+
+### Sports Management & Representation
+- [`occupations.org.ai`](https://occupations.org.ai) - Athletes, coaches, sports managers
+- Professional sports agents and agencies
+- Player representation and development
+
+### Sports Media & Broadcasting
+- [`media.org.ai`](https://media.org.ai) - Sports broadcasting and journalism
+- Sports commentary and analysis
+- Sports photography and videography
+
+### Events & Competitions
+- [`events.org.ai`](https://events.org.ai) - Sporting events and tournaments
+- Season schedules and game events
+- Playoff tournaments and championships
+
+### Health & Sports Science
+- [`health.org.ai`](https://health.org.ai) - Sports medicine and athletic training
+- Player health and injury management
+- Performance optimization and recovery
+
+### Technology & Analytics
+- [`tech.org.ai`](https://tech.org.ai) - Sports analytics and performance tracking
+- Video analysis and coaching systems
+- Player statistics and metrics
+
+## Key Metrics & KPIs
+
+### Performance Indicators
+- **Win-Loss Record**: Overall competitive performance
+- **Player Efficiency Rating (PER)**: Individual and team performance metrics
+- **Attendance**: Fan attendance and stadium capacity
+- **Television Ratings**: Viewership and media reach
+- **Merchandise Sales**: Revenue from branded products
+
+### Financial Metrics
+- **Revenue Per Available Seat (REVPAS)**: Ticket and facility revenue efficiency
+- **Broadcasting Revenue**: Media rights and streaming income
+- **Sponsorship Revenue**: Corporate partnership value
+- **Payroll Efficiency**: Player compensation vs. performance
+
+## Sources
+
+- <LeagueLink league={league} type="official" />
+- [Professional Sports League Data]({leagueWebsite})
+- <DatabaseLink namespace="sports.org.ai/ProfessionalSports" type={id} />
+- Bureau of Labor Statistics - Professional Sports Occupations
+- Sports business publications and analysis firms
