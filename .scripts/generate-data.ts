@@ -979,6 +979,21 @@ async function main(): Promise<void> {
   console.log('\n' + '='.repeat(80))
   console.log('✅ Data generation complete!')
   console.log(`\n📁 Output: ${DATA_DIR}/`)
+
+  // Enrich with digital scores
+  console.log('\n' + '='.repeat(80))
+  console.log('🔢 Adding digital scores...')
+  console.log('='.repeat(80))
+
+  try {
+    // Import and run enrichment
+    const { enrichAllFiles } = await import('./enrich-all-digital-scores.js')
+    await enrichAllFiles()
+    console.log('✅ Digital score enrichment complete!')
+  } catch (error) {
+    console.error('⚠️  Digital score enrichment failed:', error)
+    // Don't fail the entire generation if enrichment fails
+  }
 }
 
 // Run if called directly

@@ -7,5 +7,7 @@ packages:
   - '.packages/@mdxui/api'
   - '.packages/@mdxdb/api'
   - '.packages/@mdxdb/clickhouse'
+  # .org.ai ontology domains
+  - '.org.ai/*.org.ai'
   # Temporarily disabled due to catalog issues
   # - '.packages/**'

@@ -4,20 +4,22 @@
  * Complete build pipeline for the knowledge graph
  *
  * This script orchestrates the full build process:
- * 1. Ingest all source data into source.db
- * 2. Build normalized things.db (SQLite)
- * 3. Build normalized things in ClickHouse
+ * 1. Ingest raw data from external sources to .source/
+ * 2. Generate normalized TSV files in .data/ (includes digital score enrichment)
+ * 3. Build normalized things.db (SQLite)
+ * 4. Build normalized things in ClickHouse
  *
  * Note: Embeddings are generated separately with generate-embeddings.ts
  *
  * Usage:
- *   tsx .scripts/build-all.ts [--skip-ingest] [--skip-sqlite] [--skip-clickhouse]
+ *   tsx .scripts/build-all.ts [--skip-ingest] [--skip-generate] [--skip-sqlite] [--skip-clickhouse]
  */
 
 import { execSync } from 'child_process'
 
 interface BuildOptions {
   skipIngest: boolean
+  skipGenerate: boolean
   skipSqlite: boolean
   skipClickhouse: boolean
 }
@@ -26,6 +28,7 @@ function parseArgs(): BuildOptions {
   const args = process.argv.slice(2)
   return {
     skipIngest: args.includes('--skip-ingest'),
+    skipGenerate: args.includes('--skip-generate'),
     skipSqlite: args.includes('--skip-sqlite'),
     skipClickhouse: args.includes('--skip-clickhouse'),
   }
@@ -52,6 +55,7 @@ async function main() {
   console.log('🚀 Starting complete knowledge graph build...\n')
   console.log('Options:')
   console.log(`  Skip ingest: ${options.skipIngest}`)
+  console.log(`  Skip generate: ${options.skipGenerate}`)
   console.log(`  Skip SQLite: ${options.skipSqlite}`)
   console.log(`  Skip ClickHouse: ${options.skipClickhouse}`)
 
@@ -60,27 +64,37 @@ async function main() {
     if (!options.skipIngest) {
       run(
         'tsx .scripts/ingest.ts',
-        'Step 1/3: Ingesting source data into source.db'
+        'Step 1/4: Ingesting source data to .source/'
       )
     } else {
       console.log('\n⏭️  Skipping source data ingestion')
     }
 
-    // Step 2: Build SQLite things.db
+    // Step 2: Generate normalized data (includes digital score enrichment)
+    if (!options.skipGenerate) {
+      run(
+        'tsx .scripts/generate-data.ts',
+        'Step 2/4: Generating normalized data in .data/ (with digital scores)'
+      )
+    } else {
+      console.log('\n⏭️  Skipping data generation')
+    }
+
+    // Step 3: Build SQLite things.db
     if (!options.skipSqlite) {
       run(
         'tsx .scripts/build-things-db.ts sqlite',
-        'Step 2/3: Building normalized things.db (SQLite)'
+        'Step 3/4: Building normalized things.db (SQLite)'
       )
     } else {
       console.log('\n⏭️  Skipping SQLite build')
     }
 
-    // Step 3: Build ClickHouse
+    // Step 4: Build ClickHouse
     if (!options.skipClickhouse) {
       run(
         'tsx .scripts/build-things-db.ts clickhouse',
-        'Step 3/3: Building normalized things in ClickHouse'
+        'Step 4/4: Building normalized things in ClickHouse'
       )
     } else {
       console.log('\n⏭️  Skipping ClickHouse build')

@@ -319,7 +319,7 @@ function enrichFile(
   return { matched, unmatched, skipped }
 }
 
-async function main() {
+async function enrichAllFiles() {
   console.log('='.repeat(80))
   console.log('Comprehensive Digital Score Enrichment')
   console.log('='.repeat(80))
@@ -388,4 +388,10 @@ async function main() {
   console.log('='.repeat(80))
 }
 
-main().catch(console.error)
+// Export for use as module
+export { enrichAllFiles }
+
+// Run if called directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  enrichAllFiles().catch(console.error)
+}
