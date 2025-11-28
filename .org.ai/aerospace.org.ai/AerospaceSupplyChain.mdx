@@ -1,0 +1,563 @@
+---
+$context: https://aerospace.org.ai
+$id: https://aerospace.org.ai/AerospaceSupplyChain
+$type: https://aerospace.org.ai/AerospaceSupplyChain
+name: "Aerospace Supply Chain"
+naicsCode: "336413"
+description: "Multi-tier network of specialized suppliers, manufacturers, and service providers delivering aircraft components, subsystems, materials, and parts to OEMs and MRO operators globally, from raw material producers to precision component manufacturers."
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for AerospaceSupplyChain
+  return []
+}
+
+# Aerospace Supply Chain
+
+The aerospace supply chain represents one of the most complex, globally distributed, and highly specialized industrial networks in existence. Modern aircraft depend on thousands of suppliers across multiple continents, coordinated through multi-tier procurement systems with extreme quality requirements, long lead times, and strict export controls. The global aerospace and defense supply chain is estimated at $200+ billion annually, representing the backbone of the aircraft manufacturing industry.
+
+## Overview
+
+Aircraft manufacturing is fundamentally a systems integration business, with OEMs assembling components from thousands of specialized suppliers rather than manufacturing everything in-house. This structure reflects:
+
+- **Capital Efficiency**: Distributes development and production risk across many suppliers
+- **Specialization**: Enables suppliers to develop world-class expertise in specific domains
+- **Flexibility**: Allows design changes and upgrades without complete redesign
+- **Global Economics**: Leverages cost advantages and specialized capabilities worldwide
+- **Supply Chain Resilience**: Redundancy and geographic diversity reduce single-point failures
+
+However, this complexity creates vulnerability to supply disruptions, requiring sophisticated planning, inventory management, and supplier relationships. The COVID-19 pandemic exposed fragility in aerospace supply chains, with semiconductor shortages, travel restrictions, and production halts cascading through the industry.
+
+## Industry Classification
+
+### NAICS Codes
+
+- **336413** - Other Aircraft Parts and Auxiliary Equipment Manufacturing: Avionics, landing gear, flight controls, structural components
+- **336415** - Guided Missile and Space Vehicle Propulsion Unit and Parts Manufacturing: Engine components and subsystems
+- **332722** - Bolts, Nuts, Screws, Rivets, and Washers Manufacturing: Fastener production
+- **331111** - Iron and Steel Mills: Structural materials
+- **331419** - Primary Nonferrous Metal (Except Copper and Aluminum) Production: Titanium, superalloys
+- **325320** - Paint and Coating Manufacturing: Aerospace-grade coatings
+
+## Supply Chain Structure
+
+### Tier System
+
+Aerospace supply chains organized in hierarchical tiers reflecting complexity and integration:
+
+#### Tier 1 - Major Integrators and Risk-Sharing Partners
+
+Large companies responsible for major aircraft subsystems or components:
+
+**Airframe Structure**:
+- **Spirit AeroSystems**: Fuselage sections (B-737, B-787, A350), contributing to over 50% of component content
+- **Airbus Getafe**: A320/A350 fuselage sections
+- **Alenia Aermacchi**: B-787 fuselage sections and structural components
+- **Korean Air Aerospace Division**: B-747-8, B-777 wing components
+- **Mitsubishi Heavy Industries**: B-787 wing box manufacturing
+
+**Engines and Propulsion**:
+- **CFM International**: LEAP engines (joint venture General Electric/Safran)
+- **Rolls-Royce**: Trent family wide-body engines
+- **Pratt & Whitney**: PW1100G geared turbofans, military engines
+- **General Electric Aviation**: GEnx, GE9X engines
+
+**Landing Gear and Hydraulics**:
+- **Collins Aerospace**: Main and nose landing gear, flight controls, cabin systems
+- **Safran Landing Systems**: Landing gear, brakes, wheels
+- **Parker Aerospace**: Hydraulic systems and components
+- **Moog**: Flight control actuators and systems
+
+**Avionics and Electronics**:
+- **Collins Aerospace**: Integrated avionics, communications systems
+- **Honeywell Aerospace**: Inertial systems, environmental systems, engines controls
+- **Thales**: Flight management systems, navigation systems
+
+#### Tier 2 - Specialized Component Manufacturers
+
+Suppliers producing discrete components integrated into Tier 1 systems:
+
+**Structural Components**:
+- **Triumph Group**: Structural components, mechanical systems, cockpit safety equipment
+- **AeroCom Group**: Composite structures and aerostructures
+- **Standardaero**: Aircraft structural components and assemblies
+- **Contrail Canada**: Composite components for commercial aircraft
+
+**Fasteners and Hardware**:
+- **Precision Castparts** (Berkshire Hathaway subsidiary): Aerospace fasteners, forgings, castings
+- **Wesco International**: Aircraft fastener and hardware distribution
+- **Alcoa Corporation**: Aluminum and titanium fasteners
+- **Stanley Black & Decker Aerospace**: Fasteners and hardware
+
+**Castings and Forgings**:
+- **Precision Castparts**: Titanium castings, nickel superalloy castings for engines
+- **Scot Forge**: Closed-die forged components
+- **Meyer Tool**: Specialized aluminum forgings
+- **Advanced Castings**: Specialized aerospace castings
+
+**Hydraulic Components**:
+- **Eaton**: Hydraulic actuators, pumps, valves
+- **Hydac International**: Hydraulic filters and systems
+- **Senior Aerospace**: Hydraulic hoses and assemblies
+
+#### Tier 3+ - Material Suppliers and Specialty Providers
+
+Raw materials, commodity components, and specialized services:
+
+**Materials and Metals**:
+- **Aleris (Novelis)**: Aluminum alloy plate and forgings for aircraft
+- **VSMPO-Avisma**: Russian titanium sponge and ingots
+- **Huntsman**: Titanium materials and specialty chemicals
+- **Tronox**: Titanium dioxide and specialty chemicals
+- **Constellium**: Aerospace aluminum products
+
+**Composites and Advanced Materials**:
+- **Hexcel**: Carbon fiber prepreg and core materials
+- **Solvay**: Aerospace composites and specialty polymers
+- **Toray**: Carbon fiber, prepreg, and composite materials
+- **3M Aerospace**: Adhesives, sealants, thermal management materials
+
+**Specialty Services**:
+- **Heat treating**: Surface hardening, stress relief, thermal processing
+- **Metal plating and coating**: Electroplating, anodizing, corrosion protection
+- **Machining services**: Precision component production
+- **Testing and inspection**: NDT, material testing, quality verification
+
+## Procurement and Supplier Management
+
+### Supplier Selection and Qualification
+
+Aerospace suppliers undergo rigorous qualification processes before approval:
+
+**Quality Certifications**:
+- **AS9100**: Aerospace quality management system requirement (based on ISO 9001)
+- **NADCAP**: Special Process Approval certifications (welding, heat treat, NDT, etc.)
+- **ITAR Compliance**: International Traffic in Arms Regulations certification for regulated items
+- **Facility Audits**: On-site assessment of manufacturing capability, quality systems, safety
+
+**Risk Assessment**:
+- Financial stability analysis
+- Technical capability evaluation
+- Capacity and scheduling assessment
+- Quality history review
+- Supply chain vulnerability analysis
+
+**Contracts and Terms**:
+- Long-term agreements establishing pricing, quality standards, delivery schedules
+- Right-first-time quality requirements
+- Penalty clauses for delivery delays or quality failures
+- Intellectual property and confidentiality provisions
+- ITAR compliance and export control obligations
+
+### Supply Chain Planning
+
+Complex coordination required across thousands of suppliers with lead times spanning years:
+
+**Master Scheduling**:
+- Aircraft build schedule drives component requirements
+- Long-lead items (engines, landing gear, major structures) scheduled 18-36 months in advance
+- Rolling forecast updated monthly/quarterly
+- Demand signals cascaded through supply chain tiers
+
+**Materials Requirement Planning (MRP)**:
+- Computer systems track component requirements and availability
+- Demand forecasting predicting future needs
+- Inventory optimization balancing holding costs and shortage risk
+- Supplier visibility into upcoming requirements
+
+**Supply Chain Visibility**:
+- Real-time tracking of component status from supplier through assembly
+- Serialization and traceability from raw material to installed component
+- Supplier performance monitoring (on-time delivery, quality, cost)
+- Early warning systems identifying potential disruptions
+
+### Supplier Relationships and Partnerships
+
+Aerospace relationships are long-term partnerships rather than transactional procurement:
+
+**Sole-Source Suppliers**:
+- Many components have single-source suppliers due to specialized capability or qualification requirements
+- OEMs must balance costs against supply risk
+- Dual-sourcing increases costs but improves resilience
+- Strategic partnerships with preferred suppliers
+
+**Cost Reduction Collaboration**:
+- OEMs work with suppliers on continuous improvement initiatives
+- Lean manufacturing, waste elimination, efficiency improvements
+- Supplier development programs building capability in emerging markets
+- Shared cost reduction targets and risk/reward models
+
+**Technology Partnerships**:
+- Suppliers engaged early in development programs
+- Risk-sharing partner relationships on major programs
+- Joint development of new materials, processes, capabilities
+- Intellectual property sharing and cross-licensing
+
+## Key Supply Chain Components
+
+### Aircraft Structures
+
+**Aluminum Alloys**:
+- **2024 T3/T4**: High-strength fuselage skin material
+- **7075 T6**: Wing structure and highly stressed components
+- **2025-T6**: Thick plate for fuselage bulkheads
+- **5083 H321**: Lower fuselage damage-tolerant applications
+- Suppliers: Aleris, Hydro, Constellium, Aleris
+
+**Titanium Alloys**:
+- **Ti-6Al-4V (Ti-6-4)**: Most common aerospace titanium, mid-temperature service
+- **Ti-6Al-2Sn-4Zr-2Mo**: Engine casings and high-temperature components
+- **IMI 834**: Single-crystal superalloy for turbine blades
+- Suppliers: VSMPO-Avisma, Huntsman, Timetal
+
+**Composite Materials**:
+- **Carbon fiber reinforced plastics (CFRP)**: Fuselage, wings, empennage
+- **Glass fiber reinforced plastics (GFRP)**: Secondary structures, non-structural components
+- **Aramid fiber (Kevlar)**: Impact-resistant structures, ballistic protection
+- Forms: Prepreg fabric, tape, dry fiber, woven cloth
+- Suppliers: Hexcel, Toray, Solvay, Cytec
+
+### Engines and Propulsion
+
+**Engine Components**:
+- **Fan**: Large diameter, low pressure ratio, driven by low-pressure compressor
+- **Compressor**: Multi-stage axial compressor pressurizing combustion air
+- **Combustor**: Fuel injection, mixing, combustion chamber
+- **Turbine**: High-pressure and low-pressure turbines driving compressor and fan
+- **Nozzle**: Exhaust nozzle controlling thrust vectoring and noise
+
+**Engine Materials**:
+- **Nickel-based superalloys**: Turbine blades, discs rated for 3,000°F+
+- **Single-crystal materials**: Premium turbine blade material
+- **Ceramic matrix composites (CMCs)**: High-temperature, low-weight turbine components
+- **Titanium aluminides**: Advanced compressor materials
+
+**Engine Suppliers**:
+- **General Electric Aviation**: Commercial and military engines
+- **Rolls-Royce**: Wide-body commercial and military engines
+- **Pratt & Whitney**: Geared turbofan and military engines
+- **CFM International**: Narrow-body engines (50%+ market share)
+- **Safran**: Engine components and systems
+
+### Landing Gear and Brake Systems
+
+**Landing Gear Components**:
+- **Main gear struts**: Shock absorption and structural support
+- **Nose gear**: Steering, nose wheel support
+- **Wheels and tires**: Specialized aircraft wheels and high-performance tires
+- **Brakes**: Carbon or carbon-ceramic brake discs
+- **Actuators**: Retraction, steering, gear-down lock mechanisms
+
+**Suppliers**:
+- **Collins Aerospace**: 35%+ market share in landing gear
+- **Safran Landing Systems**: Competing provider
+- **Liebherr Aerospace**: Landing gear and flight control systems
+- **Goodrich**: Wheels, brakes, and landing gear components
+
+### Flight Control Systems
+
+**Hydraulic Systems**:
+- **Primary hydraulic system**: Powers flight control surfaces, landing gear, brakes
+- **Backup systems**: Redundancy for critical functions
+- **Filters**: Remove contamination protecting pumps and actuators
+- **Valves**: Directional and pressure control
+- Suppliers: Parker, Eaton, Honeywell
+
+**Electro-Mechanical Actuators**:
+- **Electric motors**: Increasingly replacing hydraulic actuators
+- **Gearboxes**: Reduce motor speed, increase torque
+- **Position sensors**: Feedback for flight control loops
+- Suppliers: Moog, Parker, Honeywell, Collins
+
+**Flight Management Systems**:
+- **Navigation computers**: GPS, inertial reference systems
+- **Flight management computers**: Route planning, performance optimization
+- **Autopilot systems**: Automatic flight control
+- Suppliers: Collins, Honeywell, Thales
+
+### Avionics and Electronics
+
+**Communication Systems**:
+- **VHF Radio**: Pilot-to-controller communications
+- **Data Link**: CPDLC, ADS-C for digital communications
+- **Satellite Communications**: Broadband internet connectivity
+- Suppliers: Collins Aerospace, Honeywell, Telephonics
+
+**Navigation Systems**:
+- **Inertial Measurement Units (IMU)**: Accelerometers and gyroscopes
+- **Air Data Computers**: Airspeed, altitude, vertical speed calculation
+- **Flight Management Systems**: Navigation, guidance, performance management
+- Suppliers: Honeywell, Collins, Parker
+
+**Displays and Controls**:
+- **Primary Flight Displays**: Aircraft attitude, airspeed, altitude
+- **Navigation Displays**: Moving map, traffic, weather
+- **Engine Indication**: ECAM/EICAS system displays
+- **Control panels**: Lighting, switches, controls
+- Suppliers: Collins, Honeywell, Thales, Gull Aerospace
+
+### Cabin Systems and Interiors
+
+**Cabin Pressurization and Air Handling**:
+- **Outflow valves**: Pressure regulation
+- **Air conditioning packs**: Temperature control
+- **Bleed air systems**: Engine bleed air supply
+- Suppliers: Honeywell, Eaton, Collins
+
+**In-Flight Amenities**:
+- **Galleys**: Food service equipment
+- **Lavatories**: Waste containment systems
+- **Seating**: Passenger and crew seats with sophisticated failure modes
+- **Entertainment**: IFE systems, screens, headset distribution
+- Suppliers: Zodiac Aerospace, Jamco, Panasonic
+
+**Emergency Systems**:
+- **Oxygen systems**: Emergency oxygen for crew and passengers
+- **Evacuation slides**: Deployment systems and inflatable slides
+- **Fire detection and suppression**: Smoke detection, fire extinguishing
+- Suppliers: Collins Aerospace, UTC Aerospace
+
+## Supply Chain Disruptions and Resilience
+
+### COVID-19 Pandemic Impact
+
+The pandemic demonstrated supply chain fragility:
+
+**Production Disruptions**:
+- Aircraft assembly line shutdowns affecting OEMs
+- Supplier facility closures interrupting parts flow
+- Travel restrictions preventing supplier visits and inspections
+- Semiconductor shortages affecting avionics and components
+
+**Demand Collapse**:
+- Airline travel restrictions reducing demand
+- Program rate cuts (Boeing 737 MAX to zero, 787 to 6/month)
+- Extended delivery deferrals and cancellations
+- Supplier bankruptcies (Spirit AeroSystems, others)
+
+**Recovery Challenges**:
+- Supply chain rebalancing as demand returned
+- Inflation in materials, labor, and energy
+- Supplier capacity constraints limiting production rate increases
+- Long-lead item availability constraining growth
+
+### Geopolitical and Trade Tensions
+
+Supply chain vulnerability to geopolitical factors:
+
+**Export Controls**:
+- US ITAR and EAR restrictions on technology transfer
+- Sanctions on Russia affecting titanium supply (VSMPO-Avisma)
+- Export controls on advanced materials and technologies
+- Compliance complexity for global supply chains
+
+**China Supply Chain**:
+- Increasing Chinese aerospace supplier capabilities
+- Technology transfer concerns and IP protection
+- Competing Chinese aircraft manufacturers (COMAC)
+- Restricted access to US and allied technologies
+
+**Nearshoring Trends**:
+- Shift toward regional supply bases reducing long supply lines
+- US domestic production investments (CHIPS Act, aerospace initiatives)
+- European industrial policy supporting regional suppliers
+- Reduced reliance on single-country suppliers
+
+### Supply Chain Resilience Strategies
+
+Industry and government responses building resilience:
+
+**Supply Chain Visibility**:
+- Real-time tracking from supplier through assembly
+- Supplier performance monitoring and analytics
+- Predictive modeling of disruption risks
+- Early warning systems enabling proactive response
+
+**Supplier Diversification**:
+- Dual-sourcing of critical components reducing single-source risk
+- Regional supplier development programs
+- Investment in emerging supplier capabilities
+- Supply chain mapping identifying vulnerabilities
+
+**Inventory Management**:
+- Strategic inventory of long-lead items
+- Buffer stocks of critical materials
+- Supply hub concepts for regional distribution
+- Increased supplier inventory funding through OEMs
+
+**Supply Chain Technology**:
+- Blockchain applications for parts traceability
+- IoT sensors monitoring component movement
+- Artificial intelligence predicting disruptions
+- Digital supply chain platforms improving coordination
+
+## Advanced Manufacturing Technologies in Supply Chain
+
+### Additive Manufacturing
+
+3D printing enabling new supply chain models:
+
+**Metal Additive Manufacturing**:
+- Complex brackets, ducts, and fittings optimized for additive
+- Titanium and aluminum parts for aircraft structures
+- Reduced weight compared to subtractive machining
+- GE fuel nozzles using additive manufacturing consolidating 20 parts into 1
+
+**Advantages**:
+- Design optimization: Internal lattice structures reducing weight
+- Part consolidation: Combining multiple parts reducing assembly
+- Flexibility: Easy design changes and customization
+- Reduced tooling: No expensive dies or fixtures required
+
+**Challenges**:
+- Quality control: Ensuring consistent material properties
+- Scalability: Current production rates insufficient for high-volume needs
+- Certification: Qualification standards still being developed
+- Cost: Current per-unit costs higher than traditional manufacturing for high volumes
+
+### Composites Manufacturing
+
+Advanced composite manufacturing techniques:
+
+**Automated Fiber Placement (AFP)**:
+- Computer-controlled heads laying carbon fiber tape in precise patterns
+- Fiber orientation optimization for strength with minimum weight
+- Continuous fiber laying reducing touch labor
+- Enables complex geometries impossible with hand-laying
+
+**Out-of-Autoclave (OOA) Composites**:
+- Resin systems and vacuum bagging curing without expensive autoclaves
+- Reduced capital costs and production time
+- Enables larger composite sections (787 fuselage barrels)
+- Improved efficiency and reduced cycle times
+
+**Thermoplastic Composites**:
+- Faster cure times than thermoset composites
+- Improved toughness and impact resistance
+- Recyclable unlike thermoset composites
+- Enable higher production rates and remanufacturing
+
+### Digital Supply Chain Technologies
+
+**Product Lifecycle Management (PLM)**:
+- Design data management from concept through production
+- Configuration management and change control
+- Supplier access to engineering data
+- Digital records enabling traceability
+
+**Manufacturing Execution Systems (MES)**:
+- Real-time shop floor data collection
+- Work order management and tracking
+- Quality data and inspection records
+- Material and labor tracking
+
+**Supply Chain Management Systems (SCM)**:
+- Demand forecasting and planning
+- Supplier performance monitoring
+- Inventory optimization
+- Procurement automation
+
+## Regulatory and Compliance Environment
+
+### Export Controls and ITAR
+
+International Traffic in Arms Regulations controlling aerospace technology transfer:
+
+**Regulated Items**:
+- Aircraft and aircraft components
+- Engines and propulsion systems
+- Avionics and electronic systems
+- Technical data and manufacturing processes
+
+**Compliance Requirements**:
+- Supplier vetting and ITAR compliance
+- Controlled manufacturing environments
+- Access restrictions to foreign nationals
+- Document control and marking requirements
+- Annual compliance training
+
+**Violations**:
+- Substantial fines and criminal penalties
+- Loss of export privileges
+- Debarment from government contracting
+- High-profile prosecutions driving compliance
+
+### Quality Management Systems
+
+**AS9100 Certification**:
+- Aerospace quality management system (based on ISO 9001)
+- Mandatory for suppliers to major aerospace OEMs
+- Required documentation and procedures
+- Regular audits by third-party registrars
+
+**NADCAP Certifications**:
+- Special process approvals (welding, heat treat, NDT, etc.)
+- Third-party assessment of capability
+- Documented procedures and controls
+- Training and certification of personnel
+
+### Environmental and Safety Compliance
+
+**Environmental Regulations**:
+- Hazardous materials handling and disposal
+- Volatile organic compound (VOC) emissions control
+- Waste reduction and recycling programs
+- Energy efficiency improvements
+
+**Occupational Safety**:
+- OSHA compliance for manufacturing facilities
+- Aviation industry-specific safety standards
+- Hazard communication and training
+- Incident reporting and investigation
+
+## Industry Challenges and Trends
+
+### Supply Chain Digitalization
+
+Increasing use of digital technologies to improve supply chain performance:
+
+- **Blockchain**: Immutable records of parts and components
+- **IoT Sensors**: Real-time tracking and condition monitoring
+- **Artificial Intelligence**: Demand forecasting, optimization, anomaly detection
+- **Data Analytics**: Supplier performance insights and trend analysis
+
+### Sustainability and Circular Economy
+
+Growing focus on environmental sustainability in supply chains:
+
+- **Sustainable Materials**: Bio-based composites, recycled content materials
+- **Additive Manufacturing**: Reduced waste compared to subtractive machining
+- **Remanufacturing**: End-of-life aircraft components refurbished for reuse
+- **Carbon Footprint Reduction**: Supply chain emissions tracking and improvement
+
+### Reshoring and Regional Supply Chains
+
+Shift toward domestic and regional sourcing:
+
+- **US Domestic Investment**: Government support for US supplier capacity
+- **European Industrial Policy**: Support for regional supply base
+- **Supply Chain Risk Reduction**: Reducing reliance on distant suppliers
+- **Lead Time Improvement**: Shorter supply lines enabling faster response
+
+### Supplier Consolidation and Industry Structure
+
+Ongoing consolidation in aerospace supply base:
+
+- **Merger and Acquisition Activity**: Larger suppliers consolidating smaller competitors
+- **Tier Collapse**: Consolidation of Tier 2 and 3 suppliers into Tier 1
+- **Vertical Integration**: OEMs acquiring key suppliers
+- **Private Equity**: Financial investors acquiring and consolidating aerospace suppliers
+
+## Related Domains
+
+- [aerospace.org.ai](https://aerospace.org.ai) - Overall aerospace industry
+- [CommercialAviation](https://aerospace.org.ai/CommercialAviation) - Commercial aircraft manufacturing
+- [DefenseAerospace](https://aerospace.org.ai/DefenseAerospace) - Military aerospace programs
+- [manufacturing.org.ai](https://manufacturing.org.ai) - Advanced manufacturing processes
+- [materials.org.ai](https://materials.org.ai) - Materials science and engineering
+- [logistics.org.ai](https://logistics.org.ai) - Supply chain and logistics management
+- [robotics.org.ai](https://robotics.org.ai) - Automation and manufacturing robotics
+
+## Sources
+
+- <DatabaseLink namespace="aerospace.org.ai" type="AerospaceSupplyChain" />

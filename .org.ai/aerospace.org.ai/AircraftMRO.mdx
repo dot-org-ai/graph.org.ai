@@ -1,0 +1,420 @@
+---
+$context: https://aerospace.org.ai
+$id: https://aerospace.org.ai/AircraftMRO
+$type: https://aerospace.org.ai/AircraftMRO
+name: "Aircraft Maintenance, Repair & Overhaul"
+naicsCode: "488190"
+description: "Comprehensive maintenance, repair, overhaul, modification, and sustainment services for aircraft, engines, and components to ensure airworthiness, extend service life, and optimize operational availability throughout the aircraft lifecycle."
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for AircraftMRO
+  return []
+}
+
+# Aircraft Maintenance, Repair & Overhaul (MRO)
+
+Aircraft maintenance, repair, and overhaul (MRO) represents a critical pillar of aviation infrastructure, ensuring aircraft safety, regulatory compliance, and operational reliability throughout their 20-30 year service lives. The global MRO market is estimated at $80+ billion annually, representing approximately 10-12% of total airline operating costs, and growing with aircraft fleet expansion and aging aircraft populations requiring increased maintenance.
+
+## Overview
+
+MRO services encompass everything from routine daily inspections and minor repairs to major overhauls requiring complete disassembly and inspection of aircraft systems. The industry is characterized by:
+
+- **Safety-Critical Operations**: Aircraft must meet zero-defect standards with extensive documentation and regulatory oversight
+- **Complex Logistics**: Coordinating thousands of specialized parts, trained technicians, and sophisticated test equipment
+- **Regulatory Compliance**: Adherence to FAA/EASA airworthiness requirements and manufacturer maintenance programs
+- **Technological Complexity**: Modern aircraft systems require specialized training, tooling, and diagnostic equipment
+- **Economic Pressures**: Airlines optimize maintenance spending to reduce fleet downtime while ensuring safety compliance
+- **Skilled Labor Shortage**: Shortage of experienced A&P (Airframe and Powerplant) mechanics globally
+
+The MRO market is bifurcated between Original Equipment Manufacturer (OEM)-owned MRO providers (Boeing, Airbus, Pratt & Whitney, Rolls-Royce) and independent MRO operators serving diverse aircraft fleets. Major independent MRO providers include AAR Corp, Lufthansa Technik, Air France Industries, Singapore Airlines Engineering, Siam Aero Works, Kalitta Air, and hundreds of smaller regional operators.
+
+## Industry Classification
+
+### NAICS Codes
+
+- **488190** - Other Support Activities for Air Transportation (MRO services)
+- **811310** - Commercial and Industrial Machinery and Equipment (Except Automotive) Repair and Maintenance (engine and component overhaul)
+- **541330** - Engineering Services (including aircraft engineering and modification services)
+
+## Maintenance Concepts and Requirements
+
+### Maintenance Program Development
+
+Modern aircraft operate under structured maintenance programs developed by manufacturers and approved by regulatory authorities.
+
+#### Progressive Maintenance
+
+Aircraft are subject to progressive maintenance checks, increasing in scope and depth from routine inspections to major overhauls:
+
+**Daily/A-Check Maintenance** (Every 400-500 flight hours or 1 calendar month):
+- Fluid level checks (oil, hydraulic, fuel system checks)
+- Visual inspection for corrosion, cracks, security of fasteners
+- Functional tests of basic systems (lights, doors, hydraulics)
+- Minor adjustments and replacements
+
+**B-Check Maintenance** (Every 4,000-6,000 flight hours or 4 calendar months):
+- More extensive system inspections than A-check
+- Engine condition monitoring review
+- Landing gear inspection and servicing
+- Flight control surface functional tests
+- Interior condition assessment
+
+**C-Check Maintenance** (Every 18,000-24,000 flight hours or 18-24 months):
+- Major inspection of entire aircraft structure and systems
+- Non-destructive testing (ultrasonic, eddy current, radiography) to detect hidden corrosion and cracks
+- Opening access panels throughout aircraft for detailed inspection
+- Hydraulic, electrical, fuel, and environmental control system overhauls
+- Engine condition assessment and trend analysis
+- Typically requires 400-600 technician-hours and 2-3 weeks of aircraft downtime
+
+**D-Check Maintenance** (Every 6-10 years or 40,000-50,000 flight hours):
+- Most comprehensive maintenance event, essentially complete aircraft disassembly and inspection
+- Fuselage detailed inspection for fatigue cracks, corrosion, structural integrity
+- Wing and empennage removal for complete internal inspection
+- Engine condition assessment and possible overhaul
+- Major component replacement and refurbishment
+- Typically requires 15,000-25,000 technician-hours and 4-6 weeks of aircraft downtime
+- Can cost $1-5M depending on aircraft size and condition
+
+#### Time-Based vs. Condition-Based Maintenance
+
+Traditional maintenance programs were time-based, with inspections and overhauls at fixed intervals regardless of actual component condition. Modern aircraft increasingly employ condition-based maintenance:
+
+**Time-Based Maintenance**:
+- Fixed intervals based on flight hours, calendar days, or cycles (takeoffs/landings)
+- Conservative approach ensuring components replaced well before failure risk
+- Requires more frequent maintenance and component replacements
+- Reduces risk of in-service failures
+
+**Condition-Based Maintenance**:
+- Maintenance intervals determined by actual condition monitoring and analysis
+- Health monitoring systems (HUMS) continuously analyze component performance
+- Maintenance performed when systems indicate degradation, not on fixed schedule
+- Reduces unnecessary maintenance and component replacements
+- Requires sophisticated monitoring systems and analytics
+
+**Predictive Maintenance**:
+- Advanced analytics predicting component failures before occurrence
+- Machine learning models analyze historical failure patterns
+- Enables optimal maintenance planning and parts procurement
+- Reduces unscheduled maintenance and operational disruptions
+
+### Service Bulletins and Airworthiness Directives
+
+Manufacturers issue Service Bulletins (SBs) recommending inspections, modifications, or maintenance based on in-service experience. When safety-critical issues are discovered, regulatory authorities issue Airworthiness Directives (ADs) mandating corrective actions.
+
+**Recent Examples**:
+- B-787 Dreamliner fuselage shim thickness variability requiring inspection and correction
+- B-737 MAX pickle fork cracking discovered during maintenance requiring inspection and potential replacement
+- Rolls-Royce Trent XWB compressor disc cracking leading to multiple ADs and inspections
+- A-350 landing gear door issues requiring modification and inspection
+
+## MRO Service Segments
+
+### Engine Overhaul and Repair
+
+Aircraft engines are complex assemblies requiring specialized overhaul services at distinct intervals.
+
+#### Engine Overhaul
+
+**Between-Overhaul (BOH) Intervals**:
+- CFM LEAP: 10,000-15,000 flight hours
+- Rolls-Royce Trent XWB: 10,000-15,000 flight hours
+- Pratt & Whitney PW4000: 20,000-30,000 flight hours
+- GE GEnx: 10,000-15,000 flight hours
+
+Overhaul process:
+1. **Borescope Inspection**: Endoscopic inspection of turbine sections for damage, corrosion, rubs
+2. **Engine Disassembly**: Complete removal of fan, compressor, turbine, combustor, and accessory sections
+3. **Part-Level Inspection**: Each component (blades, discs, casings, seals) inspected for damage, wear, and fatigue
+4. **Part Repair/Replacement**: Damaged components repaired or replaced with new or overhauled parts
+5. **Machine Work**: Honing, grinding, balancing of rotating parts to precise tolerances
+6. **Assembly and Testing**: Reassembly with meticulous cleaning and documentation
+7. **Run Testing**: Full-power engine run testing validating performance and reliability
+
+Overhaul labor can require 10,000-30,000 technician-hours for large turbofans, taking 8-12 weeks. Costs range from $5-15M for large commercial engines, making engine overhaul a significant airline cost.
+
+#### Engine Leasing Models
+
+Airlines typically employ engine leasing/exchange programs rather than owning engines outright:
+
+- **Engine Lease Options**: Engines leased from financial companies (GECAS, Airbus Capital Services) or engine manufacturers
+- **On-Wing Time**: Airlines pay for actual engine flight hours used
+- **Maintenance Reserves**: Airlines fund maintenance reserves, manufacturers conduct overhauls
+- **Engine Exchange**: Failed engines exchanged for overhauled serviceable units, spreading overhaul costs
+- **Benefits**: Reduces capital requirements, transfers maintenance risk to specialists, ensures latest avionics
+
+### Aircraft Structural Repair
+
+Aircraft suffer various damage requiring specialized repair:
+
+**Corrosion Repair**:
+- Saltwater/moisture exposure causing aluminum corrosion
+- Removal of corroded material, structural assessment, application of corrosion inhibitors
+- Small corrosion patches can be sealed; extensive corrosion may require section replacement
+- Commercial aircraft operating from coastal airports experience higher corrosion rates
+
+**Fatigue Crack Repair**:
+- Cracks developing under repetitive flight loads over years of service
+- Detected through non-destructive testing (eddy current, ultrasonic)
+- Repair involves stop-drilling at crack tips, strengthening with doublers or splices
+- Critical areas may require section replacement or early aircraft retirement
+
+**Damage Repair**:
+- Hail damage, wildlife strikes, ground handling damage, lightning strike damage
+- Minor dents and damage repaired if within approved repair limits
+- Damage exceeding limits or affecting primary structure requires engineering analysis and approval
+- Airport accidents or hangar damage may require extensive rebuild
+
+**Composite Repair**:
+- Modern aircraft with composite fuselages (787, A350) require specialized composite repair
+- Damage to composites more complex than aluminum, affecting structural reliability
+- Repair methods include scarfing, patching, and replacement of damaged laminates
+- Requires specialized training and process control
+
+### Landing Gear Overhaul
+
+Landing gear systems are critical safety components requiring detailed maintenance:
+
+**Landing Gear Inspection and Overhaul**:
+- Landing gear removed every 4-6 years for major overhaul
+- Hydraulic cylinders tested and refurbished
+- Brakes inspected for wear; brake discs replaced at service limits
+- Tires inspected for wear and replaced at service limits (typically 50-100 landings)
+- Steering systems tested and adjusted
+- Corrosion inspection and treatment
+
+**Tire and Brake Management**:
+- Aircraft tires are specialized products with specific load ratings and approved suppliers
+- Tires typically replaced every 50-200 landings depending on aircraft, route, and landing technique
+- High-temperature carbon brakes require specialized cooling and inspection
+- Brake wear trended to prevent rejection during service
+
+### Avionics and Systems Repair
+
+Modern aircraft feature sophisticated electronics requiring specialized repair:
+
+**Avionics Repair**:
+- Primary flight display, navigation display, flight management system repairs and software updates
+- Autopilot systems, flight control computers, inertial measurement units maintenance
+- Communications systems (VHF, SELCAL, data link) repair
+- Weather radar, terrain warning systems, traffic collision avoidance system maintenance
+- Requires specialized tooling, software, and technician certifications
+
+**Systems Integration**:
+- Hydraulic system maintenance and leak repair
+- Fuel system inspection and contamination control
+- Electrical system testing and component replacement
+- Environmental control system maintenance
+- Flight control system verification and calibration
+
+## MRO Operating Models
+
+### Line Maintenance
+
+Routine maintenance performed between flights at airport gates or maintenance hangars, conducted primarily during aircraft downtime between scheduled flights.
+
+- **Gate Services**: Quick checks, fluid top-offs, minor repairs minimizing turnaround time
+- **Line Maintenance Hangar**: Overnight or 1-2 day maintenance during aircraft overnight parking
+- **Quick Turnaround**: Critical for airline operations, typically 1-2 hours to several hours maximum
+- **Labor Intensive**: Requires positioning technicians at multiple airports, managing schedules
+
+### Base Maintenance
+
+Comprehensive maintenance requiring aircraft removal from revenue service for extended periods (days to weeks), performed at dedicated maintenance bases.
+
+- **Heavy Checks**: C-checks and D-checks requiring hundreds of technicians and weeks of work
+- **Major Modifications**: Installation of service bulletins, upgrades, retrofits
+- **Component Overhaul**: Landing gear, auxiliary power units, flight control actuators
+- **Facility Requirements**: Large hangars with precise temperature/humidity control, specialized tooling
+- **Planning**: Coordinated with airlines months in advance to optimize scheduling
+
+### Third-Party MRO Services
+
+Independent MRO providers serve airlines lacking in-house maintenance capabilities or seeking specialized services:
+
+**Large Independent MROs**:
+- **Lufthansa Technik**: European leader with facilities across Europe, Asia, Americas; comprehensive services
+- **Air France Industries**: French MRO with major maintenance facilities and component overhaul capabilities
+- **Singapore Airlines Engineering Company**: Asian MRO serving regional fleet expansion
+- **AAR Corp**: US-based provider of aircraft maintenance, parts, and leasing services
+- **Siam Aero Works**: Thai MRO serving Southeast Asian airlines
+
+**Advantages of Third-Party MRO**:
+- Specialized expertise and capabilities beyond airline capabilities
+- Economies of scale spreading costs across multiple airline customers
+- Capital-efficient use of facilities and equipment
+- Geographic flexibility in maintenance planning
+- Access to specialized services (composite repair, interior refurbishment)
+
+**Challenges**:
+- Loss of direct control over maintenance quality and timing
+- Cost structure and pricing models
+- Coordination complexity with multiple providers
+- Supply chain integration
+
+### On-Demand Maintenance
+
+Airlines increasingly shift from fixed maintenance schedules to on-demand services:
+
+**Health Monitoring Systems**:
+- Integrated sensor networks monitoring aircraft systems continuously
+- Real-time data transmission to ground systems
+- Predictive algorithms identifying degradation before failure
+- Enables condition-based maintenance deferral or advancement
+
+**On-Condition Maintenance**:
+- Instead of fixed overhaul intervals, components serviced based on condition data
+- Engine condition monitoring (ECS) trending fuel consumption, temperatures, vibration
+- Hydraulic system condition monitoring detecting fluid contamination
+- Reduces unnecessary maintenance and extends component life
+
+## Manufacturing of Aircraft Components and Parts
+
+MRO industry drives demand for aircraft parts and components, with dedicated supply chains:
+
+### Original Equipment Manufacturer (OEM) Parts
+
+Aircraft manufacturers (Boeing, Airbus) produce or authorize production of replacement parts:
+
+**Authorized Parts Sources**:
+- OEM-produced parts with full technical support and warranty
+- Higher cost than alternatives but guaranteed compatibility
+- Full traceability and documentation
+- Required for safety-critical components
+
+**Service Parts Programs**:
+- Manufacturers maintain long-term parts availability (25+ years after production)
+- Spare parts kits provided with aircraft delivery
+- On-demand fulfillment through worldwide distribution network
+- Pricing controlled by manufacturers, subject to regulation in some markets
+
+### Aftermarket Parts and Repairs
+
+Independent companies provide parts and repair services:
+
+**Aftermarket Suppliers**:
+- Aircraft parts resellers (AAR Corp, Wesco International, others)
+- Third-party component repair specialists
+- Reconditioned/exchanged parts from salvage aircraft
+- Lower costs than OEM but requiring careful authentication
+
+**Salvage and Reclamation**:
+- End-of-life aircraft dismantled for usable parts
+- Thousands of components recovered and tested
+- Cost-effective source for relatively young aircraft
+- Requires careful quality control and documentation
+
+**Component Exchange Programs**:
+- Rotating pools of overhauled components
+- Customers exchange failed components for overhauled serviceable units
+- Spreads overhaul costs across large customer base
+- Common for engines, landing gear, auxiliary power units
+
+## Regulatory Environment
+
+### Airworthiness Maintenance Requirements
+
+**Federal Aviation Administration (FAA)** and **European Union Aviation Safety Agency (EASA)** establish maintenance requirements:
+
+- **Part 91.407** (FAA): Aircraft maintenance and alterations
+- **Part 145** (FAA/EASA): Repair station certification
+- **CS-M** (EASA): Continuing Airworthiness
+
+### Maintenance Program Approval
+
+Aircraft operators must establish FAA/EASA-approved maintenance programs specifying inspection intervals and procedures:
+
+- **Continuous Airworthiness Maintenance Programs (CAMP)**: Large commercial operators
+- **Manufacturer-Recommended Maintenance Programs**: Smaller operators following OEM programs
+- **Reliability Programs**: Operators demonstrating in-service reliability substitute condition-based maintenance
+
+### Repair Station Certification
+
+Independent repair facilities must obtain FAA/EASA certification demonstrating:
+
+- Qualified personnel with proper certifications
+- Adequate facilities and equipment
+- Technical data and maintenance procedures
+- Quality control systems
+- Documentation and traceability
+
+**Certification Categories**:
+- **Part 145 Repair Stations** (EASA): Full maintenance and repair capability
+- **Part 146 Training Organizations**: Approved training facilities
+- **Specialized Certifications**: NADCAP certifications for special processes (welding, machining, heat treatment)
+
+## Industry Challenges and Trends
+
+### Technician Shortage
+
+Global shortage of qualified aircraft maintenance technicians threatens MRO capacity:
+
+- **Aging Workforce**: Many experienced technicians retiring faster than replacements trained
+- **Training Requirements**: Lengthy training programs (18-24 months) and certifications (A&P license)
+- **Wage Competition**: Airlines and manufacturers competing for skilled labor
+- **Geographic Gaps**: Technician shortages most acute in developing countries with expanding fleets
+
+**Solutions in Development**:
+- Apprenticeship programs and training partnerships
+- Career pathway initiatives
+- Automation of routine inspection and maintenance tasks
+- Remote diagnostics and augmented reality guidance for technicians
+
+### Sustainability and Environmental Concerns
+
+MRO industry faces environmental pressures:
+
+- **Hazardous Waste Management**: Hydraulic fluids, solvents, metals requiring proper disposal
+- **Energy Consumption**: Large maintenance facilities energy-intensive
+- **Parts Remanufacturing**: Growing focus on refurbished and reconditioned parts reducing waste
+- **Composite Recycling**: Challenging to recycle composite materials from retired aircraft
+- **Refrigerant Management**: Transition from ozone-depleting refrigerants to environmentally-friendly alternatives
+
+### Digitalization and Industry 4.0
+
+MRO operations increasingly leverage digital technologies:
+
+**Predictive Maintenance Systems**:
+- Machine learning models predicting component failures
+- Real-time condition monitoring data feeds
+- Enables optimal maintenance planning and inventory management
+
+**Digital Work Orders and Documentation**:
+- Electronic maintenance records replacing paper
+- Mobile applications for technician guidance
+- Real-time documentation and compliance verification
+- Improves quality control and traceability
+
+**Augmented Reality and Remote Expertise**:
+- AR guidance systems helping technicians locate components and procedures
+- Remote expert consultation for complex repairs
+- Training acceleration through immersive AR/VR systems
+
+**Supply Chain Visibility**:
+- Real-time parts tracking and inventory management
+- Predictive demand forecasting
+- Supplier integration and just-in-time parts delivery
+
+### Aircraft Fleet Evolution
+
+Aging commercial fleet driving MRO market growth:
+
+- **Older Aircraft Extensions**: B-777, A330, B-737NG aircraft operating longer, requiring more maintenance
+- **New Technology**: B-787, A350 complex systems requiring specialized training and tools
+- **Regional Aircraft Expansion**: Smaller operators with limited in-house capabilities rely on MRO providers
+- **Military Aircraft Sustainment**: F-35, recent fighter variants requiring new MRO approaches
+
+## Related Domains
+
+- [aerospace.org.ai](https://aerospace.org.ai) - Overall aerospace industry
+- [CommercialAviation](https://aerospace.org.ai/CommercialAviation) - Commercial aircraft manufacturing
+- [AerospaceSupplyChain](https://aerospace.org.ai/AerospaceSupplyChain) - Parts and components supply chain
+- [manufacturing.org.ai](https://manufacturing.org.ai) - Advanced manufacturing and repair processes
+- [transport.org.ai](https://transport.org.ai) - Air transportation operations and logistics
+- [logistics.org.ai](https://logistics.org.ai) - Supply chain and parts distribution
+
+## Sources
+
+- <DatabaseLink namespace="aerospace.org.ai" type="AircraftMRO" />

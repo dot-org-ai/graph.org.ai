@@ -452,22 +452,71 @@ The pharmaceutical industry is among the most heavily regulated globally:
 - Budget impact modeling
 - Quality of life (QOL) studies
 
-## Structure
+## Pharmaceutical Domain Structure
+
+This ontology covers the complete pharmaceutical industry value chain:
+
+### Core Domains
+
+**1. Drug Discovery & Development** ([DrugDiscovery.mdx](./DrugDiscovery.mdx))
+- Target identification and validation
+- Hit discovery (HTS, FBDD, SBDD)
+- Lead optimization and ADME profiling
+- Preclinical safety studies
+- Clinical candidate selection
+
+**2. Clinical Research & Trials** ([ClinicalTrials.mdx](./ClinicalTrials.mdx))
+- Phases I-IV clinical studies
+- IND and NDA regulatory pathways
+- Good Clinical Practice (GCP) compliance
+- Patient recruitment and informed consent
+- Post-marketing surveillance and pharmacovigilance
+
+**3. Pharmaceutical Manufacturing** ([DrugManufacturing.mdx](./DrugManufacturing.mdx))
+- Active Pharmaceutical Ingredient (API) synthesis
+- Formulation development
+- Dosage form manufacturing (solid, liquid, sterile)
+- Good Manufacturing Practice (GMP) compliance
+- Quality control and batch release
+- Process validation
+
+**4. Biologics & Biotechnology** ([Biologics.mdx](./Biologics.mdx))
+- Vaccines (live, inactivated, recombinant, mRNA)
+- Monoclonal antibodies (chimeric, humanized, fully human)
+- Recombinant proteins (hormones, enzymes, cytokines)
+- Cell therapies (CAR-T, dendritic cells, stem cells)
+- Gene therapies (gene replacement, gene addition)
+- Biosimilars and follow-on biologics
+
+**5. Generic Drugs & Biosimilars** ([GenericDrugs.mdx](./GenericDrugs.mdx))
+- Abbreviated New Drug Application (ANDA) pathway
+- Bioequivalence studies and acceptance criteria
+- Patent strategies and Paragraph IV certifications
+- Generic manufacturing and cost optimization
+- Biosimilar development and regulatory comparison
+- Market dynamics and generic pricing
+
+**6. Pharmaceutical Distribution** ([PharmaDistribution.mdx](./PharmaDistribution.mdx))
+- Wholesale distribution centers and logistics
+- Specialty pharmacy services
+- Cold chain management and temperature control
+- Supply chain security and track-and-trace (DSCSA)
+- Pharmacy benefit managers (PBMs) and formulary management
+- Recalls and product disposition
+
+## Document Structure
 
 ```
 pharma.org.ai/
-├── README.md                      # This file
-├── package.json                   # NPM package config
-├── index.ts                       # Type & const exports
-├── types.ts                       # TypeScript definitions
+├── README.md                      # Overview and structure (this file)
 ├── [Pharmaceutical].mdx           # Type template
 │
-├── DrugDiscovery.mdx              # R&D, target identification, lead optimization
+├── DrugDiscovery.mdx              # Drug discovery, target ID, lead optimization
 ├── ClinicalTrials.mdx             # Phase I-IV trials, regulatory approval
-├── DrugManufacturing.mdx          # API production, formulation, packaging
-├── Biologics.mdx                  # Vaccines, antibodies, cell therapies
-├── GenericDrugs.mdx               # Off-patent medications, biosimilars
-└── PharmaDistribution.mdx         # Wholesale, specialty pharmacy, cold chain
+├── DrugManufacturing.mdx          # API, formulation, packaging, GMP
+├── Biologics.mdx                  # Vaccines, antibodies, cell/gene therapies
+├── GenericDrugs.mdx               # ANDA, bioequivalence, biosimilars
+└── PharmaDistribution.mdx         # Wholesale, specialty, cold chain, DSCSA
 ```
 
 ## Usage

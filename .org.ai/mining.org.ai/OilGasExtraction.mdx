@@ -1,0 +1,532 @@
+---
+$context: https://mining.org.ai
+$id: https://mining.org.ai/OilGasExtraction
+$type: https://mining.org.ai/Mining
+name: Oil and Gas Extraction
+description: Extraction of crude oil and natural gas through drilling and production operations (NAICS 211)
+naicsCode: "211"
+apqc: ["10.0", "11.0", "12.0"]
+keywords: [oil extraction, gas extraction, drilling, petroleum, natural gas, onshore, offshore, shale, production wells, hydrocarbon]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Oil and Gas Extraction
+
+Oil and gas extraction (NAICS 211) encompasses the search for, discovery of, and production of crude oil and natural gas from subsurface geological formations. This sector represents the upstream segment of the petroleum value chain and supplies essential energy resources and petrochemical feedstocks for industrial economies worldwide.
+
+## Overview
+
+The U.S. oil and gas extraction industry is characterized by:
+
+- **Production Scale**: ~11 million barrels oil/day, ~120 billion cubic feet natural gas/day
+- **Geographic Diversity**: Onshore basins (Permian, Bakken, Eagle Ford) and offshore (Gulf of Mexico)
+- **Technology Advancement**: Horizontal drilling, hydraulic fracturing (fracking), deepwater operations
+- **Economic Importance**: $200+ billion annual revenue, ~100,000 direct employees
+- **Global Markets**: Oil and gas prices set on international commodity exchanges
+- **Environmental Scrutiny**: Greenhouse gas emissions, induced seismicity, water contamination concerns
+
+### Industry Structure
+
+**Upstream Operators**: Large integrated oil companies (ExxonMobil, Chevron, ConocoPhillips), independents (Pioneer, Diamondback), and private equity-backed firms
+
+**Service Providers**: Drilling contractors, oilfield services (Schlumberger, Baker Hughes, Halliburton), equipment manufacturers
+
+**Infrastructure**: Pipelines, processing plants, storage facilities, transportation (tankers, rail, trucks)
+
+## Exploration and Appraisal
+
+### Geological Assessment
+
+**Seismic Surveying**:
+- 3D seismic acquisition maps subsurface structures
+- Vertical resolution: 10-50 meters depending on depth and frequency
+- Identifies potential hydrocarbon traps (anticlines, fault closures, stratigraphic traps)
+- Onshore: Vibroseis trucks or dynamite
+- Offshore: Marine streamers towed behind vessels
+- Cost: $1-10 million per survey depending on size
+
+**Geochemical Analysis**:
+- Source rock evaluation: Organic maturity, hydrocarbon type (oil/gas)
+- Migration pathways: Connectivity from source to trap
+- Thermal history: Burial, heating, generation models
+- Reservoir quality assessment: Porosity, permeability potential
+
+**Basin Analysis**:
+- Play definition: Repeated geological elements with same generation mechanism
+- Risk assessment: Charge (source rock), trap (seal), seal (caprock), timing
+- Volumetric estimation: Area, thickness, porosity, saturation assumptions
+
+### Exploratory Drilling
+
+**Wildcat Wells**:
+- Drilled in unproven acreage to test geological concepts
+- High risk (20-30% success rate in frontier areas)
+- Cost: $2-20 million onshore, $50-500 million offshore depending on water depth
+
+**Well Operations**:
+- Rotary drilling with drill bit, drill string, mud circulation
+- Wellbore stability maintenance: Mud weight, rheology, lubricity
+- Formation evaluation: Logs (porosity, resistivity, density), drill stem tests, cores
+- Casing programs: Intermediate casing, production casing for well integrity
+
+**Well Control**:
+- Blowout prevention systems (BOPs) control high-pressure influx
+- Multiple barriers: Closed-loop mud systems, casing design, wellhead
+- Safety margins: Overbalanced drilling (mud weight > pore pressure + safety margin)
+
+## Development and Drilling
+
+### Reservoir Engineering
+
+**Volumetric Estimation**:
+- Stock tank original oil in place (STOOIP) = Area × Thickness × Porosity × Saturation × FVF
+- Recoverable reserves = STOOIP × Recovery Factor (typically 20-40% for conventional oil)
+- Resource categorization: Proved, probable, possible (P1, P2, P3)
+
+**Reservoir Simulation**:
+- Static models: Porosity and permeability distributions from seismic, wells, geology
+- Dynamic models: Pressure, saturation, temperature evolution during production
+- Forecast production rates, ultimate recovery, development strategies
+- Guides well spacing, completion design, enhanced oil recovery plans
+
+**Production Forecasting**:
+- Decline curve analysis: Exponential, hyperbolic, or logistic decline patterns
+- EUR (Estimated Ultimate Recovery) extrapolation
+- Risk-adjusted forecasts: Base, high, low cases
+- Reserves certification for financial reporting
+
+### Development Planning
+
+**Facility Design**:
+- Processing capacity (separation of oil/gas/water, compression, dehydration)
+- Number and pattern of production wells
+- Midstream infrastructure (pipelines, export systems)
+- Utilities (power, water, waste handling)
+
+**Well Design**:
+- Vertical wells: Lower cost, suitable for relatively flat structures
+- Deviated wells: Reaching subsurface targets laterally offset from surface
+- Horizontal wells: Maximizing reservoir exposure (1,000-15,000 feet lateral length)
+- Multi-lateral wells: Multiple branches from single main borehole
+
+**Drilling Programs**:
+- Batch drilling: Sequential drilling of multiple wells
+- Offshore drilling vessels: Drill ships, semi-submersibles, jack-ups
+- Onshore drilling rigs: Land rigs (vertical mast or slant), pad drilling (multiple wellbores from same location)
+- Development well cost: $2-10 million onshore, $20-100+ million offshore
+
+## Production Operations (NAICS 211120, 211130)
+
+### Onshore Conventional Production
+
+**Oil Production**:
+- Nodal analysis: Pressure/temperature throughout system to optimize production
+- Artificial lift: Pumping systems when natural pressure insufficient
+  - Beam pumping units (pumpjacks): Mechanical rod pumps, 5-50 barrels/day small wells
+  - Progressive cavity pumps (PCP): Downhole rotary pump, high viscosity oil
+  - Electric submersible pumps (ESP): Centrifugal downhole pump, high volume
+  - Gas lift: Injected gas reduces fluid density, maintains production
+
+**Gas Production**:
+- Dry gas wells: Natural flowing, minimal processing
+- Wet gas/condensate: Includes heavier hydrocarbons requiring separation and treatment
+- Processing: Dehydration (remove water to prevent hydrate formation in pipelines)
+  - Glycol dehydration: Triethylene glycol (TEG) contacts gas, absorbs water
+  - Molecular sieves: Solid desiccant, regenerated with heat
+- Compression: Gas must meet pipeline pressures (1,000-2,000 psi typical)
+  - Reciprocating compressors: High pressure (2,000-30,000 psi)
+  - Centrifugal compressors: High volume (for large producing fields)
+  - Screw compressors: Intermediate applications
+
+**Oil Stabilization**:
+- Flash evaporation: Pressure/temperature reduction removes dissolved gas
+- Crude heater: Warming oil improves separation of gas/water
+- Settling tanks: Gravity separation of residual water and sediment
+
+**Environmental Control**:
+- Produced water management: Injection into disposal wells, surface disposal, reuse
+- Flaring minimization: Gas utilization or reinjection
+- VOC emissions: Tankage controls (floating roof tanks, vapor recovery)
+
+### Onshore Shale/Unconventional Production
+
+**Hydraulic Fracturing (Fracking)**:
+- Horizontal wellbores drilled into shale layers
+- High-pressure fluid (water, proppant, chemicals) injected to create fractures
+- Proppants (sand, ceramic) hold fractures open, maintaining permeability
+- Typical volumes: 2-10 million gallons per stage, 20-50 stages per well
+- Fracture propagation: Microseismic monitoring reveals extent and effectiveness
+
+**Completion Design**:
+- Multi-stage completions: Perforations and packers along lateral isolate sections
+- Sliding sleeves or plug-and-perf: Enable sequential fracturing and isolation
+- Sand control: Completions to prevent formation sand production
+
+**Development Economics**:
+- Type-well EUR: Estimated ultimate recovery from offset wells informs drilling decisions
+- Decline curve shape: Shale wells exhibit steep initial decline, then long tail production
+- Typical shale well: $7-15 million capital cost, 200-400 BOE/day initial, declining 25-40% year 1
+- Large inventory: Continuous drilling maintains production as wells decline
+
+**Major U.S. Shale Plays**:
+- **Permian Basin** (Texas/New Mexico): Largest shale oil, 5+ million bbl/day
+- **Bakken** (North Dakota): Major light oil resource
+- **Eagle Ford** (Texas): Oil and gas window
+- **Marcellus** (Appalachia): Largest natural gas resource
+- **Haynesville** (Texas/Louisiana): Giant gas field
+
+### Offshore Production
+
+**Shallow Water** (<500 feet):
+- Fixed platforms: Steel or concrete structures anchored to seafloor
+- Jack-ups: Self-elevating drilling/producing platforms
+- Production capacity: 1,000-100,000 BOE/day typical
+
+**Deepwater** (500-5,000+ feet):
+- Floating production systems: Drill ships, semi-submersibles, FPSOs (Floating Production, Storage, Offloading)
+- Subsea infrastructure: Wellheads, manifolds, pipelines on seafloor
+- Tension leg platforms (TLPs): Floating hull tethered with tension cables
+- Spar platforms: Deep-draft floating structures
+
+**Deepwater Operations**:
+- Well drilling cost: $50-500 million depending on depth, complexity
+- Weather delays: Operational windows, storm season restrictions
+- Infrastructure investment: $5-20 billion for world-class deepwater project
+- Production capacity: 100,000-500,000 BOE/day for major fields
+
+**Gulf of Mexico**:
+- Primary U.S. offshore production region: ~1.5 million BOE/day (17% of U.S. production)
+- Water depths: 5,000+ feet in frontier areas
+- Infrastructure: Gathering pipelines converge to shore export
+- Hurricanes: Recurring tropical storm threats, production shut-ins
+
+### Well Operations and Maintenance
+
+**Production Monitoring**:
+- Pressure and temperature gauges: Bottomhole conditions, surface conditions
+- Flow measurement: Separators measure oil/gas/water rates
+- Downhole sensing: Permanent sensors transmit real-time data
+- Well testing: Periodic DST to verify productivity, evaluate decline
+
+**Problem Well Management**:
+- Liquid loading: Gas wells unable to produce accumulated water
+  - Solutions: Artificial lift (plunger lift, ESP), velocity management
+- Scale and corrosion: Mineral deposition, iron oxide buildup
+  - Prevention: Inhibitor injection, material selection
+- Sand production: Formation collapse reduces recovery and damages equipment
+  - Control: Underbalanced completion, consolidated sand screen
+
+**Workover Operations**:
+- Pulling tubing/rods for maintenance, remedial work
+- Reperforating: Creating new zones above damaged perforations
+- Sidetracking: Drilling bypass around obstruction
+- Cost: $100,000-2 million per workover
+
+**Well Abandonment**:
+- Permanently sealing wells at end of productive life
+- Regulatory requirement: Plugging with cement barriers
+- Cost: $500,000-5 million per well onshore, higher offshore
+- Abandonment obligation: Environmental bonding requirement during development
+
+## Enhanced Oil Recovery (EOR)
+
+### Gas Injection
+
+**Primary Mechanism**: Pressure maintenance, gas solubility in oil improves recovery
+
+**CO2 Injection**:
+- Sources: Anthropogenic (power plant, ethanol plant) or natural
+- Typical recovery improvement: 5-15% OOIP
+- Large operations: Permian Basin (Wasson, Seminole fields)
+- Cost: $15-25/barrel of incremental oil
+
+**Hydrocarbon Gas Injection** (Natural Gas or Associated Gas):
+- Reprressuring reservoirs with produced gas
+- Lower efficiency than CO2 but lower cost
+- Common in Russia, Middle East
+
+### Thermal Recovery
+
+**Steam Injection**:
+- Heating heavy oil to reduce viscosity, improve flow
+- Primary application: Canadian oil sands, California heavy oil
+- Process: Steam generation (1,000-5,000 bbl/day), injection into reservoir
+- Recovery: 50-80% of OOIP (vs. 5-15% primary)
+- Energy intensity: 1 ton steam per 3 barrels oil produced
+
+**In-Situ Combustion**:
+- Igniting oil in reservoir, combustion front drives recovery
+- Lower economics than steam
+
+### Chemical Injection
+
+**Surfactant-Polymer Flooding**:
+- Reducing interfacial tension between oil and water
+- Polymer solution improves sweep efficiency
+- Limited economic application due to high chemical cost
+
+**Micellar-Polymer Flooding**:
+- Similar mechanisms, limited commercial success
+
+## Oil and Gas Processing
+
+### Crude Oil Stabilization
+
+**Separation Process**:
+- Three-phase separation: Oil, gas, water
+- Crude heater tank: Warming and settling removes water and sediment
+- Free water knockout (FWKO): Gravity separation vessel
+- Production separator: Additional gas removal, oil polishing
+
+**Crude Quality**:
+- API gravity: Light crude (>30°API easier to refine), heavy crude (<20°API)
+- Sulfur content: Sweet (<0.5%) vs. sour (>0.5%), sour more expensive to refine
+- Viscosity: Measured in cSt at 40°C, affects flow and processing
+- Pour point: Minimum temperature crude remains fluid
+
+### Natural Gas Processing
+
+**Gathering and Compression**:
+- Wellhead pressures: 100-5,000 psi typical
+- Compression stages increase pressure for pipeline delivery (1,000-2,000 psi)
+- Reciprocating or centrifugal compressors, multiple stages
+
+**Dehydration**:
+- Removing water prevents hydrate crystal formation in cold pipelines
+- Glycol dehydration: 90-95% water removal
+- Molecular sieves: 95-99% water removal (deeper desiccation)
+
+**Hydrocarbon Dew Point Control**:
+- Condensate dropout (heavy hydrocarbons liquid) prevented by mechanical removal
+- Refrigeration or membrane separation
+
+**Acid Gas Removal** (H2S, CO2):
+- Amine absorption: Monoethanolamine (MEA), diethanolamine (DEA)
+- Pressure swing adsorption: Selective absorption on materials
+- Sulfuric acid can be recovered (Claus process)
+
+**Sulfur Recovery**:
+- Converting H2S to elemental sulfur (Claus unit)
+- Tail gas treatment: Recovering residual H2S
+- Sulfur sale: Byproduct revenue
+
+**Liquefied Natural Gas (LNG)**:
+- Cooling natural gas to -260°F (-162°C) for liquefaction
+- 600:1 volume reduction enables ocean transport
+- Regasification at receiving terminals
+- Large capital projects: $10-20 billion for greenfield LNG plant
+
+## Transportation and Export
+
+### Pipeline Systems
+
+**Gathering Lines**:
+- Low-pressure (50-500 psi), short distance from production to processing
+- Diameter: 2-12 inches
+- Capacity: 1,000-100,000 BOE/day
+
+**Transmission Lines**:
+- Long-distance (50-3,000 miles), high pressure (500-3,000 psi)
+- Diameter: 6-48 inches
+- Capacity: 10,000-500,000 BOE/day
+- Compression stations: Every 50-150 miles (gas), less frequent (oil)
+
+**Offshore Pipelines**:
+- Subsea configuration: Minimal subsurface footprint
+- Corrosion protection: Pipe coatings, cathodic protection, inhibitor injection
+- Buckle propagation: Design preventing failure cascade if dented
+
+**Regulation**:
+- PHMSA (Pipeline and Hazardous Materials Safety Administration) oversight
+- Inspection and maintenance programs
+- Maximum operating pressure limited by material and design factor
+
+### Marine Transport
+
+**Oil Tankers**:
+- Supertankers (ULCC): 300,000+ deadweight tons (dwt)
+- VLCC: 200,000-320,000 dwt
+- Aframax: 80,000-120,000 dwt
+- Panamax: 50,000-80,000 dwt
+
+**LNG Carriers**:
+- Specialized for liquefied natural gas
+- Insulated cargo tanks at -260°F
+- 135,000-180,000 cubic meters capacity typical
+- Cost: $200-350 million per vessel
+
+**Transport Costs**:
+- Strongly driven by oil price and fuel consumption
+- Long-haul (Middle East to U.S.): $3-8/barrel transport
+- Short-haul (domestic): $1-3/barrel
+
+### Rail and Truck
+
+**Crude by Rail**:
+- Responds to oil price, pipeline capacity constraints
+- Cost: $10-20/barrel (competitive during high oil prices)
+- Safety: Derailment risks, Bakken crude volatility
+
+**Rail and Truck Loading Terminals**:
+- Accepting crude from trucks, trains, or pipeline
+- Storage tanks, metering, regulatory compliance
+
+## Safety and Environmental Considerations
+
+### Well Integrity
+
+**Multiple Barriers**:
+- Casing design: Steel pipe cemented in wellbore
+- Wellhead equipment: Valves, flanges, spools
+- Downhole packers: Isolating zones
+- Blow-out preventers: Emergency surface and downhole control
+
+**Barrier Testing**:
+- Pressure tests: Confirming casing/cement integrity
+- Leak-off tests: Determining maximum wellbore pressure before formation fracture
+- Mechanical integrity testing: Verifying downhole equipment function
+
+**Deepwater Safety** (Post-Macondo 2010):
+- Dual BOPs: Redundant blowout prevention
+- Diverter systems: Preventing surface gas release
+- Well monitoring: Real-time pressure/temperature, automated alerts
+- Incident investigation: Learning from failures
+
+### Environmental Management
+
+**Produced Water**:
+- Oil-water separation: Removing hydrocarbons before disposal
+- Injection disposal: Deep wells below drinking water aquifers
+- Regulatory limits: Water quality standards (salinity, oil content)
+- Disposal volumes: 3-20 barrels water per barrel oil produced typical
+
+**Atmospheric Emissions**:
+- Fugitive emissions: Equipment leaks (valves, flanges, seals)
+- Venting: Gas releases during maintenance, well testing
+- Flaring: Combustion of excess gas
+- VOC emissions: Volatile organic compounds from tanks, loading
+
+**Greenhouse Gas Emissions**:
+- Scope 1: Direct CO2 from combustion, flaring, venting, fugitive
+- Scope 2: Indirect from purchased electricity
+- Methane emissions: 20-25 year global warming potential vs. CO2
+- Regulatory trends: Carbon accounting, methane regulations, carbon pricing
+
+**Induced Seismicity**:
+- Wastewater injection causing earthquakes in stable regions
+- Saltwater disposal in Oklahoma, Kansas
+- Mitigation: Reduced injection rates, depth limits, monitoring networks
+
+### Occupational Safety
+
+**Hazards**:
+- Well control (blowouts)
+- Pressure vessel failures
+- Hydrogen sulfide (H2S) exposure
+- Heat stress, fatigue
+- Vehicle and equipment accidents
+
+**Safety Programs**:
+- Process Safety Management (PSM): Design, operating procedures, training
+- Hazard and Operability (HAZOP) studies
+- Job Safety Analysis (JSA)
+- Incident investigation and reporting
+- Safety culture and accountability
+
+## Economics and Markets
+
+### Commodity Pricing
+
+**Oil Benchmarks**:
+- **WTI (West Texas Intermediate)**: U.S. onshore crude, price reference
+- **Brent Crude**: North Sea, global benchmark
+- **OPEC Basket**: Average of OPEC member crudes
+- Price differentials: Based on API gravity, sulfur content, location
+
+**Natural Gas Benchmarks**:
+- **Henry Hub**: U.S. natural gas trading hub
+- **Zeebrugge**: European natural gas hub
+- **JKM (Japan Korea Marker)**: LNG spot price
+
+**Price Drivers**:
+- Supply-demand balance: OPEC production decisions, U.S. shale production
+- Inventory levels: Strategic petroleum reserves, commercial stocks
+- Geopolitical events: Middle East conflicts, sanctions
+- Currency movements: Stronger dollar reduces demand
+- Seasonal demand: Winter heating, summer gasoline
+
+### Project Economics
+
+**Capital Cost Estimation**:
+- Exploration: $10-200 million per well (high exploration risk)
+- Development drilling: $2-15 million onshore, $50-500 million offshore
+- Facilities and infrastructure: $500 million-10+ billion depending on scale
+- Total project cost: $1-50+ billion for major discoveries
+
+**Operating Costs**:
+- Onshore conventional: $10-30/BOE
+- Onshore shale: $20-50/BOE depending on location and decline
+- Deepwater: $30-70/BOE
+- Lease operating expenses (LOE): Fixed and variable components
+
+**Investment Decision Criteria**:
+- IRR (Internal Rate of Return): Typically >15% required
+- NPV (Net Present Value): Discounted cash flows at cost of capital
+- Payback period: 5-10 years typical for development projects
+- Break-even price: Minimum oil/gas price for project viability
+
+## Regulatory Framework
+
+### Federal Onshore (Bureau of Land Management)
+
+- Leasing: Competitive bids for federal mineral rights
+- Environmental review: NEPA (National Environmental Policy Act)
+- Development plan approval: Operations requirements
+- Royalties: 12.5% of production value, minimum bids
+
+### Federal Offshore (BOEMRE - Bureau of Ocean Energy Management)
+
+- Lease auctions: 5-year programs with regional offerings
+- Environmental analysis: EIA, Biological Opinion (Endangered Species Act)
+- Development and Operations Plan: Comprehensive review
+- Royalties: 12.5-16.67%, rental payments, bonding
+
+### State and Local
+
+- State lease terms: Royalties, rental rates vary by state
+- Local permits: County/city requirements for operations
+- Setback requirements: Distance from homes, schools, water supplies
+- Seismic mitigation: Groundwater monitoring, injection controls
+
+## Cross-References
+
+### Related NAICS Codes
+- [211 - Oil and Gas Extraction](https://naics.org.ai/211)
+- [211120 - Crude Petroleum Extraction](https://naics.org.ai/211120)
+- [211130 - Natural Gas Extraction](https://naics.org.ai/211130)
+- [213111 - Drilling Oil and Gas Wells](https://naics.org.ai/213111)
+- [213112 - Support Activities for Oil and Gas Operations](https://naics.org.ai/213112)
+
+### APQC Process Framework
+- [10.0 Explore and Assess](https://apqc.org.ai/petroleum/10.0) - Exploration activities
+- [11.0 Develop and Construct](https://apqc.org.ai/petroleum/11.0) - Development planning
+- [12.0 Produce](https://apqc.org.ai/petroleum/12.0) - Production operations
+
+### Related Topics
+- [energy.org.ai](https://energy.org.ai) - Energy sector overview
+- [MetalOreMining.mdx](./MetalOreMining.mdx) - Metal mining operations
+- [CoalMining.mdx](./CoalMining.mdx) - Coal extraction operations
+- [MiningTechnology.mdx](./MiningTechnology.mdx) - Mining technology and automation
+- [equipment.org.ai](https://equipment.org.ai) - Drilling and production equipment
+
+## Sources
+
+- U.S. Energy Information Administration (EIA) - Oil and gas data and statistics
+- U.S. Geological Survey (USGS) - Resource assessments
+- Society of Petroleum Engineers (SPE) - Technical publications
+- Bureau of Ocean Energy Management (BOEM) - Offshore regulations
+- Pipeline and Hazardous Materials Safety Administration (PHMSA) - Pipeline safety
+- American Petroleum Institute (API) - Industry standards

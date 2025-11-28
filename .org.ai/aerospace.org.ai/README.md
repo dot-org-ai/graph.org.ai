@@ -231,6 +231,28 @@ Focus on supply chain visibility, risk management, diversification, and nearshor
 ### Advanced Materials
 Development and deployment of lightweight composites, advanced alloys, additive materials, and smart materials to improve performance and reduce weight.
 
+## Aerospace Domain Categories
+
+This domain defines the following specialized aerospace industry types:
+
+### CommercialAviation.mdx
+Design, engineering, and manufacturing of civil aircraft for passenger and cargo transport. Covers narrow-body jets, wide-body aircraft, regional jets, business jets, and general aviation. NAICS 336411-336413.
+
+### DefenseAerospace.mdx
+Development and production of military aircraft, rotorcraft, unmanned aerial systems, guided missiles, and defense technologies for government and military customers. NAICS 336414-336419.
+
+### SpaceIndustry.mdx
+Manufacturing of satellites, launch vehicles, spacecraft, space station components, and ground support equipment for civil, commercial, and military space applications. NAICS 336414-336415.
+
+### AircraftMRO.mdx
+Comprehensive maintenance, repair, overhaul, modification, and sustainment services for aircraft, engines, and components. NAICS 488190.
+
+### AerospaceSupplyChain.mdx
+Multi-tier network of specialized suppliers delivering aircraft components, subsystems, materials, and parts to OEMs and MRO operators globally. NAICS 336413, 336415, 332722, 331111, 331419, 325320.
+
+### UrbanAirMobility.mdx
+Development and operation of eVTOL aircraft, air taxis, autonomous aerial vehicles, and supporting infrastructure for urban and regional transportation. NAICS 336415, 488390, 492110.
+
 ## Hierarchy
 
 [graph.org.ai](https://graph.org.ai)
@@ -239,12 +261,12 @@ Development and deployment of lightweight composites, advanced alloys, additive 
             └── [business.org.ai](https://business.org.ai)
                 └── [industries.org.ai](https://industries.org.ai)
                     └── **aerospace.org.ai**
-                        ├── CommercialAviation
-                        ├── DefenseAerospace
-                        ├── SpaceIndustry
-                        ├── AircraftMRO
-                        ├── AerospaceSupplyChain
-                        └── UrbanAirMobility
+                        ├── CommercialAviation (NAICS 336411-336413)
+                        ├── DefenseAerospace (NAICS 336414-336419)
+                        ├── SpaceIndustry (NAICS 336414-336415)
+                        ├── AircraftMRO (NAICS 488190)
+                        ├── AerospaceSupplyChain (NAICS 336413, 336415, 332722, 331111, 331419, 325320)
+                        └── UrbanAirMobility (NAICS 336415, 488390, 492110)
 
 ## Cross-References
 
@@ -274,17 +296,30 @@ This domain defines the following aerospace industry types:
 
 ```
 aerospace.org.ai/
-├── README.md                    # This file
-├── package.json                 # NPM package config
-├── index.ts                     # Type & const exports
-├── types.ts                     # TypeScript type definitions
-├── CommercialAviation.mdx       # Commercial aircraft manufacturing
-├── DefenseAerospace.mdx         # Military aerospace and defense
-├── SpaceIndustry.mdx            # Space systems and launch vehicles
-├── AircraftMRO.mdx              # Maintenance, repair, overhaul
-├── AerospaceSupplyChain.mdx     # Supply chain and components
-└── UrbanAirMobility.mdx         # eVTOL and air taxi systems
+├── README.md                         # This file (comprehensive domain documentation)
+├── package.json                      # NPM package config
+├── index.ts                          # Type & const exports
+├── types.ts                          # TypeScript type definitions
+├── CommercialAviation.mdx            # Commercial aircraft manufacturing (NAICS 336411-336413)
+├── DefenseAerospace.mdx              # Military aerospace and defense (NAICS 336414-336419)
+├── SpaceIndustry.mdx                 # Space systems and launch vehicles (NAICS 336414-336415)
+├── AircraftMRO.mdx                   # Maintenance, repair, overhaul (NAICS 488190)
+├── AerospaceSupplyChain.mdx          # Supply chain and components (Multi-NAICS)
+└── UrbanAirMobility.mdx              # eVTOL and air taxi systems (NAICS 336415, 488390, 492110)
 ```
+
+## Domain Contents Summary
+
+This ontology provides comprehensive coverage of the aerospace industry:
+
+| Domain | NAICS | Focus | Key Topics |
+|--------|-------|-------|-----------|
+| CommercialAviation | 336411-336413 | Civil aircraft manufacturing | Narrow-body/wide-body jets, regional aircraft, business jets, general aviation, manufacturing process, avionics |
+| DefenseAerospace | 336414-336419 | Military aircraft and systems | Fighter aircraft, bombers, missiles, UAS, combat systems, military specifications |
+| SpaceIndustry | 336414-336415 | Space systems and vehicles | Launch vehicles, satellites, spacecraft, space exploration, commercial space |
+| AircraftMRO | 488190 | Maintenance and sustainment | Heavy maintenance, engine overhaul, repairs, inspections, service bulletins |
+| AerospaceSupplyChain | Multi-NAICS | Supplier network | Tier structure, materials, components, suppliers, procurement, supply chain resilience |
+| UrbanAirMobility | 336415, 488390, 492110 | Next-generation air transport | eVTOL, air taxis, autonomous delivery, vertiports, regulatory framework |
 
 ## Usage
 
