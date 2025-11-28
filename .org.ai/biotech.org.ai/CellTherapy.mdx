@@ -1,0 +1,560 @@
+---
+$context: https://biotech.org.ai
+$id: https://biotech.org.ai/CellTherapy
+$type: https://biotech.org.ai/Biotechnology
+name: "Cell Therapy"
+description: "CAR-T cell therapies, stem cell therapies, regenerative medicine, immunotherapy engineering, and living therapeutic approaches"
+naicsCode: "325414"
+parent: https://naics.org.ai/325414
+keywords:
+  - cell therapy
+  - CAR-T cells
+  - stem cells
+  - regenerative medicine
+  - cell engineering
+  - immunotherapy
+  - ex vivo therapy
+  - cellular medicine
+  - T-cell therapy
+  - NK cell therapy
+  - mesenchymal stem cells
+  - induced pluripotent stem cells
+  - iPSC
+---
+
+export const items = async () => {
+  // Fetch cell therapy programs from the database
+  return []
+}
+
+# Cell Therapy
+
+Cell therapy represents a transformative therapeutic approach where living cells are engineered, selected, or expanded to treat diseases. Unlike traditional pharmaceuticals where chemical compounds are administered, cell therapies use the therapeutic properties of cells themselves—whether immune cells fighting cancer, stem cells regenerating tissue, or engineered cells providing missing functions. This field has achieved remarkable clinical successes, particularly in hematologic malignancies, while expanding into solid tumors, genetic diseases, and degenerative conditions.
+
+## Overview
+
+Cell therapy bridges cellular medicine and precision treatment:
+
+**Market Dynamics**
+- **Global market**: $15+ billion by 2030, growing 30-40% CAGR
+- **FDA approvals**: 15+ cell therapies approved; 500+ in development
+- **Treatment costs**: $300,000-750,000 per patient (CAR-T therapies)
+- **Clinical efficacy**: Complete response rates 40-90% in approved indications
+- **Manufacturing scale**: Limited capacity, significant expansion underway
+
+**Why Cell Therapy Differs from Conventional Drugs**
+- **Living product**: Active product is living, metabolically active cells
+- **Persistence**: Cells can proliferate, self-renew (CAR-T cells)
+- **Personalization**: Ex vivo therapies are patient-specific
+- **Manufacturing complexity**: Each patient requires unique manufacturing
+- **Regulatory challenges**: "Drug" versus "tissue" classification
+- **Cost structure**: High upfront manufacturing cost per patient
+
+**Key Cell Therapy Categories**
+- Chimeric antigen receptor (CAR) T-cell therapies
+- Stem cell therapies (hematopoietic, mesenchymal, pluripotent)
+- Natural killer (NK) cell therapies
+- Dendritic cell therapies
+- B-cell therapies
+- Tissue-engineered products
+
+## CAR-T Cell Therapy
+
+### CAR Design and Engineering
+
+**Chimeric Antigen Receptor (CAR) Structure**
+- **Extracellular domain**: Single-chain variable fragment (scFv) derived from antibody
+- **Hinge region**: Linker between extracellular and transmembrane domains
+- **Transmembrane domain**: Typically CD8 alpha or CD28
+- **Intracellular domain**: Contains signaling sequences
+- **Design principle**: Combines B-cell targeting specificity with T-cell killing function
+
+**CAR Generations and Evolution**
+
+**First-Generation CAR-T**
+- **Signaling domain**: CD3-zeta only
+- **Efficacy**: Limited, often short-lived T-cell activation
+- **Status**: Historical interest only
+- **Limitation**: Inadequate T-cell expansion and persistence
+
+**Second-Generation CAR-T** (Current Standard)
+- **Signaling domains**: CD3-zeta plus one costimulatory domain (CD28 or 4-1BB)
+- **CD28 co-stimulation**:
+  - Rapid T-cell activation
+  - Faster cytokine release (IL-2, TNF-α)
+  - Shorter T-cell persistence
+  - Risk of cytokine release syndrome (CRS)
+- **4-1BB co-stimulation**:
+  - Slower activation
+  - Better long-term persistence
+  - Prolonged expansion
+  - Lower CRS risk
+  - More durable anti-tumor effect
+- **Efficacy**: Complete remission rates 40-90% in approved indications
+- **Examples**: Tisagenlecleucel (CD28), Axicabtagene ciloleucel (4-1BB)
+
+**Third-Generation CAR-T**
+- **Signaling domains**: CD3-zeta plus two costimulatory domains
+- **Rationale**: Combination signaling for enhanced activation
+- **Status**: Mostly preclinical/early clinical, limited approval
+- **Potential**: Superior efficacy, but increased toxicity risk
+
+**Fourth-Generation CAR-T** (TRUCKs - T cells Redirected for Universal Cytokine-driven Killing)
+- **Additional feature**: Transgenic cytokine secretion (IL-12, IL-15, IL-18)
+- **Mechanism**: Engineered cells produce localized cytokine signal
+- **Advantages**: Enhanced local immune activation, potential for solid tumors
+- **Status**: Clinical development
+
+### CAR-T Cell Manufacturing
+
+**Manufacturing Workflow**
+
+**1. Patient Leukapheresis**
+- **Collection**: Peripheral blood mononuclear cells (PBMCs) collected via apheresis
+- **Volume**: Typically 5-10 billion mononuclear cells per patient
+- **Processing**: Separation from plasma and red blood cells
+- **Timeline**: 2-4 hours procedure
+- **Viability**: Must be processed within 24-48 hours
+
+**2. T-Cell Isolation and Enrichment**
+- **Methods**: Magnetic bead selection (CD3+ or CD8+/CD4+ separation)
+- **Purity**: >90% T-cell purity target
+- **Ratio**: CD8:CD4 ratio impact on persistence and efficacy
+- **Alternative**: Whole PBMC culture (unselected approach)
+
+**3. CAR Gene Transfer**
+- **Viral vectors**:
+  - **Lentiviral**: Integration into genome, stable expression, highest clinically used
+  - **Retroviral**: Integration, random insertion, oncogenic risk
+  - **Adeno-associated virus (AAV)**: Transient expression, size limitations
+- **Non-viral methods**:
+  - **Electroporation**: Physical DNA introduction, transient expression
+  - **Nucleofection**: Enhanced electroporation
+  - **Transient expression**: No integration, shorter duration but simpler manufacturing
+- **Transduction efficiency**: 20-80% CAR+ cells depending on method
+- **Timeline**: 15-30 minutes for transduction
+
+**4. T-Cell Expansion**
+- **Activation**: Anti-CD3/CD28 stimulation (beads or plate-bound antibodies)
+- **Cytokine support**: IL-2 (2,000 IU/mL typical), IL-7, IL-15 dependent on design
+- **Culture duration**: 10-21 days expansion typical
+- **Cell proliferation**: 500-1,000 fold expansion possible
+- **Metabolic support**: Glucose, glutamine supplementation
+
+**5. Quality Control and Potency Testing**
+- **CAR expression**: Flow cytometry measuring CAR+ percentage
+- **Cell viability**: Typically >80-90% target
+- **Sterility**: Bacterial, fungal, mycoplasma testing required
+- **Potency assay**: Tumor cell killing (in vitro cytotoxicity)
+- **Endotoxin testing**: <175 EU/dose (FDA standard)
+- **Other testing**: Karyotype, mycoplasma detection, tumorigenicity assessment
+
+**6. Cryopreservation**
+- **Cryoprotectant**: Dimethyl sulfoxide (DMSO) 10%
+- **Freezing rate**: Controlled rate freezing to -90°C, then liquid nitrogen
+- **Viability post-thaw**: 50-80% typical recovery
+- **Storage duration**: Stable for years at -150°C
+- **Alternative**: Fresh CAR-T infusion (shorter timeline, potentially better efficacy)
+
+**7. Thawing and Infusion**
+- **Thawing**: Rapid warm thaw in 37°C water bath
+- **Infusion volume**: 100-200 mL total cell volume (includes media and cryoprotectant)
+- **Patient monitoring**: Hospitalization for CRS monitoring
+- **Dosing**: Fixed dose or weight-based dosing (varies by product)
+- **IL-2 support**: Often given to enhance persistence (varies)
+
+### Approved CAR-T Therapies
+
+**CD19-Targeting CAR-T Cells**
+
+**Tisagenlecleucel (Kymriah, Novartis)**
+- **Target**: CD19 (B-cell marker)
+- **Vector**: Lentiviral
+- **Co-stimulation**: CD28
+- **Manufacturing**: Fully personalized (patient-specific)
+- **Indications**:
+  - B-cell acute lymphoblastic leukemia (ALL) - children and young adults
+  - Diffuse large B-cell lymphoma (DLBCL) - adults
+- **Efficacy**: 80-90% complete remission in ALL, 50-60% in DLBCL
+- **Cost**: $500,000-750,000 per patient
+
+**Axicabtagene ciloleucel (Yescarta, Kite/Gilead)**
+- **Target**: CD19
+- **Vector**: Retroviral
+- **Co-stimulation**: 4-1BB
+- **Manufacturing**: Fully personalized
+- **Indications**: DLBCL, primary mediastinal B-cell lymphoma (PMBL), follicular lymphoma
+- **Efficacy**: 40-60% complete remission (varies by indication)
+- **Advantages**: Longer persistence, lower CRS risk than CD28 designs
+- **Cost**: Similar to Kymriah
+
+**Brexucabtagene autoleucel (Tecartus, Kite/Gilead)**
+- **Target**: CD19
+- **Vector**: Retroviral
+- **Co-stimulation**: 4-1BB
+- **Indication**: Mantle cell lymphoma (relapsed/refractory)
+- **Efficacy**: 90%+ overall response rate, ~70% complete remission
+- **Advantage**: First-line CAR-T for MCL (typically treated later)
+
+**Other Approved CAR-T Therapies**
+- **Lisocabtagene ciloleucel (Breyanzi)**: CD19 CAR-T for DLBCL, follicular lymphoma
+- **Idecabtagene vicleucel (Abecma)**: BCMA CAR-T for multiple myeloma
+- **Ciltacabtagene autoleucel (Sycliff)**: BCMA CAR-T for multiple myeloma
+- **Afamitresgene autoleucel (Tecelra)**: CD20/CD19 bispecific CAR-T for B-cell lymphomas
+
+### CAR-T Toxicity and Management
+
+**Cytokine Release Syndrome (CRS)**
+
+**Mechanism**
+- **Trigger**: CAR-T cell encounters target antigen, activates, produces cytokines
+- **Key cytokines**: IL-6, TNF-α, IFN-γ, IL-2, IL-10
+- **Severity**: Dose-dependent (higher CAR-T dose = greater risk)
+- **Timeline**: Typically appears 3-7 days post-infusion (range 1-21 days)
+
+**Clinical Manifestations**
+- **Grade 1-2 (Mild)**: Fever, fatigue, myalgias, nausea
+- **Grade 3-4 (Severe)**: Hypotension, hypoxia, cardiac arrhythmias, disseminated intravascular coagulation (DIC)
+- **Mortality**: <5% with appropriate management in CAR-T programs
+
+**Risk Factors**
+- **Tumor burden**: Higher burden = greater CAR-T expansion = worse CRS
+- **CAR-T dose**: Higher dose increases risk
+- **Design**: CD28 co-stimulation > 4-1BB
+- **Baseline status**: Performance status, organ function
+
+**Management**
+- **Monitoring**: Hospitalization 7-14 days minimum, ICU if severe
+- **Tocilizumab**: IL-6 receptor antagonist, first-line intervention for CRS
+- **Corticosteroids**: Methylprednisolone for severe or steroid-refractory CRS
+- **Supportive care**: Fluids, vasopressors for hypotension, oxygen for hypoxia
+- **Stopping progression**: Cooling (for fever), ICU-level monitoring
+
+**Immune Effector Cell-Associated Neurotoxicity Syndrome (ICANS)**
+
+**Mechanism**
+- **Proposed cause**: Cytokine-mediated blood-brain barrier disruption, endothelial activation
+- **CAR-T migration**: Unclear if CAR-T cells directly enter CNS
+- **Timing**: Often concurrent with or shortly after CRS
+
+**Clinical Manifestations**
+- **Mild**: Confusion, tremor, headache, insomnia
+- **Moderate**: Difficulty with complex tasks, ataxia, disorientation
+- **Severe**: Seizures, coma, fatal encephalitis
+- **Timeline**: 4-14 days post-infusion typical
+
+**Management**
+- **Corticosteroids**: Methylprednisolone first-line for ICANS
+- **Tocilizumab**: May provide additional benefit
+- **Seizure prophylaxis**: Levetiracetam standard
+- **Intensive monitoring**: Neurologic checks, EEG if seizure concern
+- **Recovery**: Most patients recover fully with appropriate management
+
+**On-Target Off-Tumor Toxicity**
+- **Mechanism**: CAR-T recognition of antigen on normal tissues
+- **Risk**: Related to target antigen expression breadth
+- **Example**: CD19 targeting → B-cell aplasia (expected, manageable with immunoglobulin replacement)
+- **Challenge**: Solid tumors have antigen on tumor and normal tissue
+
+### CAR-T in Solid Tumors
+
+**Clinical Challenges**
+- **Tumor heterogeneity**: Antigen-negative cells escape CAR-T recognition
+- **Immunosuppressive microenvironment**: T-regulatory cells, myeloid-derived suppressor cells
+- **Infiltration limitation**: Poor CAR-T trafficking to tumor
+- **Solid tumor failure rate**: <20% efficacy in early trials
+
+**Approaches to Overcome Challenges**
+- **Combination therapy**: CAR-T + checkpoint inhibitors (anti-PD-1, anti-CTLA-4)
+- **Enhanced CAR designs**: IL-12/15 secretion (TRUCKs), additional co-stimulation
+- **Conditioning chemotherapy**: Lymphodepletion before CAR-T, tumor cytoreduction
+- **Multiple targets**: Bispecific or trispecific CAR-T targeting multiple antigens
+- **Transgenic TNF-α**: Enhanced local inflammation
+
+**Solid Tumor Targets in Development**
+- **Mesothelin**: Ovarian cancer, pancreatic cancer
+- **FAP (fibroblast activation protein)**: Pancreatic cancer
+- **GPC3**: Hepatocellular carcinoma
+- **ERBB2 (HER2)**: Breast cancer, gastric cancer
+- **WT1**: AML, solid tumors
+
+## Stem Cell Therapies
+
+### Hematopoietic Stem Cell Transplantation (HSCT)
+
+**Stem Cell Mobilization and Collection**
+- **Mobilization agents**: G-CSF (granulocyte colony-stimulating factor), plerixafor
+- **Collection method**: Apheresis, same technology as PBMC collection
+- **Target dose**: >2 million CD34+ cells per kg body weight
+- **Processing**: CD34+ enrichment possible, removes T cells for allogeneic transplant
+
+**Conditioning Regimens**
+
+**Myeloablative Conditioning**
+- **Agents**: High-dose chemotherapy (busulfan, cyclophosphamide) +/- total body irradiation
+- **Effect**: Eradication of patient immune system and diseased cells
+- **Toxicity**: High, appropriate for malignancy
+- **Mortality**: 5-15% transplant-related mortality
+
+**Non-Myeloablative/Reduced Intensity Conditioning**
+- **Agents**: Lower-dose chemotherapy (fludarabine, busulfan)
+- **Effect**: Immune system suppression sufficient for engraftment
+- **Advantages**: Lower toxicity, applicable to older patients
+- **Limitation**: Higher relapse risk
+
+**Graft-Versus-Host Disease (GVHD)**
+
+**Mechanism**
+- **Allogeneic transplant**: Donor cells recognize patient cells as foreign
+- **Donor T cells**: Attack patient tissues (especially GI tract, skin, liver)
+- **Severity**: Acute (first 100 days) vs chronic (>100 days)
+
+**Acute GVHD Grades**
+- **Grade I**: Mild skin rash, no other organ involvement
+- **Grade II**: Skin rash + mild GI symptoms or hepatic involvement
+- **Grade III**: Generalized erythroderma, severe GI symptoms
+- **Grade IV**: Severe involvement of any organ, high mortality
+
+**GVHD Prevention**
+- **Pharmacologic**: Calcineurin inhibitors (tacrolimus, cyclosporine), methotrexate
+- **T-cell depletion**: CD34 selection, CD3/CD19 depletion (reduces GVHD, increases infection risk)
+- **In vivo depletion**: Antithymocyte globulin (ATG), monoclonal antibodies
+
+**GVHD Treatment**
+- **First-line**: Systemic corticosteroids (methylprednisolone)
+- **Steroid-refractory**: Calcineurin inhibitors, other agents (sirolimus, pentostatin)
+
+**Graft-Versus-Leukemia (GVL) Effect**
+- **Benefit**: Donor immune system kills leukemic cells
+- **Mechanism**: Minor histocompatibility antigen recognition
+- **Trade-off**: GVL benefit requires GVHD (to some degree)
+- **Therapeutic use**: Donor lymphocyte infusions (DLI) for relapsed leukemia post-HSCT
+
+### Mesenchymal Stem Cell (MSC) Therapies
+
+**Mesenchymal Stem Cell Characteristics**
+- **Source**: Bone marrow, adipose tissue, umbilical cord (most abundant)
+- **Differentiation capacity**: Osteogenic, chondrogenic, adipogenic
+- **Plasticity**: Possible transdifferentiation (debate ongoing)
+- **Immunomodulation**: Primary therapeutic mechanism (rather than differentiation)
+
+**Immunomodulatory Properties**
+- **Immune suppression**: Production of TGF-β, IL-10, IDO (indoleamine 2,3-dioxygenase)
+- **Th2 bias**: Skew immune response toward anti-inflammatory Th2
+- **T-regulatory induction**: Promote Foxp3+ T-reg development
+- **MSC licensing**: IFN-γ priming enhances immunosuppressive properties
+
+**Clinical Applications**
+
+**Graft-Versus-Host Disease (GVHD)**
+- **Prochymal (Osiris)**: Only MSC therapy approved by FDA
+- **Indication**: Steroid-refractory GVHD
+- **Efficacy**: ~30-40% complete response, additional improvement with steroids
+- **Mechanism**: Direct and indirect immune suppression
+- **Advantage**: Well-tolerated, minimal toxicity
+
+**Inflammatory Bowel Disease**
+- **Mechanism**: Tissue regeneration + immune suppression
+- **Clinical trials**: Multiple trials in Crohn's disease, ulcerative colitis
+- **Efficacy**: Remission rates 30-50% in refractory disease
+- **Safety**: Generally well-tolerated
+
+**Ischemic Heart Disease**
+- **Rationale**: Tissue regeneration, anti-apoptotic signaling, angiogenesis
+- **Clinical trials**: Multiple phase II trials
+- **Efficacy**: Modest improvements in cardiac function, ongoing debate
+- **Mechanism**: Paracrine effects (cytokine/growth factor secretion) rather than differentiation
+
+**Acute Respiratory Distress Syndrome (ARDS)**
+- **Rationale**: Immune modulation, barrier function restoration
+- **Clinical trial data**: Improved outcomes in some studies (ARDS, COVID-19)
+- **Mechanism**: Reduces excessive inflammation
+
+### Pluripotent Stem Cell (iPSC) Therapies
+
+**Induced Pluripotent Stem Cell (iPSC) Generation**
+- **Reprogramming factors**: Oct4, Sox2, Klf4, c-Myc (Yamanaka factors)
+- **Methods**: Viral vectors (integration), non-viral (transient), small molecules
+- **Timeline**: 2-4 weeks to pluripotency
+- **Efficiency**: Highly variable (0.01-1%)
+- **Advantage over ESCs**: Patient-specific, autologous (no rejection)
+
+**iPSC Differentiation**
+- **Protocols**: Directed differentiation toward specific cell types
+- **Examples**:
+  - Cardiomyocytes (heart disease)
+  - Dopaminergic neurons (Parkinson's disease)
+  - Pancreatic beta cells (diabetes)
+  - Retinal cells (macular degeneration)
+- **Maturation**: Challenge of achieving fully mature, functional cells
+
+**Clinical Applications**
+
+**Retinal Dystrophy**
+- **Target**: Age-related macular degeneration (AMD)
+- **Cell type**: Retinal pigment epithelium (RPE)
+- **Clinical status**: First iPSC therapy entering clinical trials (Riken, Japan)
+- **Advantage**: Replacement of degenerated cells with patient-derived cells
+
+**Cardiac Regeneration**
+- **Target**: Myocardial infarction scar replacement
+- **Cell type**: Cardiomyocytes
+- **Challenge**: Integration into existing tissue, electromechanical coupling
+- **Status**: Preclinical/early clinical
+
+**Hematologic Malignancies and Genetic Diseases**
+- **Concept**: Patient iPSCs → correct genetic mutation ex vivo → differentiate to therapeutic cells
+- **Example**: Sickle cell iPSCs → correct mutation → differentiate to HSCs → transplant
+- **Advantage**: Genetic correction + autologous transplant
+- **Challenge**: Ensuring safety (no off-target mutations from reprogramming)
+
+### Tissue-Engineered Products
+
+**Combination Approach**
+- **Cell + scaffold**: Living cells seeded into biodegradable or permanent scaffold
+- **Bioreactor culture**: Growth in controlled environment pre-implantation
+- **Vascularization**: Engineering blood vessels into tissue
+
+**Examples**
+
+**Cartilage Engineering**
+- **Cells**: Chondrocytes or iPSC-derived chondrocytes
+- **Scaffold**: Collagen, hyaluronic acid, synthetic polymers
+- **Application**: Joint cartilage repair/replacement
+- **Challenge**: Achieving mechanical properties matching native cartilage
+
+**Bone Engineering**
+- **Cells**: Osteoblasts or MSC-derived osteoblasts
+- **Scaffold**: Calcium phosphate, collagen
+- **Concept**: Combination cellular + acellular bone matrix products
+- **Application**: Large bone defects, reconstruction
+
+## NK Cell Therapies
+
+**Natural Killer Cell Biology**
+- **Source**: Peripheral blood, bone marrow, thymus
+- **Function**: Innate immunity against virus-infected cells and tumors
+- **Recognition**: Lack of MHC-I engagement (missing-self hypothesis)
+- **Advantages**: No HLA matching required (unlike T cells), no GVHD risk
+
+**CAR-NK Cell Therapies**
+- **Engineering**: Similar CAR design to T-cell CAR (scFv + signaling domains)
+- **Advantages**:
+  - No GVHD risk (allogeneic possible)
+  - Off-the-shelf potential (universal donor cells)
+  - Lower risk of CRS (lower cytokine production)
+- **Challenges**: Lower expansion potential vs T cells, shorter persistence
+- **Clinical development**: Multiple programs in early development
+
+**NK Cell Therapies in Development**
+- **CAR-NK cells**: Targeting CD19, BCMA, and other antigens
+- **Cytokine-based NK expansion**: IL-15, IL-12 signaling for enhanced activation
+- **Combination approaches**: NK cells + checkpoint inhibitors
+
+## Dendritic Cell Therapies
+
+**Sipuleucel-T (Provenge)**
+- **Mechanism**: Patient dendritic cells loaded with tumor antigen (PA2024 fusion protein)
+- **Manufacturing**: Leukapheresis → dendritic cell isolation/enrichment → antigen loading → reinfusion
+- **Indication**: Metastatic castration-resistant prostate cancer (mCRPC)
+- **Efficacy**: Modest survival benefit (4.1 month median survival advantage)
+- **Timing**: 3 infusions over 6 weeks
+- **Cost**: $93,000 (very high relative to modest efficacy)
+
+**Other Dendritic Cell Approaches**
+- **Whole tumor lysate loading**: Dendritic cells pulsed with tumor cell lysate
+- **Personalized vaccines**: Combination with checkpoint inhibitors
+- **Target expansion**: CD19, WT1, and other antigens in development
+
+## Manufacturing Scale and GMP Challenges
+
+### Current Manufacturing Landscape
+
+**Facility Expansion**
+- **Current bottleneck**: Manufacturing capacity insufficient for demand
+- **Investment**: Billions in facility development underway
+- **Target**: Thousands of patients per year → 100,000+ per year
+- **Timeline**: 2-3 years for facility to become operational
+
+**Continuous Manufacturing**
+- **Traditional approach**: Batch manufacturing (current standard)
+- **Emerging**: Continuous flow bioreactors, closed-system processing
+- **Advantages**: Reduced contamination risk, faster turnaround, cost reduction
+- **Implementation**: Regulatory path developing
+
+**Point-of-Care Manufacturing**
+- **Vision**: Manufacturing at hospital level
+- **Benefits**: Reduced logistics, faster patient access
+- **Challenges**: Regulatory approval complex, QC requirements
+- **Pilot programs**: Limited sites with automated systems
+
+### Cost Reduction Strategies
+
+**Off-the-Shelf Therapies**
+- **Allogeneic approach**: Single manufacturing batch for multiple patients
+- **Benefit**: Tremendous cost reduction (shared manufacturing)
+- **Challenge**: Rejection risk (requires T-cell depletion or immunosuppression)
+- **Examples**: iPSC-derived products, NK cell products
+
+**Automated Manufacturing**
+- **Goal**: Reduce labor, increase consistency, reduce contamination
+- **Technologies**: Robotic systems, closed bioreactors, automated quality control
+- **Impact**: Estimated 50%+ cost reduction possible
+
+**Process Optimization**
+- **Shorter manufacturing timelines**: Direct impact on cost
+- **Higher cell yields**: Reduced wastage
+- **Better viability**: Reduced dose requirements
+- **Batch uniformity**: Reduced failure rates
+
+## Regulatory Landscape
+
+### FDA Approach to Cell Therapies
+
+**Classification**
+- **Biological product**: FDA regulation as biologics (51(k) pathway)
+- **Combination products**: If includes scaffold material, separate regulations
+- **Phase development**: IND, Phase I/II, BLA (Biologics License Application)
+
+**Manufacturing Requirements**
+- **GMP compliance**: Like all biologics
+- **Cell characterization**: Identity, purity, potency
+- **Process consistency**: Lot-to-lot uniformity
+- **Safety testing**: Sterility, mycoplasma, adventitious agents
+
+**Potency Testing**
+- **Requirement**: Meaningful potency assay required
+- **Challenge**: How to measure "activity" of living therapeutic?
+- **CAR-T example**: In vitro cytotoxicity assays, in vivo tumor models
+- **Variety**: Different assays for different therapies
+
+### Compassionate Use and Accelerated Pathways
+
+**Breakthrough Therapy Designation**
+- **Criteria**: Preliminary evidence of substantial efficacy
+- **Benefits**: More frequent FDA meetings, accelerated review
+- **Timeline**: Standard BLA vs 6-month priority review
+- **Examples**: Most CAR-T therapies received breakthrough designation
+
+**Regenerative Medicine Advanced Therapy (RMAT)**
+- **Eligibility**: Cell/tissue therapies for serious/life-threatening conditions
+- **Benefits**: Conditional approval possible before Phase II completion
+- **Risk-benefit**: Risk acceptable for serious conditions
+- **Examples**: Cardiac cell products, other regenerative therapies
+
+## Related Domains
+
+- [Genomics](./Genomics.mdx) - Genetic engineering for cell therapy
+- [pharma.org.ai/Biologics](https://pharma.org.ai/Biologics) - Therapeutic proteins, cell-derived products
+- [pharma.org.ai/DrugDiscovery](https://pharma.org.ai/DrugDiscovery) - Target identification
+- [health.org.ai](https://health.org.ai) - Clinical implementation
+- [research.org.ai](https://research.org.ai) - Cell therapy research methodologies
+
+## External Resources
+
+- **International Society for Cellular Therapy (ISCT)**: Professional organization
+- **Foundation for the Advancement of Cell Therapy (FACT)**: Standards and accreditation
+- **CAR-TCR Summit**: Annual industry conference
+- **Nature Cell Biology**: Leading cell therapy research journal
+- **Molecular Therapy**: Cell therapy clinical trials and research
+- **FDA Guidance on Cell Therapy Manufacturing**: Regulatory expectations

@@ -1,0 +1,412 @@
+---
+$context: https://utilities.org.ai
+$id: https://utilities.org.ai/WaterUtilities
+$type: https://utilities.org.ai/Utilities
+name: Water Supply and Wastewater Systems
+description: Water and wastewater utility operations including water source protection, treatment, distribution to customers, wastewater collection, treatment, and environmental discharge
+naicsCode: ["2213", "221310", "221311", "221320", "221330", "221331"]
+apqc: ["10.0", "10.1", "10.2", "10.3", "11.0", "11.1", "11.2", "11.3", "11.4", "12.0", "12.1", "12.2", "12.3", "12.4", "12.5", "14.0", "14.4"]
+keywords: [water, wastewater, treatment, distribution, supply, sewage, potable water, reclaimed water]
+---
+
+export const items = async () => {
+  return []
+}
+
+# Water Supply and Wastewater Systems
+
+The water and wastewater utility industry (NAICS 2213) encompasses the collection, treatment, and distribution of potable water to residential, commercial, and industrial customers, as well as the collection and treatment of wastewater for environmental discharge or reuse. This essential infrastructure sector operates as a regulated natural monopoly providing critical services to millions of customers.
+
+## Overview
+
+Water utilities operate integrated systems for supply and demand management:
+
+- **Source Protection (APQC 10.0)**: Protecting water sources from contamination
+- **Treatment (APQC 10.1-10.3)**: Processing raw water to potable standards
+- **Distribution (APQC 11.0-11.4)**: Delivering water to customers
+- **Customer Service (APQC 12.0)**: Metering, billing, and customer support
+- **Collection (APQC 11.0-11.2)**: Gathering wastewater from properties
+- **Treatment (APQC 10.1-10.3)**: Removing pollutants for environmental discharge
+- **Discharge (APQC 11.0)**: Returning treated water to environment
+
+### Industry Scale (U.S., 2024)
+
+**Water Supply**
+- **Daily Consumption**: 320+ billion gallons
+- **Potable Supply**: 48,000+ public water systems
+- **Customers Served**: 300+ million
+- **Large systems**: 1,000+ serving >100,000 customers
+- **Small systems**: Majority serving <10,000 customers
+- **Source**: Surface water (60%), groundwater (40%)
+- **Market Value**: $50+ billion (annual spending)
+- **Treatment Plants**: 14,000+ major facilities
+- **Distribution Pipes**: 4+ million miles
+
+**Wastewater**
+- **Treatment Plants**: 15,000+ publicly-owned treatment works (POTWs)
+- **System Count**: 14,000+ collection systems
+- **Customers Served**: 200+ million
+- **Treatment Capacity**: 400+ billion gallons/day
+- **Flows Treated**: 40+ billion gallons/day average
+- **Sludge Production**: 6+ million dry tons/year
+- **Market Value**: $50+ billion (annual spending)
+- **Workforce**: 80,000+ employees
+
+### Market Participants
+
+**Public Water Utilities**
+- Municipally-owned or public authority
+- 87% of U.S. public water systems
+- Non-profit, reinvest revenue in operations/capital
+- Rate-setting: City council, utility commission, or board
+
+**Investor-Owned Utilities (IOUs)**
+- Private companies with profit incentive
+- 9% of U.S. systems but serve significant urban areas
+- Rate regulation: State regulatory commission oversight
+- Examples: American Water Works, Essential Utilities
+
+**Cooperative Utilities**
+- Member-owned utilities
+- 4% of U.S. systems
+- Nonprofit operation, member governance
+
+**Hybrid Models**
+- Public-private partnerships: BOT (Build-Operate-Transfer)
+- Private operation of public systems (contract operations)
+
+## Water Supply Systems (APQC 10.0-11.4)
+
+### Water Sources
+
+**Surface Water**
+- Rivers and streams: Direct flow, seasonal variation
+- Lakes and reservoirs: Impoundment, capacity for seasonal storage
+- Dams: Hydroelectric, flood control, water supply, recreation
+- Watershed protection: Land conservation, pollution prevention
+- U.S. usage: ~60% of public water supplies
+
+**Groundwater**
+- Wells: Shallow (<100 ft), intermediate, deep (>500 ft)
+- Aquifers: Confined (protected), unconfined (vulnerable)
+- Recharge: Annual precipitation replenishes supply
+- Sustainability: Some aquifers declining (Ogallala, others)
+- U.S. usage: ~40% of public water supplies
+- Private wells: 15 million privately-owned wells (rural areas)
+
+**Desalination**
+- Reverse osmosis (RO): Membrane technology, high energy cost
+- Multi-effect distillation: Thermal technology, waste heat recovery
+- Electrodialysis: Brackish water, low salinity
+- Applications: Coastal regions, arid climate areas
+- Cost: $2-5/1000 gallons (high vs. conventional treatment)
+- Growth: Increasing in water-scarce regions
+
+**Recycled/Reclaimed Water**
+- Purple pipe systems: Separate distribution for non-potable uses
+- Applications: Irrigation, toilet flushing, cooling water, toilet flushing
+- Cost: Lower than desalination, higher than conventional treatment
+- Water reuse potential: 5-30% of urban water supply
+
+**Water Rights and Allocations**
+- Riparian doctrine: Eastern U.S. (reasonable use)
+- Prior appropriation: Western U.S. (beneficial use priority)
+- Interstate compacts: Shared water agreements (Colorado River, Great Lakes)
+- Allocation challenges: Increasing scarcity, competing demands
+
+### Water Treatment (APQC 10.1-10.3)
+
+**Treatment Steps and Process**
+
+1. **Intake and Screening (APQC 10.1)**
+   - Intake structures: Reservoir, river, or groundwater intake
+   - Bar racks: Remove large debris (logs, trash)
+   - Wet wells: Equalization, settling of heavy solids
+   - Debris removal: Manual or mechanical screening
+
+2. **Coagulation and Flocculation (APQC 10.1)**
+   - Coagulants: Aluminum sulfate (alum), ferric chloride, polyaluminum chloride
+   - Mechanism: Neutralize colloid charge, promote agglomeration
+   - Flocculation: Mixing to encourage particle collision and growth
+   - Flocs: Larger particles settling/filtering more easily
+
+3. **Sedimentation (APQC 10.1)**
+   - Settling basins: Gravity separation (2-4 hour detention)
+   - Lamella plates: Increase settling area, reduce space
+   - Clarifiers: Continuous flow, mechanical sludge removal
+   - Efficiency: 60-80% particle removal
+
+4. **Filtration (APQC 10.1)**
+   - Sand filters: Most common (1-2 meter sand bed)
+   - Multi-media filters: Sand, anthracite, garnet (layered)
+   - Membrane filtration: Microfiltration (MF), ultrafiltration (UF), nanofiltration (NF), reverse osmosis (RO)
+   - Filter aids: Polymer aids improve filtration
+   - Backwashing: Cleaning filters (water and air reversal)
+
+5. **Disinfection (APQC 10.2)**
+   - Chlorination: Gas (Cl2), sodium hypochlorite (NaOCl), calcium hypochlorite (Ca(OCl)2)
+   - Chlorine residual: 0.2-1.0 mg/L for continuous disinfection
+   - Chlorine dioxide: Stronger oxidation, no DBP formation
+   - Ozonation: Powerful oxidant, no residual protection
+   - Ultraviolet (UV): Physical inactivation, no residual
+   - Combined approach: Multiple barriers (defense-in-depth)
+
+6. **pH Adjustment and Corrosion Control (APQC 10.2)**
+   - pH: 6.5-8.5 typical (stability, less corrosive)
+   - Lime: Calcium hydroxide for pH increase
+   - Soda ash: Sodium carbonate for pH increase
+   - Acid: Fluorosilicic acid for pH decrease
+   - Corrosion inhibitor: Polyphosphate protects pipes
+
+7. **Fluoridation (APQC 10.2)**
+   - Fluoride: 0.7-1.0 mg/L for dental health (60% of U.S. systems)
+   - Fluoride chemicals: Fluorosilicic acid (most common), sodium fluoride
+   - Public health: Reduces cavities in children
+   - Controversy: Opponents question safety and mandate
+   - Status: Optional by utility, mandated by some states
+
+8. **Advanced Treatment (APQC 10.3)**
+   - Activated carbon: Adsorption of taste, odor, organic compounds
+   - Powdered activated carbon (PAC): Temporary removal
+   - Granular activated carbon (GAC): Permanent installation, long-term removal
+   - Ion exchange: Softening (remove Ca, Mg), nitrate removal
+   - Advanced oxidation processes (AOPs): Ozone + hydrogen peroxide, UV + H2O2
+
+**Water Quality Standards (APQC 10.2)**
+- Maximum Contaminant Levels (MCLs): EPA established limits
+- Primary MCLs: Health-based (bacteria, chemicals, radionuclides)
+- Secondary MCLs: Aesthetics (taste, odor, color)
+- Monitoring: Required sampling frequency (daily to quarterly)
+- Reporting: Annual Water Quality Report to customers
+
+### Water Distribution (APQC 11.0-11.4)
+
+**Distribution Infrastructure**
+- Transmission mains: Large diameter (6-48 inches), long distances
+- Distribution mains: Medium diameter (2-12 inches), neighborhood coverage
+- Service lines: Small diameter (0.5-1.5 inches), individual connections
+- Valves: Isolation, flow control, pressure regulation
+- Hydrants: Fire suppression, flushing, maintenance
+
+**System Operations (APQC 11.1-11.4)**
+- Pressure: 40-100 psi typical (elevation dependent)
+- Flow: Demand varying hourly, daily, seasonal
+- Storage tanks: 20-50% of average daily demand (fire protection, equalization)
+- Pumping: Multiple pumps, variable frequency drives (VFDs) for efficiency
+- SCADA: Remote monitoring, pressure management, leak detection
+
+**Asset Management (APQC 11.3)**
+- Pipeline age: Many systems 50-100+ years old
+- Material: Cast iron (75%+), PVC, ductile iron, asbestos cement
+- Replacement: 1,000+ miles/year needed nationwide (only 8-10% replaced annually)
+- Pipe breaks: 200,000+ breaks annually (aging infrastructure)
+- Water loss: 14-18% of supply (leakage, line breaks)
+- Rehabilitation: Trenchless methods (pipe bursting, CIPP - cured-in-place pipe)
+
+**Water Loss Management (APQC 11.4)**
+- Non-revenue water: Commercial losses (meter errors), physical losses (leaks)
+- Detection: Night flow analysis, pressure monitoring, acoustic surveys
+- Reduction: Pipeline replacement, pressure management, meter accuracy
+- Goals: <10% loss (best-in-class systems)
+
+## Wastewater Systems (APQC 10.0-11.4)
+
+### Wastewater Collection (APQC 11.0-11.2)
+
+**Collection Systems**
+- Sanitary sewers: Wastewater only (separate system)
+- Storm sewers: Stormwater runoff only (separate system)
+- Combined sewers: Both sanitary and storm (older cities)
+- Combined sewer overflows (CSOs): Untreated discharge during wet weather
+- Septic systems: On-site treatment (15% of U.S. population)
+
+**Infrastructure**
+- Service lines: Connect properties to main sewer
+- Laterals: Small diameter from street to property
+- Main lines: Collect from neighborhoods
+- Pumping stations: Lift wastewater where gravity flow impossible
+- Capacity: Design for peak flow (peak hour multiplied by design factor)
+
+**Operation and Maintenance**
+- Cleaning: Jet cleaning, mechanical removal of grease/roots
+- Inspection: Video inspection (CCTV), locate blockages
+- Maintenance: Reduce infiltration/inflow (I/I)
+- Restoration: Pipe lining, sections replacement
+- Surcharging: When capacity exceeded (wet weather, overflows)
+
+### Wastewater Treatment (APQC 10.1-10.3)
+
+**Treatment Levels**
+
+1. **Preliminary Treatment (APQC 10.1)**
+   - Bar screening: Remove large objects (rags, wood, debris)
+   - Grit removal: Sand, gravel, eggshells (heavy solids)
+   - Flow equalization: Tank to dampen flow surges
+   - Odor control: Ventilation, chemical treatment (sodium hypochlorite)
+
+2. **Primary Treatment (APQC 10.1-10.2)**
+   - Settling: 30-50% solids removal in clarifiers
+   - Detention time: 2-3 hours typical
+   - Sludge: Removed for treatment
+   - Scum: Grease, oils removed from surface
+   - Efficiency: 60% BOD removal (when combined with secondary)
+
+3. **Secondary Biological Treatment (APQC 10.2)**
+   - Activated sludge: Most common (90%+ of municipal plants)
+     - Aeration basin: 5-8 hour detention, air/oxygen supplied
+     - Microorganisms: Bacteria consume organic matter (BOD)
+     - Clarifier: Settle mixed liquor solids
+     - Recirculation: Return settled sludge to basin
+   - Trickling filters: Biofilm on stones/plastic media
+     - Simpler operation, lower oxygen cost
+     - Lower efficiency than activated sludge
+   - Lagoons: Oxidation ponds, long detention (20+ days)
+     - Natural treatment, minimal mechanical equipment
+     - Suitable for warm climates, lower population
+   - Efficiency: 85-95% BOD removal (combined with primary)
+
+4. **Secondary Clarification (APQC 10.2)**
+   - Settle biological solids
+   - Return sludge to aeration basin
+   - Waste activated sludge (WAS): Remove excess biomass
+   - Effluent quality: 10-15 mg/L BOD, 10-15 mg/L TSS (typical)
+
+5. **Nutrient Removal (APQC 10.3)** (as required)
+   - Nitrogen: Biological nitrification/denitrification
+     - Nitrification: Ammonia → Nitrite → Nitrate (aerobic)
+     - Denitrification: Nitrate → Nitrogen gas (anoxic)
+   - Phosphorus: Biological (luxury uptake) or chemical (ferric chloride, alum)
+   - Eutrophication prevention: Reduces algae growth in receiving waters
+
+6. **Tertiary/Advanced Treatment (APQC 10.3)** (varies by receiving water standards)
+   - Filtration: Sand, membrane (MF, UF, NF, RO)
+   - Disinfection: Chlorine, UV, ozone
+   - Nutrient polishing: Biological, chemical methods
+   - Activated carbon: Removal of refractory organics
+
+**Discharge Quality**
+- Effluent limitations: Permitted discharge levels
+- Parameter monitoring: BOD, TSS, nitrogen, phosphorus, pathogens
+- Compliance: EPA NPDES permits, state water quality standards
+- Receiving water standards: Depend on designated use (drinking, recreation, industrial)
+
+### Sludge and Residuals Management (APQC 10.3)
+
+**Sludge Treatment**
+- Thickening: Gravity or centrifuge to concentrate solids
+- Stabilization: Anaerobic digestion (biogas production), aerobic digestion, composting
+- Dewatering: Centrifuge, belt press, drying beds (reduce volume 5-10x)
+- Final disposal: Landfill (40%), land application (40%), incineration (15%), other (5%)
+
+**Beneficial Use**
+- Land application: Agricultural use, soil amendment
+- Compost: Soil conditioner, turf amendment
+- Biosolids certification: Quality standards (metals, pathogens)
+- Concerns: Heavy metals, pharmaceutical residues, public perception
+
+## Customer Operations (APQC 12.0)
+
+### Metering and Billing (APQC 12.1)
+
+**Water Metering**
+- Positive displacement meters: Mechanical, accurate (±2%)
+  - Piston meters: Reciprocating motion measurement
+  - Turbine/gear meters: Continuous flow measurement
+- Velocity meters: Measure flow speed through orifice
+- Ultrasonic meters: Non-intrusive, no moving parts
+- Smart meters: Remote reading, interval data (water, stormwater, wastewater)
+
+**Rate Structures (APQC 12.1)**
+- Tiered rates: Increasing block prices (higher consumption costs more/unit)
+- Base/fixed charges: Monthly service charge
+- Usage charges: Cost per 1,000 gallons
+- Seasonal rates: Summer peak vs. winter off-peak
+- Wastewater charges: Fixed or variable based on water consumption
+- Stormwater charges: Fee based on impervious area
+- Industrial/commercial: Demand charges, volume discounts for large users
+
+**Billing Practices (APQC 12.1)**
+- Meter reading: Monthly typical (quarterly in some areas)
+- Billing cycle: Monthly, coinciding with other utilities
+- Collection: Online, automatic payment, in-person, phone
+- Low-income assistance: Bill discounts, forgiveness programs
+- Hard-of-hearing: Accessible billing methods
+
+### Customer Service (APQC 12.2)
+
+**Service Centers**
+- Multi-channel: Phone, online account portal, walk-in, email
+- Accessibility: Hours of operation, language support, ADA compliance
+- Outage/service issues: Response times (emergency vs. routine)
+
+**Outage Communication (APQC 12.2)**
+- Planned maintenance: Advance notice (48+ hours)
+- Emergency shutdowns: Boil water notices, do-not-drink orders
+- Communication: SMS, email, social media, news media
+- Duration: Estimated and actual restoration time
+
+**Service Connections and Disconnections (APQC 12.3)**
+- New service: Application, inspection, meter installation
+- Upgrade: Meter size increase, line reinforcement
+- Disconnection: Non-payment (with notice and opportunity to cure)
+- Reconnection: Payment of arrearages and reconnection fee
+- Winter protection: Non-essential disconnections prohibited in many states
+
+**Conservation and Demand Management (APQC 12.4-12.5)**
+- Outdoor watering restrictions: Seasonal, day-of-week limitations
+- Indoor conservation: Efficient fixtures, leak detection
+- Public awareness: Education programs, water audits
+- Rebate programs: Toilet replacement, smart controllers for irrigation
+
+## Emerging Technologies and Trends
+
+**Water Reuse and Recycling**
+- Potable reuse: Highly treated wastewater for drinking (emerging)
+- Non-potable reuse: Irrigation, toilet flushing, cooling
+- Purple pipe infrastructure: Separate distribution system
+- Water banking: Underground storage of excess supply
+
+**Advanced Treatment Technologies**
+- Membrane bioreactors (MBR): Combine activated sludge with membrane filtration
+- Moving bed biofilm reactors (MBBR): Biofilm technology, compact
+- Granular activated carbon (GAC): Emerging contaminant removal
+- Powdered activated carbon (PAC): Temporary, flexible deployment
+- Advanced oxidation: UV/H2O2, ozone, chlorine dioxide
+
+**Energy Efficiency**
+- Pump optimization: Variable frequency drives (VFDs), efficiency assessment
+- Biogas production: Energy recovery from anaerobic digestion
+- Solar power: Treatment plant renewable energy
+- Energy recovery: Pressure reducing devices
+
+**Resource Recovery**
+- Nutrient recovery: Struvite (magnesium ammonium phosphate) precipitation
+- Biosolids-to-energy: Incineration, gasification, anaerobic digestion
+- Rare earth recovery: From biosolids (emerging)
+
+**Green Infrastructure**
+- Stormwater capture: Rain gardens, green roofs, permeable pavement
+- Low impact development (LID): Infiltration, evapotranspiration
+- Natural treatment: Constructed wetlands, living shorelines
+
+**Resilience and Adaptation**
+- Climate change: Changing precipitation patterns, drought/flood extremes
+- Water scarcity: Demand management, alternative supplies
+- Aging infrastructure: Renewal programs, technology upgrades
+- Cybersecurity: Critical infrastructure protection
+
+## Cross-References
+
+**Related Domains:**
+- [infrastructure.org.ai](https://infrastructure.org.ai) - Pipelines, treatment plants, distribution systems
+- [finance.org.ai](https://finance.org.ai) - Utility rates, cost of capital, financing
+- [technology.org.ai](https://technology.org.ai) - SCADA, smart meters, GIS systems
+- [standards.org.ai](https://standards.org.ai) - AWWA, WEF, ANSI standards
+- [environment.org.ai](https://environment.org.ai) - Water quality, environmental protection
+- [ElectricUtilities](./ElectricUtilities.mdx) - Energy for water treatment and pumping
+- [SmartGrid](./SmartGrid.mdx) - Demand response for water pumping
+- [UtilityRegulation](./UtilityRegulation.mdx) - EPA, PUC oversight, environmental compliance
+
+---
+
+Last Updated: 2025-11-28

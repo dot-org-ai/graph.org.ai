@@ -1,0 +1,551 @@
+---
+$context: https://biotech.org.ai
+$id: https://biotech.org.ai/Biomanufacturing
+$type: https://biotech.org.ai/Biotechnology
+name: "Biomanufacturing"
+description: "Fermentation, cell culture, bioprocessing, bioreactors, upstream and downstream processing, and manufacturing scale-up"
+naicsCode: "325414"
+parent: https://naics.org.ai/325414
+keywords:
+  - biomanufacturing
+  - fermentation
+  - cell culture
+  - bioprocessing
+  - bioreactors
+  - upstream processing
+  - downstream processing
+  - bioprocessing scale-up
+  - protein production
+  - biologics manufacturing
+  - GMP manufacturing
+  - continuous bioprocessing
+---
+
+export const items = async () => {
+  // Fetch biomanufacturing programs from the database
+  return []
+}
+
+# Biomanufacturing
+
+Biomanufacturing is the industrial-scale production of biologic molecules and cells using living organisms or cells as biological factories. This encompasses fermentation (microbial culture), mammalian cell culture, and processing steps that transform cellular products into therapeutic drugs. As biologics represent an increasingly large portion of the pharmaceutical pipeline, biomanufacturing has become a critical bottleneck and competitive advantage. The field combines biology, chemistry, engineering, and process science to maximize yield, purity, and cost-efficiency.
+
+## Overview
+
+Biomanufacturing is distinct from chemical manufacturing:
+
+**Market Dynamics**
+- **Global market**: $40+ billion annually, growing 8-12% CAGR
+- **Capacity constraints**: Shortage of manufacturing capacity limiting drug supply
+- **Investment trends**: Billions in facility expansion, continuous processing implementation
+- **Technology evolution**: AI/ML-driven optimization, real-time analytics, continuous bioreactors
+- **Geographic distribution**: Traditional (U.S., Europe); expansion in Asia
+
+**Why Biomanufacturing Matters**
+- **Cost driver**: Manufacturing can represent 20-50% of total drug cost
+- **Supply constraint**: Limited capacity delays patient access
+- **Quality impact**: Process consistency affects drug quality and safety
+- **Time-to-clinic**: Manufacturing scale-up timeline impacts product launch
+- **Sustainability**: Bioproduction more environmentally friendly than chemical synthesis (often)
+
+**Key Manufacturing Pathways**
+- **Mammalian cell culture**: Monoclonal antibodies, recombinant proteins (~80% of biologics)
+- **Bacterial fermentation**: Insulin, growth factors, vaccines (~15%)
+- **Yeast fermentation**: Hepatitis B vaccine, some recombinant proteins (~5%)
+- **Plant-based systems**: Experimental, some vaccine candidates
+- **Insect cell culture**: Limited use, mostly vaccines
+
+## Upstream Processing (USP)
+
+### Cell Line Development and Banking
+
+**Cell Line Selection**
+
+**Mammalian Cell Lines**
+
+**Chinese Hamster Ovary (CHO)**
+- **Advantages**: Industry standard, extensive regulatory history, good protein folding
+- **Protein production**: 1-10 g/L typical (can exceed 10 g/L in optimized lines)
+- **Post-translational modifications**: Good N-linked and O-linked glycosylation
+- **Culture duration**: 10-14 days typical
+- **Cost**: Well-established, relatively inexpensive media available
+- **Dominance**: ~75% of approved recombinant therapeutics produced in CHO cells
+- **Limitations**: Slower growth than E. coli, more expensive culture media
+
+**Human-Derived Cell Lines**
+- **HEK293**: Human embryonic kidney cells
+  - **Advantages**: Natural human protein modifications, high protein yields
+  - **Protein production**: 1-5 g/L
+  - **Applications**: Antibodies, Fc-fusion proteins, vaccines
+  - **Regulatory acceptance**: Now standard
+
+- **NSO (Myeloma)**: Mouse myeloma cells
+  - **Advantages**: Natural antibody production, good glycosylation
+  - **Applications**: Monoclonal antibodies
+  - **Limitations**: Slower growth, lower yields than CHO
+
+**Bacterial Systems**
+
+**E. coli**
+- **Advantages**: Rapid growth (2-hour doubling), high protein yields (1-50+ g/L)
+- **Limitations**: No glycosylation, inclusion body formation, endotoxin production
+- **Use**: Non-glycosylated proteins (insulin, growth factors, interferons)
+- **Cost**: Very cost-effective
+
+**Yeast Systems**
+
+**S. cerevisiae (Bakers' Yeast)**
+- **Advantages**: GRAS status, secretory expression, post-translational modifications
+- **Protein yields**: 0.5-5 g/L
+- **Applications**: Hepatitis B vaccine, other subunit vaccines
+- **Limitations**: Different glycosylation than mammalian cells
+
+**P. pastoris (Methylotrophic Yeast)**
+- **Advantages**: Secretory pathway, high cell density cultures, methanol induction
+- **Protein yields**: 1-10 g/L possible
+- **Applications**: Vaccines, recombinant proteins
+- **Benefits**: Faster growth than mammalian cells, more modifications than E. coli
+
+### Master Cell Bank (MCB) and Working Cell Bank (WCB)
+
+**Cell Banking Principles**
+- **MCB**: Single cryopreserved batch of cells from which WCB is derived
+- **WCB**: Working supply of cells from one passage of MCB
+- **Passage limit**: Typically limited to 5-10 passages before recryopreserving from MCB
+- **Purpose**: Ensure consistency, prevent genetic drift, maintain historical traceability
+
+**Cell Banking Requirements (GMP)**
+- **Identity testing**: Confirm correct cell line (STR analysis, isoenzyme analysis)
+- **Viability post-thaw**: Target >80% recovery
+- **Sterility**: Bacterial, fungal, mycoplasma testing
+- **Mycoplasma detection**: 14-day culture and PCR-based testing
+- **Karyotyping**: Confirm chromosomal stability
+- **Tumorigenicity**: In vivo testing for malignant potential (typically)
+- **Retrovirus testing**: PCR-based detection
+- **Other adventitious agents**: Species-specific testing
+
+**Cryopreservation**
+- **Cryoprotectant**: DMSO 10% (standard), glycerol alternatives
+- **Freezing rate**: Controlled rate (~1°C/minute) to -90°C, then liquid nitrogen
+- **Storage**: -150°C liquid nitrogen (standard), -80°C (short-term backup)
+- **Stability**: Stable for decades at -150°C
+- **Thawing**: Rapid thaw to 37°C
+
+### Bioreactor Types and Operation
+
+**Stirred-Tank Bioreactors (Most Common)**
+
+**Characteristics**
+- **Design**: Cylindrical vessel with mechanical agitation (impeller)
+- **Size range**: 500 L to 20,000 L typical manufacturing scales
+- **Impeller types**: Rushton turbine, pitched blade, marine propeller
+- **Advantages**: Well-understood, established regulatory acceptance, scalable
+- **Cost**: $500K-$50M depending on size and automation
+
+**Operation Parameters**
+- **Agitation**: 50-200 RPM typical (culture-dependent)
+- **Aeration**: Bubbled air or pure oxygen for gas exchange
+- **Temperature control**: Jacket or immersion cooling
+- **pH control**: Base or acid addition via peristaltic pumps
+- **Dissolved oxygen (DO)**: 30-80% air saturation typical (culture dependent)
+- **Sterile inoculation**: Using sterile tubing and aseptic transfer
+
+**Measurement and Control**
+- **Online sensors**: DO, pH, temperature, optical density (OD)
+- **Offline analysis**: Glucose, lactate, amino acids via HPLC
+- **Control systems**: Automated feedback loops for temperature, pH, DO
+- **Data management**: Batch record collection, 21 CFR Part 11 compliance
+
+**Single-Use Bioreactors (Emerging)**
+- **Advantages**: No cleaning/sterilization, reduced cross-contamination, flexibility
+- **Materials**: Plastic bags, tubing, probes (all disposable)
+- **Scalability**: Available from 2 L to 500 L+
+- **Cost**: Higher per-unit cost, offset by reduced labor and sterilization
+- **Applications**: Development, small-scale manufacturing, flexibility
+
+**Continuous Bioreactors (Emerging)**
+- **Concept**: Continuous cell feeding and product harvest (rather than batch)
+- **Types**: Perfusion bioreactors, continuous stirred-tank reactors (CSTRs)
+- **Advantages**: 5-10x higher volumetric productivity, lower footprint
+- **Challenges**: Cell retention (centrifugation, gravity settler), process stability
+- **Status**: Regulatory approval pending for major products
+
+### Cell Culture Media and Additives
+
+**Media Components**
+
+**Basal Medium**
+- **Function**: Provides carbon, nitrogen, minerals for cell growth
+- **Examples**: DMEM, F-12, Iscove's Modified Dulbecco's Medium (IMDM)
+- **Cost**: $500-2,000 per liter for animal-free media
+- **Choice**: Varies by cell line, historically optimized empirically
+
+**Serum Supplementation**
+- **Traditional**: Fetal bovine serum (FBS) 5-10% v/v
+- **Function**: Growth factors, hormones, attachment factors
+- **Limitations**: Batch variability, animal welfare concerns, prion risk
+- **Alternatives**: Animal-free media using recombinant growth factors
+- **Transition**: Industry moving toward serum-free media
+
+**Growth Factors and Hormones**
+- **Examples**: Insulin, transferrin, selenium, hydrocortisone
+- **Function**: Enhance growth rate, maintain cell health
+- **Cost**: Significant component of media cost
+
+### Fed-Batch Culture Strategy
+
+**Traditional Batch Culture**
+- **Characteristics**: Closed system, all nutrients at start
+- **Growth phase**: Cells grow until nutrient depletion or waste accumulation
+- **Duration**: 5-7 days typical
+- **Limitations**: Nutrient limitation in late culture, waste toxicity
+
+**Fed-Batch Culture (Industry Standard)**
+- **Concept**: Continuous nutrient feeding during culture
+- **Advantage**: Extended culture duration (10-14 days), higher cell density
+- **Feeding strategies**:
+  - **Constant rate feeding**: Fixed volume fed over time
+  - **Exponential feeding**: Feed rate increases with cell growth
+  - **pH-stat**: Feed based on base/acid consumption rate
+  - **DO-stat**: Feed based on dissolved oxygen demand
+- **Benefits**: 2-5x higher protein yields
+- **Complexity**: Requires more sophisticated control
+
+**Perfusion Culture (High Density)**
+- **Concept**: Continuous media exchange, cells retained in reactor
+- **Methods**: Centrifuge-based retention, gravity settler, acoustic separation
+- **Cell density**: 10-50 million cells/mL possible (vs 5 million typical batch)
+- **Duration**: Weeks possible (continuous operation)
+- **Productivity**: 5-10x batch productivity
+- **Advantages**: Extended product accumulation, continuous harvesting
+- **Challenges**: Cell retention device complexity, process stability
+
+### Upstream Process Control and Optimization
+
+**Key Process Parameters**
+
+**Temperature**
+- **Mammalian cells**: 37°C standard, some optimization to 32-35°C for higher yields
+- **Yeast/bacteria**: 30-37°C typical (some optimize to 25-30°C)
+- **Impact**: Affects growth rate, protein production rate, protein quality
+
+**Dissolved Oxygen (DO)**
+- **Importance**: Aerobic respiration essential
+- **Set-point**: Usually 40-60% air saturation
+- **Too high**: May induce oxidative stress
+- **Too low**: Anaerobic metabolism, lactate accumulation
+- **Control**: Agitation rate, aeration rate adjustment
+
+**pH**
+- **Range**: Typically 6.8-7.4 for mammalian cells
+- **Monitoring**: Online pH probe
+- **Deviation**: Causes metabolic stress, protein aggregation
+- **Control**: CO2 sparging (lower), base addition (raise)
+
+**Media Osmolality**
+- **Measurement**: Osmometer
+- **Range**: Typically 280-320 mOsm/kg
+- **Control**: Concentrated feed media, water addition
+
+**Lactate and Ammonia Accumulation**
+- **Lactate**: Byproduct of glucose metabolism (high in aerobic growth)
+- **Ammonia**: Byproduct of amino acid metabolism
+- **Toxicity**: High levels inhibit growth and protein production
+- **Monitoring**: HPLC, enzymatic assays
+- **Control**: Optimize feeding, fed-batch design
+
+### Metabolic Engineering and Strain Development
+
+**Productivity Enhancement**
+- **Gene amplification**: Enhance protein production gene copy number
+- **Promoter optimization**: Stronger promoters for higher expression
+- **Codon optimization**: Match cell line codon bias
+- **Signal peptide engineering**: Enhance secretion efficiency
+- **Protein tagging**: Add purification tags, epitope tags
+
+**Metabolic Optimization**
+- **Reducing ammonia production**: Gene knockdown of urea cycle enzymes
+- **Enhancing energy metabolism**: Upregulate oxidative phosphorylation
+- **Reducing lactate**: Enhance TCA cycle activity
+- **Goal**: Higher titer, faster growth, lower byproduct accumulation
+
+## Downstream Processing (DSP)
+
+### Harvest and Clarification
+
+**Centrifugation**
+- **Principle**: Separates cells from media based on density
+- **Types**:
+  - **Batch centrifugation**: Disc-stack centrifuge, intermittent operation
+  - **Continuous centrifugation**: Continuous cell feed and removal
+- **Flow rate**: 100-500 L/minute typical for large-scale
+- **Clarification**: ~99% cell removal, some particulates remain
+
+**Filtration**
+- **Depth filtration**: Cellulose-based cartridges
+  - **Mechanism**: Mechanical entrapment, electrostatic interaction
+  - **Capacity**: 100-500 kg cell mass per m^2 typical
+  - **Throughput**: 5-50 L/minute
+  - **Result**: Further reduces cell debris, some protein loss
+
+**Tangential Flow Filtration (TFF)**
+- **Principle**: Flow parallel to membrane, product passes, cells retained
+- **Membrane pore size**: Typically 0.1-0.65 μm for cell separation
+- **Advantages**: Lower protein loss, better clarification
+- **Throughput**: 10-100 L/minute per m^2
+- **Application**: Often used after centrifugation/depth filtration
+
+### Viral Inactivation and Removal
+
+**Viral Inactivation (Required for Cell Culture Products)**
+- **Requirement**: Dual inactivation methods recommended (regulatory)
+- **Methods**:
+  - **Low pH treatment**: Incubation at pH 3-4 for 30-60 minutes
+    - **Advantages**: Effective against enveloped viruses (HIV, herpes)
+    - **Disadvantages**: Protein instability risk, requires buffer exchange
+  - **Solvent/detergent treatment**: Organic solvent + nonionic detergent
+    - **Advantages**: Dissolves viral envelope
+    - **Target viruses**: Enveloped viruses
+    - **Example**: Tri-n-butyl phosphate + polysorbate 80
+
+**Viral Removal**
+- **0.2 μm filtration**: Removes most enveloped and some non-enveloped viruses
+- **Virus validation**: Testing with model viruses (ΦX174, poliovirus, parvoviruses)
+- **Log reduction value (LRV)**: Quantifies virus removal (4 LRV = 10,000-fold reduction)
+- **Regulatory requirement**: Validation demonstration required
+
+### Affinity Chromatography
+
+**Protein A Chromatography (mAb Purification)**
+
+**Mechanism**
+- **Protein A**: Bacterial protein with IgG-binding domains
+- **Binding**: IgG Fc region binds protein A with high specificity
+- **Selectivity**: Highly selective for IgG (>99% purity from crude harvest)
+- **Recovery**: >90% typical
+
+**Column Operation**
+1. **Loading**: Clarified harvest onto protein A resin
+2. **Washing**: Remove contaminants (host proteins, DNA, endotoxin)
+3. **Elution**: Low pH (pH 2.5-3) causes IgG release
+4. **Regeneration**: Sodium hydroxide sanitation between runs
+
+**Advantages**
+- **High selectivity**: Single step achieves high purity
+- **Fast**: Short residence time
+- **Robust**: Well-understood, validated
+
+**Limitations**
+- **Cost**: Protein A resin expensive ($10,000-50,000 per cycle capacity)
+- **Ligand leakage**: Small amounts of protein A leach into product
+- **Regulatory**: Must validate protein A removal (<100 ng/dose)
+
+**Protein G and Protein L**
+- **Protein G**: Alternative to Protein A, different IgG subclass preferences
+- **Protein L**: Binds kappa light chains, orthogonal selectivity
+- **Use**: Useful for IgG subclasses with low protein A binding
+
+**Affinity Chromatography for Other Proteins**
+- **His-tag purification**: Nickel-nitrilotriacetic acid (Ni-NTA) columns
+- **Maltose binding protein (MBP)**: Amylose resin
+- **Glutathione-S-transferase (GST)**: Glutathione resin
+- **Biotin-streptavidin**: Streptavidin resin
+
+### Ion Exchange Chromatography (Polishing)
+
+**Cation Exchange Chromatography**
+- **Principle**: Positively charged resin binds proteins by electrostatic interaction
+- **Target**: mAb main peak elutes at high salt, contaminant proteins at different salt
+- **Advantages**: High resolution, removes charge variants
+- **Application**: Polishing after Protein A (removes charge variants, DNA, host proteins)
+
+**Anion Exchange Chromatography**
+- **Principle**: Negatively charged resin
+- **Use**: Flow-through mode (product in flow-through, impurities bind)
+- **Advantage**: Non-binding avoids protein exposure to extreme pH
+- **Application**: Removes DNA, endotoxin
+
+**Mixed-Mode Resins**
+- **Combination**: Charges + hydrophobic interaction
+- **Advantage**: Orthogonal selectivity
+- **Application**: Challenging separations
+
+### Size Exclusion Chromatography (SEC) / Gel Filtration
+
+**Principle**
+- **Separation**: Based on protein size/Stokes radius
+- **Mechanism**: Large proteins excluded from pores, elute first; small proteins enter pores, elute last
+- **Advantage**: Non-denaturing, gentle on proteins
+
+**Use in Bioprocessing**
+- **Polishing step**: Removes aggregates, DNA, small molecule contaminants
+- **Buffer exchange**: Simultaneous purification and formulation buffer exchange
+- **Aggregate removal**: Separates monomeric product from aggregates
+
+**Limitations**
+- **Throughput**: Slow compared to other chromatography methods
+- **Scalability**: Large volumes require large columns
+- **Aggregate handling**: May clog column
+
+### Formulation and Fill-Finish
+
+**Formulation Buffer Selection**
+
+**Buffering Capacity**
+- **Goal**: Maintain pH stability during storage
+- **pH optimum**: Typically pH 5.5-8 depending on protein
+- **Buffer type**: Phosphate, citrate, acetate, imidazole, tris
+
+**Protein Stabilization**
+- **Osmolytes**: Trehalose, mannitol, sorbitol (stabilize protein, prevent aggregation)
+- **Surfactants**: Polysorbate 20 or 80 (prevent aggregation, preserve hydrophobic interactions)
+- **Antioxidants**: Sodium bisulfite, methionine (prevent oxidation)
+- **EDTA**: Chelate metal ions (prevent oxidative reactions)
+
+**Sterile Filtration**
+- **0.2 μm filter**: Removes bacteria and most fungi
+- **Validation**: Testing with challenge organisms
+- **Recovery**: Minimal protein loss (1-5%)
+- **Bioburden**: Product must be <10 CFU/mL before filtration
+
+**Fill-Finish Operations**
+
+**Aseptic Filling**
+- **Environment**: ISO Class 5 cleanroom (filled rapidly in ISO Class 5 environment)
+- **Line**: Depyrogenated vials, syringes, or cartridges
+- **Temperature**: Room temperature or refrigerated (product-dependent)
+- **Fill volume**: ±10% accuracy typical
+- **Speed**: Automated lines fill 100-300 units/minute
+
+**Lyophilization** (Freeze-Drying)
+- **Advantages**: Extended shelf-life (months to years), enables long-term storage
+- **Disadvantages**: Expensive ($1-5 per vial), adds time to manufacturing
+- **Process**:
+  1. Freezing (controlled rate to -40°C)
+  2. Primary drying (ice removal, 24-48 hours under vacuum)
+  3. Secondary drying (residual moisture removal, temperature ramp)
+- **Cake structure**: Important for reconstitution and aesthetic
+
+**Labeling and Packaging**
+- **Requirements**: Drug name, lot number, expiration, storage instructions
+- **Barcode**: Tracking and verification
+- **Serialization**: DSCSA requirement (track-and-trace)
+
+## Process Validation and Quality Control
+
+### Batch Release Testing
+
+**Potency Assays**
+- **Principle**: Measure biological activity of drug substance
+- **Methods**: ELISA, cell-based assays, in vivo models
+- **Requirement**: Each batch released based on potency data
+- **Pass criteria**: Established based on preclinical and clinical data
+
+**Purity Assessment**
+- **SDS-PAGE**: Protein composition and aggregates
+- **Size exclusion HPLC**: Monomeric vs. aggregate percentage
+- **Charge variants**: CEX-HPLC identifies charge variants (aggregation, truncation, other modifications)
+- **Specification**: Typically >95% monomer, <5% aggregate
+
+**Identity Confirmation**
+- **Peptide mapping**: Liquid chromatography/mass spectrometry (LC-MS/MS) of proteolytic peptides
+- **Isoelectric focusing**: Confirms protein charge properties
+- **N-terminal sequencing**: Confirms N-terminus amino acids
+
+**Safety Testing**
+- **Sterility test**: Culturing product in appropriate media (14-day incubation)
+- **Endotoxin test**: Limulus amebocyte lysate (LAL) assay
+- **Mycoplasma**: PCR-based detection (24-hour result available)
+- **Particulate matter**: Visual inspection, particle counting
+
+### Stability Testing
+
+**Real-Time Stability**
+- **Duration**: 12-36 months at commercial storage temperature
+- **Frequency**: 0, 3, 6, 9, 12 months (and beyond)
+- **Testing**: Potency, purity, impurity levels, safety
+
+**Accelerated Stability**
+- **Conditions**: Elevated temperature/humidity (40°C/75% RH typical)
+- **Duration**: 6 months
+- **Purpose**: Predict shelf-life based on accelerated degradation
+- **Correlation**: Data should correlate with real-time stability
+
+**Intermediate Stability**
+- **Conditions**: Room temperature (25°C/60% RH)
+- **Purpose**: Capture long-term data earlier than real-time
+
+**Shelf-Life Determination**
+- **Goal**: Establish expiration date with 95% confidence that product meets specifications
+- **Statistical analysis**: Arrhenius equation or other modeling
+- **Typical shelf-lives**: 2-5 years (liquid), 3-5 years (lyophilized)
+
+## Current Manufacturing Bottlenecks and Future Directions
+
+### Capacity Limitations
+
+**Current Constraints**
+- **Growing demand**: Approvals increasing faster than manufacturing capacity
+- **Pipeline capacity**: Few available facilities for contract manufacturing
+- **Cost of capacity**: $500M-$1B per new facility
+- **Timeline**: 2-3 years from planning to operation
+
+**Expansion Strategies**
+- **Single-use systems**: Faster deployment, less labor
+- **Continuous processing**: Higher productivity per facility
+- **Distributed manufacturing**: Smaller regional facilities
+- **Tech transfer efficiency**: Speed in moving from development to manufacturing
+
+### Continuous Bioprocessing
+
+**Advantages**
+- **Productivity**: 5-10x higher throughput per facility volume
+- **Footprint**: Smaller physical facility needed
+- **Quality**: Reduced batch variability, real-time monitoring
+- **Cost**: Lower labor, smaller downstream volumes
+- **Flexibility**: Easier to switch products
+
+**Regulatory Pathway**
+- **FDA guidance**: Available for continuous manufacturing
+- **Validation**: Different approach than batch validation
+- **Adoption**: Slower than expected (3-5 approved products to date)
+- **Timeline**: Expected to accelerate through 2025+
+
+### Advanced Bioprocessing Technologies
+
+**Bioreactor Innovation**
+- **Perfusion bioreactors**: Higher densities, extended culture
+- **Orbitally shaken bioreactors**: Single-use, reduced cost
+- **Microfluidic bioreactors**: Experimental, high-throughput
+- **Airlift bioreactors**: Gas-driven mixing, reduced shear
+
+**Process Analytics**
+- **Real-time monitoring**: Spectroscopy (near-infrared, Raman)
+- **Machine learning**: Predictive models for process optimization
+- **Soft sensors**: Inferential sensors for unmeasured parameters
+- **PAT (Process Analytical Technology)**: Continuous monitoring and adjustment
+
+**Alternative Bioprocessing**
+- **Plant-based systems**: Reduced cost, distributed manufacturing, regulatory path uncertain
+- **Insect cell systems**: High-throughput, limited current use
+- **Algae systems**: Emerging, limited current use
+- **In vitro cell-free systems**: Experimental for small-scale, high-value products
+
+## Related Domains
+
+- [pharma.org.ai/Biologics](https://pharma.org.ai/Biologics) - Therapeutic proteins and biologics
+- [pharma.org.ai/DrugManufacturing](https://pharma.org.ai/DrugManufacturing) - Manufacturing GMP
+- [equipment.org.ai](https://equipment.org.ai) - Bioreactors and manufacturing equipment
+- [engineering.org.ai](https://engineering.org.ai) - Bioprocess engineering
+- [CellTherapy](./CellTherapy.mdx) - Cell therapy manufacturing
+- [research.org.ai](https://research.org.ai) - Bioprocessing research
+
+## External Resources
+
+- **Upstream Engineering, Inc.**: Bioprocessing consulting and resources
+- **BioProcess International**: Industry publication and conferences
+- **American Society of Cell Biologists**: Professional organization
+- **Parenteral Drug Association (PDA)**: Standards and best practices
+- **International Society of Pharmaceutical Engineering (ISPE)**: Bioprocessing guidance
+- **FDA Guidance on Bioprocess Development**: Regulatory expectations
+- **ASTM Standards**: Bioprocessing standards and methods

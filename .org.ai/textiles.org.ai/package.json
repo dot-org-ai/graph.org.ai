@@ -1,0 +1,28 @@
+{
+  "name": "textiles.org.ai",
+  "version": "1.0.0",
+  "description": "Ontology domain for textiles industry covering NAICS 313-315",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    }
+  },
+  "keywords": [
+    "textiles",
+    "manufacturing",
+    "fabrics",
+    "apparel",
+    "naics",
+    "ontology",
+    "org.ai"
+  ],
+  "author": "graph.org.ai",
+  "license": "CC-BY-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dot-org-ai/graph.org.ai.git",
+    "directory": ".org.ai/textiles.org.ai"
+  }
+}

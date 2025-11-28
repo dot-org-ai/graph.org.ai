@@ -1,0 +1,35 @@
+{
+  "name": "tourism.org.ai",
+  "version": "0.0.1",
+  "description": "Ontology domain for tourism.org.ai",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "types": "./index.ts"
+    },
+    "./types": {
+      "import": "./types.ts",
+      "types": "./types.ts"
+    }
+  },
+  "keywords": [
+    "ontology",
+    "org.ai",
+    "tourism",
+    "travel",
+    "hospitality"
+  ],
+  "author": ".org.ai",
+  "license": "CC-BY-SA-4.0",
+  "homepage": "https://tourism.org.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/org-ai/tourism.org.ai.git"
+  },
+  "dependencies": {
+    "schema.org.ai": "workspace:*"
+  }
+}

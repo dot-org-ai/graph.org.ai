@@ -1,0 +1,346 @@
+---
+$context: https://textiles.org.ai
+$id: https://textiles.org.ai/Apparel
+$type: https://textiles.org.ai/Textiles
+name: "Apparel Manufacturing"
+naicsCode: "315"
+description: "Manufacturing of clothing and apparel through cutting and sewing of purchased fabrics. Includes men's, women's, and children's clothing, ranging from basic garments to fashion-forward pieces, encompassing both mass production and high-end manufacturing."
+parent: https://textiles.org.ai
+---
+
+export const items = async () => {
+  // Fetch apparel manufacturing establishments from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://textiles.org.ai/Apparel',
+    naicsCode: { $regex: '^315' }
+  })
+}
+
+# Apparel Manufacturing
+
+Apparel manufacturing (NAICS 315) comprises establishments primarily engaged in cutting and sewing fabrics into clothing and apparel. This massive subsector includes the production of men's, women's, and children's clothing in all categories from basic undergarments to outerwear, formal wear, and fashion apparel. Unlike textile mills, apparel manufacturers purchase fabrics and other materials to produce finished garments for consumer and commercial use.
+
+## Overview
+
+Apparel manufacturing is among the world's largest industries, employing millions and producing billions of garments annually. The sector spans from mass-market basics to luxury fashion, serving global consumer demand. Modern apparel manufacturing involves sophisticated design, sourcing, quality control, and supply chain management, with significant competition from global producers.
+
+The subsector has historically been labor-intensive, driving manufacturing to countries with lower labor costs. Contemporary trends include automation, nearshoring, fast fashion speed-to-market capabilities, and increased focus on sustainability and ethical manufacturing practices.
+
+## Industry Groups
+
+### 3151 - Apparel Knitting Mills
+
+Establishments primarily engaged in manufacturing knitted apparel or purchasing yarn and manufacturing knitted apparel.
+
+**Product Categories:**
+- T-shirts and tank tops
+- Sweaters and cardigans
+- Hosiery and socks
+- Thermal and base layers
+- Underwear and intimates
+- Casual knit dresses and tops
+- Active and athletic wear
+
+**Knitting Methods:**
+- **Circular Knitting**: Creating tubular fabrics for seamless production
+- **Flat Knitting**: Creating flat pieces for assembly
+- **Warp Knitting**: Creating structures for foundation garments
+
+**Market Segments:**
+- Mass-market basics (T-shirts, underwear)
+- Fashion and trend-driven items
+- Athletic and performance wear
+- Luxury and premium products
+- Private label production
+
+### 3152 - Cut and Sew Apparel Contractors
+
+Establishments primarily engaged in manufacturing apparel for other companies on a contract basis without purchasing or owning the materials.
+
+**Services Offered:**
+- Pattern making and grading
+- Cutting and sewing services
+- Quality control and inspection
+- Finishing and pressing
+- Packaging for shipment
+- Special order and customization
+
+**Customer Types:**
+- Apparel manufacturers and brands
+- Retail companies with own brands
+- Wholesalers and distributors
+- Designer and luxury brands
+- International customers
+
+### 3159 - Other Cut and Sew Apparel Manufacturing
+
+Establishments primarily engaged in manufacturing apparel not included elsewhere.
+
+**Men's Apparel:**
+- Dress shirts and business wear
+- Suits and blazers
+- Trousers and slacks
+- Outerwear (jackets, coats)
+- Casual wear (jeans, khakis)
+- Underwear and sleepwear
+
+**Women's Apparel:**
+- Blouses and tops
+- Dresses and skirts
+- Trousers and pants
+- Outerwear (jackets, coats)
+- Intimate apparel (bras, slips)
+- Activewear and athletic
+
+**Children's Apparel:**
+- Infants' and toddlers' clothing
+- Children's everyday wear
+- Children's formal and special occasion
+- Play wear and active apparel
+- Sleepwear and underwear
+
+**Specialty Apparel:**
+- Uniforms (military, work, professional)
+- Protective apparel (safety, high-visibility)
+- Costumes and novelty wear
+- Bridal and formal occasion
+- Active and athletic apparel
+
+## Manufacturing Processes
+
+### Design and Pattern Development
+- **Concept Development**: Design inspiration and sketches
+- **Specification Development**: Technical specifications and details
+- **Pattern Grading**: Scaling patterns across sizes
+- **Prototyping**: Creating first samples
+- **Fit Approval**: Testing and refinement
+
+### Sourcing and Materials
+- **Fabric Selection**: Choosing appropriate textiles
+- **Notions and Trim**: Buttons, zippers, thread, elastic
+- **Supplier Qualification**: Ensuring quality and consistency
+- **Inventory Management**: Maintaining material availability
+- **Cost Management**: Balancing quality and cost
+
+### Cutting Operations
+- **Marker Making**: Layout of pattern pieces on fabric
+- **Spreading**: Layering multiple plies of fabric
+- **Cutting**: Using automated or manual cutters
+- **Bundle Organization**: Organizing pieces for sewing
+- **Quality Inspection**: Checking for defects and accuracy
+
+### Sewing and Assembly
+- **Line Organization**: Production line setup
+- **Component Sewing**: Creating functional pieces
+- **Assembly**: Joining component pieces
+- **Finishing**: Hem sewing, seam finishing
+- **Attachment**: Buttons, snaps, zippers
+- **Pressing**: Final shape and appearance
+
+### Quality Control
+- **In-Process Inspection**: Monitoring during production
+- **Final Inspection**: Complete finished product check
+- **Size Verification**: Checking dimensions and fit
+- **Stitch Quality**: Evaluating seam consistency
+- **Appearance Standards**: Color, pattern, finish quality
+
+### Finishing and Packing
+- **Final Pressing**: Wrinkle removal and shape setting
+- **Labeling and Tagging**: Size, care, origin information
+- **Quality Certification**: Meeting standards and specifications
+- **Packaging**: Individual and bulk packaging
+- **Shipping Preparation**: Organization for distribution
+
+## Product Categories and Applications
+
+### Casual and Everyday Wear
+- **T-Shirts and Tops**: The most produced garment type globally
+- **Jeans and Casual Pants**: Durable everyday wear
+- **Hoodies and Sweatshirts**: Comfort and casual category
+- **Casual Dresses**: Everyday informal wear
+- **Basics**: Undershirts, socks, underwear
+
+### Business and Professional
+- **Dress Shirts**: Formal and business wear
+- **Suits and Blazers**: Professional tailoring
+- **Business Trousers**: Work-appropriate bottoms
+- **Professional Dresses**: Business formal
+- **Work Uniforms**: Professional appearance requirements
+
+### Activewear and Athletic
+- **Yoga and Fitness Wear**: Performance and stretch fabrics
+- **Running and Training Apparel**: Technical features
+- **Sports Team Wear**: Uniforms and branded apparel
+- **Outdoor and Adventure Gear**: Functional and durable
+- **Recovery and Compression**: Specialized performance
+
+### Formal and Occasion Wear
+- **Dresses for Special Events**: Weddings, parties, galas
+- **Formal Wear**: Tuxedos, evening gowns
+- **Bridal Apparel**: Wedding dresses and bridesmaids
+- **Costumes**: Theater, performance, celebration
+- **Holiday and Special Occasion**: Themed apparel
+
+### Outerwear and Seasonal
+- **Jackets and Coats**: Winter and transitional wear
+- **Rainwear**: Water-resistant outerwear
+- **Sweaters and Cardigans**: Insulating layers
+- **Thermal Wear**: Cold weather protection
+- **Wind and Weatherproof**: Technical outerwear
+
+## Apparel Market Segments
+
+### Mass Market
+- **Fast Fashion**: Quick-to-market, trend-driven, low price
+- **Value Brands**: Discount and budget-conscious consumers
+- **Department Store Brands**: Mid-market quality and price
+- **Wholesale and Distribution**: Bulk purchasing
+- **Big-Box Retail**: Large volume, standard products
+
+### Premium and Designer
+- **Contemporary Brands**: Fashion-forward, quality focus
+- **Designer and Luxury**: High-end, exclusive designs
+- **Specialty Boutiques**: Curated collections
+- **Limited Editions**: Small batches, exclusivity
+- **Bespoke and Custom**: Made-to-order tailoring
+
+### Specialty Markets
+- **Athletic Brands**: Performance-focused apparel
+- **Outdoor and Adventure**: Technical and functional
+- **Workwear and Uniforms**: Professional and industrial
+- **Children and Infant**: Age-specific designs
+- **Plussize and Adaptive**: Inclusive sizing
+
+## Industry Challenges
+
+### Labor and Production
+- **Labor Intensity**: Most operations remain manual
+- **Skill Requirements**: Experienced sewers in short supply
+- **Wage Pressures**: Rising labor costs
+- **Quality Consistency**: Maintaining standards
+- **Production Efficiency**: Maximizing output
+
+### Market Pressures
+- **Retail Consolidation**: Power of major retailers
+- **Price Competition**: Global sourcing and pricing pressure
+- **Fast Fashion Speed**: Accelerating time-to-market
+- **Returns and Markdown**: Managing excess inventory
+- **Brand Ownership**: Consolidation of manufacturer brands
+
+### Supply Chain
+- **Global Sourcing**: Complex international logistics
+- **Lead Times**: Managing long production cycles
+- **Material Volatility**: Fabric price and availability
+- **Inventory Management**: Balancing stock and waste
+- **Logistics Costs**: International shipping expenses
+
+### Sustainability and Ethics
+- **Labor Practices**: Fair wages and working conditions
+- **Environmental Impact**: Water, chemicals, carbon
+- **Waste Management**: Fabric scraps and overproduction
+- **Material Sourcing**: Sustainable fiber options
+- **Transparency**: Supply chain visibility
+
+### Technology and Innovation
+- **Automation Costs**: High capital investment
+- **Legacy Equipment**: Older production lines
+- **Skilled Technicians**: Maintaining complex equipment
+- **Digital Integration**: ERP and production systems
+- **Data Management**: Tracking and traceability
+
+## Industry Structure
+
+### Business Models
+- **Manufacturer with Brand**: Controlling design, manufacturing, distribution
+- **Private Label Manufacturer**: Production for retail brands
+- **Contract Manufacturer**: Providing services to others
+- **Designer/Brand without Manufacturing**: Outsourcing all production
+- **Vertical Integration**: From fabric to retail
+
+### Geographic Distribution
+- **Historical Centers**: North Carolina, New York, Los Angeles
+- **Global Production**: Significant operations in Asia, Central America
+- **Nearshoring Trend**: Moving closer to major markets
+- **Specialized Regions**: Certain regions focus on specific product types
+- **Fast Fashion Hubs**: High-speed production locations
+
+## Workforce and Skills
+
+- **Production Operators**: Sewing machine operators, presser operators
+- **Assistant Operators**: Supporting production line work
+- **Quality Inspectors**: Checking product conformance
+- **Supervisors**: Line and department supervision
+- **Material Handlers**: Receiving and organizing materials
+- **Pattern Makers**: Creating and adjusting patterns
+- **Engineers**: Production engineering and process improvement
+- **Designers**: Creating designs and specifications
+- **Managers**: Production, quality, and facility management
+
+## Emerging Trends
+
+### Digitalization and Technology
+- **3D Design and Prototyping**: Virtual samples and fitting
+- **Body Scanning**: Individualized sizing and fit
+- **Robotic Sewing**: Emerging in simple operations
+- **Automated Pressing**: Efficiency in finishing
+- **Supply Chain Digitalization**: Real-time tracking and management
+- **IoT Monitoring**: Production optimization
+
+### Customization and On-Demand
+- **Made-to-Order Manufacturing**: Reducing waste
+- **Personalization Services**: Monogramming, custom colors
+- **Direct-to-Consumer**: Bypassing retail intermediaries
+- **Micro-Factories**: Distributed, local manufacturing
+- **On-Demand Production**: Print and make when ordered
+
+### Sustainability Transformation
+- **Sustainable Materials**: Organic cotton, recycled fibers
+- **Zero-Waste Production**: Minimizing fabric scraps
+- **Clean Manufacturing**: Reducing chemicals and water usage
+- **Circular Fashion**: Designing for recycling and reuse
+- **Supply Chain Transparency**: Tracking environmental impact
+- **Fair Labor Practices**: Ethical manufacturing standards
+
+### Production Evolution
+- **Nearshoring**: Locating closer to markets
+- **Reshoring**: Returning to domestic manufacturing
+- **Agile Manufacturing**: Quick response to trends
+- **Speed-to-Market**: Reducing design-to-production time
+- **Quality Focus**: Premium and sustainable positioning
+
+### Market Trends
+- **Athleisure**: Blending athletic and casual wear
+- **Sustainable Fashion**: Eco-conscious consumer demand
+- **Inclusivity**: Diverse sizing and representation
+- **Vintage and Upcycled**: Reusing and reimagining clothing
+- **Rental and Sharing**: Alternative ownership models
+
+## Cross-References
+
+| Domain | Relationship |
+|--------|--------------|
+| [manufacturing.org.ai](https://manufacturing.org.ai) | Parent manufacturing industry |
+| [naics.org.ai](https://naics.org.ai) | NAICS 315 classification |
+| [textiles.org.ai](https://textiles.org.ai) | Parent textiles domain |
+| [retail.org.ai](https://retail.org.ai) | Primary distribution channel |
+| [fashion.org.ai](https://fashion.org.ai) | Fashion industry and trends |
+| [sustainability.org.ai](https://sustainability.org.ai) | Environmental practices |
+| [labor.org.ai](https://labor.org.ai) | Labor and employment issues |
+| [international-trade.org.ai](https://international-trade.org.ai) | Global commerce and tariffs |
+
+## Market Size and Volume
+
+- **Global Annual Production**: Billions of garments per year
+- **Market Value**: Hundreds of billions of dollars globally
+- **Major Markets**: USA, EU, Asia-Pacific regions
+- **Leading Countries**: China (largest producer), Vietnam, India, Bangladesh
+- **Fastest Growing**: Southeast Asia, South Asia
+
+## See Also
+
+- [Textile Mills](./TextileMills.mdx)
+- [Textile Products](./TextileProducts.mdx)
+- [Technical Textiles](./TechnicalTextiles.mdx)
+- [Sustainable Textiles](./SustainableTextiles.mdx)
+- [Textile Technology](./TextileTech.mdx)
