@@ -1,0 +1,830 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/GraphQLAPIs
+$type: https://apis.org.ai/WebAPI
+name: "GraphQL APIs"
+description: "GraphQL - Query language and runtime for APIs providing strongly-typed schema, client-controlled field selection, real-time subscriptions, and efficient data fetching with single endpoint."
+parent: https://apis.org.ai
+---
+
+export const items = async () => {
+  // Fetch GraphQL API implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://apis.org.ai/GraphQLAPIs'
+  })
+}
+
+# GraphQL APIs
+
+GraphQL is a query language and runtime for APIs developed by Facebook (now Meta) that provides a strongly-typed interface for fetching and manipulating data. Unlike REST's rigid endpoint-based approach, GraphQL allows clients to request exactly what data they need, enabling efficient and flexible data fetching for diverse client applications.
+
+GraphQL has become increasingly popular for complex applications, particularly those serving multiple clients with varying data requirements.
+
+## Overview
+
+GraphQL introduces fundamental shifts in API design:
+
+- **Declarative Data Fetching**: Clients specify exact data needed
+- **Single Endpoint**: One URL handles all queries and mutations
+- **Strong Typing**: Schema defines all possible operations and types
+- **Real-Time Subscriptions**: Push-based updates for live data
+- **Introspection**: API self-documents its capabilities
+- **Efficient Queries**: Prevents over-fetching and under-fetching
+- **Developer Experience**: Outstanding tooling and IDE support
+
+## Core Concepts
+
+### The Schema
+
+The GraphQL schema defines the type system and all possible queries:
+
+```graphql
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  posts: [Post!]!
+  followers: [User!]!
+  followersCount: Int!
+  createdAt: DateTime!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+  author: User!
+  comments: [Comment!]!
+  likes: Int!
+  published: Boolean!
+  createdAt: DateTime!
+}
+
+type Comment {
+  id: ID!
+  text: String!
+  author: User!
+  post: Post!
+  likes: Int!
+  createdAt: DateTime!
+}
+
+type Query {
+  user(id: ID!): User
+  users(limit: Int, offset: Int): [User!]!
+  post(id: ID!): Post
+  posts(authorId: ID, limit: Int): [Post!]!
+  search(query: String!): SearchResults!
+}
+
+type SearchResults {
+  users: [User!]!
+  posts: [Post!]!
+}
+
+type Mutation {
+  createUser(name: String!, email: String!): User!
+  updateUser(id: ID!, name: String, email: String): User
+  deleteUser(id: ID!): Boolean!
+
+  createPost(title: String!, content: String!): Post!
+  updatePost(id: ID!, title: String, content: String): Post
+  publishPost(id: ID!): Post!
+  deletePost(id: ID!): Boolean!
+
+  addComment(postId: ID!, text: String!): Comment!
+}
+
+type Subscription {
+  userCreated: User!
+  postPublished: Post!
+  commentAdded(postId: ID!): Comment!
+}
+```
+
+### Scalar Types
+
+Built-in types representing single values:
+
+- **Int**: 32-bit signed integer
+- **Float**: Floating point number
+- **String**: UTF-8 text
+- **Boolean**: true/false
+- **ID**: Unique identifier, serialized as string
+
+Custom scalars:
+```graphql
+scalar DateTime
+scalar JSON
+scalar Upload
+scalar BigInt
+```
+
+### Type Modifiers
+
+- **Non-null (`!`)**: Field must always return a value
+- **List (`[Type]`)**: Array of type
+
+Examples:
+```graphql
+field: String        # Nullable string
+field: String!       # Non-null string
+field: [String]      # Nullable array of nullable strings
+field: [String!]     # Nullable array of non-null strings
+field: [String!]!    # Non-null array of non-null strings
+```
+
+### Interfaces
+
+Abstract types that other types can implement:
+
+```graphql
+interface Node {
+  id: ID!
+  createdAt: DateTime!
+}
+
+type User implements Node {
+  id: ID!
+  name: String!
+  createdAt: DateTime!
+}
+
+type Post implements Node {
+  id: ID!
+  title: String!
+  createdAt: DateTime!
+}
+```
+
+### Union Types
+
+Represent values that could be one of multiple types:
+
+```graphql
+union SearchResult = User | Post | Comment
+
+type Query {
+  search(query: String!): [SearchResult!]!
+}
+
+# Allows querying:
+query {
+  search(query: "graphql") {
+    ... on User {
+      id
+      name
+      email
+    }
+    ... on Post {
+      id
+      title
+      content
+    }
+  }
+}
+```
+
+### Enums
+
+Enumeration of specific values:
+
+```graphql
+enum UserRole {
+  ADMIN
+  MODERATOR
+  USER
+  GUEST
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+type Query {
+  users(role: UserRole, sort: SortOrder): [User!]!
+}
+```
+
+## Queries
+
+Query operations retrieve data without side effects.
+
+### Simple Query
+
+```graphql
+query {
+  user(id: "123") {
+    id
+    name
+    email
+  }
+}
+```
+
+Response:
+```json
+{
+  "data": {
+    "user": {
+      "id": "123",
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  }
+}
+```
+
+### Nested Query
+
+```graphql
+query {
+  user(id: "123") {
+    id
+    name
+    posts {
+      id
+      title
+      comments {
+        id
+        text
+        author {
+          name
+        }
+      }
+    }
+  }
+}
+```
+
+Advantages:
+- Single request fetches all nested data
+- No round-trips to fetch related data
+- Client controls depth of nesting
+
+### Arguments and Variables
+
+```graphql
+query GetUser($userId: ID!, $limit: Int = 10) {
+  user(id: $userId) {
+    id
+    name
+    posts(limit: $limit) {
+      id
+      title
+    }
+  }
+}
+```
+
+Variables sent separately:
+```json
+{
+  "userId": "123",
+  "limit": 5
+}
+```
+
+Benefits:
+- Separate data from query structure
+- Reusable queries with different values
+- Type validation
+- Security (prevents injection)
+
+### Aliases
+
+Rename fields for different contexts:
+
+```graphql
+query {
+  activeUsers: users(status: ACTIVE) {
+    id
+    name
+  }
+  inactiveUsers: users(status: INACTIVE) {
+    id
+    name
+  }
+}
+```
+
+### Fragments
+
+Reuse field selections:
+
+```graphql
+fragment UserFields on User {
+  id
+  name
+  email
+  createdAt
+}
+
+query {
+  user(id: "123") {
+    ...UserFields
+    posts {
+      id
+      title
+    }
+  }
+  otherUser: user(id: "456") {
+    ...UserFields
+  }
+}
+```
+
+### Directives
+
+Conditionally include or skip fields:
+
+```graphql
+query GetUser($userId: ID!, $includeEmail: Boolean!) {
+  user(id: $userId) {
+    id
+    name
+    email @include(if: $includeEmail)
+    phone @skip(if: !$showContact)
+  }
+}
+```
+
+Built-in directives:
+- **@include(if: Boolean!)**: Include field if condition true
+- **@skip(if: Boolean!)**: Skip field if condition true
+- **@deprecated**: Mark as deprecated
+- **@specifiedBy**: Reference specification URL
+
+## Mutations
+
+Mutation operations modify data and return results.
+
+### Simple Mutation
+
+```graphql
+mutation {
+  createUser(name: "Jane Doe", email: "jane@example.com") {
+    id
+    name
+    email
+    createdAt
+  }
+}
+```
+
+Response:
+```json
+{
+  "data": {
+    "createUser": {
+      "id": "789",
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "createdAt": "2024-01-15T10:30:00Z"
+    }
+  }
+}
+```
+
+### Multiple Mutations
+
+```graphql
+mutation {
+  user1: createUser(name: "Alice", email: "alice@example.com") {
+    id
+    name
+  }
+  user2: createUser(name: "Bob", email: "bob@example.com") {
+    id
+    name
+  }
+}
+```
+
+Executed serially in order specified.
+
+### Mutation with Input Types
+
+For complex mutations:
+
+```graphql
+input CreatePostInput {
+  title: String!
+  content: String!
+  tags: [String!]
+  published: Boolean = false
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!): Post!
+}
+
+mutation {
+  createPost(input: {
+    title: "GraphQL Guide"
+    content: "Complete guide..."
+    tags: ["graphql", "api"]
+    published: true
+  }) {
+    id
+    title
+    published
+  }
+}
+```
+
+## Subscriptions
+
+Subscription operations provide real-time push updates.
+
+### WebSocket Connection
+
+```graphql
+subscription {
+  userCreated {
+    id
+    name
+    email
+  }
+}
+```
+
+Server pushes updates when user created:
+```json
+{
+  "data": {
+    "userCreated": {
+      "id": "999",
+      "name": "New User",
+      "email": "new@example.com"
+    }
+  }
+}
+```
+
+### Filtered Subscriptions
+
+```graphql
+subscription OnCommentAdded($postId: ID!) {
+  commentAdded(postId: $postId) {
+    id
+    text
+    author {
+      name
+    }
+    createdAt
+  }
+}
+```
+
+### Multiple Subscriptions
+
+```graphql
+subscription {
+  userCreated {
+    id
+    name
+  }
+  postPublished {
+    id
+    title
+    author {
+      name
+    }
+  }
+}
+```
+
+Subscription lifecycle:
+1. Client connects via WebSocket
+2. Client sends subscription
+3. Server maintains connection
+4. Server pushes updates when events occur
+5. Client disconnects to unsubscribe
+
+## Error Handling
+
+### Query Errors
+
+```json
+{
+  "errors": [
+    {
+      "message": "Cannot query field 'age' on type 'User'",
+      "locations": [{ "line": 2, "column": 3 }],
+      "extensions": {
+        "code": "GRAPHQL_PARSE_FAILED"
+      }
+    }
+  ]
+}
+```
+
+### Partial Errors
+
+```json
+{
+  "data": {
+    "user": {
+      "id": "123",
+      "name": "John",
+      "posts": null
+    }
+  },
+  "errors": [
+    {
+      "message": "User not authorized to view posts",
+      "path": ["user", "posts"],
+      "extensions": {
+        "code": "FORBIDDEN"
+      }
+    }
+  ]
+}
+```
+
+Features:
+- Successful fields return data
+- Failed fields return null with error
+- Path indicates where error occurred
+
+### Error Codes
+
+- `GRAPHQL_PARSE_FAILED`: Syntax error
+- `GRAPHQL_VALIDATION_FAILED`: Validation error
+- `GRAPHQL_OPERATION_FAILED`: Execution error
+- `UNAUTHENTICATED`: Authentication required
+- `FORBIDDEN`: Authorization failed
+- `NOT_FOUND`: Resource not found
+- `INVALID_ARGUMENT`: Invalid argument values
+- `INTERNAL`: Server error
+
+## Best Practices
+
+### Schema Design
+
+1. **Design for Queries**: Consider common access patterns
+2. **Avoid Cyclic Dependencies**: Use fragments for shared fields
+3. **Use Enums**: Instead of arbitrary strings
+4. **Null Handling**: Use non-null only when truly required
+5. **Naming Conventions**: camelCase for fields, UPPER_CASE for enums
+
+### Query Optimization
+
+1. **Depth Limiting**: Prevent deeply nested queries
+   ```
+   query {
+     user {
+       posts {
+         comments {
+           author {
+             posts { ... } # Prevent infinite depth
+           }
+         }
+       }
+     }
+   }
+   ```
+
+2. **Query Complexity Analysis**: Calculate query cost
+3. **Batch Loading**: Prevent N+1 queries
+4. **DataLoader Pattern**: Aggregate database queries
+
+### Security
+
+1. **Authentication**: Verify user identity
+2. **Authorization**: Check field-level permissions
+3. **Rate Limiting**: Prevent abuse
+4. **Query Depth Limits**: Prevent denial of service
+5. **Query Complexity Scoring**: Limit expensive queries
+6. **Input Validation**: Sanitize all inputs
+7. **Introspection Limiting**: Disable in production if needed
+8. **HTTPS Only**: Encrypt all communication
+
+Example complexity scoring:
+```
+Simple field: 1 point
+List field: 5 points
+Nested object: 10 points
+Max query: 1000 points
+```
+
+### Performance
+
+1. **Caching**: Cache frequently accessed data
+2. **Pagination**: Limit result sets
+   ```graphql
+   type Query {
+     users(first: Int, after: String): UserConnection!
+   }
+
+   type UserConnection {
+     edges: [UserEdge!]!
+     pageInfo: PageInfo!
+   }
+
+   type UserEdge {
+     node: User!
+     cursor: String!
+   }
+
+   type PageInfo {
+     hasNextPage: Boolean!
+     endCursor: String
+   }
+   ```
+
+3. **Field Resolvers**: Optimize data loading
+4. **Caching Headers**: Set HTTP cache headers
+5. **CDN Integration**: Cache results geographically
+
+## Comparison with REST
+
+| Aspect | GraphQL | REST |
+|--------|---------|------|
+| Data Format | JSON | JSON/XML |
+| Endpoints | Single | Multiple |
+| Over-fetching | No | Possible |
+| Under-fetching | No | Possible |
+| Caching | Complex | Simple (HTTP) |
+| Learning Curve | Moderate | Easy |
+| Real-time | Subscriptions | Webhooks |
+| Versioning | Single version | Multiple versions |
+| Tooling | Excellent | Good |
+| Browser Integration | No | Yes |
+
+## Tools and Frameworks
+
+### GraphQL Servers
+- **Apollo Server**: Node.js, widely used
+- **GraphQL.js**: Reference implementation
+- **Hasura**: Instant GraphQL on databases
+- **PostGraphile**: GraphQL from PostgreSQL
+- **GraphQL Yoga**: Flexible server
+- **Federated GraphQL**: Multiple services (Apollo Federation, Schema Stitching)
+
+### Client Libraries
+- **Apollo Client**: Most popular, comprehensive
+- **Relay**: Facebook's framework, strict conventions
+- **URQL**: Lightweight, simple
+- **SWR**: React hooks for data fetching
+- **TanStack Query**: Universal data fetching
+
+### Developer Tools
+- **GraphQL Playground**: Query IDE
+- **Altair GraphQL Client**: Advanced explorer
+- **GraphiQL**: Official explorer
+- **VS Code Extensions**: Syntax highlighting, validation
+
+### Monitoring and Analytics
+- **Apollo Studio**: Monitoring and schema management
+- **New Relic GraphQL**: Performance monitoring
+- **DataDog**: Tracing and monitoring
+
+## Real-World Examples
+
+### GitHub GraphQL API
+
+```graphql
+query {
+  viewer {
+    repositories(first: 10) {
+      edges {
+        node {
+          name
+          description
+          languages(first: 5) {
+            nodes {
+              name
+            }
+          }
+          stargazers {
+            totalCount
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+### Stripe GraphQL API
+
+```graphql
+query {
+  charges(first: 10) {
+    edges {
+      node {
+        id
+        amount
+        currency
+        customer {
+          email
+        }
+      }
+    }
+  }
+}
+```
+
+### Shopify GraphQL API
+
+```graphql
+query {
+  products(first: 5) {
+    edges {
+      node {
+        id
+        title
+        variants(first: 3) {
+          edges {
+            node {
+              title
+              price
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+## Advanced Topics
+
+### Schema Federation (Apollo Federation)
+
+Compose multiple GraphQL schemas:
+
+```graphql
+# User Service
+type User @key(fields: "id") {
+  id: ID!
+  name: String!
+}
+
+# Post Service
+extend type User @key(fields: "id") {
+  id: ID! @external
+  posts: [Post!]!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  author: User!
+}
+```
+
+Benefits:
+- Decoupled services
+- Independent deployment
+- Shared types across services
+
+### Directives for Plugins
+
+Custom directives extend schema functionality:
+
+```graphql
+directive @auth(requires: UserRole) on OBJECT | FIELD_DEFINITION
+directive @cache(ttl: Int) on FIELD_DEFINITION
+directive @rateLimit(limit: Int, window: Int) on FIELD_DEFINITION
+
+type Query {
+  secretData: String @auth(requires: ADMIN) @cache(ttl: 300)
+  expensiveQuery: String @rateLimit(limit: 10, window: 60)
+}
+```
+
+### Persisted Queries
+
+Store queries on server for security and performance:
+
+```javascript
+// Server
+const persistedQueries = {
+  'query-123': `query { user(id: "1") { name } }`
+}
+
+// Client
+fetch('/graphql', {
+  method: 'POST',
+  body: JSON.stringify({ id: 'query-123', variables: {} })
+})
+```
+
+Benefits:
+- Prevents arbitrary queries
+- Reduces bandwidth
+- Improves caching
+
+## Related Resources
+
+- [functions.org.ai](https://functions.org.ai) - Resolver implementations
+- [events.org.ai](https://events.org.ai) - Subscription and event handling
+- [tech.org.ai](https://tech.org.ai) - Technology stack
+- [apis.org.ai/RESTAPIs](https://apis.org.ai/RESTAPIs) - Alternative API style
+- [apis.org.ai/APIDesign](https://apis.org.ai/APIDesign) - Schema design patterns
+- [standards.org.ai](https://standards.org.ai) - GraphQL specifications

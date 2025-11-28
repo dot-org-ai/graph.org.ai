@@ -1,0 +1,561 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/AgentWorkflows
+$type: https://workflows.org.ai/AgentWorkflows
+name: Agent Workflows
+description: LLM orchestration, agentic loops, and autonomous workflow patterns
+---
+
+export const items = async () => {
+  return [
+    {
+      name: 'Chain-of-Thought',
+      description: 'Sequential reasoning steps where each step builds on previous outputs',
+      frameworks: ['LangChain', 'LlamaIndex', 'Anthropic SDK'],
+      useCase: 'Complex reasoning, multi-step problems'
+    },
+    {
+      name: 'Tool Loop',
+      description: 'LLM iteratively selects and invokes tools until goal is achieved',
+      frameworks: ['Anthropic Claude API', 'OpenAI Function Calling', 'LangChain'],
+      useCase: 'Information retrieval, problem solving'
+    },
+    {
+      name: 'Retrieval-Augmented Generation',
+      description: 'LLM retrieves external knowledge before generating responses',
+      frameworks: ['LlamaIndex', 'Langchain RAG', 'Verba'],
+      useCase: 'Knowledge-grounded tasks, document processing'
+    },
+    {
+      name: 'ReAct Pattern',
+      description: 'Reasoning, Acting, and observing results in agent loops',
+      frameworks: ['LangChain ReAct', 'AutoGPT', 'BabyAGI'],
+      useCase: 'Autonomous agents, exploration'
+    },
+    {
+      name: 'Multi-Agent Collaboration',
+      description: 'Multiple specialized agents working together toward a goal',
+      frameworks: ['Crewai', 'AutoGen', 'LangGraph'],
+      useCase: 'Complex problems, specialized expertise'
+    },
+    {
+      name: 'Prompt Engineering',
+      description: 'Structured prompt design for improved model behavior',
+      techniques: ['Few-shot learning', 'Instruction tuning', 'Role-playing'],
+      useCase: 'Cost reduction, accuracy improvement'
+    }
+  ]
+}
+
+# Agent Workflows
+
+Agent workflows orchestrate large language models (LLMs) and autonomous agents to accomplish complex tasks. These patterns enable LLMs to reason, plan, and take actions through iterative loops and tool use.
+
+## Overview
+
+As LLMs have become more capable, new workflow paradigms have emerged that treat models as flexible agents capable of reasoning, decision-making, and tool use. Agent workflows coordinate these capabilities with external tools, APIs, and information sources to accomplish tasks that single model calls cannot handle.
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `AgentWorkflows` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+| Related | [functions.org.ai](https://functions.org.ai), [events.org.ai](https://events.org.ai) |
+
+## Core Agent Patterns
+
+### Chain-of-Thought (CoT)
+
+**Definition**: Prompting technique that encourages LLMs to show their reasoning process step-by-step.
+
+**Mechanism**:
+```
+Input: Complex question
+  ↓
+Step 1: LLM reasons about the problem
+  ↓
+Step 2: LLM breaks down into sub-problems
+  ↓
+Step 3: LLM solves each sub-problem
+  ↓
+Step 4: LLM combines results
+  ↓
+Output: Final answer
+```
+
+**Example (Anthropic SDK)**:
+```typescript
+async function solveComplexProblem(question: string): Promise<string> {
+  const response = await anthropic.messages.create({
+    model: "claude-3-5-sonnet-20241022",
+    max_tokens: 2048,
+    system: `You are a problem-solving assistant. For complex questions:
+1. First, break down the problem into steps
+2. Show your reasoning for each step
+3. Combine the results to reach a conclusion`,
+    messages: [{
+      role: "user",
+      content: question
+    }]
+  });
+
+  return response.content[0].type === 'text' ? response.content[0].text : '';
+}
+```
+
+**Advantages**:
+- Improved reasoning accuracy
+- Transparent thought process
+- Better error detection
+- Works with smaller models
+
+**Use Cases**:
+- Mathematical problem solving
+- Logical reasoning
+- Multi-step analysis
+- Complex questions
+
+### Tool Loop (ReAct)
+
+**Definition**: Agent iteratively decides which tool to use, executes it, observes results, and decides next action.
+
+**Loop Structure**:
+```
+User Query
+    ↓
+┌───────────────────┐
+│ Thought: What do  │
+│ I need to do?     │
+└────────┬──────────┘
+         ↓
+┌───────────────────┐
+│ Action: Which     │
+│ tool to use?      │
+└────────┬──────────┘
+         ↓
+┌───────────────────┐
+│ Tool Execution    │
+└────────┬──────────┘
+         ↓
+┌───────────────────┐
+│ Observation:      │
+│ What happened?    │
+└────────┬──────────┘
+         ↓
+    Done?
+   /    \
+  No     Yes
+  |      |
+  └──────┘─→ Answer
+```
+
+**Implementation (LangChain)**:
+```typescript
+import { AgentExecutor, createReactAgent } from "langchain/agents";
+import { ChatAnthropic } from "@langchain/anthropic";
+import { DuckDuckGoSearch, Calculator } from "@langchain/tools";
+
+const tools = [
+  new DuckDuckGoSearch(),
+  new Calculator()
+];
+
+const llm = new ChatAnthropic({ model: "claude-3-5-sonnet-20241022" });
+
+async function runAgent(query: string) {
+  const agent = await createReactAgent({
+    llm,
+    tools,
+    prompt: REACT_PROMPT
+  });
+
+  const executor = new AgentExecutor({
+    agent,
+    tools,
+    verbose: true
+  });
+
+  const result = await executor.invoke({
+    input: query
+  });
+
+  return result.output;
+}
+
+// Agent automatically loops through:
+// 1. Decide which tool (search, calculate, etc)
+// 2. Execute the tool
+// 3. Process results
+// 4. Decide if done or need more tools
+// 5. Return final answer
+```
+
+**Tool Types**:
+- **Search Tools**: Web search, knowledge base queries
+- **Computation**: Math calculations, data processing
+- **APIs**: Service calls, external integrations
+- **Code Execution**: Safe Python, SQL execution
+- **Knowledge**: Vector DBs, document retrieval
+
+### Retrieval-Augmented Generation (RAG)
+
+**Definition**: Augment LLM generation with retrieved external knowledge.
+
+**Flow**:
+```
+User Query
+    ↓
+┌──────────────────┐
+│ Embedding &      │
+│ Vector Search    │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│ Retrieve Relevant│
+│ Documents        │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│ Augment Prompt   │
+│ with Context     │
+└────────┬─────────┘
+         ↓
+┌──────────────────┐
+│ LLM Generation   │
+│ with Context     │
+└────────┬─────────┘
+         ↓
+    Answer
+```
+
+**Implementation (LlamaIndex)**:
+```typescript
+import { VectorStoreIndex } from "llamaindex";
+
+async function queryDocuments(documents: Document[], query: string) {
+  // Create vector index from documents
+  const index = await VectorStoreIndex.fromDocuments(documents);
+
+  // Query with automatic retrieval
+  const queryEngine = index.asQueryEngine();
+  const response = await queryEngine.query({
+    query: query,
+    similarityTopK: 5
+  });
+
+  return response.response;
+}
+```
+
+**Key Components**:
+- **Embedding Model**: Convert text to vectors
+- **Vector Store**: Store and retrieve embeddings
+- **Retriever**: Find relevant documents
+- **Prompt Template**: Format retrieved context
+- **Generator**: LLM that produces final response
+
+**Benefits**:
+- Reduces hallucinations
+- Grounds responses in facts
+- Enables knowledge updates
+- Cost-efficient (smaller models)
+
+### Multi-Agent Collaboration
+
+**Definition**: Multiple specialized agents with different roles working together.
+
+**Architecture**:
+```
+┌─────────────┐
+│   Planner   │
+│   Agent     │
+└──────┬──────┘
+       │
+   ┌───┴────┬──────────┐
+   │        │          │
+   ↓        ↓          ↓
+┌──────┐ ┌───────┐ ┌─────────┐
+│Code  │ │Search │ │Analyzer │
+│Agent │ │Agent  │ │Agent    │
+└──────┘ └───────┘ └─────────┘
+   │        │          │
+   └───┬────┴──────────┘
+       │
+       ↓
+┌─────────────┐
+│  Evaluator  │
+│   Agent     │
+└─────────────┘
+```
+
+**Implementation (CrewAI)**:
+```typescript
+import { Agent, Crew, Task } from 'crewai';
+
+const researcher = new Agent({
+  role: "Senior Researcher",
+  goal: "Uncover comprehensive facts",
+  backstory: "Expert research analyst"
+});
+
+const analyst = new Agent({
+  role: "Data Analyst",
+  goal: "Analyze and interpret data",
+  backstory: "Expert data analyst"
+});
+
+const crew = new Crew({
+  agents: [researcher, analyst],
+  tasks: [
+    new Task({
+      description: "Research the topic",
+      agent: researcher,
+      expectedOutput: "Detailed findings"
+    }),
+    new Task({
+      description: "Analyze the findings",
+      agent: analyst,
+      expectedOutput: "Analysis report"
+    })
+  ]
+});
+
+const result = await crew.kickoff();
+```
+
+**Patterns**:
+- **Sequential**: Agents work one after another
+- **Parallel**: Agents work simultaneously
+- **Hierarchical**: Manager agent delegates to workers
+- **Collaborative**: Agents communicate as peers
+
+### Agentic Loop Orchestration
+
+**Definition**: Workflow orchestration engines managing agent iterations.
+
+**Integration with Temporal**:
+```typescript
+import { proxyActivities } from "@temporalio/workflow";
+import type * as activities from "./activities";
+
+const { callLLM, executeTool, evaluateResult } =
+  proxyActivities<typeof activities>({
+    startToCloseTimeout: '5 minutes',
+  });
+
+export async function agentWorkflow(
+  initialQuery: string,
+  maxIterations: number = 10
+): Promise<AgentResult> {
+  let history = [{ role: 'user', content: initialQuery }];
+  let iteration = 0;
+
+  while (iteration < maxIterations) {
+    // Get next action from LLM
+    const response = await callLLM(history);
+
+    // Check if done
+    if (response.action === 'finish') {
+      return { answer: response.result, iterations: iteration };
+    }
+
+    // Execute tool
+    const toolResult = await executeTool(
+      response.toolName,
+      response.toolInput
+    );
+
+    // Add to history
+    history.push({ role: 'assistant', content: response.thought });
+    history.push({
+      role: 'user',
+      content: `Tool result: ${JSON.stringify(toolResult)}`
+    });
+
+    iteration++;
+  }
+
+  throw new Error('Max iterations exceeded');
+}
+```
+
+**Workflow Integration Benefits**:
+- Durable execution across iterations
+- Automatic retry on transient failures
+- State persistence
+- Visibility and observability
+- Cost tracking per iteration
+
+## Advanced Patterns
+
+### Prompt Chaining
+
+Sequence of LLM calls where output of one is input to next:
+
+```typescript
+async function analyzeAndReport(document: string): Promise<Report> {
+  // Step 1: Extract key points
+  const summary = await llm.generate({
+    prompt: `Summarize: ${document}`
+  });
+
+  // Step 2: Generate insights from summary
+  const insights = await llm.generate({
+    prompt: `Generate insights from: ${summary}`
+  });
+
+  // Step 3: Create report from insights
+  const report = await llm.generate({
+    prompt: `Create report from: ${insights}`
+  });
+
+  return parseReport(report);
+}
+```
+
+### Routing
+
+Agent decides which workflow path to take:
+
+```typescript
+async function routeQuery(query: string): Promise<Response> {
+  // Classify the query
+  const classification = await llm.classify(query, [
+    'technical',
+    'billing',
+    'general'
+  ]);
+
+  switch (classification) {
+    case 'technical':
+      return await technicalSupportWorkflow(query);
+    case 'billing':
+      return await billingSupportWorkflow(query);
+    default:
+      return await generalSupportWorkflow(query);
+  }
+}
+```
+
+### Reflection & Self-Improvement
+
+Agent evaluates its own outputs and iterates:
+
+```typescript
+async function reflexiveAgent(query: string): Promise<string> {
+  let answer = await llm.generate({ prompt: query });
+
+  // Self-evaluation
+  const evaluation = await llm.evaluate({
+    prompt: `Is this answer good? ${answer}`,
+    query: query
+  });
+
+  if (evaluation.score < 0.8) {
+    // Improve and retry
+    answer = await llm.generate({
+      prompt: `Improve your previous answer: ${answer}\nFeedback: ${evaluation.feedback}`
+    });
+  }
+
+  return answer;
+}
+```
+
+## Performance & Cost Optimization
+
+### Token Optimization
+
+```typescript
+// Compress context to reduce tokens
+const optimizedContext = compressContext(retrievedDocs);
+
+// Use token counting
+const estimatedCost = countTokens(prompt) * pricePerToken;
+
+// Batch operations
+const results = await batchLLMCalls(queries);
+```
+
+### Caching Strategies
+
+- Cache embeddings for retrieval
+- Cache LLM responses for common queries
+- Cache tool results
+- Implement semantic caching
+
+### Model Selection
+
+```typescript
+async function selectModel(task: Task) {
+  if (task.complexity === 'simple') {
+    return 'claude-3-haiku';  // Faster, cheaper
+  } else if (task.complexity === 'medium') {
+    return 'claude-3-sonnet';  // Balanced
+  } else {
+    return 'claude-3-opus';    // Most capable
+  }
+}
+```
+
+## Observability & Debugging
+
+### Logging Agent Steps
+
+```typescript
+interface AgentStep {
+  thought: string;
+  action: string;
+  input: string;
+  output: string;
+  timestamp: Date;
+}
+
+async function logAgentExecution(steps: AgentStep[]) {
+  for (const step of steps) {
+    console.log(`[${step.timestamp}] Thought: ${step.thought}`);
+    console.log(`Action: ${step.action}`);
+    console.log(`Output: ${step.output}`);
+  }
+}
+```
+
+### Tracing
+
+```typescript
+import { opentelemetry } from '@langchain/core/callbacks';
+
+const tracer = opentelemetry.getTracer('agent-workflow');
+
+const span = tracer.startSpan('agent_execution');
+try {
+  const result = await agent.invoke(query);
+  span.setStatus({ code: opentelemetry.SpanStatusCode.OK });
+} catch (error) {
+  span.setStatus({ code: opentelemetry.SpanStatusCode.ERROR });
+} finally {
+  span.end();
+}
+```
+
+## Related Domains
+
+- [agents.org.ai](https://agents.org.ai): Agent definitions and capabilities
+- [functions.org.ai](https://functions.org.ai): Tool implementations
+- [events.org.ai](https://events.org.ai): Event-triggered workflows
+- [models.org.ai](https://models.org.ai): LLM specifications
+
+## References
+
+- [Anthropic Extended Thinking](https://www.anthropic.com/news/extended-thinking)
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+- [Retrieval-Augmented Generation](https://arxiv.org/abs/2005.11401)
+- [Chain-of-Thought Prompting](https://arxiv.org/abs/2201.11903)
+- [LangChain Agent Framework](https://python.langchain.com/docs/modules/agents/)
+- [CrewAI Documentation](https://docs.crewai.com/)
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="AgentWorkflows" />

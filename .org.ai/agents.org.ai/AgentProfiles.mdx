@@ -1,0 +1,555 @@
+---
+$context: https://agents.org.ai
+$id: https://agents.org.ai/AgentProfiles
+$type: https://agents.org.ai/Agent
+name: "Agent Profiles"
+description: "Agent configuration, persona definition, AGENTS.md specification, and agent identity management."
+tags: ["profiles", "configuration", "personas", "AGENTS.md", "identity"]
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Agent Profiles
+  return []
+}
+
+# Agent Profiles
+
+Agent profiles define the identity, configuration, and behavioral characteristics of AI agents. A well-designed agent profile ensures consistent, appropriate, and effective agent behavior across all interactions.
+
+## Overview
+
+Agent profiles encompass:
+
+- **Identity**: Who the agent is and what it represents
+- **Persona**: How the agent communicates and behaves
+- **Capabilities**: What the agent can do
+- **Knowledge**: What the agent knows
+- **Constraints**: What the agent should not do
+- **Configuration**: Technical and operational settings
+
+## Core Profile Components
+
+### Agent Identity
+
+**Name and Title**:
+- Memorable, descriptive name
+- Indicates function or specialty
+- Easy to reference in multi-agent systems
+- Examples: "Research Assistant", "Code Reviewer", "Customer Support Bot"
+
+**Description**:
+- Clear statement of purpose
+- Primary responsibilities
+- Key capabilities summary
+- Target user or use case
+
+**Version and Metadata**:
+- Version tracking for updates
+- Creation and modification dates
+- Author/maintainer information
+- Classification and tagging
+
+### Persona Definition
+
+**Communication Style**:
+- Tone and formality level
+- Language complexity
+- Communication preferences
+- Personality traits
+
+**Expertise and Background**:
+- Domain expertise areas
+- Professional background
+- Knowledge depth and breadth
+- Credibility indicators
+
+**Values and Principles**:
+- Core values guiding decisions
+- Ethical guidelines
+- Fairness and bias considerations
+- Transparency principles
+
+### Role and Responsibilities
+
+**Primary Functions**:
+- Main tasks the agent performs
+- Key responsibilities
+- Success metrics
+- Expected outcomes
+
+**Scope and Boundaries**:
+- Domains and areas of expertise
+- What the agent should not do
+- Escalation criteria
+- Limitations and disclaimers
+
+## AGENTS.md Specification
+
+### Purpose and Format
+
+**What is AGENTS.md?**:
+- Standardized agent configuration format
+- Machine-readable and human-readable
+- Enables agent discovery and introspection
+- Facilitates agent interoperability
+
+**Location and Naming**:
+- Typically placed at root level: `/AGENTS.md` or `/.agents/agents.md`
+- Can be part of package metadata
+- Referenced in manifests and registries
+- Version-controlled with code
+
+### AGENTS.md Structure
+
+**Frontmatter**:
+```yaml
+---
+$id: https://agents.org.ai/MyAgent
+$type: https://agents.org.ai/Agent
+name: "My Agent"
+version: "1.0.0"
+author: "Organization Name"
+license: "MIT"
+---
+```
+
+**Agent Registry Entry**:
+```yaml
+# Agent Profile
+- id: my-agent
+  name: "My Agent"
+  version: "1.0.0"
+  description: "Brief description of agent purpose"
+  capabilities: ["capability1", "capability2"]
+  tools: ["tool1", "tool2"]
+  entrypoint: "src/agents/myAgent.ts"
+  environment: "production"
+```
+
+**Required Fields**:
+- `$id`: Unique identifier (URL format)
+- `$type`: Agent type classification
+- `name`: Display name
+- `version`: Semantic version
+- `description`: Agent purpose
+- `capabilities`: Available capabilities
+
+**Optional Fields**:
+- `author`: Creator/maintainer
+- `license`: License type
+- `tags`: Classification tags
+- `parent`: Parent agent or category
+- `dependencies`: Required resources
+- `environment`: Deployment environment
+
+### Capability Declaration
+
+**Declaring Available Tools**:
+```yaml
+capabilities:
+  tools:
+    - name: "web-search"
+      description: "Search the web for information"
+      required: false
+    - name: "python-execution"
+      description: "Execute Python code"
+      required: false
+    - name: "database-query"
+      description: "Query structured databases"
+      required: true
+```
+
+**Declaring Knowledge Areas**:
+```yaml
+knowledge:
+  - domain: "software-engineering"
+    depth: "expert"
+  - domain: "cloud-architecture"
+    depth: "intermediate"
+  - domain: "legal"
+    depth: "none"
+```
+
+**Performance Characteristics**:
+```yaml
+performance:
+  latency: "< 5 seconds"
+  accuracy: "> 95%"
+  throughput: "100 requests/minute"
+  availability: "99.9%"
+```
+
+### System Prompt and Instructions
+
+**System Prompt Template**:
+```markdown
+You are {{name}}, {{short_description}}.
+
+## Your Role
+{{role_description}}
+
+## Your Responsibilities
+{{responsibilities_list}}
+
+## Your Capabilities
+You have access to:
+{{capabilities_list}}
+
+## Guidelines
+{{guidelines_and_constraints}}
+
+## Communication Style
+{{communication_style}}
+```
+
+**Instruction Sections**:
+- **Who You Are**: Identity and role
+- **What You Do**: Primary functions
+- **How You Behave**: Behavioral guidelines
+- **What You Can Use**: Available tools
+- **What You Won't Do**: Hard constraints
+- **How You Communicate**: Style and tone
+
+## Agent Configuration
+
+### Model Selection
+
+**Base Model**:
+- Which LLM to use (GPT-4, Claude, Llama, etc.)
+- Model size and capabilities
+- Cost and performance trade-offs
+- Specialization for domain
+
+**Model Parameters**:
+- Temperature: Creativity vs consistency
+- Max tokens: Context and response length
+- Top-p: Diversity of outputs
+- Frequency penalty: Repetition control
+
+### Tool Configuration
+
+**Available Tools**:
+- Which tools the agent can use
+- Tool descriptions and parameters
+- Tool availability and permissions
+- Tool costs and rate limits
+
+**Tool Permissions**:
+- What actions the agent can perform
+- Resource limitations
+- Access controls
+- Audit trail requirements
+
+### Memory Configuration
+
+**Context Window**:
+- Maximum context length
+- Token allocation strategy
+- History retention
+- Compression and summarization
+
+**External Memory**:
+- Vector database for semantic search
+- Knowledge base access
+- Conversation history storage
+- Learning data retention
+
+### Safety and Compliance
+
+**Safety Parameters**:
+- Filtering for harmful content
+- Guardrails for constrained behavior
+- Rate limiting and throttling
+- Audit logging requirements
+
+**Compliance Configuration**:
+- Data privacy requirements
+- Regulatory compliance (GDPR, HIPAA, etc.)
+- Retention policies
+- Access control requirements
+
+## Persona and Behavioral Definition
+
+### Personality Traits
+
+**Helpfulness**:
+- Proactive in assisting users
+- Anticipating needs
+- Going above and beyond
+- Persistence in problem-solving
+
+**Honesty and Transparency**:
+- Admitting limitations
+- Being truthful even when inconvenient
+- Explaining reasoning
+- Acknowledging uncertainty
+
+**Harmlessness**:
+- Avoiding harmful outputs
+- Respecting user privacy
+- Following ethical guidelines
+- Declining inappropriate requests
+
+**Expertise**:
+- Demonstrating deep knowledge
+- Providing accurate information
+- Citing sources when appropriate
+- Knowing when to defer or escalate
+
+### Communication Preferences
+
+**Language and Tone**:
+- Formal, casual, or somewhere in between
+- Use of humor, examples, analogies
+- Technical depth appropriateness
+- Cultural sensitivity
+
+**Interaction Style**:
+- Directive vs. Collaborative
+- Verbose vs. Concise
+- Educational vs. Action-oriented
+- Structured vs. Conversational
+
+**Accessibility**:
+- Language complexity level
+- Acronym usage and explanation
+- Visual vs. textual explanations
+- Multiple explanation styles
+
+### Domain Expertise Definition
+
+**Knowledge Areas**:
+- Specific domains of expertise
+- Depth in each area (expert, intermediate, basic, none)
+- Awareness of knowledge limitations
+- Relevant experience and context
+
+**Specialized Knowledge**:
+- Domain-specific terminology
+- Best practices and conventions
+- Common pitfalls and solutions
+- Up-to-date information needs
+
+## Agent Composition and Customization
+
+### Base Agent Types
+
+**General Purpose Agent**:
+- Broad capabilities across domains
+- Flexible problem-solving
+- No specific specialization
+- Good for diverse tasks
+
+**Domain-Specialist Agent**:
+- Deep expertise in specific domain
+- Specialized knowledge and tools
+- Higher accuracy in domain
+- More focused behavior
+
+**Task-Specific Agent**:
+- Optimized for specific tasks
+- Narrow scope and clear objectives
+- Predictable behavior
+- High reliability for target tasks
+
+### Agent Specialization
+
+**Fine-Tuning**:
+- Training on domain-specific data
+- Improving performance in specialized areas
+- Adapting to specific use cases
+- Reducing errors and hallucinations
+
+**Tool Customization**:
+- Adding domain-specific tools
+- Removing unnecessary tools
+- Optimizing tool selections
+- Creating custom tool combinations
+
+**Prompt Customization**:
+- Domain-specific instructions
+- Industry-specific guidelines
+- Company-specific policies
+- Use-case-specific behavior
+
+## Multi-Profile Strategies
+
+### Profile Variants
+
+**Context-Dependent Profiles**:
+- Different personas for different contexts
+- Professional vs. casual variants
+- Public-facing vs. internal agents
+- Customer-specific customizations
+
+**Skill-Based Profiles**:
+- Junior vs. expert agent personas
+- Different confidence levels
+- Variable autonomy levels
+- Progressive capability rollout
+
+### Profile Composition
+
+**Composite Agents**:
+- Combining multiple agent profiles
+- Specialization with generalization
+- Complementary capabilities
+- Orchestrated behavior
+
+**Agent Inheritance**:
+- Base profiles with common configuration
+- Specialization through inheritance
+- Consistent behavior across variants
+- Easier maintenance and updates
+
+## Profile Versioning and Evolution
+
+### Version Management
+
+**Semantic Versioning**:
+- MAJOR.MINOR.PATCH format
+- Breaking vs. non-breaking changes
+- Backward compatibility
+- Deprecation policies
+
+**Change Tracking**:
+- Changelog documentation
+- What changed and why
+- Migration guides
+- Testing and validation
+
+### A/B Testing and Rollout
+
+**Gradual Rollout**:
+- Testing new profiles with subset of users
+- Monitoring performance metrics
+- Gradual increase in usage
+- Rollback if issues detected
+
+**Performance Comparison**:
+- Comparing different profile versions
+- Success metrics and KPIs
+- User satisfaction feedback
+- Cost-effectiveness analysis
+
+## Profile Documentation
+
+### README and Documentation
+
+**Profile Description**:
+- What the agent does
+- Who should use it
+- Common use cases
+- Expected outcomes
+
+**Setup and Configuration**:
+- How to deploy and configure
+- Required dependencies
+- Environment variables
+- Integration instructions
+
+**Usage Examples**:
+- Common interaction patterns
+- Code examples
+- API usage
+- Integration guides
+
+### Capability Documentation
+
+**Tool Documentation**:
+- What each tool does
+- Parameters and usage
+- Examples and best practices
+- Limitations and edge cases
+
+**Knowledge Base Documentation**:
+- What the agent knows
+- Up-to-date vs. outdated info
+- Training data and sources
+- Knowledge gaps and limitations
+
+## Profile Deployment and Management
+
+### Deployment Configuration
+
+**Environment Specification**:
+- Development, staging, production
+- Different configs per environment
+- Resource allocation
+- Monitoring and logging
+
+**Scaling Configuration**:
+- Concurrency limits
+- Rate limiting
+- Load balancing
+- Resource constraints
+
+### Monitoring and Maintenance
+
+**Performance Monitoring**:
+- Tracking success rates
+- Latency and throughput
+- Error rates and types
+- User satisfaction metrics
+
+**Regular Updates**:
+- Keeping knowledge current
+- Adding new capabilities
+- Fixing identified issues
+- Responding to user feedback
+
+## Profile Best Practices
+
+### Clarity and Consistency
+
+**Clear Identity**:
+- Unambiguous agent purpose
+- Consistent persona across interactions
+- Clear capabilities and limitations
+- Easy to understand for users
+
+**Consistency**:
+- Consistent behavior across interactions
+- Predictable responses
+- Coherent persona
+- Stable over time
+
+### Realistic Expectations
+
+**Honest Capability Statement**:
+- Realistic claims about abilities
+- Honest about limitations
+- No false confidence
+- Appropriate uncertainty expression
+
+**User Guidance**:
+- Clear usage guidelines
+- Best and worst use cases
+- When to use vs. avoid
+- Escalation paths
+
+### Continuous Improvement
+
+**Feedback Integration**:
+- Gathering user feedback
+- Learning from interactions
+- Continuous refinement
+- Responsive to issues
+
+**Evolution Planning**:
+- Planned improvements
+- Roadmap for new features
+- Deprecation and sunsetting
+- Strategic direction
+
+## Related Resources
+
+- [AIAgents.org.ai](https://agents.org.ai/AIAgents) - Autonomous AI agents and architectures
+- [AgentCapabilities.org.ai](https://agents.org.ai/AgentCapabilities) - Agent capabilities
+- [AgentOrchestration.org.ai](https://agents.org.ai/AgentOrchestration) - Multi-agent systems
+- [AgentSafety.org.ai](https://agents.org.ai/AgentSafety) - Safety and alignment
+- [models.org.ai](https://models.org.ai) - Available AI models
+
+## Sources
+
+- <DatabaseLink namespace="agents.org.ai" type="AgentProfiles" />

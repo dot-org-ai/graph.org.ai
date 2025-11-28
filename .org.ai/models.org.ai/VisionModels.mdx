@@ -1,0 +1,737 @@
+---
+$context: https://models.org.ai
+$id: https://models.org.ai/VisionModels
+$type: https://models.org.ai/ModelCategory
+name: "Vision Models"
+description: "Image and video understanding models including classification, detection, segmentation, and generative capabilities"
+---
+
+export const items = async () => {
+  // Fetch vision model instances from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://models.org.ai/VisionModel',
+    category: 'vision'
+  })
+}
+
+# Vision Models
+
+Vision models enable machines to perceive, understand, and generate visual information with increasing sophistication. From image classification to object detection, semantic segmentation, and generative tasks, vision models power applications across healthcare, autonomous systems, content creation, and visual analytics.
+
+## Overview
+
+Vision models process visual information through convolutional neural networks and transformer-based architectures, learning to extract meaningful features from pixels and video frames. Modern approaches achieve human-level performance on many visual tasks while enabling entirely new applications like image generation and visual question answering.
+
+## Image Classification Models
+
+### Foundational Architectures
+
+**ImageNet-era Models**
+- **ResNet (Residual Networks)**: Deep learning breakthrough
+  - Introduced residual connections for training deep networks
+  - Pre-trained on ImageNet: 1000 classes
+  - Strong feature extraction for downstream tasks
+  - Efficient inference and small model variants
+
+- **EfficientNet**: Scaling and efficiency focus
+  - Balance of accuracy and computational efficiency
+  - Mobile-friendly variants available
+  - State-of-the-art accuracy-efficiency trade-offs
+  - Systematic scaling approach
+
+- **Vision Transformer (ViT)**: Transformer architecture for vision
+  - Patches treated as tokens
+  - Self-attention for spatial relationships
+  - Superior scaling properties
+  - Transfer learning effectiveness
+
+### Modern Classification Models
+
+**Google Vision Models**
+- **EfficientNet-V2**: Improved efficiency and accuracy
+  - Faster training and inference
+  - Better robustness and generalization
+  - Competitive ImageNet accuracy
+  - Deployment-friendly
+
+- **MobileViT**: Mobile Vision Transformer
+  - Efficient transformer for mobile
+  - High accuracy at low compute
+  - Cross-layer attention
+  - Edge device suitable
+
+**Facebook/Meta Dino V2**
+- Advanced self-supervised learning
+- Powerful zero-shot classification
+- Transfer learning strength
+- Minimal dataset size requirements
+
+### Multimodal Vision-Language Models
+
+**CLIP (Contrastive Language-Image Pre-training)**
+- Image and text joint embeddings
+- Zero-shot image classification via text
+- Incredible generalization to unseen classes
+- Foundation for many downstream tasks
+
+**BLIP and BLIP-2**
+- Vision-language understanding and generation
+- Visual question answering (VQA)
+- Image captioning and description
+- Improved alignment over CLIP
+
+## Object Detection Models
+
+### Real-Time Detection
+
+**YOLO (You Only Look Once) Series**
+- **YOLOv8**: Latest high-performance detector
+  - Real-time inference at 30+ FPS
+  - Excellent speed-accuracy trade-off
+  - Small model variants for edge
+  - Active development and community
+
+- **YOLOv7**: Efficient and accurate
+  - Reduced latency vs. YOLOv6
+  - Improved backbone architecture
+  - Strong on smaller objects
+  - GPU and CPU deployment
+
+- **YOLO-NAS**: Efficient architecture search
+  - Automatically optimized for deployment
+  - Pareto-optimal speed-accuracy
+  - Reduced quantization loss
+  - Practical production performance
+
+### Anchor-Free Detection
+
+**Faster R-CNN and R-CNN Variants**
+- Anchor-based regional proposals
+- High accuracy but slower inference
+- Flexible backbone architectures
+- Stronger on small objects
+
+**CenterNet and EfficientDet**
+- Anchor-free detection approaches
+- Simplified pipeline
+- Efficient and accurate
+- Strong performance-efficiency balance
+
+### Real-time Object Tracking
+
+**DeepSORT**
+- Real-time multi-object tracking
+- Appearance feature integration
+- Trajectory and identity consistency
+- Robust to occlusions
+
+**ByteTrack and BoT-SORT**
+- High-FPS tracking capability
+- Minimal association complexity
+- Effective occlusion handling
+- Production-ready systems
+
+## Semantic and Instance Segmentation
+
+### Semantic Segmentation
+
+**U-Net Architecture**
+- Encoder-decoder with skip connections
+- Medical image segmentation foundation
+- Efficient with limited data
+- Widely adopted and effective
+
+**DeepLab Series**
+- Atrous convolution for context
+- Multi-scale feature fusion
+- Dilated spatial pyramid pooling
+- Strong contour and boundary delineation
+
+**Segmentation Transformers**
+- SegFormer: Efficient transformer segmentation
+- DeiT: Data-efficient image transformers
+- Sewin: Shifted window attention
+- State-of-the-art accuracy
+
+### Instance Segmentation
+
+**Mask R-CNN**
+- Detection plus pixel-level segmentation
+- Each object instance separately segmented
+- Excellent for complex scenes
+- Strong foundation for variants
+
+**DETR (Detection Transformer)**
+- End-to-end transformer approach
+- Eliminated hand-designed components
+- Strong generalization
+- Foundation for variants
+
+**Panoptic Segmentation**
+- Unified semantic and instance segmentation
+- Everything labels: stuff and things
+- Scene understanding
+- Complex scene analysis
+
+## 3D Vision and Point Cloud Processing
+
+### 3D Object Detection
+
+**PointNet and PointNet++**
+- Direct point cloud processing
+- Permutation invariant
+- Hierarchical feature learning
+- Foundation architecture
+
+**3D YOLO Variants**
+- LiDAR-based 3D detection
+- Autonomous driving application
+- Multi-modal fusion
+- Real-time 3D understanding
+
+**Voxel-Based Approaches**
+- Volumetric representation
+- Sparse convolutions
+- Efficient memory usage
+- Strong geometric understanding
+
+### 3D Reconstruction and Depth Estimation
+
+**Depth Estimation Models**
+- **MiDaS**: Monocular depth estimation
+  - Single image to depth map
+  - Scale-invariant learning
+  - Universal architecture
+  - Real-time inference
+
+- **Depthanything**: Universal depth estimation
+  - In-the-wild depth understanding
+  - Zero-shot generalization
+  - Practical scale prediction
+  - Robust to scene variations
+
+**3D Reconstruction**
+- Structure from motion
+- Multi-view reconstruction
+- Neural radiance fields (NeRF)
+- Photogrammetry approaches
+
+## Face and Biometric Models
+
+### Face Detection and Recognition
+
+**Face Detection**
+- **RetinaFace**: Accurate and fast
+  - Context modeling for tiny faces
+  - Multi-task learning
+  - Mobile deployment friendly
+  - Strong in the wild performance
+
+- **S3FD**: Single Shot Scale-Invariant Face Detector
+  - Anchor-based face detection
+  - Multi-scale feature maps
+  - Robust to scale variation
+  - Real-time processing
+
+### Face Recognition
+
+**ArcFace and CosFace**
+- Metric learning for face embedding
+- Normalized embeddings
+- Margin-based loss functions
+- State-of-the-art accuracy
+
+**Face Verification and Identification**
+- 1:1 comparison (verification)
+- 1:N search (identification)
+- Distance thresholding
+- Threshold selection strategies
+
+### Facial Analysis
+
+**Facial Attribute Analysis**
+- Age, gender, expression estimation
+- Emotion recognition
+- Head pose estimation
+- Eye contact and attention tracking
+
+**Facial Landmark Detection**
+- Key point localization (68 points)
+- Face alignment
+- Morphing and beautification
+- Facial animation
+
+## Optical Character Recognition (OCR)
+
+### Text Detection
+
+**Scene Text Detection**
+- **CRAFT**: Character Region Awareness for Text detection
+  - Individual character detection
+  - Flexible word arrangement
+  - Curved and irregular text
+  - Multi-lingual support
+
+- **EAST**: Efficient and Accurate Scene Text Detector
+  - Direct bounding box prediction
+  - FCN-based approach
+  - Real-time text detection
+  - Rotation-invariant
+
+### Text Recognition
+
+**Sequence-to-Sequence Models**
+- CRNN (Convolutional Recurrent Neural Networks)
+- Attention mechanisms for recognition
+- Variable length text handling
+- End-to-end differentiable
+
+**Transformer-Based OCR**
+- Vision transformer backbone
+- Transformer decoder for text
+- Superior to RNNs
+- Multi-lingual capability
+
+### End-to-End Systems
+
+**PaddleOCR**
+- Complete detection and recognition
+- Multi-lingual support
+- High-speed inference
+- Production-ready implementation
+
+**EasyOCR**
+- Simple and accessible
+- 80+ languages
+- Easy API integration
+- Rapid deployment
+
+## Image Generation and Diffusion Models
+
+### Diffusion Models
+
+**Stable Diffusion**
+- Text-to-image generation
+- Latent space diffusion
+- Efficient generation
+- Fine-tuning and customization
+
+**DALL-E 3**
+- Advanced text-to-image
+- Detailed prompt understanding
+- High image quality
+- Creative capabilities
+
+**Midjourney**
+- Artistic image generation
+- Style and aesthetic control
+- Iterative refinement
+- Community-driven platform
+
+### Generative Adversarial Networks (GANs)
+
+**StyleGAN and StyleGAN2**
+- High-quality synthetic images
+- Interpretable latent space
+- Style transfer capabilities
+- Fast inference
+
+**CycleGAN and Pix2Pix**
+- Unpaired image translation
+- Domain adaptation
+- Style transfer
+- Photo-realistic transformation
+
+### Image Super-Resolution
+
+**ESRGAN**
+- Enhanced Super-Resolution GAN
+- 4x upsampling capability
+- Texture and detail recovery
+- Real-world image restoration
+
+**Real-ESRGAN**
+- Improved for real-world images
+- Blind super-resolution
+- Artifact reduction
+- Practical enhancement
+
+## Video Understanding and Processing
+
+### Video Classification and Action Recognition
+
+**Action Recognition Models**
+- **SlowFast Networks**: Multi-stream temporal understanding
+  - Fast and slow pathways
+  - Temporal receptive field adaptation
+  - State-of-the-art action recognition
+  - Real-time capability
+
+- **TimeSformer**: Transformer for video
+  - Temporal and spatial self-attention
+  - Efficient computation
+  - Strong transfer learning
+  - Temporal modeling
+
+**Gesture and Activity Recognition**
+- Hand gesture recognition
+- Full-body activity recognition
+- Pose-based recognition
+- Real-time applications
+
+### Video Object Tracking and Segmentation
+
+**Multi-Object Tracking (MOT)**
+- Track multiple objects across frames
+- Identity consistency
+- Association strategies
+- Benchmark evaluation (MOT17, MOT20)
+
+**Video Instance Segmentation**
+- SegTrackv2 and related benchmarks
+- Mask propagation and refinement
+- Temporal consistency
+- Scene understanding
+
+### Temporal Segmentation and Localization
+
+**Temporal Action Localization**
+- Find start and end of actions
+- Temporal boundaries
+- Untrimmed video understanding
+- Activity mining
+
+**Shot Boundary Detection**
+- Scene transition detection
+- Cut and fade detection
+- Video segmentation
+- Content structure understanding
+
+## Pose Estimation and Body Analysis
+
+### 2D Pose Estimation
+
+**OpenPose**
+- Multi-person body and hand pose
+- Joint angle estimation
+- Robustness to occlusion
+- Real-time capability
+
+**MediaPipe**
+- Lightweight pose estimation
+- Hand and face landmarks
+- Holistic body model
+- Mobile-friendly
+
+**PoseNet and MoveNet**
+- Efficient body pose
+- Reduced latency
+- Edge device friendly
+- Fast inference
+
+### 3D Pose Estimation
+
+**Lifting to 3D**
+- Infer 3D from 2D estimates
+- Single image 3D pose
+- Human reconstruction
+- Motion capture alternatives
+
+**Multi-view 3D Pose**
+- Multiple camera perspectives
+- Triangulation and optimization
+- Professional-grade accuracy
+- Complex motion understanding
+
+### Gait and Motion Analysis
+
+**Gait Recognition**
+- Person identification by walking pattern
+- Surveillance and security
+- Medical gait analysis
+- Biometric modality
+
+**Human Motion Understanding**
+- Action quality assessment
+- Fall detection
+- Sports analytics
+- Rehabilitation monitoring
+
+## Medical Image Analysis
+
+### Medical Image Classification
+
+**Disease Detection**
+- Radiology image analysis
+- Cancer detection in various modalities
+- Pneumonia detection in chest X-rays
+- Lesion and abnormality identification
+
+**Pathology and Histopathology**
+- Microscopy image analysis
+- Tissue classification
+- Cancer grade determination
+- Digital pathology
+
+### Segmentation in Medical Imaging
+
+**Organ Segmentation**
+- Identify organ boundaries
+- 3D segmentation from CT/MRI
+- Multi-organ segmentation
+- Surgery planning assistance
+
+**Tumor and Lesion Segmentation**
+- Accurate tumor delineation
+- Boundary precision
+- 3D volume measurement
+- Treatment planning
+
+### Medical Image Registration
+
+**Image Alignment and Registration**
+- Align images from same patient (temporal)
+- Align across modalities
+- Population-level registration
+- Deformation tracking
+
+## Models for Edge and Mobile Devices
+
+### Lightweight Architectures
+
+**MobileNet Series**
+- Depthwise separable convolutions
+- Parameter and computation reduction
+- Multiple scaling factors
+- On-device deployment
+
+**ShuffleNet**
+- Channel shuffle operations
+- Efficient group convolutions
+- Extreme parameter efficiency
+- Real-time mobile inference
+
+**SqueezeNet**
+- Fire modules for compression
+- Model compression techniques
+- Binary and ternary variants
+- IoT device suitable
+
+### Quantization and Optimization
+
+**Model Quantization**
+- 8-bit integer quantization
+- Post-training quantization
+- Quantization-aware training
+- Minimal accuracy loss
+
+**Knowledge Distillation**
+- Smaller student networks
+- Teacher model guidance
+- Performance recovery
+- Efficient deployment
+
+**Pruning and Structured Pruning**
+- Systematic parameter removal
+- Structured sparsity
+- Hardware-friendly pruning
+- Maintained inference speed
+
+## Performance Metrics and Evaluation
+
+### Classification Metrics
+
+**Accuracy and Variants**
+- Top-1 and Top-5 accuracy
+- Class-balanced accuracy
+- Stratified evaluation
+- Confusion matrix analysis
+
+**Robustness Metrics**
+- Adversarial robustness
+- Out-of-distribution generalization
+- Domain adaptation evaluation
+- Certified robustness bounds
+
+### Detection and Segmentation Metrics
+
+**Intersection over Union (IoU)**
+- Bounding box overlap
+- Segmentation mask overlap
+- Threshold-based evaluation
+- Ranking and precision-recall
+
+**Mean Average Precision (mAP)**
+- Precision-recall integration
+- Multi-class evaluation
+- Standard detection benchmark
+- Confidence threshold impact
+
+### Benchmark Datasets
+
+**ImageNet**
+- 1.2M training images, 1000 classes
+- Standard classification benchmark
+- Pre-training source
+- Evaluation standard
+
+**COCO (Common Objects in Context)**
+- Detection, segmentation, keypoints
+- 80 object categories
+- Multiple task support
+- Real-world complexity
+
+**Pascal VOC**
+- Object detection classic
+- 20 classes
+- Well-established benchmark
+- Smaller but foundational
+
+**Domain-Specific Benchmarks**
+- Medical imaging datasets
+- Autonomous driving (KITTI, nuScenes)
+- Face detection (WIDER FACE, AFW)
+- Video understanding (ActivityNet, Kinetics)
+
+## Deployment and Optimization
+
+### Framework Support
+
+**TensorFlow and Keras**
+- Production-ready
+- Quantization and optimization tools
+- TensorFlow Lite for mobile
+- Broad hardware support
+
+**PyTorch**
+- Research-friendly
+- ONNX export capability
+- Mobile deployment (PyTorch Mobile)
+- Dynamic graph capability
+
+**ONNX (Open Neural Network Exchange)**
+- Framework-agnostic format
+- Model interchange and optimization
+- Hardware-specific optimization
+- Cross-platform inference
+
+**TensorRT and Optimization**
+- NVIDIA TensorRT for GPU optimization
+- Auto mixed precision
+- Kernel auto-tuning
+- Significant speedup
+
+### Real-Time Inference
+
+**GPU Acceleration**
+- NVIDIA CUDA and cuDNN
+- Batch processing for throughput
+- Multi-GPU scaling
+- Cost-performance optimization
+
+**Edge Accelerators**
+- TPU (Google Tensor Processing Unit)
+- Apple Neural Engine
+- Qualcomm Snapdragon
+- Specialized hardware
+
+**Streaming and Video Processing**
+- Frame-by-frame processing
+- Temporal optimization
+- Batching frames efficiently
+- Storage and bandwidth optimization
+
+## Use Cases and Applications
+
+### Autonomous Systems
+
+**Autonomous Vehicles**
+- Object detection and tracking
+- Pedestrian and vehicle detection
+- Lane and sign detection
+- 3D scene understanding
+
+**Robotics**
+- Object detection and grasping
+- Navigation and obstacle avoidance
+- Hand-eye coordination
+- Human activity recognition
+
+### Surveillance and Security
+
+**Video Surveillance**
+- Object and person detection
+- Behavior analysis
+- Anomaly detection
+- Crowd analysis
+
+**Access Control**
+- Face recognition authentication
+- Biometric identification
+- Badge and ID verification
+- Multi-modal biometrics
+
+### Healthcare and Medical
+
+**Diagnostic Assistance**
+- Disease detection support
+- Radiology AI
+- Pathology automation
+- Surgical guidance
+
+**Patient Monitoring**
+- Vital signs estimation
+- Pose and fall detection
+- Rehabilitation tracking
+- Telemedicine support
+
+### Content and Creative
+
+**Photo and Video Enhancement**
+- Super-resolution
+- Denoising and restoration
+- Color correction
+- Background removal
+
+**Content Creation Assistance**
+- Image generation from text
+- Style transfer
+- Content recommendations
+- Creative tool integration
+
+### Retail and Commerce
+
+**Product Recognition**
+- Shelf monitoring
+- Inventory management
+- Out-of-stock detection
+- Planogram compliance
+
+**Customer Analytics**
+- Foot traffic analysis
+- Dwell time measurement
+- Demographic analysis
+- Heat mapping
+
+## Related Resources
+
+- [LanguageModels.mdx](./LanguageModels) - Multimodal models combining vision and language
+- [EmbeddingModels.mdx](./EmbeddingModels) - Visual embeddings and similarity
+- [ModelArchitectures.mdx](./ModelArchitectures) - CNN and Transformer architectures
+- [ModelDeployment.mdx](./ModelDeployment) - Deploying vision models at scale
+- [datasets.org.ai](https://datasets.org.ai) - Vision dataset collections
+- [agents.org.ai](https://agents.org.ai) - Agents with vision capabilities
+
+## Cross-References
+
+| Domain | Connection |
+|--------|-----------|
+| [LanguageModels.mdx](./LanguageModels) | Vision-language multimodal models (CLIP, BLIP) |
+| [EmbeddingModels.mdx](./EmbeddingModels) | Visual embeddings for similarity and retrieval |
+| [ModelArchitectures.mdx](./ModelArchitectures) | CNN, Vision Transformer, and attention mechanisms |
+| [ModelDeployment.mdx](./ModelDeployment) | Deploying vision models and optimization techniques |
+| [agents.org.ai](https://agents.org.ai) | Visual agents and computer vision systems |
+| [datasets.org.ai](https://datasets.org.ai) | Computer vision datasets and benchmarks |
+| [tech.org.ai](https://tech.org.ai) | Technology ecosystem and infrastructure |
+

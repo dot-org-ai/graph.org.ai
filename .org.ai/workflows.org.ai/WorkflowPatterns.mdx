@@ -1,0 +1,451 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/WorkflowPatterns
+$type: https://workflows.org.ai/WorkflowPatterns
+name: Workflow Patterns
+description: Architectural patterns and composition strategies for workflow design
+---
+
+export const items = async () => {
+  return [
+    {
+      name: 'Sequential Pattern',
+      description: 'Tasks executed one after another in strict order',
+      useCase: 'Data processing pipelines, multi-step approvals'
+    },
+    {
+      name: 'Parallel Pattern',
+      description: 'Multiple tasks executed concurrently with dependency joining',
+      useCase: 'Batch processing, multi-service calls, aggregate computations'
+    },
+    {
+      name: 'Conditional Pattern',
+      description: 'Branching logic based on runtime conditions',
+      useCase: 'Decision trees, A/B testing, rule-based routing'
+    },
+    {
+      name: 'Event-Driven Pattern',
+      description: 'Workflows triggered by and responding to events',
+      useCase: 'Reactive systems, microservice choreography'
+    },
+    {
+      name: 'Fan-out/Fan-in Pattern',
+      description: 'Distribute work across many parallel branches then collect results',
+      useCase: 'Batch processing, distributed computations'
+    },
+    {
+      name: 'Recursive Pattern',
+      description: 'Workflows calling themselves with modified parameters',
+      useCase: 'Tree traversal, hierarchical processing'
+    },
+    {
+      name: 'Saga Pattern',
+      description: 'Distributed transactions with compensating actions',
+      useCase: 'Cross-service transactions, long-running processes'
+    },
+    {
+      name: 'Choreography Pattern',
+      description: 'Services coordinating via event exchange',
+      useCase: 'Loosely coupled systems, event-driven architecture'
+    }
+  ]
+}
+
+# Workflow Patterns
+
+Workflow patterns represent reusable solutions to common workflow composition and orchestration challenges. These patterns guide the design of complex workflows and help developers structure coordination logic effectively across systems.
+
+## Overview
+
+Workflow patterns abstract recurring workflow structures and interactions. They provide tested solutions for common scenarios and help establish consistency across workflow implementations. Understanding these patterns is crucial for designing scalable, maintainable workflows.
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `WorkflowPatterns` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+| Related | [WorkflowEngines.mdx](./WorkflowEngines), [events.org.ai](https://events.org.ai) |
+
+## Core Patterns
+
+### Sequential Pattern
+
+**Definition**: Tasks execute in strict linear order, each waiting for the previous to complete.
+
+**Use Cases**:
+- Multi-step data transformations
+- Sequential approval workflows
+- Dependency chains
+- Pipeline stages
+
+**Implementation (Temporal)**:
+```typescript
+async function sequentialWorkflow(input: Input): Promise<Output> {
+  const step1Result = await activities.step1(input);
+  const step2Result = await activities.step2(step1Result);
+  const step3Result = await activities.step3(step2Result);
+  return step3Result;
+}
+```
+
+**Advantages**:
+- Simple to reason about
+- Natural error propagation
+- Clear data flow
+
+**Limitations**:
+- Slower for independent tasks
+- Cannot exploit parallelism
+- Brittle to changes
+
+### Parallel Pattern
+
+**Definition**: Multiple independent or dependent tasks execute concurrently.
+
+**Use Cases**:
+- Multi-service API calls
+- Batch processing
+- Aggregating data from multiple sources
+- Computational acceleration
+
+**Implementation (Temporal)**:
+```typescript
+async function parallelWorkflow(input: Input): Promise<Output> {
+  // Execute in parallel and wait for all
+  const [result1, result2, result3] = await Promise.all([
+    activities.fetch1(input),
+    activities.fetch2(input),
+    activities.fetch3(input)
+  ]);
+
+  return activities.aggregate(result1, result2, result3);
+}
+```
+
+**Advantages**:
+- Better throughput
+- Faster total execution
+- Resource utilization
+- Scalability
+
+**Limitations**:
+- Increased complexity
+- Resource contention
+- Harder debugging
+- Cascading failures
+
+### Conditional Pattern
+
+**Definition**: Workflow branches based on runtime conditions.
+
+**Use Cases**:
+- Decision trees
+- Feature flags
+- Approval workflows
+- Dynamic routing
+
+**Implementation (Step Functions)**:
+```json
+{
+  "StartAt": "CheckCondition",
+  "States": {
+    "CheckCondition": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.amount",
+          "NumericGreaterThan": 1000,
+          "Next": "RequireApproval"
+        }
+      ],
+      "Default": "ProcessPayment"
+    },
+    "RequireApproval": {
+      "Type": "Task",
+      "Resource": "arn:...",
+      "Next": "ProcessPayment"
+    },
+    "ProcessPayment": {
+      "Type": "Task",
+      "Resource": "arn:...",
+      "End": true
+    }
+  }
+}
+```
+
+**Decision Strategies**:
+- **Simple Conditions**: Single boolean check
+- **Decision Trees**: Multiple cascading conditions
+- **Rule Engines**: Complex condition evaluation
+- **Machine Learning**: Dynamic decision routing
+
+### Event-Driven Pattern
+
+**Definition**: Workflows triggered by and responding to [events.org.ai](https://events.org.ai).
+
+**Use Cases**:
+- User action workflows
+- System event processing
+- Real-time data processing
+- Reactive systems
+
+**Implementation (Inngest)**:
+```typescript
+export const workflow = inngest.createFunction(
+  { id: "user.signup" },
+  { event: "user/signup" },
+  async ({ event, step }) => {
+    const user = await step.run("create-user", async () => {
+      return db.users.create(event.data);
+    });
+
+    await step.run("send-welcome", async () => {
+      return email.send({
+        to: user.email,
+        subject: "Welcome!"
+      });
+    });
+
+    return user;
+  }
+);
+```
+
+**Advantages**:
+- Natural reactive programming
+- Decoupled architecture
+- Easy to add new handlers
+- Suitable for microservices
+
+**Challenges**:
+- Eventual consistency
+- Harder to debug
+- Cascading events
+- Event ordering
+
+### Fan-out/Fan-in Pattern
+
+**Definition**: Distribute work across many branches, then collect results.
+
+**Use Cases**:
+- MapReduce-style processing
+- Batch processing
+- Distributed aggregation
+- Dynamic parallelism
+
+**Implementation (Temporal)**:
+```typescript
+async function fanOutFanIn(items: Item[]): Promise<AggregatedResult> {
+  // Fan-out: distribute work
+  const promises = items.map(item =>
+    activities.process(item)
+  );
+
+  // Fan-in: collect results
+  const results = await Promise.all(promises);
+
+  return activities.aggregate(results);
+}
+```
+
+**Variations**:
+- **Dynamic Parallelism**: Number of branches determined at runtime
+- **Bounded Parallelism**: Limit concurrent branches
+- **Partial Results**: Process incomplete results
+
+### Recursive Pattern
+
+**Definition**: Workflows call themselves with modified parameters.
+
+**Use Cases**:
+- Tree traversal
+- Hierarchical processing
+- Divide and conquer algorithms
+- Nested structures
+
+**Implementation (Temporal)**:
+```typescript
+async function recursiveWorkflow(node: TreeNode): Promise<Result> {
+  const currentResult = await activities.processNode(node);
+
+  if (node.hasChildren()) {
+    const childResults = await Promise.all(
+      node.children.map(child => recursiveWorkflow(child))
+    );
+    return activities.combine(currentResult, childResults);
+  }
+
+  return currentResult;
+}
+```
+
+**Considerations**:
+- **Base Case**: Prevent infinite recursion
+- **Depth Limits**: Control recursion depth
+- **State Management**: Handle recursive state
+- **Memory**: Watch for stack issues
+
+### Saga Pattern
+
+**Definition**: Long-running distributed transaction with compensating actions.
+
+**Use Cases**:
+- Cross-service transactions
+- Order fulfillment workflows
+- Multi-step business processes
+- Failure recovery
+
+**Two Approaches**:
+
+**Orchestration** (Centralized):
+```typescript
+async function orderWorkflow(order: Order): Promise<OrderResult> {
+  let inventory, payment, shipment;
+
+  try {
+    inventory = await activities.reserveInventory(order);
+    payment = await activities.processPayment(order);
+    shipment = await activities.shipOrder(order);
+    return { success: true, order };
+  } catch (error) {
+    // Compensating transactions (rollback)
+    if (inventory) await activities.releaseInventory(inventory);
+    if (payment) await activities.refundPayment(payment);
+    throw error;
+  }
+}
+```
+
+**Choreography** (Event-based):
+```typescript
+// OrderService publishes OrderCreated
+// InventoryService listens, reserves inventory
+// PaymentService listens, processes payment
+// ShippingService listens, ships order
+// All emit compensation events on failure
+```
+
+**Characteristics**:
+- **Atomicity**: No global atomicity (eventual consistency)
+- **Isolation**: Reduced isolation levels
+- **Compensation**: Inverse operations for rollback
+- **Idempotency**: Essential for safety
+
+### Choreography Pattern
+
+**Definition**: Services coordinate via event exchange without central orchestrator.
+
+**Use Cases**:
+- Microservice architectures
+- Event-driven systems
+- Loosely coupled workflows
+- Domain-driven design
+
+**Benefits**:
+- Decoupled services
+- Scalable event handling
+- Independent deployments
+- Natural for reactive systems
+
+**Challenges**:
+- Harder to understand flow
+- Event ordering issues
+- Cascading failures
+- Observability complexity
+
+## Pattern Selection Matrix
+
+| Pattern | Complexity | Latency | Coupling | Observability |
+|---------|---|---|---|---|
+| **Sequential** | Low | High | High | Excellent |
+| **Parallel** | Medium | Low | High | Good |
+| **Conditional** | Medium | Medium | High | Good |
+| **Event-Driven** | High | Low-High | Low | Challenging |
+| **Fan-out/Fan-in** | High | Low | High | Good |
+| **Recursive** | High | Medium | High | Challenging |
+| **Saga** | Very High | High | Medium | Challenging |
+| **Choreography** | Very High | Medium | Low | Very Challenging |
+
+## Combining Patterns
+
+Complex workflows often combine multiple patterns:
+
+```typescript
+// Conditional + Parallel + Saga
+async function complexWorkflow(input: Input): Promise<Output> {
+  if (input.type === 'urgent') {
+    // Fast path: parallel execution
+    const [r1, r2] = await Promise.all([
+      activities.fastRoute1(input),
+      activities.fastRoute2(input)
+    ]);
+    return activities.combine(r1, r2);
+  } else {
+    // Standard path: sequential saga
+    return sagaWorkflow(input);
+  }
+}
+```
+
+## Anti-Patterns to Avoid
+
+### Mega-Workflow
+Attempting to handle all logic in a single workflow:
+- **Issue**: Reduced reusability, harder testing
+- **Solution**: Compose smaller workflows
+
+### Synchronous Waiting
+Blocking indefinitely for event-driven results:
+- **Issue**: Resource waste, timeout risks
+- **Solution**: Use timeouts, asynchronous patterns
+
+### Missing Error Handling
+Workflows without explicit failure paths:
+- **Issue**: Silent failures, data inconsistency
+- **Solution**: Comprehensive error handling, compensation
+
+### Tight Coupling
+Workflows with hardcoded service dependencies:
+- **Issue**: Brittleness, difficult testing
+- **Solution**: Service discovery, configuration management
+
+## Testing Patterns
+
+Each pattern has specific testing considerations:
+
+```typescript
+// Testing sequential pattern
+test('sequential steps complete in order', async () => {
+  const result = await sequentialWorkflow(input);
+  expect(result).toEqual(expectedOutput);
+});
+
+// Testing parallel pattern
+test('parallel steps execute concurrently', async () => {
+  const startTime = Date.now();
+  await parallelWorkflow(input);
+  const duration = Date.now() - startTime;
+  // Should be ~parallel time, not sequential
+  expect(duration).toBeLessThan(serialDuration);
+});
+
+// Testing conditional pattern
+test('correct branch executes based on condition', async () => {
+  const result = await conditionalWorkflow(highAmount);
+  expect(result.requiresApproval).toBe(true);
+});
+```
+
+## References
+
+- [Saga Pattern](https://microservices.io/patterns/data/saga.html)
+- [Orchestration vs Choreography](https://www.enterpriseintegrationpatterns.com/patterns/messaging/Choreography.html)
+- [Temporal Workflow Patterns](https://docs.temporal.io/develop/workflows)
+- [Event-Driven Architecture](https://www.eventdriven.io/)
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="WorkflowPatterns" />

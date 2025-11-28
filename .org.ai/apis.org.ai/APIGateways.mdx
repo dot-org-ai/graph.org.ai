@@ -1,0 +1,699 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/APIGateways
+$type: https://apis.org.ai/WebAPI
+name: "API Gateways"
+description: "API Gateway patterns and implementations providing request routing, rate limiting, authentication, caching, load balancing, and security enforcement as a central control plane for API traffic."
+parent: https://apis.org.ai
+---
+
+export const items = async () => {
+  // Fetch API Gateway implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://apis.org.ai/APIGateways'
+  })
+}
+
+# API Gateways
+
+An API Gateway is a server that acts as a reverse proxy accepting API requests from clients, forwarding them to backend services, and returning responses. API Gateways provide a centralized control plane for managing API traffic, implementing cross-cutting concerns like authentication, rate limiting, logging, and traffic routing.
+
+API Gateways are essential for microservices architectures, enabling decoupling, security, and operational visibility.
+
+## Overview
+
+API Gateways provide centralized API management:
+
+- **Request Routing**: Direct requests to appropriate backend services
+- **Authentication/Authorization**: Verify and authorize requests before forwarding
+- **Rate Limiting**: Prevent abuse and ensure fair usage
+- **Caching**: Cache responses to reduce backend load
+- **Load Balancing**: Distribute traffic across multiple backends
+- **Request/Response Transformation**: Modify requests/responses in flight
+- **Logging and Monitoring**: Centralized visibility into API usage
+- **API Versioning**: Route different versions to different backends
+- **Security**: TLS/HTTPS, DDoS protection, API key management
+- **Service Mesh Integration**: Work with service discovery and mesh
+
+## Architecture
+
+### Traditional API Gateway Pattern
+
+```
+Client
+  ↓
+[API Gateway]
+  ├→ /users → User Service
+  ├→ /products → Product Service
+  ├→ /orders → Order Service
+  └→ /auth → Auth Service
+```
+
+Benefits:
+- Single entry point
+- Centralized security
+- Consistent rate limiting
+- Unified monitoring
+
+### Gateway Responsibilities
+
+1. **Request Reception**: Accept client connections
+2. **Authentication**: Verify client identity
+3. **Authorization**: Check client permissions
+4. **Rate Limiting**: Enforce usage limits
+5. **Routing**: Forward to correct backend
+6. **Request Transformation**: Modify headers, body
+7. **Caching**: Cache responses when appropriate
+8. **Response Transformation**: Modify backend responses
+9. **Logging**: Record all requests/responses
+10. **Metrics**: Collect performance metrics
+11. **Error Handling**: Return appropriate errors
+
+## Request Routing
+
+### Basic Routing
+
+```
+GET  /api/users    → http://user-service:8080/users
+GET  /api/products → http://product-service:8080/products
+POST /api/orders   → http://order-service:8080/orders
+```
+
+### Path-Based Routing
+
+```
+/api/v1/users   → User Service v1
+/api/v2/users   → User Service v2
+/api/admin/*    → Admin Service
+/api/public/*   → Public Service (no auth required)
+```
+
+### Host-Based Routing
+
+```
+api.example.com      → API v1
+api-v2.example.com   → API v2
+internal.example.com → Internal services only
+```
+
+### Header-Based Routing
+
+```
+X-API-Version: 2 → Route to v2 backend
+X-User-Type: admin → Route to admin service
+X-Region: us-east → Route to US-East datacenter
+```
+
+### Dynamic Routing
+
+```
+GET /products/123 → Check stock service
+GET /users/456/profile → Check user service
+GET /orders/789/status → Check order service
+```
+
+## Rate Limiting
+
+### Token Bucket Algorithm
+
+```
+Bucket capacity: 100 tokens
+Refill rate: 10 tokens/second
+
+Request arrives:
+  If bucket has tokens:
+    ✓ Remove token, allow request
+  Else:
+    ✗ Reject, return 429
+
+Periodically:
+  Add tokens up to capacity
+```
+
+Example:
+
+```
+Initial: 100 tokens
+Request 1: 99 tokens (allowed)
+Request 2: 98 tokens (allowed)
+Wait 1 sec: 108 tokens (capped at 100)
+Request 3: 99 tokens (allowed)
+```
+
+### Sliding Window
+
+```
+Window: 1 minute
+Limit: 1000 requests
+
+Track all requests in current minute
+When new request arrives:
+  Remove expired requests (> 1 min old)
+  If count < 1000:
+    ✓ Allow request
+  Else:
+    ✗ Reject (429)
+```
+
+### Rate Limiting Strategies
+
+**Per-User**: Limit per authenticated user
+```
+User A: 1000 req/day
+User B: 10000 req/day (premium)
+```
+
+**Per-IP**: Limit per source IP
+```
+127.0.0.1: 100 req/min
+192.0.2.1: 1000 req/min
+```
+
+**Per-API-Key**: Limit per API key
+```
+api_key_123: 5000 req/day
+api_key_456: 50000 req/day
+```
+
+**Per-Endpoint**: Different limits per endpoint
+```
+GET /users: 1000 req/min
+POST /users: 100 req/min (more expensive)
+DELETE /users: 10 req/min (most dangerous)
+```
+
+**Adaptive**: Adjust based on system load
+```
+Load < 50%: Unlimited
+Load 50-75%: 1000 req/min
+Load 75-90%: 500 req/min
+Load > 90%: 100 req/min
+```
+
+### Rate Limit Response
+
+```
+HTTP 429 Too Many Requests
+
+Headers:
+Retry-After: 60
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 0
+X-RateLimit-Reset: 1705317600
+
+Body:
+{
+  "error": "Too many requests",
+  "retryAfter": 60
+}
+```
+
+## Authentication and Authorization
+
+### API Key Verification
+
+```
+Client includes API key:
+GET /users
+X-API-Key: sk_live_abc123def456
+
+Gateway verifies:
+1. Key format valid
+2. Key exists in database
+3. Key not revoked
+4. Key not expired
+5. Forward request with user ID
+```
+
+### JWT Validation
+
+```
+Client includes JWT:
+GET /users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+
+Gateway validates:
+1. Signature valid
+2. Not expired
+3. Required claims present
+4. Extract user info from token
+5. Check permissions for endpoint
+```
+
+### OAuth 2.0 Integration
+
+```
+Client → POST /oauth/token
+↓
+Gateway exchanges code for token
+↓
+Gateway stores token
+↓
+Client uses token in Authorization header
+↓
+Gateway validates token
+```
+
+### Permission Checking
+
+```
+GET /users/123 (requires read:users)
+  ✓ If user has scope
+
+PUT /users/123 (requires write:users)
+  ✗ If user only has read:users
+
+DELETE /users/123 (requires admin)
+  ✓ If user has admin role
+```
+
+## Caching Strategies
+
+### Response Caching
+
+```
+Cache GET /users?page=1 → 300 seconds
+Cache GET /products/123 → 3600 seconds
+Don't cache POST /users → Creates data
+Don't cache DELETE → Modifies data
+```
+
+Cache header interpretation:
+
+```
+Cache-Control: public, max-age=3600
+→ Public cache (CDN), refresh after 3600s
+
+Cache-Control: private, max-age=1800
+→ Private cache (browser), refresh after 1800s
+
+Cache-Control: no-cache, no-store
+→ Don't cache
+```
+
+### Cache Invalidation
+
+**Time-based**: Cache expires after TTL
+```
+GET /user/123
+Cache-Control: max-age=300  // 5 min TTL
+```
+
+**Event-based**: Invalidate on data change
+```
+PUT /user/123 → Invalidate /user/123
+POST /posts → Invalidate /posts cache
+```
+
+**Purge API**: Manually clear cache
+```
+PURGE /api/users/123
+PURGE /api/users/*
+PURGE /api/*
+```
+
+### Cache Strategies
+
+**Cache-Aside** (Lazy Loading):
+```
+Request → Check cache
+  Hit: Return cached
+  Miss: Fetch from backend, cache, return
+```
+
+**Write-Through**:
+```
+Write request → Write to cache and backend
+Read request → Check cache, fall back to backend
+```
+
+**Write-Behind** (Write-Back):
+```
+Write request → Write to cache, queue write to backend
+Read request → Check cache
+Backend processes writes asynchronously
+```
+
+## Load Balancing
+
+### Load Balancing Algorithms
+
+**Round Robin**: Distribute evenly
+```
+Request 1 → Server A
+Request 2 → Server B
+Request 3 → Server C
+Request 4 → Server A
+```
+
+**Least Connections**: Route to least busy
+```
+Server A: 10 active connections
+Server B: 5 active connections  ← Route here
+Server C: 8 active connections
+```
+
+**Weighted Round Robin**: Different capacities
+```
+Server A (powerful): weight=3 → 3 requests
+Server B (normal): weight=1 → 1 request
+```
+
+**IP Hash**: Route by client IP
+```
+Hash(client_ip) % num_servers = server_index
+Same client always hits same server
+Useful for session affinity
+```
+
+**Least Response Time**:
+```
+Combine response time and connection count
+Route to fastest server with fewest connections
+```
+
+### Health Checking
+
+```
+Periodically ping backend servers:
+GET /health HTTP/1.1
+
+Response:
+200 OK → Server healthy, can receive traffic
+500 Internal Server Error → Remove from pool
+No response → Timeout, mark unhealthy
+```
+
+Health check configuration:
+```
+Interval: 10 seconds
+Timeout: 5 seconds
+Unhealthy threshold: 3 failures
+Healthy threshold: 2 successes
+Max retries: 0
+```
+
+## Request/Response Transformation
+
+### Request Transformation
+
+```
+Original request:
+GET /api/users/123
+
+Gateway adds:
+X-Forwarded-For: 192.0.2.1
+X-Forwarded-Proto: https
+X-Request-ID: abc123def456
+X-User-ID: user_456
+
+Transformed request to backend:
+GET /users/123
+X-Forwarded-For: 192.0.2.1
+...
+```
+
+### Header Manipulation
+
+**Add headers**:
+```
+Add: X-API-Version: 2
+Add: X-Service-Name: user-service
+```
+
+**Remove headers**:
+```
+Remove: X-Internal-Token
+Remove: X-Debug
+```
+
+**Modify headers**:
+```
+Modify: User-Agent: "MyGateway/1.0"
+Modify: Accept: "application/json"
+```
+
+### Body Transformation
+
+```
+Client sends:
+{
+  "firstName": "John",
+  "lastName": "Doe"
+}
+
+Gateway transforms for backend:
+{
+  "first_name": "John",
+  "last_name": "Doe"
+}
+
+Backend responds:
+{
+  "id": 123,
+  "first_name": "John",
+  "last_name": "Doe"
+}
+
+Gateway transforms for client:
+{
+  "id": 123,
+  "firstName": "John",
+  "lastName": "Doe"
+}
+```
+
+## Logging and Monitoring
+
+### Request Logging
+
+```
+[2024-01-15 10:30:00] GET /api/users/123
+  Client: 192.0.2.1
+  User: user_456
+  Path: /api/users/123
+  Method: GET
+  Status: 200
+  Duration: 245ms
+  Size: 2341 bytes
+  Cache: HIT
+```
+
+### Metrics
+
+- **Throughput**: Requests per second
+- **Latency**: Response time distribution (p50, p95, p99)
+- **Error Rate**: Percentage of failed requests
+- **Status Code Distribution**: 2xx, 4xx, 5xx breakdown
+- **Backend Health**: Success rate per backend
+- **Cache Hit Ratio**: Cache effectiveness
+
+### Distributed Tracing
+
+```
+Request ID: abc123def456
+  ├─ API Gateway (10ms)
+  │   ├─ Auth check (2ms)
+  │   ├─ Rate limit check (1ms)
+  │   └─ Route decision (1ms)
+  └─ User Service (200ms)
+      ├─ DB query (150ms)
+      ├─ Response serialize (20ms)
+```
+
+## Security
+
+### DDoS Protection
+
+**Rate Limiting**: Limit requests per source
+```
+Per-IP: 1000 req/min
+Per-User: 10000 req/day
+```
+
+**IP Reputation**: Block known bad IPs
+```
+Check against threat databases
+Whitelist/blacklist management
+```
+
+**CAPTCHAs**: Challenge suspicious traffic
+```
+Human verification challenges
+For suspicious patterns
+```
+
+### Web Application Firewall (WAF)
+
+```
+Check for:
+- SQL injection patterns
+- Cross-site scripting (XSS)
+- Command injection
+- Path traversal
+- Suspicious headers
+```
+
+### TLS/HTTPS
+
+```
+Enforce HTTPS only
+Redirect HTTP → HTTPS
+Modern TLS versions (1.2, 1.3)
+Strong cipher suites
+Certificate management
+```
+
+### CORS (Cross-Origin Resource Sharing)
+
+```
+GET /api/users
+Origin: https://example.com
+
+Gateway checks:
+Is https://example.com allowed?
+  ✓ If whitelisted
+  ✗ If not
+
+Response:
+Access-Control-Allow-Origin: https://example.com
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Headers: Authorization
+```
+
+## API Gateway Implementations
+
+### Cloud-Native Gateways
+
+**AWS API Gateway**
+- Serverless, pay-per-request
+- AWS service integration
+- Request/response transformation
+- Caching and rate limiting
+
+**Google Cloud Apigee**
+- Enterprise API management
+- Developer portal
+- Analytics and insights
+- Monetization
+
+**Azure API Management**
+- Multi-cloud capability
+- Versioning and revisions
+- Developer communities
+- Rich analytics
+
+### Open Source Gateways
+
+**Kong**
+```
+Plugins for: auth, rate limiting, logging, etc.
+Lua scripting for customization
+Multiple backend support
+Kubernetes native
+```
+
+**Envoy**
+```
+Layer 7 routing
+Advanced traffic management
+Observability focus
+Service mesh integration
+```
+
+**Tyk**
+```
+API versioning and routing
+OAuth and API key auth
+Rate limiting
+Developer portal
+```
+
+**Traefik**
+```
+Automatic service discovery
+Dynamic configuration
+Let's Encrypt integration
+Kubernetes native
+```
+
+**AWS CloudFlare Workers**
+```
+Edge computing
+Serverless functions
+Request transformation
+Built-in security
+```
+
+## Advanced Patterns
+
+### API Versioning Strategy
+
+```
+/api/v1/* → Legacy, minimal updates
+/api/v2/* → Current, active development
+/api/v3/* → Beta, new features
+
+Gateway routes:
+Header: X-API-Version → Different version
+URL path: /v1/ vs /v2/ → Different backend
+
+Deprecation:
+Announce sunsetting date
+Provide migration guide
+Support for 2+ years minimum
+```
+
+### Blue-Green Deployment
+
+```
+Blue (current): Production version
+Green (new): New version ready
+
+Gateway splits traffic:
+90% → Blue (production)
+10% → Green (canary)
+
+Monitor Green:
+If stable: Switch 100% to Green
+If issues: Revert to Blue
+```
+
+### Circuit Breaker Pattern
+
+```
+Backend Service failing (5xx errors)
+↓
+Circuit opens: Stop sending requests
+↓
+Wait (e.g., 30 seconds)
+↓
+Try 1 request (half-open state)
+↓
+If successful: Circuit closes
+If fails: Circuit opens again
+```
+
+## Best Practices
+
+1. **Centralized Security**: Handle auth/authz in gateway
+2. **Transparent**: Clients shouldn't know about gateway
+3. **Fast**: Minimize latency added by gateway
+4. **Scalable**: Handle traffic spikes
+5. **Reliable**: High availability, failover
+6. **Observable**: Log everything important
+7. **Flexible**: Support multiple backends
+8. **Version Management**: Plan for evolution
+9. **Rate Limiting**: Prevent abuse
+10. **Caching**: Reduce backend load
+11. **Monitoring**: Metrics and alerts
+12. **Documentation**: Clear routing rules
+
+## Related Resources
+
+- [functions.org.ai](https://functions.org.ai) - Lambda/serverless backends
+- [events.org.ai](https://events.org.ai) - Event routing and processing
+- [apis.org.ai/RESTAPIs](https://apis.org.ai/RESTAPIs) - REST endpoint design
+- [apis.org.ai/APIDesign](https://apis.org.ai/APIDesign) - Design principles
+- [tech.org.ai](https://tech.org.ai) - Technology stack and tools

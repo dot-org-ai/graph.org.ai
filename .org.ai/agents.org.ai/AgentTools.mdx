@@ -1,0 +1,670 @@
+---
+$context: https://agents.org.ai
+$id: https://agents.org.ai/AgentTools
+$type: https://agents.org.ai/Agent
+name: "Agent Tools"
+description: "Tool calling mechanisms, Model Context Protocol (MCP) integration, function calling, and tool ecosystems for AI agents."
+tags: ["tools", "tool-calling", "MCP", "function-calling", "integrations"]
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for Agent Tools
+  return []
+}
+
+# Agent Tools
+
+Tools are the mechanisms through which AI agents interact with the external world, access information, execute code, and take actions beyond pure text generation. Effective tool integration is essential for agents to be useful in real-world applications.
+
+## Overview
+
+Agent tools encompass:
+
+- **Tool Calling**: Mechanisms for agents to invoke external capabilities
+- **Function Calling**: Standardized interfaces for tool invocation
+- **Tool Integration**: Connecting tools to agents
+- **Tool Management**: Organizing and managing tool ecosystems
+- **MCP Integration**: Model Context Protocol for tool standardization
+
+## Tool Calling Fundamentals
+
+### What Are Tools?
+
+**Definition**:
+- External capabilities agents can invoke
+- Extend agent capabilities beyond language
+- Return information or perform actions
+- Enable real-world impact
+
+**Tool vs. Built-in Capability**:
+- Tools: External, invoked, async
+- Built-in: Internal, implicit, synchronous
+- Tools have latency and cost
+- Tools are more powerful but slower
+
+### Tool Design Principles
+
+**Clear Specifications**:
+- Unambiguous function names
+- Well-documented parameters
+- Clear descriptions of behavior
+- Expected return values
+
+**Single Responsibility**:
+- Each tool does one thing
+- Composable into larger tasks
+- Easy to understand and debug
+- Easier to test and maintain
+
+**Appropriate Granularity**:
+- Not too atomic (too many calls)
+- Not too coarse (limited flexibility)
+- Matching common use cases
+- Enabling composition
+
+### Tool Documentation
+
+**Function Signature**:
+```
+tool_name(parameter1: type, parameter2: type) -> return_type
+```
+
+**Description**:
+- What the tool does
+- When to use it
+- Examples of usage
+- Common patterns
+
+**Parameters**:
+- Name and type
+- Required vs. optional
+- Default values
+- Constraints and validation
+
+**Returns**:
+- Return type and structure
+- Possible error conditions
+- Performance characteristics
+- Side effects
+
+## Function Calling Mechanisms
+
+### OpenAI Function Calling
+
+**Format**:
+```json
+{
+  "type": "function",
+  "function": {
+    "name": "get_weather",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {"type": "string"},
+        "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]}
+      },
+      "required": ["location"]
+    }
+  }
+}
+```
+
+**How It Works**:
+1. Model receives function definition
+2. Model decides to call function
+3. Returns structured function call
+4. System executes function
+5. Result returned to model
+6. Model continues reasoning
+
+**Advantages**:
+- Standardized format
+- Tool-agnostic
+- Widely supported
+- Good performance
+
+### Anthropic Tool Use
+
+**Format**:
+```xml
+<tool_use id="..." name="get_weather" input="{\"location\": \"San Francisco\"}"/>
+```
+
+**Integration**:
+- Native to Claude models
+- XML-based format
+- Natural language with tool calls
+- Streaming support
+
+**Tool Definition**:
+```json
+{
+  "name": "get_weather",
+  "description": "Get weather information for a location",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "location": {"type": "string"}
+    }
+  }
+}
+```
+
+### Custom Tool Calling
+
+**Web-Based APIs**:
+- Agents making HTTP requests
+- RESTful or GraphQL endpoints
+- Authentication and headers
+- Response parsing
+
+**Direct Code Execution**:
+- Agents writing and executing code
+- Python, JavaScript execution
+- Sandboxing requirements
+- Output capture and return
+
+**Webhook Integration**:
+- External systems triggering agents
+- Agents triggering external systems
+- Event-driven architecture
+- Async notification
+
+## Tool Integration Patterns
+
+### Tool Discovery
+
+**Static Declaration**:
+- Tools defined in system prompt
+- Fixed set of available tools
+- Simple but limited
+- Good for stable tool sets
+
+**Dynamic Declaration**:
+- Tools discovered at runtime
+- Tool registry or catalog
+- Adding/removing tools without redeployment
+- Better flexibility
+
+**Capability Announcement**:
+- Tools announcing their availability
+- Self-describing tools
+- Tool metadata in standard format
+- Plug-and-play integration
+
+### Tool Selection
+
+**Agent Decision**:
+- Agent decides which tool to use
+- Based on task requirements
+- Multiple tools for similar tasks
+- Agent compares options
+
+**Automatic Routing**:
+- System routes to appropriate tool
+- Based on input classification
+- Agent decides among suggestions
+- Two-stage selection
+
+**Constraint-Based Selection**:
+- Tools have constraints
+- Only available tools selected
+- Permission-based access
+- Cost-aware selection
+
+### Tool Composition
+
+**Sequential Composition**:
+- Output of one tool as input to next
+- Building complex workflows
+- Dependency management
+- Ordered execution
+
+**Parallel Composition**:
+- Multiple tools used simultaneously
+- Aggregating results
+- Time savings
+- Handling independent tasks
+
+**Conditional Composition**:
+- Selecting tools based on intermediate results
+- Branching logic
+- Adaptive workflows
+- Dynamic decision-making
+
+## Model Context Protocol (MCP)
+
+### What is MCP?
+
+**Purpose**:
+- Standardized protocol for tool integration
+- Tool-agnostic and model-agnostic
+- Interoperability across systems
+- Simplified tool development
+
+**Design Philosophy**:
+- Simple, open standard
+- Client-server architecture
+- Request-response model
+- JSON-RPC based
+
+### MCP Architecture
+
+**Components**:
+- **Client**: The agent or AI system using tools
+- **Server**: Provides tool implementations
+- **Protocol**: JSON-RPC over stdio/HTTP/SSE
+- **Transport**: How client and server communicate
+
+**Communication Flow**:
+1. Client connects to server
+2. Client requests tool list
+3. Server returns available tools
+4. Client invokes tools as needed
+5. Server executes and returns results
+
+### MCP Specification
+
+**Tool Definition**:
+```json
+{
+  "name": "calculator",
+  "description": "Perform mathematical calculations",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "expression": {"type": "string"}
+    }
+  }
+}
+```
+
+**Tool Request**:
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "calculator",
+    "arguments": {"expression": "2 + 2"}
+  }
+}
+```
+
+**Tool Response**:
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "4"
+}
+```
+
+### MCP Implementation
+
+**Building MCP Servers**:
+- Implementing tool handlers
+- Handling requests and responses
+- Error handling and logging
+- Resource management
+
+**Client Integration**:
+- Connecting to MCP servers
+- Discovering tools
+- Error handling for failures
+- Caching and optimization
+
+**Transport Options**:
+- **Stdio**: Simple local execution
+- **HTTP**: Web-based endpoints
+- **WebSockets**: Real-time connection
+- **SSE**: Server-sent events
+
+### MCP Advantages
+
+**Standardization**:
+- Common protocol across tools
+- Easier tool development
+- Tool reusability
+- Ecosystem growth
+
+**Separation of Concerns**:
+- Tools independent of agents
+- Agent-agnostic tool development
+- Easy swapping of tools
+- Modular architecture
+
+**Scalability**:
+- Distributed tool servers
+- Load balancing
+- Tool resource isolation
+- Enterprise integration
+
+## Tool Categories and Ecosystems
+
+### Information Retrieval Tools
+
+**Web Search**:
+- Searching the internet
+- Current information access
+- Real-time data
+- Integration with search engines
+
+**Database Query**:
+- Accessing structured data
+- SQL execution
+- NoSQL queries
+- Complex data retrieval
+
+**API Calls**:
+- Calling web services
+- RESTful endpoints
+- Authentication
+- Response parsing
+
+**Knowledge Bases**:
+- Internal documentation access
+- Vector similarity search
+- Semantic search
+- Fact retrieval
+
+### Code and Execution Tools
+
+**Python Execution**:
+- Running Python code
+- Data analysis and manipulation
+- Mathematical computation
+- Installing packages
+
+**JavaScript Execution**:
+- Server-side JavaScript
+- Node.js environment
+- Web automation
+- Browser simulation
+
+**SQL Execution**:
+- Database queries
+- Data definition
+- Data manipulation
+- Complex analysis
+
+**Shell Commands**:
+- System commands
+- File operations
+- Process control
+- Dangerous and requires caution
+
+### Data Processing Tools
+
+**CSV/JSON Processing**:
+- Parsing structured data
+- Transformation and filtering
+- Aggregation
+- Output formatting
+
+**Image Processing**:
+- Image analysis
+- OCR and text extraction
+- Image transformation
+- Computer vision
+
+**Document Processing**:
+- PDF parsing
+- Text extraction
+- Document conversion
+- Content analysis
+
+### Integration Tools
+
+**Email**:
+- Sending emails
+- Reading mailboxes
+- Calendar integration
+- Notification delivery
+
+**Calendar and Scheduling**:
+- Creating events
+- Checking availability
+- Sending invitations
+- Scheduling coordination
+
+**Project Management**:
+- Creating tasks
+- Updating status
+- Assigning work
+- Tracking progress
+
+**Communication**:
+- Slack messages
+- Teams integration
+- Discord notifications
+- Chat system integration
+
+### Specialized Tools
+
+**Mathematical Tools**:
+- Symbolic math (Wolfram Alpha, SymPy)
+- Numerical computation
+- Graphing and visualization
+- Statistical analysis
+
+**Code Analysis**:
+- Static analysis
+- Linting and style checking
+- Security scanning
+- Performance profiling
+
+**Business Logic**:
+- Domain-specific calculators
+- Compliance checking
+- Business rule engines
+- Validation logic
+
+## Tool Error Handling
+
+### Error Types
+
+**Execution Errors**:
+- Tool fails to execute
+- Returns error message
+- Network timeouts
+- Invalid parameters
+
+**Business Logic Errors**:
+- Tool executes but returns error
+- Invalid data state
+- Permission denied
+- Resource not found
+
+**Integration Errors**:
+- Tool not available
+- Service temporarily down
+- Authentication failure
+- Rate limit exceeded
+
+### Error Recovery
+
+**Retry Logic**:
+- Retrying transient errors
+- Exponential backoff
+- Maximum retry limits
+- Distinguishing retryable vs. permanent
+
+**Fallback Tools**:
+- Alternative tools for same function
+- Degraded service options
+- Manual intervention escalation
+- Default values
+
+**User Communication**:
+- Clear error messages
+- Explanation of what went wrong
+- Suggestions for resolution
+- Escalation path
+
+## Tool Security and Permissions
+
+### Access Control
+
+**Authentication**:
+- Credentials for tool access
+- API keys and tokens
+- Service accounts
+- OAuth and SSO
+
+**Authorization**:
+- Who can use which tools
+- Role-based access
+- Attribute-based access
+- Fine-grained permissions
+
+**Credential Management**:
+- Secure storage of credentials
+- Rotation and expiration
+- Audit of credential usage
+- Preventing leakage
+
+### Execution Sandboxing
+
+**Code Execution Safety**:
+- Running code in isolated environment
+- Resource limits (CPU, memory)
+- Time limits for execution
+- Preventing system compromise
+
+**API Access Limits**:
+- Rate limiting per agent
+- Cost controls
+- Usage monitoring
+- Preventing resource exhaustion
+
+### Audit and Logging
+
+**Tool Usage Logging**:
+- Recording all tool invocations
+- Input and output capture
+- Timing and performance
+- Error tracking
+
+**Access Audit**:
+- Who accessed what
+- When and why
+- Compliance reporting
+- Forensic investigation
+
+## Tool Performance and Optimization
+
+### Caching
+
+**Result Caching**:
+- Caching tool results
+- Time-based expiration
+- Query-based matching
+- Cost reduction
+
+**Semantic Caching**:
+- Caching based on meaning
+- Similar queries returning cached results
+- Vector similarity matching
+- Improving performance
+
+### Batching
+
+**Request Batching**:
+- Combining multiple requests
+- Reducing latency
+- Bulk operations
+- Network efficiency
+
+**Response Aggregation**:
+- Aggregating results
+- Formatting for agent consumption
+- Reducing token usage
+- Improving efficiency
+
+### Async Execution
+
+**Background Execution**:
+- Tools running asynchronously
+- Agent continuing while waiting
+- Polling for completion
+- Callback mechanisms
+
+**Event-Based Triggering**:
+- Tools triggered by events
+- Push notifications instead of pull
+- More efficient waiting
+- Reactive architecture
+
+## Tool Ecosystem Management
+
+### Tool Registry
+
+**Cataloging Tools**:
+- Maintaining tool inventory
+- Metadata and documentation
+- Versioning
+- Deprecation tracking
+
+**Discovery**:
+- Finding appropriate tools
+- Categorization and tagging
+- Search and filtering
+- Recommendations
+
+**Lifecycle Management**:
+- Rolling out new tools
+- Updating existing tools
+- Deprecating old tools
+- Version management
+
+### Tool Development
+
+**SDKs and Frameworks**:
+- Helper libraries for tool development
+- Standard patterns
+- Error handling
+- Tested components
+
+**Testing Tools**:
+- Unit testing tools
+- Integration testing
+- Load testing
+- Chaos engineering
+
+## Best Practices
+
+### Tool Design
+
+**Clear Purpose**: Each tool has single, clear purpose
+**Good Documentation**: Clear descriptions and examples
+**Appropriate Scope**: Neither too granular nor too coarse
+**Error Handling**: Graceful error reporting
+
+### Integration
+
+**Proper Authentication**: Secure credential handling
+**Rate Limiting**: Respecting service limits
+**Monitoring**: Tracking tool usage and errors
+**Fallbacks**: Having alternatives available
+
+### Testing
+
+**Unit Tests**: Individual tool testing
+**Integration Tests**: End-to-end testing
+**Error Path Testing**: Testing failure scenarios
+**Load Testing**: Testing under stress
+
+## Related Resources
+
+- [AIAgents.org.ai](https://agents.org.ai/AIAgents) - Autonomous AI agents
+- [AgentCapabilities.org.ai](https://agents.org.ai/AgentCapabilities) - Agent capabilities
+- [tools.org.ai](https://tools.org.ai) - Available tools and integrations
+- [functions.org.ai](https://functions.org.ai) - Function definitions
+- [mcp.org.ai](https://mcp.org.ai) - Model Context Protocol specification
+- [workflows.org.ai](https://workflows.org.ai) - Workflow orchestration
+
+## Sources
+
+- <DatabaseLink namespace="agents.org.ai" type="AgentTools" />

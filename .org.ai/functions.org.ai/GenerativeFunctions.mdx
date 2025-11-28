@@ -1,0 +1,688 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/GenerativeFunctions
+$type: https://functions.org.ai/GenerativeFunction
+name: "Generative Functions"
+description: "AI-generated outputs, prompt engineering, structured generation, and language model integration"
+---
+
+export const items = async () => {
+  // Fetch generative function implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://functions.org.ai/GenerativeFunction',
+    category: 'generative'
+  })
+}
+
+# Generative Functions
+
+Generative functions leverage large language models and AI systems to produce novel outputs, generate code, create structured data, and augment human capabilities through intelligent automation.
+
+## Overview
+
+Generative functions represent a new class of computational operations that harness the power of trained models to generate contextually relevant, semantically meaningful outputs. Unlike traditional deterministic functions, generative functions operate in probabilistic spaces, balancing creativity with guidance through prompt engineering, structured outputs, and fine-tuning.
+
+## Large Language Models (LLMs)
+
+Modern generative functions are powered by large language models trained on vast corpora of text data.
+
+### Model Capabilities
+
+```typescript
+// LLM capability interface
+interface LLMCapabilities {
+  // Text generation
+  generateText(prompt: string, options?: GenerationOptions): Promise<string>
+
+  // Structured generation
+  generateJSON(prompt: string, schema: JSONSchema): Promise<object>
+
+  // Code generation
+  generateCode(description: string, language: string): Promise<string>
+
+  // Analysis and classification
+  classify(text: string, categories: string[]): Promise<string>
+
+  // Entity extraction
+  extractEntities(text: string, entityTypes: string[]): Promise<Entity[]>
+
+  // Question answering
+  answerQuestion(context: string, question: string): Promise<string>
+
+  // Summarization
+  summarize(text: string, maxLength?: number): Promise<string>
+
+  // Translation
+  translate(text: string, targetLanguage: string): Promise<string>
+
+  // Semantic similarity
+  compareSimilarity(text1: string, text2: string): Promise<number>
+
+  // Embeddings
+  embed(text: string | string[]): Promise<number[] | number[][]>
+}
+
+interface GenerationOptions {
+  temperature?: number          // Randomness (0-2, default 0.7)
+  maxTokens?: number            // Maximum response length
+  topP?: number                 // Nucleus sampling (0-1)
+  topK?: number                 // Top-k sampling
+  frequencyPenalty?: number     // Reduce repetition
+  presencePenalty?: number      // Encourage new topics
+  stopSequences?: string[]      // When to stop generation
+}
+
+interface JSONSchema {
+  type: 'object'
+  properties: Record<string, PropertySchema>
+  required?: string[]
+}
+
+interface PropertySchema {
+  type: string
+  description?: string
+  enum?: string[]
+}
+
+interface Entity {
+  text: string
+  type: string
+  confidence: number
+}
+```
+
+### Common LLM Services
+
+- **OpenAI GPT-4/3.5**: State-of-the-art general-purpose models
+- **Anthropic Claude**: Advanced reasoning and analysis
+- **Google Gemini**: Multi-modal understanding
+- **Open Source Models**: Llama, Mistral, Falcon, etc.
+- **Specialized Models**: Domain-specific fine-tuned versions
+
+## Prompt Engineering
+
+The art and science of crafting inputs to guide LLM behavior.
+
+### Prompt Structure
+
+```typescript
+interface Prompt {
+  system?: string           // System context and instructions
+  history?: Message[]       // Conversation history
+  userMessage: string       // Current user input
+  examples?: Example[]      // Few-shot examples
+  constraints?: string[]    // Output constraints
+}
+
+interface Message {
+  role: 'system' | 'assistant' | 'user'
+  content: string
+}
+
+interface Example {
+  input: string
+  output: string
+  explanation?: string
+}
+
+// Example: Classification prompt
+const classificationPrompt: Prompt = {
+  system: `You are a sentiment analysis expert. Classify the sentiment of the following text as one of: positive, negative, neutral.`,
+  examples: [
+    {
+      input: "This product is amazing! I love it!",
+      output: "positive",
+      explanation: "Enthusiastic language and explicit approval"
+    },
+    {
+      input: "The service was slow and disappointing.",
+      output: "negative",
+      explanation: "Negative adjectives expressing dissatisfaction"
+    },
+    {
+      input: "The weather is cloudy today.",
+      output: "neutral",
+      explanation: "Factual statement without emotional content"
+    }
+  ],
+  userMessage: "This film was okay, nothing special.",
+  constraints: [
+    "Output only the sentiment label",
+    "No explanation needed"
+  ]
+}
+
+// Example: Code generation prompt
+const codeGenerationPrompt: Prompt = {
+  system: `You are an expert TypeScript developer. Write clean, well-typed, production-ready code.`,
+  examples: [
+    {
+      input: "Create a function to validate email addresses",
+      output: `function validateEmail(email: string): boolean {
+  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/
+  return emailRegex.test(email)
+}`,
+      explanation: "Simple email validation using regex"
+    }
+  ],
+  userMessage: "Create a function to check if a number is prime",
+  constraints: [
+    "Use TypeScript syntax",
+    "Include type annotations",
+    "Add JSDoc comments",
+    "Handle edge cases"
+  ]
+}
+```
+
+### Prompt Techniques
+
+```typescript
+// Few-shot prompting: provide examples
+function fewShotPrompt(
+  task: string,
+  examples: { input: string; output: string }[],
+  query: string
+): string {
+  const exampleText = examples
+    .map((ex, i) => `Example ${i + 1}:\nInput: ${ex.input}\nOutput: ${ex.output}`)
+    .join('\n\n')
+
+  return `Task: ${task}\n\n${exampleText}\n\nNow solve:\nInput: ${query}`
+}
+
+// Chain of thought: make reasoning explicit
+function chainOfThoughtPrompt(question: string): string {
+  return `Q: ${question}\n\nLet me think through this step by step:\n1. First, I need to understand...`
+}
+
+// Role-based prompting: assign a persona
+function roleBasedPrompt(role: string, task: string, query: string): string {
+  return `You are a ${role}.\n\nTask: ${task}\n\nQuestion: ${query}`
+}
+
+// Instruction-based prompting: detailed instructions
+function instructionBasedPrompt(
+  goal: string,
+  instructions: string[],
+  input: string
+): string {
+  const instructionText = instructions
+    .map((inst, i) => `${i + 1}. ${inst}`)
+    .join('\n')
+
+  return `Goal: ${goal}\n\nInstructions:\n${instructionText}\n\nInput:\n${input}`
+}
+
+// Retrieval-augmented prompting: include context
+function ragPrompt(
+  question: string,
+  relevantDocuments: string[]
+): string {
+  const context = relevantDocuments
+    .map((doc, i) => `[Document ${i + 1}]\n${doc}`)
+    .join('\n\n')
+
+  return `Context:\n${context}\n\nQuestion: ${question}`
+}
+
+// Constrained generation: specify format
+function constrainedPrompt(
+  task: string,
+  format: string,
+  query: string
+): string {
+  return `${task}\n\nFormat your response as:\n${format}\n\n${query}`
+}
+```
+
+## Structured Generation
+
+Generating outputs with guaranteed structure and format.
+
+```typescript
+// JSON Schema-constrained generation
+interface StructuredGenerationRequest {
+  prompt: string
+  schema: JSONSchema
+  maxRetries?: number
+}
+
+interface StructuredGenerationResponse<T> {
+  success: boolean
+  data?: T
+  error?: string
+}
+
+async function generateStructured<T>(
+  request: StructuredGenerationRequest
+): Promise<StructuredGenerationResponse<T>> {
+  const schema = JSON.stringify(request.schema)
+  const enhancedPrompt = `${request.prompt}\n\nRespond with valid JSON matching this schema:\n${schema}`
+
+  // Call LLM with enhanced prompt
+  // Parse and validate response against schema
+  return {
+    success: true,
+    data: {} as T
+  }
+}
+
+// Example: Generating structured entity extraction
+interface EntityExtractionSchema {
+  type: 'object'
+  properties: {
+    entities: {
+      type: 'array'
+      items: {
+        type: 'object'
+        properties: {
+          name: { type: 'string' }
+          type: { type: 'string', enum: ['person', 'organization', 'location'] }
+          confidence: { type: 'number' }
+        }
+        required: ['name', 'type', 'confidence']
+      }
+    }
+  }
+  required: ['entities']
+}
+
+// Example: Generating structured classification
+interface ClassificationSchema {
+  type: 'object'
+  properties: {
+    classification: {
+      type: 'string',
+      enum: ['positive', 'negative', 'neutral']
+    },
+    confidence: {
+      type: 'number'
+    },
+    reasoning: {
+      type: 'string'
+    }
+  },
+  required: ['classification', 'confidence', 'reasoning']
+}
+```
+
+## Fine-Tuning and Customization
+
+Adapting generative functions to specific domains and styles.
+
+```typescript
+// Fine-tuning configuration
+interface FineTuneConfig {
+  baseModel: string
+  trainingData: TrainingExample[]
+  validationSplit?: number
+  epochs?: number
+  learningRate?: number
+  batchSize?: number
+  maxTokens?: number
+}
+
+interface TrainingExample {
+  input: string
+  output: string
+  metadata?: Record<string, any>
+}
+
+// LoRA (Low-Rank Adaptation) - efficient fine-tuning
+interface LoRAConfig {
+  baseModel: string
+  rank: number
+  alpha: number
+  targetModules: string[]
+  trainingData: TrainingExample[]
+}
+
+// Example: Fine-tuning for domain-specific generation
+const domainFineTuning: FineTuneConfig = {
+  baseModel: 'gpt-3.5-turbo',
+  trainingData: [
+    {
+      input: 'Explain microservices architecture',
+      output: 'Microservices is an architectural approach where applications are built as a suite of small, independently deployable services...',
+      metadata: { domain: 'software-architecture' }
+    },
+    {
+      input: 'What is domain-driven design?',
+      output: 'Domain-driven design (DDD) is an approach to software development that emphasizes understanding the core business domain...',
+      metadata: { domain: 'software-design' }
+    }
+  ],
+  epochs: 3,
+  learningRate: 0.0001
+}
+```
+
+## Prompt Chaining and Workflows
+
+Composing multiple generative calls into intelligent workflows.
+
+```typescript
+// Prompt chain: sequential generative calls
+interface PromptChainStep {
+  name: string
+  prompt: string
+  inputVariables: string[]
+  outputVariable: string
+  options?: GenerationOptions
+}
+
+interface PromptChainState {
+  [key: string]: string | object
+}
+
+async function executePromptChain(
+  steps: PromptChainStep[],
+  initialState: PromptChainState
+): Promise<PromptChainState> {
+  let state = initialState
+
+  for (const step of steps) {
+    const filledPrompt = fillTemplate(step.prompt, state)
+    const result = await generateText(filledPrompt, step.options)
+    state[step.outputVariable] = result
+  }
+
+  return state
+}
+
+function fillTemplate(template: string, variables: Record<string, any>): string {
+  return template.replace(/\{(\w+)\}/g, (match, key) => {
+    return String(variables[key] ?? match)
+  })
+}
+
+// Example: Multi-step analysis chain
+const analysisChain: PromptChainStep[] = [
+  {
+    name: 'Extract Main Points',
+    prompt: 'Extract the 3 main points from: {document}',
+    inputVariables: ['document'],
+    outputVariable: 'mainPoints'
+  },
+  {
+    name: 'Analyze Sentiment',
+    prompt: 'Analyze the sentiment of these points: {mainPoints}',
+    inputVariables: ['mainPoints'],
+    outputVariable: 'sentiment'
+  },
+  {
+    name: 'Generate Summary',
+    prompt: 'Summarize this analysis:\nPoints: {mainPoints}\nSentiment: {sentiment}',
+    inputVariables: ['mainPoints', 'sentiment'],
+    outputVariable: 'summary'
+  }
+]
+
+// Tree of thought: exploring multiple reasoning paths
+interface ThoughtNode {
+  thought: string
+  children: ThoughtNode[]
+  score?: number
+}
+
+async function generateTreeOfThought(
+  question: string,
+  depth: number = 3
+): Promise<ThoughtNode> {
+  const root: ThoughtNode = {
+    thought: question,
+    children: []
+  }
+
+  async function expandNode(node: ThoughtNode, currentDepth: number) {
+    if (currentDepth >= depth) return
+
+    const prompt = `Given this question/thought: "${node.thought}"\n\nGenerate 3 diverse approaches to explore:`
+    const thoughts = await generateText(prompt)
+
+    for (const thought of thoughts.split('\n').slice(0, 3)) {
+      const child: ThoughtNode = { thought, children: [] }
+      node.children.push(child)
+      await expandNode(child, currentDepth + 1)
+    }
+  }
+
+  await expandNode(root, 0)
+  return root
+}
+```
+
+## Embeddings and Semantic Operations
+
+Working with vector representations of text for similarity and search.
+
+```typescript
+// Embedding interface
+interface EmbeddingResult {
+  text: string
+  embedding: number[]
+  metadata?: Record<string, any>
+}
+
+// Similarity computation
+function cosineSimilarity(v1: number[], v2: number[]): number {
+  const dotProduct = v1.reduce((sum, a, i) => sum + a * v2[i], 0)
+  const magnitude1 = Math.sqrt(v1.reduce((sum, x) => sum + x * x, 0))
+  const magnitude2 = Math.sqrt(v2.reduce((sum, x) => sum + x * x, 0))
+  return dotProduct / (magnitude1 * magnitude2)
+}
+
+// Embedding-based search
+async function semanticSearch(
+  query: string,
+  documents: EmbeddingResult[],
+  topK: number = 5
+): Promise<EmbeddingResult[]> {
+  const queryEmbedding = await generateEmbedding(query)
+
+  const scored = documents.map(doc => ({
+    ...doc,
+    score: cosineSimilarity(queryEmbedding, doc.embedding)
+  }))
+
+  return scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK)
+}
+
+// Vector database operations
+interface VectorStore {
+  add(embeddings: EmbeddingResult[]): Promise<void>
+  search(queryEmbedding: number[], topK: number): Promise<EmbeddingResult[]>
+  delete(ids: string[]): Promise<void>
+  update(id: string, embedding: EmbeddingResult): Promise<void>
+}
+
+// Semantic caching
+class EmbeddingCache {
+  private cache = new Map<string, EmbeddingResult>()
+
+  async get(text: string): Promise<number[]> {
+    if (this.cache.has(text)) {
+      return this.cache.get(text)!.embedding
+    }
+
+    const result = await generateEmbedding(text)
+    this.cache.set(text, { text, embedding: result })
+    return result
+  }
+
+  clear() {
+    this.cache.clear()
+  }
+}
+```
+
+## Content Moderation and Safety
+
+Ensuring generated content is safe, appropriate, and truthful.
+
+```typescript
+// Content moderation
+interface ModerationResult {
+  flagged: boolean
+  scores: {
+    hate: number
+    hateViolent: number
+    harassment: number
+    harassment_threatening: number
+    abuse: number
+    abuse_threatening: number
+    illegal: number
+    self_harm: number
+    sexual: number
+    sexual_minor: number
+    violence: number
+    violence_graphic: number
+  }
+}
+
+async function moderateContent(text: string): Promise<ModerationResult> {
+  // Call moderation API
+  return {
+    flagged: false,
+    scores: {}
+  }
+}
+
+// Fact checking and grounding
+interface GroundingRequest {
+  claim: string
+  context?: string[]
+}
+
+interface GroundingResult {
+  claim: string
+  isSupported: boolean
+  supportingEvidence: string[]
+  confidence: number
+}
+
+async function groundClaim(request: GroundingRequest): Promise<GroundingResult> {
+  // Retrieve relevant context
+  // Determine if claim is supported
+  // Return grounding result
+  return {
+    claim: request.claim,
+    isSupported: true,
+    supportingEvidence: [],
+    confidence: 0.8
+  }
+}
+
+// Output filtering
+function filterOutput(
+  text: string,
+  filters: {
+    profanity?: boolean
+    violence?: boolean
+    adult?: boolean
+  }
+): string {
+  // Apply content filters
+  return text
+}
+```
+
+## Performance and Cost Optimization
+
+```typescript
+// Token counting and estimation
+function estimateTokenCount(text: string): number {
+  // Approximate: 1 token per 4 characters for English
+  return Math.ceil(text.length / 4)
+}
+
+interface CostEstimate {
+  inputTokens: number
+  outputTokens: number
+  estimatedCost: number
+}
+
+function estimateCost(
+  inputText: string,
+  maxOutputTokens: number,
+  model: string
+): CostEstimate {
+  const inputTokens = estimateTokenCount(inputText)
+  // Pricing varies by model
+  const inputCost = inputTokens * 0.0015 / 1000  // Example pricing
+  const outputCost = maxOutputTokens * 0.002 / 1000
+
+  return {
+    inputTokens,
+    outputTokens: maxOutputTokens,
+    estimatedCost: inputCost + outputCost
+  }
+}
+
+// Batch processing for cost efficiency
+async function batchGenerate(
+  prompts: string[],
+  batchSize: number = 10
+): Promise<string[]> {
+  const results: string[] = []
+
+  for (let i = 0; i < prompts.length; i += batchSize) {
+    const batch = prompts.slice(i, i + batchSize)
+    const batchResults = await Promise.all(
+      batch.map(prompt => generateText(prompt))
+    )
+    results.push(...batchResults)
+  }
+
+  return results
+}
+
+// Caching generated outputs
+class GenerationCache {
+  private cache = new Map<string, string>()
+
+  async generateOrCache(
+    prompt: string,
+    options?: GenerationOptions
+  ): Promise<string> {
+    const key = JSON.stringify({ prompt, options })
+
+    if (this.cache.has(key)) {
+      return this.cache.get(key)!
+    }
+
+    const result = await generateText(prompt, options)
+    this.cache.set(key, result)
+    return result
+  }
+}
+```
+
+## Best Practices
+
+1. **Clear Prompts**: Write specific, detailed prompts with examples
+2. **Constrained Output**: Use structured generation for reliable outputs
+3. **Validation**: Always validate generated content before use
+4. **Cost Management**: Monitor token usage and implement caching
+5. **Error Handling**: Gracefully handle API failures and retries
+6. **Security**: Never include sensitive data in prompts
+7. **Version Control**: Track prompt changes and model versions
+8. **Testing**: Test generation outputs across diverse inputs
+9. **Monitoring**: Log and analyze generation quality and cost
+10. **User Feedback**: Collect feedback to improve generation quality
+
+## Related Domains
+
+- [agents.org.ai](https://agents.org.ai) - Agents that use generative functions
+- [models.org.ai](https://models.org.ai) - AI models and language models
+- [code.org.ai](https://code.org.ai) - Code and program synthesis
+- [content.org.ai](https://content.org.ai) - Content generation and management
+- [workflows.org.ai](https://workflows.org.ai) - Workflows orchestrating generation
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="GenerativeFunctions" />

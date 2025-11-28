@@ -1,0 +1,817 @@
+---
+$context: https://mcp.org.ai
+$id: https://mcp.org.ai/MCPTransports
+$type: https://mcp.org.ai/Mcp
+name: "MCP Transport Mechanisms"
+description: "Complete guide to MCP transport layers: stdio, HTTP, Server-Sent Events (SSE), and WebSocket connections"
+---
+
+export const items = async () => {
+  return []
+}
+
+# MCP Transport Mechanisms
+
+MCP is transport-agnostic, meaning the protocol can work over different underlying communication mechanisms. The transport layer handles the actual serialization, transmission, and reception of protocol messages. This guide covers all supported transport types and their implementation details.
+
+## Transport Overview
+
+### Transport Types
+
+MCP supports four primary transport mechanisms, each optimized for different use cases:
+
+| Transport | Use Case | Latency | Overhead | Best For |
+|-----------|----------|---------|----------|----------|
+| **stdio** | Local processes | Ultra-low | Minimal | Local servers, development |
+| **HTTP** | REST-like semantics | Low | Medium | Stateless APIs, public endpoints |
+| **SSE** | Server-to-client streams | Low | Medium | Real-time updates, monitoring |
+| **WebSocket** | Bidirectional real-time | Very low | Low | Chat, live data, multiplexing |
+
+### Common Message Structure
+
+All transports use JSON-RPC 2.0 for request/response communication:
+
+```typescript
+interface JsonRpcRequest {
+  jsonrpc: '2.0'
+  method: string
+  params?: unknown
+  id: string | number
+}
+
+interface JsonRpcResponse {
+  jsonrpc: '2.0'
+  result?: unknown
+  error?: JsonRpcError
+  id: string | number
+}
+
+interface JsonRpcError {
+  code: number
+  message: string
+  data?: unknown
+}
+```
+
+## Stdio Transport
+
+### Overview
+
+The stdio transport uses standard input/output streams for bidirectional communication between processes. It's the simplest transport and requires the lowest overhead.
+
+**Best for:** Local development, local server deployment, process spawning
+
+### How It Works
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        Client Process                        │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │  MCP Client                                          │  │
+│  │  - Writes JSON-RPC to child process stdin           │  │
+│  │  - Reads JSON-RPC from child process stdout         │  │
+│  └──────────────┬───────────────────────────────────────┘  │
+└─────────────────┼──────────────────────────────────────────┘
+                  │
+        ┌─────────┴──────────┐
+        │  stdin / stdout    │
+        └─────────┬──────────┘
+                  │
+┌─────────────────┼──────────────────────────────────────────┐
+│                 ▼                                            │
+│  ┌──────────────────────────────────────────────────────┐  │
+│  │  MCP Server                                          │  │
+│  │  - Reads JSON-RPC from stdin                         │  │
+│  │  - Writes JSON-RPC to stdout                         │  │
+│  └──────────────────────────────────────────────────────┘  │
+│                        Server Process                       │
+└────────────────────────────────────────────────────────────┘
+```
+
+### Message Format
+
+Messages are sent as newline-delimited JSON:
+
+```
+{"jsonrpc":"2.0","method":"initialize","params":{"clientInfo":{...}},"id":"1"}\n
+{"jsonrpc":"2.0","result":{...},"id":"1"}\n
+```
+
+### Client Implementation
+
+```typescript
+import { spawn } from 'child_process'
+import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js'
+
+class StdioClient {
+  async connect() {
+    // Spawn server process
+    const serverProcess = spawn('python', ['./mcp_server.py'])
+
+    // Create transport
+    const transport = new StdioClientTransport({
+      stdin: serverProcess.stdin,
+      stdout: serverProcess.stdout
+    })
+
+    // Create client
+    const client = new Client({
+      name: 'my-app',
+      version: '1.0.0'
+    })
+
+    await client.connect(transport)
+
+    return { client, process: serverProcess }
+  }
+}
+```
+
+### Server Implementation
+
+```typescript
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
+
+async function main() {
+  // Create server
+  const server = new Server({
+    name: 'my-mcp-server',
+    version: '1.0.0'
+  })
+
+  // Register handlers
+  server.setRequestHandler(ListToolsRequestSchema, async () => ({
+    tools: [
+      {
+        name: 'example_tool',
+        description: 'An example tool',
+        inputSchema: { type: 'object' }
+      }
+    ]
+  }))
+
+  // Create transport
+  const transport = new StdioServerTransport()
+
+  // Connect
+  await server.connect(transport)
+
+  // Keep process alive
+  console.error('MCP server running on stdio')
+}
+
+main().catch(console.error)
+```
+
+### Configuration
+
+```json
+{
+  "mcpServers": {
+    "my-server": {
+      "command": "python",
+      "args": ["./server.py"],
+      "env": {
+        "LOG_LEVEL": "debug"
+      }
+    }
+  }
+}
+```
+
+## HTTP Transport
+
+### Overview
+
+HTTP transport treats the MCP server as a REST endpoint. Each request is an HTTP POST to the server endpoint, suitable for stateless APIs and public-facing servers.
+
+**Best for:** Public APIs, cloud deployments, stateless servers, load balancing
+
+### Request/Response Flow
+
+```
+Client                                     Server
+  │                                           │
+  │  POST /mcp                                │
+  │  {"jsonrpc": "2.0", "method": "...", ... }│
+  ├───────────────────────────────────────────>│
+  │                                           │
+  │  200 OK                                   │
+  │  {"jsonrpc": "2.0", "result": {...}, ...}│
+  │<───────────────────────────────────────────│
+  │                                           │
+```
+
+### Client Implementation
+
+```typescript
+import { HTTPClientTransport } from '@modelcontextprotocol/sdk/client/http.js'
+
+class HttpClient {
+  async connect(serverUrl: string) {
+    const transport = new HTTPClientTransport({
+      url: serverUrl,  // e.g., 'http://localhost:3000/mcp'
+      // Optional: Custom headers
+      headers: {
+        'Authorization': 'Bearer token123',
+        'X-API-Key': 'api-key'
+      },
+      // Optional: Request timeout
+      timeout: 30000
+    })
+
+    const client = new Client({
+      name: 'my-app',
+      version: '1.0.0'
+    })
+
+    await client.connect(transport)
+    return client
+  }
+}
+```
+
+### Server Implementation with Express
+
+```typescript
+import express from 'express'
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+
+const app = express()
+app.use(express.json())
+
+// Create MCP server
+const server = new Server({
+  name: 'http-mcp-server',
+  version: '1.0.0'
+})
+
+// Register tool handler
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params
+
+  if (name === 'example_tool') {
+    return {
+      content: [{
+        type: 'text',
+        text: `Tool executed with args: ${JSON.stringify(args)}`
+      }]
+    }
+  }
+
+  throw new Error(`Unknown tool: ${name}`)
+})
+
+// MCP endpoint
+app.post('/mcp', async (req, res) => {
+  try {
+    const response = await server.handleRequest(req.body)
+    res.json(response)
+  } catch (error) {
+    res.status(500).json({
+      jsonrpc: '2.0',
+      error: {
+        code: -32603,
+        message: 'Internal error',
+        data: { details: error.message }
+      }
+    })
+  }
+})
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    timestamp: new Date().toISOString()
+  })
+})
+
+app.listen(3000, () => {
+  console.log('MCP server listening on http://localhost:3000')
+})
+```
+
+### Authentication & Middleware
+
+```typescript
+// JWT Authentication middleware
+app.use('/mcp', (req, res, next) => {
+  const authHeader = req.headers.authorization
+  if (!authHeader?.startsWith('Bearer ')) {
+    return res.status(401).json({
+      error: {
+        code: -32600,
+        message: 'Unauthorized'
+      }
+    })
+  }
+
+  const token = authHeader.substring(7)
+  try {
+    const decoded = verifyJWT(token)
+    req.user = decoded
+    next()
+  } catch (error) {
+    res.status(401).json({
+      error: {
+        code: -32600,
+        message: 'Invalid token'
+      }
+    })
+  }
+})
+
+// Rate limiting
+const rateLimit = require('express-rate-limit')
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,  // 15 minutes
+  max: 100  // limit each IP to 100 requests per windowMs
+})
+app.use('/mcp', limiter)
+```
+
+### Error Handling
+
+```typescript
+app.post('/mcp', async (req, res) => {
+  try {
+    // Validate request structure
+    if (!req.body.jsonrpc || req.body.jsonrpc !== '2.0') {
+      return res.status(400).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32700,
+          message: 'Parse error'
+        }
+      })
+    }
+
+    if (!req.body.method) {
+      return res.status(400).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32600,
+          message: 'Invalid Request'
+        }
+      })
+    }
+
+    const response = await server.handleRequest(req.body)
+    res.json(response)
+  } catch (error) {
+    res.status(500).json({
+      jsonrpc: '2.0',
+      error: {
+        code: -32603,
+        message: 'Internal error',
+        data: { error: error.message }
+      }
+    })
+  }
+})
+```
+
+## Server-Sent Events (SSE)
+
+### Overview
+
+SSE provides a unidirectional channel from server to client for streaming updates. It's useful for pushing real-time data without the overhead of WebSocket.
+
+**Best for:** Real-time updates, monitoring, event streams, notifications
+
+### Flow Architecture
+
+```
+Client                           Server
+  │                               │
+  │  GET /mcp/stream              │
+  │──────────────────────────────>│
+  │  (Keep connection open)       │
+  │                               │
+  │  HTTP 200                     │
+  │  Content-Type: text/event-stream
+  │<──────────────────────────────│
+  │                               │
+  │  data: {"event": "update"...}│
+  │<──────────────────────────────│
+  │                               │
+  │  data: {"event": "update"...}│
+  │<──────────────────────────────│
+  │                               │
+```
+
+### Client Implementation
+
+```typescript
+import { EventSourceClientTransport } from '@modelcontextprotocol/sdk/client/sse.js'
+
+class SSEClient {
+  async connect(serverUrl: string) {
+    const transport = new EventSourceClientTransport({
+      url: `${serverUrl}/mcp/stream`,
+      // Client uses POST for sending messages, SSE for receiving
+      postUrl: `${serverUrl}/mcp`
+    })
+
+    const client = new Client({
+      name: 'my-app',
+      version: '1.0.0'
+    })
+
+    await client.connect(transport)
+    return client
+  }
+}
+```
+
+### Server Implementation
+
+```typescript
+import express from 'express'
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+
+const app = express()
+app.use(express.json())
+
+const server = new Server({
+  name: 'sse-mcp-server',
+  version: '1.0.0'
+})
+
+// Track connected clients
+const clients = new Set<ServerSentEventsStream>()
+
+// SSE stream endpoint
+app.get('/mcp/stream', (req, res) => {
+  // Set headers for SSE
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*'
+  })
+
+  // Create stream handler
+  const stream = new ServerSentEventsStream(res)
+  clients.add(stream)
+
+  res.on('close', () => {
+    clients.delete(stream)
+  })
+})
+
+// Standard RPC endpoint for requests
+app.post('/mcp', express.json(), async (req, res) => {
+  try {
+    const response = await server.handleRequest(req.body)
+
+    // Optionally broadcast updates to SSE clients
+    const message = `data: ${JSON.stringify({
+      type: 'rpc-response',
+      data: response
+    })}\n\n`
+
+    clients.forEach(client => {
+      client.write(message)
+    })
+
+    res.json(response)
+  } catch (error) {
+    res.status(500).json({
+      error: {
+        code: -32603,
+        message: error.message
+      }
+    })
+  }
+})
+
+app.listen(3000, () => {
+  console.log('SSE MCP server listening on port 3000')
+})
+```
+
+### Resource Streaming with SSE
+
+```typescript
+// Endpoint for streaming resource updates
+app.get('/mcp/resources/stream/:uri', (req, res) => {
+  const uri = decodeURIComponent(req.params.uri)
+
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache'
+  })
+
+  // Start streaming resource updates
+  const interval = setInterval(async () => {
+    try {
+      const resource = await getResource(uri)
+
+      res.write(`data: ${JSON.stringify({
+        uri,
+        content: resource,
+        timestamp: new Date().toISOString()
+      })}\n\n`)
+    } catch (error) {
+      res.write(`event: error\ndata: ${error.message}\n\n`)
+      clearInterval(interval)
+      res.end()
+    }
+  }, 1000)  // Update every second
+
+  req.on('close', () => {
+    clearInterval(interval)
+  })
+})
+```
+
+## WebSocket Transport
+
+### Overview
+
+WebSocket provides true bidirectional communication with low latency and overhead. It's ideal for real-time, interactive applications.
+
+**Best for:** Real-time collaboration, interactive applications, gaming, chat
+
+### Protocol Layers
+
+```
+TCP/IP
+  │
+  └─ HTTP Upgrade
+       │
+       └─ WebSocket Protocol
+            │
+            └─ JSON-RPC Messages
+```
+
+### Client Implementation
+
+```typescript
+import { WebSocketClientTransport } from '@modelcontextprotocol/sdk/client/websocket.js'
+
+class WebSocketClient {
+  async connect(serverUrl: string) {
+    // serverUrl should be ws:// or wss:// (secure)
+    const transport = new WebSocketClientTransport({
+      url: serverUrl,  // e.g., 'ws://localhost:8080/mcp'
+      // Optional: Custom headers for initial handshake
+      headers: {
+        'Authorization': 'Bearer token123'
+      },
+      // Optional: Reconnection settings
+      reconnect: {
+        maxRetries: 5,
+        backoffMs: 1000
+      }
+    })
+
+    const client = new Client({
+      name: 'my-app',
+      version: '1.0.0'
+    })
+
+    await client.connect(transport)
+    return client
+  }
+}
+```
+
+### Server Implementation with ws Library
+
+```typescript
+import express from 'express'
+import { createServer } from 'http'
+import { WebSocketServer } from 'ws'
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+
+const app = express()
+const httpServer = createServer(app)
+const wss = new WebSocketServer({ server: httpServer })
+
+const mcpServer = new Server({
+  name: 'websocket-mcp-server',
+  version: '1.0.0'
+})
+
+// Handle WebSocket connections
+wss.on('connection', (ws, req) => {
+  console.log('New WebSocket connection')
+
+  // Handle incoming messages
+  ws.on('message', async (data) => {
+    try {
+      const message = JSON.parse(data.toString())
+      const response = await mcpServer.handleRequest(message)
+
+      // Send response back
+      ws.send(JSON.stringify(response))
+    } catch (error) {
+      ws.send(JSON.stringify({
+        jsonrpc: '2.0',
+        error: {
+          code: -32603,
+          message: error.message
+        },
+        id: null
+      }))
+    }
+  })
+
+  ws.on('error', (error) => {
+    console.error('WebSocket error:', error)
+  })
+
+  ws.on('close', () => {
+    console.log('WebSocket closed')
+  })
+})
+
+httpServer.listen(8080, () => {
+  console.log('WebSocket MCP server listening on ws://localhost:8080')
+})
+```
+
+### Server Implementation with Socket.io
+
+```typescript
+import express from 'express'
+import { createServer } from 'http'
+import { Server as SocketIOServer } from 'socket.io'
+import { Server as MCPServer } from '@modelcontextprotocol/sdk/server/index.js'
+
+const app = express()
+const httpServer = createServer(app)
+const io = new SocketIOServer(httpServer)
+
+const mcpServer = new MCPServer({
+  name: 'socketio-mcp-server',
+  version: '1.0.0'
+})
+
+io.on('connection', (socket) => {
+  console.log('New socket.io connection:', socket.id)
+
+  // Handle MCP requests
+  socket.on('mcp-request', async (request, callback) => {
+    try {
+      const response = await mcpServer.handleRequest(request)
+      callback(null, response)
+    } catch (error) {
+      callback({
+        code: -32603,
+        message: error.message
+      })
+    }
+  })
+
+  // Handle custom events
+  socket.on('subscribe-resource', async (uri) => {
+    // Start sending updates for this resource
+    const interval = setInterval(async () => {
+      try {
+        const content = await getResource(uri)
+        socket.emit('resource-update', { uri, content })
+      } catch (error) {
+        socket.emit('resource-error', { uri, error: error.message })
+        clearInterval(interval)
+      }
+    }, 1000)
+
+    socket.on('unsubscribe-resource', () => {
+      clearInterval(interval)
+    })
+  })
+
+  socket.on('disconnect', () => {
+    console.log('Socket disconnected:', socket.id)
+  })
+})
+
+httpServer.listen(8080, () => {
+  console.log('Socket.io MCP server listening on port 8080')
+})
+```
+
+### Bidirectional Streaming
+
+```typescript
+// Server pushing updates to client
+wss.on('connection', (ws) => {
+  // Subscribe client to updates
+  ws.send(JSON.stringify({
+    method: 'subscribe',
+    params: {
+      resource: 'metrics://system/cpu'
+    }
+  }))
+
+  // Push updates
+  const interval = setInterval(() => {
+    const update = {
+      method: 'resource-updated',
+      params: {
+        uri: 'metrics://system/cpu',
+        value: Math.random() * 100
+      }
+    }
+    ws.send(JSON.stringify(update))
+  }, 1000)
+
+  ws.on('close', () => {
+    clearInterval(interval)
+  })
+})
+```
+
+## Transport Selection Guide
+
+### Choose Stdio If
+
+- Building local development tools
+- Server runs as child process
+- No remote access needed
+- Minimal overhead important
+- Simple deployment
+
+### Choose HTTP If
+
+- Building REST-like APIs
+- Need public/remote access
+- Stateless request/response
+- Load balancing required
+- Easy debugging with standard tools
+
+### Choose SSE If
+
+- Server needs to push updates
+- Client doesn't need to send much data
+- Lower complexity than WebSocket
+- Browser compatibility needed
+- Good firewall/proxy support
+
+### Choose WebSocket If
+
+- True bidirectional communication
+- Low latency critical
+- High message throughput
+- Real-time collaboration
+- Complex interactions
+
+## Transport Comparison
+
+| Feature | Stdio | HTTP | SSE | WebSocket |
+|---------|-------|------|-----|-----------|
+| **Latency** | Ultra-low | Low | Low | Very low |
+| **Bidirectional** | Yes | Half-duplex | One-way | Yes |
+| **Connection** | Process | Stateless | Persistent | Persistent |
+| **Scalability** | Local | High | High | Medium |
+| **Complexity** | Low | Low | Low | Medium |
+| **Browser Support** | N/A | Yes | Yes | Yes |
+| **Firewall/Proxy** | N/A | Good | Good | Moderate |
+
+## Best Practices
+
+### Connection Management
+
+1. **Connection Pooling**: Reuse connections
+2. **Heartbeats**: Implement keep-alive for persistent connections
+3. **Graceful Shutdown**: Clean disconnect on termination
+4. **Timeout Handling**: Set appropriate timeouts
+5. **Reconnection**: Implement exponential backoff
+
+### Error Handling
+
+1. **Validate Messages**: Check JSON-RPC structure
+2. **Error Codes**: Use standard JSON-RPC error codes
+3. **Detailed Messages**: Provide helpful error details
+4. **Logging**: Log all transport errors
+5. **Recovery**: Implement automatic reconnection
+
+### Security
+
+1. **HTTPS/WSS**: Use TLS for remote connections
+2. **Authentication**: Implement auth for public endpoints
+3. **Rate Limiting**: Protect against abuse
+4. **Input Validation**: Validate all incoming data
+5. **Monitoring**: Monitor for suspicious activity
+
+## Integration Points
+
+- **[MCPServers.mdx](https://mcp.org.ai/MCPServers)**: Server implementation
+- **[MCPClients.mdx](https://mcp.org.ai/MCPClients)**: Client implementation
+- **[MCPOverview.mdx](https://mcp.org.ai/MCPOverview)**: Protocol overview
+- **[apis.org.ai](https://apis.org.ai)**: API patterns
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| **Component Type** | Transport Layer |
+| **Domain** | [mcp.org.ai](https://mcp.org.ai) |
+| **Protocol** | JSON-RPC 2.0 |
+| **Options** | stdio, HTTP, SSE, WebSocket |
+| **Bidirectional** | Supported on all (varying degrees) |

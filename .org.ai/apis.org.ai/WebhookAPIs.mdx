@@ -1,0 +1,751 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/WebhookAPIs
+$type: https://apis.org.ai/WebAPI
+name: "Webhook APIs"
+description: "Webhook APIs - Event-driven architecture enabling real-time push notifications to client-specified endpoints, with delivery guarantees, security mechanisms, and integration patterns for asynchronous event propagation."
+parent: https://apis.org.ai
+---
+
+export const items = async () => {
+  // Fetch Webhook API implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://apis.org.ai/WebhookAPIs'
+  })
+}
+
+# Webhook APIs
+
+Webhooks are user-defined HTTP callbacks triggered by specific events. They enable real-time, event-driven architecture where services push data to client-specified endpoints rather than clients pulling data. Webhooks are essential for integrations, monitoring, and real-time synchronization across systems.
+
+Webhooks form the foundation of modern event-driven architectures and are critical for IoT, monitoring systems, and CI/CD pipelines.
+
+## Overview
+
+Webhooks are event-triggered HTTP POST requests:
+
+- **Event-Driven**: Triggered by specific system events
+- **Asynchronous**: Non-blocking, happens in background
+- **Real-Time**: Immediate notification when events occur
+- **Push-Based**: Server pushes to clients, not clients polling
+- **Bidirectional**: Clients can both consume and trigger events
+- **Scalable**: Distributed event propagation
+- **Reliable**: Retry mechanisms for failed deliveries
+
+## Core Concepts
+
+### Webhook Registration
+
+Clients register endpoints to receive notifications:
+
+```
+POST /webhooks
+{
+  "url": "https://client.example.com/webhooks/events",
+  "events": ["user.created", "user.updated", "payment.completed"],
+  "secret": "whsec_1234567890abcdef"
+}
+
+Response:
+{
+  "id": "wh_123abc",
+  "url": "https://client.example.com/webhooks/events",
+  "events": ["user.created", "user.updated", "payment.completed"],
+  "created": "2024-01-15T10:30:00Z",
+  "active": true
+}
+```
+
+### Event Payload
+
+When an event occurs, webhook is sent:
+
+```http
+POST https://client.example.com/webhooks/events
+Content-Type: application/json
+X-Webhook-Signature: sha256=abcd1234...
+X-Webhook-ID: evt_567def
+X-Webhook-Timestamp: 1705317000
+X-Retry-Count: 0
+
+{
+  "id": "evt_567def",
+  "type": "user.created",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "data": {
+    "id": "usr_123abc",
+    "name": "John Doe",
+    "email": "john@example.com",
+    "created": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+### Webhook Lifecycle
+
+1. **Registration**: Client registers endpoint and event types
+2. **Event Occurrence**: Server detects relevant event
+3. **Serialization**: Event data converted to JSON
+4. **Delivery Attempt**: HTTP POST sent to endpoint
+5. **Response Handling**: Check client response status
+6. **Retry Logic**: Retry on failure (exponential backoff)
+7. **Success/Failure**: Log delivery result
+
+## Event Types
+
+### User Events
+
+```
+user.created
+user.updated
+user.deleted
+user.email_verified
+user.password_changed
+user.suspended
+user.reactivated
+```
+
+### Payment Events
+
+```
+payment.initiated
+payment.processing
+payment.completed
+payment.failed
+payment.refunded
+payment.cancelled
+invoice.created
+invoice.paid
+invoice.overdue
+```
+
+### Content Events
+
+```
+post.created
+post.published
+post.updated
+post.deleted
+comment.created
+comment.deleted
+```
+
+### System Events
+
+```
+account.upgraded
+account.downgraded
+account.suspended
+api_key.created
+api_key.revoked
+integration.connected
+integration.disconnected
+```
+
+### Real-Time Events
+
+```
+user.online
+user.offline
+message.sent
+notification.triggered
+data.changed
+```
+
+## Delivery Guarantees
+
+### At-Least-Once Delivery
+
+Server retries failed deliveries:
+
+```
+Attempt 1 (0s): Failed - connection timeout
+Wait 2 seconds
+Attempt 2 (2s): Failed - 500 error
+Wait 4 seconds
+Attempt 3 (6s): Failed - 503 error
+Wait 8 seconds
+Attempt 4 (14s): Success - 200 OK
+```
+
+Benefits:
+- No events lost
+- Guaranteed eventual delivery
+
+Challenges:
+- Duplicate events possible
+- Clients must handle idempotency
+
+### Exponential Backoff Strategy
+
+```
+Max 5 retry attempts:
+1. Immediate
+2. 2 seconds
+3. 4 seconds
+4. 8 seconds
+5. 16 seconds
+Total: ~30 seconds before giving up
+```
+
+### Exactly-Once Delivery
+
+Using idempotency keys:
+
+```
+POST /webhooks
+{
+  "id": "evt_567def",
+  "idempotencyKey": "evt_567def",
+  "type": "user.created",
+  "data": {...}
+}
+```
+
+Client processes:
+```javascript
+async function handleWebhook(event) {
+  // Check if already processed
+  const existing = await db.webhookEvents.findOne({
+    idempotencyKey: event.idempotencyKey
+  });
+
+  if (existing) {
+    return 200; // Already processed
+  }
+
+  // Process event
+  await processUserCreated(event.data);
+
+  // Store completion
+  await db.webhookEvents.insert({
+    idempotencyKey: event.idempotencyKey,
+    processed: true,
+    timestamp: new Date()
+  });
+
+  return 200;
+}
+```
+
+## Security Mechanisms
+
+### Signature Verification
+
+Prevent unauthorized webhook calls:
+
+```javascript
+import crypto from 'crypto';
+
+function verifyWebhookSignature(payload, signature, secret) {
+  const hash = crypto
+    .createHmac('sha256', secret)
+    .update(payload)
+    .digest('hex');
+
+  return crypto.timingSafeEqual(
+    Buffer.from(hash),
+    Buffer.from(signature)
+  );
+}
+
+// Express middleware
+app.post('/webhooks', (req, res) => {
+  const signature = req.headers['x-webhook-signature'];
+  const payload = req.rawBody; // Raw body required
+
+  if (!verifyWebhookSignature(payload, signature, WEBHOOK_SECRET)) {
+    return res.status(401).json({ error: 'Invalid signature' });
+  }
+
+  // Process webhook
+  res.json({ received: true });
+});
+```
+
+### HMAC-SHA256
+
+Standard approach used by Stripe, GitHub, etc.:
+
+```
+Signature = HMAC-SHA256(payload, secret)
+Sent in header: X-Webhook-Signature: sha256=hex_digest
+```
+
+### Public Key Cryptography
+
+For higher security:
+
+```
+Server signs with private key
+Client verifies with server's public key
+Similar to JWT verification
+```
+
+### Timestamp Validation
+
+Prevent replay attacks:
+
+```javascript
+function validateTimestamp(timestamp, tolerance = 300) {
+  const now = Math.floor(Date.now() / 1000);
+  const diff = Math.abs(now - timestamp);
+
+  return diff <= tolerance; // 5 minute window
+}
+
+// Validate before processing
+if (!validateTimestamp(req.headers['x-webhook-timestamp'])) {
+  return res.status(400).json({ error: 'Request too old' });
+}
+```
+
+### Endpoint Verification
+
+Some providers require verification:
+
+```
+GET /webhooks/verify?token=abc123def456
+
+Client responds with token to confirm endpoint ownership
+```
+
+### IP Whitelisting
+
+Restrict sources:
+
+```
+Allow POST from: 192.0.2.1, 192.0.2.2, 192.0.2.3
+Documented in provider's documentation
+```
+
+## Retry and Failure Handling
+
+### Retry Configuration
+
+```
+POST /webhooks
+{
+  "url": "https://client.example.com/webhooks",
+  "events": ["user.created"],
+  "retry": {
+    "maxAttempts": 5,
+    "initialDelay": 2,
+    "maxDelay": 300,
+    "backoffMultiplier": 2
+  }
+}
+```
+
+### Timeout Handling
+
+```javascript
+const timeout = 30000; // 30 seconds
+
+const controller = new AbortController();
+const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+try {
+  const response = await fetch(webhookUrl, {
+    method: 'POST',
+    headers: headers,
+    body: payload,
+    signal: controller.signal,
+    timeout: timeout
+  });
+} finally {
+  clearTimeout(timeoutId);
+}
+```
+
+### Dead Letter Queue
+
+Events that repeatedly fail:
+
+```
+Attempt 1-5: All fail
+Move to DLQ after max retries
+Admin can review and manually retry
+Or manually discard from DLQ
+```
+
+### Manual Retry
+
+Clients can request manual retry:
+
+```
+GET /webhooks/{webhook_id}/events/{event_id}/retry
+POST /webhooks/{webhook_id}/events/{event_id}/retry
+```
+
+## Implementation Patterns
+
+### Webhook Delivery Service
+
+```typescript
+interface WebhookEvent {
+  id: string;
+  type: string;
+  timestamp: Date;
+  data: Record<string, any>;
+}
+
+interface WebhookSubscription {
+  id: string;
+  url: string;
+  events: string[];
+  secret: string;
+  active: boolean;
+}
+
+class WebhookService {
+  async registerWebhook(url: string, events: string[]): Promise<WebhookSubscription> {
+    const secret = generateSecret();
+    const webhook = await db.webhooks.create({
+      url,
+      events,
+      secret,
+      active: true
+    });
+    return webhook;
+  }
+
+  async triggerEvent(event: WebhookEvent): Promise<void> {
+    // Find subscriptions for this event type
+    const subscriptions = await db.webhooks.find({
+      events: { $in: [event.type] },
+      active: true
+    });
+
+    for (const subscription of subscriptions) {
+      // Queue for async delivery
+      await this.queueDelivery(subscription, event);
+    }
+  }
+
+  private async queueDelivery(subscription: WebhookSubscription, event: WebhookEvent): Promise<void> {
+    const payload = JSON.stringify(event);
+    const signature = this.generateSignature(payload, subscription.secret);
+
+    await deliveryQueue.add({
+      subscriptionId: subscription.id,
+      url: subscription.url,
+      payload,
+      signature,
+      attempt: 0
+    });
+  }
+
+  async deliverWebhook(delivery: DeliveryTask): Promise<void> {
+    try {
+      const response = await fetch(delivery.url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Webhook-Signature': delivery.signature,
+          'X-Webhook-ID': delivery.id,
+          'X-Webhook-Timestamp': Date.now().toString(),
+          'X-Retry-Count': delivery.attempt.toString()
+        },
+        body: delivery.payload,
+        timeout: 30000
+      });
+
+      if (response.status >= 200 && response.status < 300) {
+        // Success
+        await db.deliveries.update(delivery.id, { status: 'success' });
+      } else {
+        // Failure - retry
+        throw new Error(`HTTP ${response.status}`);
+      }
+    } catch (error) {
+      if (delivery.attempt < 5) {
+        // Retry with exponential backoff
+        const delay = Math.min(2 ** delivery.attempt * 2000, 300000);
+        await deliveryQueue.add({
+          ...delivery,
+          attempt: delivery.attempt + 1
+        }, { delay });
+      } else {
+        // Max retries exceeded
+        await db.deliveries.update(delivery.id, {
+          status: 'failed',
+          error: error.message
+        });
+        await deadLetterQueue.add(delivery);
+      }
+    }
+  }
+
+  private generateSignature(payload: string, secret: string): string {
+    return crypto
+      .createHmac('sha256', secret)
+      .update(payload)
+      .digest('hex');
+  }
+}
+```
+
+### Client Webhook Handler
+
+```typescript
+async function handleWebhook(req: Request): Promise<Response> {
+  // 1. Verify signature
+  const signature = req.headers.get('X-Webhook-Signature');
+  const timestamp = req.headers.get('X-Webhook-Timestamp');
+  const payload = await req.text();
+
+  if (!verifySignature(payload, signature, WEBHOOK_SECRET)) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  // 2. Check timestamp (anti-replay)
+  if (!isRecentTimestamp(parseInt(timestamp))) {
+    return new Response('Request too old', { status: 400 });
+  }
+
+  // 3. Parse event
+  const event = JSON.parse(payload);
+
+  // 4. Check idempotency
+  const existing = await db.webhookEvents.findOne({
+    webhookId: event.id
+  });
+  if (existing) {
+    return new Response('OK', { status: 200 }); // Idempotent
+  }
+
+  // 5. Process event
+  try {
+    switch (event.type) {
+      case 'user.created':
+        await onUserCreated(event.data);
+        break;
+      case 'payment.completed':
+        await onPaymentCompleted(event.data);
+        break;
+      case 'order.shipped':
+        await onOrderShipped(event.data);
+        break;
+    }
+
+    // 6. Mark as processed
+    await db.webhookEvents.insert({
+      webhookId: event.id,
+      type: event.type,
+      processed: true,
+      timestamp: new Date()
+    });
+
+    return new Response('OK', { status: 200 });
+  } catch (error) {
+    console.error('Webhook processing failed:', error);
+    // Return 5xx to trigger retry
+    return new Response('Internal error', { status: 500 });
+  }
+}
+```
+
+## Common Webhook Patterns
+
+### Event Fan-Out
+
+Single event triggers multiple webhooks:
+
+```
+Event: user.created
+↓
+├─→ Email service: Send welcome email
+├─→ Analytics: Log signup
+├─→ CRM: Create contact
+└─→ Client A: Custom logic
+```
+
+### Event Transformation
+
+Transform before delivery:
+
+```
+Raw Event: {type: "user.created", data: {...}}
+↓
+Transform for Client A:
+{action: "NEW_USER", payload: {...}}
+↓
+Transform for Client B:
+{event_type: "USER_SIGNUP", details: {...}}
+```
+
+### Event Batching
+
+Batch multiple events:
+
+```
+Collect 100 events or wait 1 minute
+→ POST batch of events to webhook
+```
+
+### Event Filtering
+
+Client specifies conditions:
+
+```
+{
+  "url": "https://example.com/webhooks",
+  "events": ["payment.*"],  // Wildcard
+  "filter": {
+    "data.amount": { "$gt": 100 }  // Only payments over $100
+  }
+}
+```
+
+## Monitoring and Debugging
+
+### Webhook Logs
+
+```
+GET /webhooks/{id}/deliveries
+
+[
+  {
+    id: "del_123",
+    timestamp: "2024-01-15T10:30:00Z",
+    event: "user.created",
+    status: "success",
+    statusCode: 200,
+    duration: 245,
+    attempts: 1
+  },
+  {
+    id: "del_124",
+    timestamp: "2024-01-15T10:31:00Z",
+    event: "payment.completed",
+    status: "failed",
+    statusCode: null,
+    duration: 30000,
+    attempts: 3,
+    error: "Timeout"
+  }
+]
+```
+
+### Webhook Testing
+
+Endpoint to send test event:
+
+```
+POST /webhooks/{id}/test
+
+{
+  "type": "user.created",
+  "data": {
+    "id": "test_123",
+    "name": "Test User",
+    "email": "test@example.com"
+  }
+}
+```
+
+### Webhook Status Dashboard
+
+- Recent deliveries
+- Success/failure rates
+- Average latency
+- Errors by type
+- Most problematic endpoints
+
+## Real-World Examples
+
+### Stripe Webhooks
+
+```javascript
+const stripe = require('stripe')('sk_test_...');
+
+// Register webhook
+const endpoint = await stripe.webhookEndpoints.create({
+  url: 'https://example.com/webhooks/stripe',
+  enabled_events: [
+    'payment_intent.succeeded',
+    'payment_intent.payment_failed',
+    'charge.refunded'
+  ]
+});
+
+// Handle webhook
+app.post('/webhooks/stripe', (req, res) => {
+  const sig = req.headers['stripe-signature'];
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(
+      req.body,
+      sig,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  switch (event.type) {
+    case 'payment_intent.succeeded':
+      console.log('Payment succeeded!');
+      break;
+    case 'payment_intent.payment_failed':
+      console.log('Payment failed!');
+      break;
+  }
+
+  res.json({received: true});
+});
+```
+
+### GitHub Webhooks
+
+```
+POST /payload
+{
+  "action": "opened",
+  "issue": {
+    "url": "https://api.github.com/repos/...",
+    "number": 1,
+    "title": "Found a bug",
+    "user": { "login": "octocat" },
+    ...
+  },
+  "repository": {
+    "id": 1296269,
+    "name": "Hello-World",
+    ...
+  },
+  ...
+}
+
+Headers:
+X-GitHub-Event: issues
+X-GitHub-Delivery: 12345-67890
+X-GitHub-Hook-ID: 123456
+X-Hub-Signature-256: sha256=abcdef123456
+```
+
+## Best Practices
+
+1. **Always Verify Signatures**: Validate authenticity
+2. **Handle Idempotency**: Process same event only once
+3. **Check Timestamps**: Prevent replay attacks
+4. **Implement Retry Logic**: With exponential backoff
+5. **Set Timeouts**: Prevent hanging requests
+6. **Log Everything**: Enable debugging
+7. **Monitor Deliveries**: Track success/failure rates
+8. **Dead Letter Queue**: Handle permanently failed events
+9. **Test Webhooks**: Manual and automated testing
+10. **Document Events**: Clear event type and payload docs
+11. **Rate Limiting**: Prevent overwhelming clients
+12. **Graceful Degradation**: Continue if webhook fails
+
+## Related Resources
+
+- [events.org.ai](https://events.org.ai) - Event sourcing and streaming
+- [functions.org.ai](https://functions.org.ai) - Serverless webhook handlers
+- [apis.org.ai/RESTAPIs](https://apis.org.ai/RESTAPIs) - REST foundations
+- [apis.org.ai/APIGateways](https://apis.org.ai/APIGateways) - Event routing and filtering
+- [tech.org.ai](https://tech.org.ai) - Message queues and event brokers

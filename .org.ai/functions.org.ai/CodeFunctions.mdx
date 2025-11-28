@@ -1,0 +1,503 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/CodeFunctions
+$type: https://functions.org.ai/CodeFunction
+name: "Code Functions"
+description: "Pure functions, side effects, composition, and advanced function patterns in functional programming"
+---
+
+export const items = async () => {
+  // Fetch code function implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://functions.org.ai/CodeFunction',
+    category: 'pure'
+  })
+}
+
+# Code Functions
+
+Pure functions, side effects, composition, and advanced function patterns form the foundation of functional programming and effective software architecture.
+
+## Overview
+
+Code functions are the fundamental building blocks of software systems. They encapsulate logic, define behavior, and establish the interface between different parts of a system. Code functions span from simple pure functions that transform data to complex patterns that manage side effects, compose multiple operations, and leverage advanced type systems.
+
+## Pure Functions
+
+Pure functions are the cornerstone of functional programming and predictable software behavior.
+
+### Characteristics
+- **Deterministic**: Same input always produces same output
+- **No Side Effects**: Do not modify external state or variables
+- **Referentially Transparent**: Can be replaced with their return value
+- **Testable**: Easy to test with simple input/output assertions
+- **Composable**: Can be combined to create new functions
+- **Cacheable**: Results can be memoized safely
+
+### Benefits
+- **Predictability**: Behavior is completely determined by inputs
+- **Easier Testing**: No need for complex setup or mocking
+- **Reusability**: Can be safely reused across different contexts
+- **Parallelizable**: Multiple pure functions can run concurrently safely
+- **Optimization**: Compiler can optimize more aggressively
+- **Maintainability**: Simpler to understand and modify
+
+### Examples in TypeScript
+
+```typescript
+// Pure function: same input always produces same output
+function add(a: number, b: number): number {
+  return a + b
+}
+
+// Pure function: transforming data
+function filterEvenNumbers(numbers: number[]): number[] {
+  return numbers.filter(n => n % 2 === 0)
+}
+
+// Pure function: composition
+function compose<A, B, C>(
+  f: (a: A) => B,
+  g: (b: B) => C
+): (a: A) => C {
+  return (a: A) => g(f(a))
+}
+
+const addOne = (n: number) => n + 1
+const double = (n: number) => n * 2
+const addOneThenDouble = compose(addOne, double)
+```
+
+### Common Patterns
+- **Immutable Data Transformation**: Creating new data structures instead of modifying existing ones
+- **Value Objects**: Representing immutable values with equality semantics
+- **Functions as Data**: Using functions as first-class values
+- **Partial Application**: Creating specialized functions from more general ones
+- **Memoization**: Caching pure function results for performance
+
+## Side Effects and Impure Functions
+
+Real-world applications require side effects for I/O, state mutation, and interaction with external systems.
+
+### Managing Side Effects
+- **Isolation**: Keep side effects separate from pure logic
+- **Minimal Scope**: Limit where side effects can occur
+- **Explicit Declaration**: Make side effects visible in function signatures
+- **Effect Composition**: Combine multiple effects in controlled ways
+
+### Effect Patterns
+
+```typescript
+// Effect functor encapsulating side effects
+type Effect<T> = {
+  run: () => T
+}
+
+function createEffect<T>(fn: () => T): Effect<T> {
+  return { run: fn }
+}
+
+function mapEffect<T, U>(effect: Effect<T>, transform: (t: T) => U): Effect<U> {
+  return {
+    run: () => transform(effect.run())
+  }
+}
+
+// Reader monad for dependency injection
+type Reader<R, A> = (env: R) => A
+
+function ask<R>(): Reader<R, R> {
+  return (env: R) => env
+}
+
+function runReader<R, A>(reader: Reader<R, A>, env: R): A {
+  return reader(env)
+}
+
+// State monad for state management
+type State<S, A> = (state: S) => [A, S]
+
+function getState<S>(): State<S, S> {
+  return (state: S) => [state, state]
+}
+
+function setState<S>(newState: S): State<S, void> {
+  return (_state: S) => [undefined, newState]
+}
+
+function runState<S, A>(state: State<S, A>, initialState: S): [A, S] {
+  return state(initialState)
+}
+```
+
+### Common Side Effect Scenarios
+- **I/O Operations**: Reading/writing files, network requests, database operations
+- **Console Logging**: Debugging and monitoring output
+- **Time-based Operations**: Timers, delays, scheduling
+- **System Interaction**: Environment variables, process signals
+- **State Mutation**: Modifying global or shared state
+
+## Function Composition
+
+Composition is the art of combining functions to create more complex behavior.
+
+### Composition Patterns
+
+```typescript
+// Function composition: right-to-left
+function compose<A, B, C>(
+  f: (b: B) => C,
+  g: (a: A) => B
+): (a: A) => C {
+  return (a: A) => f(g(a))
+}
+
+// Pipe: left-to-right composition
+function pipe<A, B>(a: A, f: (a: A) => B): B {
+  return f(a)
+}
+
+function pipe2<A, B, C>(a: A, f: (a: A) => B, g: (b: B) => C): C {
+  return g(f(a))
+}
+
+// Pipeline operator simulation
+const result = pipe(
+  5,
+  addOne,
+  double,
+  Math.sqrt
+)
+
+// Higher-order composition
+type Transform<T> = (value: T) => T
+
+function composeTransforms<T>(
+  ...transforms: Transform<T>[]
+): Transform<T> {
+  return (value: T) => transforms.reduce((acc, fn) => fn(acc), value)
+}
+
+// Applicative functor
+type Box<T> = {
+  map<U>(f: (t: T) => U): Box<U>
+  flatMap<U>(f: (t: T) => Box<U>): Box<U>
+  extract: T
+}
+
+function createBox<T>(value: T): Box<T> {
+  return {
+    map(f) { return createBox(f(value)) },
+    flatMap(f) { return f(value) },
+    extract: value
+  }
+}
+```
+
+### Composition Benefits
+- **Modularity**: Each function has single responsibility
+- **Reusability**: Functions can be combined in multiple ways
+- **Readability**: Clear pipeline of transformations
+- **Testing**: Each step can be tested independently
+- **Maintenance**: Changes to one function don't affect others
+
+## Currying and Partial Application
+
+Creating specialized functions from more general ones.
+
+```typescript
+// Currying: transform function with multiple parameters
+type Curry = {
+  <A, B, R>(f: (a: A, b: B) => R): (a: A) => (b: B) => R
+}
+
+const curry: Curry = function<A, B, R>(f: (a: A, b: B) => R) {
+  return (a: A) => (b: B) => f(a, b)
+}
+
+// Partial application: apply some arguments to a function
+function partial<A, B, R>(
+  f: (a: A, b: B) => R,
+  a: A
+): (b: B) => R {
+  return (b: B) => f(a, b)
+}
+
+// Example usage
+const multiply = (a: number, b: number) => a * b
+const curriedMultiply = curry(multiply)
+const multiplyByTwo = partial(multiply, 2)
+
+const result1 = curriedMultiply(3)(4) // 12
+const result2 = multiplyByTwo(5) // 10
+```
+
+## Advanced Type Systems
+
+TypeScript provides powerful abstractions for type-safe function operations.
+
+### Generic Type Constraints
+
+```typescript
+// Function that works with any object type
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key]
+}
+
+// Function type transformations
+type FunctionReturnType<F> = F extends (...args: any[]) => infer R ? R : never
+type FunctionArguments<F> = F extends (...args: infer A) => any ? A : never
+
+// Conditional types for smart inference
+type IsString<T> = T extends string ? true : false
+type Flatten<T> = T extends Array<infer U> ? U : T
+
+// Mapped types for bulk transformations
+type Readonly<T> = {
+  readonly [K in keyof T]: T[K]
+}
+
+type Optional<T> = {
+  [K in keyof T]?: T[K]
+}
+
+type Getters<T> = {
+  [K in keyof T as `get${Capitalize<string & K>}`]: () => T[K]
+}
+```
+
+### Monad and Functor Patterns
+
+```typescript
+// Functor: structure-preserving transformation
+interface Functor<A> {
+  map<B>(f: (a: A) => B): Functor<B>
+}
+
+// Monad: composing computations
+interface Monad<A> extends Functor<A> {
+  flatMap<B>(f: (a: A) => Monad<B>): Monad<B>
+  pure(a: A): Monad<A>
+}
+
+// Either: error handling monad
+type Either<E, A> = Left<E> | Right<A>
+
+type Left<E> = { tag: 'left'; value: E }
+type Right<A> = { tag: 'right'; value: A }
+
+const left = <E, A>(e: E): Either<E, A> => ({ tag: 'left', value: e })
+const right = <E, A>(a: A): Either<E, A> => ({ tag: 'right', value: a })
+
+function mapEither<E, A, B>(
+  either: Either<E, A>,
+  f: (a: A) => B
+): Either<E, B> {
+  return either.tag === 'left' ? either : right(f(either.value))
+}
+
+function flatMapEither<E, A, B>(
+  either: Either<E, A>,
+  f: (a: A) => Either<E, B>
+): Either<E, B> {
+  return either.tag === 'left' ? either : f(either.value)
+}
+```
+
+## Function Signatures and Overloading
+
+Designing clear, expressive function interfaces.
+
+```typescript
+// Function overloading
+function processInput(input: string): string
+function processInput(input: number): number
+function processInput(input: string | number): string | number {
+  if (typeof input === 'string') {
+    return input.toUpperCase()
+  }
+  return input * 2
+}
+
+// Generic function with constraints
+function mergeObjects<T extends object, U extends object>(obj1: T, obj2: U): T & U {
+  return { ...obj1, ...obj2 } as T & U
+}
+
+// Variadic functions
+function concat<T>(...items: T[]): T[] {
+  return items
+}
+
+// Async function types
+type AsyncFunction<T> = (...args: any[]) => Promise<T>
+type AsyncVoidFunction = (...args: any[]) => Promise<void>
+
+// Function that returns functions
+function createValidator(pattern: RegExp): (value: string) => boolean {
+  return (value: string) => pattern.test(value)
+}
+
+// Function composition with types
+type Predicate<T> = (value: T) => boolean
+
+function and<T>(...predicates: Predicate<T>[]): Predicate<T> {
+  return (value: T) => predicates.every(p => p(value))
+}
+
+function or<T>(...predicates: Predicate<T>[]): Predicate<T> {
+  return (value: T) => predicates.some(p => p(value))
+}
+```
+
+## Recursion and Tail Call Optimization
+
+Managing recursion efficiently.
+
+```typescript
+// Basic recursion
+function factorial(n: number): number {
+  if (n <= 1) return 1
+  return n * factorial(n - 1)
+}
+
+// Tail call recursion (can be optimized)
+function tailFactorial(n: number, acc: number = 1): number {
+  if (n <= 1) return acc
+  return tailFactorial(n - 1, n * acc)
+}
+
+// Trampoline pattern for JavaScript
+type Trampoline<T> = { tag: 'done'; value: T } | { tag: 'bounce'; fn: () => Trampoline<T> }
+
+function done<T>(value: T): Trampoline<T> {
+  return { tag: 'done', value }
+}
+
+function bounce<T>(fn: () => Trampoline<T>): Trampoline<T> {
+  return { tag: 'bounce', fn }
+}
+
+function runTrampoline<T>(t: Trampoline<T>): T {
+  while (t.tag === 'bounce') {
+    t = t.fn()
+  }
+  return t.value
+}
+
+function trampolinedFactorial(n: number, acc: number = 1): Trampoline<number> {
+  if (n <= 1) return done(acc)
+  return bounce(() => trampolinedFactorial(n - 1, n * acc))
+}
+```
+
+## Performance Considerations
+
+```typescript
+// Memoization for expensive computations
+function memoize<A extends any[], R>(f: (...args: A) => R): (...args: A) => R {
+  const cache = new Map<string, R>()
+  return (...args: A) => {
+    const key = JSON.stringify(args)
+    if (cache.has(key)) {
+      return cache.get(key)!
+    }
+    const result = f(...args)
+    cache.set(key, result)
+    return result
+  }
+}
+
+// Lazy evaluation
+class Lazy<T> {
+  constructor(private fn: () => T) {}
+
+  force(): T {
+    return this.fn()
+  }
+
+  map<U>(transform: (value: T) => U): Lazy<U> {
+    return new Lazy(() => transform(this.force()))
+  }
+}
+
+// Debouncing for rate-limited functions
+function debounce<A extends any[], R>(
+  f: (...args: A) => R,
+  delay: number
+): (...args: A) => void {
+  let timeout: NodeJS.Timeout | null = null
+  return (...args: A) => {
+    if (timeout) clearTimeout(timeout)
+    timeout = setTimeout(() => f(...args), delay)
+  }
+}
+
+// Throttling for bounded execution
+function throttle<A extends any[], R>(
+  f: (...args: A) => R,
+  interval: number
+): (...args: A) => void {
+  let lastRun = 0
+  return (...args: A) => {
+    const now = Date.now()
+    if (now - lastRun >= interval) {
+      f(...args)
+      lastRun = now
+    }
+  }
+}
+```
+
+## Testing Code Functions
+
+```typescript
+// Property-based testing
+type Property<T> = (value: T) => boolean
+
+function forAll<T>(generator: () => T, property: Property<T>, times: number = 100): boolean {
+  for (let i = 0; i < times; i++) {
+    const value = generator()
+    if (!property(value)) return false
+  }
+  return true
+}
+
+// Example: testing commutative property
+const additionIsCommutative = forAll(
+  () => ({ a: Math.random() * 100, b: Math.random() * 100 }),
+  ({ a, b }) => Math.abs((a + b) - (b + a)) < 0.0001
+)
+```
+
+## Best Practices
+
+1. **Favor Pure Functions**: Design functions to be pure when possible; isolate side effects
+2. **Clear Naming**: Function names should clearly indicate purpose and behavior
+3. **Single Responsibility**: Each function should do one thing well
+4. **Type Safety**: Use TypeScript's type system to catch errors at compile time
+5. **Composition Over Inheritance**: Build complex behavior by composing simple functions
+6. **Document Side Effects**: Clearly document any side effects or impurities
+7. **Error Handling**: Use types and functions to represent and propagate errors
+8. **Performance**: Profile and optimize hot paths; use memoization judiciously
+9. **Testability**: Structure functions to be easily testable with simple test cases
+10. **Reusability**: Design functions to be general and composable
+
+## Related Domains
+
+- [agents.org.ai](https://agents.org.ai) - Autonomous actors that use functions
+- [workflows.org.ai](https://workflows.org.ai) - Workflows orchestrate multiple functions
+- [code.org.ai](https://code.org.ai) - Programming and code patterns
+- [models.org.ai](https://models.org.ai) - Type models and data structures
+- [tasks.org.ai](https://tasks.org.ai) - Task execution and scheduling
+
+## Related Standards
+
+- TypeScript Handbook: [Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
+- [Functional Programming Principles](https://en.wikipedia.org/wiki/Functional_programming)
+- [Function Composition](https://en.wikipedia.org/wiki/Function_composition_(computer_science))
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="CodeFunctions" />

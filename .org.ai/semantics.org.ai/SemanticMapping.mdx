@@ -1,0 +1,563 @@
+---
+$context: https://semantics.org.ai
+$id: https://semantics.org.ai/SemanticMapping
+$type: https://semantics.org.ai/SemanticMapping
+name: "Semantic Mapping"
+description: "Schema alignment, crosswalks, transformations, and semantic interoperability"
+---
+
+# Semantic Mapping
+
+Semantic mapping enables interoperability between different semantic systems, ontologies, and data schemas through alignment, transformation, and crosswalk definitions.
+
+## Overview
+
+Semantic mapping establishes relationships between concepts in different semantic systems, enabling data exchange, integration, and cross-system reasoning. It bridges the gap between heterogeneous information systems.
+
+### Mapping Types
+
+- **Entity Mapping**: Connecting entities across systems
+- **Schema Mapping**: Aligning data structures
+- **Predicate Mapping**: Relating properties and relationships
+- **Value Mapping**: Transforming literal values
+- **Ontology Mapping**: Aligning semantic concepts
+
+## Basic Mapping Concepts
+
+### Entity-to-Entity Mapping
+
+Establishing equivalence between entities across systems:
+
+```
+:Alice@SystemA owl:sameAs :AliceSmith@SystemB .
+:Company123@SystemA owl:sameAs :ORG-456@SystemC .
+```
+
+### Partial Equivalence
+
+Entities that represent similar but not identical concepts:
+
+```
+:Alice@SystemA rdfs:isDefinedBy :SystemA ;
+               :similarTo :AliceS@SystemB ;
+               :similarity 0.92 ;
+               :basedOnFeatures :Name, :Email, :Phone .
+```
+
+### URI Mapping Tables
+
+Managing multiple identifiers for the same entity:
+
+```
+:EntityMapping
+  a :IdentifierMapping ;
+  :entity :RealWorldEntity ;
+  :identifier :UUID ;
+  :systemA_ID "EMP-12345" ;
+  :systemB_ID "USER-67890" ;
+  :systemC_ID "PERSON-ABC" ;
+  :externalID "000-00-0000" ;
+  :createdDate "2024-01-01" ;
+  :lastSynced "2024-11-28" .
+```
+
+## Schema Mapping
+
+### Structural Alignment
+
+Mapping between different data models:
+
+```
+# Source Schema (Relational)
+employees(id, firstName, lastName, email, phone)
+
+# Target Schema (RDF)
+:EmployeeMappingRules
+  a :SchemaMapping ;
+  :fromSchema :RelationalSchema ;
+  :toSchema :RDFOntology ;
+  :mapping [
+    :sourceField "employees.id" ;
+    :targetProperty :hasID ;
+    :transformation :Identity ;
+  ] ;
+  :mapping [
+    :sourceField "employees.firstName" ;
+    :sourceField "employees.lastName" ;
+    :targetProperty :hasName ;
+    :transformation :Concatenate ;
+  ] ;
+  :mapping [
+    :sourceField "employees.email" ;
+    :targetProperty :hasEmail ;
+    :transformation :Identity ;
+  ] .
+```
+
+### Class Mapping
+
+Aligning entity types across schemas:
+
+```
+:PersonMapping
+  a :ClassMapping ;
+  :sourceClass :rdbms:Person ;
+  :targetClass :foaf:Person ;
+  :similarity 0.95 ;
+  :mappingRules [
+    :ruleType :DirectMatch ;
+  ] .
+
+:EmployeeMapping
+  a :ClassMapping ;
+  :sourceClass :rdbms:Employee ;
+  :targetClass :schema:Employee ;
+  :subClassOf :PersonMapping ;
+  :additionalProperties [
+    :targetProperty :schema:employmentType ;
+    :sourceField "employment_type" ;
+  ] .
+```
+
+### Property Mapping
+
+Aligning attributes and relationships:
+
+```
+:PropertyMappings
+  a :PropertyAlignmentSet ;
+  :mapping [
+    :sourceProperty :person.birth_date ;
+    :targetProperty :foaf:birthday ;
+    :transformation :DateFormatConversion ;
+    :confidence 1.0 ;
+  ] ;
+  :mapping [
+    :sourceProperty :person.gender ;
+    :targetProperty :schema:gender ;
+    :transformation :EnumMapping ;
+    :enumMap [
+      :source "M" ;
+      :target "Male" ;
+    ] ;
+  ] ;
+  :mapping [
+    :sourceProperty :person.salary ;
+    :targetProperty :schema:salary ;
+    :transformation :ScalingTransformation ;
+    :scaleFactor 1.0 ; # No scaling needed
+  ] .
+```
+
+## Value Mapping and Transformation
+
+### Enumeration Mapping
+
+Mapping between different value representations:
+
+```
+:GenderEnumMapping
+  a :EnumerationMapping ;
+  :sourceEnum :RelationalGender ;
+  :targetEnum :SchemaGender ;
+  :mapping [
+    :source "M" ; :target "Male" ;
+  ] ;
+  :mapping [
+    :source "F" ; :target "Female" ;
+  ] ;
+  :mapping [
+    :source "O" ; :target "Other" ;
+  ] ;
+  :mapping [
+    :source "N/A" ; :target :Unknown ;
+  ] .
+```
+
+### Numeric Transformations
+
+```
+:SalaryTransformation
+  a :NumericMapping ;
+  :sourceUnit :USD ;
+  :targetUnit :EUR ;
+  :conversionRate 0.92 ;
+  :formula "target = source * conversionRate" ;
+  :precision 2 ; # Decimal places
+  :rounding :Half-Up .
+```
+
+### String Transformations
+
+```
+:StringMappings
+  a :StringTransformationSet ;
+  :mapping [
+    :name :ToUpperCase ;
+    :applies-to :CountryCode ;
+    :function :StringUpper ;
+  ] ;
+  :mapping [
+    :name :PhoneFormatting ;
+    :applies-to :PhoneNumber ;
+    :pattern "^(\\d{3})-(\\d{3})-(\\d{4})$" ;
+    :replacement "($1) $2-$3" ;
+  ] ;
+  :mapping [
+    :name :TrimWhitespace ;
+    :applies-to :AllStringFields ;
+    :function :StringTrim ;
+  ] .
+```
+
+### Temporal Transformations
+
+```
+:DateMapping
+  a :TemporalMapping ;
+  :sourceFormat "yyyy-MM-dd" ;
+  :targetFormat "dd/MM/yyyy" ;
+  :sourceTimezone :UTC ;
+  :targetTimezone "America/New_York" ;
+  :handling :ConvertToTargetTimezone .
+```
+
+## Ontology Alignment
+
+### Concept Alignment
+
+Establishing relationships between concepts in different ontologies:
+
+```
+:EmploymentConcept@OntologyA skos:exactMatch :JobRelationship@OntologyB .
+:Company@OntologyA skos:closeMatch :Organization@OntologyB .
+:Project@OntologyA skos:broadMatch :Initiative@OntologyB .
+```
+
+### Property Alignment
+
+```
+:PersonNameProperty@OntA
+  owl:equivalentProperty :PersonFullName@OntB ;
+  skos:relatedMatch :PersonDisplayName@OntC ;
+  :alignment-confidence 0.98 ;
+  :alignment-method :AutomaticAlignment .
+```
+
+### Subsumption Relationships
+
+```
+:ManagerRole@OntologyA rdfs:subClassOf :EmployeeRole@OntologyB .
+:SeniorManager rdfs:subClassOf :ManagerRole .
+
+# Transitive: SeniorManager is a subclass of EmployeeRole
+```
+
+## Crosswalk Definition
+
+### Semantic Crosswalk
+
+Detailed mapping that maintains semantic relationships:
+
+```
+:DataExchangeCrosswalk
+  a :SemanticCrosswalk ;
+  :sourceSystem :LegacyDatabase ;
+  :targetSystem :ModernOntology ;
+  :version "1.0" ;
+  :createdDate "2024-01-01" ;
+  :lastUpdated "2024-11-28" ;
+  :mappings [
+    :sourceEntity :dbo:Person ;
+    :targetEntity :foaf:Person ;
+    :attributes [
+      :source-attributes [
+        :first_name, :last_name, :birth_date, :gender
+      ] ;
+      :target-attributes [
+        :foaf:givenName, :foaf:familyName, :foaf:birthday, :schema:gender
+      ] ;
+      :rules [
+        :ruleId 1 ;
+        :source :first_name ;
+        :target :foaf:givenName ;
+        :transformation :Identity ;
+      ] ;
+      :rules [
+        :ruleId 2 ;
+        :source [:first_name, :last_name] ;
+        :target :foaf:name ;
+        :transformation :Concatenate ;
+        :separator " " ;
+      ] ;
+    ] ;
+  ] .
+```
+
+### Standard Crosswalks
+
+Common crosswalk definitions:
+
+```
+:DDC2BISAC
+  a :ClassificationCrosswalk ;
+  :from :DeweyDecimalClassification ;
+  :to :BISACSubjectHeadings ;
+  :example [
+    :ddc "005.3" ;
+    :bisac "COMPUTERS / Programming / General" ;
+    :confidence 0.85 ;
+  ] .
+
+:ICD9ToICD10
+  a :MedicalCrosswalk ;
+  :from :ICD9 ;
+  :to :ICD10 ;
+  :example [
+    :icd9 "250.00" ;
+    :icd10 "E11.9" ;
+    :approximate false ;
+  ] .
+```
+
+## Bi-Directional Mapping
+
+### Symmetric Mapping
+
+Mapping that works in both directions:
+
+```
+:SymmetricMapping
+  a :BidirectionalMapping ;
+  :forward [
+    :from :SystemA ;
+    :to :SystemB ;
+    :transformation :TransformAtoB ;
+  ] ;
+  :backward [
+    :from :SystemB ;
+    :to :SystemA ;
+    :transformation :TransformBtoA ;
+  ] ;
+  :consistency-check [
+    :property :Invertibility ;
+    :value true ;
+  ] .
+```
+
+### Asymmetric Mapping
+
+Mapping with different rules in each direction:
+
+```
+:AsymmetricMapping
+  a :BidirectionalMapping ;
+  :forward [
+    :from :RelationalDB ;
+    :to :RDFOntology ;
+    :loss :MinimalLoss ;
+  ] ;
+  :backward [
+    :from :RDFOntology ;
+    :to :RelationalDB ;
+    :loss :SomeDataLoss ;
+    :reason "RDF supports features not in relational model" ;
+  ] .
+```
+
+## Complex Mapping Scenarios
+
+### Multi-Step Transformation
+
+```
+:ComplexMapping
+  a :TransformationPipeline ;
+  :step1 [
+    :name :Extraction ;
+    :source :SourceDatabase ;
+    :target :InterimRepresentation ;
+  ] ;
+  :step2 [
+    :name :SchemaMapping ;
+    :source :InterimRepresentation ;
+    :target :NormalizedForm ;
+  ] ;
+  :step3 [
+    :name :DataCleaning ;
+    :source :NormalizedForm ;
+    :target :CleanedData ;
+  ] ;
+  :step4 [
+    :name :Enrichment ;
+    :source :CleanedData ;
+    :target :EnrichedData ;
+  ] ;
+  :step5 [
+    :name :Loading ;
+    :source :EnrichedData ;
+    :target :TargetOntology ;
+  ] .
+```
+
+### Conditional Mapping
+
+```
+:ConditionalMapping
+  a :AdaptiveMapping ;
+  :condition [
+    :field :dataType ;
+    :value :Numeric ;
+  ] ;
+  :then [
+    :transformation :NumericMapping ;
+  ] ;
+  :elseif [
+    :condition [
+      :field :dataType ;
+      :value :String ;
+    ] ;
+    :then [
+      :transformation :StringMapping ;
+    ] ;
+  ] ;
+  :else [
+    :transformation :CustomHandling ;
+  ] .
+```
+
+## Quality Metrics for Mappings
+
+### Mapping Confidence
+
+```
+:MappingQuality
+  a :QualityMetrics ;
+  :confidence 0.95 ;        # How certain is the mapping
+  :coverage 0.98 ;          # Percentage of data covered
+  :consistency 0.92 ;       # Consistency across mappings
+  :accuracy 0.96 ;          # Correctness of mappings
+  :completeness 0.99 ;      # No missing mappings
+  :validationMethod :ManualReview ;
+  :validatedBy :Expert ;
+  :validationDate "2024-11-28" .
+```
+
+### Mapping Statistics
+
+```
+:MappingStatistics
+  a :StatisticalAnalysis ;
+  :totalMappings 1250 ;
+  :validMappings 1245 ;
+  :invalidMappings 5 ;
+  :unmappedElements 0 ;
+  :automapperAccuracy 0.87 ;
+  :manualReviewAccuracy 0.99 ;
+  :conflictingMappings 2 ;
+  :resolutionStatus :Resolved .
+```
+
+## Managing Mapping Evolution
+
+### Mapping Versioning
+
+```
+:MappingVersion1
+  a :OntologyMapping ;
+  :version 1.0 ;
+  :createdDate "2024-01-01" ;
+  :status :Deprecated ;
+  :replacedBy :MappingVersion2 ;
+  :deprecationDate "2024-06-01" .
+
+:MappingVersion2
+  a :OntologyMapping ;
+  :version 2.0 ;
+  :createdDate "2024-06-01" ;
+  :status :Current ;
+  :improvements [
+    :betterCoverage true ;
+    :improvedAccuracy 0.94 ;
+    :addedMappings 50 ;
+  ] .
+```
+
+### Mapping Migration
+
+```
+:MigrationPlan
+  a :MappingMigration ;
+  :fromMapping :OldMapping ;
+  :toMapping :NewMapping ;
+  :conversionRate 0.99 ;
+  :failureRecovery [
+    :strategy :ManualReview ;
+    :escalateIssues true ;
+  ] ;
+  :rollbackPlan :Available ;
+  :estimatedTime "PT2H" .
+```
+
+## Integration with Related Systems
+
+### Link to Semantic Statements
+
+Mappings transform semantic statements between systems.
+
+See: [SemanticStatements.mdx](./SemanticStatements.mdx)
+
+### Link to Knowledge Systems
+
+Mapping enables integration of knowledge from multiple sources.
+
+See: [knowledge.org.ai](https://knowledge.org.ai)
+
+### Link to Language Systems
+
+Natural language understanding often requires semantic mapping.
+
+See: [language.org.ai](https://language.org.ai)
+
+### Link to Graph Systems
+
+Graph alignment and fusion uses semantic mapping.
+
+See: [graph.org.ai](https://graph.org.ai)
+
+## Best Practices
+
+1. **Clarity**: Document mapping rules clearly
+2. **Completeness**: Ensure all relevant elements are mapped
+3. **Consistency**: Apply mappings consistently across datasets
+4. **Quality Metrics**: Track and report mapping quality
+5. **Testing**: Validate mappings with test data
+6. **Versioning**: Manage mapping versions and changes
+7. **Maintenance**: Regularly review and update mappings
+8. **Automation**: Use automated tools where appropriate
+
+## Anti-Patterns
+
+1. **Incomplete Mapping**: Missing mappings for important elements
+2. **Ambiguous Rules**: Unclear or conflicting mapping definitions
+3. **No Quality Checks**: Failing to validate mapping quality
+4. **Unmaintained Mappings**: Mappings that become stale
+5. **Overcomplication**: Unnecessarily complex mapping logic
+6. **Bidirectional Loss**: Data loss in round-trip transformations
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| Type | `SemanticMapping` |
+| Domain | [semantics.org.ai](https://semantics.org.ai) |
+| Mapping Types | Entity, Schema, Predicate, Value, Ontology |
+| Standards | OWL, SKOS, R2RML, SHACL |
+| Quality Metrics | Confidence, Coverage, Consistency, Accuracy |
+
+## Sources
+
+- [SKOS Specification](https://www.w3.org/2004/02/skos/)
+- [OWL 2 Web Ontology Language](https://www.w3.org/TR/owl2-overview/)
+- [R2RML: RDB to RDF Mapping Language](https://www.w3.org/TR/r2rml/)
+- [SHACL Specification](https://www.w3.org/TR/shacl/)
+- [Linked Data Best Practices](https://www.w3.org/DesignIssues/LinkedData.html)

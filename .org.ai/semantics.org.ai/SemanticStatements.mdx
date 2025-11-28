@@ -1,0 +1,268 @@
+---
+$context: https://semantics.org.ai
+$id: https://semantics.org.ai/SemanticStatements
+$type: https://semantics.org.ai/SemanticStatement
+name: "Semantic Statements"
+description: "Foundation of semantic representation using subject-predicate-object triples, reification, and contextual metadata"
+---
+
+# Semantic Statements
+
+Semantic statements form the fundamental building blocks of semantic systems, expressing relationships and facts about entities in a structured, machine-processable format.
+
+## Overview
+
+Semantic statements are atomic units of meaning that express relationships between subjects and objects through predicates. This triple structure (subject, predicate, object) serves as the foundation for semantic systems like RDF, OWL, and knowledge graphs.
+
+### Core Concepts
+
+#### 1. Subject-Predicate-Object Triples
+
+The basic structure of a semantic statement consists of three components:
+
+- **Subject**: The entity being described or referenced
+- **Predicate**: The property or relationship being asserted
+- **Object**: The value or target entity of the relationship
+
+```
+Subject: https://example.org/Alice
+Predicate: https://example.org/knows
+Object: https://example.org/Bob
+```
+
+#### 2. Named Graphs and Context
+
+Semantic statements can be grouped within named graphs to associate metadata and manage context:
+
+```
+Graph: https://example.org/graph/2024-dataset
+Subject: https://example.org/Project-A
+Predicate: https://example.org/startDate
+Object: "2024-01-15"
+```
+
+#### 3. Blank Nodes
+
+Anonymous entities without explicit URIs, useful for representing intermediate structures:
+
+```
+Subject: _:blank123
+Predicate: https://example.org/composedOf
+Object: https://example.org/Component-1
+```
+
+## Reification
+
+Reification is the process of converting a statement into an entity that can itself be described and referenced. This allows attaching metadata to statements.
+
+### Basic Reification Pattern
+
+```
+:statement1 a rdf:Statement ;
+  rdf:subject :Alice ;
+  rdf:predicate :knows ;
+  rdf:object :Bob ;
+  :confidence 0.95 ;
+  :sourceDate "2024-01-15" ;
+  :evidenceLevel "high" .
+```
+
+### Use Cases
+
+- **Assertion Metadata**: Add confidence scores, provenance, temporal information
+- **Statement Relationships**: Link statements together to express complex relationships
+- **Qualification**: Qualify statements with modifiers, contexts, or conditions
+- **Versioning**: Track statement evolution and modifications over time
+
+### Implementation Strategies
+
+#### Graph-Based Reification
+
+```
+:stmt1 a :Statement ;
+  :subject :Alice ;
+  :predicate :hasAge ;
+  :object 30 ;
+  :confidence 0.98 ;
+  :source :DocumentX ;
+  :timestamp "2024-11-28T10:30:00Z" .
+```
+
+#### Annotation Reification
+
+```
+:Alice :knows :Bob .
+
+_:annotation1 a :StatementAnnotation ;
+  :annotates (:Alice :knows :Bob) ;
+  :confidence 0.85 ;
+  :source :Wikipedia ;
+  :type :ExternalReference .
+```
+
+## Contextual Statements
+
+Statements often require contextual information to be meaningful and accurate.
+
+### Temporal Context
+
+```
+:Alice :livesIn :Paris
+  ; :startDate "2020-01-01"
+  ; :endDate "2024-01-01"
+  ; :context :TemporalBound .
+```
+
+### Spatial Context
+
+```
+:ConferenceX :heldIn :NewYork
+  ; :location [
+    :latitude 40.7128 ;
+    :longitude -74.0060 ;
+    :venue :CentralPark
+  ] .
+```
+
+### Circumstantial Context
+
+```
+:ProjectA :hasStatus :Active
+  ; :condition :OnBudget
+  ; :riskLevel :Low
+  ; :reviewDate "2024-11-28" .
+```
+
+## Semantic Enrichment
+
+Enhancing statements with additional semantic information:
+
+### Type Annotations
+
+```
+:Alice :hasOccupation :SoftwareEngineer ;
+  :hasQualification :MastersDegree ;
+  :worksDomain :ArtificialIntelligence .
+```
+
+### Quantification and Measurement
+
+```
+:ProjectX :hasBudget [
+  :amount 1000000 ;
+  :currency :USD ;
+  :year 2024
+] .
+```
+
+### Qualification and Modality
+
+```
+:Statement1 :assertionType :Definite ;
+  :modality :Certainty ;
+  :likelihood 0.92 .
+
+:Statement2 :assertionType :Probable ;
+  :modality :Possibility ;
+  :likelihood 0.45 .
+```
+
+## Statement Validation
+
+Ensuring semantic statements meet quality standards:
+
+### Completeness Checks
+
+- Subject defined and valid
+- Predicate defined and valid
+- Object defined and valid
+- Appropriate datatype for object value
+
+### Consistency Checks
+
+- No contradictory statements in knowledge base
+- Transitive properties maintain consistency
+- Symmetric properties are bidirectional where required
+
+### Logical Validation
+
+```
+:Alice :knows :Bob .
+:Bob :knows :Charlie .
+
+# Validate transitive property
+:Alice :knows :Charlie . # Should hold if transitivity is defined
+```
+
+## Integration with Related Systems
+
+### Link to Knowledge Graphs
+
+Semantic statements form the foundation of knowledge graphs, enabling:
+- Entity resolution and disambiguation
+- Relationship discovery
+- Inference and reasoning
+
+See: [knowledge.org.ai](https://knowledge.org.ai)
+
+### Integration with Language Systems
+
+Semantic statements can be generated from natural language processing:
+- Named entity recognition
+- Relation extraction
+- Event detection
+
+See: [language.org.ai](https://language.org.ai)
+
+### Graph-Based Representation
+
+Statements are represented as nodes and edges in semantic graphs:
+- Nodes represent entities
+- Edges represent predicates
+- Properties attach metadata
+
+See: [graph.org.ai](https://graph.org.ai)
+
+## Best Practices
+
+1. **URI Consistency**: Use consistent, resolvable URIs for subjects and predicates
+2. **Namespace Management**: Organize predicates into meaningful namespaces
+3. **Data Types**: Specify appropriate data types for literal objects
+4. **Provenance Tracking**: Include source and confidence information when available
+5. **Granularity**: Break complex statements into multiple atomic statements
+6. **Documentation**: Provide clear definitions for custom predicates
+7. **Reification When Needed**: Only reify statements when additional metadata is required
+
+## Anti-Patterns
+
+1. **Overloading Objects**: Using string values instead of typed entities
+2. **Implicit Context**: Assuming contextual information without explicit statement
+3. **Vague Predicates**: Using overly general predicates without specificity
+4. **Lost Provenance**: Failing to track source and authority of statements
+5. **Unnormalized Data**: Storing redundant information across multiple statements
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| Type | `SemanticStatement` |
+| Domain | [semantics.org.ai](https://semantics.org.ai) |
+| Parent | [language.org.ai](https://language.org.ai) |
+| Core Components | Subject, Predicate, Object |
+| Reification | Converting statements to entities |
+| Context Types | Temporal, Spatial, Circumstantial |
+| Standards | RDF, OWL, SHACL |
+
+## Related Concepts
+
+- **Semantic Rules**: Logic applied to statements
+- **Semantic Patterns**: Common statement structures
+- **Semantic Modifiers**: Qualification and context
+- **Semantic Mapping**: Statement alignment and transformation
+
+## Sources
+
+- [W3C RDF Semantics](https://www.w3.org/TR/rdf11-semantics/)
+- [W3C OWL 2 Specification](https://www.w3.org/TR/owl2-overview/)
+- [RDF 1.1 Concepts](https://www.w3.org/TR/rdf11-concepts/)
+- [SPARQL Query Language](https://www.w3.org/TR/sparql11-query/)

@@ -1,0 +1,642 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/DataSchemas
+$type: https://datasets.org.ai/DataCategory
+name: "Data Schemas"
+description: "Schema definition languages and type systems for validating and documenting data structures including JSON Schema, Avro Schema, Protobuf, and TypeScript types."
+parent: https://datasets.org.ai
+---
+
+export const items = async () => {
+  // Fetch schema resources from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://datasets.org.ai/DataSchema'
+  })
+}
+
+# Data Schemas
+
+Data schemas define the structure, types, and constraints of data. They serve as contracts between data producers and consumers, enabling validation, documentation, code generation, and evolution. This category covers the principal schema definition languages used in modern data systems.
+
+## Overview
+
+A data schema provides:
+- **Structure Definition**: What fields/properties exist and their organization
+- **Type Specification**: What type of values are allowed
+- **Validation Rules**: Constraints and allowed values
+- **Documentation**: Self-documenting data models
+- **Evolution Support**: Backward/forward compatibility as schemas change
+- **Code Generation**: Automatic generation of client libraries and validators
+
+Different schema languages are optimized for different contexts: REST APIs (JSON Schema), distributed systems (Protocol Buffers, Avro), and type-safe programming (TypeScript).
+
+## JSON Schema
+
+**Overview**: A declarative language for validating JSON documents. JSON Schema provides a standard way to describe the structure and constraints of JSON data.
+
+**Key Characteristics**:
+- Declarative, composable schema definitions
+- Comprehensive validation keywords
+- Recursive schema support
+- Keyword structure: type, properties, required, pattern, etc.
+- Multiple draft versions (draft-7 is widely used, draft-2020-12 latest)
+
+**Core Validation Keywords**:
+
+| Keyword | Purpose | Example |
+|---------|---------|---------|
+| `type` | Data type validation | `"type": "string"` |
+| `properties` | Object field definitions | `"properties": {"name": {...}}` |
+| `required` | Mandatory fields | `"required": ["id", "name"]` |
+| `pattern` | Regex validation for strings | `"pattern": "^[a-z]+$"` |
+| `enum` | Allowed values | `"enum": ["active", "inactive"]` |
+| `minimum`, `maximum` | Numeric constraints | `"minimum": 0, "maximum": 100` |
+| `minLength`, `maxLength` | String length | `"minLength": 1, "maxLength": 255` |
+| `items` | Array element schema | `"items": {"type": "string"}` |
+| `additionalProperties` | Extra properties | `"additionalProperties": false` |
+| `format` | Special string formats | `"format": "email"` |
+
+**Example Schema**:
+```json
+{
+  "$schema": "https://json-schema.org/draft-7/schema",
+  "$id": "https://datasets.org.ai/schemas/Person",
+  "title": "Person",
+  "description": "A person record",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 150
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "inactive", "pending"]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    }
+  },
+  "required": ["id", "name", "email"]
+}
+```
+
+**Advanced Features**:
+
+### References and Composition
+```json
+{
+  "$defs": {
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {"type": "string"},
+        "city": {"type": "string"}
+      }
+    }
+  },
+  "properties": {
+    "billing_address": {"$ref": "#/$defs/address"},
+    "shipping_address": {"$ref": "#/$defs/address"}
+  }
+}
+```
+
+### Conditional Schemas
+```json
+{
+  "if": {
+    "properties": {
+      "country": {"const": "US"}
+    }
+  },
+  "then": {
+    "properties": {
+      "state": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 2
+      }
+    },
+    "required": ["state"]
+  }
+}
+```
+
+**Common Use Cases**:
+- REST API request/response validation
+- Configuration file validation
+- Data quality checks
+- API documentation and OpenAPI integration
+- Form validation in frontend applications
+
+**Tools and Libraries**:
+- **Validators**: Ajv (fastest), jsonschema, json-schema-validator
+- **Tooling**: JSON Schema Studio, Quicktype (schema generation)
+- **Testing**: json-schema-test-suite
+
+**Advantages**:
+- Language-agnostic and widely supported
+- Can validate existing JSON without modification
+- Excellent tooling ecosystem
+- Self-descriptive and human-readable
+
+**Limitations**:
+- Not optimized for code generation (compared to Protobuf)
+- Schema evolution less structured than Avro
+- Performance overhead for complex validations
+
+## Avro Schema
+
+**Overview**: Avro is a data serialization system with a compact binary format and strong schema support. Avro schemas are defined in JSON.
+
+**Key Characteristics**:
+- Compact binary encoding
+- Strong schema evolution (reader/writer schema compatibility)
+- Primitive types: null, boolean, int, long, float, double, bytes, string
+- Complex types: record, enum, array, map, union
+- Named types with namespacing
+- Logical types (date, timestamp, decimal)
+
+**Basic Schema Structure**:
+```json
+{
+  "type": "record",
+  "name": "Person",
+  "namespace": "com.example.data",
+  "doc": "A person record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int",
+      "doc": "Unique identifier"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "created_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-ms"
+      }
+    }
+  ]
+}
+```
+
+**Complex Type Examples**:
+
+### Enum Type
+```json
+{
+  "type": "enum",
+  "name": "Status",
+  "symbols": ["ACTIVE", "INACTIVE", "PENDING"]
+}
+```
+
+### Union Type (Optional Field)
+```json
+{
+  "name": "phone",
+  "type": ["null", "string"],
+  "default": null
+}
+```
+
+### Nested Record
+```json
+{
+  "name": "address",
+  "type": {
+    "type": "record",
+    "name": "Address",
+    "fields": [
+      {"name": "street", "type": "string"},
+      {"name": "city", "type": "string"},
+      {"name": "zip", "type": "string"}
+    ]
+  }
+}
+```
+
+### Map Type
+```json
+{
+  "name": "attributes",
+  "type": {
+    "type": "map",
+    "values": "string"
+  }
+}
+```
+
+**Logical Types**:
+| Logical Type | Base Type | Purpose |
+|--------------|-----------|---------|
+| date | int | Date (days since epoch) |
+| timestamp-ms | long | Timestamp (milliseconds since epoch) |
+| timestamp-us | long | Timestamp (microseconds since epoch) |
+| decimal | bytes | Fixed-point decimal |
+| uuid | string | UUID string |
+
+**Schema Evolution**:
+Avro supports forward and backward compatibility:
+- **Adding fields with defaults**: Compatible (old readers ignore)
+- **Removing fields with defaults**: Compatible
+- **Changing field types**: Must be union-compatible
+- **Removing fields without defaults**: Breaking change
+
+**Use Cases**:
+- Apache Kafka message serialization
+- Event streaming platforms
+- Data pipeline intermediate formats
+- Hadoop ecosystem
+
+**Tools and Libraries**:
+- **Schema Registry**: Confluent Schema Registry
+- **Libraries**: confluent-kafka, PyAvro, fastavro
+- **Tooling**: Kafka ecosystem tools
+
+**Advantages**:
+- Excellent schema evolution support
+- Compact binary format
+- Natural fit for streaming/Kafka
+- Built-in logical types
+
+**Limitations**:
+- Less mature code generation compared to Protobuf
+- Smaller ecosystem than JSON Schema
+- Requires schema registry for production use
+
+## Protocol Buffers (Protobuf)
+
+**Overview**: Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data. Proto3 is the current major version.
+
+**Key Characteristics**:
+- Efficient binary encoding with small message size
+- Strong type system and code generation
+- Backward/forward compatibility through field numbering
+- Support for packages and namespaces
+- Extensive language support (20+ languages)
+- RPC service definitions through gRPC
+
+**Basic Proto Definition**:
+```protobuf
+syntax = "proto3";
+
+package com.example.data;
+
+message Person {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  int64 created_at = 4;  // timestamp in milliseconds
+  Status status = 5;
+  repeated string tags = 6;
+
+  enum Status {
+    UNKNOWN = 0;
+    ACTIVE = 1;
+    INACTIVE = 2;
+  }
+}
+
+message Address {
+  string street = 1;
+  string city = 2;
+  string zip = 3;
+}
+```
+
+**Field Types**:
+| Category | Types |
+|----------|-------|
+| Numeric | int32, int64, uint32, uint64, sint32, sint64, float, double |
+| Boolean | bool |
+| String | string, bytes |
+| Message | Custom message type (nested) |
+| Enum | Custom enumeration |
+| Collection | repeated (arrays/lists) |
+| Map | map<key_type, value_type> |
+
+**Advanced Features**:
+
+### Nested Messages
+```protobuf
+message Person {
+  string name = 1;
+  Address address = 2;
+
+  message Address {
+    string street = 1;
+    string city = 2;
+  }
+}
+```
+
+### Oneof (Mutually Exclusive Fields)
+```protobuf
+message Contact {
+  oneof type {
+    string email = 1;
+    string phone = 2;
+    string address = 3;
+  }
+}
+```
+
+### Map Types
+```protobuf
+message Person {
+  map<string, string> attributes = 1;
+}
+```
+
+### Service Definitions (gRPC)
+```protobuf
+service PersonService {
+  rpc GetPerson (PersonRequest) returns (Person);
+  rpc ListPeople (Empty) returns (stream Person);
+}
+```
+
+**Well-Known Types**:
+Protobuf provides standard types for common use cases:
+- `google.protobuf.Timestamp`: Timestamps
+- `google.protobuf.Duration`: Time durations
+- `google.protobuf.Any`: Any message type
+- `google.protobuf.StringValue`, `Int32Value`, etc.: Nullable types
+- `google.protobuf.Empty`: Empty message
+
+**Use Cases**:
+- gRPC service definitions and implementation
+- Microservice communication
+- Configuration management
+- Real-time messaging systems
+- Cloud-native applications
+
+**Tools and Libraries**:
+- **Compiler**: protoc (Protocol Buffer Compiler)
+- **Frameworks**: gRPC, gRPC-web
+- **Code Generation**: protoc plugins for all major languages
+- **Ecosystem**: gRPC-Gateway, protoc-gen-validate
+
+**Advantages**:
+- Smallest message size (3-10x smaller than JSON)
+- Extremely fast serialization/deserialization
+- Excellent code generation and type safety
+- Native RPC support through gRPC
+- Great ecosystem and tooling
+
+**Limitations**:
+- Not human-readable without .proto definitions
+- Steeper learning curve
+- Less flexible than JSON Schema
+- Requires code generation
+
+## TypeScript Type Definitions
+
+**Overview**: Using TypeScript interfaces and types provides development-time schema definition and validation in TypeScript/JavaScript projects.
+
+**Basic Type Definition**:
+```typescript
+interface Person {
+  id: number;
+  name: string;
+  email: string;
+  createdAt: Date;
+  status: 'active' | 'inactive' | 'pending';
+  tags?: string[];
+}
+
+interface Address {
+  street: string;
+  city: string;
+  zip: string;
+}
+```
+
+**Advanced Type Features**:
+
+### Generics
+```typescript
+interface ApiResponse<T> {
+  data: T;
+  error?: string;
+  meta: {
+    timestamp: Date;
+    version: string;
+  };
+}
+```
+
+### Discriminated Unions
+```typescript
+type Contact =
+  | { type: 'email'; value: string }
+  | { type: 'phone'; value: string }
+  | { type: 'address'; value: Address };
+```
+
+### Utility Types
+```typescript
+// Partial: all properties optional
+type PartialPerson = Partial<Person>;
+
+// Required: all properties required
+type RequiredPerson = Required<Person>;
+
+// Readonly: immutable
+type ReadonlyPerson = Readonly<Person>;
+
+// Pick: specific properties
+type PersonPreview = Pick<Person, 'id' | 'name'>;
+
+// Omit: exclude properties
+type PersonPublic = Omit<Person, 'email'>;
+
+// Record: object with specific keys
+type Attributes = Record<string, string>;
+```
+
+**Runtime Validation Libraries**:
+- **Zod**: Schema validation with TypeScript inference
+- **io-ts**: Runtime type validation for TypeScript
+- **Yup**: Schema validation
+- **Joi**: Powerful schema description
+
+**Zod Example**:
+```typescript
+import { z } from 'zod';
+
+const PersonSchema = z.object({
+  id: z.number().int().positive(),
+  name: z.string().min(1).max(255),
+  email: z.string().email(),
+  createdAt: z.date(),
+  status: z.enum(['active', 'inactive', 'pending']),
+  tags: z.array(z.string()).optional()
+});
+
+type Person = z.infer<typeof PersonSchema>;
+
+// Validation at runtime
+const result = PersonSchema.parse(jsonData);
+```
+
+**Use Cases**:
+- TypeScript/JavaScript application development
+- API client generation
+- Form validation and type safety
+- Documentation through types
+- Testing with typed mocks
+
+**Advantages**:
+- Native TypeScript integration
+- Excellent development experience with IDE support
+- Runtime validation available with libraries
+- Code generation from schemas possible
+
+**Limitations**:
+- Limited to TypeScript/JavaScript ecosystem
+- No language-independent serialization format
+- Schema definition and runtime behavior separated (without runtime validation)
+
+## Schema Comparison Matrix
+
+| Aspect | JSON Schema | Avro | Protobuf | TypeScript |
+|--------|-------------|------|----------|-----------|
+| **Human Readable** | Yes | Partial | No | Yes |
+| **Type Safety** | Weak | Strong | Very Strong | Very Strong |
+| **Code Generation** | Optional | Limited | Excellent | Excellent |
+| **Message Size** | Large | Medium | Very Small | N/A |
+| **Schema Evolution** | Fair | Excellent | Good | Variable |
+| **Ecosystem Size** | Large | Medium | Very Large | Large |
+| **Primary Use Case** | API validation | Streaming | gRPC services | Development |
+| **Serialization Speed** | Slow | Fast | Very Fast | N/A |
+| **Learning Curve** | Shallow | Medium | Medium | Shallow |
+
+## Schema Composition and Reuse
+
+### JSON Schema References
+```json
+{
+  "$defs": {
+    "address": { ... },
+    "person": {
+      "properties": {
+        "home": {"$ref": "#/$defs/address"}
+      }
+    }
+  }
+}
+```
+
+### Protobuf Imports
+```protobuf
+import "google/protobuf/timestamp.proto";
+import "./address.proto";
+
+message Person {
+  Address address = 1;
+  google.protobuf.Timestamp created_at = 2;
+}
+```
+
+### TypeScript Interface Extension
+```typescript
+interface BaseEntity {
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+interface Person extends BaseEntity {
+  name: string;
+  email: string;
+}
+```
+
+## Backward Compatibility Strategies
+
+### Adding Fields
+- JSON Schema: Always allowed
+- Avro: Add with default, old readers ignore
+- Protobuf: Use new field numbers, old readers ignore
+- TypeScript: Make optional with `?`
+
+### Removing Fields
+- JSON Schema: Allowed but risks validation failures
+- Avro: Only if you remove from reader schema
+- Protobuf: Reserved field numbers prevent reuse
+- TypeScript: Breaking change at compile time
+
+### Changing Types
+- JSON Schema: Can use oneOf for alternatives
+- Avro: Union types for compatibility
+- Protobuf: Very limited compatibility
+- TypeScript: Breaking change
+
+## Migration Paths
+
+### From JSON Schema to Protobuf
+```
+JSON Schema → Extract structure → Define .proto → Code generation
+Benefits: Smaller size, faster performance, gRPC support
+```
+
+### From TypeScript to Avro
+```
+TypeScript interfaces → Avro schema generation → Binary serialization
+Benefits: Language-agnostic, Kafka integration, schema evolution
+```
+
+### From Protobuf to OpenAPI
+```
+Protobuf services → protoc-gen-openapi → OpenAPI spec
+Benefits: REST API documentation, broader tool support
+```
+
+## Best Practices
+
+1. **Version Your Schemas**: Use $schema or versioning fields
+2. **Document Thoroughly**: Use descriptions and comments
+3. **Use Namespacing**: Avoid naming conflicts in large systems
+4. **Plan for Evolution**: Design with backward compatibility in mind
+5. **Validate at Boundaries**: Always validate external data
+6. **Share Schemas**: Use schema registries and repositories
+7. **Generate Code**: Use code generation where available
+8. **Test Validation**: Test schema validation rules thoroughly
+
+## Related Resources
+
+- [standards.org.ai](https://standards.org.ai) - Schema standards and specifications
+- [models.org.ai](https://models.org.ai) - Data models and modeling approaches
+- [knowledge.org.ai](https://knowledge.org.ai) - Semantic knowledge representation

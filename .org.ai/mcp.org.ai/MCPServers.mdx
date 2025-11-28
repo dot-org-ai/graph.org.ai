@@ -1,0 +1,570 @@
+---
+$context: https://mcp.org.ai
+$id: https://mcp.org.ai/MCPServers
+$type: https://mcp.org.ai/Mcp
+name: "MCP Server Implementation"
+description: "Comprehensive guide to implementing MCP servers, tool registration, and resource providers"
+---
+
+export const items = async () => {
+  return []
+}
+
+# MCP Server Implementation
+
+MCP Servers are applications that expose tools, resources, and capabilities to MCP clients. They implement the server-side of the Model Context Protocol and handle incoming requests from clients connected via various transport mechanisms.
+
+## Server Architecture
+
+### Core Components
+
+```
+┌──────────────────────────────────┐
+│  MCP Server Application          │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Protocol Handler          │  │
+│  │  - JSON-RPC Processing     │  │
+│  │  - Message Routing         │  │
+│  │  - Error Handling          │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Capability Manager        │  │
+│  │  - Tools Registry          │  │
+│  │  - Resources Registry      │  │
+│  │  - Schema Management       │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Execution Engine          │  │
+│  │  - Tool Invocation         │  │
+│  │  - Resource Access         │  │
+│  │  - State Management        │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Transport Handlers        │  │
+│  │  - stdio                   │  │
+│  │  - HTTP/SSE                │  │
+│  │  - WebSocket               │  │
+│  └────────────────────────────┘  │
+└──────────────────────────────────┘
+```
+
+## Tool Registration
+
+### Defining Tools
+
+Tools are the primary way servers expose callable functionality. Each tool consists of metadata and an implementation.
+
+```typescript
+interface Tool {
+  name: string                    // Unique identifier
+  description: string             // Human-readable description
+  inputSchema: JSONSchema          // Parameter schema
+  implementation: ToolFunction    // Handler function
+}
+
+type ToolFunction = (
+  args: Record<string, unknown>
+) => Promise<ToolResult>
+
+interface ToolResult {
+  content: ToolContent[]          // Results
+  isError?: boolean               // Error flag
+}
+
+type ToolContent =
+  | { type: 'text'; text: string }
+  | { type: 'image'; data: string; mimeType: string }
+  | { type: 'resource'; uri: string }
+```
+
+### Input Schema Definition
+
+Tools use JSON Schema to describe their parameters:
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "query": {
+      "type": "string",
+      "description": "Search query"
+    },
+    "limit": {
+      "type": "integer",
+      "description": "Maximum results",
+      "default": 10
+    },
+    "includeDetails": {
+      "type": "boolean",
+      "description": "Include detailed results"
+    }
+  },
+  "required": ["query"]
+}
+```
+
+### Tool Categories
+
+**Query Tools**
+- Retrieve and search data
+- No side effects
+- Can be cached
+
+**Action Tools**
+- Modify state or resources
+- Create/update/delete operations
+- Typically require confirmation
+
+**Analysis Tools**
+- Process and transform data
+- Complex computations
+- May take significant time
+
+**Integration Tools**
+- Connect external systems
+- API calls and webhooks
+- Handle authentication
+
+### Example Tool Implementation
+
+```typescript
+const searchTool = {
+  name: 'search_documents',
+  description: 'Search documents by keyword',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      query: {
+        type: 'string',
+        description: 'Search keywords'
+      },
+      category: {
+        type: 'string',
+        enum: ['all', 'technical', 'business'],
+        default: 'all'
+      }
+    },
+    required: ['query']
+  },
+  implementation: async (args) => {
+    const { query, category } = args
+
+    try {
+      const results = await documentDb.search({
+        text: query,
+        category: category === 'all' ? undefined : category,
+        limit: 20
+      })
+
+      return {
+        content: [{
+          type: 'text',
+          text: JSON.stringify(results, null, 2)
+        }]
+      }
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Error: ${error.message}`
+        }],
+        isError: true
+      }
+    }
+  }
+}
+```
+
+## Resource Providers
+
+### What are Resources?
+
+Resources represent data or content accessible through the protocol. They use URI-based addressing and can return various content types.
+
+```typescript
+interface Resource {
+  uri: string                     // Unique resource identifier
+  name: string                    // Display name
+  description: string             // Description
+  mimeType?: string              // Content type
+  templates?: string[]            // URI templates for dynamic resources
+}
+
+interface ResourceContent {
+  uri: string
+  mimeType: string               // text/plain, application/json, etc.
+  contents: string               // Resource content
+}
+```
+
+### Resource URI Patterns
+
+```
+Local files:          file://documents/report.pdf
+Database records:     db://users/12345
+API endpoints:        http://api.example.com/v1/data
+Time-based:          data://weather/today
+Search results:      search://documents?q=query
+```
+
+### Dynamic Resources with Templates
+
+```typescript
+const weatherResources = {
+  uri: 'weather://',
+  name: 'Weather Data',
+  description: 'Current and forecast weather',
+  templates: [
+    'weather://current/{city}',
+    'weather://forecast/{city}/{days}'
+  ],
+  implementation: async (uri) => {
+    const match = uri.match(/weather:\/\/(\w+)\/(\w+)/)
+    if (!match) throw new Error('Invalid resource URI')
+
+    const [, type, location] = match
+    const data = await weatherApi.get(type, location)
+
+    return {
+      uri,
+      mimeType: 'application/json',
+      contents: JSON.stringify(data)
+    }
+  }
+}
+```
+
+### Resource Types
+
+**Text Resources**
+- Markdown documentation
+- Plain text files
+- CSV/TSV data
+
+**Structured Resources**
+- JSON data
+- XML documents
+- Protocol buffers
+
+**Binary Resources**
+- Images and media
+- PDFs and documents
+- Compressed archives
+
+**Real-time Resources**
+- Streaming data
+- Live metrics
+- Event feeds
+
+### Resource Implementation Example
+
+```typescript
+const resourceProvider = {
+  listResources: async () => [
+    {
+      uri: 'knowledge://documentation',
+      name: 'Documentation',
+      description: 'API and tool documentation'
+    },
+    {
+      uri: 'knowledge://faq',
+      name: 'FAQ',
+      description: 'Frequently asked questions'
+    }
+  ],
+
+  getResource: async (uri) => {
+    if (uri === 'knowledge://documentation') {
+      const docs = await loadDocumentation()
+      return {
+        uri,
+        mimeType: 'text/markdown',
+        contents: docs
+      }
+    }
+    throw new Error(`Unknown resource: ${uri}`)
+  },
+
+  getResourceTemplate: (template) => {
+    if (template === 'knowledge://doc/{name}') {
+      return {
+        description: 'Get specific documentation page'
+      }
+    }
+    return null
+  }
+}
+```
+
+## Server Initialization
+
+### Connection Setup
+
+```typescript
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
+
+// Create server instance
+const server = new Server({
+  name: 'my-mcp-server',
+  version: '1.0.0'
+})
+
+// Register tools
+server.setRequestHandler(ListToolsRequestSchema, async () => ({
+  tools: [searchTool, analyzeTool, createTool]
+}))
+
+// Handle tool calls
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const { name, arguments: args } = request.params
+
+  if (name === 'search_documents') {
+    return await searchTool.implementation(args)
+  }
+  throw new Error(`Unknown tool: ${name}`)
+})
+
+// Setup transport and connect
+const transport = new StdioServerTransport()
+await server.connect(transport)
+```
+
+### HTTP Server Implementation
+
+```typescript
+import express from 'express'
+import { Server } from '@modelcontextprotocol/sdk/server/index.js'
+
+const app = express()
+const server = new Server({...})
+
+// Register handlers
+server.setRequestHandler(...)
+
+// Express route for MCP protocol
+app.post('/mcp', express.json(), async (req, res) => {
+  const response = await server.handleRequest(req.body)
+  res.json(response)
+})
+
+app.listen(3000, () => {
+  console.log('MCP server listening on port 3000')
+})
+```
+
+## Server Capabilities Declaration
+
+### Capabilities Object
+
+```typescript
+interface ServerCapabilities {
+  tools?: {
+    listChanged?: boolean           // Tools list can change
+  }
+  resources?: {
+    subscribe?: boolean             // Support resource subscriptions
+  }
+  sampling?: {}                      // Server can request model inference
+  logging?: {}                       // Server-side logging support
+}
+
+// Example declaration
+const capabilities = {
+  tools: {
+    listChanged: true               // Tools can be added dynamically
+  },
+  resources: {
+    subscribe: true                 // Support real-time updates
+  }
+}
+```
+
+## Error Handling
+
+### Error Responses
+
+```typescript
+interface ErrorResponse {
+  code: number
+  message: string
+  data?: Record<string, unknown>
+}
+
+// Standard error codes
+const ERROR_CODES = {
+  PARSE_ERROR: -32700,             // Invalid JSON
+  INVALID_REQUEST: -32600,         // Malformed request
+  METHOD_NOT_FOUND: -32601,        // Unknown method
+  INVALID_PARAMS: -32602,          // Invalid parameters
+  INTERNAL_ERROR: -32603,          // Server error
+  SERVER_ERROR: -32000,            // Custom error
+} as const
+
+// Example error handling
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  try {
+    // Tool execution
+  } catch (error) {
+    return {
+      isError: true,
+      content: [{
+        type: 'text',
+        text: error.message
+      }]
+    }
+  }
+})
+```
+
+## Performance Optimization
+
+### Caching Strategies
+
+```typescript
+class CachingResourceProvider {
+  private cache = new Map<string, CachedResource>()
+  private ttl = 5 * 60 * 1000  // 5 minutes
+
+  async getResource(uri: string) {
+    // Check cache
+    const cached = this.cache.get(uri)
+    if (cached && Date.now() - cached.timestamp < this.ttl) {
+      return cached.content
+    }
+
+    // Fetch and cache
+    const content = await this.fetchResource(uri)
+    this.cache.set(uri, {
+      content,
+      timestamp: Date.now()
+    })
+
+    return content
+  }
+}
+```
+
+### Rate Limiting
+
+```typescript
+class RateLimitedServer {
+  private calls = new Map<string, number[]>()
+  private limit = 100  // requests per minute
+
+  checkRateLimit(clientId: string): boolean {
+    const now = Date.now()
+    const minute = now - 60000
+
+    let calls = this.calls.get(clientId) || []
+    calls = calls.filter(t => t > minute)
+
+    if (calls.length >= this.limit) {
+      return false
+    }
+
+    calls.push(now)
+    this.calls.set(clientId, calls)
+    return true
+  }
+}
+```
+
+## Monitoring & Logging
+
+### Request Logging
+
+```typescript
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+  const startTime = Date.now()
+  const { name, arguments: args } = request.params
+
+  console.log(`[Tool Call] ${name}`, {
+    timestamp: new Date().toISOString(),
+    arguments: args
+  })
+
+  try {
+    const result = await executeTool(name, args)
+    const duration = Date.now() - startTime
+
+    console.log(`[Tool Success] ${name}`, {
+      duration,
+      resultSize: JSON.stringify(result).length
+    })
+
+    return result
+  } catch (error) {
+    console.error(`[Tool Error] ${name}`, {
+      error: error.message,
+      duration: Date.now() - startTime
+    })
+    throw error
+  }
+})
+```
+
+### Health Checks
+
+```typescript
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    capabilities: {
+      toolsCount: tools.length,
+      resourcesCount: resources.length,
+      uptime: process.uptime()
+    }
+  })
+})
+```
+
+## Best Practices
+
+### Server Design
+
+1. **Single Responsibility**: Each tool should do one thing well
+2. **Clear Naming**: Use descriptive names for tools and resources
+3. **Comprehensive Schemas**: Define complete input/output schemas
+4. **Error Messages**: Provide helpful error details for debugging
+5. **Versioning**: Maintain backward compatibility when possible
+
+### Implementation
+
+1. **Async Handling**: Use async/await for I/O operations
+2. **Timeouts**: Implement request timeouts to prevent hanging
+3. **Validation**: Always validate input parameters
+4. **Security**: Sanitize inputs and limit resource access
+5. **Testing**: Write unit and integration tests
+
+### Deployment
+
+1. **Health Checks**: Implement monitoring endpoints
+2. **Graceful Shutdown**: Clean up resources on termination
+3. **Error Tracking**: Log and report errors to monitoring systems
+4. **Documentation**: Provide clear documentation for each tool
+5. **Versioning**: Use semantic versioning for server releases
+
+## Integration Points
+
+- **[MCPClients.mdx](https://mcp.org.ai/MCPClients)**: How clients connect and use servers
+- **[MCPTools.mdx](https://mcp.org.ai/MCPTools)**: Tool definition specifications
+- **[MCPResources.mdx](https://mcp.org.ai/MCPResources)**: Resource management
+- **[MCPTransports.mdx](https://mcp.org.ai/MCPTransports)**: Transport implementations
+- **[tools.org.ai](https://tools.org.ai)**: Tool registry and discovery
+- **[apis.org.ai](https://apis.org.ai)**: API integration patterns
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| **Component Type** | Server Implementation |
+| **Domain** | [mcp.org.ai](https://mcp.org.ai) |
+| **Protocol** | JSON-RPC 2.0 |
+| **Languages Supported** | Python, TypeScript/Node.js, Go, Rust |
+| **Primary Use Cases** | Tool exposure, Resource provision |

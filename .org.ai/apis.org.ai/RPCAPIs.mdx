@@ -1,0 +1,587 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/RPCAPIs
+$type: https://apis.org.ai/WebAPI
+name: "RPC APIs"
+description: "Remote Procedure Call APIs - enables invoking functions remotely via network protocols including gRPC, tRPC, JSON-RPC, XML-RPC, and Capnproto with high performance and typed contracts."
+parent: https://apis.org.ai
+---
+
+export const items = async () => {
+  // Fetch RPC API implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://apis.org.ai/RPCAPIs'
+  })
+}
+
+# RPC APIs
+
+Remote Procedure Call (RPC) is a method of invoking procedures or functions on a remote machine as if they were local calls. RPC frameworks abstract away network communication details, allowing developers to work with simple function signatures while the framework handles serialization, transmission, and deserialization.
+
+RPC is particularly useful for performance-critical applications, microservices architectures, and real-time communication between services.
+
+## Overview
+
+RPC abstracts network communication into local function calls:
+
+- **Function-Oriented**: Methods on remote services called like local functions
+- **Strongly Typed**: Explicit method signatures and parameters
+- **Serialization**: Automatic marshaling of data types
+- **Binary Protocols**: Efficient encoding for performance
+- **Multiple Transports**: TCP, HTTP/2, WebSockets
+- **Synchronous/Asynchronous**: Support for both communication patterns
+- **Built-in Error Handling**: Exceptions propagated across network
+
+## JSON-RPC
+
+JSON-RPC is a stateless, light-weight RPC protocol using JSON for encoding.
+
+### Basic Request/Response
+
+```json
+// Request
+{
+  "jsonrpc": "2.0",
+  "method": "add",
+  "params": [2, 3],
+  "id": 1
+}
+
+// Response
+{
+  "jsonrpc": "2.0",
+  "result": 5,
+  "id": 1
+}
+```
+
+### Named Parameters
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "subtract",
+  "params": { "a": 10, "b": 3 },
+  "id": 2
+}
+```
+
+### Notifications (No Response)
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "notify",
+  "params": ["hello"]
+}
+```
+
+### Error Response
+
+```json
+{
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -32600,
+    "message": "Invalid Request"
+  },
+  "id": null
+}
+```
+
+Error codes:
+- `-32700`: Parse error
+- `-32600`: Invalid Request
+- `-32601`: Method not found
+- `-32602`: Invalid params
+- `-32603`: Internal error
+- `-32000` to `-32099`: Server error (reserved)
+
+### Batch Requests
+
+```json
+[
+  { "jsonrpc": "2.0", "method": "add", "params": [1, 2], "id": 1 },
+  { "jsonrpc": "2.0", "method": "multiply", "params": [3, 4], "id": 2 },
+  { "jsonrpc": "2.0", "method": "log", "params": ["test"] }
+]
+```
+
+### Use Cases
+
+- Blockchain/Cryptocurrency (Bitcoin, Ethereum nodes)
+- Simple API integration
+- Web3 interactions
+- Custom protocols
+
+## XML-RPC
+
+XML-RPC uses XML for encoding RPC calls.
+
+### Request
+
+```xml
+<?xml version="1.0"?>
+<methodCall>
+  <methodName>examples.getStateName</methodName>
+  <params>
+    <param><value><i4>41</i4></value></param>
+  </params>
+</methodCall>
+```
+
+### Response
+
+```xml
+<?xml version="1.0"?>
+<methodResponse>
+  <params>
+    <param>
+      <value><string>South Dakota</string></value>
+    </param>
+  </params>
+</methodResponse>
+```
+
+### Characteristics
+
+- Verbose XML format
+- Simple data types (int, boolean, string, array, struct)
+- HTTP POST transport
+- Historical significance (pre-JSON era)
+
+### Current Usage
+
+- WordPress API (partly)
+- Legacy systems
+- Some enterprise integrations
+
+## gRPC
+
+gRPC is a high-performance RPC framework using HTTP/2 and Protocol Buffers.
+
+### Protocol Buffers Definition
+
+```protobuf
+syntax = "proto3";
+
+package api;
+
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  int64 created_at = 4;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+}
+
+service UserService {
+  rpc GetUser(GetUserRequest) returns (User);
+  rpc CreateUser(CreateUserRequest) returns (User);
+  rpc ListUsers(Empty) returns (stream User);
+  rpc WatchUsers(Empty) returns (stream User);
+}
+```
+
+### gRPC Call Types
+
+#### Unary RPC (Request-Response)
+
+```protobuf
+rpc GetUser(GetUserRequest) returns (User);
+```
+
+```go
+user, err := client.GetUser(ctx, &GetUserRequest{UserId: "123"})
+```
+
+#### Server Streaming
+
+```protobuf
+rpc ListUsers(Empty) returns (stream User);
+```
+
+```go
+stream, err := client.ListUsers(ctx, &Empty{})
+for {
+  user, err := stream.Recv()
+  if err == io.EOF { break }
+  // Process user
+}
+```
+
+#### Client Streaming
+
+```protobuf
+rpc BulkCreateUsers(stream CreateUserRequest) returns (Summary);
+```
+
+```go
+stream, err := client.BulkCreateUsers(ctx)
+for _, req := range requests {
+  stream.Send(req)
+}
+summary, err := stream.CloseAndRecv()
+```
+
+#### Bidirectional Streaming
+
+```protobuf
+rpc Chat(stream Message) returns (stream Message);
+```
+
+```go
+stream, err := client.Chat(ctx)
+go func() {
+  for _, msg := range outgoing {
+    stream.Send(msg)
+  }
+  stream.CloseSend()
+}()
+
+for {
+  msg, err := stream.Recv()
+  // Process incoming message
+}
+```
+
+### gRPC Advantages
+
+- **Performance**: Binary protocol, HTTP/2 multiplexing
+- **Efficiency**: Smaller payloads, faster parsing
+- **Streaming**: Native support for bidirectional streaming
+- **Code Generation**: Types generated from .proto files
+- **Strong Typing**: Compile-time type safety
+- **Language Agnostic**: Generate code for multiple languages
+
+### gRPC Disadvantages
+
+- **Learning Curve**: More complex than REST
+- **Browser Support**: Requires grpc-web for browser clients
+- **Debugging**: Binary format harder to inspect
+- **Caching**: Limited HTTP caching support
+
+### Ecosystem
+
+- **gRPC Web**: Browser-compatible gRPC
+- **gRPC Gateway**: REST proxy for gRPC services
+- **gRPC Reflection**: Service introspection
+- **Protoc Plugins**: Code generation for languages
+
+## tRPC
+
+tRPC (TypeScript Remote Procedure Call) brings end-to-end type safety to JavaScript/TypeScript.
+
+### Defining a tRPC Router
+
+```typescript
+import { initTRPC } from '@trpc/server';
+import { z } from 'zod';
+
+const t = initTRPC.create();
+const router = t.router;
+const publicProcedure = t.procedure;
+
+const appRouter = router({
+  user: router({
+    getById: publicProcedure
+      .input(z.object({ id: z.string() }))
+      .query(async ({ input }) => {
+        return await db.user.findUnique({ where: { id: input.id } });
+      }),
+
+    create: publicProcedure
+      .input(z.object({
+        name: z.string(),
+        email: z.string().email()
+      }))
+      .mutation(async ({ input }) => {
+        return await db.user.create({ data: input });
+      }),
+
+    list: publicProcedure
+      .query(async () => {
+        return await db.user.findMany();
+      }),
+
+    subscribe: publicProcedure
+      .subscription(async function* () {
+        while (true) {
+          const users = await db.user.findMany();
+          yield users;
+          await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+      }),
+  }),
+});
+
+export type AppRouter = typeof appRouter;
+```
+
+### Client Usage
+
+```typescript
+import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
+import type { AppRouter } from './server';
+
+const trpc = createTRPCProxyClient<AppRouter>({
+  links: [
+    httpBatchLink({
+      url: 'http://localhost:3000/trpc',
+    }),
+  ],
+});
+
+// Fully typed! IDE autocomplete works
+const user = await trpc.user.getById.query({ id: '123' });
+
+// Type-safe mutation
+const newUser = await trpc.user.create.mutate({
+  name: 'John',
+  email: 'john@example.com',
+});
+
+// Subscription
+const subscription = trpc.user.subscribe.subscribe(undefined, {
+  onData(users) {
+    console.log('Users:', users);
+  },
+});
+```
+
+### tRPC Advantages
+
+- **Full Type Safety**: End-to-end TypeScript types
+- **Auto-completion**: IDE knows all available procedures
+- **No Code Generation**: Types derived from router definition
+- **No Serialization**: Direct JS object passing
+- **Simple**: Minimal boilerplate
+- **Validation**: Zod integration for input validation
+
+### tRPC Limitations
+
+- **TypeScript Only**: Not suitable for non-TypeScript ecosystems
+- **Tight Coupling**: Client/server versions must align
+- **Language Lock-in**: Only works with JavaScript/TypeScript
+
+### Use Cases
+
+- **SaaS Applications**: Monolithic or tightly coupled services
+- **Internal APIs**: Microservices within organization
+- **Type-Safe Development**: Teams prioritizing developer experience
+- **Rapid Development**: Quick iteration with full type safety
+
+## Capnproto
+
+Cap'n Proto is an data interchange format and RPC system focused on speed.
+
+### Cap'n Proto Schema
+
+```capnp
+@0xc8f18a59e7b47a58;
+
+struct User {
+  id @0 :Text;
+  name @1 :Text;
+  email @2 :Text;
+  createdAt @3 :Int64;
+  posts @4 :List(Post);
+}
+
+struct Post {
+  id @0 :Text;
+  title @1 :Text;
+  content @2 :Text;
+  authorId @3 :Text;
+}
+
+interface UserService {
+  getUser @0 (userId :Text) -> (user :User);
+  createUser @1 (name :Text, email :Text) -> (user :User);
+  listUsers @2 () -> (users :List(User));
+}
+```
+
+### Performance Characteristics
+
+- **Zero-Copy**: No deserialization overhead
+- **Streaming**: Send large objects progressively
+- **Pointer-Based**: Direct memory access
+- **Compact**: Efficient binary encoding
+
+### C++ Example
+
+```cpp
+#include "user-service.capnp.h"
+
+class UserServiceImpl : public UserService::Server {
+public:
+  Promise<void> getUser(GetUserContext context) override {
+    auto params = context.getParams();
+    auto userId = params.getUserId();
+
+    auto user = db.getUser(userId);
+
+    auto result = context.getResults();
+    result.setUser(user);
+    return READY_NOW;
+  }
+};
+```
+
+### Use Cases
+
+- **High-Frequency Trading**: Financial systems
+- **Real-time Analytics**: Data streaming
+- **Video/Media Processing**: Large data chunks
+- **IoT**: Resource-constrained devices
+
+## Comparison of RPC Protocols
+
+| Aspect | JSON-RPC | XML-RPC | gRPC | tRPC | Capnproto |
+|--------|----------|---------|------|------|-----------|
+| Encoding | JSON | XML | Binary (protobuf) | JavaScript | Binary |
+| Performance | Good | Fair | Excellent | Good | Excellent |
+| Streaming | No | No | Yes | Yes | Yes |
+| Type Safety | Optional | No | Yes | Full | Yes |
+| Language Support | Universal | Good | Excellent | TypeScript only | Good |
+| Complexity | Simple | Medium | Complex | Simple | Complex |
+| Browser Support | Yes | Limited | No (grpc-web) | Yes | No |
+| Caching | HTTP | HTTP | Limited | No | No |
+
+## Error Handling in RPC
+
+### Standard RPC Errors
+
+```json
+{
+  "jsonrpc": "2.0",
+  "error": {
+    "code": -32603,
+    "message": "Internal error",
+    "data": {
+      "details": "Database connection failed",
+      "trace_id": "abc123"
+    }
+  },
+  "id": 1
+}
+```
+
+### gRPC Status Codes
+
+- `OK (0)`: Success
+- `CANCELLED (1)`: Operation cancelled
+- `UNKNOWN (2)`: Unknown error
+- `INVALID_ARGUMENT (3)`: Client-provided invalid argument
+- `DEADLINE_EXCEEDED (4)`: Operation timeout
+- `NOT_FOUND (5)`: Resource not found
+- `ALREADY_EXISTS (6)`: Resource already exists
+- `PERMISSION_DENIED (7)`: Insufficient permissions
+- `UNAUTHENTICATED (16)`: Authentication required
+- `RESOURCE_EXHAUSTED (8)`: Resource limit exceeded
+- `FAILED_PRECONDITION (9)`: Operation preconditions failed
+- `ABORTED (10)`: Operation aborted
+- `OUT_OF_RANGE (11)`: Value out of range
+- `UNIMPLEMENTED (12)`: Operation not implemented
+- `INTERNAL (13)`: Internal server error
+- `UNAVAILABLE (14)`: Service unavailable
+- `DATA_LOSS (15)`: Data loss occurred
+
+## Security Considerations
+
+### Authentication
+
+- **mTLS**: Mutual TLS for gRPC
+- **API Keys**: Simple key-based authentication
+- **JWT**: Token-based authentication
+- **OAuth 2.0**: Standard authorization
+
+### Authorization
+
+- **Field-Level Permissions**: Control access to specific fields
+- **Role-Based Access**: Different roles with different permissions
+- **Resource-Level**: Check ownership/permissions per resource
+
+### Data Protection
+
+- **Encryption in Transit**: TLS/mTLS for all communication
+- **Input Validation**: Validate all RPC parameters
+- **Rate Limiting**: Prevent abuse
+- **Message Size Limits**: Prevent memory exhaustion
+
+## Tools and Frameworks
+
+### gRPC Ecosystem
+- **grpcurl**: CLI tool for gRPC
+- **gRPC-Web**: Browser support
+- **gRPC Gateway**: REST proxy
+- **gRPC Load Balancing**: Client-side and server-side options
+
+### Code Generation
+- **Protoc**: Protocol Buffer compiler
+- **Protobuf Plugins**: Code generation for languages
+- **gRPC Plugin**: Generates service stubs
+
+### Monitoring
+- **Prometheus**: Metrics collection
+- **Jaeger**: Distributed tracing
+- **Envoy Proxy**: Service mesh integration
+
+## Real-World Examples
+
+### Blockchain RPC
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "eth_getBalance",
+  "params": ["0x8ba1f109551bD432803012645Ac136ddd64DBA72"],
+  "id": 1
+}
+```
+
+### Kubernetes API
+
+gRPC for internal API server communication and distributed control.
+
+### Consul Service Mesh
+
+Uses gRPC for service-to-service communication with mTLS.
+
+### Microservices Architecture
+
+- Services communicate via gRPC for performance
+- External clients use gRPC Gateway for REST
+- Bidirectional streaming for real-time updates
+
+## Best Practices
+
+1. **Version Your APIs**: Use semantic versioning
+2. **Backward Compatibility**: Support older clients gracefully
+3. **Error Handling**: Clear, actionable error messages
+4. **Documentation**: Generate docs from schema/proto files
+5. **Monitoring**: Track latency, errors, throughput
+6. **Testing**: Comprehensive test coverage
+7. **Security**: Always encrypt, validate inputs
+8. **Performance**: Profile and optimize hot paths
+9. **Observability**: Logging, tracing, metrics
+10. **Rate Limiting**: Prevent abuse and ensure fairness
+
+## Related Resources
+
+- [functions.org.ai](https://functions.org.ai) - Remote function implementations
+- [events.org.ai](https://events.org.ai) - Event-driven RPC patterns
+- [tech.org.ai](https://tech.org.ai) - Technology stack and languages
+- [apis.org.ai/RESTAPIs](https://apis.org.ai/RESTAPIs) - Alternative API style
+- [apis.org.ai/GraphQLAPIs](https://apis.org.ai/GraphQLAPIs) - Query language alternative
+- [standards.org.ai](https://standards.org.ai) - Protocol specifications

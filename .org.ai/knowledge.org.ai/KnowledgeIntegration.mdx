@@ -1,0 +1,731 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/KnowledgeIntegration
+$type: https://knowledge.org.ai/Knowledge
+name: "Knowledge Integration"
+description: "Combining and reconciling knowledge from multiple sources"
+---
+
+# Knowledge Integration
+
+Techniques for combining, reconciling, and harmonizing knowledge from diverse sources into unified representations.
+
+## Overview
+
+Knowledge integration addresses the fundamental challenge of combining information from multiple heterogeneous sources. It involves identifying equivalent entities across sources, resolving conflicts, aligning schemas, and creating unified knowledge representations. Knowledge integration is critical for data warehouses, master data management, knowledge graphs, and organizational information systems.
+
+### Core Challenges
+
+- **Heterogeneity**: Different formats, schemas, and vocabularies
+- **Redundancy**: Same entities and facts represented multiple times
+- **Conflicts**: Contradictory information from different sources
+- **Incompleteness**: Partial information across sources
+- **Scalability**: Integrating large numbers of sources
+
+## Schema and Ontology Alignment
+
+### Schema Matching
+
+Finding correspondences between elements of different schemas:
+
+#### Types of Matches
+
+**Exact Matches**
+```
+Source A: Person.firstName
+Source B: People.first_name
+Match: Exact (same concept)
+```
+
+**Hierarchical Matches**
+```
+Source A: Address.full_address
+Source B: Address.street, Address.city, Address.zip
+Match: Part-of (full_address contains street, city, zip)
+```
+
+**Semantic Matches**
+```
+Source A: Vehicle.mpg
+Source B: Car.fuelEfficiency
+Match: Equivalent (miles per gallon = fuel efficiency)
+```
+
+**No Match**
+```
+Source A: Person.middleInitial
+Source B: Company schema
+No corresponding concept
+```
+
+#### Schema Matching Approaches
+
+**String Similarity Methods**
+
+Simple lexical comparison:
+```
+Levenshtein distance: edit operations between strings
+Jaro-Winkler: prefix-weighted string similarity
+Soundex: phonetic matching
+
+Examples:
+- "firstName" vs "first_name": High similarity (0.85)
+- "author" vs "writer": Different strings, semantic similarity needed
+```
+
+**Structural Matching**
+
+Analyzing schema structure and constraints:
+
+```
+Source A:
+  Department (1:N) ← Employee
+  Employee (N:1) → Person
+
+Source B:
+  Org_Unit (1:N) ← Staff_Member
+  Staff_Member (N:1) → Individual
+
+Structural similarity indicates:
+  Department ↔ Org_Unit
+  Employee ↔ Staff_Member
+  Person ↔ Individual
+```
+
+**Semantic Matching**
+
+Using knowledge and ontologies:
+
+```
+External knowledge: "Author" is synonym for "Writer"
+Ontology: Publication.author ≈ Article.author
+WordNet: "person" is hypernym of "employee"
+```
+
+**Machine Learning Approaches**
+
+Supervised matching using labeled training data:
+
+```
+Training: Examples of matched and unmatched pairs
+Features: String similarity, structural properties, semantic similarity
+Classifier: Binary classification (match/no-match)
+Learning: Neural networks, random forests, SVM
+```
+
+#### Schema Alignment Tools
+
+- **Similarity Flooding**: Graph-based matching with propagation
+- **Protégé**: Ontology alignment plugins
+- **COMA**: Schema matching framework
+- **LogMap**: Ontology alignment system
+
+### Entity Matching (Record Linkage)
+
+Identifying records referring to same real-world entity:
+
+#### Matching Challenges
+
+```
+Same person, different representations:
+- John Smith vs J. Smith
+- John Michael Smith vs John M Smith
+- Johns@example.com same as johns.smith@example.com
+- Different abbreviations, nicknames, transliterations
+```
+
+#### Matching Techniques
+
+**Deterministic Rules**
+
+Simple rule-based matching:
+
+```
+Rule 1: If firstName and lastName match exactly → MATCH
+Rule 2: If email matches and phone differs → Investigate
+Rule 3: If name contains stopwords → Remove and retry
+```
+
+**Probabilistic Approaches**
+
+Statistical models of matching probability:
+
+```
+Fellegi-Sunter model:
+  Weight = log(P(agreement|match) / P(agreement|non-match))
+  Compare: Full name, Email, Phone, Address
+  Weighted sum: If > threshold → MATCH
+```
+
+**Distance-Based Methods**
+
+Computing similarity distances:
+
+```
+Euclidean distance on normalized attributes:
+  dist = √((firstName_dist)² + (lastName_dist)² + (email_dist)²)
+
+If distance < threshold → MATCH
+```
+
+**Graph-Based Matching**
+
+Using entity relationships for indirect matching:
+
+```
+Alice works for company X
+Bob works for company X
+Shared company → Higher probability Alice and Bob know each other
+Shared context → Useful for disambiguation
+```
+
+**Machine Learning Matching**
+
+Supervised record linkage:
+
+```
+Training: Labeled match/non-match pairs
+Features: Name similarity, address similarity, phone match...
+Classifier: Neural network or gradient boosting
+Output: Probability of matching
+```
+
+### Data Deduplication
+
+Removing duplicate records:
+
+#### Deduplication Strategies
+
+**Exact Duplicate Detection**
+
+Finding identical records:
+
+```sql
+SELECT *
+FROM Customer
+WHERE FirstName = 'John' AND LastName = 'Smith'
+  AND Email = 'john@example.com'
+GROUP BY FirstName, LastName, Email
+HAVING COUNT(*) > 1
+```
+
+**Fuzzy Duplicate Detection**
+
+Finding similar but not identical records:
+
+```
+Record 1: John Smith, john.smith@example.com, 555-1234
+Record 2: Jon Smith, smith.john@example.com, 555-1234
+
+Similarity score: 0.92 → Likely duplicates
+Manual review or merge
+```
+
+#### Merge Strategies
+
+When duplicates are identified:
+
+```
+Merge: Take most complete/recent information
+Record 1: firstName="John", lastName="Smith", email=NULL
+Record 2: firstName="J.", lastName="Smith", email="john@example.com"
+
+Merged: firstName="John", lastName="Smith", email="john@example.com"
+Keep full name, add email
+```
+
+## Entity Resolution
+
+### Record Clustering
+
+Grouping similar records into clusters:
+
+#### Clustering Approaches
+
+**Hierarchical Clustering**
+
+Building dendrograms of entity similarity:
+
+```
+Agglomerative clustering:
+  Start: Each record is own cluster
+  Step 1: Merge closest pairs
+  Step 2: Recompute distances
+  Step 3: Repeat until threshold
+  Result: Cluster tree
+```
+
+**Partitional Clustering**
+
+Directly partitioning records:
+
+```
+K-means style:
+  1. Initialize K cluster centers
+  2. Assign records to nearest center
+  3. Update centers
+  4. Repeat until convergence
+
+Best for large datasets
+```
+
+**Graph-Based Clustering**
+
+Using graph structure of entity similarity:
+
+```
+Nodes: Records
+Edges: Similarity > threshold
+Connected components: Entity clusters
+Advantage: Handles transitive similarity
+```
+
+### Identity Resolution
+
+Assigning unique identifiers to merged entities:
+
+#### Identifier Assignment
+
+**Source-Based Identifiers**
+
+Using identifier from authoritative source:
+
+```
+Master ID from canonical database (e.g., CRM)
+Other sources reference canonical ID
+Forward references: Track aliases and old IDs
+```
+
+**Synthetic Identifiers**
+
+Creating new identifiers for merged entities:
+
+```
+UUID-based: UUID = xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Hash-based: hash(sorted normalized attributes)
+Sequential: Natural numbers assigned to clusters
+```
+
+**Alias Management**
+
+Tracking alternate identifiers:
+
+```
+Entity 123456:
+  Primary ID: 123456
+  Aliases:
+    - Source A: A-9876
+    - Source B: B-54321
+    - Email: john.smith@example.com
+    - SSN: 123-45-6789
+```
+
+## Conflict Resolution
+
+### Conflict Detection
+
+Identifying contradictions in integrated data:
+
+#### Conflict Types
+
+**Value Conflicts**
+
+Different values for same attribute:
+
+```
+Source A: Person.birthDate = 1980-05-15
+Source B: Person.birthDate = 1980-05-16
+Source C: Person.age = 43
+
+Conflict: Inconsistent date information
+```
+
+**Structural Conflicts**
+
+Different representations of same information:
+
+```
+Source A: Location = "New York, USA"
+Source B: Location.city = "New York", Location.state = "NY", Location.country = "USA"
+Conflict: Representation mismatch
+```
+
+**Semantic Conflicts**
+
+Different meanings for same term:
+
+```
+"Bank" in Source A: Financial institution
+"Bank" in Source B: River bank
+Context-dependent meaning
+```
+
+### Conflict Resolution Strategies
+
+**Source Prioritization**
+
+Trusting one source over others:
+
+```
+Priority: Authoritative > User-entered > Inferred
+Strategy: Take value from highest-priority source
+Example:
+  Master database (priority 1): 1980-05-15
+  Web data (priority 2): 1980-05-16
+  Result: 1980-05-15
+```
+
+**Voting/Majority Rules**
+
+Using consensus across sources:
+
+```
+Source A: 1980-05-15
+Source B: 1980-05-15
+Source C: 1980-05-16
+
+Result: 1980-05-15 (2 out of 3)
+```
+
+**Metadata-Based Selection**
+
+Using quality metrics and confidence scores:
+
+```
+Source A: value = "New York", confidence = 0.95, freshness = 2024
+Source B: value = "NYC", confidence = 0.88, freshness = 2020
+
+Result: Choose A (higher confidence, more recent)
+```
+
+**Manual Conflict Resolution**
+
+Human review for important conflicts:
+
+```
+Flag high-value conflicts for human review
+Create workflow for resolution
+Document decisions for future reference
+```
+
+**Dynamic Conflict Resolution**
+
+Context-dependent handling:
+
+```
+If medical context: Prefer doctor's records
+If financial context: Prefer bank records
+If personal context: Prefer user-entered data
+```
+
+## Data Fusion
+
+### Information Fusion Techniques
+
+Combining multiple sources into unified representation:
+
+#### Schema-Level Fusion
+
+Creating unified schema from multiple sources:
+
+```
+Source A schema:
+  Person (firstName, lastName, email)
+
+Source B schema:
+  Individual (first_name, family_name, work_email, phone)
+
+Unified schema:
+  Person (firstName, lastName, email, workEmail, phone)
+```
+
+#### Instance-Level Fusion
+
+Combining attribute values:
+
+```
+Entity: John Smith
+Source A: email = john@example.com
+Source B: email = smith.john@example.com, phone = 555-1234
+
+Fused:
+  emails: [john@example.com, smith.john@example.com]
+  phone: 555-1234
+  source_score: {A: 0.9, B: 0.85}
+```
+
+#### Temporal Fusion
+
+Handling time-varying information:
+
+```
+2020: Person lives in New York
+2022: Person moves to San Francisco
+2024: Person lives in Seattle
+
+Version history:
+  2020-2021: New York
+  2022-2023: San Francisco
+  2024-present: Seattle
+```
+
+### Knowledge Enrichment
+
+Adding information to integrated entities:
+
+#### Attribute Enrichment
+
+```
+Source A: Name, Email
+After enrichment: Name, Email, Phone, Address, Company
+Enrichment sources: Phone directory, corporate database
+```
+
+#### Relationship Enrichment
+
+Adding inferred relationships:
+
+```
+Direct: John knows Alice
+Direct: Alice works at Acme Corp
+Inferred: John is connected to Acme Corp
+```
+
+#### Type Enrichment
+
+Inferring entity types from attributes:
+
+```
+Entity with email domain @stanford.edu → Likely STUDENT or FACULTY
+Entity with credit card → Likely CUSTOMER
+Entity with medical history → Likely PATIENT
+```
+
+## Quality Assessment
+
+### Completeness Metrics
+
+Measuring coverage of data:
+
+```
+Completeness = (Records with attribute) / Total records
+
+Schema completeness = Attributes present / Expected attributes
+
+Example:
+  Email present: 95% of records
+  Phone present: 72% of records
+  Address present: 88% of records
+```
+
+### Accuracy Metrics
+
+Measuring correctness:
+
+```
+Accuracy = Correct records / Total records
+
+Field-level accuracy:
+  Email accuracy: 98%
+  Phone accuracy: 95%
+  Address accuracy: 92%
+
+Assessed via:
+  Manual verification
+  External validation
+  Cross-source comparison
+```
+
+### Consistency Metrics
+
+Measuring internal coherence:
+
+```
+Referential integrity: Foreign keys all valid
+Semantic consistency: Related attributes align
+Temporal consistency: Time-series attributes valid
+
+Example:
+  If person.age = 25 and birthDate = 1990, inconsistent (2024)
+  If address.country = "USA" and state = "ON", inconsistent
+```
+
+## Master Data Management (MDM)
+
+### MDM Architecture
+
+```
+Multiple operational systems
+        ↓
+Data collection layer
+        ↓
+Matching & Deduplication
+        ↓
+Master Data Repository
+        ↓
+Data distribution to systems
+```
+
+### Key Components
+
+**Golden Records**
+
+Authoritative versions of entities:
+
+```
+Customer 12345 (Golden Record)
+- Source: CRM system
+- Name: John Smith
+- Email: john.smith@company.com
+- Phone: 555-0123
+- Address: 123 Main St, Anytown, USA
+- Last Updated: 2024-11-28
+```
+
+**Governance Rules**
+
+Policies for data management:
+
+```
+Rule 1: CRM is authoritative for customer contact info
+Rule 2: Finance system is authoritative for billing address
+Rule 3: Conflicts escalated to data steward
+Rule 4: Updates trigger approval workflow
+```
+
+**Data Stewardship**
+
+Human responsibility for data quality:
+
+```
+Steward: Manages specific master data domains
+Responsibilities:
+  - Define valid values
+  - Resolve conflicts
+  - Monitor quality
+  - Approve changes
+```
+
+## Applications
+
+### Data Warehouse Integration
+
+Combining data from operational systems:
+
+```
+Source 1: Customer DB
+Source 2: Sales system
+Source 3: Marketing platform
+
+→ ETL processes
+→ Schema mapping
+→ Deduplication
+→ Data warehouse
+```
+
+### Knowledge Graph Construction
+
+Building comprehensive knowledge graphs:
+
+```
+Wikipedia articles
+News sources
+Domain databases
+Web extraction
+
+→ Entity linking
+→ Conflict resolution
+→ Relationship fusion
+→ Knowledge graph
+```
+
+### Healthcare Data Integration
+
+Combining patient records:
+
+```
+Hospital A: Patient medical records
+Hospital B: Patient medical records
+Pharmacy: Medication history
+Insurance: Claims data
+
+→ Patient matching
+→ Record linking
+→ Comprehensive medical history
+```
+
+### Business Intelligence
+
+Integrated business data:
+
+```
+Sales system
+Inventory system
+Finance system
+HR system
+
+→ Master data
+→ Unified reporting
+→ Analytical insights
+```
+
+## Challenges and Emerging Directions
+
+### Scalability
+
+Challenge: Matching millions of records
+Solutions:
+- Blocking techniques to reduce comparisons
+- Distributed computing (Spark, Hadoop)
+- Approximate algorithms
+- Incremental matching
+
+### Real-Time Integration
+
+Challenge: Integrating streaming data
+Solutions:
+- Stream processing systems
+- Online entity resolution
+- Incremental deduplication
+- Event-driven updates
+
+### Evolving Data
+
+Challenge: Handling changing information
+Solutions:
+- Temporal databases
+- Version management
+- Change data capture
+- Temporal reasoning
+
+### Machine Learning Advances
+
+Emerging techniques:
+- Neural entity matching
+- Graph neural networks
+- Transfer learning
+- Few-shot learning
+
+## Cross-References
+
+### Related Domains
+
+- [KnowledgeGraphs.org.ai](https://knowledge.org.ai/KnowledgeGraphs) - Graph structures
+- [Ontologies.org.ai](https://knowledge.org.ai/Ontologies) - Schema definitions
+- [KnowledgeExtraction.org.ai](https://knowledge.org.ai/KnowledgeExtraction) - Data extraction
+- [SemanticWeb.org.ai](https://knowledge.org.ai/SemanticWeb) - Web standards
+
+### Related Disciplines
+
+- Data quality management
+- Information systems
+- Database systems
+- Natural language processing
+
+## Sources
+
+- Data Matching (Peter Christen)
+- Information Integration (Batini et al.)
+- ACM SIGMOD record linkage workshop papers
+- Master Data Management in Practice (Alex Berson)
+- ISO 8601 and data quality standards

@@ -1,0 +1,762 @@
+---
+$context: https://models.org.ai
+$id: https://models.org.ai/ModelDeployment
+$type: https://models.org.ai/ModelCategory
+name: "Model Deployment"
+description: "Inference optimization, serving infrastructure, quantization, and production deployment strategies for AI models"
+---
+
+export const items = async () => {
+  // Fetch deployment patterns and strategies from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://models.org.ai/DeploymentStrategy',
+    category: 'deployment'
+  })
+}
+
+# Model Deployment
+
+Model deployment bridges the gap between training state-of-the-art models and productionizing them at scale. Deployment encompasses inference optimization, serving infrastructure, resource management, and monitoring to ensure reliable, efficient, and cost-effective operation in production environments.
+
+## Overview
+
+Deploying models in production introduces unique constraints: latency requirements, throughput expectations, hardware limitations, cost considerations, and the need for continuous reliability. Successful deployment requires optimization across multiple dimensions while maintaining model quality.
+
+## Inference Optimization Fundamentals
+
+### Model Quantization
+
+**Integer Quantization (INT8)**
+- Convert floating-point weights to 8-bit integers
+- Post-training quantization (PTQ)
+- Minimal accuracy loss in many cases
+- 4x memory reduction
+- Faster computation on quantized hardware
+
+**Quantization-Aware Training (QAT)**
+- Learn quantization during training
+- Simulate quantization in forward pass
+- Better quality than post-training
+- Accurate low-bit models possible
+- Requires training infrastructure
+
+**Low-Bit Quantization (INT4 and lower)**
+- Extreme compression
+- Trade-off with accuracy
+- Smaller model sizes
+- On-device deployment viable
+- Emerging practical approaches
+
+**Activation Quantization**
+- Quantize activations between layers
+- Often larger memory footprint impact
+- Careful range selection
+- Statistics tracking
+- Important for efficiency gains
+
+### Knowledge Distillation
+
+**Student-Teacher Learning**
+- Train small model (student) to mimic large model (teacher)
+- Dark knowledge transfer
+- Soft target probability distributions
+- Maintained performance at reduced scale
+- Effective compression technique
+
+**Different Scale Distillation**
+- Any teacher-student size combination
+- Layer-wise distillation possible
+- Task-specific adaptation
+- Curriculum learning variants
+- Flexible approaches
+
+**Distillation for Specialized Tasks**
+- Domain-specific compression
+- Task-aligned smaller models
+- Efficient for specific purposes
+- Cost-effective production
+- Quality maintained
+
+### Pruning and Sparsity
+
+**Weight Pruning**
+- Remove unimportant weights
+- Magnitude-based or learned criteria
+- Structured and unstructured pruning
+- Sparsity patterns
+- Hardware support considerations
+
+**Structured Pruning**
+- Remove entire channels or layers
+- Hardware-friendly sparsity
+- Compatible with standard accelerators
+- Maintained dense operations
+- Practical efficiency gains
+
+**Neuron Pruning**
+- Remove entire neurons
+- Coarse-grained sparsity
+- Significant compression
+- Accuracy trade-offs
+- Deep learning efficiency
+
+**Dynamic/Early Termination**
+- Skip computation for easy examples
+- Cascaded inference
+- Latency reduction
+- Adaptive processing
+- Quality-latency trade-off
+
+## Hardware Acceleration
+
+### GPU Acceleration
+
+**NVIDIA GPUs**
+- CUDA programming model
+- cuDNN for optimized kernels
+- TensorRT for inference optimization
+- Auto-tuning for specific hardware
+- Industry standard
+
+**AMD GPUs**
+- ROCM ecosystem
+- Growing ML support
+- Cost-effective alternative
+- Good transfer from NVIDIA
+- Improving maturity
+
+**Multi-GPU Scaling**
+- Data parallelism
+- Model parallelism
+- Pipeline parallelism
+- Tensor parallelism
+- Distributed inference
+
+### Specialized Accelerators
+
+**TPU (Google Tensor Processing Unit)**
+- Purpose-built for ML
+- Systolic array architecture
+- Excellent for dense operations
+- Cloud availability (Google Cloud)
+- Specialized for specific workloads
+
+**Apple Neural Engine**
+- On-device inference
+- Privacy-preserving processing
+- Low power consumption
+- Integration with iOS/macOS
+- Mobile optimization
+
+**Qualcomm Snapdragon**
+- Mobile and edge devices
+- Heterogeneous cores
+- Low power efficiency
+- Extensive device coverage
+- Consumer ubiquity
+
+**Intel Gaudi and Habana**
+- High-performance training
+- Competitive inference
+- Growing adoption
+- Cloud and enterprise focus
+- Custom optimization
+
+**Custom ASICs**
+- Application-specific integration circuits
+- Optimized for specific models
+- Extreme efficiency
+- High development cost
+- Specialized deployment
+
+### Inference Frameworks and Runtimes
+
+**TensorRT (NVIDIA)**
+- GPU inference optimization
+- Auto-tuning
+- Mixed precision inference
+- Quantization support
+- Production standard
+
+**OpenVINO (Intel)**
+- Cross-platform inference
+- Heterogeneous device support
+- Model optimization toolkit
+- Edge device focus
+- Hardware abstraction
+
+**ONNX Runtime**
+- Framework-agnostic format
+- Cross-platform inference
+- Hardware acceleration
+- Graph optimization
+- Deployment flexibility
+
+**TVM and Apache MXNet**
+- Compiler-based optimization
+- Hardware abstraction
+- Code generation
+- Portable optimization
+- Research-oriented
+
+## Model Serving Architectures
+
+### API-Based Serving
+
+**REST API Services**
+- HTTP-based model access
+- Simple client integration
+- Stateless request handling
+- Language-agnostic clients
+- Standard web architecture
+
+**gRPC Services**
+- High-performance RPC framework
+- Binary protocol
+- Streaming support
+- Lower latency
+- Efficient communication
+
+**FastAPI and Python Frameworks**
+- Quick development
+- Async support
+- Auto-generated documentation
+- Validation and serialization
+- Popular choice
+
+### Containerized Deployment
+
+**Docker Containers**
+- Model and dependencies packaging
+- Environment consistency
+- Easy versioning
+- Deployment standardization
+- Industry standard
+
+**Kubernetes Orchestration**
+- Container scheduling and management
+- Auto-scaling
+- Load balancing
+- Rolling updates
+- Production standard
+
+**Serverless Functions**
+- AWS Lambda, Google Cloud Functions
+- Pay-per-execution pricing
+- Auto-scaling
+- Latency concerns
+- Cost-effective for variable load
+
+### Distributed Inference
+
+**Data Parallelism**
+- Replicate model across devices
+- Process different inputs
+- Stateless scaling
+- Simple to implement
+- Limited by model size
+
+**Model Parallelism**
+- Partition model across devices
+- Process same input
+- Large model capability
+- Complex orchestration
+- Necessary for huge models
+
+**Pipeline Parallelism**
+- Stages on different devices
+- Both input and model parallelism
+- Throughput optimization
+- GPipe and PipeDream approaches
+- Practical balance
+
+## Batch Processing and Throughput Optimization
+
+### Batching Strategies
+
+**Dynamic Batching**
+- Combine requests into batches
+- Reduced per-sample overhead
+- Latency vs. throughput trade-off
+- Adaptive batch size
+- Practical optimization
+
+**Adaptive Batching**
+- Wait for more requests
+- Time or size threshold
+- Quality-latency balance
+- Request heterogeneity handling
+- Dynamic optimization
+
+**Cascade Batching**
+- Multiple batch levels
+- Prioritization
+- SLA awareness
+- Tiered service levels
+- Sophisticated systems
+
+### Throughput Optimization
+
+**Request Queueing**
+- Manage request flow
+- Prevent overload
+- SLA guarantees
+- Load shedding strategies
+- Stability assurance
+
+**Resource Management**
+- CPU and memory allocation
+- GPU memory management
+- Model and request scheduling
+- Priority handling
+- Efficient utilization
+
+## Latency Reduction Techniques
+
+### Inference Speedup
+
+**Token Streaming**
+- Generate and return tokens as available
+- Reduce time-to-first-token
+- Improved user experience
+- Apparent performance improvement
+- Practical deployment benefit
+
+**Speculative Decoding**
+- Draft tokens with smaller model
+- Verify with main model
+- Reduced latency
+- Quality maintained
+- Recent innovation
+
+**Key-Value Cache Optimization**
+- Reduce memory bandwidth
+- Compaction and pruning
+- Multi-query attention
+- Faster generation
+- Significant improvements
+
+**Flash Attention and Kernels**
+- GPU-efficient implementations
+- Reduce memory movement
+- Significant speedups
+- I/O awareness
+- Production benefit
+
+### Caching and Memoization
+
+**Response Caching**
+- Cache common request results
+- Identical request handling
+- Exact matching requirement
+- Simple but effective
+- High hit rate scenarios
+
+**Embedding Caching**
+- Cache intermediate embeddings
+- Reuse computations
+- Relevant for retrieval systems
+- Semantic similarity handling
+- Practical optimization
+
+**KV Cache Persistence**
+- Maintain key-value states
+- Conversation context caching
+- Long conversation support
+- Memory requirements
+- Stateful deployment
+
+## Quantization in Production
+
+### Post-Training Quantization (PTQ)
+
+**Calibration Process**
+- Representative dataset selection
+- Activation range determination
+- Threshold optimization
+- One-pass through data
+- Quick deployment
+
+**Symmetric vs. Asymmetric Quantization**
+- Range symmetry
+- Optimal channel scaling
+- Per-channel vs. per-layer
+- Accuracy implications
+- Practical considerations
+
+**Mixed-Precision Quantization**
+- Different bit-widths for different layers
+- Precision allocation to sensitive layers
+- Accuracy maintenance
+- Hardware support variations
+- Flexible approach
+
+### Inference with Quantized Models
+
+**Quantization Schemes**
+- Symmetric vs. asymmetric
+- Per-channel vs. per-layer
+- Different bit-widths
+- Zero-point shifts
+- Standards and frameworks
+
+**Hardware Support**
+- INT8 widely available
+- Lower bit-widths emerging
+- SIMD operations
+- Accumulator precision
+- Hardware considerations
+
+## Model Compression Techniques
+
+### Layer Fusion and Elimination
+
+**Operator Fusion**
+- Combine sequential operations
+- Reduce memory bandwidth
+- Fewer kernel launches
+- Compiler optimization
+- Automatic techniques
+
+**Dead Layer Removal**
+- Identify unused layers
+- Remove from computation
+- Model size reduction
+- Straightforward optimization
+- Analysis-based approach
+
+**Constant Folding**
+- Precompute static operations
+- Reduce runtime computation
+- Metadata and constants
+- Compiler optimization
+- Zero-cost abstraction
+
+### Model Architecture Simplification
+
+**Bottleneck Removal**
+- Simplify expensive bottlenecks
+- Layer width reduction
+- Skip complex structures
+- Accuracy-efficiency trade-off
+- Targeted optimization
+
+**Architecture Search for Efficiency**
+- Neural architecture search (NAS)
+- Optimize for latency or energy
+- Hardware-aware search
+- Pareto-optimal frontiers
+- Automated design
+
+## Monitoring and Observability
+
+### Performance Monitoring
+
+**Latency Monitoring**
+- P50, P95, P99 latencies
+- Tail latency tracking
+- SLA compliance
+- Performance regressions
+- User experience metrics
+
+**Throughput Monitoring**
+- Requests per second
+- GPU utilization
+- Queue depth
+- System efficiency
+- Resource use tracking
+
+**Resource Utilization**
+- CPU and memory usage
+- GPU utilization and memory
+- Disk I/O patterns
+- Network bandwidth
+- Cost tracking
+
+### Model Quality Monitoring
+
+**Accuracy Monitoring**
+- Ground truth comparison
+- Performance degradation detection
+- Data drift effects
+- Model staleness
+- Continuous evaluation
+
+**Output Validation**
+- Sanity checks on predictions
+- Confidence score analysis
+- Distribution changes
+- Anomaly detection
+- Quality gates
+
+### Logging and Debugging
+
+**Request Logging**
+- Input and output recording
+- Latency and resource tracking
+- Error logging
+- Debugging information
+- Production diagnostics
+
+**Tracing and Profiling**
+- End-to-end request tracing
+- Component-level timing
+- Bottleneck identification
+- Optimization opportunities
+- System understanding
+
+## A/B Testing and Gradual Deployment
+
+### Canary Deployments
+
+**Gradual Rollout**
+- Deploy to small percentage first
+- Monitor performance
+- Expand if successful
+- Rollback capability
+- Risk mitigation
+
+**Traffic Splitting**
+- Route percentage of requests
+- A/B comparison
+- Statistical significance
+- User experience balance
+- Experiment infrastructure
+
+### Shadow Deployments
+
+**Shadow Mode**
+- Process requests without serving
+- Dry-run production behavior
+- Zero user impact
+- Realistic evaluation
+- Safe testing
+
+**Model Comparison**
+- Run multiple models
+- Compare predictions
+- User preference analysis
+- Performance testing
+- Informed decisions
+
+## Cost Optimization
+
+### Resource Allocation
+
+**Right-Sizing**
+- Match hardware to workload
+- Avoid overprovisioning
+- Efficiency optimization
+- Cost reduction
+- Performance maintenance
+
+**Batch Processing**
+- Off-peak processing
+- Reduced latency requirements
+- Lower cost tiers
+- Throughput optimization
+- Economic efficiency
+
+### Cost-Performance Trade-offs
+
+**Model Complexity Selection**
+- Task requirement matching
+- Unnecessary complexity avoidance
+- Optimal model sizing
+- Accuracy vs. cost
+- Informed choices
+
+**Infrastructure Selection**
+- On-premises vs. cloud
+- Reserved vs. on-demand
+- GPU vs. CPU optimization
+- Regional cost variations
+- Multi-option evaluation
+
+## Serving Frameworks and Platforms
+
+### Open Source Frameworks
+
+**Seldon**
+- Model-agnostic serving
+- Multi-model support
+- Ensemble capabilities
+- Kubernetes-native
+- Flexible deployment
+
+**BentoML**
+- Model packaging and serving
+- API generation
+- Docker containerization
+- Simple deployment
+- Developer-friendly
+
+**Ray Serve**
+- Distributed serving
+- Scalability
+- Dynamic batching
+- Multi-model support
+- Python integration
+
+### Cloud-Native Solutions
+
+**AWS SageMaker**
+- Endpoint management
+- Auto-scaling
+- A/B testing
+- Monitor integration
+- AWS ecosystem
+
+**Google Vertex AI**
+- Unified ML platform
+- Monitoring and evaluation
+- A/B testing
+- Integration with other services
+- Enterprise-grade
+
+**Azure Machine Learning**
+- Model deployment
+- Real-time endpoints
+- Batch inference
+- Integration with Azure
+- Enterprise support
+
+## Edge Deployment
+
+### On-Device Inference
+
+**TensorFlow Lite**
+- Mobile and embedded optimization
+- Small model sizes
+- Fast inference
+- Low memory usage
+- Cross-platform
+
+**Core ML (Apple)**
+- Native iOS/macOS models
+- Hardware acceleration
+- Privacy-preserving
+- Easy integration
+- Optimized performance
+
+**ONNX Mobile**
+- Cross-platform on-device
+- Light-weight runtime
+- Hardware acceleration
+- Privacy benefits
+- Flexibility
+
+### IoT and Embedded Systems
+
+**Model Optimization for IoT**
+- Extreme resource constraints
+- Aggressive quantization
+- Architectural simplification
+- Pruning and distillation
+- Practical feasibility
+
+**Federated Learning**
+- Train on distributed devices
+- Preserve privacy
+- Reduce data transfer
+- Edge intelligence
+- Emerging paradigm
+
+## Continuous Integration and Deployment (CI/CD)
+
+### Model Testing
+
+**Unit Testing**
+- Individual component testing
+- Model shape and type validation
+- Output range checking
+- Basic correctness verification
+- Automation essential
+
+**Integration Testing**
+- End-to-end pipeline testing
+- Data preprocessing validation
+- Post-processing verification
+- Full system testing
+- Pre-deployment assurance
+
+**Performance Testing**
+- Latency benchmarks
+- Throughput measurement
+- Resource usage profiling
+- Regression detection
+- Performance assurance
+
+### Automated Deployment
+
+**CI/CD Pipelines**
+- Automated testing
+- Model versioning
+- Deployment automation
+- Rollback capability
+- Continuous improvement
+
+**Model Registry**
+- Version control for models
+- Metadata and lineage tracking
+- Deployment history
+- Reproducibility
+- Governance and compliance
+
+## Production Considerations
+
+### High Availability and Reliability
+
+**Redundancy and Failover**
+- Multiple model instances
+- Automatic failover
+- Service continuity
+- Disaster recovery
+- Uptime guarantees
+
+**Health Checks and Recovery**
+- Periodic health monitoring
+- Automatic restarts
+- Load shedding
+- Graceful degradation
+- Reliability assurance
+
+### Versioning and Rollback
+
+**Model Versioning**
+- Version control and tracking
+- Reproducibility
+- Dependency management
+- Experiment tracking
+- Easy rollback
+
+**Canary and Progressive Rollouts**
+- Staged deployment
+- Performance monitoring
+- Safe rollout
+- Risk minimization
+- User trust
+
+## Related Resources
+
+- [LanguageModels.mdx](./LanguageModels) - LLM deployment considerations
+- [VisionModels.mdx](./VisionModels) - Vision model deployment and optimization
+- [AudioModels.mdx](./AudioModels) - Audio model real-time inference
+- [EmbeddingModels.mdx](./EmbeddingModels) - Embedding service scaling
+- [ModelArchitectures.mdx](./ModelArchitectures) - Architecture design for efficiency
+- [agents.org.ai](https://agents.org.ai) - Agent system deployment and orchestration
+
+## Cross-References
+
+| Domain | Connection |
+|--------|-----------|
+| [LanguageModels.mdx](./LanguageModels) | LLM serving and inference |
+| [VisionModels.mdx](./VisionModels) | Computer vision model optimization |
+| [AudioModels.mdx](./AudioModels) | Real-time audio processing |
+| [EmbeddingModels.mdx](./EmbeddingModels) | Vector database and retrieval serving |
+| [ModelArchitectures.mdx](./ModelArchitectures) | Efficient architecture design |
+| [agents.org.ai](https://agents.org.ai) | Agent system infrastructure |
+| [datasets.org.ai](https://datasets.org.ai) | Training and evaluation data |
+| [tech.org.ai](https://tech.org.ai) | Technology ecosystem and platforms |
+

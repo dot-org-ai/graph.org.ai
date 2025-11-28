@@ -1,0 +1,495 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/KnowledgeGraphs
+$type: https://knowledge.org.ai/Knowledge
+name: "Knowledge Graphs"
+description: "Graph-based representations of knowledge using nodes, edges, and triples"
+---
+
+# Knowledge Graphs
+
+Graph-based data structures for representing interconnected information and relationships using nodes, edges, and semantic triples.
+
+## Overview
+
+Knowledge graphs are fundamental data structures for organizing, representing, and reasoning about interconnected information. They model entities (nodes) and their relationships (edges/triples) in a structured format that enables both human understanding and machine reasoning. Knowledge graphs power semantic search, recommendation systems, AI reasoning, and knowledge integration across diverse sources.
+
+### Core Components
+
+- **Nodes (Entities)**: Discrete objects, concepts, or individuals
+- **Edges (Relationships)**: Typed connections between nodes
+- **Triples (Subject-Predicate-Object)**: Fundamental knowledge representation unit
+- **Properties/Attributes**: Characteristics of nodes
+- **Contexts**: Named graphs and scoping
+
+## Triple-Based Representation
+
+### Subject-Predicate-Object Triples
+
+The fundamental unit of knowledge representation in knowledge graphs:
+
+```
+(Subject, Predicate, Object)
+(Barack Obama, born in, Honolulu)
+(Honolulu, located in, Hawaii)
+(Hawaii, capital is, Honolulu)
+```
+
+#### Triple Components
+
+- **Subject**: The entity or concept being described
+- **Predicate**: The relationship or property name
+- **Object**: The target entity, concept, or literal value
+
+#### Triple Formats
+
+- **RDF N-Triples**: Plain text format
+  ```
+  <http://example.org/Barack_Obama> <http://example.org/bornIn> <http://example.org/Honolulu> .
+  ```
+
+- **Turtle**: Abbreviated RDF format with prefixes
+  ```
+  @prefix ex: <http://example.org/> .
+  ex:Barack_Obama ex:bornIn ex:Honolulu .
+  ```
+
+- **JSON-LD**: JSON representation with linked data context
+  ```json
+  {
+    "@context": "http://example.org/",
+    "@id": "http://example.org/Barack_Obama",
+    "bornIn": "http://example.org/Honolulu"
+  }
+  ```
+
+### N-Tuples and Extended Representations
+
+Beyond triples, knowledge graphs can use extended representations:
+
+#### Reified Triples
+Representing additional metadata about relationships:
+
+```
+:relationship1 a rdf:Statement ;
+  rdf:subject :BarackObama ;
+  rdf:predicate :bornIn ;
+  rdf:object :Honolulu ;
+  :confidence 0.95 ;
+  :source "Wikipedia" ;
+  :date "2008-01-20" .
+```
+
+#### Named Graphs
+Grouping related triples with context:
+
+```
+:Graph1 {
+  <http://example.org/Barack_Obama> <http://example.org/bornIn> <http://example.org/Honolulu> .
+}
+
+:Graph2 {
+  <http://example.org/John_Smith> <http://example.org/bornIn> <http://example.org/Honolulu> .
+}
+```
+
+## Graph Models
+
+### Property Graphs
+
+Flexible graph model supporting properties on both nodes and edges:
+
+#### Node Properties
+```
+Node: Barack Obama {
+  type: Person,
+  birthDate: "1961-08-04",
+  nationality: "American",
+  title: "44th President of the United States"
+}
+```
+
+#### Edge Properties
+```
+Edge: (Barack Obama) --[born in]--> (Honolulu) {
+  confidence: 0.95,
+  source: "Wikipedia",
+  timestamp: "2024-01-01"
+}
+```
+
+#### Advantages
+- Rich attribute representation
+- Support for weighted edges
+- More expressive than simple RDF
+- Better suited for multi-relational data
+
+### RDF Graphs (Resource Description Framework)
+
+W3C standard for representing information about resources:
+
+#### RDF Model Components
+- **URIs (Uniform Resource Identifiers)**: Unique identifiers for resources
+- **Blank Nodes**: Anonymous resources without explicit identifiers
+- **Literals**: String, numeric, date, and other value types
+- **Predicates**: Named properties and relationships
+
+#### RDF Classes and Properties
+```
+:Barack_Obama a :Person ;
+  :givenName "Barack" ;
+  :familyName "Obama" ;
+  :bornIn :Honolulu ;
+  :bornOn "1961-08-04"^^xsd:date ;
+  :title "44th President of the United States" .
+```
+
+#### Benefits
+- Standardized, web-based representation
+- Interoperability across systems
+- Semantic web integration
+- Strong formal foundations
+
+## Graph Structures and Patterns
+
+### Knowledge Graph Topology
+
+#### Hierarchical Structures
+```
+Organization {
+  Company {
+    Department {
+      Team {
+        Person
+      }
+    }
+  }
+}
+```
+
+#### Network Structures
+```
+Social graphs with mutual connections
+Collaboration networks
+Citation networks
+Communication networks
+```
+
+#### Hybrid Structures
+Combining hierarchical and networked relationships:
+```
+Taxonomy hierarchy
++ Horizontal associations
++ Cross-hierarchy relationships
+```
+
+### Common Graph Patterns
+
+#### Chains and Paths
+Sequential relationships for tracing lineage or causality:
+```
+A -> B -> C -> D
+```
+
+#### Cycles and Loops
+Circular relationships indicating mutual dependencies:
+```
+A <-> B <-> C <-> A
+```
+
+#### Hubs and Spokes
+Central nodes with many connections:
+```
+Central entity connected to multiple related concepts
+```
+
+#### Bipartite Graphs
+Two distinct types of nodes with relationships between them:
+```
+Authors <-> Papers <-> Topics
+Users <-> Products <-> Categories
+```
+
+#### Dense Sub-Graphs
+Clusters of highly interconnected entities:
+```
+Communities within social networks
+Domain-specific concept clusters
+```
+
+## Graph Metrics and Analysis
+
+### Structural Properties
+
+#### Connectivity
+- **Degree**: Number of connections per node
+- **In-degree/Out-degree**: Directional connection counts
+- **Average Degree**: Mean connections across nodes
+- **Connectivity Components**: Isolated or weakly connected sub-graphs
+
+#### Path Properties
+- **Shortest Path Length**: Minimum hops between nodes
+- **Diameter**: Maximum shortest path in connected component
+- **Average Path Length**: Mean distance between node pairs
+- **Betweenness Centrality**: Importance of nodes as bridges
+
+#### Clustering and Community Detection
+- **Clustering Coefficient**: Local interconnectedness
+- **Modularity**: Strength of community structure
+- **Community Size Distribution**: Scale-free or uniform communities
+- **Bridge Nodes**: Connections between communities
+
+### Semantic Properties
+
+#### Density and Completeness
+- **Graph Density**: Ratio of actual to possible edges
+- **Coverage**: Proportion of known relationships
+- **Missing Links**: Inferred but not yet asserted relationships
+
+#### Redundancy and Consistency
+- **Redundant Triples**: Duplicate or equivalent statements
+- **Contradiction Detection**: Conflicting assertions
+- **Version Management**: Temporal consistency
+
+## Graph Traversal and Querying
+
+### Graph Pattern Matching
+
+Finding specific structural patterns:
+
+```sparql
+MATCH (a)-[rel]->(b)-[rel2]->(c)
+WHERE a.type = 'Person' AND c.type = 'Organization'
+RETURN a, rel, b, rel2, c
+```
+
+### Path Finding Algorithms
+
+#### Breadth-First Search (BFS)
+- Explores nodes level-by-level
+- Finds shortest path
+- Uniform cost exploration
+- Use case: Distance metrics, connectivity
+
+#### Depth-First Search (DFS)
+- Explores along edges deeply before backtracking
+- Memory efficient for sparse graphs
+- Use case: Cycle detection, topological sorting
+
+#### Dijkstra's Algorithm
+- Finds shortest path with edge weights
+- Maintains distance estimates
+- Optimal for weighted graphs
+- Use case: Route planning, cost minimization
+
+#### A* Algorithm
+- Heuristic-guided shortest path
+- Combines actual and estimated distance
+- More efficient than Dijkstra with good heuristics
+- Use case: Directed graph pathfinding, spatial queries
+
+### Multi-Hop Reasoning
+
+Extracting information across multiple relationship steps:
+
+```
+Query: "What are the universities attended by inventors of programming languages?"
+
+Steps:
+1. Find all Programming Languages
+2. For each, find inventors
+3. For each inventor, find universities attended
+4. Aggregate and deduplicate results
+```
+
+## Large-Scale Knowledge Graph Systems
+
+### Database Technologies
+
+#### Graph Databases
+- **Neo4j**: Property graph database with Cypher query language
+- **Amazon Neptune**: Managed RDF and property graph service
+- **JanusGraph**: Distributed graph database
+- **TigerGraph**: High-performance graph analytics
+- **ArangoDB**: Multi-model database with graph capabilities
+
+#### RDF Triplestores
+- **Apache Jena**: Open-source RDF framework
+- **Virtuoso**: RDF and SQL triple store
+- **GraphDB**: Semantic graph database
+- **AllegroGraph**: RDF database with OWL reasoning
+
+#### Key-Value and NoSQL Approaches
+- **Document stores**: MongoDB, CouchDB (graph-adjacent)
+- **Column stores**: Cassandra, HBase
+- **Time-series databases**: InfluxDB, TimescaleDB
+
+### Scalability Challenges
+
+#### Storage and Indexing
+- **Triple indexing strategies**: SPO, PSO, OPS permutations
+- **Bitmap indexes**: Efficient predicate filtering
+- **Join optimization**: Minimizing multi-way joins
+
+#### Query Optimization
+- **Query planning**: Cost-based plan selection
+- **Cardinality estimation**: Predicting result set sizes
+- **Join ordering**: Optimizing intermediate results
+
+#### Distributed Computing
+- **Sharding strategies**: Graph partitioning approaches
+- **Replication**: Consistency vs. availability
+- **MapReduce for graphs**: Bulk processing of triples
+
+## Knowledge Graph Construction
+
+### Data Sources and Integration
+
+#### Structured Data
+- Relational databases
+- CSV/JSON data files
+- Spreadsheets
+- Data warehouses
+
+#### Semi-Structured Data
+- XML documents
+- HTML pages
+- API responses
+- Logs and event streams
+
+#### Unstructured Data
+- Natural language text
+- Documents and papers
+- News articles
+- Social media content
+
+### Extraction and Linking
+
+#### Named Entity Recognition (NER)
+Identifying entities in text for node creation:
+- Person, Organization, Location extraction
+- Domain-specific entity types
+- Disambiguation of entity mentions
+
+#### Relation Extraction
+Identifying relationships in text for edge creation:
+- Dependency parsing based extraction
+- Pattern-based extraction
+- Neural network approaches
+
+#### Entity Linking
+Connecting text mentions to canonical entities:
+- Disambiguation of ambiguous mentions
+- Cross-reference resolution
+- Linking to external identifiers (DBpedia, Wikidata)
+
+#### Link Prediction
+Inferring missing relationships:
+- Collaborative filtering approaches
+- Embedding-based methods
+- Path-based reasoning
+
+## Quality and Maintenance
+
+### Data Quality Dimensions
+
+#### Completeness
+- **Coverage**: Proportion of relevant entities and relationships represented
+- **Missing Values**: Attributes or properties not populated
+- **Sparse Relations**: Relationships with limited assertions
+
+#### Accuracy
+- **Correctness**: Conformance to real-world facts
+- **Conflicts**: Contradictory assertions
+- **Outdated Information**: Stale or deprecated facts
+
+#### Consistency
+- **Schema Conformance**: Adherence to defined types and properties
+- **Referential Integrity**: Valid references between entities
+- **Temporal Consistency**: Non-conflicting versions
+
+#### Provenance
+- **Source Attribution**: Recording where facts originated
+- **Confidence Scores**: Reliability of assertions
+- **Lineage**: Tracking derivation and transformation
+
+### Maintenance Operations
+
+#### Updates and Versioning
+- Incremental updates vs. batch refreshes
+- Version control and rollback capabilities
+- Change tracking and audit trails
+
+#### Deduplication
+- Entity resolution across sources
+- Identifying equivalent nodes
+- Merging duplicate information
+
+#### Curation
+- Community contributions and review
+- Expert validation
+- Automated quality checks
+
+## Applications
+
+### Semantic Search
+- Rich query understanding beyond keywords
+- Entity-centric search results
+- Relationship-aware ranking
+- Example: Google Knowledge Graph
+
+### Recommendation Systems
+- Collaborative filtering using graph structure
+- Content-based recommendations via properties
+- Hybrid approaches combining multiple signals
+- Example: Social recommendations, product suggestions
+
+### Question Answering
+- Mapping natural language to graph patterns
+- Multi-hop reasoning over graphs
+- Answer synthesis from diverse sources
+- Example: Chatbots, virtual assistants
+
+### Business Intelligence
+- Data integration across silos
+- Cross-functional analysis
+- Impact analysis and scenario planning
+- Example: Master data management
+
+### Scientific Discovery
+- Literature mining and citation analysis
+- Hypothesis generation
+- Drug-disease target identification
+- Example: Biomedical knowledge graphs
+
+### Fraud Detection
+- Pattern recognition in transaction networks
+- Community detection for suspicious actors
+- Anomaly detection in relationship patterns
+- Example: Financial crime detection
+
+## Cross-References
+
+### Related Domains
+
+- [graph.org.ai](https://graph.org.ai) - Core graph theory and definitions
+- [semantics.org.ai](https://semantics.org.ai) - Semantic web and meaning
+- [Ontologies.org.ai](https://knowledge.org.ai/Ontologies) - Formal knowledge structures
+- [datasets.org.ai](https://datasets.org.ai) - Knowledge graph data sources
+- [Reasoning.org.ai](https://knowledge.org.ai/Reasoning) - Inference over graphs
+
+### External Resources
+
+- W3C RDF Specification
+- SPARQL Query Language
+- Knowledge Graph Conference
+- Linked Open Data Cloud
+
+## Sources
+
+- W3C RDF Working Group
+- SPARQL Query Language Specification
+- Knowledge Graph Summit
+- Neo4j Knowledge Graph Whitepapers
+- Amazon Neptune Documentation
+- Google Knowledge Graph Documentation

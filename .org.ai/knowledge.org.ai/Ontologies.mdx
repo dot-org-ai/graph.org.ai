@@ -1,0 +1,616 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/Ontologies
+$type: https://knowledge.org.ai/Knowledge
+name: "Ontologies"
+description: "Formal representations of knowledge with classes, properties, and constraints"
+---
+
+# Ontologies
+
+Formal systems for representing shared understanding of domains using classes, hierarchies, and logical constraints.
+
+## Overview
+
+Ontologies are explicit formal specifications of conceptualizations that provide shared vocabularies for knowledge domains. They define classes of entities, their properties, relationships between classes, and rules governing those relationships. Ontologies enable knowledge sharing, integration, and automated reasoning by establishing common semantic agreements.
+
+### Core Components
+
+- **Classes (Concepts)**: Categories of entities with shared properties
+- **Properties/Relations**: Attributes and connections between entities
+- **Constraints and Rules**: Logical restrictions on valid combinations
+- **Instances**: Specific entities classified by classes
+- **Hierarchies**: Subsumption relationships between classes
+
+## Ontology Languages
+
+### RDFS (RDF Schema)
+
+Simple vocabulary definition for RDF:
+
+#### Class Hierarchies
+```turtle
+@prefix ex: <http://example.org/> .
+
+ex:Thing a rdfs:Class .
+ex:Person a rdfs:Class ;
+  rdfs:subClassOf ex:Thing .
+ex:Organization a rdfs:Class ;
+  rdfs:subClassOf ex:Thing .
+```
+
+#### Property Definitions
+```turtle
+ex:name a rdf:Property ;
+  rdfs:domain ex:Person ;
+  rdfs:range xsd:string .
+
+ex:partOf a rdf:Property ;
+  rdfs:domain ex:Person ;
+  rdfs:range ex:Organization .
+```
+
+#### Features and Limitations
+- **Simple class taxonomy**: Subclass relationships only
+- **No property hierarchies**: Cannot define sub-properties
+- **No cardinality constraints**: Cannot restrict relationship multiplicity
+- **Limited reasoning**: Basic subsumption inference only
+- **Lightweight**: Minimal computational overhead
+
+### OWL (Web Ontology Language)
+
+Expressive ontology language with strong reasoning capabilities:
+
+#### OWL Sublanguages
+
+**OWL Full**
+- Most expressive sublanguage
+- Full first-order logic semantics
+- Undecidable reasoning problems
+- Use case: Maximum expressiveness when reasoning tractability is not critical
+
+**OWL DL (Description Logic)**
+- Balance of expressiveness and tractability
+- Decidable reasoning
+- Common for enterprise ontologies
+- Use case: Business domains requiring complete reasoning
+
+**OWL Lite**
+- Simplified subset of OWL DL
+- Easier to implement
+- Faster reasoning
+- Deprecated in favor of OWL 2
+
+#### Class Definitions
+
+```owl
+:Person a owl:Class ;
+  rdfs:label "Person" ;
+  rdfs:comment "A human being" .
+
+:Student a owl:Class ;
+  rdfs:subClassOf :Person ;
+  rdfs:label "Student" .
+
+:Parent a owl:Class ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (:Person :HasChild)
+  ] .
+```
+
+#### Property Types
+
+```owl
+:knows a owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range :Person ;
+  owl:symmetric true ;
+  owl:reflexive false .
+
+:age a owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:integer ;
+  owl:functional true .
+
+:teaches a owl:ObjectProperty ;
+  rdfs:domain :Teacher ;
+  rdfs:range :Student ;
+  owl:inverseOf :taughtBy .
+```
+
+#### Property Characteristics
+
+- **Functional**: Each subject has at most one object (one-to-one)
+- **Inverse Functional**: Each object has at most one subject
+- **Symmetric**: If A relates to B, then B relates to A
+- **Transitive**: If A relates to B and B relates to C, then A relates to C
+- **Inverse**: Specifies reverse relationship
+
+#### Constraints and Restrictions
+
+```owl
+:Employee a owl:Class ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :worksFor ;
+    owl:someValuesFrom :Organization
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :salary ;
+    owl:cardinality 1
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty :age ;
+    owl:minInclusive 18 ;
+    owl:maxInclusive 70
+  ] .
+```
+
+#### Class Combinations
+
+```owl
+:Adult a owl:Class ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (:Person [ age >= 18 ])
+  ] .
+
+:Parent a owl:Class ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:unionOf (:Father :Mother)
+  ] .
+
+:Childless a owl:Class ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:complementOf :Parent
+  ] .
+```
+
+#### Disjointness and Covering
+
+```owl
+:Male a owl:Class .
+:Female a owl:Class .
+
+[] a owl:AllDisjointClasses ;
+   owl:members (:Male :Female) .
+
+:Person owl:hasValue [
+  a owl:Class ;
+  owl:unionOf (:Male :Female :NonBinary)
+] .
+```
+
+### SKOS (Simple Knowledge Organization System)
+
+Vocabulary for knowledge organization in RDF:
+
+#### Concept Hierarchies
+```turtle
+:informationScience a skos:Concept ;
+  skos:prefLabel "Information Science" ;
+  skos:altLabel "Informatics" ;
+  skos:definition "The study of information and its utilization" ;
+  skos:broaderConcept :computerScience ;
+  skos:relatedConcept :libraryScience .
+```
+
+#### Concept Schemes
+```turtle
+:thesaurus a skos:ConceptScheme ;
+  dc:title "Library of Congress Subject Headings" ;
+  skos:hasConcept :informationScience .
+
+:informationScience skos:inScheme :thesaurus .
+```
+
+#### Features
+- **Simpler than OWL**: Easy to understand and use
+- **Label variants**: Preferred, alternative, hidden labels
+- **Semantic relationships**: Broader, narrower, related
+- **No formal semantics**: Cannot perform logical reasoning
+- **Use case**: Vocabularies, thesauri, classification schemes
+
+## Taxonomy Design
+
+### Class Hierarchies
+
+#### Subsumption Relationships
+The is-a relationship defining class hierarchies:
+
+```
+Vehicle
+  ├── LandVehicle
+  │   ├── Car
+  │   │   ├── Sedan
+  │   │   ├── SUV
+  │   │   └── Truck
+  │   └── Motorcycle
+  ├── WaterVehicle
+  │   ├── Boat
+  │   └── Ship
+  └── AirVehicle
+      ├── Airplane
+      └── Helicopter
+```
+
+#### Single vs. Multiple Inheritance
+
+**Single Inheritance**
+- Each class has one parent
+- Simple, clear hierarchies
+- Limited expressiveness
+- Easier to navigate
+
+**Multiple Inheritance**
+- Classes can have multiple parents
+- More expressive
+- Potential for ambiguity and inconsistency
+- Example: A person can be both Employee and Student
+
+#### Principles of Good Taxonomy
+
+- **Consistency**: Clear, uniform classification logic
+- **Completeness**: All relevant entities classified
+- **Disjointness**: Non-overlapping categories (when appropriate)
+- **Homogeneity**: Same classification criteria at each level
+- **Stability**: Minimal changes over time
+- **Usability**: Intuitive organization for users
+
+### Slicing and Multiple Hierarchies
+
+Organizing classes along different dimensions:
+
+```
+By Function:
+  Vehicle
+    └── PassengerVehicle
+    └── CargoVehicle
+
+By Size:
+  Vehicle
+    └── SmallVehicle
+    └── LargeVehicle
+
+By Power Source:
+  Vehicle
+    └── GasolineVehicle
+    └── ElectricVehicle
+    └── HybridVehicle
+```
+
+## Properties and Relations
+
+### Object Properties (Relations)
+
+Relationships between entities:
+
+```owl
+:parentOf a owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range :Person ;
+  owl:inverseOf :childOf ;
+  owl:transitive true ;
+  owl:asymmetric true .
+
+:manages a owl:ObjectProperty ;
+  rdfs:domain :Person ;
+  rdfs:range :Project ;
+  owl:irreflexive true .
+
+:adjacentTo a owl:ObjectProperty ;
+  rdfs:domain :Place ;
+  rdfs:range :Place ;
+  owl:symmetric true .
+```
+
+### Datatype Properties (Attributes)
+
+Properties with literal values:
+
+```owl
+:name a owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+  owl:functional true .
+
+:dateOfBirth a owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:date ;
+  owl:functional true .
+
+:email a owl:DatatypeProperty ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+  owl:minCardinality 1 .
+```
+
+### Property Hierarchies
+
+```owl
+:familialRelation a owl:ObjectProperty ;
+  rdfs:label "Familial Relation" .
+
+:parentOf rdfs:subPropertyOf :familialRelation .
+:siblingOf rdfs:subPropertyOf :familialRelation .
+:spouseOf rdfs:subPropertyOf :familialRelation .
+
+:fatherOf rdfs:subPropertyOf :parentOf .
+:motherOf rdfs:subPropertyOf :parentOf .
+```
+
+## Axioms and Rules
+
+### Assertion Axioms
+
+Stating facts about instances:
+
+```owl
+:JohnDoe a :Person ;
+  :name "John Doe" ;
+  :dateOfBirth "1980-05-15"^^xsd:date ;
+  :worksFor :AcmeCorp ;
+  :knows :JaneSmith .
+```
+
+### General Class Axioms
+
+Rules governing class membership:
+
+```owl
+[] a owl:Axiom ;
+  owl:annotatedSource :Person ;
+  owl:annotatedProperty rdfs:subClassOf ;
+  owl:annotatedTarget [
+    a owl:Restriction ;
+    owl:onProperty :hasParent ;
+    owl:minCardinality 1 ;
+    owl:maxCardinality 2
+  ] ;
+  rdfs:comment "Every person has at least one but typically two parents" .
+```
+
+### Rule-Based Reasoning
+
+SWRL (Semantic Web Rule Language):
+
+```
+Person(?x) ∧ hasParent(?x, ?y) ∧ hasParent(?y, ?z) → hasGrandparent(?x, ?z)
+
+Person(?a) ∧ knows(?a, ?b) ∧ knows(?b, ?c) ∧ notEqual(?a, ?c)
+  → friendOfFriend(?a, ?c)
+
+Student(?x) ∧ enrolledIn(?x, ?c) ∧ teaches(?y, ?c) → learns(?x, ?y)
+```
+
+## Reasoning and Inference
+
+### Subsumption Inference
+
+Deriving class relationships:
+
+```
+Given:
+  Person ⊆ Thing
+  Student ⊆ Person
+
+Inferred:
+  Student ⊆ Thing
+```
+
+### Consistency Checking
+
+Verifying absence of contradictions:
+
+```owl
+:Fred a :Person ;
+  a :UnmarriedPerson ;
+  :spouse :Wilma .
+
+; INCONSISTENT: Person with spouse contradicts UnmarriedPerson
+```
+
+### Instance Classification
+
+Determining class membership:
+
+```
+Given: John has property worksFor pointing to Acme
+If: Employee ≡ Person ∧ ∃worksFor.Organization
+Then: John is inferred to be an Employee
+```
+
+### Implicit Facts and Closure
+
+```owl
+:teaches a owl:InverseFunctionalProperty .
+:FacultyMember rdfs:subClassOf ?x ∧ teaches ?y .
+
+If Dr. Smith teaches a class, Dr. Smith is inferred to be a FacultyMember
+```
+
+## Standard Ontologies and Upper Ontologies
+
+### Upper Ontologies (Foundation Ontologies)
+
+Foundational concepts applicable across domains:
+
+**SUMO (Suggested Upper Merged Ontology)**
+- Defines high-level concepts
+- 20,000+ terms covering fundamental categories
+- Used as foundation for domain ontologies
+- Publicly available
+
+**BFO (Basic Formal Ontology)**
+- Developed for biomedical sciences
+- Focus on entities and processes
+- Increasing adoption in multiple domains
+
+**DOLCE (Descriptive Ontology for Linguistic and Cognitive Engineering)**
+- Emphasizes linguistic and cognitive distinctions
+- Perdurantist approach (things persist through time)
+- Influential in European ontology research
+
+### Domain Ontologies
+
+Specialized vocabularies for specific fields:
+
+**Biomedical**
+- SNOMED CT: Clinical terminology
+- MeSH: Medical indexing
+- ChEBI: Chemical entities
+
+**Business**
+- Dublin Core: Document description
+- FOAF: Friend-of-a-friend social networks
+- SKOS: Knowledge organization
+
+**Scientific**
+- SWEET: Semantic Web for Earth and Environmental Terminology
+- QUDT: Quantities, Units, Dimensions, Types
+
+### Ontology Libraries and Repositories
+
+- **BioPortal**: Biomedical ontologies
+- **AgroPortal**: Agricultural domain
+- **Linked Open Vocabularies**: Multi-domain repository
+- **Protégé Ontology Library**: General-purpose collection
+
+## Ontology Tools
+
+### Design and Editing
+
+**Protégé**
+- Open-source ontology editor
+- OWL and SKOS support
+- Visualization and reasoning
+- Plugin ecosystem
+
+**TopBraid Composer**
+- Enterprise ontology development
+- SHACL support for validation
+- Integration with RDF databases
+
+**VocBench**
+- Web-based collaborative ontology editing
+- SKOS and OWL support
+- Multi-language support
+
+### Reasoning and Validation
+
+**Reasoners**
+- Pellet: Full-featured OWL reasoner
+- HermiT: Optimized for description logics
+- FaCT++: Highly optimized reasoning
+- Racer: Commercial-strength reasoner
+
+**Validation**
+- SHACL: Shapes Constraint Language for RDF validation
+- ShEx: Shape Expressions for RDF validation
+
+## Ontology Engineering Methodologies
+
+### Development Lifecycle
+
+1. **Requirements Analysis**: Understanding domain knowledge needs
+2. **Conceptualization**: Identifying key concepts and relationships
+3. **Formalization**: Implementing in formal language
+4. **Implementation**: Creating in ontology language (OWL, SKOS)
+5. **Evaluation**: Validation against requirements
+6. **Maintenance**: Updates and improvements
+
+### Merging and Alignment
+
+#### Ontology Merging
+Combining multiple ontologies into unified representation:
+- Identifying equivalent concepts
+- Resolving conflicts in definitions
+- Creating unified class hierarchy
+- Maintaining provenance
+
+#### Ontology Alignment
+Mapping between independently developed ontologies:
+- String similarity matching
+- Structural matching
+- Semantic similarity using embeddings
+- Manual expert review
+
+### Version Management
+
+- Tracking changes over time
+- Maintaining compatibility
+- Deprecation of outdated concepts
+- Migration strategies for dependent systems
+
+## Applications
+
+### Knowledge Integration
+- Master data management
+- Data warehouse integration
+- Entity reconciliation across sources
+
+### Semantic Interoperability
+- Healthcare information exchange
+- Supply chain integration
+- Government data sharing
+
+### Search and Discovery
+- Faceted search with ontology-based categories
+- Cross-domain information retrieval
+- Semantic question answering
+
+### Semantic Services
+- Web service description and discovery
+- API contract definition
+- Service composition and orchestration
+
+### Linked Data Publishing
+- RDF dataset publication
+- Schema.org markup for search engines
+- Knowledge graph construction
+
+## Quality and Evaluation
+
+### Ontology Metrics
+
+- **Relationship Richness**: Proportion of non-hierarchical relationships
+- **Breadth**: Number of root classes
+- **Depth**: Maximum path length in hierarchy
+- **Tangledness**: Extent of multiple inheritance
+- **Attribute Richness**: Ratio of properties to classes
+
+### Evaluation Criteria
+
+- **Correctness**: Conformance to domain reality
+- **Completeness**: Coverage of relevant concepts
+- **Clarity**: Understandability of definitions
+- **Consistency**: Non-contradictory definitions
+- **Coherence**: Related concepts properly connected
+
+## Cross-References
+
+### Related Domains
+
+- [graph.org.ai](https://graph.org.ai) - Graph structures
+- [semantics.org.ai](https://semantics.org.ai) - Semantic meaning
+- [KnowledgeGraphs.org.ai](https://knowledge.org.ai/KnowledgeGraphs) - Graph implementations
+- [Reasoning.org.ai](https://knowledge.org.ai/Reasoning) - Inference methods
+
+### Standards and Specifications
+
+- W3C OWL Specification
+- W3C SKOS Reference
+- W3C RDF Schema Specification
+
+## Sources
+
+- W3C Semantic Web Working Group
+- Ontology Design Patterns
+- Protégé Ontology Development Community
+- Stanford Center for Biomedical Informatics Research
+- ISO/IEC 704 - Terminology work - Principles and methods

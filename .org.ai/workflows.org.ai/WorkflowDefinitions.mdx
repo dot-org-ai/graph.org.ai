@@ -1,0 +1,499 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/WorkflowDefinitions
+$type: https://workflows.org.ai/WorkflowDefinitions
+name: Workflow Definitions
+description: Languages, formats, and methodologies for expressing workflow logic
+---
+
+export const items = async () => {
+  return [
+    {
+      name: 'Declarative YAML',
+      description: 'Human-readable workflow specifications in YAML format',
+      examples: ['Argo Workflows', 'Keda', 'OpenAPI Workflows'],
+      useCases: ['GitOps', 'Infrastructure-as-Code', 'Visual configuration']
+    },
+    {
+      name: 'Declarative JSON',
+      description: 'Structured workflow definitions in JSON format',
+      examples: ['AWS Step Functions', 'Temporal workflow definitions'],
+      useCases: ['API-driven', 'Tool generation', 'Schema validation']
+    },
+    {
+      name: 'Programmatic DSLs',
+      description: 'Domain-specific languages embedded in general-purpose languages',
+      examples: ['Temporal TypeScript SDK', 'Temporal Python SDK', 'Prefect Python'],
+      useCases: ['Complex logic', 'Type safety', 'IDE support']
+    },
+    {
+      name: 'Visual Builders',
+      description: 'Drag-and-drop UI tools for workflow composition',
+      examples: ['AWS Step Functions Designer', 'Zapier', 'Make.com'],
+      useCases: ['Non-technical users', 'Quick prototyping', 'Education']
+    },
+    {
+      name: 'Imperative Code',
+      description: 'Workflows as regular application code with framework annotations',
+      examples: ['Spring Batch', 'Luigi', 'Airflow DAGs'],
+      useCases: ['Complex business logic', 'Integration with existing code', 'Testing']
+    },
+    {
+      name: 'Graph-Based Definitions',
+      description: 'Workflows expressed as directed acyclic graphs (DAGs)',
+      examples: ['Airflow DAGs', 'Dagster asset graphs', 'Dbt'],
+      useCases: ['Data pipelines', 'Dependency visualization', 'Data lineage']
+    }
+  ]
+}
+
+# Workflow Definitions
+
+Workflow definitions are the specifications that describe how workflows should be constructed and executed. Different definition approaches serve different use cases, from highly structured declarative formats to flexible programmatic DSLs.
+
+## Overview
+
+Workflow definitions bridge the gap between high-level workflow intent and low-level execution semantics. The choice of definition language significantly impacts workflow maintainability, testability, and team productivity.
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `WorkflowDefinitions` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+| Related | [WorkflowEngines.mdx](./WorkflowEngines), [WorkflowPatterns.mdx](./WorkflowPatterns) |
+
+## Definition Approaches
+
+### Declarative YAML
+
+YAML provides human-readable, version-control-friendly workflow specifications.
+
+**Advantages**:
+- Human-readable
+- Git-friendly for version control
+- No programming knowledge required
+- Easy code review
+
+**Disadvantages**:
+- Limited expressiveness
+- Verbose for complex logic
+- Debugging challenges
+- Limited IDE support
+
+**Example (Argo Workflows)**:
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: sequential-
+spec:
+  entrypoint: main
+  templates:
+    - name: main
+      steps:
+        - - name: step1
+            template: process
+            arguments:
+              parameters:
+                - name: data
+                  value: "input"
+        - - name: step2
+            template: process
+            arguments:
+              parameters:
+                - name: data
+                  value: "{{steps.step1.outputs.result}}"
+
+    - name: process
+      inputs:
+        parameters:
+          - name: data
+      script:
+        image: python:3.9
+        command: [python]
+        source: |
+          import json
+          data = json.loads('{{inputs.parameters.data}}')
+          print(json.dumps({"result": data}))
+```
+
+**Use Cases**:
+- Kubernetes-native workflows
+- Container orchestration
+- Infrastructure as Code
+- DevOps workflows
+
+### Declarative JSON
+
+JSON provides structured, schema-validatable workflow specifications.
+
+**Advantages**:
+- Programmatic generation
+- Schema validation
+- Widely supported
+- Tool ecosystem
+
+**Disadvantages**:
+- Verbose
+- Harder to read
+- Less version-control friendly
+- Manual formatting
+
+**Example (AWS Step Functions)**:
+```json
+{
+  "Comment": "A workflow to process and validate data",
+  "StartAt": "ValidateInput",
+  "States": {
+    "ValidateInput": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:ValidateInput",
+      "Catch": [{
+        "ErrorEquals": ["ValidationError"],
+        "Next": "InvalidInput"
+      }],
+      "Next": "ProcessData"
+    },
+    "ProcessData": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:ProcessData",
+      "TimeoutSeconds": 300,
+      "Retry": [{
+        "ErrorEquals": ["States.TaskFailed"],
+        "IntervalSeconds": 2,
+        "MaxAttempts": 3,
+        "BackoffRate": 2.0
+      }],
+      "Next": "Success"
+    },
+    "InvalidInput": {
+      "Type": "Fail",
+      "Error": "InvalidInput",
+      "Cause": "Input validation failed"
+    },
+    "Success": {
+      "Type": "Succeed"
+    }
+  }
+}
+```
+
+**Use Cases**:
+- Cloud platform workflows
+- Generated workflows
+- Workflow-as-a-service
+- API-driven systems
+
+### Programmatic DSLs
+
+Programming language-based workflow definitions embedded in general-purpose languages.
+
+**Advantages**:
+- Full language expressiveness
+- Type safety
+- IDE support and autocomplete
+- Complex logic support
+- Testing integration
+
+**Disadvantages**:
+- Requires programming knowledge
+- Harder to visualize
+- Language-specific tooling
+- Less portable
+
+**Example (Temporal TypeScript)**:
+```typescript
+import { proxyActivities, defineSignal, defineQuery } from '@temporalio/workflow';
+import type * as activities from './activities';
+
+const { fetchUser, processPayment, sendEmail } =
+  proxyActivities<typeof activities>({
+    startToCloseTimeout: '1 minute',
+  });
+
+export const getUserSignal = defineSignal<[string]>('setUser');
+export const getStatusQuery = defineQuery<string>('status');
+
+let userId = '';
+let status = 'waiting';
+
+export async function orderWorkflow(orderId: string): Promise<OrderResult> {
+  const user = await fetchUser(userId);
+  const payment = await processPayment(orderId, user);
+  await sendEmail(user.email, `Order ${orderId} processed`);
+  return { orderId, userId, payment };
+}
+```
+
+**Language Support**:
+- **TypeScript/JavaScript**: Temporal
+- **Python**: Temporal, Prefect, Airflow
+- **Go**: Temporal
+- **Java**: Temporal
+- **.NET**: Temporal
+
+### Visual Builders
+
+Graphical user interfaces for workflow composition without code.
+
+**Advantages**:
+- No programming required
+- Visual workflow understanding
+- Fast prototyping
+- Good for non-technical users
+
+**Disadvantages**:
+- Limited complexity support
+- Hard to version control
+- Tool lock-in
+- Debugging challenges
+
+**Tools**:
+- **AWS Step Functions Designer**: Visual editor integrated with Step Functions
+- **Zapier**: No-code automation platform
+- **Make (formerly Integromat)**: Visual workflow builder
+- **BPMN Tools**: Camunda, Activiti with visual editors
+
+**Example (Conceptual)**:
+```
+┌─────────────┐
+│   Start     │
+└──────┬──────┘
+       │
+       ▼
+┌─────────────────┐
+│ Fetch User Data │
+└──────┬──────────┘
+       │
+       ▼
+┌──────────────────────┐
+│ Process Payment      │
+├──────────────────────┤
+│ Success? ────┐       │
+└──────┬───────┴───────┘
+       │                  │ Failure
+       │ Success          │
+       ▼                  ▼
+┌──────────────┐   ┌──────────────┐
+│ Send Confirm │   │ Send Failure │
+└──────┬───────┘   └──────┬───────┘
+       │                  │
+       └────────┬─────────┘
+                ▼
+           ┌─────────┐
+           │   End   │
+           └─────────┘
+```
+
+### Imperative Code
+
+Workflows as regular application code with framework support.
+
+**Advantages**:
+- Full language features
+- Easy testing
+- IDE integration
+- Clear error handling
+- Good for data engineers
+
+**Disadvantages**:
+- Mixing concerns
+- Harder to visualize
+- Performance overhead
+- Dependency management
+
+**Example (Apache Airflow)**:
+```python
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
+
+def fetch_data():
+    return "data"
+
+def process_data(ti):
+    data = ti.xcom_pull(task_ids='fetch')
+    return f"processed: {data}"
+
+def validate_data(ti):
+    processed = ti.xcom_pull(task_ids='process')
+    return processed
+
+default_args = {
+    'retries': 2,
+    'retry_delay': timedelta(minutes=5),
+}
+
+with DAG(
+    'data_pipeline',
+    default_args=default_args,
+    schedule_interval='@daily',
+    start_date=datetime(2024, 1, 1),
+) as dag:
+    fetch = PythonOperator(
+        task_id='fetch',
+        python_callable=fetch_data
+    )
+
+    process = PythonOperator(
+        task_id='process',
+        python_callable=process_data
+    )
+
+    validate = PythonOperator(
+        task_id='validate',
+        python_callable=validate_data
+    )
+
+    fetch >> process >> validate
+```
+
+### Graph-Based Definitions
+
+Workflows expressed as directed acyclic graphs (DAGs) with data lineage.
+
+**Advantages**:
+- Natural data pipeline expression
+- Built-in data lineage
+- Dependency visualization
+- Maturity in data domain
+
+**Disadvantages**:
+- Limited control flow
+- Complex logic awkward
+- Performance considerations
+- Language lock-in
+
+**Example (Prefect)**:
+```python
+from prefect import flow, task, get_run_logger
+import pandas as pd
+
+@task
+def extract():
+    logger = get_run_logger()
+    logger.info("Extracting data...")
+    return pd.DataFrame({'x': [1, 2, 3], 'y': [4, 5, 6]})
+
+@task
+def transform(data):
+    logger = get_run_logger()
+    logger.info("Transforming data...")
+    return data[data['x'] > 1]
+
+@task
+def load(data):
+    logger = get_run_logger()
+    logger.info("Loading data...")
+    # data.to_sql(...)
+
+@flow
+def etl():
+    raw = extract()
+    transformed = transform(raw)
+    load(transformed)
+
+if __name__ == "__main__":
+    etl()
+```
+
+## Definition Comparison Matrix
+
+| Feature | YAML | JSON | Programmatic | Visual | Imperative | Graph |
+|---------|------|------|---|---|---|---|
+| **Readability** | High | Medium | Medium | High | High | High |
+| **Expressiveness** | Low | Low | Very High | Low | Very High | Medium |
+| **Type Safety** | None | With Schema | High | None | Variable | None |
+| **Version Control** | Excellent | Good | Good | Poor | Good | Depends |
+| **Learning Curve** | Low | Low | High | Very Low | High | Medium |
+| **IDE Support** | Basic | With Schema | Excellent | None | Excellent | Variable |
+| **Testing** | Difficult | Difficult | Easy | Difficult | Easy | Difficult |
+| **Visualization** | Manual | Manual | Difficult | Native | Difficult | Native |
+
+## Best Practices by Definition Type
+
+### YAML/JSON
+- Use schema validation
+- Document all states and transitions
+- Version workflows in Git
+- Use templating for reusability
+- Keep files focused and modular
+
+### Programmatic
+- Write unit tests for activities
+- Use type definitions
+- Document complex logic
+- Create reusable activity libraries
+- Use proper error handling
+
+### Visual Builders
+- Document with descriptions
+- Create templates for common patterns
+- Use meaningful names
+- Add comments where possible
+- Export definitions for backup
+
+### Imperative
+- Separate business logic from orchestration
+- Use meaningful task names
+- Implement monitoring
+- Write comprehensive tests
+- Document data contracts
+
+### Graph-Based
+- Maintain clear data lineage
+- Document asset contracts
+- Use typing for asset outputs
+- Implement asset versioning
+- Monitor data quality
+
+## Conversion and Migration
+
+Most modern frameworks support multiple definition formats:
+
+```typescript
+// Temporal: Define in code
+async function myWorkflow(input) {
+  // ...
+}
+
+// Export to JSON for auditing
+const definition = {
+  version: 1,
+  states: [...]
+};
+
+// Or use in Step Functions
+const stepFunctionDef = transpile(definition);
+```
+
+## Tool Ecosystem
+
+**Definition Generators**:
+- GraphQL schema → workflows
+- OpenAPI specs → workflows
+- Natural language → workflows (emerging)
+
+**Validators**:
+- JSON Schema validation
+- Temporal workflow type checking
+- Static analysis tools
+
+**Converters**:
+- YAML ↔ JSON
+- Graph → Imperative code
+- Code → Visual representation
+
+## References
+
+- [AWS Step Functions Language](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html)
+- [Temporal Workflow Definition](https://docs.temporal.io/develop/workflows)
+- [Argo Workflows Syntax](https://argoproj.github.io/argo-workflows/fields/)
+- [Airflow DAG Definition](https://airflow.apache.org/docs/apache-airflow/stable/concepts/dags/)
+- [BPMN 2.0 Specification](https://www.omg.org/bpmn/)
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="WorkflowDefinitions" />

@@ -1,0 +1,584 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/Reasoning
+$type: https://knowledge.org.ai/Knowledge
+name: "Reasoning"
+description: "Inference, rules, logic, and automated reasoning over knowledge"
+---
+
+# Reasoning
+
+Methods for deriving new knowledge through logical inference, rule application, and automated reasoning.
+
+## Overview
+
+Knowledge reasoning is the process of deriving implicit knowledge from explicit facts and rules. Automated reasoning systems apply logical rules to knowledge bases to infer new facts, validate consistency, classify entities, and answer complex queries. Reasoning enables knowledge systems to handle incomplete information, support decision-making, and discover unexpected connections.
+
+### Core Capabilities
+
+- **Inference**: Deriving new facts from existing ones
+- **Classification**: Determining category membership
+- **Consistency Checking**: Detecting contradictions
+- **Query Answering**: Finding answers to complex questions
+- **Entailment**: Determining logical consequences
+
+## Logical Foundations
+
+### Propositional Logic
+
+Reasoning about truth values of propositions:
+
+#### Basic Operators
+
+**Conjunction (AND)**
+```
+P ∧ Q  (both P and Q must be true)
+```
+
+**Disjunction (OR)**
+```
+P ∨ Q  (at least one of P or Q must be true)
+```
+
+**Negation (NOT)**
+```
+¬P  (P is false)
+```
+
+**Implication**
+```
+P → Q  (if P then Q; equivalent to ¬P ∨ Q)
+```
+
+**Biconditional**
+```
+P ↔ Q  (P if and only if Q; P and Q have same truth value)
+```
+
+#### Truth Tables and Evaluation
+
+```
+P | Q | P∧Q | P∨Q | P→Q | P↔Q
+T | T |  T  |  T  |  T  |  T
+T | F |  F  |  T  |  F  |  F
+F | T |  F  |  T  |  T  |  F
+F | F |  F  |  F  |  T  |  T
+```
+
+### Predicate Logic (First-Order Logic)
+
+Reasoning about properties and relationships:
+
+#### Quantifiers
+
+**Universal Quantification**
+```
+∀x. Person(x) → Mortal(x)
+(For all x: if x is a person, then x is mortal)
+```
+
+**Existential Quantification**
+```
+∃x. Student(x) ∧ Diligent(x)
+(There exists an x such that x is a student and x is diligent)
+```
+
+#### Predicates and Functions
+
+```
+Father(john, mary)  - john is father of mary
+Younger(x, y)      - x is younger than y
+Max(a, b)          - maximum of a and b
+```
+
+#### Variable Scope
+
+```
+∀x. (Student(x) → (∃y. Teaches(y, x)))
+(For all x: if x is a student, then there exists some y who teaches x)
+```
+
+### Description Logics
+
+Formal framework for knowledge representation balancing expressiveness and computational tractability:
+
+#### Class Expressions
+
+```
+Person ⊓ Student           (intersection: both Person AND Student)
+Person ⊔ Organization      (union: Person OR Organization)
+¬Unemployed                (negation: not Unemployed)
+```
+
+#### Existential and Universal Quantification
+
+```
+∃worksFor.Company          (someone works for some company)
+∀knows.Person              (all known entities are persons)
+```
+
+#### Cardinality Constraints
+
+```
+≥1 hasParent               (at least 1 parent)
+≤2 hasParent               (at most 2 parents)
+= 1 hasName                (exactly 1 name)
+```
+
+#### Examples in OWL
+
+```owl
+:Parent ≡ :Person ⊓ ∃:hasChild.⊤
+:OnlyChild ≡ :Person ⊓ ∃:hasParent.⊤ ⊓ ¬∃:hasSibling.⊤
+:UnemployedPerson ≡ ¬∃:worksFor.⊤
+```
+
+## Reasoning Algorithms
+
+### Forward Chaining
+
+Applying rules to known facts to derive new facts:
+
+```
+Facts: Parent(tom, bob), Parent(bob, ann)
+Rules: Parent(x, y) ∧ Parent(y, z) → GrandParent(x, z)
+
+Step 1: Apply rule to facts → GrandParent(tom, ann)
+```
+
+#### Rete Algorithm
+
+Optimized forward chaining with pattern matching:
+- Pre-compiles rules into discrimination network
+- Efficient for large numbers of facts and rules
+- Used in production rule systems
+- Memory-intensive for complex patterns
+
+### Backward Chaining
+
+Goal-directed reasoning starting from query:
+
+```
+Query: GrandParent(tom, ?x)
+Rule: Parent(x, y) ∧ Parent(y, z) → GrandParent(x, z)
+
+Subgoal 1: Parent(tom, ?y) → finds bob
+Subgoal 2: Parent(bob, ?z) → finds ann
+Result: GrandParent(tom, ann)
+```
+
+#### SLD Resolution
+
+Resolution-based backward chaining:
+- Systematic proof search
+- Depth-first or breadth-first strategies
+- Handles negation as failure
+- Used in Prolog and logic programming
+
+### Tableaux Reasoning
+
+Systematic approach to checking satisfiability and consistency:
+
+```
+Formula: ¬(P → Q)  (is this satisfiable?)
+
+Step 1: Expand → P ∧ ¬Q
+Step 2: Check both P and ¬Q can coexist
+Result: Satisfiable (P is true, Q is false)
+```
+
+#### Tableaux-Based OWL Reasoners
+
+- HermiT: Hyper-tableaux algorithm
+- Pellet: Optimized tableaux
+- FaCT++: Optimized for DLs
+
+### Chase Algorithm
+
+Materializing complete knowledge by repeatedly applying rules:
+
+```
+Facts: Parent(tom, bob)
+Rule: Parent(x, y) → Ancestor(x, y)
+
+Chase Step 1: Add Ancestor(tom, bob)
+Rule: Ancestor(x, y) ∧ Parent(y, z) → Ancestor(x, z)
+Chase Step 2: Apply to new facts iteratively
+```
+
+## Entailment and Consequences
+
+### Logical Entailment
+
+Knowledge base entails a statement if statement is true whenever KB is true:
+
+```
+KB: {Person(john), ∀x. Person(x) → Mortal(x)}
+
+KB ⊨ Mortal(john)  (entailment holds)
+KB ⊭ Person(mary)  (entailment does not hold)
+```
+
+### Satisfiability
+
+Knowledge base is satisfiable if there exists an interpretation making all statements true:
+
+```
+KB: {Person(john), ¬Person(john)}
+Not satisfiable (contradiction)
+
+KB: {Person(john), Person(mary)}
+Satisfiable
+```
+
+### Consistency
+
+Absence of contradictions within a knowledge base:
+
+```
+Consistent:
+  :Alice a :Person ;
+    :age 25 .
+  :Bob a :Person ;
+    :age 30 .
+
+Inconsistent:
+  :Carol a :UnmarriedPerson ;
+    :spouse :Dave .
+```
+
+## Rule Languages and Systems
+
+### SWRL (Semantic Web Rule Language)
+
+Rules combining OWL with logic programming:
+
+```
+Rule syntax:
+head(x) ← body(x)
+
+Example:
+Person(?x) ∧ hasParent(?x, ?p) ∧ hasParent(?p, ?g)
+  → hasGrandparent(?x, ?g)
+
+Person(?x) ∧ hasParent(?x, ?p1) ∧ hasParent(?x, ?p2) ∧ swrlb:notEqual(?p1, ?p2)
+  → hasTwoParents(?x)
+```
+
+#### Built-in Functions
+
+```
+Mathematical: swrlb:add, swrlb:subtract, swrlb:multiply, swrlb:divide
+Comparison: swrlb:greaterThan, swrlb:lessThanOrEqual
+String: swrlb:stringConcat, swrlb:stringLength, swrlb:containsIgnoreCase
+Date/Time: swrlb:dateTime, swrlb:parseDate
+```
+
+### Datalog
+
+Logic programming language for rules and queries:
+
+```
+% Facts (base relations)
+parent(tom, bob).
+parent(bob, ann).
+
+% Rules
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Z) :- parent(X, Y), ancestor(Y, Z).
+
+% Query
+?- ancestor(tom, ann).
+```
+
+#### Stratification
+
+Organizing rules to avoid infinite loops and ensure termination:
+
+```
+Stratum 1: Base facts (parent)
+Stratum 2: Derived facts (ancestor, depends on stratum 1)
+Stratum 3: Further derived (greatAncestor, depends on stratum 2)
+```
+
+### RuleML (Rule Markup Language)
+
+XML format for representing rules:
+
+```xml
+<RuleML>
+  <Assert>
+    <Implies>
+      <body>
+        <And>
+          <Atom>
+            <Rel>Parent</Rel>
+            <Var>X</Var>
+            <Var>Y</Var>
+          </Atom>
+          <Atom>
+            <Rel>Parent</Rel>
+            <Var>Y</Var>
+            <Var>Z</Var>
+          </Atom>
+        </And>
+      </body>
+      <head>
+        <Atom>
+          <Rel>GrandParent</Rel>
+          <Var>X</Var>
+          <Var>Z</Var>
+        </Atom>
+      </head>
+    </Implies>
+  </Assert>
+</RuleML>
+```
+
+## Defeasible and Non-Monotonic Reasoning
+
+### Defeasible Logic
+
+Reasoning with exceptions and preferences:
+
+```
+Rule: Bird(x) → Flies(x)           (typically birds fly)
+Exception: Penguin(x) → ¬Flies(x)   (penguins don't fly)
+
+Fact: Bird(tweety), Penguin(tweety)
+Conclusion: ¬Flies(tweety)         (exception overrides default)
+```
+
+### Circumscription
+
+Minimizing models to default reasoning:
+
+```
+Assumption: Closed World Assumption (CWA)
+Known(P) ∨ ¬Known(P)  (minimize known facts)
+
+Example: If not explicitly stated, assume false
+```
+
+### Answer Set Programming (ASP)
+
+Finding answer sets that satisfy programs:
+
+```prolog
+bird(tweety).
+penguin(tweety).
+
+flies(X) :- bird(X), not penguin(X).
+not_flies(X) :- penguin(X).
+
+% Answer set: {bird(tweety), penguin(tweety), not_flies(tweety)}
+```
+
+## Uncertainty and Probabilistic Reasoning
+
+### Bayesian Networks
+
+Directed acyclic graphs with conditional probabilities:
+
+```
+Network structure:
+  Season → Sprinkler
+  Season → Rain
+  Sprinkler → WetGrass
+  Rain → WetGrass
+
+Conditional probabilities:
+  P(Sprinkler | Season)
+  P(WetGrass | Sprinkler, Rain)
+```
+
+### Fuzzy Logic
+
+Reasoning with degrees of truth:
+
+```
+Traditional logic: Person(john) = true/false
+Fuzzy logic: Person(john) = 0.85  (85% membership)
+
+Membership functions:
+  Young(age) = 1 if age < 18
+             = (65-age)/47 if 18 ≤ age ≤ 65
+             = 0 if age > 65
+```
+
+### Dempster-Shafer Theory
+
+Reasoning with uncertainty and evidence:
+
+```
+Belief: Bel(A) = sum of masses of subsets of A
+Plausibility: Pl(A) = 1 - Bel(¬A)
+
+Combines evidence from multiple sources
+```
+
+## Reasoning Performance
+
+### Tractability Classes
+
+**PTIME-Complete (Polynomial Time)**
+- OWL 2 RL: Rules-based, efficient
+- Datalog: Logic programming
+- Good for large datasets
+
+**NP-Complete**
+- OWL 2 DL: Description logic
+- Satisfiability checking
+- Can be expensive for large ontologies
+
+**Undecidable**
+- OWL Full: First-order logic
+- No guaranteed algorithm for reasoning
+
+### Optimization Techniques
+
+#### Materialization
+Pre-computing inferred facts:
+- Faster query answering
+- Higher storage cost
+- Useful for read-heavy systems
+
+#### Lazy Evaluation
+Computing only queried information:
+- Lower storage requirements
+- Potentially slower queries
+- Better for sparse queries
+
+#### Caching
+Storing frequently computed results:
+- Balances storage and speed
+- Effective for repeated queries
+- Requires cache invalidation
+
+## Reasoning Systems
+
+### Semantic Web Reasoners
+
+**Pellet**
+- Open-source OWL-DL reasoner
+- Supports SWRL rules
+- Tableau-based algorithm
+- Integrated with Protégé
+
+**HermiT**
+- Hyper-tableaux algorithm
+- OWL 2 compliant
+- Efficient for cyclic structures
+- Strong consistency checking
+
+**FaCT++**
+- Highly optimized tableau reasoner
+- Fast classification
+- Large ontology support
+- Description logic focus
+
+### Logic Programming Systems
+
+**SWI-Prolog**
+- General-purpose logic programming
+- Constraint handling
+- Rich library ecosystem
+- Good for rule-based systems
+
+**ASP (Clingo, DLV)**
+- Answer set programming
+- Non-monotonic reasoning
+- Preference handling
+- Suitable for planning and diagnosis
+
+### Knowledge Graph Reasoning
+
+**Reasoning in Triplestores**
+- SPARQL + inference rules
+- RDFS and OWL entailment
+- Materialization vs. query-time reasoning
+- Examples: Virtuoso, GraphDB
+
+## Applications
+
+### Ontology Validation
+- Consistency checking
+- Finding unsatisfiable classes
+- Detecting logical errors
+- Quality assurance
+
+### Query Expansion
+- Enriching queries with inferred concepts
+- Handling synonymy and hierarchy
+- Improving search results
+- Semantic search
+
+### Automatic Classification
+- Assigning entities to classes
+- Inferring concept membership
+- Hierarchical classification
+- Tagging and categorization
+
+### Decision Support
+- Medical diagnosis
+- Risk assessment
+- Business rule application
+- Recommendation systems
+
+### Knowledge Completion
+- Predicting missing links
+- Finding candidate relationships
+- Filling ontology gaps
+- Inferring implicit facts
+
+## Challenges
+
+### Tractability vs. Expressiveness
+
+- **Problem**: More expressive logics become computationally harder
+- **Trade-off**: Balance expressiveness with reasoning efficiency
+- **Solution**: Use appropriate reasoning language for domain
+
+### Incomplete Information
+
+- **Problem**: Knowledge bases never contain complete knowledge
+- **Approaches**: Closed world assumption, open world assumption
+- **Trade-off**: Different assumptions suit different domains
+
+### Scalability
+
+- **Problem**: Reasoning over large knowledge bases can be slow
+- **Solutions**:
+  - Materialization for faster queries
+  - Distributed reasoning
+  - Approximate reasoning
+
+### Explanation and Transparency
+
+- **Problem**: Modern reasoners produce results without justification
+- **Need**: Understanding why a fact was inferred
+- **Solution**: Proof generation, rule tracing, explanation extraction
+
+## Cross-References
+
+### Related Domains
+
+- [KnowledgeGraphs.org.ai](https://knowledge.org.ai/KnowledgeGraphs) - Graph structures
+- [Ontologies.org.ai](https://knowledge.org.ai/Ontologies) - Formal representations
+- [SemanticWeb.org.ai](https://knowledge.org.ai/SemanticWeb) - Web standards
+- [semantics.org.ai](https://semantics.org.ai) - Semantic meaning
+
+### Standards and Tools
+
+- W3C OWL Specification
+- W3C SWRL Specification
+- SPARQL Query Language
+- Description Logics Handbook
+
+## Sources
+
+- Description Logics Handbook
+- Handbook of Reasoning Under Uncertainty
+- Semantics of Logic Programs and Databases
+- W3C Web Ontology Language
+- Logic Programming Theory and Practice

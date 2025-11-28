@@ -1,0 +1,461 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/DeveloperTools
+$type: https://tools.org.ai/ToolCategory
+name: "Developer Tools"
+description: "IDEs, code editors, debuggers, linters, formatters, and productivity tools for software development."
+category: "Software Development"
+---
+
+export const items = async () => {
+  return [
+    { name: "VS Code", url: "https://code.visualstudio.com" },
+    { name: "WebStorm", url: "https://www.jetbrains.com/webstorm" },
+    { name: "Cursor", url: "https://cursor.sh" },
+    { name: "ESLint", url: "https://eslint.org" },
+    { name: "Prettier", url: "https://prettier.io" },
+    { name: "Git", url: "https://git-scm.com" },
+  ]
+}
+
+# Developer Tools
+
+IDEs, code editors, debuggers, linters, formatters, and productivity tools for software development.
+
+## Overview
+
+Developer tools are essential instruments that enhance code quality, productivity, and collaboration. They span from basic text editors to sophisticated integrated development environments (IDEs), providing capabilities for editing, debugging, version control, and code analysis.
+
+## Code Editors & IDEs
+
+### VS Code (Visual Studio Code)
+
+Lightweight, extensible code editor with:
+
+- **Built-in Features:**
+  - Syntax highlighting for 100+ languages
+  - IntelliSense (code completion)
+  - Integrated Git control
+  - Built-in terminal and debugging
+  - Remote development (SSH, containers, WSL)
+
+- **Extension Ecosystem:**
+  - 50,000+ extensions
+  - AI assistants (Copilot, Claude)
+  - Language servers for any language
+  - DevOps and containerization tools
+
+- **Key Shortcuts:**
+```
+Cmd/Ctrl + P     : Quick file open
+Cmd/Ctrl + Shift + P : Command palette
+Cmd/Ctrl + \     : Split editor
+F5               : Start debugging
+```
+
+### Cursor
+
+AI-powered code editor built on VS Code:
+
+- **AI Features:**
+  - Cmd/Ctrl + K: Multi-line code generation
+  - Cmd/Ctrl + L: Inline code suggestions
+  - Natural language code explanation
+  - Context-aware refactoring
+
+- **Advantages:**
+  - Faster AI-assisted coding
+  - Better context understanding
+  - Integrated chat with codebase access
+  - Composer for large-scale edits
+
+### JetBrains IDEs
+
+Full-featured IDEs with language-specific variants:
+
+- **WebStorm** - JavaScript/TypeScript
+- **PyCharm** - Python
+- **GoLand** - Go
+- **RubyMine** - Ruby
+- **IntelliJ IDEA** - Java/Kotlin/Scala
+
+**Features:**
+- Advanced refactoring tools
+- Integrated debugging and profiling
+- Database tools
+- Test runners and coverage
+- Git integration with merge conflict resolution
+
+## Code Quality Tools
+
+### Linters
+
+Tools that analyze code for potential errors and style violations:
+
+#### ESLint (JavaScript/TypeScript)
+
+```javascript
+// .eslintrc.json
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-unused-vars": "error",
+    "prefer-const": "warn"
+  }
+}
+```
+
+#### Other Linters
+
+- **Pylint** (Python) - Comprehensive Python analysis
+- **Clippy** (Rust) - Rust linting and suggestions
+- **Rubocop** (Ruby) - Ruby style and error detection
+- **Golangci-lint** (Go) - Fast, parallel Go linter
+
+### Code Formatters
+
+Tools that automatically format code according to style rules:
+
+#### Prettier (JavaScript/TypeScript/HTML/CSS)
+
+```json
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2
+}
+```
+
+**Features:**
+- Opinionated formatting (minimal configuration)
+- Language support: JavaScript, TypeScript, JSON, YAML, Markdown, CSS, GraphQL
+- Editor integration
+- CLI and programmatic API
+
+#### Other Formatters
+
+- **Black** (Python) - Uncompromising Python formatter
+- **Rustfmt** (Rust) - Rust code formatter
+- **gofmt** (Go) - Go formatter (built-in)
+- **Beautysh** (Bash) - Bash script formatter
+
+## Debugging & Profiling
+
+### Browser DevTools
+
+Built into modern browsers:
+
+- **Inspector**: DOM and CSS inspection
+- **Console**: JavaScript execution and logging
+- **Debugger**: Breakpoints, stepping, call stack
+- **Network**: HTTP request/response monitoring
+- **Performance**: Profiling and metrics
+- **Storage**: Cache, cookies, local storage
+
+### Node.js Debugging
+
+```bash
+# Start with debugger
+node --inspect app.js
+
+# Or use built-in
+node inspect app.js
+
+# In VS Code: Use Debug configuration
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/app.js"
+    }
+  ]
+}
+```
+
+### Profiling Tools
+
+- **Lighthouse** - Web performance auditing
+- **Chrome DevTools Performance** - Timeline recording
+- **Node.js Profiler** - CPU and memory profiling
+- **Clinic.js** - Node.js performance diagnostics
+
+## Version Control
+
+### Git Fundamentals
+
+```bash
+# Initialize and basic workflow
+git init
+git add .
+git commit -m "Initial commit"
+git push origin main
+
+# Branching workflow
+git checkout -b feature/new-feature
+git commit -m "Implement feature"
+git push -u origin feature/new-feature
+git pull request  # Create PR on GitHub/GitLab
+
+# Rebasing and squashing
+git rebase main
+git commit --amend
+git rebase -i HEAD~3  # Interactive rebase
+```
+
+### Advanced Git Workflows
+
+**Trunk-Based Development:**
+```bash
+git checkout main
+git pull
+git checkout -b short-lived-branch
+# Make small, focused changes
+git push
+git pull request
+# Code review and merge
+```
+
+**Feature Branching:**
+```bash
+git checkout -b feature/large-feature
+# Multiple commits
+git checkout main
+git merge feature/large-feature
+```
+
+### GUI Tools
+
+- **GitKraken** - Visual Git client
+- **Tower** - macOS Git client
+- **GitHub Desktop** - Official GitHub client
+- **Sourcetree** - Atlassian Git client
+
+## Terminal & CLI Tools
+
+### Shell Enhancements
+
+```bash
+# Modern shell
+brew install zsh
+
+# Shell framework
+brew install oh-my-zsh
+
+# Terminal multiplexer
+brew install tmux
+
+# Command line tools
+brew install fzf ripgrep bat exa
+```
+
+### Essential CLI Tools
+
+| Tool | Purpose | Example |
+|------|---------|---------|
+| `fzf` | Fuzzy finder | `fzf --preview 'cat {}'` |
+| `ripgrep` | Fast grep | `rg "pattern" --type ts` |
+| `bat` | Better cat | `bat src/index.ts` |
+| `exa` | Better ls | `exa -la --tree` |
+| `jq` | JSON processor | `jq '.data[] \| select(.id > 5)'` |
+| `curl` | HTTP client | `curl -X POST -d @data.json https://api.example.com` |
+
+## Package Managers
+
+### Node.js / JavaScript
+
+```bash
+# npm (built-in)
+npm install package-name
+npm run build
+
+# Yarn (faster, more deterministic)
+yarn add package-name
+yarn build
+
+# pnpm (disk space efficient, fast)
+pnpm add package-name
+pnpm build
+```
+
+### System Package Managers
+
+- **Homebrew** (macOS/Linux) - `brew install <package>`
+- **apt** (Ubuntu/Debian) - `apt install <package>`
+- **yum** (CentOS/RHEL) - `yum install <package>`
+- **Chocolatey** (Windows) - `choco install <package>`
+
+## Build & Task Runners
+
+### JavaScript Build Tools
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: './src/index.ts',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader'
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  }
+}
+```
+
+### Build Tool Comparison
+
+| Tool | Type | Best For | Learning Curve |
+|------|------|----------|-----------------|
+| Webpack | Bundler | Complex SPAs | High |
+| Vite | Build tool | Fast development | Low |
+| Turbo | Monorepo | Scaling builds | Moderate |
+| esbuild | Bundler | Speed | Low |
+| Rollup | Bundler | Libraries | Moderate |
+
+### Task Runners
+
+```bash
+# npm scripts
+npm run dev
+npm run build
+npm run test
+
+# Makefile
+make dev
+make build
+make test
+
+# Task (Golang)
+task build
+task test
+```
+
+## Developer Experience (DX) Tools
+
+### Code Snippets
+
+Store reusable code patterns:
+
+```json
+{
+  "React Component": {
+    "prefix": "rfc",
+    "body": [
+      "export const ${1:Component} = () => {",
+      "  return (",
+      "    <div>${2:Content}</div>",
+      "  )",
+      "}"
+    ],
+    "description": "React functional component"
+  }
+}
+```
+
+### EditorConfig
+
+Maintain consistent coding styles:
+
+```ini
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{js,ts,jsx,tsx}]
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+```
+
+## Performance & Monitoring
+
+### Development Performance
+
+```bash
+# Measure build time
+time npm run build
+
+# Analyze bundle size
+npm run build -- --analyze
+
+# Monitor file watching
+watchman watch-project .
+```
+
+### Application Monitoring
+
+- **Sentry** - Error tracking
+- **LogRocket** - Session replay
+- **New Relic** - APM and monitoring
+- **DataDog** - Infrastructure monitoring
+
+## Best Practices
+
+### Workspace Setup
+
+1. **Use consistent tooling** across team
+2. **Version dependencies** explicitly
+3. **Automate formatting** with pre-commit hooks
+4. **Document setup** in README
+5. **Provide development container** for consistency
+
+### Code Quality
+
+1. **Enable strict linting** for new projects
+2. **Configure formatters** with team standards
+3. **Use type checking** (TypeScript, mypy, etc.)
+4. **Implement pre-commit hooks** for validation
+5. **Require code review** before merge
+
+### Debugging Workflow
+
+1. **Set meaningful breakpoints** on key logic
+2. **Use console logging** strategically
+3. **Monitor network requests** for API issues
+4. **Profile before optimizing** performance
+5. **Track errors** with error reporting
+
+## Cross-References
+
+- [tech.org.ai](https://tech.org.ai) - Technology stacks and frameworks
+- [AutomationTools.mdx](#) - CI/CD and testing tools
+- [DeveloperTools.mdx](#) - Additional development resources
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `ToolCategory` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Category | Software Development |
+| Related Domains | [tech.org.ai](https://tech.org.ai) |
+
+## Sources
+
+- Microsoft. "VS Code Documentation." https://code.visualstudio.com/docs
+- Prettier. "Prettier Documentation." https://prettier.io/docs
+- ESLint. "ESLint User Guide." https://eslint.org/docs/user-guide
+- Git. "Git Documentation." https://git-scm.com/doc
+- JetBrains. "IntelliJ IDEA Documentation." https://www.jetbrains.com/help/idea

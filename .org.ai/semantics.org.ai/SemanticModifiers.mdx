@@ -1,0 +1,478 @@
+---
+$context: https://semantics.org.ai
+$id: https://semantics.org.ai/SemanticModifiers
+$type: https://semantics.org.ai/SemanticModifier
+name: "Semantic Modifiers"
+description: "Prepositions, qualifiers, temporal and spatial modifiers for semantic enrichment"
+---
+
+# Semantic Modifiers
+
+Semantic modifiers are linguistic and structural elements that refine, contextualize, and qualify semantic statements to express nuanced meaning and relationships.
+
+## Overview
+
+Semantic modifiers add layers of meaning to core statements by expressing how, when, where, why, and to what degree relationships and facts hold. They are essential for capturing the full complexity of real-world information.
+
+### Modifier Categories
+
+- **Qualifiers**: Degree, manner, and quality modifiers
+- **Temporal Modifiers**: Time-related information
+- **Spatial Modifiers**: Location and direction information
+- **Prepositional Modifiers**: Relationship context from prepositions
+- **Epistemic Modifiers**: Certainty and knowledge states
+
+## Prepositional Modifiers
+
+Prepositions establish semantic relationships and contexts between entities.
+
+### Spatial Prepositions
+
+Expressing location and spatial relationships:
+
+```
+:Alice :locatedIn :Paris .           # at a location
+:Alice :locatedAt :EiffelTower .     # specific place
+:Alice :nearestTo :Museum .          # spatial proximity
+:Alice :insideOf :Building .         # interior location
+:Alice :aboveOf :Ground .            # vertical position
+:Alice :leftOf :Window .             # horizontal position
+```
+
+**Common Spatial Prepositions**:
+- in, at, on, above, below, under, over, beside, between, near, far, inside, outside, behind, in front of, alongside, towards
+
+### Temporal Prepositions
+
+Expressing temporal relationships:
+
+```
+:Event :occursAt "2024-11-28T10:00:00Z" .
+:Event :occursAfter :PreviousEvent .
+:Event :occursBefore :NextEvent .
+:Event :occursDuring :TimeInterval .
+:Event :occursSince "2024-01-01" .
+:Event :occursUntil "2024-12-31" .
+:Event :occursBetween "2024-11-01" AND "2024-11-30" .
+```
+
+**Common Temporal Prepositions**:
+- at, in, on, before, after, during, since, until, between, throughout, within
+
+### Causal Prepositions
+
+Expressing cause and effect relationships:
+
+```
+:Accident :causedBy :Driver .
+:Disease :resultFrom :Infection .
+:Success :dueTo :HardWork .
+:Failure :becauseOf :LackOfPlanning .
+:Change :causedDue-to :ExternalFactors .
+```
+
+**Common Causal Prepositions**:
+- because, due to, caused by, resulting from, caused by, thanks to, on account of
+
+### Instrumental Prepositions
+
+Expressing means and instruments:
+
+```
+:Alice :accomplishesGoal :Learning ; :using :OnlineResources .
+:Task :completedUsing :Automation .
+:Communication :performedVia :Email .
+:Travel :accomplishedWith :Airplane .
+:Problem :solvedBy :Analysis .
+```
+
+**Common Instrumental Prepositions**:
+- with, using, via, through, by means of, by way of
+
+### Relational Prepositions
+
+Expressing relationships and associations:
+
+```
+:Alice :relatesToContext :Project .
+:Alice :associatedWith :Company .
+:Alice :connectedTo :Network .
+:Alice :relatedTo :Family .
+:Alice :linkedWith :Issue .
+:Alice :partneredWith :Organization .
+```
+
+**Common Relational Prepositions**:
+- with, for, to, of, between, among, from, in, on, upon
+
+## Temporal Modifiers
+
+Adding temporal specificity and constraints to statements:
+
+### Absolute Time
+
+```
+:Event :occursAt "2024-11-28T10:30:00Z" ;
+       :startDate "2024-11-28" ;
+       :endDate "2024-11-29" ;
+       :year 2024 ;
+       :month 11 ;
+       :dayOfWeek "Tuesday" .
+```
+
+### Relative Time
+
+```
+:Event :occursNow ;
+       :occursRecently ;
+       :occursSoon ;
+       :occursLately .
+
+:Event :occursAfterEvent :PreviousEvent ;
+       :occursBeforeEvent :NextEvent ;
+       :occursSimultaneouslyWith :ConcurrentEvent .
+```
+
+### Duration
+
+```
+:Event :duration "PT2H" ;         # 2 hours (ISO 8601)
+       :duration "P3D" ;          # 3 days
+       :duration "P1Y" ;          # 1 year
+       :averageDuration "PT1H" .
+```
+
+### Frequency
+
+```
+:Event :frequency :Daily ;
+       :frequency :Weekly ;
+       :frequency :Monthly ;
+       :frequency :Quarterly ;
+       :frequency :Annually ;
+       :occurrencesPerPeriod 5 ;
+       :periodUnit :Month .
+```
+
+### Temporal Context
+
+```
+:Period :labeled "Business Hours" ;
+        :startTime "09:00:00" ;
+        :endTime "17:00:00" ;
+        :timezone "UTC" .
+
+:Action :temporalRelation :Morning ;
+        :temporalRelation :Afternoon ;
+        :temporalRelation :Evening .
+```
+
+## Spatial Modifiers
+
+Adding spatial specificity and constraints:
+
+### Location Representation
+
+```
+:Place :hasCoordinates [
+  :latitude 48.8566 ;
+  :longitude 2.3522 ;
+  :altitude 35 ;
+  :coordinateSystem :WGS84 ;
+  :precision :Meter ;
+] .
+```
+
+### Geometric Relationships
+
+```
+:PointA :distanceFrom :PointB ; :distance 100 ; :unit "Kilometers" .
+:AreaA :overlaps :AreaB .
+:AreaA :contains :AreaB .
+:AreaA :boundedBy :Boundary .
+:AreaA :adjacentTo :AreaB .
+:AreaA :intersects :AreaB .
+```
+
+### Directional Relationships
+
+```
+:Subject :direction :North ; :from :Origin .
+:Subject :direction :Northeast ; :fromLocation :PointA ; :toLocation :PointB .
+:Subject :heading 45 ; :unit :Degrees .
+```
+
+### Regional Hierarchies
+
+```
+:City :locatedInRegion :State .
+:State :locatedInRegion :Country .
+:Country :locatedInRegion :Continent .
+```
+
+## Degree and Intensity Modifiers
+
+Expressing varying degrees and intensities:
+
+### Scalar Modifiers
+
+```
+:Attribute :hasValue 7 ; :scaleMin 0 ; :scaleMax 10 .
+
+:Quality :intensity :Low ;
+        :intensity :Medium ;
+        :intensity :High ;
+        :intensity :VeryHigh .
+```
+
+### Comparative Modifiers
+
+```
+:ItemA :compareTo :ItemB ;
+       :comparison :MoreExpensive .
+
+:PersonA :tallness "180cm" ;
+         :tallerThan :PersonB ;
+         :shorterThan :PersonC .
+```
+
+### Quantitative Modifiers
+
+```
+:Item :quantity 5 ; :unit :Pieces .
+:Item :percentage 85 ; :relativeTo :Total .
+:Item :ratio 3 ; :ratioTo 2 .
+:Item :proportion 0.75 .
+```
+
+## Manner Modifiers
+
+Describing how actions or states occur:
+
+### Action Manner
+
+```
+:Task :performedQuickly .
+:Task :performedCarefully .
+:Task :performedJoyfully .
+:Task :performedReluctantly .
+:Task :performedEfficiently .
+
+:Task :manner "swift" ; :magnitude :High .
+:Task :manner "careful" ; :magnitude :Extreme .
+```
+
+### State Manner
+
+```
+:State :established :Gradually .
+:State :established :Suddenly .
+:State :maintained :Consistently .
+:State :maintained :Intermittently .
+```
+
+## Epistemic Modifiers
+
+Expressing certainty, belief, and knowledge:
+
+### Certainty Levels
+
+```
+:Statement :certainty :Certain ;
+          :probability 1.0 .
+
+:Statement :certainty :Likely ;
+          :probability 0.7-0.9 .
+
+:Statement :certainty :Possible ;
+          :probability 0.3-0.6 .
+
+:Statement :certainty :Unlikely ;
+          :probability 0.0-0.3 .
+```
+
+### Modality
+
+```
+:Statement :modality :Necessary ;    # must be true
+          :modality :Possible ;      # might be true
+          :modality :Contingent ;    # depends on conditions
+          :modality :Impossible .    # cannot be true
+```
+
+### Knowledge Attribution
+
+```
+:Statement :assertedBy :Source1 .
+:Statement :believedBy :Agent1 .
+:Statement :claimedBy :Person1 .
+:Statement :reportedBy :Media1 .
+:Statement :confirmedBy :Expert1 .
+```
+
+## Conditional Modifiers
+
+Expressing conditions and dependencies:
+
+### Simple Conditions
+
+```
+:Statement :conditional true ;
+          :condition "If X is true" ;
+          :consequence "Then Y is true" .
+
+:Action :appliesIf :Condition1 .
+:Action :appliesUnless :Condition2 .
+:Action :appliesWhen :Condition3 .
+```
+
+### Complex Conditions
+
+```
+:Rule :condition [
+  a :ConjunctionCondition ;
+  :includes :Condition1 ;
+  :includes :Condition2 ;
+] ;
+:consequence :Result .
+
+:Rule :condition [
+  a :DisjunctionCondition ;
+  :includes :ConditionA ;
+  :includes :ConditionB ;
+] ;
+:consequence :AlternativeResult .
+```
+
+## Limitation and Scope Modifiers
+
+Expressing scope and limitations:
+
+### Scope Bounds
+
+```
+:Rule :appliesTo :Domain1 .
+:Rule :appliesToClass :EntityType .
+:Rule :appliesToRegion :GeographicArea .
+:Rule :appliesToPeriod :TimeRange .
+```
+
+### Exclusions
+
+```
+:Statement :includes :CityA, :CityB, :CityC .
+:Statement :excludes :CityD, :CityE .
+:Statement :scope :AllExcept :SpecificException .
+```
+
+## Composite Modifiers
+
+Combining multiple modifiers for complex expressions:
+
+### Multi-Modifier Statements
+
+```
+:Alice :works
+  :for :Company ;
+  :in :Engineering ;
+  :at :HeadquartersLocation ;
+  :since "2020-01-01" ;
+  :status :FullTime ;
+  :satisfactionLevel :High .
+```
+
+### Modifier Hierarchies
+
+```
+:Modifier
+  :primary :Temporal ;
+  :secondary :Spatial ;
+  :tertiary :Causal ;
+  :quaternary :Epistemic .
+```
+
+## Modifier Application Patterns
+
+### Pattern 1: Simple Qualification
+
+```
+SPARQL:
+?subject ?predicate ?object .
+?statement rdfs:comment "Qualifies the above" .
+```
+
+### Pattern 2: Structured Modifiers
+
+```
+:Statement
+  :core [
+    :subject :Alice ;
+    :predicate :knows ;
+    :object :Bob ;
+  ] ;
+  :modifiers [
+    :temporal :Since-2020 ;
+    :spatial :InParis ;
+    :confidence 0.95 ;
+  ] .
+```
+
+### Pattern 3: Annotation Model
+
+```
+:Alice :knows :Bob .
+
+:Annotation
+  a :StatementAnnotation ;
+  :annotates (:Alice :knows :Bob) ;
+  :hasModifier :TimeTemporal ;
+  :hasModifier :SpatialContext ;
+  :hasModifier :EpistemicContext .
+```
+
+## Integration with Related Systems
+
+### Link to Semantic Statements
+
+Modifiers enhance semantic statements with additional context.
+
+See: [SemanticStatements.mdx](./SemanticStatements.mdx)
+
+### Link to Language Systems
+
+Modifiers derive from linguistic structures and prepositions.
+
+See: [language.org.ai](https://language.org.ai)
+
+### Link to Semantic Patterns
+
+Modifiers are often applied according to semantic patterns.
+
+See: [SemanticPatterns.mdx](./SemanticPatterns.mdx)
+
+## Best Practices
+
+1. **Clarity**: Use clear, unambiguous modifier terms
+2. **Consistency**: Apply modifiers consistently across knowledge base
+3. **Standardization**: Use standard vocabularies for modifiers
+4. **Documentation**: Document modifier semantics and usage
+5. **Reusability**: Design modifiers for reuse across domains
+6. **Performance**: Consider performance implications of modifier querying
+7. **Validation**: Validate modifier combinations for logical consistency
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| Type | `SemanticModifier` |
+| Domain | [semantics.org.ai](https://semantics.org.ai) |
+| Modifier Types | Spatial, Temporal, Prepositional, Epistemic, Conditional |
+| Primary Purpose | Contextualize and qualify statements |
+| Scope | Domain-independent |
+
+## Sources
+
+- [RDF and OWL Specifications](https://www.w3.org/standards/semanticweb/)
+- [PROV-O Specification](https://www.w3.org/TR/prov-o/)
+- [Qualified Relations](https://www.w3.org/TR/prov-o/#qualified-forms)
+- [Semantic Web Vocabulary](https://www.w3.org/standards/semanticweb/ontology)

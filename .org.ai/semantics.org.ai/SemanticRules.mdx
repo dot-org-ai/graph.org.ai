@@ -1,0 +1,470 @@
+---
+$context: https://semantics.org.ai
+$id: https://semantics.org.ai/SemanticRules
+$type: https://semantics.org.ai/SemanticRule
+name: "Semantic Rules"
+description: "Inference rules, constraints, SHACL validation, and logical reasoning in semantic systems"
+---
+
+# Semantic Rules
+
+Semantic rules enable logical inference, constraint enforcement, and automated reasoning over semantic statements and knowledge bases.
+
+## Overview
+
+Semantic rules define how statements should relate to one another, what constraints must be satisfied, and how new knowledge can be inferred from existing statements. They provide the reasoning foundation for semantic systems.
+
+### Rule Components
+
+Rules typically consist of:
+
+- **Condition (Antecedent)**: The premise or condition to be checked
+- **Consequence (Consequent)**: The result or action when condition is met
+- **Scope**: The range of application (global, domain-specific, contextual)
+- **Priority**: Execution order and importance in rule evaluation
+
+```
+IF (Person A knows Person B) AND (Person B lives in City C)
+THEN (Person A may have knowledge of City C)
+```
+
+## Inference Rules
+
+Inference rules enable deriving new facts from existing knowledge without explicit statement.
+
+### Transitive Properties
+
+Properties that maintain transitivity across chains:
+
+```
+:Alice :knows :Bob .
+:Bob :knows :Charlie .
+↓ (transitivity rule)
+:Alice :knows :Charlie .
+```
+
+**SPARQL Representation:**
+
+```sparql
+CONSTRUCT {
+  ?x :knows ?z .
+}
+WHERE {
+  ?x :knows ?y .
+  ?y :knows ?z .
+}
+```
+
+### Symmetric Properties
+
+Properties that work in both directions:
+
+```
+:Alice :relatedTo :Bob .
+↓ (symmetry rule)
+:Bob :relatedTo :Alice .
+```
+
+### Reflexive Properties
+
+Properties that apply to an entity and itself:
+
+```
+:Alice :hasEqualValue :Alice . # Always true for equality
+```
+
+### Subsumption Rules
+
+Hierarchical inference through class and property hierarchies:
+
+```
+:Employee rdfs:subClassOf :Person .
+:Alice rdf:type :Employee .
+↓ (subsumption)
+:Alice rdf:type :Person .
+```
+
+### Inverse Property Rules
+
+Establishing bidirectional relationships:
+
+```
+:Alice :employs :Bob .
+:employs owl:inverseOf :employedBy .
+↓ (inverse rule)
+:Bob :employedBy :Alice .
+```
+
+## Constraint-Based Rules
+
+Rules that enforce constraints on semantic statements.
+
+### Domain and Range Constraints
+
+```
+:hasAge rdfs:domain :Person ;
+        rdfs:range xsd:int .
+
+# Valid
+:Alice :hasAge 30 .
+
+# Invalid (violates constraint)
+:Apple :hasAge 5 . # Apple is not a Person
+```
+
+### Cardinality Constraints
+
+```
+:Person rdf:type owl:Class ;
+  :hasProperty [
+    owl:onProperty :hasMother ;
+    owl:cardinality 1 ;
+  ] .
+
+# Valid: Every person has exactly one biological mother
+:Alice :hasMother :AliceMother .
+
+# Invalid: Person cannot have two mothers
+:Bob :hasMother :Mother1, :Mother2 .
+```
+
+### Uniqueness Constraints
+
+```
+:Employee :hasProperty [
+  owl:onProperty :hasSSN ;
+  owl:hasKey (:hasSSN) ;
+] .
+
+# Ensures no two employees share the same SSN
+```
+
+### Functional Properties
+
+```
+:Person :hasProperty [
+  owl:onProperty :hasBirthDate ;
+  rdf:type owl:FunctionalProperty ;
+] .
+
+# A person can have only one birth date
+:Alice :hasBirthDate "1990-05-15" .
+```
+
+## SHACL (Shapes Constraint Language)
+
+SHACL provides a standardized framework for defining constraints and validation rules.
+
+### Basic Shape Definition
+
+```
+:PersonShape
+  a sh:NodeShape ;
+  sh:targetClass :Person ;
+  sh:property [
+    sh:path :hasName ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path :hasAge ;
+    sh:datatype xsd:int ;
+    sh:minInclusive 0 ;
+    sh:maxInclusive 150 ;
+  ] .
+```
+
+### Property Constraints
+
+```
+:EmployeeShape
+  a sh:NodeShape ;
+  sh:targetClass :Employee ;
+  sh:property [
+    sh:path :hasEmployeeID ;
+    sh:datatype xsd:string ;
+    sh:pattern "^EMP-[0-9]{5}$" ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path :hasSalary ;
+    sh:minExclusive 0 ;
+    sh:maxExclusive 1000000 ;
+  ] .
+```
+
+### Complex Shape Rules
+
+```
+:CompanyShape
+  a sh:NodeShape ;
+  sh:targetClass :Company ;
+  sh:property [
+    sh:path :hasEmployee ;
+    sh:class :Person ;
+    sh:minCount 1 ;
+  ] ;
+  sh:or (
+    [ sh:path :hasRevenueUSD ; sh:datatype xsd:decimal ]
+    [ sh:path :hasRevenueEUR ; sh:datatype xsd:decimal ]
+  ) .
+```
+
+### Conditional Rules in SHACL
+
+```
+:ManagerShape
+  a sh:NodeShape ;
+  sh:targetClass :Manager ;
+  sh:rule [
+    a sh:TripleRule ;
+    sh:condition [
+      sh:path :supervises ;
+      sh:class :Employee ;
+    ] ;
+    sh:object [
+      sh:path :hasResponsibility ;
+      sh:value :PeopleManagement ;
+    ] ;
+  ] .
+```
+
+## OWL-Based Rules
+
+OWL (Web Ontology Language) provides advanced logical reasoning capabilities.
+
+### Equivalence Rules
+
+```
+:Manager owl:equivalentClass [
+  owl:intersectionOf (
+    :Employee
+    [ owl:onProperty :supervises ; owl:minQualifiedCardinality 1 ]
+  )
+] .
+```
+
+### Disjointness Rules
+
+```
+:Dog owl:disjointWith :Cat .
+# No entity can be both a Dog and a Cat
+```
+
+### Union Rules
+
+```
+:Guardian owl:equivalentClass [
+  owl:unionOf (:Parent :Tutor :LegalGuardian)
+] .
+```
+
+### Negation and Complement
+
+```
+:Unemployed owl:complementOf :Employed .
+# An entity is either Employed or Unemployed, not both
+```
+
+## Forward and Backward Chaining
+
+### Forward Chaining (Eager Inference)
+
+Applies rules to known facts to derive new facts:
+
+```
+Known: :Alice :knows :Bob
+Rule: IF X knows Y, Y lives in Z, THEN X has connection to Z
+Derive: :Alice :hasConnectionTo :Paris
+```
+
+### Backward Chaining (Lazy Inference)
+
+Works backwards from a goal to determine what facts are needed:
+
+```
+Goal: Prove Alice knows Paris
+Question: Does Alice know someone who lives in Paris?
+Lookup: :Bob :livesIn :Paris and :Alice :knows :Bob
+Conclusion: TRUE
+```
+
+## Integrity Constraints
+
+Rules that maintain data integrity and consistency.
+
+### Entity Integrity
+
+```
+CONSTRAINT: Every entity must have a unique identifier
+:Entity a sh:NodeShape ;
+  sh:property [
+    sh:path :hasUUID ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+  ] .
+```
+
+### Referential Integrity
+
+```
+CONSTRAINT: Every reference must point to an existing entity
+:Reference a sh:NodeShape ;
+  sh:property [
+    sh:path :references ;
+    sh:class :Thing ;
+  ] .
+```
+
+### Temporal Integrity
+
+```
+CONSTRAINT: End date must be after start date
+:TimeInterval a sh:NodeShape ;
+  sh:sparql [
+    sh:message "End date must be after start date" ;
+    sh:select """
+      SELECT $this
+      WHERE {
+        $this :startDate ?start ;
+               :endDate ?end .
+        FILTER (?end < ?start)
+      }
+    """ ;
+  ] .
+```
+
+## Rule Composition and Chaining
+
+### Rule Chains
+
+Multiple rules can be chained together to derive complex conclusions:
+
+```
+Rule 1: IF X :hasRole :Manager THEN X :hasResponsibility :Supervision
+Rule 2: IF X :hasResponsibility :Supervision THEN X :requires :LeadershipTraining
+Rule 3: IF X :requires :LeadershipTraining THEN X :qualifies :TrainingProgram
+
+Application:
+:Alice :hasRole :Manager
+↓ (Rule 1)
+:Alice :hasResponsibility :Supervision
+↓ (Rule 2)
+:Alice :requires :LeadershipTraining
+↓ (Rule 3)
+:Alice :qualifies :TrainingProgram
+```
+
+### Conditional Execution
+
+```
+IF condition1 AND condition2 THEN action1
+ELSE IF condition3 THEN action2
+ELSE action3
+```
+
+## Rule Priority and Conflict Resolution
+
+### Priority Levels
+
+```
+HIGH_PRIORITY:
+  IF :ProductRecall THEN :PublicNotification
+
+MEDIUM_PRIORITY:
+  IF :ProductDefect THEN :InternalReview
+
+LOW_PRIORITY:
+  IF :QualityIssue THEN :DepartmentReview
+```
+
+### Conflict Resolution Strategies
+
+1. **First Match**: Apply first matching rule
+2. **Specificity**: Apply most specific rule first
+3. **Recency**: Apply most recently added rule
+4. **Weighted**: Apply based on assigned priority weight
+
+## Negation in Rules
+
+### Negation as Failure
+
+```
+IF Person X does NOT have relationship "knows" with Person Y
+AND Person Y is not a Friend of Person X
+THEN Recommend Person Y as potential contact
+```
+
+### Explicit Negation
+
+```
+:AlcoholProhibited a sh:NodeShape ;
+  sh:targetClass :Item ;
+  sh:sparql [
+    sh:message "This item contains prohibited content" ;
+    sh:select """
+      SELECT $this
+      WHERE {
+        $this :contains :Alcohol .
+      }
+    """ ;
+  ] .
+```
+
+## Integration with Related Systems
+
+### Link to Semantic Statements
+
+Rules operate on semantic statements to derive new facts and enforce constraints.
+
+See: [SemanticStatements.mdx](./SemanticStatements.mdx)
+
+### Link to Semantic Patterns
+
+Rules often implement common semantic patterns.
+
+See: [SemanticPatterns.mdx](./SemanticPatterns.mdx)
+
+### Link to Knowledge Systems
+
+Rules enable reasoning in knowledge graphs and knowledge bases.
+
+See: [knowledge.org.ai](https://knowledge.org.ai)
+
+## Best Practices
+
+1. **Rule Clarity**: Write clear, unambiguous rule definitions
+2. **Performance Monitoring**: Test rules for performance impact
+3. **Conflict Awareness**: Document potential rule conflicts
+4. **Reusability**: Design rules for reuse across domains
+5. **Documentation**: Provide clear rationale for each rule
+6. **Testing**: Validate rules with comprehensive test cases
+7. **Versioning**: Track rule versions and changes
+
+## Anti-Patterns
+
+1. **Circular Dependencies**: Rules that reference each other infinitely
+2. **Over-specification**: Rules that are too restrictive
+3. **Ambiguity**: Rules with unclear conditions or consequences
+4. **Performance Overload**: Rules that require excessive computation
+5. **Silent Failures**: Rules that fail without reporting errors
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| Type | `SemanticRule` |
+| Domain | [semantics.org.ai](https://semantics.org.ai) |
+| Standards | SPARQL, SHACL, OWL, RuleML |
+| Inference Types | Transitive, Symmetric, Subsumption, Inverse |
+| Execution Modes | Forward Chaining, Backward Chaining |
+| Constraint Types | Domain, Range, Cardinality, Uniqueness |
+
+## Sources
+
+- [SHACL Specification](https://www.w3.org/TR/shacl/)
+- [OWL 2 Web Ontology Language](https://www.w3.org/TR/owl2-overview/)
+- [SPARQL Query Language](https://www.w3.org/TR/sparql11-query/)
+- [RuleML Standard](http://www.ruleml.org/)

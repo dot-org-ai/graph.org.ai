@@ -1,0 +1,799 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/FunctionComposition
+$type: https://functions.org.ai/CodeFunction
+name: "Function Composition"
+description: "Pipelines, chains, graphs, orchestration, and composable function patterns"
+---
+
+export const items = async () => {
+  // Fetch function composition patterns from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://functions.org.ai/CodeFunction',
+    category: 'composition'
+  })
+}
+
+# Function Composition
+
+Function composition is the art and science of building complex applications by combining simpler, reusable functions into larger computational units. From simple pipes to directed acyclic graphs (DAGs) to complex orchestration patterns, composition enables modularity, testability, and reusability.
+
+## Overview
+
+Composition patterns enable developers to break down complex problems into manageable pieces and reassemble them in various combinations. Rather than monolithic applications, composable functions create systems that are easier to understand, test, maintain, and evolve. Composition works at multiple scales: from simple function chains to enterprise-grade workflow orchestration.
+
+## Pipelines and Linear Composition
+
+The simplest form of composition: chaining sequential operations.
+
+```typescript
+// Basic pipeline
+function pipe<A>(value: A): Piped<A> {
+  return new Piped(value)
+}
+
+class Piped<T> {
+  constructor(private value: T) {}
+
+  pipe<U>(fn: (value: T) => U): Piped<U> {
+    return new Piped(fn(this.value))
+  }
+
+  async pipeAsync<U>(fn: (value: T) => Promise<U>): Promise<Piped<U>> {
+    return new Piped(await fn(this.value))
+  }
+
+  get(): T {
+    return this.value
+  }
+}
+
+// Example pipeline
+const result = pipe(5)
+  .pipe(x => x * 2)           // 10
+  .pipe(x => x + 3)            // 13
+  .pipe(x => String(x))        // "13"
+  .get()
+
+// Async pipeline
+const asyncResult = await pipe(userId)
+  .pipeAsync(id => fetchUser(id))
+  .pipeAsync(user => enrichUserData(user))
+  .pipeAsync(user => saveUser(user))
+  .pipeAsync(user => sendWelcomeEmail(user))
+
+// Function array composition (reduce-based)
+function composePipeline<T>(
+  ...fns: Array<(value: T) => T>
+): (value: T) => T {
+  return (value: T) => fns.reduce((acc, fn) => fn(acc), value)
+}
+
+const multiplyByTwo = (x: number) => x * 2
+const addFive = (x: number) => x + 5
+const square = (x: number) => x * x
+
+const process = composePipeline(multiplyByTwo, addFive, square)
+console.log(process(3)) // ((3 * 2) + 5)^2 = 121
+
+// Middleware chain pattern (common in Express)
+type Middleware<T> = (value: T, next: () => Promise<void>) => Promise<void>
+
+async function executeMiddleware<T>(
+  value: T,
+  middlewares: Middleware<T>[]
+): Promise<void> {
+  let index = 0
+
+  const executeNext = async () => {
+    if (index >= middlewares.length) return
+
+    const middleware = middlewares[index++]
+    await middleware(value, executeNext)
+  }
+
+  await executeNext()
+}
+
+// Example middleware
+const logMiddleware: Middleware<Request> = async (request, next) => {
+  console.log(`[${new Date().toISOString()}] ${request.method} ${request.path}`)
+  await next()
+  console.log(`Response time: ${Date.now() - request.startTime}ms`)
+}
+
+const authMiddleware: Middleware<Request> = async (request, next) => {
+  if (!request.headers.authorization) {
+    throw new Error('Unauthorized')
+  }
+  await next()
+}
+
+// DAG (Directed Acyclic Graph) composition for parallel work
+interface DAGNode<T> {
+  id: string
+  fn: (inputs: Record<string, any>) => Promise<T>
+  dependencies: string[]
+}
+
+interface DAGEdge {
+  from: string
+  to: string
+}
+
+class DAGComposer<T> {
+  private nodes: Map<string, DAGNode<T>> = new Map()
+  private edges: DAGEdge[] = []
+  private cache: Map<string, any> = new Map()
+
+  addNode(id: string, fn: (inputs: Record<string, any>) => Promise<T>, dependencies: string[] = []): this {
+    this.nodes.set(id, { id, fn, dependencies })
+    return this
+  }
+
+  async execute(inputs: Record<string, any>): Promise<Record<string, T>> {
+    const results: Record<string, any> = { ...inputs }
+
+    // Topological sort
+    const sorted = this.topologicalSort()
+
+    // Execute nodes in order
+    for (const nodeId of sorted) {
+      const node = this.nodes.get(nodeId)!
+      const deps = node.dependencies.map(depId => results[depId])
+      const depsObj = Object.fromEntries(
+        node.dependencies.map((dep, i) => [dep, deps[i]])
+      )
+
+      results[nodeId] = await node.fn(depsObj)
+    }
+
+    return results
+  }
+
+  async executeParallel(inputs: Record<string, any>): Promise<Record<string, T>> {
+    const results: Record<string, any> = { ...inputs }
+    const completed: Set<string> = new Set(Object.keys(inputs))
+    const inProgress: Set<string> = new Set()
+
+    while (completed.size < this.nodes.size) {
+      // Find nodes ready to execute
+      const ready: string[] = []
+
+      for (const [nodeId, node] of this.nodes) {
+        if (!completed.has(nodeId) && !inProgress.has(nodeId)) {
+          if (node.dependencies.every(dep => completed.has(dep))) {
+            ready.push(nodeId)
+          }
+        }
+      }
+
+      // Execute ready nodes in parallel
+      const promises = ready.map(async (nodeId) => {
+        const node = this.nodes.get(nodeId)!
+        inProgress.add(nodeId)
+
+        const depsObj = Object.fromEntries(
+          node.dependencies.map(dep => [dep, results[dep]])
+        )
+
+        try {
+          results[nodeId] = await node.fn(depsObj)
+          completed.add(nodeId)
+        } finally {
+          inProgress.delete(nodeId)
+        }
+      })
+
+      await Promise.all(promises)
+    }
+
+    return results
+  }
+
+  private topologicalSort(): string[] {
+    const sorted: string[] = []
+    const visited: Set<string> = new Set()
+    const visiting: Set<string> = new Set()
+
+    const visit = (nodeId: string) => {
+      if (visited.has(nodeId)) return
+      if (visiting.has(nodeId)) throw new Error('Circular dependency detected')
+
+      visiting.add(nodeId)
+      const node = this.nodes.get(nodeId)!
+
+      for (const dep of node.dependencies) {
+        visit(dep)
+      }
+
+      visiting.delete(nodeId)
+      visited.add(nodeId)
+      sorted.push(nodeId)
+    }
+
+    for (const nodeId of this.nodes.keys()) {
+      visit(nodeId)
+    }
+
+    return sorted
+  }
+}
+
+// Example DAG usage
+const dag = new DAGComposer<any>()
+  .addNode('fetchUser', async () => ({ id: 1, name: 'Alice' }))
+  .addNode('fetchPosts', async (inputs) => {
+    const userId = inputs.fetchUser.id
+    return [{ id: 1, title: 'Post 1' }]
+  }, ['fetchUser'])
+  .addNode('fetchComments', async (inputs) => {
+    const postId = inputs.fetchPosts[0].id
+    return [{ id: 1, text: 'Comment 1' }]
+  }, ['fetchPosts'])
+
+const dagResults = await dag.executeParallel({})
+```
+
+## Stream Processing and Reactive Composition
+
+Processing infinite or large sequences of data efficiently.
+
+```typescript
+// Observable/Stream interface
+interface Stream<T> {
+  map<U>(fn: (value: T) => U): Stream<U>
+  filter(predicate: (value: T) => boolean): Stream<T>
+  flatMap<U>(fn: (value: T) => Stream<U>): Stream<U>
+  take(count: number): Stream<T>
+  debounce(ms: number): Stream<T>
+  subscribe(observer: Observer<T>): Subscription
+}
+
+interface Observer<T> {
+  next(value: T): void
+  error(error: Error): void
+  complete(): void
+}
+
+interface Subscription {
+  unsubscribe(): void
+}
+
+// Simple stream implementation
+class SimpleStream<T> implements Stream<T> {
+  constructor(private producer: (observer: Observer<T>) => () => void) {}
+
+  map<U>(fn: (value: T) => U): Stream<U> {
+    return new SimpleStream(observer => {
+      const subscription = this.subscribe({
+        next: (value: T) => observer.next(fn(value)),
+        error: (error: Error) => observer.error(error),
+        complete: () => observer.complete()
+      })
+      return () => subscription.unsubscribe()
+    })
+  }
+
+  filter(predicate: (value: T) => boolean): Stream<T> {
+    return new SimpleStream(observer => {
+      const subscription = this.subscribe({
+        next: (value: T) => {
+          if (predicate(value)) observer.next(value)
+        },
+        error: (error: Error) => observer.error(error),
+        complete: () => observer.complete()
+      })
+      return () => subscription.unsubscribe()
+    })
+  }
+
+  flatMap<U>(fn: (value: T) => Stream<U>): Stream<U> {
+    return new SimpleStream(observer => {
+      let activeCount = 0
+      let completed = false
+
+      const subscription = this.subscribe({
+        next: (value: T) => {
+          activeCount++
+          const innerStream = fn(value)
+          const innerSubscription = innerStream.subscribe({
+            next: (u: U) => observer.next(u),
+            error: (error: Error) => observer.error(error),
+            complete: () => {
+              activeCount--
+              if (completed && activeCount === 0) {
+                observer.complete()
+              }
+            }
+          })
+        },
+        error: (error: Error) => observer.error(error),
+        complete: () => {
+          completed = true
+          if (activeCount === 0) {
+            observer.complete()
+          }
+        }
+      })
+
+      return () => subscription.unsubscribe()
+    })
+  }
+
+  take(count: number): Stream<T> {
+    return new SimpleStream(observer => {
+      let taken = 0
+
+      const subscription = this.subscribe({
+        next: (value: T) => {
+          if (taken < count) {
+            observer.next(value)
+            taken++
+            if (taken === count) {
+              observer.complete()
+            }
+          }
+        },
+        error: (error: Error) => observer.error(error),
+        complete: () => observer.complete()
+      })
+
+      return () => subscription.unsubscribe()
+    })
+  }
+
+  debounce(ms: number): Stream<T> {
+    return new SimpleStream(observer => {
+      let timeout: NodeJS.Timeout | null = null
+      let lastValue: T
+
+      const subscription = this.subscribe({
+        next: (value: T) => {
+          lastValue = value
+          if (timeout) clearTimeout(timeout)
+          timeout = setTimeout(() => {
+            observer.next(lastValue)
+          }, ms)
+        },
+        error: (error: Error) => observer.error(error),
+        complete: () => observer.complete()
+      })
+
+      return () => {
+        if (timeout) clearTimeout(timeout)
+        subscription.unsubscribe()
+      }
+    })
+  }
+
+  subscribe(observer: Observer<T>): Subscription {
+    const unsubscribe = this.producer(observer)
+    return { unsubscribe }
+  }
+}
+
+// Stream example
+const eventStream = new SimpleStream<MouseEvent>(observer => {
+  const handler = (event: MouseEvent) => observer.next(event)
+  document.addEventListener('mousemove', handler)
+  return () => document.removeEventListener('mousemove', handler)
+})
+
+const doubleClickDetection = eventStream
+  .debounce(300)
+  .map(event => ({ x: event.clientX, y: event.clientY }))
+  .filter(pos => pos.x > 100)
+  .take(10)
+
+doubleClickDetection.subscribe({
+  next: (pos) => console.log('Position:', pos),
+  error: (err) => console.error(err),
+  complete: () => console.log('Stream complete')
+})
+```
+
+## Actor Model and Message Passing
+
+Composition through asynchronous message passing between independent actors.
+
+```typescript
+// Actor interface
+interface Actor<T> {
+  send(message: T): void
+  start(): void
+  stop(): void
+  join(): Promise<void>
+}
+
+// Actor implementation
+abstract class BaseActor<T> implements Actor<T> {
+  protected queue: T[] = []
+  protected running = false
+  protected handlers: Map<string, (msg: T) => void | Promise<void>> = new Map()
+
+  abstract onMessage(message: T): void | Promise<void>
+
+  send(message: T): void {
+    this.queue.push(message)
+    if (this.running) {
+      this.processQueue()
+    }
+  }
+
+  start(): void {
+    this.running = true
+    this.processQueue()
+  }
+
+  stop(): void {
+    this.running = false
+  }
+
+  private async processQueue(): Promise<void> {
+    while (this.queue.length > 0 && this.running) {
+      const message = this.queue.shift()!
+      try {
+        await this.onMessage(message)
+      } catch (error) {
+        console.error('Error processing message:', error)
+      }
+    }
+  }
+
+  async join(): Promise<void> {
+    while (this.queue.length > 0) {
+      await new Promise(resolve => setTimeout(resolve, 10))
+    }
+  }
+}
+
+// Example actors
+interface ProcessingMessage {
+  type: 'data' | 'control'
+  payload: any
+}
+
+class DataProcessingActor extends BaseActor<ProcessingMessage> {
+  constructor(private nextActor?: Actor<ProcessingMessage>) {}
+
+  async onMessage(message: ProcessingMessage): Promise<void> {
+    if (message.type === 'data') {
+      const processed = await this.processData(message.payload)
+      if (this.nextActor) {
+        this.nextActor.send({
+          type: 'data',
+          payload: processed
+        })
+      }
+    }
+  }
+
+  private async processData(data: any): Promise<any> {
+    // Process data asynchronously
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ ...data, processed: true })
+      }, 100)
+    })
+  }
+}
+
+// Actor pipeline
+const actor1 = new DataProcessingActor()
+const actor2 = new DataProcessingActor(actor1)
+const actor3 = new DataProcessingActor(actor2)
+
+actor1.start()
+actor2.start()
+actor3.start()
+
+// Send messages through the pipeline
+actor3.send({ type: 'data', payload: { value: 1 } })
+```
+
+## Workflow Orchestration
+
+High-level composition patterns for orchestrating complex workflows.
+
+```typescript
+// Workflow step interface
+interface WorkflowStep<TInput, TOutput> {
+  name: string
+  fn: (input: TInput) => Promise<TOutput>
+  retry?: RetryPolicy
+  timeout?: number
+  fallback?: (error: Error, input: TInput) => Promise<TOutput>
+}
+
+interface RetryPolicy {
+  maxAttempts: number
+  backoffMs: number
+  backoffMultiplier: number
+}
+
+// Workflow builder
+class WorkflowBuilder<T> {
+  private steps: WorkflowStep<any, any>[] = []
+
+  addStep<TOut>(
+    name: string,
+    fn: (input: T) => Promise<TOut>,
+    options?: { retry?: RetryPolicy; timeout?: number; fallback?: (error: Error) => Promise<TOut> }
+  ): WorkflowBuilder<TOut> {
+    this.steps.push({
+      name,
+      fn,
+      retry: options?.retry,
+      timeout: options?.timeout,
+      fallback: options?.fallback
+    })
+    return this as any
+  }
+
+  async execute(input: T): Promise<any> {
+    let current = input
+
+    for (const step of this.steps) {
+      current = await this.executeStep(step, current)
+    }
+
+    return current
+  }
+
+  private async executeStep(step: WorkflowStep<any, any>, input: any): Promise<any> {
+    const attempts = step.retry?.maxAttempts ?? 1
+    let lastError: Error | null = null
+
+    for (let attempt = 0; attempt < attempts; attempt++) {
+      try {
+        const timeoutPromise = step.timeout
+          ? Promise.race([
+            step.fn(input),
+            new Promise((_, reject) =>
+              setTimeout(() => reject(new Error('Timeout')), step.timeout)
+            )
+          ])
+          : step.fn(input)
+
+        return await timeoutPromise
+      } catch (error) {
+        lastError = error as Error
+
+        if (attempt < attempts - 1) {
+          const backoff = (step.retry?.backoffMs ?? 1000) *
+            Math.pow(step.retry?.backoffMultiplier ?? 2, attempt)
+          await new Promise(resolve => setTimeout(resolve, backoff))
+        }
+      }
+    }
+
+    // Use fallback if available
+    if (step.fallback) {
+      return step.fallback(lastError!, input)
+    }
+
+    throw lastError
+  }
+}
+
+// Example workflow
+async function processOrderWorkflow(orderId: string): Promise<void> {
+  await new WorkflowBuilder<string>()
+    .addStep('Validate Order', async (id) => {
+      const order = await fetchOrder(id)
+      if (!order) throw new Error('Order not found')
+      return order
+    }, { timeout: 5000 })
+
+    .addStep('Process Payment', async (order) => {
+      const payment = await processPayment(order)
+      return { order, payment }
+    }, {
+      retry: { maxAttempts: 3, backoffMs: 1000, backoffMultiplier: 2 },
+      fallback: async (error, context) => {
+        // Refund on failure
+        return { order: context.order, payment: null }
+      }
+    })
+
+    .addStep('Update Inventory', async (context) => {
+      await updateInventory(context.order)
+      return context
+    })
+
+    .addStep('Send Confirmation', async (context) => {
+      await sendConfirmationEmail(context.order)
+      return context
+    })
+
+    .execute(orderId)
+}
+```
+
+## Higher-Order Functions
+
+Functions that operate on other functions.
+
+```typescript
+// Function composition operators
+function compose<A, B, C>(
+  f: (b: B) => C,
+  g: (a: A) => B
+): (a: A) => C {
+  return (a: A) => f(g(a))
+}
+
+function pipe<A, B, C>(
+  f: (a: A) => B,
+  g: (b: B) => C
+): (a: A) => C {
+  return (a: A) => g(f(a))
+}
+
+// Function specialization
+function createValidator<T>(
+  rules: Array<(value: T) => string | null>
+): (value: T) => string[] {
+  return (value: T) => {
+    const errors: string[] = []
+    for (const rule of rules) {
+      const error = rule(value)
+      if (error) errors.push(error)
+    }
+    return errors
+  }
+}
+
+// Example validators
+const emailValidator = createValidator([
+  (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? null : 'Invalid email format',
+  (email: string) => email.length > 254 ? 'Email too long' : null
+])
+
+// Function memoization with cache busting
+function memoizeWithTTL<T extends any[], R>(
+  fn: (...args: T) => Promise<R>,
+  ttlMs: number
+): (...args: T) => Promise<R> {
+  const cache = new Map<string, { value: R; expiry: number }>()
+
+  return async (...args: T): Promise<R> => {
+    const key = JSON.stringify(args)
+    const cached = cache.get(key)
+
+    if (cached && cached.expiry > Date.now()) {
+      return cached.value
+    }
+
+    const value = await fn(...args)
+    cache.set(key, { value, expiry: Date.now() + ttlMs })
+    return value
+  }
+}
+
+// Function combination operators
+function both<T>(
+  f: (value: T) => boolean,
+  g: (value: T) => boolean
+): (value: T) => boolean {
+  return (value: T) => f(value) && g(value)
+}
+
+function either<T>(
+  f: (value: T) => boolean,
+  g: (value: T) => boolean
+): (value: T) => boolean {
+  return (value: T) => f(value) || g(value)
+}
+
+function not<T>(
+  f: (value: T) => boolean
+): (value: T) => boolean {
+  return (value: T) => !f(value)
+}
+
+// Example: compose validators
+const isAdult = (person: Person) => person.age >= 18
+const hasValidId = (person: Person) => !!person.id
+const isNotBanned = not((person: Person) => person.banned)
+
+const canEnter = both(both(isAdult, hasValidId), isNotBanned)
+```
+
+## Error Handling in Composition
+
+Managing errors through composed operations.
+
+```typescript
+// Result type for explicit error handling
+type Result<T, E = Error> = Success<T> | Failure<E>
+
+class Success<T> {
+  constructor(public value: T) {}
+
+  map<U>(fn: (value: T) => U): Result<U> {
+    return new Success(fn(this.value))
+  }
+
+  flatMap<U, E>(fn: (value: T) => Result<U, E>): Result<U, E> {
+    return fn(this.value)
+  }
+
+  getOrElse(fallback: T): T {
+    return this.value
+  }
+}
+
+class Failure<E> {
+  constructor(public error: E) {}
+
+  map<U>(fn: (value: any) => U): Result<U, E> {
+    return this as any
+  }
+
+  flatMap<U, E2>(fn: (value: any) => Result<U, E2>): Result<U, E | E2> {
+    return this as any
+  }
+
+  getOrElse<U>(fallback: U): U {
+    return fallback
+  }
+}
+
+// Composing Results
+function resultCompose<A, B, C>(
+  f: (a: A) => Result<B>,
+  g: (b: B) => Result<C>
+): (a: A) => Result<C> {
+  return (a: A) => {
+    const result1 = f(a)
+    if (result1 instanceof Failure) return result1 as any
+
+    const result2 = g((result1 as Success<B>).value)
+    return result2
+  }
+}
+
+// Exception handling in pipelines
+function handleErrors<T>(
+  pipeline: () => Promise<T>,
+  handlers: Map<string, (error: any) => Promise<T>>
+): Promise<T> {
+  return pipeline().catch(async (error) => {
+    const errorType = error.constructor.name
+    const handler = handlers.get(errorType)
+
+    if (handler) {
+      return handler(error)
+    }
+
+    throw error
+  })
+}
+```
+
+## Best Practices
+
+1. **Keep Functions Pure**: Pure functions compose better and are easier to reason about
+2. **Single Responsibility**: Each function should do one thing well
+3. **Type Safety**: Use TypeScript for compile-time verification of compositions
+4. **Lazy Evaluation**: Use lazy evaluation to avoid unnecessary computation
+5. **Error Propagation**: Handle errors explicitly through the composition chain
+6. **Testability**: Design compositions to be easily testable in isolation
+7. **Performance**: Be aware of performance implications of deep composition
+8. **Documentation**: Document composition contracts clearly
+9. **Reusability**: Design composable functions to be general and reusable
+10. **Modularity**: Keep composed functions loosely coupled
+
+## Related Domains
+
+- [code.org.ai](https://code.org.ai) - Code patterns and best practices
+- [workflows.org.ai](https://workflows.org.ai) - Workflow orchestration systems
+- [agents.org.ai](https://agents.org.ai) - Agent-based composition
+- [apis.org.ai](https://apis.org.ai) - API composition and integration
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="FunctionComposition" />

@@ -1,0 +1,723 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/WorkflowMonitoring
+$type: https://workflows.org.ai/WorkflowMonitoring
+name: Workflow Monitoring
+description: Observability, debugging, retries, error handling, and workflow visibility
+---
+
+export const items = async () => {
+  return [
+    {
+      name: 'Metrics & Observability',
+      description: 'Operational metrics for workflow execution and performance',
+      tools: ['Prometheus', 'Datadog', 'New Relic'],
+      metrics: ['Execution duration', 'Success rate', 'Failure rate', 'Queue depth']
+    },
+    {
+      name: 'Logging',
+      description: 'Structured event logs for debugging and audit',
+      tools: ['ELK Stack', 'Splunk', 'CloudWatch'],
+      levels: ['DEBUG', 'INFO', 'WARN', 'ERROR', 'FATAL']
+    },
+    {
+      name: 'Tracing',
+      description: 'Distributed tracing across workflow activities',
+      tools: ['Jaeger', 'Zipkin', 'DataDog APM'],
+      standards: ['OpenTelemetry', 'OpenTracing']
+    },
+    {
+      name: 'Alerting',
+      description: 'Proactive notification of workflow issues',
+      tools: ['PagerDuty', 'Opsgenie', 'Slack'],
+      conditions: ['SLO breach', 'Error threshold', 'Timeout']
+    },
+    {
+      name: 'Retry Strategies',
+      description: 'Intelligent retry policies for transient failures',
+      strategies: ['Exponential backoff', 'Circuit breaker', 'Dead letter queue'],
+      configurations: ['Max attempts', 'Backoff multiplier', 'Max delay']
+    },
+    {
+      name: 'Error Handling',
+      description: 'Comprehensive error management and recovery',
+      patterns: ['Compensation', 'Fallback', 'Circuit breaking', 'Bulkheads'],
+      logging: ['Stack traces', 'Context data', 'Timestamps']
+    }
+  ]
+}
+
+# Workflow Monitoring
+
+Comprehensive monitoring and observability is critical for production workflows. This domain covers the practices, tools, and patterns for detecting issues, debugging problems, and maintaining reliability.
+
+## Overview
+
+Workflow monitoring transforms workflows from black boxes into observable systems. Through metrics, logs, traces, and alerts, organizations gain visibility into workflow execution and can proactively respond to issues.
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `WorkflowMonitoring` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+| Related | [WorkflowEngines.mdx](./WorkflowEngines), [events.org.ai](https://events.org.ai) |
+
+## The Three Pillars: Metrics, Logs, Traces
+
+### Metrics: Understanding Performance
+
+Metrics are numerical time-series data that track workflow behavior.
+
+**Key Workflow Metrics**:
+
+```
+Execution Metrics:
+├─ workflow_execution_duration (histogram)
+├─ workflow_executions_total (counter)
+├─ workflow_executions_failed (counter)
+├─ workflow_executions_succeeded (counter)
+└─ workflow_executions_currently_running (gauge)
+
+Activity Metrics:
+├─ activity_execution_duration (histogram)
+├─ activity_retries (counter)
+├─ activity_failures (counter)
+└─ activity_timeouts (counter)
+
+Resource Metrics:
+├─ workflow_execution_queue_size (gauge)
+├─ worker_count (gauge)
+├─ worker_availability (gauge)
+└─ event_history_size (gauge)
+```
+
+**Implementation (Prometheus)**:
+```typescript
+import { Registry, Counter, Histogram, Gauge } from 'prom-client';
+
+const register = new Registry();
+
+const workflowExecutionDuration = new Histogram({
+  name: 'workflow_execution_duration_seconds',
+  help: 'Workflow execution duration in seconds',
+  labelNames: ['workflow_name', 'status'],
+  buckets: [0.1, 0.5, 1, 2, 5, 10, 30, 60]
+});
+
+const workflowFailureCount = new Counter({
+  name: 'workflow_failures_total',
+  help: 'Total workflow failures',
+  labelNames: ['workflow_name', 'error_type']
+});
+
+const activeExecutions = new Gauge({
+  name: 'active_workflow_executions',
+  help: 'Currently executing workflows',
+  labelNames: ['workflow_name']
+});
+
+register.registerMetric(workflowExecutionDuration);
+register.registerMetric(workflowFailureCount);
+register.registerMetric(activeExecutions);
+```
+
+**Dashboarding**:
+```yaml
+# Grafana Dashboard
+dashboard:
+  title: "Workflow Execution Overview"
+  panels:
+    - title: "Execution Success Rate"
+      query: |
+        100 * (sum(rate(workflow_executions_succeeded[5m])) /
+               sum(rate(workflow_executions_total[5m])))
+      targets:
+        - prometheus: default
+
+    - title: "P95 Execution Duration"
+      query: |
+        histogram_quantile(0.95,
+          rate(workflow_execution_duration_seconds_bucket[5m]))
+
+    - title: "Active Executions"
+      query: workflow_executions_currently_running
+```
+
+### Logging: Understanding What Happened
+
+Structured logging provides detailed context about workflow execution.
+
+**Log Levels**:
+```typescript
+import { Logger } from 'winston';
+
+const logger = new Logger();
+
+// DEBUG: Detailed diagnostic information
+logger.debug('Starting activity', {
+  workflowId: 'wf-123',
+  activityName: 'fetchUser',
+  input: userData
+});
+
+// INFO: General informational messages
+logger.info('Activity completed', {
+  workflowId: 'wf-123',
+  activityName: 'fetchUser',
+  duration: 245,
+  resultSize: 1024
+});
+
+// WARN: Warning conditions that should be investigated
+logger.warn('Activity slow execution', {
+  workflowId: 'wf-123',
+  activityName: 'fetchUser',
+  duration: 5000,
+  threshold: 1000
+});
+
+// ERROR: Error conditions requiring attention
+logger.error('Activity failed', {
+  workflowId: 'wf-123',
+  activityName: 'fetchUser',
+  error: error.message,
+  stack: error.stack
+});
+
+// FATAL: Critical failures requiring immediate action
+logger.fatal('Workflow engine failure', {
+  engineId: 'temporal-1',
+  error: error.message,
+  action: 'escalate'
+});
+```
+
+**Structured Logging Pattern**:
+```typescript
+interface WorkflowLogEntry {
+  timestamp: string;
+  level: 'DEBUG' | 'INFO' | 'WARN' | 'ERROR' | 'FATAL';
+  workflowId: string;
+  workflowName: string;
+  activityId?: string;
+  activityName?: string;
+  duration?: number;
+  status: 'started' | 'completed' | 'failed' | 'retrying';
+  error?: {
+    type: string;
+    message: string;
+    stack: string;
+  };
+  context: Record<string, unknown>;
+}
+```
+
+**Centralized Log Aggregation**:
+```bash
+# ELK Stack Setup
+elasticsearch:
+  index: logs-workflow-${date}
+  retention: 30 days
+
+logstash:
+  input: syslog, file, http
+  filter: parse, enrich, aggregate
+  output: elasticsearch
+
+kibana:
+  searches:
+    - name: "Failed Workflows"
+      query: status:failed AND timestamp:[now-24h TO now]
+    - name: "Slow Activities"
+      query: duration > 10000 AND level:WARN
+```
+
+### Tracing: Understanding the Path
+
+Distributed tracing shows the full path of a workflow execution across services.
+
+**Trace Structure**:
+```
+Workflow Execution (root trace)
+├── Activity 1
+│   ├── HTTP Request to Service A
+│   ├── Database Query
+│   └── Response Processing
+├── Activity 2
+│   ├── Message Queue Publish
+│   └── Acknowledgment
+└── Activity 3
+    ├── Cache Lookup
+    ├── Cache Miss → Database Query
+    └── Cache Update
+```
+
+**Implementation (OpenTelemetry)**:
+```typescript
+import { NodeSDK } from '@opentelemetry/sdk-node';
+import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
+import { JaegerExporter } from '@opentelemetry/exporter-trace-jaeger';
+
+const sdk = new NodeSDK({
+  instrumentations: [getNodeAutoInstrumentations()],
+  traceExporter: new JaegerExporter({
+    endpoint: 'http://localhost:14268/api/traces'
+  })
+});
+
+sdk.start();
+
+// In workflow activity
+import { trace } from '@opentelemetry/api';
+
+const tracer = trace.getTracer('workflow-tracer');
+
+async function myActivity(input: ActivityInput): Promise<ActivityOutput> {
+  const span = tracer.startSpan('myActivity', {
+    attributes: {
+      'workflow.id': workflowId,
+      'activity.input': JSON.stringify(input)
+    }
+  });
+
+  try {
+    // Nested spans for sub-operations
+    const userSpan = tracer.startSpan('fetch-user', {
+      parent: span
+    });
+    const user = await fetchUser(input.userId);
+    userSpan.end();
+
+    const processSpan = tracer.startSpan('process-data', {
+      parent: span
+    });
+    const result = processData(user);
+    processSpan.end();
+
+    span.setStatus({ code: SpanStatusCode.OK });
+    return result;
+  } catch (error) {
+    span.recordException(error);
+    span.setStatus({ code: SpanStatusCode.ERROR });
+    throw error;
+  } finally {
+    span.end();
+  }
+}
+```
+
+## Retry Strategies
+
+Intelligent retries are essential for handling transient failures.
+
+### Exponential Backoff
+
+Most common and recommended strategy.
+
+```typescript
+interface RetryPolicy {
+  maxAttempts: number;
+  initialDelay: number;      // milliseconds
+  maxDelay: number;
+  backoffMultiplier: number;
+  jitterFraction?: number;    // 0.1 = 10% jitter
+}
+
+function calculateBackoff(
+  attemptNumber: number,
+  policy: RetryPolicy
+): number {
+  const exponentialDelay = policy.initialDelay *
+    Math.pow(policy.backoffMultiplier, attemptNumber - 1);
+
+  const cappedDelay = Math.min(exponentialDelay, policy.maxDelay);
+
+  // Add jitter to prevent thundering herd
+  const jitter = cappedDelay * (policy.jitterFraction ?? 0.1) *
+    (Math.random() * 2 - 1);
+
+  return cappedDelay + jitter;
+}
+
+// Example: exponential backoff configuration
+const retryPolicy: RetryPolicy = {
+  maxAttempts: 5,
+  initialDelay: 100,        // 100ms
+  maxDelay: 32000,          // 32s
+  backoffMultiplier: 2,
+  jitterFraction: 0.1
+};
+
+// Results in: 100ms, 200ms, 400ms, 800ms, 1600ms
+```
+
+### Circuit Breaker Pattern
+
+Prevents cascading failures by stopping requests to failing services.
+
+```typescript
+enum CircuitState {
+  CLOSED = 'closed',      // Normal operation
+  OPEN = 'open',          // Failing, reject requests
+  HALF_OPEN = 'half_open' // Testing recovery
+}
+
+class CircuitBreaker {
+  private state: CircuitState = CircuitState.CLOSED;
+  private failureCount: number = 0;
+  private successCount: number = 0;
+  private lastFailureTime: number = 0;
+
+  constructor(
+    private failureThreshold: number = 5,
+    private successThreshold: number = 2,
+    private timeout: number = 60000 // 1 minute
+  ) {}
+
+  async execute<T>(
+    operation: () => Promise<T>
+  ): Promise<T> {
+    if (this.state === CircuitState.OPEN) {
+      if (Date.now() - this.lastFailureTime > this.timeout) {
+        this.state = CircuitState.HALF_OPEN;
+        this.successCount = 0;
+      } else {
+        throw new Error('Circuit breaker is OPEN');
+      }
+    }
+
+    try {
+      const result = await operation();
+
+      if (this.state === CircuitState.HALF_OPEN) {
+        this.successCount++;
+        if (this.successCount >= this.successThreshold) {
+          this.state = CircuitState.CLOSED;
+          this.failureCount = 0;
+        }
+      }
+
+      return result;
+    } catch (error) {
+      this.failureCount++;
+      this.lastFailureTime = Date.now();
+
+      if (this.failureCount >= this.failureThreshold) {
+        this.state = CircuitState.OPEN;
+      }
+
+      throw error;
+    }
+  }
+}
+```
+
+### Dead Letter Queue Pattern
+
+Captures failed messages for later analysis and replay.
+
+```typescript
+interface FailedWorkflowMessage {
+  workflowId: string;
+  workflowName: string;
+  input: unknown;
+  error: {
+    message: string;
+    stack: string;
+    type: string;
+  };
+  attempts: number;
+  firstFailureTime: string;
+  lastFailureTime: string;
+}
+
+async function handleWorkflowFailure(
+  error: Error,
+  workflow: WorkflowExecution,
+  attempts: number
+): Promise<void> {
+  // If max retries exceeded, send to DLQ
+  if (attempts >= MAX_RETRY_ATTEMPTS) {
+    const dlqMessage: FailedWorkflowMessage = {
+      workflowId: workflow.id,
+      workflowName: workflow.name,
+      input: workflow.input,
+      error: {
+        message: error.message,
+        stack: error.stack || '',
+        type: error.constructor.name
+      },
+      attempts,
+      firstFailureTime: workflow.createdAt.toISOString(),
+      lastFailureTime: new Date().toISOString()
+    };
+
+    // Store in DLQ for investigation
+    await deadLetterQueue.publish(dlqMessage);
+
+    // Alert operations team
+    await alerting.sendAlert({
+      severity: 'critical',
+      title: `Workflow ${workflow.name} exhausted retries`,
+      message: error.message,
+      context: dlqMessage
+    });
+  }
+}
+```
+
+## Error Handling
+
+### Error Classification
+
+```typescript
+enum ErrorType {
+  // Transient: retry likely to succeed
+  TRANSIENT = 'transient',
+  // Permanent: retry will not help
+  PERMANENT = 'permanent',
+  // Unknown: uncertain if transient or permanent
+  UNKNOWN = 'unknown'
+}
+
+function classifyError(error: Error): ErrorType {
+  // Transient errors
+  if (error instanceof TimeoutError) return ErrorType.TRANSIENT;
+  if (error instanceof NetworkError) return ErrorType.TRANSIENT;
+  if (error.message.includes('temporarily unavailable'))
+    return ErrorType.TRANSIENT;
+
+  // Permanent errors
+  if (error instanceof ValidationError) return ErrorType.PERMANENT;
+  if (error instanceof AuthenticationError) return ErrorType.PERMANENT;
+  if (error instanceof NotFoundError) return ErrorType.PERMANENT;
+
+  // Unknown
+  return ErrorType.UNKNOWN;
+}
+
+// Retry decision based on error type
+async function retryDecision(
+  error: Error,
+  attempts: number,
+  policy: RetryPolicy
+): Promise<boolean> {
+  const errorType = classifyError(error);
+
+  if (errorType === ErrorType.PERMANENT) {
+    // Never retry permanent errors
+    return false;
+  }
+
+  if (errorType === ErrorType.TRANSIENT) {
+    // Always retry transient errors up to limit
+    return attempts < policy.maxAttempts;
+  }
+
+  // For unknown errors, use conservative approach
+  return attempts < 3;
+}
+```
+
+### Compensation Transactions
+
+Rolling back partial workflow execution on failure.
+
+```typescript
+async function orderWorkflow(order: Order): Promise<OrderResult> {
+  const compensations: Array<() => Promise<void>> = [];
+
+  try {
+    // Reserve inventory
+    const inventory = await activities.reserveInventory(order);
+    compensations.push(() =>
+      activities.releaseInventory(inventory)
+    );
+
+    // Process payment
+    const payment = await activities.processPayment(order);
+    compensations.push(() =>
+      activities.refundPayment(payment)
+    );
+
+    // Ship order
+    const shipment = await activities.shipOrder(order);
+    // No compensation needed for shipment yet
+
+    return { success: true, order, shipment };
+  } catch (error) {
+    // Execute compensations in reverse order
+    for (const compensation of compensations.reverse()) {
+      try {
+        await compensation();
+      } catch (compensationError) {
+        logger.error('Compensation failed', {
+          originalError: error,
+          compensationError
+        });
+      }
+    }
+
+    throw error;
+  }
+}
+```
+
+## Alerting Strategy
+
+### Alert Criteria
+
+```yaml
+alerts:
+  - name: "workflow_failure_rate"
+    condition: "failure_rate > 5%"
+    duration: "5 minutes"
+    severity: "warning"
+    action: "notify #ops"
+
+  - name: "workflow_execution_timeout"
+    condition: "execution_duration > 1 hour"
+    severity: "critical"
+    action: "page on-call"
+
+  - name: "queue_backlog"
+    condition: "queue_depth > 10000"
+    duration: "10 minutes"
+    severity: "warning"
+    action: "scale workers"
+
+  - name: "activity_retry_storm"
+    condition: "retry_rate > 50%"
+    duration: "2 minutes"
+    severity: "critical"
+    action: "open incident, pause workflow"
+```
+
+### Alert Routing
+
+```typescript
+interface AlertRule {
+  name: string;
+  condition: () => Promise<boolean>;
+  severity: 'info' | 'warning' | 'critical';
+  channels: AlertChannel[];
+  actions: Action[];
+}
+
+interface AlertChannel {
+  type: 'slack' | 'pagerduty' | 'email' | 'sms';
+  target: string;
+  onlySeverity?: string[];
+}
+
+// Example: Critical alerts to PagerDuty and Slack
+const criticalRule: AlertRule = {
+  name: 'workflow_failure_rate_critical',
+  condition: () => checkFailureRate() > 10,
+  severity: 'critical',
+  channels: [
+    { type: 'pagerduty', target: 'workflow-oncall' },
+    { type: 'slack', target: '#incidents' }
+  ],
+  actions: [
+    { type: 'open_incident' },
+    { type: 'page_oncall' },
+    { type: 'pause_workflow' }
+  ]
+};
+```
+
+## Dashboard Design
+
+Essential dashboards for workflow monitoring:
+
+### Operational Dashboard
+```
+┌─────────────────────────────────────────────┐
+│ Workflow Execution Summary                  │
+├─────────────────────────────────────────────┤
+│                                             │
+│ Success Rate: 99.5%  │ Avg Duration: 2.3s │
+│ Active: 1,243        │ Queued: 45         │
+│                                             │
+├─────────────────────────────────────────────┤
+│                                             │
+│ Executions (24h)     │ Error Rate (15min) │
+│  [graph]             │  [graph]           │
+│                                             │
+│ Top Failing Workflows                       │
+│  1. order_processing: 2.3% failure          │
+│  2. notification_pipeline: 1.8% failure     │
+│  3. reporting_job: 0.9% failure             │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+
+### Debugging Dashboard
+```
+┌─────────────────────────────────────────────┐
+│ Workflow Execution Details                  │
+├─────────────────────────────────────────────┤
+│                                             │
+│ Workflow: order_processing                 │
+│ Execution ID: wf-123456                    │
+│ Status: FAILED (after 3 retries)          │
+│ Duration: 45.2s                            │
+│                                             │
+│ Timeline:                                   │
+│  00:00 START                               │
+│  00:05 Activity: validate_order DONE       │
+│  00:10 Activity: check_inventory DONE      │
+│  00:15 Activity: process_payment FAILED    │
+│  00:20 RETRY 1                             │
+│  00:25 Activity: process_payment FAILED    │
+│  00:30 RETRY 2                             │
+│  00:40 Activity: process_payment FAILED    │
+│  00:45 END (exhausted retries)             │
+│                                             │
+│ Error:                                      │
+│  PaymentGatewayError: Connection timeout   │
+│  at PaymentGateway.charge()                │
+│                                             │
+└─────────────────────────────────────────────┘
+```
+
+## SLOs and Error Budgets
+
+```yaml
+service_level_objectives:
+  availability:
+    target: 99.9%
+    window: monthly
+    error_budget: 43.2 minutes/month
+
+  latency:
+    p50: 500ms
+    p95: 2s
+    p99: 5s
+
+  error_rate:
+    target: < 0.1%
+    budget: 0.1% of requests
+
+budget_tracking:
+  current_month:
+    availability_used: 5 minutes (11.6%)
+    availability_remaining: 38.2 minutes
+    status: healthy
+    forecast: meet target
+```
+
+## References
+
+- [Observability Engineering (O'Reilly)](https://www.oreilly.com/library/view/observability-engineering/9781492076438/)
+- [OpenTelemetry Documentation](https://opentelemetry.io/)
+- [Temporal Monitoring Guide](https://docs.temporal.io/develop/go/observability)
+- [SRE Book: Monitoring Distributed Systems](https://sre.google/books/)
+- [Circuit Breaker Pattern](https://martinfowler.com/bliki/CircuitBreaker.html)
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="WorkflowMonitoring" />

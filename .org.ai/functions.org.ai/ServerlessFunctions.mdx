@@ -1,0 +1,724 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/ServerlessFunctions
+$type: https://functions.org.ai/CodeFunction
+name: "Serverless Functions"
+description: "Lambda functions, edge computing, cold starts, deployment, scaling, and cost optimization"
+---
+
+export const items = async () => {
+  // Fetch serverless function implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://functions.org.ai/CodeFunction',
+    category: 'serverless'
+  })
+}
+
+# Serverless Functions
+
+Serverless computing enables scaling applications without managing infrastructure. Serverless functions represent the paradigm shift from server management to event-driven, function-oriented architecture where organizations pay only for actual computation time.
+
+## Overview
+
+Serverless functions are event-driven code units that execute in managed environments with automatic scaling, built-in high availability, and per-invocation billing. Unlike traditional servers, developers don't manage capacity planning, operating system patching, or infrastructure provisioning. The abstraction layer handles resource allocation, networking, and fault tolerance transparently.
+
+## Platforms and Runtimes
+
+```typescript
+// Serverless platform interface
+interface ServerlessPlatform {
+  name: string
+  provider: 'aws' | 'google' | 'azure' | 'cloudflare' | 'netlify' | 'vercel'
+  supportedRuntimes: Runtime[]
+  maxMemory: number          // MB
+  maxTimeout: number         // seconds
+  maxPayloadSize: number     // bytes
+  coldStartMs: number        // approximate
+  pricingPer1MRequests: number
+  pricingPerGBSecond: number
+}
+
+interface Runtime {
+  name: string
+  language: string
+  version: string
+  deprecated: boolean
+  supportsLayers: boolean
+  maxPackageSize: number  // MB
+}
+
+// Platform comparison
+const platforms: ServerlessPlatform[] = [
+  {
+    name: 'AWS Lambda',
+    provider: 'aws',
+    supportedRuntimes: [
+      { name: 'nodejs20.x', language: 'JavaScript', version: '20.x', deprecated: false, supportsLayers: true, maxPackageSize: 250 },
+      { name: 'python3.12', language: 'Python', version: '3.12', deprecated: false, supportsLayers: true, maxPackageSize: 250 }
+    ],
+    maxMemory: 10240,
+    maxTimeout: 900,
+    maxPayloadSize: 6291456,
+    coldStartMs: 100,
+    pricingPer1MRequests: 0.20,
+    pricingPerGBSecond: 0.0000166667
+  },
+  {
+    name: 'Google Cloud Functions',
+    provider: 'google',
+    supportedRuntimes: [
+      { name: 'nodejs20', language: 'JavaScript', version: '20', deprecated: false, supportsLayers: false, maxPackageSize: 500 },
+      { name: 'python3.11', language: 'Python', version: '3.11', deprecated: false, supportsLayers: false, maxPackageSize: 500 }
+    ],
+    maxMemory: 16000,
+    maxTimeout: 3600,
+    maxPayloadSize: 10485760,
+    coldStartMs: 200,
+    pricingPer1MRequests: 0.40,
+    pricingPerGBSecond: 0.0000025
+  },
+  {
+    name: 'Cloudflare Workers',
+    provider: 'cloudflare',
+    supportedRuntimes: [
+      { name: 'workers', language: 'JavaScript/WebAssembly', version: 'v1', deprecated: false, supportsLayers: false, maxPackageSize: 1 }
+    ],
+    maxMemory: 128,
+    maxTimeout: 30,
+    maxPayloadSize: 1048576,
+    coldStartMs: 0,
+    pricingPer1MRequests: 0.15,
+    pricingPerGBSecond: 0
+  }
+]
+
+// Runtime selection
+function selectOptimalRuntime(
+  requirements: FunctionRequirements,
+  platforms: ServerlessPlatform[]
+): { platform: ServerlessPlatform; runtime: Runtime } | null {
+  const candidates = platforms.filter(p => {
+    return (
+      p.maxMemory >= requirements.memoryMB &&
+      p.maxTimeout >= requirements.timeoutSeconds &&
+      p.maxPayloadSize >= requirements.payloadSizeMB * 1024 * 1024
+    )
+  })
+
+  // Score by cold start and cost
+  const scored = candidates.map(platform => ({
+    platform,
+    runtime: platform.supportedRuntimes.find(r => r.language === requirements.language)!,
+    coldStartScore: platform.coldStartMs,
+    costScore: platform.pricingPerGBSecond * requirements.memoryMB / 1024
+  }))
+
+  const best = scored.reduce((best, current) =>
+    (current.coldStartScore + current.costScore) < (best.coldStartScore + best.costScore)
+      ? current
+      : best
+  )
+
+  return { platform: best.platform, runtime: best.runtime! }
+}
+
+interface FunctionRequirements {
+  language: string
+  memoryMB: number
+  timeoutSeconds: number
+  payloadSizeMB: number
+  expectedInvocations: number
+}
+```
+
+## Cold Start Optimization
+
+Minimizing latency on first invocation.
+
+```typescript
+// Cold start analysis
+interface ColdStartProfile {
+  bootstrapTime: number      // Function framework initialization
+  importTime: number         // Module loading
+  initializationTime: number // Code execution before handler
+  totalColdStartMs: number
+  factors: ColdStartFactor[]
+}
+
+interface ColdStartFactor {
+  name: string
+  duration: number
+  impact: 'high' | 'medium' | 'low'
+  optimizable: boolean
+  suggestions: string[]
+}
+
+// Optimization strategies
+class ColdStartOptimizer {
+  optimizeImports(code: string): string {
+    // Move require/import statements inside handlers
+    // Use lazy loading for heavy dependencies
+    return code
+      .replace(
+        /^const (\w+) = require\(['"]([^'"]+)['"]\);?$/gm,
+        (match, varName, module) => {
+          if (this.isHeavyModule(module)) {
+            return `let ${varName};`
+          }
+          return match
+        }
+      )
+  }
+
+  private isHeavyModule(module: string): boolean {
+    const heavyModules = ['aws-sdk', 'sharp', 'pandas', 'tensorflow']
+    return heavyModules.some(heavy => module.includes(heavy))
+  }
+
+  createLazyLoader(moduleName: string): string {
+    return `
+      let ${moduleName};
+      function load${moduleName}() {
+        if (!${moduleName}) {
+          ${moduleName} = require('${moduleName}');
+        }
+        return ${moduleName};
+      }
+    `
+  }
+
+  // Bundle and minify
+  optimizeBundle(): string {
+    return `
+      // Use tree-shaking and code splitting
+      // Minify production code
+      // Remove dev dependencies
+      // Use compression
+    `
+  }
+
+  // Container image optimization
+  createLightweightContainer(): string {
+    return `
+      FROM node:20-alpine
+      WORKDIR /app
+      COPY package*.json ./
+      RUN npm ci --production
+      COPY index.js .
+      ENTRYPOINT ["node", "index.js"]
+    `
+  }
+
+  // Lambda layers for shared code
+  structureWithLayers(): string {
+    return `
+      Layer structure:
+      - nodejs/node_modules/ (shared dependencies)
+      - libs/utils/ (shared code)
+      - constants/ (configuration)
+
+      Handler size: ~50KB (minimal)
+      Layer size: ~50MB (shared code)
+      Total deployment: ~50KB (much smaller!)
+    `
+  }
+
+  // Provisioned concurrency
+  enableProvisionedConcurrency(concurrentInstances: number): string {
+    return `
+      Provisioned Concurrency keeps instances warm
+      - ${concurrentInstances} instances always running
+      - Eliminates cold starts for those instances
+      - Pay for allocated instances continuously
+      - Good for latency-critical APIs
+    `
+  }
+}
+
+// Cold start monitoring
+interface ColdStartMetrics {
+  averageColdStartMs: number
+  p95ColdStartMs: number
+  coldStartPercentage: number
+  trend: 'improving' | 'degrading' | 'stable'
+}
+
+function analyzeColdStartPattern(invocations: Invocation[]): ColdStartMetrics {
+  const coldStarts = invocations.filter(i => i.initDuration > 50)
+  const durations = coldStarts.map(i => i.duration)
+
+  return {
+    averageColdStartMs: durations.reduce((a, b) => a + b, 0) / durations.length,
+    p95ColdStartMs: durations.sort()[Math.floor(durations.length * 0.95)],
+    coldStartPercentage: (coldStarts.length / invocations.length) * 100,
+    trend: calculateTrend(invocations)
+  }
+}
+
+interface Invocation {
+  timestamp: Date
+  duration: number
+  initDuration: number
+  billed: boolean
+  error?: string
+}
+```
+
+## Event-Driven Architecture
+
+```typescript
+// Event source interface
+interface EventSource {
+  type: EventSourceType
+  arn?: string
+  filter?: EventFilter
+  batchSize?: number
+  parallelizationFactor?: number
+}
+
+enum EventSourceType {
+  HTTP = 'http',
+  S3 = 's3',
+  DynamoDB = 'dynamodb',
+  SQS = 'sqs',
+  SNS = 'sns',
+  EventBridge = 'eventbridge',
+  CloudWatch = 'cloudwatch',
+  Kinesis = 'kinesis',
+  Webhook = 'webhook'
+}
+
+interface EventFilter {
+  properties?: Record<string, string | string[]>
+  operators?: Record<string, any>
+}
+
+// Event handler patterns
+async function httpHandler(event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> {
+  try {
+    const { path, httpMethod, body } = event
+    const parsedBody = body ? JSON.parse(body) : null
+
+    // Route based on method and path
+    let result: any
+
+    if (httpMethod === 'GET' && path === '/items') {
+      result = await getItems()
+    } else if (httpMethod === 'POST' && path === '/items') {
+      result = await createItem(parsedBody)
+    } else if (httpMethod === 'PUT' && path.match(/^\/items\/\d+$/)) {
+      const id = path.split('/')[2]
+      result = await updateItem(id, parsedBody)
+    } else if (httpMethod === 'DELETE' && path.match(/^\/items\/\d+$/)) {
+      const id = path.split('/')[2]
+      result = await deleteItem(id)
+    } else {
+      return {
+        statusCode: 404,
+        body: JSON.stringify({ error: 'Not found' })
+      }
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(result),
+      headers: { 'Content-Type': 'application/json' }
+    }
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: String(error) })
+    }
+  }
+}
+
+interface APIGatewayProxyEvent {
+  resource: string
+  path: string
+  httpMethod: string
+  headers: Record<string, string>
+  queryStringParameters?: Record<string, string>
+  body?: string
+  requestContext: {
+    requestId: string
+    identity: { sourceIp: string }
+  }
+}
+
+interface APIGatewayProxyResult {
+  statusCode: number
+  body: string
+  headers?: Record<string, string>
+}
+
+// S3 event handler
+async function s3EventHandler(event: S3Event): Promise<void> {
+  for (const record of event.Records) {
+    const bucket = record.s3.bucket.name
+    const key = record.s3.object.key
+    const eventType = record.eventName
+
+    if (eventType === 'ObjectCreated:Put') {
+      await processNewFile(bucket, key)
+    } else if (eventType === 'ObjectRemoved:Delete') {
+      await cleanupMetadata(bucket, key)
+    }
+  }
+}
+
+interface S3Event {
+  Records: S3EventRecord[]
+}
+
+interface S3EventRecord {
+  eventName: string
+  s3: {
+    bucket: { name: string }
+    object: { key: string, size: number }
+  }
+}
+
+// DynamoDB stream handler
+async function dynamoDBStreamHandler(event: DynamoDBStreamEvent): Promise<void> {
+  for (const record of event.Records) {
+    const { eventID, eventName, dynamodb } = record
+
+    if (eventName === 'INSERT') {
+      await handleItemInserted(dynamodb.NewImage)
+    } else if (eventName === 'MODIFY') {
+      await handleItemModified(dynamodb.OldImage, dynamodb.NewImage)
+    } else if (eventName === 'REMOVE') {
+      await handleItemRemoved(dynamodb.OldImage)
+    }
+  }
+}
+
+// Async job processing with SQS
+async function sqsHandler(event: SQSEvent): Promise<void> {
+  const batchItemFailures = []
+
+  for (const record of event.Records) {
+    try {
+      const message = JSON.parse(record.body)
+      await processJob(message)
+    } catch (error) {
+      // Report failure for retry
+      batchItemFailures.push({
+        itemId: record.messageId
+      })
+    }
+  }
+
+  // Return failed messages to queue
+  return { batchItemFailures }
+}
+
+interface SQSEvent {
+  Records: SQSMessage[]
+}
+
+interface SQSMessage {
+  messageId: string
+  body: string
+  attributes: Record<string, string>
+}
+```
+
+## Deployment and Packaging
+
+```typescript
+// Deployment configuration
+interface DeploymentConfig {
+  name: string
+  handler: string
+  runtime: string
+  timeout: number
+  memory: number
+  environment: Record<string, string>
+  vpc?: VPCConfig
+  layers?: string[]
+  reserved_concurrent_executions?: number
+  ephemeralStorage?: number
+  architecture?: 'x86_64' | 'arm64'
+}
+
+interface VPCConfig {
+  subnetIds: string[]
+  securityGroupIds: string[]
+}
+
+// IaC (Infrastructure as Code) definition
+const functionDefinition: DeploymentConfig = {
+  name: 'ProcessUserData',
+  handler: 'index.handler',
+  runtime: 'nodejs20.x',
+  timeout: 60,
+  memory: 512,
+  environment: {
+    TABLE_NAME: 'users',
+    REGION: 'us-east-1',
+    LOG_LEVEL: 'info'
+  },
+  vpc: {
+    subnetIds: ['subnet-123', 'subnet-456'],
+    securityGroupIds: ['sg-789']
+  },
+  layers: [
+    'arn:aws:lambda:us-east-1:123456789012:layer:shared-libs:1'
+  ],
+  reserved_concurrent_executions: 100,
+  ephemeralStorage: 512,
+  architecture: 'arm64'
+}
+
+// Infrastructure as Code (Terraform/CDK)
+class InfrastructureDefinition {
+  generateTerraform(config: DeploymentConfig): string {
+    return `
+      resource "aws_lambda_function" "${config.name}" {
+        function_name = "${config.name}"
+        runtime       = "${config.runtime}"
+        handler       = "${config.handler}"
+        timeout       = ${config.timeout}
+        memory_size   = ${config.memory}
+        architectures = ["${config.architecture}"]
+
+        environment {
+          variables = {
+            ${Object.entries(config.environment)
+              .map(([k, v]) => `${k} = "${v}"`)
+              .join('\n')}
+          }
+        }
+
+        vpc_config {
+          subnet_ids         = [${config.vpc?.subnetIds.map(s => `"${s}"`).join(', ')}]
+          security_group_ids = [${config.vpc?.securityGroupIds.map(s => `"${s}"`).join(', ')}]
+        }
+
+        reserved_concurrent_executions = ${config.reserved_concurrent_executions}
+        ephemeral_storage {
+          size = ${config.ephemeralStorage}
+        }
+      }
+    `
+  }
+
+  generateCloudFormation(config: DeploymentConfig): string {
+    return `
+      AWSTemplateFormatVersion: '2010-09-09'
+      Resources:
+        ${config.name}Function:
+          Type: AWS::Lambda::Function
+          Properties:
+            FunctionName: ${config.name}
+            Runtime: ${config.runtime}
+            Handler: ${config.handler}
+            Timeout: ${config.timeout}
+            MemorySize: ${config.memory}
+            Architectures:
+              - ${config.architecture}
+            Environment:
+              Variables:
+                ${Object.entries(config.environment)
+                  .map(([k, v]) => `${k}: ${v}`)
+                  .join('\n')}
+    `
+  }
+}
+
+// Packaging and bundling
+class FunctionPackager {
+  async bundle(sourcePath: string, outputPath: string): Promise<void> {
+    // Install dependencies
+    await this.runCommand(`cd ${sourcePath} && npm install --production`)
+
+    // Bundle code
+    await this.runCommand(`esbuild ${sourcePath}/index.ts --bundle --platform=node --outfile=${outputPath}/index.js`)
+
+    // Create deployment package
+    await this.createZip(outputPath)
+  }
+
+  private async createZip(path: string): Promise<void> {
+    // Create deployment zip file
+  }
+
+  private async runCommand(cmd: string): Promise<void> {
+    // Execute shell command
+  }
+}
+```
+
+## Monitoring and Logging
+
+```typescript
+// CloudWatch integration
+class LambdaMonitoring {
+  async createMetricAlarms(functionName: string): Promise<void> {
+    // Error rate alarm
+    await this.createAlarm({
+      alarmName: `${functionName}-errors`,
+      metricName: 'Errors',
+      threshold: 1,
+      comparisonOperator: 'GreaterThanOrEqualToThreshold',
+      evaluationPeriods: 1
+    })
+
+    // Duration alarm (performance degradation)
+    await this.createAlarm({
+      alarmName: `${functionName}-duration`,
+      metricName: 'Duration',
+      threshold: 5000, // 5 seconds
+      comparisonOperator: 'GreaterThanThreshold',
+      evaluationPeriods: 2
+    })
+
+    // Throttle alarm
+    await this.createAlarm({
+      alarmName: `${functionName}-throttles`,
+      metricName: 'Throttles',
+      threshold: 1,
+      comparisonOperator: 'GreaterThanOrEqualToThreshold',
+      evaluationPeriods: 1
+    })
+  }
+
+  private async createAlarm(config: AlarmConfig): Promise<void> {
+    // Create CloudWatch alarm
+  }
+}
+
+interface AlarmConfig {
+  alarmName: string
+  metricName: string
+  threshold: number
+  comparisonOperator: string
+  evaluationPeriods: number
+}
+
+// Structured logging
+function createStructuredLogger() {
+  return {
+    info: (message: string, context: Record<string, any> = {}) => {
+      console.log(JSON.stringify({
+        timestamp: new Date().toISOString(),
+        level: 'INFO',
+        message,
+        ...context
+      }))
+    },
+    error: (message: string, error: Error, context: Record<string, any> = {}) => {
+      console.error(JSON.stringify({
+        timestamp: new Date().toISOString(),
+        level: 'ERROR',
+        message,
+        errorName: error.name,
+        errorMessage: error.message,
+        stack: error.stack,
+        ...context
+      }))
+    }
+  }
+}
+```
+
+## Cost Optimization
+
+```typescript
+// Cost calculator
+class CostCalculator {
+  calculateMonthlyCost(
+    invocations: number,
+    avgDurationMs: number,
+    memoryMB: number,
+    platform: ServerlessPlatform
+  ): CostBreakdown {
+    // Request cost
+    const requestCost = (invocations / 1_000_000) * platform.pricingPer1MRequests
+
+    // Compute cost (billed in 1ms increments, rounded up to 100ms)
+    const gbSeconds = (invocations * (avgDurationMs / 1000) * (memoryMB / 1024))
+    const computeCost = gbSeconds * platform.pricingPerGBSecond
+
+    return {
+      requestCost,
+      computeCost,
+      totalCost: requestCost + computeCost,
+      costPerInvocation: (requestCost + computeCost) / invocations
+    }
+  }
+
+  findCostOptimalConfiguration(
+    requirements: PerformanceRequirements,
+    platforms: ServerlessPlatform[]
+  ): { platform: ServerlessPlatform; config: DeploymentConfig; estimatedCost: number } {
+    let bestOption = null
+    let lowestCost = Infinity
+
+    for (const platform of platforms) {
+      for (let memory = 128; memory <= platform.maxMemory; memory *= 2) {
+        const estimatedDuration = this.estimateDuration(requirements, memory)
+        const cost = this.calculateMonthlyCost(
+          requirements.monthlyInvocations,
+          estimatedDuration,
+          memory,
+          platform
+        )
+
+        if (cost.totalCost < lowestCost && estimatedDuration <= requirements.maxLatencyMs) {
+          lowestCost = cost.totalCost
+          bestOption = { platform, memory, cost: cost.totalCost }
+        }
+      }
+    }
+
+    return bestOption!
+  }
+
+  private estimateDuration(requirements: PerformanceRequirements, memory: number): number {
+    // Estimate function duration based on memory allocation
+    // More memory = faster CPU = shorter execution
+    const baseDuration = requirements.estimatedBaseDurationMs
+    return baseDuration / (memory / 128) // Rough estimate
+  }
+}
+
+interface CostBreakdown {
+  requestCost: number
+  computeCost: number
+  totalCost: number
+  costPerInvocation: number
+}
+
+interface PerformanceRequirements {
+  monthlyInvocations: number
+  estimatedBaseDurationMs: number
+  maxLatencyMs: number
+}
+```
+
+## Best Practices
+
+1. **Minimize Package Size**: Reduce cold start time by keeping function size small
+2. **Lazy Load Dependencies**: Load heavy libraries only when needed
+3. **Implement Caching**: Use in-memory caching across invocations
+4. **Idempotent Functions**: Design functions to handle duplicate invocations safely
+5. **Error Handling**: Implement comprehensive error handling and retry logic
+6. **Environment Variables**: Use for configuration instead of hardcoding
+7. **Monitoring**: Set up metrics and alarms for production functions
+8. **VPC Caution**: Only use VPC when necessary due to cold start overhead
+9. **Cost Monitoring**: Track costs and optimize memory/timeout settings
+10. **Security**: Use least-privilege IAM roles and encrypt sensitive data
+
+## Related Domains
+
+- [apis.org.ai](https://apis.org.ai) - APIs built with serverless functions
+- [workflows.org.ai](https://workflows.org.ai) - Orchestrating serverless functions
+- [code.org.ai](https://code.org.ai) - Code patterns for serverless
+- [tools.org.ai](https://tools.org.ai) - Serverless development tools
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="ServerlessFunctions" />

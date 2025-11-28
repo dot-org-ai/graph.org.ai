@@ -1,0 +1,767 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/AgenticFunctions
+$type: https://functions.org.ai/AgenticFunction
+name: "Agentic Functions"
+description: "Tool calling, multi-step execution, planning, reasoning, and agent orchestration"
+---
+
+export const items = async () => {
+  // Fetch agentic function implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://functions.org.ai/AgenticFunction',
+    category: 'agentic'
+  })
+}
+
+# Agentic Functions
+
+Agentic functions enable autonomous agents to execute complex, multi-step tasks through tool calling, planning, reasoning, and adaptive decision-making. They represent the bridge between language understanding and action in the physical and digital worlds.
+
+## Overview
+
+Agentic functions empower AI systems to break down complex goals into actionable steps, reason about available tools, make decisions based on feedback, and iterate toward solutions. Unlike simple generative functions that produce text, agentic functions orchestrate sequences of operations, integrate with external systems, and adapt behavior based on outcomes.
+
+## Tool Definitions and Schemas
+
+Agents operate by selecting and calling tools appropriate for their tasks.
+
+```typescript
+// Tool definition interface
+interface ToolDefinition {
+  name: string
+  description: string
+  parameters: JSONSchema
+  required?: string[]
+  returnType?: string
+  authentication?: AuthConfig
+}
+
+interface JSONSchema {
+  type: 'object'
+  properties: Record<string, PropertySchema>
+  required?: string[]
+  additionalProperties?: boolean
+}
+
+interface PropertySchema {
+  type: string | string[]
+  description: string
+  enum?: string[]
+  items?: PropertySchema
+  minimum?: number
+  maximum?: number
+  pattern?: string
+}
+
+interface AuthConfig {
+  type: 'api_key' | 'oauth2' | 'bearer'
+  headerName?: string
+  paramName?: string
+}
+
+// Example tool definitions
+const toolLibrary = {
+  searchWeb: {
+    name: 'search_web',
+    description: 'Search the web for current information',
+    parameters: {
+      type: 'object',
+      properties: {
+        query: {
+          type: 'string',
+          description: 'Search query'
+        },
+        maxResults: {
+          type: 'integer',
+          description: 'Maximum number of results',
+          minimum: 1,
+          maximum: 10
+        }
+      },
+      required: ['query']
+    }
+  } as ToolDefinition,
+
+  sendEmail: {
+    name: 'send_email',
+    description: 'Send an email message',
+    parameters: {
+      type: 'object',
+      properties: {
+        to: {
+          type: 'string',
+          description: 'Recipient email address'
+        },
+        subject: {
+          type: 'string',
+          description: 'Email subject'
+        },
+        body: {
+          type: 'string',
+          description: 'Email body content'
+        },
+        attachments: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'File paths of attachments'
+        }
+      },
+      required: ['to', 'subject', 'body']
+    },
+    authentication: {
+      type: 'oauth2'
+    }
+  } as ToolDefinition,
+
+  executeCode: {
+    name: 'execute_code',
+    description: 'Execute Python code and return results',
+    parameters: {
+      type: 'object',
+      properties: {
+        code: {
+          type: 'string',
+          description: 'Python code to execute'
+        },
+        timeout: {
+          type: 'integer',
+          description: 'Execution timeout in seconds',
+          minimum: 1,
+          maximum: 300
+        }
+      },
+      required: ['code']
+    }
+  } as ToolDefinition
+}
+```
+
+## Tool Calling Patterns
+
+How agents decide which tools to use and when.
+
+```typescript
+// Tool calling interface
+interface ToolCall {
+  toolName: string
+  arguments: Record<string, any>
+  reasoningChain?: string
+}
+
+interface ToolResult {
+  toolName: string
+  success: boolean
+  output?: any
+  error?: string
+  executionTime?: number
+}
+
+// Agent decision making
+interface AgentThought {
+  thought: string
+  action?: ToolCall
+  observation?: ToolResult
+  reasoning: string
+}
+
+interface ReActLoop {
+  steps: AgentThought[]
+  finalAnswer: string
+  totalTokens: number
+}
+
+// ReAct (Reasoning + Acting) pattern
+async function reactAgent(
+  objective: string,
+  tools: Map<string, ToolDefinition>,
+  maxSteps: number = 10
+): Promise<ReActLoop> {
+  const loop: ReActLoop = {
+    steps: [],
+    finalAnswer: '',
+    totalTokens: 0
+  }
+
+  let context = `Task: ${objective}\n\nAvailable tools:\n`
+  context += Array.from(tools.values())
+    .map(t => `- ${t.name}: ${t.description}`)
+    .join('\n')
+
+  for (let step = 0; step < maxSteps; step++) {
+    // Generate thought and action
+    const thought = await generateThought(context)
+
+    if (thought.isFinalAnswer) {
+      loop.finalAnswer = thought.answer
+      break
+    }
+
+    if (thought.action) {
+      // Execute tool
+      const result = await executeTool(thought.action)
+      thought.observation = result
+
+      // Update context with observation
+      context += `\nThought: ${thought.reasoning}\nAction: ${thought.action.toolName}\nObservation: ${JSON.stringify(result.output)}`
+    }
+
+    loop.steps.push(thought)
+  }
+
+  return loop
+}
+
+// Agent routing: selecting appropriate agents
+interface AgentRouter {
+  routeTask(task: string): Promise<string> // Returns agent name
+  selectTools(task: string): Promise<ToolDefinition[]>
+  scoreAgent(agentName: string, task: string): Promise<number>
+}
+
+async function routeTaskToAgent(
+  task: string,
+  agents: Map<string, AgentDescription>
+): Promise<string> {
+  const scores: Map<string, number> = new Map()
+
+  for (const [name, agent] of agents.entries()) {
+    const score = await evaluateAgentFitness(agent, task)
+    scores.set(name, score)
+  }
+
+  return Array.from(scores.entries())
+    .sort((a, b) => b[1] - a[1])[0][0]
+}
+
+interface AgentDescription {
+  name: string
+  specialization: string
+  capabilities: string[]
+  tools: ToolDefinition[]
+}
+```
+
+## Planning and Decomposition
+
+Breaking complex tasks into actionable steps.
+
+```typescript
+// Task decomposition
+interface Task {
+  id: string
+  description: string
+  subtasks?: Task[]
+  dependencies?: string[] // IDs of tasks that must complete first
+  estimatedDuration?: number
+  priority?: number
+}
+
+interface Plan {
+  tasks: Task[]
+  executionOrder: string[]
+  estimatedTime: number
+  complexityScore: number
+}
+
+// Hierarchical task decomposition
+async function decomposePlan(
+  goal: string,
+  maxDepth: number = 3
+): Promise<Plan> {
+  const rootTask: Task = {
+    id: '0',
+    description: goal,
+    subtasks: [],
+    dependencies: []
+  }
+
+  async function decompose(task: Task, depth: number) {
+    if (depth >= maxDepth) return
+
+    const prompt = `Break down this task into concrete subtasks:\n${task.description}\n\nProvide 3-5 subtasks as JSON array.`
+    const subtaskDescriptions = await generateText(prompt)
+
+    const subtasks = parseSubtasks(subtaskDescriptions)
+    task.subtasks = subtasks.map((desc, i) => ({
+      id: `${task.id}-${i}`,
+      description: desc,
+      subtasks: [],
+      dependencies: [task.id]
+    }))
+
+    for (const subtask of task.subtasks) {
+      await decompose(subtask, depth + 1)
+    }
+  }
+
+  await decompose(rootTask, 0)
+
+  // Flatten and order tasks
+  const allTasks = flattenTasks(rootTask)
+  const executionOrder = topologicalSort(allTasks)
+
+  return {
+    tasks: allTasks,
+    executionOrder,
+    estimatedTime: estimateTotalTime(allTasks),
+    complexityScore: calculateComplexity(allTasks)
+  }
+}
+
+// Task scheduling
+function topologicalSort(tasks: Task[]): string[] {
+  const visited = new Set<string>()
+  const result: string[] = []
+
+  function visit(taskId: string) {
+    if (visited.has(taskId)) return
+    visited.add(taskId)
+
+    const task = tasks.find(t => t.id === taskId)
+    if (task?.dependencies) {
+      for (const dep of task.dependencies) {
+        visit(dep)
+      }
+    }
+
+    result.push(taskId)
+  }
+
+  for (const task of tasks) {
+    visit(task.id)
+  }
+
+  return result
+}
+
+// Dynamic planning: adjusting plan based on results
+interface PlanExecutionContext {
+  originalPlan: Plan
+  completedTasks: Set<string>
+  results: Map<string, ToolResult>
+  hasDeviated: boolean
+}
+
+async function adaptPlan(
+  context: PlanExecutionContext,
+  currentObservation: string
+): Promise<Plan> {
+  const prompt = `Original plan:\n${JSON.stringify(context.originalPlan)}\n\nCompleted: ${Array.from(context.completedTasks)}\n\nCurrent observation: ${currentObservation}\n\nShould we adapt the plan? If yes, provide new plan.`
+
+  const shouldAdapt = await determineAdaptation(prompt)
+
+  if (shouldAdapt) {
+    context.hasDeviated = true
+    return await decomposePlan(extractRemainingObjective(context), 2)
+  }
+
+  return context.originalPlan
+}
+```
+
+## Multi-Agent Coordination
+
+Managing cooperation between multiple agents.
+
+```typescript
+// Agent collaboration patterns
+interface MultiAgentSystem {
+  agents: Agent[]
+  coordinator: AgentCoordinator
+  sharedContext: SharedContext
+}
+
+interface Agent {
+  id: string
+  name: string
+  role: string
+  tools: ToolDefinition[]
+  state: AgentState
+}
+
+interface AgentState {
+  currentTask?: Task
+  completedTasks: Set<string>
+  knowledgeBase: Map<string, any>
+  lastAction?: ToolCall
+  status: 'idle' | 'busy' | 'waiting' | 'error'
+}
+
+interface SharedContext {
+  globalGoal: string
+  sharedKnowledge: Map<string, any>
+  communicationLog: Message[]
+  agentStatus: Map<string, AgentState>
+}
+
+interface Message {
+  from: string
+  to: string | 'all'
+  content: string
+  timestamp: number
+  type: 'task' | 'info' | 'request' | 'result'
+}
+
+// Hierarchical coordination
+class AgentCoordinator {
+  private agents: Map<string, Agent>
+  private context: SharedContext
+
+  async coordinateAgents(goal: string): Promise<any> {
+    this.context.globalGoal = goal
+
+    // Create plan
+    const plan = await decomposePlan(goal)
+
+    // Assign tasks to agents
+    const assignments = await this.assignTasks(plan.tasks)
+
+    // Coordinate execution
+    const results = await this.executeCoordinatedPlan(assignments, plan.executionOrder)
+
+    return results
+  }
+
+  private async assignTasks(tasks: Task[]): Promise<Map<string, Task[]>> {
+    const assignments = new Map<string, Task[]>()
+
+    for (const task of tasks) {
+      const bestAgent = await this.selectBestAgent(task)
+      if (!assignments.has(bestAgent)) {
+        assignments.set(bestAgent, [])
+      }
+      assignments.get(bestAgent)!.push(task)
+    }
+
+    return assignments
+  }
+
+  private async selectBestAgent(task: Task): Promise<string> {
+    // Score each agent's fitness for the task
+    const scores = new Map<string, number>()
+
+    for (const [agentId, agent] of this.agents) {
+      const score = this.calculateAgentFitness(agent, task)
+      scores.set(agentId, score)
+    }
+
+    return Array.from(scores.entries())
+      .sort((a, b) => b[1] - a[1])[0][0]
+  }
+
+  private calculateAgentFitness(agent: Agent, task: Task): number {
+    // Evaluate agent's capability and availability
+    const capabilityScore = this.evaluateCapability(agent, task)
+    const availabilityScore = 100 - this.calculateWorkload(agent)
+
+    return (capabilityScore * 0.7 + availabilityScore * 0.3)
+  }
+
+  private async executeCoordinatedPlan(
+    assignments: Map<string, Task[]>,
+    executionOrder: string[]
+  ): Promise<Map<string, ToolResult>> {
+    const results = new Map<string, ToolResult>()
+
+    for (const taskId of executionOrder) {
+      // Find which agent has this task
+      for (const [agentId, tasks] of assignments) {
+        const task = tasks.find(t => t.id === taskId)
+        if (task) {
+          const result = await this.executeAgentTask(agentId, task)
+          results.set(taskId, result)
+
+          // Broadcast result to other agents
+          this.broadcastResult(agentId, task, result)
+        }
+      }
+    }
+
+    return results
+  }
+
+  private async executeAgentTask(agentId: string, task: Task): Promise<ToolResult> {
+    const agent = this.agents.get(agentId)!
+    // Execute task using agent's tools
+    return { toolName: '', success: true }
+  }
+
+  private broadcastResult(agentId: string, task: Task, result: ToolResult) {
+    const message: Message = {
+      from: agentId,
+      to: 'all',
+      content: `Completed task: ${task.description}. Result: ${JSON.stringify(result.output)}`,
+      timestamp: Date.now(),
+      type: 'result'
+    }
+
+    this.context.communicationLog.push(message)
+    this.context.sharedKnowledge.set(task.id, result.output)
+  }
+}
+
+// Debate/discussion pattern for disagreement resolution
+interface Argument {
+  agentId: string
+  position: string
+  reasoning: string
+  evidence: string[]
+  confidence: number
+}
+
+async function debateResolution(
+  agents: Agent[],
+  question: string,
+  rounds: number = 3
+): Promise<string> {
+  const positions: Argument[] = []
+
+  for (const agent of agents) {
+    const argument = await generateArgument(agent, question)
+    positions.push(argument)
+  }
+
+  for (let round = 0; round < rounds; round++) {
+    for (const position of positions) {
+      // Generate counter-arguments against other positions
+      const counterArguments = await generateCounterArguments(
+        position,
+        positions.filter(p => p.agentId !== position.agentId)
+      )
+
+      // Update position with new evidence
+      position.evidence.push(...counterArguments)
+      position.confidence = updateConfidence(position)
+    }
+  }
+
+  // Reach consensus
+  return positions.sort((a, b) => b.confidence - a.confidence)[0].position
+}
+```
+
+## Error Handling and Recovery
+
+Managing failures and recovering from errors gracefully.
+
+```typescript
+// Error classification
+enum ErrorType {
+  ToolFailure = 'tool_failure',
+  InvalidOutput = 'invalid_output',
+  TokenLimit = 'token_limit',
+  RateLimited = 'rate_limited',
+  LogicError = 'logic_error',
+  ExternalError = 'external_error'
+}
+
+interface RecoveryStrategy {
+  errorType: ErrorType
+  maxRetries: number
+  backoffMultiplier: number
+  fallbackAction?: () => Promise<any>
+}
+
+class ErrorRecovery {
+  private strategies: Map<ErrorType, RecoveryStrategy>
+  private retryCount: Map<string, number> = new Map()
+
+  async executeWithRecovery<T>(
+    operation: () => Promise<T>,
+    operationId: string,
+    errorType?: ErrorType
+  ): Promise<T> {
+    let lastError: Error | null = null
+    const strategy = errorType ? this.strategies.get(errorType) : this.getDefaultStrategy()
+
+    for (let attempt = 0; attempt < strategy.maxRetries; attempt++) {
+      try {
+        this.retryCount.set(operationId, attempt + 1)
+        return await operation()
+      } catch (error) {
+        lastError = error as Error
+
+        if (attempt < strategy.maxRetries - 1) {
+          const delay = Math.pow(strategy.backoffMultiplier, attempt) * 1000
+          await this.sleep(delay)
+        }
+      }
+    }
+
+    // Use fallback if available
+    if (strategy.fallbackAction) {
+      return await strategy.fallbackAction()
+    }
+
+    throw lastError
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms))
+  }
+
+  private getDefaultStrategy(): RecoveryStrategy {
+    return {
+      errorType: ErrorType.ToolFailure,
+      maxRetries: 3,
+      backoffMultiplier: 2
+    }
+  }
+}
+
+// Self-correction loop
+interface CorrectionAttempt {
+  originalOutput: string
+  error: string
+  correctedOutput: string
+  isCorrect: boolean
+}
+
+async function selfCorrectingAgent(
+  task: string,
+  maxCorrections: number = 3
+): Promise<string> {
+  let output = await generateInitialOutput(task)
+
+  for (let attempt = 0; attempt < maxCorrections; attempt++) {
+    const validation = await validateOutput(output, task)
+
+    if (validation.isValid) {
+      return output
+    }
+
+    // Generate correction based on validation error
+    const correctionPrompt = `
+      Task: ${task}
+      Current output: ${output}
+      Error: ${validation.error}
+
+      Please fix this error in the output.
+    `
+
+    output = await generateText(correctionPrompt)
+  }
+
+  return output
+}
+```
+
+## Knowledge Management and Memory
+
+Agents maintaining and utilizing knowledge across interactions.
+
+```typescript
+// Agent memory types
+interface ShortTermMemory {
+  conversationHistory: Message[]
+  currentContext: string
+  recentActions: ToolCall[]
+  maxSize: number
+}
+
+interface LongTermMemory {
+  facts: Map<string, string>
+  relationships: Graph
+  procedures: Map<string, Task[]>
+  lessons: Map<string, Lesson>
+}
+
+interface Lesson {
+  situation: string
+  action: string
+  outcome: string
+  learned: string
+  timestamp: number
+}
+
+// Memory consolidation
+class AgentMemory {
+  shortTerm: ShortTermMemory
+  longTerm: LongTermMemory
+
+  async consolidateMemory() {
+    // Move important information from short-term to long-term
+    for (const message of this.shortTerm.conversationHistory) {
+      const facts = await extractFacts(message.content)
+      for (const [key, fact] of Object.entries(facts)) {
+        this.longTerm.facts.set(key, fact)
+      }
+    }
+
+    // Extract and store lessons learned
+    const lesson = await extractLesson(this.shortTerm.recentActions)
+    if (lesson) {
+      this.longTerm.lessons.set(
+        `${Date.now()}`,
+        lesson
+      )
+    }
+
+    // Clear short-term memory beyond max size
+    if (this.shortTerm.conversationHistory.length > this.shortTerm.maxSize) {
+      this.shortTerm.conversationHistory =
+        this.shortTerm.conversationHistory.slice(-this.shortTerm.maxSize)
+    }
+  }
+
+  async retrieveRelevantKnowledge(query: string): Promise<string[]> {
+    // Search both short and long-term memory
+    const results: string[] = []
+
+    // Query short-term
+    for (const message of this.shortTerm.conversationHistory) {
+      if (this.isSimilar(message.content, query)) {
+        results.push(message.content)
+      }
+    }
+
+    // Query long-term facts
+    for (const [key, fact] of this.longTerm.facts) {
+      if (this.isSimilar(fact, query)) {
+        results.push(fact)
+      }
+    }
+
+    // Query lessons
+    for (const lesson of this.longTerm.lessons.values()) {
+      if (this.isSimilar(lesson.situation, query)) {
+        results.push(`Previously learned: ${lesson.learned}`)
+      }
+    }
+
+    return results
+  }
+
+  private isSimilar(text1: string, text2: string): boolean {
+    // Implement semantic similarity check
+    return text1.includes(text2) || text2.includes(text1)
+  }
+}
+```
+
+## Best Practices
+
+1. **Clear Tool Definitions**: Write precise tool descriptions and parameters
+2. **Graceful Degradation**: Have fallback strategies for tool failures
+3. **Token Management**: Monitor and manage token usage in long interactions
+4. **Error Context**: Provide rich context when errors occur for better recovery
+5. **Audit Trails**: Log all agent decisions and actions for analysis
+6. **Safety Constraints**: Implement checks to prevent harmful actions
+7. **Human Oversight**: Require human approval for critical decisions
+8. **Testing**: Test agents with diverse scenarios and edge cases
+9. **Memory Management**: Regularly consolidate and cleanup agent memory
+10. **Cost Monitoring**: Track and optimize costs of agent operations
+
+## Related Domains
+
+- [agents.org.ai](https://agents.org.ai) - Agent definitions and capabilities
+- [workflows.org.ai](https://workflows.org.ai) - Workflow orchestration
+- [tasks.org.ai](https://tasks.org.ai) - Task management
+- [apis.org.ai](https://apis.org.ai) - API integrations for tools
+- [models.org.ai](https://models.org.ai) - AI models and reasoning engines
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="AgenticFunctions" />

@@ -1,0 +1,578 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/DataPipelines
+$type: https://workflows.org.ai/DataPipelines
+name: Data Pipelines
+description: ETL workflows, streaming data processing, and batch pipeline orchestration
+---
+
+export const items = async () => {
+  return [
+    {
+      name: 'Extract-Transform-Load (ETL)',
+      description: 'Traditional data integration pattern extracting from sources, transforming, loading to target',
+      examples: ['Apache NiFi', 'Talend', 'Informatica'],
+      characteristics: ['Batch-oriented', 'Schema-enforced', 'Error-handling']
+    },
+    {
+      name: 'Extract-Load-Transform (ELT)',
+      description: 'Modern pattern loading raw data then transforming in the target system',
+      examples: ['dbt', 'Sigma', 'Modern Data Stack'],
+      characteristics: ['Cloud-native', 'Scalable transformation', 'Data warehouse native']
+    },
+    {
+      name: 'Streaming Pipelines',
+      description: 'Continuous data processing with sub-second latency requirements',
+      examples: ['Apache Kafka', 'Apache Flink', 'Apache Spark Streaming'],
+      characteristics: ['Real-time', 'Event-driven', 'Stateful processing']
+    },
+    {
+      name: 'Batch Processing',
+      description: 'Scheduled processing of large data volumes on fixed schedules',
+      examples: ['Apache Spark', 'Hadoop MapReduce', 'Presto'],
+      characteristics: ['High-throughput', 'Scheduled', 'Cost-effective']
+    },
+    {
+      name: 'Lambda Architecture',
+      description: 'Hybrid approach combining batch and streaming layers',
+      examples: ['Kappa Architecture evolution', 'Analytics platforms'],
+      characteristics: ['Batch + Real-time', 'Fault-tolerant', 'Scalable']
+    },
+    {
+      name: 'Data Lineage Tracking',
+      description: 'Monitoring data provenance and transformation lineage',
+      examples: ['OpenMetadata', 'Collibra', 'Apache Atlas'],
+      characteristics: ['Observability', 'Governance', 'Impact analysis']
+    }
+  ]
+}
+
+# Data Pipelines
+
+Data pipelines are specialized workflows that extract, transform, and load data across systems. They form the backbone of modern data infrastructure and enable organizations to derive insights from disparate data sources.
+
+## Overview
+
+Data pipelines orchestrate the movement and transformation of data at scale. From traditional batch ETL processes to modern real-time streaming systems, data pipelines solve the critical challenge of making data available, clean, and actionable for analysis and applications.
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `DataPipelines` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+| Related | [WorkflowEngines.mdx](./WorkflowEngines), [events.org.ai](https://events.org.ai) |
+
+## Pipeline Paradigms
+
+### ETL (Extract-Transform-Load)
+
+**Definition**: Traditional data integration pattern that extracts data from sources, transforms it to meet business requirements, and loads into target systems.
+
+**Architecture**:
+```
+┌─────────────┐
+│  Source 1   │─┐
+└─────────────┘ │
+                │
+┌─────────────┐ │
+│  Source 2   │─┼──→ ┌───────────┐     ┌──────────────┐     ┌────────────┐
+└─────────────┘ │    │  Extract  │────▶│  Transform   │────▶│   Load     │
+                │    └───────────┘     └──────────────┘     └────────────┘
+┌─────────────┐ │
+│  Source N   │─┘
+└─────────────┘
+
+                    ↓ (Data Warehouse)
+                ┌────────────┐
+                │  Analytics │
+                │  Platform  │
+                └────────────┘
+```
+
+**Characteristics**:
+- **Batch-Oriented**: Scheduled runs, often daily
+- **Schema-Enforced**: Strict data quality requirements
+- **Error Handling**: Validation, reconciliation
+- **Audit Trail**: Complete data lineage
+
+**Example (Apache NiFi)**:
+```xml
+<processor>
+  <id>extract-from-source</id>
+  <type>GetFile</type>
+  <properties>
+    <property>
+      <name>Input Directory</name>
+      <value>/data/source</value>
+    </property>
+  </properties>
+</processor>
+
+<processor>
+  <id>transform-data</id>
+  <type>ExecuteScript</type>
+  <properties>
+    <property>
+      <name>Script Engine</name>
+      <value>python</value>
+    </property>
+    <property>
+      <name>Script File</name>
+      <value>transform.py</value>
+    </property>
+  </properties>
+</processor>
+
+<processor>
+  <id>load-to-warehouse</id>
+  <type>PutSQL</type>
+  <properties>
+    <property>
+      <name>Database Connection Pooling Service</name>
+      <value>DBCPService</value>
+    </property>
+  </properties>
+</processor>
+
+<connection>
+  <source>extract-from-source</source>
+  <destination>transform-data</destination>
+</connection>
+
+<connection>
+  <source>transform-data</source>
+  <destination>load-to-warehouse</destination>
+</connection>
+```
+
+**Advantages**:
+- Mature tooling ecosystem
+- Well-understood patterns
+- Strong data validation
+- Clear audit trails
+
+**Limitations**:
+- Latency (batch schedules)
+- Upfront schema design required
+- Less flexible for exploratory data
+- Infrastructure complexity
+
+### ELT (Extract-Load-Transform)
+
+**Definition**: Modern pattern loading raw data first, then transforming within the target system (usually a data warehouse).
+
+**Architecture**:
+```
+┌─────────────┐      ┌────────────────┐
+│  Source 1   │─────▶│ Data Warehouse │
+└─────────────┘      │  (Raw Layer)   │
+                     └────────┬───────┘
+┌─────────────┐              │
+│  Source 2   │─────────────▶│
+└─────────────┘              │
+                     ┌────────▼───────┐
+┌─────────────┐      │  Transformation│
+│  Source N   │─────▶│   (dbt, SQL)   │
+└─────────────┘      └────────┬───────┘
+                              │
+                     ┌────────▼───────┐
+                     │ Analytics Layer│
+                     └────────────────┘
+```
+
+**Characteristics**:
+- **Cloud-Native**: Leverages warehouse compute
+- **Schema-on-Read**: Flexible schema evolution
+- **SQL-Centric**: Transformation via SQL
+- **Version-Controlled**: Code-based transformations
+
+**Example (dbt)**:
+```sql
+-- models/staging/stg_customers.sql
+{{ config(
+    materialized='view',
+    tags=['daily']
+) }}
+
+SELECT
+    id,
+    email,
+    created_at,
+    updated_at,
+    CASE
+        WHEN is_deleted THEN 'deleted'
+        WHEN subscription_status = 'active' THEN 'active'
+        ELSE 'inactive'
+    END as status
+FROM {{ source('raw', 'customers') }}
+WHERE created_at >= '2024-01-01'
+
+
+-- models/marts/fact_customers.sql
+{{ config(
+    materialized='table',
+    indexes=[
+        {'columns': ['customer_id'], 'type': 'btree'}
+    ]
+) }}
+
+SELECT
+    c.id as customer_id,
+    c.email,
+    COUNT(o.id) as total_orders,
+    SUM(o.amount) as lifetime_value,
+    MAX(o.created_at) as last_order_date
+FROM {{ ref('stg_customers') }} c
+LEFT JOIN {{ ref('stg_orders') }} o ON c.id = o.customer_id
+GROUP BY 1, 2
+```
+
+**Advantages**:
+- Uses warehouse computing power
+- Version control for transformations
+- Rapid iteration on transforms
+- Less infrastructure to manage
+- Data democratization
+
+### Streaming Pipelines
+
+**Definition**: Continuous processing of data streams with sub-second latency.
+
+**Architecture**:
+```
+┌──────────┐      ┌─────────────────┐      ┌──────────┐
+│  Event   │─────▶│ Stream Processor │─────▶│  Sinks   │
+│ Sources  │      │  (Stateful Ops) │      │ (Store   │
+└──────────┘      │                 │      │  Output) │
+   (Kafka)        │ - Aggregations  │      └──────────┘
+                  │ - Joins         │
+                  │ - Windowing     │      (Real-time
+                  │ - Filtering     │      Dashboards)
+                  └─────────────────┘
+                     (Flink/Spark)
+```
+
+**Characteristics**:
+- **Continuous Processing**: No batch boundaries
+- **State Management**: Maintaining aggregates
+- **Windowing**: Time-based aggregations
+- **Low Latency**: Sub-second processing
+
+**Example (Apache Flink)**:
+```java
+StreamExecutionEnvironment env =
+  StreamExecutionEnvironment.getExecutionEnvironment();
+
+DataStream<Event> eventStream = env.addSource(
+  new FlinkKafkaConsumer<>("events", new EventDeserializer(), props)
+);
+
+// Stateful aggregation with windowing
+DataStream<AggregateResult> results = eventStream
+  .keyBy(Event::getUserId)
+  .window(TumblingEventTimeWindows.of(Time.minutes(5)))
+  .aggregate(new CountAggregator())
+  .map(new WindowMapper());
+
+results.addSink(new ElasticsearchSink.Builder<>(
+  esConfig,
+  new IndexRequestBuilder<AggregateResult>() {
+    // ...
+  }
+).build());
+
+env.execute("Event Processing Pipeline");
+```
+
+**Technologies**:
+- **Message Brokers**: Kafka, RabbitMQ, AWS Kinesis
+- **Stream Processors**: Flink, Spark Streaming, Kafka Streams
+- **Sink Connectors**: Elasticsearch, Databases, S3
+
+### Batch Processing
+
+**Definition**: Scheduled processing of large datasets with focus on throughput.
+
+**Architecture**:
+```
+Schedule Trigger
+      │
+      ▼
+┌──────────────────┐
+│ Spark/Hadoop Job │
+│                  │
+│ • Read Data      │
+│ • Distributed Compute
+│ • Write Results  │
+└────────┬─────────┘
+         │
+    ┌────▼─────┐
+    │ Success? │
+    └────┬─────┘
+         │
+    Yes  │  No
+        ▼
+    Store Result
+    (on failure: retry/alert)
+```
+
+**Example (Apache Spark)**:
+```python
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, sum, avg
+
+spark = SparkSession.builder \
+    .appName("batch_processing") \
+    .getOrCreate()
+
+# Read data
+df = spark.read.parquet("s3://data/raw/transactions")
+
+# Transform
+result = df \
+    .filter(col("amount") > 0) \
+    .groupBy("customer_id") \
+    .agg(
+        sum("amount").alias("total_spent"),
+        avg("amount").alias("avg_transaction"),
+        count("*").alias("transaction_count")
+    ) \
+    .filter(col("total_spent") > 1000)
+
+# Write results
+result.write \
+    .mode("overwrite") \
+    .parquet("s3://data/processed/customer_summaries")
+```
+
+**Advantages**:
+- Cost-effective for large-scale processing
+- Mature ecosystem
+- Strong consistency guarantees
+- Excellent debugging tools
+
+### Lambda & Kappa Architectures
+
+**Lambda Architecture**: Maintains both batch and streaming layers
+
+```
+         ┌──────────────────────┐
+         │  Real-time Stream    │
+         │  Processing Layer    │
+         │  (Speed Layer)       │
+         └──────────┬───────────┘
+                    │
+   ┌────────────────┼────────────────┐
+   │                │                │
+   ▼                ▼                ▼
+┌──────────┐   ┌─────────┐    ┌───────────┐
+│ Query    │   │ Serving │    │Batch Layer│
+│ Results  │   │ Layer   │    │(Batch)    │
+└──────────┘   └─────────┘    └───────────┘
+   │                │                │
+   └────────────────┼────────────────┘
+                    │
+            ┌───────▼────────┐
+            │  Query View    │
+            │  (Real + Batch)│
+            └────────────────┘
+```
+
+**Kappa Architecture**: Single streaming source of truth
+
+```
+         ┌──────────────────┐
+         │  Event Stream    │
+         │  (Source)        │
+         └────────┬─────────┘
+                  │
+         ┌────────▼──────────┐
+         │ Stream Processing │
+         │ (Flink/Kafka)    │
+         └────────┬──────────┘
+                  │
+      ┌───────────┼──────────┐
+      │           │          │
+      ▼           ▼          ▼
+  Serving   Real-time    Batch
+   Store    Analytics    Analytics
+```
+
+## Data Quality & Validation
+
+### Schema Validation
+
+```python
+# Using Pydantic in Python
+from pydantic import BaseModel, validator
+from typing import Optional
+
+class Transaction(BaseModel):
+    transaction_id: str
+    amount: float
+    customer_id: int
+    timestamp: datetime
+    status: str
+
+    @validator('amount')
+    def amount_positive(cls, v):
+        if v <= 0:
+            raise ValueError('Amount must be positive')
+        return v
+
+    @validator('status')
+    def valid_status(cls, v):
+        if v not in ['pending', 'completed', 'failed']:
+            raise ValueError('Invalid status')
+        return v
+```
+
+### Data Profiling
+
+```python
+import pandas as pd
+from pandas_profiling import ProfileReport
+
+df = pd.read_csv('customer_data.csv')
+profile = ProfileReport(df)
+
+# Checks
+assert profile['null_count']['email'] == 0
+assert profile['duplicate_rows'] == 0
+assert profile['memory_usage'] < 1e9
+```
+
+### Great Expectations Framework
+
+```python
+from great_expectations.dataset import PandasDataset
+
+df = pd.read_csv('data.csv')
+gdf = PandasDataset(df)
+
+gdf.expect_column_values_to_be_in_set('status',
+  ['active', 'inactive', 'pending']
+)
+gdf.expect_column_values_to_be_between(
+  'age', min_value=0, max_value=150
+)
+gdf.expect_column_values_to_match_regex(
+  'email', regex=r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+)
+```
+
+## Observability in Data Pipelines
+
+### Data Lineage
+
+```
+Customer Source (Raw)
+    │
+    ├─→ Clean Customers
+    │       │
+    │       └─→ Customer Metrics
+    │               │
+    │               └─→ Customer Dashboard
+    │
+├─→ Order Source (Raw)
+    │
+    └─→ Clean Orders
+            │
+            └─→ Order Analytics
+                    │
+                    └─→ Sales Dashboard
+```
+
+### Monitoring
+
+```yaml
+# Pipeline Health Metrics
+metrics:
+  - name: pipeline_duration
+    description: Total execution time
+    threshold: 300 seconds
+    alert: critical
+
+  - name: record_count
+    description: Records processed
+    threshold: variance > 10%
+    alert: warning
+
+  - name: quality_score
+    description: Data quality
+    threshold: < 95%
+    alert: critical
+```
+
+## Cost Optimization
+
+### Partitioning Strategy
+
+```sql
+-- Partition by date for efficient queries
+CREATE TABLE events (
+    event_id STRING,
+    user_id STRING,
+    event_type STRING,
+    event_time TIMESTAMP,
+    -- ...
+)
+PARTITIONED BY (event_date DATE);
+
+-- Query only needed partitions
+SELECT * FROM events
+WHERE event_date = '2024-11-28'
+```
+
+### Compression
+
+```
+Storage Format Comparison:
+- CSV: 100% (baseline)
+- Parquet: 20% (with compression)
+- ORC: 18% (with compression)
+- Delta: 22% (with compression)
+```
+
+## Pipeline Orchestration Integration
+
+Data pipelines typically run as [WorkflowEngines.mdx](./WorkflowEngines) tasks:
+
+```typescript
+// Temporal workflow orchestrating data pipeline
+async function dataIngestWorkflow(
+  source: DataSource,
+  date: string
+): Promise<PipelineResult> {
+  const extractedData = await activities.extract(source, date);
+  const transformedData = await activities.transform(extractedData);
+  const validatedData = await activities.validateQuality(transformedData);
+  const loadResult = await activities.load(validatedData, source.target);
+
+  return {
+    recordsProcessed: loadResult.count,
+    duration: loadResult.duration,
+    qualityScore: validatedData.qualityScore
+  };
+}
+```
+
+## Related Domains
+
+- [events.org.ai](https://events.org.ai): Event-driven pipeline triggers
+- [functions.org.ai](https://functions.org.ai): Transformation functions
+- [WorkflowEngines.mdx](./WorkflowEngines): Pipeline orchestration
+
+## References
+
+- [Apache Airflow Data Pipeline Guide](https://airflow.apache.org/docs)
+- [dbt Best Practices](https://docs.getdbt.com/guides/best-practices)
+- [Apache Flink Streaming Guide](https://nightlies.apache.org/flink/flink-docs-master/)
+- [Lambda vs Kappa Architecture](https://www.oreilly.com/ideas/questioning-the-lambda-architecture)
+- [Fundamentals of Data Engineering](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/)
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="DataPipelines" />

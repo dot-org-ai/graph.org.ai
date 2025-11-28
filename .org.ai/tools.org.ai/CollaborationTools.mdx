@@ -1,0 +1,640 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/CollaborationTools
+$type: https://tools.org.ai/ToolCategory
+name: "Collaboration Tools"
+description: "Version control, project management, communication, and team collaboration platforms for distributed teams."
+category: "Team Collaboration"
+---
+
+export const items = async () => {
+  return [
+    { name: "Git & GitHub", url: "https://github.com" },
+    { name: "GitLab", url: "https://gitlab.com" },
+    { name: "Jira", url: "https://www.atlassian.com/software/jira" },
+    { name: "Slack", url: "https://slack.com" },
+    { name: "Notion", url: "https://notion.so" },
+    { name: "Linear", url: "https://linear.app" },
+  ]
+}
+
+# Collaboration Tools
+
+Version control, project management, communication, and team collaboration platforms for distributed teams.
+
+## Overview
+
+Modern collaboration tools enable teams to work together effectively across distributed locations and time zones. They provide version control for code, project tracking, real-time communication, and knowledge management, forming the backbone of remote and hybrid work environments.
+
+## Version Control Systems
+
+### Git Fundamentals
+
+Distributed version control system enabling:
+
+- Complete change history
+- Branching and merging workflows
+- Offline work capability
+- Collaboration at scale
+
+**Essential Concepts:**
+
+```bash
+# Repository initialization
+git init
+git clone https://github.com/user/repo.git
+
+# Staging and committing
+git add .
+git commit -m "feat: Add new feature"
+git push origin main
+
+# Branching workflows
+git checkout -b feature/new-feature
+git merge main
+git rebase main
+
+# History inspection
+git log --oneline --graph
+git show <commit-hash>
+git diff main...feature
+```
+
+### GitHub
+
+Most popular Git hosting platform with integrated tools:
+
+**Core Features:**
+
+- **Repositories**: Public and private code hosting
+- **Pull Requests**: Code review and discussion
+- **Issues**: Bug tracking and feature requests
+- **Actions**: CI/CD automation
+- **Discussions**: Community engagement
+- **Wiki**: Documentation
+
+**Workflow Example:**
+
+```bash
+# Create feature branch
+git checkout -b feature/user-authentication
+
+# Make changes and commit
+git add src/auth.ts
+git commit -m "feat: Implement OAuth2"
+
+# Push to remote
+git push -u origin feature/user-authentication
+
+# Create PR on GitHub
+# - Request reviewers
+# - Describe changes
+# - Link to issues
+
+# Address review feedback
+git push origin feature/user-authentication
+
+# Merge via GitHub UI or CLI
+git merge feature/user-authentication
+```
+
+**Advanced Features:**
+
+```yaml
+# GitHub Actions Workflow
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+```
+
+**GitHub Best Practices:**
+
+1. **Atomic Commits**: Each commit represents one logical change
+2. **Clear Messages**: Use conventional commits format
+3. **Code Review**: Require reviews before merge
+4. **Branch Protection**: Enforce status checks
+5. **Semantic Versioning**: Tag releases appropriately
+
+### GitLab
+
+Comprehensive DevOps platform with Git at its core:
+
+**Features:**
+- Self-hosted or SaaS options
+- Built-in CI/CD (GitLab Runner)
+- Container registry
+- Issue tracking and boards
+- Wiki and documentation
+- Security scanning
+- Monitoring and insights
+
+**CI/CD Pipeline Example:**
+
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+test:
+  stage: test
+  script:
+    - npm run test
+    - npm run lint
+  coverage: '/Lines\s*:\s*(\d+.\d+)%/'
+
+deploy:
+  stage: deploy
+  script:
+    - npm run deploy
+  only:
+    - main
+```
+
+### Gitea
+
+Lightweight, self-hosted Git service:
+
+- Minimal resource requirements
+- Fast and efficient
+- Easy deployment
+- Community-driven
+
+## Project Management Tools
+
+### Jira
+
+Enterprise project management and issue tracking:
+
+**Core Concepts:**
+
+- **Issues**: Units of work (bugs, features, tasks)
+- **Projects**: Logical groupings of issues
+- **Epics**: Large features spanning multiple issues
+- **Sprints**: Time-boxed iterations
+- **Workflows**: Custom state transitions
+
+**Issue Types:**
+
+```
+Bug → Analysis → In Progress → Code Review → QA → Done
+Story → Estimation → In Progress → Code Review → QA → Done
+Task → In Progress → Done
+Subtask → In Progress → Done
+```
+
+**Dashboard Example:**
+
+- **Burndown Chart**: Track sprint progress
+- **Velocity**: Measure team capacity
+- **Release Plan**: Plan upcoming releases
+- **Issue Search**: JQL (Jira Query Language)
+
+```jql
+project = "PROJ" AND
+status = "In Progress" AND
+assignee = currentUser() AND
+dueDate <= endOfDay()
+```
+
+### Linear
+
+Modern issue tracking designed for developers:
+
+**Key Advantages:**
+
+- Faster, snappier UI
+- Keyboard-centric workflow
+- Better API
+- Simpler to learn
+- Integrated cycle planning
+
+**Workflow:**
+
+```
+Backlog → In Review → In Progress → Done
+        ↓
+      Cancelled
+
+Cycle → Draft → In Progress → Complete
+```
+
+### Asana
+
+Visual project management with multiple views:
+
+- **List View**: Traditional task list
+- **Board View**: Kanban columns
+- **Timeline View**: Gantt charts
+- **Calendar View**: Date-based planning
+- **Dependencies**: Task relationships
+
+## Communication & Chat
+
+### Slack
+
+Real-time messaging platform for team communication:
+
+**Core Features:**
+
+- **Channels**: Topic-based conversations
+- **Direct Messages**: One-on-one chat
+- **Threads**: Organized discussions
+- **Integrations**: 2000+ apps
+- **Bots**: Automation and workflows
+- **Search**: Find past messages
+
+**Best Practices:**
+
+1. **Channel Organization:**
+   - `#general` - Announcements
+   - `#random` - Off-topic
+   - `#engineering` - Team specific
+   - `#project-name` - Project specific
+
+2. **Notification Management:**
+   - Mute non-urgent channels
+   - Set focus hours
+   - Use status/DND
+   - Configure keyword alerts
+
+3. **Bot Automation:**
+
+```javascript
+// Slash command handler
+app.command('/remind', async ({ ack, body, client }) => {
+  ack()
+
+  const userId = body.user_id
+  const channelId = body.channel_id
+  const text = body.text
+
+  // Schedule reminder
+  await scheduleReminder(userId, channelId, text)
+})
+```
+
+### Discord
+
+Community-focused communication platform:
+
+- **Servers**: Community spaces
+- **Channels**: Organized conversations
+- **Voice Channels**: Audio/video chat
+- **Roles**: Permission management
+- **Bots**: Custom functionality
+- **Webhooks**: External integrations
+
+### Microsoft Teams
+
+Enterprise communication with tight Office 365 integration:
+
+- **Teams**: Organized groups
+- **Channels**: Conversations and files
+- **Chat**: Direct messaging
+- **Meetings**: Video conferencing
+- **Apps**: Extensibility
+
+## Documentation & Knowledge Management
+
+### Notion
+
+All-in-one workspace for docs, wikis, and databases:
+
+**Key Components:**
+
+- **Pages**: Hierarchical document structure
+- **Databases**: Flexible relational data
+- **Galleries**: Visual content organization
+- **Boards**: Kanban workflows
+- **Timelines**: Project planning
+- **Relations**: Connect data across databases
+
+**Example Database Schema:**
+
+```
+Projects Database
+├── Name (Title)
+├── Status (Select: Planning, Active, Complete)
+├── Team Members (Multi-select)
+├── Timeline (Date range)
+├── Repository (Text → Link to repos)
+├── Issues (Relation → Issues Database)
+└── Documents (Relation → Pages)
+
+Issues Database
+├── Title
+├── Status (Select)
+├── Priority (Select)
+├── Project (Relation)
+└── Due Date
+```
+
+### Confluence
+
+Team collaboration platform for documentation:
+
+- Document organization
+- Templates for consistency
+- Spaces for teams
+- Permission management
+- Search and discovery
+- Version history
+
+**Workflow:**
+
+```
+Create Page → Share in Slack → Request Feedback → Review → Publish
+```
+
+### Obsidian
+
+Personal knowledge management with networked notes:
+
+- **Vault**: Local file system
+- **Links**: Create knowledge networks
+- **Backlinks**: Discover connections
+- **Graph View**: Visualize relationships
+- **Plugins**: Extend functionality
+- **Community**: Active ecosystem
+
+## Code Review & Collaboration
+
+### Pull Request Workflow
+
+**Best Practices:**
+
+1. **Description Quality:**
+   - Clear title
+   - Problem statement
+   - Solution approach
+   - Testing verification
+   - Screenshots for UI changes
+
+2. **Review Process:**
+   - Request specific reviewers
+   - Link related issues
+   - Discuss trade-offs
+   - Be respectful of feedback
+
+3. **Code Review Checklist:**
+   - Does code meet requirements?
+   - Are tests included and passing?
+   - Is performance acceptable?
+   - Are error cases handled?
+   - Is code maintainable?
+   - Are edge cases covered?
+
+### Review Tools
+
+```typescript
+// Example review comment in code
+// @reviewer-name - why is this approach used?
+const complexAlgorithm = data.reduce((acc, item) => {
+  // TODO: Document algorithm rationale
+  return acc
+})
+```
+
+### Collaboration Features
+
+- **Suggestions**: Propose specific changes
+- **Comments**: Discussion on code
+- **Approvals**: Sign-off on changes
+- **Checks**: Automated validation
+- **Conversations**: Resolve before merge
+
+## Knowledge Base & Documentation
+
+### README Best Practices
+
+```markdown
+# Project Name
+
+Description of what the project does.
+
+## Features
+
+- Feature 1
+- Feature 2
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+## Documentation
+
+[Full documentation](./docs/README.md)
+
+## Contributing
+
+[Contributing guide](./CONTRIBUTING.md)
+
+## License
+
+MIT
+```
+
+### CONTRIBUTING.md
+
+```markdown
+# Contributing Guidelines
+
+## Development Setup
+
+```bash
+git clone ...
+cd project
+npm install
+npm run dev
+```
+
+## Commit Message Convention
+
+Use conventional commits:
+- `feat:` New feature
+- `fix:` Bug fix
+- `docs:` Documentation
+- `style:` Code style
+- `refactor:` Code refactoring
+
+## Pull Request Process
+
+1. Fork the repository
+2. Create feature branch
+3. Make changes and commit
+4. Push to fork
+5. Open pull request
+6. Address feedback
+7. Merge when approved
+```
+
+## Team Workflows
+
+### Trunk-Based Development
+
+```
+main (always deployable)
+  ↑
+  ├── feature-1 (short-lived, 1-2 days)
+  ├── feature-2 (short-lived, 1-2 days)
+  └── feature-3 (short-lived, 1-2 days)
+```
+
+**Benefits:**
+- Reduces merge conflicts
+- Enables continuous deployment
+- Better team communication
+- Faster feedback loops
+
+### Release Branch Workflow
+
+```
+main
+  ↑
+  ├── develop (integration branch)
+  │     ↑
+  │     ├── feature/user-auth
+  │     ├── feature/payment
+  │     └── feature/notifications
+  │
+  └── release/v1.0.0
+        ↑
+        └── hotfix/critical-bug
+```
+
+**Benefits:**
+- Organized release cycle
+- Parallel feature development
+- Emergency hotfixes
+- Version management
+
+## Integration & Automation
+
+### Commit Hooks (Git Hooks)
+
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+
+# Run linter
+npm run lint
+if [ $? -ne 0 ]; then
+  echo "Linting failed"
+  exit 1
+fi
+
+# Run tests
+npm run test
+if [ $? -ne 0 ]; then
+  echo "Tests failed"
+  exit 1
+fi
+```
+
+### Bot Automation
+
+```javascript
+// Automated PR labeling based on files changed
+export const applyLabels = (changedFiles) => {
+  const labels = []
+
+  if (changedFiles.some(f => f.startsWith('src/'))) {
+    labels.push('code')
+  }
+  if (changedFiles.some(f => f.startsWith('docs/'))) {
+    labels.push('documentation')
+  }
+  if (changedFiles.some(f => f.includes('package.json'))) {
+    labels.push('dependencies')
+  }
+
+  return labels
+}
+```
+
+## Comparison Matrix
+
+| Tool | Type | Best For | Team Size |
+|------|------|----------|-----------|
+| GitHub | VCS + Platform | Open source & scale | Any |
+| GitLab | VCS + DevOps | Self-hosted & control | Any |
+| Jira | Project Mgmt | Enterprise | Large |
+| Linear | Issue Tracking | Fast-moving teams | Small-Medium |
+| Slack | Communication | Quick sync | Any |
+| Notion | Documentation | Knowledge base | Any |
+| Confluence | Documentation | Enterprise docs | Large |
+
+## Best Practices
+
+### Team Communication
+
+1. **Use Appropriate Channels**: Code discussion in GitHub, quick questions in Slack
+2. **Async First**: Write long-form thoughts, respect timezone differences
+3. **Update Status**: Keep team informed of availability
+4. **Document Decisions**: Record important decisions in documentation
+5. **Archive Old Conversations**: Keep searchable knowledge base
+
+### Effective Collaboration
+
+1. **Clear Requirements**: Define issues well before starting work
+2. **Regular Syncs**: Daily standups and weekly planning
+3. **Code Review**: Make it constructive and timely
+4. **Knowledge Sharing**: Document solutions and learnings
+5. **Feedback Culture**: Embrace feedback and iterate
+
+### Remote Work Best Practices
+
+1. **Written Communication**: Prefer written over verbal (except urgent)
+2. **Time Zone Awareness**: Consider colleagues in different zones
+3. **Recording Meetings**: Record for those who can't attend live
+4. **Status Updates**: Share weekly accomplishments and blockers
+5. **One-on-Ones**: Maintain personal connections
+
+## Cross-References
+
+- [DeveloperTools.mdx](#) - Git and code editors
+- [AutomationTools.mdx](#) - CI/CD integration
+- [tech.org.ai](https://tech.org.ai) - Technology stacks
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `ToolCategory` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Category | Team Collaboration |
+| Related Domains | [tech.org.ai](https://tech.org.ai) |
+
+## Sources
+
+- GitHub. "GitHub Documentation." https://docs.github.com
+- GitLab. "GitLab Documentation." https://docs.gitlab.com
+- Atlassian. "Jira Documentation." https://www.atlassian.com/software/jira/guides
+- Slack. "Slack Help Center." https://slack.com/help
+- Notion. "Notion Help & Support." https://notion.so/help
+- Linear. "Linear Documentation." https://linear.app/docs

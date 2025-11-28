@@ -1,0 +1,553 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/DataTools
+$type: https://tools.org.ai/ToolCategory
+name: "Data Tools"
+description: "ETL, data visualization, querying, transformation, and analytics tools for data processing and business intelligence."
+category: "Data & Analytics"
+---
+
+export const items = async () => {
+  return [
+    { name: "Apache Airflow", url: "https://airflow.apache.org" },
+    { name: "dbt (data build tool)", url: "https://www.getdbt.com" },
+    { name: "Apache Spark", url: "https://spark.apache.org" },
+    { name: "Tableau", url: "https://www.tableau.com" },
+    { name: "Looker", url: "https://looker.com" },
+    { name: "ClickHouse", url: "https://clickhouse.com" },
+  ]
+}
+
+# Data Tools
+
+ETL, data visualization, querying, transformation, and analytics tools for data processing and business intelligence.
+
+## Overview
+
+Data tools enable organizations to collect, process, transform, visualize, and analyze data at scale. These tools form the modern data stack (MDS), enabling self-service analytics, real-time dashboards, and data-driven decision making.
+
+## ETL & Workflow Orchestration
+
+### Apache Airflow
+
+Python-based workflow orchestration platform for building, scheduling, and monitoring data pipelines.
+
+**Key Concepts:**
+
+```python
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime
+
+def extract_data():
+    # Extract data from source
+    pass
+
+def transform_data():
+    # Transform and clean data
+    pass
+
+def load_data():
+    # Load to destination
+    pass
+
+dag = DAG(
+    'etl_pipeline',
+    start_date=datetime(2024, 1, 1),
+    schedule_interval='@daily'
+)
+
+extract = PythonOperator(
+    task_id='extract',
+    python_callable=extract_data,
+    dag=dag
+)
+
+transform = PythonOperator(
+    task_id='transform',
+    python_callable=transform_data,
+    dag=dag
+)
+
+load = PythonOperator(
+    task_id='load',
+    python_callable=load_data,
+    dag=dag
+)
+
+extract >> transform >> load
+```
+
+**Features:**
+- Directed Acyclic Graph (DAG) definitions
+- Operator library (BashOperator, PythonOperator, etc.)
+- Backfill and rerun capabilities
+- Monitoring and alerting
+- Scaling with Kubernetes executor
+
+### dbt (Data Build Tool)
+
+SQL-first data transformation tool for building, testing, and documenting analytics.
+
+```sql
+-- models/staging/stg_orders.sql
+with source as (
+    select * from {{ source('raw', 'orders') }}
+),
+transformed as (
+    select
+        order_id,
+        customer_id,
+        order_date,
+        total_amount,
+        cast(order_date as date) as order_day
+    from source
+    where order_id is not null
+)
+select * from transformed
+```
+
+**Features:**
+- Version control for analytics code
+- Testing and data validation
+- Documentation generation
+- Lineage and dependency management
+- Incremental models for efficiency
+
+### Prefect
+
+Modern data workflow orchestration with improved developer experience:
+
+```python
+from prefect import flow, task
+
+@task
+def fetch_data(url: str):
+    return requests.get(url).json()
+
+@task
+def process_data(data: dict):
+    return {k: v * 2 for k, v in data.items()}
+
+@flow
+def analytics_pipeline(url: str):
+    data = fetch_data(url)
+    processed = process_data(data)
+    return processed
+
+analytics_pipeline("https://api.example.com/data")
+```
+
+## Data Transformation & Processing
+
+### Apache Spark
+
+Unified analytics engine for big data processing:
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("DataProcessing").getOrCreate()
+
+# Read data
+df = spark.read.csv("data.csv", header=True)
+
+# Transform
+transformed = df.filter(df.age > 18) \
+    .groupBy("city") \
+    .agg({"salary": "avg"})
+
+# Write results
+transformed.write.parquet("output/")
+```
+
+**Capabilities:**
+- Distributed SQL queries
+- Streaming data processing
+- Machine learning pipeline
+- Partition pruning for performance
+- Support for multiple file formats
+
+### Pandas (Python)
+
+Popular data manipulation library for smaller datasets:
+
+```python
+import pandas as pd
+
+# Read data
+df = pd.read_csv("data.csv")
+
+# Transform
+df['age_group'] = pd.cut(df['age'], bins=[0, 18, 65, 100])
+df['new_column'] = df['col1'] * df['col2']
+
+# Aggregate
+summary = df.groupby('category').agg({
+    'sales': 'sum',
+    'quantity': 'mean'
+})
+
+# Write
+df.to_parquet("output.parquet")
+```
+
+### Polars
+
+Fast DataFrame library with modern API (emerging alternative to Pandas):
+
+```python
+import polars as pl
+
+df = pl.read_csv("data.csv")
+
+result = df.select([
+    pl.col("name"),
+    pl.col("value").sum().over("group")
+]).filter(pl.col("value") > 100)
+
+result.write_parquet("output.parquet")
+```
+
+## Data Querying & Analytics
+
+### ClickHouse
+
+Fast, open-source columnar database for OLAP workloads:
+
+```sql
+-- Create table
+CREATE TABLE events (
+    timestamp DateTime,
+    user_id UInt32,
+    event_type String,
+    value Float32
+) ENGINE = MergeTree()
+ORDER BY (timestamp, user_id)
+
+-- Insert data
+INSERT INTO events VALUES
+('2024-01-01 10:00:00', 1, 'click', 1.0)
+
+-- Query
+SELECT
+    user_id,
+    event_type,
+    count() as event_count,
+    avg(value) as avg_value
+FROM events
+WHERE timestamp >= '2024-01-01'
+GROUP BY user_id, event_type
+ORDER BY event_count DESC
+```
+
+**Advantages:**
+- 100x faster than traditional OLAP databases
+- Columnar storage for analytical queries
+- Compression up to 87%
+- Horizontal scaling
+- Real-time data ingestion
+
+### BigQuery
+
+Google Cloud's serverless data warehouse:
+
+```sql
+-- Create dataset and table
+CREATE SCHEMA `project.analytics`
+
+CREATE TABLE `project.analytics.events` (
+    timestamp TIMESTAMP,
+    user_id INT64,
+    event_type STRING,
+    value FLOAT64
+)
+
+-- Query across tables
+SELECT
+    DATE(timestamp) as date,
+    COUNT(*) as total_events,
+    COUNT(DISTINCT user_id) as unique_users
+FROM `project.analytics.events`
+WHERE timestamp >= TIMESTAMP('2024-01-01')
+GROUP BY date
+ORDER BY date DESC
+```
+
+**Features:**
+- Serverless scaling
+- Multi-cloud support
+- Built-in machine learning
+- Strong integration with GCP services
+- BI Engine for acceleration
+
+### Apache Druid
+
+Real-time OLAP datastore:
+
+```json
+{
+  "dataSource": "wikipedia",
+  "granularity": "hour",
+  "intervals": ["2024-01-01/2024-01-02"],
+  "aggregations": [
+    {
+      "type": "count",
+      "name": "count"
+    },
+    {
+      "type": "doubleSum",
+      "name": "added",
+      "fieldName": "added"
+    }
+  ],
+  "dimensions": ["country", "page"],
+  "metric": "count",
+  "threshold": 10
+}
+```
+
+## Data Visualization
+
+### Tableau
+
+Enterprise business intelligence and visualization platform:
+
+**Capabilities:**
+- Drag-and-drop dashboard builder
+- Connection to 100+ data sources
+- Real-time data refresh
+- Embedded analytics
+- Advanced calculations and expressions
+- Mobile-first dashboards
+
+**Key Features:**
+- Dimensions and measures
+- LOD (Level of Detail) expressions
+- Calculated fields
+- Dashboard interactivity
+- Storytelling with data
+
+### Looker
+
+Modern data exploration and visualization tool (owned by Google):
+
+```lookml
+view: orders {
+  sql_table_name: public.orders ;;
+
+  dimension: id {
+    primary_key: yes
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
+  dimension: status {
+    type: string
+    sql: ${TABLE}.status ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  set: detail {
+    fields: [id, status, created_date]
+  }
+}
+```
+
+**Features:**
+- LookML for version-controlled BI
+- Explores for self-service analytics
+- Data governance
+- API-first architecture
+- Embedded analytics
+
+### Metabase
+
+Open-source analytics and visualization:
+
+- Minimal setup and configuration
+- Question builder UI
+- Dashboard composition
+- Sharing and alerting
+- Mobile app support
+- Self-hosted or cloud
+
+### Apache Superset
+
+Open-source data visualization platform:
+
+```python
+# API example
+from superset_client import Client
+
+client = Client('http://localhost:8088')
+
+# Create dataset
+dataset = client.create_dataset(
+    name='sales_data',
+    table_name='sales',
+    database_id=1
+)
+
+# Create chart
+chart = client.create_chart(
+    name='Sales by Region',
+    dataset_id=dataset['id'],
+    viz_type='bar',
+    params={...}
+)
+```
+
+## Data Pipeline Patterns
+
+### Lambda Architecture
+
+```
+        Raw Data
+           |
+        +--+--+
+        |  |  |
+      Batch | Speed
+      Layer | Layer
+        |  |  |
+        +--+--+
+           |
+      Serving Layer
+           |
+        Analytics
+```
+
+**Implementation:**
+- Batch: Spark, Airflow, dbt
+- Speed: Kafka, Flink
+- Serving: ClickHouse, Druid
+
+### Kappa Architecture
+
+```
+    Raw Data → Stream Processing → Serving Layer → Analytics
+       ↑                                              ↓
+       +--- Reprocessing (state rebuild) -----------+
+```
+
+**Benefits:**
+- Simpler architecture
+- Single codebase for transformations
+- Real-time results
+- Easier to debug
+
+## Data Quality & Validation
+
+### Great Expectations
+
+Framework for data validation and profiling:
+
+```python
+import great_expectations as ge
+
+# Load data
+df = ge.read_csv("data.csv")
+
+# Add expectations
+df.expect_column_values_to_be_in_set("status", ["active", "inactive"])
+df.expect_column_values_to_match_regex("email", r"^[^@]+@[^@]+\.[^@]+$")
+df.expect_column_values_to_be_between("age", 0, 150)
+
+# Validate
+validation_result = df.validate()
+```
+
+### Monte Carlo Data
+
+Data observability platform:
+
+- Field health monitoring
+- Anomaly detection
+- Data lineage tracking
+- Impact analysis
+- SLA enforcement
+
+## Modern Data Stack (MDS)
+
+Typical Modern Data Stack components:
+
+```
+Data Sources
+    ↓
+Ingestion (Airbyte, Fivetran)
+    ↓
+Data Lake/Warehouse (Snowflake, BigQuery, Redshift)
+    ↓
+Transformation (dbt, SQL)
+    ↓
+Semantic Layer (dbt, Cube, Supergrain)
+    ↓
+BI/Visualization (Tableau, Looker, Metabase)
+    ↓
+Analytics & ML
+```
+
+## Best Practices
+
+### Pipeline Development
+
+1. **Modular Design**: Break pipelines into small, testable tasks
+2. **Error Handling**: Implement retry logic and dead-letter queues
+3. **Monitoring**: Track data quality and pipeline health
+4. **Documentation**: Document data lineage and transformations
+5. **Version Control**: Track all code and configurations
+
+### Performance Optimization
+
+1. **Partition Data**: Use appropriate partitioning strategies
+2. **Incremental Processing**: Only process new/changed data
+3. **Caching**: Materialize intermediate results
+4. **Query Optimization**: Use EXPLAIN to analyze queries
+5. **Indexing**: Create strategic indexes for analytics
+
+### Data Governance
+
+1. **Data Catalog**: Maintain inventory of all data assets
+2. **Documentation**: Document all transformations and calculations
+3. **Access Control**: Implement role-based access
+4. **Lineage Tracking**: Understand data dependencies
+5. **Quality SLAs**: Define and monitor data quality expectations
+
+## Comparison Matrix
+
+| Tool | Type | Use Case | Scalability |
+|------|------|----------|-------------|
+| Airflow | Orchestration | Complex workflows | High |
+| dbt | Transformation | Analytics SQL | High |
+| Spark | Processing | Large-scale processing | Extreme |
+| ClickHouse | Database | Real-time analytics | High |
+| Tableau | Visualization | Enterprise BI | High |
+| Metabase | Visualization | Self-service BI | Moderate |
+
+## Cross-References
+
+- [tech.org.ai](https://tech.org.ai) - Technology stacks
+- [AutomationTools.mdx](#) - CI/CD for data pipelines
+- [CollaborationTools.mdx](#) - Version control for data
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `ToolCategory` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Category | Data & Analytics |
+| Related Domains | [tech.org.ai](https://tech.org.ai) |
+
+## Sources
+
+- Apache. "Airflow Documentation." https://airflow.apache.org/docs
+- dbt. "dbt Documentation." https://docs.getdbt.com
+- Apache. "Spark Documentation." https://spark.apache.org/docs
+- ClickHouse. "ClickHouse Documentation." https://clickhouse.com/docs
+- Tableau. "Tableau Help." https://help.tableau.com
+- Looker. "Looker Documentation." https://cloud.google.com/looker/docs

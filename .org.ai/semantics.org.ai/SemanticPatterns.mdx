@@ -1,0 +1,501 @@
+---
+$context: https://semantics.org.ai
+$id: https://semantics.org.ai/SemanticPatterns
+$type: https://semantics.org.ai/SemanticPattern
+name: "Semantic Patterns"
+description: "Common patterns, best practices, and anti-patterns for effective semantic modeling"
+---
+
+# Semantic Patterns
+
+Semantic patterns are reusable structures and approaches for modeling common relationships and concepts in semantic systems.
+
+## Overview
+
+Semantic patterns provide battle-tested solutions for recurring modeling problems. They improve consistency, reduce errors, and enable better knowledge base quality through proven design approaches.
+
+### Pattern Categories
+
+- **Structural Patterns**: How to organize and structure semantic data
+- **Behavioral Patterns**: How entities interact and change
+- **Relationship Patterns**: Common ways to express relationships
+- **Time Patterns**: Representing temporal information
+- **Quality Patterns**: Representing uncertainty and confidence
+
+## Structural Patterns
+
+### Classification Pattern
+
+The most fundamental pattern for organizing entities into categories:
+
+```
+:Alice rdf:type :Person ;
+       rdf:type :Employee ;
+       rdf:type :Manager .
+
+:Person rdfs:subClassOf :Agent .
+:Manager rdfs:subClassOf :Employee .
+:Employee rdfs:subClassOf :Person .
+```
+
+**When to Use**: Categorizing entities and establishing hierarchies
+
+### Property Pattern
+
+Expressing attributes as separate entities rather than simple values:
+
+```
+# Simple (Limited Context)
+:Alice :hasAge 30 .
+
+# Property Pattern (Rich Context)
+:Alice :hasProperty :AgeProperty .
+:AgeProperty
+  a :Property ;
+  :hasValue 30 ;
+  :dataType xsd:int ;
+  :measurement :Years ;
+  :confidence 0.95 ;
+  :sourceDate "2024-11-28" .
+```
+
+**When to Use**: When properties need rich metadata or temporal information
+
+### Container Pattern
+
+Grouping related entities for management and organization:
+
+```
+:TeamAlpha
+  a :Team ;
+  :hasMember :Alice ;
+  :hasMember :Bob ;
+  :hasMember :Charlie ;
+  :createdDate "2024-01-01" ;
+  :department :Engineering .
+```
+
+**When to Use**: Organizing collections of related entities
+
+### Composition Pattern
+
+Building complex entities from simpler components:
+
+```
+:Company rdf:type :Organization ;
+  :hasLocation :HeadquartersOffice ;
+  :hasLocation :DevelopmentOffice ;
+  :hasLocation :SalesOffice .
+
+:HeadquartersOffice
+  a :Location ;
+  :address "123 Main St" ;
+  :city "San Francisco" .
+```
+
+**When to Use**: Representing hierarchical or modular structures
+
+## Relationship Patterns
+
+### Link Pattern
+
+Simple, direct relationships between entities:
+
+```
+:Alice :knows :Bob .
+:Bob :works-for :CompanyX .
+:Project :uses :Tool .
+```
+
+**When to Use**: Expressing simple, direct relationships
+
+### N-Ary Relationship Pattern
+
+Expressing relationships involving more than two entities:
+
+```
+:Meeting
+  a :Event ;
+  :hasAttendee :Alice ;
+  :hasAttendee :Bob ;
+  :hasLocation :ConferenceRoom ;
+  :hasTime "2024-11-28T14:00:00Z" ;
+  :hasDuration "PT2H" .
+```
+
+**When to Use**: Relationships involving multiple participants or complex contexts
+
+### Association Pattern
+
+Creating explicit relationship entities for richer modeling:
+
+```
+:Employment
+  a :Relationship ;
+  :subject :Alice ;
+  :predicate :employs ;
+  :object :Bob ;
+  :startDate "2020-01-01" ;
+  :endDate "2024-01-01" ;
+  :position :SeniorEngineer ;
+  :compensation [
+    :amount 150000 ;
+    :currency :USD
+  ] .
+```
+
+**When to Use**: Relationships requiring rich metadata and context
+
+### Inverse Relationship Pattern
+
+Maintaining bidirectional relationships:
+
+```
+:Parent rdfs:subPropertyOf :Guardian .
+:Parent owl:inverseOf :Child .
+
+:Alice :hasChild :Bob .
+# Automatically infers:
+:Bob :hasParent :Alice .
+```
+
+**When to Use**: Maintaining consistency in bidirectional relationships
+
+## Temporal Patterns
+
+### Interval Pattern
+
+Representing time-bounded facts:
+
+```
+:Alice
+  :livesIn :Paris
+    ; :startDate "2020-01-01"
+    ; :endDate "2024-01-01" .
+
+:Alice
+  :livesIn :NewYork
+    ; :startDate "2024-02-01"
+    ; :endDate nil . # Still living
+```
+
+**When to Use**: Facts that change over time
+
+### Point-in-Time Pattern
+
+Representing facts at specific moments:
+
+```
+:Project
+  :status :Active ; :statusDate "2024-11-28" .
+  :status :Planning ; :statusDate "2024-01-01" .
+  :status :Complete ; :statusDate "2024-06-15" .
+```
+
+**When to Use**: Historical snapshots and status changes
+
+### Duration Pattern
+
+Representing time spans and durations:
+
+```
+:Event
+  :startTime "2024-11-28T14:00:00Z" ;
+  :endTime "2024-11-28T16:00:00Z" ;
+  :duration "PT2H" ;
+  :timezone "America/Los_Angeles" .
+```
+
+**When to Use**: Events and activities with specific timing
+
+### Recurring Pattern
+
+Representing recurring events and periodic facts:
+
+```
+:Meeting
+  :title "Weekly Sync" ;
+  :frequency :Weekly ;
+  :dayOfWeek :Tuesday ;
+  :time "10:00:00" ;
+  :timezone "UTC" ;
+  :recurrenceStart "2024-01-01" ;
+  :recurrenceEnd "2025-12-31" .
+```
+
+**When to Use**: Scheduled recurring events
+
+## Quality Patterns
+
+### Confidence Pattern
+
+Expressing certainty levels for facts:
+
+```
+:Statement1
+  a :SemanticStatement ;
+  :subject :Alice ;
+  :predicate :livesin ;
+  :object :Paris ;
+  :confidence 0.95 ;
+  :confidenceScale 0.0-1.0 .
+```
+
+**When to Use**: Uncertain or probabilistic information
+
+### Provenance Pattern
+
+Tracking information sources:
+
+```
+:Fact1
+  a :SemanticStatement ;
+  :subject :Company ;
+  :predicate :hasRevenue ;
+  :object 1000000 ;
+  :source :AnnualReport ;
+  :sourceURL "https://example.com/report.pdf" ;
+  :sourceDate "2024-11-01" ;
+  :authority :AuthorizedSource .
+```
+
+**When to Use**: Tracking origins and sources of information
+
+### Versioning Pattern
+
+Managing multiple versions of facts:
+
+```
+:AliceProfile
+  :version 1 ;
+  :status :Deprecated ;
+  :replacedBy :AliceProfile-v2 ;
+  :deprecationDate "2024-03-01" .
+
+:AliceProfile-v2
+  :version 2 ;
+  :status :Current ;
+  :createdDate "2024-03-01" ;
+  :lastModified "2024-11-28" .
+```
+
+**When to Use**: Evolving concepts and changing information
+
+### Evidence Pattern
+
+Supporting statements with evidence:
+
+```
+:Claim
+  a :Statement ;
+  :text "Alice is a software engineer" ;
+  :hasEvidence :Evidence1 ;
+  :hasEvidence :Evidence2 ;
+  :supportScore 0.92 .
+
+:Evidence1
+  :type :LinkedInProfile ;
+  :source "https://linkedin.com/..." ;
+  :weight 0.6 .
+
+:Evidence2
+  :type :GithubProfile ;
+  :source "https://github.com/..." ;
+  :weight 0.4 .
+```
+
+**When to Use**: Supporting claims with multiple sources
+
+## Best Practice Patterns
+
+### Namespace Management
+
+```
+@prefix ex: <https://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+
+ex:Alice foaf:name "Alice Smith" ;
+         foaf:knows ex:Bob ;
+         schema:email "alice@example.com" .
+```
+
+**When to Use**: Organizing predicates across domains
+
+### Semantic Versioning
+
+```
+:ServiceV1.0 :deprecatedVersion true .
+:ServiceV2.0
+  :replaces :ServiceV1.0 ;
+  :features :EnhancedFeature ;
+  :releaseDate "2024-11-28" .
+```
+
+**When to Use**: Managing API and ontology versions
+
+### Documentation Pattern
+
+```
+:MyProperty a rdf:Property ;
+  rdfs:label "My Property" ;
+  rdfs:comment "Description of what this property represents" ;
+  rdfs:domain :MyClass ;
+  rdfs:range xsd:string ;
+  sh:example "example value" .
+```
+
+**When to Use**: Self-documenting ontologies
+
+### Extensibility Pattern
+
+```
+:Entity a sh:NodeShape ;
+  sh:property [
+    sh:path :customProperties ;
+    sh:datatype :JSON ;
+  ] ;
+  :allowCustomProperties true .
+```
+
+**When to Use**: Supporting future extensions without schema changes
+
+## Anti-Patterns to Avoid
+
+### God Object Anti-Pattern
+
+Overloading a single entity with too many responsibilities:
+
+```
+# Bad
+:Person
+  :hasName ...
+  :hasAge ...
+  :hasAddress ...
+  :hasEmployment ...
+  :hasEducation ...
+  # 50 more properties
+
+# Good - Composition
+:Person :hasProfile :PersonProfile .
+:PersonProfile :hasName ... .
+
+:Person :hasAddress :Address .
+:Address :street ... .
+```
+
+### Ambiguous Predicates
+
+Using vague relationship names:
+
+```
+# Bad
+:Alice :hasRelation :Bob .
+
+# Good
+:Alice :knows :Bob .
+:Alice :worksWith :Bob .
+:Alice :supervises :Bob .
+```
+
+### Forgotten Context
+
+Losing important contextual information:
+
+```
+# Bad
+:Employee rdf:type :FullTime .
+:Employee rdf:type :PartTime .
+
+# Good
+:Alice :employmentType :FullTime ; :effective "2024-01-01" .
+:Alice :employmentType :PartTime ; :effective "2024-06-01" .
+```
+
+### String-Based Relationships
+
+Using string values instead of entity references:
+
+```
+# Bad
+:Alice :friendsWith "Bob" .
+
+# Good
+:Alice :friendsWith :Bob .
+```
+
+### Inconsistent Naming
+
+Using varying conventions for similar concepts:
+
+```
+# Bad
+:Person :hasAge ...
+:Employee :age ...
+:User :personAge ...
+
+# Good
+:Person :hasAge ...
+:Employee :hasAge ...
+:User :hasAge ...
+```
+
+## Pattern Selection Guide
+
+| Problem | Pattern | Benefit |
+|---------|---------|---------|
+| Organizing entities | Classification | Clear hierarchies |
+| Rich attributes | Property Pattern | Metadata support |
+| Multiple components | Composition | Modularity |
+| Complex relationships | N-Ary Relationship | Expressiveness |
+| Historical data | Interval Pattern | Temporal accuracy |
+| Uncertain facts | Confidence Pattern | Probability support |
+| Information sources | Provenance Pattern | Traceability |
+| Evolution tracking | Versioning Pattern | Change management |
+
+## Integration with Related Systems
+
+### Link to Semantic Statements
+
+Patterns are applied when creating semantic statements.
+
+See: [SemanticStatements.mdx](./SemanticStatements.mdx)
+
+### Link to Semantic Rules
+
+Patterns often have associated rules for validation.
+
+See: [SemanticRules.mdx](./SemanticRules.mdx)
+
+### Link to Knowledge Systems
+
+Patterns enable consistent knowledge modeling.
+
+See: [knowledge.org.ai](https://knowledge.org.ai)
+
+## Best Practices
+
+1. **Pattern Recognition**: Identify common patterns in your domain
+2. **Consistent Application**: Apply patterns uniformly across datasets
+3. **Documentation**: Document why specific patterns were chosen
+4. **Extensibility**: Design patterns that allow future expansion
+5. **Performance**: Consider performance implications of pattern choices
+6. **Interoperability**: Use standard patterns from established vocabularies
+7. **Evolution**: Plan for pattern evolution as requirements change
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| Type | `SemanticPattern` |
+| Domain | [semantics.org.ai](https://semantics.org.ai) |
+| Pattern Categories | Structural, Behavioral, Relationship, Temporal, Quality |
+| Primary Goal | Consistency and reusability |
+| Scope | Domain-independent and domain-specific |
+
+## Sources
+
+- [Semantic Web Best Practices](https://www.w3.org/2001/sw/)
+- [OWL Design Patterns](https://www.w3.org/wiki/OutstandingDescriptionLogics)
+- [Linked Data Patterns](http://patterns.dataincubator.org/)
+- [Knowledge Graph Best Practices](https://kgbook.org/)

@@ -1,0 +1,677 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/TrainingDatasets
+$type: https://datasets.org.ai/DataCategory
+name: "Training Datasets"
+description: "Datasets and infrastructure for machine learning including data annotation, versioning, data splits, and dataset management systems."
+parent: https://datasets.org.ai
+---
+
+export const items = async () => {
+  // Fetch training dataset resources from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://datasets.org.ai/TrainingDataset'
+  })
+}
+
+# Training Datasets
+
+Training datasets are the foundation of machine learning systems. They require careful curation, annotation, versioning, and management to ensure model quality and reproducibility.
+
+## Overview
+
+Training datasets are characterized by:
+- **Labeled Data**: Ground truth annotations for supervised learning
+- **Diverse Samples**: Representative coverage of use cases and edge cases
+- **Quality Control**: Consistent and accurate labels
+- **Versioning**: Track changes and reproducibility
+- **Splits**: Training, validation, and test partitions
+- **Metadata**: Information about sources, collectors, and annotation processes
+
+High-quality training datasets are critical for model performance, fairness, and generalization.
+
+## Data Annotation
+
+### Annotation Types
+
+**Classification**:
+Assigning data points to predefined categories.
+
+Example: Image classification
+```json
+{
+  "sample_id": "img_001",
+  "content": "image.jpg",
+  "labels": ["dog"],
+  "confidence": 0.98,
+  "annotator": "user_123",
+  "timestamp": "2024-01-15T10:30:00Z"
+}
+```
+
+**Object Detection**:
+Identifying and locating objects within images.
+
+```json
+{
+  "sample_id": "img_002",
+  "content": "scene.jpg",
+  "annotations": [
+    {
+      "object": "dog",
+      "bbox": {
+        "x": 100,
+        "y": 150,
+        "width": 200,
+        "height": 250
+      },
+      "confidence": 0.95
+    },
+    {
+      "object": "cat",
+      "bbox": {
+        "x": 400,
+        "y": 100,
+        "width": 150,
+        "height": 200
+      },
+      "confidence": 0.87
+    }
+  ]
+}
+```
+
+**Named Entity Recognition (NER)**:
+Identifying and classifying entities in text.
+
+```json
+{
+  "sample_id": "text_001",
+  "content": "John Smith works at Google in San Francisco.",
+  "entities": [
+    {
+      "text": "John Smith",
+      "type": "PERSON",
+      "start": 0,
+      "end": 10
+    },
+    {
+      "text": "Google",
+      "type": "ORGANIZATION",
+      "start": 20,
+      "end": 26
+    },
+    {
+      "text": "San Francisco",
+      "type": "LOCATION",
+      "start": 30,
+      "end": 43
+    }
+  ]
+}
+```
+
+**Semantic Segmentation**:
+Assigning class labels to each pixel in an image.
+
+```json
+{
+  "sample_id": "img_003",
+  "content": "street_scene.jpg",
+  "segmentation_mask": "segmentation_mask.png",
+  "classes": {
+    "0": "background",
+    "1": "road",
+    "2": "sidewalk",
+    "3": "person",
+    "4": "car"
+  }
+}
+```
+
+**Sentiment Analysis**:
+Assigning sentiment scores to text.
+
+```json
+{
+  "sample_id": "review_001",
+  "content": "This product is amazing!",
+  "sentiment": {
+    "label": "positive",
+    "score": 0.95
+  },
+  "annotator": "user_456"
+}
+```
+
+**Regression**:
+Assigning continuous numeric values.
+
+```json
+{
+  "sample_id": "house_001",
+  "features": {
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "square_feet": 2000,
+    "location": "San Francisco"
+  },
+  "label": 850000,
+  "currency": "USD"
+}
+```
+
+### Annotation Workflows
+
+**Single Annotator**:
+One person labels all data (fastest but less reliable).
+
+**Multiple Annotators with Consensus**:
+Multiple people label same data, consensus labels used.
+
+```json
+{
+  "sample_id": "text_002",
+  "content": "Customer service was poor.",
+  "annotations": [
+    {
+      "annotator": "user_1",
+      "sentiment": "negative",
+      "confidence": 0.9
+    },
+    {
+      "annotator": "user_2",
+      "sentiment": "negative",
+      "confidence": 0.85
+    },
+    {
+      "annotator": "user_3",
+      "sentiment": "negative",
+      "confidence": 0.88
+    }
+  ],
+  "consensus": {
+    "label": "negative",
+    "agreement_rate": 1.0
+  }
+}
+```
+
+**Hierarchical Labeling**:
+Expert review follows initial labeling.
+
+```json
+{
+  "sample_id": "img_004",
+  "initial_annotation": {
+    "annotator": "user_50",
+    "label": "dog",
+    "confidence": 0.7
+  },
+  "expert_review": {
+    "reviewer": "expert_1",
+    "verified": true,
+    "corrected_label": "dog",
+    "notes": "Confirmed as golden retriever"
+  }
+}
+```
+
+**Active Learning**:
+Model suggests labels for uncertain samples.
+
+```json
+{
+  "sample_id": "img_005",
+  "model_prediction": {
+    "label": "cat",
+    "confidence": 0.51
+  },
+  "uncertainty_score": 0.49,
+  "flagged_for_annotation": true,
+  "reason": "Model uncertain, requires human review"
+}
+```
+
+### Annotation Tools
+
+**Image Annotation**:
+- Labelbox: Web-based annotation platform
+- CVAT: Computer Vision Annotation Tool
+- Prodigy: Active learning-powered annotation
+- Roboflow: Vision-focused annotation and labeling
+
+**Text Annotation**:
+- Doccano: Open-source text annotation
+- Label Studio: Multi-modal annotation
+- Prodigy: Pattern-based labeling
+- Amazon SageMaker Ground Truth: AWS-managed service
+
+**Multi-Modal Annotation**:
+- Label Studio: Images, text, audio, video
+- Labelbox: Video and image annotation
+- Scale: Human-in-the-loop annotation service
+- Encord: Video AI dataset platform
+
+## Dataset Versioning
+
+### Version Control Schema
+
+```json
+{
+  "dataset_id": "customer_churn_v2",
+  "dataset_name": "Customer Churn Training Data",
+  "versions": [
+    {
+      "version": "1.0",
+      "created": "2023-06-15T00:00:00Z",
+      "total_samples": 10000,
+      "features": 25,
+      "description": "Initial dataset release",
+      "status": "archived"
+    },
+    {
+      "version": "1.1",
+      "created": "2023-09-20T00:00:00Z",
+      "total_samples": 12000,
+      "features": 25,
+      "description": "Added 2000 additional samples from Q3 2023",
+      "changes": [
+        "Added 2000 new customer records",
+        "Fixed missing value handling in feature X"
+      ],
+      "parent_version": "1.0",
+      "status": "deprecated"
+    },
+    {
+      "version": "2.0",
+      "created": "2024-01-10T00:00:00Z",
+      "total_samples": 50000,
+      "features": 32,
+      "description": "Major update: new features and larger dataset",
+      "changes": [
+        "Expanded from 25 to 32 features",
+        "Added behavioral engagement metrics",
+        "Total samples increased to 50k",
+        "Fixed feature engineering bugs"
+      ],
+      "parent_version": "1.1",
+      "status": "current",
+      "breaking_changes": true
+    }
+  ]
+}
+```
+
+### Version Metadata
+
+| Field | Type | Purpose |
+|-------|------|---------|
+| version | string | Semantic versioning (major.minor.patch) |
+| created | timestamp | When version was created |
+| total_samples | integer | Number of samples in version |
+| features | integer | Number of features |
+| description | string | Human-readable description |
+| changes | array | List of changes from previous version |
+| parent_version | string | Previous version reference |
+| status | enum | archived, deprecated, stable, current |
+| breaking_changes | boolean | If API/schema breaking changes exist |
+| hash | string | Content hash for integrity verification |
+
+### Version Branching
+
+```
+v1.0 (stable)
+├─ v1.1 (bug fix branch)
+│  ├─ v1.1.1 (minor update)
+│  └─ v1.1.2 (final patch)
+└─ v2.0 (major feature branch)
+   ├─ v2.1 (enhancement)
+   └─ v2.2 (current)
+```
+
+## Data Splits
+
+### Standard Split Strategy
+
+**Training/Validation/Test Split**:
+```
+Total Dataset (100%)
+├── Training Set (70%)
+├── Validation Set (15%)
+└── Test Set (15%)
+```
+
+**Configuration**:
+```json
+{
+  "dataset": "customer_churn_v2",
+  "split_strategy": "stratified_random",
+  "splits": {
+    "train": {
+      "percentage": 0.70,
+      "samples": 35000,
+      "file": "s3://datasets/churn/v2/train.parquet"
+    },
+    "validation": {
+      "percentage": 0.15,
+      "samples": 7500,
+      "file": "s3://datasets/churn/v2/validation.parquet"
+    },
+    "test": {
+      "percentage": 0.15,
+      "samples": 7500,
+      "file": "s3://datasets/churn/v2/test.parquet"
+    }
+  },
+  "random_seed": 42,
+  "stratification_column": "target_label"
+}
+```
+
+### Stratified Splitting
+
+Ensures class distribution maintained across splits (important for imbalanced data).
+
+```python
+# Training set: 70% each class
+# Validation set: 70% each class
+# Test set: 70% each class
+# Class distribution maintained across all splits
+```
+
+### Time-Based Splitting
+
+For time-series data, split by temporal boundaries.
+
+```json
+{
+  "split_strategy": "temporal",
+  "splits": {
+    "train": {
+      "start_date": "2022-01-01",
+      "end_date": "2023-06-30",
+      "samples": 35000
+    },
+    "validation": {
+      "start_date": "2023-07-01",
+      "end_date": "2023-10-31",
+      "samples": 7500
+    },
+    "test": {
+      "start_date": "2023-11-01",
+      "end_date": "2024-01-31",
+      "samples": 7500
+    }
+  },
+  "reason": "Prevents lookahead bias in time-series models"
+}
+```
+
+### K-Fold Cross-Validation
+
+```json
+{
+  "split_strategy": "k_fold",
+  "k": 5,
+  "folds": [
+    {
+      "fold_id": 1,
+      "train": [0, 2, 3, 4],
+      "validation": [1],
+      "samples_train": 40000,
+      "samples_validation": 10000
+    },
+    {
+      "fold_id": 2,
+      "train": [0, 1, 3, 4],
+      "validation": [2],
+      "samples_train": 40000,
+      "samples_validation": 10000
+    }
+  ]
+}
+```
+
+## Dataset Management Systems
+
+### DVC (Data Version Control)
+
+```yaml
+# dvc.yaml
+stages:
+  prepare_dataset:
+    cmd: python prepare.py
+    deps:
+      - raw_data/customers.csv
+    outs:
+      - prepared_data/customers.parquet
+  train_model:
+    cmd: python train.py
+    deps:
+      - prepared_data/customers.parquet
+    outs:
+      - models/model.pkl
+```
+
+### Hugging Face Datasets Library
+
+```python
+from datasets import load_dataset, DatasetDict
+
+# Load and cache dataset
+dataset = load_dataset('glue', 'mrpc')
+
+# Work with splits
+train_data = dataset['train']
+validation_data = dataset['validation']
+
+# Push to Hub
+dataset.push_to_hub("username/my_dataset")
+
+# Version tracking automatic through Hub
+```
+
+### MLflow Data Management
+
+```python
+import mlflow
+
+# Log dataset information
+mlflow.log_param("dataset_version", "2.0")
+mlflow.log_param("train_samples", 35000)
+mlflow.log_param("test_samples", 7500)
+
+# Artifact tracking
+mlflow.log_artifact("data/splits/train.parquet")
+mlflow.log_artifact("data/splits/test.parquet")
+```
+
+## Data Quality for Training
+
+### Quality Metrics
+
+**Label Consistency**:
+- Agreement rate between multiple annotators
+- Confidence scores for single-annotator labels
+- Flag inconsistent or uncertain labels
+
+```json
+{
+  "metric": "inter_annotator_agreement",
+  "value": 0.89,
+  "threshold": 0.85,
+  "status": "pass"
+}
+```
+
+**Class Balance**:
+Ensures representative sampling of all classes.
+
+```json
+{
+  "metric": "class_distribution",
+  "classes": {
+    "positive": {
+      "count": 25000,
+      "percentage": 0.50
+    },
+    "negative": {
+      "count": 25000,
+      "percentage": 0.50
+    }
+  },
+  "status": "balanced"
+}
+```
+
+**Feature Completeness**:
+Track missing values and data quality.
+
+```json
+{
+  "metric": "missing_values",
+  "features": {
+    "age": {
+      "missing_count": 150,
+      "missing_percentage": 0.3
+    },
+    "email": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    }
+  },
+  "status": "acceptable"
+}
+```
+
+**Outlier Detection**:
+Identify and flag anomalous samples.
+
+```json
+{
+  "metric": "outliers",
+  "outlier_count": 45,
+  "outlier_percentage": 0.09,
+  "flagged_samples": ["sample_001", "sample_045"],
+  "action": "manual_review"
+}
+```
+
+### Data Quality Checks
+
+```python
+from great_expectations import dataset
+
+# Define expectations
+expectation_suite = [
+    {"expectation_type": "expect_column_values_to_be_in_set",
+     "kwargs": {"column": "sentiment", "value_set": ["positive", "negative"]}},
+
+    {"expectation_type": "expect_column_values_to_not_be_null",
+     "kwargs": {"column": "id"}},
+
+    {"expectation_type": "expect_column_values_to_be_between",
+     "kwargs": {"column": "age", "min_value": 0, "max_value": 150}}
+]
+```
+
+## Dataset Reproducibility
+
+### Dataset Cards
+
+Documentation standard for datasets (similar to Model Cards).
+
+```markdown
+# Dataset Card: Customer Churn v2
+
+## Dataset Summary
+Training dataset for customer churn prediction with 50k labeled examples.
+
+## Dataset Details
+
+### Dataset Description
+- Curated dataset of customer behavior and churn labels
+- Used for training churn prediction models
+- Updated quarterly with new customer data
+
+### Versions
+- Current: 2.0 (January 2024)
+- Previous: 1.1 (September 2023)
+
+## Uses
+- Customer churn prediction
+- Retention strategy development
+- Behavioral analysis
+
+## Source Data
+- Customer transaction database (internal)
+- Customer service interactions (internal)
+- Web behavior logs (internal)
+
+## Annotations
+- Labels: Annotated by data team using churn definition
+- Process: Multi-annotator consensus with expert review
+- Agreement: 94% inter-annotator agreement
+
+## Splits
+- Training: 35,000 samples
+- Validation: 7,500 samples
+- Test: 7,500 samples
+
+## Ethics and Limitations
+- Trained on US customers only
+- Limited to past 2 years of data
+- Geographic bias toward high-density areas
+```
+
+### Reproducibility Checklist
+
+- [ ] Dataset version clearly documented
+- [ ] Random seed specified (if using random splits)
+- [ ] Split methodology described
+- [ ] Feature engineering steps documented
+- [ ] Data preprocessing logged
+- [ ] Annotation guidelines preserved
+- [ ] Data quality validation results stored
+- [ ] Dataset snapshot available for long-term access
+
+## Large-Scale Dataset Management
+
+### Hugging Face Datasets Hub
+- Repository for 100,000+ datasets
+- Automatic versioning and caching
+- Community contributions
+- Dataset cards and documentation
+
+### Kaggle Datasets
+- 100,000+ public datasets
+- Competitions and notebooks
+- Collaboration tools
+- Dataset discussions and insights
+
+### Open Data Platforms
+- [data.gov](https://data.gov) - US government datasets
+- [Zenodo](https://zenodo.org) - Scientific research datasets
+- [GitHub Datasets Topic](https://github.com/topics/dataset)
+- [Google Dataset Search](https://datasetsearch.research.google.com)
+
+## Best Practices
+
+1. **Version Everything**: Track dataset versions like code
+2. **Document Provenance**: Where data came from and how it was collected
+3. **Ensure Quality**: Implement validation and quality checks
+4. **Maintain Splits**: Use consistent random seeds for reproducibility
+5. **Document Annotations**: Guidelines, annotator instructions, quality metrics
+6. **Preserve Metadata**: Capture dataset characteristics at creation
+7. **Enable Reproducibility**: Others should be able to reproduce your dataset
+8. **Handle Privacy**: Anonymize or redact sensitive data appropriately
+9. **Use Standards**: Follow dataset card conventions
+10. **Plan for Evolution**: Design versioning strategy from the start
+
+## Related Resources
+
+- [knowledge.org.ai](https://knowledge.org.ai) - Knowledge representation
+- [models.org.ai](https://models.org.ai) - ML model documentation
+- [standards.org.ai](https://standards.org.ai) - Dataset and annotation standards

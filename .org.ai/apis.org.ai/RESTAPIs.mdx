@@ -1,0 +1,653 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/RESTAPIs
+$type: https://apis.org.ai/WebAPI
+name: "REST APIs"
+description: "Representational State Transfer APIs - architectural style for distributed systems using HTTP/HTTPS with stateless client-server communication, standard HTTP methods, and resource-oriented endpoints."
+parent: https://apis.org.ai
+---
+
+export const items = async () => {
+  // Fetch REST API implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://apis.org.ai/RESTAPIs'
+  })
+}
+
+# REST APIs
+
+Representational State Transfer (REST) is an architectural style for designing networked applications using HTTP/HTTPS as the underlying protocol. REST APIs provide a standardized way for systems to communicate over the web using resource-oriented endpoints, standard HTTP methods, and stateless interactions.
+
+REST has become the dominant architectural pattern for web APIs due to its simplicity, scalability, and alignment with HTTP's design principles. It forms the foundation of most modern web services and integrations.
+
+## Overview
+
+REST is an architectural approach that emphasizes:
+
+- **Resource-Oriented Design**: Everything is a resource with a unique URI/URL identifier
+- **Stateless Communication**: Each request contains all information needed for processing
+- **Standard HTTP Methods**: Using GET, POST, PUT, PATCH, DELETE for CRUD operations
+- **Uniform Interface**: Consistent conventions across different endpoints and services
+- **Hypermedia**: Links and metadata guide clients through available operations
+- **Cacheable Responses**: HTTP caching mechanisms for performance optimization
+- **Layered Architecture**: Intermediate servers can be inserted without affecting clients
+
+## Core Principles
+
+### 1. Client-Server Architecture
+
+REST separates concerns between client and server:
+
+- **Clients**: User interface and user experience concerns
+- **Servers**: Data storage, business logic, and resource management
+- **Benefits**:
+  - Independent scaling of components
+  - Flexibility to change client or server independently
+  - Better separation of concerns
+  - Improved performance through caching
+
+### 2. Statelessness
+
+Each request must contain all information needed for processing:
+
+- **No Session State**: Server doesn't store client context between requests
+- **Request Independence**: Each request is a complete, standalone transaction
+- **Scalability**: Easy to distribute load across multiple servers without affinity
+- **Reliability**: Server failures don't require session recovery mechanisms
+
+Example contrasts:
+```
+Stateful: Client logs in, server maintains session
+Stateless: Client includes credentials/token with each request
+```
+
+### 3. Resource-Based URLs
+
+Resources are identified by URIs and manipulated using standard representations:
+
+- **Nouns, Not Verbs**: `/users/123` instead of `/getUser?id=123`
+- **Hierarchy**: `/organizations/123/departments/456/employees/789`
+- **Collections**: `/users` for all users, `/users/123` for specific user
+- **Filtering**: `/users?role=admin&status=active`
+
+Best practices:
+- Use plural nouns for collections: `/products` not `/product`
+- Use lowercase: `/users` not `/Users`
+- Use hyphens for multi-word resources: `/blog-posts` not `/blogPosts`
+- Avoid deep nesting: Keep hierarchies 2-3 levels deep
+
+## HTTP Methods
+
+### GET - Retrieve Resources
+
+Retrieves data without side effects:
+
+```
+GET /users
+GET /users/123
+GET /users?page=2&limit=10
+GET /users/123/posts
+```
+
+Characteristics:
+- Idempotent: Same request always returns same result
+- Safe: No data modification
+- Cacheable: Can be cached by clients and proxies
+- Must not have request body (convention)
+
+Response codes:
+- `200 OK`: Successful retrieval
+- `304 Not Modified`: Resource unchanged since last request
+- `404 Not Found`: Resource doesn't exist
+- `410 Gone`: Resource was deleted
+
+### POST - Create Resources
+
+Creates new resources:
+
+```
+POST /users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com"
+}
+```
+
+Characteristics:
+- Not idempotent: Multiple identical requests create multiple resources
+- Side effects: Creates new data
+- Not cacheable (by default)
+- Request body required
+
+Response codes:
+- `201 Created`: Successfully created
+- `202 Accepted`: Request accepted, processing asynchronously
+- `400 Bad Request`: Invalid input
+- `409 Conflict`: Resource conflict (duplicate)
+
+### PUT - Replace Resources
+
+Replaces entire resource:
+
+```
+PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "role": "admin"
+}
+```
+
+Characteristics:
+- Idempotent: Same request always results in same state
+- Replaces entire resource: Must include all properties
+- Side effects: Modifies data
+- Should be used with specific IDs
+
+Response codes:
+- `200 OK` or `204 No Content`: Successfully replaced
+- `400 Bad Request`: Invalid input
+- `404 Not Found`: Resource doesn't exist
+- `409 Conflict`: Conflict (e.g., missing required fields)
+
+### PATCH - Partial Updates
+
+Modifies specific resource properties:
+
+```
+PATCH /users/123
+Content-Type: application/json-patch+json
+
+[
+  { "op": "replace", "path": "/email", "value": "newemail@example.com" },
+  { "op": "add", "path": "/phone", "value": "555-1234" }
+]
+```
+
+Characteristics:
+- May or may not be idempotent (depends on implementation)
+- Partial updates: Only modified properties included
+- Side effects: Modifies data
+- Can use JSON Patch or JSON Merge Patch formats
+
+Response codes:
+- `200 OK` or `204 No Content`: Successfully patched
+- `400 Bad Request`: Invalid patch format
+- `404 Not Found`: Resource doesn't exist
+
+### DELETE - Remove Resources
+
+Removes resources:
+
+```
+DELETE /users/123
+```
+
+Characteristics:
+- Idempotent: Multiple requests achieve same result (deletion)
+- Side effects: Removes data
+- No request body
+- May return resource deleted or empty response
+
+Response codes:
+- `200 OK`: Deleted with response body
+- `204 No Content`: Deleted, no body returned
+- `202 Accepted`: Deletion accepted, processing asynchronously
+- `404 Not Found`: Resource doesn't exist
+- `410 Gone`: Already deleted
+
+## HTTP Status Codes
+
+### 2xx Success
+
+- `200 OK`: Request succeeded, returning data
+- `201 Created`: Resource successfully created
+- `202 Accepted`: Request accepted for processing (async)
+- `204 No Content`: Successful but no content to return
+- `206 Partial Content`: Partial response (e.g., pagination, range requests)
+
+### 3xx Redirection
+
+- `301 Moved Permanently`: Endpoint moved, use new URL
+- `302 Found`: Temporary redirect
+- `304 Not Modified`: Resource unchanged since client's cached version
+- `307 Temporary Redirect`: Preserve HTTP method on redirect
+- `308 Permanent Redirect`: Preserve HTTP method permanently
+
+### 4xx Client Error
+
+- `400 Bad Request`: Invalid request format or parameters
+- `401 Unauthorized`: Authentication required
+- `403 Forbidden`: Authenticated but lacking permission
+- `404 Not Found`: Resource doesn't exist
+- `405 Method Not Allowed`: HTTP method not supported for resource
+- `409 Conflict`: Request conflicts with current state (duplicate, constraint violation)
+- `422 Unprocessable Entity`: Syntactically valid but semantic errors
+- `429 Too Many Requests`: Rate limit exceeded
+
+### 5xx Server Error
+
+- `500 Internal Server Error`: Unexpected server error
+- `501 Not Implemented`: Functionality not implemented
+- `502 Bad Gateway`: Invalid response from upstream
+- `503 Service Unavailable`: Server temporarily unavailable
+- `504 Gateway Timeout`: Upstream service timeout
+
+## Response Formats and Content Negotiation
+
+### JSON (Most Common)
+
+```
+GET /users/123
+Content-Type: application/json
+
+{
+  "id": 123,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "created": "2024-01-15T10:30:00Z"
+}
+```
+
+Advantages:
+- Lightweight and human-readable
+- Native support in JavaScript
+- Wide framework support
+- Good for APIs
+
+### XML
+
+```
+GET /users/123
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+  <id>123</id>
+  <name>John Doe</name>
+  <email>john@example.com</email>
+  <created>2024-01-15T10:30:00Z</created>
+</user>
+```
+
+Advantages:
+- Structured hierarchical data
+- Named attributes and elements
+- Schema validation (XSD)
+
+Used for:
+- Enterprise systems
+- Configuration files
+- SOAP services (legacy)
+
+## HATEOAS (Hypermedia As The Engine Of Application State)
+
+Links guide clients through API capabilities without hardcoding endpoint URLs.
+
+### Without HATEOAS
+
+Client must know API structure:
+```
+GET /users
+→ Client knows to call /users/123 for details
+→ Client knows to call /users/123/posts for user's posts
+```
+
+### With HATEOAS
+
+Server provides all available actions via links:
+
+```json
+{
+  "id": 123,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "_links": {
+    "self": { "href": "/users/123", "method": "GET" },
+    "edit": { "href": "/users/123", "method": "PUT" },
+    "delete": { "href": "/users/123", "method": "DELETE" },
+    "posts": { "href": "/users/123/posts", "method": "GET" },
+    "followers": { "href": "/users/123/followers", "method": "GET" }
+  }
+}
+```
+
+Benefits:
+- **Discoverability**: Clients discover API without documentation
+- **Flexibility**: Server can change URLs without breaking clients
+- **Self-Documenting**: API structure evident from responses
+- **Evolution**: New operations can be added without breaking clients
+
+Standards:
+- **HAL (Hypertext Application Language)**: `_links` and `_embedded`
+- **JSON:API**: Standardized JSON structure with links
+- **Siren**: Hypermedia format emphasizing actions
+- **Collection+JSON**: Collection representation with action templates
+
+## Pagination Patterns
+
+### Offset/Limit
+
+```
+GET /users?offset=20&limit=10
+```
+
+Useful for:
+- Displaying page numbers in UI
+- Skipping specific amounts
+
+Drawbacks:
+- Can skip items if data modified between requests
+- Inefficient for large offsets
+- Doesn't expose total count efficiently
+
+### Cursor-Based
+
+```
+GET /users?cursor=eyJpZCI6IDEwMH0&limit=10
+```
+
+Response includes next cursor:
+```json
+{
+  "items": [...],
+  "pagination": {
+    "cursor": "eyJpZCI6IDExMH0",
+    "has_more": true
+  }
+}
+```
+
+Advantages:
+- Consistent results even with concurrent modifications
+- Efficient for large datasets
+- Natural for sorting by timestamp
+
+Best for:
+- Infinite scroll UI
+- Real-time feeds
+- Large result sets
+
+### Keyset Pagination
+
+```
+GET /users?after_id=100&limit=10
+```
+
+Uses last item's ID to fetch next page. Combines benefits of offset and cursor approaches.
+
+## Error Handling
+
+### Consistent Error Response Format
+
+```json
+{
+  "error": {
+    "code": "INVALID_EMAIL",
+    "message": "Email address is invalid",
+    "details": {
+      "field": "email",
+      "value": "invalid-email"
+    }
+  },
+  "trace_id": "abc123def456"
+}
+```
+
+### Common Error Codes
+
+- `INVALID_REQUEST`: Request format/syntax error
+- `INVALID_INPUT`: Semantic validation error
+- `UNAUTHORIZED`: Authentication required
+- `FORBIDDEN`: Insufficient permissions
+- `NOT_FOUND`: Resource not found
+- `DUPLICATE`: Resource already exists
+- `CONFLICT`: State conflict
+- `RATE_LIMITED`: Too many requests
+- `INTERNAL_ERROR`: Server error
+- `SERVICE_UNAVAILABLE`: Temporary outage
+
+### Best Practices
+
+- Include HTTP status code and error code
+- Provide human-readable message
+- Include field-level validation details for input errors
+- Include trace ID for debugging
+- Don't expose internal implementation details
+- Localize error messages when appropriate
+
+## Versioning
+
+### URL Path Versioning
+
+```
+GET /v1/users
+GET /v2/users
+```
+
+Pros:
+- Explicit in URL
+- Easy to track usage
+
+Cons:
+- URL clutter
+- Forces clients to upgrade
+
+### Header Versioning
+
+```
+GET /users
+Accept: application/vnd.myapi.v2+json
+```
+
+Pros:
+- Cleaner URLs
+- Supports content negotiation
+
+Cons:
+- Less visible
+- Requires documentation
+
+### No Versioning (Additive Only)
+
+Never remove/change existing fields, only add new ones:
+
+```json
+// v1
+{ "id": 123, "name": "John" }
+
+// v2 (backward compatible)
+{ "id": 123, "name": "John", "email": "john@example.com" }
+```
+
+Pros:
+- Single codebase
+- No URL proliferation
+
+Cons:
+- Limited evolution options
+- Must maintain all old fields
+
+## Security Considerations
+
+### Authentication
+
+- **API Keys**: Simple but limited use cases
+- **OAuth 2.0**: Industry standard for user authorization
+- **JWT**: Stateless token-based authentication
+- **mTLS**: Mutual TLS for service-to-service
+
+### Authorization
+
+- **Role-Based Access Control (RBAC)**: Users have roles with permissions
+- **Attribute-Based Access Control (ABAC)**: Fine-grained policy engine
+- **Scope-Based**: OAuth scopes limiting access
+
+### Data Protection
+
+- **HTTPS/TLS**: Always encrypt in transit
+- **Rate Limiting**: Prevent abuse
+- **Input Validation**: Sanitize all inputs
+- **Output Encoding**: Prevent injection attacks
+- **CORS**: Restrict cross-origin access
+
+### Best Practices
+
+- Always use HTTPS
+- Validate and sanitize all inputs
+- Use strong authentication mechanisms
+- Implement rate limiting
+- Include security headers (X-Content-Type-Options, etc.)
+- Log security events
+- Regular security audits
+
+## Common REST Architectural Patterns
+
+### Resource-Oriented Design
+
+Model API around resources users work with:
+```
+/blogs/{id}/posts
+/blogs/{id}/posts/{id}/comments
+/posts/{id}/author
+```
+
+### Bulk Operations
+
+```
+POST /users/bulk
+[{ "name": "Alice" }, { "name": "Bob" }]
+
+DELETE /users/bulk?ids=1,2,3
+```
+
+### Custom Actions
+
+When standard operations aren't sufficient:
+```
+POST /users/123/activate
+POST /posts/456/publish
+GET /search?q=term&category=posts
+```
+
+Use POST for custom actions that modify state.
+
+### Webhooks
+
+Server sends events to client-specified URLs:
+```
+POST https://client.example.com/webhooks/user-created
+{
+  "event": "user.created",
+  "data": { "id": 123, "name": "John" },
+  "timestamp": "2024-01-15T10:30:00Z"
+}
+```
+
+## Performance Optimization
+
+### Caching
+
+- **HTTP Caching Headers**: Cache-Control, ETag, Last-Modified
+- **Client-Side Caching**: Reduce requests
+- **CDN Caching**: Geographic distribution
+- **Server-Side Caching**: Cache computations and database queries
+
+### Compression
+
+- **Gzip/Brotli**: Compress response bodies
+- **Content-Encoding**: Advertise compression support
+
+### Pagination and Filtering
+
+- Implement filtering to reduce response size
+- Use pagination for large datasets
+- Return only needed fields (sparse fieldsets)
+
+### Async Processing
+
+```
+POST /reports
+Response: 202 Accepted
+Location: /reports/123
+
+GET /reports/123
+Response: { "status": "processing" }
+
+// Later...
+GET /reports/123
+Response: { "status": "complete", "data": {...} }
+```
+
+## Related Concepts
+
+### Comparison with Other Architectural Styles
+
+| Aspect | REST | GraphQL | gRPC |
+|--------|------|---------|------|
+| Protocol | HTTP | HTTP/Streams | HTTP/2, TCP |
+| Data Format | JSON/XML | JSON | Protocol Buffers |
+| Query Flexibility | Fixed endpoints | Client-controlled | Predefined messages |
+| Over-fetching | Possible | Minimal | None |
+| Performance | Good | Very Good | Excellent |
+| Learning Curve | Easy | Moderate | Steep |
+
+## Industry Examples
+
+- **GitHub API**: Resource-oriented, HATEOAS, versioning
+- **Stripe API**: Comprehensive REST design, excellent documentation
+- **Twilio API**: REST for communication services
+- **AWS API Gateway**: RESTful service exposure layer
+- **Twitter API v2**: Modern REST with pagination
+- **OpenAPI/Swagger**: API documentation and specification standard
+
+## Tools and Frameworks
+
+### API Development
+- **Express.js**: Node.js HTTP server framework
+- **Django REST Framework**: Python REST toolkit
+- **FastAPI**: Modern Python async framework
+- **Spring Boot**: Java framework with REST support
+- **Flask**: Lightweight Python microframework
+
+### Testing
+- **Postman**: API testing and documentation
+- **Insomnia**: REST client
+- **RestAssured**: Java REST API testing
+- **Supertest**: Node.js HTTP testing
+
+### Specification and Documentation
+- **OpenAPI/Swagger**: Industry standard API specification
+- **API Blueprint**: Markdown-based API documentation
+- **RAML**: RESTful API Modeling Language
+
+## Best Practices Summary
+
+1. **Use Standard HTTP Methods**: GET, POST, PUT, PATCH, DELETE
+2. **Resource-Based URLs**: Nouns not verbs
+3. **HTTP Status Codes**: Return appropriate codes
+4. **Stateless**: No client context stored
+5. **Consistent Naming**: Conventions for resources and fields
+6. **Error Handling**: Clear, standardized error responses
+7. **Versioning Strategy**: Plan for evolution
+8. **Documentation**: OpenAPI/Swagger specifications
+9. **Security**: HTTPS, authentication, authorization
+10. **Performance**: Caching, pagination, compression
+11. **Testing**: Comprehensive test coverage
+12. **Monitoring**: Track API usage and errors
+13. **Rate Limiting**: Prevent abuse
+14. **CORS**: Proper cross-origin configuration
+
+## Related Resources
+
+- [functions.org.ai](https://functions.org.ai) - Serverless functions implementing REST endpoints
+- [events.org.ai](https://events.org.ai) - Event-driven architecture and webhooks
+- [tech.org.ai](https://tech.org.ai) - Technology stack and frameworks
+- [apis.org.ai/APIDesign](https://apis.org.ai/APIDesign) - OpenAPI, authentication, versioning
+- [apis.org.ai/APIGateways](https://apis.org.ai/APIGateways) - Rate limiting, routing, security
+- [standards.org.ai](https://standards.org.ai) - Web and API standards

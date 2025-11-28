@@ -1,0 +1,775 @@
+---
+$context: https://mcp.org.ai
+$id: https://mcp.org.ai/MCPTools
+$type: https://mcp.org.ai/Mcp
+name: "MCP Tool Definitions and Examples"
+description: "Complete specification for tool definitions, parameters, return types, and practical implementation examples"
+---
+
+export const items = async () => {
+  return []
+}
+
+# MCP Tool Definitions and Examples
+
+Tools are the primary mechanism through which MCP servers expose callable functionality to clients. Each tool consists of metadata describing what it does and an implementation that executes when called. This guide covers tool specification, parameter definition, and practical examples.
+
+## Tool Structure
+
+### Core Tool Definition
+
+```typescript
+interface Tool {
+  // Unique identifier within the server
+  name: string
+
+  // Human-readable description
+  description: string
+
+  // JSON Schema describing input parameters
+  inputSchema: JSONSchema
+
+  // Optional: Additional metadata
+  displayName?: string
+  category?: string
+  tags?: string[]
+  deprecated?: boolean
+}
+```
+
+### Complete Tool Example
+
+```typescript
+const tool = {
+  name: 'analyze_sentiment',
+  displayName: 'Analyze Sentiment',
+  description: 'Analyze the sentiment of provided text content',
+  category: 'analysis',
+  tags: ['nlp', 'sentiment', 'text-analysis'],
+  inputSchema: {
+    type: 'object',
+    properties: {
+      text: {
+        type: 'string',
+        description: 'Text to analyze'
+      },
+      language: {
+        type: 'string',
+        enum: ['en', 'es', 'fr', 'de'],
+        default: 'en',
+        description: 'Language of the text'
+      },
+      detailed: {
+        type: 'boolean',
+        default: false,
+        description: 'Include detailed analysis metrics'
+      }
+    },
+    required: ['text']
+  }
+}
+```
+
+## Input Schema Specification
+
+### Schema Fundamentals
+
+Tools use JSON Schema to describe their input parameters. This enables:
+- Client-side validation
+- IDE autocomplete and hints
+- Automatic documentation generation
+- Type safety
+
+### Basic Types
+
+```typescript
+// String type
+{
+  type: 'string',
+  description: 'A text value',
+  minLength: 1,
+  maxLength: 1000,
+  pattern: '^[a-zA-Z0-9]+$'  // Regex validation
+}
+
+// Integer type
+{
+  type: 'integer',
+  description: 'A whole number',
+  minimum: 0,
+  maximum: 100,
+  multipleOf: 5
+}
+
+// Number type (floating point)
+{
+  type: 'number',
+  description: 'A decimal number',
+  minimum: 0.0,
+  maximum: 1.0
+}
+
+// Boolean type
+{
+  type: 'boolean',
+  description: 'True or false value'
+}
+
+// Array type
+{
+  type: 'array',
+  description: 'List of items',
+  items: {
+    type: 'string'
+  },
+  minItems: 1,
+  maxItems: 10,
+  uniqueItems: true
+}
+
+// Object type
+{
+  type: 'object',
+  description: 'Structured data',
+  properties: {
+    name: { type: 'string' },
+    age: { type: 'integer' }
+  },
+  required: ['name'],
+  additionalProperties: false  // Don't allow extra fields
+}
+```
+
+### Enums and Constraints
+
+```typescript
+// Enum - restricted set of values
+{
+  type: 'string',
+  enum: ['low', 'medium', 'high'],
+  default: 'medium',
+  description: 'Priority level'
+}
+
+// Pattern - regex validation
+{
+  type: 'string',
+  pattern: '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$',
+  description: 'Email address'
+}
+
+// Numeric constraints
+{
+  type: 'integer',
+  minimum: 1,
+  maximum: 12,
+  description: 'Month (1-12)'
+}
+```
+
+### Complex Schemas
+
+```typescript
+// Tool with complex nested parameters
+{
+  name: 'create_project',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      name: {
+        type: 'string',
+        description: 'Project name'
+      },
+      metadata: {
+        type: 'object',
+        description: 'Project metadata',
+        properties: {
+          owner: { type: 'string' },
+          team: { type: 'string' },
+          tags: {
+            type: 'array',
+            items: { type: 'string' },
+            description: 'Project tags'
+          }
+        },
+        required: ['owner']
+      },
+      settings: {
+        type: 'object',
+        properties: {
+          isPublic: { type: 'boolean' },
+          allowCollaboration: { type: 'boolean' },
+          retentionDays: {
+            type: 'integer',
+            minimum: 1
+          }
+        }
+      }
+    },
+    required: ['name', 'metadata']
+  }
+}
+```
+
+### Conditional Schemas
+
+```typescript
+// Schema with conditional properties
+{
+  name: 'send_notification',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      type: {
+        type: 'string',
+        enum: ['email', 'sms', 'push'],
+        description: 'Notification type'
+      },
+      recipient: {
+        type: 'string',
+        description: 'Email, phone, or user ID depending on type'
+      },
+      subject: {
+        type: 'string',
+        description: 'Email subject (required for email type)'
+      },
+      phoneNumber: {
+        type: 'string',
+        description: 'Phone number (required for SMS type)'
+      }
+    },
+    required: ['type', 'recipient'],
+    // Conditional: subject required if type is 'email'
+    if: { properties: { type: { const: 'email' } } },
+    then: { required: ['subject'] }
+  }
+}
+```
+
+## Tool Return Types
+
+### Result Structure
+
+```typescript
+interface ToolResult {
+  // Array of content items (can be mixed types)
+  content: ToolContent[]
+
+  // Optional: Indicates if result is an error
+  isError?: boolean
+}
+
+type ToolContent =
+  // Text response
+  | {
+      type: 'text'
+      text: string
+    }
+  // Binary image data
+  | {
+      type: 'image'
+      data: string  // base64 encoded
+      mimeType: 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp'
+    }
+  // Reference to external resource
+  | {
+      type: 'resource'
+      uri: string
+      mimeType?: string
+    }
+```
+
+### Return Type Examples
+
+```typescript
+// Text result
+{
+  content: [{
+    type: 'text',
+    text: 'Operation completed successfully. Created 5 new records.'
+  }]
+}
+
+// Error result
+{
+  content: [{
+    type: 'text',
+    text: 'Failed to process: Invalid format in row 3'
+  }],
+  isError: true
+}
+
+// Image result
+{
+  content: [{
+    type: 'image',
+    data: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+    mimeType: 'image/png'
+  }]
+}
+
+// Multiple content items
+{
+  content: [
+    {
+      type: 'text',
+      text: 'Analysis Results:\n- Found 3 anomalies\n- Average response time: 245ms'
+    },
+    {
+      type: 'image',
+      data: 'base64encodedimage...',
+      mimeType: 'image/png'
+    },
+    {
+      type: 'text',
+      text: 'Full report available at: report://analysis/2024-11-28'
+    }
+  ]
+}
+
+// Resource reference
+{
+  content: [{
+    type: 'resource',
+    uri: 'file://reports/analysis-report.pdf',
+    mimeType: 'application/pdf'
+  }]
+}
+```
+
+## Practical Tool Examples
+
+### 1. Data Query Tool
+
+```typescript
+const searchProductsTool = {
+  name: 'search_products',
+  description: 'Search for products in the inventory database',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      query: {
+        type: 'string',
+        description: 'Search keywords'
+      },
+      category: {
+        type: 'string',
+        enum: ['electronics', 'clothing', 'books', 'home'],
+        description: 'Product category'
+      },
+      minPrice: {
+        type: 'number',
+        description: 'Minimum price in dollars',
+        minimum: 0
+      },
+      maxPrice: {
+        type: 'number',
+        description: 'Maximum price in dollars',
+        minimum: 0
+      },
+      inStock: {
+        type: 'boolean',
+        description: 'Only show in-stock items',
+        default: true
+      },
+      limit: {
+        type: 'integer',
+        description: 'Maximum results to return',
+        default: 10,
+        maximum: 100
+      }
+    },
+    required: ['query']
+  },
+
+  async implementation(args) {
+    const { query, category, minPrice, maxPrice, inStock, limit } = args
+
+    try {
+      const results = await database.products.search({
+        text: query,
+        category,
+        priceRange: [minPrice, maxPrice],
+        inStock,
+        limit
+      })
+
+      const formatted = results.map(p => ({
+        id: p.id,
+        name: p.name,
+        price: p.price,
+        category: p.category,
+        inStock: p.quantity > 0,
+        rating: p.averageRating
+      }))
+
+      return {
+        content: [{
+          type: 'text',
+          text: `Found ${formatted.length} products:\n\n${
+            formatted.map(p =>
+              `• ${p.name} - $${p.price.toFixed(2)} (Rating: ${p.rating}/5)`
+            ).join('\n')
+          }`
+        }]
+      }
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Search failed: ${error.message}`
+        }],
+        isError: true
+      }
+    }
+  }
+}
+```
+
+### 2. File Manipulation Tool
+
+```typescript
+const createFileTool = {
+  name: 'create_file',
+  description: 'Create a new file with specified content',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      path: {
+        type: 'string',
+        description: 'File path (relative to project root)'
+      },
+      content: {
+        type: 'string',
+        description: 'File content'
+      },
+      overwrite: {
+        type: 'boolean',
+        description: 'Overwrite if file exists',
+        default: false
+      }
+    },
+    required: ['path', 'content']
+  },
+
+  async implementation(args) {
+    const { path, content, overwrite } = args
+
+    try {
+      // Validate path
+      if (path.includes('..') || path.startsWith('/')) {
+        throw new Error('Invalid path: attempted directory traversal')
+      }
+
+      const fullPath = Path.join(projectRoot, path)
+
+      // Check if file exists
+      const exists = await fileSystem.exists(fullPath)
+      if (exists && !overwrite) {
+        throw new Error(`File already exists: ${path}`)
+      }
+
+      // Create file
+      await fileSystem.writeFile(fullPath, content, 'utf-8')
+
+      return {
+        content: [{
+          type: 'text',
+          text: `File created successfully: ${path} (${content.length} bytes)`
+        }]
+      }
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Failed to create file: ${error.message}`
+        }],
+        isError: true
+      }
+    }
+  }
+}
+```
+
+### 3. API Execution Tool
+
+```typescript
+const fetchDataTool = {
+  name: 'fetch_data',
+  description: 'Fetch data from external API',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      endpoint: {
+        type: 'string',
+        description: 'API endpoint path (without domain)',
+        pattern: '^/[a-zA-Z0-9/_-]+$'
+      },
+      method: {
+        type: 'string',
+        enum: ['GET', 'POST'],
+        default: 'GET'
+      },
+      params: {
+        type: 'object',
+        description: 'Query parameters or request body',
+        additionalProperties: true
+      },
+      timeout: {
+        type: 'integer',
+        description: 'Request timeout in milliseconds',
+        default: 5000,
+        minimum: 1000,
+        maximum: 30000
+      }
+    },
+    required: ['endpoint']
+  },
+
+  async implementation(args) {
+    const { endpoint, method = 'GET', params = {}, timeout = 5000 } = args
+
+    try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), timeout)
+
+      const url = new URL(`${API_BASE_URL}${endpoint}`)
+      if (method === 'GET') {
+        Object.entries(params).forEach(([key, value]) => {
+          url.searchParams.append(key, String(value))
+        })
+      }
+
+      const response = await fetch(url, {
+        method,
+        headers: {
+          'Authorization': `Bearer ${API_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: method !== 'GET' ? JSON.stringify(params) : undefined,
+        signal: controller.signal
+      })
+
+      clearTimeout(timeoutId)
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status} ${response.statusText}`)
+      }
+
+      const data = await response.json()
+
+      return {
+        content: [{
+          type: 'text',
+          text: `API Response (${response.status}):\n${JSON.stringify(data, null, 2)}`
+        }]
+      }
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `API call failed: ${error.message}`
+        }],
+        isError: true
+      }
+    }
+  }
+}
+```
+
+### 4. Analysis/Processing Tool
+
+```typescript
+const analyzeCodeTool = {
+  name: 'analyze_code',
+  description: 'Analyze code for quality metrics and issues',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      code: {
+        type: 'string',
+        description: 'Code to analyze'
+      },
+      language: {
+        type: 'string',
+        enum: ['javascript', 'python', 'java', 'go'],
+        description: 'Programming language'
+      },
+      checks: {
+        type: 'array',
+        items: {
+          type: 'string',
+          enum: ['complexity', 'security', 'performance', 'style']
+        },
+        description: 'Analysis checks to run',
+        default: ['complexity', 'security']
+      }
+    },
+    required: ['code', 'language']
+  },
+
+  async implementation(args) {
+    const { code, language, checks = ['complexity', 'security'] } = args
+
+    try {
+      const results = {
+        complexity: { score: 0, issues: [] },
+        security: { vulnerabilities: [] },
+        performance: { issues: [] },
+        style: { violations: [] }
+      }
+
+      // Complexity analysis
+      if (checks.includes('complexity')) {
+        const lines = code.split('\n')
+        const cyclomaticComplexity = calculateComplexity(code)
+        results.complexity.score = cyclomaticComplexity
+
+        if (cyclomaticComplexity > 10) {
+          results.complexity.issues.push(
+            `High complexity (${cyclomaticComplexity}): Consider refactoring`
+          )
+        }
+      }
+
+      // Security analysis
+      if (checks.includes('security')) {
+        const securityIssues = detectSecurityIssues(code, language)
+        results.security.vulnerabilities = securityIssues
+      }
+
+      // Additional checks...
+
+      const summary = `Code Analysis Results for ${language}:\n`
+        + `• Complexity Score: ${results.complexity.score}\n`
+        + `• Security Issues: ${results.security.vulnerabilities.length}\n`
+        + `• Performance Issues: ${results.performance.issues.length}\n`
+        + `• Style Violations: ${results.style.violations.length}`
+
+      return {
+        content: [{
+          type: 'text',
+          text: summary + '\n\n' + JSON.stringify(results, null, 2)
+        }]
+      }
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Analysis failed: ${error.message}`
+        }],
+        isError: true
+      }
+    }
+  }
+}
+```
+
+### 5. Image Generation Tool
+
+```typescript
+const generateImageTool = {
+  name: 'generate_image',
+  description: 'Generate an image based on a text description',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      prompt: {
+        type: 'string',
+        description: 'Image description'
+      },
+      style: {
+        type: 'string',
+        enum: ['realistic', 'artistic', 'abstract', 'cartoon'],
+        default: 'realistic'
+      },
+      size: {
+        type: 'string',
+        enum: ['256x256', '512x512', '1024x1024'],
+        default: '512x512'
+      }
+    },
+    required: ['prompt']
+  },
+
+  async implementation(args) {
+    const { prompt, style, size } = args
+
+    try {
+      const image = await imageGenerationApi.generate({
+        prompt: `${prompt} (${style} style)`,
+        size,
+        quality: 'hd'
+      })
+
+      return {
+        content: [{
+          type: 'image',
+          data: image.base64Data,
+          mimeType: 'image/png'
+        }]
+      }
+    } catch (error) {
+      return {
+        content: [{
+          type: 'text',
+          text: `Image generation failed: ${error.message}`
+        }],
+        isError: true
+      }
+    }
+  }
+}
+```
+
+## Tool Best Practices
+
+### Schema Design
+
+1. **Be Specific**: Use precise descriptions and constraints
+2. **Validate Early**: Use JSON Schema to catch invalid inputs
+3. **Provide Defaults**: Offer sensible defaults for optional parameters
+4. **Limit Options**: Use enums to restrict choices
+5. **Clear Naming**: Use descriptive property names
+
+### Implementation
+
+1. **Input Validation**: Always validate inputs before processing
+2. **Error Handling**: Return meaningful error messages
+3. **Timeouts**: Implement timeout protection
+4. **Logging**: Log tool invocations for debugging
+5. **Security**: Sanitize inputs and limit resource access
+
+### Performance
+
+1. **Async Operations**: Use async/await for I/O operations
+2. **Caching**: Cache frequently accessed data
+3. **Rate Limiting**: Implement rate limits for expensive operations
+4. **Streaming**: Stream large results when possible
+5. **Optimization**: Profile and optimize slow tools
+
+### Documentation
+
+1. **Clear Descriptions**: Explain what each tool does
+2. **Usage Examples**: Provide examples in descriptions
+3. **Parameter Docs**: Document each parameter clearly
+4. **Return Format**: Document what the tool returns
+5. **Error Cases**: Document possible error scenarios
+
+## Integration Points
+
+- **[MCPServers.mdx](https://mcp.org.ai/MCPServers)**: Server implementation details
+- **[MCPClients.mdx](https://mcp.org.ai/MCPClients)**: Client tool discovery and invocation
+- **[MCPResources.mdx](https://mcp.org.ai/MCPResources)**: Resource patterns
+- **[tools.org.ai](https://tools.org.ai)**: Tool registry and discovery
+- **[apis.org.ai](https://apis.org.ai)**: API patterns and standards
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| **Component Type** | Tool Specification |
+| **Domain** | [mcp.org.ai](https://mcp.org.ai) |
+| **Input Format** | JSON Schema |
+| **Output Format** | ToolResult (text/image/resource) |
+| **Error Handling** | isError flag + error text |

@@ -1,0 +1,650 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/DataQuality
+$type: https://datasets.org.ai/DataCategory
+name: "Data Quality"
+description: "Data validation, testing, profiling, and monitoring systems for ensuring data quality, reliability, and fitness for use."
+parent: https://datasets.org.ai
+---
+
+export const items = async () => {
+  // Fetch data quality resources from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://datasets.org.ai/DataQualitySystem'
+  })
+}
+
+# Data Quality
+
+Data quality is foundational to analytics, machine learning, and decision-making. High-quality data is accurate, complete, consistent, timely, and fit for purpose. Data quality frameworks provide systematic approaches to measure, monitor, and improve data.
+
+## Overview
+
+Data quality dimensions:
+
+**Accuracy**: Data correctly represents reality
+- Are values correct and precise?
+- Are calculations correct?
+- Do values fall within expected ranges?
+
+**Completeness**: All required data is present
+- Are there missing values?
+- Are required fields populated?
+- What is the null/empty rate?
+
+**Consistency**: Data is uniform across systems
+- Are values standardized (e.g., date formats)?
+- Are duplicate values handled correctly?
+- Are relationships maintained?
+
+**Timeliness**: Data is available when needed
+- How fresh is the data?
+- What is the latency from source to availability?
+- Are SLAs being met?
+
+**Validity**: Data conforms to defined format and structure
+- Do values match expected types?
+- Do values conform to business rules?
+- Are constraints satisfied?
+
+**Uniqueness**: No unintended duplicates
+- Are duplicate records identified?
+- Are there unintended data copies?
+- Is deduplication working correctly?
+
+## Data Validation
+
+### Validation Rules
+
+**Type Validation**:
+```python
+# Ensure correct data types
+rules = {
+    "age": {"type": "integer"},
+    "email": {"type": "string"},
+    "created_at": {"type": "timestamp"},
+    "active": {"type": "boolean"}
+}
+```
+
+**Range Validation**:
+```python
+# Values fall within acceptable ranges
+rules = {
+    "age": {"min": 0, "max": 150},
+    "score": {"min": 0, "max": 100},
+    "created_at": {"before": "now()"}
+}
+```
+
+**Pattern Validation**:
+```python
+# Values match expected patterns
+rules = {
+    "email": {"pattern": r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"},
+    "phone": {"pattern": r"^\+?1?\d{9,15}$"},
+    "zip_code": {"pattern": r"^\d{5}(-\d{4})?$"}
+}
+```
+
+**Set Membership Validation**:
+```python
+# Values from allowed set
+rules = {
+    "status": {"enum": ["active", "inactive", "pending"]},
+    "country": {"enum": ["US", "CA", "MX"]},
+    "currency": {"enum": ["USD", "EUR", "GBP"]}
+}
+```
+
+**Relationship Validation**:
+```python
+# Constraints across fields
+rules = [
+    {
+        "name": "age_must_be_positive",
+        "condition": "age >= 0"
+    },
+    {
+        "name": "end_date_after_start",
+        "condition": "end_date > start_date"
+    },
+    {
+        "name": "active_requires_start_date",
+        "condition": "if status='active' then start_date is not null"
+    }
+]
+```
+
+**Referential Integrity Validation**:
+```python
+# Foreign key constraints
+rules = {
+    "customer_id": {
+        "foreign_key": "customers.id"
+    },
+    "order_id": {
+        "foreign_key": "orders.id"
+    }
+}
+```
+
+### Validation Frameworks
+
+**Great Expectations** (Python):
+```python
+from great_expectations.dataset import PandasDataset
+
+df = PandasDataset(data)
+
+# Define expectations
+df.expect_column_values_to_not_be_null("id")
+df.expect_column_values_to_be_in_set(
+    "status",
+    ["active", "inactive"]
+)
+df.expect_column_values_to_be_between(
+    "age",
+    min_value=0,
+    max_value=150
+)
+
+# Run validation
+results = df.validate()
+```
+
+**dbt tests** (SQL-based):
+```sql
+-- Define tests
+select *
+from {{ ref('customers') }}
+where id is null
+  or email is null
+  or not email ~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$'
+```
+
+**JSON Schema Validation**:
+```json
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    }
+  },
+  "required": ["id", "email"]
+}
+```
+
+## Data Profiling
+
+Data profiling analyzes data characteristics to understand distribution, outliers, and quality issues.
+
+### Profile Metrics
+
+**Univariate Analysis** (Single Column):
+
+```json
+{
+  "column": "age",
+  "type": "numeric",
+  "null_count": 15,
+  "null_percentage": 0.15,
+  "distinct_count": 89,
+  "distinct_percentage": 0.89,
+  "min": 18,
+  "max": 89,
+  "mean": 45.3,
+  "median": 43,
+  "mode": 40,
+  "std_dev": 12.5,
+  "skewness": 0.45,
+  "kurtosis": 2.1,
+  "percentiles": {
+    "25": 35,
+    "50": 43,
+    "75": 55,
+    "95": 72
+  }
+}
+```
+
+```json
+{
+  "column": "status",
+  "type": "categorical",
+  "null_count": 0,
+  "distinct_count": 3,
+  "unique_percentage": 0.03,
+  "value_distribution": {
+    "active": 6000,
+    "inactive": 3500,
+    "pending": 500
+  },
+  "mode": "active",
+  "mode_count": 6000
+}
+```
+
+**Multivariate Analysis** (Multiple Columns):
+
+```json
+{
+  "correlation_matrix": {
+    "age": {"income": 0.65, "spending": 0.58},
+    "income": {"spending": 0.72},
+    "spending": {}
+  },
+  "relationships": [
+    {
+      "columns": ["created_at", "updated_at"],
+      "relationship": "updated_at >= created_at",
+      "violations": 3
+    }
+  ]
+}
+```
+
+### Profiling Tools
+
+**pandas-profiling** (Python):
+```python
+from ydata_profiling import ProfileReport
+
+profile = ProfileReport(df, title="Data Profile", minimal=False)
+profile.to_file("profile.html")
+```
+
+**Great Expectations Data Docs**:
+```python
+from great_expectations.core.batch import RuntimeBatchRequest
+
+context = ge.get_context()
+batch = context.get_batch(batch_request)
+profile = batch.expect_table_row_count_to_be_between(0)
+profile.build_data_docs()
+```
+
+**Apache Griffin**:
+```json
+{
+  "name": "customer_data_profile",
+  "dataSource": "hdfs://data/customers",
+  "evaluateRule": {
+    "rules": [
+      {
+        "metric": "nullCount",
+        "column": "email",
+        "name": "missing_emails"
+      },
+      {
+        "metric": "distinctCount",
+        "column": "id",
+        "name": "unique_ids"
+      }
+    ]
+  }
+}
+```
+
+## Data Testing
+
+### Test Categories
+
+**Schema Tests**:
+Verify structure and types.
+
+```python
+def test_schema():
+    df = load_data()
+    assert set(df.columns) == {"id", "name", "email", "age"}
+    assert df["id"].dtype == "int64"
+    assert df["email"].dtype == "object"
+```
+
+**Completeness Tests**:
+Check for missing values.
+
+```python
+def test_completeness():
+    df = load_data()
+    required_fields = ["id", "name", "email"]
+    for field in required_fields:
+        assert df[field].isna().sum() == 0, f"Missing values in {field}"
+```
+
+**Accuracy Tests**:
+Verify correctness against sources.
+
+```python
+def test_accuracy():
+    df = load_data()
+    source_df = load_source_data()
+
+    # Sample comparison
+    sample_ids = [1, 2, 3, 4, 5]
+    for id in sample_ids:
+        expected = source_df[source_df.id == id].iloc[0]
+        actual = df[df.id == id].iloc[0]
+        assert expected['name'] == actual['name']
+```
+
+**Consistency Tests**:
+Check for contradictions.
+
+```python
+def test_consistency():
+    df = load_data()
+
+    # Created before updated
+    assert (df['created_at'] <= df['updated_at']).all()
+
+    # Active requires email
+    active_no_email = df[(df['status'] == 'active') & (df['email'].isna())]
+    assert len(active_no_email) == 0
+```
+
+**Uniqueness Tests**:
+Detect duplicates.
+
+```python
+def test_uniqueness():
+    df = load_data()
+
+    # No duplicate IDs
+    assert df['id'].nunique() == len(df)
+
+    # No duplicate records
+    assert df.duplicated().sum() == 0
+```
+
+**Timeliness Tests**:
+Verify data freshness.
+
+```python
+def test_timeliness():
+    df = load_data()
+    last_update = df['updated_at'].max()
+    age_minutes = (datetime.now() - last_update).total_seconds() / 60
+
+    assert age_minutes < 60, f"Data is {age_minutes} minutes old"
+```
+
+## Data Monitoring
+
+### Monitoring Metrics
+
+**Volume Monitoring**:
+```json
+{
+  "metric": "record_count",
+  "table": "transactions",
+  "expected_range": {"min": 50000, "max": 150000},
+  "current": 98500,
+  "status": "healthy",
+  "threshold": 0.1
+}
+```
+
+**Freshness Monitoring**:
+```json
+{
+  "metric": "max_timestamp",
+  "table": "events",
+  "expected_freshness_hours": 1,
+  "max_timestamp": "2024-01-28T14:30:00Z",
+  "age_hours": 0.5,
+  "status": "healthy"
+}
+```
+
+**Distribution Monitoring**:
+```json
+{
+  "metric": "value_distribution",
+  "column": "status",
+  "baseline": {"active": 0.60, "inactive": 0.35, "pending": 0.05},
+  "current": {"active": 0.58, "inactive": 0.37, "pending": 0.05},
+  "drift_detected": false,
+  "drift_score": 0.02
+}
+```
+
+**Anomaly Detection**:
+```json
+{
+  "metric": "transaction_amount",
+  "type": "anomaly",
+  "normal_range": [10, 5000],
+  "spike_detected": {
+    "value": 250000,
+    "timestamp": "2024-01-28T09:15:00Z",
+    "severity": "high",
+    "action": "alert"
+  }
+}
+```
+
+### Monitoring Platforms
+
+**Apache Griffin**:
+- Data quality platform for Hadoop/Spark
+- Metrics and rules framework
+- Distribution and anomaly detection
+- Integration with monitoring stacks
+
+**Soda Cloud**:
+- Real-time data quality monitoring
+- Cloud-native architecture
+- Anomaly detection with ML
+- Incident management
+
+**Monte Carlo**:
+- Data downtime monitoring
+- Automated lineage discovery
+- Incident detection and resolution
+- Data health insights
+
+**dbt tests + Slack integration**:
+```yaml
+# dbt_project.yml
+on-run-end: |
+  {% if execute %}
+    {% set results = run_results.results %}
+    {% for result in results %}
+      {% if result.status == 'error' %}
+        [Send Slack alert about failure]
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+```
+
+## Data Quality Frameworks
+
+### DAMA Dimensions
+
+The DAMA International Data Management Body of Knowledge (DMBOK) defines 6 dimensions:
+
+| Dimension | Definition |
+|-----------|-----------|
+| **Accuracy** | Data correctly represents reality |
+| **Completeness** | Required data is present |
+| **Consistency** | Data is uniform across systems |
+| **Timeliness** | Data is current and available |
+| **Validity** | Data conforms to required format |
+| **Uniqueness** | No unintended duplicates |
+
+### Data Quality Scorecard
+
+```json
+{
+  "dataset": "customer_data",
+  "period": "2024-01",
+  "dimensions": {
+    "accuracy": {
+      "score": 0.98,
+      "weight": 0.25,
+      "weighted_score": 0.245,
+      "issues": ["3 duplicate records found"]
+    },
+    "completeness": {
+      "score": 0.95,
+      "weight": 0.25,
+      "weighted_score": 0.2375,
+      "issues": ["15 missing email values"]
+    },
+    "consistency": {
+      "score": 0.99,
+      "weight": 0.2,
+      "weighted_score": 0.198,
+      "issues": []
+    },
+    "timeliness": {
+      "score": 1.0,
+      "weight": 0.15,
+      "weighted_score": 0.15,
+      "issues": []
+    },
+    "validity": {
+      "score": 0.97,
+      "weight": 0.1,
+      "weighted_score": 0.097,
+      "issues": ["5 invalid email formats"]
+    },
+    "uniqueness": {
+      "score": 0.98,
+      "weight": 0.05,
+      "weighted_score": 0.049,
+      "issues": ["2 duplicate customer IDs"]
+    }
+  },
+  "overall_score": 0.967,
+  "status": "good",
+  "trending": "improving"
+}
+```
+
+## Anomaly Detection
+
+### Statistical Anomalies
+
+**Z-Score Method**:
+```python
+import numpy as np
+from scipy import stats
+
+def detect_outliers_zscore(data, threshold=3):
+    z_scores = np.abs(stats.zscore(data))
+    return data[z_scores > threshold]
+
+# Values >3 standard deviations from mean are outliers
+```
+
+**IQR Method**:
+```python
+def detect_outliers_iqr(data):
+    Q1 = data.quantile(0.25)
+    Q3 = data.quantile(0.75)
+    IQR = Q3 - Q1
+
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    return data[(data < lower_bound) | (data > upper_bound)]
+```
+
+### Distribution Shift Detection
+
+```python
+from scipy.stats import ks_2samp
+
+# Compare current distribution to baseline
+baseline_data = load_baseline()
+current_data = load_current()
+
+statistic, p_value = ks_2samp(baseline_data, current_data)
+
+if p_value < 0.05:
+    print("Distribution shift detected!")
+```
+
+### Isolation Forest
+
+```python
+from sklearn.ensemble import IsolationForest
+
+# Unsupervised anomaly detection
+clf = IsolationForest(contamination=0.1)
+predictions = clf.fit_predict(X)
+anomalies = X[predictions == -1]
+```
+
+## Data Quality SLAs
+
+### Service Level Agreements
+
+```yaml
+Service Level Agreement: Customer Database
+
+Accuracy:
+  Target: 99.0%
+  Measurement: Manual sampling of 100 records/week
+  Remediation: 48 hours to fix
+
+Completeness:
+  Target: 99.5%
+  Measurement: Null value rate
+  Remediation: 24 hours to populate missing required fields
+
+Timeliness:
+  Target: Data available within 1 hour of source update
+  Measurement: Max lag time
+  Remediation: Escalation if exceeds 2 hours
+
+Consistency:
+  Target: 100% cross-system alignment
+  Measurement: Weekly consistency audit
+  Remediation: Same-day reconciliation
+
+Consequences of SLA Breach:
+  - Credit to affected data users
+  - Root cause analysis required
+  - Prevention plan for future occurrences
+```
+
+## Best Practices
+
+1. **Define Clear Requirements**: What does "good" data mean for your use case?
+2. **Automate Validation**: Don't manually check data quality
+3. **Profile Before Modeling**: Understand data before using it
+4. **Monitor Continuously**: Set up ongoing quality monitoring
+5. **Document Issues**: Track and categorize quality problems
+6. **Root Cause Analysis**: Understand why issues occur
+7. **Establish SLAs**: Define and enforce data quality expectations
+8. **Test Data Quality**: Include quality tests in your pipeline
+9. **Make It Visible**: Dashboard quality metrics for stakeholders
+10. **Invest in Data Governance**: Quality is everyone's responsibility
+
+## Tools Summary
+
+| Tool | Type | Best For |
+|------|------|----------|
+| Great Expectations | Framework | Comprehensive validation testing |
+| dbt tests | SQL/Testing | Data warehouse testing |
+| Monte Carlo | Monitoring | Downtime detection and SLAs |
+| Soda | Monitoring | Real-time quality metrics |
+| Apache Griffin | Platform | Big data quality monitoring |
+| pandas-profiling | Analysis | Initial data exploration |
+| Freshness | Monitoring | Update frequency and latency |
+
+## Related Resources
+
+- [standards.org.ai](https://standards.org.ai) - Data quality standards
+- [knowledge.org.ai](https://knowledge.org.ai) - Data governance and quality frameworks
+- [models.org.ai](https://models.org.ai) - Data quality in ML context

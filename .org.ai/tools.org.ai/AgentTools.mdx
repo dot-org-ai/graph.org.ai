@@ -1,0 +1,270 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/AgentTools
+$type: https://tools.org.ai/ToolCategory
+name: "Agent Tools"
+description: "Frameworks, libraries, and platforms for building and managing AI agents, including MCP (Model Context Protocol) tools, function calling systems, and autonomous agent orchestration."
+category: "AI Development"
+---
+
+export const items = async () => {
+  return [
+    { name: "Model Context Protocol (MCP)", url: "https://mcp.org.ai" },
+    { name: "Claude SDK", url: "https://anthropic.com" },
+    { name: "LangChain", url: "https://langchain.com" },
+    { name: "AutoGen", url: "https://microsoft.github.io/autogen" },
+    { name: "ReAct", url: "https://arxiv.org/abs/2210.03629" },
+    { name: "CrewAI", url: "https://crewai.com" },
+  ]
+}
+
+# Agent Tools
+
+Frameworks, libraries, and platforms for building and managing AI agents, including MCP (Model Context Protocol) tools, function calling systems, and autonomous agent orchestration.
+
+## Overview
+
+Agent tools enable developers to create, deploy, and manage AI agents that can autonomously perform tasks, reason through problems, and interact with external systems. These tools provide abstractions for agent state management, action execution, function calling, and tool integration.
+
+## Key Technologies
+
+### Model Context Protocol (MCP)
+
+[MCP](https://mcp.org.ai) is an open protocol for managing context and tool interaction in AI agents. It provides a standardized way to:
+
+- Define tool interfaces and schemas
+- Handle function calling with proper type safety
+- Manage context windows and prompt optimization
+- Enable tool composition and chaining
+- Support streaming and asynchronous operations
+
+**Use Cases:**
+- Integrating external APIs and services
+- Providing structured data access to agents
+- Enabling safe, controlled function execution
+- Building composable tool ecosystems
+
+### Claude SDK & Function Calling
+
+The Claude SDK provides native support for:
+
+- Tool definition and schema validation
+- Multi-turn function calling workflows
+- Parallel tool execution
+- Error handling and retry logic
+- Streaming tool responses
+
+**Key Features:**
+```typescript
+const message = await client.messages.create({
+  model: "claude-3-5-sonnet-20241022",
+  max_tokens: 1024,
+  tools: [
+    {
+      name: "weather",
+      description: "Get weather information",
+      input_schema: {
+        type: "object",
+        properties: {
+          location: { type: "string" }
+        },
+        required: ["location"]
+      }
+    }
+  ]
+})
+```
+
+### LangChain
+
+LangChain provides a unified framework for building agent applications with:
+
+- Chain composition and orchestration
+- Memory and state management
+- Tool integration and wrapping
+- Agent loop execution
+- Multiple agent types (ReAct, OpenAI Agents, etc.)
+
+**Agent Types:**
+- ReAct (Reasoning + Acting)
+- Tool-using agents
+- Plan-and-execute agents
+- Multi-action agents
+
+### Microsoft AutoGen
+
+AutoGen enables building multi-agent systems with:
+
+- Agent role definition
+- Conversation management
+- Code execution capability
+- Group chat orchestration
+- Customizable agent behaviors
+
+### CrewAI
+
+CrewAI specializes in agent coordination with:
+
+- Role-based agent definition
+- Task orchestration
+- Memory and knowledge sharing
+- Hierarchical execution flows
+- Result validation and retry
+
+## Common Patterns
+
+### Function Calling Pattern
+
+```typescript
+interface ToolDefinition {
+  name: string
+  description: string
+  input_schema: JSONSchema
+}
+
+interface ToolCall {
+  id: string
+  type: "tool_use"
+  name: string
+  input: Record<string, unknown>
+}
+
+interface ToolResult {
+  type: "tool_result"
+  tool_use_id: string
+  content: string
+}
+```
+
+### Agent Loop Pattern
+
+```typescript
+while (shouldContinue) {
+  const response = await ai.generate({
+    messages: conversationHistory,
+    tools: availableTools,
+    model: selectedModel
+  })
+
+  if (response.stop_reason === "tool_use") {
+    const toolResults = await executeTools(response.tool_calls)
+    conversationHistory.push({
+      role: "assistant",
+      content: response.content
+    })
+    conversationHistory.push({
+      role: "user",
+      content: toolResults
+    })
+  } else {
+    // Final response
+    break
+  }
+}
+```
+
+### Tool Integration Pattern
+
+```typescript
+const tools = {
+  search: {
+    description: "Search the internet",
+    execute: async (query: string) => {
+      return await searchEngine.search(query)
+    }
+  },
+  calculate: {
+    description: "Perform mathematical calculations",
+    execute: async (expression: string) => {
+      return eval(expression) // Use safe math library in production
+    }
+  },
+  fetch: {
+    description: "Fetch data from URLs",
+    execute: async (url: string) => {
+      return await fetch(url).then(r => r.json())
+    }
+  }
+}
+```
+
+## Best Practices
+
+### Tool Design
+
+1. **Clear Descriptions**: Write detailed tool descriptions that help agents understand when and how to use them
+2. **Strict Schemas**: Define comprehensive JSON schemas for tool inputs
+3. **Error Handling**: Provide clear error messages for tool execution failures
+4. **Monitoring**: Track tool usage patterns and failures
+5. **Versioning**: Maintain backwards compatibility in tool APIs
+
+### Agent Development
+
+1. **Prompt Engineering**: Craft clear system prompts that define agent behavior
+2. **Tool Prioritization**: Expose only necessary tools to agents
+3. **Feedback Loops**: Implement validation and error recovery
+4. **Testing**: Test agent behavior with various tool combinations
+5. **Logging**: Instrument agents for debugging and observability
+
+### Context Management
+
+1. **Window Optimization**: Manage context window size effectively
+2. **Memory Strategy**: Choose appropriate memory types (short-term, long-term, semantic)
+3. **Chunking**: Break large tasks into manageable subtasks
+4. **Recovery**: Implement graceful degradation when context limits are reached
+
+## Comparison Matrix
+
+| Aspect | MCP | Claude SDK | LangChain | AutoGen | CrewAI |
+|--------|-----|-----------|-----------|---------|--------|
+| Protocol Focus | Yes | Library | Framework | Framework | Framework |
+| Multi-Agent | Native | Basic | Advanced | Advanced | Native |
+| Memory Mgmt | Tool | Basic | Advanced | Configurable | Built-in |
+| Code Execution | Optional | No | Optional | Yes | No |
+| Learning Curve | Moderate | Low | Moderate | High | Moderate |
+
+## Cross-References
+
+- [agents.org.ai](https://agents.org.ai) - Agent types and definitions
+- [mcp.org.ai](https://mcp.org.ai) - Model Context Protocol specification
+- [tech.org.ai](https://tech.org.ai) - Related technologies and stacks
+- [DeveloperTools.mdx](#) - Development frameworks and IDEs
+- [AutomationTools.mdx](#) - Workflow and orchestration tools
+
+## Resources
+
+### Documentation
+
+- [Claude API Documentation](https://docs.anthropic.com)
+- [MCP Protocol Specification](https://modelcontextprotocol.io)
+- [LangChain Documentation](https://python.langchain.com)
+- [AutoGen Documentation](https://microsoft.github.io/autogen)
+
+### Papers & Research
+
+- [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629)
+- [Agents in LLMs: Reasoning and Acting](https://arxiv.org/abs/2212.10537)
+- [Multi-Agent Systems with LLMs](https://arxiv.org/abs/2305.10813)
+
+### Community
+
+- [Anthropic Discord](https://discord.gg/anthropic)
+- [LangChain Community](https://github.com/langchain-ai/langchain)
+- [MCP Community](https://github.com/modelcontextprotocol)
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `ToolCategory` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Category | AI Development |
+| Related Domains | [agents.org.ai](https://agents.org.ai), [mcp.org.ai](https://mcp.org.ai), [tech.org.ai](https://tech.org.ai) |
+
+## Sources
+
+- Anthropic. "Claude API Documentation." https://docs.anthropic.com
+- Model Context Protocol. "Protocol Specification." https://modelcontextprotocol.io
+- LangChain. "LangChain Documentation." https://python.langchain.com
+- Microsoft. "AutoGen Framework." https://microsoft.github.io/autogen
+- Shunyu Yao et al. "ReAct: Synergizing Reasoning and Acting in Language Models." 2022.

@@ -1,0 +1,481 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/DataCatalogs
+$type: https://datasets.org.ai/DataCategory
+name: "Data Catalogs"
+description: "Data catalog systems for metadata management, data lineage, discovery, and governance across enterprise data ecosystems."
+parent: https://datasets.org.ai
+---
+
+export const items = async () => {
+  // Fetch data catalog resources from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://datasets.org.ai/DataCatalog'
+  })
+}
+
+# Data Catalogs
+
+Data catalogs are centralized repositories for metadata about datasets, models, pipelines, and other data assets. They enable discovery, governance, lineage tracking, and collaboration across data organizations.
+
+## Overview
+
+Data catalogs solve critical challenges in data organizations:
+- **Data Discovery**: Finding what data exists and where it is
+- **Metadata Management**: Capturing properties, ownership, quality metrics
+- **Data Lineage**: Understanding how data flows through pipelines
+- **Governance**: Enforcing policies, managing access, compliance
+- **Data Quality**: Tracking data quality metrics and issues
+- **Collaboration**: Annotating and documenting data assets
+- **Impact Analysis**: Understanding downstream impacts of changes
+
+A comprehensive data catalog provides the foundation for effective data governance, democratization, and utilization.
+
+## Core Components
+
+### Asset Metadata
+
+Assets are the primary entities in a data catalog. Common asset types:
+
+**Datasets**:
+- Name, description, owner
+- Format and schema information
+- Location (data warehouse, data lake, database)
+- Update frequency and freshness
+- Row/record counts and size
+- Sensitivity classification
+- Tags and business context
+
+**Tables/Datasets**:
+- Column-level metadata (name, type, description)
+- Primary and foreign key relationships
+- Business metrics and KPIs
+- SLA and freshness expectations
+- Data quality rules
+
+**Data Models**:
+- Dimensions and facts
+- Aggregation hierarchies
+- Slowly changing dimensions
+- Conforming dimensions
+
+**Pipelines/Transformations**:
+- Data sources (upstream inputs)
+- Data sinks (downstream outputs)
+- Transformation logic
+- Schedule and runtime information
+- Error handling and monitoring
+
+**APIs and Services**:
+- Endpoint information
+- Authentication requirements
+- Rate limiting and quotas
+- SLA and availability metrics
+- Version information
+
+**Example Metadata Record**:
+```json
+{
+  "asset_id": "prod_orders_table",
+  "asset_type": "table",
+  "name": "Production Orders",
+  "owner": {
+    "name": "Data Engineering Team",
+    "email": "data-eng@example.com"
+  },
+  "description": "Complete transactional order records from production systems",
+  "location": "s3://datalake/prod/orders",
+  "format": "parquet",
+  "columns": [
+    {
+      "name": "order_id",
+      "type": "bigint",
+      "description": "Unique order identifier",
+      "pii": false
+    },
+    {
+      "name": "customer_email",
+      "type": "string",
+      "description": "Customer email address",
+      "pii": true
+    }
+  ],
+  "row_count": 15000000,
+  "size_gb": 2.3,
+  "updated_at": "2024-01-28T00:00:00Z",
+  "update_frequency": "daily",
+  "quality_score": 0.95,
+  "tags": ["production", "transactional", "orders", "finance"],
+  "sensitivity": "confidential"
+}
+```
+
+### Metadata Attributes
+
+Standard metadata attributes tracked across assets:
+
+| Attribute | Type | Purpose |
+|-----------|------|---------|
+| Asset ID | string | Unique identifier |
+| Name | string | Human-readable name |
+| Description | text | Business context and use cases |
+| Owner | person/team | Responsible party |
+| Steward | person/team | Governance responsibility |
+| Created Date | timestamp | Asset creation date |
+| Last Modified | timestamp | Last update time |
+| Format | string | Data format (parquet, csv, etc.) |
+| Location | URI | Storage location |
+| Schema | schema object | Column/field definitions |
+| Size | bytes | Storage size |
+| Record Count | integer | Number of records |
+| Freshness | timestamp | When data was last refreshed |
+| Quality Score | float | Data quality assessment (0-1) |
+| Tags | array | Classification and categorization |
+| Business Terms | array | Business glossary mappings |
+| Sensitivity | enum | PII, confidential, public, etc. |
+
+## Data Lineage
+
+Data lineage tracks the flow of data through systems, answering:
+- Where does this data come from?
+- What transformations happen to it?
+- What systems depend on this data?
+- What is the end-to-end data flow?
+
+### Lineage Types
+
+**Upstream Lineage (Provenance)**:
+Shows where data originates and what transforms are applied.
+
+```
+Source System → Extract → Transform → Load → Data Warehouse
+     ↓            ↓           ↓          ↓          ↓
+  Orders      [ETL Job]  [Aggregation] [CDC]   [Orders Table]
+```
+
+**Downstream Lineage (Impact)**:
+Shows what systems and reports depend on data.
+
+```
+Orders Table → [Aggregation Job] → Dashboard
+     ↓              ↓                   ↓
+     └─ → [ML Model] → Predictions
+     └─ → [Report] → Executives
+```
+
+**Column-Level Lineage**:
+Fine-grained tracking of which source columns map to which output columns.
+
+```
+order_id (source) → transform_order_id() → order_id (target)
+order_date (source) → parse_date() → date (target)
+```
+
+### Lineage Graph Example
+
+```json
+{
+  "asset_id": "customer_360_dataset",
+  "upstream": [
+    {
+      "asset_id": "orders_table",
+      "type": "table",
+      "transformation": "Join on customer_id",
+      "last_ingested": "2024-01-28T00:00:00Z"
+    },
+    {
+      "asset_id": "customers_table",
+      "type": "table",
+      "transformation": "Join on customer_id",
+      "last_ingested": "2024-01-28T00:00:00Z"
+    }
+  ],
+  "downstream": [
+    {
+      "asset_id": "customer_dashboard",
+      "type": "dashboard",
+      "depends_on": ["customer_360_dataset"]
+    },
+    {
+      "asset_id": "churn_prediction_model",
+      "type": "model",
+      "depends_on": ["customer_360_dataset"]
+    }
+  ]
+}
+```
+
+## Data Governance
+
+Data catalogs enable comprehensive governance frameworks:
+
+### Access Control
+- Define who can access what data
+- Role-based access control (RBAC)
+- Attribute-based access control (ABAC)
+- Data masking for sensitive columns
+- Audit trails of data access
+
+### Data Quality
+- Define quality rules and expectations
+- Track quality metrics over time
+- Alert on quality degradation
+- Document quality issues
+- Track remediation
+
+### Compliance
+- Map data to compliance requirements (GDPR, CCPA, HIPAA)
+- Track data retention policies
+- Document data usage agreements
+- Audit regulatory compliance
+- Manage data retention and deletion
+
+### Data Stewardship
+- Assign asset stewards
+- Document stewardship responsibilities
+- Track metadata certification
+- Manage approvals and sign-offs
+
+### Example Governance Policy
+
+```yaml
+policy_id: mask_customer_pii
+asset_pattern: ".*customer.*"
+rules:
+  - field_name: "email"
+    pii_type: "email"
+    action: "mask_except_domain"
+  - field_name: "phone"
+    pii_type: "phone"
+    action: "mask_all"
+  - field_name: "ssn"
+    pii_type: "ssn"
+    action: "redact"
+
+access_control:
+  - role: "data_analyst"
+    permission: "view_masked"
+  - role: "data_scientist"
+    permission: "view_unmasked"
+    condition: "approved_project"
+  - role: "customer_service"
+    permission: "view_unmasked"
+    condition: "production_support"
+```
+
+## Data Discovery
+
+### Search Capabilities
+
+Effective data discovery requires:
+
+**Full-Text Search**:
+- Search across asset names, descriptions, tags
+- Fuzzy matching and autocomplete
+- Relevance-based ranking
+
+**Faceted Search**:
+- Filter by owner, tags, format, sensitivity
+- Hierarchical navigation
+- Dynamic facet counts
+
+**Advanced Queries**:
+- Find tables with specific columns
+- Search by data quality score
+- Find unused datasets
+- Identify data duplicates
+- Locate sensitive data
+
+**Example Queries**:
+```
+Query: Find all production datasets owned by Analytics team
+Filters: owner="Analytics", sensitivity="internal", status="active"
+
+Query: Find tables with customer email column
+Search: column_name="email" AND table_type="customer"
+
+Query: Find data quality issues last week
+Filters: quality_issues_created > 2024-01-22
+
+Query: Find datasets not accessed in 90 days
+Filters: last_accessed < 2024-10-30
+```
+
+### Search Interface Features
+
+- **Search Suggestions**: Autocomplete with recent/popular terms
+- **Search History**: Track and replay previous searches
+- **Saved Searches**: Store common queries for reuse
+- **Alerts**: Notify on new matching assets
+- **Notifications**: Digest of new/updated assets
+
+## Data Catalogs in Practice
+
+### Popular Data Catalog Solutions
+
+**Apache Atlas**:
+- Open-source metadata management
+- Lineage tracking with graph database
+- Governance and compliance
+- Integration with Hadoop ecosystem
+- Use case: Large-scale data platforms
+
+**Collibra**:
+- Enterprise data governance platform
+- Comprehensive metadata management
+- Business glossary and data dictionary
+- Workflow automation
+- Use case: Enterprise data governance
+
+**Alation**:
+- Data intelligence platform
+- Collaborative data discovery
+- SQL parser for lineage
+- Content-driven experience
+- Use case: Analytics-focused organizations
+
+**Datahub** (LinkedIn open-sourced):
+- Metadata platform with streaming architecture
+- Real-time lineage and monitoring
+- GraphQL API
+- Extensible plugin framework
+- Use case: Modern data stacks
+
+**AWS Glue Catalog**:
+- Cloud-native metadata service
+- Integration with AWS services
+- Schema registry for formats
+- Partition projection
+- Use case: AWS-based data lakes
+
+**Azure Purview**:
+- Microsoft's data governance service
+- Unified metadata management
+- Lineage and impact analysis
+- Multi-cloud support
+- Use case: Microsoft ecosystem
+
+**Google Cloud Data Catalog**:
+- Serverless metadata service
+- Search across data assets
+- Data quality integration
+- BigQuery integration
+- Use case: Google Cloud Platform
+
+### Implementation Patterns
+
+**Metadata Extraction**:
+- Automated extraction from data warehouses
+- SQL parser for lineage detection
+- ETL tool integration
+- Database schema crawling
+- API-based ingestion
+
+**Lineage Tracking**:
+- Automated from ETL/workflow tools
+- Database query logs analysis
+- API instrumentation
+- Event-based tracking
+- Manual documentation
+
+**Metadata Update Strategy**:
+- Batch crawls on schedule
+- Real-time event-driven updates
+- Combination of both
+- Manual contribution from teams
+- Integration with data platform APIs
+
+## Metadata Standards
+
+### Common Metadata Models
+
+**Dublin Core**:
+Simple metadata scheme with 15 core elements (title, creator, subject, description, etc.)
+
+**Data Catalog Vocabulary (DCAT)**:
+W3C standard for dataset metadata, used by data.gov and open data portals
+
+**ISO 8601**:
+Standard for date/time representation (used for timestamps, update frequency)
+
+**GS1 Standards**:
+Supply chain data standards with structured identifiers
+
+### Metadata Ontologies
+
+```
+Entity Hierarchy:
+  Organization
+    ├─ Data Domain
+    │  ├─ Dataset/Table
+    │  │  ├─ Column
+    │  │  └─ Quality Metric
+    │  ├─ Pipeline/Job
+    │  │  ├─ Task
+    │  │  └─ Lineage Link
+    │  └─ Data Model
+    │     ├─ Dimension
+    │     └─ Fact
+    └─ Team
+       ├─ Data Steward
+       ├─ Data Owner
+       └─ Data Analyst
+```
+
+## Integration with Data Platforms
+
+### Modern Data Stack Integration
+
+| Platform | Catalog Integration | Benefit |
+|----------|------------------|---------|
+| dbt | Lineage, model documentation | Code-to-catalog tracking |
+| Airflow | DAG lineage, execution history | Pipeline monitoring |
+| Kafka | Schema registry, topic lineage | Event stream governance |
+| Spark | Lineage from jobs, table metadata | Big data governance |
+| Snowflake | Auto-discovery, column-level lineage | Data warehouse integration |
+| BigQuery | Dataset metadata, column lineage | Cloud warehouse integration |
+| Looker | Dashboard/tile lineage, data semantics | BI tool integration |
+
+### API-Based Integration
+
+```bash
+# Create asset
+POST /api/v1/assets
+{
+  "name": "customer_events",
+  "type": "table",
+  "owner": "analytics",
+  "tags": ["production", "events"]
+}
+
+# Update lineage
+POST /api/v1/lineage
+{
+  "upstream": ["raw_events"],
+  "asset_id": "customer_events",
+  "downstream": ["churn_model"]
+}
+
+# Search
+GET /api/v1/search?q=customer&type=table&owner=analytics
+```
+
+## Best Practices
+
+1. **Centralize Metadata**: Single source of truth for asset information
+2. **Automate Extraction**: Reduce manual effort and keep metadata fresh
+3. **Enforce Standards**: Establish naming conventions and classification schemes
+4. **Enable Collaboration**: Allow teams to annotate and enrich metadata
+5. **Track Quality**: Monitor data quality and surface issues
+6. **Define Governance**: Clear policies and responsibility assignments
+7. **Make It Discoverable**: Invest in search and navigation UX
+8. **Integrate Tools**: Connect with data platforms and operational systems
+9. **Regular Curation**: Schedule metadata reviews and cleanup
+10. **Measure Adoption**: Track catalog usage and ROI
+
+## Related Resources
+
+- [knowledge.org.ai](https://knowledge.org.ai) - Knowledge representation and organization
+- [standards.org.ai](https://standards.org.ai) - Metadata standards and specifications
+- [models.org.ai](https://models.org.ai) - Data models and semantics

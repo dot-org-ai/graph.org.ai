@@ -1,0 +1,814 @@
+---
+$context: https://mcp.org.ai
+$id: https://mcp.org.ai/MCPResources
+$type: https://mcp.org.ai/Mcp
+name: "MCP Resources and URI Schemes"
+description: "Comprehensive guide to resource URIs, templates, dynamic resources, and resource management patterns"
+---
+
+export const items = async () => {
+  return []
+}
+
+# MCP Resources and URI Schemes
+
+Resources in MCP represent data or content accessible through the protocol. Unlike tools (which are functions to call), resources are references to data that can be read, potentially subscribed to for updates, and often accessed using URI-based addressing. This guide covers resource design, URI patterns, and implementation strategies.
+
+## Resource Fundamentals
+
+### Resource Definition
+
+```typescript
+interface Resource {
+  // URI identifying this resource
+  uri: string
+
+  // Human-readable name
+  name: string
+
+  // Description of the resource
+  description: string
+
+  // MIME type of content (optional)
+  mimeType?: string
+
+  // URI templates for dynamic resources
+  templates?: string[]
+
+  // Whether this resource is read-only
+  readOnly?: boolean
+
+  // Whether this resource can be subscribed to
+  subscribable?: boolean
+}
+
+interface ResourceContent {
+  // The URI of the fetched resource
+  uri: string
+
+  // MIME type of the content
+  mimeType: string
+
+  // The actual resource content
+  contents: string
+}
+```
+
+### Resource vs Tools Comparison
+
+| Aspect | Tools | Resources |
+|--------|-------|-----------|
+| **Purpose** | Execute functions | Access data |
+| **Parameters** | Defined in schema | Part of URI |
+| **Result** | Output of computation | Raw/structured data |
+| **Caching** | Usually not | Often cacheable |
+| **Subscriptions** | Not applicable | Supported |
+| **Examples** | search, create, analyze | docs, config, logs |
+
+## URI Schemes and Patterns
+
+### Standard URI Format
+
+MCP resources use URIs following RFC 3986. Servers define URI schemes and patterns:
+
+```
+scheme://authority/path?query#fragment
+
+file://documents/report.pdf
+db://users/12345
+http://api.example.com/v1/data
+search://documents?q=machine+learning&limit=10
+```
+
+### Built-in URI Schemes
+
+#### File Scheme
+
+```typescript
+// Local filesystem resources
+const fileResources = [
+  {
+    uri: 'file://documents/readme.md',
+    name: 'README',
+    mimeType: 'text/markdown'
+  },
+  {
+    uri: 'file://config/settings.json',
+    name: 'Settings',
+    mimeType: 'application/json'
+  },
+  {
+    uri: 'file://logs/application.log',
+    name: 'Application Log',
+    mimeType: 'text/plain'
+  }
+]
+```
+
+#### Database Scheme
+
+```typescript
+// Database record resources
+const dbResources = [
+  {
+    uri: 'db://users/12345',
+    name: 'User Record #12345',
+    mimeType: 'application/json'
+  },
+  {
+    uri: 'db://orders/order-2024-11-28-001',
+    name: 'Order Record',
+    mimeType: 'application/json'
+  }
+]
+```
+
+#### HTTP Scheme
+
+```typescript
+// Remote API resources
+const apiResources = [
+  {
+    uri: 'http://api.weather.com/current/NewYork',
+    name: 'Current Weather - New York',
+    mimeType: 'application/json'
+  }
+]
+```
+
+#### Custom Schemes
+
+```typescript
+// Custom domain-specific schemes
+const customResources = [
+  {
+    uri: 'knowledge://faq/getting-started',
+    name: 'Getting Started FAQ',
+    mimeType: 'text/markdown'
+  },
+  {
+    uri: 'metrics://prometheus/cpu-usage',
+    name: 'CPU Usage Metrics',
+    mimeType: 'text/plain'
+  },
+  {
+    uri: 'search://github/repositories?q=mcp&language=typescript',
+    name: 'GitHub Repository Search',
+    mimeType: 'application/json'
+  }
+]
+```
+
+## URI Templates
+
+### Template Syntax
+
+URI templates allow dynamic resource access using RFC 6570 syntax:
+
+```typescript
+// Simple path variables
+'db://users/{userId}'
+'db://users/{userId}/posts/{postId}'
+
+// Query parameters
+'search://documents?q={query}&limit={limit}'
+
+// Multiple variable types
+'metrics://time-series/{metric}/{interval}'
+  // interval could be "daily", "weekly", "monthly"
+```
+
+### Template Implementation
+
+```typescript
+const resourceTemplates = {
+  // Single parameter
+  'file://documents/{name}': {
+    description: 'Access documents by name',
+    variables: {
+      name: { description: 'Document filename' }
+    }
+  },
+
+  // Multiple parameters
+  'db://users/{userId}/orders/{orderId}': {
+    description: 'Access specific user order',
+    variables: {
+      userId: { description: 'User ID', required: true },
+      orderId: { description: 'Order ID', required: true }
+    }
+  },
+
+  // Query parameters
+  'search://products?query={q}&category={cat}&limit={limit}': {
+    description: 'Search products',
+    variables: {
+      q: { description: 'Search query', required: true },
+      cat: { description: 'Product category', required: false },
+      limit: { description: 'Result limit', default: 10 }
+    }
+  },
+
+  // Complex template
+  'weather://forecast/{location}/daily/{days}': {
+    description: 'Get weather forecast',
+    variables: {
+      location: { description: 'City name or coordinates' },
+      days: { description: 'Number of forecast days (1-14)' }
+    }
+  }
+}
+```
+
+## Dynamic Resources
+
+### Template Resolution
+
+```typescript
+class DynamicResourceProvider {
+  // Template patterns registered by server
+  private templates = new Map<string, TemplateHandler>()
+
+  registerTemplate(pattern: string, handler: TemplateHandler) {
+    this.templates.set(pattern, handler)
+  }
+
+  async getResource(uri: string): Promise<ResourceContent> {
+    // Try exact match first
+    const exact = this.resources.get(uri)
+    if (exact) {
+      return exact
+    }
+
+    // Try template matching
+    for (const [pattern, handler] of this.templates) {
+      const match = this.matchPattern(pattern, uri)
+      if (match) {
+        return handler(match)
+      }
+    }
+
+    throw new Error(`Resource not found: ${uri}`)
+  }
+
+  private matchPattern(
+    pattern: string,
+    uri: string
+  ): Record<string, string> | null {
+    // Convert pattern to regex and extract variables
+    const regex = this.patternToRegex(pattern)
+    const matches = uri.match(regex)
+
+    if (!matches) return null
+
+    const params: Record<string, string> = {}
+    const variables = this.extractVariables(pattern)
+
+    variables.forEach((varName, index) => {
+      params[varName] = matches[index + 1]
+    })
+
+    return params
+  }
+
+  private patternToRegex(pattern: string): RegExp {
+    // Convert {var} to capture groups
+    const escaped = pattern.replace(/[.+^${}()|[\]\\]/g, '\\$&')
+    const regex = escaped.replace(/\{(\w+)\}/g, '([^/]+)')
+    return new RegExp(`^${regex}$`)
+  }
+
+  private extractVariables(pattern: string): string[] {
+    const vars: string[] = []
+    const regex = /\{(\w+)\}/g
+    let match
+
+    while ((match = regex.exec(pattern))) {
+      vars.push(match[1])
+    }
+
+    return vars
+  }
+}
+```
+
+### Practical Dynamic Resource Examples
+
+```typescript
+// Weather forecast resource
+class WeatherResourceProvider {
+  private templates = [
+    'weather://current/{city}',
+    'weather://forecast/{city}/{days}'
+  ]
+
+  async getResource(uri: string): Promise<ResourceContent> {
+    const match = uri.match(/weather:\/\/(\w+)\/(\w+)/)
+    if (!match) throw new Error('Invalid weather URI')
+
+    const [, type, location, days] = match
+
+    if (type === 'current') {
+      const data = await this.getWeatherCurrent(location)
+      return {
+        uri,
+        mimeType: 'application/json',
+        contents: JSON.stringify(data, null, 2)
+      }
+    }
+
+    if (type === 'forecast') {
+      const data = await this.getWeatherForecast(location, parseInt(days))
+      return {
+        uri,
+        mimeType: 'application/json',
+        contents: JSON.stringify(data, null, 2)
+      }
+    }
+
+    throw new Error(`Unknown weather type: ${type}`)
+  }
+
+  private async getWeatherCurrent(city: string) {
+    const data = await weatherApi.getCurrent(city)
+    return {
+      city,
+      temperature: data.temp,
+      condition: data.description,
+      humidity: data.humidity,
+      timestamp: new Date().toISOString()
+    }
+  }
+
+  private async getWeatherForecast(city: string, days: number) {
+    const forecast = await weatherApi.getForecast(city, days)
+    return {
+      city,
+      days,
+      forecast: forecast.map(day => ({
+        date: day.date,
+        high: day.high_temp,
+        low: day.low_temp,
+        condition: day.description
+      }))
+    }
+  }
+}
+
+// Database record resource
+class DatabaseResourceProvider {
+  private templates = [
+    'db://users/{userId}',
+    'db://users/{userId}/posts',
+    'db://posts/{postId}'
+  ]
+
+  async getResource(uri: string): Promise<ResourceContent> {
+    if (uri.match(/^db:\/\/users\/\d+$/)) {
+      const userId = uri.split('/').pop()
+      const user = await database.users.findById(userId)
+      return {
+        uri,
+        mimeType: 'application/json',
+        contents: JSON.stringify(user, null, 2)
+      }
+    }
+
+    if (uri.match(/^db:\/\/users\/\d+\/posts$/)) {
+      const userId = uri.split('/')[2]
+      const posts = await database.posts.findByUserId(userId)
+      return {
+        uri,
+        mimeType: 'application/json',
+        contents: JSON.stringify(posts, null, 2)
+      }
+    }
+
+    if (uri.match(/^db:\/\/posts\/\w+$/)) {
+      const postId = uri.split('/').pop()
+      const post = await database.posts.findById(postId)
+      return {
+        uri,
+        mimeType: 'application/json',
+        contents: JSON.stringify(post, null, 2)
+      }
+    }
+
+    throw new Error(`Unknown database resource: ${uri}`)
+  }
+}
+```
+
+## Resource Types
+
+### Text Resources
+
+```typescript
+// Markdown documentation
+{
+  uri: 'docs://api/getting-started',
+  name: 'API Getting Started',
+  description: 'Introduction to our API',
+  mimeType: 'text/markdown'
+}
+
+// Plain text
+{
+  uri: 'logs://application.log',
+  name: 'Application Log',
+  mimeType: 'text/plain'
+}
+
+// CSV/TSV data
+{
+  uri: 'data://sales/2024-11.csv',
+  name: 'November 2024 Sales',
+  mimeType: 'text/csv'
+}
+```
+
+### Structured Resources
+
+```typescript
+// JSON data
+{
+  uri: 'config://database.json',
+  name: 'Database Configuration',
+  mimeType: 'application/json'
+}
+
+// JSON-LD linked data
+{
+  uri: 'graph://companies/acme-corp',
+  name: 'ACME Corporation',
+  mimeType: 'application/ld+json'
+}
+
+// XML data
+{
+  uri: 'feeds://blog.xml',
+  name: 'Blog RSS Feed',
+  mimeType: 'application/xml'
+}
+```
+
+### Binary Resources
+
+```typescript
+// Images
+{
+  uri: 'images://avatar/user-12345.png',
+  name: 'User Avatar',
+  mimeType: 'image/png'
+}
+
+// PDF documents
+{
+  uri: 'documents://reports/annual-2024.pdf',
+  name: 'Annual Report 2024',
+  mimeType: 'application/pdf'
+}
+
+// Compressed archives
+{
+  uri: 'archives://backups/data-2024-11-28.tar.gz',
+  name: 'Data Backup',
+  mimeType: 'application/gzip'
+}
+```
+
+### Real-time Resources
+
+```typescript
+// Metrics and monitoring
+{
+  uri: 'metrics://system/cpu-usage',
+  name: 'CPU Usage',
+  mimeType: 'text/plain',
+  subscribable: true
+}
+
+// Event streams
+{
+  uri: 'events://orders/stream',
+  name: 'Order Events',
+  mimeType: 'application/json',
+  subscribable: true
+}
+
+// Live feeds
+{
+  uri: 'feeds://social/twitter/timeline',
+  name: 'Twitter Timeline',
+  mimeType: 'application/json',
+  subscribable: true
+}
+```
+
+## Resource Implementation
+
+### Basic Resource Provider
+
+```typescript
+class FileResourceProvider {
+  private baseDir: string = './resources'
+
+  async listResources(): Promise<Resource[]> {
+    const files = await fs.promises.readdir(this.baseDir, { recursive: true })
+
+    return files.map(file => ({
+      uri: `file://${file}`,
+      name: Path.basename(file),
+      description: `File resource: ${file}`,
+      mimeType: this.getMimeType(file)
+    }))
+  }
+
+  async getResource(uri: string): Promise<ResourceContent> {
+    const filePath = uri.replace('file://', '')
+
+    // Security: prevent directory traversal
+    const fullPath = Path.resolve(this.baseDir, filePath)
+    if (!fullPath.startsWith(Path.resolve(this.baseDir))) {
+      throw new Error('Access denied')
+    }
+
+    try {
+      const contents = await fs.promises.readFile(fullPath, 'utf-8')
+      return {
+        uri,
+        mimeType: this.getMimeType(filePath),
+        contents
+      }
+    } catch (error) {
+      throw new Error(`Cannot read resource: ${error.message}`)
+    }
+  }
+
+  private getMimeType(filePath: string): string {
+    const ext = Path.extname(filePath).toLowerCase()
+    const mimeTypes: Record<string, string> = {
+      '.md': 'text/markdown',
+      '.json': 'application/json',
+      '.txt': 'text/plain',
+      '.csv': 'text/csv',
+      '.xml': 'application/xml',
+      '.pdf': 'application/pdf',
+      '.png': 'image/png',
+      '.jpg': 'image/jpeg'
+    }
+    return mimeTypes[ext] || 'application/octet-stream'
+  }
+}
+```
+
+### Template-based Resource Provider
+
+```typescript
+class TemplateResourceProvider {
+  // Register resources and templates
+  private resources: Resource[] = [
+    {
+      uri: 'knowledge://documentation',
+      name: 'Documentation Index',
+      description: 'Main documentation'
+    }
+  ]
+
+  private templates: Map<RegExp, ResourceHandler> = new Map()
+
+  constructor() {
+    // Register template handlers
+    this.templates.set(
+      /^db:\/\/users\/(\d+)$/,
+      (match) => this.getUserResource(match[1])
+    )
+
+    this.templates.set(
+      /^weather:\/\/(\w+)\/daily$/,
+      (match) => this.getWeatherResource(match[1])
+    )
+  }
+
+  async listResources(): Promise<Resource[]> {
+    return this.resources
+  }
+
+  async getResource(uri: string): Promise<ResourceContent> {
+    // Try templates
+    for (const [pattern, handler] of this.templates) {
+      const match = uri.match(pattern)
+      if (match) {
+        return handler(match)
+      }
+    }
+
+    throw new Error(`Unknown resource: ${uri}`)
+  }
+
+  private async getUserResource(userId: string): Promise<ResourceContent> {
+    const user = await database.users.findById(userId)
+    return {
+      uri: `db://users/${userId}`,
+      mimeType: 'application/json',
+      contents: JSON.stringify(user, null, 2)
+    }
+  }
+
+  private async getWeatherResource(city: string): Promise<ResourceContent> {
+    const data = await weatherApi.getDaily(city)
+    return {
+      uri: `weather://${city}/daily`,
+      mimeType: 'application/json',
+      contents: JSON.stringify(data, null, 2)
+    }
+  }
+}
+```
+
+## Resource Subscriptions
+
+### Subscription Model
+
+```typescript
+interface Subscription {
+  uri: string
+  onUpdate: (content: ResourceContent) => void
+  onError?: (error: Error) => void
+}
+
+class SubscriptionManager {
+  private subscriptions = new Map<string, Subscription[]>()
+
+  async subscribe(
+    uri: string,
+    handler: (content: ResourceContent) => void
+  ): Promise<void> {
+    if (!this.subscriptions.has(uri)) {
+      this.subscriptions.set(uri, [])
+      this.startWatch(uri)
+    }
+
+    this.subscriptions.get(uri)!.push({
+      uri,
+      onUpdate: handler
+    })
+  }
+
+  async unsubscribe(
+    uri: string,
+    handler: (content: ResourceContent) => void
+  ): Promise<void> {
+    const subs = this.subscriptions.get(uri)
+    if (!subs) return
+
+    const index = subs.findIndex(s => s.onUpdate === handler)
+    if (index >= 0) {
+      subs.splice(index, 1)
+    }
+
+    if (subs.length === 0) {
+      this.stopWatch(uri)
+    }
+  }
+
+  private startWatch(uri: string) {
+    // Start polling or listening for updates
+    const interval = setInterval(async () => {
+      try {
+        const content = await this.getResource(uri)
+        const subs = this.subscriptions.get(uri)
+        subs?.forEach(sub => sub.onUpdate(content))
+      } catch (error) {
+        const subs = this.subscriptions.get(uri)
+        subs?.forEach(sub => sub.onError?.(error as Error))
+      }
+    }, 5000)  // Poll every 5 seconds
+
+    this.watchers.set(uri, interval)
+  }
+
+  private stopWatch(uri: string) {
+    const interval = this.watchers.get(uri)
+    if (interval) {
+      clearInterval(interval)
+      this.watchers.delete(uri)
+    }
+  }
+}
+```
+
+## Resource Security
+
+### Access Control
+
+```typescript
+class SecureResourceProvider {
+  private permissions = new Map<string, string[]>()
+
+  private canAccess(uri: string, userId: string): boolean {
+    const allowedUsers = this.permissions.get(uri) || []
+    return allowedUsers.includes(userId)
+  }
+
+  async getResource(
+    uri: string,
+    userId: string
+  ): Promise<ResourceContent> {
+    if (!this.canAccess(uri, userId)) {
+      throw new Error(`Access denied to ${uri}`)
+    }
+
+    // Proceed with resource access
+    return this.fetchResource(uri)
+  }
+
+  grantAccess(uri: string, userId: string) {
+    if (!this.permissions.has(uri)) {
+      this.permissions.set(uri, [])
+    }
+    this.permissions.get(uri)!.push(userId)
+  }
+
+  revokeAccess(uri: string, userId: string) {
+    const users = this.permissions.get(uri) || []
+    const index = users.indexOf(userId)
+    if (index >= 0) {
+      users.splice(index, 1)
+    }
+  }
+}
+```
+
+### Input Sanitization
+
+```typescript
+class SanitizedResourceProvider {
+  async getResource(uri: string): Promise<ResourceContent> {
+    // Validate URI format
+    if (!this.isValidUri(uri)) {
+      throw new Error('Invalid resource URI')
+    }
+
+    // Prevent directory traversal
+    if (uri.includes('..') || uri.includes('//')) {
+      throw new Error('Access denied')
+    }
+
+    return this.fetchResource(uri)
+  }
+
+  private isValidUri(uri: string): boolean {
+    try {
+      const parsed = new URL(uri, 'scheme://authority')
+      return !!parsed.protocol
+    } catch {
+      return false
+    }
+  }
+}
+```
+
+## Best Practices
+
+### Resource Design
+
+1. **Clear URIs**: Use meaningful, hierarchical URIs
+2. **Consistency**: Use consistent naming and structure
+3. **Mime Types**: Always specify appropriate MIME types
+4. **Documentation**: Document all resources and templates
+5. **Versioning**: Include version info when needed
+
+### Implementation
+
+1. **Efficiency**: Cache frequently accessed resources
+2. **Error Handling**: Return meaningful error messages
+3. **Timeouts**: Implement request timeouts
+4. **Streaming**: Stream large resources
+5. **Validation**: Validate all inputs and outputs
+
+### Performance
+
+1. **Caching Strategy**: Implement caching at appropriate levels
+2. **Lazy Loading**: Load resources on-demand
+3. **Compression**: Compress large responses
+4. **Pagination**: Paginate large datasets
+5. **Optimization**: Profile and optimize slow resources
+
+## Integration Points
+
+- **[MCPServers.mdx](https://mcp.org.ai/MCPServers)**: Server resource implementation
+- **[MCPClients.mdx](https://mcp.org.ai/MCPClients)**: Client resource access
+- **[MCPTools.mdx](https://mcp.org.ai/MCPTools)**: Tool specifications
+- **[apis.org.ai](https://apis.org.ai)**: API patterns and standards
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| **Component Type** | Resource Specification |
+| **Domain** | [mcp.org.ai](https://mcp.org.ai) |
+| **Addressing** | URI-based (RFC 3986) |
+| **Templates** | RFC 6570 URI Templates |
+| **Content** | Any MIME type |
+| **Subscriptions** | Supported for dynamic resources |

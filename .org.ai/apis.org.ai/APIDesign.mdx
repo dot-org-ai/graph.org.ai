@@ -1,0 +1,794 @@
+---
+$context: https://apis.org.ai
+$id: https://apis.org.ai/APIDesign
+$type: https://apis.org.ai/WebAPI
+name: "API Design"
+description: "API Design principles and patterns covering OpenAPI specifications, versioning strategies, pagination techniques, authentication methods, and API documentation standards for robust and maintainable interfaces."
+parent: https://apis.org.ai
+---
+
+export const items = async () => {
+  // Fetch API Design patterns from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://apis.org.ai/APIDesign'
+  })
+}
+
+# API Design
+
+API design encompasses the principles, patterns, and practices for building effective, maintainable, and developer-friendly interfaces. Good API design reduces friction for developers, enables seamless integrations, and creates a foundation for long-term platform success.
+
+API design is as much an art as a science, requiring consideration of usability, performance, security, and evolution.
+
+## Design Principles
+
+### 1. Consistency
+
+All endpoints follow same patterns and conventions:
+
+```
+GET /users          ✓ Consistent
+GET /products       ✓ Consistent
+GET /user           ✗ Inconsistent (singular)
+GET /products_list  ✗ Inconsistent (underscore)
+```
+
+Benefits:
+- Easy to learn and remember
+- Fewer surprises
+- Better code generation
+- Easier documentation
+
+### 2. Intuitiveness
+
+API behavior should be obvious from design:
+
+```
+POST /users         → Creates user (intuitive)
+POST /login         → Logs in user (intuitive)
+PUT /users/123      → Replaces user (intuitive)
+PATCH /users/123    → Updates user (intuitive)
+DELETE /users/123   → Deletes user (intuitive)
+```
+
+### 3. Discoverability
+
+Clients can discover API capabilities:
+
+```json
+// Response includes available actions
+GET /users/123
+{
+  "id": 123,
+  "name": "John",
+  "_links": {
+    "self": { "href": "/users/123" },
+    "update": { "href": "/users/123", "method": "PUT" },
+    "delete": { "href": "/users/123", "method": "DELETE" }
+  }
+}
+```
+
+### 4. Reliability
+
+Predictable behavior across different scenarios:
+
+```
+GET /users/123      → 200 OK with user
+GET /users/999      → 404 Not Found (consistent error handling)
+GET /users/invalid  → 400 Bad Request (validation error)
+```
+
+### 5. Performance
+
+Efficient data transfer and processing:
+
+```
+GET /users?fields=id,name,email  → Only requested fields
+GET /products?limit=10&offset=0  → Paginated results
+GET /posts?page=1&size=20        → Cursor-based pagination
+```
+
+## Naming Conventions
+
+### Resource Names
+
+```
+/users              → All users
+/users/123          → Specific user
+/users/123/posts    → User's posts
+/users/123/posts/456 → Specific post by user
+
+✓ Use plural nouns for collections
+✓ Use lowercase
+✓ Use hyphens for multi-word resources
+✗ Avoid verbs (actions handled by HTTP methods)
+✗ Avoid mixed cases
+```
+
+### Query Parameters
+
+```
+GET /users?role=admin&status=active&sort=name&page=1
+
+✓ camelCase: ?sortBy, ?filterBy
+✓ Lowercase simple: ?page, ?limit
+✓ Standard conventions: ?search, ?filter, ?sort
+```
+
+### Response Fields
+
+```json
+{
+  "id": "user_123",
+  "firstName": "John",     ✓ camelCase
+  "emailAddress": "...",   ✓ camelCase
+  "createdAt": "2024...",  ✓ camelCase + At suffix for dates
+  "updatedAt": "2024...",  ✓ Consistent date naming
+  "isActive": true         ✓ is prefix for booleans
+}
+```
+
+## API Versioning
+
+### URL Path Versioning
+
+```
+/v1/users
+/v2/users
+/v3/users
+```
+
+Pros:
+- Explicit version in URL
+- Clear in browser
+- Trackable usage per version
+
+Cons:
+- URL proliferation
+- Must maintain multiple versions
+- Can't deprecate old versions easily
+
+When to use:
+- Major breaking changes
+- Long support windows
+- Need to track usage per version
+
+### Header Versioning
+
+```
+GET /users
+Accept: application/vnd.company.v2+json
+
+or
+
+GET /users
+API-Version: 2
+```
+
+Pros:
+- Clean URLs
+- Content negotiation
+- Flexible version handling
+
+Cons:
+- Not visible in browser
+- Requires documentation
+- Harder to test in browser
+
+### Query Parameter Versioning
+
+```
+GET /users?api_version=2
+GET /users?version=2
+```
+
+Pros:
+- Flexible and visible
+
+Cons:
+- Easy to forget
+- Not RESTful
+- Harder to document
+
+### No Versioning (Backward Compatibility)
+
+Never remove/change, only add:
+
+```
+// v1 response
+{
+  "id": 123,
+  "name": "John"
+}
+
+// v2 response (backward compatible)
+{
+  "id": 123,
+  "name": "John",
+  "email": "john@example.com"  // New field
+}
+
+// Client can ignore new fields
+```
+
+When to use:
+- Additive changes only
+- External APIs
+- Avoid versioning complexity
+
+### Deprecation Strategy
+
+```
+Announce: "Field X deprecated in v2, will be removed in v3"
+↓
+v2: Include field X, set X-Deprecated header
+↓
+v3: Field X removed
+```
+
+Headers:
+```
+Deprecation: true
+Sunset: Sun, 31 Dec 2025 23:59:59 GMT
+Link: </migration-guide>; rel="deprecation"
+```
+
+## Pagination
+
+### Offset/Limit (Page-Based)
+
+```
+GET /users?offset=20&limit=10
+
+Response:
+{
+  "items": [...],
+  "pagination": {
+    "offset": 20,
+    "limit": 10,
+    "total": 1000
+  }
+}
+```
+
+Use cases:
+- Page numbers in UI (1, 2, 3...)
+- Skipping to middle of results
+
+Issues:
+- Can miss items if data changes
+- Slow for large offsets
+- May need to fetch total count separately
+
+### Cursor-Based Pagination
+
+```
+GET /users?limit=10&after=cursor_xyz
+
+Response:
+{
+  "items": [...],
+  "pagination": {
+    "after": "cursor_abc",
+    "hasMore": true
+  }
+}
+```
+
+Use cases:
+- Infinite scroll
+- Real-time feeds
+- Large result sets
+
+Benefits:
+- Consistent results with concurrent changes
+- O(1) performance regardless of position
+- Scalable to billions of items
+
+### Keyset Pagination
+
+```
+GET /users?limit=10&startId=100
+
+// Next page
+GET /users?limit=10&startId=200
+```
+
+Use cases:
+- Most efficient pagination
+- Works with sorting
+
+Issues:
+- Can't skip to arbitrary page
+- Requires ordered results
+
+### Time-Based Pagination
+
+```
+GET /events?since=2024-01-15T10:00:00Z&until=2024-01-15T12:00:00Z&limit=100
+
+Response:
+{
+  "items": [...],
+  "pagination": {
+    "nextTimestamp": "2024-01-15T11:00:00Z"
+  }
+}
+```
+
+Use cases:
+- Event streams
+- Time-series data
+- Activity feeds
+
+## Filtering and Search
+
+### Query Parameter Filters
+
+```
+GET /products?category=electronics&price_min=100&price_max=500&inStock=true
+
+GET /posts?author=john&published=true&tags=graphql,api
+```
+
+### Advanced Filtering
+
+```
+GET /products?filter=category:electronics AND price:[100 TO 500]
+
+GET /posts?q=title:"API Design" AND author:john
+```
+
+### Full-Text Search
+
+```
+GET /posts/search?q=graphql+api
+GET /products/search?query=wireless+headphones
+```
+
+### Faceted Search
+
+```
+GET /products/search?q=laptop
+
+Response:
+{
+  "items": [...],
+  "facets": {
+    "category": [
+      { "value": "laptops", "count": 156 },
+      { "value": "accessories", "count": 45 }
+    ],
+    "brand": [
+      { "value": "Apple", "count": 67 },
+      { "value": "Dell", "count": 56 }
+    ],
+    "price_range": [
+      { "value": "0-500", "count": 23 },
+      { "value": "500-1000", "count": 89 }
+    ]
+  }
+}
+```
+
+## Sorting
+
+### Basic Sorting
+
+```
+GET /users?sort=name
+GET /users?sort=-createdAt         // Descending
+GET /users?sort=name,-createdAt    // Multiple fields
+```
+
+### Explicit Direction
+
+```
+GET /users?sort=name&direction=asc
+GET /users?sort=createdAt&direction=desc
+```
+
+### Search Relevance Sorting
+
+```
+GET /posts/search?q=api&sort=_score   // Relevance score
+```
+
+## Authentication and Authorization
+
+### API Key Authentication
+
+Simple but limited:
+
+```
+GET /users
+Authorization: Bearer api_key_xyz123
+
+or
+
+GET /users?api_key=xyz123
+```
+
+Use cases:
+- Internal services
+- Server-to-server
+- Simple integrations
+
+### Bearer Token (JWT)
+
+Stateless token-based authentication:
+
+```
+GET /users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+```
+
+JWT payload:
+```json
+{
+  "sub": "user_123",
+  "email": "john@example.com",
+  "roles": ["user", "admin"],
+  "exp": 1705317600
+}
+```
+
+### OAuth 2.0
+
+Standard authorization framework:
+
+```
+// Authorization Code Flow
+1. Redirect to: /oauth/authorize?client_id=...&redirect_uri=...
+2. User logs in and consents
+3. Redirect back with code
+4. Exchange code for token: /oauth/token
+5. Use token to access API
+```
+
+### mTLS (Mutual TLS)
+
+Certificate-based authentication:
+
+```
+Client has certificate
+Server has certificate
+Both verify each other
+Encrypted connection
+```
+
+Use cases:
+- Service-to-service
+- High-security requirements
+- Financial/healthcare systems
+
+### Scopes and Permissions
+
+```
+GET /oauth/authorize?
+  client_id=app123&
+  scopes=read:users,write:posts,delete:comments
+
+Token includes:
+{
+  "scope": "read:users write:posts"
+}
+
+API checks scopes:
+if (!token.scope.includes('write:posts')) {
+  return 403 Forbidden
+}
+```
+
+## Error Handling
+
+### Standard Error Format
+
+```json
+{
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "The request is invalid",
+    "details": {
+      "field": "email",
+      "reason": "Invalid email format"
+    }
+  },
+  "statusCode": 400,
+  "timestamp": "2024-01-15T10:30:00Z",
+  "traceId": "abc123def456"
+}
+```
+
+### Validation Errors
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Validation failed",
+    "fields": [
+      {
+        "field": "email",
+        "message": "Invalid email format"
+      },
+      {
+        "field": "age",
+        "message": "Must be >= 18"
+      }
+    ]
+  },
+  "statusCode": 422
+}
+```
+
+### Error Codes
+
+- `BAD_REQUEST`: Syntax error
+- `UNAUTHORIZED`: Authentication required
+- `FORBIDDEN`: Insufficient permissions
+- `NOT_FOUND`: Resource doesn't exist
+- `CONFLICT`: Data conflict (duplicate, constraint)
+- `VALIDATION_ERROR`: Input validation failed
+- `RATE_LIMITED`: Too many requests
+- `SERVICE_UNAVAILABLE`: Temporary outage
+- `INTERNAL_ERROR`: Server error
+
+## OpenAPI/Swagger
+
+Industry-standard API specification:
+
+```yaml
+openapi: 3.0.0
+info:
+  title: User API
+  version: 1.0.0
+  description: API for managing users
+
+servers:
+  - url: https://api.example.com
+    description: Production
+
+paths:
+  /users:
+    get:
+      summary: List all users
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          description: Max results
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          description: Offset for pagination
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    post:
+      summary: Create a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserRequest'
+      responses:
+        '201':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+  /users/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get user by ID
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: User not found
+
+    put:
+      summary: Update user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+      responses:
+        '200':
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+    delete:
+      summary: Delete user
+      responses:
+        '204':
+          description: User deleted
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        createdAt:
+          type: string
+          format: date-time
+      required:
+        - id
+        - name
+        - email
+
+    CreateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+      required:
+        - name
+        - email
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+```
+
+Benefits of OpenAPI:
+- Auto-generated documentation
+- Client SDK generation
+- Server stub generation
+- Testing tools
+- Validation
+
+## Rate Limiting
+
+### Header-Based Rate Limits
+
+```
+Response headers:
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 432
+X-RateLimit-Reset: 1705317600
+
+When limit exceeded:
+HTTP 429 Too Many Requests
+Retry-After: 60
+```
+
+### Rate Limiting Strategies
+
+**Throttling**: Slow response rather than reject
+**Queuing**: Queue requests for later processing
+**Load shedding**: Reject requests during overload
+
+### Rate Limit Headers
+
+```
+// Per-user limit
+X-RateLimit-Limit-User: 10000
+X-RateLimit-Remaining-User: 4532
+X-RateLimit-Reset-User: 1705317600
+
+// Per-API key limit
+X-RateLimit-Limit-Key: 100000
+X-RateLimit-Remaining-Key: 45321
+X-RateLimit-Reset-Key: 1705317600
+```
+
+## Documentation
+
+### Best Practices
+
+1. **Clear Examples**: Include request/response examples
+2. **Error Cases**: Document common errors
+3. **Authentication**: Explain how to authenticate
+4. **Rate Limits**: Document rate limiting
+5. **Changelog**: Track API changes
+6. **SDKs**: Provide official SDKs
+7. **Sandbox**: Allow testing without live data
+8. **Support**: Provide support channels
+
+### Tools
+
+- **Swagger UI**: Interactive API documentation
+- **ReDoc**: Beautiful generated docs
+- **Postman**: API testing and docs
+- **Stoplight**: API design and documentation
+- **Slate**: Beautiful static documentation
+
+## Caching
+
+### Cache Control Headers
+
+```
+GET /users/123
+Cache-Control: public, max-age=3600
+ETag: "abc123def456"
+Last-Modified: Mon, 15 Jan 2024 10:30:00 GMT
+```
+
+Client checks:
+```
+If-None-Match: "abc123def456"  → 304 Not Modified
+If-Modified-Since: Mon, 15 Jan 2024 10:30:00 GMT → 304
+```
+
+### Caching Strategies
+
+```
+// Cacheable
+GET /users/123         ✓ Cache by ID
+GET /products          ✓ Cache by endpoint
+POST /users            ✗ Don't cache (creates data)
+```
+
+## Best Practices Summary
+
+1. **Consistency**: Follow patterns throughout API
+2. **Simplicity**: Easy to learn and use
+3. **Predictability**: Behavior matches expectations
+4. **Documentation**: Clear, comprehensive docs
+5. **Versioning**: Plan for evolution
+6. **Errors**: Clear error messages and codes
+7. **Security**: HTTPS, authentication, validation
+8. **Performance**: Caching, pagination, compression
+9. **Monitoring**: Track usage and errors
+10. **Backward Compatibility**: Don't break clients
+11. **Feedback**: Listen to developer feedback
+12. **Evolution**: Regular updates and improvements
+
+## Related Resources
+
+- [functions.org.ai](https://functions.org.ai) - Function signatures and types
+- [events.org.ai](https://events.org.ai) - Event data structure
+- [apis.org.ai/RESTAPIs](https://apis.org.ai/RESTAPIs) - REST principles
+- [apis.org.ai/GraphQLAPIs](https://apis.org.ai/GraphQLAPIs) - GraphQL design
+- [apis.org.ai/APIGateways](https://apis.org.ai/APIGateways) - API gateway patterns
+- [tech.org.ai](https://tech.org.ai) - API frameworks and tools

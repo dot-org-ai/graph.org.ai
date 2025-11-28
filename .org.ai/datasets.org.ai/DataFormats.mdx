@@ -1,0 +1,404 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/DataFormats
+$type: https://datasets.org.ai/DataCategory
+name: "Data Formats"
+description: "Standard serialization formats for data storage, transmission, and interchange including JSON, CSV, Parquet, Arrow, Avro, and Protocol Buffers."
+parent: https://datasets.org.ai
+---
+
+export const items = async () => {
+  // Fetch data format resources from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://datasets.org.ai/DataFormat'
+  })
+}
+
+# Data Formats
+
+Data formats are the foundation of data interchange and storage. Choosing the right format impacts performance, storage efficiency, interoperability, and ease of processing. This category covers the most widely-used serialization formats in modern data engineering and analytics.
+
+## Overview
+
+Data formats serve multiple critical purposes:
+- **Serialization**: Converting in-memory data structures into byte sequences
+- **Compression**: Reducing storage footprint and transmission bandwidth
+- **Schema Support**: Defining and enforcing data structure and types
+- **Compatibility**: Enabling data exchange between different systems and languages
+- **Performance**: Optimizing speed of reading and writing operations
+
+Formats range from human-readable text formats to highly compressed binary formats optimized for specific use cases.
+
+## Text-Based Formats
+
+### JSON (JavaScript Object Notation)
+
+**Characteristics**:
+- Lightweight, human-readable format
+- Hierarchical structure with objects and arrays
+- Native support in all modern programming languages
+- UTF-8 text encoding
+- Verbose representation (larger file sizes)
+
+**Common Use Cases**:
+- Web APIs and REST services
+- Configuration files
+- Application logs (structured logging)
+- Document databases (MongoDB, CouchDB)
+- Data interchange between microservices
+
+**Advantages**:
+- Human-readable and debuggable
+- Native JavaScript/web support
+- Flexible schema
+- Widely understood and adopted
+
+**Limitations**:
+- Large file sizes compared to binary formats
+- Limited type support (no native Date, complex numbers)
+- Slow parsing for large datasets
+- No built-in compression
+
+**Example**:
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "active": true,
+  "created_at": "2024-01-01T00:00:00Z"
+}
+```
+
+### CSV (Comma-Separated Values)
+
+**Characteristics**:
+- Tabular data format with rows and columns
+- Plain text with simple delimiters (comma, tab, pipe)
+- No standardized schema definition
+- RFC 4180 specification for CSV
+
+**Common Use Cases**:
+- Spreadsheet data export/import
+- Data dumps from databases
+- Simple data exchange between systems
+- Historical data archives
+- Analytics and reporting
+
+**Advantages**:
+- Simple and ubiquitous
+- Works with any spreadsheet application
+- Minimal overhead
+- Good for small to medium datasets
+
+**Limitations**:
+- No schema information
+- Type inference required
+- Poor handling of special characters
+- Inefficient for nested or hierarchical data
+- No standard for missing values
+
+**Example**:
+```csv
+id,name,email,active,created_at
+1,John Doe,john@example.com,true,2024-01-01T00:00:00Z
+2,Jane Smith,jane@example.com,true,2024-01-02T00:00:00Z
+```
+
+### TSV (Tab-Separated Values)
+
+**Characteristics**:
+- Similar to CSV but uses tabs as delimiters
+- More robust for fields containing commas
+- Common in bioinformatics and scientific data
+
+**Common Use Cases**:
+- Genomic data (FASTA, GFF formats)
+- Biological datasets
+- Scientific research data
+- Large-scale data exports
+
+## Binary Formats
+
+### Parquet
+
+**Characteristics**:
+- Columnar storage format designed for analytics
+- Compressed and efficient for analytical queries
+- Schema-on-read approach with embedded metadata
+- Nested data structure support
+- Apache Arrow-based specification
+
+**Common Use Cases**:
+- Data lake storage (AWS S3, Azure Data Lake)
+- Apache Spark DataFrames
+- BigQuery and Snowflake external tables
+- Analytics and OLAP workloads
+- Machine learning feature stores
+
+**Advantages**:
+- Highly compressed (often 10x reduction vs JSON)
+- Fast analytical queries (columnar access)
+- Predicate pushdown for filtering
+- Supports complex nested types
+- Excellent compression ratios with snappy, gzip, or brotli
+
+**Limitations**:
+- Not human-readable
+- Slower write performance compared to row-based formats
+- Requires schema definition upfront
+- Not ideal for single-row access or frequent updates
+
+**Schema Example**:
+```
+message Person {
+  required int32 id;
+  required string name;
+  required string email;
+  required boolean active;
+  required int64 created_at (timestamp_ms);
+}
+```
+
+### Arrow (Apache Arrow)
+
+**Characteristics**:
+- In-memory columnar data format
+- Standard for analytical processing
+- Cross-language and cross-platform support
+- Zero-copy data sharing between processes
+- Unified representation in memory
+
+**Common Use Cases**:
+- In-memory analytics engines
+- GPU acceleration for data processing
+- Distributed computing frameworks
+- Data science Python/R workflows
+- Real-time streaming analytics
+
+**Advantages**:
+- Efficient in-memory representation
+- Fast serialization/deserialization
+- GPU-compatible
+- Language-agnostic
+- Excellent for data interchange
+
+**Limitations**:
+- Still primarily used as in-memory format
+- Mature but less widespread adoption than Parquet
+- Complex schema definitions
+
+### Avro
+
+**Characteristics**:
+- Row-based binary format with schema support
+- Compact serialization
+- Schema evolution support
+- Language-independent
+- Designed for Hadoop ecosystem
+
+**Common Use Cases**:
+- Apache Kafka message serialization
+- Hadoop sequence files
+- Event streaming and real-time processing
+- Data pipeline intermediate formats
+- RPC protocols
+
+**Advantages**:
+- Compact binary representation
+- Strong schema support with evolution
+- Good for write-heavy workloads
+- Excellent in streaming contexts
+
+**Limitations**:
+- Row-based (less efficient for analytical queries)
+- Smaller ecosystem than Parquet
+- Schema registry required for schema management
+
+**Schema Example**:
+```json
+{
+  "type": "record",
+  "name": "Person",
+  "fields": [
+    {"name": "id", "type": "int"},
+    {"name": "name", "type": "string"},
+    {"name": "email", "type": "string"},
+    {"name": "active", "type": "boolean"},
+    {"name": "created_at", "type": "long", "logicalType": "timestamp-ms"}
+  ]
+}
+```
+
+### Protocol Buffers (Protobuf)
+
+**Characteristics**:
+- Efficient binary serialization format by Google
+- Strongly-typed schema definition
+- Compact representation
+- Language support across 20+ languages
+- Backward/forward compatibility
+
+**Common Use Cases**:
+- gRPC service definitions
+- Internal Google and enterprise systems
+- Microservice communication
+- Message-oriented middleware
+- Configuration management
+
+**Advantages**:
+- Extremely compact (smaller than JSON, comparable to Avro)
+- Fast serialization/deserialization
+- Strong type checking and schema validation
+- Excellent schema evolution support
+- Cross-language support
+
+**Limitations**:
+- Not human-readable (requires .proto definitions)
+- Steeper learning curve for schema definition
+- Requires code generation
+- Less ecosystem support for analytics than Parquet
+
+**Proto Definition Example**:
+```protobuf
+syntax = "proto3";
+
+message Person {
+  int32 id = 1;
+  string name = 2;
+  string email = 3;
+  bool active = 4;
+  int64 created_at = 5;
+}
+```
+
+## Format Comparison Matrix
+
+| Aspect | JSON | CSV | Parquet | Arrow | Avro | Protobuf |
+|--------|------|-----|---------|-------|------|----------|
+| **Human Readable** | Yes | Yes | No | No | No | No |
+| **Compression** | Poor | Poor | Excellent | Good | Good | Excellent |
+| **Schema Support** | Flexible | None | Yes | Yes | Yes | Yes |
+| **Nested Types** | Yes | No | Yes | Yes | Partial | Yes |
+| **Write Speed** | Slow | Fast | Medium | Medium | Fast | Fast |
+| **Read Speed** | Slow | Medium | Fast (columnar) | Fast | Medium | Fast |
+| **Streaming** | Possible | Yes | No | Possible | Excellent | Excellent |
+| **Use Case** | APIs, config | Simple export | Analytics | In-memory | Kafka, streams | gRPC, services |
+
+## Choosing the Right Format
+
+### For Web APIs
+- **JSON**: Standard for REST APIs, widely supported
+- **Protobuf**: For gRPC services requiring high performance
+
+### For Data Warehousing
+- **Parquet**: Best choice for analytical workloads in cloud data lakes
+- **Arrow**: For in-memory analytics and GPU processing
+
+### For Real-Time Streaming
+- **Avro**: Excellent schema evolution, Kafka integration
+- **Protobuf**: For microservice-based architectures
+
+### For Data Exchange
+- **JSON**: When human readability is important
+- **Parquet/Arrow**: For large datasets requiring performance
+- **CSV**: For simple tabular data
+
+### For Storage Optimization
+- **Parquet**: Best compression for analytical workloads
+- **Protobuf**: Smallest footprint for services
+- **Avro**: Good balance for streaming
+
+## Format Specifications and Standards
+
+| Format | Specification | Compression | Schema Format |
+|--------|---------------|-------------|---------------|
+| JSON | [RFC 7159](https://tools.ietf.org/html/rfc7159) | Optional (gzip) | JSON Schema |
+| CSV | [RFC 4180](https://tools.ietf.org/html/rfc4180) | Optional | None |
+| Parquet | [Apache Parquet](https://parquet.apache.org) | Built-in (snappy, gzip, brotli) | Parquet Schema |
+| Arrow | [Apache Arrow Format](https://arrow.apache.org) | Optional | Arrow Schema |
+| Avro | [Apache Avro](https://avro.apache.org) | Optional | Avro Schema |
+| Protobuf | [Protocol Buffers](https://developers.google.com/protocol-buffers) | Optional | .proto files |
+
+## Tools and Libraries
+
+### JSON
+- **Parsing**: Built-in in all modern languages, jq for CLI manipulation
+- **Schema**: JSON Schema, Ajv, json-schema-validator
+- **Tools**: jq, jsonschema, json-formatter
+
+### CSV
+- **Parsing**: pandas, dplyr, csv module (Python/Node)
+- **Tools**: csvkit, mlr (Miller), xsv
+- **Validation**: Great Expectations (CSV support)
+
+### Parquet
+- **Libraries**: PyArrow, Arrow-Java, arrow-rs
+- **Tools**: parquet-tools, Apache Spark
+- **Validation**: Apache Arrow validation
+
+### Arrow
+- **Libraries**: PyArrow, Arrow-Java, arrow-rs, arrow-js
+- **Ecosystem**: Compute kernels, SQL engines
+
+### Avro
+- **Libraries**: Apache Avro, fastavro (Python), confluent-kafka
+- **Tools**: avro-tools, Schema Registry
+- **Ecosystem**: Kafka, Confluent Platform
+
+### Protobuf
+- **Compiler**: protoc (Protocol Buffer Compiler)
+- **Libraries**: protobuf-java, protobuf-python, grpc
+- **Tools**: protoc plugins, gRPC tooling
+
+## Performance Considerations
+
+### Serialization Speed
+- **Fast**: Protobuf, Avro
+- **Medium**: Parquet, Arrow
+- **Slow**: JSON, CSV
+
+### Deserialization Speed
+- **Fast**: Arrow (in-memory), Protobuf, Avro
+- **Medium**: Parquet (columnar selection)
+- **Slow**: JSON, CSV
+
+### Storage Size
+- **Smallest**: Protobuf (often 3-10x smaller than JSON)
+- **Small**: Avro, Parquet (with compression)
+- **Medium**: Arrow (depends on compression)
+- **Large**: JSON, CSV
+
+### Memory Usage
+- **Efficient**: Arrow (columnar, zero-copy)
+- **Good**: Parquet (columnar)
+- **Fair**: Avro, Protobuf
+- **Poor**: JSON, CSV (row-based parsing)
+
+## Migration Strategies
+
+### From CSV to Parquet
+```
+CSV → Pandas/Spark → Parquet
+```
+Benefits: Better compression, faster queries, schema enforcement
+
+### From JSON to Protobuf
+```
+JSON → Schema definition → Code generation → Protobuf
+```
+Benefits: Smaller size, faster serialization, type safety
+
+### From Avro to Parquet
+```
+Avro → Arrow conversion → Parquet
+```
+Benefits: Better for analytics, columnar access patterns
+
+## Related Resources
+
+- [standards.org.ai](https://standards.org.ai) - Data standards and specifications
+- [schemas.org.ai](https://schemas.org.ai) - Schema definitions and validation
+- [models.org.ai](https://models.org.ai) - Data models and their representations
+- [knowledge.org.ai](https://knowledge.org.ai) - Knowledge representation formats

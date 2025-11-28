@@ -1,0 +1,667 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/KnowledgeExtraction
+$type: https://knowledge.org.ai/Knowledge
+name: "Knowledge Extraction"
+description: "Extracting structured knowledge from unstructured text and documents"
+---
+
+# Knowledge Extraction
+
+Techniques for automatically extracting entities, relationships, and structured knowledge from unstructured text and documents.
+
+## Overview
+
+Knowledge extraction transforms unstructured information from text, documents, and web content into structured, machine-readable knowledge. It bridges natural language and knowledge graphs by identifying entities, relationships, attributes, and events from raw text. Knowledge extraction is fundamental to building knowledge bases, powering search engines, and enabling information integration.
+
+### Core Tasks
+
+- **Named Entity Recognition (NER)**: Identifying entity mentions
+- **Relation Extraction**: Finding relationships between entities
+- **Event Extraction**: Identifying events and their participants
+- **Attribute Extraction**: Extracting entity properties and values
+- **Entity Linking**: Connecting mentions to canonical entities
+- **Coreference Resolution**: Linking multiple mentions of same entity
+
+## Named Entity Recognition (NER)
+
+### Entity Types
+
+#### Standard CONLL Entity Types
+
+**Person**
+```
+Named individuals, authors, celebrities
+"Albert Einstein was a physicist."
+→ Einstein: PERSON
+```
+
+**Organization**
+```
+Companies, institutions, government bodies
+"Microsoft released Windows 11."
+→ Microsoft: ORGANIZATION, Windows: PRODUCT
+```
+
+**Location**
+```
+Geographic entities, cities, countries, regions
+"The Eiffel Tower is in Paris, France."
+→ Paris: LOCATION, France: LOCATION
+```
+
+**Miscellaneous (Misc)**
+```
+Events, works of art, other entities
+"The 2024 Olympics in Paris."
+→ Olympics: EVENT
+```
+
+#### Domain-Specific Entity Types
+
+**Biomedical**
+- Gene, Protein, Disease, Drug
+- Chemical Compound, Anatomical Structure
+
+**Legal**
+- Contract, Clause, Party, Judge
+- Court, Legislation, Regulation
+
+**Financial**
+- Organization, Stock Symbol, Amount
+- Financial Metric, Stock Exchange
+
+### NER Approaches
+
+#### Rule-Based NER
+
+Using pattern matching and linguistic rules:
+
+```
+Pattern: "Mr./Ms./Dr. [Capitalized Word]"
+Pattern: "[City] located in [Country]"
+Pattern: "[Organization] announced that"
+
+Example:
+"Dr. Smith announced that Apple released iOS 17."
+→ Dr. Smith (PERSON), Apple (ORGANIZATION), iOS 17 (PRODUCT)
+```
+
+**Advantages**
+- Highly accurate for well-defined patterns
+- Interpretable and explainable
+- No training data required
+- Fast execution
+
+**Disadvantages**
+- Labor-intensive pattern creation
+- Limited to predefined patterns
+- Poor generalization
+- Difficult for complex cases
+
+#### Statistical NER (Sequence Labeling)
+
+Using supervised learning on labeled data:
+
+**Hidden Markov Models (HMM)**
+- Probabilistic model of sequence tags
+- Efficient training and inference
+- Foundation for early NER systems
+
+**Conditional Random Fields (CRF)**
+- Discriminative sequence labeling
+- Captures state dependencies
+- Better performance than HMM
+- Standard approach before neural methods
+
+```
+Text: "John Smith works at Google"
+Word: John    Smith    works  at    Google
+Tag:  B-PER   I-PER    O      O     B-ORG
+
+(B-*: Beginning of entity, I-*: Inside entity, O: Outside)
+```
+
+#### Deep Learning NER
+
+Neural sequence-to-sequence models:
+
+**LSTM + CRF**
+```
+Input: "John Smith works at Google"
+LSTM: Bidirectional context encoding
+CRF: Sequence tagging with constraints
+Output: [B-PER, I-PER, O, O, B-ORG]
+```
+
+**Transformer Models (BERT, RoBERTa)**
+```
+Pre-trained language models fine-tuned for NER
+Input: Tokenized text
+Contextual embeddings from transformer
+Classification head for token-level tags
+```
+
+**Advantages**
+- State-of-the-art performance
+- Learns from data representations
+- Handles context well
+- Transfer learning with pre-trained models
+
+**Disadvantages**
+- Requires large labeled datasets
+- Computationally expensive
+- Black-box decision making
+- Domain adaptation challenges
+
+### Entity Disambiguation
+
+Linking mentions to canonical references:
+
+#### String Similarity Matching
+
+```
+Mention: "Apple Inc."
+Candidates: ["Apple (company)", "Apple (fruit)", "Apple (record label)"]
+
+Similarity scores:
+- Exact match: 1.0
+- Levenshtein distance-based: 0.95
+- Phonetic similarity: 0.85
+```
+
+#### Linking to External Knowledge Bases
+
+```
+Mention: "New York"
+Link to: DBpedia: http://dbpedia.org/resource/New_York_City
+         Wikidata: http://www.wikidata.org/entity/Q60
+         GeoNames: 5128581
+```
+
+#### Context-Based Disambiguation
+
+Using surrounding text to resolve ambiguity:
+
+```
+Text 1: "Apple released the iPhone 15."
+Context indicates: ORGANIZATION (Apple Inc.)
+
+Text 2: "I ate a red apple yesterday."
+Context indicates: FRUIT (Apple fruit)
+```
+
+**Methods**
+- Cosine similarity of context embeddings
+- Knowledge graph embeddings
+- Joint NER and linking models
+- Attention mechanisms for context
+
+## Relation Extraction
+
+### Relation Types
+
+#### Entity-to-Entity Relations
+
+Relationships between identified entities:
+
+```
+(Subject, Predicate, Object)
+
+Examples:
+(Barack Obama, bornIn, Honolulu)
+(Microsoft, foundedBy, Bill Gates)
+(Apple, madeProduct, iPhone)
+```
+
+#### Attribute Relations
+
+Entity properties and values:
+
+```
+(Entity, Property, Value)
+
+Examples:
+(John Smith, age, 45)
+(Paris, capital_of, France)
+(Aspirin, chemical_formula, C₉H₈O₄)
+```
+
+#### Event Relations
+
+Participants in events and temporal information:
+
+```
+(Participant, Role, Event)
+
+Examples:
+(Steve Jobs, founder, Apple Inc.)
+(World War II, involved, Germany)
+(Conference 2024, hosted, Paris)
+```
+
+### Relation Extraction Approaches
+
+#### Pattern-Based Extraction
+
+Using syntactic or semantic patterns:
+
+```
+Pattern: [NP] is a [NP]
+Example: "Albert Einstein is a physicist."
+Extraction: (Albert Einstein, is-a, physicist)
+
+Pattern: [ORG] was founded in [YEAR]
+Example: "Google was founded in 1998."
+Extraction: (Google, foundedIn, 1998)
+```
+
+#### Dependency Path Methods
+
+Using syntactic parse trees:
+
+```
+Sentence: "The president of France visited Japan."
+
+Parse tree:
+       visited
+      /   |   \
+     |   Japan |
+president       |
+     |          |
+   France       |
+
+Dependency path: president -of- France -subject- visited -object- Japan
+Relation: (France, visited, Japan)
+```
+
+#### Sequence Labeling
+
+Similar to NER but for relation arguments:
+
+```
+Text: "John Smith, CEO of Microsoft, announced..."
+Tags: [O, O, B-ROLE, I-ROLE, O, B-ORG, I-ORG, O]
+
+Extraction: (John Smith, CEO, Microsoft)
+```
+
+#### Neural Network Approaches
+
+**Convolutional Neural Networks (CNN)**
+- Capture local syntactic patterns
+- Input: word/dependency embeddings
+- Convolutional filters at multiple widths
+- Pooling and classification
+
+**Recurrent Neural Networks (RNN)**
+- Sequence processing with memory
+- LSTM/GRU for long-range dependencies
+- Bi-directional encoding
+- Attention mechanisms
+
+**Transformer-Based Models**
+```
+Pre-trained (BERT, RoBERTa)
+Fine-tuned on relation classification
+Token-level or sequence-level classification
+Joint entity and relation extraction
+```
+
+**Graph Neural Networks (GNN)**
+- Operate on syntactic/semantic graphs
+- Message passing between nodes
+- Encode relational structure
+- Effective for structured extraction
+
+#### Joint Entity and Relation Extraction
+
+Extracting entities and relations simultaneously:
+
+```
+Input: "Bill Gates founded Microsoft in 1975."
+
+Output:
+Entities:
+  - Bill Gates: PERSON
+  - Microsoft: ORGANIZATION
+  - 1975: DATE
+
+Relations:
+  - (Bill Gates, founded, Microsoft)
+  - (Microsoft, foundedIn, 1975)
+```
+
+## Event Extraction
+
+### Event Components
+
+**Trigger**: Word indicating event occurrence
+```
+"Apple released iPhone 15."
+Trigger: released
+```
+
+**Arguments**: Participants and attributes
+```
+Event: released
+  Actor: Apple
+  Object: iPhone 15
+  Temporal: implicit (now)
+```
+
+**Event Type**: Classification of event
+```
+Product launch
+Medical treatment
+Crime
+Sports competition
+```
+
+### Event Extraction Methods
+
+#### Pattern-Based
+
+```
+Pattern: [ORG] released [PRODUCT]
+Pattern: [PERSON] died in [YEAR]
+Pattern: [EVENT] occurred in [LOCATION]
+```
+
+#### Annotated Corpora and Supervised Learning
+
+Training on manually labeled event data:
+
+```
+Training corpus: ACE (Automatic Content Extraction)
+Annotation: Trigger word and argument roles
+Learning: Statistical models of event patterns
+```
+
+#### Temporal Information Extraction
+
+Extracting event timing and duration:
+
+```
+"On January 15, 2024, the conference will be held in Paris."
+
+Event: conference
+  Date: January 15, 2024
+  Location: Paris
+  Temporal expression: on January 15, 2024
+```
+
+**Methods**
+- TimeML annotation standards
+- Temporal relation extraction (before, after, simultaneous)
+- Duration and frequency extraction
+
+## Attribute and Fact Extraction
+
+### Fact Extraction
+
+Extracting structured facts in the form of predicates:
+
+```
+Text: "The Great Wall of China is approximately 13,171 miles long."
+
+Facts:
+- Structure(GreatWallOfChina, length, 13171 miles)
+- LocatedIn(GreatWallOfChina, China)
+```
+
+### Attribute Extraction
+
+Extracting specific entity properties:
+
+```
+Text: "iPhone 15 comes in midnight black, white, and titanium."
+
+Entity: iPhone 15
+Attributes:
+  - colors: [midnight black, white, titanium]
+```
+
+### Opinion and Sentiment Extraction
+
+Extracting subjective information:
+
+```
+Text: "The film was brilliant but the ending was disappointing."
+
+Sentiments:
+  - film: positive (brilliant)
+  - ending: negative (disappointing)
+```
+
+## Coreference Resolution
+
+### Problem Definition
+
+Linking multiple mentions of same entity:
+
+```
+Text: "John gave Mary a book. He gave it to her yesterday."
+
+Coreferences:
+  - John ↔ He
+  - Mary ↔ her
+  - book ↔ it
+```
+
+### Resolution Approaches
+
+#### Mention Pair Models
+
+Pairwise classification of mention pairs:
+
+```
+(John, He) → COREFERENCE (0.95)
+(John, Mary) → NOT_COREFERENCE (0.02)
+(book, it) → COREFERENCE (0.98)
+```
+
+#### Entity Linking Models
+
+Building entity clusters:
+
+```
+Mention 1: John
+Mention 2: He
+Mention 3: John Smith
+Mention 4: Mr. Smith
+
+Cluster: {John, He, John Smith, Mr. Smith}
+```
+
+#### Neural Coreference
+
+End-to-end neural models:
+
+```
+Input: Document tokens
+Span representations: BiLSTM + attention
+Mention pair scoring: Neural network
+Clustering: Agglomerative approach
+Output: Entity clusters
+```
+
+## Information Extraction Pipelines
+
+### Sequential Processing
+
+```
+Raw Text
+  ↓
+Tokenization
+  ↓
+Named Entity Recognition (NER)
+  ↓
+Dependency Parsing
+  ↓
+Relation Extraction
+  ↓
+Coreference Resolution
+  ↓
+Entity Linking
+  ↓
+Structured Knowledge
+```
+
+### End-to-End Models
+
+Extracting multiple information types simultaneously:
+
+```
+Input: Document
+Shared encoder: Transformer
+Task-specific heads:
+  - NER head
+  - Relation extraction head
+  - Event extraction head
+Output: Integrated extraction results
+```
+
+## Challenges
+
+### Ambiguity
+
+```
+"Bank" can mean financial institution or river bank
+"Apple" can mean fruit or company
+Require context and knowledge bases to disambiguate
+```
+
+### Incomplete Information
+
+```
+Some entities mentioned implicitly
+Pronouns and references require resolution
+Missing attributes in unstructured text
+```
+
+### Out-of-Domain Data
+
+```
+Models trained on news perform poorly on clinical text
+Different domains have different entity types
+Language variations across sources
+```
+
+### Rare and Novel Entities
+
+```
+New companies, products, people
+Model may not recognize low-frequency entities
+Zero-shot learning approaches emerging
+```
+
+## Evaluation Metrics
+
+### Standard Metrics
+
+**Precision**: Correct extractions / All extractions
+```
+Precision = 100 / 105 = 95.2%
+```
+
+**Recall**: Correct extractions / All actual
+```
+Recall = 100 / 110 = 90.9%
+```
+
+**F1-Score**: Harmonic mean of precision and recall
+```
+F1 = 2 × (Precision × Recall) / (Precision + Recall) = 92.9%
+```
+
+### Evaluation Frameworks
+
+- **ACE evaluation**: Entity, relation, event metrics
+- **SemEval shared tasks**: Benchmark datasets
+- **CoNLL evaluation**: NER standard metrics
+
+## Tools and Systems
+
+### Open Source Frameworks
+
+**spaCy**
+- Industrial-strength NLP
+- Fast entity recognition
+- Dependency parsing
+- Word vectors and similarity
+
+**Stanford CoreNLP**
+- Java-based NLP pipeline
+- Tokenization, POS tagging, NER
+- Dependency parsing
+- Coreference resolution
+
+**NLTK (Natural Language Toolkit)**
+- Educational framework
+- Entity extraction
+- Chunking and tagging
+- Corpus access
+
+### Pre-trained Models
+
+**Named Entity Recognition**
+- spaCy models (en_core_web_md, en_core_web_trf)
+- Hugging Face (bert-base-uncased-NER)
+- Flair embeddings
+
+**Relation Extraction**
+- OPENNRE framework
+- Hugging Face relation extraction models
+- Domain-specific models
+
+## Applications
+
+### Knowledge Graph Construction
+- Populating knowledge bases with extracted facts
+- Source: Wikipedia, news articles, scientific papers
+- Enabling automated ontology building
+
+### Question Answering
+- Extracting relevant passages
+- Identifying answer candidates
+- Building QA knowledge bases
+
+### Information Retrieval
+- Rich indexing beyond keywords
+- Entity-centric search
+- Faceted search and filtering
+
+### Business Intelligence
+- Company intelligence from news
+- Product releases and announcements
+- Competitive analysis
+
+### Academic Research
+- Citation mining
+- Scientific fact extraction
+- Research trend discovery
+
+## Cross-References
+
+### Related Domains
+
+- [KnowledgeGraphs.org.ai](https://knowledge.org.ai/KnowledgeGraphs) - Graph structures
+- [Ontologies.org.ai](https://knowledge.org.ai/Ontologies) - Formal structures
+- [SemanticWeb.org.ai](https://knowledge.org.ai/SemanticWeb) - Web standards
+- [KnowledgeIntegration.org.ai](https://knowledge.org.ai/KnowledgeIntegration) - Integration methods
+
+### Related Standards
+
+- ACE (Automatic Content Extraction)
+- TimeML (Temporal Markup Language)
+- PropBank (Proposition Bank)
+- FrameNet (Frame Semantics)
+
+## Sources
+
+- Natural Language Processing with Python (Bird, Klein, Loper)
+- Speech and Language Processing (Jurafsky, Martin)
+- SemEval and CoNLL shared task papers
+- ACL, EMNLP, NAACL conference proceedings
+- spaCy and Stanford CoreNLP documentation

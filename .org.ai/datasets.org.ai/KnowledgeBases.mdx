@@ -1,0 +1,554 @@
+---
+$context: https://datasets.org.ai
+$id: https://datasets.org.ai/KnowledgeBases
+$type: https://datasets.org.ai/DataCategory
+name: "Knowledge Bases"
+description: "Vector stores, embeddings, semantic search infrastructure, and retrieval-augmented generation systems for knowledge management."
+parent: https://datasets.org.ai
+---
+
+export const items = async () => {
+  // Fetch knowledge base resources from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://datasets.org.ai/KnowledgeBase'
+  })
+}
+
+# Knowledge Bases
+
+Knowledge bases are structured repositories of information designed for semantic search and retrieval. Modern knowledge bases use vector embeddings to enable semantic similarity matching and power AI applications like retrieval-augmented generation (RAG).
+
+## Overview
+
+Knowledge bases enable:
+- **Semantic Search**: Find relevant information by meaning, not keywords
+- **Retrieval-Augmented Generation**: Ground LLM responses in factual documents
+- **Question Answering**: Answer questions over large document collections
+- **Recommendation**: Find similar or related content
+- **Clustering**: Organize documents by semantic similarity
+- **Deduplication**: Identify and remove duplicate content
+
+A knowledge base system consists of documents, embeddings (numerical representations), and a retrieval mechanism.
+
+## Vector Embeddings
+
+### Embedding Models
+
+Embeddings convert text to dense numeric vectors that capture semantic meaning.
+
+**Text Embedding Models**:
+
+| Model | Dimension | Speed | Quality | Best For |
+|-------|-----------|-------|---------|----------|
+| sentence-transformers/all-MiniLM-L6-v2 | 384 | Very Fast | Good | Fast, low-latency applications |
+| sentence-transformers/all-mpnet-base-v2 | 768 | Medium | Excellent | General purpose, high quality |
+| OpenAI text-embedding-3-small | 1536 | Medium | Excellent | Production systems |
+| OpenAI text-embedding-3-large | 3072 | Slower | State-of-art | Maximum quality |
+| Cohere Embed v3 | 1024 | Medium | Excellent | Enterprise systems |
+| Google Vertex Embeddings | 768 | Medium | Excellent | GCP integration |
+
+### Embedding Dimensions
+
+Higher dimensions generally improve quality but increase storage and computation.
+
+```
+Embedding Quality vs. Efficiency Trade-off:
+┌─────────────────────────────────────────┐
+│ Higher Dimension → Higher Quality        │
+│ (but higher storage, computation cost)   │
+│                                          │
+│ Lower Dimension → Lower Quality          │
+│ (but faster, uses less memory)           │
+└─────────────────────────────────────────┘
+
+384 dim:   ████░░░░░░ (Fast, Good)
+768 dim:   ██████░░░░ (Balanced)
+1536 dim:  ████████░░ (Slow, Better)
+3072 dim:  ██████████ (Slowest, Best)
+```
+
+### Generating Embeddings
+
+**Using Hugging Face Transformers**:
+```python
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer('all-mpnet-base-v2')
+
+# Single document
+embedding = model.encode("Artificial intelligence is transforming industries")
+
+# Batch of documents
+documents = [
+  "AI is transforming industries",
+  "Machine learning powers modern systems",
+  "Deep learning requires large datasets"
+]
+embeddings = model.encode(documents)  # Returns [3, 768] array
+```
+
+**Using OpenAI API**:
+```python
+import openai
+
+response = openai.Embedding.create(
+    input="Text to embed",
+    model="text-embedding-3-small"
+)
+
+embedding = response['data'][0]['embedding']  # 1536 dimensions
+```
+
+### Embedding Normalization
+
+Normalized embeddings (unit length) are more efficient and enable cosine similarity.
+
+```python
+import numpy as np
+
+# Normalize embedding to unit length
+embedding = np.array(embedding)
+normalized = embedding / np.linalg.norm(embedding)
+
+# Cosine similarity = dot product of normalized vectors
+similarity = np.dot(embedding1, embedding2)
+```
+
+## Vector Stores
+
+Vector stores (vector databases) are specialized databases optimized for storing and querying embeddings.
+
+### Popular Vector Stores
+
+**Pinecone**:
+- Fully managed vector database
+- Serverless, no infrastructure management
+- Hybrid search with metadata filtering
+- Scalable to billions of vectors
+- Enterprise features: RBAC, monitoring, SLA
+
+**Weaviate**:
+- Open-source vector database
+- GraphQL API
+- Hybrid search combining vector and BM25
+- On-premises or cloud deployment
+- Rich filtering and aggregation
+
+**Milvus**:
+- Open-source, cloud-native vector database
+- High performance at scale
+- Multiple index types (IVF, HNSW, etc.)
+- Distributed architecture
+- Active community and ecosystem
+
+**FAISS** (Facebook AI Similarity Search):
+- Library for similarity search
+- Efficient indexing for millions of vectors
+- CPU and GPU support
+- No external dependencies
+- Popular in research and production
+
+**Qdrant**:
+- Open-source vector database
+- REST and gRPC APIs
+- Advanced filtering and recommendations
+- Scalable production deployments
+- Community-focused development
+
+**Chroma**:
+- Lightweight embedding database
+- Designed for LLM applications
+- Simple Python API
+- SQLite, DuckDB backends
+- Great for prototyping and small-to-medium scale
+
+**Elasticsearch with Vector Search**:
+- Vector search in Elasticsearch 8.0+
+- Combines full-text and semantic search
+- DENSE_VECTOR field type
+- Hybrid BM25 + vector search
+
+### Vector Store Comparison
+
+| Aspect | Pinecone | Weaviate | Milvus | FAISS | Qdrant | Chroma |
+|--------|----------|----------|--------|-------|--------|--------|
+| **Type** | Managed | OSS/Cloud | OSS | Library | OSS | Embedded |
+| **Scalability** | Billions | Millions+ | Billions | Millions | Millions+ | Thousands |
+| **Latency** | <100ms | 50-200ms | 50-100ms | Variable | 50-100ms | <50ms |
+| **Hybrid Search** | Yes | Yes | No | No | Yes | No |
+| **Setup** | Easy | Medium | Medium | Hard | Easy | Very Easy |
+| **Cost** | Paid | Free | Free | Free | Free | Free |
+
+## Vector Store Schema
+
+### Document Storage
+
+```json
+{
+  "id": "doc_001",
+  "content": "Artificial intelligence is transforming industries worldwide",
+  "embedding": [0.123, -0.456, 0.789, ...],  // 768 dimensions
+  "metadata": {
+    "source": "company_blog",
+    "author": "John Doe",
+    "date": "2024-01-15",
+    "category": "AI",
+    "url": "https://example.com/ai-industry"
+  },
+  "chunk_index": 0,  // Which chunk if text was split
+  "total_chunks": 5
+}
+```
+
+### Metadata Filtering
+
+```python
+# Find AI articles by John Doe from 2024
+results = vector_store.search(
+    query="How is AI transforming business?",
+    filters={
+        "author": "John Doe",
+        "year": 2024,
+        "category": "AI"
+    },
+    limit=10
+)
+```
+
+## Chunking and Preprocessing
+
+Documents must be chunked before embedding to stay within model limits and improve retrieval.
+
+### Chunking Strategies
+
+**Fixed Size Chunks**:
+```python
+def chunk_text(text, chunk_size=512, overlap=100):
+    chunks = []
+    for i in range(0, len(text), chunk_size - overlap):
+        chunks.append(text[i:i + chunk_size])
+    return chunks
+
+# Result: ["...", "...", ...] where each chunk is ~512 characters
+```
+
+**Semantic Chunking**:
+Split at semantic boundaries (paragraphs, sentences).
+
+```python
+# Split by paragraph
+chunks = text.split('\n\n')
+
+# Split by sentence
+from nltk.tokenize import sent_tokenize
+chunks = sent_tokenize(text)
+```
+
+**Hierarchical Chunking**:
+Create chunks at multiple levels of granularity.
+
+```
+Document
+├─ Section (Level 1)
+│  ├─ Paragraph (Level 2)
+│  │  └─ Sentence (Level 3)
+│  └─ Paragraph
+└─ Section
+```
+
+### Chunking Best Practices
+
+| Approach | Chunk Size | Overlap | Best For |
+|----------|-----------|---------|----------|
+| Small chunks | 128-256 tokens | 20-50 tokens | Dense documents, precise retrieval |
+| Medium chunks | 256-512 tokens | 50-100 tokens | General purpose, balanced |
+| Large chunks | 512-1024 tokens | 100-200 tokens | Narrative text, context preservation |
+
+## Semantic Search Implementation
+
+### Vector Similarity Search
+
+```python
+from sentence_transformers import SentenceTransformer
+import numpy as np
+
+model = SentenceTransformer('all-mpnet-base-v2')
+
+# Database of documents
+documents = [
+    "Python is a programming language",
+    "Dogs are loyal pets",
+    "Machine learning uses Python extensively"
+]
+
+# Embed all documents
+doc_embeddings = model.encode(documents)
+
+# User query
+query = "How to learn programming?"
+query_embedding = model.encode(query)
+
+# Calculate similarity
+similarities = np.dot(doc_embeddings, query_embedding)
+
+# Get top results
+top_indices = np.argsort(similarities)[::-1][:3]
+results = [documents[i] for i in top_indices]
+# Results: ["Python is a programming language",
+#           "Machine learning uses Python extensively",
+#           "Dogs are loyal pets"]
+```
+
+### Hybrid Search
+
+Combine vector search with keyword search for better results.
+
+```python
+# Hybrid search: 70% semantic, 30% keyword
+semantic_score = vector_similarity(query, doc)  # 0-1
+keyword_score = bm25_similarity(query, doc)      # 0-1
+
+hybrid_score = 0.7 * semantic_score + 0.3 * keyword_score
+
+# Rank by hybrid score
+```
+
+### Re-ranking
+
+Retrieve more candidates then re-rank with expensive models.
+
+```
+User Query
+    ↓
+Vector Search (Fast)
+    ↓
+Top 100 Candidates
+    ↓
+Cross-Encoder Re-ranking (Accurate but Slow)
+    ↓
+Top 10 Results
+    ↓
+User
+```
+
+## Retrieval-Augmented Generation (RAG)
+
+RAG grounds LLM responses in knowledge base documents.
+
+### RAG Pipeline
+
+```
+User Query
+    ↓
+[Retriever] Get relevant documents from knowledge base
+    ↓
+Retrieved Documents (context)
+    ↓
+[Augmentation] Create prompt with documents + query
+    ↓
+"Answer this question using the following documents:
+ [Document 1]
+ [Document 2]
+ [Document 3]
+ Question: [User Query]"
+    ↓
+[Generator] LLM generates response
+    ↓
+Response grounded in documents
+```
+
+### RAG Implementation
+
+```python
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.llm import OpenAI
+from langchain.chains import RetrievalQA
+
+# Create vector store with documents
+embeddings = OpenAIEmbeddings()
+vectorstore = Chroma.from_documents(
+    documents=docs,
+    embedding=embeddings
+)
+
+# Create retriever
+retriever = vectorstore.as_retriever(
+    search_kwargs={"k": 5}  # Retrieve top 5 documents
+)
+
+# Create RAG chain
+qa_chain = RetrievalQA.from_chain_type(
+    llm=OpenAI(),
+    chain_type="stuff",  # Combine documents into prompt
+    retriever=retriever
+)
+
+# Query
+response = qa_chain.run("What is machine learning?")
+```
+
+### Prompt Engineering for RAG
+
+```
+System Prompt:
+"You are a helpful assistant. Answer questions based on the
+provided documents. If the answer is not in the documents,
+say so clearly."
+
+Context:
+"Document 1: Machine learning is a subset of artificial intelligence...
+Document 2: Supervised learning requires labeled training data...
+Document 3: Neural networks are inspired by biological neurons..."
+
+User Query:
+"What is machine learning and how is it different from
+traditional programming?"
+
+Assistant Task:
+Generate a response using ONLY the provided documents.
+Cite sources when referencing specific information.
+```
+
+## Knowledge Base Applications
+
+### Question Answering Systems
+
+```
+Knowledge Base: Product Documentation
+↓
+User: "How do I reset my password?"
+↓
+Retriever: Gets relevant FAQ entries
+↓
+Generator: Creates clear, helpful answer
+```
+
+### Recommendation Systems
+
+```
+Knowledge Base: Product Descriptions
+↓
+User: "I like Python for data science"
+↓
+Vector Search: Find similar products/content
+↓
+Results: ["R for Data Science", "Julia for ML", ...]
+```
+
+### Chatbots and Conversational AI
+
+```
+Knowledge Base: Company Knowledge
+↓
+User: "What's your return policy?"
+↓
+RAG System: Retrieves policy, generates conversational response
+↓
+Bot: "Our return policy allows 30 days from purchase..."
+```
+
+## Knowledge Base Maintenance
+
+### Regular Updates
+
+```python
+# Add new documents
+new_docs = ["Recent industry trends...", "New product features..."]
+embeddings = model.encode(new_docs)
+vector_store.add(new_docs, embeddings)
+
+# Update existing documents
+vector_store.update(doc_id, new_content)
+
+# Delete outdated documents
+vector_store.delete(outdated_doc_ids)
+```
+
+### Quality Metrics
+
+**Retrieval Quality**:
+- Precision: Are retrieved documents relevant?
+- Recall: Are all relevant documents retrieved?
+- MRR (Mean Reciprocal Rank): How high is first relevant result?
+
+**Search Performance**:
+- Latency: How fast is retrieval?
+- Throughput: Queries per second?
+- Cost: Embedding computation and storage costs?
+
+### Re-embedding and Index Rebuilding
+
+```python
+# Periodically rebuild indexes with improved models
+new_model = SentenceTransformer('better-model')
+all_documents = vector_store.get_all()
+
+# Re-embed with new model
+new_embeddings = new_model.encode([d['content'] for d in all_documents])
+
+# Rebuild vector store
+vector_store.delete_all()
+vector_store.add_bulk(all_documents, new_embeddings)
+```
+
+## Scaling Considerations
+
+### Storage Requirements
+
+```
+Documents: 1 million
+Embedding Size: 768 dimensions
+Bytes per dimension: 4 (float32)
+
+Storage per document: 768 * 4 = 3,072 bytes ≈ 3 KB
+Total storage: 1M * 3KB = 3 GB
+
+With metadata (100 bytes): 3GB + 100MB = 3.1 GB
+```
+
+### Query Performance
+
+**Index Types for Vector Search**:
+
+| Index Type | Speed | Memory | Best For |
+|-----------|-------|--------|----------|
+| Brute Force | Slow | Low | <100K vectors |
+| IVF (Inverted File) | Medium | Medium | 100K-10M vectors |
+| HNSW | Fast | High | 1M-1B vectors |
+| Product Quantization | Fast | Low | Very large scale |
+
+### Distributed Architecture
+
+```
+Query
+  ↓
+Load Balancer
+  ├─ Shard 1 (Vectors A-D)
+  ├─ Shard 2 (Vectors E-H)
+  └─ Shard 3 (Vectors I-L)
+  ↓
+Aggregate Results
+  ↓
+Return Top K
+```
+
+## Best Practices
+
+1. **Chunk Appropriately**: Balance between context and precision
+2. **Use Quality Embeddings**: Better models improve retrieval quality
+3. **Implement Re-ranking**: Use cross-encoders to improve top results
+4. **Monitor Performance**: Track latency, quality, and costs
+5. **Plan for Scale**: Start with simple approaches, scale as needed
+6. **Version Knowledge**: Track knowledge base evolution
+7. **Test Retrieval**: Evaluate with real queries and relevance judgments
+8. **Optimize Costs**: Balance model quality with inference costs
+9. **Implement Caching**: Cache frequent queries
+10. **User Feedback**: Incorporate user feedback to improve quality
+
+## Related Resources
+
+- [knowledge.org.ai](https://knowledge.org.ai) - Knowledge representation and organization
+- [models.org.ai](https://models.org.ai) - Embedding and language models
+- [standards.org.ai](https://standards.org.ai) - Vector search standards

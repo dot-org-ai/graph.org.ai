@@ -1,0 +1,571 @@
+---
+$context: https://knowledge.org.ai
+$id: https://knowledge.org.ai/SemanticWeb
+$type: https://knowledge.org.ai/Knowledge
+name: "Semantic Web"
+description: "Web technologies for making data machine-readable and interoperable"
+---
+
+# Semantic Web
+
+Web architecture and standards for publishing, linking, and querying structured, machine-readable data.
+
+## Overview
+
+The Semantic Web extends the current web by adding machine-readable descriptions to data and documents. It enables web resources to be discovered, described, understood, and utilized by both humans and machines. Built on standards like RDF, OWL, and SPARQL, the Semantic Web facilitates data interoperability, automated reasoning, and knowledge sharing across organizational and disciplinary boundaries.
+
+### Core Vision
+
+- **Meaningful URIs**: Every concept has a unique, dereferenceable identifier
+- **Linked Data**: Resources explicitly link to related resources
+- **Machine-Readability**: Data carries explicit semantic meaning
+- **Integration**: Seamless data combination across sources
+- **Reasoning**: Automated inference from explicit and implicit knowledge
+
+## Uniform Resource Identifiers (URIs)
+
+### URI Structure and Semantics
+
+**Anatomy of a URI**
+
+```
+https://example.org/people/john-doe
+│      │ │       │  │      │
+scheme authority base path  fragment
+
+scheme: https (HTTPS protocol)
+authority: example.org (domain)
+path: /people/john-doe (hierarchical resource identifier)
+```
+
+### HTTP URIs vs. Non-HTTP URIs
+
+**HTTP URIs**
+- Dereferenceable: Can be accessed via web request
+- Best practice for semantic web
+- Return RDF/linked data when requested with appropriate content-type
+- Example: `http://dbpedia.org/resource/Albert_Einstein`
+
+**URN (Uniform Resource Names)**
+- Non-dereferenceable persistent identifiers
+- Format: `urn:isbn:0451450523`
+- Useful for stable, non-network-dependent identifiers
+
+**UUID/ARK Identifiers**
+- UUID: `urn:uuid:f81d4fae-7dec-11d0-a765-00a0c91e6bf6`
+- ARK: `ark:/12345/abc123`
+- Good for institutional repositories
+
+### URI Design Best Practices
+
+- **Opaqueness**: Avoid encoding meaning in URI structure
+- **Stability**: URIs should remain unchanged over time
+- **Consistency**: Use same URI for same concept across datasets
+- **Resolvability**: Prefer HTTP URIs that return machine-readable descriptions
+
+## Linked Data Principles
+
+### Four Principles of Linked Data
+
+1. **Use URIs as names for things**: Every entity has unique identifier
+   ```
+   http://example.org/person/alice
+   http://example.org/person/bob
+   http://example.org/organization/acme
+   ```
+
+2. **Use HTTP URIs so that people can look up those names**: Resources are web-accessible
+   ```
+   GET http://example.org/person/alice
+   Returns: RDF description of Alice
+   ```
+
+3. **When someone looks up a URI, provide useful information using RDF standards**: Return structured data
+   ```turtle
+   @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+   <http://example.org/person/alice>
+     foaf:name "Alice" ;
+     foaf:knows <http://example.org/person/bob> ;
+     foaf:mbox <mailto:alice@example.org> .
+   ```
+
+4. **Include links to other URIs so that they can discover more things**: Create the web of data
+   ```turtle
+   <http://example.org/person/alice>
+     foaf:workplaceHomepage <http://example.org/organization/acme> ;
+     foaf:knows <http://example.org/person/bob> ;
+     dbpedia:birthPlace <http://dbpedia.org/resource/New_York> .
+   ```
+
+### Linked Open Data (LOD) Cloud
+
+A global graph of linked open datasets:
+
+**Major Collections**
+- **DBpedia**: Structured data from Wikipedia
+- **Wikidata**: Community-curated knowledge base
+- **YAGO**: Combining Wikipedia and WordNet
+- **GeoNames**: Geographic locations
+- **PubChem**: Chemical compounds
+- **UniProt**: Protein sequences and information
+
+**LOD Properties**
+- Open licensing (CC0, CC-BY, CC-BY-SA)
+- Dereferenceable URIs
+- RDF representation
+- Links to other LOD datasets
+
+## JSON-LD (JSON for Linking Data)
+
+### Advantages
+
+- **JSON Compatibility**: Uses familiar JSON format
+- **Developer-Friendly**: Easy for JavaScript ecosystems
+- **Linked Data Properties**: Full semantic web capabilities
+- **Compact Representation**: Less verbose than XML-based RDF
+
+### Core Concepts
+
+#### Context
+
+Defines namespace prefixes and mappings:
+
+```json
+{
+  "@context": {
+    "name": "http://xmlns.com/foaf/0.1/name",
+    "knows": "http://xmlns.com/foaf/0.1/knows",
+    "homepage": "http://xmlns.com/foaf/0.1/homepage"
+  },
+  "@id": "http://example.org/person/alice",
+  "name": "Alice",
+  "knows": [
+    {"@id": "http://example.org/person/bob"}
+  ],
+  "homepage": {"@id": "http://example.org"}
+}
+```
+
+#### Expansion and Compaction
+
+**Expansion**: Converting compact JSON-LD to full RDF triples
+```json
+{
+  "http://xmlns.com/foaf/0.1/name": [{"@value": "Alice"}],
+  "http://xmlns.com/foaf/0.1/knows": [
+    {"@id": "http://example.org/person/bob"}
+  ]
+}
+```
+
+**Compaction**: Using context to make JSON-LD more readable
+```json
+{
+  "@context": {"name": "foaf:name"},
+  "name": "Alice"
+}
+```
+
+#### Nested Objects and Arrays
+
+```json
+{
+  "@context": {
+    "person": "http://example.org/person/",
+    "knows": "http://xmlns.com/foaf/0.1/knows",
+    "name": "http://xmlns.com/foaf/0.1/name"
+  },
+  "@id": "person:alice",
+  "name": "Alice",
+  "knows": [
+    {"@id": "person:bob", "name": "Bob"},
+    {"@id": "person:charlie", "name": "Charlie"}
+  ]
+}
+```
+
+### Schema.org Integration
+
+Structured data markup for search engines:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jane Doe",
+  "url": "http://www.janedoe.com",
+  "jobTitle": "Professor",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "University of Example"
+  }
+}
+```
+
+## SPARQL Query Language
+
+### Query Types
+
+#### SELECT Queries
+
+Retrieve specific bindings:
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?name ?email
+WHERE {
+  ?person a foaf:Person ;
+    foaf:name ?name ;
+    foaf:mbox ?email .
+  FILTER (regex(?name, "Alice", "i"))
+}
+```
+
+#### CONSTRUCT Queries
+
+Generate RDF from query results:
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+
+CONSTRUCT {
+  ?person vcard:fn ?name ;
+    vcard:email ?email .
+}
+WHERE {
+  ?person foaf:name ?name ;
+    foaf:mbox ?email .
+}
+```
+
+#### DESCRIBE Queries
+
+Return descriptions of resources:
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+DESCRIBE ?person
+WHERE {
+  ?person foaf:name "Alice" .
+}
+```
+
+#### ASK Queries
+
+Boolean existence checks:
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+ASK {
+  <http://example.org/person/alice>
+    foaf:knows <http://example.org/person/bob> .
+}
+```
+
+### Graph Patterns
+
+#### Triple Patterns
+Basic RDF triple matching:
+
+```sparql
+?person foaf:name "Alice" ;
+  foaf:email ?email .
+```
+
+#### Optional Patterns
+Non-required matches:
+
+```sparql
+?person foaf:name ?name .
+OPTIONAL { ?person foaf:email ?email . }
+```
+
+#### Filters
+Constraint conditions:
+
+```sparql
+FILTER (?age > 18 && ?age < 65)
+FILTER (regex(?email, "@example.org$"))
+FILTER NOT EXISTS { ?person foaf:knows ?friend }
+```
+
+#### Union Patterns
+Alternative matches:
+
+```sparql
+{
+  ?person foaf:name ?name .
+} UNION {
+  ?person foaf:givenName ?firstName ;
+    foaf:familyName ?lastName .
+}
+```
+
+#### Negation
+Excluding certain patterns:
+
+```sparql
+?person foaf:name ?name .
+FILTER NOT EXISTS {
+  ?person foaf:email ?email .
+}
+```
+
+### Aggregation and Group By
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?org (COUNT(?person) as ?count)
+WHERE {
+  ?person foaf:workplaceHomepage ?org .
+}
+GROUP BY ?org
+HAVING (COUNT(?person) > 5)
+```
+
+### Ordering and Limiting
+
+```sparql
+SELECT ?name ?age
+WHERE {
+  ?person foaf:name ?name ;
+    foaf:age ?age .
+}
+ORDER BY DESC(?age)
+LIMIT 10
+OFFSET 20
+```
+
+### Named Graphs and Federative Queries
+
+#### Named Graph Queries
+Querying specific graph contexts:
+
+```sparql
+SELECT ?person ?name
+FROM NAMED <http://example.org/dataset1>
+FROM NAMED <http://example.org/dataset2>
+WHERE {
+  GRAPH <http://example.org/dataset1> {
+    ?person foaf:name ?name .
+  }
+}
+```
+
+#### Service Queries
+Querying remote SPARQL endpoints:
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?name
+WHERE {
+  ?person foaf:name ?name .
+  SERVICE <http://dbpedia.org/sparql> {
+    ?person foaf:workplaceHomepage ?org .
+  }
+}
+```
+
+## RDF Serialization Formats
+
+### Turtle (Terse RDF Triple Language)
+
+Human-readable, compact format:
+
+```turtle
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@base <http://example.org/> .
+
+<person/alice>
+  a foaf:Person ;
+  foaf:name "Alice" ;
+  foaf:email <mailto:alice@example.org> ;
+  foaf:knows <person/bob> .
+
+<person/bob>
+  a foaf:Person ;
+  foaf:name "Bob" .
+```
+
+### RDF/XML
+
+XML serialization of RDF:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+  <foaf:Person rdf:about="http://example.org/person/alice">
+    <foaf:name>Alice</foaf:name>
+    <foaf:email rdf:resource="mailto:alice@example.org"/>
+    <foaf:knows rdf:resource="http://example.org/person/bob"/>
+  </foaf:Person>
+
+</rdf:RDF>
+```
+
+### N-Quads
+
+Line-based format with graph context:
+
+```
+<http://example.org/person/alice> <http://xmlns.com/foaf/0.1/name> "Alice" <http://example.org/graph1> .
+<http://example.org/person/bob> <http://xmlns.com/foaf/0.1/name> "Bob" <http://example.org/graph2> .
+```
+
+## Content Negotiation and Dereferencing
+
+### HTTP Content Negotiation
+
+Requesting specific RDF format via Accept header:
+
+```http
+GET /person/alice HTTP/1.1
+Accept: application/rdf+xml, application/n-triples;q=0.9, text/turtle;q=0.8
+```
+
+### RDFa (RDF in Attributes)
+
+Embedding RDF in HTML:
+
+```html
+<div typeof="http://xmlns.com/foaf/0.1/Person">
+  <span property="http://xmlns.com/foaf/0.1/name">Alice</span>
+  <a property="http://xmlns.com/foaf/0.1/homepage"
+     href="http://example.org/">Alice's Homepage</a>
+</div>
+```
+
+### Microdata
+
+Semantic HTML markup:
+
+```html
+<div itemscope itemtype="http://schema.org/Person">
+  <span itemprop="name">Alice</span>
+  <a itemprop="url" href="http://example.org/">Homepage</a>
+</div>
+```
+
+## SPARQL Endpoints and Federated Querying
+
+### Public SPARQL Endpoints
+
+- **DBpedia**: `http://dbpedia.org/sparql`
+- **Wikidata**: `https://query.wikidata.org/sparql`
+- **Bio2RDF**: Various biomedical data endpoints
+- **GeoNames**: Geographic data endpoint
+
+### Federated Query Architecture
+
+Multiple distributed SPARQL endpoints queried together:
+
+```sparql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dbpedia: <http://dbpedia.org/property/>
+
+SELECT ?name ?birthPlace
+WHERE {
+  # Local query
+  ?person foaf:name ?name .
+
+  # Remote query to DBpedia
+  SERVICE <http://dbpedia.org/sparql> {
+    ?resource rdf:label ?name ;
+      dbpedia:birthPlace ?birthPlace .
+  }
+}
+```
+
+## Applications
+
+### Data Publishing and Sharing
+- Open government data
+- Scientific data repositories
+- Cultural heritage collections
+- Corporate linked data
+
+### Knowledge Integration
+- Healthcare information exchange
+- Supply chain data
+- Master data management
+- Data warehouse federation
+
+### Semantic Search and Discovery
+- Entity-centric search
+- Cross-domain information retrieval
+- Semantic autocomplete
+- Advanced filtering and faceting
+
+### Reasoning and Inference
+- Ontology-based data access (OBDA)
+- Query expansion
+- Automatic schema mapping
+- Consistency checking
+
+### Machine Learning
+- Knowledge graph embeddings
+- Link prediction
+- Entity classification
+- Relation extraction
+
+## Best Practices
+
+### URI Design
+- Use http:// URIs for public datasets
+- Maintain URI stability with 301 redirects
+- Use meaningful but opaque URI structure
+- Document URI patterns
+
+### RDF Modeling
+- Reuse established vocabularies (FOAF, Dublin Core)
+- Describe resources with multiple properties
+- Use appropriate datatype literals
+- Link to external authoritative URIs
+
+### SPARQL Querying
+- Use FILTER constraints for efficiency
+- Avoid costly UNION queries when possible
+- Leverage OPTIONAL for optional bindings
+- Use LIMIT for result set management
+
+### Data Quality
+- Include dcterms:issued and dcterms:modified for temporal tracking
+- Provide prov:wasAttributedTo for attribution
+- Include rdfs:comment for human-readable documentation
+- Validate against SHACL shapes
+
+## Cross-References
+
+### Related Domains
+
+- [graph.org.ai](https://graph.org.ai) - Graph structures
+- [semantics.org.ai](https://semantics.org.ai) - Semantic meaning
+- [KnowledgeGraphs.org.ai](https://knowledge.org.ai/KnowledgeGraphs) - Graph systems
+- [Ontologies.org.ai](https://knowledge.org.ai/Ontologies) - Formal representations
+
+### External Resources
+
+- W3C Semantic Web Activity
+- JSON-LD Community Group
+- SPARQL Federation Specifications
+- Schema.org Vocabulary
+
+## Sources
+
+- W3C Semantic Web Recommendations
+- Linked Data Design Issues (Tim Berners-Lee)
+- JSON-LD Specification
+- SPARQL 1.1 Query Language
+- Semantic Web for the Working Ontologist

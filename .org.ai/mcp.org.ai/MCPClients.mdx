@@ -1,0 +1,768 @@
+---
+$context: https://mcp.org.ai
+$id: https://mcp.org.ai/MCPClients
+$type: https://mcp.org.ai/Mcp
+name: "MCP Client Integration"
+description: "Comprehensive guide to implementing and integrating MCP clients, including Claude Desktop, IDE plugins, and custom applications"
+---
+
+export const items = async () => {
+  return []
+}
+
+# MCP Client Integration
+
+MCP Clients are applications that connect to MCP servers and consume their tools and resources. They manage server connections, discover capabilities, and present available tools to users and applications (particularly AI models like Claude).
+
+## Client Architecture
+
+### Core Components
+
+```
+┌──────────────────────────────────┐
+│  MCP Client Application          │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Connection Manager        │  │
+│  │  - Server Discovery        │  │
+│  │  - Connection Lifecycle    │  │
+│  │  - Reconnection Logic      │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Capability Aggregator     │  │
+│  │  - Tool Discovery          │  │
+│  │  - Resource Listing        │  │
+│  │  - Schema Management       │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Request Dispatcher        │  │
+│  │  - Tool Invocation         │  │
+│  │  - Resource Access         │  │
+│  │  - Response Handling       │  │
+│  └────────────────────────────┘  │
+│                                  │
+│  ┌────────────────────────────┐  │
+│  │  Transport Handler         │  │
+│  │  - Protocol Implementation │  │
+│  │  - Message Serialization   │  │
+│  │  - Error Management        │  │
+│  └────────────────────────────┘  │
+└──────────────────────────────────┘
+```
+
+## Client Initialization
+
+### Basic Client Setup
+
+```typescript
+import { Client } from '@modelcontextprotocol/sdk/client/index.js'
+import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js'
+
+// Create transport connection
+const transport = new StdioClientTransport({
+  command: 'python',
+  args: ['./my_mcp_server.py']
+})
+
+// Create client
+const client = new Client({
+  name: 'my-app',
+  version: '1.0.0'
+})
+
+// Connect to server
+await client.connect(transport)
+
+// Discover available tools
+const tools = await client.listTools()
+console.log(`Available tools: ${tools.map(t => t.name).join(', ')}`)
+```
+
+### HTTP Client Implementation
+
+```typescript
+import { Client } from '@modelcontextprotocol/sdk/client/index.js'
+import { HTTPClientTransport } from '@modelcontextprotocol/sdk/client/http.js'
+
+const transport = new HTTPClientTransport({
+  url: 'http://localhost:3000/mcp'
+})
+
+const client = new Client({
+  name: 'web-app',
+  version: '1.0.0'
+})
+
+await client.connect(transport)
+```
+
+### WebSocket Client Implementation
+
+```typescript
+import { WebSocketClientTransport } from '@modelcontextprotocol/sdk/client/websocket.js'
+
+const transport = new WebSocketClientTransport({
+  url: 'ws://localhost:8080/mcp'
+})
+
+const client = new Client({
+  name: 'realtime-app',
+  version: '1.0.0'
+})
+
+await client.connect(transport)
+```
+
+## Server Discovery & Connection
+
+### Server Configuration
+
+Clients typically manage connections to multiple servers through configuration files:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "node",
+      "args": ["./servers/filesystem-server.js"],
+      "env": {}
+    },
+    "database": {
+      "command": "python",
+      "args": ["./servers/db_server.py"],
+      "env": {
+        "DB_CONNECTION_STRING": "postgresql://..."
+      }
+    },
+    "github": {
+      "command": "node",
+      "args": ["./servers/github-server.js"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+### Dynamic Server Discovery
+
+```typescript
+class ServerRegistry {
+  private servers = new Map<string, ServerConfig>()
+
+  async discoverServers(): Promise<ServerInfo[]> {
+    // Load from configuration
+    const config = await loadConfig()
+    const discovered: ServerInfo[] = []
+
+    for (const [name, config] of Object.entries(config.mcpServers)) {
+      try {
+        const info = await this.probeServer(config)
+        discovered.push({
+          name,
+          ...info
+        })
+      } catch (error) {
+        console.error(`Failed to discover server ${name}:`, error)
+      }
+    }
+
+    return discovered
+  }
+
+  private async probeServer(config: ServerConfig): Promise<ServerInfo> {
+    const transport = this.createTransport(config)
+    const client = new Client({...})
+
+    try {
+      await client.connect(transport)
+      const tools = await client.listTools()
+      const resources = await client.listResources()
+
+      return {
+        capabilities: { tools, resources },
+        config
+      }
+    } finally {
+      await client.close()
+    }
+  }
+}
+```
+
+## Tool Discovery & Presentation
+
+### Listing Tools
+
+```typescript
+// Get all tools from connected servers
+const tools = await client.listTools()
+
+// Tools are returned with metadata
+interface ToolInfo {
+  name: string
+  description: string
+  inputSchema: JSONSchema
+  id?: string
+}
+
+// Example response
+const tools = [
+  {
+    name: 'search_documents',
+    description: 'Search documents by keyword',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        query: { type: 'string' },
+        limit: { type: 'integer', default: 10 }
+      },
+      required: ['query']
+    }
+  },
+  {
+    name: 'create_document',
+    description: 'Create a new document',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        title: { type: 'string' },
+        content: { type: 'string' }
+      },
+      required: ['title', 'content']
+    }
+  }
+]
+```
+
+### Tool Execution
+
+```typescript
+// Call a tool with arguments
+const result = await client.callTool({
+  name: 'search_documents',
+  arguments: {
+    query: 'machine learning',
+    limit: 5
+  }
+})
+
+// Result structure
+interface ToolResult {
+  content: ToolContent[]
+  isError?: boolean
+}
+
+type ToolContent =
+  | { type: 'text'; text: string }
+  | { type: 'image'; data: string; mimeType: string }
+  | { type: 'resource'; uri: string }
+```
+
+### Tool Caching & Optimization
+
+```typescript
+class CachingClient {
+  private toolCache: Map<string, ToolInfo[]> = new Map()
+  private cacheTTL = 5 * 60 * 1000  // 5 minutes
+
+  async listTools(serverId: string): Promise<ToolInfo[]> {
+    const cached = this.toolCache.get(serverId)
+    if (cached) {
+      return cached
+    }
+
+    const tools = await this.client.listTools()
+    this.toolCache.set(serverId, tools)
+
+    // Clear cache after TTL
+    setTimeout(() => {
+      this.toolCache.delete(serverId)
+    }, this.cacheTTL)
+
+    return tools
+  }
+}
+```
+
+## Resource Management
+
+### Listing Resources
+
+```typescript
+// Get available resources from servers
+const resources = await client.listResources()
+
+interface ResourceInfo {
+  uri: string
+  name: string
+  description: string
+  mimeType?: string
+}
+
+// Example: List all resources
+resources.forEach(resource => {
+  console.log(`${resource.name}: ${resource.uri}`)
+  if (resource.description) {
+    console.log(`  ${resource.description}`)
+  }
+})
+```
+
+### Resource Access
+
+```typescript
+// Read resource content
+const resource = await client.readResource({
+  uri: 'knowledge://documentation/setup-guide'
+})
+
+interface ResourceContent {
+  uri: string
+  mimeType: string
+  contents: string
+}
+
+// Access content
+console.log(`Content Type: ${resource.mimeType}`)
+console.log(`Content:\n${resource.contents}`)
+```
+
+### Resource Subscriptions
+
+```typescript
+// Subscribe to resource changes (if supported)
+await client.subscribeResource({
+  uri: 'metrics://system/cpu-usage'
+})
+
+// Handle subscription updates
+client.on('resource-updated', (update) => {
+  console.log(`Resource ${update.uri} updated`)
+  console.log(`New content: ${update.content.contents}`)
+})
+
+// Unsubscribe when done
+await client.unsubscribeResource({
+  uri: 'metrics://system/cpu-usage'
+})
+```
+
+## Connection Management
+
+### Lifecycle Management
+
+```typescript
+class ManagedClient {
+  private client: Client
+  private transport: Transport
+  private reconnectAttempts = 0
+  private maxReconnectAttempts = 5
+  private reconnectDelay = 1000
+
+  async connect() {
+    try {
+      await this.client.connect(this.transport)
+      this.reconnectAttempts = 0
+      console.log('Connected to MCP server')
+    } catch (error) {
+      console.error('Connection failed:', error)
+      this.scheduleReconnect()
+    }
+  }
+
+  private scheduleReconnect() {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+      console.error('Max reconnection attempts reached')
+      return
+    }
+
+    this.reconnectAttempts++
+    const delay = this.reconnectDelay * Math.pow(2, this.reconnectAttempts)
+
+    setTimeout(() => {
+      console.log(`Attempting reconnection (${this.reconnectAttempts}/${this.maxReconnectAttempts})`)
+      this.connect()
+    }, delay)
+  }
+
+  async disconnect() {
+    try {
+      await this.client.close()
+      console.log('Disconnected from MCP server')
+    } catch (error) {
+      console.error('Disconnect error:', error)
+    }
+  }
+}
+```
+
+### Health Monitoring
+
+```typescript
+class HealthMonitor {
+  private client: Client
+  private healthCheckInterval = 30000  // 30 seconds
+
+  startMonitoring() {
+    setInterval(async () => {
+      try {
+        const tools = await this.client.listTools()
+        console.log(`Health check passed: ${tools.length} tools available`)
+      } catch (error) {
+        console.error('Health check failed:', error)
+        this.notifyUnhealthy()
+      }
+    }, this.healthCheckInterval)
+  }
+
+  private notifyUnhealthy() {
+    // Trigger reconnection, alerts, etc.
+  }
+}
+```
+
+## Claude Desktop Integration
+
+### Configuration
+
+Claude Desktop uses a configuration file to manage MCP servers:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "node",
+      "args": ["/path/to/filesystem-server/index.js"]
+    },
+    "web-access": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-web-access"]
+    },
+    "github": {
+      "command": "node",
+      "args": ["/path/to/github-server.js"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_..."
+      }
+    },
+    "database": {
+      "command": "python",
+      "args": ["/path/to/db_server.py"],
+      "env": {
+        "DATABASE_URL": "postgresql://..."
+      }
+    }
+  }
+}
+```
+
+### Tool Presentation to Claude
+
+Once configured, Claude automatically discovers and uses tools:
+
+```
+User: "Search for documents about machine learning"
+
+Claude sees available tools:
+- search_documents (from filesystem server)
+- web_search (from web-access server)
+- github_search (from github server)
+
+Claude: I'll search your documents for information about machine learning.
+[Calls search_documents with query "machine learning"]
+
+Result: Found 3 documents about machine learning...
+```
+
+## IDE Plugin Development
+
+### VS Code Extension Example
+
+```typescript
+// extension.ts
+import * as vscode from 'vscode'
+import { Client } from '@modelcontextprotocol/sdk/client/index.js'
+
+export class MCPExtension {
+  private client: Client
+  private provider: MCPCommandProvider
+
+  async activate(context: vscode.ExtensionContext) {
+    // Initialize client
+    this.client = new Client({...})
+    this.provider = new MCPCommandProvider(this.client)
+
+    // Register command provider
+    vscode.commands.registerCommand(
+      'mcp.listTools',
+      () => this.listTools()
+    )
+
+    // Add to command palette
+    context.subscriptions.push(
+      vscode.languages.registerCodeLensProvider('*', this.provider)
+    )
+  }
+
+  private async listTools() {
+    const tools = await this.client.listTools()
+    const quickPick = vscode.window.createQuickPick()
+    quickPick.items = tools.map(tool => ({
+      label: tool.name,
+      description: tool.description
+    }))
+
+    quickPick.onDidChangeSelection(async (selection) => {
+      if (selection.length > 0) {
+        await this.executeTool(selection[0].label)
+      }
+    })
+
+    quickPick.show()
+  }
+
+  private async executeTool(toolName: string) {
+    const result = await this.client.callTool({
+      name: toolName,
+      arguments: {}
+    })
+
+    vscode.window.showInformationMessage(
+      `Tool executed: ${JSON.stringify(result.content)}`
+    )
+  }
+}
+```
+
+## Error Handling & Resilience
+
+### Request Error Handling
+
+```typescript
+async function safeToolCall(
+  client: Client,
+  toolName: string,
+  args: unknown
+): Promise<ToolResult | null> {
+  try {
+    const result = await client.callTool({
+      name: toolName,
+      arguments: args
+    })
+
+    if (result.isError) {
+      console.error(`Tool error: ${result.content[0].text}`)
+      return null
+    }
+
+    return result
+  } catch (error) {
+    if (error.code === 'TIMEOUT') {
+      console.error('Tool execution timed out')
+    } else if (error.code === 'CONNECTION_LOST') {
+      console.error('Server connection lost')
+    } else {
+      console.error(`Unexpected error: ${error.message}`)
+    }
+    return null
+  }
+}
+```
+
+### Timeout Management
+
+```typescript
+class TimeoutClient {
+  private defaultTimeout = 30000  // 30 seconds
+
+  async callToolWithTimeout(
+    toolName: string,
+    args: unknown,
+    timeout?: number
+  ): Promise<ToolResult> {
+    return Promise.race([
+      this.client.callTool({ name: toolName, arguments: args }),
+      this.delayedReject(timeout ?? this.defaultTimeout)
+    ])
+  }
+
+  private delayedReject(ms: number): Promise<never> {
+    return new Promise((_, reject) =>
+      setTimeout(
+        () => reject(new Error(`Tool call timed out after ${ms}ms`)),
+        ms
+      )
+    )
+  }
+}
+```
+
+## Performance Optimization
+
+### Batch Operations
+
+```typescript
+class BatchClient {
+  async callToolsBatch(
+    calls: Array<{ name: string; arguments: unknown }>
+  ): Promise<ToolResult[]> {
+    return Promise.all(
+      calls.map(call =>
+        this.client.callTool({
+          name: call.name,
+          arguments: call.arguments
+        })
+      )
+    )
+  }
+
+  // Usage
+  const results = await client.callToolsBatch([
+    { name: 'fetch_user', arguments: { id: '123' } },
+    { name: 'fetch_user', arguments: { id: '456' } },
+    { name: 'fetch_user', arguments: { id: '789' } }
+  ])
+}
+```
+
+### Tool Capability Caching
+
+```typescript
+class CachedCapabilityClient {
+  private capabilities: Map<string, ClientCapabilities> = new Map()
+  private capabilityCacheTTL = 10 * 60 * 1000  // 10 minutes
+
+  async getCapabilities(serverId: string): Promise<ClientCapabilities> {
+    const cached = this.capabilities.get(serverId)
+    if (cached?.timestamp && Date.now() - cached.timestamp < this.capabilityCacheTTL) {
+      return cached
+    }
+
+    const tools = await this.client.listTools()
+    const resources = await this.client.listResources()
+
+    const capabilities = {
+      tools,
+      resources,
+      timestamp: Date.now()
+    }
+
+    this.capabilities.set(serverId, capabilities)
+    return capabilities
+  }
+}
+```
+
+## Logging & Debugging
+
+### Request/Response Logging
+
+```typescript
+class LoggingClient {
+  async callTool(request: CallToolRequest): Promise<ToolResult> {
+    const id = crypto.randomUUID()
+    console.log(`[${id}] Tool Call`, {
+      tool: request.name,
+      arguments: request.arguments,
+      timestamp: new Date().toISOString()
+    })
+
+    const startTime = performance.now()
+
+    try {
+      const result = await this.client.callTool(request)
+      const duration = performance.now() - startTime
+
+      console.log(`[${id}] Tool Success`, {
+        duration: `${duration.toFixed(2)}ms`,
+        resultSize: JSON.stringify(result).length,
+        isError: result.isError
+      })
+
+      return result
+    } catch (error) {
+      const duration = performance.now() - startTime
+
+      console.error(`[${id}] Tool Error`, {
+        duration: `${duration.toFixed(2)}ms`,
+        error: error.message
+      })
+
+      throw error
+    }
+  }
+}
+```
+
+## Integration with AI Models
+
+### Tool Availability for Claude
+
+```typescript
+class ClaudeToolProvider {
+  private client: Client
+
+  async getToolsForClaude(): Promise<Tool[]> {
+    const serverTools = await this.client.listTools()
+
+    return serverTools.map(tool => ({
+      name: tool.name,
+      description: tool.description,
+      input_schema: tool.inputSchema,
+      call: (args) => this.client.callTool({
+        name: tool.name,
+        arguments: args
+      })
+    }))
+  }
+}
+```
+
+## Best Practices
+
+### Client Design
+
+1. **Connection Pooling**: Reuse connections across requests
+2. **Capability Caching**: Cache tool lists to reduce overhead
+3. **Error Recovery**: Implement exponential backoff for retries
+4. **Resource Cleanup**: Always close connections properly
+5. **Logging**: Log all tool invocations for debugging
+
+### Error Handling
+
+1. **Graceful Degradation**: Handle missing tools gracefully
+2. **Timeout Protection**: Always set timeouts on tool calls
+3. **Error Messages**: Provide helpful error information
+4. **Circuit Breaking**: Disable failing servers temporarily
+5. **User Feedback**: Inform users of connectivity issues
+
+### Performance
+
+1. **Batch Operations**: Group requests when possible
+2. **Lazy Loading**: Only connect to needed servers
+3. **Resource Limits**: Implement rate limiting
+4. **Monitoring**: Track performance metrics
+5. **Optimization**: Profile and optimize slow operations
+
+## Integration Points
+
+- **[MCPServers.mdx](https://mcp.org.ai/MCPServers)**: Server implementation details
+- **[MCPTools.mdx](https://mcp.org.ai/MCPTools)**: Tool specifications
+- **[MCPResources.mdx](https://mcp.org.ai/MCPResources)**: Resource management
+- **[MCPTransports.mdx](https://mcp.org.ai/MCPTransports)**: Transport implementations
+- **[agents.org.ai](https://agents.org.ai)**: Agent frameworks
+- **[tools.org.ai](https://tools.org.ai)**: Tool registry
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| **Component Type** | Client Implementation |
+| **Domain** | [mcp.org.ai](https://mcp.org.ai) |
+| **Protocol** | JSON-RPC 2.0 |
+| **Primary Consumers** | Claude, IDE plugins, Custom apps |
+| **Transport Agnostic** | Works with any MCP transport |

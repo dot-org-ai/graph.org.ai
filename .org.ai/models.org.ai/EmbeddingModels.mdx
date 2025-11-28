@@ -1,0 +1,573 @@
+---
+$context: https://models.org.ai
+$id: https://models.org.ai/EmbeddingModels
+$type: https://models.org.ai/ModelCategory
+name: "Embedding Models"
+description: "Text and multimodal embedding models for semantic search, similarity matching, and vector-based retrieval systems"
+---
+
+export const items = async () => {
+  // Fetch embedding model instances from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://models.org.ai/EmbeddingModel',
+    category: 'embedding'
+  })
+}
+
+# Embedding Models
+
+Embedding models transform text, images, and other data into high-dimensional vector representations that capture semantic meaning. These vector embeddings enable similarity search, clustering, recommendation systems, and serve as a foundation for retrieval-augmented generation (RAG) and vector databases.
+
+## Overview
+
+Embeddings are numerical representations where semantic similarity translates to geometric proximity. Models trained on large text corpora learn to place similar concepts close together in vector space, enabling downstream tasks like semantic search without explicit keyword matching.
+
+Embedding models have become essential infrastructure for modern AI applications, particularly in combination with vector databases for efficient retrieval and knowledge augmentation.
+
+## Text Embedding Models
+
+### General-Purpose Text Embeddings
+
+**OpenAI text-embedding-3 Series**
+- **text-embedding-3-large**: High-dimensionality embedding
+  - Dimension: 3072
+  - Performance: Best quality embeddings from OpenAI
+  - Strengths: Semantic accuracy, multilingual support
+  - Use cases: Production retrieval systems, similarity search
+
+- **text-embedding-3-small**: Efficient embedding
+  - Dimension: 1536
+  - Performance: Faster inference, reduced storage
+  - Strengths: Cost-effective, still high quality
+  - Use cases: Real-time applications, high-volume embedding
+
+**Anthropic/Hugging Face BGE (BAAI General Embedding) Series**
+- **bge-large-en-v1.5**: State-of-the-art open model
+  - Dimension: 1024
+  - Performance: Competitive with commercial models
+  - Strengths: Open-source, excellent generalization
+  - Use cases: Fine-tuning base, local deployment
+
+- **bge-large-zh-v1.5**: Chinese language optimized
+  - Dimension: 1024
+  - Performance: Superior for Chinese content
+  - Strengths: Multilingual awareness, cultural context
+  - Use cases: Chinese search, cross-lingual retrieval
+
+**Cohere Embed API**
+- **embed-english-v3.0**: Production-grade embeddings
+  - Dimension: Configurable 256-4096
+  - Performance: Adjustable quality/speed tradeoff
+  - Strengths: Flexible dimensions, task-specific tuning
+  - Use cases: Optimized retrieval, cost control
+
+- **embed-multilingual-v3.0**: 100+ language support
+  - Dimension: Configurable
+  - Performance: Cross-lingual retrieval capable
+  - Strengths: Extreme language coverage, cultural awareness
+  - Use cases: Global applications, multilingual search
+
+### Domain-Specific Embeddings
+
+**Scientific and Academic Embeddings**
+- **SPECTER**: Citation-informed embeddings
+  - Specialized in academic paper representation
+  - Uses citation information in training
+  - Excellent for scientific document retrieval
+  - Use cases: Research paper discovery, citation analysis
+
+- **SciBERT**: Scientific BERT variant
+  - Fine-tuned on scientific papers
+  - Stronger performance on scientific text
+  - Better vocabulary for scientific domains
+  - Use cases: Biomedical search, scientific literature review
+
+**Domain Adaptation**
+- Medical document embeddings (e.g., BioBERT)
+- Legal document embeddings
+- Code embeddings (CodeBERT, GraphCodeBERT)
+- Financial and business embeddings
+
+### Multilingual and Semantic Embeddings
+
+**Multilingual BERT (mBERT)**
+- Coverage: 104 languages
+- Strengths: Cross-lingual alignment, broad coverage
+- Limitations: Lower quality than language-specific models
+- Use cases: Diverse language applications, cross-lingual search
+
+**XLM-RoBERTa**
+- Coverage: 100+ languages
+- Improvements: Better cross-lingual transfer
+- Performance: Comparable to mBERT on most tasks
+- Use cases: Multilingual semantic search, translation assistance
+
+**mE5 (Multilingual E5)**
+- Coverage: 100+ languages
+- Approach: Uses instructions for task specification
+- Performance: Competitive with proprietary models
+- Use cases: Open-source multilingual retrieval
+
+## Multimodal Embedding Models
+
+### Image-Text Embedding Models
+
+**CLIP (Contrastive Language-Image Pre-training)**
+- Vision-language alignment in shared embedding space
+- Enables text-to-image and image-to-image search
+- Zero-shot image classification via text
+- Open-source and widely adopted
+
+**BLIP-2 (Bootstrap Language-Image Pre-training)**
+- Improved image understanding
+- Better visual reasoning capability
+- Efficient training approach
+- Enhanced image-text alignment
+
+**Alibaba DINO v2**
+- State-of-the-art image embeddings
+- Self-supervised learning approach
+- Strong zero-shot generalization
+- Excellent for image search and classification
+
+### Video and Audio Embeddings
+
+**CLIP4Clip**
+- Video-text embeddings
+- Temporal understanding of video content
+- Video search and retrieval
+- Action and event understanding
+
+**AudioCLIP**
+- Joint audio-visual-text embeddings
+- Sound event detection and classification
+- Audio-visual correspondence learning
+- Audio description and retrieval
+
+**MAUD (Multimodal Audio Description)**
+- Audio-text embedding alignment
+- Speech and music understanding
+- Acoustic event classification
+- Audio content discovery
+
+## Vector Database Integration
+
+### Popular Vector Databases
+
+**Pinecone**
+- Fully managed vector database service
+- Automatic scaling and indexing
+- Built-in metadata filtering
+- Real-time updates and queries
+- Integration with embedding APIs
+
+**Weaviate**
+- Open-source vector search engine
+- Schema-driven vector database
+- Hybrid search combining vector and keyword
+- GraphQL API for complex queries
+- Modular architecture
+
+**Milvus**
+- Open-source distributed vector database
+- Horizontal scaling capability
+- Multiple indexing strategies
+- High throughput and low latency
+- Cloud and on-premises options
+
+**Qdrant**
+- Rust-based vector database
+- Efficient similarity search
+- Payload storage for metadata
+- Snapshot and restore capability
+- Single and distributed deployments
+
+**Chroma**
+- Simple, lightweight vector database
+- Embedded and client-server modes
+- Built-in embedding support
+- Easy to integrate into applications
+- Growing ecosystem
+
+**Vespa**
+- Large-scale information retrieval platform
+- Vector, text, and structured data indexing
+- Query ranking and personalization
+- Real-time updates
+- Enterprise-grade scalability
+
+## Embedding Techniques and Approaches
+
+### Training Methodologies
+
+**Contrastive Learning**
+- Learn representations from similar/dissimilar pairs
+- Effective for creating meaningful embeddings
+- Foundation of CLIP and similar models
+- Enables zero-shot learning capabilities
+
+**Masked Language Modeling**
+- BERT-style pretraining approach
+- Predictive training objective
+- Strong contextual understanding
+- Foundation for many embedding models
+
+**Instruction-Based Training**
+- Models that understand task instructions
+- Task-specific embeddings via prompts
+- Flexible application to new domains
+- Improved performance with explicit task specification
+
+**Hard Negative Mining**
+- Focus training on difficult examples
+- Improved discrimination between similar items
+- More robust embeddings
+- Better performance on challenging retrieval tasks
+
+### Fine-tuning and Adaptation
+
+**Domain-Specific Fine-tuning**
+- Adapt general embeddings to specific domains
+- Relatively small training data requirements
+- Significant performance improvements
+- Cost-effective customization
+
+**Few-Shot Learning for Embeddings**
+- Metric learning approaches
+- Prototypical networks
+- Siamese networks with triplet loss
+- Adaptation with limited labeled data
+
+**Prompt-Based Fine-tuning**
+- Specify embedding behavior via prompts
+- No parameter updates required
+- Immediate adaptation
+- Flexible task switching
+
+## Semantic Search and Retrieval
+
+### Basic Semantic Search
+
+**Query Embedding Process**
+1. Embed query text with same model as corpus
+2. Compute similarity scores (cosine, L2, inner product)
+3. Return top-k most similar documents
+4. Can rerank using cross-encoder models
+
+**Advantages Over Keyword Search**
+- Synonym and paraphrase matching
+- Intent-based retrieval
+- Conceptual relevance
+- No exact keyword requirement
+
+**Limitations and Challenges**
+- Keyword matching sometimes necessary
+- Long-tail and rare query handling
+- Computational cost of embedding
+- Embedding quality variability
+
+### Advanced Retrieval Techniques
+
+**Hybrid Search**
+- Combine vector similarity with keyword matching
+- Best of both semantic and exact matching
+- Improved recall and precision
+- More robust to query variations
+
+**Reranking with Cross-Encoders**
+- Initial retrieval with efficient bi-encoder
+- Rerank results using more expensive cross-encoder
+- Improved relevance for top results
+- Balanced performance and accuracy
+
+**Clustering and Indexing**
+- K-means or other clustering of embeddings
+- Index by cluster for efficiency
+- Approximate nearest neighbor (ANN) algorithms
+- Logarithmic retrieval complexity
+
+**Multi-Vector and Hierarchical Retrieval**
+- Different embeddings for different purposes
+- Hierarchical document structure handling
+- Chunked document processing
+- Passage-level and document-level retrieval
+
+## Similarity Metrics and Distance Measures
+
+### Common Distance Metrics
+
+**Cosine Similarity**
+- Most common for text embeddings
+- Normalized by vector magnitude
+- Range: -1 to 1 (typically 0 to 1)
+- Best for normalized embeddings
+
+**Euclidean Distance (L2)**
+- Straight-line distance in embedding space
+- Sensitive to magnitude differences
+- Used for some embedding models
+- Can perform well with proper normalization
+
+**Inner Product (Dot Product)**
+- Efficient to compute
+- Works well with unit-normalized vectors
+- Common in approximate nearest neighbor
+- Often preferred for scalability
+
+**Manhattan Distance (L1)**
+- Sum of absolute differences
+- Sparse embedding friendly
+- Less sensitive to outliers
+- Less common for dense embeddings
+
+### Similarity Threshold and Ranking
+
+**Threshold Selection**
+- Filtering results above similarity threshold
+- Trade-off between precision and recall
+- Domain and task specific
+- Often determined empirically
+
+**Ranking and Re-ranking**
+- Score normalization for combination
+- Multiple retrieval method fusion
+- Learned-to-rank approaches
+- Personalization and diversity
+
+## Vector Dimensionality and Trade-offs
+
+### Dimension Size Impact
+
+**High Dimensionality (1024-3072+)**
+- Greater expressive capacity
+- Potentially richer semantic information
+- Increased storage and computation cost
+- Better for complex retrieval tasks
+
+**Low Dimensionality (64-256)**
+- Efficient storage and computation
+- Faster similarity calculations
+- Reduced model memory footprint
+- May lose semantic nuance
+
+**Optimal Dimensionality Selection**
+- Task and domain dependent
+- Empirical evaluation recommended
+- Trade-off between quality and efficiency
+- Consider deployment constraints
+
+### Dimension Reduction
+
+**Principal Component Analysis (PCA)**
+- Linear dimensionality reduction
+- Preserves maximum variance
+- Fast computation
+- May lose semantic information
+
+**Learned Compression**
+- Fine-tune models for lower dimensions
+- Maintains semantic quality better
+- Requires additional training
+- Task-specific optimization possible
+
+## Clustering, Recommendation, and Similarity Tasks
+
+### Document and Semantic Clustering
+
+**K-means and Variants**
+- Partition embeddings into clusters
+- Topic discovery and organization
+- Hierarchical clustering variants
+- Stability through multiple runs
+
+**DBSCAN and Density-Based Methods**
+- Density-based clustering
+- Variable cluster sizes
+- Outlier detection
+- No prior cluster count specification
+
+**Use Cases**
+- Topic modeling and discovery
+- Document organization
+- Content recommendations
+- Trend and pattern identification
+
+### Recommendation Systems
+
+**Content-Based Recommendations**
+- Find similar items using embeddings
+- User preferences based on interactions
+- Personalized recommendations
+- Cold-start friendly approach
+
+**Collaborative Filtering Enhancement**
+- Combine user interaction patterns
+- Item embedding similarity
+- User embedding similarity
+- Hybrid systems for better performance
+
+**Application Areas**
+- Product recommendations
+- Content recommendation (articles, videos)
+- Personalized search results
+- Cross-sell and upsell opportunities
+
+### Similarity and Matching
+
+**Duplicate and Near-Duplicate Detection**
+- Find similar documents or records
+- Data deduplication
+- Plagiarism detection
+- Quality control and consistency
+
+**Entity Matching and Linking**
+- Match same entity across datasets
+- Data integration and reconciliation
+- Knowledge graph link prediction
+- Record linkage for databases
+
+**Paraphrase and Semantic Equivalence**
+- Identify paraphrased content
+- Question pairing for FAQ
+- Semantic duplicate removal
+- Semantic equivalence scoring
+
+## Evaluation and Benchmarking
+
+### Embedding Quality Metrics
+
+**Benchmark Datasets**
+- BEIR: Benchmark for information retrieval
+- STS Benchmark: Semantic Textual Similarity
+- MTEB: Massive Text Embedding Benchmark
+- Domain-specific benchmarks
+
+**Evaluation Metrics**
+- Recall@K: Proportion of relevant items in top-K
+- Mean Reciprocal Rank (MRR)
+- Normalized Discounted Cumulative Gain (NDCG)
+- Mean Average Precision (MAP)
+
+**Intrinsic Quality Metrics**
+- Spearman correlation for similarity tasks
+- Clustering quality (silhouette score, Davies-Bouldin)
+- Generalization to unseen data
+
+### Ablation Studies
+
+**Dimensionality Impact**
+- Performance vs. dimension trade-offs
+- Optimal dimensions for tasks
+- Compression effectiveness
+
+**Architecture Variations**
+- Impact of different pooling strategies
+- Token weighting approaches
+- Model size and efficiency
+
+## Applications and Use Cases
+
+### Information Retrieval and Search
+
+**Full-Text Search Enhancement**
+- Hybrid semantic-keyword search
+- Query expansion and reformulation
+- Re-ranking and relevance scoring
+- Personalization and user adaptation
+
+**Enterprise Search**
+- Internal document search systems
+- Multi-repository search
+- Access control integration
+- Compliance and security
+
+**Knowledge Base and FAQ Search**
+- Question answering assistance
+- Relevant article retrieval
+- Customer support automation
+- Context-aware recommendations
+
+### Clustering and Organization
+
+**Automatic Content Organization**
+- Document categorization
+- Topic detection and modeling
+- Hierarchical organization
+- Knowledge structure generation
+
+**Data Exploration**
+- Understand dataset structure
+- Outlier and anomaly detection
+- Pattern and trend discovery
+- Interactive exploration
+
+### Anomaly and Fraud Detection
+
+**Outlier Identification**
+- Detect unusual documents or patterns
+- Fraud pattern recognition
+- Quality assurance
+- Security threat identification
+
+**Behavioral Anomaly Detection**
+- Detect unusual user behavior
+- Account compromise detection
+- Insider threat identification
+- Risk scoring
+
+## Production Considerations
+
+### Scalability and Performance
+
+**Storage Optimization**
+- Quantization (8-bit, 4-bit)
+- Compression techniques
+- Sparse embeddings
+- Approximate nearest neighbor indices
+
+**Computation Efficiency**
+- Batch embedding generation
+- GPU acceleration
+- Approximate similarity search
+- Caching strategies
+
+**Latency and Throughput**
+- Response time requirements
+- Throughput needs
+- Real-time vs. batch processing
+- Cost-performance trade-offs
+
+### Embedding Updates and Freshness
+
+**Incremental Indexing**
+- Add new documents efficiently
+- Update existing embeddings
+- Maintain index consistency
+- Avoid full recomputation
+
+**Model Updates**
+- Recompute with new embedding model
+- Gradual rollout and validation
+- Performance impact assessment
+- A/B testing new embeddings
+
+## Related Resources
+
+- [LanguageModels.mdx](./LanguageModels) - Large language models for text understanding
+- [VisionModels.mdx](./VisionModels) - Image and vision model embeddings
+- [ModelDeployment.mdx](./ModelDeployment) - Deploying and serving embeddings at scale
+- [agents.org.ai](https://agents.org.ai) - AI agents using embeddings for retrieval
+- [datasets.org.ai](https://datasets.org.ai) - Embedding datasets and benchmarks
+
+## Cross-References
+
+| Domain | Connection |
+|--------|-----------|
+| [LanguageModels.mdx](./LanguageModels) | Language models for generating and understanding embeddings |
+| [VisionModels.mdx](./VisionModels) | Visual embeddings and multimodal models |
+| [ModelDeployment.mdx](./ModelDeployment) | Efficient deployment of embedding services |
+| [agents.org.ai](https://agents.org.ai) | Agent systems using embeddings for retrieval and knowledge |
+| [datasets.org.ai](https://datasets.org.ai) | Training and evaluation datasets for embeddings |
+| [tech.org.ai](https://tech.org.ai) | Technology ecosystem and infrastructure |
+

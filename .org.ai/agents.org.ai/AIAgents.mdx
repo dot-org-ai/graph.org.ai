@@ -1,0 +1,438 @@
+---
+$context: https://agents.org.ai
+$id: https://agents.org.ai/AIAgents
+$type: https://agents.org.ai/Agent
+name: "AI Agents"
+description: "Autonomous AI agents, large language model-based agents, and agent architectures that enable intelligent decision-making and action-taking capabilities."
+tags: ["autonomous", "LLM", "agent-architecture", "reasoning"]
+---
+
+export const items = async () => {
+  // TODO: Implement data fetching for AI Agents
+  return []
+}
+
+# AI Agents
+
+Autonomous AI agents powered by large language models (LLMs) represent a fundamental shift in how systems can perceive, reason, and act in complex environments. These intelligent agents combine advanced reasoning capabilities with the ability to take actions based on their understanding of the world and their objectives.
+
+## Overview
+
+AI agents are software systems that can:
+
+- **Perceive** their environment through observations and information input
+- **Reason** about situations using knowledge and inference capabilities
+- **Decide** on appropriate actions based on goals and constraints
+- **Act** by executing decisions and interacting with systems
+- **Learn** from experiences and improve performance over time
+
+Modern AI agents leverage large language models as their cognitive core, enabling natural language understanding, complex reasoning, and adaptive decision-making that was previously only possible with human intelligence.
+
+## Autonomous AI Agent Architectures
+
+### Goal-Oriented Agents
+
+**Purpose**: Agents designed to achieve specific objectives or goals.
+
+**Characteristics**:
+- Clear goal definitions and success metrics
+- Planning capabilities to achieve goals
+- Ability to decompose complex goals into subgoals
+- Monitoring progress toward objectives
+- Adaptive replanning when obstacles arise
+
+**Applications**:
+- Task automation and workflow orchestration
+- Research and analysis agents
+- Business process automation
+- Problem-solving and optimization
+- Project management assistants
+
+### Reactive Agents
+
+**Purpose**: Agents that respond to stimuli and environmental changes in real-time.
+
+**Characteristics**:
+- Immediate response to environmental changes
+- Minimal state and memory requirements
+- Simple stimulus-response mappings
+- Low computational overhead
+- Highly responsive behavior
+
+**Applications**:
+- Real-time monitoring and alerting systems
+- Emergency response systems
+- Sensor-based automated responses
+- Quick decision-making in dynamic environments
+- Edge computing applications
+
+### Deliberative Agents
+
+**Purpose**: Agents that engage in conscious reasoning and planning before action.
+
+**Characteristics**:
+- Explicit world models and knowledge representation
+- Reasoning engines and inference capabilities
+- Planning algorithms for action sequences
+- Complex decision-making processes
+- Maintenance of internal state and beliefs
+
+**Applications**:
+- Strategic planning and scenario analysis
+- Complex problem solving
+- Scientific research and discovery
+- Medical diagnosis and treatment planning
+- Long-term business strategy development
+
+### Hybrid Agents
+
+**Purpose**: Agents combining reactive and deliberative capabilities.
+
+**Characteristics**:
+- Rapid response to immediate stimuli (reactive layer)
+- Careful planning for complex decisions (deliberative layer)
+- Layered architecture with multiple reasoning components
+- Coordination between rapid and slow thinking
+- Balancing speed and sophistication
+
+**Applications**:
+- Autonomous vehicles (detect obstacles immediately, plan routes carefully)
+- Game playing agents (react to immediate threats, plan long-term strategy)
+- Financial trading systems (respond to market events, execute complex strategies)
+- Manufacturing control systems (react to errors, plan production schedules)
+
+## LLM-Based Agent Architecture
+
+### Foundation Model as Cognitive Core
+
+**Role**: Large language models serve as the reasoning engine of AI agents.
+
+**Capabilities**:
+- **Natural Language Understanding**: Comprehend complex instructions and context
+- **Knowledge Synthesis**: Combine learned knowledge with current context
+- **Reasoning**: Apply logic, inference, and multi-step thinking
+- **Generation**: Produce coherent plans, explanations, and code
+- **Adaptation**: Adjust behavior based on feedback and new information
+
+**Popular Models**:
+- OpenAI GPT-4, GPT-4o
+- Anthropic Claude Opus, Claude Sonnet
+- Google Gemini Pro
+- Meta Llama 2, Llama 3
+- Mistral, Mixtral (open-source alternatives)
+
+### Agent Perception System
+
+**Information Input**:
+- **Textual Input**: User instructions, documentation, feedback
+- **Structured Data**: JSON, databases, knowledge bases
+- **Sensory Data**: Images, audio, video (multimodal agents)
+- **Real-time Streams**: Event data, monitoring feeds
+- **Environmental Context**: System state, available resources
+
+**Processing Pipeline**:
+- Input normalization and formatting
+- Context window management (handling token limits)
+- Information retrieval and augmentation (RAG)
+- Relevance filtering and summarization
+- State representation and belief updating
+
+### Agent Reasoning Mechanisms
+
+**Chain of Thought (CoT)**:
+- Breaking down complex problems into steps
+- Showing intermediate reasoning
+- Improving accuracy on complex tasks
+- Human-interpretable decision processes
+
+**Tree of Thought**:
+- Exploring multiple reasoning paths
+- Evaluating different approaches in parallel
+- Backtracking and changing directions
+- Finding optimal solutions through branch search
+
+**Retrieval-Augmented Generation (RAG)**:
+- Retrieving relevant information from knowledge bases
+- Augmenting LLM context with retrieved data
+- Improving factual accuracy and relevance
+- Accessing up-to-date information beyond training data
+
+**Few-Shot Learning**:
+- Providing examples of desired behavior
+- Adapting to new tasks without retraining
+- Improving performance through demonstration
+- Reducing hallucinations and errors
+
+### Agent Action Execution
+
+**Tool/Function Calling**:
+- Structured invocation of external tools
+- Code execution (Python, JavaScript)
+- API calls to external services
+- Database queries and updates
+- System commands and workflow triggers
+
+**Action Selection**:
+- Determining which tools/actions are appropriate
+- Sequencing multiple actions
+- Handling dependencies between actions
+- Error recovery and retry logic
+
+**Feedback Integration**:
+- Processing action results
+- Updating internal state based on outcomes
+- Adjusting future decisions based on feedback
+- Learning from successful and failed attempts
+
+## Advanced Agent Capabilities
+
+### Long-Horizon Planning
+
+**Multi-Step Planning**:
+- Breaking objectives into sequential steps
+- Identifying dependencies and constraints
+- Resource allocation and scheduling
+- Timeline estimation and adjustments
+- Contingency planning
+
+**Hierarchical Planning**:
+- Breaking down complex plans into sub-plans
+- Different levels of abstraction
+- Progressive refinement of plans
+- Managing complexity through decomposition
+
+### Memory and Context Management
+
+**Short-Term Memory**:
+- Current conversation context
+- Recent actions and results
+- Working memory for active reasoning
+- Typically limited by token window
+
+**Long-Term Memory**:
+- Persistent knowledge bases
+- Vector embeddings for semantic search
+- Historical data and learning
+- Episodic memory of past experiences
+
+**Memory Retrieval**:
+- Similarity-based retrieval
+- Relevance ranking
+- Memory consolidation and summarization
+- Forgetting mechanisms for efficiency
+
+### Collaboration and Communication
+
+**Multi-Agent Collaboration**:
+- Agents working together toward shared goals
+- Task delegation and coordination
+- Communication protocols and messaging
+- Conflict resolution and negotiation
+
+**Human-Agent Collaboration**:
+- Natural language interaction
+- Explanation and transparency
+- Accepting human input and guidance
+- Asking clarifying questions
+- Learning from human feedback
+
+## Agent Learning and Adaptation
+
+### Experience-Based Learning
+
+**Learning from Successes**:
+- Reinforcing successful action sequences
+- Building patterns and heuristics
+- Improving performance over time
+- Adaptation to specific domains
+
+**Learning from Failures**:
+- Analyzing failure causes
+- Avoiding repeated mistakes
+- Alternative strategy exploration
+- Continuous improvement
+
+### Fine-Tuning and Specialization
+
+**Domain Adaptation**:
+- Specializing agents for specific domains
+- Learning domain-specific knowledge
+- Improving accuracy in specialized areas
+- Maintaining general capabilities
+
+**Few-Shot Adaptation**:
+- Rapid adaptation to new tasks
+- In-context learning from examples
+- Without requiring retraining
+- Flexible multi-task agents
+
+## Real-World Applications
+
+### Software Development and Code Generation
+
+**Code Generation Agents**:
+- Writing and refactoring code
+- Implementing algorithms and data structures
+- Debugging and testing
+- Documentation and comment generation
+
+**Software Engineering Agents**:
+- Architecture design and planning
+- API design and specification
+- Security vulnerability analysis
+- Performance optimization
+
+### Research and Analysis
+
+**Information Synthesis Agents**:
+- Literature review and summarization
+- Identifying patterns and insights
+- Generating research questions
+- Hypothesis formation and testing
+
+**Data Analysis Agents**:
+- Exploratory data analysis
+- Statistical analysis and inference
+- Visualization and reporting
+- Predictive modeling
+
+### Customer Service and Support
+
+**Customer Support Agents**:
+- Answering customer questions
+- Resolving issues and troubleshooting
+- Handling complaints and escalations
+- Providing personalized recommendations
+
+**Knowledge Management Agents**:
+- Organizing and retrieving information
+- Creating documentation
+- Training and onboarding support
+- Knowledge transfer
+
+### Business Operations
+
+**Process Automation Agents**:
+- Automating repetitive workflows
+- Data entry and integration
+- Report generation
+- Schedule optimization
+
+**Decision Support Agents**:
+- Analyzing business scenarios
+- Providing recommendations
+- Forecasting and planning
+- Risk assessment
+
+## Challenges and Limitations
+
+### Reliability and Robustness
+
+**Hallucinations**:
+- Generating plausible-sounding but false information
+- Confidence in incorrect answers
+- Especially problematic for factual tasks
+
+**Consistency**:
+- Inconsistent behavior across similar inputs
+- Difficulty maintaining coherent long-term behavior
+- Context-dependent reasoning
+
+**Safety and Alignment**:
+- Ensuring agents act in alignment with human values
+- Preventing misuse and harmful actions
+- Handling adversarial inputs
+- Robustness to manipulation
+
+### Scalability and Efficiency
+
+**Computational Cost**:
+- Expensive inference with large models
+- Token limits restricting context size
+- Latency constraints for real-time applications
+- Cost of operating at scale
+
+**Complexity Management**:
+- Coordination of many simultaneous agents
+- Managing state across distributed systems
+- Integration with existing infrastructure
+- Monitoring and debugging
+
+### Knowledge and Understanding
+
+**Knowledge Cutoff**:
+- Limited to training data knowledge
+- Inability to access real-time information without RAG
+- Gaps in specialized or new knowledge areas
+
+**Interpretability**:
+- Difficulty understanding agent decision-making
+- Black-box reasoning processes
+- Lack of explainability for users and regulators
+- Debugging and improvement challenges
+
+## Best Practices and Design Patterns
+
+### Agent Design Principles
+
+**Goal Clarity**:
+- Well-defined, measurable objectives
+- Clear success criteria
+- Appropriate level of specificity
+
+**Tool Appropriateness**:
+- Selecting tools that genuinely help achieve goals
+- Not over-complicating with unnecessary tools
+- Matching tool capabilities to task requirements
+
+**Error Handling**:
+- Graceful handling of failures
+- Recovery mechanisms and fallbacks
+- Clear communication of limitations
+
+### Prompt Engineering for Agents
+
+**Role Definition**:
+- Clear persona and expertise area
+- Appropriate tone and communication style
+- Context about the agent's responsibilities
+
+**Instruction Clarity**:
+- Specific, unambiguous instructions
+- Examples of desired behavior
+- Constraints and limitations
+
+**Output Formatting**:
+- Structured output specification
+- Consistency in format
+- Easy parsing for downstream systems
+
+### Monitoring and Evaluation
+
+**Performance Metrics**:
+- Task completion rate
+- Accuracy and correctness
+- Latency and efficiency
+- User satisfaction
+
+**Continuous Monitoring**:
+- Tracking agent behavior in production
+- Detecting degradation or failures
+- Alert mechanisms for anomalies
+- Regular evaluation and updates
+
+## Related Resources
+
+- [AgentCapabilities.org.ai](https://agents.org.ai/AgentCapabilities) - Tools, memory, reasoning, planning, execution
+- [AgentProfiles.org.ai](https://agents.org.ai/AgentProfiles) - Agent configuration and personas
+- [AgentOrchestration.org.ai](https://agents.org.ai/AgentOrchestration) - Multi-agent systems and coordination
+- [AgentSafety.org.ai](https://agents.org.ai/AgentSafety) - Guardrails, alignment, and monitoring
+- [AgentTools.org.ai](https://agents.org.ai/AgentTools) - Tool calling and MCP integration
+- [models.org.ai](https://models.org.ai) - AI models and their capabilities
+- [functions.org.ai](https://functions.org.ai) - Function calling and execution
+- [tools.org.ai](https://tools.org.ai) - Tools and integrations
+- [workflows.org.ai](https://workflows.org.ai) - Workflow orchestration
+
+## Sources
+
+- <DatabaseLink namespace="agents.org.ai" type="AIAgents" />

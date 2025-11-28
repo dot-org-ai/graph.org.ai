@@ -1,0 +1,710 @@
+---
+$context: https://functions.org.ai
+$id: https://functions.org.ai/HumanFunctions
+$type: https://functions.org.ai/HumanFunction
+name: "Human Functions"
+description: "Human-in-the-loop interactions, approvals, escalation, and feedback mechanisms"
+---
+
+export const items = async () => {
+  // Fetch human function implementations from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://functions.org.ai/HumanFunction',
+    category: 'human'
+  })
+}
+
+# Human Functions
+
+Human-in-the-loop interactions represent critical junctures where human judgment, expertise, and oversight ensure systems remain aligned with human values, handle edge cases, and make consequential decisions responsibly.
+
+## Overview
+
+Human functions integrate human decision-making into automated systems. They span from simple approvals to complex collaborative workflows where humans and machines combine their respective strengths. Effective human functions require clear communication, contextual information, manageable decisions, and actionable feedback mechanisms.
+
+## Approval Workflows
+
+Structured processes for human review and authorization.
+
+```typescript
+// Approval request interface
+interface ApprovalRequest {
+  id: string
+  type: ApprovalType
+  requestor: string
+  context: string
+  requiredApprovers: Approver[]
+  deadline?: Date
+  priority: 'low' | 'normal' | 'high' | 'urgent'
+  details: Record<string, any>
+  attachments?: string[]
+  metadata?: Record<string, any>
+}
+
+enum ApprovalType {
+  DataAccess = 'data_access',
+  LargeTransaction = 'large_transaction',
+  PolicyException = 'policy_exception',
+  HighRiskAction = 'high_risk_action',
+  ResourceAllocation = 'resource_allocation',
+  ChangeRequest = 'change_request'
+}
+
+interface Approver {
+  userId: string
+  role: string
+  requiredForApproval: boolean
+  delegable: boolean
+  delegatedTo?: string
+}
+
+interface ApprovalDecision {
+  approverId: string
+  decision: 'approved' | 'rejected' | 'conditional'
+  reasoning: string
+  conditions?: string[]
+  timestamp: Date
+  comments?: string
+}
+
+interface ApprovalStatus {
+  requestId: string
+  overallStatus: 'pending' | 'approved' | 'rejected' | 'expired'
+  decisions: ApprovalDecision[]
+  approvalPercentage: number
+  remainingApprovers: Approver[]
+  canProceed: boolean
+}
+
+// Approval routing logic
+async function routeApprovalRequest(
+  request: ApprovalRequest
+): Promise<ApprovalStatus> {
+  const status: ApprovalStatus = {
+    requestId: request.id,
+    overallStatus: 'pending',
+    decisions: [],
+    approvalPercentage: 0,
+    remainingApprovers: request.requiredApprovers,
+    canProceed: false
+  }
+
+  // Determine approval routing based on risk level
+  const riskLevel = assessRiskLevel(request)
+  const requiredApprovals = calculateRequiredApprovals(request, riskLevel)
+
+  // Send notifications
+  for (const approver of request.requiredApprovers) {
+    await notifyApprover(approver, request)
+  }
+
+  return status
+}
+
+// Risk assessment for routing
+function assessRiskLevel(request: ApprovalRequest): 'low' | 'medium' | 'high' {
+  let riskScore = 0
+
+  // Factor in request type
+  if (request.type === ApprovalType.HighRiskAction) riskScore += 3
+  if (request.type === ApprovalType.PolicyException) riskScore += 2
+  if (request.type === ApprovalType.LargeTransaction) riskScore += 2
+
+  // Factor in priority
+  if (request.priority === 'urgent') riskScore += 1
+
+  // Factor in other details
+  if (request.details.amount && request.details.amount > 100000) riskScore += 2
+
+  if (riskScore >= 4) return 'high'
+  if (riskScore >= 2) return 'medium'
+  return 'low'
+}
+
+function calculateRequiredApprovals(
+  request: ApprovalRequest,
+  riskLevel: string
+): number {
+  const baseRequired = request.requiredApprovers.filter(a => a.requiredForApproval).length
+
+  if (riskLevel === 'high') return baseRequired + 1
+  if (riskLevel === 'medium') return Math.ceil(baseRequired * 0.7)
+  return baseRequired
+}
+
+// Delegation handling
+async function delegateApproval(
+  request: ApprovalRequest,
+  originalApproverId: string,
+  delegatedTo: string
+): Promise<void> {
+  const approver = request.requiredApprovers.find(a => a.userId === originalApproverId)
+
+  if (!approver?.delegable) {
+    throw new Error('This approval cannot be delegated')
+  }
+
+  approver.delegatedTo = delegatedTo
+
+  // Notify delegated approver
+  await notifyApprover(
+    { userId: delegatedTo, role: approver.role, requiredForApproval: approver.requiredForApproval, delegable: false },
+    request
+  )
+}
+```
+
+## Escalation Mechanisms
+
+Routing issues and decisions up the chain when needed.
+
+```typescript
+// Escalation policy
+interface EscalationPolicy {
+  trigger: EscalationTrigger
+  escalationChain: string[]
+  timeLimit: number // minutes
+  notificationTemplate: string
+  includeContext: boolean
+}
+
+enum EscalationTrigger {
+  Timeout = 'timeout',
+  Rejection = 'rejection',
+  Conflict = 'conflict',
+  HighValue = 'high_value',
+  SecurityAlert = 'security_alert',
+  UserRequest = 'user_request'
+}
+
+interface EscalationEvent {
+  requestId: string
+  trigger: EscalationTrigger
+  previousApprover?: string
+  escalatedTo: string
+  reason: string
+  timestamp: Date
+  context: Record<string, any>
+}
+
+// Escalation manager
+class EscalationManager {
+  private policies: EscalationPolicy[]
+  private escalationHistory: EscalationEvent[] = []
+
+  async checkForEscalation(
+    request: ApprovalRequest,
+    status: ApprovalStatus
+  ): Promise<EscalationEvent | null> {
+    // Check timeout
+    if (request.deadline && new Date() > request.deadline) {
+      return this.escalate(request, EscalationTrigger.Timeout, 'Approval request exceeded deadline')
+    }
+
+    // Check rejection
+    const rejections = status.decisions.filter(d => d.decision === 'rejected')
+    if (rejections.length > 0) {
+      return this.escalate(request, EscalationTrigger.Rejection, 'Approval was rejected')
+    }
+
+    // Check for conflicts
+    const conflicts = this.detectConflicts(status.decisions)
+    if (conflicts.length > 0) {
+      return this.escalate(request, EscalationTrigger.Conflict, `Conflicting decisions: ${conflicts.join(', ')}`)
+    }
+
+    return null
+  }
+
+  private async escalate(
+    request: ApprovalRequest,
+    trigger: EscalationTrigger,
+    reason: string
+  ): Promise<EscalationEvent> {
+    const policy = this.findApplicablePolicy(request, trigger)
+    const nextLevel = policy.escalationChain[0]
+
+    const event: EscalationEvent = {
+      requestId: request.id,
+      trigger,
+      escalatedTo: nextLevel,
+      reason,
+      timestamp: new Date(),
+      context: request.details
+    }
+
+    this.escalationHistory.push(event)
+
+    // Notify escalation
+    await this.notifyEscalation(event, policy, request)
+
+    return event
+  }
+
+  private findApplicablePolicy(request: ApprovalRequest, trigger: EscalationTrigger): EscalationPolicy {
+    const policies = this.policies.filter(p => p.trigger === trigger)
+    return policies.length > 0 ? policies[0] : this.getDefaultPolicy()
+  }
+
+  private detectConflicts(decisions: ApprovalDecision[]): string[] {
+    const groupedByRole = new Map<string, ApprovalDecision[]>()
+
+    for (const decision of decisions) {
+      // In real implementation, fetch role from user service
+      const role = 'approver'
+      if (!groupedByRole.has(role)) {
+        groupedByRole.set(role, [])
+      }
+      groupedByRole.get(role)!.push(decision)
+    }
+
+    const conflicts: string[] = []
+    for (const [role, roleMgmt] of groupedByRole) {
+      const hasApprove = roleMgmt.some(d => d.decision === 'approved')
+      const hasReject = roleMgmt.some(d => d.decision === 'rejected')
+
+      if (hasApprove && hasReject) {
+        conflicts.push(`${role} has conflicting decisions`)
+      }
+    }
+
+    return conflicts
+  }
+
+  private async notifyEscalation(
+    event: EscalationEvent,
+    policy: EscalationPolicy,
+    request: ApprovalRequest
+  ) {
+    // Send notification to escalated party
+    const message = `
+      ${policy.notificationTemplate}
+
+      Reason: ${event.reason}
+      Request ID: ${event.requestId}
+      Request Type: ${request.type}
+      Priority: ${request.priority}
+    `
+
+    await sendNotification(event.escalatedTo, message)
+  }
+
+  private getDefaultPolicy(): EscalationPolicy {
+    return {
+      trigger: EscalationTrigger.UserRequest,
+      escalationChain: ['manager', 'director', 'executive'],
+      timeLimit: 24 * 60,
+      notificationTemplate: 'Escalated request requiring attention',
+      includeContext: true
+    }
+  }
+}
+```
+
+## Feedback and Learning
+
+Collecting human feedback to improve system behavior.
+
+```typescript
+// Feedback interface
+interface Feedback {
+  id: string
+  systemDecision: string
+  userFeedback: string
+  humanDecision?: string
+  explanations?: string
+  rating: 1 | 2 | 3 | 4 | 5
+  tags: string[]
+  timestamp: Date
+  confidence?: number
+}
+
+interface FeedbackAnalysis {
+  totalFeedback: number
+  averageRating: number
+  agreementRate: number
+  commonMisalignments: string[]
+  suggestedImprovements: string[]
+}
+
+// Feedback collection
+class FeedbackCollector {
+  private feedbackBuffer: Feedback[] = []
+  private analysisCache: Map<string, FeedbackAnalysis> = new Map()
+
+  async collectFeedback(
+    systemDecision: string,
+    context: Record<string, any>
+  ): Promise<Feedback> {
+    const feedback = await this.promptForFeedback(systemDecision, context)
+    this.feedbackBuffer.push(feedback)
+
+    // Trigger analysis if buffer is full
+    if (this.feedbackBuffer.length >= 100) {
+      await this.analyzeFeedback()
+    }
+
+    return feedback
+  }
+
+  private async promptForFeedback(
+    systemDecision: string,
+    context: Record<string, any>
+  ): Promise<Feedback> {
+    // Present decision and request human evaluation
+    const result = await showFeedbackForm(systemDecision, context)
+
+    return {
+      id: generateId(),
+      systemDecision,
+      userFeedback: result.feedback,
+      humanDecision: result.decision,
+      explanations: result.explanations,
+      rating: result.rating,
+      tags: result.tags,
+      timestamp: new Date()
+    }
+  }
+
+  async analyzeFeedback(): Promise<FeedbackAnalysis> {
+    if (this.feedbackBuffer.length === 0) {
+      return { totalFeedback: 0, averageRating: 0, agreementRate: 0, commonMisalignments: [], suggestedImprovements: [] }
+    }
+
+    const totalFeedback = this.feedbackBuffer.length
+    const averageRating = this.feedbackBuffer.reduce((sum, f) => sum + f.rating, 0) / totalFeedback
+    const agreementRate = this.feedbackBuffer.filter(
+      f => f.systemDecision === f.humanDecision
+    ).length / totalFeedback
+
+    // Find common misalignments
+    const misalignments = new Map<string, number>()
+    for (const feedback of this.feedbackBuffer) {
+      if (feedback.systemDecision !== feedback.humanDecision) {
+        const key = `${feedback.systemDecision} -> ${feedback.humanDecision}`
+        misalignments.set(key, (misalignments.get(key) || 0) + 1)
+      }
+    }
+
+    const commonMisalignments = Array.from(misalignments.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5)
+      .map(([key]) => key)
+
+    // Generate improvement suggestions
+    const suggestedImprovements = await this.generateImprovements(this.feedbackBuffer)
+
+    const analysis: FeedbackAnalysis = {
+      totalFeedback,
+      averageRating,
+      agreementRate,
+      commonMisalignments,
+      suggestedImprovements
+    }
+
+    this.analysisCache.set(new Date().toISOString(), analysis)
+    return analysis
+  }
+
+  private async generateImprovements(feedback: Feedback[]): Promise<string[]> {
+    // Analyze feedback patterns and suggest improvements
+    const prompt = `Analyze this feedback data and suggest system improvements:\n${JSON.stringify(feedback)}`
+    const suggestions = await generateText(prompt)
+    return suggestions.split('\n').filter(s => s.trim())
+  }
+}
+
+// Learning from feedback
+async function updateModelFromFeedback(
+  feedbackData: Feedback[],
+  model: string
+): Promise<void> {
+  // Extract patterns from feedback
+  const patterns = extractPatterns(feedbackData)
+
+  // Fine-tune model on feedback data
+  for (const pattern of patterns) {
+    if (pattern.frequency > 0.05) {
+      // This pattern appears in >5% of feedback, should be addressed
+      await scheduleFineTuning(model, pattern.examples)
+    }
+  }
+}
+```
+
+## Collaborative Decision Making
+
+Humans and systems working together to make better decisions.
+
+```typescript
+// Collaborative decision interface
+interface CollaborativeDecision {
+  decision: string
+  systemRecommendation: string
+  humanInput: string
+  confidence: number
+  reasoning: string
+  alternativeOptions: string[]
+}
+
+// Interactive decision support
+class DecisionSupport {
+  async suggestWithOptions(
+    context: Record<string, any>,
+    options: string[]
+  ): Promise<CollaborativeDecision> {
+    // Generate system recommendation
+    const recommendation = await this.generateRecommendation(context)
+
+    // Assess confidence
+    const confidence = await this.assessConfidence(recommendation, context)
+
+    // Get human input
+    const humanInput = await this.getHumanChoice(recommendation, options)
+
+    // Combine recommendation and human input
+    const decision = await this.synthesizeDecision(recommendation, humanInput)
+
+    return {
+      decision,
+      systemRecommendation: recommendation,
+      humanInput,
+      confidence,
+      reasoning: await this.explainDecision(decision, context),
+      alternativeOptions: this.filterAlternatives(options, decision)
+    }
+  }
+
+  private async generateRecommendation(context: Record<string, any>): Promise<string> {
+    // Generate recommendation based on context
+    return 'recommended_option'
+  }
+
+  private async assessConfidence(recommendation: string, context: Record<string, any>): Promise<number> {
+    // Calculate confidence score
+    return 0.85
+  }
+
+  private async getHumanChoice(recommendation: string, options: string[]): Promise<string> {
+    // Present recommendation and options to human
+    return 'human_selected_option'
+  }
+
+  private async synthesizeDecision(recommendation: string, humanInput: string): Promise<string> {
+    // Combine recommendation and human input
+    // Prioritize human input when it differs
+    return humanInput || recommendation
+  }
+
+  private async explainDecision(decision: string, context: Record<string, any>): Promise<string> {
+    // Generate explanation for the decision
+    return `Decision made based on: ${decision}`
+  }
+
+  private filterAlternatives(options: string[], selectedDecision: string): string[] {
+    return options.filter(opt => opt !== selectedDecision).slice(0, 2)
+  }
+}
+
+// Explainable AI for decision support
+interface ExplainableDecision {
+  decision: string
+  factors: Factor[]
+  keyInfluencers: string[]
+  uncertainties: string[]
+}
+
+interface Factor {
+  name: string
+  impact: 'positive' | 'negative' | 'neutral'
+  weight: number
+  evidence: string
+}
+
+async function explainDecision(
+  decision: string,
+  context: Record<string, any>
+): Promise<ExplainableDecision> {
+  // Extract decision factors
+  const factors = await extractDecisionFactors(decision, context)
+
+  // Identify key influencers
+  const keyInfluencers = factors
+    .sort((a, b) => b.weight - a.weight)
+    .slice(0, 3)
+    .map(f => f.name)
+
+  // Identify uncertainties
+  const uncertainties = identifyUncertainties(context)
+
+  return {
+    decision,
+    factors,
+    keyInfluencers,
+    uncertainties
+  }
+}
+```
+
+## User Interface and Experience
+
+Designing interfaces that facilitate human decision-making.
+
+```typescript
+// Decision interface design
+interface DecisionUI {
+  layout: 'card' | 'table' | 'timeline' | 'network'
+  requiredFields: string[]
+  optionalFields: string[]
+  visualization?: string
+  actionButtons: ActionButton[]
+  helpText?: string
+  contextualTips?: string[]
+}
+
+interface ActionButton {
+  label: string
+  action: 'approve' | 'reject' | 'conditional' | 'more_info' | 'escalate'
+  variant: 'primary' | 'secondary' | 'danger'
+  requiresComment?: boolean
+}
+
+// Progressive disclosure for complex decisions
+interface ProgressiveDisclosureUI {
+  summary: string
+  expandedDetails: string
+  advancedOptions: string[]
+  isExpanded: boolean
+}
+
+function createDecisionUI(
+  request: ApprovalRequest,
+  riskLevel: string
+): DecisionUI {
+  const isHighRisk = riskLevel === 'high'
+
+  return {
+    layout: isHighRisk ? 'card' : 'table',
+    requiredFields: ['decision', 'reasoning'],
+    optionalFields: isHighRisk ? ['conditions', 'followUp'] : [],
+    visualization: isHighRisk ? 'risk_heatmap' : undefined,
+    actionButtons: [
+      { label: 'Approve', action: 'approve', variant: 'primary' },
+      { label: 'Reject', action: 'reject', variant: 'danger', requiresComment: true },
+      { label: 'More Info', action: 'more_info', variant: 'secondary' },
+      ...(isHighRisk ? [{ label: 'Escalate', action: 'escalate', variant: 'secondary' }] : [])
+    ],
+    helpText: 'Review the details carefully before making a decision',
+    contextualTips: isHighRisk ? [
+      'This is a high-risk request requiring careful consideration',
+      'Consider all implications before deciding',
+      'You can escalate if uncertain'
+    ] : []
+  }
+}
+```
+
+## Audit and Compliance
+
+Tracking human decisions for audit purposes.
+
+```typescript
+// Audit trail
+interface AuditEntry {
+  timestamp: Date
+  actor: string
+  action: string
+  resourceId: string
+  before?: Record<string, any>
+  after?: Record<string, any>
+  reason?: string
+  ipAddress?: string
+  userAgent?: string
+}
+
+class AuditLogger {
+  private entries: AuditEntry[] = []
+
+  logDecision(
+    userId: string,
+    decision: ApprovalDecision,
+    request: ApprovalRequest
+  ): void {
+    this.entries.push({
+      timestamp: new Date(),
+      actor: userId,
+      action: 'approval_decision',
+      resourceId: request.id,
+      after: {
+        decision: decision.decision,
+        reasoning: decision.reasoning
+      },
+      reason: 'Approval decision made'
+    })
+  }
+
+  generateAuditReport(startDate: Date, endDate: Date): string {
+    const relevantEntries = this.entries.filter(
+      e => e.timestamp >= startDate && e.timestamp <= endDate
+    )
+
+    return `
+      Audit Report: ${startDate} to ${endDate}
+      Total Decisions: ${relevantEntries.length}
+
+      By User:
+      ${this.groupByUser(relevantEntries)}
+
+      By Action Type:
+      ${this.groupByAction(relevantEntries)}
+    `
+  }
+
+  private groupByUser(entries: AuditEntry[]): string {
+    const grouped = new Map<string, number>()
+    for (const entry of entries) {
+      grouped.set(entry.actor, (grouped.get(entry.actor) || 0) + 1)
+    }
+
+    return Array.from(grouped.entries())
+      .map(([user, count]) => `  ${user}: ${count} decisions`)
+      .join('\n')
+  }
+
+  private groupByAction(entries: AuditEntry[]): string {
+    const grouped = new Map<string, number>()
+    for (const entry of entries) {
+      grouped.set(entry.action, (grouped.get(entry.action) || 0) + 1)
+    }
+
+    return Array.from(grouped.entries())
+      .map(([action, count]) => `  ${action}: ${count} times`)
+      .join('\n')
+  }
+}
+```
+
+## Best Practices
+
+1. **Clear Context**: Provide sufficient context without overwhelming the user
+2. **Reasonable Time Limits**: Set realistic deadlines for approvals
+3. **Explain Reasoning**: Show why the system is requesting human input
+4. **Minimize Friction**: Make approval process as fast as possible
+5. **Consistent Experience**: Maintain consistent UX across different approval types
+6. **Audit Trail**: Log all human decisions for compliance and learning
+7. **Feedback Loop**: Use feedback to improve system decisions
+8. **Escalation Paths**: Provide clear escalation when needed
+9. **User Control**: Allow users to adjust how involved they want to be
+10. **Recognition**: Acknowledge when human input improves outcomes
+
+## Related Domains
+
+- [agents.org.ai](https://agents.org.ai) - Agents that interact with humans
+- [workflows.org.ai](https://workflows.org.ai) - Workflows incorporating human steps
+- [apis.org.ai](https://apis.org.ai) - APIs for approval systems
+- [tasks.org.ai](https://tasks.org.ai) - Human task management
+
+## Sources
+
+- <DatabaseLink namespace="functions.org.ai" type="HumanFunctions" />

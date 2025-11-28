@@ -1,0 +1,633 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/AITools
+$type: https://tools.org.ai/ToolCategory
+name: "AI Tools"
+description: "Model inference, embeddings, fine-tuning, evaluation, and AI platform tools for building and deploying AI applications."
+category: "Artificial Intelligence"
+---
+
+export const items = async () => {
+  return [
+    { name: "Claude API", url: "https://anthropic.com" },
+    { name: "OpenAI API", url: "https://openai.com" },
+    { name: "Hugging Face", url: "https://huggingface.co" },
+    { name: "LangChain", url: "https://langchain.com" },
+    { name: "LlamaIndex", url: "https://www.llamaindex.ai" },
+    { name: "Weights & Biases", url: "https://wandb.ai" },
+  ]
+}
+
+# AI Tools
+
+Model inference, embeddings, fine-tuning, evaluation, and AI platform tools for building and deploying AI applications.
+
+## Overview
+
+AI tools enable developers to build intelligent applications without training models from scratch. They provide access to state-of-the-art language models, tools for managing AI workflows, and platforms for evaluating and improving AI systems.
+
+## Language Models & APIs
+
+### Claude (Anthropic)
+
+Advanced language model with strong reasoning and safety:
+
+```typescript
+import Anthropic from '@anthropic-ai/sdk'
+
+const client = new Anthropic()
+
+const message = await client.messages.create({
+  model: "claude-3-5-sonnet-20241022",
+  max_tokens: 1024,
+  messages: [
+    {
+      role: "user",
+      content: "Explain quantum computing in simple terms"
+    }
+  ]
+})
+
+console.log(message.content[0].type === 'text' && message.content[0].text)
+```
+
+**Model Variants:**
+
+- **Claude 3.5 Sonnet**: Fastest, best for most tasks
+- **Claude 3 Opus**: Most capable, for complex reasoning
+- **Claude Haiku**: Smallest, for low-latency applications
+
+**Key Features:**
+- 200K token context window
+- Tool/function calling
+- Vision capabilities
+- Batch processing API
+- Long context support
+
+### OpenAI API
+
+Leading AI platform with GPT models:
+
+```python
+import openai
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+response = openai.ChatCompletion.create(
+    model="gpt-4-turbo",
+    messages=[
+        {
+            "role": "system",
+            "content": "You are a helpful assistant."
+        },
+        {
+            "role": "user",
+            "content": "What is machine learning?"
+        }
+    ],
+    temperature=0.7,
+    max_tokens=500
+)
+
+print(response.choices[0].message.content)
+```
+
+**Model Lineup:**
+- **GPT-4 Turbo**: Most advanced, complex reasoning
+- **GPT-3.5 Turbo**: Cost-effective, general purpose
+- **GPT-4 Vision**: Multimodal, image understanding
+- **Embeddings**: Text to vector conversion
+
+**Features:**
+- Fine-tuning API
+- Vision API
+- Function calling
+- Token counting
+
+### Google Gemini
+
+Multimodal AI model from Google:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic(api_key="your-api-key")
+
+message = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[
+        {
+            "role": "user",
+            "content": "Describe this image",
+        }
+    ],
+)
+```
+
+### Open Source Models
+
+Hosted via Hugging Face Hub:
+
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+model_id = "meta-llama/Llama-2-7b"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id)
+
+inputs = tokenizer("Hello, my name is", return_tensors="pt")
+outputs = model.generate(**inputs, max_length=100)
+print(tokenizer.decode(outputs[0]))
+```
+
+**Popular Models:**
+- **Llama 2**: Meta's open-source model
+- **Mistral**: Fast, capable open-source
+- **Falcon**: High-performance open-source
+- **CodeLlama**: Code generation specialist
+
+## Embeddings & Vector Search
+
+### Embedding Models
+
+Converting text to vector representations:
+
+```typescript
+import Anthropic from '@anthropic-ai/sdk'
+
+const client = new Anthropic()
+
+// Using Claude for embeddings
+const response = await client.beta.messages.create({
+  model: "claude-3-5-sonnet-20241022",
+  max_tokens: 1024,
+  messages: [{
+    role: "user",
+    content: "Generate embedding for: machine learning fundamentals"
+  }]
+}, {
+  headers: {
+    "anthropic-beta": "token-counting-2024-11-01"
+  }
+})
+```
+
+### Vector Databases
+
+```python
+from pinecone import Pinecone
+
+# Initialize Pinecone
+pc = Pinecone(api_key="your-api-key")
+index = pc.Index("documents")
+
+# Store embeddings
+vectors = [
+    {
+        "id": "doc1",
+        "values": [0.1, 0.2, 0.3, ...],
+        "metadata": {"source": "blog"}
+    },
+    {
+        "id": "doc2",
+        "values": [0.4, 0.5, 0.6, ...],
+        "metadata": {"source": "docs"}
+    }
+]
+index.upsert(vectors=vectors)
+
+# Search
+results = index.query(
+    vector=[0.15, 0.25, 0.35, ...],
+    top_k=5,
+    include_metadata=True
+)
+```
+
+**Popular Vector DBs:**
+- **Pinecone**: Fully managed, serverless
+- **Weaviate**: Open source, flexible
+- **Milvus**: Open source, high performance
+- **Qdrant**: Rust-based, efficient
+- **Chroma**: Lightweight, embedded option
+
+## RAG (Retrieval Augmented Generation)
+
+### LlamaIndex
+
+Framework for building RAG applications:
+
+```python
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+
+# Load documents
+documents = SimpleDirectoryReader("docs").load_data()
+
+# Create index
+index = VectorStoreIndex.from_documents(documents)
+
+# Query
+query_engine = index.as_query_engine()
+response = query_engine.query(
+    "What are the main features of this product?"
+)
+print(response)
+```
+
+### LangChain RAG
+
+Building retrieval-augmented generation chains:
+
+```python
+from langchain.chat_models import ChatOpenAI
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Pinecone
+from langchain.chains import RetrievalQA
+
+# Setup components
+embeddings = OpenAIEmbeddings()
+vectorstore = Pinecone.from_existing_index(
+    index_name="documents",
+    embedding=embeddings
+)
+
+# Create RAG chain
+qa = RetrievalQA.from_chain_type(
+    llm=ChatOpenAI(model="gpt-4"),
+    chain_type="stuff",
+    retriever=vectorstore.as_retriever(k=3)
+)
+
+# Query
+response = qa.run("What are the pricing plans?")
+```
+
+## Fine-Tuning & Training
+
+### OpenAI Fine-Tuning
+
+```bash
+# Prepare training data (JSONL format)
+# Each line: {"messages": [{"role": "system", "content": "..."}, {"role": "user", "content": "..."}, {"role": "assistant", "content": "..."}]}
+
+# Upload file
+openai api files.create -f training_data.jsonl -p fine-tune
+
+# Create fine-tuning job
+openai api fine_tunes.create \
+  -t <FILE_ID> \
+  --model gpt-3.5-turbo
+
+# Use fine-tuned model
+openai api completions.create \
+  -m ft-<FINE_TUNE_MODEL_ID> \
+  -p "User query"
+```
+
+### Hugging Face Fine-Tuning
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer, TrainingArguments
+
+model_id = "meta-llama/Llama-2-7b"
+model = AutoModelForCausalLM.from_pretrained(model_id)
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+
+# Prepare training arguments
+training_args = TrainingArguments(
+    output_dir="./results",
+    num_train_epochs=3,
+    per_device_train_batch_size=4,
+    learning_rate=2e-5,
+)
+
+# Create trainer
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,
+)
+
+# Train
+trainer.train()
+```
+
+## Evaluation & Monitoring
+
+### LLM Evaluation Framework
+
+```python
+from langsmith import evaluate
+
+def check_answer_relevance(output, reference):
+    """Check if output is relevant to reference"""
+    return output.lower() in reference.lower()
+
+def check_answer_length(output):
+    """Check answer is reasonable length"""
+    return 50 < len(output.split()) < 500
+
+# Define evaluation dataset
+data = [
+    {
+        "question": "What is machine learning?",
+        "expected": "ML is subset of AI..."
+    },
+    # ... more examples
+]
+
+# Run evaluation
+results = evaluate(
+    llm_app=my_chain,
+    data=data,
+    evaluators=[check_answer_relevance, check_answer_length],
+)
+
+print(results.summary())
+```
+
+### Weights & Biases
+
+Experiment tracking and model evaluation:
+
+```python
+import wandb
+from wandb.integration.openai import autolog
+
+# Initialize WandB
+wandb.init(project="my-ai-project")
+autolog({"openai_api_key": os.getenv("OPENAI_API_KEY")})
+
+# Log metrics
+wandb.log({
+    "accuracy": 0.95,
+    "loss": 0.05,
+    "tokens_used": 1500
+})
+
+# Log model
+wandb.log_model(model_path="model.pkl", name="production-model")
+
+# Track hyperparameters
+wandb.config.update({
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "model": "gpt-3.5-turbo"
+})
+```
+
+## Prompt Engineering
+
+### Basic Techniques
+
+**Few-Shot Learning:**
+```
+Answer the question with one of the provided options.
+
+Examples:
+Q: Is a tomato a fruit or vegetable?
+A: Fruit
+
+Q: Is a carrot a fruit or vegetable?
+A: Vegetable
+
+Q: Is a cucumber a fruit or vegetable?
+A: Fruit
+```
+
+**Chain of Thought:**
+```
+Let's solve this step by step:
+
+Problem: If Mary has 3 apples and buys 5 more, but gives 2 to John, how many does she have?
+
+Step 1: Mary starts with 3 apples
+Step 2: She buys 5 more, so 3 + 5 = 8 apples
+Step 3: She gives 2 to John, so 8 - 2 = 6 apples
+Answer: Mary has 6 apples
+```
+
+**Role-Based Prompting:**
+```
+You are an expert Python developer with 10 years of experience.
+Explain how to optimize database queries for a junior developer.
+```
+
+### Prompt Templates
+
+```typescript
+interface PromptTemplate {
+  template: string
+  variables: string[]
+}
+
+const analyzeCodeTemplate: PromptTemplate = {
+  template: `
+Analyze the following code for:
+- Performance issues
+- Security vulnerabilities
+- Code quality improvements
+
+Code:
+{code}
+
+Analysis:
+  `,
+  variables: ["code"]
+}
+
+function formatPrompt(template: PromptTemplate, values: Record<string, string>) {
+  let result = template.template
+  template.variables.forEach(variable => {
+    result = result.replace(`{${variable}}`, values[variable])
+  })
+  return result
+}
+```
+
+## Multimodal AI
+
+### Vision Capabilities
+
+```typescript
+import Anthropic from '@anthropic-ai/sdk'
+
+const client = new Anthropic()
+
+const message = await client.messages.create({
+  model: "claude-3-5-sonnet-20241022",
+  max_tokens: 1024,
+  messages: [
+    {
+      role: "user",
+      content: [
+        {
+          type: "image",
+          source: {
+            type: "base64",
+            media_type: "image/jpeg",
+            data: imageBase64
+          }
+        },
+        {
+          type: "text",
+          text: "What is shown in this image?"
+        }
+      ]
+    }
+  ]
+})
+```
+
+### Audio Processing
+
+```python
+import openai
+
+# Transcribe audio
+transcript = openai.Audio.transcribe(
+    "whisper-1",
+    open("audio.mp3", "rb")
+)
+print(transcript["text"])
+
+# Generate speech
+response = openai.Audio.create(
+    model="tts-1",
+    voice="nova",
+    input="Hello, this is synthesized speech."
+)
+response.stream_to_file("output.mp3")
+```
+
+## Deployment Platforms
+
+### Hugging Face Spaces
+
+```yaml
+---
+title: Sentiment Analysis
+emoji: 😊
+colorFrom: purple
+colorTo: pink
+sdk: gradio
+sdk_version: 4.0.0
+app_file: app.py
+pinned: false
+---
+
+# Sentiment Analysis App
+```
+
+```python
+import gradio as gr
+from transformers import pipeline
+
+sentiment_pipeline = pipeline("sentiment-analysis")
+
+def analyze_sentiment(text):
+    result = sentiment_pipeline(text)
+    return result[0]['label'], result[0]['score']
+
+interface = gr.Interface(
+    fn=analyze_sentiment,
+    inputs="text",
+    outputs=["label", "confidence"],
+    title="Sentiment Analysis",
+    description="Analyze sentiment of input text"
+)
+
+interface.launch()
+```
+
+### Modal
+
+Serverless functions for AI workloads:
+
+```python
+import modal
+
+app = modal.App("ml-app")
+
+@app.function(
+    image=modal.Image.debian_slim().pip_install("transformers"),
+    gpu="T4"
+)
+def process_image(image_url: str):
+    from transformers import pipeline
+
+    classifier = pipeline(
+        "image-classification",
+        model="ViT-Base-Patch16-224",
+        device=0
+    )
+
+    return classifier(image_url)
+
+@app.local_entrypoint()
+def main():
+    result = process_image.remote("https://example.com/image.jpg")
+    print(result)
+```
+
+## Best Practices
+
+### Prompt Design
+
+1. **Be Specific**: Clear, detailed instructions produce better results
+2. **Provide Context**: Give relevant background information
+3. **Show Examples**: Few-shot learning improves consistency
+4. **Specify Format**: Define expected output format
+5. **Iterate**: Test and refine prompts for quality
+
+### Cost Optimization
+
+1. **Use Caching**: Cache repeated prompts
+2. **Batch Processing**: Process multiple items together
+3. **Model Selection**: Choose appropriate model size
+4. **Token Counting**: Optimize prompt lengths
+5. **Monitor Usage**: Track API calls and costs
+
+### Safety & Ethics
+
+1. **Input Validation**: Sanitize user inputs
+2. **Output Filtering**: Filter harmful content
+3. **Rate Limiting**: Prevent abuse
+4. **Audit Logging**: Track API usage
+5. **Bias Awareness**: Monitor model outputs for bias
+
+## Comparison Matrix
+
+| Tool | Focus | Best For | Pricing |
+|------|-------|----------|---------|
+| Claude API | Reasoning, safety | Complex tasks | Pay-per-token |
+| OpenAI API | Versatility | General purpose | Pay-per-token |
+| Gemini | Multimodal | Vision tasks | Pay-per-token |
+| Hugging Face | Open source | Custom models | Free + Enterprise |
+| LlamaIndex | RAG | Document QA | Free + Enterprise |
+| Weights & Biases | MLOps | Experiment tracking | Free + Paid |
+
+## Cross-References
+
+- [AgentTools.mdx](#) - Building AI agents
+- [models.org.ai](https://models.org.ai) - AI model information
+- [tech.org.ai](https://tech.org.ai) - Technology stacks
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `ToolCategory` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Category | Artificial Intelligence |
+| Related Domains | [agents.org.ai](https://agents.org.ai), [models.org.ai](https://models.org.ai) |
+
+## Sources
+
+- Anthropic. "Claude API Documentation." https://docs.anthropic.com
+- OpenAI. "OpenAI API Documentation." https://platform.openai.com/docs
+- Hugging Face. "Hugging Face Documentation." https://huggingface.co/docs
+- LlamaIndex. "LlamaIndex Documentation." https://docs.llamaindex.ai
+- LangChain. "LangChain Documentation." https://python.langchain.com
+- Weights & Biases. "W&B Documentation." https://docs.wandb.ai

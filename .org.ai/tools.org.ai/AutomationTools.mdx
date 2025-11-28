@@ -1,0 +1,672 @@
+---
+$context: https://tools.org.ai
+$id: https://tools.org.ai/AutomationTools
+$type: https://tools.org.ai/ToolCategory
+name: "Automation Tools"
+description: "CI/CD pipelines, testing frameworks, deployment tools, and monitoring systems for automating software delivery and operations."
+category: "DevOps & Operations"
+---
+
+export const items = async () => {
+  return [
+    { name: "GitHub Actions", url: "https://github.com/features/actions" },
+    { name: "Jenkins", url: "https://www.jenkins.io" },
+    { name: "GitLab CI/CD", url: "https://docs.gitlab.com/ee/ci" },
+    { name: "CircleCI", url: "https://circleci.com" },
+    { name: "Kubernetes", url: "https://kubernetes.io" },
+    { name: "Terraform", url: "https://www.terraform.io" },
+  ]
+}
+
+# Automation Tools
+
+CI/CD pipelines, testing frameworks, deployment tools, and monitoring systems for automating software delivery and operations.
+
+## Overview
+
+Automation tools enable teams to build, test, deploy, and monitor applications with minimal manual intervention. They form the backbone of DevOps practices, enabling continuous integration, continuous delivery, and reliable infrastructure management.
+
+## Continuous Integration (CI)
+
+### GitHub Actions
+
+GitHub's native CI/CD platform:
+
+```yaml
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build application
+        run: npm run build
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/coverage-final.json
+```
+
+**Advantages:**
+- Native GitHub integration
+- Free for public repositories
+- Matrix builds for multiple environments
+- Reusable workflows
+- Secrets management
+- Artifact storage
+
+### Jenkins
+
+Self-hosted CI/CD server:
+
+```groovy
+pipeline {
+    agent any
+
+    environment {
+        NODE_ENV = 'test'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/user/repo.git'
+            }
+        }
+
+        stage('Install') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                sh 'npm run lint'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'npm run test'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'npm run deploy'
+            }
+        }
+    }
+
+    post {
+        always {
+            junit 'test-results.xml'
+            publishHTML([
+                reportDir: 'coverage',
+                reportFiles: 'index.html',
+                reportName: 'Coverage Report'
+            ])
+        }
+        success {
+            echo 'Deployment successful!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
+```
+
+**Features:**
+- Declarative and scripted pipelines
+- Plugin ecosystem (1000+)
+- Master-agent architecture
+- Blue Ocean UI
+- Distributed builds
+
+### GitLab CI/CD
+
+GitLab's integrated CI/CD system:
+
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+build:
+  stage: build
+  image: node:18
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+test:
+  stage: test
+  image: node:18
+  script:
+    - npm ci
+    - npm run test
+    - npm run lint
+  coverage: '/Lines\s*:\s*(\d+.\d+)%/'
+
+test:e2e:
+  stage: test
+  image: node:18-browsers
+  script:
+    - npm ci
+    - npm run test:e2e
+  artifacts:
+    paths:
+      - cypress/videos/
+
+deploy:production:
+  stage: deploy
+  image: alpine
+  script:
+    - apk add --no-cache aws-cli
+    - aws deploy push --application-name MyApp --s3-location s3://my-bucket/latest.zip --ignore-hidden-files
+  only:
+    - main
+  environment:
+    name: production
+    url: https://example.com
+```
+
+**Advantages:**
+- Built into GitLab platform
+- Self-hosted or SaaS
+- Container-native workflows
+- Kubernetes integration
+- Comprehensive security scanning
+
+### CircleCI
+
+Cloud-based CI platform:
+
+```yaml
+version: 2.1
+
+orbs:
+  node: circleci/node@5.0.0
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/node:18.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+          cache-version: v1
+      - run:
+          name: Run tests
+          command: npm run test
+      - run:
+          name: Run build
+          command: npm run build
+      - store_artifacts:
+          path: dist/
+      - store_test_results:
+          path: test-results/
+
+workflows:
+  build:
+    jobs:
+      - build-and-test
+```
+
+## Testing Automation
+
+### Unit Testing
+
+#### Jest (JavaScript)
+
+```typescript
+describe('Calculator', () => {
+  it('should add two numbers correctly', () => {
+    expect(add(2, 3)).toBe(5)
+  })
+
+  it('should handle negative numbers', () => {
+    expect(add(-2, 3)).toBe(1)
+  })
+})
+```
+
+#### pytest (Python)
+
+```python
+import pytest
+
+class TestCalculator:
+    def test_add(self):
+        assert add(2, 3) == 5
+
+    @pytest.mark.parametrize("a,b,expected", [
+        (2, 3, 5),
+        (-2, 3, 1),
+        (0, 0, 0)
+    ])
+    def test_add_parametrized(self, a, b, expected):
+        assert add(a, b) == expected
+```
+
+### Integration Testing
+
+```typescript
+describe('User API Integration', () => {
+  let server: Server
+  let database: Database
+
+  beforeAll(async () => {
+    database = new Database(':memory:')
+    server = new Server(database)
+    await server.start()
+  })
+
+  afterAll(async () => {
+    await server.close()
+    await database.close()
+  })
+
+  it('should create and retrieve user', async () => {
+    const response = await fetch('http://localhost:3000/users', {
+      method: 'POST',
+      body: JSON.stringify({ name: 'John' })
+    })
+
+    const user = await response.json()
+    expect(user.id).toBeDefined()
+    expect(user.name).toBe('John')
+
+    // Verify in database
+    const dbUser = await database.users.findById(user.id)
+    expect(dbUser.name).toBe('John')
+  })
+})
+```
+
+### E2E Testing
+
+#### Cypress
+
+```javascript
+describe('User Authentication', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000')
+  })
+
+  it('should allow user to login', () => {
+    cy.get('[data-testid="email-input"]').type('user@example.com')
+    cy.get('[data-testid="password-input"]').type('password123')
+    cy.get('[data-testid="login-button"]').click()
+
+    cy.url().should('include', '/dashboard')
+    cy.get('[data-testid="user-profile"]').should('be.visible')
+  })
+
+  it('should show error for invalid credentials', () => {
+    cy.get('[data-testid="email-input"]').type('user@example.com')
+    cy.get('[data-testid="password-input"]').type('wrongpassword')
+    cy.get('[data-testid="login-button"]').click()
+
+    cy.get('[data-testid="error-message"]')
+      .should('contain', 'Invalid credentials')
+  })
+})
+```
+
+#### Playwright
+
+```typescript
+import { test, expect } from '@playwright/test'
+
+test('user authentication flow', async ({ page }) => {
+  await page.goto('http://localhost:3000')
+
+  await page.fill('[data-testid="email-input"]', 'user@example.com')
+  await page.fill('[data-testid="password-input"]', 'password123')
+  await page.click('[data-testid="login-button"]')
+
+  await expect(page).toHaveURL(/.*dashboard/)
+  await expect(page.locator('[data-testid="user-profile"]')).toBeVisible()
+})
+```
+
+### Test Coverage
+
+```yaml
+# GitHub Actions for coverage reporting
+- name: Generate coverage report
+  run: npm run test -- --coverage
+
+- name: Upload coverage
+  uses: codecov/codecov-action@v3
+  with:
+    files: ./coverage/coverage-final.json
+    fail_ci_if_error: true
+    minimum-coverage: 80
+```
+
+## Continuous Deployment
+
+### Deployment Strategies
+
+**Blue-Green Deployment:**
+```
+Current (Blue) → New Version (Green) → Traffic Switch
+↓
+Old (Blue) kept running for quick rollback
+```
+
+**Canary Deployment:**
+```
+Release to 5% of users → Monitor → 25% → 50% → 100%
+                        ↓ Rollback if issues
+```
+
+**Rolling Deployment:**
+```
+Pod 1: Old → New
+Pod 2: Old → New
+Pod 3: Old → New
+(Sequential, gradual update)
+```
+
+### Deployment Tools
+
+#### Kubernetes
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-server
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: api-server
+  template:
+    metadata:
+      labels:
+        app: api-server
+    spec:
+      containers:
+      - name: api
+        image: myregistry.azurecr.io/api:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+```
+
+#### Terraform
+
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "api_server" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "api-server"
+  }
+}
+
+resource "aws_elb" "api_load_balancer" {
+  name               = "api-lb"
+  availability_zones = ["us-east-1a", "us-east-1b"]
+
+  listener {
+    instance_port     = 3000
+    instance_protocol = "http"
+    lb_port           = 80
+    lb_protocol       = "http"
+  }
+
+  instances = [aws_instance.api_server.id]
+}
+
+output "load_balancer_dns" {
+  value = aws_elb.api_load_balancer.dns_name
+}
+```
+
+## Monitoring & Observability
+
+### Application Performance Monitoring (APM)
+
+```typescript
+// New Relic integration
+import newrelic from 'newrelic'
+
+const app = express()
+
+// Auto-instrumented for monitoring
+app.get('/api/users/:id', (req, res) => {
+  const userId = req.params.id
+
+  newrelic.startWebTransaction(`/api/users/:id`, async () => {
+    const user = await getUser(userId)
+    res.json(user)
+  })
+})
+```
+
+### Logging
+
+```typescript
+import winston from 'winston'
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports: [
+    new winston.transports.File({ filename: 'error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'combined.log' })
+  ]
+})
+
+logger.info('User login', { userId: 123, timestamp: new Date() })
+logger.error('Database connection failed', { error: err })
+```
+
+### Metrics & Alerting
+
+```yaml
+# Prometheus configuration
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'api-server'
+    static_configs:
+      - targets: ['localhost:3000']
+
+# Alert rules
+groups:
+  - name: application
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.05
+        for: 5m
+        annotations:
+          summary: "High error rate detected"
+```
+
+## Infrastructure as Code (IaC)
+
+### Cloudformation (AWS)
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  ApiServerRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: 'sts:AssumeRole'
+
+  ApiServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c55b159cbfafe1f0
+      InstanceType: t2.micro
+      IamInstanceProfile: !Ref ApiServerRole
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          npm install
+          npm start
+
+Outputs:
+  PublicIP:
+    Value: !GetAtt ApiServerInstance.PublicIp
+```
+
+## Security Automation
+
+### SAST (Static Application Security Testing)
+
+```yaml
+# GitLab CI with security scanning
+security_scan:
+  stage: test
+  image: returntocorp/semgrep
+  script:
+    - semgrep --config=p/security-audit .
+```
+
+### Dependency Scanning
+
+```yaml
+# Dependabot in GitHub
+name: Dependabot
+on: pull_request
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+```
+
+## Pipeline Best Practices
+
+1. **Fast Feedback**: Keep build time under 10 minutes
+2. **Parallel Execution**: Run independent jobs in parallel
+3. **Caching**: Cache dependencies to speed up builds
+4. **Fail Fast**: Run quick checks before slow tests
+5. **Clear Visibility**: Make build status easily visible
+6. **Notifications**: Alert team on failures
+7. **Retry Logic**: Automatic retry on flaky tests
+8. **Environment Parity**: Match prod/test environments
+
+## Comparison Matrix
+
+| Tool | Type | Pricing | Best For |
+|------|------|---------|----------|
+| GitHub Actions | Cloud CI/CD | Free (public), paid (private) | GitHub-native workflows |
+| Jenkins | Self-hosted CI/CD | Free, self-hosted | Complex enterprise pipelines |
+| GitLab CI/CD | Cloud/Self CI/CD | Integrated with GitLab | Full DevOps platform |
+| CircleCI | Cloud CI/CD | Freemium | Small to medium teams |
+| Kubernetes | Container Orchestration | Open source | Microservices at scale |
+| Terraform | IaC | Open source | Multi-cloud infrastructure |
+
+## Cross-References
+
+- [CollaborationTools.mdx](#) - Version control integration
+- [DeveloperTools.mdx](#) - Testing frameworks
+- [tech.org.ai](https://tech.org.ai) - Technology stacks
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `ToolCategory` |
+| Domain | [tools.org.ai](https://tools.org.ai) |
+| Category | DevOps & Operations |
+| Related Domains | [tech.org.ai](https://tech.org.ai) |
+
+## Sources
+
+- GitHub. "GitHub Actions Documentation." https://docs.github.com/en/actions
+- Jenkins. "Jenkins Documentation." https://www.jenkins.io/doc
+- GitLab. "GitLab CI/CD Documentation." https://docs.gitlab.com/ee/ci
+- Kubernetes. "Kubernetes Documentation." https://kubernetes.io/docs
+- Terraform. "Terraform Documentation." https://www.terraform.io/docs
+- CircleCI. "CircleCI Documentation." https://circleci.com/docs

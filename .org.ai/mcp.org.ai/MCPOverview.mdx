@@ -1,0 +1,275 @@
+---
+$context: https://mcp.org.ai
+$id: https://mcp.org.ai/MCPOverview
+$type: https://mcp.org.ai/Mcp
+name: "Model Context Protocol Overview"
+description: "Comprehensive guide to the Model Context Protocol, its architecture, purpose, and key benefits"
+---
+
+export const items = async () => {
+  return []
+}
+
+# Model Context Protocol Overview
+
+The Model Context Protocol (MCP) is a standardized framework that enables seamless integration between AI models and external systems, tools, and data sources. It provides a structured approach for applications and services to expose capabilities to AI models in a safe, scalable, and interoperable manner.
+
+## What is MCP?
+
+The Model Context Protocol is an open protocol that allows AI models (particularly Claude) to interact with external systems through a well-defined interface. Instead of embedding domain-specific knowledge and tools directly into an AI model, MCP allows models to safely access external capabilities on-demand while maintaining clear separation of concerns.
+
+### Core Philosophy
+
+MCP is built on these fundamental principles:
+
+- **Standardization**: A single, unified protocol eliminates the need for custom integrations for each tool or service
+- **Security First**: Explicit permissions and clear boundaries between model and system capabilities
+- **Composability**: Multiple MCP servers can work together, enabling complex workflows
+- **Language Agnostic**: Implementations available in multiple programming languages
+- **Developer Friendly**: Simple APIs that follow familiar patterns
+
+## Key Components
+
+### 1. MCP Servers
+
+Servers implement specific tools, resources, and capabilities. They expose functionality through the MCP protocol and handle requests from clients.
+
+**Characteristics:**
+- Execute tools and access resources
+- Provide structured data schemas
+- Manage state and persistence
+- Handle rate limiting and resource constraints
+
+### 2. MCP Clients
+
+Clients initiate connections and make requests to servers. They integrate with applications (like Claude Desktop, IDEs, or custom tools) and facilitate communication.
+
+**Characteristics:**
+- Connect to one or more servers
+- Maintain persistent relationships
+- Handle protocol-level communication
+- Present server capabilities to users
+
+### 3. Transport Layer
+
+MCP supports multiple transport mechanisms for client-server communication:
+
+- **stdio**: Local process communication via standard input/output
+- **HTTP**: Request-response over HTTP protocol
+- **SSE (Server-Sent Events)**: Server-to-client streaming
+- **WebSocket**: Bidirectional communication
+
+### 4. Protocol Messages
+
+MCP uses JSON-RPC 2.0 for request/response communication with extensions for streaming and server-initiated messages.
+
+## Architecture Overview
+
+```
+┌─────────────────────────────────────────┐
+│   Application/AI Model (Client)         │
+│  ┌─────────────────────────────────┐    │
+│  │  MCP Client Implementation      │    │
+│  │  - Connection Management        │    │
+│  │  - Message Serialization        │    │
+│  │  - Error Handling               │    │
+│  └──────────────┬────────────────┬─┘    │
+└─────────────────┼────────────────┼──────┘
+                  │                │
+            ┌─────┴────────────────┴─────┐
+            │  Transport Layer            │
+            │  (stdio/HTTP/SSE/WS)        │
+            └─────┬────────────────┬─────┘
+                  │                │
+┌─────────────────┼────────────────┼──────┐
+│  External System/Service (Server)       │
+│  ┌──────────────┴────────────────┐      │
+│  │  MCP Server Implementation    │      │
+│  │  - Tool Registration          │      │
+│  │  - Resource Providers         │      │
+│  │  - Request Handlers           │      │
+│  │  - State Management           │      │
+│  └──────────────────────────────┘      │
+│                                         │
+│  ┌─────────────────────────────────┐   │
+│  │  Capabilities                   │   │
+│  │  - Tools (callable functions)   │   │
+│  │  - Resources (data sources)     │   │
+│  │  - Sampling (model inference)   │   │
+│  └─────────────────────────────────┘   │
+└─────────────────────────────────────────┘
+```
+
+## Core Capabilities
+
+### Tools
+
+Tools are callable functions exposed by MCP servers. The client can discover available tools and invoke them with specific parameters.
+
+**Tool Definition Includes:**
+- Name and description
+- Input schema (parameters)
+- Output schema (return type)
+- Invocation semantics
+
+### Resources
+
+Resources represent data sources accessible through the protocol. They use URI-based addressing and can return text, binary, or structured data.
+
+**Resource Types:**
+- Text documents
+- Configuration files
+- Database queries
+- API responses
+- Real-time data streams
+
+### Sampling
+
+Servers can request the client (AI model) to perform inference tasks, enabling interactive workflows where servers guide model behavior.
+
+## Benefits
+
+### For AI Model Developers
+
+- **Extensibility**: Add new capabilities without retraining models
+- **Isolation**: Keep external integrations separate from core model
+- **Safety**: Explicit permission and monitoring of external interactions
+- **Performance**: Models only load/run required tools
+
+### For Tool/Service Providers
+
+- **Reach**: Make tools available to any MCP-compatible client
+- **Standardization**: Single implementation serves multiple consumers
+- **Discovery**: Clients can programmatically discover capabilities
+- **Control**: Fine-grained permission and access management
+
+### For End Users
+
+- **Flexibility**: Choose which tools and services to enable
+- **Security**: Understand exactly what models can access
+- **Performance**: Only pay for resources actually used
+- **Reliability**: Tools can be updated independently of models
+
+## Use Cases
+
+### Development & Engineering
+
+- Access to code repositories, build systems, and deployment pipelines
+- Integration with debugging and profiling tools
+- Access to documentation and knowledge bases
+- Version control and collaboration systems
+
+### Data Analysis & Science
+
+- Query databases and data warehouses
+- Access to data visualization tools
+- Statistical analysis libraries
+- Real-time data streams
+
+### Business Operations
+
+- CRM and customer data access
+- Project management and task tracking
+- Financial systems and analytics
+- HR and employee management
+
+### Content & Creativity
+
+- Access to design tools and asset libraries
+- Content management systems
+- Publishing and distribution platforms
+- Collaboration and review workflows
+
+## Standards & Specifications
+
+MCP adheres to established web standards:
+
+- **JSON-RPC 2.0**: Request/response protocol
+- **JSON Schema**: Schema definition and validation
+- **URI RFC 3986**: Resource addressing
+- **HTTP/1.1 and HTTP/2**: For HTTP-based transports
+- **POSIX**: For stdio-based transports
+
+## Getting Started
+
+### For Tool Providers
+
+1. Choose a language and runtime environment
+2. Implement the MCP server interface
+3. Register tools and resources
+4. Define input/output schemas
+5. Deploy and make accessible to clients
+
+### For Integrators
+
+1. Identify required tools and resources
+2. Configure MCP client connections
+3. Test server connections
+4. Implement error handling and logging
+5. Deploy with appropriate permissions
+
+## Integration with Related Systems
+
+MCP works seamlessly with:
+
+- **[agents.org.ai](https://agents.org.ai)**: Agent frameworks that use MCP for tool access
+- **[tools.org.ai](https://tools.org.ai)**: Tool registries and catalogs
+- **[apis.org.ai](https://apis.org.ai)**: API discovery and integration patterns
+- **[code.org.ai](https://code.org.ai)**: Development tools and environments
+
+## Security Considerations
+
+### Authentication & Authorization
+
+- Servers authenticate clients
+- Clients authenticate servers
+- Token-based and certificate-based options
+- Per-resource permission controls
+
+### Data Protection
+
+- Input validation and sanitization
+- Rate limiting and resource quotas
+- Audit logging of tool invocations
+- Data encryption for sensitive transmissions
+
+### Isolation
+
+- Process isolation for server implementations
+- Resource constraints and timeouts
+- Error handling without leaking sensitive data
+- Sandboxing of tool execution
+
+## Future Directions
+
+### Planned Enhancements
+
+- Adaptive capability discovery based on context
+- Caching strategies for frequently accessed resources
+- Enhanced streaming and real-time capabilities
+- Standardized monitoring and observability
+
+### Emerging Patterns
+
+- Server-to-server communication
+- Hierarchical tool organization
+- Advanced sampling with streaming
+- Distributed tool coordination
+
+## Quick Facts
+
+| Aspect | Details |
+|--------|---------|
+| **Type** | `Mcp` |
+| **Domain** | [mcp.org.ai](https://mcp.org.ai) |
+| **Parent** | [agents.org.ai](https://agents.org.ai) |
+| **Protocol** | JSON-RPC 2.0 |
+| **License** | Open Source |
+| **Status** | Active Development |
+
+## References
+
+- [Model Context Protocol Specification](https://spec.modelcontextprotocol.io)
+- [Claude Integration Guide](https://claude.ai/docs/mcp)
+- [Server Implementations](https://github.com/modelcontextprotocol/servers)
+- [Related Technologies](https://mcp.org.ai)

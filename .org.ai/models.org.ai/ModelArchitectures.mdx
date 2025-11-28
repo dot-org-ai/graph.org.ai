@@ -1,0 +1,684 @@
+---
+$context: https://models.org.ai
+$id: https://models.org.ai/ModelArchitectures
+$type: https://models.org.ai/ModelCategory
+name: "Model Architectures"
+description: "Foundational neural network architectures including transformers, attention mechanisms, CNNs, and multimodal fusion approaches"
+---
+
+export const items = async () => {
+  // Fetch architecture definitions from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://models.org.ai/Architecture',
+    category: 'architecture'
+  })
+}
+
+# Model Architectures
+
+Model architectures provide the foundational designs for neural networks that power modern AI. From attention-based transformers to convolutional networks and mixture of experts, these architectures enable the remarkable capabilities of contemporary models.
+
+## Overview
+
+Neural network architectures define how information flows through layers of computation. Successful architectures balance computational efficiency, representational capacity, and training stability. Modern deep learning is built on a relatively small number of core architectural innovations that have proven effective across diverse domains.
+
+## Transformer Architecture
+
+### Foundation and Evolution
+
+**The Original Transformer (2017)**
+- "Attention Is All You Need" paper
+- Self-attention as core mechanism
+- Eliminated recurrence in sequence modeling
+- Parallel training across sequence
+- Foundation for modern NLP and beyond
+
+**Key Components**
+- Multi-head self-attention layers
+- Position-wise feed-forward networks
+- Positional encoding for sequence order
+- Layer normalization for training stability
+- Residual connections for gradient flow
+
+**Encoder-Decoder Architecture**
+- Encoder processes input sequence
+- Decoder generates output sequence
+- Cross-attention between encoder and decoder
+- Autoregressive generation
+- Sequence-to-sequence tasks
+
+### Attention Mechanisms
+
+**Self-Attention and Multi-Head Attention**
+- Query, key, value projections
+- Multiple representation subspaces
+- Parallel attention computation
+- Information combination from multiple perspectives
+- Interpretability and visualization
+
+**Scaled Dot-Product Attention**
+- Query-key dot product similarity
+- Temperature scaling for stability
+- Softmax normalization
+- Value-weighted combination
+- Foundational attention computation
+
+**Cross-Attention**
+- Attend to different sequence
+- Input-output alignment
+- Conditional generation
+- Decoder-encoder interaction
+- Multi-modal fusion
+
+### Variants and Improvements
+
+**Vision Transformer (ViT)**
+- Apply transformer to image patches
+- Image classification at scale
+- Strong transfer learning
+- Efficient scaling properties
+- Foundation for vision models
+
+**BERT and Masked Language Modeling**
+- Bidirectional encoder representation
+- Masked token prediction
+- Unsupervised pre-training
+- Strong transfer learning
+- NLP foundation model
+
+**GPT and Causal Language Modeling**
+- Decoder-only architecture
+- Autoregressive generation
+- Scalable pre-training
+- Next-token prediction
+- Foundation for LLMs
+
+**T5 and Unified Sequence-to-Sequence**
+- Text-to-text framework
+- Unified architecture for diverse tasks
+- Shared transformer architecture
+- Task specification via prefixes
+- Flexible task adaptation
+
+### Efficient Attention Mechanisms
+
+**Linear Attention**
+- Reduce quadratic complexity
+- Linear complexity attention
+- Approximate similarity
+- Kernel-based approaches
+- Longer sequence capability
+
+**Sparse Attention**
+- Attend only to subset of positions
+- Block-sparse patterns
+- Local window attention
+- Structured sparsity
+- Computational savings
+
+**Multi-Query and Grouped Query Attention**
+- Reduce key-value cache size
+- Shared attention heads
+- Faster decoding
+- Maintained quality
+- Practical improvements
+
+**Flash Attention and Optimizations**
+- GPU-efficient implementation
+- Reduce memory bandwidth
+- Kernel fusion
+- Dramatic speedup
+- Production optimization
+
+## Convolutional Neural Networks (CNNs)
+
+### Basic CNN Architecture
+
+**Convolutional Layers**
+- Learned filters with weight sharing
+- Local receptive fields
+- Translation invariance
+- Efficient parameter usage
+- Feature extraction
+
+**Pooling Layers**
+- Max pooling and average pooling
+- Spatial dimension reduction
+- Shift invariance improvement
+- Computational efficiency
+- Feature abstraction
+
+**Fully Connected Layers**
+- Global feature integration
+- Classification head
+- Non-linear transformations
+- Final predictions
+- Task-specific learning
+
+### Deep CNN Architectures
+
+**ResNet (Residual Networks)**
+- Skip connections for deep networks
+- Enable training of very deep models
+- Mitigate vanishing gradient
+- State-of-the-art image classification
+- Transfer learning foundation
+
+**VGG and Sequential Depth**
+- Simple stacked convolutions
+- Importance of depth
+- Small filter sizes
+- Dense connectivity
+- Feature hierarchy
+
+**Inception and Multi-Scale Features**
+- Parallel convolutional branches
+- Multiple filter sizes
+- Efficient parameter usage
+- Multi-scale feature extraction
+- Computational efficiency
+
+**DenseNet and Feature Reuse**
+- Dense connections between layers
+- Feature reuse and gradient flow
+- Parameter efficiency
+- Strong feature propagation
+- Improved training dynamics
+
+### Specialized Convolutional Architectures
+
+**MobileNet and Lightweight CNNs**
+- Depthwise separable convolutions
+- Reduced parameter count
+- Mobile and edge deployment
+- Accuracy-efficiency trade-off
+- Practical deployment
+
+**EfficientNet and Scaling**
+- Systematic architecture scaling
+- Compound coefficient approach
+- Balance depth, width, resolution
+- Pareto-optimal efficiency
+- Multiple model sizes
+
+**Dilated/Atrous Convolutions**
+- Expanded receptive field
+- Skip inputs
+- Dense prediction tasks
+- Semantic segmentation
+- Efficient context capture
+
+**Deformable Convolutions**
+- Learnable spatial adaptation
+- Flexible receptive fields
+- Adaptive sampling locations
+- Object detection improvement
+- Morphological variation handling
+
+## Recurrent Neural Networks (RNNs)
+
+### Core RNN Variants
+
+**Long Short-Term Memory (LSTM)**
+- Gates for information flow
+- Gradient flow preservation
+- Long-range dependency learning
+- Forget, input, and output gates
+- Foundational sequence model
+
+**Gated Recurrent Unit (GRU)**
+- Simplified LSTM variant
+- Fewer parameters
+- Similar performance
+- Faster training
+- Practical alternative
+
+**Bidirectional RNNs**
+- Process sequence forwards and backwards
+- Full context utilization
+- Better performance than unidirectional
+- Offline processing only
+- Standard practice for NLP
+
+### RNN Applications and Variants
+
+**Sequence-to-Sequence Models**
+- Encoder RNN processes input
+- Decoder RNN generates output
+- Attention mechanism over encoder
+- Machine translation
+- Abstractive summarization
+
+**Attention Mechanisms with RNNs**
+- Dynamic context vector
+- Improved long-range dependencies
+- Interpretable alignment
+- Bridge to transformer architecture
+- Practical improvements
+
+### Limitations and Transition
+
+**RNN Limitations**
+- Sequential processing prevents parallelization
+- Gradient vanishing/exploding
+- Long-range dependencies challenging
+- Slower training than CNNs/Transformers
+- Historical importance, limited modern use
+
+**Transition to Transformers**
+- Transformer advantages for NLP
+- Parallelizable training
+- Stronger long-range modeling
+- Better scaling properties
+- Modern standard
+
+## Mixture of Experts (MoE)
+
+### Conditional Computation Concept
+
+**Sparse Expert Networks**
+- Multiple expert networks
+- Router network for assignment
+- Only active experts per token
+- Conditional computation
+- Efficient scaling
+
+**Expert Selection Mechanisms**
+- Top-k selection
+- Softmax routing
+- Load balancing
+- Expert capacity
+- Dispatch and combine operations
+
+### MoE Architectures
+
+**GShard and Large-Scale MoE**
+- 1 trillion parameter model
+- Efficient scaling to 2048 experts
+- Balanced expert load
+- Practical training stability
+- Production feasibility
+
+**Switch Transformer**
+- Simplified expert routing
+- Single expert selection
+- Extreme scale (1.6 trillion parameters)
+- Improved efficiency
+- Practical scaling
+
+**Base Layer and Base MoE**
+- Foundation models with MoE
+- Scalable alternatives to dense
+- Efficient inference
+- Token-router optimization
+- Production systems
+
+### Benefits and Challenges
+
+**Advantages**
+- Improved scaling efficiency
+- Reduced computation per token
+- Larger model capacity at lower cost
+- Specialization capability
+- Parallel expert processing
+
+**Challenges**
+- Training stability and convergence
+- Load balancing complexity
+- Expert redundancy
+- Communication overhead
+- Knowledge sharing between experts
+
+## Normalization Techniques
+
+### Layer Normalization
+
+**Layer Norm Properties**
+- Normalize across features (not batch)
+- Stable training dynamics
+- Transformer standard
+- Invariant to absolute magnitudes
+- Essential for stability
+
+**Variants**
+- Pre-normalization (before sublayer)
+- Post-normalization (after sublayer)
+- Residual connections interaction
+- Training and inference implications
+- Empirical performance differences
+
+### Batch Normalization
+
+**Batch Norm in Training**
+- Normalize across batch dimension
+- Reduce internal covariate shift
+- Smooths loss landscape
+- Allows higher learning rates
+- CNN standard
+
+**Batch Norm Challenges**
+- Different behavior at train/test
+- Batch size sensitivity
+- Problematic for small batches
+- Sequential model issues
+- Inference time considerations
+
+### Group and Instance Normalization
+
+**Group Norm**
+- Normalize across groups of channels
+- Batch size independent
+- Vision transformer adoption
+- Parameter-free
+- Training stability
+
+**Instance Norm**
+- Per-instance normalization
+- Style transfer and generative models
+- Strong across domain shifts
+- Limited batch awareness
+- Specialized applications
+
+## Activation Functions
+
+### ReLU and Variants
+
+**Rectified Linear Unit (ReLU)**
+- Simple and effective
+- Computationally efficient
+- Sparse activation
+- Gradient flow in positive region
+- Standard hidden layer activation
+
+**Leaky ReLU and Variants**
+- Non-zero gradient for negatives
+- Avoid dead neurons
+- Empirical improvements
+- Parametric variants (PReLU)
+- Practical alternative
+
+**GELU and Smooth Activations**
+- Gaussian Error Linear Unit
+- Smooth approximation to ReLU
+- Transformer standard
+- Probabilistic interpretation
+- Superior to ReLU empirically
+
+### Specialized Activations
+
+**Swish and Sigmoid-Based**
+- Self-gated activation
+- Smooth nonlinearity
+- Training dynamics improvement
+- EfficientNet adoption
+- Modern alternative
+
+**Mish Activation**
+- Smooth, non-monotonic
+- Self-regularizing properties
+- Strong empirical results
+- Research applications
+- Emerging standard
+
+## Loss Functions and Training
+
+### Classification Losses
+
+**Cross-Entropy Loss**
+- Standard classification loss
+- Entropy minimization
+- Probabilistic interpretation
+- Numerical stability improvements
+- Foundation approach
+
+**Focal Loss**
+- Address class imbalance
+- Focus on hard examples
+- Object detection
+- One-stage detector improvement
+- Reweighting mechanism
+
+**Label Smoothing**
+- Soft targets instead of hard
+- Regularization effect
+- Over-confidence prevention
+- Improved generalization
+- Training stability
+
+### Ranking and Contrastive Losses
+
+**Triplet Loss**
+- Relative distance learning
+- Anchor, positive, negative triples
+- Margin-based learning
+- Embedding quality
+- Person re-identification
+
+**Contrastive Learning Losses**
+- SimCLR and variants
+- Positive pair similarity
+- Negative pair dissimilarity
+- Self-supervised pre-training
+- Strong representations
+
+**Noise Contrastive Estimation (NCE)**
+- Efficient contrastive approximation
+- Sampling strategy
+- Large vocabulary handling
+- Language model pre-training
+- Practical scalability
+
+## Optimization Methods
+
+### First-Order Optimization
+
+**Stochastic Gradient Descent (SGD)**
+- Classic optimization
+- Simple and effective
+- Momentum variants
+- Nesterov acceleration
+- Foundation method
+
+**Adam Optimizer**
+- Adaptive learning rates
+- First and second moment estimation
+- Effective for deep learning
+- Practical standard
+- Slightly worse generalization
+
+**AdamW and Weight Decay**
+- Decoupled weight decay
+- Improved regularization
+- Practical improvements
+- Transformer training
+- Modern standard
+
+### Advanced Optimization
+
+**Learning Rate Scheduling**
+- Decay schedules
+- Warmup phases
+- Cosine annealing
+- Cyclical schedules
+- Training dynamics optimization
+
+**Gradient Clipping and Normalization**
+- Prevent exploding gradients
+- Stability improvement
+- RNN training essential
+- Large model training
+- Practical safeguard
+
+## Regularization Techniques
+
+### Dropout and Stochastic Methods
+
+**Dropout**
+- Stochastic neuron removal
+- Co-adaptation prevention
+- Ensemble effect
+- Implicit model averaging
+- Standard regularization
+
+**Variants**
+- Spatial dropout (ConvNets)
+- DropConnect
+- Variational dropout
+- Targeted dropout
+- Application-specific improvements
+
+### Data Augmentation
+
+**Image Augmentation**
+- Random crops and rotations
+- Color jittering
+- Horizontal flipping
+- Normalization and resizing
+- Standard practice
+
+**Advanced Augmentation**
+- Mixup and CutMix
+- RandAugment and AutoAugment
+- Efficient augmentation
+- Learned augmentation policies
+- Improved data efficiency
+
+## Multimodal Architectures
+
+### Cross-Modal Fusion
+
+**Early Fusion**
+- Concatenate modalities early
+- Direct joint representation
+- Simple and efficient
+- Limited modality specialization
+- Baseline approach
+
+**Late Fusion**
+- Process modalities separately
+- Combine at higher levels
+- Modality specialization
+- Flexible architectures
+- Practical robustness
+
+**Intermediate Fusion**
+- Multiple fusion points
+- Balance of early and late
+- Flexible interaction
+- Improved coordination
+- Standard practice
+
+### Cross-Modal Attention
+
+**Transformer Cross-Attention**
+- Attend across modalities
+- Symmetric or asymmetric
+- Flexible information flow
+- Interpretable alignments
+- Modern standard
+
+**Gating Mechanisms**
+- Modality importance weighting
+- Adaptive combination
+- Learned fusion weights
+- Dynamic balance
+- Flexible adaptation
+
+### Vision-Language Models
+
+**CLIP Architecture**
+- Separate image and text encoders
+- Contrastive learning
+- Shared embedding space
+- Zero-shot classification
+- Foundation for vision-language
+
+**Visual Transformer Integration**
+- Vision and language transformers
+- Unified architecture
+- Cross-modal understanding
+- Bidirectional attention
+- State-of-the-art performance
+
+## Graph Neural Networks (GNNs)
+
+### Message Passing Framework
+
+**Graph Convolution**
+- Aggregate neighborhood information
+- Message passing on graphs
+- Learnable aggregation
+- Node feature transformation
+- Inductive learning
+
+**Attention on Graphs**
+- Graph attention networks (GAT)
+- Learn edge importance
+- Multi-head attention
+- Interpretable importance
+- Flexible architecture
+
+### GNN Variants
+
+**Graph Isomorphism Networks**
+- Powerful graph representation
+- Expressiveness bounds
+- Discriminative power
+- Theoretical foundation
+- Practical effectiveness
+
+**Spectral Methods**
+- Fourier analysis on graphs
+- Spectral filtering
+- ChebNet approximation
+- Efficient computation
+- Alternative perspectives
+
+## Sequence-to-Sequence Models
+
+### Encoder-Decoder with Attention
+
+**Attention Mechanism in Seq2Seq**
+- Context vector computation
+- Alignment learning
+- Interpretable attention weights
+- Improved long-range modeling
+- Machine translation breakthrough
+
+**Beam Search Decoding**
+- Search over possible sequences
+- Limited hypotheses expansion
+- Length normalization
+- Practical inference
+- Quality-speed trade-off
+
+### Non-Autoregressive Decoding
+
+**Parallel Decoding**
+- Generate all positions simultaneously
+- Latency reduction
+- Iterative refinement
+- Quality-latency trade-off
+- Real-time applications
+
+## Related Resources
+
+- [LanguageModels.mdx](./LanguageModels) - Applications of architectures in LLMs
+- [VisionModels.mdx](./VisionModels) - Computer vision architectures
+- [AudioModels.mdx](./AudioModels) - Audio and sequential architectures
+- [EmbeddingModels.mdx](./EmbeddingModels) - Embedding learning architectures
+- [ModelDeployment.mdx](./ModelDeployment) - Efficient architecture deployment
+- [agents.org.ai](https://agents.org.ai) - Agent architectures built on these foundations
+
+## Cross-References
+
+| Domain | Connection |
+|--------|-----------|
+| [LanguageModels.mdx](./LanguageModels) | Transformer-based LLM architectures |
+| [VisionModels.mdx](./VisionModels) | CNN and Vision Transformer architectures |
+| [AudioModels.mdx](./AudioModels) | Sequential and transformer audio models |
+| [EmbeddingModels.mdx](./EmbeddingModels) | Embedding learning mechanisms |
+| [ModelDeployment.mdx](./ModelDeployment) | Architecture optimization for deployment |
+| [tech.org.ai](https://tech.org.ai) | Technology ecosystem foundations |
+

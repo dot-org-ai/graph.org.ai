@@ -1,0 +1,269 @@
+---
+$context: https://workflows.org.ai
+$id: https://workflows.org.ai/WorkflowEngines
+$type: https://workflows.org.ai/WorkflowEngines
+name: Workflow Engines
+description: Orchestration platforms and engines for executing complex workflows
+---
+
+export const items = async () => {
+  // Workflow engine implementations
+  return [
+    {
+      name: 'Temporal',
+      description: 'Microservice orchestration and workflow engine for long-running, fault-tolerant executions',
+      website: 'https://temporal.io',
+      primaryLanguages: ['Go', 'TypeScript', 'Java', 'Python'],
+      features: ['Durable execution', 'Workflow state management', 'Automatic retries', 'Temporal UI dashboard']
+    },
+    {
+      name: 'Inngest',
+      description: 'Serverless event-driven workflow and background job platform',
+      website: 'https://inngest.com',
+      primaryLanguages: ['TypeScript', 'JavaScript', 'Python'],
+      features: ['Event-driven', 'Serverless', 'Scheduled workflows', 'Built-in observability']
+    },
+    {
+      name: 'AWS Step Functions',
+      description: 'Serverless workflow orchestration service by Amazon Web Services',
+      website: 'https://aws.amazon.com/step-functions',
+      primaryLanguages: ['JSON', 'YAML'],
+      features: ['Serverless', 'AWS integration', 'Visual workflows', 'Built-in error handling']
+    },
+    {
+      name: 'Apache Airflow',
+      description: 'Platform to programmatically author, schedule and monitor workflows',
+      website: 'https://airflow.apache.org',
+      primaryLanguages: ['Python'],
+      features: ['DAG-based', 'Rich UI', 'Extensible', 'Enterprise features']
+    },
+    {
+      name: 'Prefect',
+      description: 'Modern data workflow automation platform with Python-native API',
+      website: 'https://www.prefect.io',
+      primaryLanguages: ['Python'],
+      features: ['Python-first', 'Dynamic workflows', 'Cloud-agnostic', 'Observable flows']
+    },
+    {
+      name: 'Dagster',
+      description: 'Data orchestrator for the modern data stack with asset-oriented architecture',
+      website: 'https://dagster.io',
+      primaryLanguages: ['Python'],
+      features: ['Asset graphs', 'Data-aware', 'Observable', 'Op-based paradigm']
+    }
+  ]
+}
+
+# Workflow Engines
+
+Workflow engines are specialized orchestration platforms designed to execute, manage, and monitor complex workflows at scale. These engines handle the core concerns of workflow execution including state management, error recovery, scheduling, and observability.
+
+## Overview
+
+Workflow engines serve as the backbone for modern distributed systems, providing robust infrastructure for executing multi-step processes that may span multiple services, systems, and execution environments. They abstract away common infrastructure concerns and provide guarantees around execution semantics.
+
+## Quick Facts
+
+| Attribute | Value |
+|-----------|-------|
+| Type | `WorkflowEngines` |
+| Domain | [workflows.org.ai](https://workflows.org.ai) |
+| Parent | [agents.org.ai](https://agents.org.ai) |
+| Related | [functions.org.ai](https://functions.org.ai), [events.org.ai](https://events.org.ai) |
+
+## Key Categories
+
+### Microservice Orchestration
+
+**Temporal** and **Cadence** provide comprehensive microservice orchestration with:
+- Durable task execution
+- Automatic state management
+- Built-in retry and timeout handling
+- Workflow versioning and compatibility
+
+### Serverless & Cloud-Native
+
+**AWS Step Functions** and **Inngest** offer serverless workflow execution:
+- No infrastructure management
+- Event-driven architecture
+- Tight cloud platform integration
+- Pay-per-execution pricing models
+
+### Data Pipeline Orchestration
+
+**Apache Airflow**, **Prefect**, and **Dagster** specialize in data workflows:
+- DAG or asset-graph based representations
+- Rich scheduling capabilities
+- Data lineage tracking
+- Comprehensive error handling
+
+## Engine Comparison
+
+### Execution Model
+
+| Engine | Execution Type | State Management | Durability |
+|--------|---|---|---|
+| **Temporal** | Event sourced | Persistent | Guaranteed |
+| **Inngest** | Event-driven | Distributed | At-least-once |
+| **Step Functions** | State machine | Cloud-backed | Guaranteed |
+| **Airflow** | Task-based | Database | Best-effort |
+| **Prefect** | Task-based | Cloud | Guaranteed |
+| **Dagster** | Asset-based | Database | Best-effort |
+
+### Fault Tolerance Features
+
+Each engine provides sophisticated fault tolerance:
+- **Automatic Retries**: Configurable retry policies with exponential backoff
+- **Dead Letter Queues**: Failed workflows routed for manual intervention
+- **Compensating Transactions**: Undo operations for failed workflows
+- **Checkpointing**: Ability to resume from checkpoints
+- **Idempotency Keys**: Prevent duplicate execution on retries
+
+## Core Concepts
+
+### Workflow Definition
+
+Workflows can be defined declaratively or programmatically:
+
+```typescript
+// Temporal: TypeScript/programmatic
+async function myWorkflow(params: WorkflowInput): Promise<WorkflowOutput> {
+  const result1 = await myActivity1(params);
+  const result2 = await myActivity2(result1);
+  return result2;
+}
+
+// Step Functions: JSON/declarative
+{
+  "Comment": "A Hello World workflow",
+  "StartAt": "HelloWorld",
+  "States": {
+    "HelloWorld": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:123456789012:function:HelloWorld",
+      "End": true
+    }
+  }
+}
+```
+
+### Activity/Task Definition
+
+Individual work units within workflows:
+- Idempotent functions with side effects
+- Automatic retry and timeout handling
+- Access to workflow context
+- Can return results or throw errors
+
+### Workflow Instance Management
+
+- **Workflow ID**: Unique identifier per workflow execution
+- **Version**: Workflow definition versioning
+- **Status Tracking**: Running, completed, failed, timed out
+- **Event History**: Complete execution trace
+
+## Integration Patterns
+
+### With Functions
+
+Engines integrate with [functions.org.ai](https://functions.org.ai) types:
+- Serverless functions as workflow tasks
+- Code functions for computation-heavy steps
+- Generative functions for AI-powered tasks
+- Agentic functions for autonomous behaviors
+
+### With Events
+
+Events serve as workflow triggers and within-workflow signaling:
+- Start workflows from [events.org.ai](https://events.org.ai)
+- Emit events during workflow execution
+- Event-driven workflow branching
+- Cross-system event correlation
+
+### With Agents
+
+Workflow engines coordinate [agents.org.ai](https://agents.org.ai):
+- Autonomous agent orchestration
+- Multi-agent choreography
+- Agent state synchronization
+- Hierarchical agent workflows
+
+## Best Practices
+
+### 1. Idempotency
+All workflow activities must be idempotent to handle retries:
+```typescript
+// Good: idempotent activity
+async function createUser(id: string, data: UserData) {
+  const existing = await db.users.get(id);
+  if (existing) return existing;
+  return db.users.create(id, data);
+}
+```
+
+### 2. Activity Isolation
+Keep activities focused and independent:
+- Single responsibility
+- Minimal side effects
+- Clear input/output contracts
+- Reasonable execution time bounds
+
+### 3. Failure Handling
+Explicit error handling strategies:
+- Retry policies with exponential backoff
+- Circuit breakers for dependent services
+- Compensation transactions for rollbacks
+- Dead letter queues for terminal failures
+
+### 4. Monitoring & Observability
+Comprehensive workflow visibility:
+- Workflow execution metrics
+- Activity duration tracking
+- Error rate monitoring
+- Custom event logging
+
+## Deployment Considerations
+
+### Scale & Performance
+
+| Engine | Throughput | Latency | Max Workflow Duration |
+|--------|---|---|---|
+| **Temporal** | Very High | <100ms | Months |
+| **Inngest** | High | 100-500ms | Hours |
+| **Step Functions** | High | 100-200ms | 1 year |
+| **Airflow** | Medium | 1-5s | Days |
+| **Prefect** | Medium | 1-5s | Days |
+| **Dagster** | Medium | 5-30s | Days |
+
+### Infrastructure Requirements
+
+- **Temporal**: Distributed system (cluster required)
+- **Inngest**: Managed cloud service
+- **Step Functions**: AWS-managed service
+- **Airflow**: Self-hosted or managed
+- **Prefect**: Self-hosted or managed cloud
+- **Dagster**: Self-hosted or managed cloud
+
+## Costs
+
+### Pricing Models
+
+- **Temporal**: Self-hosted (infrastructure costs)
+- **Inngest**: Per-execution pricing
+- **Step Functions**: Per-state-transition + storage
+- **Airflow**: Self-hosted (infrastructure)
+- **Prefect**: Per-task or enterprise license
+- **Dagster**: Self-hosted or enterprise SaaS
+
+## References
+
+- [Temporal Documentation](https://docs.temporal.io)
+- [AWS Step Functions User Guide](https://docs.aws.amazon.com/step-functions)
+- [Apache Airflow Documentation](https://airflow.apache.org/docs)
+- [Prefect Documentation](https://docs.prefect.io)
+- [Dagster Documentation](https://docs.dagster.io)
+- [Inngest Documentation](https://docs.inngest.com)
+
+## Sources
+
+- <DatabaseLink namespace="workflows.org.ai" type="WorkflowEngines" />

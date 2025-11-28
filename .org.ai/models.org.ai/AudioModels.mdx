@@ -1,0 +1,747 @@
+---
+$context: https://models.org.ai
+$id: https://models.org.ai/AudioModels
+$type: https://models.org.ai/ModelCategory
+name: "Audio Models"
+description: "Speech recognition, text-to-speech, audio understanding, and sound generation models"
+---
+
+export const items = async () => {
+  // Fetch audio model instances from database
+  const db = await import('platform.do').then(m => m.$.db)
+  return db.find({
+    '@type': 'https://models.org.ai/AudioModel',
+    category: 'audio'
+  })
+}
+
+# Audio Models
+
+Audio models enable machines to understand and generate speech and sound, powering applications from voice assistants to transcription services, music generation, and acoustic analytics. Modern audio models leverage transformer architectures and attention mechanisms to achieve unprecedented accuracy in speech understanding and synthesis.
+
+## Overview
+
+Audio processing involves converting continuous acoustic signals into meaningful representations. Audio models work with various modalities including speech, music, environmental sounds, and speaker characteristics, enabling both understanding and generation tasks.
+
+## Automatic Speech Recognition (ASR)
+
+### End-to-End Speech Recognition
+
+**Wav2Vec 2.0 (Meta/Facebook)**
+- Self-supervised speech representation learning
+- Contrastive learning on unlabeled audio
+- State-of-the-art accuracy with fine-tuning
+- Multilingual variant (XLSR-53)
+- Foundation for many downstream tasks
+
+**HuBERT (Hidden Unit BERT)**
+- Self-supervised learning from hidden units
+- Iterative refinement approach
+- Strong multilingual capability
+- Efficient fine-tuning
+- Robust acoustic modeling
+
+**Whisper (OpenAI)**
+- Robust speech recognition
+- Trained on 680K hours of multilingual audio
+- Multilingual and code-switching capability
+- Automatic punctuation and capitalization
+- No need for language identification
+
+**Conformer Architecture**
+- Combines convolution and transformer
+- Better time-frequency modeling
+- Competitive with hybrid systems
+- Efficient and practical
+- Industry-standard architecture
+
+### Traditional ASR Systems
+
+**HMM-GMM (Hidden Markov Models)**
+- Classic speech recognition approach
+- Acoustic and language model separation
+- Computationally light
+- Still used in embedded systems
+- Well-understood and interpretable
+
+**Hybrid DNN-HMM Systems**
+- Deep neural networks for acoustics
+- HMM for temporal modeling
+- Practical production systems
+- Good balance of accuracy and efficiency
+- Kaldi toolkit standard
+
+**Attention-Based Models**
+- Sequence-to-sequence with attention
+- Eliminated hard alignments
+- End-to-end training
+- Listen, Attend and Tell approach
+- Transformer variants
+
+### Streaming and Real-Time ASR
+
+**Transducer Architecture**
+- Joint optimization of prediction and alignment
+- Online decoding capability
+- Low latency speech recognition
+- RNN-T (Recurrent Neural Network Transducer)
+- Streaming transformer variants
+
+**Squeezeformer and Conformer Variants**
+- Efficient streaming models
+- Minimal context requirements
+- Low latency inference
+- Mobile-friendly designs
+- Real-time capability
+
+### Multilingual and Code-Switching ASR
+
+**Multilingual Models**
+- Shared representations across languages
+- Cross-lingual transfer learning
+- Language identification and handling
+- Accent and dialect robustness
+- Whisper and XLS-R support
+
+**Code-Switching Recognition**
+- Multiple languages in single utterance
+- Community language usage
+- Bilingual speaker accommodation
+- Language boundary detection
+- Enhanced transcription accuracy
+
+## Text-to-Speech (TTS) and Voice Synthesis
+
+### Neural Vocoding
+
+**WaveGlow and Glow-TTS**
+- Flow-based generative models
+- Parallel waveform generation
+- Natural and expressive speech
+- Fast inference capability
+- High audio quality
+
+**HiFi-GAN**
+- Generative adversarial network for vocoding
+- High-quality audio synthesis
+- Fast real-time synthesis
+- Compact model size
+- Industry standard vocoder
+
+**UnivNet**
+- Universal vocoder across domains
+- Spectrogram-agnostic
+- Fast inference
+- Parameter efficient
+- Cross-domain capability
+
+### Acoustic Modeling and Mel-Spectrogram Generation
+
+**Transformer-Based TTS**
+- Transformer encoders and decoders
+- Attention for alignment learning
+- Parallel training capability
+- Non-autoregressive variants
+- State-of-the-art quality
+
+**Glow-TTS**
+- Flow-based acoustic model
+- Parallel synthesis
+- Single pitch predictor
+- Duration predictor
+- Fast training and inference
+
+**FastSpeech and FastSpeech 2**
+- Non-autoregressive speech synthesis
+- Sequence-level knowledge distillation
+- Parallel waveform generation
+- Real-time factor below 0.1
+- Robust performance
+
+### Expressive and Emotional Speech Synthesis
+
+**Emotional TTS**
+- Emotion embedding integration
+- Prosody control
+- Variance predictors
+- Speaker-dependent emotion
+- Naturally expressive speech
+
+**Controllable TTS**
+- Pitch and energy control
+- Speaking rate adjustment
+- Phone/grapheme manipulation
+- Fine-grained prosody control
+- Style variation capability
+
+**Voice Cloning and Style Transfer**
+- Few-shot speaker adaptation
+- Voice characteristic transfer
+- Speaker embedding utilization
+- Personalized speech synthesis
+- Natural speaker variation
+
+### Multilingual and Cross-Lingual TTS
+
+**Multilingual TTS Systems**
+- Language-universal features
+- Language-specific phonetics
+- Code-switching synthesis
+- Accent adaptation
+- Polyglot speech synthesis
+
+**End-to-End Multilingual Systems**
+- Single model for multiple languages
+- Language code specification
+- Transfer learning between languages
+- Efficient model sharing
+- Unified interface
+
+## Voice Conversion and Enhancement
+
+### Voice Conversion
+
+**StarGAN-VC and Variants**
+- Generative adversarial voice conversion
+- Non-parallel training data
+- One-to-many and many-to-one conversion
+- Preserves linguistic content
+- Natural-sounding conversion
+
+**Zero-Shot Voice Conversion**
+- Conversion to unseen speakers
+- Speaker embedding based
+- Limited reference data
+- Flexible speaker targets
+- Real-world applicability
+
+### Speech Enhancement and Noise Reduction
+
+**Spectral Subtraction and Beyond**
+- Classic noise reduction
+- Subtractive approaches
+- Variability handling
+- Musical noise artifacts
+- Foundation technique
+
+**Deep Learning Speech Enhancement**
+- Neural masking networks
+- Time-frequency masking
+- Spectrogram reconstruction
+- Waveform domain learning
+- Superior noise reduction
+
+**Speech Separation**
+- Separate speakers from mixture
+- Single-speaker extraction
+- Speaker-independent approaches
+- Real-world acoustic challenges
+- Cocktail party problem solving
+
+## Audio Classification and Understanding
+
+### Sound Event Detection
+
+**YAMNet (Yet Another MobileNet)**
+- Lightweight audio classification
+- 521 sound event classes
+- Mobile deployment friendly
+- Pre-training on AudioSet
+- Transfer learning capability
+
+**PANNs (Pre-trained Audio Neural Networks)**
+- Various architectures and scales
+- 527 sound event classes
+- Convolutional and attention-based
+- Music and sound classification
+- Strong transfer learning
+
+**Temporal Convolutional Networks**
+- Efficient sequence modeling
+- Dilated convolutions
+- Long temporal context
+- Event detection and localization
+- Real-time processing
+
+### Music Understanding and Generation
+
+**Music Classification**
+- Genre classification
+- Mood and emotion recognition
+- Instrument identification
+- Artist and era classification
+- Metadata extraction
+
+**Music Tagging and Information Retrieval**
+- Autotagging systems
+- Semantic tag prediction
+- Music similarity
+- Recommendation systems
+- Playlist generation
+
+### Speech Emotion and Intent Recognition
+
+**Emotion Recognition from Speech**
+- Acoustic feature analysis
+- Prosody and spectral features
+- Deep learning approaches
+- Robust to background noise
+- Cross-lingual capability
+
+**Intent and Dialog Act Recognition**
+- Conversational understanding
+- Intent classification
+- Dialog state tracking
+- Semantic understanding
+- Dialogue system foundation
+
+### Speaker Recognition and Verification
+
+**Speaker Verification (1:1)**
+- Authentication from voice
+- Biometric security
+- Imposter detection
+- Threshold-based acceptance
+- Forensic applications
+
+**Speaker Identification (1:N)**
+- Identify speaker from population
+- Multi-speaker systems
+- Large-scale matching
+- Speaker diary systems
+- Meeting transcription
+
+**Speaker Embedding Models**
+- X-Vector extraction
+- I-Vector systems
+- Learned representations
+- Similarity scoring
+- Enrollment and verification
+
+## Audio Representation Learning
+
+### Self-Supervised Learning in Audio
+
+**Contrastive Learning Approaches**
+- SimCLR for audio
+- Contrastive loss functions
+- Positive and negative pair selection
+- Representation quality improvement
+- Foundation for downstream tasks
+
+**Masked Acoustic Modeling**
+- BERT-like approach for audio
+- Mask and predict framework
+- Robust feature learning
+- Contextual representation
+- Transfer learning strength
+
+**Wav2Vec and Variants**
+- Large-scale self-supervised learning
+- Quantization and prediction
+- Multilingual pre-training
+- Fine-tuning efficiency
+- Dominant pre-training approach
+
+### Multimodal Audio-Visual Learning
+
+**Audio-Visual Representation**
+- Joint audio-visual embeddings
+- Cross-modal learning
+- Synchronization awareness
+- Self-supervised from video
+- Stronger representations
+
+**Visual Speech Recognition**
+- Lip reading integration
+- Audio-visual fusion
+- Noise-robust speech understanding
+- Accent and language variants
+- Multimodal robustness
+
+## Music Analysis and Generation
+
+### Music Information Retrieval
+
+**Chord and Key Recognition**
+- Harmonic analysis
+- Chord progression extraction
+- Key detection
+- Music understanding
+- Musicological analysis
+
+**Beat and Tempo Estimation**
+- Pulse detection
+- Tempo determination
+- Downbeat localization
+- Timing and synchronization
+- Music structure understanding
+
+**Music Source Separation**
+- Isolate individual instruments
+- Vocal isolation
+- Stems extraction
+- Remix and remixing
+- Karaoke creation
+
+### Music Generation
+
+**Neural Audio Codecs**
+- Compressed audio representation
+- Efficient storage and transmission
+- Reconstruction quality
+- EnCodec and variants
+- Generative model foundation
+
+**Language Models for Music**
+- Music as sequence of tokens
+- Transformer-based generation
+- Symbolic music representation
+- Continuation and variation
+- Creative music composition
+
+**Generative Models for Audio**
+- Diffusion models for audio
+- Audio generation from description
+- Music style transfer
+- Composition assistance
+- Creative tools
+
+## Acoustic Features and Representation
+
+### Feature Extraction
+
+**Mel-Spectrogram**
+- Time-frequency representation
+- Human hearing aligned
+- Loss of phase information
+- Standard DL input
+- Visualization friendly
+
+**MFCC (Mel-Frequency Cepstral Coefficients)**
+- Classic speech feature
+- Robustness to background noise
+- Reduced dimensionality
+- Legacy system standard
+- Still used in traditional ASR
+
+**CQT (Constant-Q Transform)**
+- Logarithmic frequency spacing
+- Music analysis advantage
+- Phase information retention
+- Energy preservation
+- Musical representation
+
+### Acoustic Models and Adaptation
+
+**I-Vector and X-Vector Systems**
+- Speaker representation
+- Low-dimensional subspace
+- Variability modeling
+- Discriminant training
+- Robust speaker recognition
+
+**Factor Analysis**
+- Variability decomposition
+- Speaker and channel factors
+- Adaptation techniques
+- Total variability modeling
+- Traditional strong approach
+
+**Neural Feature Extraction**
+- End-to-end learned features
+- No hand-crafted preprocessing
+- Automatic feature optimization
+- Superior performance
+- Deep learning standard
+
+## Multilingual and Low-Resource ASR
+
+### Multilingual Pre-training
+
+**XLS-R (Cross-lingual Speech Representations)**
+- 128+ languages in single model
+- Massive unlabeled audio
+- Language-universal representation
+- Strong transfer learning
+- Low-resource language support
+
+**XLNET for Speech**
+- Language model pre-training
+- Bidirectional context
+- Strong multilingual support
+- Few-shot adaptation
+- Robust across languages
+
+### Low-Resource and Endangered Languages
+
+**Data Augmentation**
+- SpecAugment for speech
+- Time and frequency stretching
+- Noise and room impulse injection
+- Limited data maximization
+- Practical low-resource approach
+
+**Transfer Learning Strategies**
+- Pre-train on high-resource languages
+- Fine-tune on target language
+- Cross-lingual knowledge transfer
+- Parameter sharing
+- Practical low-resource solutions
+
+**Collaborative and Distributed Collection**
+- Community participation
+- Lightweight annotation
+- Crowdsourcing approaches
+- Minimal infrastructure
+- Cultural and linguistic preservation
+
+## Streaming and Real-Time Systems
+
+### Streaming Speech Recognition
+
+**Online and Streaming Architectures**
+- Minimal latency requirements
+- Limited future context
+- Incremental processing
+- Continuous updating
+- User experience critical
+
+**Lattice and Confusion Network Fusion**
+- Multiple hypothesis combination
+- Uncertainty representation
+- Improved accuracy
+- Real-time feasible
+- Robust decision making
+
+**Dynamic Decoding Strategies**
+- Beam search variants
+- Pruning and lattice
+- Real-time factorization
+- Hardware constraints
+- Practical deployment
+
+### Low-Latency Voice Interaction
+
+**Voice Assistant Architectures**
+- Wake word detection
+- Streaming ASR
+- NLU processing
+- TTS generation
+- Real-time requirements
+
+**On-Device Processing**
+- Edge inference
+- Privacy preservation
+- Reduced latency
+- Offline capability
+- User data protection
+
+## Evaluation and Benchmarking
+
+### Speech Recognition Metrics
+
+**Word Error Rate (WER)**
+- Standard ASR evaluation
+- Edit distance normalized
+- Insertions, deletions, substitutions
+- Comparative metric
+- Industry standard
+
+**Character Error Rate (CER)**
+- Character-level accuracy
+- Useful for languages without clear words
+- CJK language evaluation
+- Fine-grained error analysis
+- Morphological language analysis
+
+### TTS Evaluation Metrics
+
+**Subjective Evaluation (MOS)**
+- Mean Opinion Score
+- Listening panel assessment
+- Perceptual quality
+- Gold standard evaluation
+- Expensive and time-consuming
+
+**Objective Metrics**
+- Mel-spectrogram distance
+- Acoustic similarity measures
+- Speaker verification score
+- Pronunciation accuracy
+- Automated evaluation
+
+### Standard Benchmarks and Datasets
+
+**LibriSpeech**
+- 960 hours English speech
+- Clean and noisy conditions
+- Speaker-independent
+- Standard benchmark
+- Pre-training source
+
+**VoxCeleb**
+- Large-scale speaker recognition
+- 7 million utterances
+- 7,000+ speakers
+- Speaker verification benchmark
+- Diverse speakers and conditions
+
+**TIMIT and Related**
+- Phoneme recognition benchmark
+- 630 speakers
+- Acoustic-phonetic database
+- Classic dataset
+- Reproducibility standard
+
+**Domain-Specific Benchmarks**
+- Medical speech recognition (MedSpeech)
+- Meeting transcription (ICSI, AMI)
+- Multilingual evaluation (BABEL, FLEURS)
+- Accented speech (Accented Speech)
+- Noise robustness evaluation
+
+## Applications and Use Cases
+
+### Conversational AI and Voice Assistants
+
+**Voice-First Interfaces**
+- Natural language interaction
+- Multimodal input/output
+- Context awareness
+- Personalization
+- Consumer devices
+
+**Smart Speakers and IoT**
+- On-device processing
+- Always-listening capability
+- Privacy considerations
+- Wake word detection
+- Smart home integration
+
+### Accessibility and Assistive Technology
+
+**Speech-to-Text for Accessibility**
+- Real-time captioning
+- Deaf and hard of hearing support
+- Live event captioning
+- Emergency services accessibility
+- Inclusive communication
+
+**Voice Control for Mobility**
+- Hands-free interaction
+- Physical disability accommodation
+- Voice command systems
+- Accessibility API
+- Assistive living
+
+### Media and Broadcasting
+
+**Automatic Transcription**
+- Content transcription
+- Archive accessibility
+- Search indexing
+- Subtitle generation
+- Content discovery
+
+**Broadcast Monitoring**
+- Audio content analysis
+- Brand monitoring
+- Speech detection
+- Speaker identification
+- Media intelligence
+
+### Healthcare and Medical
+
+**Clinical Documentation**
+- Doctor-patient conversation transcription
+- Clinical note generation
+- Time efficiency improvement
+- Accuracy verification
+- EMR integration
+
+**Speech Pathology Assessment**
+- Speech disorder detection
+- Dysarthria and aphasia analysis
+- Articulation evaluation
+- Progress monitoring
+- Therapy guidance
+
+### Entertainment and Content Creation
+
+**Podcast and Audiobook Production**
+- Automatic narration
+- Voice synthesis for accessibility
+- Audiobook generation
+- Podcast transcription
+- Content accessibility
+
+**Gaming and Interactive Entertainment**
+- Dialogue-driven games
+- Voice command gaming
+- Character voice synthesis
+- Interactive storytelling
+- Immersive experiences
+
+## Deployment and Optimization
+
+### Model Quantization and Compression
+
+**Quantization for Audio**
+- Integer inference
+- Reduced memory footprint
+- Faster computation
+- Mobile deployment
+- Edge devices
+
+**Knowledge Distillation**
+- Smaller student models
+- Teacher model guidance
+- Maintained performance
+- Production feasibility
+- Cost reduction
+
+**Pruning and Sparsity**
+- Parameter reduction
+- Structured sparsity
+- Efficient inference
+- Maintained accuracy
+- Hardware acceleration
+
+### Framework and Runtime Support
+
+**PyTorch and TensorFlow**
+- Research and production frameworks
+- GPU and CPU support
+- Quantization tooling
+- Export capabilities
+- Community ecosystem
+
+**ONNX Runtime and TensorRT**
+- Cross-platform inference
+- Hardware optimization
+- Auto-tuning capabilities
+- Performance improvement
+- Deployment flexibility
+
+## Related Resources
+
+- [LanguageModels.mdx](./LanguageModels) - Language models for dialogue and text understanding
+- [EmbeddingModels.mdx](./EmbeddingModels) - Audio embeddings and representations
+- [ModelArchitectures.mdx](./ModelArchitectures) - Transformer and attention mechanisms for audio
+- [ModelDeployment.mdx](./ModelDeployment) - Deploying audio models at scale
+- [datasets.org.ai](https://datasets.org.ai) - Audio datasets and benchmarks
+- [agents.org.ai](https://agents.org.ai) - Voice agents and conversational AI
+
+## Cross-References
+
+| Domain | Connection |
+|--------|-----------|
+| [LanguageModels.mdx](./LanguageModels) | Language models for dialogue and text from speech |
+| [EmbeddingModels.mdx](./EmbeddingModels) | Audio embeddings and acoustic representations |
+| [ModelArchitectures.mdx](./ModelArchitectures) | Transformer and attention for sequential audio |
+| [ModelDeployment.mdx](./ModelDeployment) | Deploying audio models for real-time inference |
+| [agents.org.ai](https://agents.org.ai) | Conversational agents using speech and audio |
+| [datasets.org.ai](https://datasets.org.ai) | Audio datasets and evaluation benchmarks |
+| [tech.org.ai](https://tech.org.ai) | Technology ecosystem and infrastructure |
+
