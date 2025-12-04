@@ -132,7 +132,7 @@ async function main() {
     const id = slugToId(slug)
     const name = slugToName(slug)
     return [
-      `https://integrations.org.ai/Integration/${id}`,
+      `https://integrations.org.ai/${id}`,
       'integrations.org.ai',
       'Integration',
       id,
@@ -159,7 +159,7 @@ async function main() {
     .map(n => {
       const ontology = nounDescriptions.get(n.noun)
       return [
-        `https://nouns.org.ai/Noun/${n.noun}`,
+        `https://nouns.org.ai/${n.noun}`,
         'nouns.org.ai',
         'Noun',
         n.noun,
@@ -187,7 +187,7 @@ async function main() {
       const ontology = actionDescriptions.get(a.action)
       const id = `${a.noun}.${a.verb}`
       return [
-        `https://actions.org.ai/Action/${id}`,
+        `https://actions.org.ai/${id}`,
         'actions.org.ai',
         'Action',
         id,
@@ -217,7 +217,7 @@ async function main() {
       const ontology = eventDescriptions.get(e.event)
       const id = `${e.noun}.${e.verb}`
       return [
-        `https://events.org.ai/Event/${id}`,
+        `https://events.org.ai/${id}`,
         'events.org.ai',
         'Event',
         id,

@@ -236,7 +236,7 @@ async function main() {
     const displayName = noun.replace(/([A-Z])/g, ' $1').trim()
 
     newConcepts.push({
-      url: `https://concepts.org.ai/Concept/${noun}`,
+      url: `https://concepts.org.ai/${noun}`,
       ns: 'concepts.org.ai',
       type: 'Concept',
       id: noun,
