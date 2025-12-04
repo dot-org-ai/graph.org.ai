@@ -28,3 +28,6 @@
 [submodule ".org.ai/process.org.ai"]
 	path = .org.ai/process.org.ai
 	url = https://github.com/dot-org-ai/process.org.ai
+[submodule ".org.ai/business.org.ai"]
+	path = .org.ai/business.org.ai
+	url = https://github.com/dot-org-ai/business.org.ai
