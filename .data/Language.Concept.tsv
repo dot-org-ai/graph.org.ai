@@ -1,0 +1,60 @@
+ns	type	id	name	description	code	baseNoun	modifiers	category	source	examples
+language.org.ai	Concept	LongTermVision	LongTermVision	Strategic direction and goals extending beyond immediate horizons		Vision	long-term	Strategic Planning	APQC PCF 7.0	Define the business concept and long-term vision
+language.org.ai	Concept	BusinessConcept	BusinessConcept	Fundamental idea or model underlying a business operation		Concept	business	Strategic Planning	APQC PCF 7.0	Define the business concept and long-term vision
+language.org.ai	Concept	ExternalEnvironment	ExternalEnvironment	Forces, entities, and systems outside an organization		Environment	external	Strategic Analysis	APQC PCF 7.0	Assess the external environment
+language.org.ai	Concept	InternalEnvironment	InternalEnvironment	Organization's in-house skills, resources and capabilities		Environment	internal	Strategic Analysis	APQC PCF 7.0	Assess the internal environment
+language.org.ai	Concept	CustomerNeeds	CustomerNeeds	Requirements and desires of customers for products/services		Needs	customer	Market Research	APQC PCF 7.0	Survey market and determine customer needs and wants
+language.org.ai	Concept	IntellectualProperty	IntellectualProperty	Creations of the mind with commercial value		Property	intellectual	Legal	APQC PCF 7.0	Evaluate intellectual property
+language.org.ai	Concept	WorkingCapital	WorkingCapital	Financial metrics measuring operational efficiency		Capital	working	Finance	APQC PCF 7.0	Manage working capital
+language.org.ai	Concept	SupplyChain	SupplyChain	Network between company and suppliers to produce and distribute		Chain	supply	Operations	APQC PCF 7.0	Manage supply chain
+language.org.ai	Concept	HumanResources	HumanResources	Department managing employee-related functions		Resources	human	HR	APQC PCF 7.0	Manage human resources
+language.org.ai	Concept	DataSecurity	DataSecurity	Protection of digital information from unauthorized access		Security	data	Information Technology	APQC PCF 7.0	Manage data security
+language.org.ai	Concept	ProductDevelopment	ProductDevelopment	Process of bringing new products to market		Development	product	Innovation	APQC PCF 7.0	Manage product development
+language.org.ai	Concept	ServiceDelivery	ServiceDelivery	Process of providing services to customers		Delivery	service	Operations	APQC PCF 7.0	Manage service delivery
+language.org.ai	Concept	FinancialPerformance	FinancialPerformance	Measure of how well a firm uses assets to generate revenue		Performance	financial	Finance	APQC PCF 7.0	Monitor financial performance
+language.org.ai	Concept	RiskManagement	RiskManagement	Identification, assessment, and prioritization of risks		Management	risk	Governance	APQC PCF 7.0	Implement risk management
+language.org.ai	Concept	QualityControl	QualityControl	Process ensuring products/services meet requirements		Control	quality	Operations	APQC PCF 7.0	Implement quality control
+language.org.ai	Concept	ChangeManagement	ChangeManagement	Structured approach to transitioning organizations		Management	change	Organizational Development	APQC PCF 7.0	Manage organizational change
+language.org.ai	Concept	PerformanceManagement	PerformanceManagement	System for monitoring and improving organizational/employee performance		Management	performance	Operations	APQC PCF 7.0	Develop performance management processes
+language.org.ai	Concept	CustomerService	CustomerService	Assistance and advice provided to customers		Service	customer	Customer Relations	APQC PCF 7.0	Manage customer service operations
+language.org.ai	Concept	ProjectManagement	ProjectManagement	Application of knowledge and skills to achieve project objectives		Management	project	Operations	APQC PCF 7.0	Manage project execution
+language.org.ai	Concept	ProtectionEquipment	ProtectionEquipment	Devices or gear used to protect workers from hazards		Equipment	protection	Safety	ONET	Maintain respiratory protection equipment
+language.org.ai	Concept	RespiratoryProtectionEquipment	RespiratoryProtectionEquipment	Devices protecting workers from airborne hazards		Equipment	respiratory protection	Safety	ONET	Maintain respiratory protection equipment
+language.org.ai	Concept	AerospaceVehicles	AerospaceVehicles	Aircraft and spacecraft used for air and space travel		Vehicles	aerospace	Aviation	ONET	Develop autonomous systems for uncrewed aerospace vehicles
+language.org.ai	Concept	ResearchFindings	ResearchFindings	Results and conclusions from research studies		Findings	research	Research	ONET	Write, present, and publish research findings
+language.org.ai	Concept	RemedialActions	RemedialActions	Corrective measures taken to fix problems		Actions	remedial	Quality	ONET	Recommend or perform remedial actions
+language.org.ai	Concept	GovernmentLeaders	GovernmentLeaders	Officials and leaders in government organizations		Leaders	government	Government	ONET	Confer with leaders of government
+language.org.ai	Concept	CommunityLeaders	CommunityLeaders	Leaders of community organizations and groups		Leaders	community	Community	ONET	Confer with leaders of community groups
+language.org.ai	Concept	CustomerInteractions	CustomerInteractions	Exchanges and communications between customers and organization		Interactions	customer	Customer Service	APQC	Monitor quality of customer interactions
+language.org.ai	Concept	StaffPerformance	StaffPerformance	How well employees execute their job responsibilities		Performance	staff	Human Resources	APQC	Determine performance of company staff
+language.org.ai	Concept	CompanyStaff	CompanyStaff	Employees working for the company		Staff	company	Human Resources	APQC	Performance of company staff
+language.org.ai	Concept	CapitalAllocation	CapitalAllocation	Distribution of financial resources across investments		Allocation	capital	Finance	APQC	Within established capital allocation
+language.org.ai	Concept	RiskLimits	RiskLimits	Maximum acceptable levels of risk exposure		Limits	risk	Risk Management	APQC	Within established risk limits
+language.org.ai	Concept	TradingStrategy	TradingStrategy	Plan for executing trades to achieve objectives		Strategy	trading	Finance	APQC	Consistent with trading strategy
+language.org.ai	Concept	StudentAchievement	StudentAchievement	Measured learning outcomes of students		Achievement	student	Education	APQC	Actual student achievement
+language.org.ai	Concept	AchievementTargets	AchievementTargets	Goals set for performance and accomplishment		Targets	achievement	Performance Management	APQC	Achievement targets or expectations
+language.org.ai	Concept	PotentialValue	PotentialValue	Estimated worth or benefit that could be realized		Value	potential	Finance	APQC	Discover potential value in opportunities
+language.org.ai	Concept	RegulatoryCapitalRequirements	RegulatoryCapitalRequirements	Minimum capital levels mandated by regulators		Requirements	regulatory capital	Finance	APQC	Calculate regulatory capital requirements
+language.org.ai	Concept	CreditRisks	CreditRisks	Possibility of loss from borrower default		Risks	credit	Risk Management	APQC	Credit risks according to regulations
+language.org.ai	Concept	IndustryRegulations	IndustryRegulations	Rules and standards governing an industry sector		Regulations	industry	Compliance	APQC	According to industry regulations
+language.org.ai	Concept	NationalLegislation	NationalLegislation	Laws enacted at the country level		Legislation	national	Legal	APQC	According to national legislation
+language.org.ai	Concept	InnovationStrategies	InnovationStrategies	Plans for developing new products or approaches		Strategies	innovation	Strategy	APQC	Develop innovation strategies
+language.org.ai	Concept	StakeholderExpectations	StakeholderExpectations	What stakeholders anticipate or require		Expectations	stakeholder	Governance	APQC	Meet stakeholder expectations
+language.org.ai	Concept	EducationalPrograms	EducationalPrograms	Structured courses of study and instruction		Programs	educational	Education	APQC	Educational programs and support services
+language.org.ai	Concept	SupportServices	SupportServices	Auxiliary services that enable core operations		Services	support	Operations	APQC	Educational programs and support services
+language.org.ai	Concept	FederalTestingAgencies	FederalTestingAgencies	Government bodies overseeing standardized tests		Agencies	federal testing	Education	APQC	Federal testing agencies or test publishers
+language.org.ai	Concept	TestPublishers	TestPublishers	Companies that create and distribute assessments		Publishers	test	Education	APQC	Test publishers on quality issues
+language.org.ai	Concept	QualityIssues	QualityIssues	Problems affecting standard or excellence		Issues	quality	Quality Control	APQC	Quality issues and needed improvements
+language.org.ai	Concept	SuccessfulResponse	SuccessfulResponse	Answer or reaction that meets criteria		Response	successful	Performance	APQC	Requirements for successful response
+language.org.ai	Concept	ScoringCriteria	ScoringCriteria	Standards used to evaluate performance		Criteria	scoring	Assessment	APQC	Scoring criteria for performance tasks
+language.org.ai	Concept	PerformanceTasks	PerformanceTasks	Activities designed to demonstrate competency		Tasks	performance	Assessment	APQC	Performance tasks and open-ended items
+language.org.ai	Concept	CommunicationMechanisms	CommunicationMechanisms	Systems or methods for exchanging information		Mechanisms	communication	Operations	APQC	Communication mechanisms for students
+language.org.ai	Concept	CaseManagementProcess	CaseManagementProcess	Coordinated approach to handling individual cases		Process	case management	Operations	APQC	Case management process to streamline
+language.org.ai	Concept	ServicesDuplication	ServicesDuplication	Unnecessary repetition of service provision		Duplication	services	Operations	APQC	Avoid duplication of services
+language.org.ai	Concept	ComponentBlend	ComponentBlend	Mixture of elements combined for specific result		Blend	component	Manufacturing	APQC	Component blend meets specifications
+language.org.ai	Concept	ProductSpecifications	ProductSpecifications	Detailed requirements for a product		Specifications	product	Quality	APQC	Product specifications and regulatory standards
+language.org.ai	Concept	RegulatoryStandards	RegulatoryStandards	Official requirements set by governing bodies		Standards	regulatory	Compliance	APQC	Regulatory standards for products
+language.org.ai	Concept	HydroelectricFacility	HydroelectricFacility	Power generation facility using water		Facility	hydroelectric	Energy	ONET	Supervise hydroelectric facility operations
+language.org.ai	Concept	GenerationEquipment	GenerationEquipment	Machinery used to generate power		Equipment	generation	Energy	ONET	Generation equipment conform to regulations
+language.org.ai	Concept	MechanicalEquipment	MechanicalEquipment	Machinery and mechanical systems		Equipment	mechanical	Operations	ONET	Mechanical equipment conform to regulations
+language.org.ai	Concept	MaterialsPrices	MaterialsPrices	Cost of raw materials and supplies		Prices	materials	Procurement	ONET	Negotiate materials prices with suppliers

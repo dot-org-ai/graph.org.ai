@@ -123,6 +123,10 @@ function toCamelCase(text: string, conceptIndex: Map<string, any>, shortNames?: 
   // Prepositions that should be kept as separators in GraphDL (lowercase with dots)
   const prepositions = new Set(['to', 'from', 'with', 'without', 'in', 'on', 'at', 'by', 'of', 'for', 'about', 'into', 'onto', 'within'])
 
+  // Connector verbs that pair with prepositions (e.g., "concerned with", "related to")
+  // These should be kept as lowercase separators like prepositions
+  const connectorVerbs = new Set(['concerned', 'related', 'involved', 'responsible', 'engaged', 'associated', 'dealing', 'focused', 'pertaining'])
+
   // Articles to filter out completely
   const articles = new Set(['the', 'a', 'an'])
 
@@ -133,12 +137,31 @@ function toCamelCase(text: string, conceptIndex: Map<string, any>, shortNames?: 
   const segments: string[][] = [[]]
   let currentSegment = 0
 
-  for (const token of tokens) {
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i]
     const lower = token.toLowerCase()
 
     // Skip articles and conjunctions
     if (articles.has(lower) || conjunctions.has(lower)) {
       continue
+    }
+
+    // If it's a connector verb followed by a preposition, treat both as separators
+    // E.g., "concerned with" → ".concerned.with."
+    if (connectorVerbs.has(lower)) {
+      const nextToken = tokens[i + 1]?.toLowerCase()
+      if (nextToken && prepositions.has(nextToken)) {
+        if (segments[currentSegment].length > 0) {
+          currentSegment++
+          segments[currentSegment] = [lower] // Connector verb as separator
+          currentSegment++
+          segments[currentSegment] = [nextToken] // Preposition as separator
+          currentSegment++
+          segments[currentSegment] = []
+        }
+        i++ // Skip the next token (preposition) since we've handled it
+        continue
+      }
     }
 
     // If it's a preposition, start a new segment and add the preposition
@@ -392,9 +415,17 @@ async function main() {
   console.log(`  ✓ Expanded to ${expandedIndustries.length} industry entities`)
 
   // Write Industries output
-  const industriesTsvHeaders = ['id', 'name', 'description', 'code', 'type']
+  const industriesTsvHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description']
   const industriesTsvRows = expandedIndustries.map(i =>
-    [i.entityType, i.title, i.description, i.code, 'Industry'].join('\t')
+    [
+      `https://industries.org.ai/${i.entityType}`,
+      'industries.org.ai',
+      'Industry',
+      i.entityType,
+      i.code,
+      i.title,
+      i.description
+    ].join('\t')
   )
   const industriesTsv = [industriesTsvHeaders.join('\t'), ...industriesTsvRows].join('\n')
   const industriesOutputPath = path.join(outputDir, 'Industries.tsv')
@@ -463,9 +494,20 @@ async function main() {
   console.log(`  ✓ Loaded ${processedCount} APQC process expansions across all industries`)
 
   // Write APQC output
-  const apqcTsvHeaders = ['id', 'pcfId', 'hierarchyId', 'name', 'description', 'industry']
+  const apqcTsvHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description', 'pcfId', 'hierarchyId', 'industry']
   const apqcTsvRows = apqcProcesses.map(p =>
-    [p.id, p.pcfId, p.hierarchyId, p.name, p.description, p.industry].join('\t')
+    [
+      `https://processes.org.ai/${p.id}`,
+      'processes.org.ai',
+      'Process',
+      p.id,
+      p.hierarchyId,
+      p.name,
+      p.description,
+      p.pcfId,
+      p.hierarchyId,
+      p.industry
+    ].join('\t')
   )
   const apqcTsv = [apqcTsvHeaders.join('\t'), ...apqcTsvRows].join('\n')
   const apqcOutputPath = path.join(outputDir, 'Processes.tsv')
@@ -502,9 +544,17 @@ async function main() {
   console.log(`  ✓ Expanded to ${expandedOccupations.length} occupation entities`)
 
   // Write Occupations output
-  const occupationsTsvHeaders = ['id', 'name', 'description', 'code', 'type']
+  const occupationsTsvHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description']
   const occupationsTsvRows = expandedOccupations.map(o =>
-    [o.entityType, o.title, o.description, o.code, 'Occupation'].join('\t')
+    [
+      `https://occupations.org.ai/${o.entityType}`,
+      'occupations.org.ai',
+      'Occupation',
+      o.entityType,
+      o.code,
+      o.title,
+      o.description
+    ].join('\t')
   )
   const occupationsTsv = [occupationsTsvHeaders.join('\t'), ...occupationsTsvRows].join('\n')
   const occupationsOutputPath = path.join(outputDir, 'Occupations.tsv')
@@ -573,9 +623,20 @@ async function main() {
   console.log(`  ✓ Loaded ${taskProcessedCount} ONET task expansions`)
 
   // Write ONET output
-  const onetTsvHeaders = ['id', 'onetCode', 'occupationCode', 'taskId', 'task', 'description', 'occupationTitle']
+  const onetTsvHeaders = ['url', 'ns', 'type', 'id', 'code', 'name', 'description', 'onetCode', 'taskId', 'occupationTitle']
   const onetTsvRows = onetTasks.map(t =>
-    [t.id, t.onetCode, t.occupationCode, t.taskId, t.task, t.description, t.occupationTitle].join('\t')
+    [
+      `https://tasks.org.ai/${t.id}`,
+      'tasks.org.ai',
+      'Task',
+      t.id,
+      t.taskId,
+      t.task,
+      t.description,
+      t.onetCode,
+      t.taskId,
+      t.occupationTitle
+    ].join('\t')
   )
   const onetTsv = [onetTsvHeaders.join('\t'), ...onetTsvRows].join('\n')
   const onetOutputPath = path.join(outputDir, 'Tasks.tsv')

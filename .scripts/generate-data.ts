@@ -82,15 +82,35 @@ function writeRelationshipsTSV(filePath: string, relationships: any[]): void {
 }
 
 /**
- * Create Wikipedia-style identifier from name (replace spaces with underscores)
+ * Create Wikipedia_Style_Names ID from text
+ * - 1-3 words: PascalCase (e.g., "LiveAnimals", "SoybeanFarming")
+ * - 4+ words: Wikipedia_Style (e.g., "Diagnosis_of_Cholera_Due_to_Vibrio")
  */
 function createId(name: string): string {
-  return name
-    .replace(/ /g, '_')
-    .replace(/\//g, '_')
-    .replace(/\?/g, '')
-    .replace(/"/g, '')  // Remove quotes
-    .replace(/'/g, '')  // Remove single quotes
+  if (!name) return ''
+
+  // Clean and normalize
+  const cleaned = name
+    .replace(/[^\w\s-]/g, '') // Remove special chars
+    .replace(/\s+/g, ' ')     // Normalize spaces
+    .trim()
+
+  // Split into words
+  const words = cleaned.split(/[\s_-]+/).filter(w => w.length > 0)
+
+  if (words.length === 0) return ''
+
+  // Capitalize each word
+  const capitalizedWords = words.map(w =>
+    w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+  )
+
+  // PascalCase for 1-3 words, Wikipedia_Style for 4+
+  if (words.length <= 3) {
+    return capitalizedWords.join('')
+  } else {
+    return capitalizedWords.join('_')
+  }
 }
 
 /**
@@ -101,23 +121,22 @@ function getCode(code: string, name: string): string {
 }
 
 /**
- * Create entity object with simplified column structure
+ * Create entity with simplified schema:
+ * ns (canonical namespace), type, id, name, description, code, + extra fields
+ * URLs are computed at runtime: https://{ns}/{id}
  */
 function createEntity(domain: string, typeName: string, id: string, data: any) {
   return {
-    url: `${domain}/${typeName}/${id}`,
     ns: domain.replace('https://', ''),
     type: typeName,
     id: id,
-    ...data,
-    sourceUrl: data.sourceUrl || ''
+    ...data
   }
 }
 
-// Special helper for Schema.org entities that don't have type in URL
+// Special helper for Schema.org entities
 function createSchemaEntity(domain: string, typeName: string, id: string, data: any) {
   return {
-    url: `${domain}/${id}`,
     ns: domain.replace('https://', ''),
     type: typeName,
     id: id,
@@ -674,17 +693,18 @@ function generateNAPCSData(): void {
 
   const domain = 'https://services.org.ai'
 
-  const source = parseTSV(path.join(SOURCE_DIR, 'NAPCS/NAPCS.NAPCS2022Structure.tsv'))
+  const source = parseTSV(path.join(SOURCE_DIR, 'NAPCS/NAPCS.NAPCS2022Structure.clean.tsv'))
 
   const data = source
-    .filter(row => row.code && row.hierarchicalStructure)
+    .filter(row => row.code && row.codeTitle)
     .map(row => {
-      const id = row.code
+      const id = createId(row.codeTitle)
       return createEntity(domain, 'Service', id, {
-        name: row.hierarchicalStructure,
-        description: row.hierarchicalStructure,
+        name: row.codeTitle,
+        description: row.codeDefinition || row.codeTitle,
         code: row.code,
         level: row.level || '',
+        type: row.hierarchicalStructure || '',  // Group, Class, Subclass, Detail
         parent: row.parent || '',
         sameAs: `https://standards.org.ai/napcs/${row.code}`,
       })

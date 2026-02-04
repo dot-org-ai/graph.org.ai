@@ -1,0 +1,58 @@
+ns	type	id	name	description	code
+onet.org.ai	WorkContext	PublicSpeaking	Public Speaking	Public Speaking	4.C.1.a.2.c
+onet.org.ai	WorkContext	TelephoneConversations	Telephone Conversations	Telephone Conversations	4.C.1.a.2.f
+onet.org.ai	WorkContext	EMail	E-Mail	E-Mail	4.C.1.a.2.h
+onet.org.ai	WorkContext	Written_Letters_And_Memos	Written Letters and Memos	Written Letters and Memos	4.C.1.a.2.j
+onet.org.ai	WorkContext	Face_To_Face_Discussions_With_Individuals_And_Within_Teams	Face-to-Face Discussions with Individuals and Within Teams	Face-to-Face Discussions with Individuals and Within Teams	4.C.1.a.2.l
+onet.org.ai	WorkContext	ContactWithOthers	Contact With Others	Contact With Others	4.C.1.a.4
+onet.org.ai	WorkContext	Work_With_Or_Contribute_To_A_Work_Group_Or_Team	Work With or Contribute to a Work Group or Team	Work With or Contribute to a Work Group or Team	4.C.1.b.1.e
+onet.org.ai	WorkContext	Deal_With_External_Customers_Or_The_Public_In_General	Deal With External Customers or the Public in General	Deal With External Customers or the Public in General	4.C.1.b.1.f
+onet.org.ai	WorkContext	Coordinate_Or_Lead_Others_In_Accomplishing_Work_Activities	Coordinate or Lead Others in Accomplishing Work Activities	Coordinate or Lead Others in Accomplishing Work Activities	4.C.1.b.1.g
+onet.org.ai	WorkContext	Health_And_Safety_Of_Other_Workers	Health and Safety of Other Workers	Health and Safety of Other Workers	4.C.1.c.1
+onet.org.ai	WorkContext	Work_Outcomes_And_Results_Of_Other_Workers	Work Outcomes and Results of Other Workers	Work Outcomes and Results of Other Workers	4.C.1.c.2
+onet.org.ai	WorkContext	ConflictSituations	Conflict Situations	Conflict Situations	4.C.1.d.1
+onet.org.ai	WorkContext	Dealing_With_Unpleasant_Angry_Or_Discourteous_People	Dealing With Unpleasant, Angry, or Discourteous People	Dealing With Unpleasant, Angry, or Discourteous People	4.C.1.d.2
+onet.org.ai	WorkContext	Dealing_With_Violent_Or_Physically_Aggressive_People	Dealing with Violent or Physically Aggressive People	Dealing with Violent or Physically Aggressive People	4.C.1.d.3
+onet.org.ai	WorkContext	IndoorsEnvironmentallyControlled	Indoors, Environmentally Controlled	Indoors, Environmentally Controlled	4.C.2.a.1.a
+onet.org.ai	WorkContext	Indoors_Not_Environmentally_Controlled	Indoors, Not Environmentally Controlled	Indoors, Not Environmentally Controlled	4.C.2.a.1.b
+onet.org.ai	WorkContext	Outdoors_Exposed_To_All_Weather_Conditions	Outdoors, Exposed to All Weather Conditions	Outdoors, Exposed to All Weather Conditions	4.C.2.a.1.c
+onet.org.ai	WorkContext	OutdoorsUnderCover	Outdoors, Under Cover	Outdoors, Under Cover	4.C.2.a.1.d
+onet.org.ai	WorkContext	In_An_Open_Vehicle_Or_Operating_Equipment	In an Open Vehicle or Operating Equipment	In an Open Vehicle or Operating Equipment	4.C.2.a.1.e
+onet.org.ai	WorkContext	In_An_Enclosed_Vehicle_Or_Operate_Enclosed_Equipment	In an Enclosed Vehicle or Operate Enclosed Equipment	In an Enclosed Vehicle or Operate Enclosed Equipment	4.C.2.a.1.f
+onet.org.ai	WorkContext	PhysicalProximity	Physical Proximity	Physical Proximity	4.C.2.a.3
+onet.org.ai	WorkContext	Exposed_To_Sounds_Noise_Levels_That_Are_Distracting_Or_Uncomfortable	Exposed to Sounds, Noise Levels that are Distracting or Uncomfortable	Exposed to Sounds, Noise Levels that are Distracting or Uncomfortable	4.C.2.b.1.a
+onet.org.ai	WorkContext	Exposed_To_Very_Hot_Or_Cold_Temperatures	Exposed to Very Hot or Cold Temperatures	Exposed to Very Hot or Cold Temperatures	4.C.2.b.1.b
+onet.org.ai	WorkContext	Exposed_To_Extremely_Bright_Or_Inadequate_Lighting_Conditions	Exposed to Extremely Bright or Inadequate Lighting Conditions	Exposed to Extremely Bright or Inadequate Lighting Conditions	4.C.2.b.1.c
+onet.org.ai	WorkContext	ExposedToContaminants	Exposed to Contaminants	Exposed to Contaminants	4.C.2.b.1.d
+onet.org.ai	WorkContext	Exposed_To_Cramped_Work_Space_Awkward_Positions	Exposed to Cramped Work Space, Awkward Positions	Exposed to Cramped Work Space, Awkward Positions	4.C.2.b.1.e
+onet.org.ai	WorkContext	Exposed_To_Whole_Body_Vibration	Exposed to Whole Body Vibration	Exposed to Whole Body Vibration	4.C.2.b.1.f
+onet.org.ai	WorkContext	ExposedToRadiation	Exposed to Radiation	Exposed to Radiation	4.C.2.c.1.a
+onet.org.ai	WorkContext	Exposed_To_Disease_Or_Infections	Exposed to Disease or Infections	Exposed to Disease or Infections	4.C.2.c.1.b
+onet.org.ai	WorkContext	Exposed_To_High_Places	Exposed to High Places	Exposed to High Places	4.C.2.c.1.c
+onet.org.ai	WorkContext	Exposed_To_Hazardous_Conditions	Exposed to Hazardous Conditions	Exposed to Hazardous Conditions	4.C.2.c.1.d
+onet.org.ai	WorkContext	Exposed_To_Hazardous_Equipment	Exposed to Hazardous Equipment	Exposed to Hazardous Equipment	4.C.2.c.1.e
+onet.org.ai	WorkContext	Exposed_To_Minor_Burns_Cuts_Bites_Or_Stings	Exposed to Minor Burns, Cuts, Bites, or Stings	Exposed to Minor Burns, Cuts, Bites, or Stings	4.C.2.c.1.f
+onet.org.ai	WorkContext	SpendTimeSitting	Spend Time Sitting	Spend Time Sitting	4.C.2.d.1.a
+onet.org.ai	WorkContext	SpendTimeStanding	Spend Time Standing	Spend Time Standing	4.C.2.d.1.b
+onet.org.ai	WorkContext	Spend_Time_Climbing_Ladders_Scaffolds_Or_Poles	Spend Time Climbing Ladders, Scaffolds, or Poles	Spend Time Climbing Ladders, Scaffolds, or Poles	4.C.2.d.1.c
+onet.org.ai	WorkContext	Spend_Time_Walking_Or_Running	Spend Time Walking or Running	Spend Time Walking or Running	4.C.2.d.1.d
+onet.org.ai	WorkContext	Spend_Time_Kneeling_Crouching_Stooping_Or_Crawling	Spend Time Kneeling, Crouching, Stooping, or Crawling	Spend Time Kneeling, Crouching, Stooping, or Crawling	4.C.2.d.1.e
+onet.org.ai	WorkContext	Spend_Time_Keeping_Or_Regaining_Balance	Spend Time Keeping or Regaining Balance	Spend Time Keeping or Regaining Balance	4.C.2.d.1.f
+onet.org.ai	WorkContext	Spend_Time_Using_Your_Hands_To_Handle_Control_Or_Feel_Objects_Tools_Or_Controls	Spend Time Using Your Hands to Handle, Control, or Feel Objects, Tools, or Controls	Spend Time Using Your Hands to Handle, Control, or Feel Objects, Tools, or Controls	4.C.2.d.1.g
+onet.org.ai	WorkContext	Spend_Time_Bending_Or_Twisting_Your_Body	Spend Time Bending or Twisting Your Body	Spend Time Bending or Twisting Your Body	4.C.2.d.1.h
+onet.org.ai	WorkContext	Spend_Time_Making_Repetitive_Motions	Spend Time Making Repetitive Motions	Spend Time Making Repetitive Motions	4.C.2.d.1.i
+onet.org.ai	WorkContext	Wear_Common_Protective_Or_Safety_Equipment_Such_As_Safety_Shoes_Glasses_Gloves_Hearing_Protection_Hard_Hats_Or_Life_Jackets	Wear Common Protective or Safety Equipment such as Safety Shoes, Glasses, Gloves, Hearing Protection, Hard Hats, or Life Jackets	Wear Common Protective or Safety Equipment such as Safety Shoes, Glasses, Gloves, Hearing Protection, Hard Hats, or Life Jackets	4.C.2.e.1.d
+onet.org.ai	WorkContext	Wear_Specialized_Protective_Or_Safety_Equipment_Such_As_Breathing_Apparatus_Safety_Harness_Full_Protection_Suits_Or_Radiation_Protection	Wear Specialized Protective or Safety Equipment such as Breathing Apparatus, Safety Harness, Full Protection Suits, or Radiation Protection	Wear Specialized Protective or Safety Equipment such as Breathing Apparatus, Safety Harness, Full Protection Suits, or Radiation Protection	4.C.2.e.1.e
+onet.org.ai	WorkContext	ConsequenceOfError	Consequence of Error	Consequence of Error	4.C.3.a.1
+onet.org.ai	WorkContext	Impact_Of_Decisions_On_Co_Workers_Or_Company_Results	Impact of Decisions on Co-workers or Company Results	Impact of Decisions on Co-workers or Company Results	4.C.3.a.2.a
+onet.org.ai	WorkContext	Frequency_Of_Decision_Making	Frequency of Decision Making	Frequency of Decision Making	4.C.3.a.2.b
+onet.org.ai	WorkContext	Freedom_To_Make_Decisions	Freedom to Make Decisions	Freedom to Make Decisions	4.C.3.a.4
+onet.org.ai	WorkContext	DegreeOfAutomation	Degree of Automation	Degree of Automation	4.C.3.b.2
+onet.org.ai	WorkContext	Importance_Of_Being_Exact_Or_Accurate	Importance of Being Exact or Accurate	Importance of Being Exact or Accurate	4.C.3.b.4
+onet.org.ai	WorkContext	Importance_Of_Repeating_Same_Tasks	Importance of Repeating Same Tasks	Importance of Repeating Same Tasks	4.C.3.b.7
+onet.org.ai	WorkContext	Determine_Tasks_Priorities_And_Goals	Determine Tasks, Priorities and Goals	Determine Tasks, Priorities and Goals	4.C.3.b.8
+onet.org.ai	WorkContext	LevelOfCompetition	Level of Competition	Level of Competition	4.C.3.c.1
+onet.org.ai	WorkContext	TimePressure	Time Pressure	Time Pressure	4.C.3.d.1
+onet.org.ai	WorkContext	Pace_Determined_By_Speed_Of_Equipment	Pace Determined by Speed of Equipment	Pace Determined by Speed of Equipment	4.C.3.d.3
+onet.org.ai	WorkContext	WorkSchedules	Work Schedules	Work Schedules	4.C.3.d.4
+onet.org.ai	WorkContext	Duration_Of_Typical_Work_Week	Duration of Typical Work Week	Duration of Typical Work Week	4.C.3.d.8

@@ -13,6 +13,35 @@
 
 import { readFileSync, writeFileSync } from 'fs'
 
+/**
+ * Create Wikipedia_Style_Names ID from text
+ * - 1-3 words: PascalCase (e.g., "LiveAnimals")
+ * - 4+ words: Wikipedia_Style (e.g., "Diagnosis_of_Cholera")
+ */
+function toWikipediaStyleId(text: string): string {
+  if (!text) return ''
+
+  // Clean and normalize
+  const cleaned = text
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  const words = cleaned.split(/[\s_-]+/).filter(w => w.length > 0)
+
+  if (words.length === 0) return ''
+
+  const capitalizedWords = words.map(w =>
+    w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+  )
+
+  if (words.length <= 3) {
+    return capitalizedWords.join('')
+  } else {
+    return capitalizedWords.join('_')
+  }
+}
+
 // Common service activity verbs
 const SERVICE_VERBS = new Set([
   'maintenance', 'repair', 'installation', 'removal', 'cleaning', 'washing',
@@ -345,9 +374,7 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
           fullName += ` (except ${statement.exclusions.join(' and ')})`
         }
 
-        const id = fullName
-          .replace(/[^a-zA-Z0-9]+/g, '')
-          .replace(/^(.)/, (m) => m.toUpperCase())
+        const id = toWikipediaStyleId(fullName)
 
         expanded.push({
           activity,
@@ -372,9 +399,7 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
           fullName += ` (except ${statement.exclusions.join(' and ')})`
         }
 
-        const id = fullName
-          .replace(/[^a-zA-Z0-9]+/g, '')
-          .replace(/^(.)/, (m) => m.toUpperCase())
+        const id = toWikipediaStyleId(fullName)
 
         expanded.push({
           exclusion: statement.exclusions.join(' and ') || undefined,
@@ -391,9 +416,7 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
       if (statement.serviceKeyword) parts.push(statement.serviceKeyword)
 
       const fullName = parts.join(' ')
-      const id = fullName
-        .replace(/[^a-zA-Z0-9]+/g, '')
-        .replace(/^(.)/, (m) => m.toUpperCase())
+      const id = toWikipediaStyleId(fullName)
 
       expanded.push({
         activity,
@@ -413,9 +436,7 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
         fullName += ` (except ${statement.exclusions.join(' and ')})`
       }
 
-      const id = fullName
-        .replace(/[^a-zA-Z0-9]+/g, '')
-        .replace(/^(.)/, (m) => m.toUpperCase())
+      const id = toWikipediaStyleId(fullName)
 
       expanded.push({
         object,
@@ -429,9 +450,7 @@ function expandServiceStatement(statement: ServiceStatement): ExpandedService[] 
   else {
     expanded.push({
       fullName: statement.original,
-      id: statement.original
-        .replace(/[^a-zA-Z0-9]+/g, '')
-        .replace(/^(.)/, (m) => m.toUpperCase())
+      id: toWikipediaStyleId(statement.original)
     })
   }
 

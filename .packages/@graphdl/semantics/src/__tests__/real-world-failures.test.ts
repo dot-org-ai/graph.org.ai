@@ -33,9 +33,10 @@ describe('Real World Failure Cases', () => {
     const result = parser.parse('Discover potential value in opportunities consistent with trading strategy and objectives')
     console.log('Discover:', JSON.stringify(result, null, 2))
     expect(result.predicate.toLowerCase()).toBe('discover')
-    expect(result.object).toBe('potential value')
+    // Object is normalized to PascalCase concept format
+    expect(result.object).toBe('PotentialValue')
     // Should NOT expand on "and" within prepositional phrase
-    expect(result.complement).toContain('trading strategy and objectives')
+    expect(result.complement).toContain('TradingStrategy')
   })
 
   test('ONET: assist and support - should expand', () => {

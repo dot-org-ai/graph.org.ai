@@ -1,0 +1,42 @@
+ns	type	id	name	description	code
+onet.org.ai	WorkActivity	GettingInformation	Getting Information	Getting Information	4.A.1.a.1
+onet.org.ai	WorkActivity	Monitoring_Processes_Materials_Or_Surroundings	Monitoring Processes, Materials, or Surroundings	Monitoring Processes, Materials, or Surroundings	4.A.1.a.2
+onet.org.ai	WorkActivity	Identifying_Objects_Actions_And_Events	Identifying Objects, Actions, and Events	Identifying Objects, Actions, and Events	4.A.1.b.1
+onet.org.ai	WorkActivity	Inspecting_Equipment_Structures_Or_Materials	Inspecting Equipment, Structures, or Materials	Inspecting Equipment, Structures, or Materials	4.A.1.b.2
+onet.org.ai	WorkActivity	Estimating_The_Quantifiable_Characteristics_Of_Products_Events_Or_Information	Estimating the Quantifiable Characteristics of Products, Events, or Information	Estimating the Quantifiable Characteristics of Products, Events, or Information	4.A.1.b.3
+onet.org.ai	WorkActivity	Judging_The_Qualities_Of_Objects_Services_Or_People	Judging the Qualities of Objects, Services, or People	Judging the Qualities of Objects, Services, or People	4.A.2.a.1
+onet.org.ai	WorkActivity	ProcessingInformation	Processing Information	Processing Information	4.A.2.a.2
+onet.org.ai	WorkActivity	Evaluating_Information_To_Determine_Compliance_With_Standards	Evaluating Information to Determine Compliance with Standards	Evaluating Information to Determine Compliance with Standards	4.A.2.a.3
+onet.org.ai	WorkActivity	Analyzing_Data_Or_Information	Analyzing Data or Information	Analyzing Data or Information	4.A.2.a.4
+onet.org.ai	WorkActivity	Making_Decisions_And_Solving_Problems	Making Decisions and Solving Problems	Making Decisions and Solving Problems	4.A.2.b.1
+onet.org.ai	WorkActivity	ThinkingCreatively	Thinking Creatively	Thinking Creatively	4.A.2.b.2
+onet.org.ai	WorkActivity	Updating_And_Using_Relevant_Knowledge	Updating and Using Relevant Knowledge	Updating and Using Relevant Knowledge	4.A.2.b.3
+onet.org.ai	WorkActivity	Developing_Objectives_And_Strategies	Developing Objectives and Strategies	Developing Objectives and Strategies	4.A.2.b.4
+onet.org.ai	WorkActivity	Scheduling_Work_And_Activities	Scheduling Work and Activities	Scheduling Work and Activities	4.A.2.b.5
+onet.org.ai	WorkActivity	Organizing_Planning_And_Prioritizing_Work	Organizing, Planning, and Prioritizing Work	Organizing, Planning, and Prioritizing Work	4.A.2.b.6
+onet.org.ai	WorkActivity	Performing_General_Physical_Activities	Performing General Physical Activities	Performing General Physical Activities	4.A.3.a.1
+onet.org.ai	WorkActivity	Handling_And_Moving_Objects	Handling and Moving Objects	Handling and Moving Objects	4.A.3.a.2
+onet.org.ai	WorkActivity	Controlling_Machines_And_Processes	Controlling Machines and Processes	Controlling Machines and Processes	4.A.3.a.3
+onet.org.ai	WorkActivity	Operating_Vehicles_Mechanized_Devices_Or_Equipment	Operating Vehicles, Mechanized Devices, or Equipment	Operating Vehicles, Mechanized Devices, or Equipment	4.A.3.a.4
+onet.org.ai	WorkActivity	WorkingWithComputers	Working with Computers	Working with Computers	4.A.3.b.1
+onet.org.ai	WorkActivity	Drafting_Laying_Out_And_Specifying_Technical_Devices_Parts_And_Equipment	Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment	Drafting, Laying Out, and Specifying Technical Devices, Parts, and Equipment	4.A.3.b.2
+onet.org.ai	WorkActivity	Repairing_And_Maintaining_Mechanical_Equipment	Repairing and Maintaining Mechanical Equipment	Repairing and Maintaining Mechanical Equipment	4.A.3.b.4
+onet.org.ai	WorkActivity	Repairing_And_Maintaining_Electronic_Equipment	Repairing and Maintaining Electronic Equipment	Repairing and Maintaining Electronic Equipment	4.A.3.b.5
+onet.org.ai	WorkActivity	DocumentingrecordingInformation	Documenting/Recording Information	Documenting/Recording Information	4.A.3.b.6
+onet.org.ai	WorkActivity	Interpreting_The_Meaning_Of_Information_For_Others	Interpreting the Meaning of Information for Others	Interpreting the Meaning of Information for Others	4.A.4.a.1
+onet.org.ai	WorkActivity	Communicating_With_Supervisors_Peers_Or_Subordinates	Communicating with Supervisors, Peers, or Subordinates	Communicating with Supervisors, Peers, or Subordinates	4.A.4.a.2
+onet.org.ai	WorkActivity	Communicating_With_People_Outside_The_Organization	Communicating with People Outside the Organization	Communicating with People Outside the Organization	4.A.4.a.3
+onet.org.ai	WorkActivity	Establishing_And_Maintaining_Interpersonal_Relationships	Establishing and Maintaining Interpersonal Relationships	Establishing and Maintaining Interpersonal Relationships	4.A.4.a.4
+onet.org.ai	WorkActivity	Assisting_And_Caring_For_Others	Assisting and Caring for Others	Assisting and Caring for Others	4.A.4.a.5
+onet.org.ai	WorkActivity	Selling_Or_Influencing_Others	Selling or Influencing Others	Selling or Influencing Others	4.A.4.a.6
+onet.org.ai	WorkActivity	Resolving_Conflicts_And_Negotiating_With_Others	Resolving Conflicts and Negotiating with Others	Resolving Conflicts and Negotiating with Others	4.A.4.a.7
+onet.org.ai	WorkActivity	Performing_For_Or_Working_Directly_With_The_Public	Performing for or Working Directly with the Public	Performing for or Working Directly with the Public	4.A.4.a.8
+onet.org.ai	WorkActivity	Coordinating_The_Work_And_Activities_Of_Others	Coordinating the Work and Activities of Others	Coordinating the Work and Activities of Others	4.A.4.b.1
+onet.org.ai	WorkActivity	Developing_And_Building_Teams	Developing and Building Teams	Developing and Building Teams	4.A.4.b.2
+onet.org.ai	WorkActivity	Training_And_Teaching_Others	Training and Teaching Others	Training and Teaching Others	4.A.4.b.3
+onet.org.ai	WorkActivity	Guiding_Directing_And_Motivating_Subordinates	Guiding, Directing, and Motivating Subordinates	Guiding, Directing, and Motivating Subordinates	4.A.4.b.4
+onet.org.ai	WorkActivity	Coaching_And_Developing_Others	Coaching and Developing Others	Coaching and Developing Others	4.A.4.b.5
+onet.org.ai	WorkActivity	Providing_Consultation_And_Advice_To_Others	Providing Consultation and Advice to Others	Providing Consultation and Advice to Others	4.A.4.b.6
+onet.org.ai	WorkActivity	PerformingAdministrativeActivities	Performing Administrative Activities	Performing Administrative Activities	4.A.4.c.1
+onet.org.ai	WorkActivity	StaffingOrganizationalUnits	Staffing Organizational Units	Staffing Organizational Units	4.A.4.c.2
+onet.org.ai	WorkActivity	Monitoring_And_Controlling_Resources	Monitoring and Controlling Resources	Monitoring and Controlling Resources	4.A.4.c.3

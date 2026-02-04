@@ -16,7 +16,6 @@ const DATA_DIR = resolve(__dirname, '../.data')
 const SOURCE_DIR = resolve(__dirname, '../.source')
 
 interface Service {
-  url: string
   ns: string
   type: string
   id: string
@@ -35,28 +34,45 @@ interface Service {
   hierarchy?: string
 }
 
-function toPascalCase(str: string): string {
-  if (!str) return ''
-  // Handle special cases with numbers at the end
-  const cleaned = str
-    .replace(/[^\w\s-]/g, '') // Remove special chars except word chars, spaces, hyphens
-    .replace(/\s+/g, ' ') // Normalize spaces
+/**
+ * Convert text to Wikipedia_Style_Names ID
+ * - 1-3 words: PascalCase (e.g., "LiveAnimals", "SoybeanFarming")
+ * - 4+ words: Wikipedia_Style (e.g., "Diagnosis_of_Cholera_Due_to_Vibrio_Cholerae")
+ */
+function toWikipediaStyleId(text: string): string {
+  if (!text) return ''
+
+  // Clean and normalize
+  const cleaned = text
+    .replace(/[^\w\s-]/g, '') // Remove special chars
+    .replace(/\s+/g, ' ')     // Normalize spaces
     .trim()
 
-  return cleaned
-    .split(/[\s_-]+/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join('')
+  // Split into words
+  const words = cleaned.split(/[\s_-]+/).filter(w => w.length > 0)
+
+  if (words.length === 0) return ''
+
+  // Capitalize each word
+  const capitalizedWords = words.map(w =>
+    w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()
+  )
+
+  // PascalCase for 1-3 words, Wikipedia_Style for 4+
+  if (words.length <= 3) {
+    return capitalizedWords.join('')
+  } else {
+    return capitalizedWords.join('_')
+  }
 }
 
 function generateServiceId(name: string, code: string): string {
-  const pascalName = toPascalCase(name)
+  const id = toWikipediaStyleId(name)
   // If name is too generic or empty, append code
-  if (!pascalName || pascalName.length < 3) {
-    return toPascalCase(name + code)
+  if (!id || id.length < 3) {
+    return toWikipediaStyleId(name + ' ' + code)
   }
-  // If there are multiple services with same name, we'll append code later during deduplication
-  return pascalName
+  return id
 }
 
 console.log('🔧 Generating unified Services.tsv file\n')
@@ -93,7 +109,6 @@ for (let i = 1; i < unspscLines.length; i++) {
   const id = generateServiceId(name, commodityCode)
 
   unspscServices.push({
-    url: `https://unspsc.org/Service/${id}`,
     ns: 'unspsc.org.ai',
     type: 'Service',
     id,
@@ -113,9 +128,9 @@ for (let i = 1; i < unspscLines.length; i++) {
 
 console.log(`   ✓ Extracted ${unspscServices.length.toLocaleString()} UNSPSC services\n`)
 
-// 2. Read NAPCS services
+// 2. Read NAPCS services (from main generate-data.ts output)
 console.log('2️⃣  Reading NAPCS services...')
-const napcsPath = resolve(DATA_DIR, 'Services.NAPCS.tsv')
+const napcsPath = resolve(DATA_DIR, 'Services.tsv')
 const napcsContent = readFileSync(napcsPath, 'utf-8')
 const napcsLines = napcsContent.split('\n').filter(l => l.trim())
 const napcsHeaders = napcsLines[0].split('\t')
@@ -132,7 +147,6 @@ for (let i = 1; i < napcsLines.length; i++) {
 
   if (obj.id && obj.id !== 'id') {
     napcsServices.push({
-      url: obj.url,
       ns: obj.ns,
       type: obj.type,
       id: obj.id,
@@ -187,9 +201,8 @@ uniqueServices.forEach(service => {
   Object.keys(service).forEach(key => allColumns.add(key))
 })
 
-// Standard columns first
+// Standard columns first (no url - computed at runtime from ns + id)
 const headers = [
-  'url',
   'ns',
   'type',
   'id',

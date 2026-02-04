@@ -1,0 +1,40 @@
+ns	type	id	name	description	code	category	usage
+language.org.ai	Determiner	A	a	indefinite article (singular)		Article	a document
+language.org.ai	Determiner	An	an	indefinite article before vowel sound		Article	an email
+language.org.ai	Determiner	The	the	definite article		Article	the report
+language.org.ai	Determiner	All	all	the whole quantity of		Quantifier	all employees
+language.org.ai	Determiner	Another	another	one more; a different one		Quantifier	another approach
+language.org.ai	Determiner	Any	any	one or some of a thing		Quantifier	any questions
+language.org.ai	Determiner	Both	both	the two; one and the other		Quantifier	both options
+language.org.ai	Determiner	Each	each	every one of two or more		Quantifier	each employee
+language.org.ai	Determiner	Either	either	one or the other of two		Quantifier	either option
+language.org.ai	Determiner	Enough	enough	as much as required		Quantifier	enough resources
+language.org.ai	Determiner	Every	every	all of a group		Quantifier	every day
+language.org.ai	Determiner	Few	few	a small number of		Quantifier	few issues
+language.org.ai	Determiner	Fewer	fewer	a smaller number of		Quantifier	fewer errors
+language.org.ai	Determiner	Little	little	a small amount of		Quantifier	little time
+language.org.ai	Determiner	Less	less	a smaller amount of		Quantifier	less effort
+language.org.ai	Determiner	Many	many	a large number of		Quantifier	many customers
+language.org.ai	Determiner	More	more	a greater amount		Quantifier	more data
+language.org.ai	Determiner	Most	most	the greatest amount		Quantifier	most people
+language.org.ai	Determiner	Much	much	a great amount of		Quantifier	much work
+language.org.ai	Determiner	Neither	neither	not one nor the other		Quantifier	neither option
+language.org.ai	Determiner	No	no	not any		Quantifier	no problems
+language.org.ai	Determiner	Other	other	alternative; different		Quantifier	other methods
+language.org.ai	Determiner	Several	several	more than two but not many		Quantifier	several approaches
+language.org.ai	Determiner	Some	some	an unspecified amount		Quantifier	some data
+language.org.ai	Determiner	Sufficient	sufficient	enough; adequate		Quantifier	sufficient evidence
+language.org.ai	Determiner	This	this	referring to a specific thing nearby		Demonstrative	this document
+language.org.ai	Determiner	That	that	referring to a specific thing		Demonstrative	that report
+language.org.ai	Determiner	These	these	plural of this		Demonstrative	these files
+language.org.ai	Determiner	Those	those	plural of that		Demonstrative	those records
+language.org.ai	Determiner	My	my	belonging to me		Possessive	my task
+language.org.ai	Determiner	Your	your	belonging to you		Possessive	your project
+language.org.ai	Determiner	His	his	belonging to him		Possessive	his role
+language.org.ai	Determiner	Her	her	belonging to her		Possessive	her assignment
+language.org.ai	Determiner	Its	its	belonging to it		Possessive	its purpose
+language.org.ai	Determiner	Our	our	belonging to us		Possessive	our team
+language.org.ai	Determiner	Their	their	belonging to them		Possessive	their goals
+language.org.ai	Determiner	What	what	asking for information		Interrogative	what data
+language.org.ai	Determiner	Which	which	asking for choice		Interrogative	which option
+language.org.ai	Determiner	Whose	whose	asking about possession		Interrogative	whose responsibility

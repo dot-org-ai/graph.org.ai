@@ -1,0 +1,53 @@
+ns	type	id	name	description	code
+onet.org.ai	Ability	OralComprehension	Oral Comprehension	Oral Comprehension	1.A.1.a.1
+onet.org.ai	Ability	WrittenComprehension	Written Comprehension	Written Comprehension	1.A.1.a.2
+onet.org.ai	Ability	OralExpression	Oral Expression	Oral Expression	1.A.1.a.3
+onet.org.ai	Ability	WrittenExpression	Written Expression	Written Expression	1.A.1.a.4
+onet.org.ai	Ability	FluencyOfIdeas	Fluency of Ideas	Fluency of Ideas	1.A.1.b.1
+onet.org.ai	Ability	Originality	Originality	Originality	1.A.1.b.2
+onet.org.ai	Ability	ProblemSensitivity	Problem Sensitivity	Problem Sensitivity	1.A.1.b.3
+onet.org.ai	Ability	DeductiveReasoning	Deductive Reasoning	Deductive Reasoning	1.A.1.b.4
+onet.org.ai	Ability	InductiveReasoning	Inductive Reasoning	Inductive Reasoning	1.A.1.b.5
+onet.org.ai	Ability	InformationOrdering	Information Ordering	Information Ordering	1.A.1.b.6
+onet.org.ai	Ability	CategoryFlexibility	Category Flexibility	Category Flexibility	1.A.1.b.7
+onet.org.ai	Ability	MathematicalReasoning	Mathematical Reasoning	Mathematical Reasoning	1.A.1.c.1
+onet.org.ai	Ability	NumberFacility	Number Facility	Number Facility	1.A.1.c.2
+onet.org.ai	Ability	Memorization	Memorization	Memorization	1.A.1.d.1
+onet.org.ai	Ability	SpeedOfClosure	Speed of Closure	Speed of Closure	1.A.1.e.1
+onet.org.ai	Ability	FlexibilityOfClosure	Flexibility of Closure	Flexibility of Closure	1.A.1.e.2
+onet.org.ai	Ability	PerceptualSpeed	Perceptual Speed	Perceptual Speed	1.A.1.e.3
+onet.org.ai	Ability	SpatialOrientation	Spatial Orientation	Spatial Orientation	1.A.1.f.1
+onet.org.ai	Ability	Visualization	Visualization	Visualization	1.A.1.f.2
+onet.org.ai	Ability	SelectiveAttention	Selective Attention	Selective Attention	1.A.1.g.1
+onet.org.ai	Ability	TimeSharing	Time Sharing	Time Sharing	1.A.1.g.2
+onet.org.ai	Ability	ArmHandSteadiness	Arm-Hand Steadiness	Arm-Hand Steadiness	1.A.2.a.1
+onet.org.ai	Ability	ManualDexterity	Manual Dexterity	Manual Dexterity	1.A.2.a.2
+onet.org.ai	Ability	FingerDexterity	Finger Dexterity	Finger Dexterity	1.A.2.a.3
+onet.org.ai	Ability	ControlPrecision	Control Precision	Control Precision	1.A.2.b.1
+onet.org.ai	Ability	MultilimbCoordination	Multilimb Coordination	Multilimb Coordination	1.A.2.b.2
+onet.org.ai	Ability	ResponseOrientation	Response Orientation	Response Orientation	1.A.2.b.3
+onet.org.ai	Ability	RateControl	Rate Control	Rate Control	1.A.2.b.4
+onet.org.ai	Ability	ReactionTime	Reaction Time	Reaction Time	1.A.2.c.1
+onet.org.ai	Ability	WristFingerSpeed	Wrist-Finger Speed	Wrist-Finger Speed	1.A.2.c.2
+onet.org.ai	Ability	Speed_Of_Limb_Movement	Speed of Limb Movement	Speed of Limb Movement	1.A.2.c.3
+onet.org.ai	Ability	StaticStrength	Static Strength	Static Strength	1.A.3.a.1
+onet.org.ai	Ability	ExplosiveStrength	Explosive Strength	Explosive Strength	1.A.3.a.2
+onet.org.ai	Ability	DynamicStrength	Dynamic Strength	Dynamic Strength	1.A.3.a.3
+onet.org.ai	Ability	TrunkStrength	Trunk Strength	Trunk Strength	1.A.3.a.4
+onet.org.ai	Ability	Stamina	Stamina	Stamina	1.A.3.b.1
+onet.org.ai	Ability	ExtentFlexibility	Extent Flexibility	Extent Flexibility	1.A.3.c.1
+onet.org.ai	Ability	DynamicFlexibility	Dynamic Flexibility	Dynamic Flexibility	1.A.3.c.2
+onet.org.ai	Ability	GrossBodyCoordination	Gross Body Coordination	Gross Body Coordination	1.A.3.c.3
+onet.org.ai	Ability	GrossBodyEquilibrium	Gross Body Equilibrium	Gross Body Equilibrium	1.A.3.c.4
+onet.org.ai	Ability	NearVision	Near Vision	Near Vision	1.A.4.a.1
+onet.org.ai	Ability	FarVision	Far Vision	Far Vision	1.A.4.a.2
+onet.org.ai	Ability	VisualColorDiscrimination	Visual Color Discrimination	Visual Color Discrimination	1.A.4.a.3
+onet.org.ai	Ability	NightVision	Night Vision	Night Vision	1.A.4.a.4
+onet.org.ai	Ability	PeripheralVision	Peripheral Vision	Peripheral Vision	1.A.4.a.5
+onet.org.ai	Ability	DepthPerception	Depth Perception	Depth Perception	1.A.4.a.6
+onet.org.ai	Ability	GlareSensitivity	Glare Sensitivity	Glare Sensitivity	1.A.4.a.7
+onet.org.ai	Ability	HearingSensitivity	Hearing Sensitivity	Hearing Sensitivity	1.A.4.b.1
+onet.org.ai	Ability	AuditoryAttention	Auditory Attention	Auditory Attention	1.A.4.b.2
+onet.org.ai	Ability	SoundLocalization	Sound Localization	Sound Localization	1.A.4.b.3
+onet.org.ai	Ability	SpeechRecognition	Speech Recognition	Speech Recognition	1.A.4.b.4
+onet.org.ai	Ability	SpeechClarity	Speech Clarity	Speech Clarity	1.A.4.b.5

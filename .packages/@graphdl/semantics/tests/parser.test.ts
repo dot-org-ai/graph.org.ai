@@ -26,7 +26,8 @@ describe('GraphDL Parser', () => {
     it('should preserve original verb form', () => {
       const result = parser.parse('Monitor performance')
       expect(result.predicate).toBe('Monitor')
-      expect(parser.toGraphDL(result)).toBe('Monitor.performance')
+      // Objects are PascalCase in GraphDL
+      expect(parser.toGraphDL(result)).toBe('Monitor.Performance')
     })
   })
 
@@ -58,23 +59,26 @@ describe('GraphDL Parser', () => {
       const result = parser.parse('Review and monitor physical and logical IT data security measures')
 
       expect(result.hasConjunction).toBe(true)
-      expect(result.expansions).toHaveLength(2)
+      // 2 verbs x 2 objects (physical/logical) = 4 expansions
+      expect(result.expansions).toHaveLength(4)
       expect(result.expansions![0].predicate).toBe('Review')
-      expect(result.expansions![1].predicate).toBe('Monitor')
+      expect(result.expansions![2].predicate).toBe('Monitor')
     })
 
     it('should handle "Compile and communicate"', () => {
       const result = parser.parse('Compile and communicate internal and regulatory compliance reports')
 
       expect(result.hasConjunction).toBe(true)
-      expect(result.expansions).toHaveLength(2)
+      // 2 verbs x 2 objects (internal/regulatory) = 4 expansions
+      expect(result.expansions).toHaveLength(4)
     })
 
     it('should handle "Develop and manage"', () => {
       const result = parser.parse('Develop and manage human resources planning, policies, and strategies')
 
       expect(result.hasConjunction).toBe(true)
-      expect(result.expansions).toHaveLength(2)
+      // 2 verbs x 3 objects (planning, policies, strategies) = 6 expansions
+      expect(result.expansions).toHaveLength(6)
     })
   })
 
@@ -189,7 +193,10 @@ describe('GraphDL Parser', () => {
 
       expect(result.predicate).toBe('Provide')
       const graphdl = parser.toGraphDL(result)
-      expect(graphdl.length).toBeLessThan(150)
+      // With expansion of "feedback and insights" plus the comma-separated list,
+      // output is an array format which is longer. With slash pattern expansion
+      // (product design/development), this grows further.
+      expect(graphdl.length).toBeLessThan(400)
     })
   })
 
@@ -279,9 +286,10 @@ describe('GraphDL Parser', () => {
     it('case 3: Multiple "and" in objects', () => {
       const result = parser.parse('Define and maintain enterprise information policies, standards, and procedures')
 
-      // Should split verbs but keep object conjunctions
+      // Now splits both verbs AND object conjunctions
+      // 2 verbs x 3 objects (policies, standards, procedures) = 6 expansions
       expect(result.hasConjunction).toBe(true)
-      expect(result.expansions).toHaveLength(2)
+      expect(result.expansions).toHaveLength(6)
     })
   })
 })

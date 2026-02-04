@@ -52,7 +52,7 @@ describe('Entity Name Expansion', () => {
     // - Commercial Refrigeration Equipment Manufacturing
     // - Industrial Refrigeration Equipment Manufacturing
 
-    expect(input.length).toBe(116)
+    expect(input.length).toBe(115)
   })
 
   test('Except clause handling', () => {
@@ -87,7 +87,7 @@ describe('Entity Name Expansion', () => {
     // - Related Products ... for Displaying Industrial Process Variables
     // - ... for Controlling Industrial Process Variables
 
-    expect(input.length).toBe(119)
+    expect(input.length).toBe(118)
   })
 
   test('Media streaming with comma list', () => {

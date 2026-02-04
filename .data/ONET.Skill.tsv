@@ -1,0 +1,36 @@
+ns	type	id	name	description	code
+onet.org.ai	Skill	ReadingComprehension	Reading Comprehension	Reading Comprehension	2.A.1.a
+onet.org.ai	Skill	ActiveListening	Active Listening	Active Listening	2.A.1.b
+onet.org.ai	Skill	Writing	Writing	Writing	2.A.1.c
+onet.org.ai	Skill	Speaking	Speaking	Speaking	2.A.1.d
+onet.org.ai	Skill	Mathematics	Mathematics	Mathematics	2.A.1.e
+onet.org.ai	Skill	Science	Science	Science	2.A.1.f
+onet.org.ai	Skill	CriticalThinking	Critical Thinking	Critical Thinking	2.A.2.a
+onet.org.ai	Skill	ActiveLearning	Active Learning	Active Learning	2.A.2.b
+onet.org.ai	Skill	LearningStrategies	Learning Strategies	Learning Strategies	2.A.2.c
+onet.org.ai	Skill	Monitoring	Monitoring	Monitoring	2.A.2.d
+onet.org.ai	Skill	SocialPerceptiveness	Social Perceptiveness	Social Perceptiveness	2.B.1.a
+onet.org.ai	Skill	Coordination	Coordination	Coordination	2.B.1.b
+onet.org.ai	Skill	Persuasion	Persuasion	Persuasion	2.B.1.c
+onet.org.ai	Skill	Negotiation	Negotiation	Negotiation	2.B.1.d
+onet.org.ai	Skill	Instructing	Instructing	Instructing	2.B.1.e
+onet.org.ai	Skill	ServiceOrientation	Service Orientation	Service Orientation	2.B.1.f
+onet.org.ai	Skill	ComplexProblemSolving	Complex Problem Solving	Complex Problem Solving	2.B.2.i
+onet.org.ai	Skill	OperationsAnalysis	Operations Analysis	Operations Analysis	2.B.3.a
+onet.org.ai	Skill	TechnologyDesign	Technology Design	Technology Design	2.B.3.b
+onet.org.ai	Skill	EquipmentSelection	Equipment Selection	Equipment Selection	2.B.3.c
+onet.org.ai	Skill	Installation	Installation	Installation	2.B.3.d
+onet.org.ai	Skill	Programming	Programming	Programming	2.B.3.e
+onet.org.ai	Skill	OperationsMonitoring	Operations Monitoring	Operations Monitoring	2.B.3.g
+onet.org.ai	Skill	OperationAndControl	Operation and Control	Operation and Control	2.B.3.h
+onet.org.ai	Skill	EquipmentMaintenance	Equipment Maintenance	Equipment Maintenance	2.B.3.j
+onet.org.ai	Skill	Troubleshooting	Troubleshooting	Troubleshooting	2.B.3.k
+onet.org.ai	Skill	Repairing	Repairing	Repairing	2.B.3.l
+onet.org.ai	Skill	QualityControlAnalysis	Quality Control Analysis	Quality Control Analysis	2.B.3.m
+onet.org.ai	Skill	Judgment_And_Decision_Making	Judgment and Decision Making	Judgment and Decision Making	2.B.4.e
+onet.org.ai	Skill	SystemsAnalysis	Systems Analysis	Systems Analysis	2.B.4.g
+onet.org.ai	Skill	SystemsEvaluation	Systems Evaluation	Systems Evaluation	2.B.4.h
+onet.org.ai	Skill	TimeManagement	Time Management	Time Management	2.B.5.a
+onet.org.ai	Skill	Management_Of_Financial_Resources	Management of Financial Resources	Management of Financial Resources	2.B.5.b
+onet.org.ai	Skill	Management_Of_Material_Resources	Management of Material Resources	Management of Material Resources	2.B.5.c
+onet.org.ai	Skill	Management_Of_Personnel_Resources	Management of Personnel Resources	Management of Personnel Resources	2.B.5.d

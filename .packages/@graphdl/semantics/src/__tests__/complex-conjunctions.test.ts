@@ -13,12 +13,12 @@ describe('Complex Conjunctions', () => {
     console.log('Test 1:', JSON.stringify(result, null, 2))
     // Complex prepositional phrases - currently just preserve the phrase structure
     expect(result.predicate.toLowerCase()).toBe('discover')
-    expect(result.object).toBe('potential value')
+    expect(result.object).toBe('PotentialValue')
     expect(result.preposition).toBe('in')
     // The complement should preserve all the "and" conjunctions within the phrase
     expect(result.complement).toContain('and')
     expect(result.complement).toContain('objectives')
-    expect(result.complement).toContain('capital allocation')
+    expect(result.complement).toContain('CapitalAllocation')
   })
 
   test('or with long descriptive phrases', () => {
